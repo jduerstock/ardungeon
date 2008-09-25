@@ -1,4 +1,5 @@
 		.include	"equates.inc"
+		.include	"exp_kernel.inc"
 
 ;		.ORG	$7600
 		LDA	#0
@@ -28,7 +29,7 @@
 		STA	$190B
 		LDA	#$90 ; 'ђ'
 		STA	$190C
-		JSR	$1842
+		JSR	j_SEGLOAD
 		JSR	$9000
 
 loc_764B:				; CODE XREF: RAM:7634j
@@ -38,7 +39,7 @@ loc_764B:				; CODE XREF: RAM:7634j
 		STA	$190B
 		LDA	#$98 ; ''
 		STA	$190C
-		JSR	$1842
+		JSR	j_SEGLOAD
 
 loc_765D:				; CODE XREF: RAM:loc_7AC4j
 		LDA	#$3B ; ';'
@@ -47,7 +48,7 @@ loc_765D:				; CODE XREF: RAM:loc_7AC4j
 		STA	$190B
 		LDA	#$63 ; 'c'
 		STA	$190C
-		JSR	$1842
+		JSR	j_SEGLOAD
 		LDA	#0
 		TAX
 
@@ -440,7 +441,7 @@ loc_78D8:				; CODE XREF: RAM:769Dj
 		STA	$190B
 		LDA	#$76 ; 'v'
 		STA	$190C
-		JMP	$1842
+		JMP	j_SEGLOAD
 ; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
 
 loc_78F0:				; CODE XREF: RAM:76A4j	RAM:83E4j ...

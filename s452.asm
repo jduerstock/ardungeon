@@ -1,3 +1,5 @@
+		.include	"exp_kernel.inc"
+
 ;		.ORG	$7600
 		NOP
 		LDA	#$F
@@ -6,7 +8,7 @@
 		STA	$190B
 		LDA	#$96 ; '–'
 		STA	$190C
-		JSR	$1842
+		JSR	j_SEGLOAD
 		LDA	#1
 		JSR	$180F
 		LDA	$254

@@ -1,4 +1,5 @@
 		.include	"equates.inc"
+		.include	"exp_kernel.inc"
 
 ;		.ORG	$7600
 
@@ -11,7 +12,7 @@ loc_7600:				; CODE XREF: RAM:7814j
 		STA	$190B
 		LDA	#$90 ; 'ê'
 		STA	$190C
-		JSR	$1842
+		JSR	j_SEGLOAD
 		LDA	RANDOM
 		AND	#7
 		BNE	loc_7621
