@@ -399,8 +399,7 @@ unk_1940:	.BYTE $FF		; DATA XREF: RAM:5D85o
 		.BYTE $FF
 		.BYTE $FF
 		.BYTE $FF
-byte_1944:	.BYTE $FF		; DATA XREF: RAM:36D4w	sub_51B6+24w ...
-byte_1945:	.BYTE $FF		; DATA XREF: RAM:36D9w	sub_51B6+29w ...
+off_1944:	.WORD	$FFFF		; DATA XREF: RAM:36D4w	sub_51B6+24w ...
 byte_1946:	.BYTE 0			; DATA XREF: sub_502E:loc_5032w
 					; sub_508C+6r ...
 		.BYTE	0
@@ -5493,9 +5492,9 @@ loc_36C3:				; CODE XREF: RAM:36A8j
 
 loc_36D2:				; CODE XREF: RAM:36C0j
 		LDA	#<aForwardBackEsc
-		STA	byte_1944
+		STA	off_1944
 		LDA	#>aForwardBackEsc
-		STA	byte_1945
+		STA	off_1944+1
 		LDA	#0
 		STA	byte_6276
 		JSR	sub_50B2
@@ -9426,9 +9425,9 @@ loc_51C6:				; CODE XREF: sub_51B6+Cj
 
 loc_51D8:				; CODE XREF: sub_577E+14j
 		LDA	#$57 ; 'W'
-		STA	byte_1944
+		STA	off_1944
 		LDA	#$5F ; '_'
-		STA	byte_1945
+		STA	off_1944+1
 		JSR	sub_50B2
 		BCS	loc_5225
 		CMP	#$80 ; '€'
@@ -9977,9 +9976,9 @@ loc_5519:				; CODE XREF: RAM:5513j
 		LDA	#$5F ; '_'
 		STA	off_193A+1
 		LDA	#$3D ; '='
-		STA	byte_1944
+		STA	off_1944
 		LDA	#$5F ; '_'
-		STA	byte_1945
+		STA	off_1944+1
 		LDX	#3
 
 loc_5543:				; CODE XREF: RAM:554Aj
@@ -10848,9 +10847,9 @@ loc_5ACB:				; CODE XREF: RAM:376Bp
 
 loc_5ADF:				; CODE XREF: sub_5AB4+14j
 		LDA	#$57 ; 'W'
-		STA	byte_1944
+		STA	off_1944
 		LDA	#$5F ; '_'
-		STA	byte_1945
+		STA	off_1944+1
 		LDA	#$C
 		STA	byte_6276
 		LDA	#$F0 ; 'ð'

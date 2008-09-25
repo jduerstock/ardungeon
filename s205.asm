@@ -720,9 +720,9 @@ loc_84EB:				; CODE XREF: RAM:84E5j
 		LDA	#$5F ; '_'
 		STA	off_193A+1
 		LDA	#$3D ; '='
-		STA	$1944
+		STA	off_1944
 		LDA	#$5F ; '_'
-		STA	$1945
+		STA	off_1944+1
 		LDX	#3
 
 loc_8515:				; CODE XREF: RAM:851Cj
