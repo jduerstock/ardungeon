@@ -1,5 +1,6 @@
 		.include	"equates.inc"
 		.include	"exp_kernel.inc"
+		.include	"globals.inc"
 
 ;		.ORG	$7600
 		LDA	#0
@@ -445,10 +446,10 @@ loc_78D8:				; CODE XREF: RAM:769Dj
 ; ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
 
 loc_78F0:				; CODE XREF: RAM:76A4j	RAM:83E4j ...
-		LDA	#$92 ; '’'
-		STA	$16
-		LDA	#$8B ; '‹'
-		STA	$17
+		LDA	#<a_CharacterUtil
+		STA	off_16
+		LDA	#>a_CharacterUtil
+		STA	off_16+1
 		JSR	$1818
 
 loc_78FB:				; CODE XREF: RAM:78FEj	RAM:790Cj
@@ -2389,6 +2390,8 @@ aThySexIs:	.BYTE "Thy sex is "
 aIsThisCorrectq:.BYTE "Is this correct? (Y or N)"
 		.BYTE $D
 		.BYTE $FF
+
+a_CharacterUtil:
 		.BYTE $A8
 		.BYTE $A5
 aCharacterUtili:.BYTE "Character Utilities"
