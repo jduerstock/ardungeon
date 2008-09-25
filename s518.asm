@@ -5474,9 +5474,9 @@ loc_369A:				; CODE XREF: RAM:369Dj	RAM:36ACj
 ; ---------------------------------------------------------------------------
 
 loc_36B1:				; CODE XREF: RAM:36A4j
-		LDA	#$EF ; 'ï'
+		LDA	#<aExamineInvento
 		STA	off_193A
-		LDA	#$36 ; '6'
+		LDA	#>aExamineInvento
 		STA	off_193A+1
 		LDA	#$F0 ; 'ð'
 		STA	loc_51B0
@@ -5486,15 +5486,15 @@ loc_36B1:				; CODE XREF: RAM:36A4j
 loc_36C3:				; CODE XREF: RAM:36A8j
 		LDA	#$D0 ; 'Ð'
 		STA	loc_51B0
-		LDA	#1
+		LDA	#<aExamineSpells
 		STA	off_193A
-		LDA	#$37 ; '7'
+		LDA	#>aExamineSpells
 		STA	off_193A+1
 
 loc_36D2:				; CODE XREF: RAM:36C0j
-		LDA	#$32 ; '2'
+		LDA	#<aForwardBackEsc
 		STA	byte_1944
-		LDA	#$37 ; '7'
+		LDA	#>aForwardBackEsc
 		STA	byte_1945
 		LDA	#0
 		STA	byte_6276
@@ -5524,6 +5524,8 @@ aS:		.BYTE "S"
 aPellsq:	.BYTE "pells?"
 		.BYTE $D
 		.BYTE $FF
+
+aForwardBackEsc:
 		.BYTE $A1
 aF:		.BYTE "F"
 		.BYTE $A0
