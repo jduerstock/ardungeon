@@ -5105,9 +5105,9 @@ loc_3454:				; CODE XREF: RAM:33F3j
 
 loc_347E:				; CODE XREF: RAM:339Cj	RAM:34D7j ...
 		LDA	#$9C ; 'њ'
-		STA	$16
+		STA	off_16
 		LDA	#$3A ; ':'
-		STA	$17
+		STA	off_16+1
 		LDX	byte_352E
 		JSR	sub_3C5C
 		JSR	sub_2BB0
@@ -5128,9 +5128,9 @@ loc_34A3:				; CODE XREF: RAM:3475j	RAM:347Cj ...
 		LDX	#$45 ; 'E'
 		JSR	loc_2E66
 		LDA	#$B1 ; '±'
-		STA	$16
+		STA	off_16
 		LDA	#$3A ; ':'
-		STA	$17
+		STA	off_16+1
 		JMP	loc_343B
 ; ---------------------------------------------------------------------------
 
@@ -5140,9 +5140,9 @@ loc_34BB:				; CODE XREF: RAM:3456j
 		LDA	$63BF
 		BNE	loc_34CF
 		LDA	#$4D ; 'M'
-		STA	$16
+		STA	off_16
 		LDA	#$61 ; 'a'
-		STA	$17
+		STA	off_16+1
 		JMP	loc_343B
 ; ---------------------------------------------------------------------------
 
@@ -5156,9 +5156,9 @@ loc_34D9:				; CODE XREF: RAM:34BDj
 		CMP	#4
 		BNE	loc_3518
 		LDA	#$E1 ; 'б'
-		STA	$16
+		STA	off_16
 		LDA	#$3A ; ':'
-		STA	$17
+		STA	off_16+1
 		LDX	byte_352E
 		JSR	sub_3C5C
 		LDX	#$78 ; 'x'
@@ -5182,9 +5182,9 @@ loc_34ED:				; CODE XREF: RAM:34F1j
 
 loc_350D:				; CODE XREF: RAM:3501j	RAM:3508j
 		LDA	#$B1 ; '±'
-		STA	$16
+		STA	off_16
 		LDA	#$3A ; ':'
-		STA	$17
+		STA	off_16+1
 		JMP	loc_343B
 ; ---------------------------------------------------------------------------
 
@@ -5381,9 +5381,9 @@ sub_3635:				; CODE XREF: RAM:loc_3689p RAM:3756p ...
 		LDA	word_1977+1
 		STA	byte_3682
 		LDA	#7
-		STA	$16
+		STA	off_16
 		LDA	#$20 ; ' '
-		STA	$17
+		STA	off_16+1
 		JSR	sub_3CA5
 		LDX	byte_1933
 		STX	byte_194A
@@ -5417,9 +5417,9 @@ byte_3682:	.BYTE $FF		; DATA XREF: sub_3635+18w RAM:366Br
 loc_3689:				; CODE XREF: RAM:3686j
 		JSR	sub_3635
 		LDA	#$10
-		STA	$16
+		STA	off_16
 		LDA	#$37 ; '7'
-		STA	$17
+		STA	off_16+1
 		LDX	byte_194A
 		JSR	sub_3C5C
 
@@ -5427,9 +5427,9 @@ loc_369A:				; CODE XREF: RAM:369Dj	RAM:36ACj
 		JSR	sub_2643
 		BMI	loc_369A
 		JSR	sub_2BA5
-		CMP	#$49 ; 'I'
+		CMP	#'I'
 		BEQ	loc_36B1
-		CMP	#$53 ; 'S'
+		CMP	#'S'
 		BEQ	loc_36C3
 		CMP	#$1B
 		BNE	loc_369A
@@ -5534,9 +5534,9 @@ loc_3771:				; CODE XREF: RAM:18A8j
 loc_3789:				; CODE XREF: RAM:3786j
 		JSR	sub_3635
 		LDA	#$BE ; 'ѕ'
-		STA	$16
+		STA	off_16
 		LDA	#$37 ; '7'
-		STA	$17
+		STA	off_16+1
 		JSR	sub_3C5C
 
 loc_3797:				; CODE XREF: RAM:379Aj
@@ -5569,9 +5569,9 @@ aSaveCharacterq:.BYTE "Save character?"
 ; ---------------------------------------------------------------------------
 		DEC	$32
 		LDA	#4
-		STA	$16
+		STA	off_16
 		LDA	#$38 ; '8'
-		STA	$17
+		STA	off_16+1
 		JSR	sub_1C88
 
 loc_37E3:				; CODE XREF: RAM:37E6j
@@ -5613,9 +5613,9 @@ aN:		.BYTE 'N'
 ; ---------------------------------------------------------------------------
 		DEC	$32
 		LDA	#$60 ; '`'
-		STA	$16
+		STA	off_16
 		LDA	#$38 ; '8'
-		STA	$17
+		STA	off_16+1
 		JSR	sub_3CA5
 		JSR	sub_2BB0
 		JSR	sub_3CC2
@@ -5636,9 +5636,9 @@ sub_386F:				; CODE XREF: sub_2BFA+3FCp RAM:30D8p
 		LDA	#0
 		STA	byte_38CF
 		LDA	#$D0 ; 'Р'
-		STA	$16
+		STA	off_16
 		LDA	#$38 ; '8'
-		STA	$17
+		STA	off_16+1
 		LDA	$631E
 		BEQ	loc_3882
 		RTS
@@ -5672,15 +5672,15 @@ loc_38A6:				; CODE XREF: sub_386F+1Aj sub_386F+22j ...
 		TXA
 		BEQ	loc_38CB
 		LDA	#$F9 ; 'щ'
-		STA	$16
+		STA	off_16
 		LDA	#$38 ; '8'
-		STA	$17
+		STA	off_16+1
 		CPX	#2
 		BCC	loc_38CB
 		LDA	#$D5 ; 'Х'
-		STA	$16
+		STA	off_16
 		LDA	#$38 ; '8'
-		STA	$17
+		STA	off_16+1
 
 loc_38CB:				; CODE XREF: sub_386F+46j sub_386F+52j
 		JSR	sub_1C84
@@ -6021,16 +6021,16 @@ sub_3C2D:				; CODE XREF: RAM:1848j	RAM:2F6Ap ...
 		CPX	byte_1935
 		BEQ	loc_3C40
 		LDA	#7
-		STA	$16
+		STA	off_16
 		LDA	#$20 ; ' '
-		STA	$17
+		STA	off_16+1
 		JSR	sub_1C88
 
 loc_3C40:				; CODE XREF: sub_3C2D+6j
 		LDX	byte_1933
 		STX	byte_1935
 		LDA	byte_1913,X
-		STA	$16
+		STA	off_16
 		LDA	byte_1923,X
 		BNE	loc_3C57
 		LDX	#0
@@ -6038,7 +6038,7 @@ loc_3C40:				; CODE XREF: sub_3C2D+6j
 		BEQ	sub_3C2D
 
 loc_3C57:				; CODE XREF: sub_3C2D+21j
-		STA	$17
+		STA	off_16+1
 		JMP	sub_1C88
 ; End of function sub_3C2D
 
@@ -6644,9 +6644,9 @@ loc_40CD:				; CODE XREF: sub_408B+7j sub_408B+3Dj
 		JSR	sub_42E7
 		JSR	loc_43C6
 		LDA	#$69 ; 'i'
-		STA	$16
+		STA	off_16
 		LDA	#$39 ; '9'
-		STA	$17
+		STA	off_16+1
 		JSR	sub_1C84
 		JSR	sub_3C2D
 		LDA	#0
@@ -6674,9 +6674,9 @@ loc_4104:				; CODE XREF: sub_408B+7Dj
 		LDA	#1
 		JSR	sub_1A0D
 		LDA	#$69 ; 'i'
-		STA	$16
+		STA	off_16
 		LDA	#$39 ; '9'
-		STA	$17
+		STA	off_16+1
 		JSR	sub_1C84
 		DEC	$32
 		DEC	$F
@@ -8828,9 +8828,9 @@ loc_4E64:				; CODE XREF: sub_4E0F+2Cj sub_4E0F+38j ...
 		ADC	#0
 		STA	byte_502B
 		LDA	#$7D ; '}'
-		STA	$16
+		STA	off_16
 		LDA	#$4F ; 'O'
-		STA	$17
+		STA	off_16+1
 		JSR	sub_3CA5
 		JSR	sub_2BB0
 		JSR	sub_3CC2
@@ -9120,17 +9120,17 @@ sub_5049:				; CODE XREF: sub_50B2:loc_515Cp
 		CMP	byte_6276
 		BCS	loc_505C
 		LDA	#9
-		STA	$16
+		STA	off_16
 		LDA	#$5E ; '^'
-		STA	$17
+		STA	off_16+1
 		JMP	loc_5064
 ; ---------------------------------------------------------------------------
 
 loc_505C:				; CODE XREF: sub_5049+6j
 		LDA	#$41 ; 'A'
-		STA	$16
+		STA	off_16
 		LDA	#$5D ; ']'
-		STA	$17
+		STA	off_16+1
 
 loc_5064:				; CODE XREF: sub_5049+10j
 		LDX	byte_194A
@@ -9492,9 +9492,9 @@ unk_525D:	.BYTE $52 ; R		; DATA XREF: RAM:loc_5251r
 
 loc_526E:				; CODE XREF: RAM:5266j
 		LDA	#2
-		STA	$16
+		STA	off_16
 		LDA	#$61 ; 'a'
-		STA	$17
+		STA	off_16+1
 		LDX	byte_194A
 		JSR	sub_3C5C
 		JSR	sub_2BFA
@@ -9624,9 +9624,9 @@ loc_5342:				; CODE XREF: RAM:5315j
 		AND	#2
 		BEQ	loc_535B
 		LDA	#$5A ; 'Z'
-		STA	$16
+		STA	off_16
 		LDA	#$62 ; 'b'
-		STA	$17
+		STA	off_16+1
 		JMP	loc_53E7
 ; ---------------------------------------------------------------------------
 
@@ -9675,9 +9675,9 @@ loc_5390:				; CODE XREF: RAM:5373j	RAM:5380j
 		ADC	#0
 		STA	byte_193D
 		LDA	#$E1 ; 'б'
-		STA	$16
+		STA	off_16
 		LDA	#$61 ; 'a'
-		STA	$17
+		STA	off_16+1
 		LDX	byte_194A
 		JSR	sub_3C5C
 		LDA	#$82 ; '‚'
@@ -9696,15 +9696,15 @@ loc_53CA:				; CODE XREF: RAM:5363j
 		LDA	byte_6282
 		JSR	loc_2E66
 		LDA	#$D
-		STA	$16
+		STA	off_16
 		LDA	#$62 ; 'b'
-		STA	$17
+		STA	off_16+1
 		LDA	byte_6282
 		BEQ	loc_53E7
 		LDA	#$24 ; '$'
-		STA	$16
+		STA	off_16
 		LDA	#$62 ; 'b'
-		STA	$17
+		STA	off_16+1
 
 loc_53E7:				; CODE XREF: RAM:5358j	RAM:53DDj
 		LDX	byte_194A
@@ -10098,9 +10098,9 @@ sub_5602:				; CODE XREF: RAM:loc_558Fp RAM:55B1p
 
 loc_561F:				; CODE XREF: sub_5602+17j
 		LDA	#$E8 ; 'и'
-		STA	$16
+		STA	off_16
 		LDA	#$60 ; '`'
-		STA	$17
+		STA	off_16+1
 		LDX	byte_194A
 		JSR	sub_3C5C
 		LDA	#2
@@ -10181,9 +10181,9 @@ loc_566F:				; CODE XREF: RAM:566Aj
 
 loc_5691:				; CODE XREF: RAM:5675j
 		LDA	#$EF ; 'п'
-		STA	$16
+		STA	off_16
 		LDA	#$5F ; '_'
-		STA	$17
+		STA	off_16+1
 		LDX	byte_194A
 		JSR	sub_3C5C
 		LDA	#$10
@@ -10207,9 +10207,9 @@ loc_56AF:				; CODE XREF: RAM:56AAj
 
 loc_56C1:				; CODE XREF: RAM:5573j	RAM:56B5j
 		LDA	#$64 ; 'd'
-		STA	$16
+		STA	off_16
 		LDA	#$60 ; '`'
-		STA	$17
+		STA	off_16+1
 		LDX	byte_194A
 		JSR	sub_3C5C
 		LDA	#$10
@@ -10271,9 +10271,9 @@ loc_570C:				; CODE XREF: RAM:5714j
 		LDA	$63C1
 		BEQ	loc_5774
 		LDA	#$61 ; 'a'
-		STA	$16
+		STA	off_16
 		LDA	#$61 ; 'a'
-		STA	$17
+		STA	off_16+1
 		JSR	sub_2E31
 		LDA	#$73 ; 's'
 		LDX	$6309
@@ -10314,9 +10314,9 @@ loc_5768:				; CODE XREF: RAM:577Cj
 
 loc_5774:				; CODE XREF: RAM:566Cj	RAM:56ACj ...
 		LDA	#$4D ; 'M'
-		STA	$16
+		STA	off_16
 		LDA	#$61 ; 'a'
-		STA	$17
+		STA	off_16+1
 		BNE	loc_5768
 
 ; ЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫ S U B	R O U T	I N E ЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫ
@@ -10360,9 +10360,9 @@ locret_57AA:				; CODE XREF: sub_5795+2j
 
 sub_57AB:				; CODE XREF: RAM:54AAp	RAM:loc_56F5p ...
 		LDA	#$96 ; '–'
-		STA	$16
+		STA	off_16
 		LDA	#$5F ; '_'
-		STA	$17
+		STA	off_16+1
 		LDX	byte_194A
 		JSR	sub_3C5C
 
@@ -10395,9 +10395,9 @@ locret_57DB:				; CODE XREF: RAM:57CCj
 
 sub_57DC:				; CODE XREF: RAM:loc_56E4p
 		LDA	#$C1 ; 'Б'
-		STA	$16
+		STA	off_16
 		LDA	#$61 ; 'a'
-		STA	$17
+		STA	off_16+1
 		LDX	byte_194A
 		JSR	sub_3C5C
 		JMP	sub_2BFA
@@ -10419,9 +10419,9 @@ sub_57DC:				; CODE XREF: RAM:loc_56E4p
 
 loc_580B:				; CODE XREF: RAM:5804j
 		LDA	#$99 ; '™'
-		STA	$16
+		STA	off_16
 		LDA	#$62 ; 'b'
-		STA	$17
+		STA	off_16+1
 		LDX	byte_194A
 		DEC	byte_18FE
 		JSR	sub_3C5C
@@ -10429,9 +10429,9 @@ loc_580B:				; CODE XREF: RAM:5804j
 		STA	byte_18FE
 		JSR	sub_2BB0
 		LDA	#7
-		STA	$16
+		STA	off_16
 		LDA	#$20 ; ' '
-		STA	$17
+		STA	off_16+1
 		LDX	byte_194A
 		JSR	sub_3C5C
 		JMP	loc_5209
@@ -10506,9 +10506,9 @@ loc_58A5:				; CODE XREF: sub_5857+16j sub_5857+1Ej ...
 		LDA	byte_58C1
 		BPL	locret_58C0
 		LDA	#$EE ; 'о'
-		STA	$16
+		STA	off_16
 		LDA	#$59 ; 'Y'
-		STA	$17
+		STA	off_16+1
 		LDX	byte_194A
 		JSR	sub_3C5C
 		JSR	sub_2BB0
@@ -10556,9 +10556,9 @@ sub_58C2:				; CODE XREF: sub_5857+49p
 
 loc_5904:				; CODE XREF: sub_58C2+24j RAM:5932j
 		LDA	byte_5955
-		STA	$16
+		STA	off_16
 		LDA	byte_5956
-		STA	$17
+		STA	off_16+1
 		LDX	byte_194A
 		JSR	sub_3C5C
 
@@ -10859,9 +10859,9 @@ loc_5B35:				; CODE XREF: sub_5AB4+78j
 
 loc_5B40:				; CODE XREF: sub_5AB4+B6j
 		LDA	byte_5CC3
-		STA	$16
+		STA	off_16
 		LDA	byte_5CC4
-		STA	$17
+		STA	off_16+1
 		LDX	byte_194A
 		JSR	sub_3C5C
 		JSR	sub_2AA0
@@ -10869,9 +10869,9 @@ loc_5B40:				; CODE XREF: sub_5AB4+B6j
 		BEQ	loc_5B0E
 		BPL	loc_5B6D
 		LDA	#$A4 ; '¤'
-		STA	$16
+		STA	off_16
 		LDA	#$5C ; '\'
-		STA	$17
+		STA	off_16+1
 		LDX	byte_194A
 		JSR	sub_3C5C
 		JSR	sub_2BFA
@@ -11054,9 +11054,9 @@ loc_5CEA:				; CODE XREF: RAM:5CD0j
 		DEX
 		BPL	loc_5CCA
 		LDA	#5
-		STA	$16
+		STA	off_16
 		LDA	#$5D ; ']'
-		STA	$17
+		STA	off_16+1
 		LDX	byte_194A
 		JSR	sub_3C5C
 		JSR	sub_2BB0
