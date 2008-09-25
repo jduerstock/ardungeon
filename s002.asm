@@ -1,70 +1,70 @@
-	.BYTE	$10,$07,$03,$04
-	.BYTE	$48,$0a,$00,$14
-	.BYTE	$48,$33,$00,$14
-	.BYTE	$48,$5c,$00,$14
-	.BYTE	$48,$85,$00,$14
-	.BYTE	$48,$ae,$00,$14
-	.BYTE	$48,$d7,$00,$14
-	.BYTE	$49,$00,$00,$14
-	.BYTE	$49,$29,$10,$15
-	.BYTE	$49,$55,$10,$15
-	.BYTE	$49,$81,$10,$15
-	.BYTE	$49,$ad,$10,$15
-	.BYTE	$49,$d9,$10,$15
-	.BYTE	$4a,$05,$10,$15
-	.BYTE	$40,$21,$00,$70
-	.BYTE	$4a,$31,$00,$05
-	.BYTE	$4a,$3c,$f0,$20
-	.BYTE	$50,$01,$00,$38
-	.BYTE	$50,$72,$00,$2a
-	.BYTE	$4c,$01,$00,$11 
-	.BYTE	$4a,$7f,$00,$06
-	.BYTE	$4a,$8c,$00,$16
-	.BYTE	$54,$01,$00,$10
-	.BYTE	$54,$22,$00,$1c
-	.BYTE	$54,$5b,$00,$11
-	.BYTE	$41,$02,$00,$1a
-	.BYTE	$4c,$24,$00,$1c
-	.BYTE	$54,$7e,$00,$1c
-	.BYTE	$54,$b7,$00,$27
-	.BYTE	$55,$06,$00,$20
-	.BYTE	$4c,$5d,$00,$14
-	.BYTE	$50,$c7,$00,$12
-	.BYTE	$55,$47,$00,$1b
-	.BYTE	$55,$7e,$00,$18
-	.BYTE	$41,$37,$00,$20
-	.BYTE	$4c,$86,$00,$10
-	.BYTE	$4c,$a7,$00,$0f
-	.BYTE	$4c,$c6,$00,$20
-	.BYTE	$4d,$07,$00,$22
-	.BYTE	$4d,$4c,$00,$10
-	.BYTE	$4d,$6d,$00,$15
-	.BYTE	$4d,$98,$00,$0b
-	.BYTE	$41,$78,$00,$25
-	.BYTE	$4d,$af,$00,$1f
-	.BYTE	$4d,$ee,$00,$07
-	.BYTE	$55,$af,$00,$1f
-	.BYTE	$50,$ec,$00,$b0
-	.BYTE	$41,$c3,$00,$07
-	.BYTE	$4d,$fd,$00,$04
-	.BYTE	$41,$d2,$00,$06
-	.BYTE	$4e,$06,$80,$08
-	.BYTE	$55,$ee,$80,$07
-	.BYTE	$55,$fe,$80,$07
-	.BYTE	$52,$4d,$00,$07
-	.BYTE	$41,$df,$00,$00
-	.BYTE	$56,$0e,$00,$0d
-	.BYTE	$56,$29,$00,$06
-	.BYTE	$56,$36,$00,$04
-	.BYTE	$56,$3f,$00,$17
-	.BYTE	$41,$e0,$00,$12
-	.BYTE	$42,$05,$00,$4f
-	.BYTE	$42,$a4,$00,$01
-	.BYTE	$42,$a7,$00,$01
-	.BYTE	$52,$5c,$f0,$20
-	.BYTE	$56,$6e,$00,$10
-	.BYTE	$56,$8f,$00,$0e
-	.BYTE	$4e,$18,$00,$05
-	.BYTE	$52,$9f,$00,$05
-	.BYTE	$56,$ac,$00,$05
+	.DBYT	$1007,$0300 | 4
+	.DBYT	$480a,20		; map 1
+	.DBYT	$4833,20		; map 2
+	.DBYT	$485c,20		; map 3
+	.DBYT	$4885,20		; map 4
+	.DBYT	$48ae,20		; map 5
+	.DBYT	$48d7,20 		; map 6
+	.DBYT	$4900,20		; map 7
+	.DBYT	$4929,$1000 | 21	; picture 1
+	.DBYT	$4955,$1000 | 21	; picture 2
+	.DBYT	$4981,$1000 | 21	; picture 3
+	.DBYT	$49ad,$1000 | 21	; picture 4
+	.DBYT	$49d9,$1000 | 21	; picture 5
+	.DBYT	$4a05,$1000 | 21	; picture 6
+	.DBYT	$4021,112		; ???
+	.DBYT	$4a31,5			; unknown 1
+	.DBYT	$4a3c,$f000 | 32	; ???
+	.DBYT	$5001,56		; combat
+	.DBYT	$5072,42		; items
+	.DBYT	$4c01,17		; fountain
+	.DBYT	$4a7f,6			; ???
+	.DBYT	$4a8c,22		; ???
+	.DBYT	$5401,16		; vault
+	.DBYT	$5422,28		; goblin/troll
+	.DBYT	$545b,17		; acrinimiril's tomb
+	.DBYT	$4102,26		; ???
+	.DBYT	$4c24,28		; ???
+	.DBYT	$547e,28		; ozob
+	.DBYT	$54b7,39		; guild
+	.DBYT	$5506,32		; shop
+	.DBYT	$4c5d,20		; ???
+	.DBYT	$50c7,18		; inn
+	.DBYT	$5547,27		; oracle
+	.DBYT	$557e,24		; enchantress
+	.DBYT	$4137,32		; ???
+	.DBYT	$4c86,16		; ferryman
+	.DBYT	$4ca7,15		; horse
+	.DBYT	$4cc6,32		; smithy
+	.DBYT	$4d07,34		; brewery
+	.DBYT	$4d4c,16		; crypt
+	.DBYT	$4d6d,21		; dragon
+	.DBYT	$4d98,11		; ??? (death's door?)
+	.DBYT	$4178,37		; ???
+	.DBYT	$4daf,31		; machine room
+	.DBYT	$4dee,7			; elevator
+	.DBYT	$55af,31		; tavern
+	.DBYT	$50ec,176		; ???
+	.DBYT	$41c3,7			; ???
+	.DBYT	$4dfd,4			; unknown 2
+	.DBYT	$41d2,6			; ???
+	.DBYT	$4e06,$8000 | 8		; unknown 3
+	.DBYT	$55ee,$8000 | 7		; picture 7
+	.DBYT	$55fe,$8000 | 7		; picture 8
+	.DBYT	$524d,$0000 | 7		; dead song
+	.DBYT	$41df,0			; ???
+	.DBYT	$560e,13		; tavern monster song
+	.DBYT	$5629,6			; devourer song
+	.DBYT	$5636,4			; unknown song
+	.DBYT	$563f,23		; tavern talk
+	.DBYT	$41e0,18		; ???
+	.DBYT	$4205,79		; portal 2
+	.DBYT	$42a4,1			; ???
+	.DBYT	$42a7,1			; ???
+	.DBYT	$525c,$f000 | 32	; location names
+	.DBYT	$566e,16		; lost song
+	.DBYT	$568f,14		; black heart song
+	.DBYT	$4e18,5			; ???
+	.DBYT	$529f,5			; unknown 4
+	.DBYT	$56ac,5			; unknown 5
 	.RES	236,$00
