@@ -10,9 +10,9 @@ loc_7600:				; CODE XREF: RAM:7814j
 		LDA	#$3E ; '>'
 		STA	SEGNO
 		LDA	#0
-		STA	$190B
+		STA	SEGADDR
 		LDA	#$90 ; 'ê'
-		STA	$190C
+		STA	SEGADDR+1
 		JSR	j_SEGLOAD
 		LDA	RANDOM
 		AND	#7

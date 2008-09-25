@@ -1,4 +1,5 @@
 		.include	"equates.inc"
+		.include	"exp_kernel.inc"
 		.include	"globals.inc"
 
 ;		.ORG	$7600
@@ -19,15 +20,15 @@ loc_760B:				; CODE XREF: sub_7AE7-4D9j
 		PLA
 		PLA
 		JMP	$18B4
-; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+; ---------------------------------------------------------------------------
 
 loc_7619:				; CODE XREF: sub_7AE7-4D5j
 		LDA	#3
 		STA	$7C
 		LDA	#$E8 ; 'и'
-		STA	$190B
+		STA	SEGADDR
 		LDA	#$94 ; '”'
-		STA	$190C
+		STA	SEGADDR+1
 		LDA	#$13
 		STA	$1903
 		LDA	#0
@@ -62,12 +63,12 @@ loc_7663:				; CODE XREF: sub_7AE7-489j
 		BPL	loc_7653
 		JSR	$1830
 		JMP	loc_7673
-; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+; ---------------------------------------------------------------------------
 
 loc_766D:				; CODE XREF: sub_7AE7-491j
 		JSR	$1830
 		JMP	loc_7600
-; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+; ---------------------------------------------------------------------------
 
 loc_7673:				; CODE XREF: sub_7AE7-47Dj
 		LDX	#$1F
@@ -148,7 +149,7 @@ loc_76E3:				; CODE XREF: sub_7AE7-3F5j
 		CMP	#$1B
 		BNE	loc_76ED
 		JMP	loc_7600
-; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+; ---------------------------------------------------------------------------
 
 loc_76ED:				; CODE XREF: sub_7AE7-3FFj
 		SEC
@@ -178,9 +179,9 @@ loc_76ED:				; CODE XREF: sub_7AE7-3FFj
 
 loc_7719:
 		LDA	#$34 ; '4'
-		STA	$190B
+		STA	SEGADDR
 		LDA	#$8E ; 'Ћ'
-		STA	$190C
+		STA	SEGADDR+1
 		LDA	$7DB4,X
 		STA	$1903
 		LDA	$7DB8,X
@@ -210,7 +211,7 @@ loc_775A:				; CODE XREF: sub_7AE7-38Aj
 		JSR	$181E
 		BMI	loc_775A
 		JMP	loc_7600
-; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+; ---------------------------------------------------------------------------
 
 loc_7762:				; CODE XREF: sub_7AE7-39Aj
 		LDA	#$32 ; '2'
@@ -283,7 +284,7 @@ loc_77C6:				; CODE XREF: sub_7AE7-325j
 		LDA	($65),Y
 		STA	($67),Y
 		JMP	loc_77A6
-; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+; ---------------------------------------------------------------------------
 
 loc_77CF:				; CODE XREF: sub_7AE7-33Aj
 		LDA	#2
@@ -330,7 +331,7 @@ loc_77FB:				; CODE XREF: sub_7AE7-2F0j
 		LDY	#1
 		STA	($67),Y
 		JMP	loc_77DA
-; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+; ---------------------------------------------------------------------------
 
 loc_7816:				; CODE XREF: sub_7AE7-2E5j
 		LDA	#$FF
@@ -338,7 +339,7 @@ loc_7816:				; CODE XREF: sub_7AE7-2E5j
 		DEY
 		STA	($67),Y
 		JMP	loc_77DA
-; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+; ---------------------------------------------------------------------------
 
 loc_7820:				; CODE XREF: sub_7AE7-304j
 		JSR	sub_7B1C
@@ -420,13 +421,13 @@ loc_78AA:				; CODE XREF: sub_7AE7-23Aj
 		CMP	#$59 ; 'Y'
 		BNE	loc_78B9
 		JMP	loc_797B
-; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+; ---------------------------------------------------------------------------
 
 loc_78B9:				; CODE XREF: sub_7AE7-233j
 		CMP	#$4E ; 'N'
 		BNE	loc_78AA
 		JMP	loc_7600
-; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+; ---------------------------------------------------------------------------
 
 loc_78C0:				; CODE XREF: sub_7AE7-260j
 		CMP	#$3B ; ';'
@@ -484,7 +485,7 @@ loc_791B:				; CODE XREF: sub_7AE7-1B5j
 		STX	$6F
 		JSR	sub_7A36
 		JMP	loc_791B
-; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+; ---------------------------------------------------------------------------
 
 loc_7935:				; CODE XREF: sub_7AE7-1BDj
 		LDA	byte_8EB1
@@ -579,7 +580,7 @@ loc_79BD:				; CODE XREF: sub_79AA+1Cj
 		BMI	loc_7A02
 		LDA	($63),Y
 		JMP	loc_79BD
-; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+; ---------------------------------------------------------------------------
 
 loc_79C9:				; CODE XREF: sub_79AA+15j
 		STA	($67),Y
@@ -615,7 +616,7 @@ loc_79D1:				; CODE XREF: sub_79AA+2Cj
 		LDX	#$7C ; '|'
 		LDY	#$82 ; '‚'
 		JMP	$1884
-; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+; ---------------------------------------------------------------------------
 
 loc_7A02:				; CODE XREF: sub_79AA+18j sub_79AA+25j
 		LDA	#$FF
@@ -647,7 +648,7 @@ loc_7A15:				; CODE XREF: sub_7A05+2Aj
 
 locret_7A1E:				; CODE XREF: sub_7A05+15j
 		RTS
-; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+; ---------------------------------------------------------------------------
 
 loc_7A1F:				; CODE XREF: sub_7A05+7j
 		LDY	#7
@@ -714,7 +715,7 @@ loc_7A65:				; CODE XREF: sub_7A36+26j
 
 locret_7A75:				; CODE XREF: sub_7A36+32j
 		RTS
-; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+; ---------------------------------------------------------------------------
 
 loc_7A76:				; CODE XREF: sub_7A36+2Dj
 		LDY	#$80 ; 'Ђ'
@@ -779,7 +780,7 @@ loc_7ACB:				; CODE XREF: sub_7A36+4Cj
 		JMP	$1884
 ; End of function sub_7A36
 
-; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+; ---------------------------------------------------------------------------
 ; START	OF FUNCTION CHUNK FOR sub_7AE7
 
 loc_7AD2:				; CODE XREF: sub_7AE7+32j
@@ -1081,7 +1082,7 @@ loc_7C46:				; CODE XREF: sub_7C27+26j
 		RTS
 ; End of function sub_7C27
 
-; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+; ---------------------------------------------------------------------------
 word_7C51:	.WORD $929D		; DATA XREF: sub_7AE7-1CAr
 					; sub_7AE7-1C4r
 		.WORD $92C8
@@ -1159,7 +1160,7 @@ unk_7C96:	.BYTE $91 ; ‘		; DATA XREF: sub_7A36+55w
 		.BYTE $CA ; К
 		.BYTE $D0 ; Р
 		.BYTE $DF ; Я
-; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+; ---------------------------------------------------------------------------
 		LDA	#$FF
 		STA	$AC
 		LDA	#0
@@ -1204,7 +1205,7 @@ loc_7CCF:				; CODE XREF: RAM:7CBEj	RAM:7CC9j
 		LDA	#$F0 ; 'р'
 		STA	$82
 		JMP	$56FE
-; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+; ---------------------------------------------------------------------------
 		.BYTE	0
 		.BYTE	0
 		.BYTE	0
@@ -1411,7 +1412,7 @@ unk_7DBC:	.BYTE	0		; DATA XREF: sub_7AE7-3D8r
 		.BYTE $C1 ; Б
 		.BYTE $D2 ; Т
 		.BYTE $A0 ;  
-		.BYTE $C4 ; Д
+		.BYTE $C4 ; -
 		.BYTE $C9 ; Й
 		.BYTE $D3 ; У
 		.BYTE $CB ; Л
@@ -2168,7 +2169,7 @@ unk_8293:	.BYTE $C3 ; Г		; DATA XREF: sub_7A05+1Er
 		.BYTE $D2 ; Т
 		.BYTE $D3 ; У
 		.BYTE $C5 ; Е
-		.BYTE $C4 ; Д
+		.BYTE $C4 ; -
 		.BYTE $A1 ; Ў
 		.BYTE $A0 ;  
 		.BYTE $A8
@@ -2507,7 +2508,7 @@ aReadingCityCha:.BYTE "   Reading City Character...    " ; DATA XREF: sub_7AE7:l
 aPotionOfFleetn:.BYTE "Potion of Fleetness",0
 		.BYTE $84 ; „
 		.BYTE $FF
-		.BYTE $C4 ; Д
+		.BYTE $C4 ; -
 		.BYTE	1
 		.BYTE $E0 ; а
 		.BYTE	1
@@ -2554,7 +2555,7 @@ aFleetness:	.BYTE "Fleetness",0
 aPotionOfStreng:.BYTE "Potion of Strength",0
 		.BYTE $84 ; „
 		.BYTE $FF
-		.BYTE $C4 ; Д
+		.BYTE $C4 ; -
 		.BYTE	1
 		.BYTE $E0 ; а
 		.BYTE	1
@@ -2602,7 +2603,7 @@ aStrength:	.BYTE "Strength",0
 aPotionOfIntell:.BYTE "Potion of Intelligence",0
 		.BYTE $84 ; „
 		.BYTE $FF
-		.BYTE $C4 ; Д
+		.BYTE $C4 ; -
 		.BYTE	1
 		.BYTE $E0 ; а
 		.BYTE	1
@@ -2646,7 +2647,7 @@ aIntelligence:	.BYTE "Intelligence",0
 aPotionOfCharis:.BYTE "Potion of Charisma",0
 		.BYTE $84 ; „
 		.BYTE $FF
-		.BYTE $C4 ; Д
+		.BYTE $C4 ; -
 		.BYTE	1
 		.BYTE $E0 ; а
 		.BYTE	1
@@ -2694,7 +2695,7 @@ aCharisma:	.BYTE "Charisma",0
 aPotionOfEndura:.BYTE "Potion of Endurance",0
 		.BYTE $84 ; „
 		.BYTE $FF
-		.BYTE $C4 ; Д
+		.BYTE $C4 ; -
 		.BYTE	1
 		.BYTE $E0 ; а
 		.BYTE	1
@@ -2718,7 +2719,7 @@ aPotionOfEndura:.BYTE "Potion of Endurance",0
 aPotionOfInv_Bl:.BYTE "Potion of Inv. Blunt",0
 		.BYTE $84 ; „
 		.BYTE $FF
-		.BYTE $C4 ; Д
+		.BYTE $C4 ; -
 		.BYTE	1
 		.BYTE $E0 ; а
 		.BYTE	1
@@ -2764,7 +2765,7 @@ aInv_Blunt:	.BYTE "Inv. Blunt",0
 aPotionOfInv_Sh:.BYTE "Potion of Inv. Sharp",0
 		.BYTE $84 ; „
 		.BYTE $FF
-		.BYTE $C4 ; Д
+		.BYTE $C4 ; -
 		.BYTE	1
 		.BYTE $E0 ; а
 		.BYTE	1
@@ -2810,7 +2811,7 @@ aInv_Sharp:	.BYTE "Inv. Sharp",0
 aPotionOfInv_Ea:.BYTE "Potion of Inv. Earth",0
 		.BYTE $84 ; „
 		.BYTE $FF
-		.BYTE $C4 ; Д
+		.BYTE $C4 ; -
 		.BYTE	1
 		.BYTE $E0 ; а
 		.BYTE	1
@@ -2856,7 +2857,7 @@ aInv_Earth:	.BYTE "Inv. Earth",0
 aPotionOfInv_Ai:.BYTE "Potion of Inv. Air",0
 		.BYTE $84 ; „
 		.BYTE $FF
-		.BYTE $C4 ; Д
+		.BYTE $C4 ; -
 		.BYTE	1
 		.BYTE $E0 ; а
 		.BYTE	1
@@ -2904,7 +2905,7 @@ aInv_Air:	.BYTE "Inv. Air",0
 aPotionOfInv_Fi:.BYTE "Potion of Inv. Fire",0
 		.BYTE $84 ; „
 		.BYTE $FF
-		.BYTE $C4 ; Д
+		.BYTE $C4 ; -
 		.BYTE	1
 		.BYTE $E0 ; а
 		.BYTE	1
@@ -2951,7 +2952,7 @@ aInv_Fire:	.BYTE "Inv. Fire",0
 aPotionOfInv_Wa:.BYTE "Potion of Inv. Water",0
 		.BYTE $84 ; „
 		.BYTE $FF
-		.BYTE $C4 ; Д
+		.BYTE $C4 ; -
 		.BYTE	1
 		.BYTE $E0 ; а
 		.BYTE	1
@@ -2997,7 +2998,7 @@ aInv_Water:	.BYTE "Inv. Water",0
 aPotionOfRegene:.BYTE "Potion of Regeneration",0
 		.BYTE $84 ; „
 		.BYTE $FF
-		.BYTE $C4 ; Д
+		.BYTE $C4 ; -
 		.BYTE $3C ; <
 		.BYTE	1
 		.BYTE	0
@@ -3025,7 +3026,7 @@ aRegeneration:	.BYTE "Regeneration",0
 aPotionOfInv_Me:.BYTE "Potion of Inv. Mental",0
 		.BYTE $84 ; „
 		.BYTE $FF
-		.BYTE $C4 ; Д
+		.BYTE $C4 ; -
 		.BYTE	1
 		.BYTE $E0 ; а
 		.BYTE	1
@@ -3070,7 +3071,7 @@ aInv_Mental:	.BYTE "Inv. Mental",0
 aPotionOfInv_Co:.BYTE "Potion of Inv. Cold",0
 		.BYTE $84 ; „
 		.BYTE $FF
-		.BYTE $C4 ; Д
+		.BYTE $C4 ; -
 		.BYTE	1
 		.BYTE $E0 ; а
 		.BYTE	1
@@ -3117,7 +3118,7 @@ aInv_Cold:	.BYTE "Inv. Cold",0
 aPotionOfFruitJ:.BYTE "Potion of Fruit Juice",0
 		.BYTE $84 ; „
 		.BYTE $FF
-		.BYTE $C4 ; Д
+		.BYTE $C4 ; -
 		.BYTE	1
 		.BYTE	1
 		.BYTE	0
@@ -3141,7 +3142,7 @@ aPotionOfFruitJ:.BYTE "Potion of Fruit Juice",0
 aPotionOfSuperV:.BYTE "Potion of Super Vision",0
 		.BYTE $84 ; „
 		.BYTE $FF
-		.BYTE $C4 ; Д
+		.BYTE $C4 ; -
 		.BYTE	1
 		.BYTE $78 ; x
 		.BYTE	0
@@ -3157,7 +3158,7 @@ aPotionOfSuperV:.BYTE "Potion of Super Vision",0
 		.BYTE	0
 		.BYTE $84 ; „
 		.BYTE	0
-		.BYTE $C4 ; Д
+		.BYTE $C4 ; -
 		.BYTE	1
 		.BYTE	1
 		.BYTE	0
@@ -3185,7 +3186,7 @@ aSuperVision:	.BYTE "Super Vision",0
 aPotionOfDexter:.BYTE "Potion of Dexterity",0
 		.BYTE $84 ; „
 		.BYTE $FF
-		.BYTE $C4 ; Д
+		.BYTE $C4 ; -
 		.BYTE	1
 		.BYTE $E0 ; а
 		.BYTE	1
@@ -3232,7 +3233,7 @@ aDexterity:	.BYTE "Dexterity",0
 aPotionOfInfraV:.BYTE "Potion of Infra-Vision",0
 		.BYTE $84 ; „
 		.BYTE $FF
-		.BYTE $C4 ; Д
+		.BYTE $C4 ; -
 		.BYTE	1
 		.BYTE $E0 ; а
 		.BYTE	1
@@ -3294,7 +3295,7 @@ aPotionOfAntido:.BYTE "Potion of Antidote",0
 aPotionOfRestor:.BYTE "Potion of Restoration",0
 		.BYTE $84 ; „
 		.BYTE $FF
-		.BYTE $C4 ; Д
+		.BYTE $C4 ; -
 		.BYTE	1
 		.BYTE	1
 		.BYTE	0
@@ -3318,7 +3319,7 @@ aPotionOfRestor:.BYTE "Potion of Restoration",0
 aPotionOfHealin:.BYTE "Potion of Healing",0
 		.BYTE $84 ; „
 		.BYTE $FF
-		.BYTE $C4 ; Д
+		.BYTE $C4 ; -
 		.BYTE	1
 		.BYTE	1
 		.BYTE	0
@@ -3342,7 +3343,7 @@ aPotionOfHealin:.BYTE "Potion of Healing",0
 aPotionOfHemloc:.BYTE "Potion of Hemlock",0
 		.BYTE $82 ; ‚
 		.BYTE $FF
-		.BYTE $C4 ; Д
+		.BYTE $C4 ; -
 		.BYTE	0
 		.BYTE	1
 		.BYTE	0
@@ -3455,25 +3456,25 @@ loc_8DB6:				; CODE XREF: sub_8D72+3Fj
 
 loc_8DBE:				; CODE XREF: sub_8D72+47j
 		JMP	loc_8D75
-; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+; ---------------------------------------------------------------------------
 
 loc_8DC1:				; CODE XREF: sub_8D72+36j
 		LDA	#0
 		STA	$190D
 		CLC
 		RTS
-; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+; ---------------------------------------------------------------------------
 
 loc_8DC8:				; CODE XREF: sub_8D72+13j
 		SEC
 		RTS
 ; End of function sub_8D72
 
-; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+; ---------------------------------------------------------------------------
 		CLC
-; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+; ---------------------------------------------------------------------------
 		.BYTE $24 ; $
-; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+; ---------------------------------------------------------------------------
 		SEC
 		JMP	$1830
 
@@ -3513,7 +3514,7 @@ loc_8E04:				; CODE XREF: sub_8DD0+3Dj
 		BPL	loc_8E04
 		CLC
 		RTS
-; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+; ---------------------------------------------------------------------------
 
 loc_8E11:				; CODE XREF: sub_8DD0+3Aj
 		SEC
@@ -3525,9 +3526,9 @@ loc_8E11:				; CODE XREF: sub_8DD0+3Aj
 
 
 sub_8E13:				; CODE XREF: sub_8D72p
-		LDA	$190B
+		LDA	SEGADDR
 		STA	9
-		LDA	$190C
+		LDA	SEGADDR+1
 		STA	$A
 		LDA	$1903
 		STA	$232
@@ -3540,7 +3541,7 @@ sub_8E13:				; CODE XREF: sub_8D72p
 		RTS
 ; End of function sub_8E13
 
-; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+; ---------------------------------------------------------------------------
 		.BYTE	0
 		.BYTE	0
 		.BYTE	0

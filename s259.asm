@@ -27,9 +27,9 @@
 		LDA	#$3D ; '='
 		STA	SEGNO
 		LDA	#0
-		STA	$190B
+		STA	SEGADDR
 		LDA	#$90 ; 'ê'
-		STA	$190C
+		STA	SEGADDR+1
 		JSR	j_SEGLOAD
 		JSR	$9000
 
@@ -37,18 +37,18 @@ loc_764B:				; CODE XREF: RAM:7634j
 		LDA	#$2A ; '*'
 		STA	SEGNO
 		LDA	#0
-		STA	$190B
+		STA	SEGADDR
 		LDA	#$98 ; 'ò'
-		STA	$190C
+		STA	SEGADDR+1
 		JSR	j_SEGLOAD
 
 loc_765D:				; CODE XREF: RAM:loc_7AC4j
 		LDA	#$3B ; ';'
 		STA	SEGNO
 		LDA	#0
-		STA	$190B
+		STA	SEGADDR
 		LDA	#$63 ; 'c'
-		STA	$190C
+		STA	SEGADDR+1
 		JSR	j_SEGLOAD
 		LDA	#0
 		TAX
@@ -439,9 +439,9 @@ loc_78D8:				; CODE XREF: RAM:769Dj
 		LDA	#$22 ; '"'
 		STA	SEGNO
 		LDA	#0
-		STA	$190B
+		STA	SEGADDR
 		LDA	#$76 ; 'v'
-		STA	$190C
+		STA	SEGADDR+1
 		JMP	j_SEGLOAD
 ; ---------------------------------------------------------------------------
 

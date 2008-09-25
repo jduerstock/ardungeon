@@ -342,9 +342,8 @@ byte_1907:	.BYTE 0			; DATA XREF: sub_27DE+4Br sub_27DE+62r ...
 byte_1908:	.BYTE 0			; DATA XREF: sub_27DE+26r sub_27DE+73r ...
 SEGNO:		.BYTE	0		; DATA XREF: sub_28A1+4r sub_2CC2+2r ...
 		.BYTE	0
-byte_190B:	.BYTE 0			; DATA XREF: sub_27DE+1Cr
+SEGADDR:	.WORD	0		; DATA XREF: sub_27DE+1Cr
 					; sub_27DE:loc_2845r ...
-byte_190C:	.BYTE 0			; DATA XREF: sub_27DE+21r sub_27DE+6Cr ...
 byte_190D:	.BYTE 0			; DATA XREF: sub_2799+36w
 byte_190E:	.BYTE 0			; DATA XREF: sub_2799+Cw sub_28D7+21r	...
 byte_190F:	.BYTE 0			; DATA XREF: sub_275B+Bw sub_275B+21w
@@ -2981,9 +2980,9 @@ loc_27F2:				; CODE XREF: sub_27DE+Bj
 		LDY	#0
 		STY	byte_1901
 		STY	byte_1902
-		LDA	byte_190B
+		LDA	SEGADDR
 		STA	9
-		LDA	byte_190C
+		LDA	SEGADDR+1
 		STA	$A
 		LDX	byte_1908
 		BEQ	loc_2827
@@ -3034,9 +3033,9 @@ loc_283F:				; CODE XREF: sub_27DE+5Dj
 		BCC	loc_282E
 
 loc_2845:				; CODE XREF: sub_27DE+4Ej
-		LDA	byte_190B
+		LDA	SEGADDR
 		STA	9
-		LDA	byte_190C
+		LDA	SEGADDR+1
 		STA	$A
 		LDY	#0
 		LDX	byte_1908
@@ -3205,9 +3204,9 @@ sub_292B:				; CODE XREF: sub_28D7+4Ap
 
 
 sub_2937:				; CODE XREF: sub_2799p
-		LDA	byte_190B
+		LDA	SEGADDR
 		STA	9
-		LDA	byte_190C
+		LDA	SEGADDR+1
 		STA	$A
 		LDA	byte_1903
 		STA	$232
@@ -4267,9 +4266,9 @@ loc_2ECD:				; CODE XREF: RAM:2ED1j
 		LDA	#$19
 		STA	SEGNO
 		LDA	#0
-		STA	byte_190B
+		STA	SEGADDR
 		LDA	#$76 ; 'v'
-		STA	byte_190C
+		STA	SEGADDR+1
 		JSR	SEGLOAD
 		JSR	$7600
 		LDA	#2
@@ -4373,9 +4372,9 @@ loc_2F80:				; CODE XREF: RAM:1803j	sub_2BFA+435j ...
 loc_2FBA:				; CODE XREF: sub_2BFA+3AAj
 					; sub_2BFA+3AEj ...
 		LDA	#0
-		STA	byte_190B
+		STA	SEGADDR
 		LDA	#$76 ; 'v'
-		STA	byte_190C
+		STA	SEGADDR+1
 		LDA	$631E
 		CLC
 		ADC	#$10
@@ -4671,9 +4670,9 @@ loc_318C:				; CODE XREF: RAM:2F6Dj	RAM:loc_3180j ...
 		LDA	#1
 		JSR	sub_1A0D
 		LDA	#0
-		STA	byte_190B
+		STA	SEGADDR
 		LDA	#$AC ; '¬'
-		STA	byte_190C
+		STA	SEGADDR+1
 		JSR	SEGLOAD
 		LDA	#$FF
 		STA	byte_1912
@@ -5549,9 +5548,9 @@ loc_3797:				; CODE XREF: RAM:379Aj
 		LDA	#$31 ; '1'
 		STA	SEGNO
 		LDA	#0
-		STA	byte_190B
+		STA	SEGADDR
 		LDA	#$76 ; 'v'
-		STA	byte_190C
+		STA	SEGADDR+1
 		JSR	SEGLOAD
 		JMP	$7600
 ; ---------------------------------------------------------------------------
@@ -6689,9 +6688,9 @@ loc_4120:				; CODE XREF: sub_408B+99j
 		LDA	#$35 ; '5'
 		STA	SEGNO
 		LDA	#0
-		STA	byte_190B
+		STA	SEGADDR
 		LDA	#$76 ; 'v'
-		STA	byte_190C
+		STA	SEGADDR+1
 		JSR	SEGLOAD
 		JMP	$7600
 ; ---------------------------------------------------------------------------

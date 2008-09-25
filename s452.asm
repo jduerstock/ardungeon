@@ -6,9 +6,9 @@
 		LDA	#$F
 		STA	SEGNO
 		LDA	#$F0 ; 'ð'
-		STA	$190B
+		STA	SEGADDR
 		LDA	#$96 ; '–'
-		STA	$190C
+		STA	SEGADDR+1
 		JSR	j_SEGLOAD
 		LDA	#1
 		JSR	$180F
