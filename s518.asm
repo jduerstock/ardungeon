@@ -1078,6 +1078,7 @@ loc_1CF3:
 		JSR	sub_1E9D
 		JMP	loc_1CAB
 ; ---------------------------------------------------------------------------
+loc_1CFE:
 		JSR	sub_1F26
 		JSR	sub_1D07
 		JMP	loc_1CAB
@@ -1090,6 +1091,8 @@ sub_1D07:				; CODE XREF: RAM:1D01p
 ; End of function sub_1D07
 
 ; ---------------------------------------------------------------------------
+
+loc_1D0A:
 		LDA	#0
 		STA	byte_1F23
 
@@ -1109,6 +1112,8 @@ loc_1D21:
 		STA	byte_1F23
 		LDA	#0
 		BEQ	loc_1D0F
+
+loc_1D2A:
 		JSR	sub_1F31
 		STA	$1F
 		JSR	sub_1F31
@@ -1117,6 +1122,8 @@ loc_1D21:
 		STA	$20
 		JMP	loc_1CAB
 ; ---------------------------------------------------------------------------
+
+loc_1D3B:
 		LDA	off_16
 		STA	$27
 		LDA	off_16+1
@@ -1128,6 +1135,8 @@ loc_1D21:
 		STA	$26
 		JMP	loc_1CAB
 ; ---------------------------------------------------------------------------
+
+loc_1D50:
 		LDA	#0
 		STA	$1F
 		LDA	unk_1FA8,X
@@ -1147,6 +1156,8 @@ loc_1D5D:				; CODE XREF: RAM:1D6Aj
 		STA	$20
 		JMP	loc_1CAB
 ; ---------------------------------------------------------------------------
+
+loc_1D74:
 		JSR	loc_1D7A
 		JMP	loc_1CAB
 ; ---------------------------------------------------------------------------
@@ -1172,6 +1183,8 @@ loc_1D91:				; CODE XREF: RAM:1D95j
 		LDX	$23
 		RTS
 ; ---------------------------------------------------------------------------
+
+loc_1D9A:
 		BIT	$24
 		BMI	loc_1DBD
 		LDA	#$28 ; '('
@@ -1196,11 +1209,15 @@ loc_1DB6:				; CODE XREF: RAM:1DBBj
 loc_1DBD:				; CODE XREF: RAM:1D9Cj
 		JMP	loc_1CAB
 ; ---------------------------------------------------------------------------
+
+loc_1DC0:
 		LDA	#0
 		STA	$21
 		STA	$24
 		JMP	loc_1CAB
 ; ---------------------------------------------------------------------------
+
+loc_1DC9:
 		JSR	sub_1F26
 
 loc_1DCC:				; CODE XREF: RAM:1DD4j
@@ -1211,6 +1228,8 @@ loc_1DCC:				; CODE XREF: RAM:1DD4j
 		BCC	loc_1DCC
 		JMP	loc_1DF9
 ; ---------------------------------------------------------------------------
+
+loc_1DD9:
 		JSR	sub_1F26
 		STY	$29
 		STY	$2A
@@ -1221,6 +1240,8 @@ loc_1DCC:				; CODE XREF: RAM:1DD4j
 		STA	$2C
 		JMP	loc_1DF9
 ; ---------------------------------------------------------------------------
+
+loc_1DEC:
 		JSR	sub_1F26
 		STY	$29
 		STY	$2A
@@ -1379,11 +1400,15 @@ loc_1EB1:				; CODE XREF: sub_1EA8+5j
 ; End of function sub_1EA8
 
 ; ---------------------------------------------------------------------------
+
+loc_1EB4:
 		JSR	sub_1F26
 		JSR	sub_1F31
 		STA	$2D
 		JMP	loc_1ED4
 ; ---------------------------------------------------------------------------
+
+loc_1EBF:
 		JSR	sub_1F26
 		JSR	sub_1F31
 		STA	$2D
@@ -1407,6 +1432,8 @@ loc_1ED4:				; CODE XREF: RAM:1EBCj	RAM:1EDEj
 loc_1EE0:				; CODE XREF: RAM:1ED6j
 		JMP	loc_1CAB
 ; ---------------------------------------------------------------------------
+
+loc_1EE3:
 		JSR	sub_1F26
 		LDA	off_16
 		STA	byte_1F24
@@ -1418,6 +1445,8 @@ loc_1EE0:				; CODE XREF: RAM:1ED6j
 		STA	off_16+1
 		JMP	loc_1CAB
 ; ---------------------------------------------------------------------------
+
+loc_1EFB:
 		JSR	sub_1F26
 		LDA	off_16
 		STA	byte_1F24
@@ -1431,6 +1460,8 @@ loc_1EE0:				; CODE XREF: RAM:1ED6j
 		STA	off_16+1
 		JMP	loc_1CAB
 ; ---------------------------------------------------------------------------
+
+loc_1F16:
 		LDA	byte_1F24
 		STA	off_16
 		LDA	byte_1F25
@@ -1579,45 +1610,45 @@ unk_1FB7:	.BYTE	2		; DATA XREF: RAM:1E55r
 unk_1FBF:	.BYTE	<(loc_1CE7-1)	; DATA XREF: sub_1C88+42r
 		.BYTE	<(loc_1CED-1)
 		.BYTE	<(loc_1D21-1)
-		.BYTE $FD ; э
+		.BYTE	<(loc_1CFE-1)
 		.BYTE	<(loc_1CF3-1)
-		.BYTE	9
-		.BYTE $29 ; )
-		.BYTE $3A ; :
-		.BYTE $4F ; O
-		.BYTE $73 ; s
-		.BYTE $BF ; ї
-		.BYTE $99 ; ™
-		.BYTE $E2 ; в
-		.BYTE $FA ; ъ
-		.BYTE $15
-		.BYTE $CE ; О
-		.BYTE $C8 ; И
-		.BYTE $D8 ; Ш
-		.BYTE $EB ; л
-		.BYTE $B3 ; і
-		.BYTE $BE ; ѕ
+		.BYTE	<(loc_1D0A-1)
+		.BYTE	<(loc_1D2A-1)
+		.BYTE	<(loc_1D3B-1)
+		.BYTE	<(loc_1D50-1)
+		.BYTE	<(loc_1D74-1)
+		.BYTE	<(loc_1DC0-1)
+		.BYTE	<(loc_1D9A-1)
+		.BYTE	<(loc_1EE3-1)
+		.BYTE	<(loc_1EFB-1)
+		.BYTE	<(loc_1F16-1)
+		.BYTE	<(loc_1CCF-1)
+		.BYTE	<(loc_1DC9-1)
+		.BYTE	<(loc_1DD9-1)
+		.BYTE	<(loc_1DEC-1)
+		.BYTE	<(loc_1EB4-1)
+		.BYTE	<(loc_1EBF-1)
 unk_1FD4:	.BYTE	>(loc_1CE7-1)	; DATA XREF: sub_1C88+3Er
 		.BYTE	>(loc_1CED-1)
 		.BYTE	>(loc_1D21-1)
-		.BYTE $1C
+		.BYTE	>(loc_1CFE-1)
 		.BYTE	>(loc_1CF3-1)
-		.BYTE $1D
-		.BYTE $1D
-		.BYTE $1D
-		.BYTE $1D
-		.BYTE $1D
-		.BYTE $1D
-		.BYTE $1D
-		.BYTE $1E
-		.BYTE $1E
-		.BYTE $1F
-		.BYTE $1C
-		.BYTE $1D
-		.BYTE $1D
-		.BYTE $1D
-		.BYTE $1E
-		.BYTE $1E
+		.BYTE	>(loc_1D0A-1)
+		.BYTE	>(loc_1D2A-1)
+		.BYTE	>(loc_1D3B-1)
+		.BYTE	>(loc_1D50-1)
+		.BYTE	>(loc_1D74-1)
+		.BYTE	>(loc_1DC0-1)
+		.BYTE	>(loc_1D9A-1)
+		.BYTE	>(loc_1EE3-1)
+		.BYTE	>(loc_1EFB-1)
+		.BYTE	>(loc_1F16-1)
+		.BYTE	>(loc_1CCF-1)
+		.BYTE	>(loc_1DC9-1)
+		.BYTE	>(loc_1DD9-1)
+		.BYTE	>(loc_1DEC-1)
+		.BYTE	>(loc_1EB4-1)
+		.BYTE	>(loc_1EBF-1)
 
 ; ЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫ S U B	R O U T	I N E ЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫ
 
