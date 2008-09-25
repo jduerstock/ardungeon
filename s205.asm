@@ -863,9 +863,9 @@ locret_85D3:				; CODE XREF: RAM:85BBj
 
 loc_85F1:				; CODE XREF: RAM:85EBj
 		LDA	#$E8 ; 'и'
-		STA	$16
+		STA	off_16
 		LDA	#$60 ; '`'
-		STA	$17
+		STA	off_16+
 		LDX	$194A
 		JSR	$3C5C
 		LDA	#2
@@ -936,9 +936,9 @@ loc_8641:				; CODE XREF: RAM:863Cj
 
 loc_8663:				; CODE XREF: RAM:8647j
 		LDA	#$EF ; 'п'
-		STA	$16
+		STA	off_16
 		LDA	#$5F ; '_'
-		STA	$17
+		STA	off_16+1
 		LDX	$194A
 		JSR	$3C5C
 		LDA	#$10
@@ -962,9 +962,9 @@ loc_8681:				; CODE XREF: RAM:867Cj
 
 loc_8693:				; CODE XREF: RAM:8687j
 		LDA	#$64 ; 'd'
-		STA	$16
+		STA	off_16
 		LDA	#$60 ; '`'
-		STA	$17
+		STA	off_16+1
 		LDX	$194A
 		JSR	$3C5C
 		LDA	#$10
@@ -1020,9 +1020,9 @@ loc_86DE:				; CODE XREF: RAM:86E6j
 		LDA	$63C1
 		BEQ	loc_8746
 		LDA	#$61 ; 'a'
-		STA	$16
+		STA	off_16
 		LDA	#$61 ; 'a'
-		STA	$17
+		STA	off_16+1
 		JSR	$2E31
 		LDA	#$73 ; 's'
 		LDX	$6309
@@ -1063,9 +1063,9 @@ loc_873A:				; CODE XREF: RAM:874Ej
 
 loc_8746:				; CODE XREF: RAM:86F8j
 		LDA	#$4D ; 'M'
-		STA	$16
+		STA	off_16
 		LDA	#$61 ; 'a'
-		STA	$17
+		STA	off_16+1
 		BNE	loc_873A
 		LDA	#0
 		STA	$6276
@@ -1094,9 +1094,9 @@ locret_877C:				; CODE XREF: RAM:8769j
 
 loc_877D:				; CODE XREF: RAM:87A3j	RAM:87A7j
 		LDA	#$96 ; '–'
-		STA	$16
+		STA	off_16
 		LDA	#$5F ; '_'
-		STA	$17
+		STA	off_16+1
 		LDX	$194A
 		JSR	$3C5C
 
@@ -1123,9 +1123,9 @@ locret_87AD:				; CODE XREF: RAM:879Ej
 		RTS
 ; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
 		LDA	#$C1 ; 'Б'
-		STA	$16
+		STA	off_16
 		LDA	#$61 ; 'a'
-		STA	$17
+		STA	off_16+1
 		LDX	$194A
 		JSR	$3C5C
 		JMP	$2BFA
@@ -1145,9 +1145,9 @@ locret_87AD:				; CODE XREF: RAM:879Ej
 
 loc_87DD:				; CODE XREF: RAM:87D6j
 		LDA	#$99 ; '™'
-		STA	$16
+		STA	off_16
 		LDA	#$62 ; 'b'
-		STA	$17
+		STA	off_16+1
 		LDX	$194A
 		DEC	$18FE
 		JSR	$3C5C
@@ -1155,9 +1155,9 @@ loc_87DD:				; CODE XREF: RAM:87D6j
 		STA	$18FE
 		JSR	$2BB0
 		LDA	#7
-		STA	$16
+		STA	off_16
 		LDA	#$20 ; ' '
-		STA	$17
+		STA	off_16+1
 		LDX	$194A
 		JSR	$3C5C
 		JMP	$5209
@@ -1222,9 +1222,9 @@ loc_8877:				; CODE XREF: RAM:883Fj	RAM:8847j ...
 		LDA	$58C1
 		BPL	locret_8892
 		LDA	#$EE ; 'о'
-		STA	$16
+		STA	off_16
 		LDA	#$59 ; 'Y'
-		STA	$17
+		STA	off_16+1
 		LDX	$194A
 		JSR	$3C5C
 		JSR	$2BB0
@@ -1266,9 +1266,9 @@ locret_8892:				; CODE XREF: RAM:8875j	RAM:887Fj
 
 loc_88D6:				; CODE XREF: RAM:88B8j	RAM:8904j
 		LDA	$5955
-		STA	$16
+		STA	off_16
 		LDA	$5956
-		STA	$17
+		STA	off_16+1
 		LDX	$194A
 		JSR	$3C5C
 
@@ -1313,9 +1313,9 @@ loc_891D:				; CODE XREF: RAM:8900j	RAM:88F9j
 		RTS
 ; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
 		LDA	#7
-		STA	$16
+		STA	off_16
 		LDA	#$20 ; ' '
-		STA	$17
+		STA	off_16+1
 		JSR	$1C88
 		RTS
 ; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД

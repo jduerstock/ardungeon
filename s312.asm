@@ -5,9 +5,9 @@
 loc_7600:				; CODE XREF: sub_7AE7-477j
 					; sub_7AE7-3FDj ...
 		LDA	#$9B ; '›'
-		STA	$16
+		STA	off_16
 		LDA	#$82 ; '‚'
-		STA	$17
+		STA	off_16+1
 		JSR	$1818
 
 loc_760B:				; CODE XREF: sub_7AE7-4D9j
@@ -136,9 +136,9 @@ loc_76D4:				; CODE XREF: sub_7AE7-417j
 		DEC	$7C
 		BPL	loc_76A1
 		LDA	#$9F ; 'Ÿ'
-		STA	$16
+		STA	off_16
 		LDA	#$83 ; 'ƒ'
-		STA	$17
+		STA	off_16+1
 		JSR	$1818
 
 loc_76E3:				; CODE XREF: sub_7AE7-3F5j
@@ -200,9 +200,9 @@ loc_773B:				; CODE XREF: sub_7AE7-3A5j
 		JSR	$1830
 		BCC	loc_7762
 		LDA	#$F4 ; 'ô'
-		STA	$16
+		STA	off_16
 		LDA	#$84 ; '„'
-		STA	$17
+		STA	off_16+1
 		JSR	$1818
 
 loc_775A:				; CODE XREF: sub_7AE7-38Aj
@@ -213,9 +213,9 @@ loc_775A:				; CODE XREF: sub_7AE7-38Aj
 
 loc_7762:				; CODE XREF: sub_7AE7-39Aj
 		LDA	#$32 ; '2'
-		STA	$16
+		STA	off_16
 		LDA	#$85 ; '…'
-		STA	$17
+		STA	off_16+1
 		JSR	$1818
 
 loc_776D:				; CODE XREF: sub_7AE7-377j
@@ -406,9 +406,9 @@ loc_787D:				; CODE XREF: sub_7AE7-26Fj
 loc_789F:				; CODE XREF: sub_7AE7-259j
 					; sub_7AE7-225j ...
 		LDA	#$24 ; '$'
-		STA	$16
+		STA	off_16
 		LDA	#$84 ; '„'
-		STA	$17
+		STA	off_16+1
 		JSR	$1818
 
 loc_78AA:				; CODE XREF: sub_7AE7-23Aj
@@ -783,9 +783,9 @@ loc_7ACB:				; CODE XREF: sub_7A36+4Cj
 
 loc_7AD2:				; CODE XREF: sub_7AE7+32j
 		LDA	#$3C ; '<'
-		STA	$16
+		STA	off_16
 		LDA	#$86 ; '†'
-		STA	$17
+		STA	off_16+1
 		JSR	$1818
 
 loc_7ADD:				; CODE XREF: sub_7AE7-7j
@@ -807,9 +807,9 @@ sub_7AE7:				; CODE XREF: sub_7AE7-2BCp
 ; FUNCTION CHUNK AT 7AD2 SIZE 00000015 BYTES
 
 		LDA	#$65 ; 'e'
-		STA	$16
+		STA	off_16
 		LDA	#$85 ; '…'
-		STA	$17
+		STA	off_16+1
 		JSR	$1818
 
 loc_7AF2:				; CODE XREF: sub_7AE7+17j
