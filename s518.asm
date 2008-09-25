@@ -4099,7 +4099,7 @@ sub_2E0D:				; CODE XREF: RAM:1866j	sub_4AC9+49p ...
 		BEQ	loc_2E23
 
 loc_2E15:				; CODE XREF: sub_2E0D+Dj sub_2E0D+14j
-		LDA	(7),Y
+		LDA	(off_7),Y
 		STA	(9),Y
 		INY
 		BNE	loc_2E15
@@ -4113,7 +4113,7 @@ loc_2E23:				; CODE XREF: sub_2E0D+6j
 		BEQ	locret_2E30
 
 loc_2E27:				; CODE XREF: sub_2E0D+21j
-		LDA	(7),Y
+		LDA	(off_7),Y
 		STA	(9),Y
 		INY
 		CPY	$B
@@ -4265,7 +4265,7 @@ loc_2EB0:				; CODE XREF: RAM:2EACj
 		LDY	#0
 
 loc_2EB2:				; CODE XREF: RAM:2EBFj	RAM:2EC3j
-		LDA	(7),Y
+		LDA	(off_7),Y
 		STA	(9),Y
 		INY
 		BNE	loc_2EBD
@@ -8293,7 +8293,7 @@ sub_4B4D:				; CODE XREF: RAM:1884j	sub_4EFD+32p ...
 		STY	7
 		STX	8
 		LDY	#1
-		LDA	(7),Y
+		LDA	(off_7),Y
 		JSR	sub_4A83
 		BMI	locret_4B73
 		LDX	#$64 ; 'd'
@@ -9783,7 +9783,7 @@ unk_540D:	.BYTE	8		; DATA XREF: RAM:loc_53F5r
 		LDA	$44
 		STA	8
 		LDY	#0
-		LDA	(7),Y
+		LDA	(off_7),Y
 		CMP	#1
 		BEQ	loc_5450
 		LDA	$639C
@@ -9793,12 +9793,12 @@ unk_540D:	.BYTE	8		; DATA XREF: RAM:loc_53F5r
 		JSR	sub_4EC4
 		LDY	#0
 		LDA	($43),Y
-		CMP	(7),Y
+		CMP	(off_7),Y
 		BNE	loc_546D
 		LDY	#$C
 
 loc_543B:				; CODE XREF: RAM:5440j
-		LDA	(7),Y
+		LDA	(off_7),Y
 		STA	($43),Y
 		DEY
 		BNE	loc_543B
@@ -9811,7 +9811,7 @@ loc_543B:				; CODE XREF: RAM:5440j
 
 loc_5450:				; CODE XREF: RAM:5422j
 		INY
-		LDA	(7),Y
+		LDA	(off_7),Y
 		CMP	#$63 ; 'c'
 		BCS	loc_546D
 		LDX	$63BE
@@ -9824,7 +9824,7 @@ loc_5450:				; CODE XREF: RAM:5422j
 		LDA	#$63 ; 'c'
 
 loc_5468:				; CODE XREF: RAM:5464j
-		STA	(7),Y
+		STA	(off_7),Y
 		JSR	sub_5471
 
 loc_546D:				; CODE XREF: RAM:5427j	RAM:5437j ...
@@ -10129,10 +10129,10 @@ sub_5602:				; CODE XREF: RAM:loc_558Fp RAM:55B1p
 		STA	byte_193D
 		STA	8
 		LDY	#6
-		LDA	(7),Y
+		LDA	(off_7),Y
 		BNE	loc_561F
 		LDA	#$20 ; ' '
-		STA	(7),Y
+		STA	(off_7),Y
 
 loc_561F:				; CODE XREF: sub_5602+17j
 		LDA	#$E8 ; 'è'
@@ -10966,7 +10966,7 @@ loc_5BB8:				; CODE XREF: RAM:18ABj
 		LDY	#0
 
 loc_5BD1:				; CODE XREF: sub_5AB4+125j
-		LDA	(7),Y
+		LDA	(off_7),Y
 		BEQ	loc_5BDB
 		STA	aFoodPacketS,Y	; "Food	Packet(s)"
 		INY

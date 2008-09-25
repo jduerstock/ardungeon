@@ -1995,7 +1995,7 @@ loc_851B:				; CODE XREF: RAM:851Fj
 
 loc_8549:				; CODE XREF: RAM:856Fj
 		LDY	6
-		LDA	(7),Y
+		LDA	(off_7),Y
 		STA	4
 		LDY	#7
 
@@ -2054,7 +2054,7 @@ loc_859B:				; CODE XREF: RAM:85B8j
 
 loc_859D:				; CODE XREF: RAM:85B6j
 		LDY	6
-		LDA	(7),Y
+		LDA	(off_7),Y
 		LDY	#4
 
 loc_85A3:				; CODE XREF: RAM:85A8j
