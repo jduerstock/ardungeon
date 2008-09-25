@@ -3098,20 +3098,20 @@ loc_2897:				; CODE XREF: sub_27DE+ADj sub_27DE+B5j
 
 sub_28A1:				; CODE XREF: RAM:182Aj	sub_275B+6p
 		LDA	#0
-		STA	8
+		STA	off_7+1
 		LDA	SEGNO
 		LDX	#2
 
 loc_28AA:				; CODE XREF: sub_28A1+Dj
 		ASL	A
-		ROL	8
+		ROL	off_7+1
 		DEX
 		BNE	loc_28AA
 		ADC	#$80 ; '€'
-		STA	7
-		LDA	8
+		STA	off_7
+		LDA	off_7+1
 		ADC	#2
-		STA	8
+		STA	off_7+1
 		LDY	#3
 
 loc_28BC:				; CODE XREF: sub_28A1+21j
