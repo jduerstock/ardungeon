@@ -1,3 +1,5 @@
+		.include	"equates.inc"
+
 ;		.ORG	$7600
 		LDA	#0
 		JSR	$180F
@@ -407,15 +409,15 @@ loc_78A7:				; CODE XREF: RAM:7795j	RAM:77E3j
 
 
 sub_78BB:				; CODE XREF: RAM:786Cp	RAM:7875p
-		LDA	$D20A
+		LDA	RANDOM
 		AND	#7
 		STA	$6C
-		LDA	$D20A
+		LDA	RANDOM
 		AND	#7
 		CLC
 		ADC	$6C
 		STA	$6C
-		LDA	$D20A
+		LDA	RANDOM
 		AND	#7
 		CLC
 		ADC	#7
@@ -561,15 +563,15 @@ loc_7974:				; CODE XREF: sub_7959+16j
 		STA	unk_8D01,Y
 		CPX	#7
 		BNE	loc_79A5
-		LDA	$D20A
+		LDA	RANDOM
 		AND	#$1F
 		STA	$6C
-		LDA	$D20A
+		LDA	RANDOM
 		AND	#$1F
 		CLC
 		ADC	$6C
 		STA	$6C
-		LDA	$D20A
+		LDA	RANDOM
 		AND	#$1F
 		CLC
 		ADC	#3
@@ -578,15 +580,15 @@ loc_7974:				; CODE XREF: sub_7959+16j
 ; 컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴�
 
 loc_79A5:				; CODE XREF: sub_7959+2Cj
-		LDA	$D20A
+		LDA	RANDOM
 		AND	#7
 		STA	$6C
-		LDA	$D20A
+		LDA	RANDOM
 		AND	#7
 		CLC
 		ADC	$6C
 		STA	$6C
-		LDA	$D20A
+		LDA	RANDOM
 		AND	#7
 		CLC
 		ADC	$6C
@@ -1210,7 +1212,7 @@ loc_7DB6:				; CODE XREF: RAM:7DAEj
 		CLC
 		ADC	#$63 ; 'c'
 		STA	$64E5
-		LDA	$D20A
+		LDA	RANDOM
 		LDX	byte_83CD
 		STA	$6311
 		STA	unk_8EAC,X

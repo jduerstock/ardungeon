@@ -1,3 +1,5 @@
+		.include	"equates.inc"
+
 ;		.ORG	$1E00
 		.RES	398, $00
 		.BYTE	$87
@@ -266,7 +268,7 @@ aSystemInitiali:.BYTE "      System Initialization     "
 		TYA
 		PHA
 		LDA	$D20F
-		STA	$D20A
+		STA	SKREST
 		BMI	loc_21ED
 		LDY	#$8C ; 'Œ'
 		STY	$23D

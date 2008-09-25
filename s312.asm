@@ -1,5 +1,6 @@
+		.include	"equates.inc"
+
 ;		.ORG	$7600
-; START	OF FUNCTION CHUNK FOR sub_7AE7
 
 loc_7600:				; CODE XREF: sub_7AE7-477j
 					; sub_7AE7-3FDj ...
@@ -503,7 +504,7 @@ loc_7946:				; CODE XREF: sub_7AE7-16Ej
 		STA	$63
 		LDA	$8760,X
 		STA	$64
-		LDA	$D20A
+		LDA	RANDOM
 		CLC
 		ADC	byte_8E74
 		BCS	loc_7969

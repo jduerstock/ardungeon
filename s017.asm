@@ -1,3 +1,6 @@
+		.include	"equates.inc"
+
+
 ;		.ORG	$600
 unk_600:	.BYTE	0		; DATA XREF: sub_31A2+3Er
 		.BYTE	0
@@ -7471,7 +7474,7 @@ loc_257A:				; CODE XREF: sub_2538+50j
 		LDA	($80),Y
 		BIT	$98
 		BMI	loc_2583
-		AND	$D20A
+		AND	RANDOM
 
 loc_2583:				; CODE XREF: sub_2538+46j
 		STA	($82),Y
@@ -8368,7 +8371,7 @@ loc_2998:				; CODE XREF: sub_2958+25j sub_2958+35j ...
 		JSR	sub_2A8F
 
 loc_29B5:				; CODE XREF: sub_2958+64j
-		LDA	$D20A
+		LDA	RANDOM
 		AND	#$3F ; '?'
 		CMP	#5
 		BCC	loc_29B5
@@ -8531,18 +8534,18 @@ sub_2A88:				; CODE XREF: sub_292A:loc_292Cp
 
 
 sub_2A8F:				; CODE XREF: sub_2958+5Ap
-		LDA	$D20A
+		LDA	RANDOM
 
 loc_2A92:				; CODE XREF: sub_2A88+5j
 		STA	$6600,X
-		LDA	$D20A
+		LDA	RANDOM
 		STA	$6680,X
-		LDA	$D20A
+		LDA	RANDOM
 		STA	$66C0,X
-		LDA	$D20A
+		LDA	RANDOM
 		AND	#3
 		STA	$6700,X
-		LDA	$D20A
+		LDA	RANDOM
 		ORA	#4
 		STA	$6740,X
 		LDA	#$FF
@@ -9391,7 +9394,7 @@ locret_2E75:				; CODE XREF: sub_2E47+5j
 ; 컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴�
 
 loc_2E76:				; CODE XREF: sub_2E47+19j sub_2E47+35j
-		LDA	$D20A
+		LDA	RANDOM
 		STA	$D01A
 		JMP	loc_2E76
 ; End of function sub_2E47
@@ -9515,7 +9518,7 @@ loc_2F32:				; CODE XREF: RAM:2F4Bj
 		STA	unk_2CDF,X
 		JMP	sub_2E47
 ; 컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴�
-		CMP	$D20A
+		CMP	RANDOM
 		BCC	loc_2F4E
 		INC	$B9
 		BNE	loc_2F49
@@ -9747,7 +9750,7 @@ loc_30BA:				; CODE XREF: RAM:30B3j
 		STA	$BC
 
 loc_30BF:				; CODE XREF: RAM:30C8j
-		LDA	$D20A
+		LDA	RANDOM
 		AND	$BC
 		CMP	($B9),Y
 		BEQ	loc_30CA

@@ -141,4 +141,4 @@ s682.bin:
 	cl65 --start-addr 0x1400 -t none s682.asm -o s682.bin
 
 clean:
-	$(RM) -f $(OBJECTS) *.*~ 
+	$(RM) -f $(OBJECTS) *.*~ *.bin.crypt *.o ar11.img

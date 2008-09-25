@@ -1,3 +1,5 @@
+		.include	"equates.inc"
+
 ;		.ORG	$7600
 
 loc_7600:				; CODE XREF: RAM:7814j
@@ -10,7 +12,7 @@ loc_7600:				; CODE XREF: RAM:7814j
 		LDA	#$90 ; 'ê'
 		STA	$190C
 		JSR	$1842
-		LDA	$D20A
+		LDA	RANDOM
 		AND	#7
 		BNE	loc_7621
 		JSR	$9000
