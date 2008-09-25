@@ -5138,9 +5138,9 @@ loc_34BB:				; CODE XREF: RAM:3456j
 		BNE	loc_34D9
 		LDA	I_KEYS
 		BNE	loc_34CF
-		LDA	#$4D ; 'M'
+		LDA	#<a_YouHaveNone
 		STA	off_16
-		LDA	#$61 ; 'a'
+		LDA	#>a_YouHaveNone
 		STA	off_16+1
 		JMP	loc_343B
 ; ---------------------------------------------------------------------------
@@ -11516,6 +11516,8 @@ aLitTorch:	.BYTE "Lit Torch",0
 		.BYTE $16
 		.BYTE $82 ; ‚
 		.BYTE	3
+
+a_YouHaveNone:
 		.BYTE $A6,  0,	3
 		.BYTE $A5
 aYouHaveNone_:	.BYTE "You have none."
