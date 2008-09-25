@@ -712,9 +712,9 @@ loc_1ABB:				; CODE XREF: RAM:1ABFj
 		BPL	loc_1ABB
 		JSR	sub_1C09
 		LDA	#$F0 ; 'ð'
-		STA	7
+		STA	off_7
 		LDA	#4
-		STA	8
+		STA	off_7+1
 		LDA	#$D
 		STA	9
 		LDA	#5
@@ -725,9 +725,9 @@ loc_1AD6:				; CODE XREF: RAM:1AFEj
 		LDY	#$A
 
 loc_1AD8:				; CODE XREF: RAM:1AE5j
-		LDA	(7),Y
+		LDA	(off_7),Y
 		ORA	#$80 ; '€'
-		STA	(7),Y
+		STA	(off_7),Y
 		LDA	(9),Y
 		ORA	#$80 ; '€'
 		STA	(9),Y
@@ -3111,11 +3111,11 @@ loc_28AA:				; CODE XREF: sub_28A1+Dj
 		STA	off_7
 		LDA	off_7+1
 		ADC	#2
-		STA	off_7+1
+		STA	off_7+1		; off_7 = SEGNO << 2 + $0280 ?
 		LDY	#3
 
 loc_28BC:				; CODE XREF: sub_28A1+21j
-		LDA	(7),Y
+		LDA	(off_7),Y
 		STA	$1905,Y
 		DEY
 		BPL	loc_28BC
