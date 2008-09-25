@@ -9665,9 +9665,9 @@ loc_5342:				; CODE XREF: RAM:5315j
 		LDA	byte_194D
 		AND	#2
 		BEQ	loc_535B
-		LDA	#$5A ; 'Z'
+		LDA	#<a_SomethingIsOdd
 		STA	off_16
-		LDA	#$62 ; 'b'
+		LDA	#>a_SomethingIsOdd
 		STA	off_16+1
 		JMP	loc_53E7
 ; ---------------------------------------------------------------------------
@@ -11657,6 +11657,8 @@ aAndBackfiredFo:.BYTE "and backfired for "
 		.BYTE $A3 ; £
 		.WORD loc_59E5
 		.BYTE $FF
+
+a_SomethingIsOdd:
 		.BYTE $A6,  0,	3
 		.BYTE $A5 ; ¥
 aSomethingIsOdd:.BYTE "Something is odd here."
