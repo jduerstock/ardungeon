@@ -2777,7 +2777,7 @@ loc_2650:				; CODE XREF: sub_2643+2j
 		BEQ	loc_2676
 		LDA	#4
 		STA	byte_18FF
-		LDX	$D209
+		LDX	KBCODE
 		BMI	loc_2676
 		LDA	byte_26D1,X
 		BMI	loc_2676
@@ -2824,7 +2824,7 @@ loc_26A2:				; CODE XREF: sub_267A+7j
 		AND	#4
 		BNE	loc_26BD
 		LDX	#4
-		LDA	$D209
+		LDA	KBCODE
 
 loc_26B0:				; CODE XREF: sub_267A+3Cj
 		CMP	unk_2751,X
@@ -2851,27 +2851,27 @@ locret_26D0:				; CODE XREF: sub_267A+48j
 ; End of function sub_267A
 
 ; ---------------------------------------------------------------------------
-byte_26D1:	.BYTE $6C,$6A,$3B,$FF,$FF,$6B,$2B,$2A ;	DATA XREF: RAM:266Fr
-		.BYTE $6F,$FF,$70,$75, $D,$69,$2D,$3D
-		.BYTE $76,$3F,$63,$FF,$FF,$62,$78,$7A
-		.BYTE $34,$FF,$33,$36,$1B,$35,$32,$31
-		.BYTE $2C,$20,$2E,$6E,$FF,$6D,$2F,$3F
-		.BYTE $72,$FF,$65,$79,$FF,$74,$77,$71
-		.BYTE $39,$FF,$30,$37,	8,$38,$3C,$3E
-		.BYTE $66,$68,$64,$FF,$FF,$67,$73,$61
-		.BYTE $4C,$4A,$3A,$FF,$FF,$4B,$5C,$5E
-		.BYTE $4F,$FF,$50,$55, $D,$49,$2D,$3D
-		.BYTE $56,$3F,$43,$FF,$FF,$42,$58,$5A
-		.BYTE $24,$FF,$23,$26,$FF,$25,$22,$21
-		.BYTE $5B,$20,$5D,$4E,$FF,$4D,$3F,$3F
-		.BYTE $52,$FF,$45,$59,$FF,$54,$57,$51
-		.BYTE $28,$FF,$29,$27,$FF,$40,$3C,$3E
-		.BYTE $46,$48,$44,$FF,$FF,$47,$53,$41
-unk_2751:	.BYTE  $D		; DATA XREF: sub_267A:loc_26B0r
-		.BYTE	1
-		.BYTE	5
-		.BYTE	0
-		.BYTE $21 ; !
+byte_26D1:	.BYTE	"l","j",";",$FF,$FF,"k","+","*" ;DATA XREF: RAM:266Fr
+		.BYTE	"o",$FF,"p","u",$0D,"i","-","="
+		.BYTE	"v","?","c",$FF,$FF,"b","x","z"
+		.BYTE	"4",$FF,"3","6",$1B,"5","2","1"
+		.BYTE	","," ",".","n",$FF,"m","/","?"
+		.BYTE	"r",$FF,"e","y",$FF,"t","w","q"
+		.BYTE	"9",$FF,"0","7",$08,"8","<",">"
+		.BYTE	"f","h","d",$FF,$FF,"g","s","a"
+		.BYTE	"L","J",":",$FF,$FF,"K",$5C,"^"
+		.BYTE	"O",$FF,"P","U",$0D,"I","-","="
+		.BYTE	"V","?","C",$FF,$FF,"B","X","Z"
+		.BYTE	"$",$FF,"#","&",$FF,"%",$22,"!"
+		.BYTE	"["," ","]","N",$FF,"M","?","?"
+		.BYTE	"R",$FF,"E","Y",$FF,"T","W","Q"
+		.BYTE	"(",$FF,")",$27,$FF,"@","<",">"
+		.BYTE	"F","H","D",$FF,$FF,"G","S","A"
+unk_2751:	.BYTE  $D	; "i"	; DATA XREF: sub_267A:loc_26B0r
+		.BYTE	1	; "j"
+		.BYTE	5	; "k"
+		.BYTE	0	; "l"
+		.BYTE $21	; " "
 unk_2756:	.BYTE	1		; DATA XREF: sub_267A:loc_26BAr
 		.BYTE	4
 		.BYTE	2
