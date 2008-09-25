@@ -1,17 +1,30 @@
-	.DBYT	$1007,$0300 | 4
-	.DBYT	$480a,20		; map 1
-	.DBYT	$4833,20		; map 2
-	.DBYT	$485c,20		; map 3
-	.DBYT	$4885,20		; map 4
-	.DBYT	$48ae,20		; map 5
-	.DBYT	$48d7,20 		; map 6
-	.DBYT	$4900,20		; map 7
-	.DBYT	$4929,$1000 | 21	; picture 1
-	.DBYT	$4955,$1000 | 21	; picture 2
-	.DBYT	$4981,$1000 | 21	; picture 3
-	.DBYT	$49ad,$1000 | 21	; picture 4
-	.DBYT	$49d9,$1000 | 21	; picture 5
-	.DBYT	$4a05,$1000 | 21	; picture 6
+.macro	DirEnt	Extra1,Disk,Side,Sector,Extra2,Length
+	.ifblank Extra1
+	.DBYT	Sector | ((Disk-1)<<11) | ((Side-1)<<10)
+	.else
+	.DBYT	Extra1 | Sector | ((Disk-1)<<11) | ((Side-1)<<10)
+	.endif
+	.ifblank Extra2
+	.DBYT	Length
+	.else
+	.DBYT	Extra2 | Length
+	.endif
+.endmacro
+
+	DirEnt	,3,1,7,$300,4		; ???
+	DirEnt	$4000,2,1,10,,20	; map 1
+	DirEnt	$4000,2,1,51,,20	; map 2
+	DirEnt	$4000,2,1,92,,20	; map 3
+	DirEnt	$4000,2,1,133,,20	; map 4
+	DirEnt	$4000,2,1,174,,20	; map 5
+	DirEnt	$4000,2,1,215,,20	; map 6
+	DirEnt	$4000,2,1,256,,20	; map 7
+	DirEnt	$4000,2,1,297,$1000,21	; picture 1
+	DirEnt	$4000,2,1,341,$1000,21	; picture 2
+	DirEnt	$4000,2,1,385,$1000,21	; picture 3
+	DirEnt	$4000,2,1,429,$1000,21	; picture 4
+	DirEnt	$4000,2,1,473,$1000,21	; picture 5
+	DirEnt	$4000,2,1,517,$1000,21	; picture 6
 	.DBYT	$4021,112		; ???
 	.DBYT	$4a31,5			; unknown 1
 	.DBYT	$4a3c,$f000 | 32	; ???
