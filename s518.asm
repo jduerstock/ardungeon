@@ -1090,9 +1090,9 @@ sub_1D07:				; CODE XREF: RAM:1D01p
 loc_1D0F:				; CODE XREF: RAM:1D28j
 		STA	$25
 		STA	$26
-		LDA	$16
+		LDA	off_16
 		STA	$27
-		LDA	$17
+		LDA	off_16+1
 		STA	$28
 		LDA	#$80 ; '€'
 		STA	$24
@@ -1109,9 +1109,9 @@ loc_1D0F:				; CODE XREF: RAM:1D28j
 		STA	$20
 		JMP	loc_1CAB
 ; ---------------------------------------------------------------------------
-		LDA	$16
+		LDA	off_16
 		STA	$27
-		LDA	$17
+		LDA	off_16+1
 		STA	$28
 		LDA	#$C0 ; 'À'
 		STA	$24
@@ -1451,10 +1451,10 @@ sub_1F26:				; CODE XREF: RAM:1CF3p	RAM:1CFEp ...
 sub_1F31:				; CODE XREF: sub_1C88:loc_1CABp
 					; RAM:1D2Ap ...
 		LDY	#0
-		LDA	($16),Y
-		INC	$16
+		LDA	(off_16),Y
+		INC	off_16
 		BNE	locret_1F3B
-		INC	$17
+		INC	off_16+1
 
 locret_1F3B:				; CODE XREF: sub_1F31+6j
 		RTS
@@ -6056,9 +6056,9 @@ sub_3C5C:				; CODE XREF: RAM:1851j	RAM:33AAp ...
 
 sub_3C61:				; CODE XREF: RAM:1836j	sub_5049+1Ep
 		STX	byte_1933
-		LDA	$16
+		LDA	off_16
 		STA	byte_1913,X
-		LDA	$17
+		LDA	off_16+1
 		STA	byte_1923,X
 		JMP	sub_3C2D
 ; End of function sub_3C61
@@ -6102,9 +6102,9 @@ sub_3CA5:				; CODE XREF: RAM:184Bj	RAM:336Fp ...
 		STX	byte_1936
 		LDX	byte_1934
 		STX	byte_1933
-		LDA	$16
+		LDA	off_16
 		STA	byte_1913,X
-		LDA	$17
+		LDA	off_16+1
 		STA	byte_1923,X
 		INX
 		STX	byte_1934
