@@ -6895,12 +6895,12 @@ loc_421A:				; CODE XREF: RAM:423Fj
 		JSR	sub_4EC4
 		LDY	#0
 		LDA	byte_1976
-		ADC	($43),Y
+		ADC	(off_43),Y
 		STA	byte_1976
 		INY
 		LDA	byte_195E
 		CLC
-		ADC	($43),Y
+		ADC	(off_43),Y
 		STA	byte_195E
 
 loc_423D:				; CODE XREF: RAM:421Fj
@@ -8571,20 +8571,20 @@ sub_4CCF:				; CODE XREF: RAM:4C99p	RAM:4CAFp ...
 
 loc_4CD8:				; CODE XREF: sub_4CCF:loc_4D8Fj
 		LDY	#0
-		LDA	($43),Y
+		LDA	(off_43),Y
 		BNE	loc_4CE1
 		JMP	locret_4D92
 ; ---------------------------------------------------------------------------
 
 loc_4CE1:				; CODE XREF: sub_4CCF+Dj
 		LDY	#1
-		LDA	($43),Y
+		LDA	(off_43),Y
 		BPL	loc_4CE9
 		STA	$4A
 
 loc_4CE9:				; CODE XREF: sub_4CCF+16j
 		LDY	#2
-		LDA	($43),Y
+		LDA	(off_43),Y
 		AND	#$20 ; ' '
 		BEQ	loc_4CF7
 		AND	$4C
@@ -8597,7 +8597,7 @@ loc_4CF7:				; CODE XREF: sub_4CCF+20j
 		BNE	loc_4D05
 
 loc_4CFD:				; CODE XREF: sub_4CCF+24j
-		LDA	($43),Y
+		LDA	(off_43),Y
 		AND	$4C
 		CMP	$4C
 		BEQ	loc_4D08
@@ -8607,14 +8607,14 @@ loc_4D05:				; CODE XREF: sub_4CCF+26j sub_4CCF+2Cj
 ; ---------------------------------------------------------------------------
 
 loc_4D08:				; CODE XREF: sub_4CCF+34j
-		LDA	($43),Y
+		LDA	(off_43),Y
 		BPL	loc_4D11
 		JSR	sub_4DD4
 		BMI	loc_4D1A
 
 loc_4D11:				; CODE XREF: sub_4CCF+3Bj
 		LDY	#0
-		LDA	($43),Y
+		LDA	(off_43),Y
 		JSR	sub_49B0
 		BPL	loc_4D29
 
@@ -8634,7 +8634,7 @@ loc_4D29:				; CODE XREF: sub_4CCF+49j
 		LDY	#1
 		BIT	$4A
 		BMI	loc_4D33
-		LDA	($43),Y
+		LDA	(off_43),Y
 		BPL	loc_4D37
 
 loc_4D33:				; CODE XREF: sub_4CCF+5Ej
@@ -8650,24 +8650,24 @@ loc_4D37:				; CODE XREF: sub_4CCF+62j
 		BCS	loc_4D53
 		LDY	#$F
 		LDA	$4B
-		STA	($43),Y
+		STA	(off_43),Y
 		LDY	#2
-		LDA	($43),Y
+		LDA	(off_43),Y
 		ASL	A
 		BPL	loc_4D53
 		LDY	#$F
-		STA	($43),Y
+		STA	(off_43),Y
 
 loc_4D53:				; CODE XREF: sub_4CCF+71j sub_4CCF+7Ej
 		LDY	#0
-		LDA	($43),Y
+		LDA	(off_43),Y
 		LDY	#$F
 		CMP	#$F0 ; 'ð'
 		BCC	loc_4D5F
 		LDY	#$1F
 
 loc_4D5F:				; CODE XREF: sub_4CCF+8Cj sub_4CCF+97j
-		LDA	($43),Y
+		LDA	(off_43),Y
 		STA	($3D),Y
 		DEY
 		CPY	#2
@@ -8686,7 +8686,7 @@ loc_4D79:				; CODE XREF: sub_4CCF:loc_4D05j
 					; sub_4CCF+9Dj	...
 		LDX	#$10
 		LDY	#0
-		LDA	($43),Y
+		LDA	(off_43),Y
 		CMP	#$F0 ; 'ð'
 		BCC	loc_4D85
 		LDX	#$20 ; ' '
@@ -8694,10 +8694,10 @@ loc_4D79:				; CODE XREF: sub_4CCF:loc_4D05j
 loc_4D85:				; CODE XREF: sub_4CCF+B2j
 		TXA
 		CLC
-		ADC	$43
-		STA	$43
+		ADC	off_43
+		STA	off_43
 		BCC	loc_4D8F
-		INC	$44
+		INC	off_43+1
 
 loc_4D8F:				; CODE XREF: sub_4CCF+BCj
 		JMP	loc_4CD8
@@ -8773,7 +8773,7 @@ loc_4DDE:				; CODE XREF: sub_4DD4+2Fj
 		LDY	#6
 
 loc_4DE8:				; CODE XREF: sub_4DD4+1Dj
-		LDA	($43),Y
+		LDA	(off_43),Y
 		CMP	($3F),Y
 		BNE	loc_4DF7
 		INY
@@ -8957,7 +8957,7 @@ sub_4EC4:				; CODE XREF: RAM:1896j	RAM:4226p ...
 
 loc_4EC7:				; CODE XREF: sub_4EC4:loc_4EDFj
 		LDY	#0
-		LDA	($43),Y
+		LDA	(off_43),Y
 		BEQ	loc_4EE1
 		LDX	#$10
 		CMP	#$F0 ; 'ð'
@@ -8967,8 +8967,8 @@ loc_4EC7:				; CODE XREF: sub_4EC4:loc_4EDFj
 loc_4ED5:				; CODE XREF: sub_4EC4+Dj
 		TXA
 		CLC
-		ADC	$43
-		STA	$43
+		ADC	off_43
+		STA	off_43
 		BCC	loc_4EDF
 		INC	$44
 
@@ -8976,7 +8976,7 @@ loc_4EDF:				; CODE XREF: sub_4EC4+17j
 		BNE	loc_4EC7
 
 loc_4EE1:				; CODE XREF: sub_4EC4+7j
-		INC	$43
+		INC	off_43
 		BNE	locret_4EE7
 		INC	$44
 
@@ -8995,7 +8995,7 @@ sub_4EE8:				; CODE XREF: sub_4CCF+2p sub_4EC4p
 		CLC
 		LDA	($41),Y
 		ADC	$41
-		STA	$43
+		STA	off_43
 		LDA	$42
 		ADC	#0
 		STA	$44
@@ -9543,10 +9543,10 @@ loc_526E:				; CODE XREF: RAM:5266j
 		JMP	loc_5225
 ; ---------------------------------------------------------------------------
 		LDY	#0
-		LDA	($43),Y
+		LDA	(off_43),Y
 		SEC
 		SBC	#1
-		STA	($43),Y
+		STA	(off_43),Y
 		BNE	loc_5290
 		DEC	byte_627F
 
@@ -9554,25 +9554,25 @@ loc_5290:				; CODE XREF: RAM:528Bj
 		JMP	loc_5209
 ; ---------------------------------------------------------------------------
 		LDY	#1
-		LDA	($43),Y
+		LDA	(off_43),Y
 		BEQ	loc_52A3
 		SEC
 		SBC	#1
-		STA	($43),Y
+		STA	(off_43),Y
 		BNE	loc_52A3
 		DEC	byte_627F
 
 loc_52A3:				; CODE XREF: RAM:5297j	RAM:529Ej
 		INY
-		LDA	($43),Y
+		LDA	(off_43),Y
 		CMP	#1
 		BEQ	loc_52BD
 		INY
-		LDA	($43),Y
+		LDA	(off_43),Y
 		CMP	#8
 		BNE	loc_52BA
 		LDY	#0
-		LDA	($43),Y
+		LDA	(off_43),Y
 		STA	$51
 		JSR	sub_55B7
 
@@ -9582,7 +9582,7 @@ loc_52BA:				; CODE XREF: RAM:52AFj
 
 loc_52BD:				; CODE XREF: RAM:52A8j
 		INY
-		LDA	($43),Y
+		LDA	(off_43),Y
 		JMP	loc_53F3
 ; ---------------------------------------------------------------------------
 		LDA	#0
@@ -9590,7 +9590,7 @@ loc_52BD:				; CODE XREF: RAM:52A8j
 		STA	byte_1961
 		LDA	$4B
 		STA	byte_627B
-		LDA	$43
+		LDA	off_43
 		STA	$47
 		LDA	$44
 		STA	$48
@@ -9615,7 +9615,7 @@ loc_52E6:				; CODE XREF: RAM:5302j
 		JSR	sub_4EC4
 		LDA	#1
 		LDY	#0
-		CMP	($43),Y
+		CMP	(off_43),Y
 		BEQ	loc_5306
 
 loc_5300:				; CODE XREF: RAM:52EBj	RAM:52F3j
@@ -9626,10 +9626,10 @@ loc_5300:				; CODE XREF: RAM:52EBj	RAM:52F3j
 loc_5306:				; CODE XREF: RAM:52FEj
 		LDY	#1
 		SEC
-		LDA	($43),Y
+		LDA	(off_43),Y
 		SBC	byte_6280
 		BCC	loc_5318
-		STA	($43),Y
+		STA	(off_43),Y
 		JSR	sub_5471
 		JMP	loc_5342
 ; ---------------------------------------------------------------------------
@@ -9637,10 +9637,10 @@ loc_5306:				; CODE XREF: RAM:52FEj
 loc_5318:				; CODE XREF: RAM:530Ej
 		SEC
 		LDA	byte_6280
-		SBC	($43),Y
+		SBC	(off_43),Y
 		STA	byte_6280
 		LDA	#0
-		STA	($43),Y
+		STA	(off_43),Y
 		JSR	sub_5471
 
 loc_5328:				; CODE XREF: RAM:5304j
@@ -9782,9 +9782,9 @@ unk_540D:	.BYTE	8		; DATA XREF: RAM:loc_53F5r
 ; ---------------------------------------------------------------------------
 		LDA	$4B
 		STA	byte_627C
-		LDA	$43
+		LDA	off_43
 		STA	7
-		LDA	$44
+		LDA	off_43+1
 		STA	8
 		LDY	#0
 		LDA	(off_7),Y
@@ -9796,14 +9796,14 @@ unk_540D:	.BYTE	8		; DATA XREF: RAM:loc_53F5r
 		JSR	sub_4B74
 		JSR	sub_4EC4
 		LDY	#0
-		LDA	($43),Y
+		LDA	(off_43),Y
 		CMP	(off_7),Y
 		BNE	loc_546D
 		LDY	#$C
 
 loc_543B:				; CODE XREF: RAM:5440j
 		LDA	(off_7),Y
-		STA	($43),Y
+		STA	(off_43),Y
 		DEY
 		BNE	loc_543B
 		JSR	sub_5471
@@ -9842,7 +9842,7 @@ byte_5470:	.BYTE 0			; DATA XREF: sub_50B2:loc_511Cr
 
 sub_5471:				; CODE XREF: RAM:189Cj	RAM:5312p ...
 		LDY	#1
-		LDA	($43),Y
+		LDA	(off_43),Y
 		JSR	sub_548E
 		LDY	#5
 		LDA	($41),Y
@@ -9936,7 +9936,7 @@ loc_54EB:				; CODE XREF: RAM:54ADj	RAM:54E6j
 		JMP	loc_5225
 ; ---------------------------------------------------------------------------
 		LDY	#0
-		LDA	($43),Y
+		LDA	(off_43),Y
 		AND	#3
 		CLC
 		ADC	#2
@@ -10586,10 +10586,10 @@ sub_58C2:				; CODE XREF: sub_5857+49p
 		LDA	$4B
 		JSR	sub_4EC4
 		LDY	#1
-		LDA	($43),Y
+		LDA	(off_43),Y
 		STA	byte_59E3
 		INY
-		LDA	($43),Y
+		LDA	(off_43),Y
 		STA	byte_59E4
 		LDA	#$AB ; '«'
 		STA	byte_5955
@@ -11089,9 +11089,9 @@ loc_5CCA:				; CODE XREF: RAM:5CEBj
 		LDY	#$D
 
 loc_5CE5:				; CODE XREF: RAM:5CE1j
-		LDA	($43),Y
+		LDA	(off_43),Y
 		DEY
-		STA	($43),Y
+		STA	(off_43),Y
 
 loc_5CEA:				; CODE XREF: RAM:5CD0j
 		DEX
@@ -11249,7 +11249,7 @@ loc_5DD6:				; CODE XREF: RAM:5DCCj
 		JSR	sub_4B74
 		JSR	sub_4EC4
 		LDY	#1
-		LDA	($43),Y
+		LDA	(off_43),Y
 		STA	byte_5DAE
 		LDA	#$B0 ; '°'
 		STA	byte_5DAC
