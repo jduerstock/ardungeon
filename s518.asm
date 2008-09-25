@@ -340,7 +340,7 @@ byte_1905:	.BYTE 0			; DATA XREF: sub_28D7r
 byte_1906:	.BYTE 0			; DATA XREF: sub_28A1+2Fr
 byte_1907:	.BYTE 0			; DATA XREF: sub_27DE+4Br sub_27DE+62r ...
 byte_1908:	.BYTE 0			; DATA XREF: sub_27DE+26r sub_27DE+73r ...
-byte_1909:	.BYTE 0			; DATA XREF: sub_28A1+4r sub_2CC2+2r ...
+SEGNO:		.BYTE	0		; DATA XREF: sub_28A1+4r sub_2CC2+2r ...
 		.BYTE	0
 byte_190B:	.BYTE 0			; DATA XREF: sub_27DE+1Cr
 					; sub_27DE:loc_2845r ...
@@ -3100,7 +3100,7 @@ loc_2897:				; CODE XREF: sub_27DE+ADj sub_27DE+B5j
 sub_28A1:				; CODE XREF: RAM:182Aj	sub_275B+6p
 		LDA	#0
 		STA	8
-		LDA	byte_1909
+		LDA	SEGNO
 		LDX	#2
 
 loc_28AA:				; CODE XREF: sub_28A1+Dj
@@ -3807,7 +3807,7 @@ loc_2CBF:				; CODE XREF: SEGLOAD+Aj
 
 sub_2CC2:				; CODE XREF: RAM:1881j	sub_2BFA+3D8p
 		DEC	$32
-		LDA	byte_1909
+		LDA	SEGNO
 		LDX	#3
 
 loc_2CC9:				; CODE XREF: sub_2CC2+Dj
@@ -3853,7 +3853,7 @@ unk_2CF7:	.BYTE $10		; DATA XREF: sub_2CC2:loc_2CC9r
 
 sub_2CFB:				; CODE XREF: SEGLOAD:loc_2CB4p
 					; sub_2CC2:loc_2CD8p
-		LDA	byte_1909
+		LDA	SEGNO
 		PHA
 
 loc_2CFF:				; CODE XREF: sub_2CFB+87j
@@ -3865,7 +3865,7 @@ loc_2D03:				; CODE XREF: sub_2CFB+Cj
 		DEX
 		BPL	loc_2D03
 		LDX	#9
-		LDY	byte_1909
+		LDY	SEGNO
 
 loc_2D0E:				; CODE XREF: sub_2CFB+21j
 		LDA	aEncounter,X	; "Encounter!"
@@ -3884,7 +3884,7 @@ loc_2D18:				; CODE XREF: sub_2CFB+18j
 		STA	$25B
 		BIT	$258
 		BPL	loc_2D40
-		LDA	byte_1909
+		LDA	SEGNO
 		CMP	#$E
 		BCS	loc_2D40
 		DEC	$259
@@ -3892,7 +3892,7 @@ loc_2D18:				; CODE XREF: sub_2CFB+18j
 		BCC	loc_2D62
 
 loc_2D40:				; CODE XREF: sub_2CFB+34j sub_2CFB+3Bj
-		LDA	byte_1909
+		LDA	SEGNO
 		LDX	#$2A ; '*'
 		LDY	#$38 ; '8'
 		JSR	sub_2DE3
@@ -3913,12 +3913,12 @@ loc_2D61:				; CODE XREF: sub_2CFB+7Fj
 
 loc_2D62:				; CODE XREF: sub_2CFB+43j sub_2CFB+5Aj ...
 		PLA
-		STA	byte_1909
+		STA	SEGNO
 		RTS
 ; ---------------------------------------------------------------------------
 
 loc_2D67:				; CODE XREF: sub_2CFB+64j
-		LDA	byte_1909
+		LDA	SEGNO
 		LDX	#5
 		BIT	$258
 		BVC	loc_2D72
@@ -3933,7 +3933,7 @@ loc_2D72:				; CODE XREF: sub_2CFB+74j sub_2CFB+7Dj
 
 loc_2D7C:				; CODE XREF: sub_2CFB+7Aj
 		LDA	unk_2D8A,X
-		STA	byte_1909
+		STA	SEGNO
 		JMP	loc_2CFF
 ; End of function sub_2CFB
 
@@ -4265,7 +4265,7 @@ loc_2ECD:				; CODE XREF: RAM:2ED1j
 		LDA	#$20 ; ' '
 		STA	byte_1923
 		LDA	#$19
-		STA	byte_1909
+		STA	SEGNO
 		LDA	#0
 		STA	byte_190B
 		LDA	#$76 ; 'v'
@@ -4379,7 +4379,7 @@ loc_2FBA:				; CODE XREF: sub_2BFA+3AAj
 		LDA	$631E
 		CLC
 		ADC	#$10
-		STA	byte_1909
+		STA	SEGNO
 		LDA	#$FF
 		STA	byte_190E
 		JSR	sub_2CC2
@@ -4667,7 +4667,7 @@ loc_318C:				; CODE XREF: RAM:2F6Dj	RAM:loc_3180j ...
 		TXA
 		CLC
 		ADC	#1
-		STA	byte_1909
+		STA	SEGNO
 		LDA	#1
 		JSR	sub_1A0D
 		LDA	#0
@@ -5547,7 +5547,7 @@ loc_3797:				; CODE XREF: RAM:379Aj
 		BNE	loc_37BB
 		JSR	sub_3CC2
 		LDA	#$31 ; '1'
-		STA	byte_1909
+		STA	SEGNO
 		LDA	#0
 		STA	byte_190B
 		LDA	#$76 ; 'v'
@@ -6687,7 +6687,7 @@ loc_4120:				; CODE XREF: sub_408B+99j
 		DEX
 		BNE	loc_4120
 		LDA	#$35 ; '5'
-		STA	byte_1909
+		STA	SEGNO
 		LDA	#0
 		STA	byte_190B
 		LDA	#$76 ; 'v'

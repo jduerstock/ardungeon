@@ -1,4 +1,6 @@
 		.include	"equates.inc"
+		.include	"exp_kernel.inc"
+		.include	"globals.inc"
 
 ;		.ORG	$8000
 
@@ -297,7 +299,7 @@ loc_8221:				; CODE XREF: sub_819E+Bj
 ; End of function sub_819E
 
 ; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
-		LDA	$1909
+		LDA	SEGNO
 		CMP	#8
 		BCS	loc_825A
 		STA	$F9CE
@@ -342,7 +344,7 @@ loc_8271:				; CODE XREF: RAM:8258j
 		CLC
 		RTS
 ; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
-		LDA	$1909
+		LDA	SEGNO
 		CMP	#8
 		BCS	loc_82AF
 		CMP	$F9CE
@@ -865,7 +867,7 @@ loc_85F1:				; CODE XREF: RAM:85EBj
 		LDA	#$E8 ; 'и'
 		STA	off_16
 		LDA	#$60 ; '`'
-		STA	off_16+
+		STA	off_16+1
 		LDX	$194A
 		JSR	$3C5C
 		LDA	#2

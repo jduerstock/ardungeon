@@ -1,9 +1,10 @@
 		.include	"exp_kernel.inc"
+		.include	"globals.inc"
 
 ;		.ORG	$7600
 		NOP
 		LDA	#$F
-		STA	$1909
+		STA	SEGNO
 		LDA	#$F0 ; 'ð'
 		STA	$190B
 		LDA	#$96 ; '–'

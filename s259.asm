@@ -25,7 +25,7 @@
 		BIT	$265
 		BMI	loc_764B
 		LDA	#$3D ; '='
-		STA	$1909
+		STA	SEGNO
 		LDA	#0
 		STA	$190B
 		LDA	#$90 ; 'ê'
@@ -35,7 +35,7 @@
 
 loc_764B:				; CODE XREF: RAM:7634j
 		LDA	#$2A ; '*'
-		STA	$1909
+		STA	SEGNO
 		LDA	#0
 		STA	$190B
 		LDA	#$98 ; 'ò'
@@ -44,7 +44,7 @@ loc_764B:				; CODE XREF: RAM:7634j
 
 loc_765D:				; CODE XREF: RAM:loc_7AC4j
 		LDA	#$3B ; ';'
-		STA	$1909
+		STA	SEGNO
 		LDA	#0
 		STA	$190B
 		LDA	#$63 ; 'c'
@@ -437,7 +437,7 @@ loc_78D8:				; CODE XREF: RAM:769Dj
 		LDA	#$FF
 		PHA
 		LDA	#$22 ; '"'
-		STA	$1909
+		STA	SEGNO
 		LDA	#0
 		STA	$190B
 		LDA	#$76 ; 'v'

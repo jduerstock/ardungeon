@@ -8,7 +8,7 @@ loc_7600:				; CODE XREF: RAM:7814j
 		LDA	#0
 		JSR	$180F
 		LDA	#$3E ; '>'
-		STA	$1909
+		STA	SEGNO
 		LDA	#0
 		STA	$190B
 		LDA	#$90 ; 'ê'
