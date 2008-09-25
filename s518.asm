@@ -780,7 +780,7 @@ loc_1B0E:				; CODE XREF: RAM:1B11j	RAM:1B16j
 		PHA
 		LDX	byte_18B8
 		LDA	unk_1C19,X
-		STA	$D40A
+		STA	WSYNC
 		STA	$D018
 		INX
 		STX	byte_18B8
@@ -811,7 +811,7 @@ loc_1B52:				; CODE XREF: RAM:1B44j
 		LDA	byte_18BF
 		STA	$D019
 		LDA	byte_18BD
-		STA	$D40A
+		STA	WSYNC
 		STA	$D01A
 		LDA	#8
 		STA	$D409
@@ -836,21 +836,21 @@ loc_1BA0:				; CODE XREF: RAM:1B8Cj
 		LDA	#$1B
 		STA	$201
 		LDA	#$C
-		STA	$D40A
+		STA	WSYNC
 		STA	$D409
 		PLA
 		RTI
 ; ---------------------------------------------------------------------------
 		PHA
-		STA	$D40A
+		STA	WSYNC
 		LDA	#<sub_1BD6
 		STA	$200
 		LDA	#>sub_1BD6
 		STA	$201
-		STA	$D40A
+		STA	WSYNC
 		LDA	byte_18BE
-		STA	$D40A
-		STA	$D40A
+		STA	WSYNC
+		STA	WSYNC
 		STA	$D01A
 		PLA
 		RTI
@@ -863,7 +863,7 @@ sub_1BD6:
 		LDA	#>sub_1BEB
 		STA	$201
 		LDA	#$10
-		STA	$D40A
+		STA	WSYNC
 		STA	$D409
 		PLA
 		RTI
@@ -872,7 +872,7 @@ sub_1BD6:
 sub_1BEB:
 		PHA
 		LDA	#0
-		STA	$D40A
+		STA	WSYNC
 		STA	$D018
 		STA	$D01A
 		STA	$D012
