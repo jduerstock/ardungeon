@@ -1,5 +1,6 @@
 		.include	"equates.inc"
 		.include	"exp_kernel.inc"
+		.include	"globals.inc"
 
 ;		.ORG	$7600
 
@@ -20,9 +21,9 @@ loc_7600:				; CODE XREF: RAM:7814j
 
 loc_7621:				; CODE XREF: RAM:761Cj	RAM:7677j ...
 		LDA	#$46 ; 'F'
-		STA	$16
+		STA	off_16
 		LDA	#$78 ; 'x'
-		STA	$17
+		STA	off_16+1
 		JSR	$1818
 
 loc_762C:				; CODE XREF: RAM:762Fj
@@ -280,9 +281,9 @@ loc_77D2:				; CODE XREF: RAM:77CDj
 		BNE	loc_7798
 		JSR	$1830
 		LDA	#$8E ; 'Ћ'
-		STA	$16
+		STA	off_16
 		LDA	#$78 ; 'x'
-		STA	$17
+		STA	off_16+1
 		JSR	$1818
 
 loc_77E6:				; CODE XREF: RAM:77E9j
@@ -294,9 +295,9 @@ loc_77E6:				; CODE XREF: RAM:77E9j
 loc_77EE:				; CODE XREF: RAM:7774j	RAM:77ABj ...
 		JSR	$1830
 		LDA	#$59 ; 'Y'
-		STA	$16
+		STA	off_16
 		LDA	#$79 ; 'y'
-		STA	$17
+		STA	off_16+1
 		JSR	$1818
 
 loc_77FC:				; CODE XREF: RAM:77FFj
@@ -305,9 +306,9 @@ loc_77FC:				; CODE XREF: RAM:77FFj
 		JMP	loc_772C
 ; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
 		LDA	#$E3 ; 'г'
-		STA	$16
+		STA	off_16
 		LDA	#$79 ; 'y'
-		STA	$17
+		STA	off_16+1
 		JSR	$1818
 
 loc_780F:				; CODE XREF: RAM:7812j
@@ -323,9 +324,9 @@ loc_7817:				; CODE XREF: RAM:76AEj	RAM:76CBj ...
 
 loc_781F:				; CODE XREF: RAM:781Aj
 		LDA	#$B
-		STA	$16
+		STA	off_16
 		LDA	#$79 ; 'y'
-		STA	$17
+		STA	off_16+1
 		JSR	$1818
 
 loc_782A:				; CODE XREF: RAM:782Dj
