@@ -843,9 +843,9 @@ loc_1BA0:				; CODE XREF: RAM:1B8Cj
 ; ---------------------------------------------------------------------------
 		PHA
 		STA	$D40A
-		LDA	#$D6 ; 'Ö'
+		LDA	#<sub_1BD6
 		STA	$200
-		LDA	#$1B
+		LDA	#>sub_1BD6
 		STA	$201
 		STA	$D40A
 		LDA	byte_18BE
@@ -855,10 +855,12 @@ loc_1BA0:				; CODE XREF: RAM:1B8Cj
 		PLA
 		RTI
 ; ---------------------------------------------------------------------------
+
+sub_1BD6:
 		PHA
-		LDA	#$EB ; 'ë'
+		LDA	#<sub_1BEB
 		STA	$200
-		LDA	#$1B
+		LDA	#>sub_1BEB
 		STA	$201
 		LDA	#$10
 		STA	$D40A
@@ -866,6 +868,8 @@ loc_1BA0:				; CODE XREF: RAM:1B8Cj
 		PLA
 		RTI
 ; ---------------------------------------------------------------------------
+
+sub_1BEB:
 		PHA
 		LDA	#0
 		STA	$D40A
