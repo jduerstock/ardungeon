@@ -1061,6 +1061,8 @@ loc_1CD1:				; CODE XREF: sub_1C88+32j
 ; End of function sub_1C88
 
 ; ---------------------------------------------------------------------------
+
+loc_1CE7:
 		LDA	#0
 		STA	$21
 		BEQ	loc_1CAB
@@ -1568,7 +1570,7 @@ unk_1FB7:	.BYTE	2		; DATA XREF: RAM:1E55r
 		.BYTE	9
 		.BYTE	9
 		.BYTE	9
-unk_1FBF:	.BYTE $E6 ; æ		; DATA XREF: sub_1C88+42r
+unk_1FBF:	.BYTE	<(loc_1CE7-1)	; DATA XREF: sub_1C88+42r
 		.BYTE $EC ; ì
 		.BYTE $20
 		.BYTE $FD ; ý
@@ -1589,7 +1591,7 @@ unk_1FBF:	.BYTE $E6 ; æ		; DATA XREF: sub_1C88+42r
 		.BYTE $EB ; ë
 		.BYTE $B3 ; ³
 		.BYTE $BE ; ¾
-unk_1FD4:	.BYTE $1C		; DATA XREF: sub_1C88+3Er
+unk_1FD4:	.BYTE	>(loc_1CE7-1)	; DATA XREF: sub_1C88+3Er
 		.BYTE $1C
 		.BYTE $1D
 		.BYTE $1C
