@@ -5136,7 +5136,7 @@ loc_34A3:				; CODE XREF: RAM:3475j	RAM:347Cj ...
 loc_34BB:				; CODE XREF: RAM:3456j
 		CMP	#3
 		BNE	loc_34D9
-		LDA	$63BF
+		LDA	I_KEYS
 		BNE	loc_34CF
 		LDA	#$4D ; 'M'
 		STA	off_16
@@ -5146,7 +5146,7 @@ loc_34BB:				; CODE XREF: RAM:3456j
 ; ---------------------------------------------------------------------------
 
 loc_34CF:				; CODE XREF: RAM:34C2j
-		DEC	$63BF
+		DEC	I_KEYS
 		LDA	byte_1970
 		BNE	loc_34A3
 		BEQ	loc_347E
@@ -6229,7 +6229,7 @@ aGems:		.BYTE "Gems:"
 		.BYTE $A6,$1C,	5
 aKeys:		.BYTE "Keys:"
 		.BYTE $B2
-		.WORD $63BF
+		.WORD	I_KEYS
 		.BYTE 3
 		.BYTE $A6,  5,	6
 aJewels:	.BYTE "Jewels:"
@@ -11313,7 +11313,7 @@ aCompasses_0:	.BYTE "Compasses: "     ; DATA XREF: RAM:5F15o
 		.BYTE $AE
 aKeys_0:	.BYTE "Keys: "          ; DATA XREF: RAM:5F17o
 		.BYTE $B2
-		.WORD $63BF
+		.WORD	I_KEYS
 		.BYTE 3
 		.BYTE $AE
 aCrystals_0:	.BYTE "Crystals: "      ; DATA XREF: RAM:5F19o
