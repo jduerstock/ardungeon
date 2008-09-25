@@ -1,0 +1,11687 @@
+;		.ORG	$1400
+		.BYTE	0,  0,	0,  0,	0,  0,	0,  0
+		.BYTE $78,$9C,$3C,$36,$3E,$66,$66,$C3
+		.BYTE $EE,$73,$63,$6E,$63,$63,$63,$DE
+		.BYTE $3C,$66,$CC,$C0,$C0,$C0,$E6,$7C
+		.BYTE $EE,$73,$63,$63,$63,$63,$63,$DE
+		.BYTE $FE,$66,$60,$78,$60,$63,$66,$7C
+		.BYTE $FE,$66,$60,$78,$60,$60,$60,$60
+		.BYTE $3C,$66,$C6,$C0,$DE,$C6,$66,$3C
+		.BYTE $C6,$C6,$C6,$CE,$FE,$E6,$C6,$C6
+		.BYTE $30,$18,$18,$18,$18,$18,$18, $C
+		.BYTE $1E, $C, $C, $C, $C,$1C,$38,$60
+		.BYTE $C6,$6C,$6C,$78,$78,$6C,$6C,$C6
+		.BYTE $E0,$60,$60,$60,$60,$66,$7E,$78
+		.BYTE $C6,$EE,$FE,$D6,$C6,$C6,$C6,$C6
+		.BYTE $C6,$C6,$E6,$F6,$DE,$CE,$C6,$C6
+		.BYTE $7C,$CE,$C6,$C6,$C6,$C6,$E6,$7C
+		.BYTE $FC,$66,$66,$66,$6C,$60,$60,$C0
+		.BYTE $7C,$E6,$C6,$C6,$C6,$C6,$CE,$7F
+		.BYTE $EE,$73,$66,$6C,$66,$66,$63,$C3
+		.BYTE $3A,$66,$60,$3C,	6,  6,$66,$5C
+		.BYTE $FE,$30,$60,$C0,$C0,$C2,$C6,$7C
+		.BYTE $E6,$66,$66,$66,$66,$66,$6E,$3F
+		.BYTE $C3,$66,$66,$66,$66,$66,$3C,$18
+		.BYTE $C3,$C3,$C3,$D3,$CB,$DF,$77,$62
+		.BYTE $C3,$C3,$66,$3C,$3C,$66,$C3,$C3
+		.BYTE $C3,$66,$66,$3C,$18,$18,$18,$18
+		.BYTE $7E,$C6, $C,$18,$FE,$60,$C3,$FE
+		.BYTE	0,  0,	0,  0,	0,$18,$18,  0
+		.BYTE	0,  0,	0,  0,$7E,  0,	0,  0
+		.BYTE	0,$18,$18,$18,	0,  0,	0,  0
+		.BYTE $18,$3C,$3C,$3C,$18,$18,	0,$18
+		.BYTE $3C,$66,$66, $C,$18,  0,$18,  0
+		.BYTE	0,  0,	0,  0,	0,  0,	0,  0
+		.BYTE $18,$3C,$3C,$3C,$18,$18,	0,$18
+		.BYTE $66,$66,$66,  0,	0,  0,	0,  0
+		.BYTE	0,$66,$FF,$66,$66,$FF,$66,  0
+		.BYTE $18,$3E,$60,$3C,	6,$7C,$18,  0
+		.BYTE	0,$66,$6C,$18,$30,$66,$46,  0
+		.BYTE $1C,$36,$1C,$38,$6F,$66,$3B,  0
+		.BYTE	0,$18,$18,$18,	0,  0,	0,  0
+		.BYTE	6, $E,$1C,$18,$18,$1C, $E,  6
+		.BYTE $60,$70,$38,$18,$18,$38,$70,$60
+		.BYTE	0,$66,$3C,$FF,$3C,$66,	0,  0
+		.BYTE	0,$18,$18,$7E,$18,$18,	0,  0
+		.BYTE	0,  0,	0,  0,	0,$18,$18,$30
+		.BYTE	0,  0,	0,$7E,	0,  0,	0,  0
+		.BYTE	0,  0,	0,  0,	0,$18,$18,  0
+		.BYTE	3,  6, $C,$18,$30,$60,$40,  0
+		.BYTE $7C,$CE,$C6,$C6,$C6,$E6,$7C,  0
+		.BYTE $38,$38,$18,$18,$18,$18,$18,  0
+		.BYTE $7C,$E6, $C,$18,$30,$60,$FE,  0
+		.BYTE $7E, $C,$18, $C,	6,$66,$3C,  0
+		.BYTE  $C,$1C,$3C,$6C,$CC,$FE, $C,  0
+		.BYTE $7E,$60,$7C,  6,	6,$66,$3C,  0
+		.BYTE $7C,$C6,$C0,$FC,$CE,$E6,$7C,  0
+		.BYTE $7E,  6, $C,$18,$30,$30,$30,  0
+		.BYTE $7C,$CE,$E6,$7C,$CE,$E6,$7C,  0
+		.BYTE $7C,$CE,$C6,$E6,$7E, $C,$18,$30
+		.BYTE	0,$38,$38,  0,	0,$38,$38,  0
+		.BYTE	0,  0,$18,$18,	0,$18,$18,$30
+		.BYTE	6, $C,$18,$30,$18, $C,	6,  0
+		.BYTE	0,  0,$7E,  0,	0,$7E,	0,  0
+		.BYTE $60,$30,$18, $C,$18,$30,$60,  0
+		.BYTE $3C,$66,$66, $C,$18,  0,$18,  0
+		.BYTE	0,$3C,$66,$6E,$6E,$60,$3E,  0
+		.BYTE $78,$9C,$3C,$36,$3E,$66,$66,$C3
+		.BYTE $EE,$73,$63,$6E,$63,$63,$63,$DE
+		.BYTE $3C,$66,$CC,$C0,$C0,$C0,$E6,$7C
+		.BYTE $EE,$73,$63,$63,$63,$63,$63,$DE
+		.BYTE $FE,$66,$60,$78,$60,$63,$66,$7C
+		.BYTE $FE,$66,$60,$78,$60,$60,$60,$60
+		.BYTE $3C,$66,$C6,$C0,$DE,$C6,$66,$3C
+		.BYTE $C6,$C6,$C6,$CE,$FE,$E6,$C6,$C6
+		.BYTE $30,$18,$18,$18,$18,$18,$18, $C
+		.BYTE $1E, $C, $C, $C, $C,$1C,$38,$60
+		.BYTE $C6,$6C,$6C,$78,$78,$6C,$6C,$C6
+		.BYTE $E0,$60,$60,$60,$60,$66,$7E,$78
+		.BYTE $C6,$EE,$FE,$D6,$C6,$C6,$C6,$C6
+		.BYTE $C6,$C6,$E6,$F6,$DE,$CE,$C6,$C6
+		.BYTE $7C,$CE,$C6,$C6,$C6,$C6,$E6,$7C
+		.BYTE $FC,$66,$66,$66,$6C,$60,$60,$C0
+		.BYTE $7C,$E6,$C6,$C6,$C6,$C6,$CE,$7F
+		.BYTE $EE,$73,$66,$6C,$66,$66,$63,$C3
+		.BYTE $3A,$66,$60,$3C,	6,  6,$66,$5C
+		.BYTE $FE,$30,$60,$C0,$C0,$C2,$C6,$7C
+		.BYTE $E6,$66,$66,$66,$66,$66,$6E,$3F
+		.BYTE $C3,$66,$66,$66,$66,$66,$3C,$18
+		.BYTE $C3,$C3,$C3,$D3,$CB,$DF,$77,$62
+		.BYTE $C3,$C3,$66,$3C,$3C,$66,$C3,$C3
+		.BYTE $C3,$66,$66,$3C,$18,$18,$18,$18
+		.BYTE $7E,$C6, $C,$18,$FE,$60,$C3,$FE
+		.BYTE $1E,$18,$18,$18,$18,$18,$18,$1E
+		.BYTE	0,$40,$60,$30,$18, $C,	6,  0
+		.BYTE $78,$18,$18,$18,$18,$18,$18,$78
+		.BYTE	0,  8,$1C,$36,$63,  0,	0,  0
+		.BYTE	0,  0,	0,  0,	0,  0,	0,$FF
+		.BYTE $7E,$7E,$7E,$7E,$7E,$7E,$7E,$7E
+		.BYTE	0,  0,$3E,$66,$66,$66,$3B,  0
+		.BYTE $E0,$60,$60,$7C,$66,$66,$7C,  0
+		.BYTE	0,  0,$3C,$66,$60,$66,$3C,  0
+		.BYTE  $C,  6,	6,$3E,$66,$66,$3B,  0
+		.BYTE	0,  0,$3C,$66,$7E,$60,$3E,  0
+		.BYTE  $E,$18,$18,$18,$3E,$18,$18,  0
+		.BYTE	0,  6,$7C,$CC,$CC,$78,$C2,$7C
+		.BYTE $C0,$60,$60,$6C,$76,$66,$66,  0
+		.BYTE $30,  0,$18, $C, $C, $C, $C,  0
+		.BYTE  $C,  0, $C, $C, $C, $C, $C,$38
+		.BYTE $C0,$60,$66,$6C,$78,$6C,$E6,  0
+		.BYTE $30,$18,$18,$18,$18,$18, $C,  0
+		.BYTE	0,$C0,$66,$7E,$7E,$6B,$63,  0
+		.BYTE	0,$C0,$7C,$66,$66,$66,$63,  0
+		.BYTE	0,  0,$3C,$6E,$66,$76,$3C,  0
+		.BYTE	0,$C0,$7C,$66,$66,$7C,$60,$E0
+		.BYTE	0,  0,$3B,$66,$66,$3E,	6,  7
+		.BYTE	0,$C0,$7C,$76,$60,$60,$60,  0
+		.BYTE	0,  0,$3E,$60,$3C,  6,$7C,  0
+		.BYTE	0,$30,$7E,$30,$30,$30,$36,$1C
+		.BYTE	0,  0,$E6,$66,$66,$6E,$3B,  0
+		.BYTE	0,  0,$E6,$66,$66,$3C,$18,  0
+		.BYTE	0,  0,$E3,$6B,$7F,$3E,$36,  0
+		.BYTE	0,  3,$66,$3C,$18,$3C,$66,$C0
+		.BYTE	0,  0,$E6,$66,$66,$3E,$CC,$78
+		.BYTE	0,  0,$7E, $C,$7E,$31,$7E,  0
+		.BYTE $18,$18,$18,$FF,$FF,$18,$18,$18
+		.BYTE  $C, $C,$D8,$FC,$3F,$1B,$30,$30
+		.BYTE $42,$E7,$7E,$3C,$3C,$7E,$E7,$42
+		.BYTE $30,$30,$1B,$3F,$FC,$D8, $C, $C
+		.BYTE	8,$18,$30,$7C,$18,$30,$60,$40
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+		JMP	sub_2979
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+		JMP	loc_2F80
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+		JMP	loc_2FF3
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+		JMP	loc_30E3
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+		JMP	loc_3183
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+		JMP	sub_1A0D
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+		JMP	sub_1C84
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+		JMP	sub_1C88
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+		JMP	loc_1C8C
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+		JMP	sub_1C2C
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+		JMP	sub_2643
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+		JMP	sub_262F
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+		JMP	sub_275B
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+		JMP	sub_245D
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+		JMP	sub_28A1
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+		JMP	sub_248E
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+		JMP	loc_24C6
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+		JMP	loc_2494
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+		JMP	sub_3C61
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+		JMP	sub_2A41
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+		JMP	sub_2BB0
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+		JMP	sub_2BA5
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+		JMP	sub_2CAD
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+		JMP	loc_3C27
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+		JMP	sub_3C2D
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+		JMP	sub_3CA5
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+		JMP	sub_3CC2
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+		JMP	sub_3C5C
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+		JMP	loc_2D8F
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+		JMP	loc_2C6F
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+		JMP	loc_2BFC
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+		JMP	loc_2C9B
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+		JMP	sub_2DAB
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+		JMP	sub_2DE3
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+		JMP	sub_2E0D
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+		JMP	sub_2E31
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+		JMP	loc_2E6B
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+		JMP	sub_2E69
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+		JMP	loc_2E66
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+		JMP	loc_2E45
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+		JMP	sub_2E43
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+		JMP	loc_2E40
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+		JMP	loc_2E9E
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+		JMP	sub_2CC2
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+		JMP	sub_4B4D
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+		JMP	sub_4B74
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+		JMP	sub_4AC9
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+		JMP	loc_4E06
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+		JMP	sub_49B0
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+		JMP	sub_55B7
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+		JMP	sub_4EC4
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+		JMP	sub_2B6B
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+		JMP	sub_5471
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+		JMP	loc_375F
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+		JMP	sub_2B47
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+		JMP	sub_408B
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+		JMP	loc_3771
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+		JMP	loc_5BB8
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+		JMP	sub_2AA0
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+		JMP	loc_5492
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+		JMP	loc_2EC6
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+byte_18B7:	.BYTE 0			; DATA XREF: RAM:23AFw
+byte_18B8:	.BYTE 0			; DATA XREF: RAM:1A86w	RAM:1B32r ...
+byte_18B9:	.BYTE 0			; DATA XREF: sub_1A0D+1w RAM:234Br ...
+byte_18BA:	.BYTE 0			; DATA XREF: RAM:loc_1ABBw RAM:1B61r ...
+byte_18BB:	.BYTE 0			; DATA XREF: RAM:1B67r
+byte_18BC:	.BYTE 0			; DATA XREF: RAM:1B6Dr
+byte_18BD:	.BYTE 0			; DATA XREF: RAM:1B79r
+byte_18BE:	.BYTE 0			; DATA XREF: RAM:1BC8r
+byte_18BF:	.BYTE 0			; DATA XREF: RAM:1B73r
+		.BYTE	0
+unk_18C1:	.BYTE	0		; DATA XREF: sub_1C88+8r sub_1C88+4Dw
+		.BYTE	0
+		.BYTE	0
+unk_18C4:	.BYTE	0		; DATA XREF: sub_1C88+Dr sub_1C88+56w
+		.BYTE	0
+		.BYTE	0
+unk_18C7:	.BYTE	0		; DATA XREF: sub_1C88+16r sub_1C88+5Bw
+		.BYTE	0
+		.BYTE	0
+unk_18CA:	.BYTE	0		; DATA XREF: RAM:loc_1E40r
+					; RAM:loc_1E59r
+		.BYTE	0
+		.BYTE	0
+		.BYTE	0
+		.BYTE	0
+		.BYTE	0
+		.BYTE	0
+		.BYTE	0
+		.BYTE	0
+		.BYTE	0
+byte_18D4:	.BYTE 0			; DATA XREF: sub_2A41:loc_2A47w
+					; sub_2A41+50r
+unk_18D5:	.BYTE $80 ; Ђ		; DATA XREF: sub_2A41+1Ew sub_2A41+55w ...
+		.BYTE $80 ; Ђ
+		.BYTE $80 ; Ђ
+		.BYTE $80 ; Ђ
+		.BYTE $80 ; Ђ
+		.BYTE $80 ; Ђ
+		.BYTE $80 ; Ђ
+		.BYTE $80 ; Ђ
+		.BYTE $80 ; Ђ
+		.BYTE $80 ; Ђ
+		.BYTE $80 ; Ђ
+		.BYTE $80 ; Ђ
+		.BYTE $80 ; Ђ
+		.BYTE $80 ; Ђ
+		.BYTE $80 ; Ђ
+		.BYTE $80 ; Ђ
+		.BYTE $80 ; Ђ
+		.BYTE $80 ; Ђ
+		.BYTE $80 ; Ђ
+		.BYTE $80 ; Ђ
+		.BYTE $80 ; Ђ
+		.BYTE $80 ; Ђ
+		.BYTE $80 ; Ђ
+		.BYTE $80 ; Ђ
+		.BYTE $80 ; Ђ
+		.BYTE $80 ; Ђ
+		.BYTE $80 ; Ђ
+		.BYTE $80 ; Ђ
+		.BYTE $80 ; Ђ
+		.BYTE $80 ; Ђ
+		.BYTE $80 ; Ђ
+		.BYTE $80 ; Ђ
+		.BYTE $80 ; Ђ
+		.BYTE $80 ; Ђ
+		.BYTE $80 ; Ђ
+		.BYTE $80 ; Ђ
+		.BYTE $80 ; Ђ
+		.BYTE $80 ; Ђ
+		.BYTE $80 ; Ђ
+		.BYTE $80 ; Ђ
+		.BYTE	0
+byte_18FE:	.BYTE 0			; DATA XREF: RAM:1E71r	RAM:5816w ...
+byte_18FF:	.BYTE 0			; DATA XREF: RAM:2659r	RAM:2667w ...
+byte_1900:	.BYTE 0			; DATA XREF: sub_267A+10r
+					; sub_267A:loc_269Fw
+byte_1901:	.BYTE 0			; DATA XREF: sub_27DE+16w sub_27DE+7Br ...
+byte_1902:	.BYTE 0			; DATA XREF: sub_27DE+19w sub_27DE+83w ...
+byte_1903:	.BYTE 0			; DATA XREF: sub_28A1+32w sub_2937+Ar
+byte_1904:	.BYTE 0			; DATA XREF: sub_28A1+2Cw sub_2937+10r
+byte_1905:	.BYTE 0			; DATA XREF: sub_28D7r
+					; sub_2937:loc_2969r
+byte_1906:	.BYTE 0			; DATA XREF: sub_28A1+2Fr
+byte_1907:	.BYTE 0			; DATA XREF: sub_27DE+4Br sub_27DE+62r ...
+byte_1908:	.BYTE 0			; DATA XREF: sub_27DE+26r sub_27DE+73r ...
+byte_1909:	.BYTE 0			; DATA XREF: sub_28A1+4r sub_2CC2+2r ...
+		.BYTE	0
+byte_190B:	.BYTE 0			; DATA XREF: sub_27DE+1Cr
+					; sub_27DE:loc_2845r ...
+byte_190C:	.BYTE 0			; DATA XREF: sub_27DE+21r sub_27DE+6Cr ...
+byte_190D:	.BYTE 0			; DATA XREF: sub_2799+36w
+byte_190E:	.BYTE 0			; DATA XREF: sub_2799+Cw sub_28D7+21r	...
+byte_190F:	.BYTE 0			; DATA XREF: sub_275B+Bw sub_275B+21w
+byte_1910:	.BYTE 0			; DATA XREF: sub_28D7+13w RAM:29D0o
+byte_1911:	.BYTE 0			; DATA XREF: sub_28D7+10w RAM:29C4o
+byte_1912:	.BYTE 0			; DATA XREF: sub_2BFA+393w
+					; sub_2BFA+5BCw ...
+byte_1913:	.BYTE $80		; DATA XREF: RAM:2EE8w	sub_3C2D+19r ...
+		.BYTE $80 ; Ђ
+		.BYTE $80 ; Ђ
+		.BYTE $80 ; Ђ
+		.BYTE $80 ; Ђ
+		.BYTE $80 ; Ђ
+		.BYTE $80 ; Ђ
+byte_191A:	.BYTE $80		; DATA XREF: RAM:3338w	sub_3596+16w
+		.BYTE $80 ; Ђ
+		.BYTE $80 ; Ђ
+		.BYTE $80 ; Ђ
+		.BYTE $80 ; Ђ
+		.BYTE $80 ; Ђ
+		.BYTE $80 ; Ђ
+		.BYTE $80 ; Ђ
+		.BYTE $80 ; Ђ
+byte_1923:	.BYTE $80		; DATA XREF: RAM:2EEDw	sub_3C2D+1Er ...
+		.BYTE $80 ; Ђ
+		.BYTE $80 ; Ђ
+		.BYTE $80 ; Ђ
+		.BYTE $80 ; Ђ
+		.BYTE $80 ; Ђ
+		.BYTE $80 ; Ђ
+byte_192A:	.BYTE $80		; DATA XREF: RAM:333Bw	RAM:3590w ...
+		.BYTE $80 ; Ђ
+		.BYTE $80 ; Ђ
+		.BYTE $80 ; Ђ
+		.BYTE $80 ; Ђ
+		.BYTE $80 ; Ђ
+		.BYTE $80 ; Ђ
+		.BYTE $80 ; Ђ
+		.BYTE $80 ; Ђ
+byte_1933:	.BYTE 0			; DATA XREF: RAM:2EE3w	RAM:2F64w ...
+byte_1934:	.BYTE 0			; DATA XREF: RAM:2F54w	RAM:3C77r ...
+byte_1935:	.BYTE 0			; DATA XREF: RAM:2F15w	RAM:37FEw ...
+byte_1936:	.BYTE 0			; DATA XREF: sub_3CA5+3w sub_3CC2+Br
+byte_1937:	.BYTE 0			; DATA XREF: sub_2BFA+9w RAM:2C5Fw ...
+byte_1938:	.BYTE 0			; DATA XREF: sub_2BFA+396w RAM:3627w ...
+byte_1939:	.BYTE 0			; DATA XREF: sub_2BFA+39Cw sub_322C+Br ...
+byte_193A:	.BYTE $FF		; DATA XREF: RAM:36B3w	RAM:36CAw ...
+byte_193B:	.BYTE $FF		; DATA XREF: RAM:36B8w	RAM:36CFw ...
+byte_193C:	.BYTE $FF		; DATA XREF: sub_502E+Ew sub_502E+14w	...
+byte_193D:	.BYTE $FF		; DATA XREF: sub_508C+1Ew sub_50B2+29w ...
+unk_193E:	.BYTE $FF		; DATA XREF: RAM:5D6Fo
+		.BYTE $FF
+unk_1940:	.BYTE $FF		; DATA XREF: RAM:5D85o
+		.BYTE $FF
+		.BYTE $FF
+		.BYTE $FF
+byte_1944:	.BYTE $FF		; DATA XREF: RAM:36D4w	sub_51B6+24w ...
+byte_1945:	.BYTE $FF		; DATA XREF: RAM:36D9w	sub_51B6+29w ...
+byte_1946:	.BYTE 0			; DATA XREF: sub_502E:loc_5032w
+					; sub_508C+6r ...
+		.BYTE	0
+		.BYTE	0
+		.BYTE	0
+byte_194A:	.BYTE 0			; DATA XREF: sub_3635+29w RAM:3694r ...
+		.BYTE	0
+		.BYTE	0
+byte_194D:	.BYTE 0			; DATA XREF: RAM:5349r
+		.BYTE	0
+		.BYTE	0
+		.BYTE	0
+		.BYTE	0
+		.BYTE	0
+byte_1953:	.BYTE $80		; DATA XREF: RAM:4245r
+byte_1954:	.BYTE 0			; DATA XREF: RAM:32E7w
+byte_1955:	.BYTE 0			; DATA XREF: RAM:23C1r	RAM:23D3r
+byte_1956:	.BYTE 0			; DATA XREF: sub_2BFA:loc_306Aw
+					; sub_408B+2Fw
+byte_1957:	.BYTE 0			; DATA XREF: sub_408B:loc_40BFw
+byte_1958:	.BYTE 0			; DATA XREF: sub_2BFA+3FFr
+					; sub_2BFA+40Dw ...
+byte_1959:	.BYTE 0			; DATA XREF: sub_2BFA+404r
+					; sub_2BFA+5E6w ...
+byte_195A:	.BYTE 0			; DATA XREF: sub_2BFA+5D1w RAM:3548r ...
+		.BYTE	0
+		.BYTE	0
+byte_195D:	.BYTE 0			; DATA XREF: sub_2BFA+447r
+					; sub_2BFA+44Ew ...
+byte_195E:	.BYTE 0			; DATA XREF: RAM:420Aw	RAM:4234r ...
+byte_195F:	.BYTE 0			; DATA XREF: sub_2BFA+39Fw RAM:346Bw ...
+byte_1960:	.BYTE 0			; DATA XREF: sub_2BFA+3A2w
+					; RAM:loc_41FCr ...
+byte_1961:	.BYTE 0			; DATA XREF: sub_51B6+62w RAM:52C8w ...
+byte_1962:	.BYTE 0			; DATA XREF: RAM:23F3w	sub_408B+Dr ...
+		.BYTE	0
+		.BYTE	0
+		.BYTE	0
+		.BYTE	0
+		.BYTE	0
+byte_1968:	.BYTE 0			; DATA XREF: sub_2BFA+48Ar
+					; sub_2BFA+49Br
+		.BYTE	0
+byte_196A:	.BYTE 0			; DATA XREF: sub_2BFA+399w RAM:3621w
+unk_196B:	.BYTE	0		; DATA XREF: RAM:loc_337Ar RAM:3391w
+		.BYTE	0
+		.BYTE	0
+		.BYTE	0
+byte_196F:	.BYTE 0			; DATA XREF: RAM:3389w	RAM:loc_3397r ...
+byte_1970:	.BYTE 0			; DATA XREF: RAM:loc_334Ew
+					; RAM:loc_341Cr ...
+byte_1971:	.BYTE 0			; DATA XREF: sub_2BFA:loc_300Dr
+					; RAM:3364w ...
+byte_1972:	.BYTE 0			; DATA XREF: RAM:41A2r	RAM:43B9r ...
+byte_1973:	.BYTE 0			; DATA XREF: sub_2BFA+610w RAM:4149r
+byte_1974:	.BYTE 0			; DATA XREF: sub_2BFA+5C6w sub_322C+8r ...
+byte_1975:	.BYTE 0			; DATA XREF: RAM:30E5w	RAM:3115w ...
+byte_1976:	.BYTE 0			; DATA XREF: RAM:4207w	RAM:422Br ...
+word_1977:	.WORD 0			; DATA XREF: sub_2BFA:loc_2C26r
+					; sub_2BFA+3Aw	...
+byte_1979:	.BYTE 0			; DATA XREF: sub_2BFA+41Dr
+					; sub_2BFA+424w ...
+byte_197A:	.BYTE 0			; DATA XREF: sub_3635+2w RAM:367Dw ...
+byte_197B:	.BYTE 0			; DATA XREF: sub_2BFA:loc_3032r
+					; sub_5857+2w
+unk_197C:	.BYTE $80 ; Ђ		; DATA XREF: sub_2CFB:loc_2D03w
+		.BYTE $80 ; Ђ
+		.BYTE $80 ; Ђ
+		.BYTE $80 ; Ђ
+		.BYTE $80 ; Ђ
+		.BYTE $80 ; Ђ
+		.BYTE $80 ; Ђ
+		.BYTE $80 ; Ђ
+		.BYTE $80 ; Ђ
+		.BYTE $80 ; Ђ
+		.BYTE $80 ; Ђ
+unk_1987:	.BYTE $80 ; Ђ		; DATA XREF: sub_2CFB:loc_2D18w
+		.BYTE $80 ; Ђ
+		.BYTE $80 ; Ђ
+		.BYTE $80 ; Ђ
+		.BYTE $80 ; Ђ
+		.BYTE $80 ; Ђ
+		.BYTE $80 ; Ђ
+		.BYTE $80 ; Ђ
+		.BYTE $80 ; Ђ
+		.BYTE $80 ; Ђ
+		.BYTE $80 ; Ђ
+		.BYTE $80 ; Ђ
+		.BYTE $80 ; Ђ
+		.BYTE $80 ; Ђ
+		.BYTE $80 ; Ђ
+		.BYTE $80 ; Ђ
+		.BYTE $80 ; Ђ
+		.BYTE $80 ; Ђ
+		.BYTE $80 ; Ђ
+		.BYTE $80 ; Ђ
+		.BYTE $80 ; Ђ
+byte_199C:	.BYTE 0			; DATA XREF: sub_245D+1Cw sub_2503r ...
+		.BYTE $70 ; p
+		.BYTE $70 ; p
+		.BYTE $30 ; 0
+		.BYTE $42 ; B
+		.BYTE	0
+		.BYTE	4
+		.BYTE	2
+		.BYTE	2
+		.BYTE	2
+		.BYTE	2
+		.BYTE	2
+		.BYTE	2
+		.BYTE	2
+		.BYTE	2
+		.BYTE	2
+		.BYTE	2
+		.BYTE	2
+		.BYTE	2
+		.BYTE	2
+		.BYTE	2
+		.BYTE	2
+		.BYTE	2
+		.BYTE	2
+		.BYTE	2
+		.BYTE	2
+		.BYTE	2
+		.BYTE	2
+		.BYTE	2
+		.BYTE	2
+		.BYTE	2
+		.BYTE $41 ; A
+		.BYTE $9D ; ќ
+		.BYTE $19
+		.BYTE $70 ; p
+		.BYTE $70 ; p
+		.BYTE $30 ; 0
+		.BYTE $42 ; B
+		.BYTE	0
+		.BYTE	4
+		.BYTE $80 ; Ђ
+		.BYTE	2
+		.BYTE $80 ; Ђ
+		.BYTE	2
+		.BYTE $80 ; Ђ
+		.BYTE	2
+		.BYTE $80 ; Ђ
+		.BYTE	2
+		.BYTE	2
+		.BYTE $80 ; Ђ
+		.BYTE $44 ; D
+		.BYTE $F0 ; р
+		.BYTE	4
+		.BYTE	4
+		.BYTE $84 ; „
+		.BYTE $84 ; „
+		.BYTE	4
+		.BYTE $84 ; „
+		.BYTE	4
+		.BYTE	4
+		.BYTE $84 ; „
+		.BYTE	0
+		.BYTE	0
+		.BYTE $42 ; B
+		.BYTE $58 ; X
+		.BYTE	6
+		.BYTE	0
+		.BYTE	2
+		.BYTE	0
+		.BYTE	2
+		.BYTE	0
+		.BYTE	2
+		.BYTE	0
+		.BYTE	2
+		.BYTE	0
+		.BYTE	2
+		.BYTE	0
+		.BYTE	2
+		.BYTE	0
+		.BYTE	2
+		.BYTE $41 ; A
+		.BYTE $BE ; ѕ
+		.BYTE $19
+unk_19EF:	.BYTE $19		; DATA XREF: sub_1A0D+14r
+		.BYTE $19
+		.BYTE $19
+unk_19F2:	.BYTE $9D ; ќ		; DATA XREF: sub_1A0D+1Ar
+		.BYTE $BE ; ѕ
+		.BYTE $BE ; ѕ
+		.BYTE $70 ; p
+		.BYTE $70 ; p
+		.BYTE $70 ; p
+		.BYTE $70 ; p
+		.BYTE $70 ; p
+		.BYTE $70 ; p
+		.BYTE $70 ; p
+		.BYTE $70 ; p
+		.BYTE $70 ; p
+		.BYTE $70 ; p
+		.BYTE $70 ; p
+		.BYTE $70 ; p
+		.BYTE $70 ; p
+		.BYTE $70 ; p
+		.BYTE $70 ; p
+		.BYTE $42 ; B
+		.BYTE $7C ; |
+		.BYTE $19
+		.BYTE $41 ; A
+		.BYTE $F5 ; х
+		.BYTE $19
+		.BYTE $41 ; A
+		.BYTE  $A
+		.BYTE $1A
+
+; ЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫ S U B	R O U T	I N E ЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫ
+
+
+sub_1A0D:				; CODE XREF: RAM:180Fj	RAM:2ED5p ...
+		TAX
+		STA	byte_18B9
+		LDA	#0
+		LDY	#3
+		STY	$253
+
+loc_1A18:				; CODE XREF: sub_1A0D+Fj
+		STA	$D000,Y
+		DEY
+		BPL	loc_1A18
+		JSR	sub_2454
+		LDA	unk_19EF,X
+		STA	$255
+		LDA	unk_19F2,X
+		STA	$254
+		LDY	unk_1C21,X
+		LDA	#0
+
+loc_1A32:				; CODE XREF: sub_1A0D+29j
+		STA	$4C8,Y
+		DEY
+		BPL	loc_1A32
+		LDA	unk_1A41,X
+		PHA
+		LDA	unk_1A44,X
+		PHA
+		RTS
+; End of function sub_1A0D
+
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+unk_1A41:	.BYTE $1A		; DATA XREF: sub_1A0D+2Br
+		.BYTE $1A
+		.BYTE $1B
+unk_1A44:	.BYTE $46 ; F		; DATA XREF: sub_1A0D+2Fr
+		.BYTE $64 ; d
+		.BYTE $18
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+		LDA	#$55 ; 'U'
+		STA	$200
+		STA	$248
+		LDA	#$1B
+		STA	$201
+		STA	$249
+		LDX	#7
+		LDA	#0
+
+loc_1A5B:				; CODE XREF: RAM:1A5Fj
+		STA	$D000,X
+		DEX
+		BPL	loc_1A5B
+		STA	$253
+		RTS
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+		LDA	#$2F ; '/'
+		STA	$200
+		STA	$248
+		LDA	#$1B
+		STA	$201
+		STA	$249
+		LDA	#$56 ; 'V'
+		STA	$24A
+		LDA	#$1B
+		STA	$24B
+		LDA	#$C0 ; 'А'
+		STA	$D40E
+		LDA	#0
+		STA	byte_18B8
+		LDA	#$34 ; '4'
+		STA	$D01B
+		LDX	#3
+		STX	$D008
+		STX	$D009
+
+loc_1A96:				; CODE XREF: RAM:1AABj
+		LDA	unk_1C24,X
+		STA	$D004,X
+		LDA	unk_1C28,X
+		STA	$D000,X
+		LDA	#0
+		STA	$D00D,X
+		STA	$D012,X
+		DEX
+		BPL	loc_1A96
+		STA	$D01D
+		STA	$D019
+		STX	$D011
+		STX	$D00C
+		LDX	#5
+
+loc_1ABB:				; CODE XREF: RAM:1ABFj
+		STA	byte_18BA,X
+		DEX
+		BPL	loc_1ABB
+		JSR	sub_1C09
+		LDA	#$F0 ; 'р'
+		STA	7
+		LDA	#4
+		STA	8
+		LDA	#$D
+		STA	9
+		LDA	#5
+		STA	$A
+		LDX	#9
+
+loc_1AD6:				; CODE XREF: RAM:1AFEj
+		LDY	#$A
+
+loc_1AD8:				; CODE XREF: RAM:1AE5j
+		LDA	(7),Y
+		ORA	#$80 ; 'Ђ'
+		STA	(7),Y
+		LDA	(9),Y
+		ORA	#$80 ; 'Ђ'
+		STA	(9),Y
+		DEY
+		BPL	loc_1AD8
+		LDA	7
+		CLC
+		ADC	#$28 ; '('
+		STA	7
+		BCC	loc_1AF2
+		INC	8
+
+loc_1AF2:				; CODE XREF: RAM:1AEEj
+		LDA	9
+		CLC
+		ADC	#$28 ; '('
+		STA	9
+		BCC	loc_1AFD
+		INC	$A
+
+loc_1AFD:				; CODE XREF: RAM:1AF9j
+		DEX
+		BNE	loc_1AD6
+		LDA	#0
+		STA	9
+		LDA	#8
+		STA	$A
+		LDX	#$C
+		LDY	#0
+		LDA	#$FF
+
+loc_1B0E:				; CODE XREF: RAM:1B11j	RAM:1B16j
+		STA	(9),Y
+		INY
+		BNE	loc_1B0E
+		INC	$A
+		DEX
+		BNE	loc_1B0E
+		RTS
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+		JSR	sub_1C09
+		LDA	#$2F ; '/'
+		STA	$200
+		STA	$248
+		LDA	#$1B
+		STA	$201
+		STA	$249
+		JMP	$760A
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+		PHA
+		TXA
+		PHA
+		LDX	byte_18B8
+		LDA	unk_1C19,X
+		STA	$D40A
+		STA	$D018
+		INX
+		STX	byte_18B8
+		CPX	#4
+		BCC	loc_1B52
+		LDA	$24A
+		STA	$200
+		LDA	$24B
+		STA	$201
+
+loc_1B52:				; CODE XREF: RAM:1B44j
+		PLA
+		TAX
+		PLA
+		RTI
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+		PHA
+		LDA	#$A2 ; 'ў'
+		STA	$200
+		LDA	#$1B
+		STA	$201
+		LDA	byte_18BA
+		STA	$D016
+		LDA	byte_18BB
+		STA	$D017
+		LDA	byte_18BC
+		STA	$D018
+		LDA	byte_18BF
+		STA	$D019
+		LDA	byte_18BD
+		STA	$D40A
+		STA	$D01A
+		LDA	#8
+		STA	$D409
+		LDA	$7600
+		CMP	#1
+		BEQ	loc_1BA0
+		LDA	#$90 ; 'ђ'
+		STA	$D012
+		LDA	#$34 ; '4'
+		STA	$D013
+		LDA	#$FF
+		STA	$D00D
+		STA	$D00E
+
+loc_1BA0:				; CODE XREF: RAM:1B8Cj
+		PLA
+		RTI
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+		PHA
+		LDA	#$B7 ; '·'
+		STA	$200
+		LDA	#$1B
+		STA	$201
+		LDA	#$C
+		STA	$D40A
+		STA	$D409
+		PLA
+		RTI
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+		PHA
+		STA	$D40A
+		LDA	#$D6 ; 'Ц'
+		STA	$200
+		LDA	#$1B
+		STA	$201
+		STA	$D40A
+		LDA	byte_18BE
+		STA	$D40A
+		STA	$D40A
+		STA	$D01A
+		PLA
+		RTI
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+		PHA
+		LDA	#$EB ; 'л'
+		STA	$200
+		LDA	#$1B
+		STA	$201
+		LDA	#$10
+		STA	$D40A
+		STA	$D409
+		PLA
+		RTI
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+		PHA
+		LDA	#0
+		STA	$D40A
+		STA	$D018
+		STA	$D01A
+		STA	$D012
+		STA	$D013
+		LDA	#$E
+		STA	$D017
+		LDA	#$14
+		STA	$D409
+		PLA
+		RTI
+
+; ЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫ S U B	R O U T	I N E ЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫ
+
+
+sub_1C09:				; CODE XREF: RAM:1AC1p	RAM:1B19p
+		LDX	#$77 ; 'w'
+
+loc_1C0B:				; CODE XREF: sub_1C09+Dj
+		TXA
+		STA	$4F0,X
+		STA	$568,X
+		STA	$5E0,X
+		DEX
+		BPL	loc_1C0B
+		RTS
+; End of function sub_1C09
+
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+unk_1C19:	.BYTE $46 ; F		; DATA XREF: RAM:1B35r
+		.BYTE $68 ; h
+		.BYTE $88 ; €
+unk_1C1C:	.BYTE $B6 ; ¶		; DATA XREF: RAM:loc_23A3r
+		.BYTE $76 ; v
+		.BYTE $9E ; ћ
+		.BYTE $34 ; 4
+		.BYTE	0
+unk_1C21:	.BYTE	0		; DATA XREF: sub_1A0D+20r
+		.BYTE $27 ; '
+		.BYTE $13
+unk_1C24:	.BYTE $20		; DATA XREF: RAM:loc_1A96r
+		.BYTE $28 ; (
+		.BYTE $D0 ; Р
+		.BYTE $D8 ; Ш
+unk_1C28:	.BYTE $38 ; 8		; DATA XREF: RAM:1A9Cr
+		.BYTE $AC ; ¬
+		.BYTE	0
+		.BYTE	0
+
+; ЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫ S U B	R O U T	I N E ЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫ
+
+
+sub_1C2C:				; CODE XREF: RAM:181Bj	RAM:loc_1F4Bj ...
+		STX	$1B
+		STY	$1C
+		STA	$1A
+		LDY	$1F
+		LDX	$20
+		CMP	#$D
+		BEQ	loc_1C63
+		CMP	#8
+		BEQ	loc_1C77
+		LDA	#0
+		STA	$1E
+		TXA
+		ASL	A
+		ASL	A
+		ASL	A
+		STA	$1D
+		ASL	A
+		ROL	$1E
+		ASL	A
+		ROL	$1E
+		ADC	$1D
+		STA	$1D
+		LDA	$1E
+		ADC	#4
+		STA	$1E
+		LDA	$1A
+		ORA	$21
+		STA	($1D),Y
+		INY
+		CPY	#$28 ; '('
+		BCC	loc_1C6C
+
+loc_1C63:				; CODE XREF: sub_1C2C+Cj
+		LDY	#0
+		INX
+		CPX	#$19
+		BCC	loc_1C6C
+		LDX	#$18
+
+loc_1C6C:				; CODE XREF: sub_1C2C+35j sub_1C2C+3Cj ...
+		STY	$1F
+		STX	$20
+		LDY	$1C
+		LDX	$1B
+		LDA	$1A
+		RTS
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+
+loc_1C77:				; CODE XREF: sub_1C2C+10j
+		DEY
+		BPL	loc_1C6C
+		LDY	#$27 ; '''
+		DEX
+		BPL	loc_1C6C
+		LDX	#0
+		BEQ	loc_1C6C
+		RTS
+; End of function sub_1C2C
+
+
+; ЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫ S U B	R O U T	I N E ЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫ
+
+
+sub_1C84:				; CODE XREF: RAM:1812j	RAM:2F44p ...
+		LDX	#0
+		BEQ	loc_1C8E
+; End of function sub_1C84
+
+
+; ЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫ S U B	R O U T	I N E ЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫ
+
+
+sub_1C88:				; CODE XREF: RAM:1815j	sub_28D7+1Ep ...
+		LDX	#1
+		BNE	loc_1C8E
+
+loc_1C8C:				; CODE XREF: RAM:1818j	RAM:2EE0p
+		LDX	#2
+
+loc_1C8E:				; CODE XREF: sub_1C84+2j sub_1C88+2j
+		STX	$23
+		LDA	unk_18C1,X
+		STA	$1F
+		LDA	unk_18C4,X
+		CLC
+		ADC	unk_1FA8,X
+		STA	$20
+		LDA	unk_18C7,X
+		STA	$21
+		LDA	#0
+		STA	$24
+		STA	$25
+		STA	$26
+
+loc_1CAB:				; CODE XREF: sub_1C88+2Dj RAM:1CEBj ...
+		JSR	sub_1F31
+		CMP	#$80 ; 'Ђ'
+		BCS	loc_1CB8
+		JSR	loc_1F3C
+		JMP	loc_1CAB
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+
+loc_1CB8:				; CODE XREF: sub_1C88+28j
+		CMP	#$FF
+		BEQ	loc_1CD1
+		SEC
+		SBC	#$A0 ; ' '
+		CMP	#$15
+		BCS	loc_1CCF
+		LDX	$23
+		TAY
+		LDA	unk_1FD4,Y
+		PHA
+		LDA	unk_1FBF,Y
+		PHA
+		RTS
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+
+loc_1CCF:				; CODE XREF: sub_1C88+39j
+		BRK
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+		RTS
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+
+loc_1CD1:				; CODE XREF: sub_1C88+32j
+		LDX	$23
+		LDA	$1F
+		STA	unk_18C1,X
+		LDA	$20
+		SEC
+		SBC	unk_1FA8,X
+		STA	unk_18C4,X
+		LDA	$21
+		STA	unk_18C7,X
+		RTS
+; End of function sub_1C88
+
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+		LDA	#0
+		STA	$21
+		BEQ	loc_1CAB
+		LDA	#$80 ; 'Ђ'
+		STA	$21
+		BNE	loc_1CAB
+		JSR	sub_1F26
+		LDA	($18),Y
+		JSR	sub_1E9D
+		JMP	loc_1CAB
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+		JSR	sub_1F26
+		JSR	sub_1D07
+		JMP	loc_1CAB
+
+; ЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫ S U B	R O U T	I N E ЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫ
+
+
+sub_1D07:				; CODE XREF: RAM:1D01p
+		JMP	($18)
+; End of function sub_1D07
+
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+		LDA	#0
+		STA	byte_1F23
+
+loc_1D0F:				; CODE XREF: RAM:1D28j
+		STA	$25
+		STA	$26
+		LDA	$16
+		STA	$27
+		LDA	$17
+		STA	$28
+		LDA	#$80 ; 'Ђ'
+		STA	$24
+		BMI	loc_1CAB
+		LDA	#$80 ; 'Ђ'
+		STA	byte_1F23
+		LDA	#0
+		BEQ	loc_1D0F
+		JSR	sub_1F31
+		STA	$1F
+		JSR	sub_1F31
+		CLC
+		ADC	unk_1FA8,X
+		STA	$20
+		JMP	loc_1CAB
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+		LDA	$16
+		STA	$27
+		LDA	$17
+		STA	$28
+		LDA	#$C0 ; 'А'
+		STA	$24
+		LDA	#0
+		STA	$25
+		STA	$26
+		JMP	loc_1CAB
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+		LDA	#0
+		STA	$1F
+		LDA	unk_1FA8,X
+		CLC
+		ADC	unk_1FAB,X
+		STA	$20
+
+loc_1D5D:				; CODE XREF: RAM:1D6Aj
+		JSR	loc_1D7A
+		DEC	$20
+		LDA	$20
+		SEC
+		SBC	unk_1FA8,X
+		CMP	#$FF
+		BNE	loc_1D5D
+		LDA	unk_1FA8,X
+		STA	$20
+		JMP	loc_1CAB
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+		JSR	loc_1D7A
+		JMP	loc_1CAB
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+
+loc_1D7A:				; CODE XREF: RAM:loc_1D5Dp RAM:1D74p
+		LDY	$20
+		LDA	#$28 ; '('
+		JSR	sub_1FE9
+		CLC
+		ADC	#0
+		STA	loc_1D91+1
+		LDA	3
+		ADC	#4
+		STA	loc_1D91+2
+		LDY	#$27 ; '''
+		TXA
+
+loc_1D91:				; CODE XREF: RAM:1D95j
+					; DATA XREF: RAM:1D84w	...
+		STA	$FFFF,Y
+		DEY
+		BPL	loc_1D91
+		LDX	$23
+		RTS
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+		BIT	$24
+		BMI	loc_1DBD
+		LDA	#$28 ; '('
+		LDY	$20
+		JSR	sub_1FE9
+		CLC
+		LDA	2
+		ADC	#0
+		STA	9
+		LDA	3
+		ADC	#4
+		STA	$A
+		LDY	$1F
+		LDA	#$20 ; ' '
+
+loc_1DB6:				; CODE XREF: RAM:1DBBj
+		STA	(9),Y
+		INY
+		CPY	#$28 ; '('
+		BCC	loc_1DB6
+
+loc_1DBD:				; CODE XREF: RAM:1D9Cj
+		JMP	loc_1CAB
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+		LDA	#0
+		STA	$21
+		STA	$24
+		JMP	loc_1CAB
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+		JSR	sub_1F26
+
+loc_1DCC:				; CODE XREF: RAM:1DD4j
+		LDA	($18),Y
+		STA	$29,Y
+		INY
+		CPY	#4
+		BCC	loc_1DCC
+		JMP	loc_1DF9
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+		JSR	sub_1F26
+		STY	$29
+		STY	$2A
+		LDA	($18),Y
+		STA	$2B
+		INY
+		LDA	($18),Y
+		STA	$2C
+		JMP	loc_1DF9
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+		JSR	sub_1F26
+		STY	$29
+		STY	$2A
+		STY	$2B
+		LDA	($18),Y
+		STA	$2C
+
+loc_1DF9:				; CODE XREF: RAM:1DD6j	RAM:1DE9j
+		JSR	sub_1F31
+		STA	$2D
+		SED
+		LDA	#0
+		LDX	#3
+
+loc_1E03:				; CODE XREF: RAM:1E06j
+		STA	2,X
+		DEX
+		BPL	loc_1E03
+		LDX	#$1F
+
+loc_1E0A:				; CODE XREF: RAM:1E2Dj
+		ASL	$2C
+		ROL	$2B
+		ROL	$2A
+		ROL	$29
+		LDA	5
+		ADC	5
+		STA	5
+		LDA	4
+		ADC	4
+		STA	4
+		LDA	3
+		ADC	3
+		STA	3
+		LDA	2
+		ADC	2
+		STA	2
+		BCS	loc_1E7E
+		DEX
+		BPL	loc_1E0A
+		CLD
+		LDX	#0
+		LDY	#0
+
+loc_1E34:				; CODE XREF: RAM:1E3Aj
+		JSR	sub_1E8B
+		INX
+		CPX	#4
+		BCC	loc_1E34
+		LDX	#0
+		LDY	#8
+
+loc_1E40:				; CODE XREF: RAM:1E47j
+		LDA	unk_18CA,X
+		BNE	loc_1E4B
+		INX
+		DEY
+		BNE	loc_1E40
+		DEX
+		INY
+
+loc_1E4B:				; CODE XREF: RAM:1E43j
+		SEC
+		LDA	$2D
+		SBC	unk_1FAE,Y
+		BCC	loc_1E7E
+		STA	$2D
+		LDA	unk_1FB7,X
+		TAY
+
+loc_1E59:				; CODE XREF: RAM:1E6Fj
+		LDA	unk_18CA,X
+		ORA	#$30 ; '0'
+		JSR	loc_1F3C
+		DEY
+		BNE	loc_1E6C
+		LDA	#$2C ; ','
+		JSR	loc_1F3C
+		LDY	$1FB8,X
+
+loc_1E6C:				; CODE XREF: RAM:1E62j
+		INX
+		CPX	#8
+		BCC	loc_1E59
+		BIT	byte_18FE
+		BMI	loc_1E88
+		LDA	$2D
+		BEQ	loc_1E88
+		LDA	#$20 ; ' '
+		BNE	loc_1E81
+
+loc_1E7E:				; CODE XREF: RAM:1E2Aj	RAM:1E51j
+		CLD
+		LDA	#$21 ; '!'
+
+loc_1E81:				; CODE XREF: RAM:1E7Cj	RAM:1E86j
+		JSR	loc_1F3C
+		DEC	$2D
+		BNE	loc_1E81
+
+loc_1E88:				; CODE XREF: RAM:1E74j	RAM:1E78j
+		JMP	loc_1CAB
+
+; ЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫ S U B	R O U T	I N E ЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫ
+
+
+sub_1E8B:				; CODE XREF: RAM:loc_1E34p
+		LDA	2,X
+		LSR	A
+		LSR	A
+		LSR	A
+		LSR	A
+		JSR	sub_1E98
+		LDA	2,X
+		AND	#$F
+; End of function sub_1E8B
+
+
+; ЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫ S U B	R O U T	I N E ЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫ
+
+
+sub_1E98:				; CODE XREF: sub_1E8B+6p
+		STA	$18CA,Y
+		INY
+		RTS
+; End of function sub_1E98
+
+
+; ЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫ S U B	R O U T	I N E ЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫ
+
+
+sub_1E9D:				; CODE XREF: RAM:1CF8p
+		PHA
+		LSR	A
+		LSR	A
+		LSR	A
+		LSR	A
+		JSR	sub_1EA8
+		PLA
+		AND	#$F
+; End of function sub_1E9D
+
+
+; ЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫ S U B	R O U T	I N E ЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫ
+
+
+sub_1EA8:				; CODE XREF: sub_1E9D+5p
+		CLC
+		ADC	#$30 ; '0'
+		CMP	#$3A ; ':'
+		BCC	loc_1EB1
+		ADC	#6
+
+loc_1EB1:				; CODE XREF: sub_1EA8+5j
+		JMP	loc_1F3C
+; End of function sub_1EA8
+
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+		JSR	sub_1F26
+		JSR	sub_1F31
+		STA	$2D
+		JMP	loc_1ED4
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+		JSR	sub_1F26
+		JSR	sub_1F31
+		STA	$2D
+		LDA	($18),Y
+		PHA
+		INY
+		LDA	($18),Y
+		STA	$19
+		PLA
+		STA	$18
+		LDY	#0
+
+loc_1ED4:				; CODE XREF: RAM:1EBCj	RAM:1EDEj
+		LDA	($18),Y
+		BEQ	loc_1EE0
+		JSR	loc_1F3C
+		INY
+		CPY	$2D
+		BCC	loc_1ED4
+
+loc_1EE0:				; CODE XREF: RAM:1ED6j
+		JMP	loc_1CAB
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+		JSR	sub_1F26
+		LDA	$16
+		STA	byte_1F24
+		LDA	$17
+		STA	byte_1F25
+		LDA	$18
+		STA	$16
+		LDA	$19
+		STA	$17
+		JMP	loc_1CAB
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+		JSR	sub_1F26
+		LDA	$16
+		STA	byte_1F24
+		LDA	$17
+		STA	byte_1F25
+		LDY	#0
+		LDA	($18),Y
+		STA	$16
+		INY
+		LDA	($18),Y
+		STA	$17
+		JMP	loc_1CAB
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+		LDA	byte_1F24
+		STA	$16
+		LDA	byte_1F25
+		STA	$17
+		JMP	loc_1CAB
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+byte_1F23:	.BYTE 0			; DATA XREF: RAM:1D0Cw	RAM:1D23w ...
+byte_1F24:	.BYTE 0			; DATA XREF: RAM:1EE8w	RAM:1F00w ...
+byte_1F25:	.BYTE 0			; DATA XREF: RAM:1EEDw	RAM:1F05w ...
+
+; ЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫ S U B	R O U T	I N E ЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫ
+
+
+sub_1F26:				; CODE XREF: RAM:1CF3p	RAM:1CFEp ...
+		JSR	sub_1F31
+		STA	$18
+		JSR	sub_1F31
+		STA	$19
+		RTS
+; End of function sub_1F26
+
+
+; ЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫ S U B	R O U T	I N E ЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫ
+
+
+sub_1F31:				; CODE XREF: sub_1C88:loc_1CABp
+					; RAM:1D2Ap ...
+		LDY	#0
+		LDA	($16),Y
+		INC	$16
+		BNE	locret_1F3B
+		INC	$17
+
+locret_1F3B:				; CODE XREF: sub_1F31+6j
+		RTS
+; End of function sub_1F31
+
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+
+loc_1F3C:				; CODE XREF: sub_1C88+2Ap RAM:1E5Ep ...
+		BIT	$24
+		BMI	loc_1F4E
+		BIT	$26
+		BPL	loc_1F4B
+		CMP	#$D
+		BNE	loc_1F4B
+		STA	$26
+		RTS
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+
+loc_1F4B:				; CODE XREF: RAM:1F42j	RAM:1F46j
+		JMP	sub_1C2C
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+
+loc_1F4E:				; CODE XREF: RAM:1F3Ej
+		CMP	#$D
+		BEQ	loc_1F55
+		INC	$25
+		RTS
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+
+loc_1F55:				; CODE XREF: RAM:1F50j
+		LDA	#0
+		BIT	$24
+		STA	$24
+		BVC	loc_1F7D
+		LDA	#$28 ; '('
+		SEC
+		SBC	$25
+		CMP	#$28 ; '('
+		BCC	loc_1F68
+		LDA	#0
+
+loc_1F68:				; CODE XREF: RAM:1F64j
+		STA	$1F
+		BNE	loc_1F70
+
+loc_1F6C:				; CODE XREF: RAM:1FA4j
+		LDA	#$80 ; 'Ђ'
+		STA	$26
+
+loc_1F70:				; CODE XREF: RAM:1F6Aj	RAM:1FA6j
+		PLA
+		PLA
+		LDA	$27
+		STA	$16
+		LDA	$28
+		STA	$17
+		JMP	loc_1CAB
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+
+loc_1F7D:				; CODE XREF: RAM:1F5Bj
+		LDA	#$28 ; '('
+		SEC
+		SBC	$25
+		LSR	A
+		BPL	loc_1F87
+		LDA	#0
+
+loc_1F87:				; CODE XREF: RAM:1F83j
+		STA	loc_1F9A+1
+		BIT	byte_1F23
+		BPL	loc_1F9E
+		LDA	#0
+		STA	$1F
+
+loc_1F93:				; CODE XREF: RAM:1F9Cj
+		LDA	#$20 ; ' '
+		JSR	sub_1C2C
+		LDA	$1F
+
+loc_1F9A:				; DATA XREF: RAM:loc_1F87w
+		CMP	#$FF
+		BNE	loc_1F93
+
+loc_1F9E:				; CODE XREF: RAM:1F8Dj
+		STA	$1F
+		LDA	$25
+		CMP	#$28 ; '('
+		BEQ	loc_1F6C
+		BNE	loc_1F70
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+unk_1FA8:	.BYTE	0		; DATA XREF: sub_1C88+11r sub_1C88+53r ...
+		.BYTE  $F
+		.BYTE	0
+unk_1FAB:	.BYTE	5		; DATA XREF: RAM:1D58r
+		.BYTE	7
+		.BYTE $18
+unk_1FAE:	.BYTE	1		; DATA XREF: RAM:1E4Er
+		.BYTE	1
+		.BYTE	2
+		.BYTE	3
+		.BYTE	5
+		.BYTE	6
+		.BYTE	7
+		.BYTE	9
+		.BYTE  $A
+unk_1FB7:	.BYTE	2		; DATA XREF: RAM:1E55r
+		.BYTE	1
+		.BYTE	3
+		.BYTE	2
+		.BYTE	1
+		.BYTE	9
+		.BYTE	9
+		.BYTE	9
+unk_1FBF:	.BYTE $E6 ; ж		; DATA XREF: sub_1C88+42r
+		.BYTE $EC ; м
+		.BYTE $20
+		.BYTE $FD ; э
+		.BYTE $F2 ; т
+		.BYTE	9
+		.BYTE $29 ; )
+		.BYTE $3A ; :
+		.BYTE $4F ; O
+		.BYTE $73 ; s
+		.BYTE $BF ; ї
+		.BYTE $99 ; ™
+		.BYTE $E2 ; в
+		.BYTE $FA ; ъ
+		.BYTE $15
+		.BYTE $CE ; О
+		.BYTE $C8 ; И
+		.BYTE $D8 ; Ш
+		.BYTE $EB ; л
+		.BYTE $B3 ; і
+		.BYTE $BE ; ѕ
+unk_1FD4:	.BYTE $1C		; DATA XREF: sub_1C88+3Er
+		.BYTE $1C
+		.BYTE $1D
+		.BYTE $1C
+		.BYTE $1C
+		.BYTE $1D
+		.BYTE $1D
+		.BYTE $1D
+		.BYTE $1D
+		.BYTE $1D
+		.BYTE $1D
+		.BYTE $1D
+		.BYTE $1E
+		.BYTE $1E
+		.BYTE $1F
+		.BYTE $1C
+		.BYTE $1D
+		.BYTE $1D
+		.BYTE $1D
+		.BYTE $1E
+		.BYTE $1E
+
+; ЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫ S U B	R O U T	I N E ЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫ
+
+
+sub_1FE9:				; CODE XREF: RAM:1D7Ep	RAM:1DA2p
+		STA	4
+		STY	5
+		LDA	#0
+		STA	3
+		LDX	#8
+
+loc_1FF3:				; CODE XREF: sub_1FE9+19j
+		ASL	A
+		ROL	3
+		ASL	5
+		BCC	loc_2001
+		CLC
+		ADC	4
+		BCC	loc_2001
+		INC	3
+
+loc_2001:				; CODE XREF: sub_1FE9+Fj sub_1FE9+14j
+		DEX
+		BNE	loc_1FF3
+		STA	2
+		RTS
+; End of function sub_1FE9
+
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+		.BYTE $A8,$FF
+
+; ЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫ S U B	R O U T	I N E ЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫ
+
+
+sub_2009:				; CODE XREF: sub_20F7+Dp
+		LDA	#7
+		AND	$237
+		ORA	#$20 ; ' '
+		STA	$237
+		STA	$D20F
+		LDA	#$C7 ; 'З'
+		AND	$236
+		ORA	#$10
+
+loc_201D:				; CODE XREF: sub_21B7+17j
+		STA	$236
+		STA	$D20E
+		LDA	#$28 ; '('
+		STA	$D208
+		LDA	#$A0 ; ' '
+		STA	$D207,X
+		STA	$D205
+		STA	$D203
+		STA	$D201
+		RTS
+; End of function sub_2009
+
+
+; ЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫ S U B	R O U T	I N E ЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫ
+
+
+sub_2037:				; CODE XREF: sub_248E:loc_20EDp
+					; sub_20F7+28p
+		LDA	#$C7 ; 'З'
+		AND	$236
+		STA	$236
+		STA	$D20E
+		LDX	#6
+		LDA	#0
+
+loc_2046:				; CODE XREF: sub_2037+14j
+		STA	$D201,X
+		DEX
+		DEX
+		BPL	loc_2046
+		RTS
+; End of function sub_2037
+
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+; START	OF FUNCTION CHUNK FOR sub_248E
+
+loc_204E:				; CODE XREF: sub_248E+12j
+		LDA	#1
+		STA	$23F
+
+loc_2053:				; CODE XREF: sub_248E-3A4j
+		LDA	#$D
+		STA	$23E
+
+loc_2058:				; CODE XREF: sub_248E-3FCj
+		LDX	#3
+
+loc_205A:				; CODE XREF: sub_248E-42Dj
+		LDA	$230,X
+		STA	$266,X
+		DEX
+		BPL	loc_205A
+		LDA	#$28 ; '('
+		STA	$D204
+		LDA	#0
+		STA	$D206
+		CLC
+		CLC
+		LDA	#$66 ; 'f'
+		STA	0
+		ADC	#4
+		STA	$23A
+		LDA	#2
+		STA	1
+		STA	$23B
+		LDA	#$34 ; '4'
+		STA	$D303
+		JSR	sub_20F7
+		LDA	$257
+		BNE	loc_208F
+		TYA
+		BNE	loc_2097
+
+loc_208F:				; CODE XREF: sub_248E-404j
+					; sub_248E-3E7j
+		DEC	$23E
+		BPL	loc_2058
+		JMP	loc_20E5
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+
+loc_2097:				; CODE XREF: sub_248E-401j
+		LDA	$246
+		BPL	loc_20A9
+		LDA	#$D
+		STA	$23E
+		JSR	sub_21D1
+		JSR	sub_20F7
+		BEQ	loc_208F
+
+loc_20A9:				; CODE XREF: sub_248E-3F4j
+		LDA	$247
+		ROR	A
+		ROR	A
+		TAY
+		AND	#$3F ; '?'
+		TAX
+		TYA
+		ROR	A
+		AND	#$C0 ; 'А'
+		TAY
+		LDA	#0
+		STA	$257
+		JSR	sub_2126
+		BEQ	loc_20D3
+		BIT	$246
+		BVS	loc_20CD
+		LDA	$257
+		BNE	loc_20E5
+		BEQ	loc_20ED
+
+loc_20CD:				; CODE XREF: sub_248E-3CAj
+		JSR	sub_21D1
+		JSR	sub_218E
+
+loc_20D3:				; CODE XREF: sub_248E-3CFj
+		LDA	$257
+		BEQ	loc_20DE
+		LDA	$238
+		STA	$23D
+
+loc_20DE:				; CODE XREF: sub_248E-3B8j
+		LDA	$23D
+		CMP	#1
+		BEQ	loc_20ED
+
+loc_20E5:				; CODE XREF: sub_248E-3FAj
+					; sub_248E-3C5j
+		DEC	$23F
+		BMI	loc_20ED
+		JMP	loc_2053
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+
+loc_20ED:				; CODE XREF: sub_248E-3C3j
+					; sub_248E-3ABj ...
+		JSR	sub_2037
+		LDY	$23D
+		STY	$246
+		RTS
+; END OF FUNCTION CHUNK	FOR sub_248E
+
+; ЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫ S U B	R O U T	I N E ЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫ
+
+
+sub_20F7:				; CODE XREF: sub_248E-40Ap
+					; sub_248E-3EAp
+		LDX	#0
+
+loc_20F9:				; CODE XREF: sub_20F7+3j
+		DEX
+		BNE	loc_20F9
+
+loc_20FC:				; CODE XREF: sub_20F7+6j
+		DEX
+		BNE	loc_20FC
+		LDA	#1
+		STA	$23D
+		JSR	sub_2009
+		LDY	#0
+		STY	$23C
+		STY	$243
+		STY	$241
+		LDA	(0),Y
+		STA	$D20D
+		STA	$23C
+
+loc_211A:				; CODE XREF: sub_20F7+26j
+		LDA	$241
+		BEQ	loc_211A
+		JSR	sub_2037
+		LDY	#2
+		LDX	#0
+; End of function sub_20F7
+
+
+; ЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫ S U B	R O U T	I N E ЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫ
+
+
+sub_2126:				; CODE XREF: sub_248E-3D2p
+		LDA	#0
+		STA	$239
+		STY	$24C
+		STX	$24D
+		INC	$239
+		LDA	#0
+		STA	$257
+		CLC
+		LDA	#$70 ; 'p'
+		STA	0
+		ADC	#1
+		STA	$23A
+		LDA	#2
+		STA	1
+		STA	$23B
+		LDA	#$FF
+		STA	$245
+		JSR	sub_218E
+		LDY	#$FF
+		LDA	$23D
+		CMP	#1
+		BNE	loc_2176
+		LDA	$270
+		CMP	#'A'
+		BEQ	loc_2186
+		CMP	#'C'
+		BEQ	loc_2186
+		CMP	#'E'
+		BNE	loc_2171
+		LDA	#$90 ; 'ђ'
+		STA	$23D
+		BNE	loc_2176
+
+loc_2171:				; CODE XREF: sub_2126+42j
+		LDA	#$8B ; '‹'
+		STA	$23D
+
+loc_2176:				; CODE XREF: sub_2126+33j sub_2126+49j
+		LDA	$23D
+		CMP	#$8A ; 'Љ'
+		BEQ	loc_2184
+		LDA	#$FF
+		STA	$257
+		BNE	loc_2186
+
+loc_2184:				; CODE XREF: sub_2126+55j
+		LDY	#0
+
+loc_2186:				; CODE XREF: sub_2126+3Aj sub_2126+3Ej ...
+		LDA	$23D
+		STA	$238
+		TYA
+		RTS
+; End of function sub_2126
+
+
+; ЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫ S U B	R O U T	I N E ЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫ
+
+
+sub_218E:				; CODE XREF: sub_248E-3BEp
+					; sub_2126+29p
+		LDA	#0
+		STA	$23C
+		STA	$242
+		STA	$240
+		LDA	#1
+		STA	$23D
+		JSR	sub_21B7
+		LDA	#$3C ; '<'
+		STA	$D303
+
+loc_21A6:				; CODE XREF: sub_218E+20j
+		LDA	$239
+		BEQ	loc_21B1
+		LDA	$240
+		BEQ	loc_21A6
+		RTS
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+
+loc_21B1:				; CODE XREF: sub_218E+1Bj
+		LDA	#$8A ; 'Љ'
+		STA	$23D
+		RTS
+; End of function sub_218E
+
+
+; ЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫ S U B	R O U T	I N E ЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫ
+
+
+sub_21B7:				; CODE XREF: sub_218E+10p
+		LDA	#7
+		AND	$237
+		ORA	#$10
+		STA	$237
+		STA	$D20F
+		STA	$D20A
+		LDA	#$C7 ; 'З'
+		AND	$236
+		ORA	#$20 ; ' '
+		JMP	loc_201D
+; End of function sub_21B7
+
+
+; ЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫ S U B	R O U T	I N E ЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫ
+
+
+sub_21D1:				; CODE XREF: sub_248E-3EDp
+					; sub_248E:loc_20CDp
+		CLC
+		LDA	#0
+		STA	0
+		ADC	$234
+		STA	$23A
+		LDA	#1
+		STA	1
+		ADC	$235
+		STA	$23B
+		RTS
+; End of function sub_21D1
+
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+		TYA
+		PHA
+		LDA	$D20F
+		STA	$D20A
+		BMI	loc_21F6
+		LDY	#$8C ; 'Њ'
+		STY	$23D
+
+loc_21F6:				; CODE XREF: RAM:21EFj
+		AND	#$20 ; ' '
+		BNE	loc_21FF
+		LDY	#$8E ; 'Ћ'
+		STY	$23D
+
+loc_21FF:				; CODE XREF: RAM:21F8j
+		LDA	$242
+		BEQ	loc_221A
+		LDA	$D20D
+		CMP	$23C
+		BEQ	loc_2211
+		LDY	#$8F ; 'Џ'
+		STY	$23D
+
+loc_2211:				; CODE XREF: RAM:220Aj	RAM:2246j
+		LDA	#$FF
+		STA	$240
+
+loc_2216:				; CODE XREF: RAM:223Aj	RAM:224Dj
+		PLA
+		TAY
+		PLA
+		RTI
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+
+loc_221A:				; CODE XREF: RAM:2202j
+		LDA	$D20D
+		LDY	#0
+		STA	(0),Y
+		CLC
+		ADC	$23C
+		ADC	#0
+		STA	$23C
+		INC	0
+		BNE	loc_2230
+		INC	1
+
+loc_2230:				; CODE XREF: RAM:222Cj
+		LDA	0
+		CMP	$23A
+		LDA	1
+		SBC	$23B
+		BCC	loc_2216
+		LDA	$245
+		BEQ	loc_2248
+		LDA	#0
+		STA	$245
+		BEQ	loc_2211
+
+loc_2248:				; CODE XREF: RAM:223Fj
+		LDA	#$FF
+		STA	$242
+		BNE	loc_2216
+		TYA
+		PHA
+		INC	0
+		BNE	loc_2257
+		INC	1
+
+loc_2257:				; CODE XREF: RAM:2253j
+		LDA	0
+		CMP	$23A
+		LDA	1
+		SBC	$23B
+		BCC	loc_2284
+		LDA	$243
+		BNE	loc_2275
+		LDA	$23C
+		STA	$D20D
+		LDA	#$FF
+		STA	$243
+		BNE	loc_2280
+
+loc_2275:				; CODE XREF: RAM:2266j
+		LDA	$236
+		ORA	#8
+		STA	$236
+		STA	$D20E
+
+loc_2280:				; CODE XREF: RAM:2273j	RAM:2294j
+		PLA
+		TAY
+		PLA
+		RTI
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+
+loc_2284:				; CODE XREF: RAM:2261j
+		LDY	#0
+		LDA	(0),Y
+		STA	$D20D
+		CLC
+		ADC	$23C
+		ADC	#0
+		STA	$23C
+		JMP	loc_2280
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+		LDA	$243
+		BEQ	loc_22AA
+		STA	$241
+		LDA	$236
+		AND	#$F7 ; 'ч'
+		STA	$236
+		STA	$D20E
+
+loc_22AA:				; CODE XREF: RAM:229Aj
+		PLA
+		RTI
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+		PHA
+		LDA	$D20E
+		AND	#$20 ; ' '
+		BNE	loc_22C2
+		LDA	#$DF ; 'Я'
+		STA	$D20E
+		LDA	$236
+		STA	$D20E
+		JMP	($20A)
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+
+loc_22C2:				; CODE XREF: RAM:22B2j
+		TXA
+		PHA
+		LDX	#2
+
+loc_22C6:				; CODE XREF: RAM:22D8j
+		LDA	unk_2301,X
+		CPX	#1
+		BNE	loc_22D2
+		AND	$236
+		BEQ	loc_22D7
+
+loc_22D2:				; CODE XREF: RAM:22CBj
+		BIT	$D20E
+		BEQ	loc_22DC
+
+loc_22D7:				; CODE XREF: RAM:22D0j
+		DEX
+		BPL	loc_22C6
+		BMI	loc_22F7
+
+loc_22DC:				; CODE XREF: RAM:22D5j
+		EOR	#$FF
+		STA	$D20E
+		LDA	$236
+		STA	$D20E
+		LDA	unk_2304,X
+		STA	loc_22F4+1
+		LDA	#2
+		STA	loc_22F4+2
+		PLA
+		TAX
+
+loc_22F4:				; DATA XREF: RAM:22EAw	RAM:22EFw
+		.BYTE	$6C		; bytes for JMP ($FFFF)
+		.WORD	$FFFF		; to prevent assembler warning
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+
+loc_22F7:				; CODE XREF: RAM:22DAj
+		PLA
+		TAX
+		LDA	$D300
+		LDA	$D301
+		PLA
+		RTI
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+unk_2301:	.BYTE $40 ; @		; DATA XREF: RAM:loc_22C6r
+		.BYTE	8
+		.BYTE $10
+unk_2304:	.BYTE	8		; DATA XREF: RAM:22E7r
+		.BYTE  $E
+		.BYTE  $C
+unk_2307:	.BYTE $22 ; "		; DATA XREF: RAM:234Er
+		.BYTE $22 ; "
+		.BYTE $2E ; .
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+
+loc_230A:				; CODE XREF: RAM:235Ej
+		LDA	#$F5 ; 'х'
+		STA	$D402
+		LDA	#$19
+		STA	$D403
+		LDA	#$40 ; '@'
+		STA	$D40E
+		LDA	#$21 ; '!'
+		STA	$D400
+		LDA	$239
+		BEQ	loc_2344
+		LDA	$24C
+		ORA	$24D
+		BEQ	loc_2344
+		SEC
+		LDA	$24C
+		SBC	#1
+		STA	$24C
+		LDA	$24D
+		SBC	#0
+		STA	$24D
+		ORA	$24C
+		BNE	loc_2344
+		STA	$239
+
+loc_2344:				; CODE XREF: RAM:2321j	RAM:2329j ...
+		JMP	loc_244B
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+		CLD
+		INC	$252
+		LDX	byte_18B9
+		LDA	unk_2307,X
+		STA	$D400
+		LDA	#$14
+		STA	$D409
+		LDA	$253
+		BEQ	loc_236F
+		BMI	loc_230A
+		DEC	$253
+		LDA	#$A
+		STA	$D402
+		LDA	#$1A
+		STA	$D403
+		BNE	loc_2344
+
+loc_236F:				; CODE XREF: RAM:235Cj
+		LDA	$254
+		STA	$D402
+		LDA	$255
+		STA	$D403
+		LDA	$248
+		STA	$200
+		LDA	$249
+		STA	$201
+		LDA	#$C0 ; 'А'
+		STA	$D40E
+		LDA	$256
+		BEQ	loc_2394
+		JMP	loc_244B
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+
+loc_2394:				; CODE XREF: RAM:238Fj
+		INC	$256
+		LDX	byte_18B9
+		DEX
+		BNE	loc_23A1
+		DEX
+		STX	$D011
+
+loc_23A1:				; CODE XREF: RAM:239Bj
+		LDX	#5
+
+loc_23A3:				; CODE XREF: RAM:23AAj
+		LDA	unk_1C1C,X
+		STA	$D015,X
+		DEX
+		BNE	loc_23A3
+		STX	byte_18B8
+		STX	byte_18B7
+		LDX	byte_18B9
+		BNE	loc_23BA
+		STX	$D018
+
+loc_23BA:				; CODE XREF: RAM:23B5j
+		JSR	sub_267A
+		LDX	$32
+		BMI	loc_242E
+		BIT	byte_1955
+		BPL	loc_23C9
+		JSR	loc_24E5
+
+loc_23C9:				; CODE XREF: RAM:23C4j
+		INC	$33
+		LDA	$33
+		CMP	#4
+		BCC	loc_242E
+		STX	$33
+		BIT	byte_1955
+		BMI	loc_23EF
+		DEC	byte_24FF
+		BPL	loc_23E5
+		LDA	#2
+		STA	byte_24FF
+		JSR	loc_24E5
+
+loc_23E5:				; CODE XREF: RAM:23DBj
+		INC	$34
+		LDA	$34
+		CMP	#$3C ; '<'
+		BCC	loc_242E
+		STX	$34
+
+loc_23EF:				; CODE XREF: RAM:23D6j
+		LDA	$50
+		BNE	loc_23F6
+		INC	byte_1962
+
+loc_23F6:				; CODE XREF: RAM:23F1j
+		STX	$50
+		STX	$50
+		INC	$35
+		LDA	$35
+		CMP	#$3C ; '<'
+		BCC	loc_242E
+		STX	$35
+		INC	$36
+		LDA	$36
+		CMP	#$18
+		BCC	loc_242E
+		STX	$36
+		INC	$3B
+		BNE	loc_2414
+		INC	$3C
+
+loc_2414:				; CODE XREF: RAM:2410j
+		INC	$37
+		LDA	$37
+		CMP	#$1E
+		BCC	loc_242E
+		STX	$37
+		INC	$38
+		LDA	$38
+		CMP	#$C
+		BCC	loc_242E
+		STX	$38
+		INC	$3A
+		BNE	loc_242E
+		INC	$39
+
+loc_242E:				; CODE XREF: RAM:23BFj	RAM:23CFj ...
+		LDX	#0
+		LDA	$252
+		AND	#$3F ; '?'
+		CMP	#8
+		BCS	loc_243A
+		INX
+
+loc_243A:				; CODE XREF: RAM:2437j
+		STX	$D401
+		LDA	$22F
+		BPL	loc_2445
+		JSR	sub_2451
+
+loc_2445:				; CODE XREF: RAM:2440j
+		JSR	sub_2503
+		DEC	$256
+
+loc_244B:				; CODE XREF: RAM:loc_2344j RAM:2391j
+		PLA
+		TAY
+		PLA
+		TAX
+		PLA
+		RTI
+
+; ЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫ S U B	R O U T	I N E ЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫ
+
+
+sub_2451:				; CODE XREF: RAM:2442p
+		JMP	($224)
+; End of function sub_2451
+
+
+; ЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫ S U B	R O U T	I N E ЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫ
+
+
+sub_2454:				; CODE XREF: sub_1A0D+11p sub_245D+12p
+		LDA	$252
+
+loc_2457:				; CODE XREF: sub_2454+6j
+		CMP	$252
+		BEQ	loc_2457
+		RTS
+; End of function sub_2454
+
+
+; ЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫ S U B	R O U T	I N E ЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫ
+
+
+sub_245D:				; CODE XREF: RAM:1827j	sub_275B+3p
+		LDA	#7
+		STA	$237
+		LDA	#$80 ; 'Ђ'
+		STA	$253
+		LDX	#0
+		STX	$236
+		STX	$D20E
+		JSR	sub_2454
+		STX	$D01A
+		STX	$D018
+		TXA
+		STA	byte_199C
+		LDX	#3
+
+loc_247E:				; CODE XREF: sub_245D+2Bj
+		STA	$D00D,X
+		STA	$D200,X
+		STA	$D204,X
+		DEX
+		BPL	loc_247E
+		STX	$D017
+		RTS
+; End of function sub_245D
+
+
+; ЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫ S U B	R O U T	I N E ЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫ
+
+
+sub_248E:				; CODE XREF: RAM:182Dj
+					; sub_2979:loc_298Ap
+
+; FUNCTION CHUNK AT 204E SIZE 000000A9 BYTES
+
+		LDA	#$52 ; 'R'
+		LDX	#$40 ; '@'
+		LDY	#3
+
+loc_2494:				; CODE XREF: RAM:1833j	RAM:24B6p
+		STA	$231
+		STY	$247
+		STX	$23D
+		STX	$246
+		JMP	loc_204E
+; End of function sub_248E
+
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+		LDA	#0
+		STA	$100
+		STA	$235
+		LDA	#4
+		STA	$234
+		LDA	#$53 ; 'S'
+		LDX	#$40 ; '@'
+		LDY	#3
+		JSR	loc_2494
+		PHP
+		LDA	#$80 ; 'Ђ'
+		STA	$234
+		LDA	#0
+		STA	$235
+		PLP
+		RTS
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+; START	OF FUNCTION CHUNK FOR sub_275B
+
+loc_24C6:				; CODE XREF: RAM:1830j
+					; sub_275B:loc_2782j ...
+		PHP
+		LDA	#$40 ; '@'
+		STA	$236
+		STA	$D20E
+		LDA	#3
+		STA	$D20F
+		LDA	#0
+		STA	$D208
+		LDA	#1
+		STA	$253
+
+loc_24DE:				; CODE XREF: sub_275B-27Aj
+		LDA	$253
+		BNE	loc_24DE
+		PLP
+		RTS
+; END OF FUNCTION CHUNK	FOR sub_275B
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+
+loc_24E5:				; CODE XREF: RAM:23C6p	RAM:23E2p
+		LDA	$453
+		CMP	#$7B ; '{'
+		BCC	locret_24FA
+		INC	loc_24EF+1
+
+loc_24EF:				; DATA XREF: RAM:24ECw
+		LDA	#$FF
+		AND	#3
+		TAX
+		LDA	unk_24FB,X
+		STA	$453
+
+locret_24FA:				; CODE XREF: RAM:24EAj
+		RTS
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+unk_24FB:	.BYTE $7B ; {		; DATA XREF: RAM:24F4r
+		.BYTE $7C ; |
+		.BYTE $7D ; }
+		.BYTE $7E ; ~
+byte_24FF:	.BYTE 2			; DATA XREF: RAM:23D8w	RAM:23DFw
+		.BYTE	0
+		.BYTE	0
+		.BYTE	0
+
+; ЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫ S U B	R O U T	I N E ЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫ
+
+
+sub_2503:				; CODE XREF: RAM:loc_2445p
+		LDA	byte_199C
+		BMI	loc_250B
+		JMP	loc_254F
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+
+loc_250B:				; CODE XREF: sub_2503+3j
+		AND	#$7F ; ''
+		TAX
+		LDA	#0
+		LDY	#8
+		STA	byte_199C
+
+loc_2515:				; CODE XREF: sub_2503+16j
+		STA	$D200,Y
+		DEY
+		BPL	loc_2515
+		LDA	unk_2623,X
+		STA	$F0
+		LDA	unk_2629,X
+		STA	$F1
+		LDA	unk_2617,X
+		STA	$F2
+		LDA	unk_261D,X
+		STA	$F3
+		LDA	#1
+		STA	byte_25BE
+		LDA	#4
+		STA	byte_25BF
+		LDA	unk_2611,X
+		STA	byte_25C0
+		STA	byte_25C1
+		STX	byte_25C3
+		LDY	unk_25E5,X
+		STY	$D208
+		STA	byte_199C
+		RTS
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+
+loc_254F:				; CODE XREF: sub_2503+5j
+		BNE	loc_2552
+
+locret_2551:				; CODE XREF: sub_2503+58j
+		RTS
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+
+loc_2552:				; CODE XREF: sub_2503:loc_254Fj
+		LDA	byte_25C0
+		ORA	byte_25C1
+		STA	byte_199C
+		BEQ	locret_2551
+		LDA	#1
+		STA	byte_25C4
+
+loc_2562:				; CODE XREF: sub_2503+65j
+		JSR	sub_256B
+		DEC	byte_25C4
+		BPL	loc_2562
+		RTS
+; End of function sub_2503
+
+
+; ЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫ S U B	R O U T	I N E ЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫ
+
+
+sub_256B:				; CODE XREF: sub_2503:loc_2562p
+		LDX	byte_25C4
+		DEC	byte_25BE,X
+		BNE	loc_25AB
+		DEC	byte_25C0,X
+		BEQ	locret_25AA
+		LDY	byte_25C0,X
+		DEY
+		LDA	($F2),Y
+		STA	byte_25BE,X
+		LDA	($F0),Y
+		STA	byte_25C2
+		TXA
+		ASL	A
+		ASL	A
+		TAY
+		LSR	A
+		ADC	byte_25C2
+		STA	$D200,Y
+		CLC
+		ADC	#1
+		STA	$D202,Y
+		LDX	byte_25C3
+		LDA	unk_25EB,X
+		CPY	#0
+		BNE	loc_25A4
+		CLC
+		ADC	#3
+
+loc_25A4:				; CODE XREF: sub_256B+34j
+		STA	$D201,Y
+		STA	$D202,Y
+
+locret_25AA:				; CODE XREF: sub_256B+Bj
+		RTS
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+
+loc_25AB:				; CODE XREF: sub_256B+6j
+		LDA	byte_25BE,X
+		CMP	#1
+		BNE	locret_25BD
+		TXA
+		ASL	A
+		TAX
+		LDA	#0
+		STA	$D201,X
+		STA	$D203,X
+
+locret_25BD:				; CODE XREF: sub_256B+45j
+		RTS
+; End of function sub_256B
+
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+byte_25BE:	.BYTE 0			; DATA XREF: sub_2503+2Ew sub_256B+3w	...
+byte_25BF:	.BYTE 0			; DATA XREF: sub_2503+33w
+byte_25C0:	.BYTE 0			; DATA XREF: sub_2503+39w
+					; sub_2503:loc_2552r ...
+byte_25C1:	.BYTE 0			; DATA XREF: sub_2503+3Cw sub_2503+52r
+byte_25C2:	.BYTE 0			; DATA XREF: sub_256B+18w sub_256B+20r
+byte_25C3:	.BYTE 0			; DATA XREF: sub_2503+3Fw sub_256B+2Cr
+byte_25C4:	.BYTE 0			; DATA XREF: sub_2503+5Cw sub_2503+62w ...
+		.BYTE $CC ; М
+		.BYTE $B6 ; ¶
+		.BYTE $AD ; ­
+		.BYTE $F0 ; р
+		.BYTE $FF
+		.BYTE $EE ; о
+		.BYTE $F8 ; ш
+		.BYTE $88 ; €
+		.BYTE $88 ; €
+		.BYTE $72 ; r
+		.BYTE $99 ; ™
+		.BYTE $88 ; €
+		.BYTE $66 ; f
+		.BYTE $FC ; ь
+		.BYTE $AD ; ­
+		.BYTE $A2 ; ў
+		.BYTE $99 ; ™
+		.BYTE $F3 ; у
+		.BYTE $66 ; f
+		.BYTE $4C ; L
+		.BYTE $4C ; L
+		.BYTE $5B ; [
+		.BYTE $5B ; [
+		.BYTE $5B ; [
+		.BYTE $5B ; [
+		.BYTE $79 ; y
+		.BYTE $90 ; ђ
+		.BYTE $80 ; Ђ
+		.BYTE $79 ; y
+		.BYTE $60 ; `
+		.BYTE $55 ; U
+		.BYTE $60 ; `
+unk_25E5:	.BYTE	0		; DATA XREF: sub_2503+42r
+		.BYTE $40 ; @
+		.BYTE	4
+		.BYTE	7
+		.BYTE	7
+		.BYTE	6
+unk_25EB:	.BYTE $A1 ; Ў		; DATA XREF: sub_256B+2Fr
+		.BYTE	1
+		.BYTE $A1 ; Ў
+		.BYTE $A1 ; Ў
+		.BYTE $A1 ; Ў
+		.BYTE $A1 ; Ў
+		.BYTE $40 ; @
+		.BYTE	8
+		.BYTE	8
+		.BYTE	4
+		.BYTE	1
+		.BYTE	3
+		.BYTE	3
+		.BYTE $10
+		.BYTE	8
+		.BYTE	8
+		.BYTE	6
+		.BYTE	5
+		.BYTE	5
+		.BYTE $50 ; P
+		.BYTE $2F ; /
+		.BYTE	8
+		.BYTE $26 ; &
+		.BYTE $2F ; /
+		.BYTE $61 ; a
+		.BYTE  $C
+		.BYTE  $C
+		.BYTE $17
+		.BYTE  $C
+		.BYTE $17
+		.BYTE  $C
+		.BYTE $20
+		.BYTE $40 ; @
+		.BYTE	8
+		.BYTE	8
+		.BYTE	8
+		.BYTE	8
+		.BYTE	8
+unk_2611:	.BYTE	4		; DATA XREF: sub_2503+36r
+		.BYTE	5
+		.BYTE	7
+		.BYTE	6
+		.BYTE	8
+		.BYTE	8
+unk_2617:	.BYTE $F1 ; с		; DATA XREF: sub_2503+22r
+		.BYTE $F4 ; ф
+		.BYTE $F8 ; ш
+		.BYTE $FE ; ю
+		.BYTE	3
+		.BYTE  $A
+unk_261D:	.BYTE $25 ; %		; DATA XREF: sub_2503+27r
+		.BYTE $25 ; %
+		.BYTE $25 ; %
+		.BYTE $25 ; %
+		.BYTE $26 ; &
+		.BYTE $26 ; &
+unk_2623:	.BYTE $C5 ; Е		; DATA XREF: sub_2503+18r
+		.BYTE $C8 ; И
+		.BYTE $CC ; М
+		.BYTE $D2 ; Т
+		.BYTE $D7 ; Ч
+		.BYTE $DE ; Ю
+unk_2629:	.BYTE $25 ; %		; DATA XREF: sub_2503+1Dr
+		.BYTE $25 ; %
+		.BYTE $25 ; %
+		.BYTE $25 ; %
+		.BYTE $25 ; %
+		.BYTE $25 ; %
+
+; ЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫ S U B	R O U T	I N E ЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫ
+
+
+sub_262F:				; CODE XREF: RAM:1821j
+					; sub_28D7:loc_2908p
+		LDA	$D010
+		LSR	A
+		LDA	$D300
+		AND	#$F
+		BCC	loc_263C
+		ORA	#$80 ; 'Ђ'
+
+loc_263C:				; CODE XREF: sub_262F+9j
+		EOR	#$8F ; 'Џ'
+		ORA	$2F
+		STA	$2E
+		RTS
+; End of function sub_262F
+
+
+; ЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫ S U B	R O U T	I N E ЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫ
+
+
+sub_2643:				; CODE XREF: RAM:181Ej	sub_28D7+36p ...
+		LDA	$30
+		BMI	loc_2650
+		STA	$31
+		ORA	#$80 ; 'Ђ'
+		STA	$30
+		AND	#$7F ; ''
+		RTS
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+
+loc_2650:				; CODE XREF: sub_2643+2j
+		STA	$31
+		RTS
+; End of function sub_2643
+
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+		TXA
+		PHA
+		LDA	$30
+		BPL	loc_2676
+		LDA	byte_18FF
+		BNE	loc_2676
+		LDA	$D20F
+		AND	#$20 ; ' '
+		BEQ	loc_2676
+		LDA	#4
+		STA	byte_18FF
+		LDX	$D209
+		BMI	loc_2676
+		LDA	byte_26D1,X
+		BMI	loc_2676
+		STA	$30
+
+loc_2676:				; CODE XREF: RAM:2657j	RAM:265Cj ...
+		PLA
+		TAX
+		PLA
+		RTI
+
+; ЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫ S U B	R O U T	I N E ЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫ
+
+
+sub_267A:				; CODE XREF: RAM:loc_23BAp
+		LDA	#8
+		STA	$D01F
+		LDA	$30
+		BPL	loc_26A2
+		LDA	$D01F
+		CMP	#7
+		BNE	loc_269F
+		LDA	byte_1900
+		CMP	#7
+		BEQ	loc_269F
+		LDX	#$10
+		LSR	A
+		BCC	loc_269B
+		INX
+		LSR	A
+		BCC	loc_269B
+		INX
+
+loc_269B:				; CODE XREF: sub_267A+1Aj sub_267A+1Ej
+		STX	$30
+		LDA	#7
+
+loc_269F:				; CODE XREF: sub_267A+Ej sub_267A+15j
+		STA	byte_1900
+
+loc_26A2:				; CODE XREF: sub_267A+7j
+		LDY	#0
+		LDA	$D20F
+		AND	#4
+		BNE	loc_26BD
+		LDX	#4
+		LDA	$D209
+
+loc_26B0:				; CODE XREF: sub_267A+3Cj
+		CMP	unk_2751,X
+		BEQ	loc_26BA
+		DEX
+		BPL	loc_26B0
+		BMI	loc_26BD
+
+loc_26BA:				; CODE XREF: sub_267A+39j
+		LDY	unk_2756,X
+
+loc_26BD:				; CODE XREF: sub_267A+2Fj sub_267A+3Ej
+		STY	$2F
+		LDA	byte_18FF
+		BEQ	locret_26D0
+		LDY	#1
+		STY	$D01F
+		DEY
+		STY	$D01F
+		STY	byte_18FF
+
+locret_26D0:				; CODE XREF: sub_267A+48j
+		RTS
+; End of function sub_267A
+
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+byte_26D1:	.BYTE $6C,$6A,$3B,$FF,$FF,$6B,$2B,$2A ;	DATA XREF: RAM:266Fr
+		.BYTE $6F,$FF,$70,$75, $D,$69,$2D,$3D
+		.BYTE $76,$3F,$63,$FF,$FF,$62,$78,$7A
+		.BYTE $34,$FF,$33,$36,$1B,$35,$32,$31
+		.BYTE $2C,$20,$2E,$6E,$FF,$6D,$2F,$3F
+		.BYTE $72,$FF,$65,$79,$FF,$74,$77,$71
+		.BYTE $39,$FF,$30,$37,	8,$38,$3C,$3E
+		.BYTE $66,$68,$64,$FF,$FF,$67,$73,$61
+		.BYTE $4C,$4A,$3A,$FF,$FF,$4B,$5C,$5E
+		.BYTE $4F,$FF,$50,$55, $D,$49,$2D,$3D
+		.BYTE $56,$3F,$43,$FF,$FF,$42,$58,$5A
+		.BYTE $24,$FF,$23,$26,$FF,$25,$22,$21
+		.BYTE $5B,$20,$5D,$4E,$FF,$4D,$3F,$3F
+		.BYTE $52,$FF,$45,$59,$FF,$54,$57,$51
+		.BYTE $28,$FF,$29,$27,$FF,$40,$3C,$3E
+		.BYTE $46,$48,$44,$FF,$FF,$47,$53,$41
+unk_2751:	.BYTE  $D		; DATA XREF: sub_267A:loc_26B0r
+		.BYTE	1
+		.BYTE	5
+		.BYTE	0
+		.BYTE $21 ; !
+unk_2756:	.BYTE	1		; DATA XREF: sub_267A:loc_26BAr
+		.BYTE	4
+		.BYTE	2
+		.BYTE	8
+		.BYTE $80 ; Ђ
+
+; ЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫ S U B	R O U T	I N E ЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫ
+
+
+sub_275B:				; CODE XREF: RAM:1824j	sub_2CFB+52p
+
+; FUNCTION CHUNK AT 24C6 SIZE 0000001F BYTES
+
+		JSR	sub_2788
+		JSR	sub_245D
+		JSR	sub_28A1
+		LDA	#4
+		STA	byte_190F
+
+loc_2769:				; CODE XREF: sub_275B+24j
+		LDA	$230
+		AND	#$F
+		TAX
+		LDA	$24D,X
+		BMI	loc_2779
+		JSR	sub_2799
+		BCC	loc_2782
+
+loc_2779:				; CODE XREF: sub_275B+17j
+		JSR	sub_2785
+		DEC	byte_190F
+		BNE	loc_2769
+		SEC
+
+loc_2782:				; CODE XREF: sub_275B+1Cj
+		JMP	loc_24C6
+; End of function sub_275B
+
+
+; ЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫ S U B	R O U T	I N E ЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫ
+
+
+sub_2785:				; CODE XREF: sub_275B:loc_2779p
+		INC	$230
+; End of function sub_2785
+
+
+; ЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫ S U B	R O U T	I N E ЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫ
+
+
+sub_2788:				; CODE XREF: sub_275Bp
+		LDA	$230
+		CMP	#'1'
+		BCC	loc_2793
+		CMP	#'5'
+		BCC	locret_2798
+
+loc_2793:				; CODE XREF: sub_2788+5j
+		LDA	#$31 ; '1'
+		STA	$230
+
+locret_2798:				; CODE XREF: sub_2788+9j
+		RTS
+; End of function sub_2788
+
+
+; ЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫ S U B	R O U T	I N E ЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫ
+
+
+sub_2799:				; CODE XREF: sub_275B+19p
+		JSR	sub_2937
+		BMI	loc_27D6
+
+loc_279E:				; CODE XREF: sub_2799:loc_27CAj
+		JSR	sub_2979
+		BMI	loc_27D6
+		LDA	#0
+		STA	byte_190E
+		TAY
+
+loc_27A9:				; CODE XREF: sub_2799+25j
+		LDA	$100,Y
+		STA	(9),Y
+		SEC
+		LDA	$B
+		SBC	#1
+		STA	$B
+		BCS	loc_27B9
+		DEC	$C
+
+loc_27B9:				; CODE XREF: sub_2799+1Cj
+		ORA	$C
+		BEQ	loc_27CD
+		INY
+		BPL	loc_27A9
+		TYA
+		CLC
+		ADC	9
+		STA	9
+		BCC	loc_27CA
+		INC	$A
+
+loc_27CA:				; CODE XREF: sub_2799+2Dj
+		JMP	loc_279E
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+
+loc_27CD:				; CODE XREF: sub_2799+22j
+		LDA	#0
+		STA	byte_190D
+		JSR	sub_27DE
+		RTS
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+
+loc_27D6:				; CODE XREF: sub_2799+3j sub_2799+8j
+		SEC
+		RTS
+; End of function sub_2799
+
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+		CLC
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+		.BYTE $24
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+		SEC
+		JMP	loc_24C6
+
+; ЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫ S U B	R O U T	I N E ЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫ
+
+
+sub_27DE:				; CODE XREF: sub_2799+39p
+		LDY	#0
+
+loc_27E0:				; CODE XREF: sub_27DE+12j
+		LDX	#0
+
+loc_27E2:				; CODE XREF: sub_27DE+10j
+		LDA	$180,X
+		STA	$100,Y
+		INY
+		BMI	loc_27F2
+		INX
+		CPX	#$10
+		BCC	loc_27E2
+		BCS	loc_27E0
+
+loc_27F2:				; CODE XREF: sub_27DE+Bj
+		LDY	#0
+		STY	byte_1901
+		STY	byte_1902
+		LDA	byte_190B
+		STA	9
+		LDA	byte_190C
+		STA	$A
+		LDX	byte_1908
+		BEQ	loc_2827
+		STX	$C
+		LDX	#0
+
+loc_280D:				; CODE XREF: sub_27DE+41j sub_27DE+47j
+		LDA	(9),Y
+		LSR	A
+		BCC	loc_2814
+		ORA	#$80 ; 'Ђ'
+
+loc_2814:				; CODE XREF: sub_27DE+32j
+		EOR	$100,X
+		STA	(9),Y
+		INX
+		BPL	loc_281E
+		LDX	#0
+
+loc_281E:				; CODE XREF: sub_27DE+3Cj
+		INY
+		BNE	loc_280D
+		INC	$A
+		DEC	$C
+		BNE	loc_280D
+
+loc_2827:				; CODE XREF: sub_27DE+29j
+		LDX	#0
+		LDA	byte_1907
+		BEQ	loc_2845
+
+loc_282E:				; CODE XREF: sub_27DE+65j
+		LDA	(9),Y
+		LSR	A
+		BCC	loc_2835
+		ORA	#$80 ; 'Ђ'
+
+loc_2835:				; CODE XREF: sub_27DE+53j
+		EOR	$100,X
+		STA	(9),Y
+		INX
+		BPL	loc_283F
+		LDX	#0
+
+loc_283F:				; CODE XREF: sub_27DE+5Dj
+		INY
+		CPY	byte_1907
+		BCC	loc_282E
+
+loc_2845:				; CODE XREF: sub_27DE+4Ej
+		LDA	byte_190B
+		STA	9
+		LDA	byte_190C
+		STA	$A
+		LDY	#0
+		LDX	byte_1908
+		BEQ	loc_286C
+
+loc_2856:				; CODE XREF: sub_27DE+87j sub_27DE+8Cj
+		LDA	(9),Y
+		CLC
+		ADC	byte_1901
+		STA	byte_1901
+		BCC	loc_2864
+		INC	byte_1902
+
+loc_2864:				; CODE XREF: sub_27DE+81j
+		INY
+		BNE	loc_2856
+		INC	$A
+		DEX
+		BNE	loc_2856
+
+loc_286C:				; CODE XREF: sub_27DE+76j
+		LDX	byte_1907
+		BEQ	loc_2885
+
+loc_2871:				; CODE XREF: sub_27DE+A5j
+		LDA	(9),Y
+		CLC
+		ADC	byte_1901
+		STA	byte_1901
+		BCC	loc_287F
+		INC	byte_1902
+
+loc_287F:				; CODE XREF: sub_27DE+9Cj
+		INY
+		CPY	byte_1907
+		BCC	loc_2871
+
+loc_2885:				; CODE XREF: sub_27DE+91j
+		LDA	byte_1901
+		CMP	$184
+		BNE	loc_2897
+		LDA	byte_1902
+		CMP	$185
+		BNE	loc_2897
+		CLC
+		RTS
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+
+loc_2897:				; CODE XREF: sub_27DE+ADj sub_27DE+B5j
+		LDA	#0
+		STA	$25B
+		DEC	$264
+		SEC
+		RTS
+; End of function sub_27DE
+
+
+; ЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫ S U B	R O U T	I N E ЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫ
+
+
+sub_28A1:				; CODE XREF: RAM:182Aj	sub_275B+6p
+		LDA	#0
+		STA	8
+		LDA	byte_1909
+		LDX	#2
+
+loc_28AA:				; CODE XREF: sub_28A1+Dj
+		ASL	A
+		ROL	8
+		DEX
+		BNE	loc_28AA
+		ADC	#$80 ; 'Ђ'
+		STA	7
+		LDA	8
+		ADC	#2
+		STA	8
+		LDY	#3
+
+loc_28BC:				; CODE XREF: sub_28A1+21j
+		LDA	(7),Y
+		STA	$1905,Y
+		DEY
+		BPL	loc_28BC
+		PHA
+		AND	#$FC ; 'ь'
+		STA	$25C
+		PLA
+		AND	#3
+		STA	byte_1904
+		LDA	byte_1906
+		STA	byte_1903
+		RTS
+; End of function sub_28A1
+
+
+; ЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫ S U B	R O U T	I N E ЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫ
+
+
+sub_28D7:				; CODE XREF: sub_2CAD+Cp sub_2CC2+1Bp
+		LDA	byte_1905
+		LDX	#1
+		LSR	A
+		LSR	A
+		LSR	A
+		BCC	loc_28E2
+		INX
+
+loc_28E2:				; CODE XREF: sub_28D7+8j
+		AND	#3
+		CLC
+		ADC	#1
+		STA	byte_1911
+		STX	byte_1910
+		LDA	#$9F ; 'џ'
+		STA	$16
+		LDA	#$29 ; ')'
+		STA	$17
+		JSR	sub_1C88
+		LDA	byte_190E
+		BEQ	loc_2908
+		LDA	#7
+		STA	$16
+		LDA	#$2A ; '*'
+		STA	$17
+		JSR	sub_1C88
+
+loc_2908:				; CODE XREF: sub_28D7+24j sub_28D7+43j ...
+		JSR	sub_262F
+		BMI	loc_2926
+		JSR	sub_2643
+		CMP	#$10
+		BEQ	loc_2926
+		CMP	#$20 ; ' '
+		BEQ	loc_2926
+		CMP	#$1B
+		BNE	loc_2908
+		LDA	byte_190E
+		BEQ	loc_2908
+		JSR	sub_292B
+		SEC
+		RTS
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+
+loc_2926:				; CODE XREF: sub_28D7+34j sub_28D7+3Bj ...
+		JSR	sub_292B
+		CLC
+		RTS
+; End of function sub_28D7
+
+
+; ЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫ S U B	R O U T	I N E ЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫ
+
+
+sub_292B:				; CODE XREF: sub_28D7+4Ap
+					; sub_28D7:loc_2926p
+		LDA	#7
+		STA	$16
+		LDA	#$20 ; ' '
+		STA	$17
+		JSR	sub_1C88
+		RTS
+; End of function sub_292B
+
+
+; ЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫ S U B	R O U T	I N E ЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫ
+
+
+sub_2937:				; CODE XREF: sub_2799p
+		LDA	byte_190B
+		STA	9
+		LDA	byte_190C
+		STA	$A
+		LDA	byte_1903
+		STA	$232
+		LDA	byte_1904
+		STA	$233
+		LDA	byte_1907
+		STA	$B
+		LDA	byte_1908
+		STA	$C
+		JSR	sub_2979
+		BMI	loc_2976
+		LDX	#$F
+
+loc_295E:				; CODE XREF: sub_2937+2Ej
+		LDA	$100,X
+		STA	$180,X
+		DEX
+		BPL	loc_295E
+		LDX	#3
+
+loc_2969:				; CODE XREF: sub_2937+3Bj
+		LDA	byte_1905,X
+		CMP	$180,X
+		BNE	loc_2976
+		DEX
+		BPL	loc_2969
+		INX
+		RTS
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+
+loc_2976:				; CODE XREF: sub_2937+23j sub_2937+38j
+		LDA	#$FF
+		RTS
+; End of function sub_2937
+
+
+; ЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫ S U B	R O U T	I N E ЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫ
+
+
+sub_2979:				; CODE XREF: RAM:1800j
+					; sub_2799:loc_279Ep ...
+		BIT	$258
+		BVC	loc_2986
+		BIT	$25A
+		BPL	loc_2986
+		JMP	$F9F4
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+
+loc_2986:				; CODE XREF: sub_2979+3j sub_2979+8j
+		LDA	#2
+		STA	6
+
+loc_298A:				; CODE XREF: sub_2979+18j
+		JSR	sub_248E
+		BPL	loc_2995
+		DEC	6
+		BNE	loc_298A
+		BEQ	loc_299D
+
+loc_2995:				; CODE XREF: sub_2979+14j
+		INC	$232
+		BNE	loc_299D
+		INC	$233
+
+loc_299D:				; CODE XREF: sub_2979+1Aj sub_2979+1Fj
+		TYA
+		RTS
+; End of function sub_2979
+
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+		.BYTE $A8
+		.BYTE $A6,  0,	1
+		.BYTE $A5
+aPleaseInsertTh:.BYTE "Please insert The Dungeon Disk "
+		.BYTE $B2
+		.WORD byte_1911
+		.BYTE 1
+		.BYTE $D
+		.BYTE $D
+		.BYTE $A5
+aSide:		.BYTE "Side "
+		.BYTE $B2
+		.WORD byte_1910
+		.BYTE 1
+		.BYTE $20
+aIntoAnyDrive_:	.BYTE "into any drive."
+		.BYTE $D
+		.BYTE $A6,  0,	5
+		.BYTE $A5
+aPress:		.BYTE "Press "
+		.BYTE $A1
+aSpaceBar:	.BYTE "SPACE BAR"
+		.BYTE $A0
+aToContinue:	.BYTE " to continue"
+		.BYTE $D
+		.BYTE $FF
+		.BYTE $A6,  0,	7
+		.BYTE $A5
+aOrPress:	.BYTE "or press "
+		.BYTE $A1
+aEsc:		.BYTE "ESC"
+		.BYTE $A0
+		.BYTE $20
+aToAbort:	.BYTE "to abort"
+		.BYTE $D
+		.BYTE $FF
+aLoading___:	.BYTE "Loading..."      ; DATA XREF: sub_2CFB+1Ar
+aEncounter:	.BYTE "Encounter!",0    ; DATA XREF: sub_2CFB:loc_2D0Er
+		.BYTE	1
+		.BYTE $EF ; п
+		.BYTE $FF
+		.BYTE $DE ; Ю
+		.BYTE $B4 ; ґ
+		.BYTE $B9 ; №
+		.BYTE $F0 ; р
+		.BYTE $E0 ; а
+
+; ЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫ S U B	R O U T	I N E ЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫ
+
+
+sub_2A41:				; CODE XREF: RAM:1839j	sub_2AA0+8p
+		CMP	#$28 ; '('
+		BCC	loc_2A47
+		LDA	#$27 ; '''
+
+loc_2A47:				; CODE XREF: sub_2A41+2j
+		STA	byte_18D4
+		LDX	#0
+
+loc_2A4C:				; CODE XREF: sub_2A41+49j sub_2A41+5Cj
+		LDA	#$5F ; '_'
+		JSR	sub_1C2C
+		LDA	#8
+		JSR	sub_1C2C
+
+loc_2A56:				; CODE XREF: sub_2A41+18j sub_2A41+39j ...
+		JSR	sub_2643
+		BMI	loc_2A56
+		CMP	#$D
+		BNE	loc_2A69
+		STA	unk_18D5,X
+		LDA	#$20 ; ' '
+		JSR	sub_1C2C
+		CLC
+		RTS
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+
+loc_2A69:				; CODE XREF: sub_2A41+1Cj
+		CMP	#$1B
+		BNE	loc_2A74
+		LDA	#$20 ; ' '
+		JSR	sub_1C2C
+		SEC
+		RTS
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+
+loc_2A74:				; CODE XREF: sub_2A41+2Aj
+		CMP	#8
+		BNE	loc_2A8D
+		CPX	#0
+		BEQ	loc_2A56
+		LDA	#$20 ; ' '
+		JSR	sub_1C2C
+		LDA	#8
+		JSR	sub_1C2C
+		JSR	sub_1C2C
+		DEX
+		JMP	loc_2A4C
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+
+loc_2A8D:				; CODE XREF: sub_2A41+35j
+		CMP	#$20 ; ' '
+		BCC	loc_2A56
+		CPX	byte_18D4
+		BCS	loc_2A56
+		STA	unk_18D5,X
+		JSR	sub_1C2C
+		INX
+		JMP	loc_2A4C
+; End of function sub_2A41
+
+
+; ЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫ S U B	R O U T	I N E ЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫ
+
+
+sub_2AA0:				; CODE XREF: RAM:18AEj	sub_5AB4+9Cp
+		LDA	#0
+		STA	2
+		STA	3
+		LDA	#5
+		JSR	sub_2A41
+		BCS	locret_2B01
+		CPX	#0
+		BNE	loc_2AB4
+		JMP	loc_2AF8
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+
+loc_2AB4:				; CODE XREF: sub_2AA0+Fj
+		JSR	sub_2B0F
+		BEQ	loc_2AF8
+		DEX
+
+loc_2ABA:				; CODE XREF: sub_2AA0+26j
+		LDA	unk_18D5,X
+		CMP	#$30 ; '0'
+		BCC	loc_2B02
+		CMP	#$3A ; ':'
+		BCS	loc_2B02
+		DEX
+		BPL	loc_2ABA
+		INX
+		STX	6
+
+loc_2ACB:				; CODE XREF: sub_2AA0+56j
+		LDA	#$A
+		STA	7
+		LDA	#0
+		STA	8
+		JSR	sub_2B47
+		LDA	4
+		ORA	5
+		BNE	loc_2B06
+		LDX	6
+		CLC
+		LDA	unk_18D5,X
+		AND	#$F
+		ADC	2
+		STA	2
+		LDA	#0
+		ADC	3
+		STA	3
+		BCS	loc_2B06
+		INX
+		STX	6
+		CPX	byte_2B46
+		BCC	loc_2ACB
+
+loc_2AF8:				; CODE XREF: sub_2AA0+11j sub_2AA0+17j ...
+		CLC
+		LDA	2
+		ORA	3
+		BPL	locret_2B01
+		LDA	#1
+
+locret_2B01:				; CODE XREF: sub_2AA0+Bj sub_2AA0+5Dj
+		RTS
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+
+loc_2B02:				; CODE XREF: sub_2AA0+1Fj sub_2AA0+23j
+		CLC
+		LDA	#$FF
+		RTS
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+
+loc_2B06:				; CODE XREF: sub_2AA0+3Aj sub_2AA0+4Ej
+		LDA	#$FF
+		STA	2
+		STA	3
+		BNE	loc_2AF8
+		RTS
+; End of function sub_2AA0
+
+
+; ЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫ S U B	R O U T	I N E ЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫ
+
+
+sub_2B0F:				; CODE XREF: sub_2AA0:loc_2AB4p
+		STX	byte_2B46
+		DEX
+
+loc_2B13:				; CODE XREF: sub_2B0F+Cj
+		LDA	unk_18D5,X
+		CMP	#$20 ; ' '
+		BNE	loc_2B1D
+		DEX
+		BPL	loc_2B13
+
+loc_2B1D:				; CODE XREF: sub_2B0F+9j
+		INX
+		STX	byte_2B46
+		LDX	#0
+
+loc_2B23:				; CODE XREF: sub_2B0F+1Fj
+		LDA	unk_18D5,X
+		CMP	#$20 ; ' '
+		BNE	loc_2B30
+		INX
+		CPX	byte_2B46
+		BCC	loc_2B23
+
+loc_2B30:				; CODE XREF: sub_2B0F+19j
+		LDY	#0
+
+loc_2B32:				; CODE XREF: sub_2B0F+2Ej
+		LDA	unk_18D5,X
+		STA	unk_18D5,Y
+		INY
+		INX
+		CPX	byte_2B46
+		BCC	loc_2B32
+		STY	byte_2B46
+		LDX	byte_2B46
+		RTS
+; End of function sub_2B0F
+
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+byte_2B46:	.BYTE 0			; DATA XREF: sub_2AA0+53r sub_2B0Fw ...
+
+; ЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫ S U B	R O U T	I N E ЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫ
+
+
+sub_2B47:				; CODE XREF: RAM:18A2j	sub_2AA0+33p
+		LDA	#0
+		STA	4
+		STA	5
+		LDX	#$11
+		CLC
+
+loc_2B50:				; CODE XREF: sub_2B47+21j
+		ROR	5
+		ROR	4
+		ROR	3
+		ROR	2
+		BCC	loc_2B67
+		CLC
+		LDA	7
+		ADC	4
+		STA	4
+		LDA	8
+		ADC	5
+		STA	5
+
+loc_2B67:				; CODE XREF: sub_2B47+11j
+		DEX
+		BNE	loc_2B50
+		RTS
+; End of function sub_2B47
+
+
+; ЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫ S U B	R O U T	I N E ЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫ
+
+
+sub_2B6B:				; CODE XREF: RAM:1899j	RAM:535Dp
+		PHA
+		TXA
+		PHA
+		TYA
+		PHA
+		TSX
+		INC	$103,X
+		BNE	loc_2B7C
+		LDA	$D20A
+		JMP	loc_2B92
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+
+loc_2B7C:				; CODE XREF: sub_2B6B+9j
+		LDA	$103,X
+		LDY	#7
+
+loc_2B81:				; CODE XREF: sub_2B6B+1Aj
+		ASL	A
+		BCS	loc_2B87
+		DEY
+		BPL	loc_2B81
+
+loc_2B87:				; CODE XREF: sub_2B6B+17j sub_2B6B+25j
+		LDA	$D20A
+		AND	unk_2B9D,Y
+		CMP	$103,X
+		BCS	loc_2B87
+
+loc_2B92:				; CODE XREF: sub_2B6B+Ej
+		STA	$103,X
+		PLA
+		TAY
+		PLA
+		TAX
+		PLA
+		ORA	#0
+		RTS
+; End of function sub_2B6B
+
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+unk_2B9D:	.BYTE	1		; DATA XREF: sub_2B6B+1Fr
+		.BYTE	3
+		.BYTE	7
+		.BYTE  $F
+		.BYTE $1F
+		.BYTE $3F ; ?
+		.BYTE $7F ; 
+		.BYTE $FF
+
+; ЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫ S U B	R O U T	I N E ЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫ
+
+
+sub_2BA5:				; CODE XREF: RAM:183Fj
+					; sub_2BFA:loc_30AAp ...
+		CMP	#$61 ; 'a'
+		BCC	locret_2BAF
+		CMP	#$7B ; '{'
+		BCS	locret_2BAF
+		SBC	#$1F
+
+locret_2BAF:				; CODE XREF: sub_2BA5+2j sub_2BA5+6j
+		RTS
+; End of function sub_2BA5
+
+
+; ЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫ S U B	R O U T	I N E ЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫ
+
+
+sub_2BB0:				; CODE XREF: RAM:183Cj	RAM:348Cp ...
+		DEC	$32
+		LDX	#$1E
+
+loc_2BB4:				; CODE XREF: sub_2BB0+8j
+		JSR	sub_2C66
+		DEX
+		BNE	loc_2BB4
+		JSR	sub_2643
+		LDA	#$D0 ; 'Р'
+		STA	$16
+		LDA	#$2B ; '+'
+		STA	$17
+		JSR	sub_1C88
+
+loc_2BC8:				; CODE XREF: sub_2BB0+1Bj
+		JSR	sub_2643
+		BMI	loc_2BC8
+		INC	$32
+		RTS
+; End of function sub_2BB0
+
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+		.BYTE $A6,  0,	7
+		.BYTE $A9
+		.BYTE $A5
+		.BYTE "<<< "
+		.BYTE $A1
+aPressAnyKeyToC:.BYTE "Press any key to continue"
+		.BYTE $A0
+		.BYTE $20
+		.BYTE ">>>"
+		.BYTE $D
+		.BYTE $FF
+
+; ЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫ S U B	R O U T	I N E ЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫ
+
+
+sub_2BFA:				; CODE XREF: RAM:527Cp	RAM:53EDp ...
+
+; FUNCTION CHUNK AT 2F80 SIZE 00000151 BYTES
+; FUNCTION CHUNK AT 30DB SIZE 00000006 BYTES
+; FUNCTION CHUNK AT 3183 SIZE 00000072 BYTES
+; FUNCTION CHUNK AT 31F8 SIZE 0000002D BYTES
+
+		LDA	#6
+
+loc_2BFC:				; CODE XREF: RAM:185Aj	RAM:3443p ...
+		STA	byte_2C64
+		DEC	$32
+		DEC	$F
+		DEC	byte_1937
+		LDA	#1
+		STA	byte_2C65
+		JSR	sub_2643
+
+loc_2C0E:				; CODE XREF: sub_2BFA+29j RAM:2C59j
+		LDA	#6
+		STA	byte_2C63
+
+loc_2C13:				; CODE XREF: RAM:2C54j
+		LDX	#$A
+
+loc_2C15:				; CODE XREF: sub_2BFA+1Fj
+		JSR	sub_2C66
+		DEX
+		BNE	loc_2C15
+		LDA	byte_2C65
+		BMI	loc_2C26
+		DEC	byte_2C65
+		JMP	loc_2C0E
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+
+loc_2C26:				; CODE XREF: sub_2BFA+24j
+		LDA	word_1977
+		STA	byte_2C99
+		LDA	word_1977+1
+		STA	byte_2C9A
+		LDA	#$3F ; '?'
+		STA	word_1977
+		LDA	#$2C ; ','
+		STA	word_1977+1
+		JMP	loc_2FF3
+; End of function sub_2BFA
+
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+		LDA	byte_2C99
+		STA	word_1977
+		LDA	byte_2C9A
+		STA	word_1977+1
+		LDA	$31
+		CMP	#$20 ; ' '
+		BEQ	loc_2C5B
+		DEC	byte_2C63
+		BNE	loc_2C13
+		DEC	byte_2C64
+		BNE	loc_2C0E
+
+loc_2C5B:				; CODE XREF: RAM:2C4Fj
+		INC	$32
+		INC	$F
+		INC	byte_1937
+		RTS
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+byte_2C63:	.BYTE 0			; DATA XREF: sub_2BFA+16w RAM:2C51w
+byte_2C64:	.BYTE 0			; DATA XREF: sub_2BFA:loc_2BFCw
+					; RAM:2C56w
+byte_2C65:	.BYTE 0			; DATA XREF: sub_2BFA+Ew sub_2BFA+21r	...
+
+; ЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫ S U B	R O U T	I N E ЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫ
+
+
+sub_2C66:				; CODE XREF: sub_2BB0:loc_2BB4p
+					; sub_2BFA:loc_2C15p ...
+		LDA	$252
+
+loc_2C69:				; CODE XREF: sub_2C66+6j
+		CMP	$252
+		BEQ	loc_2C69
+		RTS
+; End of function sub_2C66
+
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+
+loc_2C6F:				; CODE XREF: RAM:1857j	RAM:2C96j
+		LDA	word_1977
+		STA	byte_2C99
+		LDA	word_1977+1
+		STA	byte_2C9A
+		LDA	#$88 ; '€'
+		STA	word_1977
+		LDA	#$2C ; ','
+		STA	word_1977+1
+		JMP	loc_2FF3
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+		LDA	byte_2C99
+		STA	word_1977
+		LDA	byte_2C9A
+		STA	word_1977+1
+		LDA	$31
+		BMI	loc_2C6F
+		RTS
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+byte_2C99:	.BYTE $FF		; DATA XREF: sub_2BFA+2Fw RAM:2C3Fr ...
+byte_2C9A:	.BYTE $FF		; DATA XREF: sub_2BFA+35w RAM:2C45r ...
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+
+loc_2C9B:				; CODE XREF: RAM:185Dj
+		STX	$E
+		STY	$D
+		ASL	A
+		TAY
+		LDA	($D),Y
+		STA	$16
+		INY
+		LDA	($D),Y
+		STA	$17
+		RTS
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+		.BYTE	0
+		.BYTE $60 ; `
+
+; ЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫ S U B	R O U T	I N E ЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫ
+
+
+sub_2CAD:				; CODE XREF: RAM:1842j	RAM:2EFFp ...
+		DEC	$32
+		LDA	#0
+		STA	byte_190E
+
+loc_2CB4:				; CODE XREF: sub_2CAD+Fj
+		JSR	sub_2CFB
+		BCC	loc_2CBF
+		JSR	sub_28D7
+		JMP	loc_2CB4
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+
+loc_2CBF:				; CODE XREF: sub_2CAD+Aj
+		INC	$32
+		RTS
+; End of function sub_2CAD
+
+
+; ЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫ S U B	R O U T	I N E ЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫ
+
+
+sub_2CC2:				; CODE XREF: RAM:1881j	sub_2BFA+3D8p
+		DEC	$32
+		LDA	byte_1909
+		LDX	#3
+
+loc_2CC9:				; CODE XREF: sub_2CC2+Dj
+		CMP	unk_2CF7,X
+		BEQ	loc_2CD3
+		DEX
+		BPL	loc_2CC9
+		BMI	loc_2CD8
+
+loc_2CD3:				; CODE XREF: sub_2CC2+Aj
+		LDA	#0
+		STA	byte_190E
+
+loc_2CD8:				; CODE XREF: sub_2CC2+Fj sub_2CC2+1Ej
+		JSR	sub_2CFB
+		BCC	loc_2CF4
+		JSR	sub_28D7
+		BCC	loc_2CD8
+		LDX	#4
+
+loc_2CE4:				; CODE XREF: sub_2CC2+29j
+		LDA	$6318,X
+		STA	$6313,X
+		DEX
+		BPL	loc_2CE4
+		LDA	$631F
+		STA	$631E
+		SEC
+
+loc_2CF4:				; CODE XREF: sub_2CC2+19j
+		INC	$32
+		RTS
+; End of function sub_2CC2
+
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+unk_2CF7:	.BYTE $10		; DATA XREF: sub_2CC2:loc_2CC9r
+		.BYTE $11
+		.BYTE $12
+		.BYTE $3F ; ?
+
+; ЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫ S U B	R O U T	I N E ЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫ
+
+
+sub_2CFB:				; CODE XREF: sub_2CAD:loc_2CB4p
+					; sub_2CC2:loc_2CD8p
+		LDA	byte_1909
+		PHA
+
+loc_2CFF:				; CODE XREF: sub_2CFB+87j
+		LDX	#$1F
+		LDA	#0
+
+loc_2D03:				; CODE XREF: sub_2CFB+Cj
+		STA	unk_197C,X
+		DEX
+		BPL	loc_2D03
+		LDX	#9
+		LDY	byte_1909
+
+loc_2D0E:				; CODE XREF: sub_2CFB+21j
+		LDA	aEncounter,X	; "Encounter!"
+		CPY	#$11
+		BEQ	loc_2D18
+		LDA	aLoading___,X	; "Loading..."
+
+loc_2D18:				; CODE XREF: sub_2CFB+18j
+		STA	unk_1987,X
+		DEX
+		BPL	loc_2D0E
+		LDA	#0
+		STA	$264
+		STA	$259
+		STA	$25A
+		STA	$25B
+		BIT	$258
+		BPL	loc_2D40
+		LDA	byte_1909
+		CMP	#$E
+		BCS	loc_2D40
+		DEC	$259
+		JSR	$F953
+		BCC	loc_2D62
+
+loc_2D40:				; CODE XREF: sub_2CFB+34j sub_2CFB+3Bj
+		LDA	byte_1909
+		LDX	#$2A ; '*'
+		LDY	#$38 ; '8'
+		JSR	sub_2DE3
+		ROR	$25A
+		JSR	sub_275B
+		BCS	loc_2D5C
+		BIT	$259
+		BPL	loc_2D62
+		JSR	$F900
+		BCC	loc_2D62
+
+loc_2D5C:				; CODE XREF: sub_2CFB+55j
+		BIT	$23D
+		BPL	loc_2D67
+
+loc_2D61:				; CODE XREF: sub_2CFB+7Fj
+		SEC
+
+loc_2D62:				; CODE XREF: sub_2CFB+43j sub_2CFB+5Aj ...
+		PLA
+		STA	byte_1909
+		RTS
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+
+loc_2D67:				; CODE XREF: sub_2CFB+64j
+		LDA	byte_1909
+		LDX	#5
+		BIT	$258
+		BVC	loc_2D72
+		DEX
+
+loc_2D72:				; CODE XREF: sub_2CFB+74j sub_2CFB+7Dj
+		CMP	unk_2D85,X
+		BEQ	loc_2D7C
+		DEX
+		BPL	loc_2D72
+		BMI	loc_2D61
+
+loc_2D7C:				; CODE XREF: sub_2CFB+7Aj
+		LDA	unk_2D8A,X
+		STA	byte_1909
+		JMP	loc_2CFF
+; End of function sub_2CFB
+
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+unk_2D85:	.BYTE $35 ; 5		; DATA XREF: sub_2CFB:loc_2D72r
+		.BYTE  $F
+		.BYTE $44 ; D
+		.BYTE $43 ; C
+		.BYTE $10
+unk_2D8A:	.BYTE $2F ; /		; DATA XREF: sub_2CFB:loc_2D7Cr
+		.BYTE $44 ; D
+		.BYTE $43 ; C
+		.BYTE $42 ; B
+		.BYTE $3F ; ?
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+
+loc_2D8F:				; CODE XREF: RAM:1854j
+		LDY	#0
+		LDX	$C
+		BEQ	loc_2D9F
+
+loc_2D95:				; CODE XREF: RAM:2D98j	RAM:2D9Dj
+		STA	(9),Y
+		INY
+		BNE	loc_2D95
+		INC	$A
+		DEX
+		BNE	loc_2D95
+
+loc_2D9F:				; CODE XREF: RAM:2D93j
+		LDX	$B
+		BEQ	locret_2DAA
+
+loc_2DA3:				; CODE XREF: RAM:2DA8j
+		STA	(9),Y
+		INY
+		CPY	$B
+		BNE	loc_2DA3
+
+locret_2DAA:				; CODE XREF: RAM:2DA1j
+		RTS
+
+; ЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫ S U B	R O U T	I N E ЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫ
+
+
+sub_2DAB:				; CODE XREF: RAM:1860j	RAM:3578p ...
+		STX	loc_2DD9+2
+		STX	loc_2DDF+2
+		STY	loc_2DD9+1
+		STY	loc_2DDF+1
+		PHA
+		LDA	#$1D
+		LDX	#$2E ; '.'
+		LDY	#5
+		BCS	loc_2DC6
+		LDA	#$3D ; '='
+		LDX	#$2D ; '-'
+		LDY	#$FD ; 'э'
+
+loc_2DC6:				; CODE XREF: sub_2DAB+13j
+		STA	loc_2DDC
+		STY	loc_2DDC+1
+		STX	loc_2DDC+2
+		PLA
+		PHA
+		AND	#7
+		TAX
+		PLA
+		LSR	A
+		LSR	A
+		LSR	A
+		TAY
+
+loc_2DD9:				; DATA XREF: sub_2DAB+6w sub_2DABw
+		LDA	$FFFF,Y
+
+loc_2DDC:				; DATA XREF: sub_2DAB:loc_2DC6w
+					; sub_2DAB+1Ew	...
+		ORA	byte_2E05,X
+
+loc_2DDF:				; DATA XREF: sub_2DAB+9w sub_2DAB+3w
+		STA	$FFFF,Y
+		RTS
+; End of function sub_2DAB
+
+
+; ЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫ S U B	R O U T	I N E ЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫ
+
+
+sub_2DE3:				; CODE XREF: RAM:1863j	sub_2CFB+4Cp ...
+		STX	loc_2DF3+2
+		STY	loc_2DF3+1
+		PHA
+		AND	#7
+		TAX
+		PLA
+		LSR	A
+		LSR	A
+		LSR	A
+		TAY
+		CLC
+
+loc_2DF3:				; DATA XREF: sub_2DE3+3w sub_2DE3w
+		LDA	$FFFF,Y
+		AND	byte_2E05,X
+		BEQ	locret_2DFC
+		SEC
+
+locret_2DFC:				; CODE XREF: sub_2DE3+16j
+		RTS
+; End of function sub_2DE3
+
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+		.BYTE $7F,$BF,$DF,$EF,$F7,$FB,$FD,$FE
+byte_2E05:	.BYTE $80,$40,$20,$10,	8,  4,	2,  1 ;	DATA XREF: sub_2DAB:loc_2DDCr
+					; sub_2DE3+13r
+
+; ЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫ S U B	R O U T	I N E ЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫ
+
+
+sub_2E0D:				; CODE XREF: RAM:1866j	sub_4AC9+49p ...
+		STY	$B
+		LDY	#0
+		CPX	#0
+		BEQ	loc_2E23
+
+loc_2E15:				; CODE XREF: sub_2E0D+Dj sub_2E0D+14j
+		LDA	(7),Y
+		STA	(9),Y
+		INY
+		BNE	loc_2E15
+		INC	$A
+		INC	8
+		DEX
+		BNE	loc_2E15
+
+loc_2E23:				; CODE XREF: sub_2E0D+6j
+		LDA	$B
+		BEQ	locret_2E30
+
+loc_2E27:				; CODE XREF: sub_2E0D+21j
+		LDA	(7),Y
+		STA	(9),Y
+		INY
+		CPY	$B
+		BNE	loc_2E27
+
+locret_2E30:				; CODE XREF: sub_2E0D+18j
+		RTS
+; End of function sub_2E0D
+
+
+; ЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫ S U B	R O U T	I N E ЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫ
+
+
+sub_2E31:				; CODE XREF: RAM:1869j	RAM:5730p
+		DEC	$32
+		LDX	#7
+
+loc_2E35:				; CODE XREF: sub_2E31+Aj
+		LDA	$35,X
+		STA	$6309,X
+		DEX
+		BPL	loc_2E35
+		INC	$32
+		RTS
+; End of function sub_2E31
+
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+
+loc_2E40:				; CODE XREF: RAM:187Bj
+		LDY	#1
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+		.BYTE $2C ; ,
+
+; ЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫ S U B	R O U T	I N E ЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫ
+
+
+sub_2E43:				; CODE XREF: RAM:1878j	RAM:41C4p ...
+		LDY	#0
+
+loc_2E45:				; CODE XREF: RAM:1875j
+		JSR	sub_2E8D
+
+loc_2E48:				; CODE XREF: RAM:loc_494Dp
+		CLC
+		LDA	($45),Y
+		ADC	$51
+		STA	($45),Y
+		DEY
+		BMI	loc_2E5B
+
+loc_2E52:				; CODE XREF: sub_2E43+16j
+		LDA	($45),Y
+		ADC	#0
+		STA	($45),Y
+		DEY
+		BPL	loc_2E52
+
+loc_2E5B:				; CODE XREF: sub_2E43+Dj
+		BCC	locret_2E65
+		TYA
+		LDY	$54
+
+loc_2E60:				; CODE XREF: sub_2E43+20j
+		STA	($45),Y
+		DEY
+		BPL	loc_2E60
+
+locret_2E65:				; CODE XREF: sub_2E43:loc_2E5Bj
+		RTS
+; End of function sub_2E43
+
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+
+loc_2E66:				; CODE XREF: RAM:1872j	RAM:34ADp ...
+		LDY	#1
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+		.BYTE $2C ; ,
+
+; ЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫ S U B	R O U T	I N E ЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫ
+
+
+sub_2E69:				; CODE XREF: RAM:186Fj	RAM:34F7p ...
+		LDY	#0
+
+loc_2E6B:				; CODE XREF: RAM:186Cj
+		JSR	sub_2E8D
+
+loc_2E6E:				; CODE XREF: RAM:loc_4953p
+		SEC
+		LDA	($45),Y
+		SBC	$51
+		STA	($45),Y
+		DEY
+		BMI	loc_2E81
+
+loc_2E78:				; CODE XREF: sub_2E69+16j
+		LDA	($45),Y
+		SBC	#0
+		STA	($45),Y
+		DEY
+		BPL	loc_2E78
+
+loc_2E81:				; CODE XREF: sub_2E69+Dj
+		BCS	locret_2E8C
+		LDA	#0
+		LDY	$54
+
+loc_2E87:				; CODE XREF: sub_2E69+21j
+		STA	($45),Y
+		DEY
+		BPL	loc_2E87
+
+locret_2E8C:				; CODE XREF: sub_2E69:loc_2E81j
+		RTS
+; End of function sub_2E69
+
+
+; ЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫ S U B	R O U T	I N E ЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫ
+
+
+sub_2E8D:				; CODE XREF: sub_2E43:loc_2E45p
+					; sub_2E69:loc_2E6Bp
+		STA	$51
+		STY	$54
+		CLC
+		TXA
+		ADC	#0
+		STA	$45
+		LDA	#$63 ; 'c'
+		ADC	#0
+		STA	$46
+		RTS
+; End of function sub_2E8D
+
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+
+loc_2E9E:				; CODE XREF: RAM:187Ej
+		LDA	$B
+		EOR	#$FF
+		STA	$B
+		LDA	$C
+		EOR	#$FF
+		STA	$C
+		INC	$B
+		BNE	loc_2EB0
+		INC	$C
+
+loc_2EB0:				; CODE XREF: RAM:2EACj
+		LDY	#0
+
+loc_2EB2:				; CODE XREF: RAM:2EBFj	RAM:2EC3j
+		LDA	(7),Y
+		STA	(9),Y
+		INY
+		BNE	loc_2EBD
+		INC	8
+		INC	$A
+
+loc_2EBD:				; CODE XREF: RAM:2EB7j
+		INC	$B
+		BNE	loc_2EB2
+		INC	$C
+		BNE	loc_2EB2
+		RTS
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+
+loc_2EC6:				; CODE XREF: RAM:18B4j	RAM:37F9j
+		LDX	#$FF
+		TXS
+		LDX	#$E6 ; 'ж'
+		LDA	#0
+
+loc_2ECD:				; CODE XREF: RAM:2ED1j
+		STA	$18B6,X
+		DEX
+		BNE	loc_2ECD
+		LDA	#0
+		JSR	sub_1A0D
+		LDA	#7
+		STA	$16
+		LDA	#$20 ; ' '
+		STA	$17
+		JSR	loc_1C8C
+		STX	byte_1933
+		LDA	#7
+		STA	byte_1913
+		LDA	#$20 ; ' '
+		STA	byte_1923
+		LDA	#$19
+		STA	byte_1909
+		LDA	#0
+		STA	byte_190B
+		LDA	#$76 ; 'v'
+		STA	byte_190C
+		JSR	sub_2CAD
+		JSR	$7600
+		LDA	#2
+		STA	$253
+		LDA	#$FF
+		STA	$AC00
+		STA	$7600
+		STA	$96F0
+		STA	byte_1935
+		LDA	#1
+		JSR	sub_1A0D
+		LDX	#7
+
+loc_2F1F:				; CODE XREF: RAM:2F25j
+		LDA	$6309,X
+		STA	$35,X
+		DEX
+		BPL	loc_2F1F
+		INX
+		STX	$32
+		STX	$F
+		LDX	#$13
+
+loc_2F2E:				; CODE XREF: RAM:2F3Aj
+		LDA	#$47 ; 'G'
+		STA	$45A3,X
+		DEX
+		LDA	#$E5 ; 'е'
+		STA	$45A3,X
+		DEX
+		BPL	loc_2F2E
+		LDA	#$17
+		STA	$16
+		LDA	#$39 ; '9'
+		STA	$17
+		JSR	sub_1C84
+		LDA	#$69 ; 'i'
+		STA	$16
+		LDA	#$39 ; '9'
+		STA	$17
+		JSR	sub_1C84
+		LDX	#8
+		STX	byte_1934
+		DEX
+
+loc_2F58:				; CODE XREF: RAM:2F68j
+		LDA	$2F70,X
+		STA	$1913,X
+		LDA	$2F78,X
+		STA	$1923,X
+		STX	byte_1933
+		DEX
+		BPL	loc_2F58
+		JSR	sub_3C2D
+		JMP	loc_318C
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+		.BYTE $DE ; Ю
+		.BYTE $84 ; „
+		.BYTE $31 ; 1
+		.BYTE $A2 ; ў
+		.BYTE $D1 ; С
+		.BYTE $E9 ; й
+		.BYTE	3
+		.BYTE	0
+		.BYTE $3C ; <
+		.BYTE $3D ; =
+		.BYTE $3E ; >
+		.BYTE $3E ; >
+		.BYTE $3E ; >
+		.BYTE $3E ; >
+		.BYTE $3F ; ?
+		.BYTE	0
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+; START	OF FUNCTION CHUNK FOR sub_2BFA
+
+loc_2F80:				; CODE XREF: RAM:1803j	sub_2BFA+435j ...
+		JSR	sub_322C
+		LDA	$7600
+		CMP	$631E
+		BEQ	loc_2FE5
+		LDA	#$FF
+		STA	byte_1912
+		STA	byte_1938
+		STA	byte_196A
+		STA	byte_1939
+		STA	byte_195F
+		STA	byte_1960
+		LDA	$631E
+		CMP	#1
+		BEQ	loc_2FBA
+		CMP	#2
+		BEQ	loc_2FBA
+		LDA	$631F
+		CMP	#1
+		BEQ	loc_2FBA
+		CMP	#2
+		BEQ	loc_2FBA
+		LDA	#1
+		JSR	sub_1A0D
+
+loc_2FBA:				; CODE XREF: sub_2BFA+3AAj
+					; sub_2BFA+3AEj ...
+		LDA	#0
+		STA	byte_190B
+		LDA	#$76 ; 'v'
+		STA	byte_190C
+		LDA	$631E
+		CLC
+		ADC	#$10
+		STA	byte_1909
+		LDA	#$FF
+		STA	byte_190E
+		JSR	sub_2CC2
+		BCC	loc_2FDA
+		JMP	loc_3183
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+
+loc_2FDA:				; CODE XREF: sub_2BFA+3DBj
+		LDX	#$F3 ; 'у'
+		LDA	#0
+
+loc_2FDE:				; CODE XREF: sub_2BFA+3E9j
+		STA	0,X
+		DEX
+		CPX	#$62 ; 'b'
+		BCS	loc_2FDE
+
+loc_2FE5:				; CODE XREF: sub_2BFA+38Fj
+		LDA	$631F
+		CMP	$631E
+		BEQ	loc_2FF0
+		JSR	$7601
+
+loc_2FF0:				; CODE XREF: sub_2BFA+3F1j
+		JMP	(word_1977)
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+
+loc_2FF3:				; CODE XREF: RAM:1806j	sub_2BFA+42j ...
+		JSR	sub_408B
+		JSR	sub_386F
+		LDA	byte_1958
+		BMI	loc_300D
+		LDA	byte_1959
+		CMP	#2
+		BNE	loc_300D
+		LDA	#$FF
+		STA	byte_1958
+		JSR	sub_3596
+
+loc_300D:				; CODE XREF: sub_2BFA+402j
+					; sub_2BFA+409j
+		LDA	byte_1971
+		BMI	loc_307F
+		LDA	$7600
+		BNE	loc_307F
+		LDA	byte_1979
+		BPL	loc_3032
+		LDA	#0
+		STA	byte_1979
+		LDA	$631E
+		STA	$631F
+		LDA	#2
+		STA	$631E
+		JSR	$7607
+		JMP	loc_2F80
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+
+loc_3032:				; CODE XREF: sub_2BFA+420j
+		LDA	byte_197B
+		BEQ	loc_303C
+		LDA	#$47 ; 'G'
+		JMP	loc_30AA
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+
+loc_303C:				; CODE XREF: sub_2BFA+43Bj
+		LDA	$6320
+		BPL	loc_3046
+		LDA	byte_195D
+		BEQ	loc_307F
+
+loc_3046:				; CODE XREF: sub_2BFA+445j
+		LDA	#$FF
+		STA	byte_195D
+		LDA	$6316
+		CMP	#$12
+		BNE	loc_306A
+		LDA	$6317
+		CMP	#$12
+		BNE	loc_306A
+		LDA	$631E
+		STA	$631F
+		LDA	#1
+		STA	$631E
+		JSR	$7607
+		JMP	loc_2F80
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+
+loc_306A:				; CODE XREF: sub_2BFA+456j
+					; sub_2BFA+45Dj
+		DEC	byte_1956
+		LDX	#1
+
+loc_306F:				; CODE XREF: sub_2BFA+481j
+		LDA	$6316,X
+		STA	$195B,X
+		LDA	#$12
+		STA	$6316,X
+		DEX
+		BPL	loc_306F
+		BMI	loc_30DB
+
+loc_307F:				; CODE XREF: sub_2BFA+416j
+					; sub_2BFA+41Bj ...
+		LDA	#0
+		STA	byte_195D
+		LDA	byte_1968
+		CMP	#1
+		BCC	loc_30A5
+		LDA	$D20A
+		CMP	#$10
+		BCS	loc_30A5
+		LDA	$D20A
+		CMP	byte_1968
+		BCS	loc_30A5
+		AND	#1
+		TAX
+		LDA	$30E1,X
+		STA	$31
+		JMP	loc_30AA
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+
+loc_30A5:				; CODE XREF: sub_2BFA+48Fj
+					; sub_2BFA+496j ...
+		JSR	sub_2643
+		BMI	loc_30DB
+
+loc_30AA:				; CODE XREF: sub_2BFA+43Fj
+					; sub_2BFA+4A8j
+		JSR	sub_2BA5
+		LDX	#$C
+
+loc_30AF:				; CODE XREF: sub_2BFA+4BBj
+		CMP	$3B78,X
+		BEQ	loc_30BA
+		DEX
+		BPL	loc_30AF
+		JMP	loc_30DE
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+
+loc_30BA:				; CODE XREF: sub_2BFA+4B8j
+		BIT	byte_1937
+		BPL	loc_30C5
+		CPX	#5
+		BCS	loc_30C5
+		BCC	loc_30DE
+
+loc_30C5:				; CODE XREF: sub_2BFA+4C3j
+					; sub_2BFA+4C7j
+		LDA	$3B85,X
+		STA	loc_30D1+1
+		LDA	$3B92,X
+		STA	loc_30D1+2
+; END OF FUNCTION CHUNK	FOR sub_2BFA
+
+loc_30D1:				; DATA XREF: sub_2BFA+4CEw
+					; sub_2BFA+4D4w
+		JSR	$FFFF
+		LDA	#$FF
+		STA	$31
+		JSR	sub_386F
+; START	OF FUNCTION CHUNK FOR sub_2BFA
+
+loc_30DB:				; CODE XREF: sub_2BFA+483j
+					; sub_2BFA+4AEj
+		LDA	$D20A
+
+loc_30DE:				; CODE XREF: sub_2BFA+4BDj
+					; sub_2BFA+4C9j
+		JMP	(word_1977)
+; END OF FUNCTION CHUNK	FOR sub_2BFA
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+		.BYTE $2C ; ,
+		.BYTE $2E ; .
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+
+loc_30E3:				; CODE XREF: RAM:1809j
+		LDA	#0
+		STA	byte_1975
+		LDA	$631E
+		STA	$631F
+		JSR	sub_3531
+		LDA	$2E
+		BIT	byte_3B74
+		BNE	loc_3124
+		BIT	byte_3B75
+		BNE	loc_311B
+		BIT	byte_3B76
+		BNE	loc_3108
+		INC	$6312
+		JMP	loc_310B
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+
+loc_3108:				; CODE XREF: RAM:3100j
+		DEC	$6312
+
+loc_310B:				; CODE XREF: RAM:3105j
+		LDA	$6312
+		AND	#3
+		STA	$6312
+		LDA	#$FF
+		STA	byte_1975
+		JMP	loc_3180
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+
+loc_311B:				; CODE XREF: RAM:30FBj
+		LDA	$6312
+		ORA	#4
+		TAX
+		JMP	loc_3127
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+
+loc_3124:				; CODE XREF: RAM:30F6j
+		LDX	$6312
+
+loc_3127:				; CODE XREF: RAM:3121j
+		STX	byte_317F
+		JSR	sub_32CA
+		LDA	unk_3B44,X
+		EOR	#1
+		TAY
+		LDA	#$11
+		STA	$6316,Y
+		LDY	unk_3B44,X
+		LDA	unk_3B54,X
+		BMI	loc_314A
+		LDA	$6316,Y
+		CLC
+		ADC	$6383
+		JMP	loc_3151
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+
+loc_314A:				; CODE XREF: RAM:313Ej
+		LDA	$6316,Y
+		SEC
+		SBC	$6383
+
+loc_3151:				; CODE XREF: RAM:3147j
+		STA	$6316,Y
+		CMP	#$24 ; '$'
+		BCC	loc_3180
+		CLC
+		ADC	unk_3B4C,X
+		STA	$6316,Y
+		LDY	unk_3B64,X
+		LDA	($10),Y
+		LDY	unk_3B6C,X
+		BPL	loc_316D
+		LSR	A
+		LSR	A
+		LSR	A
+		LSR	A
+
+loc_316D:				; CODE XREF: RAM:3167j
+		AND	#$F
+		TAY
+		LDA	unk_3B24,Y
+		STA	loc_317C+1
+		LDA	unk_3B34,Y
+		STA	loc_317C+2
+
+loc_317C:				; DATA XREF: RAM:3173w	RAM:3179w
+		JMP	$FFFF
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+byte_317F:	.BYTE 0			; DATA XREF: RAM:loc_3127w
+					; RAM:loc_331Er
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+
+loc_3180:				; CODE XREF: RAM:3118j	RAM:3156j ...
+		JMP	loc_318C
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+; START	OF FUNCTION CHUNK FOR sub_2BFA
+
+loc_3183:				; CODE XREF: RAM:180Cj	sub_2BFA+3DDj
+		JSR	sub_32CA
+		LDA	$631E
+		STA	$631F
+
+loc_318C:				; CODE XREF: RAM:2F6Dj	RAM:loc_3180j ...
+		LDA	$6315
+		CMP	$AC00
+		BEQ	loc_31B9
+		TAX
+		LDA	unk_3225,X
+		STA	$631D
+		TXA
+		CLC
+		ADC	#1
+		STA	byte_1909
+		LDA	#1
+		JSR	sub_1A0D
+		LDA	#0
+		STA	byte_190B
+		LDA	#$AC ; '¬'
+		STA	byte_190C
+		JSR	sub_2CAD
+		LDA	#$FF
+		STA	byte_1912
+
+loc_31B9:				; CODE XREF: sub_2BFA+598j
+		JSR	sub_3531
+		LDY	#2
+		LDA	($10),Y
+		STA	byte_1974
+		LDY	#3
+		LDA	($10),Y
+		BPL	loc_31F8
+		AND	#$1F
+		STA	byte_195A
+		LDA	#0
+		STA	$631E
+		BIT	byte_1958
+		BMI	loc_320D
+		LDA	($10),Y
+		ROL	A
+		ROL	A
+		ROL	A
+		ROL	A
+		AND	#3
+		STA	byte_1959
+		TAX
+		LDA	unk_3B9F,X
+		STA	loc_31F5+1
+		LDA	unk_3BA3,X
+		STA	loc_31F5+2
+		LDA	#$FF
+		STA	byte_1958
+; END OF FUNCTION CHUNK	FOR sub_2BFA
+
+loc_31F5:				; DATA XREF: sub_2BFA+5EDw
+					; sub_2BFA+5F3w
+		JMP	$FFFF
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+; START	OF FUNCTION CHUNK FOR sub_2BFA
+
+loc_31F8:				; CODE XREF: sub_2BFA+5CDj
+		AND	#$1F
+		STA	$631E
+		LDA	#$FF
+		STA	byte_1959
+		LDA	($10),Y
+		ROL	A
+		ROL	A
+		ROL	A
+		ROL	A
+		AND	#3
+		STA	byte_1973
+
+loc_320D:				; CODE XREF: sub_2BFA+5DCj RAM:3559j ...
+		LDA	$631F
+		CMP	#$FF
+		BEQ	loc_3222
+		LDA	$631E
+		CMP	$631F
+		BNE	loc_321F
+		JMP	loc_2F80
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+
+loc_321F:				; CODE XREF: sub_2BFA+620j
+		JSR	$7604
+
+loc_3222:				; CODE XREF: sub_2BFA+618j
+		JMP	loc_2F80
+; END OF FUNCTION CHUNK	FOR sub_2BFA
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+unk_3225:	.BYTE	1		; DATA XREF: sub_2BFA+59Br
+		.BYTE	1
+		.BYTE	1
+		.BYTE	1
+		.BYTE	2
+		.BYTE	3
+		.BYTE	4
+
+; ЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫ S U B	R O U T	I N E ЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫ
+
+
+sub_322C:				; CODE XREF: sub_2BFA:loc_2F80p
+		LDA	$AC00
+		CMP	$6315
+		BNE	locret_3296
+		LDA	byte_1974
+		CMP	byte_1939
+		BEQ	locret_3296
+		STA	byte_1939
+		LDA	#$BE ; 'ѕ'
+		STA	$16
+		LDA	#$32 ; '2'
+		STA	$17
+		JSR	sub_1C84
+		LDA	$AC01
+		STA	$12
+		LDA	$AC02
+		STA	$13
+		LDY	#0
+		LDX	byte_1974
+
+loc_3259:				; CODE XREF: sub_322C+3Aj
+		DEX
+		BMI	loc_326B
+
+loc_325C:				; CODE XREF: sub_322C+3Cj
+		LDA	($12),Y
+		INC	$12
+		BNE	loc_3264
+		INC	$13
+
+loc_3264:				; CODE XREF: sub_322C+34j
+		ORA	#0
+		BEQ	loc_3259
+		JMP	loc_325C
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+
+loc_326B:				; CODE XREF: sub_322C+2Ej sub_322C+7Aj ...
+		LDA	($12),Y
+		INC	$12
+		BNE	loc_3273
+		INC	$13
+
+loc_3273:				; CODE XREF: sub_322C+43j
+		ORA	#0
+		BEQ	loc_32B1
+		BPL	loc_32AB
+		AND	#$7F ; ''
+		TAX
+		LDA	#3
+		STA	$14
+		LDA	#$AC ; '¬'
+		STA	$15
+
+loc_3284:				; CODE XREF: sub_322C+65j
+		DEX
+		BMI	loc_3297
+
+loc_3287:				; CODE XREF: sub_322C+67j
+		LDA	($14),Y
+		INC	$14
+		BNE	loc_328F
+		INC	$15
+
+loc_328F:				; CODE XREF: sub_322C+5Fj
+		ORA	#0
+		BMI	loc_3284
+		JMP	loc_3287
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+
+locret_3296:				; CODE XREF: sub_322C+6j sub_322C+Ej ...
+		RTS
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+
+loc_3297:				; CODE XREF: sub_322C+59j sub_322C+7Cj
+		LDA	($14),Y
+		PHP
+		INC	$14
+		BNE	loc_32A0
+		INC	$15
+
+loc_32A0:				; CODE XREF: sub_322C+70j
+		AND	#$7F ; ''
+		JSR	sub_1C2C
+		PLP
+		BMI	loc_326B
+		JMP	loc_3297
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+
+loc_32AB:				; CODE XREF: sub_322C+4Bj
+		JSR	sub_1C2C
+		JMP	loc_326B
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+
+loc_32B1:				; CODE XREF: sub_322C+49j sub_322C+8Ej
+		LDA	$1F
+		BEQ	locret_3296
+		LDA	#$20 ; ' '
+		JSR	sub_1C2C
+		JMP	loc_32B1
+; End of function sub_322C
+
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+		RTS
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+		.BYTE $A6,  1,	4
+aYouAre:	.BYTE "You are "
+		.BYTE $FF
+
+; ЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫ S U B	R O U T	I N E ЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫ
+
+
+sub_32CA:				; CODE XREF: RAM:312Ap
+					; sub_2BFA:loc_3183p
+		TXA
+		PHA
+		LDX	#4
+
+loc_32CE:				; CODE XREF: sub_32CA+Bj
+		LDA	$6313,X
+		STA	$6318,X
+		DEX
+		BPL	loc_32CE
+		PLA
+		TAX
+		RTS
+; End of function sub_32CA
+
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+		LDY	unk_3B44,X
+		LDA	unk_3B5C,X
+		CMP	$631B,Y
+		BNE	loc_32ED
+		LDA	#$FF
+		STA	byte_1954
+		LDA	unk_3B5C,X
+
+loc_32ED:				; CODE XREF: RAM:32E3j
+		STA	$6316,Y
+		JMP	loc_3180
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+
+loc_32F3:				; CODE XREF: RAM:33E3j	RAM:352Bj
+		LDY	unk_3B44,X
+		LDA	unk_3B5C,X
+		CMP	$631B,Y
+		BNE	loc_3301
+		LDA	unk_3B5C,X
+
+loc_3301:				; CODE XREF: RAM:32FCj
+		STA	$6316,Y
+		JMP	loc_3180
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+		LDA	#$80 ; 'Ђ'
+		STA	byte_199C
+		JMP	loc_3314
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+
+loc_330F:				; CODE XREF: RAM:335Ej	RAM:34A0j
+		LDA	#$81 ; 'Ѓ'
+		STA	byte_199C
+
+loc_3314:				; CODE XREF: RAM:330Cj
+		LDA	$D20A
+		AND	#$51 ; 'Q'
+		BNE	loc_331E
+		DEC	byte_195D
+
+loc_331E:				; CODE XREF: RAM:3319j
+		LDX	byte_317F
+		LDY	unk_3B44,X
+		CLC
+		LDA	$6313,Y
+		ADC	unk_3B54,X
+		STA	$6313,Y
+		LDA	#$FF
+		STA	byte_1975
+		LDA	#0
+		STA	byte_1958
+		STA	byte_191A
+		STA	byte_192A
+		JSR	sub_3C2D
+		JMP	loc_3180
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+		LDA	#0
+		BEQ	loc_334E
+		LDA	#1
+		BNE	loc_334E
+		LDA	#2
+
+loc_334E:				; CODE XREF: RAM:3346j	RAM:334Aj
+		STA	byte_1970
+		LDA	$6388
+		AND	#2
+		BEQ	loc_3361
+		EOR	$6388
+		STA	$6388
+		JMP	loc_330F
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+
+loc_3361:				; CODE XREF: RAM:3356j
+		DEC	byte_1937
+		DEC	byte_1971
+		LDA	#7
+		STA	$16
+		LDA	#$20 ; ' '
+		STA	$17
+		JSR	sub_3CA5
+		LDA	byte_1933
+		STA	byte_352E
+		LDX	#3
+
+loc_337A:				; CODE XREF: RAM:3383j
+		LDA	unk_196B,X
+		CMP	$6312,X
+		BNE	loc_3387
+		DEX
+		BPL	loc_337A
+		BMI	loc_3397
+
+loc_3387:				; CODE XREF: RAM:3380j
+		LDA	#0
+		STA	byte_196F
+		LDX	#3
+
+loc_338E:				; CODE XREF: RAM:3395j
+		LDA	$6312,X
+		STA	unk_196B,X
+		DEX
+		BPL	loc_338E
+
+loc_3397:				; CODE XREF: RAM:3385j
+		LDA	byte_196F
+		BPL	loc_339F
+		JMP	loc_347E
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+
+loc_339F:				; CODE XREF: RAM:339Aj	RAM:33EFj ...
+		LDA	#$B0 ; '°'
+		STA	$16
+		LDA	#$39 ; '9'
+		STA	$17
+		LDX	byte_352E
+		JSR	sub_3C5C
+
+loc_33AD:				; CODE XREF: RAM:33E8j
+		LDA	word_1977
+		STA	byte_352F
+		LDA	word_1977+1
+		STA	byte_3530
+		LDA	#$C6 ; 'Ж'
+		STA	word_1977
+		LDA	#$33 ; '3'
+		STA	word_1977+1
+		JMP	loc_2FF3
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+		LDA	byte_352F
+		STA	word_1977
+		LDA	byte_3530
+		STA	word_1977+1
+		LDA	byte_195D
+		BPL	loc_33E6
+		INC	byte_1937
+		INC	byte_1971
+		JSR	sub_3CC2
+		LDX	$6312
+		JMP	loc_32F3
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+
+loc_33E6:				; CODE XREF: RAM:33D5j
+		LDA	$31
+		BMI	loc_33AD
+		SEC
+		SBC	#$30 ; '0'
+		CMP	#5
+		BCS	loc_339F
+		CMP	#1
+		BNE	loc_3454
+		LDA	#$CD ; 'Н'
+		STA	$16
+		LDA	#$3A ; ':'
+		STA	$17
+		LDX	byte_352E
+		JSR	sub_3C5C
+		LDX	#$F0 ; 'р'
+
+loc_3405:				; CODE XREF: RAM:3409j
+		JSR	sub_2C66
+		DEX
+		BNE	loc_3405
+		LDA	byte_196F
+		AND	#1
+		BNE	loc_341C
+		LDA	$D20A
+		LSR	A
+		LSR	A
+		CMP	$6369
+		BCS	loc_3449
+
+loc_341C:				; CODE XREF: RAM:3410j
+		LDX	byte_1970
+		LDA	$3AF9,X
+		STA	word_3A61
+		LDA	$3AFC,X
+		STA	word_3A61+1
+		LDA	byte_196F
+		ORA	#1
+		STA	byte_196F
+		LDA	#$48 ; 'H'
+		STA	$16
+		LDA	#$3A ; ':'
+		STA	$17
+
+loc_343B:				; CODE XREF: RAM:3451j	RAM:34B8j ...
+		LDX	byte_352E
+		JSR	sub_3C5C
+		LDA	#4
+		JSR	loc_2BFC
+		JMP	loc_339F
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+
+loc_3449:				; CODE XREF: RAM:341Aj
+		LDA	#$66 ; 'f'
+		STA	$16
+		LDA	#$3A ; ':'
+		STA	$17
+		JMP	loc_343B
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+
+loc_3454:				; CODE XREF: RAM:33F3j
+		CMP	#2
+		BNE	loc_34BB
+		LDA	#$91 ; '‘'
+		STA	$16
+		LDA	#$3A ; ':'
+		STA	$17
+		LDX	byte_352E
+		JSR	sub_3C5C
+		LDA	#1
+		JSR	loc_2BFC
+		DEC	byte_195F
+		LDA	$D20A
+		LSR	A
+		CMP	$6359
+		BCS	loc_34A3
+		LDA	byte_1970
+		CMP	#1
+		BNE	loc_34A3
+
+loc_347E:				; CODE XREF: RAM:339Cj	RAM:34D7j ...
+		LDA	#$9C ; 'њ'
+		STA	$16
+		LDA	#$3A ; ':'
+		STA	$17
+		LDX	byte_352E
+		JSR	sub_3C5C
+		JSR	sub_2BB0
+		LDA	byte_196F
+		ORA	#$80 ; 'Ђ'
+		STA	byte_196F
+		INC	byte_1937
+		INC	byte_1971
+		JSR	sub_3CC2
+		JMP	loc_330F
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+
+loc_34A3:				; CODE XREF: RAM:3475j	RAM:347Cj ...
+		LDA	$D20A
+		AND	#1
+		CLC
+		ADC	#1
+		LDX	#$45 ; 'E'
+		JSR	loc_2E66
+		LDA	#$B1 ; '±'
+		STA	$16
+		LDA	#$3A ; ':'
+		STA	$17
+		JMP	loc_343B
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+
+loc_34BB:				; CODE XREF: RAM:3456j
+		CMP	#3
+		BNE	loc_34D9
+		LDA	$63BF
+		BNE	loc_34CF
+		LDA	#$4D ; 'M'
+		STA	$16
+		LDA	#$61 ; 'a'
+		STA	$17
+		JMP	loc_343B
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+
+loc_34CF:				; CODE XREF: RAM:34C2j
+		DEC	$63BF
+		LDA	byte_1970
+		BNE	loc_34A3
+		BEQ	loc_347E
+
+loc_34D9:				; CODE XREF: RAM:34BDj
+		CMP	#4
+		BNE	loc_3518
+		LDA	#$E1 ; 'б'
+		STA	$16
+		LDA	#$3A ; ':'
+		STA	$17
+		LDX	byte_352E
+		JSR	sub_3C5C
+		LDX	#$78 ; 'x'
+
+loc_34ED:				; CODE XREF: RAM:34F1j
+		JSR	sub_2C66
+		DEX
+		BNE	loc_34ED
+		LDA	#1
+		LDX	#$65 ; 'e'
+		JSR	sub_2E69
+		LDA	$D20A
+		LSR	A
+		CMP	$6361
+		BCS	loc_350D
+		LDA	byte_1970
+		CMP	#2
+		BNE	loc_350D
+		JMP	loc_347E
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+
+loc_350D:				; CODE XREF: RAM:3501j	RAM:3508j
+		LDA	#$B1 ; '±'
+		STA	$16
+		LDA	#$3A ; ':'
+		STA	$17
+		JMP	loc_343B
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+
+loc_3518:				; CODE XREF: RAM:34DBj
+		CMP	#0
+		BEQ	loc_351F
+		JMP	loc_339F
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+
+loc_351F:				; CODE XREF: RAM:351Aj
+		JSR	sub_3CC2
+		LDX	$6312
+		INC	byte_1937
+		INC	byte_1971
+		JMP	loc_32F3
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+byte_352E:	.BYTE 0			; DATA XREF: RAM:3375w	RAM:33A7r ...
+byte_352F:	.BYTE $FF		; DATA XREF: RAM:33B0w	RAM:33C6r
+byte_3530:	.BYTE $FF		; DATA XREF: RAM:33B6w	RAM:33CCr
+
+; ЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫ S U B	R O U T	I N E ЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫ
+
+
+sub_3531:				; CODE XREF: RAM:30EEp
+					; sub_2BFA:loc_31B9p
+		LDA	$6314
+		LSR	A
+		ORA	#$B0 ; '°'
+		STA	$11
+		LDA	#0
+		ROR	A
+		STA	$10
+		LDA	$6313
+		ASL	A
+		ASL	A
+		ORA	$10
+		STA	$10
+		RTS
+; End of function sub_3531
+
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+		LDA	byte_195A
+		LDX	#$75 ; 'u'
+		LDY	#0
+		JSR	sub_2DE3
+		BCS	loc_355C
+		LDA	#$FF
+		STA	byte_195D
+		JMP	loc_320D
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+
+loc_355C:				; CODE XREF: RAM:3552j	RAM:356Ej
+		LDA	#$FF
+		STA	byte_1959
+		JMP	loc_320D
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+		LDA	byte_195A
+		LDX	#$75 ; 'u'
+		LDY	#4
+		JSR	sub_2DE3
+		BCS	loc_355C
+		LDA	byte_195A
+		LDX	#$75 ; 'u'
+		LDY	#4
+		SEC
+		JSR	sub_2DAB
+		LDA	#$FF
+		STA	byte_1979
+		JMP	loc_320D
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+		JSR	sub_3596
+		BCS	loc_358B
+		JMP	loc_320D
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+
+loc_358B:				; CODE XREF: RAM:3586j
+		LDA	#0
+		STA	byte_1958
+		STA	byte_192A
+		JMP	loc_320D
+
+; ЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫ S U B	R O U T	I N E ЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫ
+
+
+sub_3596:				; CODE XREF: sub_2BFA+410p RAM:3583p
+		LDA	$7600
+		BNE	loc_35BF
+		LDA	$760A
+		STA	$12
+		LDA	$760B
+		STA	$13
+		LDA	byte_195A
+		ASL	A
+		TAY
+		LDA	($12),Y
+		STA	byte_191A
+		INY
+		LDA	($12),Y
+		STA	byte_192A
+		LDA	#7
+		STA	byte_1933
+		JSR	sub_3C2D
+		CLC
+		RTS
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+
+loc_35BF:				; CODE XREF: sub_3596+3j
+		SEC
+		RTS
+; End of function sub_3596
+
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+		LDA	byte_195A
+		ASL	A
+		ASL	A
+		TAX
+		LDA	byte_3BA7,X
+		STA	$6313
+		LDA	byte_3BA7+1,X
+		STA	$6314
+		LDA	byte_3BA7+2,X
+		STA	$6315
+		LDA	byte_3BA7+3,X
+		BPL	loc_35E7
+		CMP	#$FF
+		BEQ	loc_35EA
+		LDA	$D20A
+		AND	#3
+
+loc_35E7:				; CODE XREF: RAM:35DCj
+		STA	$6312
+
+loc_35EA:				; CODE XREF: RAM:35E0j
+		LDX	#4
+
+loc_35EC:				; CODE XREF: RAM:35F3j
+		LDA	byte_18BA,X
+		STA	unk_3630,X
+		DEX
+		BPL	loc_35EC
+		LDY	#8
+
+loc_35F7:				; CODE XREF: RAM:3612j
+		LDA	#$1A
+		LDX	#4
+
+loc_35FB:				; CODE XREF: RAM:35FFj
+		STA	byte_18BA,X
+		DEX
+		BPL	loc_35FB
+		JSR	sub_2C66
+		LDA	#0
+		LDX	#4
+
+loc_3608:				; CODE XREF: RAM:360Cj
+		STA	byte_18BA,X
+		DEX
+		BPL	loc_3608
+		JSR	sub_2C66
+		DEY
+		BNE	loc_35F7
+		LDX	#4
+
+loc_3616:				; CODE XREF: RAM:361Dj
+		LDA	unk_3630,X
+		STA	byte_18BA,X
+		DEX
+		BPL	loc_3616
+		LDA	#$FF
+		STA	byte_196A
+		STA	byte_1912
+		STA	byte_1938
+		STA	byte_1939
+		JMP	loc_318C
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+unk_3630:	.BYTE $85 ; …		; DATA XREF: RAM:35EFw	RAM:loc_3616r
+		.BYTE	3
+		.BYTE $A2 ; ў
+		.BYTE	8
+		.BYTE  $A
+
+; ЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫ S U B	R O U T	I N E ЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫ
+
+
+sub_3635:				; CODE XREF: RAM:loc_3689p RAM:3756p ...
+		LDA	#$FF
+		STA	byte_197A
+		DEC	$F
+		DEC	$32
+		DEC	byte_1937
+		DEC	byte_1971
+		LDA	word_1977
+		STA	byte_3681
+		LDA	word_1977+1
+		STA	byte_3682
+		LDA	#7
+		STA	$16
+		LDA	#$20 ; ' '
+		STA	$17
+		JSR	sub_3CA5
+		LDX	byte_1933
+		STX	byte_194A
+		RTS
+; End of function sub_3635
+
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+
+loc_3662:				; CODE XREF: RAM:loc_36ECj RAM:375Cj ...
+		JSR	sub_3CC2
+		LDA	byte_3681
+		STA	word_1977
+		LDA	byte_3682
+		STA	word_1977+1
+		INC	$32
+		INC	byte_1937
+		INC	$F
+		INC	byte_1971
+		LDA	#0
+		STA	byte_197A
+		RTS
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+byte_3681:	.BYTE $FF		; DATA XREF: sub_3635+12w RAM:3665r
+byte_3682:	.BYTE $FF		; DATA XREF: sub_3635+18w RAM:366Br
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+		LDA	byte_197A
+		BEQ	loc_3689
+		RTS
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+
+loc_3689:				; CODE XREF: RAM:3686j
+		JSR	sub_3635
+		LDA	#$10
+		STA	$16
+		LDA	#$37 ; '7'
+		STA	$17
+		LDX	byte_194A
+		JSR	sub_3C5C
+
+loc_369A:				; CODE XREF: RAM:369Dj	RAM:36ACj
+		JSR	sub_2643
+		BMI	loc_369A
+		JSR	sub_2BA5
+		CMP	#$49 ; 'I'
+		BEQ	loc_36B1
+		CMP	#$53 ; 'S'
+		BEQ	loc_36C3
+		CMP	#$1B
+		BNE	loc_369A
+		JMP	loc_36EC
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+
+loc_36B1:				; CODE XREF: RAM:36A4j
+		LDA	#$EF ; 'п'
+		STA	byte_193A
+		LDA	#$36 ; '6'
+		STA	byte_193B
+		LDA	#$F0 ; 'р'
+		STA	loc_51B0
+		JMP	loc_36D2
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+
+loc_36C3:				; CODE XREF: RAM:36A8j
+		LDA	#$D0 ; 'Р'
+		STA	loc_51B0
+		LDA	#1
+		STA	byte_193A
+		LDA	#$37 ; '7'
+		STA	byte_193B
+
+loc_36D2:				; CODE XREF: RAM:36C0j
+		LDA	#$32 ; '2'
+		STA	byte_1944
+		LDA	#$37 ; '7'
+		STA	byte_1945
+		LDA	#0
+		STA	byte_6276
+		JSR	sub_50B2
+
+loc_36E4:				; CODE XREF: RAM:36E9j
+		BCS	loc_36EC
+		JSR	loc_50B7
+		JMP	loc_36E4
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+
+loc_36EC:				; CODE XREF: RAM:36AEj	RAM:loc_36E4j
+		JMP	loc_3662
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+aExamineInvento:.BYTE "Examine Inventory",0
+aExamineSpells:	.BYTE "Examine Spells",0
+		.BYTE $A6,  0,	2
+		.BYTE $A5
+aExamine:	.BYTE "Examine "
+		.BYTE $A1
+aI:		.BYTE "I"
+		.BYTE $A0
+aTemsOr:	.BYTE "tems or "
+		.BYTE $A1
+aS:		.BYTE "S"
+		.BYTE $A0
+aPellsq:	.BYTE "pells?"
+		.BYTE $D
+		.BYTE $FF
+		.BYTE $A1
+aF:		.BYTE "F"
+		.BYTE $A0
+aOrward:	.BYTE "orward, "
+		.BYTE $A1
+aB:		.BYTE "B"
+		.BYTE $A0
+aAckOr:		.BYTE "ack, or "
+		.BYTE $A1
+aEsc_0:		.BYTE "ESC"
+		.BYTE $A0
+		.BYTE $20
+aToExit:	.BYTE "to exit"
+		.BYTE $AE
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+		JSR	sub_3635
+		JSR	sub_5857
+		JMP	loc_3662
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+
+loc_375F:				; CODE XREF: RAM:189Fj
+		JSR	sub_3635
+		JSR	sub_5AB4
+		JMP	loc_3662
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+		JSR	sub_3635
+		JSR	loc_5ACB
+		JMP	loc_3662
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+
+loc_3771:				; CODE XREF: RAM:18A8j
+		JSR	sub_3635
+		JSR	sub_51B6
+		JMP	loc_3662
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+		JSR	sub_3635
+		JSR	sub_577E
+		JMP	loc_3662
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+		LDA	$7600
+		BEQ	loc_3789
+		RTS
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+
+loc_3789:				; CODE XREF: RAM:3786j
+		JSR	sub_3635
+		LDA	#$BE ; 'ѕ'
+		STA	$16
+		LDA	#$37 ; '7'
+		STA	$17
+		JSR	sub_3C5C
+
+loc_3797:				; CODE XREF: RAM:379Aj
+		JSR	sub_2643
+		BMI	loc_3797
+		JSR	sub_2BA5
+		CMP	#$59 ; 'Y'
+		BNE	loc_37BB
+		JSR	sub_3CC2
+		LDA	#$31 ; '1'
+		STA	byte_1909
+		LDA	#0
+		STA	byte_190B
+		LDA	#$76 ; 'v'
+		STA	byte_190C
+		JSR	sub_2CAD
+		JMP	$7600
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+
+loc_37BB:				; CODE XREF: RAM:37A1j
+		JMP	loc_3662
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+		.BYTE $A6,  0,	2
+		.BYTE $A5
+aSaveCharacterq:.BYTE "Save character?"
+		.BYTE $D
+		.BYTE $D
+		.BYTE $AC
+		.WORD byte_382E
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+		DEC	$32
+		LDA	#4
+		STA	$16
+		LDA	#$38 ; '8'
+		STA	$17
+		JSR	sub_1C88
+
+loc_37E3:				; CODE XREF: RAM:37E6j
+		JSR	sub_2643
+		BMI	loc_37E3
+		JSR	sub_2BA5
+		CMP	#$59 ; 'Y'
+		BNE	loc_37FC
+		LDA	#0
+		STA	$22F
+		LDA	#1
+		JSR	sub_1A0D
+		JMP	loc_2EC6
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+
+loc_37FC:				; CODE XREF: RAM:37EDj
+		INC	$32
+		DEC	byte_1935
+		JMP	sub_3C2D
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+		.BYTE $A8
+		.BYTE $A6,  0,	2
+		.BYTE $A5
+aQuitGameWithou:.BYTE "Quit game without saving character?"
+		.BYTE $D
+		.BYTE $D
+byte_382E:	.BYTE $A5		; DATA XREF: RAM:37D4o
+aAreYouSure:	.BYTE "Are you sure ("
+		.BYTE $A1
+aY:		.BYTE 'Y'
+		.BYTE $A0
+aOr:		.BYTE " or "
+		.BYTE $A1
+aN:		.BYTE 'N'
+		.BYTE $A0
+		.BYTE ')'
+		.BYTE $D
+		.BYTE $FF
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+		DEC	$32
+		LDA	#$60 ; '`'
+		STA	$16
+		LDA	#$38 ; '8'
+		STA	$17
+		JSR	sub_3CA5
+		JSR	sub_2BB0
+		JSR	sub_3CC2
+		INC	$32
+		RTS
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+		.BYTE $A8
+		.BYTE $A6,  0,	2
+		.BYTE $A5
+aPaused:	.BYTE "(Paused)"
+		.BYTE $D
+		.BYTE $FF
+
+; ЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫ S U B	R O U T	I N E ЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫ
+
+
+sub_386F:				; CODE XREF: sub_2BFA+3FCp RAM:30D8p
+		LDA	#0
+		STA	byte_38CF
+		LDA	#$D0 ; 'Р'
+		STA	$16
+		LDA	#$38 ; '8'
+		STA	$17
+		LDA	$631E
+		BEQ	loc_3882
+		RTS
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+
+loc_3882:				; CODE XREF: sub_386F+10j
+		LDX	#$F
+
+loc_3884:				; CODE XREF: sub_386F+38j
+		LDA	$6494,X
+		CMP	#2
+		BNE	loc_38A6
+		LDA	$64A4,X
+		CMP	$6313
+		BNE	loc_38A6
+		LDA	$64B4,X
+		CMP	$6314
+		BNE	loc_38A6
+		LDA	$64C4,X
+		CMP	$6315
+		BNE	loc_38A6
+		INC	byte_38CF
+
+loc_38A6:				; CODE XREF: sub_386F+1Aj sub_386F+22j ...
+		DEX
+		BPL	loc_3884
+		LDX	byte_38CF
+		CPX	byte_1938
+		BEQ	locret_38CE
+		STX	byte_1938
+		TXA
+		BEQ	loc_38CB
+		LDA	#$F9 ; 'щ'
+		STA	$16
+		LDA	#$38 ; '8'
+		STA	$17
+		CPX	#2
+		BCC	loc_38CB
+		LDA	#$D5 ; 'Х'
+		STA	$16
+		LDA	#$38 ; '8'
+		STA	$17
+
+loc_38CB:				; CODE XREF: sub_386F+46j sub_386F+52j
+		JSR	sub_1C84
+
+locret_38CE:				; CODE XREF: sub_386F+40j
+		RTS
+; End of function sub_386F
+
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+byte_38CF:	.BYTE 0			; DATA XREF: sub_386F+2w sub_386F+34w	...
+		.BYTE $A6,  0,	5
+		.BYTE $AB
+		.BYTE $FF
+		.BYTE $A6,  0,	5
+aThereAreSevera:.BYTE " There are several things here."
+		.BYTE $AB
+		.BYTE $FF
+		.BYTE $A6,  0,	5
+aThereIsSomethi:.BYTE " There is something here."
+		.BYTE $AB
+		.BYTE $FF
+		.BYTE $A8
+		.BYTE $A6,$1F,	0
+aLevel:		.BYTE "Level:"
+		.BYTE $A6,  1,	1
+aStatsStaChrStr:.BYTE "Stats:  STA  CHR  STR  INT  WIS  SKL"
+		.BYTE $A6,  3,	2
+		.BYTE $7B ; {
+		.BYTE $A6,  1,	3
+aExperience:	.BYTE "Experience:"
+		.BYTE $A6,$17,	3
+aHitPoints:	.BYTE "Hit Points:"
+		.BYTE $FF
+		.BYTE $A6,  1,	0
+		.BYTE $B3
+		.WORD $6321
+		.BYTE $1C
+		.BYTE $A6,$25,	0
+		.BYTE $B2
+		.WORD $633C
+		.BYTE 2
+		.BYTE $A6,  9,	2
+		.BYTE $B2
+		.WORD $6349
+		.BYTE 3
+		.BYTE "  "
+		.BYTE $B2
+		.WORD $6351
+		.BYTE 3
+		.BYTE "  "
+		.BYTE $B2
+		.WORD $6359
+		.BYTE 3
+		.BYTE "  "
+		.BYTE $B2
+		.WORD $6361
+		.BYTE 3
+		.BYTE "  "
+		.BYTE $B2
+		.WORD $6369
+		.BYTE 3
+		.BYTE "  "
+		.BYTE $B2
+		.WORD $6371
+		.BYTE 3
+		.BYTE $A6, $C,	3
+		.BYTE $B0
+		.WORD $633D
+		.BYTE $A
+		.BYTE $A6,$22,	3
+		.BYTE $B1
+		.WORD $6345
+		.BYTE 5
+		.BYTE $FF
+		.BYTE $A6,  0,	4
+		.BYTE $AB
+		.BYTE $FF
+		.BYTE $A6,  0,	0
+		.BYTE $A5
+aTheDoorWonTOpe:.BYTE "The door won't open. You may:"
+		.BYTE $D
+		.BYTE $A6,  8,	2
+		.BYTE "("
+		.BYTE $A1
+a1:		.BYTE '1'
+		.BYTE $A0
+aExamineTheDoor:.BYTE ") Examine the door."
+		.BYTE $A6,  8,	3
+		.BYTE '('
+		.BYTE $A1
+a2:		.BYTE '2'
+		.BYTE $A0
+aForceTheDoor_:	.BYTE ") Force the door."
+		.BYTE $A6,  8,	4
+		.BYTE '('
+		.BYTE $A1
+a3:		.BYTE '3'
+		.BYTE $A0
+		.BYTE ") Use a key."
+		.BYTE $A6,  8,	5
+		.BYTE '('
+		.BYTE $A1
+a4:		.BYTE '4'
+		.BYTE $A0
+aBreakAnEnchant:.BYTE ") Break an enchantment."
+		.BYTE $A6,  8,	7
+		.BYTE '('
+		.BYTE $A1
+a0:		.BYTE '0'
+		.BYTE $A0
+aLeaveIt_:	.BYTE ") Leave it."
+		.BYTE $FF
+		.BYTE $A6,  0,	2
+		.BYTE $A5
+aTheDoorAppears:.BYTE "The door appears to "
+		.BYTE $B3
+word_3A61:	.WORD $FFFF		; DATA XREF: RAM:3422w	RAM:3428w
+		.BYTE $11
+		.BYTE $D
+		.BYTE $FF
+		.BYTE $A6,  0,	2
+		.BYTE $A5
+aYouCanTDiscern:.BYTE "You can't discern what bars the door."
+		.BYTE $D
+		.BYTE $FF
+		.BYTE $A6,  0,	2
+		.BYTE $A5
+aWham:		.BYTE "Wham!"
+		.BYTE $D
+		.BYTE $FF
+		.BYTE $A6,  0,	2
+		.BYTE $A5
+aTheDoorOpens:	.BYTE "The door opens!"
+		.BYTE $D
+		.BYTE $FF
+		.BYTE $A6,  0,	2
+		.BYTE $A5
+aTheDoorRemains:.BYTE "The door remains shut."
+		.BYTE $D
+		.BYTE $FF
+		.BYTE $A6,  0,	2
+		.BYTE $A1
+		.BYTE $A5
+aExamining___:	.BYTE "Examining..."
+		.BYTE $D
+		.BYTE $A0
+		.BYTE $FF
+		.BYTE $A6,  0,	2
+		.BYTE $A1
+		.BYTE $A5
+aConcentrating_:.BYTE "Concentrating..."
+		.BYTE $D
+		.BYTE $A0
+		.BYTE $FF
+		.BYTE $FF
+		.BYTE  $B
+		.BYTE $16
+		.BYTE $3A ; :
+		.BYTE $3B ; ;
+		.BYTE $3B ; ;
+aNeedAKey_:	.BYTE "need a key.",0
+aBeBolted_:	.BYTE "be bolted.",0
+aBeEnchanted:	.BYTE "be enchanted!",0
+unk_3B24:	.BYTE $21 ; !		; DATA XREF: RAM:3170r
+		.BYTE $21 ; !
+		.BYTE $21 ; !
+		.BYTE  $F
+		.BYTE  $F
+		.BYTE	7
+		.BYTE	7
+		.BYTE $21 ; !
+		.BYTE $44 ; D
+		.BYTE $48 ; H
+		.BYTE $4C ; L
+		.BYTE $DA ; Ъ
+		.BYTE $DA ; Ъ
+		.BYTE $DA ; Ъ
+		.BYTE $DA ; Ъ
+		.BYTE $DA ; Ъ
+unk_3B34:	.BYTE $33 ; 3		; DATA XREF: RAM:3176r
+		.BYTE $33 ; 3
+		.BYTE $33 ; 3
+		.BYTE $33 ; 3
+		.BYTE $33 ; 3
+		.BYTE $33 ; 3
+		.BYTE $33 ; 3
+		.BYTE $33 ; 3
+		.BYTE $33 ; 3
+		.BYTE $33 ; 3
+		.BYTE $33 ; 3
+		.BYTE $32 ; 2
+		.BYTE $32 ; 2
+		.BYTE $32 ; 2
+		.BYTE $32 ; 2
+		.BYTE $32 ; 2
+unk_3B44:	.BYTE	1		; DATA XREF: RAM:312Dr	RAM:3138r ...
+		.BYTE	0
+		.BYTE	1
+		.BYTE	0
+		.BYTE	1
+		.BYTE	0
+		.BYTE	1
+		.BYTE	0
+unk_3B4C:	.BYTE $24 ; $		; DATA XREF: RAM:3159r
+		.BYTE $DC ; Ь
+		.BYTE $DC ; Ь
+		.BYTE $24 ; $
+		.BYTE $DC ; Ь
+		.BYTE $24 ; $
+		.BYTE $24 ; $
+		.BYTE $DC ; Ь
+unk_3B54:	.BYTE $FF		; DATA XREF: RAM:313Br	RAM:3328r
+		.BYTE	1
+		.BYTE	1
+		.BYTE $FF
+		.BYTE	1
+		.BYTE $FF
+		.BYTE $FF
+		.BYTE	1
+unk_3B5C:	.BYTE	0		; DATA XREF: RAM:32DDr	RAM:32EAr ...
+		.BYTE $23 ; #
+		.BYTE $23 ; #
+		.BYTE	0
+		.BYTE $23 ; #
+		.BYTE	0
+		.BYTE	0
+		.BYTE $23 ; #
+unk_3B64:	.BYTE	0		; DATA XREF: RAM:315Fr
+		.BYTE	0
+		.BYTE	1
+		.BYTE	1
+		.BYTE	1
+		.BYTE	1
+		.WORD 0
+unk_3B6C:	.BYTE	0		; DATA XREF: RAM:3164r
+		.BYTE $80 ; Ђ
+		.BYTE	0
+		.BYTE $80 ; Ђ
+		.BYTE	0
+		.BYTE $80 ; Ђ
+		.BYTE	0
+		.BYTE $80 ; Ђ
+byte_3B74:	.BYTE 1			; DATA XREF: RAM:30F3r
+byte_3B75:	.BYTE 2			; DATA XREF: RAM:30F8r
+byte_3B76:	.BYTE 4			; DATA XREF: RAM:30FDr
+		.BYTE	8
+		.BYTE $47 ; G
+		.BYTE $44 ; D
+		.BYTE $55 ; U
+		.BYTE $43 ; C
+		.BYTE $53 ; S
+		.BYTE $45 ; E
+		.BYTE $51 ; Q
+		.BYTE $50 ; P
+		.BYTE $2C ; ,
+		.BYTE $2E ; .
+		.BYTE $10
+		.BYTE $11
+		.BYTE $13
+		.BYTE $56 ; V
+		.BYTE $68 ; h
+		.BYTE $71 ; q
+		.BYTE $7A ; z
+		.BYTE $83 ; ѓ
+		.BYTE $83 ; ѓ
+		.BYTE $D6 ; Ц
+		.BYTE $4A ; J
+		.BYTE $8C ; Њ
+		.BYTE $71 ; q
+		.BYTE $71 ; q
+		.BYTE $8C ; Њ
+		.BYTE $AB ; «
+		.BYTE $37 ; 7
+		.BYTE $37 ; 7
+		.BYTE $37 ; 7
+		.BYTE $37 ; 7
+		.BYTE $37 ; 7
+		.BYTE $36 ; 6
+		.BYTE $37 ; 7
+		.BYTE $38 ; 8
+		.BYTE $3C ; <
+		.BYTE $3C ; <
+		.BYTE $3C ; <
+		.BYTE $3C ; <
+		.BYTE $2C ; ,
+unk_3B9F:	.BYTE $48 ; H		; DATA XREF: sub_2BFA+5EAr
+		.BYTE $64 ; d
+		.BYTE $83 ; ѓ
+		.BYTE $C1 ; Б
+unk_3BA3:	.BYTE $35 ; 5		; DATA XREF: sub_2BFA+5F0r
+		.BYTE $35 ; 5
+		.BYTE $35 ; 5
+		.BYTE $35 ; 5
+byte_3BA7:	.BYTE $12,$1E,	0,$FF	; DATA XREF: RAM:35C7r	RAM:35CDr ...
+		.BYTE $12,$1B,	0,  3
+		.BYTE $13,$1B,	0,  1
+		.BYTE  $F,$17,	0,  0
+		.BYTE $1D,$17,	0,  0
+		.BYTE	5,$1A,	0,$FF
+		.BYTE $14,$1F,	0,  0
+		.BYTE $10,  1,	0,$FF
+		.BYTE  $B,  1,	1,$FF
+		.BYTE $11,  7,	1,$FF
+		.BYTE $11, $A,	1,$FF
+		.BYTE  $B,$1C,	1,$FF
+		.BYTE  $B,$1F,	1,$FF
+		.BYTE	8, $F,	1,$80
+		.BYTE $12,  9,	2,$80
+		.BYTE	0,  1,	2,$FF
+		.BYTE	0,$1E,	0,$FF
+		.BYTE	1,  0,	1,$FF
+		.BYTE $1E,  0,	0,$FF
+		.BYTE $1F,$1E,	1,$FF
+		.BYTE $1F,  1,	3,$FF
+		.BYTE	1,$1F,	3,$FF
+		.BYTE $1E,$1F,	2,$FF
+		.BYTE	0,$12,	5,$FF
+		.BYTE  $D, $F,	5,$FF
+		.BYTE	3,  1,	3,$FF
+		.BYTE	3,$1E,	1,$FF
+		.BYTE  $B,  0,	4,$FF
+		.BYTE $16,  7,	1,  2
+		.BYTE $1A,  5,	1,  0
+		.BYTE $1C,  7,	1,  2
+		.BYTE $18,$1B,	2,  3
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+
+loc_3C27:				; CODE XREF: RAM:1845j
+		CMP	byte_1933
+		BEQ	sub_3C2D
+		RTS
+
+; ЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫ S U B	R O U T	I N E ЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫ
+
+
+sub_3C2D:				; CODE XREF: RAM:1848j	RAM:2F6Ap ...
+		LDX	byte_1933
+		CPX	byte_1935
+		BEQ	loc_3C40
+		LDA	#7
+		STA	$16
+		LDA	#$20 ; ' '
+		STA	$17
+		JSR	sub_1C88
+
+loc_3C40:				; CODE XREF: sub_3C2D+6j
+		LDX	byte_1933
+		STX	byte_1935
+		LDA	byte_1913,X
+		STA	$16
+		LDA	byte_1923,X
+		BNE	loc_3C57
+		LDX	#0
+		STX	byte_1933
+		BEQ	sub_3C2D
+
+loc_3C57:				; CODE XREF: sub_3C2D+21j
+		STA	$17
+		JMP	sub_1C88
+; End of function sub_3C2D
+
+
+; ЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫ S U B	R O U T	I N E ЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫ
+
+
+sub_3C5C:				; CODE XREF: RAM:1851j	RAM:33AAp ...
+		LDA	#$FF
+		STA	byte_1935
+; End of function sub_3C5C
+
+
+; ЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫ S U B	R O U T	I N E ЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫ
+
+
+sub_3C61:				; CODE XREF: RAM:1836j	sub_5049+1Ep
+		STX	byte_1933
+		LDA	$16
+		STA	byte_1913,X
+		LDA	$17
+		STA	byte_1923,X
+		JMP	sub_3C2D
+; End of function sub_3C61
+
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+
+loc_3C71:				; CODE XREF: RAM:3C87j
+		INC	byte_1933
+		LDA	byte_1933
+		CMP	byte_1934
+		BCC	loc_3C81
+		LDA	#0
+		STA	byte_1933
+
+loc_3C81:				; CODE XREF: RAM:3C7Aj
+		LDX	byte_1933
+		LDA	byte_1923,X
+		BEQ	loc_3C71
+		JMP	sub_3C2D
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+
+loc_3C8C:				; CODE XREF: RAM:3CA0j
+		DEC	byte_1933
+		BPL	loc_3C9A
+		LDA	byte_1934
+		SEC
+		SBC	#1
+		STA	byte_1933
+
+loc_3C9A:				; CODE XREF: RAM:3C8Fj
+		LDX	byte_1933
+		LDA	byte_1923,X
+		BEQ	loc_3C8C
+		JMP	sub_3C2D
+
+; ЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫ S U B	R O U T	I N E ЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫ
+
+
+sub_3CA5:				; CODE XREF: RAM:184Bj	RAM:336Fp ...
+		LDX	byte_1933
+		STX	byte_1936
+		LDX	byte_1934
+		STX	byte_1933
+		LDA	$16
+		STA	byte_1913,X
+		LDA	$17
+		STA	byte_1923,X
+		INX
+		STX	byte_1934
+		JMP	sub_3C2D
+; End of function sub_3CA5
+
+
+; ЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫ S U B	R O U T	I N E ЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫ
+
+
+sub_3CC2:				; CODE XREF: RAM:184Ej	RAM:33DDp ...
+		DEC	byte_1934
+		LDA	byte_1933
+		CMP	byte_1934
+		BCC	locret_3CDD
+		LDA	byte_1936
+		CMP	byte_1934
+		BCC	loc_3CD7
+		LDA	#0
+
+loc_3CD7:				; CODE XREF: sub_3CC2+11j
+		STA	byte_1933
+		JMP	sub_3C2D
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+
+locret_3CDD:				; CODE XREF: sub_3CC2+9j
+		RTS
+; End of function sub_3CC2
+
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+		.BYTE $A6,  0,	0
+aFoodPackets:	.BYTE "Food Packets"
+		.BYTE $A6,$10,	0
+aTorches:	.BYTE "Torches"
+		.BYTE $A7
+aWaterFlasks:	.BYTE "Water Flasks"
+		.BYTE $D
+		.BYTE $A6,  5,	1
+		.BYTE $B2
+		.WORD $63BB
+		.BYTE 3
+		.BYTE $A6,$12,	1
+		.BYTE $B2
+		.WORD $63BD
+		.BYTE 3
+		.BYTE $A6,$21,	1
+		.BYTE $B2
+		.WORD $63BC
+		.BYTE 3
+		.BYTE $D
+		.BYTE $D
+		.BYTE $A5
+aYouAreOnLevel:	.BYTE "You are on level "
+		.BYTE $B2
+		.WORD $631D
+		.BYTE 1
+		.BYTE $D
+		.BYTE $A5
+aOfTheDungeon:	.BYTE "of the Dungeon"
+		.BYTE $D
+		.BYTE $A6,  0,	4
+		.BYTE $B4
+		.WORD off_45A9
+		.BYTE $C
+		.BYTE $D
+		.BYTE $B4
+		.WORD off_45A7
+		.BYTE $C
+		.BYTE $D
+		.BYTE $B4
+		.WORD off_45A5
+		.BYTE $C
+		.BYTE $D
+		.BYTE $B4
+		.WORD off_45AD
+		.BYTE $C
+		.BYTE $A6,$1C,	4
+		.BYTE $B4
+		.WORD off_45AB
+		.BYTE $C
+		.BYTE $A6,$1C,	5
+		.BYTE $B4
+		.WORD off_45A3
+		.BYTE $C
+		.BYTE $A6,$1C,	6
+		.BYTE $B4
+		.WORD off_45B3
+		.BYTE $C
+		.BYTE $A6,$1C,	7
+		.BYTE $B4
+		.WORD off_45B1
+		.BYTE $C
+		.BYTE $A6, $E,	6
+		.BYTE $B4
+		.WORD off_45B5
+		.BYTE $C
+		.BYTE $A6, $E,	7
+		.BYTE $B4
+		.WORD off_45AF
+		.BYTE $C
+		.BYTE $FF
+		.BYTE $A6,  0,	0
+aGoldCoinsSilve:.BYTE "Gold Coins   Silver Coins   Copper Coins  "
+		.BYTE $B1
+		.WORD $63B1
+		.BYTE 6
+		.BYTE $A6,$10,	1
+		.BYTE $B1
+		.WORD $63B3
+		.BYTE 6
+		.BYTE $A6,$1F,	1
+		.BYTE $B1
+		.WORD $63B5
+		.BYTE 6
+		.BYTE $A6, $C,	3
+aOtherPossessio:.BYTE "Other Possessions"
+		.BYTE $A6,  7,	5
+aGems:		.BYTE "Gems:"
+		.BYTE $B1
+		.WORD $63B7
+		.BYTE 6
+		.BYTE $A6,$1C,	5
+aKeys:		.BYTE "Keys:"
+		.BYTE $B2
+		.WORD $63BF
+		.BYTE 3
+		.BYTE $A6,  5,	6
+aJewels:	.BYTE "Jewels:"
+		.BYTE $B1
+		.WORD $63B9
+		.BYTE 6
+		.BYTE $A6,$17,	6
+aCompasses:	.BYTE "Compasses:"
+		.BYTE $B2
+		.WORD $63C0
+		.BYTE 3
+		.BYTE $A6,  3,	7
+aCrystals:	.BYTE "Crystals:"
+		.BYTE $B2
+		.WORD $63BE
+		.BYTE 3
+		.BYTE $A6,$16,	7
+aTimepieces:	.BYTE "Timepieces:"
+		.BYTE $B2
+		.WORD $63C1
+		.BYTE 3
+		.BYTE $FF
+		.BYTE $A6,  0,	0
+		.BYTE $A5
+aWeapons:	.BYTE "Weapons"
+		.BYTE $D
+		.BYTE $A3
+		.WORD loc_3F41
+		.BYTE $A6,  0,	1
+aPrimary:	.BYTE "Primary: "
+		.BYTE $B4
+		.WORD byte_407F
+		.BYTE $1F
+		.BYTE $AB
+		.BYTE $A6,  0,	2
+aSecondary:	.BYTE "Secondary: "
+		.BYTE $B4
+		.WORD byte_4081
+		.BYTE $1D
+		.BYTE $AB
+		.BYTE $D
+		.BYTE $A5
+aArmor:		.BYTE "Armor"
+		.BYTE $D
+aHead:		.BYTE "Head: "
+		.BYTE $B4
+		.WORD unk_4083
+		.BYTE $22
+		.BYTE $AB
+		.BYTE $A6,  0,	5
+aBody:		.BYTE "Body: "
+		.BYTE $B4
+		.WORD unk_4085
+		.BYTE $22
+		.BYTE $AB
+		.BYTE $A6,  0,	6
+aArms:		.BYTE "Arms: "
+		.BYTE $B4
+		.WORD unk_4087
+		.BYTE $22
+		.BYTE $AB
+		.BYTE $A6,  0,	7
+aLegs:		.BYTE "Legs: "
+		.BYTE $B4
+		.WORD unk_4089
+		.BYTE $22
+		.BYTE $AB
+		.BYTE $FF
+		.BYTE $A6,  0,	0
+		.BYTE $A5
+aApparel:	.BYTE "Apparel"
+		.BYTE $D
+		.BYTE $A3
+		.WORD loc_3F8D
+		.BYTE $A6, $A,	2
+		.BYTE $A2
+		.BYTE $B4
+		.WORD byte_407F
+		.BYTE $1E
+		.BYTE $AB
+		.BYTE $D
+		.BYTE $A2
+		.BYTE $B4
+		.WORD byte_4081
+		.BYTE $1E
+		.BYTE $AB
+		.BYTE $D
+		.BYTE $A2
+		.BYTE $B4
+		.WORD unk_4083
+		.BYTE $1E
+		.BYTE $AB
+		.BYTE $D
+		.BYTE $A2
+		.BYTE $B4
+		.WORD unk_4085
+		.BYTE $1E
+		.BYTE $AB
+		.BYTE $D
+		.BYTE $FF
+		.BYTE $A6,  0,	0
+		.BYTE $A5
+aActiveMagic:	.BYTE "Active Magic"
+		.BYTE $D
+		.BYTE $A3
+		.WORD loc_3FFC
+		.BYTE $AC
+		.WORD byte_3F15
+		.BYTE $FF
+		.BYTE $A6,  0,	0
+		.BYTE $A5
+aKnownDiseases:	.BYTE "Known Diseases"
+		.BYTE $D
+		.BYTE $A3
+		.WORD loc_3FF6
+		.BYTE $AC
+		.WORD byte_3F15
+		.BYTE $FF
+		.BYTE $A6,  0,	0
+		.BYTE $A5
+aCurses:	.BYTE "Curses"
+		.BYTE $D
+		.BYTE $A3
+		.WORD loc_3FF9
+		.BYTE $AC
+		.WORD byte_3F15
+		.BYTE $FF
+byte_3F15:	.BYTE $D		; DATA XREF: RAM:3EE6o	RAM:3F00o ...
+		.BYTE $A2
+		.BYTE $B4
+		.WORD byte_407F
+		.BYTE $26
+		.BYTE $AB
+		.BYTE $D
+		.BYTE $A2
+		.BYTE $B4
+		.WORD byte_4081
+		.BYTE $26
+		.BYTE $AB
+		.BYTE $D
+		.BYTE $A2
+		.BYTE $B4
+		.WORD unk_4083
+		.BYTE $26
+		.BYTE $AB
+		.BYTE $D
+		.BYTE $A2
+		.BYTE $B4
+		.WORD unk_4085
+		.BYTE $26
+		.BYTE $AB
+		.BYTE $D
+		.BYTE $A2
+		.BYTE $B4
+		.WORD unk_4087
+		.BYTE $26
+		.BYTE $AB
+		.BYTE $D
+		.BYTE $A2
+		.BYTE $B4
+		.WORD unk_4089
+		.BYTE $26
+		.BYTE $AB
+		.BYTE $D
+		.BYTE $AE
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+
+loc_3F41:				; DATA XREF: RAM:3E3Eo
+		LDA	#$6E ; 'n'
+		STA	byte_407F
+		STA	byte_4081
+		LDA	#$40 ; '@'
+		STA	byte_4080
+		STA	byte_4082
+		LDX	#7
+
+loc_3F53:				; CODE XREF: RAM:3F5Fj
+		LDA	#$40 ; '@'
+		STA	unk_4083,X
+		DEX
+		LDA	#$78 ; 'x'
+		STA	unk_4083,X
+		DEX
+		BPL	loc_3F53
+		LDA	#5
+		STA	byte_407D
+
+loc_3F66:				; CODE XREF: RAM:3F8Aj
+		LDX	byte_407D
+		LDA	$639C,X
+		BMI	loc_3F87
+		JSR	sub_4B74
+		BEQ	loc_3F87
+		CLC
+		LDA	byte_407D
+		ASL	A
+		TAY
+		LDA	$41
+		ADC	#6
+		STA	byte_407F,Y
+		LDA	#0
+		ADC	$42
+		STA	byte_4080,Y
+
+loc_3F87:				; CODE XREF: RAM:3F6Cj	RAM:3F71j
+		DEC	byte_407D
+		BPL	loc_3F66
+		RTS
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+
+loc_3F8D:				; DATA XREF: RAM:3EAFo
+		LDA	#$60 ; '`'
+		STA	byte_407F
+		LDA	#$40 ; '@'
+		STA	byte_4080
+		LDX	#5
+
+loc_3F99:				; CODE XREF: RAM:3FA5j
+		LDA	#$5E ; '^'
+		STA	byte_4081,X
+		DEX
+		LDA	#$53 ; 'S'
+		STA	byte_4081,X
+		DEX
+		BPL	loc_3F99
+		LDY	#4
+
+loc_3FA9:				; CODE XREF: RAM:3FC8j
+		LDX	#0
+
+loc_3FAB:				; CODE XREF: RAM:3FC5j
+		LDA	$63A2,X
+		BPL	loc_3FC2
+
+loc_3FB0:				; CODE XREF: RAM:3FB9j
+		LDA	$63A3,X
+		STA	$63A2,X
+		INX
+		CPX	#4
+		BCC	loc_3FB0
+		LDA	#$FF
+		STA	$63A5
+		BMI	loc_3FC7
+
+loc_3FC2:				; CODE XREF: RAM:3FAEj
+		INX
+		CPX	#4
+		BCC	loc_3FAB
+
+loc_3FC7:				; CODE XREF: RAM:3FC0j
+		DEY
+		BNE	loc_3FA9
+		LDA	#3
+		STA	byte_407D
+
+loc_3FCF:				; CODE XREF: RAM:3FF3j
+		LDX	byte_407D
+		LDA	$63A2,X
+		BMI	loc_3FF0
+		JSR	sub_4B74
+		BEQ	loc_3FF0
+		LDA	byte_407D
+		ASL	A
+		TAX
+		CLC
+		LDA	$41
+		ADC	#6
+		STA	byte_407F,X
+		LDA	$42
+		ADC	#0
+		STA	byte_4080,X
+
+loc_3FF0:				; CODE XREF: RAM:3FD5j	RAM:3FDAj
+		DEC	byte_407D
+		BPL	loc_3FCF
+		RTS
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+
+loc_3FF6:				; DATA XREF: RAM:3EFDo
+		LDA	#9
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+		.BYTE $2C ; ,
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+
+loc_3FF9:				; DATA XREF: RAM:3F0Fo
+		LDA	#$B
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+		.BYTE $2C ; ,
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+
+loc_3FFC:				; DATA XREF: RAM:3EE3o
+		LDA	#$C
+		STA	byte_407E
+		LDX	#$B
+
+loc_4003:				; CODE XREF: RAM:400Fj
+		LDA	#$5E ; '^'
+		STA	byte_407F,X
+		DEX
+		LDA	#$53 ; 'S'
+		STA	byte_407F,X
+		DEX
+		BPL	loc_4003
+		LDA	#0
+		STA	$3D
+		LDA	#$65 ; 'e'
+		STA	$3E
+		LDA	#0
+		STA	$49
+		STA	byte_407D
+
+loc_4020:				; CODE XREF: RAM:405Dj
+		LDY	#0
+		LDA	($3D),Y
+		CMP	#$E0 ; 'а'
+		BCC	loc_404C
+		AND	#$F
+		CMP	byte_407E
+		BNE	loc_404C
+		LDA	byte_407D
+		ASL	A
+		TAX
+		LDA	$3D
+		ADC	#3
+		STA	byte_407F,X
+		LDA	$3E
+		ADC	#0
+		STA	byte_4080,X
+		INC	byte_407D
+		LDA	byte_407D
+		CMP	#6
+		BEQ	locret_405F
+
+loc_404C:				; CODE XREF: RAM:4026j	RAM:402Dj
+		LDA	$3D
+		CLC
+		ADC	#$10
+		STA	$3D
+		BCC	loc_4057
+		INC	$3E
+
+loc_4057:				; CODE XREF: RAM:4053j
+		INC	$49
+		LDA	$49
+		CMP	#$40 ; '@'
+		BCC	loc_4020
+
+locret_405F:				; CODE XREF: RAM:404Aj
+		RTS
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+aBirthdaySuit:	.BYTE "Birthday suit",0
+aBareHand:	.BYTE "Bare hand",0
+aNone:		.BYTE "None",0
+byte_407D:	.BYTE 0			; DATA XREF: RAM:3F63w	RAM:loc_3F66r ...
+byte_407E:	.BYTE 0			; DATA XREF: RAM:3FFEw	RAM:402Ar
+byte_407F:	.BYTE 0			; DATA XREF: RAM:3E4Do	RAM:3EB6o ...
+byte_4080:	.BYTE 0			; DATA XREF: RAM:3F4Bw	RAM:3F84w ...
+byte_4081:	.BYTE 0			; DATA XREF: RAM:3E60o	RAM:3EBDo ...
+byte_4082:	.BYTE 0			; DATA XREF: RAM:3F4Ew
+unk_4083:	.BYTE	0		; DATA XREF: RAM:3E73o	RAM:3EC4o ...
+		.BYTE	0
+unk_4085:	.BYTE	0		; DATA XREF: RAM:3E81o	RAM:3ECBo ...
+		.BYTE	0
+unk_4087:	.BYTE	0		; DATA XREF: RAM:3E8Fo	RAM:3F34o
+		.BYTE	0
+unk_4089:	.BYTE	0		; DATA XREF: RAM:3E9Do	RAM:3F3Bo
+		.BYTE	0
+
+; ЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫ S U B	R O U T	I N E ЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫ
+
+
+sub_408B:				; CODE XREF: RAM:18A5j
+					; sub_2BFA:loc_2FF3p
+		JSR	sub_4A5F
+		LDX	$50
+		BEQ	loc_4095
+		JMP	loc_40CD
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+
+loc_4095:				; CODE XREF: sub_408B+5j
+		DEX
+		LDY	#0
+		LDA	byte_1962
+		STX	$50
+		STY	byte_1962
+		STA	byte_413C
+		JSR	loc_41FC
+
+loc_40A6:				; CODE XREF: sub_408B+3Fj
+		JSR	loc_47F2
+		JSR	loc_4176
+		JSR	sub_42E7
+		JSR	loc_4377
+		JSR	loc_43C6
+		LDA	$638B
+		BEQ	loc_40BF
+		DEC	byte_1956
+		LDA	#$FF
+
+loc_40BF:				; CODE XREF: sub_408B+2Dj
+		STA	byte_1957
+		JSR	loc_413D
+		DEC	byte_413C
+		BMI	loc_40CD
+		JMP	loc_40A6
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+
+loc_40CD:				; CODE XREF: sub_408B+7j sub_408B+3Dj
+		LDA	byte_195F
+		BEQ	loc_40EB
+		JSR	sub_42E7
+		JSR	loc_43C6
+		LDA	#$69 ; 'i'
+		STA	$16
+		LDA	#$39 ; '9'
+		STA	$17
+		JSR	sub_1C84
+		JSR	sub_3C2D
+		LDA	#0
+		STA	byte_195F
+
+loc_40EB:				; CODE XREF: sub_408B+45j
+		LDA	$6345
+		ORA	$6346
+		BNE	locret_413B
+		LDA	#$FF
+		LDX	#3
+
+loc_40F7:				; CODE XREF: sub_408B+70j
+		STA	$6345,X
+		DEX
+		BPL	loc_40F7
+		LDA	#0
+		STA	$22F
+		LDX	#3
+
+loc_4104:				; CODE XREF: sub_408B+7Dj
+		STA	$D000,X
+		DEX
+		BPL	loc_4104
+		LDA	#1
+		JSR	sub_1A0D
+		LDA	#$69 ; 'i'
+		STA	$16
+		LDA	#$39 ; '9'
+		STA	$17
+		JSR	sub_1C84
+		DEC	$32
+		DEC	$F
+		LDA	#$F0 ; 'р'
+
+loc_4120:				; CODE XREF: sub_408B+99j
+		JSR	sub_2C66
+		DEX
+		BNE	loc_4120
+		LDA	#$35 ; '5'
+		STA	byte_1909
+		LDA	#0
+		STA	byte_190B
+		LDA	#$76 ; 'v'
+		STA	byte_190C
+		JSR	sub_2CAD
+		JMP	$7600
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+
+locret_413B:				; CODE XREF: sub_408B+66j
+		RTS
+; End of function sub_408B
+
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+byte_413C:	.BYTE 0			; DATA XREF: sub_408B+15w sub_408B+3Aw
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+
+loc_413D:				; CODE XREF: sub_408B+37p
+		LDA	$7600
+		BNE	locret_4171
+		BIT	$32
+		BMI	locret_4171
+		LDA	$6382
+		LDX	byte_1973
+		SEC
+		SBC	#$80 ; 'Ђ'
+		CLC
+		BMI	loc_415B
+		ADC	unk_4172,X
+		BCC	loc_4162
+		LDA	#$FF
+		BMI	loc_4162
+
+loc_415B:				; CODE XREF: RAM:4150j
+		ADC	unk_4172,X
+		BCS	loc_4162
+		LDA	#0
+
+loc_4162:				; CODE XREF: RAM:4155j	RAM:4159j ...
+		STA	loc_4168+1
+		LDA	$D20A
+
+loc_4168:				; DATA XREF: RAM:loc_4162w
+		CMP	#$FF
+		BEQ	loc_416E
+		BCS	locret_4171
+
+loc_416E:				; CODE XREF: RAM:416Aj
+		DEC	byte_195D
+
+locret_4171:				; CODE XREF: RAM:4140j	RAM:4144j ...
+		RTS
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+unk_4172:	.BYTE  $C		; DATA XREF: RAM:4152r	RAM:loc_415Br
+		.BYTE $10
+		.BYTE $18
+		.BYTE $20
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+
+loc_4176:				; CODE XREF: sub_408B+1Ep
+		DEC	byte_4590
+		BNE	loc_4187
+		LDA	#$21 ; '!'
+		STA	byte_4590
+		LDX	#$99 ; '™'
+		LDA	#1
+		JSR	sub_2E69
+
+loc_4187:				; CODE XREF: RAM:4179j
+		DEC	byte_4591
+		BNE	loc_4198
+		LDA	#$16
+		STA	byte_4591
+		LDX	#$9A ; 'љ'
+		LDA	#1
+		JSR	sub_2E69
+
+loc_4198:				; CODE XREF: RAM:418Aj
+		DEC	byte_4592
+		BNE	loc_41AE
+		LDA	#$E
+		STA	byte_4592
+		BIT	byte_1972
+		BMI	loc_41AE
+		LDX	#$9B ; '›'
+		LDA	#1
+		JSR	sub_2E69
+
+loc_41AE:				; CODE XREF: RAM:419Bj	RAM:41A5j
+		DEC	byte_4593
+		BNE	loc_41DE
+		LDA	#1
+		STA	byte_4593
+		LDA	$6396
+		BEQ	loc_41CA
+		DEC	$6396
+		LDX	#$97 ; '—'
+		LDA	#1
+		JSR	sub_2E43
+		JMP	loc_41DE
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+
+loc_41CA:				; CODE XREF: RAM:41BBj
+		LDA	loc_41D2+1
+		EOR	#$FF
+		STA	loc_41D2+1
+
+loc_41D2:				; DATA XREF: RAM:loc_41CAr RAM:41CFw
+		LDA	#$FF
+		BMI	loc_41DE
+		LDA	$6397
+		BEQ	loc_41DE
+		DEC	$6397
+
+loc_41DE:				; CODE XREF: RAM:41B1j	RAM:41C7j ...
+		DEC	byte_4594
+		BNE	locret_41EF
+		LDA	#2
+		STA	byte_4594
+		LDX	#$98 ; ''
+		LDA	#1
+		JSR	sub_2E69
+
+locret_41EF:				; CODE XREF: RAM:41E1j
+		RTS
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+		.BYTE	4
+		.BYTE	4
+		.BYTE	4
+		.BYTE	3
+		.BYTE	3
+		.BYTE	1
+		.BYTE	0
+		.BYTE	0
+		.BYTE	3
+		.BYTE	3
+		.BYTE	2
+		.BYTE	2
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+
+loc_41FC:				; CODE XREF: sub_408B+18p
+		LDA	byte_1960
+		BNE	loc_4202
+		RTS
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+
+loc_4202:				; CODE XREF: RAM:41FFj
+		LDA	#0
+		STA	byte_1960
+		STA	byte_1976
+		STA	byte_195E
+		STA	$6394
+		STA	byte_42E5
+		STA	byte_42E6
+		LDA	#3
+		STA	$5C
+
+loc_421A:				; CODE XREF: RAM:423Fj
+		LDX	$5C
+		LDA	$63A2,X
+		BMI	loc_423D
+		STA	$4B
+		JSR	sub_4B74
+		JSR	sub_4EC4
+		LDY	#0
+		LDA	byte_1976
+		ADC	($43),Y
+		STA	byte_1976
+		INY
+		LDA	byte_195E
+		CLC
+		ADC	($43),Y
+		STA	byte_195E
+
+loc_423D:				; CODE XREF: RAM:421Fj
+		DEC	$5C
+		BPL	loc_421A
+		LDA	byte_195E
+		CLC
+		ADC	byte_1953
+		STA	$6395
+		LDA	#$3F ; '?'
+		STA	$4B
+
+loc_424F:				; CODE XREF: RAM:4271j
+		LDA	$4B
+		JSR	sub_4B74
+		BEQ	loc_426F
+		LDY	#0
+		LDA	($41),Y
+		BPL	loc_426F
+		LDY	#4
+		LDA	($41),Y
+		CLC
+		ADC	byte_42E5
+		STA	byte_42E5
+		LDA	byte_42E6
+		ADC	#0
+		STA	byte_42E6
+
+loc_426F:				; CODE XREF: RAM:4254j	RAM:425Aj
+		DEC	$4B
+		BPL	loc_424F
+		LDX	#4
+
+loc_4275:				; CODE XREF: RAM:429Bj
+		TXA
+		ASL	A
+		TAY
+		LDA	$63B1,Y
+		STA	$58
+		LDA	$63B2,Y
+		LDY	$41F0,X
+
+loc_4283:				; CODE XREF: RAM:4289j
+		BEQ	loc_428B
+		LSR	$58
+		ROR	A
+		DEY
+		BPL	loc_4283
+
+loc_428B:				; CODE XREF: RAM:loc_4283j
+		CLC
+		ADC	byte_42E5
+		STA	byte_42E5
+		LDA	byte_42E6
+		ADC	#0
+		STA	byte_42E6
+		DEX
+		BPL	loc_4275
+		LDX	#6
+
+loc_429F:				; CODE XREF: RAM:42BBj
+		LDA	$63BB,X
+		LDY	$41F5,X
+
+loc_42A5:				; CODE XREF: RAM:42A9j
+		BEQ	loc_42AB
+		LSR	A
+		DEY
+		BPL	loc_42A5
+
+loc_42AB:				; CODE XREF: RAM:loc_42A5j
+		CLC
+		ADC	byte_42E5
+		STA	byte_42E5
+		LDA	byte_42E6
+		ADC	#0
+		STA	byte_42E6
+		DEX
+		BPL	loc_429F
+		LDA	$6359
+		LSR	A
+		STA	loc_42C8+1
+		LDA	byte_42E5
+		SEC
+
+loc_42C8:				; DATA XREF: RAM:42C1w
+		SBC	#$FF
+		STA	byte_42E5
+		LDA	byte_42E6
+		SBC	#0
+		STA	byte_42E6
+		BCC	locret_42E4
+		BEQ	loc_42DE
+		LDA	#$FF
+		STA	byte_42E5
+
+loc_42DE:				; CODE XREF: RAM:42D7j
+		LDA	byte_42E5
+		STA	$6394
+
+locret_42E4:				; CODE XREF: RAM:42D5j
+		RTS
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+byte_42E5:	.BYTE $FF		; DATA XREF: RAM:4210w	RAM:4261r ...
+byte_42E6:	.BYTE $FF		; DATA XREF: RAM:4213w	RAM:4267r ...
+
+; ЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫ S U B	R O U T	I N E ЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫ
+
+
+sub_42E7:				; CODE XREF: sub_408B+21p sub_408B+47p
+		LDA	#$E5 ; 'е'
+		STA	off_45B1
+		STA	off_45B3
+		STA	off_45B5
+		LDA	#$47 ; 'G'
+		STA	off_45B1+1
+		STA	off_45B3+1
+		STA	off_45B5+1
+		BIT	$6391
+		BPL	loc_430C
+		LDA	#$CB ; 'Л'
+		STA	off_45B1
+		LDA	#$47 ; 'G'
+		STA	off_45B1+1
+
+loc_430C:				; CODE XREF: sub_42E7+19j
+		BIT	$6392
+		BPL	loc_431B
+		LDA	#$BE ; 'ѕ'
+		STA	off_45B3
+		LDA	#$47 ; 'G'
+		STA	off_45B3+1
+
+loc_431B:				; CODE XREF: sub_42E7+28j
+		BIT	$6393
+		BPL	loc_432A
+		LDA	#$D8 ; 'Ш'
+		STA	off_45B5
+		LDA	#$47 ; 'G'
+		STA	off_45B5+1
+
+loc_432A:				; CODE XREF: sub_42E7+37j
+		LDX	#6
+		STX	$5C
+
+loc_432E:				; CODE XREF: sub_42E7+8Dj
+		LDA	$45E0,X
+		STA	$58
+		LDA	$45E7,X
+		STA	$59
+		LDA	$45EE,X
+		STA	$5A
+		LDA	$45F5,X
+		STA	$5B
+		LDA	$45D9,X
+		TAY
+		LDA	$6300,Y
+		LDY	#0
+
+loc_434B:				; CODE XREF: sub_42E7+6Bj
+		CMP	($58),Y
+		BCC	loc_4354
+		BEQ	loc_4354
+		INY
+		BNE	loc_434B
+
+loc_4354:				; CODE XREF: sub_42E7+66j sub_42E7+68j
+		TYA
+		CMP	$1963,X
+		BEQ	loc_4360
+		DEC	byte_195F
+		STA	$1963,X
+
+loc_4360:				; CODE XREF: sub_42E7+71j
+		ASL	A
+		TAY
+		TXA
+		ASL	A
+		TAX
+		LDA	($5A),Y
+		STA	$45A3,X
+		INY
+		LDA	($5A),Y
+		STA	$45A4,X
+		DEC	$5C
+		LDX	$5C
+		BPL	loc_432E
+		RTS
+; End of function sub_42E7
+
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+
+loc_4377:				; CODE XREF: sub_408B+24p
+		LDA	$639B
+		STA	byte_43C5
+		LDX	#6
+		STX	$5C
+
+loc_4381:				; CODE XREF: RAM:43B7j
+		DEC	$4595,X
+		BNE	loc_43B3
+		LDA	$459C,X
+		STA	$4595,X
+		LDA	$45FC,X
+		STA	$58
+		LDA	$4603,X
+		STA	$59
+		LDY	$1963,X
+		LDA	($58),Y
+		BEQ	loc_43B3
+		ASL	A
+		TAY
+		LDA	off_45B5,Y
+		STA	loc_43B0+1
+		LDA	off_45B5+1,Y
+		STA	loc_43B0+2
+		LDA	#$FF
+		STA	byte_195F
+
+loc_43B0:				; DATA XREF: RAM:43A2w	RAM:43A8w
+		JSR	$FFFF
+
+loc_43B3:				; CODE XREF: RAM:4384j	RAM:439Bj
+		DEC	$5C
+		LDX	$5C
+		BPL	loc_4381
+		BIT	byte_1972
+		BPL	locret_43C4
+		LDA	byte_43C5
+		STA	$639B
+
+locret_43C4:				; CODE XREF: RAM:43BCj
+		RTS
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+byte_43C5:	.BYTE 0			; DATA XREF: RAM:437Aw	RAM:43BEr
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+
+loc_43C6:				; CODE XREF: sub_408B+27p sub_408B+4Ap
+		LDA	$6346
+		CMP	$6348
+		LDA	$6345
+		SBC	$6347
+		BCC	loc_43E2
+		LDX	#1
+
+loc_43D6:				; CODE XREF: RAM:43DDj
+		LDA	$6347,X
+		STA	$6345,X
+		DEX
+		BPL	loc_43D6
+		LDA	#$3D ; '='
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+		.BYTE $2C ; ,
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+
+loc_43E2:				; CODE XREF: RAM:43D2j
+		LDA	#$3A ; ':'
+		STA	$499
+		LDA	#$49 ; 'I'
+		STA	$58
+		LDA	#$63 ; 'c'
+		STA	$59
+		LDX	#6
+
+loc_43F1:				; CODE XREF: RAM:442Ej
+		LDY	#1
+		LDA	($58),Y
+		CLC
+		LDY	#2
+		ADC	($58),Y
+		BCC	loc_43FE
+		LDA	#$FF
+
+loc_43FE:				; CODE XREF: RAM:43FAj
+		SEC
+		INY
+		SBC	($58),Y
+		BCS	loc_4406
+		LDA	#0
+
+loc_4406:				; CODE XREF: RAM:4402j
+		INY
+		SEC
+		SBC	($58),Y
+		BCS	loc_440E
+		LDA	#0
+
+loc_440E:				; CODE XREF: RAM:440Aj
+		INY
+		SEC
+		SBC	($58),Y
+		BCS	loc_4416
+		LDA	#0
+
+loc_4416:				; CODE XREF: RAM:4412j
+		INY
+		SEC
+		SBC	($58),Y
+		BCS	loc_441E
+		LDA	#0
+
+loc_441E:				; CODE XREF: RAM:441Aj
+		LDY	#0
+		STA	($58),Y
+		LDA	#8
+		CLC
+		ADC	$58
+		STA	$58
+		BCC	loc_442D
+		INC	$59
+
+loc_442D:				; CODE XREF: RAM:4429j
+		DEX
+		BPL	loc_43F1
+		LDA	$6379
+		LSR	A
+		LSR	A
+		LSR	A
+		LSR	A
+		TAX
+		LDA	$445F,X
+		STA	$6383
+		BIT	$6398
+		BPL	loc_4446
+		LSR	$6383
+
+loc_4446:				; CODE XREF: RAM:4441j
+		LDA	$6383
+		CMP	#4
+		BCS	loc_4452
+		LDA	#4
+		STA	$6383
+
+loc_4452:				; CODE XREF: RAM:444Bj
+		LDA	$6394
+		CMP	#$E0 ; 'а'
+		BCC	locret_445E
+		LDA	#2
+		STA	$6383
+
+locret_445E:				; CODE XREF: RAM:4457j
+		RTS
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+		.BYTE	6
+		.BYTE	7
+		.BYTE	8
+		.BYTE	9
+		.BYTE  $A
+		.BYTE  $B
+		.BYTE  $C
+		.BYTE  $D
+		.BYTE  $E
+		.BYTE  $F
+		.BYTE $10
+		.BYTE $11
+		.BYTE $11
+		.BYTE $11
+		.BYTE $12
+		.BYTE $12
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+
+loc_446F:				; CODE XREF: RAM:loc_449Dp
+					; RAM:loc_44AEp ...
+		LDA	$D20A
+		STA	loc_4479+1
+		LDA	$6349
+		LSR	A
+
+loc_4479:				; DATA XREF: RAM:4472w
+		CMP	#$FF
+		BCS	loc_447E
+		RTS
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+
+loc_447E:				; CODE XREF: RAM:447Bj
+		PLA
+		PLA
+		RTS
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+
+loc_4481:				; DATA XREF: RAM:45B7o
+		LDX	#$9B ; '›'
+		LDA	#1
+		JSR	sub_2E69
+		LDX	#$99 ; '™'
+		LDA	#1
+		JMP	sub_2E69
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+
+loc_448F:				; DATA XREF: RAM:45B9o
+		LDX	#$9B ; '›'
+		LDA	#1
+		JSR	sub_2E69
+		LDX	#$9A ; 'љ'
+		LDA	#1
+		JMP	sub_2E69
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+
+loc_449D:				; DATA XREF: RAM:45BBo
+		JSR	loc_446F
+		LDX	#$5D ; ']'
+		LDA	#1
+		JSR	sub_2E43
+		LDX	#$7D ; '}'
+		LDA	#1
+		JMP	sub_2E43
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+
+loc_44AE:				; DATA XREF: RAM:45BDo
+		JSR	loc_446F
+		LDX	#$45 ; 'E'
+		LDA	#1
+		JSR	loc_2E66
+		LDX	#$5D ; ']'
+		LDA	#1
+		JSR	sub_2E43
+		LDX	#$75 ; 'u'
+		LDA	#1
+		JSR	sub_2E43
+		LDX	#$7D ; '}'
+		LDA	#1
+		JSR	sub_2E43
+		LDX	#$9B ; '›'
+		LDA	#1
+		JMP	sub_2E69
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+
+loc_44D4:				; DATA XREF: RAM:45D3o
+		LDX	#$5D ; ']'
+		LDA	#1
+		JSR	sub_2E69
+		LDX	#$75 ; 'u'
+		LDA	#1
+		JSR	sub_2E69
+		LDX	#$7D ; '}'
+		LDA	#1
+		JMP	sub_2E69
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+
+loc_44E9:				; DATA XREF: RAM:45BFo
+		JSR	loc_446F
+		LDX	#$5E ; '^'
+		LDA	#1
+		JSR	sub_2E43
+		LDX	#$7E ; '~'
+		LDA	#1
+		JMP	sub_2E43
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+
+loc_44FA:				; DATA XREF: RAM:45C1o
+		JSR	loc_446F
+		LDX	#$45 ; 'E'
+		LDA	#1
+		JSR	loc_2E66
+		LDX	#$5E ; '^'
+		LDA	#1
+		JSR	sub_2E43
+		LDX	#$7E ; '~'
+		LDA	#1
+		JSR	sub_2E43
+		LDX	#$9B ; '›'
+		LDA	#1
+		JMP	sub_2E69
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+
+loc_4519:				; DATA XREF: RAM:45D5o
+		LDX	#$5E ; '^'
+		LDA	#1
+		JSR	sub_2E69
+		LDX	#$7E ; '~'
+		LDA	#1
+		JMP	sub_2E69
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+
+loc_4527:				; DATA XREF: RAM:45C3o
+		JSR	loc_446F
+		LDA	byte_1972
+		BPL	loc_4530
+		RTS
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+
+loc_4530:				; CODE XREF: RAM:452Dj
+		LDX	#$7F ; ''
+		LDA	#1
+		JSR	sub_2E43
+		LDX	#$5F ; '_'
+		LDA	#1
+		JMP	sub_2E43
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+
+loc_453E:				; DATA XREF: RAM:45C5o
+		JSR	loc_446F
+		BIT	byte_1972
+		BPL	loc_4547
+		RTS
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+
+loc_4547:				; CODE XREF: RAM:4544j
+		LDX	#$45 ; 'E'
+		LDA	#1
+		JSR	loc_2E66
+		LDX	#$7F ; ''
+		LDA	#1
+		JSR	sub_2E43
+		LDX	#$5F ; '_'
+		LDA	#1
+		JSR	sub_2E43
+		LDX	#$77 ; 'w'
+		LDA	#1
+		JMP	sub_2E43
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+
+loc_4563:				; DATA XREF: RAM:45D7o
+		LDX	#$7F ; ''
+		LDA	#1
+		JSR	sub_2E69
+		LDX	#$5F ; '_'
+		LDA	#1
+		JSR	sub_2E69
+		LDX	#$77 ; 'w'
+		LDA	#1
+		JMP	sub_2E69
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+
+loc_4578:				; DATA XREF: RAM:45C7o
+		JSR	loc_446F
+		LDX	#$9B ; '›'
+		LDA	#1
+		JMP	sub_2E69
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+
+loc_4582:				; DATA XREF: RAM:45C9o
+		JSR	loc_446F
+		LDX	#$9B ; '›'
+		LDA	#1
+		JMP	sub_2E69
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+
+locret_458C:				; DATA XREF: RAM:45CBo
+		RTS
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+
+locret_458D:				; DATA XREF: RAM:45CDo
+		RTS
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+
+locret_458E:				; DATA XREF: RAM:45CFo
+		RTS
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+
+locret_458F:				; DATA XREF: RAM:45D1o
+		RTS
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+byte_4590:	.BYTE $21		; DATA XREF: RAM:loc_4176w RAM:417Dw
+byte_4591:	.BYTE $16		; DATA XREF: RAM:loc_4187w RAM:418Ew
+byte_4592:	.BYTE $E		; DATA XREF: RAM:loc_4198w RAM:419Fw
+byte_4593:	.BYTE 4			; DATA XREF: RAM:loc_41AEw RAM:41B5w
+byte_4594:	.BYTE 3			; DATA XREF: RAM:loc_41DEw RAM:41E5w
+		.BYTE	4
+		.BYTE $21 ; !
+		.BYTE $16
+		.BYTE  $E
+		.BYTE	3
+		.BYTE	2
+		.BYTE	2
+		.BYTE	4
+		.BYTE $21 ; !
+		.BYTE $16
+		.BYTE  $E
+		.BYTE	3
+		.BYTE	2
+		.BYTE	2
+off_45A3:	.WORD asc_47E5		; DATA XREF: RAM:3D64o
+					; "	       "
+off_45A5:	.WORD asc_47E5		; DATA XREF: RAM:3D51o
+					; "	       "
+off_45A7:	.WORD asc_47E5		; DATA XREF: RAM:3D4Co
+					; "	       "
+off_45A9:	.WORD asc_47E5		; DATA XREF: RAM:3D47o
+					; "	       "
+off_45AB:	.WORD asc_47E5		; DATA XREF: RAM:3D5Do
+					; "	       "
+off_45AD:	.WORD asc_47E5		; DATA XREF: RAM:3D56o
+					; "	       "
+off_45AF:	.WORD asc_47E5		; DATA XREF: RAM:3D80o
+					; "	       "
+off_45B1:	.WORD asc_47E5		; DATA XREF: RAM:3D72o	sub_42E7+2w ...
+					; "	       "
+off_45B3:	.WORD asc_47E5		; DATA XREF: RAM:3D6Bo	sub_42E7+5w ...
+					; "	       "
+off_45B5:	.WORD asc_47E5		; DATA XREF: RAM:3D79o	sub_42E7+8w ...
+					; "	       "
+		.WORD loc_4481
+		.WORD loc_448F
+		.WORD loc_449D
+		.WORD loc_44AE
+		.WORD loc_44E9
+		.WORD loc_44FA
+		.WORD loc_4527
+		.WORD loc_453E
+		.WORD loc_4578
+		.WORD loc_4582
+		.WORD locret_458C
+		.WORD locret_458D
+		.WORD locret_458E
+		.WORD locret_458F
+		.WORD loc_44D4
+		.WORD loc_4519
+		.WORD loc_4563
+		.BYTE $95 ; •
+		.BYTE $99 ; ™
+		.BYTE $9A ; љ
+		.BYTE $9B ; ›
+		.BYTE $94 ; ”
+		.BYTE $97 ; —
+		.BYTE $98 ; 
+		.BYTE  $A
+		.BYTE $26 ; &
+		.BYTE $36 ; 6
+		.BYTE $46 ; F
+		.BYTE $56 ; V
+		.BYTE $66 ; f
+		.BYTE $76 ; v
+		.BYTE $46 ; F
+		.BYTE $46 ; F
+		.BYTE $46 ; F
+		.BYTE $46 ; F
+		.BYTE $46 ; F
+		.BYTE $46 ; F
+		.BYTE $46 ; F
+		.BYTE $18
+		.BYTE $2E ; .
+		.BYTE $3E ; >
+		.BYTE $4E ; N
+		.BYTE $5E ; ^
+		.BYTE $6E ; n
+		.BYTE $7E ; ~
+		.BYTE $46 ; F
+		.BYTE $46 ; F
+		.BYTE $46 ; F
+		.BYTE $46 ; F
+		.BYTE $46 ; F
+		.BYTE $46 ; F
+		.BYTE $46 ; F
+		.BYTE $11
+		.BYTE $2A ; *
+		.BYTE $3A ; :
+		.BYTE $4A ; J
+		.BYTE $5A ; Z
+		.BYTE $6A ; j
+		.BYTE $7A ; z
+		.BYTE $46 ; F
+		.BYTE $46 ; F
+		.BYTE $46 ; F
+		.BYTE $46 ; F
+		.BYTE $46 ; F
+		.BYTE $46 ; F
+		.BYTE $46 ; F
+		.BYTE $20
+		.BYTE $40 ; @
+		.BYTE $60 ; `
+		.BYTE $A0 ;  
+		.BYTE $C0 ; А
+		.BYTE $E0 ; а
+		.BYTE $FF
+		.BYTE	1
+		.BYTE	0
+		.BYTE	0
+		.BYTE	0
+		.BYTE	0
+		.BYTE	0
+		.BYTE	2
+		.WORD aFreezing		; "   Freezing!"
+		.WORD aCold		; "	   Cold"
+		.WORD aChilly		; "	 Chilly"
+		.WORD asc_47E5		; "	       "
+		.WORD aWarm		; "	   Warm"
+		.WORD aHot		; "	    Hot"
+		.WORD aRoasting		; "   Roasting!"
+		.BYTE $30 ; 0
+		.BYTE $80 ; Ђ
+		.BYTE $EC ; м
+		.BYTE $FF
+		.BYTE	4
+		.BYTE	3
+		.BYTE	0
+		.BYTE  $F
+		.WORD aStarving		; "Starving!   "
+		.WORD aFamished		; "Famished    "
+		.WORD aHungry		; "Hungry      "
+		.WORD asc_47E5		; "	       "
+		.BYTE $40 ; @
+		.BYTE $80 ; Ђ
+		.BYTE $D0 ; Р
+		.BYTE $FF
+		.BYTE	6
+		.BYTE	5
+		.BYTE	0
+		.BYTE $10
+		.WORD aDehydrated	; "Dehydrated! "
+		.WORD aParched		; "Parched     "
+		.WORD aThirsty		; "Thirsty     "
+		.WORD asc_47E5		; "	       "
+		.BYTE $40 ; @
+		.BYTE $A0 ;  
+		.BYTE $C0 ; А
+		.BYTE $FF
+		.BYTE	8
+		.BYTE	7
+		.BYTE	0
+		.BYTE $11
+		.WORD aExhausted	; "Exhausted!  "
+		.WORD aTired		; "Tired       "
+		.WORD aWeary		; "Weary       "
+		.WORD asc_47E5		; "	       "
+		.BYTE $80 ; Ђ
+		.BYTE $C0 ; А
+		.BYTE $F0 ; р
+		.BYTE $FF
+		.BYTE	0
+		.BYTE	0
+		.BYTE	9
+		.BYTE  $A
+		.WORD asc_47E5		; "	       "
+		.WORD aBurdened		; "    Burdened"
+		.WORD aEncumbered	; "  Encumbered"
+		.WORD aImmobilized	; "Immobilized!"
+		.BYTE	8
+		.BYTE $10
+		.BYTE $20
+		.BYTE $FF
+		.BYTE	0
+		.BYTE	0
+		.BYTE  $B
+		.BYTE  $C
+		.WORD asc_47E5		; "	       "
+		.WORD aTipsy		; "Tipsy       "
+		.WORD aDrunk		; "Drunk       "
+		.WORD aVeryDrunk	; "Very	Drunk! "
+		.BYTE $40 ; @
+		.BYTE $60 ; `
+		.BYTE $80 ; Ђ
+		.BYTE $FF
+		.BYTE	0
+		.BYTE	0
+		.BYTE  $D
+		.BYTE  $E
+		.WORD asc_47E5		; "	       "
+		.WORD aFull		; "    Full    "
+		.WORD aStuffed		; "  Stuffed   "
+		.WORD aBloated		; "  Bloated!  "
+aFreezing:	.BYTE "   Freezing!",0  ; DATA XREF: RAM:4618o
+aCold:		.BYTE "        Cold",0  ; DATA XREF: RAM:461Ao
+aChilly:	.BYTE "      Chilly",0  ; DATA XREF: RAM:461Co
+aWarm:		.BYTE "        Warm",0  ; DATA XREF: RAM:4620o
+aHot:		.BYTE "         Hot",0  ; DATA XREF: RAM:4622o
+aRoasting:	.BYTE "   Roasting!",0  ; DATA XREF: RAM:4624o
+aHungry:	.BYTE "Hungry      ",0  ; DATA XREF: RAM:4632o
+aFamished:	.BYTE "Famished    ",0  ; DATA XREF: RAM:4630o
+aStarving:	.BYTE "Starving!   ",0  ; DATA XREF: RAM:462Eo
+aThirsty:	.BYTE "Thirsty     ",0  ; DATA XREF: RAM:4642o
+aParched:	.BYTE "Parched     ",0  ; DATA XREF: RAM:4640o
+aDehydrated:	.BYTE "Dehydrated! ",0  ; DATA XREF: RAM:463Eo
+aWeary:		.BYTE "Weary       ",0  ; DATA XREF: RAM:4652o
+aTired:		.BYTE "Tired       ",0  ; DATA XREF: RAM:4650o
+aExhausted:	.BYTE "Exhausted!  ",0  ; DATA XREF: RAM:464Eo
+aBurdened:	.BYTE "    Burdened",0  ; DATA XREF: RAM:4660o
+aEncumbered:	.BYTE "  Encumbered",0  ; DATA XREF: RAM:4662o
+aImmobilized:	.BYTE "Immobilized!",0  ; DATA XREF: RAM:4664o
+aTipsy:		.BYTE "Tipsy       ",0  ; DATA XREF: RAM:4670o
+aDrunk:		.BYTE "Drunk       ",0  ; DATA XREF: RAM:4672o
+aVeryDrunk:	.BYTE "Very Drunk! ",0  ; DATA XREF: RAM:4674o
+aFull:		.BYTE "    Full    ",0  ; DATA XREF: RAM:4680o
+aStuffed:	.BYTE "  Stuffed   ",0  ; DATA XREF: RAM:4682o
+aBloated:	.BYTE "  Bloated!  ",0  ; DATA XREF: RAM:4684o
+aPoisoned:	.BYTE "   Poisoned!",0
+aDiseased:	.BYTE "   Diseased!",0
+aCursed:	.BYTE "   Cursed!  ",0
+asc_47E5:	.BYTE "            ",0  ; DATA XREF: RAM:off_45A3o
+					; RAM:off_45A5o ...
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+
+loc_47F2:				; CODE XREF: sub_408B:loc_40A6p
+		LDA	$F
+		BEQ	loc_47F9
+		JMP	locret_49AF
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+
+loc_47F9:				; CODE XREF: RAM:47F4j
+		STA	$49
+		STA	$6391
+		STA	$6392
+		STA	$6393
+		LDA	#$F0 ; 'р'
+		STA	$50
+		LDA	#0
+		STA	$3D
+		LDA	#$65 ; 'e'
+		STA	$3E
+
+loc_4810:				; CODE XREF: RAM:49ACj
+		LDY	#0
+		LDA	($3D),Y
+		CMP	#$81 ; 'Ѓ'
+		BCS	loc_481B
+		JMP	loc_4999
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+
+loc_481B:				; CODE XREF: RAM:4816j
+		CMP	#$E0 ; 'а'
+		BCC	loc_4822
+		JMP	loc_4999
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+
+loc_4822:				; CODE XREF: RAM:481Dj
+		AND	#7
+		BEQ	loc_482E
+		CMP	#4
+		BCS	loc_482E
+		TAX
+		DEC	$6390,X
+
+loc_482E:				; CODE XREF: RAM:4824j	RAM:4828j
+		LDY	#4
+		LDA	($3D),Y
+		INY
+		ORA	($3D),Y
+		BNE	loc_483A
+		JMP	loc_4999
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+
+loc_483A:				; CODE XREF: RAM:4835j
+		DEY
+		SEC
+		LDA	($3D),Y
+		SBC	#1
+		STA	($3D),Y
+		INY
+		LDA	($3D),Y
+		SBC	#0
+		STA	($3D),Y
+		DEY
+		ORA	($3D),Y
+		BEQ	loc_4851
+		JMP	loc_4999
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+
+loc_4851:				; CODE XREF: RAM:484Cj
+		LDY	#0
+		LDA	($3D),Y
+		AND	#$BF ; 'ї'
+		CMP	($3D),Y
+		BEQ	loc_4893
+		STA	($3D),Y
+		LDX	$49
+		LDY	#1
+		LDA	($3D),Y
+		STA	$4A
+		LDA	$3D
+		STA	$3F
+		LDA	$3E
+		STA	$40
+
+loc_486D:				; CODE XREF: RAM:4883j	RAM:488Aj
+		INX
+		CPX	#$40 ; '@'
+		BCS	loc_4893
+		LDA	$3F
+		CLC
+		ADC	#$10
+		STA	$3F
+		BCC	loc_487D
+		INC	$40
+
+loc_487D:				; CODE XREF: RAM:4879j
+		LDY	#0
+		LDA	($3F),Y
+		CMP	#$E0 ; 'а'
+		BCC	loc_486D
+		INY
+		LDA	($3F),Y
+		CMP	$4A
+		BNE	loc_486D
+		DEY
+		LDA	($3F),Y
+		ORA	#8
+		STA	($3F),Y
+
+loc_4893:				; CODE XREF: RAM:4859j	RAM:4870j
+		LDY	#6
+		LDA	($3D),Y
+		TAX
+		INY
+		LDA	($3D),Y
+		LDY	#5
+		STA	($3D),Y
+		DEY
+		TXA
+		STA	($3D),Y
+		LDA	$D20A
+		CMP	#$20 ; ' '
+		BCS	loc_48B9
+		LDA	$D20A
+		LDY	#8
+		CMP	($3D),Y
+		BCS	loc_48B9
+		JSR	sub_4A01
+		JMP	loc_4999
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+
+loc_48B9:				; CODE XREF: RAM:48A8j	RAM:48B1j
+		LDY	#$A
+		LDA	($3D),Y
+		STA	$45
+		INY
+		CLC
+		LDA	($3D),Y
+		STA	$46
+		BPL	loc_48DE
+		LDY	#$F
+		LDA	($3D),Y
+		TAX
+		LDA	$45
+		ADC	$640B,X
+		STA	$45
+		LDA	$46
+		AND	#$7F ; ''
+		ADC	$644B,X
+		STA	$46
+		BNE	loc_48EA
+
+loc_48DE:				; CODE XREF: RAM:48C5j
+		LDA	$45
+		ADC	#0
+		STA	$45
+		LDA	$46
+		ADC	#$63 ; 'c'
+		STA	$46
+
+loc_48EA:				; CODE XREF: RAM:48DCj
+		LDY	#$E
+		LDA	($3D),Y
+		STA	$51
+		LDY	#$C
+		LDA	($3D),Y
+		STA	$52
+		LDY	#$D
+		LDA	($3D),Y
+		STA	$53
+		LDY	#9
+		LDA	($3D),Y
+		BMI	loc_4913
+		TAY
+		DEY
+		STY	$54
+		LDA	#$78 ; 'x'
+		STA	loc_4936+1
+		LDA	#$49 ; 'I'
+		STA	loc_4936+2
+		JMP	loc_4936
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+
+loc_4913:				; CODE XREF: RAM:4900j
+		PHA
+		AND	#$F
+		TAY
+		DEY
+		STY	$54
+		PLA
+		AND	#$70 ; 'p'
+		LSR	A
+		LSR	A
+		LSR	A
+		TAX
+		LDA	off_4968,X
+		STA	loc_4936+1
+		LDA	off_4968+1,X
+		STA	loc_4936+2
+		TXA
+		LSR	A
+		TAX
+		LDA	loc_4960+1,X
+		STA	loc_495B
+
+loc_4936:				; CODE XREF: RAM:4910j	RAM:4948j
+					; DATA XREF: ...
+		JMP	$FFFF
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+
+loc_4939:				; CODE XREF: RAM:4950j	RAM:4956j ...
+		CLC
+		LDA	$45
+		ADC	$53
+		STA	$45
+		BCC	loc_4944
+		INC	$46
+
+loc_4944:				; CODE XREF: RAM:4940j
+		LDY	$54
+		DEC	$52
+		BNE	loc_4936
+		JMP	loc_4984
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+
+loc_494D:				; DATA XREF: RAM:off_4968o
+		JSR	loc_2E48
+		JMP	loc_4939
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+
+loc_4953:				; DATA XREF: RAM:496Ao
+		JSR	loc_2E6E
+		JMP	loc_4939
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+
+loc_4959:				; CODE XREF: RAM:loc_4960j
+					; DATA XREF: RAM:4970o	...
+		LDA	($45),Y
+
+loc_495B:				; DATA XREF: RAM:4933w
+		EOR	$51
+		STA	($45),Y
+		DEY
+
+loc_4960:				; DATA XREF: RAM:4930r
+		BPL	loc_4959
+		JMP	loc_4939
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+		.BYTE $45 ; E
+		.BYTE $25 ; %
+		.BYTE	5
+off_4968:	.WORD loc_494D		; DATA XREF: RAM:4921r	RAM:4927r
+		.WORD loc_4953
+		.WORD loc_4939
+		.WORD loc_4939
+		.WORD loc_4959
+		.WORD loc_4959
+		.WORD loc_4959
+		.BYTE $82 ; ‚
+		.BYTE $49 ; I
+		.BYTE $A5 ; Ґ
+		.BYTE $51 ; Q
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+
+loc_497A:				; CODE XREF: RAM:497Dj
+		STA	($45),Y
+		DEY
+		BPL	loc_497A
+		JMP	loc_4939
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+		.BYTE	0
+		.BYTE $60 ; `
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+
+loc_4984:				; CODE XREF: RAM:494Aj
+		LDY	#3
+		LDA	($3D),Y
+		BEQ	loc_4994
+		SEC
+		SBC	#1
+		STA	($3D),Y
+		BNE	loc_4994
+		JSR	sub_4A01
+
+loc_4994:				; CODE XREF: RAM:4988j	RAM:498Fj
+		LDA	#$80 ; 'Ђ'
+		STA	byte_195F
+
+loc_4999:				; CODE XREF: RAM:4818j	RAM:481Fj ...
+		LDA	$3D
+		CLC
+		ADC	#$10
+		STA	$3D
+		BCC	loc_49A4
+		INC	$3E
+
+loc_49A4:				; CODE XREF: RAM:49A0j
+		INC	$49
+		LDA	$49
+		CMP	#$40 ; '@'
+		BCS	locret_49AF
+		JMP	loc_4810
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+
+locret_49AF:				; CODE XREF: RAM:47F6j	RAM:49AAj
+		RTS
+
+; ЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫ S U B	R O U T	I N E ЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫ
+
+
+sub_49B0:				; CODE XREF: RAM:1890j	sub_4CCF+46p ...
+		LDX	#$40 ; '@'
+		STX	$55
+		LDX	#0
+		STA	$57
+		CMP	#$F0 ; 'р'
+		BCC	loc_49C0
+		LDX	#$10
+		DEC	$55
+
+loc_49C0:				; CODE XREF: sub_49B0+Aj
+		STX	$56
+		LDA	#0
+		STA	$3D
+		LDA	#$65 ; 'e'
+		STA	$3E
+		LDX	#0
+
+loc_49CC:				; CODE XREF: sub_49B0+3Cj
+		LDY	$56
+		LDA	#$80 ; 'Ђ'
+		CMP	($3D),Y
+		BNE	loc_49DE
+		CPY	#0
+		BEQ	loc_49F5
+		LDY	#0
+		CMP	($3D),Y
+		BEQ	loc_49F5
+
+loc_49DE:				; CODE XREF: sub_49B0+22j
+		LDA	$3D
+		CLC
+		ADC	#$10
+		STA	$3D
+		BCC	loc_49E9
+		INC	$3E
+
+loc_49E9:				; CODE XREF: sub_49B0+35j
+		INX
+		CPX	$55
+		BCC	loc_49CC
+		LDX	#0
+		STX	$3E
+		DEX
+		BMI	loc_49FD
+
+loc_49F5:				; CODE XREF: sub_49B0+26j sub_49B0+2Cj
+		LDA	$57
+		STA	($3D),Y
+		INY
+		TXA
+		STA	($3D),Y
+
+loc_49FD:				; CODE XREF: sub_49B0+43j
+		STX	$49
+		TXA
+		RTS
+; End of function sub_49B0
+
+
+; ЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫ S U B	R O U T	I N E ЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫ
+
+
+sub_4A01:				; CODE XREF: RAM:48B3p	RAM:4991p ...
+		DEC	byte_195F
+		LDA	$49
+		LDX	#4
+
+loc_4A08:				; CODE XREF: sub_4A01+Bj
+		ASL	A
+		ROL	$40
+		DEX
+		BNE	loc_4A08
+		CLC
+		ADC	#0
+		STA	$3F
+		LDA	$40
+		AND	#$F
+		ADC	#$65 ; 'e'
+		STA	$40
+		JSR	sub_4A4A
+		LDA	$49
+		TAX
+		INY
+		CMP	($3F),Y
+		BEQ	loc_4A39
+		RTS
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+
+loc_4A27:				; CODE XREF: sub_4A01+46j
+		LDY	#0
+		LDA	($3F),Y
+		CMP	#$81 ; 'Ѓ'
+		BCC	loc_4A39
+		INY
+		LDA	($3F),Y
+		CMP	$49
+		BNE	loc_4A39
+		JSR	sub_4A4A
+
+loc_4A39:				; CODE XREF: sub_4A01+23j sub_4A01+2Cj ...
+		LDA	$3F
+		CLC
+		ADC	#$10
+		STA	$3F
+		BCC	loc_4A44
+		INC	$40
+
+loc_4A44:				; CODE XREF: sub_4A01+3Fj
+		INX
+		CPX	#$40 ; '@'
+		BCC	loc_4A27
+		RTS
+; End of function sub_4A01
+
+
+; ЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫ S U B	R O U T	I N E ЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫ
+
+
+sub_4A4A:				; CODE XREF: sub_4A01+1Ap sub_4A01+35p
+		LDY	#0
+		LDA	($3F),Y
+		CMP	#$F0 ; 'р'
+		BCC	loc_4A5A
+		LDY	#$10
+		LDA	#$80 ; 'Ђ'
+		STA	($3F),Y
+		LDY	#0
+
+loc_4A5A:				; CODE XREF: sub_4A4A+6j
+		LDA	#$80 ; 'Ђ'
+		STA	($3F),Y
+		RTS
+; End of function sub_4A4A
+
+
+; ЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫ S U B	R O U T	I N E ЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫ
+
+
+sub_4A5F:				; CODE XREF: sub_408Bp
+		LDA	$F
+		BNE	locret_4A82
+		DEC	$F
+		LDX	#0
+		STX	$4B
+
+loc_4A69:				; CODE XREF: sub_4A5F+1Fj
+		LDA	$644B,X
+		BEQ	loc_4A78
+		STA	$42
+		LDA	$640B,X
+		STA	$41
+		JSR	sub_4BB3
+
+loc_4A78:				; CODE XREF: sub_4A5F+Dj
+		INC	$4B
+		LDX	$4B
+		CPX	#$40 ; '@'
+		BCC	loc_4A69
+		INC	$F
+
+locret_4A82:				; CODE XREF: sub_4A5F+2j
+		RTS
+; End of function sub_4A5F
+
+
+; ЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫ S U B	R O U T	I N E ЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫ
+
+
+sub_4A83:				; CODE XREF: sub_4B4D+8p
+		STA	$4F
+		LDX	#$3F ; '?'
+
+loc_4A87:				; CODE XREF: sub_4A83+Aj
+		LDA	$644B,X
+		BEQ	loc_4A91
+		DEX
+		BPL	loc_4A87
+		BMI	locret_4ABE
+
+loc_4A91:				; CODE XREF: sub_4A83+7j
+		STX	$4B
+		CLC
+		LDA	$64E4
+		STA	$640B,X
+		STA	$41
+		ADC	$4F
+		TAY
+		LDA	$64E5
+		STA	$644B,X
+		STA	$42
+		ADC	#0
+		TAX
+		CMP	#$75 ; 'u'
+		BCC	loc_4AB6
+		BEQ	loc_4AB2
+		BCS	loc_4ABF
+
+loc_4AB2:				; CODE XREF: sub_4A83+2Bj
+		CPY	#0
+		BCS	loc_4ABF
+
+loc_4AB6:				; CODE XREF: sub_4A83+29j
+		STY	$64E4
+		STX	$64E5
+		LDA	$4B
+
+locret_4ABE:				; CODE XREF: sub_4A83+Cj
+		RTS
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+
+loc_4ABF:				; CODE XREF: sub_4A83+2Dj sub_4A83+31j
+		LDX	$4B
+		LDA	#0
+		STA	$644B,X
+		LDA	#$FF
+		RTS
+; End of function sub_4A83
+
+
+; ЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫ S U B	R O U T	I N E ЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫ
+
+
+sub_4AC9:				; CODE XREF: RAM:188Aj	RAM:4C1Ep ...
+		STA	$4B
+		TAX
+		LDA	$640B,X
+		STA	$41
+		LDA	$644B,X
+		STA	$42
+		LDA	$4C
+		PHA
+		LDA	#$FF
+		STA	$4C
+		JSR	sub_4D93
+		PLA
+		STA	$4C
+		JSR	sub_4EA2
+		JSR	sub_4E90
+		LDX	$4B
+		LDA	#0
+		STA	$644B,X
+		LDY	#1
+		LDA	($41),Y
+		STA	$4F
+		LDA	$41
+		STA	9
+		CLC
+		ADC	$4F
+		STA	7
+		LDA	$42
+		STA	$A
+		ADC	#0
+		STA	8
+		SEC
+		LDA	#0
+		SBC	7
+		TAY
+		LDA	#$75 ; 'u'
+		SBC	8
+		TAX
+		JSR	sub_2E0D
+		SEC
+		LDA	$64E4
+		SBC	$4F
+		STA	$64E4
+		LDA	$64E5
+		SBC	#0
+		STA	$64E5
+		LDX	#$3F ; '?'
+
+loc_4B28:				; CODE XREF: sub_4AC9+81j
+		SEC
+		LDA	$640B,X
+		SBC	$4F
+		TAY
+		LDA	$644B,X
+		BEQ	loc_4B49
+		SBC	#0
+		CMP	$42
+		BCC	loc_4B49
+		BEQ	loc_4B3E
+		BCS	loc_4B42
+
+loc_4B3E:				; CODE XREF: sub_4AC9+71j
+		CPY	$41
+		BCC	loc_4B49
+
+loc_4B42:				; CODE XREF: sub_4AC9+73j
+		STA	$644B,X
+		TYA
+		STA	$640B,X
+
+loc_4B49:				; CODE XREF: sub_4AC9+69j sub_4AC9+6Fj ...
+		DEX
+		BPL	loc_4B28
+		RTS
+; End of function sub_4AC9
+
+
+; ЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫ S U B	R O U T	I N E ЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫ
+
+
+sub_4B4D:				; CODE XREF: RAM:1884j	sub_4EFD+32p ...
+		STY	7
+		STX	8
+		LDY	#1
+		LDA	(7),Y
+		JSR	sub_4A83
+		BMI	locret_4B73
+		LDX	#$64 ; 'd'
+		LDY	#$8B ; '‹'
+		CLC
+		JSR	sub_2DAB
+		LDY	$4F
+		LDX	#0
+		LDA	$41
+		STA	9
+		LDA	$42
+		STA	$A
+		JSR	sub_2E0D
+		LDA	$4B
+
+locret_4B73:				; CODE XREF: sub_4B4D+Bj
+		RTS
+; End of function sub_4B4D
+
+
+; ЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫ S U B	R O U T	I N E ЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫ
+
+
+sub_4B74:				; CODE XREF: RAM:1887j	RAM:3F6Ep ...
+		TAX
+		LDA	$640B,X
+		STA	$41
+		LDA	$644B,X
+		STA	$42
+		RTS
+; End of function sub_4B74
+
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+		LDX	#1
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+		.BYTE $2C
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+		LDX	#2
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+		.BYTE $2C
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+
+loc_4B86:				; CODE XREF: sub_51B6+5Cp
+		LDX	#4
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+		.BYTE $2C
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+		LDX	#8
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+		.BYTE $2C
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+		LDX	#$10
+		STA	$4B
+		STX	$4D
+		JSR	sub_4BAA
+		LDA	$4B
+		JSR	sub_4B74
+		BEQ	locret_4BA9
+		LDY	#2
+		LDA	$4D
+		STA	$4C
+		STA	($41),Y
+		JSR	sub_4BB3
+		LDA	#$FF
+
+locret_4BA9:				; CODE XREF: RAM:4B9Aj
+		RTS
+
+; ЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫ S U B	R O U T	I N E ЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫ
+
+
+sub_4BAA:				; CODE XREF: RAM:4B92p
+		JSR	sub_4B74
+		BEQ	locret_4BB2
+		JSR	sub_4BB3
+
+locret_4BB2:				; CODE XREF: sub_4BAA+3j
+		RTS
+; End of function sub_4BAA
+
+
+; ЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫ S U B	R O U T	I N E ЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫ
+
+
+sub_4BB3:				; CODE XREF: sub_4A5F+16p RAM:4BA4p ...
+		LDY	#2
+		LDA	($41),Y
+		BNE	loc_4BBA
+		RTS
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+
+loc_4BBA:				; CODE XREF: sub_4BB3+4j
+		STA	$4C
+		DEC	byte_1960
+		DEC	byte_195F
+		LDA	#0
+		STA	($41),Y
+		JSR	sub_4E0F
+		LDA	$4C
+		LDY	#7
+		LDX	#0
+
+loc_4BCF:				; CODE XREF: sub_4BB3+21j
+		LSR	A
+		BCS	loc_4BD6
+		INX
+		DEY
+		BNE	loc_4BCF
+
+loc_4BD6:				; CODE XREF: sub_4BB3+1Dj
+		TXA
+		ASL	A
+		TAX
+		LDA	off_4CBF+1,X
+		PHA
+		LDA	off_4CBF,X
+		PHA
+		RTS
+; End of function sub_4BB3
+
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+
+loc_4BE2:				; DATA XREF: RAM:off_4CBFo
+		LDA	#$80 ; 'Ђ'
+		LDY	#0
+		ORA	($41),Y
+		STA	($41),Y
+		JSR	sub_4E90
+		LDA	#1
+		PHA
+		LDA	#2
+		JMP	loc_4C95
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+
+loc_4BF5:				; DATA XREF: RAM:4CC1o
+		LDY	#0
+		LDA	($41),Y
+		BMI	loc_4BFE
+		JMP	locret_4C9C
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+
+loc_4BFE:				; CODE XREF: RAM:4BF9j
+		AND	#$7F ; ''
+		STA	($41),Y
+		CMP	#$B
+		BNE	loc_4C09
+		JSR	sub_4EFD
+
+loc_4C09:				; CODE XREF: RAM:4C04j
+		JSR	sub_4EA2
+		LDX	$6493
+		LDA	$6494,X
+		AND	#$7F ; ''
+		BEQ	loc_4C27
+		LDA	$4B
+		PHA
+		LDA	$64D4,X
+		STA	$4B
+		JSR	sub_4AC9
+		PLA
+		STA	$4B
+		JSR	sub_4B74
+
+loc_4C27:				; CODE XREF: RAM:4C14j
+		LDX	$6493
+		LDA	$6313
+		STA	$64A4,X
+		LDA	$6314
+		STA	$64B4,X
+		LDA	$6315
+		STA	$64C4,X
+		LDA	#2
+		STA	$6494,X
+		LDA	$4B
+		STA	$64D4,X
+		INX
+		TXA
+		AND	#$F
+		STA	$6493
+		LDY	#2
+		LDA	#8
+		STA	($41),Y
+		LDA	#2
+		PHA
+		LDA	#1
+		BNE	loc_4C95
+
+loc_4C5A:				; DATA XREF: RAM:4CC3o
+		LDX	#$64 ; 'd'
+		LDY	#$8B ; '‹'
+		LDA	$4B
+		SEC
+		JSR	sub_2DAB
+		LDA	#4
+		PHA
+		LDA	#8
+		BNE	loc_4C95
+
+loc_4C6B:				; DATA XREF: RAM:4CC5o
+		LDY	#0
+		LDA	($41),Y
+		AND	#$7F ; ''
+		CMP	#$B
+		BNE	loc_4C78
+		JSR	sub_4EFD
+
+loc_4C78:				; CODE XREF: RAM:4C73j
+		LDX	#$64 ; 'd'
+		LDY	#$8B ; '‹'
+		LDA	$4B
+		JSR	sub_2DE3
+		BCS	loc_4C86
+		JMP	locret_4C9C
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+
+loc_4C86:				; CODE XREF: RAM:4C81j
+		LDX	#$64 ; 'd'
+		LDY	#$8B ; '‹'
+		LDA	$4B
+		CLC
+		JSR	sub_2DAB
+		LDA	#8
+		PHA
+		LDA	#4
+
+loc_4C95:				; CODE XREF: RAM:4BF2j	RAM:4C58j ...
+		JSR	sub_4D93
+		PLA
+		JSR	sub_4CCF
+
+locret_4C9C:				; CODE XREF: RAM:4BFBj	RAM:4C83j
+					; DATA XREF: ...
+		RTS
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+
+loc_4C9D:				; DATA XREF: RAM:4CC7o
+		LDY	#0
+		LDA	($41),Y
+		CMP	#$8B ; '‹'
+		BNE	loc_4CAD
+		LDA	$6390
+		BEQ	loc_4CAD
+		DEC	$6390
+
+loc_4CAD:				; CODE XREF: RAM:4CA3j	RAM:4CA8j
+		LDA	#2
+		JSR	sub_4CCF
+		LDA	#8
+		JSR	sub_4CCF
+		JSR	sub_4E90
+		LDA	$4B
+		JMP	sub_4AC9
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+off_4CBF:	.WORD loc_4BE2-1	; DATA XREF: sub_4BB3+2Ar sub_4BB3+26r
+		.WORD loc_4BF5-1
+		.WORD loc_4C5A-1
+		.WORD loc_4C6B-1
+		.WORD loc_4C9D-1
+		.WORD locret_4C9C-1
+		.WORD locret_4C9C-1
+		.WORD locret_4C9C-1
+
+; ЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫ S U B	R O U T	I N E ЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫ
+
+
+sub_4CCF:				; CODE XREF: RAM:4C99p	RAM:4CAFp ...
+		STA	$4C
+		JSR	sub_4EE8
+		LDA	#$FF
+		STA	$4A
+
+loc_4CD8:				; CODE XREF: sub_4CCF:loc_4D8Fj
+		LDY	#0
+		LDA	($43),Y
+		BNE	loc_4CE1
+		JMP	locret_4D92
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+
+loc_4CE1:				; CODE XREF: sub_4CCF+Dj
+		LDY	#1
+		LDA	($43),Y
+		BPL	loc_4CE9
+		STA	$4A
+
+loc_4CE9:				; CODE XREF: sub_4CCF+16j
+		LDY	#2
+		LDA	($43),Y
+		AND	#$20 ; ' '
+		BEQ	loc_4CF7
+		AND	$4C
+		BNE	loc_4CFD
+		BEQ	loc_4D05
+
+loc_4CF7:				; CODE XREF: sub_4CCF+20j
+		LDA	$4C
+		AND	#$20 ; ' '
+		BNE	loc_4D05
+
+loc_4CFD:				; CODE XREF: sub_4CCF+24j
+		LDA	($43),Y
+		AND	$4C
+		CMP	$4C
+		BEQ	loc_4D08
+
+loc_4D05:				; CODE XREF: sub_4CCF+26j sub_4CCF+2Cj
+		JMP	loc_4D79
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+
+loc_4D08:				; CODE XREF: sub_4CCF+34j
+		LDA	($43),Y
+		BPL	loc_4D11
+		JSR	sub_4DD4
+		BMI	loc_4D1A
+
+loc_4D11:				; CODE XREF: sub_4CCF+3Bj
+		LDY	#0
+		LDA	($43),Y
+		JSR	sub_49B0
+		BPL	loc_4D29
+
+loc_4D1A:				; CODE XREF: sub_4CCF+40j
+		LDA	$4A
+		BPL	loc_4D21
+		JMP	locret_4D92
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+
+loc_4D21:				; CODE XREF: sub_4CCF+4Dj
+		STA	$49
+		JSR	sub_4A01
+		JMP	locret_4D92
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+
+loc_4D29:				; CODE XREF: sub_4CCF+49j
+		LDY	#1
+		BIT	$4A
+		BMI	loc_4D33
+		LDA	($43),Y
+		BPL	loc_4D37
+
+loc_4D33:				; CODE XREF: sub_4CCF+5Ej
+		LDA	$49
+		STA	$4A
+
+loc_4D37:				; CODE XREF: sub_4CCF+62j
+		LDA	$4A
+		STA	($3D),Y
+		DEY
+		LDA	($3D),Y
+		CMP	#$E0 ; 'а'
+		BCS	loc_4D53
+		LDY	#$F
+		LDA	$4B
+		STA	($43),Y
+		LDY	#2
+		LDA	($43),Y
+		ASL	A
+		BPL	loc_4D53
+		LDY	#$F
+		STA	($43),Y
+
+loc_4D53:				; CODE XREF: sub_4CCF+71j sub_4CCF+7Ej
+		LDY	#0
+		LDA	($43),Y
+		LDY	#$F
+		CMP	#$F0 ; 'р'
+		BCC	loc_4D5F
+		LDY	#$1F
+
+loc_4D5F:				; CODE XREF: sub_4CCF+8Cj sub_4CCF+97j
+		LDA	($43),Y
+		STA	($3D),Y
+		DEY
+		CPY	#2
+		BCS	loc_4D5F
+		LDY	#5
+		LDA	($3D),Y
+		BNE	loc_4D79
+		DEY
+		LDA	($3D),Y
+		CMP	#1
+		BNE	loc_4D79
+		LDA	#0
+		STA	$50
+
+loc_4D79:				; CODE XREF: sub_4CCF:loc_4D05j
+					; sub_4CCF+9Dj	...
+		LDX	#$10
+		LDY	#0
+		LDA	($43),Y
+		CMP	#$F0 ; 'р'
+		BCC	loc_4D85
+		LDX	#$20 ; ' '
+
+loc_4D85:				; CODE XREF: sub_4CCF+B2j
+		TXA
+		CLC
+		ADC	$43
+		STA	$43
+		BCC	loc_4D8F
+		INC	$44
+
+loc_4D8F:				; CODE XREF: sub_4CCF+BCj
+		JMP	loc_4CD8
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+
+locret_4D92:				; CODE XREF: sub_4CCF+Fj sub_4CCF+4Fj	...
+		RTS
+; End of function sub_4CCF
+
+
+; ЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫ S U B	R O U T	I N E ЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫ
+
+
+sub_4D93:				; CODE XREF: sub_4AC9+14p
+					; RAM:loc_4C95p
+		STA	$4C
+		LDA	#0
+		STA	$3D
+		LDA	#$65 ; 'e'
+		STA	$3E
+		LDX	#0
+		STX	$49
+
+loc_4DA1:				; CODE XREF: sub_4D93+3Ej
+		LDY	#0
+		LDA	($3D),Y
+		CMP	#$81 ; 'Ѓ'
+		BCC	loc_4DC0
+		CMP	#$E0 ; 'а'
+		BCS	loc_4DC0
+		LDY	#$F
+		LDA	($3D),Y
+		CMP	$4B
+		BNE	loc_4DC0
+		LDY	#2
+		LDA	($3D),Y
+		AND	$4C
+		BEQ	loc_4DC0
+		JSR	sub_4A01
+
+loc_4DC0:				; CODE XREF: sub_4D93+14j sub_4D93+18j ...
+		LDA	$3D
+		CLC
+		ADC	#$10
+		STA	$3D
+		BCC	loc_4DCB
+		INC	$3E
+
+loc_4DCB:				; CODE XREF: sub_4D93+34j
+		INC	$49
+		LDX	$49
+		CPX	#$40 ; '@'
+		BCC	loc_4DA1
+		RTS
+; End of function sub_4D93
+
+
+; ЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫ S U B	R O U T	I N E ЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫ
+
+
+sub_4DD4:				; CODE XREF: sub_4CCF+3Dp
+		LDA	#0
+		STA	$3F
+		LDA	#$65 ; 'e'
+		STA	$40
+		LDX	#$40 ; '@'
+
+loc_4DDE:				; CODE XREF: sub_4DD4+2Fj
+		LDY	#0
+		LDA	($3F),Y
+		CMP	#$81 ; 'Ѓ'
+		BCC	loc_4DF7
+		LDY	#6
+
+loc_4DE8:				; CODE XREF: sub_4DD4+1Dj
+		LDA	($43),Y
+		CMP	($3F),Y
+		BNE	loc_4DF7
+		INY
+		CPY	#$F
+		BCC	loc_4DE8
+		LDA	#$FF
+		BMI	locret_4E05
+
+loc_4DF7:				; CODE XREF: sub_4DD4+10j sub_4DD4+18j
+		LDA	$3F
+		CLC
+		ADC	#$10
+		STA	$3F
+		BCC	loc_4E02
+		INC	$40
+
+loc_4E02:				; CODE XREF: sub_4DD4+2Aj
+		DEX
+		BNE	loc_4DDE
+
+locret_4E05:				; CODE XREF: sub_4DD4+21j
+		RTS
+; End of function sub_4DD4
+
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+
+loc_4E06:				; CODE XREF: RAM:188Dj
+		JSR	sub_4B74
+		BEQ	locret_4E22
+		LDA	#4
+		STA	$4C
+
+; ЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫ S U B	R O U T	I N E ЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫ
+
+
+sub_4E0F:				; CODE XREF: sub_4BB3+13p
+		LDA	$4C
+		AND	#5
+		BEQ	locret_4E22
+		LDY	#3
+		LDA	($41),Y
+		BEQ	locret_4E22
+		BPL	loc_4E23
+		CMP	$6385
+		BCS	loc_4E28
+
+locret_4E22:				; CODE XREF: RAM:4E09j	sub_4E0F+4j ...
+		RTS
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+
+loc_4E23:				; CODE XREF: sub_4E0F+Cj
+		CMP	$6385
+		BCS	locret_4E22
+
+loc_4E28:				; CODE XREF: sub_4E0F+11j
+		LDA	($41),Y
+		BPL	loc_4E49
+		LDA	$6385
+		BPL	loc_4E3D
+		LDA	#$9D ; 'ќ'
+		STA	byte_502C
+		LDA	#$4F ; 'O'
+		STA	byte_502D
+		BNE	loc_4E64
+
+loc_4E3D:				; CODE XREF: sub_4E0F+20j
+		LDA	#$E4 ; 'д'
+		STA	byte_502C
+		LDA	#$4F ; 'O'
+		STA	byte_502D
+		BNE	loc_4E64
+
+loc_4E49:				; CODE XREF: sub_4E0F+1Bj
+		LDA	$6385
+		BMI	loc_4E5A
+		LDA	#$C0 ; 'А'
+		STA	byte_502C
+		LDA	#$4F ; 'O'
+		STA	byte_502D
+		BNE	loc_4E64
+
+loc_4E5A:				; CODE XREF: sub_4E0F+3Dj
+		LDA	#5
+		STA	byte_502C
+		LDA	#$50 ; 'P'
+		STA	byte_502D
+
+loc_4E64:				; CODE XREF: sub_4E0F+2Cj sub_4E0F+38j ...
+		CLC
+		LDA	#6
+		ADC	$41
+		STA	byte_502A
+		LDA	$42
+		ADC	#0
+		STA	byte_502B
+		LDA	#$7D ; '}'
+		STA	$16
+		LDA	#$4F ; 'O'
+		STA	$17
+		JSR	sub_3CA5
+		JSR	sub_2BB0
+		JSR	sub_3CC2
+		LDA	$4C
+		PHA
+		ORA	#$20 ; ' '
+		JSR	sub_4CCF
+		PLA
+		STA	$4C
+		RTS
+; End of function sub_4E0F
+
+
+; ЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫ S U B	R O U T	I N E ЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫ
+
+
+sub_4E90:				; CODE XREF: sub_4AC9+1Dp RAM:4BEAp ...
+		LDX	#$F
+
+loc_4E92:				; CODE XREF: sub_4E90+Fj
+		LDA	$4B
+		CMP	$64D4,X
+		BNE	loc_4E9E
+		LDA	#0
+		STA	$6494,X
+
+loc_4E9E:				; CODE XREF: sub_4E90+7j
+		DEX
+		BPL	loc_4E92
+		RTS
+; End of function sub_4E90
+
+
+; ЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫ S U B	R O U T	I N E ЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫ
+
+
+sub_4EA2:				; CODE XREF: sub_4AC9+1Ap
+					; RAM:loc_4C09p ...
+		LDX	#9
+
+loc_4EA4:				; CODE XREF: sub_4EA2+Fj
+		LDA	$4B
+		CMP	$639C,X
+		BNE	loc_4EB0
+		LDA	#$FF
+		STA	$639C,X
+
+loc_4EB0:				; CODE XREF: sub_4EA2+7j
+		DEX
+		BPL	loc_4EA4
+		RTS
+; End of function sub_4EA2
+
+
+; ЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫ S U B	R O U T	I N E ЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫ
+
+
+sub_4EB4:				; CODE XREF: sub_5835+11p RAM:5DC9p
+		LDY	#9
+
+loc_4EB6:				; CODE XREF: sub_4EB4+Cj
+		CMP	#$80 ; 'Ђ'
+		BCS	loc_4EC2
+		CMP	$639C,Y
+		BEQ	locret_4EC3
+		DEY
+		BPL	loc_4EB6
+
+loc_4EC2:				; CODE XREF: sub_4EB4+4j
+		CLC
+
+locret_4EC3:				; CODE XREF: sub_4EB4+9j
+		RTS
+; End of function sub_4EB4
+
+
+; ЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫ S U B	R O U T	I N E ЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫ
+
+
+sub_4EC4:				; CODE XREF: RAM:1896j	RAM:4226p ...
+		JSR	sub_4EE8
+
+loc_4EC7:				; CODE XREF: sub_4EC4:loc_4EDFj
+		LDY	#0
+		LDA	($43),Y
+		BEQ	loc_4EE1
+		LDX	#$10
+		CMP	#$F0 ; 'р'
+		BCC	loc_4ED5
+		LDX	#$20 ; ' '
+
+loc_4ED5:				; CODE XREF: sub_4EC4+Dj
+		TXA
+		CLC
+		ADC	$43
+		STA	$43
+		BCC	loc_4EDF
+		INC	$44
+
+loc_4EDF:				; CODE XREF: sub_4EC4+17j
+		BNE	loc_4EC7
+
+loc_4EE1:				; CODE XREF: sub_4EC4+7j
+		INC	$43
+		BNE	locret_4EE7
+		INC	$44
+
+locret_4EE7:				; CODE XREF: sub_4EC4+1Fj
+		RTS
+; End of function sub_4EC4
+
+
+; ЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫ S U B	R O U T	I N E ЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫ
+
+
+sub_4EE8:				; CODE XREF: sub_4CCF+2p sub_4EC4p
+		LDA	$4B
+		JSR	sub_4B74
+		LDY	#5
+		CLC
+		LDA	($41),Y
+		ADC	$41
+		STA	$43
+		LDA	$42
+		ADC	#0
+		STA	$44
+		RTS
+; End of function sub_4EE8
+
+
+; ЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫ S U B	R O U T	I N E ЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫ
+
+
+sub_4EFD:				; CODE XREF: RAM:4C06p	RAM:4C75p
+		LDA	$6390
+		BEQ	loc_4F05
+		DEC	$6390
+
+loc_4F05:				; CODE XREF: sub_4EFD+3j
+		LDY	#0
+		LDA	($41),Y
+		AND	#$80 ; 'Ђ'
+		PHA
+		LDA	$4B
+		LDX	#9
+
+loc_4F10:				; CODE XREF: sub_4EFD+19j
+		CMP	$639C,X
+		BEQ	loc_4F18
+		DEX
+		BPL	loc_4F10
+
+loc_4F18:				; CODE XREF: sub_4EFD+16j
+		LDY	#$F
+
+loc_4F1A:				; CODE XREF: sub_4EFD+23j
+		CMP	$64D4,Y
+		BEQ	loc_4F22
+		DEY
+		BPL	loc_4F1A
+
+loc_4F22:				; CODE XREF: sub_4EFD+20j
+		TXA
+		PHA
+		TYA
+		PHA
+		LDA	$4B
+		JSR	sub_4AC9
+		LDX	#$4F ; 'O'
+		LDY	#$5D ; ']'
+		JSR	sub_4B4D
+		PLA
+		TAX
+		BMI	loc_4F4C
+		LDA	$4B
+		STA	$64D4,X
+		LDA	$6313
+		STA	$64A4,X
+		LDA	$6314
+		STA	$64B4,X
+		LDA	#2
+		STA	$6494,X
+
+loc_4F4C:				; CODE XREF: sub_4EFD+37j
+		PLA
+		TAX
+		BMI	loc_4F55
+		LDA	$4B
+		STA	$639C,X
+
+loc_4F55:				; CODE XREF: sub_4EFD+51j
+		PLA
+		LDY	#0
+		ORA	($41),Y
+		STA	($41),Y
+		RTS
+; End of function sub_4EFD
+
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+		.BYTE	3
+		.BYTE $20
+		.BYTE	0
+		.BYTE	0
+		.BYTE	2
+		.BYTE  $C
+aStick:		.BYTE "stick",0
+		.BYTE	0
+		.BYTE $FF
+		.BYTE	0
+		.BYTE $14
+		.BYTE	0
+		.BYTE	0
+		.BYTE	0
+		.BYTE	0
+		.BYTE	0
+		.BYTE	0
+		.BYTE	0
+		.BYTE	0
+		.BYTE	0
+		.BYTE	0
+		.BYTE	4
+		.BYTE	1
+		.BYTE	9
+		.BYTE	9
+		.BYTE $82 ; ‚
+		.BYTE	1
+		.BYTE $A6,  0,	0
+		.BYTE $A5
+aThe:		.BYTE "The"
+		.BYTE $D
+		.BYTE $A5
+		.BYTE $B4
+		.WORD byte_502A
+		.BYTE $27
+		.BYTE $D
+		.BYTE $A5
+aScreams:	.BYTE "screams:"
+		.BYTE $D
+		.BYTE $D
+		.BYTE $A5
+		.BYTE $B4
+		.WORD byte_502C
+		.BYTE $28
+		.BYTE $D
+		.BYTE $FF
+aIWasMeantForBe:.BYTE $22,"I was meant for better than you!",$22,0
+aYourEvilCannot:.BYTE $22,"Your evil cannot compare to mine!",$22,0
+aReleaseMeFoulM:.BYTE $22,"Release me foul mortal or pay!",$22,0
+aMiserableDoGoo:.BYTE $22,"Miserable do-gooder you shall pay!",$22,0
+byte_502A:	.BYTE 0			; DATA XREF: sub_4E0F+5Aw RAM:4F87o
+byte_502B:	.BYTE 0			; DATA XREF: sub_4E0F+61w
+byte_502C:	.BYTE 0			; DATA XREF: sub_4E0F+24w sub_4E0F+30w ...
+byte_502D:	.BYTE 0			; DATA XREF: sub_4E0F+29w sub_4E0F+35w ...
+
+; ЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫ S U B	R O U T	I N E ЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫ
+
+
+sub_502E:				; CODE XREF: sub_50B2:loc_50B7p
+					; RAM:552Ap
+		LDX	#3
+		LDA	#$FF
+
+loc_5032:				; CODE XREF: sub_502E+8j
+		STA	byte_1946,X
+		DEX
+		BPL	loc_5032
+		LDX	#7
+
+loc_503A:				; CODE XREF: sub_502E+18j
+		LDA	#$5E ; '^'
+		STA	byte_193C,X
+		DEX
+		LDA	#$53 ; 'S'
+		STA	byte_193C,X
+		DEX
+		BPL	loc_503A
+		RTS
+; End of function sub_502E
+
+
+; ЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫ S U B	R O U T	I N E ЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫ
+
+
+sub_5049:				; CODE XREF: sub_50B2:loc_515Cp
+					; RAM:loc_554Fp
+		LDA	byte_6277
+		CMP	byte_6276
+		BCS	loc_505C
+		LDA	#9
+		STA	$16
+		LDA	#$5E ; '^'
+		STA	$17
+		JMP	loc_5064
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+
+loc_505C:				; CODE XREF: sub_5049+6j
+		LDA	#$41 ; 'A'
+		STA	$16
+		LDA	#$5D ; ']'
+		STA	$17
+
+loc_5064:				; CODE XREF: sub_5049+10j
+		LDX	byte_194A
+		JSR	sub_3C61
+
+loc_506A:				; CODE XREF: RAM:5079j
+		LDA	#$77 ; 'w'
+		STA	word_1977
+		LDA	#$50 ; 'P'
+		STA	word_1977+1
+		JMP	loc_2FF3
+; End of function sub_5049
+
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+		LDA	$31
+		BMI	loc_506A
+		CMP	#'1'
+		BCC	loc_5087
+		CMP	#'5'
+		BCS	loc_5087
+		SBC	#'0'
+		CLC
+		RTS
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+
+loc_5087:				; CODE XREF: RAM:507Dj	RAM:5081j
+		JSR	sub_2BA5
+		SEC
+		RTS
+
+; ЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫ S U B	R O U T	I N E ЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫ
+
+
+sub_508C:				; CODE XREF: sub_50B2:loc_5159p
+					; RAM:554Cp
+		LDA	#3
+		STA	6
+
+loc_5090:				; CODE XREF: sub_508C+23j
+		LDX	6
+		LDA	byte_1946,X
+		BMI	loc_50AD
+		JSR	sub_4B74
+		LDA	6
+		ASL	A
+		TAY
+		CLC
+		LDA	#6
+		ADC	$41
+		STA	byte_193C,Y
+		LDA	$42
+		ADC	#0
+		STA	byte_193D,Y
+
+loc_50AD:				; CODE XREF: sub_508C+9j
+		DEC	6
+		BPL	loc_5090
+		RTS
+; End of function sub_508C
+
+
+; ЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫ S U B	R O U T	I N E ЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫ
+
+
+sub_50B2:				; CODE XREF: RAM:36E1p	sub_50B2+E3j ...
+		LDA	#0
+		STA	byte_6277
+
+loc_50B7:				; CODE XREF: RAM:36E6p	sub_50B2+70j ...
+		JSR	sub_502E
+		LDA	#0
+		STA	byte_6278
+		LDA	byte_6277
+		STA	byte_627D
+		CMP	byte_6276
+		BCS	loc_50EF
+
+loc_50CA:				; CODE XREF: sub_50B2+39j
+		LDA	byte_627D
+		ASL	A
+		TAY
+		AND	#7
+		TAX
+		LDA	off_5F0D,Y
+		STA	byte_193C,X
+		LDA	off_5F0D+1,Y
+		STA	byte_193D,X
+		LDX	byte_6278
+		TXA
+		STA	byte_1946,X
+		INC	byte_627D
+		JSR	sub_5198
+		BCC	loc_50CA
+		BCS	loc_515C
+
+loc_50EF:				; CODE XREF: sub_50B2+16j
+		LDX	#$3F ; '?'
+		STX	byte_627A
+		SBC	byte_6276
+		BEQ	loc_5125
+		STA	byte_6279
+
+loc_50FC:				; CODE XREF: sub_50B2+60j
+		LDA	byte_627A
+		JSR	loc_51A1
+		BCS	loc_510F
+		DEC	byte_6279
+		BNE	loc_510F
+		DEC	byte_627A
+		JMP	loc_5125
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+
+loc_510F:				; CODE XREF: sub_50B2+50j sub_50B2+55j
+		DEC	byte_627A
+		BPL	loc_50FC
+
+loc_5114:				; CODE XREF: sub_50B2+76j
+		LDA	byte_6277
+		ORA	byte_6276
+		BEQ	loc_515C
+
+loc_511C:				; CODE XREF: sub_50B2+8Cj
+		LDA	byte_5470
+		STA	byte_6277
+		JMP	loc_50B7
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+
+loc_5125:				; CODE XREF: sub_50B2+45j sub_50B2+5Aj ...
+		LDA	byte_627A
+		BMI	loc_5114
+		JSR	loc_51A1
+		BCC	loc_5141
+		DEC	byte_627A
+		BPL	loc_5125
+		LDA	byte_1946
+		BPL	loc_5159
+		LDA	byte_6276
+		BEQ	loc_5159
+		JMP	loc_511C
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+
+loc_5141:				; CODE XREF: sub_50B2+7Bj
+		LDA	byte_627A
+		LDY	byte_6278
+		STA	byte_1946,Y
+		DEC	byte_627A
+		BMI	loc_5159
+		INC	byte_6278
+		LDA	byte_6278
+		CMP	#4
+		BCC	loc_5125
+
+loc_5159:				; CODE XREF: sub_50B2+85j sub_50B2+8Aj ...
+		JSR	sub_508C
+
+loc_515C:				; CODE XREF: sub_50B2+3Bj sub_50B2+68j ...
+		JSR	sub_5049
+		BCC	loc_516E
+		CMP	#'F'
+		BEQ	loc_5180
+		CMP	#'B'
+		BEQ	loc_518E
+		CMP	#$1B
+		BNE	loc_515C
+		RTS
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+
+loc_516E:				; CODE XREF: sub_50B2+ADj
+		TAX
+		LDA	byte_1946,X
+		BMI	loc_515C
+		LDX	byte_6277
+		CPX	byte_6276
+		BCS	loc_517E
+		ORA	#$80 ; 'Ђ'
+
+loc_517E:				; CODE XREF: sub_50B2+C8j
+		CLC
+		RTS
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+
+loc_5180:				; CODE XREF: sub_50B2+B1j
+		LDA	byte_6277
+		STA	byte_5470
+		ADC	#3
+
+loc_5188:				; CODE XREF: sub_50B2+E1j
+		STA	byte_6277
+		JMP	loc_50B7
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+
+loc_518E:				; CODE XREF: sub_50B2+B5j
+		LDA	byte_6277
+		SBC	#4
+		BPL	loc_5188
+		JMP	sub_50B2
+; End of function sub_50B2
+
+
+; ЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫ S U B	R O U T	I N E ЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫ
+
+
+sub_5198:				; CODE XREF: sub_50B2+36p
+		INC	byte_6278
+		LDA	byte_6278
+		CMP	#4
+		RTS
+; End of function sub_5198
+
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+
+loc_51A1:				; CODE XREF: sub_50B2+4Dp sub_50B2+78p
+		JSR	sub_4B74
+		BEQ	loc_51B4
+		LDY	#0
+		LDA	($41),Y
+		BPL	loc_51B4
+		AND	#7
+		CMP	#1
+
+loc_51B0:				; DATA XREF: RAM:36BDw	RAM:36C5w ...
+		BEQ	loc_51B4
+		CLC
+		RTS
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+
+loc_51B4:				; CODE XREF: RAM:51A4j	RAM:51AAj ...
+		SEC
+		RTS
+
+; ЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫ S U B	R O U T	I N E ЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫ
+
+
+sub_51B6:				; CODE XREF: RAM:3774p
+
+; FUNCTION CHUNK AT 5653 SIZE 0000000C BYTES
+
+		LDA	#0
+		STA	byte_627F
+		LDA	#4
+		LDX	$7600
+		CPX	#1
+		BNE	loc_51C6
+		LDA	#0
+
+loc_51C6:				; CODE XREF: sub_51B6+Cj
+		STA	byte_6276
+		LDA	#$F0 ; 'р'
+		STA	loc_51B0
+		LDA	#$25 ; '%'
+		STA	byte_193A
+		LDA	#$5F ; '_'
+		STA	byte_193B
+
+loc_51D8:				; CODE XREF: sub_577E+14j
+		LDA	#$57 ; 'W'
+		STA	byte_1944
+		LDA	#$5F ; '_'
+		STA	byte_1945
+		JSR	sub_50B2
+		BCS	loc_5225
+		CMP	#$80 ; 'Ђ'
+		BCC	loc_51EE
+		JMP	loc_5653
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+
+loc_51EE:				; CODE XREF: sub_51B6+33j
+		STA	$4B
+		JSR	sub_4B74
+		JSR	sub_4EC4
+		LDY	#0
+		LDA	($41),Y
+		AND	#7
+		STA	byte_627E
+		TAX
+		LDA	unk_5229,X
+		PHA
+		LDA	unk_5231,X
+		PHA
+		RTS
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+
+loc_5209:				; CODE XREF: RAM:524Ej	RAM:526Bj ...
+		LDA	$4B
+		JSR	sub_4B74
+		BEQ	loc_5225
+		LDA	$4B
+		JSR	loc_4B86
+		LDA	byte_627E
+		STA	byte_1961
+		BIT	byte_627F
+		BPL	loc_5225
+		LDA	$4B
+		JSR	sub_4AC9
+
+loc_5225:				; CODE XREF: sub_51B6+2Fj sub_51B6+58j ...
+		DEC	byte_195F
+		RTS
+; End of function sub_51B6
+
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+unk_5229:	.BYTE $52 ; R		; DATA XREF: sub_51B6+4Ar
+		.BYTE $52 ; R
+		.BYTE $54 ; T
+		.BYTE $54 ; T
+		.BYTE $54 ; T
+		.BYTE $55 ; U
+		.BYTE $55 ; U
+		.BYTE $56 ; V
+unk_5231:	.BYTE $38 ; 8		; DATA XREF: sub_51B6+4Er
+		.BYTE $C2 ; В
+		.BYTE  $E
+		.BYTE $A9 ; ©
+		.BYTE $ED ; н
+		.BYTE	4
+		.BYTE $6A ; j
+		.BYTE $31 ; 1
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+		LDY	#0
+		LDA	($41),Y
+		AND	#$78 ; 'x'
+		BNE	loc_5244
+		JMP	loc_5225
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+
+loc_5244:				; CODE XREF: RAM:523Fj
+		LDX	#2
+
+loc_5246:				; CODE XREF: RAM:524Cj
+		CMP	$5260,X
+		BEQ	loc_5251
+		DEX
+		BPL	loc_5246
+		JMP	loc_5209
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+
+loc_5251:				; CODE XREF: RAM:5249j
+		LDA	unk_525D,X
+		PHA
+		LDA	unk_525A,X
+		PHA
+		RTS
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+unk_525A:	.BYTE $62 ; b		; DATA XREF: RAM:5255r
+		.BYTE $81 ; Ѓ
+		.BYTE $92 ; ’
+unk_525D:	.BYTE $52 ; R		; DATA XREF: RAM:loc_5251r
+		.BYTE $52 ; R
+		.BYTE $52 ; R
+		.BYTE	8
+		.BYTE $10
+		.BYTE $18
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+		LDA	$63BE
+		BEQ	loc_526E
+		DEC	$63BE
+		JMP	loc_5209
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+
+loc_526E:				; CODE XREF: RAM:5266j
+		LDA	#2
+		STA	$16
+		LDA	#$61 ; 'a'
+		STA	$17
+		LDX	byte_194A
+		JSR	sub_3C5C
+		JSR	sub_2BFA
+		JMP	loc_5225
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+		LDY	#0
+		LDA	($43),Y
+		SEC
+		SBC	#1
+		STA	($43),Y
+		BNE	loc_5290
+		DEC	byte_627F
+
+loc_5290:				; CODE XREF: RAM:528Bj
+		JMP	loc_5209
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+		LDY	#1
+		LDA	($43),Y
+		BEQ	loc_52A3
+		SEC
+		SBC	#1
+		STA	($43),Y
+		BNE	loc_52A3
+		DEC	byte_627F
+
+loc_52A3:				; CODE XREF: RAM:5297j	RAM:529Ej
+		INY
+		LDA	($43),Y
+		CMP	#1
+		BEQ	loc_52BD
+		INY
+		LDA	($43),Y
+		CMP	#8
+		BNE	loc_52BA
+		LDY	#0
+		LDA	($43),Y
+		STA	$51
+		JSR	sub_55B7
+
+loc_52BA:				; CODE XREF: RAM:52AFj
+		JMP	loc_5209
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+
+loc_52BD:				; CODE XREF: RAM:52A8j
+		INY
+		LDA	($43),Y
+		JMP	loc_53F3
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+		LDA	#0
+		STA	byte_627F
+		STA	byte_1961
+		LDA	$4B
+		STA	byte_627B
+		LDA	$43
+		STA	$47
+		LDA	$44
+		STA	$48
+		LDY	#2
+
+loc_52DA:				; CODE XREF: RAM:52E0j
+		LDA	($47),Y
+		STA	byte_6280,Y
+		DEY
+		BPL	loc_52DA
+		LDA	#$3F ; '?'
+		STA	$4B
+
+loc_52E6:				; CODE XREF: RAM:5302j
+		LDA	$4B
+		JSR	sub_4B74
+		BEQ	loc_5300
+		LDY	#0
+		LDA	($41),Y
+		CMP	#$82 ; '‚'
+		BNE	loc_5300
+		JSR	sub_4EC4
+		LDA	#1
+		LDY	#0
+		CMP	($43),Y
+		BEQ	loc_5306
+
+loc_5300:				; CODE XREF: RAM:52EBj	RAM:52F3j
+		DEC	$4B
+		BPL	loc_52E6
+		BMI	loc_5328
+
+loc_5306:				; CODE XREF: RAM:52FEj
+		LDY	#1
+		SEC
+		LDA	($43),Y
+		SBC	byte_6280
+		BCC	loc_5318
+		STA	($43),Y
+		JSR	sub_5471
+		JMP	loc_5342
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+
+loc_5318:				; CODE XREF: RAM:530Ej
+		SEC
+		LDA	byte_6280
+		SBC	($43),Y
+		STA	byte_6280
+		LDA	#0
+		STA	($43),Y
+		JSR	sub_5471
+
+loc_5328:				; CODE XREF: RAM:5304j
+		SEC
+		LDA	$639B
+		SBC	byte_6280
+		BCS	loc_533F
+		LDX	#$45 ; 'E'
+		SEC
+		LDA	byte_6280
+		SBC	$639B
+		JSR	loc_2E66
+		LDA	#0
+
+loc_533F:				; CODE XREF: RAM:532Fj
+		STA	$639B
+
+loc_5342:				; CODE XREF: RAM:5315j
+		LDA	$6388
+		AND	#4
+		BNE	loc_535B
+		LDA	byte_194D
+		AND	#2
+		BEQ	loc_535B
+		LDA	#$5A ; 'Z'
+		STA	$16
+		LDA	#$62 ; 'b'
+		STA	$17
+		JMP	loc_53E7
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+
+loc_535B:				; CODE XREF: RAM:5347j	RAM:534Ej
+		LDA	#$64 ; 'd'
+		JSR	sub_2B6B
+		CMP	byte_6281
+		BCS	loc_53CA
+		LDA	$D20A
+		STA	loc_5371+1
+		LDA	$6369
+		LSR	A
+		ADC	#$20 ; ' '
+
+loc_5371:				; DATA XREF: RAM:5368w
+		CMP	#$FF
+		BCC	loc_5390
+		LDY	$7600
+		DEY
+		BEQ	loc_5382
+		LDA	$D20A
+		CMP	#$40 ; '@'
+		BCS	loc_5390
+
+loc_5382:				; CODE XREF: RAM:5379j
+		LDA	#1
+		TAY
+		CLC
+		ADC	($47),Y
+		CMP	#$60 ; '`'
+		BCC	loc_538E
+		LDA	#$5F ; '_'
+
+loc_538E:				; CODE XREF: RAM:538Aj
+		STA	($47),Y
+
+loc_5390:				; CODE XREF: RAM:5373j	RAM:5380j
+		LDA	byte_627B
+		STA	$4B
+		JSR	sub_4B74
+		CLC
+		LDA	$41
+		ADC	#6
+		STA	byte_193C
+		LDA	$42
+		ADC	#0
+		STA	byte_193D
+		LDA	#$E1 ; 'б'
+		STA	$16
+		LDA	#$61 ; 'a'
+		STA	$17
+		LDX	byte_194A
+		JSR	sub_3C5C
+		LDA	#$82 ; '‚'
+		STA	byte_199C
+		LDA	#1
+		JSR	loc_2BFC
+		LDY	#0
+		LDA	($41),Y
+		AND	#$78 ; 'x'
+		BNE	loc_53F3
+		JMP	loc_5209
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+
+loc_53CA:				; CODE XREF: RAM:5363j
+		LDX	#$45 ; 'E'
+		LDA	byte_6282
+		JSR	loc_2E66
+		LDA	#$D
+		STA	$16
+		LDA	#$62 ; 'b'
+		STA	$17
+		LDA	byte_6282
+		BEQ	loc_53E7
+		LDA	#$24 ; '$'
+		STA	$16
+		LDA	#$62 ; 'b'
+		STA	$17
+
+loc_53E7:				; CODE XREF: RAM:5358j	RAM:53DDj
+		LDX	byte_194A
+		JSR	sub_3C5C
+		JSR	sub_2BFA
+		JMP	loc_5225
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+
+loc_53F3:				; CODE XREF: RAM:52C0j	RAM:53C5j
+		LDX	#1
+
+loc_53F5:				; CODE XREF: RAM:53FBj
+		CMP	unk_540D,X
+		BEQ	loc_5400
+		DEX
+		BPL	loc_53F5
+		JMP	loc_5225
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+
+loc_5400:				; CODE XREF: RAM:53F8j
+		LDA	unk_540B,X
+		PHA
+		LDA	unk_5409,X
+		PHA
+		RTS
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+unk_5409:	.BYTE $EC ; м		; DATA XREF: RAM:5404r
+		.BYTE $C4 ; Д
+unk_540B:	.BYTE $57 ; W		; DATA XREF: RAM:loc_5400r
+		.BYTE $5C ; \
+unk_540D:	.BYTE	8		; DATA XREF: RAM:loc_53F5r
+		.BYTE $10
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+		LDA	$4B
+		STA	byte_627C
+		LDA	$43
+		STA	7
+		LDA	$44
+		STA	8
+		LDY	#0
+		LDA	(7),Y
+		CMP	#1
+		BEQ	loc_5450
+		LDA	$639C
+		BMI	loc_546D
+		STA	$4B
+		JSR	sub_4B74
+		JSR	sub_4EC4
+		LDY	#0
+		LDA	($43),Y
+		CMP	(7),Y
+		BNE	loc_546D
+		LDY	#$C
+
+loc_543B:				; CODE XREF: RAM:5440j
+		LDA	(7),Y
+		STA	($43),Y
+		DEY
+		BNE	loc_543B
+		JSR	sub_5471
+		LDA	byte_627C
+		STA	$4B
+		DEC	byte_627F
+		JMP	loc_5209
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+
+loc_5450:				; CODE XREF: RAM:5422j
+		INY
+		LDA	(7),Y
+		CMP	#$63 ; 'c'
+		BCS	loc_546D
+		LDX	$63BE
+		BEQ	loc_546D
+		DEC	$63BE
+		CLC
+		ADC	#$A
+		CMP	#$63 ; 'c'
+		BCC	loc_5468
+		LDA	#$63 ; 'c'
+
+loc_5468:				; CODE XREF: RAM:5464j
+		STA	(7),Y
+		JSR	sub_5471
+
+loc_546D:				; CODE XREF: RAM:5427j	RAM:5437j ...
+		JMP	loc_5225
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+byte_5470:	.BYTE 0			; DATA XREF: sub_50B2:loc_511Cr
+					; sub_50B2+D1w
+
+; ЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫ S U B	R O U T	I N E ЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫ
+
+
+sub_5471:				; CODE XREF: RAM:189Cj	RAM:5312p ...
+		LDY	#1
+		LDA	($43),Y
+		JSR	sub_548E
+		LDY	#5
+		LDA	($41),Y
+		SEC
+		SBC	#4
+		TAY
+		LDA	2
+		ORA	#$30 ; '0'
+		STA	($41),Y
+		INY
+		LDA	3
+		ORA	#$30 ; '0'
+		STA	($41),Y
+		RTS
+; End of function sub_5471
+
+
+; ЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫ S U B	R O U T	I N E ЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫ
+
+
+sub_548E:				; CODE XREF: sub_5471+4p
+		LDY	#0
+		LDX	#$A
+
+loc_5492:				; CODE XREF: RAM:18B1j
+		STA	2
+		STX	4
+		TYA
+		LDX	#8
+
+loc_5499:				; CODE XREF: sub_548E+17j
+		ASL	2
+		ROL	A
+		CMP	4
+		BCC	loc_54A4
+		SBC	4
+		INC	2
+
+loc_54A4:				; CODE XREF: sub_548E+10j
+		DEX
+		BNE	loc_5499
+		STA	3
+		RTS
+; End of function sub_548E
+
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+		JSR	sub_57AB
+		BCS	loc_54EB
+
+loc_54AF:				; CODE XREF: RAM:5720j
+		LDX	#$A
+		LDA	#0
+
+loc_54B3:				; CODE XREF: RAM:54B7j
+		STA	$63D2,X
+		DEX
+		BPL	loc_54B3
+		LDA	#0
+		STA	$49
+		LDA	#0
+		STA	$3D
+		LDA	#$65 ; 'e'
+		STA	$3E
+
+loc_54C5:				; CODE XREF: RAM:54E1j
+		LDY	#0
+		LDA	($3D),Y
+		CMP	#$87 ; '‡'
+		BNE	loc_54D0
+		JSR	sub_4A01
+
+loc_54D0:				; CODE XREF: RAM:54CBj
+		INC	$49
+		LDA	$3D
+		CLC
+		ADC	#$10
+		STA	$3D
+		BCC	loc_54DD
+		INC	$3E
+
+loc_54DD:				; CODE XREF: RAM:54D9j
+		LDA	$49
+		CMP	#$40 ; '@'
+		BCC	loc_54C5
+		JSR	sub_5835
+		BCS	loc_54EB
+		JMP	loc_5209
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+
+loc_54EB:				; CODE XREF: RAM:54ADj	RAM:54E6j
+		JMP	loc_5225
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+		LDY	#0
+		LDA	($43),Y
+		AND	#3
+		CLC
+		ADC	#2
+		STA	byte_6283
+		JSR	sub_5835
+		BCS	loc_5502
+		JMP	loc_5209
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+
+loc_5502:				; CODE XREF: RAM:54FDj
+		JMP	loc_5225
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+		LDX	#0
+
+loc_5507:				; CODE XREF: RAM:5511j
+		LDA	$63A2,X
+		CMP	#$FF
+		BEQ	loc_5515
+		INX
+		CPX	#4
+		BCC	loc_5507
+		BCS	loc_5519
+
+loc_5515:				; CODE XREF: RAM:550Cj
+		TXA
+		JMP	loc_555A
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+
+loc_5519:				; CODE XREF: RAM:5513j
+		LDX	#$31 ; '1'
+		STX	asc_5D51	; " ("
+		INX
+		STX	asc_5D67	; " ("
+		INX
+		STX	asc_5D7D	; " ("
+		INX
+		STX	asc_5D93	; " ("
+		JSR	sub_502E
+		LDA	#$85 ; '…'
+		STA	byte_193A
+		LDA	#$5F ; '_'
+		STA	byte_193B
+		LDA	#$3D ; '='
+		STA	byte_1944
+		LDA	#$5F ; '_'
+		STA	byte_1945
+		LDX	#3
+
+loc_5543:				; CODE XREF: RAM:554Aj
+		LDA	$63A2,X
+		STA	byte_1946,X
+		DEX
+		BPL	loc_5543
+		JSR	sub_508C
+
+loc_554F:				; CODE XREF: RAM:5558j
+		JSR	sub_5049
+		BCC	loc_555A
+		CMP	#$1B
+		BEQ	loc_5568
+		BNE	loc_554F
+
+loc_555A:				; CODE XREF: RAM:5516j	RAM:5552j
+		CLC
+		ADC	#6
+		STA	byte_6283
+		JSR	sub_5835
+		BCS	loc_5568
+		JMP	loc_5209
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+
+loc_5568:				; CODE XREF: RAM:5556j	RAM:5563j
+		JMP	loc_5225
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+		DEC	byte_627F
+		LDA	$6398
+		BPL	loc_5576
+		JMP	loc_56C1
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+
+loc_5576:				; CODE XREF: RAM:5571j
+		LDA	#4
+		LDY	#2
+		JSR	sub_56D7
+		LDY	#0
+		LDA	($41),Y
+		AND	#$78 ; 'x'
+		BEQ	loc_558F
+		LDX	#0
+
+loc_5587:				; CODE XREF: RAM:558Dj
+		CMP	unk_559E,X
+		BEQ	loc_5595
+		DEX
+		BPL	loc_5587
+
+loc_558F:				; CODE XREF: RAM:5583j
+		JSR	sub_5602
+		JMP	loc_5209
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+
+loc_5595:				; CODE XREF: RAM:558Aj
+		LDA	unk_559F,X
+		PHA
+		LDA	unk_55A0,X
+		PHA
+		RTS
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+unk_559E:	.BYTE	8		; DATA XREF: RAM:loc_5587r
+unk_559F:	.BYTE $55 ; U		; DATA XREF: RAM:loc_5595r
+unk_55A0:	.BYTE $A0 ;  		; DATA XREF: RAM:5599r
+		.BYTE $A0 ;  
+		.BYTE	0
+		.BYTE $B1 ; ±
+		.BYTE $43 ; C
+		.BYTE $AA ; Є
+		.BYTE	9
+		.BYTE $80 ; Ђ
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+		STA	$51
+		TYA
+		STA	$6390,X
+		JSR	sub_55B7
+		JSR	sub_5602
+		JMP	loc_5209
+
+; ЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫ S U B	R O U T	I N E ЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫ
+
+
+sub_55B7:				; CODE XREF: RAM:1893j	RAM:52B7p ...
+		LDA	#0
+		STA	$3D
+		LDA	#$65 ; 'e'
+		STA	$3E
+		LDA	#0
+		STA	$49
+
+loc_55C3:				; CODE XREF: sub_55B7+2Aj
+		LDY	#0
+		LDA	($3D),Y
+		AND	#$83 ; 'ѓ'
+		CMP	$51
+		BNE	loc_55D0
+		JSR	sub_4A01
+
+loc_55D0:				; CODE XREF: sub_55B7+14j
+		LDA	$3D
+		CLC
+		ADC	#$10
+		STA	$3D
+		BCC	loc_55DB
+		INC	$3E
+
+loc_55DB:				; CODE XREF: sub_55B7+20j
+		INC	$49
+		LDA	$49
+		CMP	#$40 ; '@'
+		BCC	loc_55C3
+		LDA	$51
+		AND	#3
+		CMP	#3
+		BNE	locret_5601
+		TAX
+		LDA	#0
+		STA	$6390,X
+		LDX	#0
+
+loc_55F3:				; CODE XREF: sub_55B7+48j
+		LDA	#0
+		STA	$6350,X
+		TXA
+		CLC
+		ADC	#8
+		TAX
+		CMP	#$38 ; '8'
+		BCC	loc_55F3
+
+locret_5601:				; CODE XREF: sub_55B7+32j
+		RTS
+; End of function sub_55B7
+
+
+; ЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫ S U B	R O U T	I N E ЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫ
+
+
+sub_5602:				; CODE XREF: RAM:loc_558Fp RAM:55B1p
+		CLC
+		LDA	#6
+		ADC	$41
+		STA	byte_193C
+		STA	7
+		LDA	#0
+		ADC	$42
+		STA	byte_193D
+		STA	8
+		LDY	#6
+		LDA	(7),Y
+		BNE	loc_561F
+		LDA	#$20 ; ' '
+		STA	(7),Y
+
+loc_561F:				; CODE XREF: sub_5602+17j
+		LDA	#$E8 ; 'и'
+		STA	$16
+		LDA	#$60 ; '`'
+		STA	$17
+		LDX	byte_194A
+		JSR	sub_3C5C
+		LDA	#2
+		JMP	loc_2BFC
+; End of function sub_5602
+
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+		LDY	#0
+		LDA	($41),Y
+		AND	#$78 ; 'x'
+		BEQ	loc_5644
+		LDX	#0
+
+loc_563C:				; CODE XREF: RAM:5642j
+		CMP	byte_564F,X
+		BEQ	loc_5647
+		DEX
+		BPL	loc_563C
+
+loc_5644:				; CODE XREF: RAM:5638j
+		JMP	loc_5209
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+
+loc_5647:				; CODE XREF: RAM:563Fj
+		LDA	word_5650+1,X
+		PHA
+		LDA	word_5650,X
+		PHA
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+byte_564F:	.BYTE $FF		; DATA XREF: RAM:loc_563Cr
+word_5650:	.WORD $5208		; DATA XREF: RAM:564Br	RAM:loc_5647r
+		.BYTE $60
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+; START	OF FUNCTION CHUNK FOR sub_51B6
+
+loc_5653:				; CODE XREF: sub_51B6+35j
+		AND	#3
+		TAX
+		LDA	unk_565F,X
+		PHA
+		LDA	unk_5663,X
+		PHA
+		RTS
+; END OF FUNCTION CHUNK	FOR sub_51B6
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+unk_565F:	.BYTE $56 ; V		; DATA XREF: sub_51B6+4A0r
+		.BYTE $56 ; V
+		.BYTE $56 ; V
+		.BYTE $57 ; W
+unk_5663:	.BYTE $66 ; f		; DATA XREF: sub_51B6+4A4r
+		.BYTE $A6 ; ¦
+		.BYTE $E9 ; й
+		.BYTE $22 ; "
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+		LDA	$63BB
+		BNE	loc_566F
+		JMP	loc_5774
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+
+loc_566F:				; CODE XREF: RAM:566Aj
+		DEC	$63BB
+		LDA	$6398
+		BMI	loc_5691
+		LDA	$6399
+		LSR	A
+		LSR	A
+		LSR	A
+		LSR	A
+		TAX
+		LDA	unk_6054,X
+		LDX	#$99 ; '™'
+		JSR	sub_2E43
+		LDA	#$1C
+		LDX	#$98 ; ''
+		JSR	sub_2E43
+		JMP	loc_5225
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+
+loc_5691:				; CODE XREF: RAM:5675j
+		LDA	#$EF ; 'п'
+		STA	$16
+		LDA	#$5F ; '_'
+		STA	$17
+		LDX	byte_194A
+		JSR	sub_3C5C
+		LDA	#$10
+		JSR	loc_2BFC
+		JMP	loc_5225
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+		LDA	$63BC
+		BNE	loc_56AF
+		JMP	loc_5774
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+
+loc_56AF:				; CODE XREF: RAM:56AAj
+		DEC	$63BC
+		LDA	$6398
+		BMI	loc_56C1
+		LDA	#$10
+		LDY	#8
+		JSR	sub_56D7
+		JMP	loc_5225
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+
+loc_56C1:				; CODE XREF: RAM:5573j	RAM:56B5j
+		LDA	#$64 ; 'd'
+		STA	$16
+		LDA	#$60 ; '`'
+		STA	$17
+		LDX	byte_194A
+		JSR	sub_3C5C
+		LDA	#$10
+		JSR	loc_2BFC
+		JMP	loc_5225
+
+; ЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫ S U B	R O U T	I N E ЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫ
+
+
+sub_56D7:				; CODE XREF: RAM:557Ap	RAM:56BBp
+		PHA
+		TYA
+		LDX	#$98 ; ''
+		JSR	sub_2E43
+		PLA
+		LDX	#$9A ; 'љ'
+		JMP	sub_2E43
+; End of function sub_56D7
+
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+
+loc_56E4:				; CODE XREF: RAM:5701j	RAM:5708j
+		JSR	sub_57DC
+		JMP	loc_5225
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+		LDA	$63BD
+		BNE	loc_56F5
+		JMP	loc_5774
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+
+loc_56F2:				; CODE XREF: RAM:56F8j
+		JMP	loc_5225
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+
+loc_56F5:				; CODE XREF: RAM:56EDj
+		JSR	sub_57AB
+		BCS	loc_56F2
+		LDX	#$61 ; 'a'
+		LDY	#$29 ; ')'
+		JSR	sub_4B4D
+		BMI	loc_56E4
+		LDA	#$88 ; '€'
+		JSR	sub_49B0
+		BMI	loc_56E4
+		LDY	#2
+
+loc_570C:				; CODE XREF: RAM:5714j
+		LDA	byte_611A,Y
+		STA	($3D),Y
+		INY
+		CPY	#$F
+		BNE	loc_570C
+		LDA	$4B
+		STA	($3D),Y
+		DEC	$63BD
+		INC	$6390
+		JMP	loc_54AF
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+		LDA	$63C1
+		BEQ	loc_5774
+		LDA	#$61 ; 'a'
+		STA	$16
+		LDA	#$61 ; 'a'
+		STA	$17
+		JSR	sub_2E31
+		LDA	#$73 ; 's'
+		LDX	$6309
+		CPX	#1
+		BNE	loc_573E
+		LDA	#$20 ; ' '
+
+loc_573E:				; CODE XREF: RAM:573Aj
+		STA	aMinutes+6
+		LDA	#1
+		CPX	#$A
+		BCC	loc_5749
+		LDA	#2
+
+loc_5749:				; CODE XREF: RAM:5745j
+		STA	byte_616E
+		LDA	$630A
+		LDY	#1
+		CMP	#$A
+		BCC	loc_5757
+		LDY	#2
+
+loc_5757:				; CODE XREF: RAM:5753j
+		STY	byte_6186
+		ASL	A
+		TAX
+		LDA	aTh_16,X	; "th"
+		STA	aThHour_	; "th hour."
+		LDA	aTh_16+1,X
+		STA	aThHour_+1
+
+loc_5768:				; CODE XREF: RAM:577Cj
+		LDX	byte_194A
+		JSR	sub_3C5C
+		JSR	sub_2BFA
+		JMP	loc_5225
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+
+loc_5774:				; CODE XREF: RAM:566Cj	RAM:56ACj ...
+		LDA	#$4D ; 'M'
+		STA	$16
+		LDA	#$61 ; 'a'
+		STA	$17
+		BNE	loc_5768
+
+; ЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫ S U B	R O U T	I N E ЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫ
+
+
+sub_577E:				; CODE XREF: RAM:377Dp
+		LDA	#0
+		STA	byte_6276
+		LDA	#$D0 ; 'Р'
+		STA	loc_51B0
+		LDA	#$2E ; '.'
+		STA	byte_193A
+		LDA	#$5F ; '_'
+		STA	byte_193B
+		JMP	loc_51D8
+; End of function sub_577E
+
+
+; ЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫ S U B	R O U T	I N E ЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫ
+
+
+sub_5795:				; CODE XREF: sub_5835+Cp
+		CMP	#$80 ; 'Ђ'
+		BCS	locret_57AA
+		TAY
+		LDA	$644B,Y
+		STA	$A
+		LDA	$640B,Y
+		STA	9
+		LDY	#2
+		LDA	#8
+		STA	(9),Y
+
+locret_57AA:				; CODE XREF: sub_5795+2j
+		RTS
+; End of function sub_5795
+
+
+; ЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫ S U B	R O U T	I N E ЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫ
+
+
+sub_57AB:				; CODE XREF: RAM:54AAp	RAM:loc_56F5p ...
+		LDA	#$96 ; '–'
+		STA	$16
+		LDA	#$5F ; '_'
+		STA	$17
+		LDX	byte_194A
+		JSR	sub_3C5C
+
+loc_57B9:				; CODE XREF: RAM:57C8j
+		LDA	#$C6 ; 'Ж'
+		STA	word_1977
+		LDA	#$57 ; 'W'
+		STA	word_1977+1
+		JMP	loc_2FF3
+; End of function sub_57AB
+
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+		LDA	$31
+		BMI	loc_57B9
+		CMP	#$1B
+		BEQ	locret_57DB
+		SEC
+		SBC	#$31 ; '1'
+		BCC	sub_57AB
+		CMP	#2
+		BCS	sub_57AB
+		STA	byte_6283
+		CLC
+
+locret_57DB:				; CODE XREF: RAM:57CCj
+		RTS
+
+; ЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫ S U B	R O U T	I N E ЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫ
+
+
+sub_57DC:				; CODE XREF: RAM:loc_56E4p
+		LDA	#$C1 ; 'Б'
+		STA	$16
+		LDA	#$61 ; 'a'
+		STA	$17
+		LDX	byte_194A
+		JSR	sub_3C5C
+		JMP	sub_2BFA
+; End of function sub_57DC
+
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+		LDX	$6315
+		LDA	$6313
+		CLC
+		ADC	$628B,X
+		STA	byte_6289
+		SEC
+		LDA	$6292,X
+		SBC	$6314
+		STA	byte_628A
+		BPL	loc_580B
+		LDA	#$FF
+		STA	byte_6289
+
+loc_580B:				; CODE XREF: RAM:5804j
+		LDA	#$99 ; '™'
+		STA	$16
+		LDA	#$62 ; 'b'
+		STA	$17
+		LDX	byte_194A
+		DEC	byte_18FE
+		JSR	sub_3C5C
+		LDA	#0
+		STA	byte_18FE
+		JSR	sub_2BB0
+		LDA	#7
+		STA	$16
+		LDA	#$20 ; ' '
+		STA	$17
+		LDX	byte_194A
+		JSR	sub_3C5C
+		JMP	loc_5209
+
+; ЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫ S U B	R O U T	I N E ЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫ
+
+
+sub_5835:				; CODE XREF: RAM:54E3p	RAM:54FAp ...
+		LDX	byte_6283
+		LDA	$639C,X
+		BMI	loc_5844
+		CMP	$4B
+		BEQ	loc_5844
+		JSR	sub_5795
+
+loc_5844:				; CODE XREF: sub_5835+6j sub_5835+Aj
+		LDA	$4B
+		JSR	sub_4EB4
+		PHP
+		JSR	sub_4EA2
+		LDA	$4B
+		LDX	byte_6283
+		STA	$639C,X
+		PLP
+		RTS
+; End of function sub_5835
+
+
+; ЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫ S U B	R O U T	I N E ЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫ
+
+
+sub_5857:				; CODE XREF: RAM:3759p
+		LDX	#0
+		STX	byte_197B
+		DEX
+		STX	byte_58C1
+		LDA	#$F
+		STA	byte_6284
+
+loc_5865:				; CODE XREF: sub_5857+51j
+		LDX	byte_6284
+		LDA	$6494,X
+		CMP	#2
+		BNE	loc_58A5
+		LDA	$64C4,X
+		CMP	$6315
+		BNE	loc_58A5
+		LDA	$64A4,X
+		CMP	$6313
+		BNE	loc_58A5
+		LDA	$64B4,X
+		CMP	$6314
+		BNE	loc_58A5
+		BIT	$4B
+		BPL	loc_5895
+		LDA	#$53 ; 'S'
+		STA	off_59C1
+		LDA	#$5E ; '^'
+		STA	off_59C1+1
+
+loc_5895:				; CODE XREF: sub_5857+32j
+		LDX	byte_6284
+		LDA	$64D4,X
+		STA	$4B
+		STA	byte_58C1
+		JSR	sub_58C2
+		BCS	locret_58C0
+
+loc_58A5:				; CODE XREF: sub_5857+16j sub_5857+1Ej ...
+		DEC	byte_6284
+		BPL	loc_5865
+		LDA	byte_58C1
+		BPL	locret_58C0
+		LDA	#$EE ; 'о'
+		STA	$16
+		LDA	#$59 ; 'Y'
+		STA	$17
+		LDX	byte_194A
+		JSR	sub_3C5C
+		JSR	sub_2BB0
+
+locret_58C0:				; CODE XREF: sub_5857+4Cj sub_5857+56j
+		RTS
+; End of function sub_5857
+
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+byte_58C1:	.BYTE 0			; DATA XREF: sub_5857+6w sub_5857+46w	...
+
+; ЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫ S U B	R O U T	I N E ЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫ
+
+
+sub_58C2:				; CODE XREF: sub_5857+49p
+		LDA	$4B
+		JSR	sub_4B74
+		LDA	#6
+		CLC
+		ADC	$41
+		STA	off_59C1
+		LDA	$42
+		ADC	#0
+		STA	off_59C1+1
+		LDA	#$9B ; '›'
+		STA	byte_5955
+		LDA	#$59 ; 'Y'
+		STA	byte_5956
+		LDY	#0
+		LDA	($41),Y
+		AND	#$7F ; ''
+		BNE	loc_5904
+		LDA	$4B
+		JSR	sub_4EC4
+		LDY	#1
+		LDA	($43),Y
+		STA	byte_59E3
+		INY
+		LDA	($43),Y
+		STA	byte_59E4
+		LDA	#$AB ; '«'
+		STA	byte_5955
+		LDA	#$59 ; 'Y'
+		STA	byte_5956
+
+loc_5904:				; CODE XREF: sub_58C2+24j RAM:5932j
+		LDA	byte_5955
+		STA	$16
+		LDA	byte_5956
+		STA	$17
+		LDX	byte_194A
+		JSR	sub_3C5C
+
+loc_5914:				; CODE XREF: RAM:5923j
+		LDA	#$21 ; '!'
+		STA	word_1977
+		LDA	#$59 ; 'Y'
+		STA	word_1977+1
+		JMP	loc_2FF3
+; End of function sub_58C2
+
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+		LDA	$31
+		BMI	loc_5914
+		CMP	#$1B
+		BEQ	loc_594D
+		JSR	sub_2BA5
+		CMP	#'N'
+		BEQ	loc_594B
+		CMP	#'Y'
+		BNE	loc_5904
+		LDA	#8
+		STA	byte_1961
+		LDY	#0
+		LDA	($41),Y
+		BNE	loc_5945
+		JSR	sub_5957
+		JMP	loc_594B
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+
+loc_5945:				; CODE XREF: RAM:593Dj
+		LDY	#2
+		LDA	#1
+		STA	($41),Y
+
+loc_594B:				; CODE XREF: RAM:592Ej	RAM:5942j
+		CLC
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+		.BYTE $24 ; $
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+
+loc_594D:				; CODE XREF: RAM:5927j
+		SEC
+		DEC	byte_195F
+		DEC	byte_1960
+		RTS
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+byte_5955:	.BYTE $9B		; DATA XREF: sub_58C2+16w sub_58C2+3Aw ...
+byte_5956:	.BYTE $59		; DATA XREF: sub_58C2+1Bw sub_58C2+3Fw ...
+
+; ЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫ S U B	R O U T	I N E ЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫ
+
+
+sub_5957:				; CODE XREF: RAM:593Fp
+		LDY	#$16
+		LDA	($41),Y
+		TAX
+		LDA	$5AA8,X
+		LDY	#$18
+		CPX	#7
+		BCC	loc_5984
+		TAX
+		CLC
+		LDA	($41),Y
+		ADC	$6301,X
+		STA	$6301,X
+		DEY
+		LDA	($41),Y
+		ADC	$6300,X
+		STA	$6300,X
+		BCC	loc_5995
+		LDA	#$FF
+		STA	$6300,X
+		STA	$6301,X
+		BNE	loc_5995
+
+loc_5984:				; CODE XREF: sub_5957+Cj
+		TAX
+		CLC
+		LDA	($41),Y
+		ADC	$6300,X
+		STA	$6300,X
+		BCC	loc_5995
+		LDA	#$FF
+		STA	$6300,X
+
+loc_5995:				; CODE XREF: sub_5957+21j sub_5957+2Bj ...
+		LDA	$4B
+		JSR	sub_4AC9
+		RTS
+; End of function sub_5957
+
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+		.BYTE $A6,  0,	0
+		.BYTE $A5
+aGetq:		.BYTE "GET?"
+		.BYTE $D
+		.BYTE $D
+		.BYTE $D
+		.BYTE $A9
+		.BYTE $A5
+		.BYTE $AC
+		.WORD byte_59C0
+		.BYTE $A6,  0,	0
+		.BYTE $A5
+aGetq_0:	.BYTE "GET?"
+		.BYTE $D
+		.BYTE $D
+		.BYTE $D
+		.BYTE $A3
+		.WORD loc_59E8
+		.BYTE $A9
+		.BYTE $A5
+		.BYTE $B1
+		.WORD $59E3
+		.BYTE 6
+		.BYTE $20
+byte_59C0:	.BYTE $B3		; DATA XREF: RAM:59A9o
+off_59C1:	.WORD unk_5E53		; DATA XREF: sub_5857+36w sub_58C2+Aw	...
+		.BYTE $26
+		.BYTE $D
+		.BYTE $A3
+		.WORD loc_59E5
+		.BYTE $A6,  0,	7
+		.BYTE $A5
+		.BYTE $A1
+aY_0:		.BYTE 'Y'
+		.BYTE $A0
+aEs:		.BYTE "es, "
+		.BYTE $A1
+aN_0:		.BYTE 'N'
+		.BYTE $A0
+aOOr:		.BYTE "o or "
+		.BYTE $A1
+aEsc_1:		.BYTE "ESC"
+		.BYTE $A0
+a__0:		.BYTE '.'
+		.BYTE $D
+		.BYTE $FF
+byte_59E3:	.BYTE 0			; DATA XREF: sub_58C2+2Fw
+byte_59E4:	.BYTE 0			; DATA XREF: sub_58C2+35w
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+
+loc_59E5:				; DATA XREF: RAM:59C6o	RAM:6257o
+		LDA	#0
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+		.BYTE $2C ; ,
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+
+loc_59E8:				; DATA XREF: RAM:59B7o	RAM:6228o
+		LDA	#$FF
+		STA	byte_18FE
+		RTS
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+		.BYTE $A6,  0,	3
+		.BYTE $A5
+aNothingHere_:	.BYTE "Nothing here."
+		.BYTE $D
+		.BYTE $FF
+		.BYTE $80 ; Ђ
+		.BYTE $19
+		.BYTE	2
+		.BYTE	0
+		.BYTE	0
+		.BYTE $15
+aFoodPacketS:	.BYTE "Food Packet(s)",0 ; DATA XREF: sub_5AB4+121w
+					; sub_5AB4:loc_5BDDw
+		.BYTE	0
+byte_5A17:	.BYTE 0			; DATA XREF: sub_5AB4+67w
+					; sub_5AB4:loc_5BA1r ...
+byte_5A18:	.BYTE 0			; DATA XREF: sub_5AB4+109w
+					; sub_5AB4+17Cr
+byte_5A19:	.BYTE 0			; DATA XREF: sub_5AB4+10Ew
+					; sub_5AB4+174r
+aFoodPacketS_0:	.BYTE "Food Packet(s)",0
+aWaterFlaskS:	.BYTE "Water Flask(s)",0
+aTorchEs:	.BYTE "Torch(es)",0
+aTimepieceS:	.BYTE "Timepiece(s)",0
+aCompassEs:	.BYTE "Compass(es)",0
+aKeyS:		.BYTE "Key(s)",0
+aCrystalS:	.BYTE "Crystal(s)",0
+aGemS:		.BYTE "Gem(s)",0
+aJewelS:	.BYTE "Jewel(s)",0
+aGold:		.BYTE "Gold",0
+aSilver:	.BYTE "Silver",0
+aCopper:	.BYTE "Copper",0
+unk_5A90:	.BYTE $1A		; DATA XREF: sub_5AB4+111r
+		.BYTE $29 ; )
+		.BYTE $38 ; 8
+		.BYTE $42 ; B
+		.BYTE $4F ; O
+		.BYTE $5B ; [
+		.BYTE $62 ; b
+		.BYTE $6D ; m
+		.BYTE $74 ; t
+		.BYTE $7D ; }
+		.BYTE $82 ; ‚
+		.BYTE $89 ; ‰
+unk_5A9C:	.BYTE $5A ; Z		; DATA XREF: sub_5AB4+116r
+		.BYTE $5A ; Z
+		.BYTE $5A ; Z
+		.BYTE $5A ; Z
+		.BYTE $5A ; Z
+		.BYTE $5A ; Z
+		.BYTE $5A ; Z
+		.BYTE $5A ; Z
+		.BYTE $5A ; Z
+		.BYTE $5A ; Z
+		.BYTE $5A ; Z
+		.BYTE $5A ; Z
+unk_5AA8:	.BYTE $BB ; »		; DATA XREF: sub_5AB4+73r sub_5AB4+F0r
+		.BYTE $BC ; ј
+		.BYTE $BD ; Ѕ
+		.BYTE $C1 ; Б
+		.BYTE $C0 ; А
+		.BYTE $BF ; ї
+		.BYTE $BE ; ѕ
+		.BYTE $B7 ; ·
+		.BYTE $B9 ; №
+		.BYTE $B1 ; ±
+		.BYTE $B3 ; і
+		.BYTE $B5 ; µ
+
+; ЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫ S U B	R O U T	I N E ЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫ
+
+
+sub_5AB4:				; CODE XREF: RAM:3762p
+		LDA	#$37 ; '7'
+		STA	byte_193A
+		LDA	#$5F ; '_'
+		STA	byte_193B
+		LDA	#$53 ; 'S'
+		STA	byte_5CC3
+		LDA	#$5C ; '\'
+		STA	byte_5CC4
+		JMP	loc_5ADF
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+
+loc_5ACB:				; CODE XREF: RAM:376Bp
+		LDA	#$29 ; ')'
+		STA	byte_193A
+		LDA	#$5F ; '_'
+		STA	byte_193B
+		LDA	#$6A ; 'j'
+		STA	byte_5CC3
+		LDA	#$5C ; '\'
+		STA	byte_5CC4
+
+loc_5ADF:				; CODE XREF: sub_5AB4+14j
+		LDA	#$57 ; 'W'
+		STA	byte_1944
+		LDA	#$5F ; '_'
+		STA	byte_1945
+		LDA	#$C
+		STA	byte_6276
+		LDA	#$F0 ; 'р'
+		STA	loc_51B0
+		JSR	sub_50B2
+		BCS	loc_5B0E
+		CMP	#$80 ; 'Ђ'
+		BCS	loc_5B15
+		STA	$4B
+		JSR	sub_4B74
+		BEQ	loc_5B0E
+		LDA	#9
+		STA	byte_1961
+		LDA	#2
+		LDY	#2
+		STA	($41),Y
+
+loc_5B0E:				; CODE XREF: sub_5AB4+42j sub_5AB4+4Dj ...
+		DEC	byte_195F
+		DEC	byte_1960
+		RTS
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+
+loc_5B15:				; CODE XREF: sub_5AB4+46j
+		AND	#3
+		CLC
+		ADC	byte_6277
+		STA	byte_5A17
+		TAX
+		LDA	#0
+		STA	byte_6285
+		STA	byte_6286
+		LDY	unk_5AA8,X
+		CPX	#7
+		BCC	loc_5B35
+		LDA	$6300,Y
+		STA	byte_6285
+		INY
+
+loc_5B35:				; CODE XREF: sub_5AB4+78j
+		LDA	$6300,Y
+		STA	byte_6286
+		ORA	byte_6285
+		BEQ	loc_5B0E
+
+loc_5B40:				; CODE XREF: sub_5AB4+B6j
+		LDA	byte_5CC3
+		STA	$16
+		LDA	byte_5CC4
+		STA	$17
+		LDX	byte_194A
+		JSR	sub_3C5C
+		JSR	sub_2AA0
+		BCS	loc_5B0E
+		BEQ	loc_5B0E
+		BPL	loc_5B6D
+		LDA	#$A4 ; '¤'
+		STA	$16
+		LDA	#$5C ; '\'
+		STA	$17
+		LDX	byte_194A
+		JSR	sub_3C5C
+		JSR	sub_2BFA
+		JMP	loc_5B40
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+
+loc_5B6D:				; CODE XREF: sub_5AB4+A3j
+		LDX	3
+		LDY	2
+		STY	3
+		STX	2
+		LDA	#9
+		STA	byte_1961
+		SEC
+		LDA	byte_6286
+		SBC	3
+		STA	byte_6288
+		LDA	byte_6285
+		SBC	2
+		STA	byte_6287
+		BCS	loc_5BA1
+		LDA	byte_6285
+		STA	2
+		LDA	byte_6286
+		STA	3
+		LDA	#0
+		STA	byte_6287
+		LDA	#0
+		STA	byte_6288
+
+loc_5BA1:				; CODE XREF: sub_5AB4+D7j
+		LDX	byte_5A17
+		LDY	unk_5AA8,X
+		CPX	#7
+		BCC	loc_5BB2
+		LDA	byte_6287
+		STA	$6300,Y
+		INY
+
+loc_5BB2:				; CODE XREF: sub_5AB4+F5j
+		LDA	byte_6288
+		STA	$6300,Y
+
+loc_5BB8:				; CODE XREF: RAM:18ABj
+		STX	byte_5A17
+		LDA	2
+		STA	byte_5A18
+		LDA	3
+		STA	byte_5A19
+		LDA	unk_5A90,X
+		STA	7
+		LDA	unk_5A9C,X
+		STA	8
+		LDY	#0
+
+loc_5BD1:				; CODE XREF: sub_5AB4+125j
+		LDA	(7),Y
+		BEQ	loc_5BDB
+		STA	aFoodPacketS,Y	; "Food	Packet(s)"
+		INY
+		BNE	loc_5BD1
+
+loc_5BDB:				; CODE XREF: sub_5AB4+11Fj
+		LDA	#0
+
+loc_5BDD:				; CODE XREF: sub_5AB4+12Fj
+		STA	aFoodPacketS,Y	; "Food	Packet(s)"
+		INY
+		CPY	#$F
+		BCC	loc_5BDD
+		LDA	#$F
+		STA	byte_6284
+
+loc_5BEA:				; CODE XREF: sub_5AB4+193j
+		LDX	byte_6284
+		LDA	$6494,X
+		CMP	#2
+		BNE	loc_5C44
+		LDA	$64A4,X
+		CMP	$6313
+		BNE	loc_5C44
+		LDA	$64B4,X
+		CMP	$6314
+		BNE	loc_5C44
+		LDA	$64C4,X
+		CMP	$6315
+		BNE	loc_5C44
+		LDA	$64D4,X
+		STA	$4B
+		JSR	sub_4B74
+		BEQ	loc_5C44
+		LDY	#0
+		LDA	($41),Y
+		BNE	loc_5C44
+		LDY	#$16
+		LDA	($41),Y
+		CMP	byte_5A17
+		BNE	loc_5C44
+		LDY	#$18
+		CLC
+		LDA	byte_5A19
+		ADC	($41),Y
+		STA	($41),Y
+		DEY
+		LDA	byte_5A18
+		ADC	($41),Y
+		STA	$41,Y
+		BCC	loc_5C41
+		LDA	#$FF
+		STA	($41),Y
+		INY
+		STA	($41),Y
+
+loc_5C41:				; CODE XREF: sub_5AB4+184j
+		JMP	loc_5B0E
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+
+loc_5C44:				; CODE XREF: sub_5AB4+13Ej
+					; sub_5AB4+146j ...
+		DEC	byte_6284
+		BPL	loc_5BEA
+		LDX	#$5A ; 'Z'
+		LDY	#1
+		JSR	sub_4B4D
+		JMP	loc_5B0E
+; End of function sub_5AB4
+
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+		.BYTE $A6,  0,	0
+		.BYTE $A5
+aOfferHowManyq:	.BYTE "Offer how many?"
+		.BYTE $D
+		.BYTE $AC
+		.WORD byte_5C7D
+		.BYTE $A6,  0,	0
+		.BYTE $A5
+aDropHowManyq:	.BYTE "Drop how many?",$D
+byte_5C7D:	.BYTE $A6,  0,	7	; DATA XREF: RAM:5C68o
+		.BYTE $A5
+aEnterAmountOrP:.BYTE "Enter amount or press "
+		.BYTE $A1
+aEsc_2:		.BYTE "ESC"
+		.BYTE $A0
+a__1:		.BYTE '.'
+		.BYTE $D
+		.BYTE $A6, $A,	3
+		.BYTE "> "
+		.BYTE $FF
+		.BYTE $A6,  0,	3
+		.BYTE $A5
+aInvalidEntryTr:.BYTE "Invalid entry, try again."
+		.BYTE $D
+		.BYTE $FF
+byte_5CC3:	.BYTE $FF		; DATA XREF: sub_5AB4+Cw sub_5AB4+23w	...
+byte_5CC4:	.BYTE $FF		; DATA XREF: sub_5AB4+11w sub_5AB4+28w ...
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+		LDA	$4B
+		PHA
+		LDX	#5
+
+loc_5CCA:				; CODE XREF: RAM:5CEBj
+		STX	byte_5D04
+		LDA	$639C,X
+		BMI	loc_5CEA
+		STA	$4B
+		JSR	sub_4B74
+		JSR	sub_4EC4
+		LDY	#$10
+		LDX	byte_5D04
+		CPX	#2
+		BCC	loc_5CE5
+		LDY	#$D
+
+loc_5CE5:				; CODE XREF: RAM:5CE1j
+		LDA	($43),Y
+		DEY
+		STA	($43),Y
+
+loc_5CEA:				; CODE XREF: RAM:5CD0j
+		DEX
+		BPL	loc_5CCA
+		LDA	#5
+		STA	$16
+		LDA	#$5D ; ']'
+		STA	$17
+		LDX	byte_194A
+		JSR	sub_3C5C
+		JSR	sub_2BB0
+		PLA
+		STA	$4B
+		JMP	loc_5209
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+byte_5D04:	.BYTE 0			; DATA XREF: RAM:loc_5CCAw RAM:5CDCr
+		.BYTE $A6,  0,	2
+		.BYTE $A5
+aYourInUseWeapo:.BYTE "Your in use weapons and armor"
+		.BYTE $D
+		.BYTE $A5
+aHaveBeenRepair:.BYTE "have been repaired."
+		.BYTE $D
+		.BYTE $FF
+		.BYTE $31 ; 1
+		.BYTE $32 ; 2
+		.BYTE $33 ; 3
+		.BYTE $34 ; 4
+		.BYTE $A6,  0,	0
+		.BYTE $A2
+		.BYTE $B4
+		.WORD byte_193A
+		.BYTE $28
+		.BYTE $AB
+		.BYTE $D
+		.BYTE $A3
+		.WORD loc_5DB6
+		.BYTE $A6,  3,	2
+asc_5D51:	.BYTE " ("              ; DATA XREF: RAM:551Bw RAM:5DC3w ...
+		.BYTE $A1
+a1_0:		.BYTE '1'
+		.BYTE $A0
+		.BYTE ") "
+		.BYTE $B4
+		.WORD byte_193C
+		.BYTE $1D
+		.BYTE ' '
+		.BYTE $AD
+		.BYTE $AC ; ¬
+		.BYTE $5D ; ]
+		.BYTE $AB
+		.BYTE $A6,  3,	3
+		.BYTE $A3
+		.WORD loc_5DBB
+asc_5D67:	.BYTE " ("              ; DATA XREF: RAM:551Fw
+		.BYTE $A1
+a2_0:		.BYTE '2'
+		.BYTE $A0
+		.BYTE ") "
+		.BYTE $B4
+		.WORD unk_193E
+		.BYTE $1D
+		.BYTE $20
+		.BYTE $AD ; ­
+		.BYTE $AC ; ¬
+		.BYTE $5D ; ]
+		.BYTE $AB
+		.BYTE $A6,  3,	4
+		.BYTE $A3
+		.WORD loc_5DBB
+asc_5D7D:	.BYTE " ("              ; DATA XREF: RAM:5523w
+		.BYTE $A1
+a3_0:		.BYTE '3'
+		.BYTE $A0
+		.BYTE $29 ; )
+		.BYTE $20
+		.BYTE $B4
+		.WORD unk_1940
+		.BYTE $1D
+		.BYTE $20
+		.BYTE $AD ; ­
+		.BYTE $AC ; ¬
+		.BYTE $5D ; ]
+		.BYTE $AB ; «
+		.BYTE $A6 ; ¦
+		.BYTE	3
+		.BYTE	5
+		.BYTE $A3 ; Ј
+		.BYTE $BB ; »
+		.BYTE $5D ; ]
+asc_5D93:	.BYTE " ("              ; DATA XREF: RAM:5527w
+		.BYTE $A1
+a4_0:		.BYTE '4'
+		.BYTE $A0
+		.BYTE $29 ; )
+		.BYTE $20
+		.BYTE $B4 ; ґ
+		.BYTE $42 ; B
+		.BYTE $19
+		.BYTE $1D
+		.BYTE $20
+		.BYTE $AD ; ­
+		.BYTE $AC ; ¬
+		.BYTE $5D ; ]
+		.BYTE $AB ; «
+		.BYTE  $D
+		.BYTE  $D
+		.BYTE $A2 ; ў
+		.BYTE $AD ; ­
+		.BYTE $44 ; D
+		.BYTE $19
+		.BYTE $AB ; «
+		.BYTE  $D
+		.BYTE $FF
+byte_5DAC:	.BYTE 0			; DATA XREF: RAM:5DD8w	RAM:5DFDw
+byte_5DAD:	.BYTE 0			; DATA XREF: RAM:5DDDw	RAM:5E02w
+byte_5DAE:	.BYTE 0			; DATA XREF: RAM:5DB1o	RAM:5DF8w
+byte_5DAF:	.BYTE 0			; DATA XREF: RAM:5DB8w	RAM:loc_5DBBr ...
+		.BYTE $B2
+		.WORD byte_5DAE
+		.BYTE 2
+		.BYTE '%'
+		.BYTE $AE
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+
+loc_5DB6:				; DATA XREF: RAM:5D4Co
+		LDA	#0
+		STA	byte_5DAF
+
+loc_5DBB:				; DATA XREF: RAM:5D65o	RAM:5D7Bo
+		LDX	byte_5DAF
+		LDY	unk_5E55,X
+		LDA	#$20 ; ' '
+		STA	asc_5D51,Y	; " ("
+		LDA	$1946,X
+		JSR	sub_4EB4
+		BCC	loc_5DD6
+		LDY	unk_5E55,X
+		LDA	#$2A ; '*'
+		STA	asc_5D51,Y	; " ("
+
+loc_5DD6:				; CODE XREF: RAM:5DCCj
+		LDA	#$54 ; 'T'
+		STA	byte_5DAC
+		LDA	#$5E ; '^'
+		STA	byte_5DAD
+		LDA	loc_51B0
+		CMP	#$D0 ; 'Р'
+		BNE	loc_5E05
+		LDA	byte_1946,X
+		BMI	loc_5E05
+		STA	$4B
+		JSR	sub_4B74
+		JSR	sub_4EC4
+		LDY	#1
+		LDA	($43),Y
+		STA	byte_5DAE
+		LDA	#$B0 ; '°'
+		STA	byte_5DAC
+		LDA	#$5D ; ']'
+		STA	byte_5DAD
+
+loc_5E05:				; CODE XREF: RAM:5DE5j	RAM:5DEAj
+		INC	byte_5DAF
+		RTS
+; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+		.BYTE $A6,  0,	0
+		.BYTE $A5
+		.BYTE $B4
+		.WORD byte_193A
+		.BYTE $28
+		.BYTE $D
+		.BYTE $A6,  3,	2
+		.BYTE " ("
+		.BYTE $A1
+a1_1:		.BYTE '1'
+		.BYTE $A0
+		.BYTE $29 ; )
+		.BYTE $20
+		.BYTE $AD ; ­
+		.BYTE $3C ; <
+		.BYTE $19
+		.BYTE $AB ; «
+		.BYTE $A6,  3,	3
+		.BYTE $20
+		.BYTE $28 ; (
+		.BYTE $A1 ; Ў
+		.BYTE $32 ; 2
+		.BYTE $A0 ;  
+		.BYTE $29 ; )
+		.BYTE $20
+		.BYTE $AD ; ­
+		.BYTE $3E ; >
+		.BYTE $19
+		.BYTE $AB ; «
+		.BYTE $A6 ; ¦
+		.BYTE	3
+		.BYTE	4
+		.BYTE $20
+		.BYTE $28 ; (
+		.BYTE $A1 ; Ў
+		.BYTE $33 ; 3
+		.BYTE $A0 ;  
+		.BYTE $29 ; )
+		.BYTE $20
+		.BYTE $AD ; ­
+		.BYTE $40 ; @
+		.BYTE $19
+		.BYTE $AB ; «
+		.BYTE $A6 ; ¦
+		.BYTE	3
+		.BYTE	5
+		.BYTE $20
+		.BYTE $28 ; (
+		.BYTE $A1 ; Ў
+		.BYTE $34 ; 4
+		.BYTE $A0 ;  
+		.BYTE $29 ; )
+		.BYTE $20
+		.BYTE $AD ; ­
+		.BYTE $42 ; B
+		.BYTE $19
+		.BYTE $AB ; «
+		.BYTE  $D
+		.BYTE  $D
+		.BYTE $A2 ; ў
+		.BYTE $AD ; ­
+		.BYTE $44 ; D
+		.BYTE $19
+		.BYTE $AB ; «
+		.BYTE  $D
+		.BYTE $FF
+unk_5E53:	.BYTE	0		; DATA XREF: RAM:off_59C1o
+		.BYTE $AE ; ®
+unk_5E55:	.BYTE	0		; DATA XREF: RAM:5DBEr	RAM:5DCEr
+		.BYTE $16
+		.BYTE $2C ; ,
+		.BYTE $42 ; B
+aFoodPackets_0:	.BYTE "Food Packets: "  ; DATA XREF: RAM:off_5F0Do
+		.BYTE $B2
+		.WORD $63BB
+		.BYTE 3
+		.BYTE $AE
+aWaterFlasks_0:	.BYTE "Water Flasks: "  ; DATA XREF: RAM:5F0Fo
+		.BYTE $B2
+		.WORD $63BC
+		.BYTE 3
+		.BYTE $AE
+aUnlitTorches:	.BYTE "Unlit Torches: " ; DATA XREF: RAM:5F11o
+		.BYTE $B2
+		.WORD $63BD
+		.BYTE 3
+		.BYTE $AE
+aTimepieces_0:	.BYTE "Timepieces: "    ; DATA XREF: RAM:5F13o
+		.BYTE $B2
+		.WORD $63C1
+		.BYTE 3
+		.BYTE $AE
+aCompasses_0:	.BYTE "Compasses: "     ; DATA XREF: RAM:5F15o
+		.BYTE $B2
+		.WORD $63C0
+		.BYTE 3
+		.BYTE $AE
+aKeys_0:	.BYTE "Keys: "          ; DATA XREF: RAM:5F17o
+		.BYTE $B2
+		.WORD $63BF
+		.BYTE 3
+		.BYTE $AE
+aCrystals_0:	.BYTE "Crystals: "      ; DATA XREF: RAM:5F19o
+		.BYTE $B2
+		.WORD $63BE
+		.BYTE 3
+		.BYTE $AE
+aGems_0:	.BYTE "Gems: "          ; DATA XREF: RAM:5F1Bo
+		.BYTE $B1
+		.WORD $63B7
+		.BYTE 6
+		.BYTE $AE
+aJewels_0:	.BYTE "Jewels: "        ; DATA XREF: RAM:5F1Do
+		.BYTE $B1
+		.WORD $63B9
+		.BYTE 6
+		.BYTE $AE
+aGold_0:	.BYTE "Gold  : "        ; DATA XREF: RAM:5F1Fo
+		.BYTE $B1
+		.WORD $63B1
+		.BYTE 6
+		.BYTE $AE
+aSilver_0:	.BYTE "Silver: "        ; DATA XREF: RAM:5F21o
+		.BYTE $B1
+		.WORD $63B3
+		.BYTE 6
+		.BYTE $AE
+aCopper_0:	.BYTE "Copper: "        ; DATA XREF: RAM:5F23o
+		.BYTE $B1
+		.WORD $63B5
+		.BYTE 6
+		.BYTE $AE
+off_5F0D:	.WORD aFoodPackets_0	; DATA XREF: sub_50B2+20r sub_50B2+26r
+					; "Food	Packets: "
+		.WORD aWaterFlasks_0	; "Water Flasks: "
+		.WORD aUnlitTorches	; "Unlit Torches: "
+		.WORD aTimepieces_0	; "Timepieces: "
+		.WORD aCompasses_0	; "Compasses: "
+		.WORD aKeys_0		; "Keys: "
+		.WORD aCrystals_0	; "Crystals: "
+		.WORD aGems_0		; "Gems: "
+		.WORD aJewels_0		; "Jewels: "
+		.WORD aGold_0		; "Gold	 : "
+		.WORD aSilver_0		; "Silver: "
+		.WORD aCopper_0		; "Copper: "
+aUse:		.BYTE "USE",0
+aDrop:		.BYTE "DROP",0
+aCast:		.BYTE "CAST",0
+aGet:		.BYTE "GET",0
+aOffer:		.BYTE "OFFER",0
+aItem:		.BYTE "Item "
+		.BYTE $A1
+		.BYTE '#'
+		.BYTE $A0
+aOr_0:		.BYTE " or "
+		.BYTE $A1
+aEsc_3:		.BYTE "ESC"
+		.BYTE $A0
+aToExit_0:	.BYTE " to exit"
+		.BYTE $AE
+aItem_0:	.BYTE "Item "
+		.BYTE $A1
+		.BYTE '#'
+		.BYTE $A0
+		.BYTE ", "
+		.BYTE $A1
+aF_0:		.BYTE 'F'
+		.BYTE $A0
+aOrward_0:	.BYTE "orward, "
+		.BYTE $A1
+aB_0:		.BYTE 'B'
+		.BYTE $A0
+aAckOr_0:	.BYTE "ack, or "
+		.BYTE $A1
+aEsc_4:		.BYTE "ESC"
+		.BYTE $A0
+		.BYTE $20
+aToExit_1:	.BYTE "to exit"
+		.BYTE $AE
+aWearInsteadOf:	.BYTE "Wear instead of:",0
+		.BYTE $A6,  0,	0
+		.BYTE $A5
+aUseAs:		.BYTE "Use as:"
+		.BYTE $D
+		.BYTE $A6, $B,	3
+		.BYTE $A1
+a1_2:		.BYTE '1'
+		.BYTE $A0
+aPrimaryWeapon:	.BYTE " Primary weapon"
+		.BYTE $A6, $B,	4
+		.BYTE $A1
+a2_1:		.BYTE '2'
+		.BYTE $A0
+aSecondaryWeapo:.BYTE " Secondary weapon"
+		.BYTE $A6,  0,	7
+		.BYTE $A5
+aPressNumberOrE:.BYTE "Press number or ESC to exit"
+		.BYTE $D
+		.BYTE $FF
+		.BYTE $A6,  0,	1
+		.BYTE $A5
+aYourStomachTur:.BYTE "Your stomach turns at"
+		.BYTE $D
+		.BYTE $A5
+aTheThoughtOfEa:.BYTE "the thought of eating another bite."
+		.BYTE $D
+		.BYTE $D
+		.BYTE $A5
+aThePacketSpill:.BYTE "The packet spills onto the ground."
+		.BYTE $D
+		.BYTE $FF
+unk_6054:	.BYTE $30 ; 0		; DATA XREF: RAM:567Fr
+		.BYTE $30 ; 0
+		.BYTE $30 ; 0
+		.BYTE $20
+		.BYTE $20
+		.BYTE $20
+		.BYTE $10
+		.BYTE $10
+		.BYTE $10
+		.BYTE $10
+		.BYTE $10
+		.BYTE $10
+		.BYTE $10
+		.BYTE $10
+		.BYTE $10
+		.BYTE $10
+		.BYTE $A6,  0,	1
+		.BYTE $A5
+aYourThroatFail:.BYTE "Your throat fails to allow anything"
+		.BYTE $D
+		.BYTE $A5
+aMoreToEnterYou:.BYTE "more to enter your already full belly"
+		.BYTE $2E
+		.BYTE $D
+		.BYTE $D
+		.BYTE $A5
+aTheLiquidSlide:.BYTE "The liquid slides down your face"
+		.BYTE $D
+		.BYTE $A5
+aToTheGround_:	.BYTE "to the ground."
+		.BYTE $D
+		.BYTE $FF
+		.BYTE $A8
+		.BYTE $A6,  0,	2
+		.BYTE $A5
+aYouDrinkA:	.BYTE "You drink a"
+		.BYTE $D
+		.BYTE $D
+		.BYTE $A5
+		.BYTE $B4
+		.WORD byte_193C
+		.BYTE $26
+a__2:		.BYTE '.'
+		.BYTE $D
+		.BYTE $FF
+		.BYTE $A8
+		.BYTE $A6,  0,	3
+		.BYTE $A5
+aYouNeedACrysta:.BYTE "You need a crystal."
+byte_611A:	.BYTE $D		; DATA XREF: RAM:loc_570Cr
+		.BYTE $FF
+		.BYTE	4
+		.BYTE	1
+		.BYTE $F0 ; р
+		.BYTE	0
+		.BYTE	0
+		.BYTE	0
+		.BYTE	0
+		.BYTE	1
+		.BYTE	2
+		.BYTE $80 ; Ђ
+		.BYTE	1
+		.BYTE	0
+		.BYTE	8
+		.BYTE $8B ; ‹
+		.BYTE $24 ; $
+		.BYTE	4
+		.BYTE	0
+		.BYTE	2
+		.BYTE $10
+aLitTorch:	.BYTE "Lit Torch",0
+		.BYTE	0
+		.BYTE $FF
+		.BYTE	0
+		.BYTE $13
+		.BYTE	0
+		.BYTE	0
+		.BYTE	0
+		.BYTE $13
+		.BYTE	0
+		.BYTE	0
+		.BYTE	0
+		.BYTE	0
+		.BYTE	0
+		.BYTE	0
+		.BYTE	4
+		.BYTE	1
+		.BYTE $16
+		.BYTE $16
+		.BYTE $82 ; ‚
+		.BYTE	3
+		.BYTE $A6,  0,	3
+		.BYTE $A5
+aYouHaveNone_:	.BYTE "You have none."
+		.BYTE $D
+		.BYTE $FF
+		.BYTE $A6,  0,	2
+		.BYTE $A5
+aItIs:		.BYTE "It is "
+		.BYTE $B2
+		.WORD $6309
+byte_616E:	.BYTE 2			; DATA XREF: RAM:loc_5749w
+		.BYTE $20
+aMinutes:	.BYTE "minutes "        ; DATA XREF: RAM:loc_573Ew
+		.BYTE $D
+		.BYTE $A5
+aPastThe:	.BYTE "past the "
+		.BYTE $B2
+		.WORD $630A
+byte_6186:	.BYTE 2			; DATA XREF: RAM:loc_5757w
+aThHour_:	.BYTE "th hour."        ; DATA XREF: RAM:575Fw RAM:5765w
+		.BYTE $D
+		.BYTE $FF
+aTh_16:		.BYTE "th"              ; DATA XREF: RAM:575Cr RAM:5762r
+aSt_0:		.BYTE "st"
+aNd_0:		.BYTE "nd"
+aRd_0:		.BYTE "rd"
+aTh_15:		.BYTE "th"
+aTh_14:		.BYTE "th"
+aTh_13:		.BYTE "th"
+aTh_12:		.BYTE "th"
+aTh_11:		.BYTE "th"
+aTh_10:		.BYTE "th"
+aTh_9:		.BYTE "th"
+aTh_8:		.BYTE "th"
+aTh_7:		.BYTE "th"
+aTh_6:		.BYTE "th"
+aTh_5:		.BYTE "th"
+aTh_4:		.BYTE "th"
+aTh_3:		.BYTE "th"
+aTh_2:		.BYTE "th"
+aTh_1:		.BYTE "th"
+aTh_0:		.BYTE "th"
+aTh:		.BYTE "th"
+aSt:		.BYTE "st"
+a_Nd:		.BYTE "nd"
+aRd:		.BYTE "rd"
+		.BYTE $A6,  0,	4
+		.BYTE $A5
+aYouAreCarrying:.BYTE "You are carrying too much!"
+		.BYTE $D
+		.BYTE $FF
+		.BYTE $A8
+		.BYTE $A6,  0,	2
+		.BYTE $A5
+aYouCastTheSpel:.BYTE "You cast the spell of"
+		.BYTE $D
+		.BYTE $D
+		.BYTE $A5
+		.BYTE $A1
+		.BYTE $7F ; 
+		.BYTE $A0
+		.BYTE ' '
+		.BYTE $B4
+		.WORD byte_193C
+		.BYTE $1E
+a__3:		.BYTE ". "
+		.BYTE $A1
+		.BYTE $7F ; 
+		.BYTE $A0
+		.BYTE $D
+		.BYTE $FF
+		.BYTE $A6,  0,	3
+		.BYTE $A5
+aTheSpellFailed:.BYTE "The spell failed!"
+		.BYTE $D
+		.BYTE $FF
+		.BYTE $A6,  0,	2
+		.BYTE $A3
+		.WORD loc_59E8
+		.BYTE $A5
+aTheSpellFail_0:.BYTE "The spell failed"
+		.BYTE $D
+		.BYTE $D
+		.BYTE $A5
+aAndBackfiredFo:.BYTE "and backfired for "
+		.BYTE $B2
+		.WORD byte_6282
+		.BYTE 2
+		.BYTE '!'
+		.BYTE $D
+		.BYTE $A3 ; Ј
+		.WORD loc_59E5
+		.BYTE $FF
+		.BYTE $A6,  0,	3
+		.BYTE $A5 ; Ґ
+aSomethingIsOdd:.BYTE "Something is odd here."
+		.BYTE $D
+		.BYTE $FF
+byte_6276:	.BYTE 0			; DATA XREF: RAM:36DEw	sub_5049+3r ...
+byte_6277:	.BYTE 0			; DATA XREF: sub_5049r	sub_50B2+2w ...
+byte_6278:	.BYTE 0			; DATA XREF: sub_50B2+Aw sub_50B2+2Cr	...
+byte_6279:	.BYTE 0			; DATA XREF: sub_50B2+47w sub_50B2+52w
+byte_627A:	.BYTE 0			; DATA XREF: sub_50B2+3Fw
+					; sub_50B2:loc_50FCr ...
+byte_627B:	.BYTE 0			; DATA XREF: RAM:52CDw	RAM:loc_5390r
+byte_627C:	.BYTE 0			; DATA XREF: RAM:5411w	RAM:5445r
+byte_627D:	.BYTE 0			; DATA XREF: sub_50B2+10w
+					; sub_50B2:loc_50CAr ...
+byte_627E:	.BYTE 0			; DATA XREF: sub_51B6+46w sub_51B6+5Fr
+byte_627F:	.BYTE 0			; DATA XREF: sub_51B6+2w sub_51B6+65r	...
+byte_6280:	.BYTE 0			; DATA XREF: RAM:52DCw	RAM:530Br ...
+byte_6281:	.BYTE 0			; DATA XREF: RAM:5360r
+byte_6282:	.BYTE 0			; DATA XREF: RAM:53CCr	RAM:53DAr ...
+byte_6283:	.BYTE 0			; DATA XREF: RAM:54F7w	RAM:555Dw ...
+byte_6284:	.BYTE 0			; DATA XREF: sub_5857+Bw
+					; sub_5857:loc_5865r ...
+byte_6285:	.BYTE 0			; DATA XREF: sub_5AB4+6Dw sub_5AB4+7Dw ...
+byte_6286:	.BYTE 0			; DATA XREF: sub_5AB4+70w sub_5AB4+84w ...
+byte_6287:	.BYTE 0			; DATA XREF: sub_5AB4+D4w sub_5AB4+E5w ...
+byte_6288:	.BYTE 0			; DATA XREF: sub_5AB4+CCw sub_5AB4+EAw ...
+byte_6289:	.BYTE 0			; DATA XREF: RAM:57F7w	RAM:5808w ...
+byte_628A:	.BYTE 0			; DATA XREF: RAM:5801w	RAM:62A6o
+		.BYTE	0
+		.BYTE $20
+		.BYTE	0
+		.BYTE $20
+		.BYTE	0
+		.BYTE	0
+		.BYTE	0
+		.BYTE $3F ; ?
+		.BYTE $3F ; ?
+		.BYTE $1F
+		.BYTE $1F
+		.BYTE $1F
+		.BYTE  $F
+		.BYTE	7
+		.BYTE $A6,  0,	2
+		.BYTE $A5
+aYouAre_0:	.BYTE "You are "
+		.BYTE $B2
+		.WORD byte_628A
+		.BYTE 2
+aSquaresNorth:	.BYTE " squares North"
+		.BYTE $D
+		.BYTE $A5
+		.BYTE $61 ; a
+		.BYTE $6E ; n
+		.BYTE $64 ; d
+		.BYTE $20
+		.BYTE $B2
+		.WORD byte_6289
+		.BYTE 2
+aSquaresEastFro:.BYTE " squares East from the Southwest"
+		.BYTE $D
+		.BYTE $A5
+aCornerOfLevel:	.BYTE "corner of level "
+		.BYTE $B2
+		.WORD $631D
+		.BYTE 1
+a_:		.BYTE '.'
+		.BYTE $D
+		.BYTE $FF
+		.BYTE $4D ; M
+		.BYTE $53 ; S
+		.BYTE $47 ; G
+		.BYTE $7C ; |
+		.BYTE $19
+		.BYTE $87 ; ‡
+; end of 'RAM'
+
+
+		.END
