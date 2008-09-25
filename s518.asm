@@ -1066,9 +1066,13 @@ loc_1CE7:
 		LDA	#0
 		STA	$21
 		BEQ	loc_1CAB
+
+loc_1CED:
 		LDA	#$80 ; '€'
 		STA	$21
 		BNE	loc_1CAB
+
+loc_1CF3:
 		JSR	sub_1F26
 		LDA	($18),Y
 		JSR	sub_1E9D
@@ -1099,6 +1103,8 @@ loc_1D0F:				; CODE XREF: RAM:1D28j
 		LDA	#$80 ; '€'
 		STA	$24
 		BMI	loc_1CAB
+
+loc_1D21:
 		LDA	#$80 ; '€'
 		STA	byte_1F23
 		LDA	#0
@@ -1571,10 +1577,10 @@ unk_1FB7:	.BYTE	2		; DATA XREF: RAM:1E55r
 		.BYTE	9
 		.BYTE	9
 unk_1FBF:	.BYTE	<(loc_1CE7-1)	; DATA XREF: sub_1C88+42r
-		.BYTE $EC ; ì
-		.BYTE $20
+		.BYTE	<(loc_1CED-1)
+		.BYTE	<(loc_1D21-1)
 		.BYTE $FD ; ý
-		.BYTE $F2 ; ò
+		.BYTE	<(loc_1CF3-1)
 		.BYTE	9
 		.BYTE $29 ; )
 		.BYTE $3A ; :
@@ -1592,10 +1598,10 @@ unk_1FBF:	.BYTE	<(loc_1CE7-1)	; DATA XREF: sub_1C88+42r
 		.BYTE $B3 ; ³
 		.BYTE $BE ; ¾
 unk_1FD4:	.BYTE	>(loc_1CE7-1)	; DATA XREF: sub_1C88+3Er
+		.BYTE	>(loc_1CED-1)
+		.BYTE	>(loc_1D21-1)
 		.BYTE $1C
-		.BYTE $1D
-		.BYTE $1C
-		.BYTE $1C
+		.BYTE	>(loc_1CF3-1)
 		.BYTE $1D
 		.BYTE $1D
 		.BYTE $1D
