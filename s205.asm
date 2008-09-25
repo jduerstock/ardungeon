@@ -716,9 +716,9 @@ loc_84EB:				; CODE XREF: RAM:84E5j
 		STX	$5D93
 		JSR	$502E
 		LDA	#$85 ; '…'
-		STA	$193A
+		STA	off_193A
 		LDA	#$5F ; '_'
-		STA	$193B
+		STA	off_193A+1
 		LDA	#$3D ; '='
 		STA	$1944
 		LDA	#$5F ; '_'
@@ -1074,9 +1074,9 @@ loc_8746:				; CODE XREF: RAM:86F8j
 		LDA	#$D0 ; 'Ð'
 		STA	$51B0
 		LDA	#$2E ; '.'
-		STA	$193A
+		STA	off_193A
 		LDA	#$5F ; '_'
-		STA	$193B
+		STA	off_193A+1
 		JMP	$51D8
 ; ---------------------------------------------------------------------------
 		CMP	#$80 ; '€'

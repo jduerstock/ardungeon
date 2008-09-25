@@ -390,8 +390,7 @@ byte_1936:	.BYTE 0			; DATA XREF: sub_3CA5+3w sub_3CC2+Br
 byte_1937:	.BYTE 0			; DATA XREF: sub_2BFA+9w RAM:2C5Fw ...
 byte_1938:	.BYTE 0			; DATA XREF: sub_2BFA+396w RAM:3627w ...
 byte_1939:	.BYTE 0			; DATA XREF: sub_2BFA+39Cw sub_322C+Br ...
-byte_193A:	.BYTE $FF		; DATA XREF: RAM:36B3w	RAM:36CAw ...
-byte_193B:	.BYTE $FF		; DATA XREF: RAM:36B8w	RAM:36CFw ...
+off_193A:	.WORD	$FFFF		; DATA XREF: RAM:36B3w	RAM:36CAw ...
 byte_193C:	.BYTE $FF		; DATA XREF: sub_502E+Ew sub_502E+14w	...
 byte_193D:	.BYTE $FF		; DATA XREF: sub_508C+1Ew sub_50B2+29w ...
 unk_193E:	.BYTE $FF		; DATA XREF: RAM:5D6Fo
@@ -5476,9 +5475,9 @@ loc_369A:				; CODE XREF: RAM:369Dj	RAM:36ACj
 
 loc_36B1:				; CODE XREF: RAM:36A4j
 		LDA	#$EF ; 'ï'
-		STA	byte_193A
+		STA	off_193A
 		LDA	#$36 ; '6'
-		STA	byte_193B
+		STA	off_193A+1
 		LDA	#$F0 ; 'ð'
 		STA	loc_51B0
 		JMP	loc_36D2
@@ -5488,9 +5487,9 @@ loc_36C3:				; CODE XREF: RAM:36A8j
 		LDA	#$D0 ; 'Ð'
 		STA	loc_51B0
 		LDA	#1
-		STA	byte_193A
+		STA	off_193A
 		LDA	#$37 ; '7'
-		STA	byte_193B
+		STA	off_193A+1
 
 loc_36D2:				; CODE XREF: RAM:36C0j
 		LDA	#$32 ; '2'
@@ -9419,9 +9418,9 @@ loc_51C6:				; CODE XREF: sub_51B6+Cj
 		LDA	#$F0 ; 'ð'
 		STA	loc_51B0
 		LDA	#$25 ; '%'
-		STA	byte_193A
+		STA	off_193A
 		LDA	#$5F ; '_'
-		STA	byte_193B
+		STA	off_193A+1
 
 loc_51D8:				; CODE XREF: sub_577E+14j
 		LDA	#$57 ; 'W'
@@ -9972,9 +9971,9 @@ loc_5519:				; CODE XREF: RAM:5513j
 		STX	asc_5D93	; " ("
 		JSR	sub_502E
 		LDA	#$85 ; '…'
-		STA	byte_193A
+		STA	off_193A
 		LDA	#$5F ; '_'
-		STA	byte_193B
+		STA	off_193A+1
 		LDA	#$3D ; '='
 		STA	byte_1944
 		LDA	#$5F ; '_'
@@ -10366,9 +10365,9 @@ sub_577E:				; CODE XREF: RAM:377Dp
 		LDA	#$D0 ; 'Ð'
 		STA	loc_51B0
 		LDA	#$2E ; '.'
-		STA	byte_193A
+		STA	off_193A
 		LDA	#$5F ; '_'
-		STA	byte_193B
+		STA	off_193A+1
 		JMP	loc_51D8
 ; End of function sub_577E
 
@@ -10824,22 +10823,22 @@ unk_5AA8:	.BYTE $BB ; »		; DATA XREF: sub_5AB4+73r sub_5AB4+F0r
 
 
 sub_5AB4:				; CODE XREF: RAM:3762p
-		LDA	#$37 ; '7'
-		STA	byte_193A
-		LDA	#$5F ; '_'
-		STA	byte_193B
-		LDA	#$53 ; 'S'
+		LDA	#<aOffer
+		STA	off_193A
+		LDA	#>aOffer
+		STA	off_193A+1
+		LDA	#<a_OfferHowMany
 		STA	byte_5CC3
-		LDA	#$5C ; '\'
+		LDA	#>a_OfferHowMany
 		STA	byte_5CC4
 		JMP	loc_5ADF
 ; ---------------------------------------------------------------------------
 
 loc_5ACB:				; CODE XREF: RAM:376Bp
 		LDA	#$29 ; ')'
-		STA	byte_193A
+		STA	off_193A
 		LDA	#$5F ; '_'
-		STA	byte_193B
+		STA	off_193A+1
 		LDA	#$6A ; 'j'
 		STA	byte_5CC3
 		LDA	#$5C ; '\'
@@ -11038,6 +11037,7 @@ loc_5C44:				; CODE XREF: sub_5AB4+13Ej
 ; End of function sub_5AB4
 
 ; ---------------------------------------------------------------------------
+a_OfferHowMany:
 		.BYTE $A6,  0,	0
 		.BYTE $A5
 aOfferHowManyq:	.BYTE "Offer how many?"
@@ -11091,9 +11091,9 @@ loc_5CE5:				; CODE XREF: RAM:5CE1j
 loc_5CEA:				; CODE XREF: RAM:5CD0j
 		DEX
 		BPL	loc_5CCA
-		LDA	#5
+		LDA	#<a_YourInUseWeap
 		STA	off_16
-		LDA	#$5D ; ']'
+		LDA	#>a_YourInUseWeap
 		STA	off_16+1
 		LDX	byte_194A
 		JSR	sub_3C5C
@@ -11103,6 +11103,8 @@ loc_5CEA:				; CODE XREF: RAM:5CD0j
 		JMP	loc_5209
 ; ---------------------------------------------------------------------------
 byte_5D04:	.BYTE 0			; DATA XREF: RAM:loc_5CCAw RAM:5CDCr
+
+a_YourInUseWeap:
 		.BYTE $A6,  0,	2
 		.BYTE $A5
 aYourInUseWeapo:.BYTE "Your in use weapons and armor"
@@ -11118,7 +11120,7 @@ aHaveBeenRepair:.BYTE "have been repaired."
 		.BYTE $A6,  0,	0
 		.BYTE $A2
 		.BYTE $B4
-		.WORD byte_193A
+		.WORD off_193A
 		.BYTE $28
 		.BYTE $AB
 		.BYTE $D
@@ -11256,7 +11258,7 @@ loc_5E05:				; CODE XREF: RAM:5DE5j	RAM:5DEAj
 		.BYTE $A6,  0,	0
 		.BYTE $A5
 		.BYTE $B4
-		.WORD byte_193A
+		.WORD off_193A
 		.BYTE $28
 		.BYTE $D
 		.BYTE $A6,  3,	2
