@@ -175,7 +175,7 @@
 		JMP	sub_2BA5
 ; ---------------------------------------------------------------------------
 j_SEGLOAD:
-		JMP	sub_2CAD
+		JMP	SEGLOAD
 ; ---------------------------------------------------------------------------
 		JMP	loc_3C27
 ; ФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФ
@@ -3134,7 +3134,7 @@ loc_28BC:				; CODE XREF: sub_28A1+21j
 ; ллллллллллллллл S U B	R O U T	I N E ллллллллллллллллллллллллллллллллллллллл
 
 
-sub_28D7:				; CODE XREF: sub_2CAD+Cp sub_2CC2+1Bp
+sub_28D7:				; CODE XREF: SEGLOAD+Cp sub_2CC2+1Bp
 		LDA	byte_1905
 		LDX	#1
 		LSR	A
@@ -3783,22 +3783,22 @@ loc_2C9B:				; CODE XREF: RAM:185Dj
 ; ллллллллллллллл S U B	R O U T	I N E ллллллллллллллллллллллллллллллллллллллл
 
 
-sub_2CAD:				; CODE XREF: RAM:1842j	RAM:2EFFp ...
+SEGLOAD:				; CODE XREF: j_SEGLOADj	RAM:2EFFp ...
 		DEC	$32
 		LDA	#0
 		STA	byte_190E
 
-loc_2CB4:				; CODE XREF: sub_2CAD+Fj
+loc_2CB4:				; CODE XREF: SEGLOAD+Fj
 		JSR	sub_2CFB
 		BCC	loc_2CBF
 		JSR	sub_28D7
 		JMP	loc_2CB4
 ; ФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФ
 
-loc_2CBF:				; CODE XREF: sub_2CAD+Aj
+loc_2CBF:				; CODE XREF: SEGLOAD+Aj
 		INC	$32
 		RTS
-; End of function sub_2CAD
+; End of function SEGLOAD
 
 
 ; ллллллллллллллл S U B	R O U T	I N E ллллллллллллллллллллллллллллллллллллллл
@@ -3850,7 +3850,7 @@ unk_2CF7:	.BYTE $10		; DATA XREF: sub_2CC2:loc_2CC9r
 ; ллллллллллллллл S U B	R O U T	I N E ллллллллллллллллллллллллллллллллллллллл
 
 
-sub_2CFB:				; CODE XREF: sub_2CAD:loc_2CB4p
+sub_2CFB:				; CODE XREF: SEGLOAD:loc_2CB4p
 					; sub_2CC2:loc_2CD8p
 		LDA	byte_1909
 		PHA
@@ -4269,7 +4269,7 @@ loc_2ECD:				; CODE XREF: RAM:2ED1j
 		STA	byte_190B
 		LDA	#$76 ; 'v'
 		STA	byte_190C
-		JSR	sub_2CAD
+		JSR	SEGLOAD
 		JSR	$7600
 		LDA	#2
 		STA	$253
@@ -4673,7 +4673,7 @@ loc_318C:				; CODE XREF: RAM:2F6Dj	RAM:loc_3180j ...
 		STA	byte_190B
 		LDA	#$AC ; 'Ќ'
 		STA	byte_190C
-		JSR	sub_2CAD
+		JSR	SEGLOAD
 		LDA	#$FF
 		STA	byte_1912
 
@@ -5551,7 +5551,7 @@ loc_3797:				; CODE XREF: RAM:379Aj
 		STA	byte_190B
 		LDA	#$76 ; 'v'
 		STA	byte_190C
-		JSR	sub_2CAD
+		JSR	SEGLOAD
 		JMP	$7600
 ; ФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФ
 
@@ -6691,7 +6691,7 @@ loc_4120:				; CODE XREF: sub_408B+99j
 		STA	byte_190B
 		LDA	#$76 ; 'v'
 		STA	byte_190C
-		JSR	sub_2CAD
+		JSR	SEGLOAD
 		JMP	$7600
 ; ФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФ
 
