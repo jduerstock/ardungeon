@@ -781,7 +781,7 @@ loc_1B0E:				; CODE XREF: RAM:1B11j	RAM:1B16j
 		LDX	byte_18B8
 		LDA	unk_1C19,X
 		STA	WSYNC
-		STA	$D018
+		STA	COLPF2
 		INX
 		STX	byte_18B8
 		CPX	#4
@@ -807,7 +807,7 @@ loc_1B52:				; CODE XREF: RAM:1B44j
 		LDA	byte_18BB
 		STA	$D017
 		LDA	byte_18BC
-		STA	$D018
+		STA	COLPF2
 		LDA	byte_18BF
 		STA	$D019
 		LDA	byte_18BD
@@ -873,7 +873,7 @@ sub_1BEB:
 		PHA
 		LDA	#0
 		STA	WSYNC
-		STA	$D018
+		STA	COLPF2
 		STA	$D01A
 		STA	$D012
 		STA	$D013
@@ -2261,7 +2261,7 @@ loc_23A3:				; CODE XREF: RAM:23AAj
 		STX	byte_18B7
 		LDX	byte_18B9
 		BNE	loc_23BA
-		STX	$D018
+		STX	COLPF2
 
 loc_23BA:				; CODE XREF: RAM:23B5j
 		JSR	sub_267A
@@ -2389,7 +2389,7 @@ sub_245D:				; CODE XREF: RAM:1827j	sub_275B+3p
 		STX	$D20E
 		JSR	sub_2454
 		STX	$D01A
-		STX	$D018
+		STX	COLPF2
 		TXA
 		STA	byte_199C
 		LDX	#3
