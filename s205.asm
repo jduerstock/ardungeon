@@ -1,4 +1,4 @@
-
+		.include	"equates.inc"
 
 ;		.ORG	$8000
 
@@ -235,7 +235,7 @@ sub_819E:				; CODE XREF: sub_8000+64p
 		CMP	#5
 		BEQ	loc_8221
 		LDA	#$FE ; 'þ'
-		STA	$D301
+		STA	PORTB
 		LDA	$D800
 		TAX
 		INX
@@ -264,11 +264,11 @@ sub_819E:				; CODE XREF: sub_8000+64p
 		LDX	$4000
 		STX	4
 		LDA	#$E2 ; 'â'
-		STA	$D301
+		STA	PORTB
 		INX
 		STX	$4000
 		LDA	#$FE ; 'þ'
-		STA	$D301
+		STA	PORTB
 		CPX	$4000
 		BNE	loc_8205
 		DEX
@@ -278,7 +278,7 @@ sub_819E:				; CODE XREF: sub_8000+64p
 
 loc_8205:				; CODE XREF: sub_819E+5Ej
 		LDA	#$E2 ; 'â'
-		STA	$D301
+		STA	PORTB
 		DEC	$4000
 		LDX	$4000
 		CPX	4
@@ -289,7 +289,7 @@ loc_8205:				; CODE XREF: sub_819E+5Ej
 
 loc_821C:				; CODE XREF: sub_819E+1Dj sub_819E+23j ...
 		LDA	#$FE ; 'þ'
-		STA	$D301
+		STA	PORTB
 
 loc_8221:				; CODE XREF: sub_819E+Bj
 		CLI
@@ -575,7 +575,7 @@ loc_83F7:				; CODE XREF: RAM:83FEj
 		INY
 		BPL	loc_83F7
 		LDA	#$FE ; 'þ'
-		STA	$D301
+		STA	PORTB
 		LDA	#$40 ; '@'
 		STA	$D40E
 		CLI
@@ -632,7 +632,7 @@ loc_8466:				; CODE XREF: RAM:846Dj
 
 loc_8477:				; CODE XREF: RAM:8472j
 		LDA	#$FE ; 'þ'
-		STA	$D301
+		STA	PORTB
 		LDA	#$40 ; '@'
 		STA	$D40E
 		CLI
@@ -668,7 +668,7 @@ loc_8477:				; CODE XREF: RAM:8472j
 		ASL	A
 		AND	#$C
 		ORA	#$E2 ; 'â'
-		STA	$D301
+		STA	PORTB
 		TXA
 		AND	#$3F ; '?'
 		ORA	#$40 ; '@'

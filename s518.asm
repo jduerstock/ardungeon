@@ -2123,7 +2123,7 @@ loc_22F7:				; CODE XREF: RAM:22DAj
 		PLA
 		TAX
 		LDA	$D300
-		LDA	$D301
+		LDA	PORTB
 		PLA
 		RTI
 ; 컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴�
