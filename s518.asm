@@ -7100,16 +7100,16 @@ loc_4377:				; CODE XREF: sub_408B+24p
 		STX	$5C
 
 loc_4381:				; CODE XREF: RAM:43B7j
-		DEC	$4595,X
+		DEC	byte_4595,X
 		BNE	loc_43B3
-		LDA	$459C,X
-		STA	$4595,X
-		LDA	$45FC,X
-		STA	$58
-		LDA	$4603,X
-		STA	$59
+		LDA	byte_459C,X
+		STA	byte_4595,X
+		LDA	byte_45FC,X
+		STA	off_58
+		LDA	byte_4603,X
+		STA	off_58+1
 		LDY	$1963,X
-		LDA	($58),Y
+		LDA	(off_58),Y
 		BEQ	loc_43B3
 		ASL	A
 		TAY
@@ -7461,6 +7461,8 @@ byte_4591:	.BYTE $16		; DATA XREF: RAM:loc_4187w RAM:418Ew
 byte_4592:	.BYTE $E		; DATA XREF: RAM:loc_4198w RAM:419Fw
 byte_4593:	.BYTE 4			; DATA XREF: RAM:loc_41AEw RAM:41B5w
 byte_4594:	.BYTE 3			; DATA XREF: RAM:loc_41DEw RAM:41E5w
+
+byte_4595:
 		.BYTE	4
 		.BYTE $21 ; !
 		.BYTE $16
@@ -7468,6 +7470,8 @@ byte_4594:	.BYTE 3			; DATA XREF: RAM:loc_41DEw RAM:41E5w
 		.BYTE	3
 		.BYTE	2
 		.BYTE	2
+
+byte_459C:
 		.BYTE	4
 		.BYTE $21 ; !
 		.BYTE $16
@@ -7541,22 +7545,24 @@ byte_45E7:
 		.BYTE	>byte_4676
 
 byte_45EE:
-		.BYTE $18
-		.BYTE $2E ; .
-		.BYTE $3E ; >
-		.BYTE $4E ; N
-		.BYTE $5E ; ^
-		.BYTE $6E ; n
-		.BYTE $7E ; ~
+		.BYTE	<off_4618
+		.BYTE	<off_462E
+		.BYTE	<off_463E
+		.BYTE	<off_464E
+		.BYTE	<off_465E
+		.BYTE	<off_466E
+		.BYTE	<off_467E
 
 byte_45F5:
-		.BYTE $46 ; F
-		.BYTE $46 ; F
-		.BYTE $46 ; F
-		.BYTE $46 ; F
-		.BYTE $46 ; F
-		.BYTE $46 ; F
-		.BYTE $46 ; F
+		.BYTE	>off_4618
+		.BYTE	>off_462E
+		.BYTE	>off_463E
+		.BYTE	>off_464E
+		.BYTE	>off_465E
+		.BYTE	>off_466E
+		.BYTE	>off_467E
+
+byte_45FC:
 		.BYTE $11
 		.BYTE $2A ; *
 		.BYTE $3A ; :
@@ -7564,6 +7570,8 @@ byte_45F5:
 		.BYTE $5A ; Z
 		.BYTE $6A ; j
 		.BYTE $7A ; z
+
+byte_4603:
 		.BYTE $46 ; F
 		.BYTE $46 ; F
 		.BYTE $46 ; F
@@ -7587,6 +7595,8 @@ byte_460A:
 		.BYTE	0
 		.BYTE	0
 		.BYTE	2
+
+off_4618:
 		.WORD aFreezing		; "   Freezing!"
 		.WORD aCold		; "	   Cold"
 		.WORD aChilly		; "	 Chilly"
@@ -7604,6 +7614,8 @@ byte_4626:
 		.BYTE	3
 		.BYTE	0
 		.BYTE  $F
+
+off_462E:
 		.WORD aStarving		; "Starving!   "
 		.WORD aFamished		; "Famished    "
 		.WORD aHungry		; "Hungry      "
@@ -7618,6 +7630,8 @@ byte_4636:
 		.BYTE	5
 		.BYTE	0
 		.BYTE $10
+
+off_463E:
 		.WORD aDehydrated	; "Dehydrated! "
 		.WORD aParched		; "Parched     "
 		.WORD aThirsty		; "Thirsty     "
@@ -7632,6 +7646,8 @@ byte_4646:
 		.BYTE	7
 		.BYTE	0
 		.BYTE $11
+
+off_464E:
 		.WORD aExhausted	; "Exhausted!  "
 		.WORD aTired		; "Tired       "
 		.WORD aWeary		; "Weary       "
@@ -7646,6 +7662,8 @@ byte_4656:
 		.BYTE	0
 		.BYTE	9
 		.BYTE  $A
+
+off_465E:
 		.WORD asc_47E5		; "	       "
 		.WORD aBurdened		; "    Burdened"
 		.WORD aEncumbered	; "  Encumbered"
@@ -7660,6 +7678,8 @@ byte_4666:
 		.BYTE	0
 		.BYTE  $B
 		.BYTE  $C
+
+off_466E:
 		.WORD asc_47E5		; "	       "
 		.WORD aTipsy		; "Tipsy       "
 		.WORD aDrunk		; "Drunk       "
@@ -7674,6 +7694,8 @@ byte_4676:
 		.BYTE	0
 		.BYTE  $D
 		.BYTE  $E
+
+off_467E:
 		.WORD asc_47E5		; "	       "
 		.WORD aFull		; "    Full    "
 		.WORD aStuffed		; "  Stuffed   "
