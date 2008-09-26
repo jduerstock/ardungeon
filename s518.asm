@@ -273,7 +273,7 @@ unk_18C4:	.BYTE	0		; DATA XREF: sub_1C88+Dr sub_1C88+56w
 unk_18C7:	.BYTE	0		; DATA XREF: sub_1C88+16r sub_1C88+5Bw
 		.BYTE	0
 		.BYTE	0
-unk_18CA:	.BYTE	0		; DATA XREF: RAM:loc_1E40r
+byte_18CA:	.BYTE	0		; DATA XREF: RAM:loc_1E40r
 					; RAM:loc_1E59r
 		.BYTE	0
 		.BYTE	0
@@ -767,14 +767,16 @@ loc_1B0E:				; CODE XREF: RAM:1B11j	RAM:1B16j
 		RTS
 ; ---------------------------------------------------------------------------
 		JSR	sub_1C09
-		LDA	#$2F ; '/'
+		LDA	#<loc_1B2F
 		STA	$200
 		STA	$248
-		LDA	#$1B
+		LDA	#>loc_1B2F
 		STA	$201
 		STA	$249
 		JMP	$760A
 ; ---------------------------------------------------------------------------
+
+loc_1B2F:
 		PHA
 		TXA
 		PHA
@@ -798,9 +800,9 @@ loc_1B52:				; CODE XREF: RAM:1B44j
 		RTI
 ; ---------------------------------------------------------------------------
 		PHA
-		LDA	#$A2 ; '¢'
+		LDA	#<loc_1BA2
 		STA	$200
-		LDA	#$1B
+		LDA	#>loc_1BA2
 		STA	$201
 		LDA	byte_18BA
 		STA	$D016
@@ -830,10 +832,12 @@ loc_1BA0:				; CODE XREF: RAM:1B8Cj
 		PLA
 		RTI
 ; ---------------------------------------------------------------------------
+
+loc_1BA2:
 		PHA
-		LDA	#$B7 ; '·'
+		LDA	#<loc_1BB7
 		STA	$200
-		LDA	#$1B
+		LDA	#>loc_1BB7
 		STA	$201
 		LDA	#$C
 		STA	WSYNC
@@ -841,6 +845,8 @@ loc_1BA0:				; CODE XREF: RAM:1B8Cj
 		PLA
 		RTI
 ; ---------------------------------------------------------------------------
+
+loc_1BB7:
 		PHA
 		STA	WSYNC
 		LDA	#<sub_1BD6
@@ -1076,7 +1082,7 @@ loc_1CED:
 
 loc_1CF3:
 		JSR	sub_1F26
-		LDA	($18),Y
+		LDA	(off_18),Y
 		JSR	sub_1E9D
 		JMP	loc_1CAB
 ; ---------------------------------------------------------------------------
@@ -1089,7 +1095,7 @@ loc_1CFE:
 
 
 sub_1D07:				; CODE XREF: RAM:1D01p
-		JMP	($18)
+		JMP	(off_18)
 ; End of function sub_1D07
 
 ; ---------------------------------------------------------------------------
@@ -1223,7 +1229,7 @@ loc_1DC9:
 		JSR	sub_1F26
 
 loc_1DCC:				; CODE XREF: RAM:1DD4j
-		LDA	($18),Y
+		LDA	(off_18),Y
 		STA	$29,Y
 		INY
 		CPY	#4
@@ -1235,10 +1241,10 @@ loc_1DD9:
 		JSR	sub_1F26
 		STY	$29
 		STY	$2A
-		LDA	($18),Y
+		LDA	(off_18),Y
 		STA	$2B
 		INY
-		LDA	($18),Y
+		LDA	(off_18),Y
 		STA	$2C
 		JMP	loc_1DF9
 ; ---------------------------------------------------------------------------
@@ -1248,7 +1254,7 @@ loc_1DEC:
 		STY	$29
 		STY	$2A
 		STY	$2B
-		LDA	($18),Y
+		LDA	(off_18),Y
 		STA	$2C
 
 loc_1DF9:				; CODE XREF: RAM:1DD6j	RAM:1DE9j
@@ -1297,7 +1303,7 @@ loc_1E34:				; CODE XREF: RAM:1E3Aj
 		LDY	#8
 
 loc_1E40:				; CODE XREF: RAM:1E47j
-		LDA	unk_18CA,X
+		LDA	byte_18CA,X
 		BNE	loc_1E4B
 		INX
 		DEY
@@ -1315,7 +1321,7 @@ loc_1E4B:				; CODE XREF: RAM:1E43j
 		TAY
 
 loc_1E59:				; CODE XREF: RAM:1E6Fj
-		LDA	unk_18CA,X
+		LDA	byte_18CA,X
 		ORA	#$30 ; '0'
 		JSR	loc_1F3C
 		DEY
@@ -1366,7 +1372,7 @@ sub_1E8B:				; CODE XREF: RAM:loc_1E34p
 
 
 sub_1E98:				; CODE XREF: sub_1E8B+6p
-		STA	$18CA,Y
+		STA	byte_18CA,Y
 		INY
 		RTS
 ; End of function sub_1E98

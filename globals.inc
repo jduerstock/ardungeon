@@ -3,6 +3,7 @@ off_7 	= $07
 off_9 	= $09
 off_D	= $0D
 off_16	= $16
+off_18	= $18
 off_3D	= $3D
 off_41	= $41
 off_43	= $43
