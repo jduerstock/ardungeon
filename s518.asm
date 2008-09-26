@@ -611,7 +611,7 @@ unk_19F2:	.BYTE $9D ; 		; DATA XREF: sub_1A0D+1Ar
 		.BYTE  $A
 		.BYTE $1A
 
-; ллллллллллллллл S U B	R O U T	I N E ллллллллллллллллллллллллллллллллллллллл
+; --------------- S U B	R O U T	I N E ---------------------------------------
 
 
 sub_1A0D:				; CODE XREF: RAM:180Fj	RAM:2ED5p ...
@@ -884,7 +884,7 @@ sub_1BEB:
 		PLA
 		RTI
 
-; ллллллллллллллл S U B	R O U T	I N E ллллллллллллллллллллллллллллллллллллллл
+; --------------- S U B	R O U T	I N E ---------------------------------------
 
 
 sub_1C09:				; CODE XREF: RAM:1AC1p	RAM:1B19p
@@ -921,7 +921,7 @@ unk_1C28:	.BYTE $38 ; 8		; DATA XREF: RAM:1A9Cr
 		.BYTE	0
 		.BYTE	0
 
-; ллллллллллллллл S U B	R O U T	I N E ллллллллллллллллллллллллллллллллллллллл
+; --------------- S U B	R O U T	I N E ---------------------------------------
 
 
 sub_1C2C:				; CODE XREF: RAM:181Bj	RAM:loc_1F4Bj ...
@@ -985,7 +985,7 @@ loc_1C77:				; CODE XREF: sub_1C2C+10j
 ; End of function sub_1C2C
 
 
-; ллллллллллллллл S U B	R O U T	I N E ллллллллллллллллллллллллллллллллллллллл
+; --------------- S U B	R O U T	I N E ---------------------------------------
 
 
 sub_1C84:				; CODE XREF: RAM:1812j	RAM:2F44p ...
@@ -994,7 +994,7 @@ sub_1C84:				; CODE XREF: RAM:1812j	RAM:2F44p ...
 ; End of function sub_1C84
 
 
-; ллллллллллллллл S U B	R O U T	I N E ллллллллллллллллллллллллллллллллллллллл
+; --------------- S U B	R O U T	I N E ---------------------------------------
 
 
 sub_1C88:				; CODE XREF: RAM:1815j	sub_28D7+1Ep ...
@@ -1085,7 +1085,7 @@ loc_1CFE:
 		JSR	sub_1D07
 		JMP	loc_1CAB
 
-; ллллллллллллллл S U B	R O U T	I N E ллллллллллллллллллллллллллллллллллллллл
+; --------------- S U B	R O U T	I N E ---------------------------------------
 
 
 sub_1D07:				; CODE XREF: RAM:1D01p
@@ -1347,7 +1347,7 @@ loc_1E81:				; CODE XREF: RAM:1E7Cj	RAM:1E86j
 loc_1E88:				; CODE XREF: RAM:1E74j	RAM:1E78j
 		JMP	loc_1CAB
 
-; ллллллллллллллл S U B	R O U T	I N E ллллллллллллллллллллллллллллллллллллллл
+; --------------- S U B	R O U T	I N E ---------------------------------------
 
 
 sub_1E8B:				; CODE XREF: RAM:loc_1E34p
@@ -1362,7 +1362,7 @@ sub_1E8B:				; CODE XREF: RAM:loc_1E34p
 ; End of function sub_1E8B
 
 
-; ллллллллллллллл S U B	R O U T	I N E ллллллллллллллллллллллллллллллллллллллл
+; --------------- S U B	R O U T	I N E ---------------------------------------
 
 
 sub_1E98:				; CODE XREF: sub_1E8B+6p
@@ -1372,7 +1372,7 @@ sub_1E98:				; CODE XREF: sub_1E8B+6p
 ; End of function sub_1E98
 
 
-; ллллллллллллллл S U B	R O U T	I N E ллллллллллллллллллллллллллллллллллллллл
+; --------------- S U B	R O U T	I N E ---------------------------------------
 
 
 sub_1E9D:				; CODE XREF: RAM:1CF8p
@@ -1387,7 +1387,7 @@ sub_1E9D:				; CODE XREF: RAM:1CF8p
 ; End of function sub_1E9D
 
 
-; ллллллллллллллл S U B	R O U T	I N E ллллллллллллллллллллллллллллллллллллллл
+; --------------- S U B	R O U T	I N E ---------------------------------------
 
 
 sub_1EA8:				; CODE XREF: sub_1E9D+5p
@@ -1474,7 +1474,7 @@ byte_1F23:	.BYTE 0			; DATA XREF: RAM:1D0Cw	RAM:1D23w ...
 byte_1F24:	.BYTE 0			; DATA XREF: RAM:1EE8w	RAM:1F00w ...
 byte_1F25:	.BYTE 0			; DATA XREF: RAM:1EEDw	RAM:1F05w ...
 
-; ллллллллллллллл S U B	R O U T	I N E ллллллллллллллллллллллллллллллллллллллл
+; --------------- S U B	R O U T	I N E ---------------------------------------
 
 
 sub_1F26:				; CODE XREF: RAM:1CF3p	RAM:1CFEp ...
@@ -1486,7 +1486,7 @@ sub_1F26:				; CODE XREF: RAM:1CF3p	RAM:1CFEp ...
 ; End of function sub_1F26
 
 
-; ллллллллллллллл S U B	R O U T	I N E ллллллллллллллллллллллллллллллллллллллл
+; --------------- S U B	R O U T	I N E ---------------------------------------
 
 
 sub_1F31:				; CODE XREF: sub_1C88:loc_1CABp
@@ -1652,7 +1652,7 @@ unk_1FD4:	.BYTE	>(loc_1CE7-1)	; DATA XREF: sub_1C88+3Er
 		.BYTE	>(loc_1EB4-1)
 		.BYTE	>(loc_1EBF-1)
 
-; ллллллллллллллл S U B	R O U T	I N E ллллллллллллллллллллллллллллллллллллллл
+; --------------- S U B	R O U T	I N E ---------------------------------------
 
 
 sub_1FE9:				; CODE XREF: RAM:1D7Ep	RAM:1DA2p
@@ -1682,7 +1682,7 @@ loc_2001:				; CODE XREF: sub_1FE9+Fj sub_1FE9+14j
 ; ---------------------------------------------------------------------------
 		.BYTE $A8,$FF
 
-; ллллллллллллллл S U B	R O U T	I N E ллллллллллллллллллллллллллллллллллллллл
+; --------------- S U B	R O U T	I N E ---------------------------------------
 
 
 sub_2009:				; CODE XREF: sub_20F7+Dp
@@ -1709,7 +1709,7 @@ loc_201D:				; CODE XREF: sub_21B7+17j
 ; End of function sub_2009
 
 
-; ллллллллллллллл S U B	R O U T	I N E ллллллллллллллллллллллллллллллллллллллл
+; --------------- S U B	R O U T	I N E ---------------------------------------
 
 
 sub_2037:				; CODE XREF: sub_248E:loc_20EDp
@@ -1836,7 +1836,7 @@ loc_20ED:				; CODE XREF: sub_248E-3C3j
 		RTS
 ; END OF FUNCTION CHUNK	FOR sub_248E
 
-; ллллллллллллллл S U B	R O U T	I N E ллллллллллллллллллллллллллллллллллллллл
+; --------------- S U B	R O U T	I N E ---------------------------------------
 
 
 sub_20F7:				; CODE XREF: sub_248E-40Ap
@@ -1870,7 +1870,7 @@ loc_211A:				; CODE XREF: sub_20F7+26j
 ; End of function sub_20F7
 
 
-; ллллллллллллллл S U B	R O U T	I N E ллллллллллллллллллллллллллллллллллллллл
+; --------------- S U B	R O U T	I N E ---------------------------------------
 
 
 sub_2126:				; CODE XREF: sub_248E-3D2p
@@ -1930,7 +1930,7 @@ loc_2186:				; CODE XREF: sub_2126+3Aj sub_2126+3Ej ...
 ; End of function sub_2126
 
 
-; ллллллллллллллл S U B	R O U T	I N E ллллллллллллллллллллллллллллллллллллллл
+; --------------- S U B	R O U T	I N E ---------------------------------------
 
 
 sub_218E:				; CODE XREF: sub_248E-3BEp
@@ -1960,7 +1960,7 @@ loc_21B1:				; CODE XREF: sub_218E+1Bj
 ; End of function sub_218E
 
 
-; ллллллллллллллл S U B	R O U T	I N E ллллллллллллллллллллллллллллллллллллллл
+; --------------- S U B	R O U T	I N E ---------------------------------------
 
 
 sub_21B7:				; CODE XREF: sub_218E+10p
@@ -1977,7 +1977,7 @@ sub_21B7:				; CODE XREF: sub_218E+10p
 ; End of function sub_21B7
 
 
-; ллллллллллллллл S U B	R O U T	I N E ллллллллллллллллллллллллллллллллллллллл
+; --------------- S U B	R O U T	I N E ---------------------------------------
 
 
 sub_21D1:				; CODE XREF: sub_248E-3EDp
@@ -2355,7 +2355,7 @@ loc_244B:				; CODE XREF: RAM:loc_2344j RAM:2391j
 		PLA
 		RTI
 
-; ллллллллллллллл S U B	R O U T	I N E ллллллллллллллллллллллллллллллллллллллл
+; --------------- S U B	R O U T	I N E ---------------------------------------
 
 
 sub_2451:				; CODE XREF: RAM:2442p
@@ -2363,7 +2363,7 @@ sub_2451:				; CODE XREF: RAM:2442p
 ; End of function sub_2451
 
 
-; ллллллллллллллл S U B	R O U T	I N E ллллллллллллллллллллллллллллллллллллллл
+; --------------- S U B	R O U T	I N E ---------------------------------------
 
 
 sub_2454:				; CODE XREF: sub_1A0D+11p sub_245D+12p
@@ -2376,7 +2376,7 @@ loc_2457:				; CODE XREF: sub_2454+6j
 ; End of function sub_2454
 
 
-; ллллллллллллллл S U B	R O U T	I N E ллллллллллллллллллллллллллллллллллллллл
+; --------------- S U B	R O U T	I N E ---------------------------------------
 
 
 sub_245D:				; CODE XREF: RAM:1827j	sub_275B+3p
@@ -2405,7 +2405,7 @@ loc_247E:				; CODE XREF: sub_245D+2Bj
 ; End of function sub_245D
 
 
-; ллллллллллллллл S U B	R O U T	I N E ллллллллллллллллллллллллллллллллллллллл
+; --------------- S U B	R O U T	I N E ---------------------------------------
 
 
 sub_248E:				; CODE XREF: RAM:182Dj
@@ -2491,7 +2491,7 @@ byte_24FF:	.BYTE 2			; DATA XREF: RAM:23D8w	RAM:23DFw
 		.BYTE	0
 		.BYTE	0
 
-; ллллллллллллллл S U B	R O U T	I N E ллллллллллллллллллллллллллллллллллллллл
+; --------------- S U B	R O U T	I N E ---------------------------------------
 
 
 sub_2503:				; CODE XREF: RAM:loc_2445p
@@ -2556,7 +2556,7 @@ loc_2562:				; CODE XREF: sub_2503+65j
 ; End of function sub_2503
 
 
-; ллллллллллллллл S U B	R O U T	I N E ллллллллллллллллллллллллллллллллллллллл
+; --------------- S U B	R O U T	I N E ---------------------------------------
 
 
 sub_256B:				; CODE XREF: sub_2503:loc_2562p
@@ -2751,7 +2751,7 @@ unk_2629:	.BYTE	>byte_25C5	; DATA XREF: sub_2503+1Dr
 		.BYTE	>byte_25D7
 		.BYTE	>byte_25DE
 
-; ллллллллллллллл S U B	R O U T	I N E ллллллллллллллллллллллллллллллллллллллл
+; --------------- S U B	R O U T	I N E ---------------------------------------
 
 
 sub_262F:				; CODE XREF: RAM:1821j
@@ -2771,7 +2771,7 @@ loc_263C:				; CODE XREF: sub_262F+9j
 ; End of function sub_262F
 
 
-; ллллллллллллллл S U B	R O U T	I N E ллллллллллллллллллллллллллллллллллллллл
+; --------------- S U B	R O U T	I N E ---------------------------------------
 
 
 sub_2643:				; CODE XREF: RAM:181Ej	sub_28D7+36p ...
@@ -2813,7 +2813,7 @@ loc_2676:				; CODE XREF: RAM:2657j	RAM:265Cj ...
 		PLA
 		RTI
 
-; ллллллллллллллл S U B	R O U T	I N E ллллллллллллллллллллллллллллллллллллллл
+; --------------- S U B	R O U T	I N E ---------------------------------------
 
 
 sub_267A:				; CODE XREF: RAM:loc_23BAp
@@ -2902,7 +2902,7 @@ unk_2756:	.BYTE	1		; DATA XREF: sub_267A:loc_26BAr
 		.BYTE	8
 		.BYTE $80 ; 
 
-; ллллллллллллллл S U B	R O U T	I N E ллллллллллллллллллллллллллллллллллллллл
+; --------------- S U B	R O U T	I N E ---------------------------------------
 
 
 sub_275B:				; CODE XREF: RAM:1824j	sub_2CFB+52p
@@ -2935,7 +2935,7 @@ loc_2782:				; CODE XREF: sub_275B+1Cj
 ; End of function sub_275B
 
 
-; ллллллллллллллл S U B	R O U T	I N E ллллллллллллллллллллллллллллллллллллллл
+; --------------- S U B	R O U T	I N E ---------------------------------------
 
 
 sub_2785:				; CODE XREF: sub_275B:loc_2779p
@@ -2943,7 +2943,7 @@ sub_2785:				; CODE XREF: sub_275B:loc_2779p
 ; End of function sub_2785
 
 
-; ллллллллллллллл S U B	R O U T	I N E ллллллллллллллллллллллллллллллллллллллл
+; --------------- S U B	R O U T	I N E ---------------------------------------
 
 
 sub_2788:				; CODE XREF: sub_275Bp
@@ -2962,7 +2962,7 @@ locret_2798:				; CODE XREF: sub_2788+9j
 ; End of function sub_2788
 
 
-; ллллллллллллллл S U B	R O U T	I N E ллллллллллллллллллллллллллллллллллллллл
+; --------------- S U B	R O U T	I N E ---------------------------------------
 
 
 sub_2799:				; CODE XREF: sub_275B+19p
@@ -3022,7 +3022,7 @@ loc_27D6:				; CODE XREF: sub_2799+3j sub_2799+8j
 		SEC
 		JMP	loc_24C6
 
-; ллллллллллллллл S U B	R O U T	I N E ллллллллллллллллллллллллллллллллллллллл
+; --------------- S U B	R O U T	I N E ---------------------------------------
 
 
 sub_27DE:				; CODE XREF: sub_2799+39p
@@ -3158,7 +3158,7 @@ loc_2897:				; CODE XREF: sub_27DE+ADj sub_27DE+B5j
 ; End of function sub_27DE
 
 
-; ллллллллллллллл S U B	R O U T	I N E ллллллллллллллллллллллллллллллллллллллл
+; --------------- S U B	R O U T	I N E ---------------------------------------
 
 
 sub_28A1:				; CODE XREF: RAM:182Aj	sub_275B+6p
@@ -3196,7 +3196,7 @@ loc_28BC:				; CODE XREF: sub_28A1+21j
 ; End of function sub_28A1
 
 
-; ллллллллллллллл S U B	R O U T	I N E ллллллллллллллллллллллллллллллллллллллл
+; --------------- S U B	R O U T	I N E ---------------------------------------
 
 
 sub_28D7:				; CODE XREF: SEGLOAD+Cp sub_2CC2+1Bp
@@ -3251,7 +3251,7 @@ loc_2926:				; CODE XREF: sub_28D7+34j sub_28D7+3Bj ...
 ; End of function sub_28D7
 
 
-; ллллллллллллллл S U B	R O U T	I N E ллллллллллллллллллллллллллллллллллллллл
+; --------------- S U B	R O U T	I N E ---------------------------------------
 
 
 sub_292B:				; CODE XREF: sub_28D7+4Ap
@@ -3265,7 +3265,7 @@ sub_292B:				; CODE XREF: sub_28D7+4Ap
 ; End of function sub_292B
 
 
-; ллллллллллллллл S U B	R O U T	I N E ллллллллллллллллллллллллллллллллллллллл
+; --------------- S U B	R O U T	I N E ---------------------------------------
 
 
 sub_2937:				; CODE XREF: sub_2799p
@@ -3308,7 +3308,7 @@ loc_2976:				; CODE XREF: sub_2937+23j sub_2937+38j
 ; End of function sub_2937
 
 
-; ллллллллллллллл S U B	R O U T	I N E ллллллллллллллллллллллллллллллллллллллл
+; --------------- S U B	R O U T	I N E ---------------------------------------
 
 
 sub_2979:				; CODE XREF: RAM:1800j
@@ -3384,7 +3384,7 @@ aEncounter:	.BYTE "Encounter!",0    ; DATA XREF: sub_2CFB:loc_2D0Er
 		.BYTE $F0 ; №
 		.BYTE $E0 ; р
 
-; ллллллллллллллл S U B	R O U T	I N E ллллллллллллллллллллллллллллллллллллллл
+; --------------- S U B	R O U T	I N E ---------------------------------------
 
 
 sub_2A41:				; CODE XREF: RAM:1839j	sub_2AA0+8p
@@ -3449,7 +3449,7 @@ loc_2A8D:				; CODE XREF: sub_2A41+35j
 ; End of function sub_2A41
 
 
-; ллллллллллллллл S U B	R O U T	I N E ллллллллллллллллллллллллллллллллллллллл
+; --------------- S U B	R O U T	I N E ---------------------------------------
 
 
 sub_2AA0:				; CODE XREF: RAM:18AEj	sub_5AB4+9Cp
@@ -3530,7 +3530,7 @@ loc_2B06:				; CODE XREF: sub_2AA0+3Aj sub_2AA0+4Ej
 ; End of function sub_2AA0
 
 
-; ллллллллллллллл S U B	R O U T	I N E ллллллллллллллллллллллллллллллллллллллл
+; --------------- S U B	R O U T	I N E ---------------------------------------
 
 
 sub_2B0F:				; CODE XREF: sub_2AA0:loc_2AB4p
@@ -3575,7 +3575,7 @@ loc_2B32:				; CODE XREF: sub_2B0F+2Ej
 ; ---------------------------------------------------------------------------
 byte_2B46:	.BYTE 0			; DATA XREF: sub_2AA0+53r sub_2B0Fw ...
 
-; ллллллллллллллл S U B	R O U T	I N E ллллллллллллллллллллллллллллллллллллллл
+; --------------- S U B	R O U T	I N E ---------------------------------------
 
 
 sub_2B47:				; CODE XREF: RAM:18A2j	sub_2AA0+33p
@@ -3606,7 +3606,7 @@ loc_2B67:				; CODE XREF: sub_2B47+11j
 ; End of function sub_2B47
 
 
-; ллллллллллллллл S U B	R O U T	I N E ллллллллллллллллллллллллллллллллллллллл
+; --------------- S U B	R O U T	I N E ---------------------------------------
 
 
 sub_2B6B:				; CODE XREF: RAM:1899j	RAM:535Dp
@@ -3659,7 +3659,7 @@ unk_2B9D:	.BYTE	1		; DATA XREF: sub_2B6B+1Fr
 		.BYTE $7F ; 
 		.BYTE $FF
 
-; ллллллллллллллл S U B	R O U T	I N E ллллллллллллллллллллллллллллллллллллллл
+; --------------- S U B	R O U T	I N E ---------------------------------------
 
 
 sub_2BA5:				; CODE XREF: RAM:183Fj
@@ -3675,7 +3675,7 @@ locret_2BAF:				; CODE XREF: sub_2BA5+2j sub_2BA5+6j
 ; End of function sub_2BA5
 
 
-; ллллллллллллллл S U B	R O U T	I N E ллллллллллллллллллллллллллллллллллллллл
+; --------------- S U B	R O U T	I N E ---------------------------------------
 
 
 sub_2BB0:				; CODE XREF: RAM:183Cj	RAM:348Cp ...
@@ -3711,7 +3711,7 @@ aPressAnyKeyToC:BLINK	"Press any key to continue"
 		.BYTE $D
 		.BYTE $FF
 
-; ллллллллллллллл S U B	R O U T	I N E ллллллллллллллллллллллллллллллллллллллл
+; --------------- S U B	R O U T	I N E ---------------------------------------
 
 
 sub_2BFA:				; CODE XREF: RAM:527Cp	RAM:53EDp ...
@@ -3785,7 +3785,7 @@ byte_2C64:	.BYTE 0			; DATA XREF: sub_2BFA:loc_2BFCw
 					; RAM:2C56w
 byte_2C65:	.BYTE 0			; DATA XREF: sub_2BFA+Ew sub_2BFA+21r	...
 
-; ллллллллллллллл S U B	R O U T	I N E ллллллллллллллллллллллллллллллллллллллл
+; --------------- S U B	R O U T	I N E ---------------------------------------
 
 
 sub_2C66:				; CODE XREF: sub_2BB0:loc_2BB4p
@@ -3838,7 +3838,7 @@ loc_2C9B:				; CODE XREF: RAM:185Dj
 		.BYTE	0
 		.BYTE $60 ; `
 
-; ллллллллллллллл S U B	R O U T	I N E ллллллллллллллллллллллллллллллллллллллл
+; --------------- S U B	R O U T	I N E ---------------------------------------
 
 
 SEGLOAD:				; CODE XREF: j_SEGLOADj	RAM:2EFFp ...
@@ -3859,7 +3859,7 @@ loc_2CBF:				; CODE XREF: SEGLOAD+Aj
 ; End of function SEGLOAD
 
 
-; ллллллллллллллл S U B	R O U T	I N E ллллллллллллллллллллллллллллллллллллллл
+; --------------- S U B	R O U T	I N E ---------------------------------------
 
 
 sub_2CC2:				; CODE XREF: RAM:1881j	sub_2BFA+3D8p
@@ -3905,7 +3905,7 @@ unk_2CF7:	.BYTE $10		; DATA XREF: sub_2CC2:loc_2CC9r
 		.BYTE $12
 		.BYTE $3F ; ?
 
-; ллллллллллллллл S U B	R O U T	I N E ллллллллллллллллллллллллллллллллллллллл
+; --------------- S U B	R O U T	I N E ---------------------------------------
 
 
 sub_2CFB:				; CODE XREF: SEGLOAD:loc_2CB4p
@@ -4033,7 +4033,7 @@ loc_2DA3:				; CODE XREF: RAM:2DA8j
 locret_2DAA:				; CODE XREF: RAM:2DA1j
 		RTS
 
-; ллллллллллллллл S U B	R O U T	I N E ллллллллллллллллллллллллллллллллллллллл
+; --------------- S U B	R O U T	I N E ---------------------------------------
 
 
 sub_2DAB:				; CODE XREF: RAM:1860j	RAM:3578p ...
@@ -4077,7 +4077,7 @@ loc_2DDF:				; DATA XREF: sub_2DAB+9w sub_2DAB+3w
 ; End of function sub_2DAB
 
 
-; ллллллллллллллл S U B	R O U T	I N E ллллллллллллллллллллллллллллллллллллллл
+; --------------- S U B	R O U T	I N E ---------------------------------------
 
 
 sub_2DE3:				; CODE XREF: RAM:1863j	sub_2CFB+4Cp ...
@@ -4108,7 +4108,7 @@ locret_2DFC:				; CODE XREF: sub_2DE3+16j
 byte_2E05:	.BYTE $80,$40,$20,$10,	8,  4,	2,  1 ;	DATA XREF: sub_2DAB:loc_2DDCr
 					; sub_2DE3+13r
 
-; ллллллллллллллл S U B	R O U T	I N E ллллллллллллллллллллллллллллллллллллллл
+; --------------- S U B	R O U T	I N E ---------------------------------------
 
 
 sub_2E0D:				; CODE XREF: RAM:1866j	sub_4AC9+49p ...
@@ -4143,7 +4143,7 @@ locret_2E30:				; CODE XREF: sub_2E0D+18j
 ; End of function sub_2E0D
 
 
-; ллллллллллллллл S U B	R O U T	I N E ллллллллллллллллллллллллллллллллллллллл
+; --------------- S U B	R O U T	I N E ---------------------------------------
 
 
 sub_2E31:				; CODE XREF: RAM:1869j	RAM:5730p
@@ -4166,7 +4166,7 @@ loc_2E40:				; CODE XREF: RAM:187Bj
 ; ---------------------------------------------------------------------------
 		.BYTE $2C ; ,
 
-; ллллллллллллллл S U B	R O U T	I N E ллллллллллллллллллллллллллллллллллллллл
+; --------------- S U B	R O U T	I N E ---------------------------------------
 
 
 sub_2E43:				; CODE XREF: RAM:1878j	RAM:41C4p ...
@@ -4211,7 +4211,7 @@ loc_2E66:				; CODE XREF: RAM:1872j	RAM:34ADp ...
 ; ---------------------------------------------------------------------------
 		.BYTE $2C ; ,
 
-; ллллллллллллллл S U B	R O U T	I N E ллллллллллллллллллллллллллллллллллллллл
+; --------------- S U B	R O U T	I N E ---------------------------------------
 
 
 sub_2E69:				; CODE XREF: RAM:186Fj	RAM:34F7p ...
@@ -4250,7 +4250,7 @@ locret_2E8C:				; CODE XREF: sub_2E69:loc_2E81j
 ; End of function sub_2E69
 
 
-; ллллллллллллллл S U B	R O U T	I N E ллллллллллллллллллллллллллллллллллллллл
+; --------------- S U B	R O U T	I N E ---------------------------------------
 
 
 sub_2E8D:				; CODE XREF: sub_2E43:loc_2E45p
@@ -4809,7 +4809,7 @@ unk_3225:	.BYTE	1		; DATA XREF: sub_2BFA+59Br
 		.BYTE	3
 		.BYTE	4
 
-; ллллллллллллллл S U B	R O U T	I N E ллллллллллллллллллллллллллллллллллллллл
+; --------------- S U B	R O U T	I N E ---------------------------------------
 
 
 sub_322C:				; CODE XREF: sub_2BFA:loc_2F80p
@@ -4920,7 +4920,7 @@ loc_32B1:				; CODE XREF: sub_322C+49j sub_322C+8Ej
 aYouAre:	.BYTE "You are "
 		.BYTE $FF
 
-; ллллллллллллллл S U B	R O U T	I N E ллллллллллллллллллллллллллллллллллллллл
+; --------------- S U B	R O U T	I N E ---------------------------------------
 
 
 sub_32CA:				; CODE XREF: RAM:312Ap
@@ -5262,7 +5262,7 @@ byte_352E:	.BYTE 0			; DATA XREF: RAM:3375w	RAM:33A7r ...
 byte_352F:	.BYTE $FF		; DATA XREF: RAM:33B0w	RAM:33C6r
 byte_3530:	.BYTE $FF		; DATA XREF: RAM:33B6w	RAM:33CCr
 
-; ллллллллллллллл S U B	R O U T	I N E ллллллллллллллллллллллллллллллллллллллл
+; --------------- S U B	R O U T	I N E ---------------------------------------
 
 
 sub_3531:				; CODE XREF: RAM:30EEp
@@ -5323,7 +5323,7 @@ loc_358B:				; CODE XREF: RAM:3586j
 		STA	byte_192A
 		JMP	loc_320D
 
-; ллллллллллллллл S U B	R O U T	I N E ллллллллллллллллллллллллллллллллллллллл
+; --------------- S U B	R O U T	I N E ---------------------------------------
 
 
 sub_3596:				; CODE XREF: sub_2BFA+410p RAM:3583p
@@ -5423,7 +5423,7 @@ unk_3630:	.BYTE $85 ; 		; DATA XREF: RAM:35EFw	RAM:loc_3616r
 		.BYTE	8
 		.BYTE  $A
 
-; ллллллллллллллл S U B	R O U T	I N E ллллллллллллллллллллллллллллллллллллллл
+; --------------- S U B	R O U T	I N E ---------------------------------------
 
 
 sub_3635:				; CODE XREF: RAM:loc_3689p RAM:3756p ...
@@ -5673,7 +5673,7 @@ aPaused:	.BYTE "(Paused)"
 		.BYTE $D
 		.BYTE $FF
 
-; ллллллллллллллл S U B	R O U T	I N E ллллллллллллллллллллллллллллллллллллллл
+; --------------- S U B	R O U T	I N E ---------------------------------------
 
 
 sub_386F:				; CODE XREF: sub_2BFA+3FCp RAM:30D8p
@@ -6049,7 +6049,7 @@ loc_3C27:				; CODE XREF: RAM:1845j
 		BEQ	sub_3C2D
 		RTS
 
-; ллллллллллллллл S U B	R O U T	I N E ллллллллллллллллллллллллллллллллллллллл
+; --------------- S U B	R O U T	I N E ---------------------------------------
 
 
 sub_3C2D:				; CODE XREF: RAM:1848j	RAM:2F6Ap ...
@@ -6079,7 +6079,7 @@ loc_3C57:				; CODE XREF: sub_3C2D+21j
 ; End of function sub_3C2D
 
 
-; ллллллллллллллл S U B	R O U T	I N E ллллллллллллллллллллллллллллллллллллллл
+; --------------- S U B	R O U T	I N E ---------------------------------------
 
 
 sub_3C5C:				; CODE XREF: RAM:1851j	RAM:33AAp ...
@@ -6088,7 +6088,7 @@ sub_3C5C:				; CODE XREF: RAM:1851j	RAM:33AAp ...
 ; End of function sub_3C5C
 
 
-; ллллллллллллллл S U B	R O U T	I N E ллллллллллллллллллллллллллллллллллллллл
+; --------------- S U B	R O U T	I N E ---------------------------------------
 
 
 sub_3C61:				; CODE XREF: RAM:1836j	sub_5049+1Ep
@@ -6131,7 +6131,7 @@ loc_3C9A:				; CODE XREF: RAM:3C8Fj
 		BEQ	loc_3C8C
 		JMP	sub_3C2D
 
-; ллллллллллллллл S U B	R O U T	I N E ллллллллллллллллллллллллллллллллллллллл
+; --------------- S U B	R O U T	I N E ---------------------------------------
 
 
 sub_3CA5:				; CODE XREF: RAM:184Bj	RAM:336Fp ...
@@ -6149,7 +6149,7 @@ sub_3CA5:				; CODE XREF: RAM:184Bj	RAM:336Fp ...
 ; End of function sub_3CA5
 
 
-; ллллллллллллллл S U B	R O U T	I N E ллллллллллллллллллллллллллллллллллллллл
+; --------------- S U B	R O U T	I N E ---------------------------------------
 
 
 sub_3CC2:				; CODE XREF: RAM:184Ej	RAM:33DDp ...
@@ -6635,7 +6635,7 @@ unk_4087:	.BYTE	0		; DATA XREF: RAM:3E8Fo	RAM:3F34o
 unk_4089:	.BYTE	0		; DATA XREF: RAM:3E9Do	RAM:3F3Bo
 		.BYTE	0
 
-; ллллллллллллллл S U B	R O U T	I N E ллллллллллллллллллллллллллллллллллллллл
+; --------------- S U B	R O U T	I N E ---------------------------------------
 
 
 sub_408B:				; CODE XREF: RAM:18A5j
@@ -7001,7 +7001,7 @@ locret_42E4:				; CODE XREF: RAM:42D5j
 byte_42E5:	.BYTE $FF		; DATA XREF: RAM:4210w	RAM:4261r ...
 byte_42E6:	.BYTE $FF		; DATA XREF: RAM:4213w	RAM:4267r ...
 
-; ллллллллллллллл S U B	R O U T	I N E ллллллллллллллллллллллллллллллллллллллл
+; --------------- S U B	R O U T	I N E ---------------------------------------
 
 
 sub_42E7:				; CODE XREF: sub_408B+21p sub_408B+47p
@@ -8044,7 +8044,7 @@ loc_49A4:				; CODE XREF: RAM:49A0j
 locret_49AF:				; CODE XREF: RAM:47F6j	RAM:49AAj
 		RTS
 
-; ллллллллллллллл S U B	R O U T	I N E ллллллллллллллллллллллллллллллллллллллл
+; --------------- S U B	R O U T	I N E ---------------------------------------
 
 
 sub_49B0:				; CODE XREF: RAM:1890j	sub_4CCF+46p ...
@@ -8107,7 +8107,7 @@ loc_49FD:				; CODE XREF: sub_49B0+43j
 ; End of function sub_49B0
 
 
-; ллллллллллллллл S U B	R O U T	I N E ллллллллллллллллллллллллллллллллллллллл
+; --------------- S U B	R O U T	I N E ---------------------------------------
 
 
 sub_4A01:				; CODE XREF: RAM:48B3p	RAM:4991p ...
@@ -8163,7 +8163,7 @@ loc_4A44:				; CODE XREF: sub_4A01+3Fj
 ; End of function sub_4A01
 
 
-; ллллллллллллллл S U B	R O U T	I N E ллллллллллллллллллллллллллллллллллллллл
+; --------------- S U B	R O U T	I N E ---------------------------------------
 
 
 sub_4A4A:				; CODE XREF: sub_4A01+1Ap sub_4A01+35p
@@ -8183,7 +8183,7 @@ loc_4A5A:				; CODE XREF: sub_4A4A+6j
 ; End of function sub_4A4A
 
 
-; ллллллллллллллл S U B	R O U T	I N E ллллллллллллллллллллллллллллллллллллллл
+; --------------- S U B	R O U T	I N E ---------------------------------------
 
 
 sub_4A5F:				; CODE XREF: sub_408Bp
@@ -8213,7 +8213,7 @@ locret_4A82:				; CODE XREF: sub_4A5F+2j
 ; End of function sub_4A5F
 
 
-; ллллллллллллллл S U B	R O U T	I N E ллллллллллллллллллллллллллллллллллллллл
+; --------------- S U B	R O U T	I N E ---------------------------------------
 
 
 sub_4A83:				; CODE XREF: sub_4B4D+8p
@@ -8267,7 +8267,7 @@ loc_4ABF:				; CODE XREF: sub_4A83+2Dj sub_4A83+31j
 ; End of function sub_4A83
 
 
-; ллллллллллллллл S U B	R O U T	I N E ллллллллллллллллллллллллллллллллллллллл
+; --------------- S U B	R O U T	I N E ---------------------------------------
 
 
 sub_4AC9:				; CODE XREF: RAM:188Aj	RAM:4C1Ep ...
@@ -8347,7 +8347,7 @@ loc_4B49:				; CODE XREF: sub_4AC9+69j sub_4AC9+6Fj ...
 ; End of function sub_4AC9
 
 
-; ллллллллллллллл S U B	R O U T	I N E ллллллллллллллллллллллллллллллллллллллл
+; --------------- S U B	R O U T	I N E ---------------------------------------
 
 
 sub_4B4D:				; CODE XREF: RAM:1884j	sub_4EFD+32p ...
@@ -8375,7 +8375,7 @@ locret_4B73:				; CODE XREF: sub_4B4D+Bj
 ; End of function sub_4B4D
 
 
-; ллллллллллллллл S U B	R O U T	I N E ллллллллллллллллллллллллллллллллллллллл
+; --------------- S U B	R O U T	I N E ---------------------------------------
 
 
 sub_4B74:				; CODE XREF: RAM:1887j	RAM:3F6Ep ...
@@ -8423,7 +8423,7 @@ loc_4B86:				; CODE XREF: sub_51B6+5Cp
 locret_4BA9:				; CODE XREF: RAM:4B9Aj
 		RTS
 
-; ллллллллллллллл S U B	R O U T	I N E ллллллллллллллллллллллллллллллллллллллл
+; --------------- S U B	R O U T	I N E ---------------------------------------
 
 
 sub_4BAA:				; CODE XREF: RAM:4B92p
@@ -8436,7 +8436,7 @@ locret_4BB2:				; CODE XREF: sub_4BAA+3j
 ; End of function sub_4BAA
 
 
-; ллллллллллллллл S U B	R O U T	I N E ллллллллллллллллллллллллллллллллллллллл
+; --------------- S U B	R O U T	I N E ---------------------------------------
 
 
 sub_4BB3:				; CODE XREF: sub_4A5F+16p RAM:4BA4p ...
@@ -8617,7 +8617,7 @@ off_4CBF:	.WORD	loc_4BE2-1	; DATA XREF: sub_4BB3+2Ar sub_4BB3+26r
 		.WORD	locret_4C9C-1
 		.WORD	locret_4C9C-1
 
-; ллллллллллллллл S U B	R O U T	I N E ллллллллллллллллллллллллллллллллллллллл
+; --------------- S U B	R O U T	I N E ---------------------------------------
 
 
 sub_4CCF:				; CODE XREF: RAM:4C99p	RAM:4CAFp ...
@@ -8765,7 +8765,7 @@ locret_4D92:				; CODE XREF: sub_4CCF+Fj sub_4CCF+4Fj	...
 ; End of function sub_4CCF
 
 
-; ллллллллллллллл S U B	R O U T	I N E ллллллллллллллллллллллллллллллллллллллл
+; --------------- S U B	R O U T	I N E ---------------------------------------
 
 
 sub_4D93:				; CODE XREF: sub_4AC9+14p
@@ -8812,7 +8812,7 @@ loc_4DCB:				; CODE XREF: sub_4D93+34j
 ; End of function sub_4D93
 
 
-; ллллллллллллллл S U B	R O U T	I N E ллллллллллллллллллллллллллллллллллллллл
+; --------------- S U B	R O U T	I N E ---------------------------------------
 
 
 sub_4DD4:				; CODE XREF: sub_4CCF+3Dp
@@ -8863,7 +8863,7 @@ loc_4E06:				; CODE XREF: RAM:188Dj
 		LDA	#4
 		STA	$4C
 
-; ллллллллллллллл S U B	R O U T	I N E ллллллллллллллллллллллллллллллллллллллл
+; --------------- S U B	R O U T	I N E ---------------------------------------
 
 
 sub_4E0F:				; CODE XREF: sub_4BB3+13p
@@ -8943,7 +8943,7 @@ loc_4E64:				; CODE XREF: sub_4E0F+2Cj sub_4E0F+38j ...
 ; End of function sub_4E0F
 
 
-; ллллллллллллллл S U B	R O U T	I N E ллллллллллллллллллллллллллллллллллллллл
+; --------------- S U B	R O U T	I N E ---------------------------------------
 
 
 sub_4E90:				; CODE XREF: sub_4AC9+1Dp RAM:4BEAp ...
@@ -8963,7 +8963,7 @@ loc_4E9E:				; CODE XREF: sub_4E90+7j
 ; End of function sub_4E90
 
 
-; ллллллллллллллл S U B	R O U T	I N E ллллллллллллллллллллллллллллллллллллллл
+; --------------- S U B	R O U T	I N E ---------------------------------------
 
 
 sub_4EA2:				; CODE XREF: sub_4AC9+1Ap
@@ -8984,7 +8984,7 @@ loc_4EB0:				; CODE XREF: sub_4EA2+7j
 ; End of function sub_4EA2
 
 
-; ллллллллллллллл S U B	R O U T	I N E ллллллллллллллллллллллллллллллллллллллл
+; --------------- S U B	R O U T	I N E ---------------------------------------
 
 
 sub_4EB4:				; CODE XREF: sub_5835+11p RAM:5DC9p
@@ -9006,7 +9006,7 @@ locret_4EC3:				; CODE XREF: sub_4EB4+9j
 ; End of function sub_4EB4
 
 
-; ллллллллллллллл S U B	R O U T	I N E ллллллллллллллллллллллллллллллллллллллл
+; --------------- S U B	R O U T	I N E ---------------------------------------
 
 
 sub_4EC4:				; CODE XREF: RAM:1896j	RAM:4226p ...
@@ -9042,7 +9042,7 @@ locret_4EE7:				; CODE XREF: sub_4EC4+1Fj
 ; End of function sub_4EC4
 
 
-; ллллллллллллллл S U B	R O U T	I N E ллллллллллллллллллллллллллллллллллллллл
+; --------------- S U B	R O U T	I N E ---------------------------------------
 
 
 sub_4EE8:				; CODE XREF: sub_4CCF+2p sub_4EC4p
@@ -9060,7 +9060,7 @@ sub_4EE8:				; CODE XREF: sub_4CCF+2p sub_4EC4p
 ; End of function sub_4EE8
 
 
-; ллллллллллллллл S U B	R O U T	I N E ллллллллллллллллллллллллллллллллллллллл
+; --------------- S U B	R O U T	I N E ---------------------------------------
 
 
 sub_4EFD:				; CODE XREF: RAM:4C06p	RAM:4C75p
@@ -9184,7 +9184,7 @@ byte_502B:	.BYTE 0			; DATA XREF: sub_4E0F+61w
 byte_502C:	.BYTE 0			; DATA XREF: sub_4E0F+24w sub_4E0F+30w ...
 byte_502D:	.BYTE 0			; DATA XREF: sub_4E0F+29w sub_4E0F+35w ...
 
-; ллллллллллллллл S U B	R O U T	I N E ллллллллллллллллллллллллллллллллллллллл
+; --------------- S U B	R O U T	I N E ---------------------------------------
 
 
 sub_502E:				; CODE XREF: sub_50B2:loc_50B7p
@@ -9210,7 +9210,7 @@ loc_503A:				; CODE XREF: sub_502E+18j
 ; End of function sub_502E
 
 
-; ллллллллллллллл S U B	R O U T	I N E ллллллллллллллллллллллллллллллллллллллл
+; --------------- S U B	R O U T	I N E ---------------------------------------
 
 
 sub_5049:				; CODE XREF: sub_50B2:loc_515Cp
@@ -9260,7 +9260,7 @@ loc_5087:				; CODE XREF: RAM:507Dj	RAM:5081j
 		SEC
 		RTS
 
-; ллллллллллллллл S U B	R O U T	I N E ллллллллллллллллллллллллллллллллллллллл
+; --------------- S U B	R O U T	I N E ---------------------------------------
 
 
 sub_508C:				; CODE XREF: sub_50B2:loc_5159p
@@ -9291,7 +9291,7 @@ loc_50AD:				; CODE XREF: sub_508C+9j
 ; End of function sub_508C
 
 
-; ллллллллллллллл S U B	R O U T	I N E ллллллллллллллллллллллллллллллллллллллл
+; --------------- S U B	R O U T	I N E ---------------------------------------
 
 
 sub_50B2:				; CODE XREF: RAM:36E1p	sub_50B2+E3j ...
@@ -9429,7 +9429,7 @@ loc_518E:				; CODE XREF: sub_50B2+B5j
 ; End of function sub_50B2
 
 
-; ллллллллллллллл S U B	R O U T	I N E ллллллллллллллллллллллллллллллллллллллл
+; --------------- S U B	R O U T	I N E ---------------------------------------
 
 
 sub_5198:				; CODE XREF: sub_50B2+36p
@@ -9460,7 +9460,7 @@ loc_51B4:				; CODE XREF: RAM:51A4j	RAM:51AAj ...
 		SEC
 		RTS
 
-; ллллллллллллллл S U B	R O U T	I N E ллллллллллллллллллллллллллллллллллллллл
+; --------------- S U B	R O U T	I N E ---------------------------------------
 
 
 sub_51B6:				; CODE XREF: RAM:3774p
@@ -9894,7 +9894,7 @@ loc_546D:				; CODE XREF: RAM:5427j	RAM:5437j ...
 byte_5470:	.BYTE 0			; DATA XREF: sub_50B2:loc_511Cr
 					; sub_50B2+D1w
 
-; ллллллллллллллл S U B	R O U T	I N E ллллллллллллллллллллллллллллллллллллллл
+; --------------- S U B	R O U T	I N E ---------------------------------------
 
 
 sub_5471:				; CODE XREF: RAM:189Cj	RAM:5312p ...
@@ -9917,7 +9917,7 @@ sub_5471:				; CODE XREF: RAM:189Cj	RAM:5312p ...
 ; End of function sub_5471
 
 
-; ллллллллллллллл S U B	R O U T	I N E ллллллллллллллллллллллллллллллллллллллл
+; --------------- S U B	R O U T	I N E ---------------------------------------
 
 
 sub_548E:				; CODE XREF: sub_5471+4p
@@ -10120,7 +10120,7 @@ unk_55A0:	.BYTE $A0 ;  		; DATA XREF: RAM:5599r
 		JSR	sub_5602
 		JMP	loc_5209
 
-; ллллллллллллллл S U B	R O U T	I N E ллллллллллллллллллллллллллллллллллллллл
+; --------------- S U B	R O U T	I N E ---------------------------------------
 
 
 sub_55B7:				; CODE XREF: RAM:1893j	RAM:52B7p ...
@@ -10176,7 +10176,7 @@ locret_5601:				; CODE XREF: sub_55B7+32j
 ; End of function sub_55B7
 
 
-; ллллллллллллллл S U B	R O U T	I N E ллллллллллллллллллллллллллллллллллллллл
+; --------------- S U B	R O U T	I N E ---------------------------------------
 
 
 sub_5602:				; CODE XREF: RAM:loc_558Fp RAM:55B1p
@@ -10319,7 +10319,7 @@ loc_56C1:				; CODE XREF: RAM:5573j	RAM:56B5j
 		JSR	loc_2BFC
 		JMP	loc_5225
 
-; ллллллллллллллл S U B	R O U T	I N E ллллллллллллллллллллллллллллллллллллллл
+; --------------- S U B	R O U T	I N E ---------------------------------------
 
 
 sub_56D7:				; CODE XREF: RAM:557Ap	RAM:56BBp
@@ -10426,7 +10426,7 @@ loc_5774:				; CODE XREF: RAM:566Cj	RAM:56ACj ...
 		STA	off_16+1
 		BNE	loc_5768
 
-; ллллллллллллллл S U B	R O U T	I N E ллллллллллллллллллллллллллллллллллллллл
+; --------------- S U B	R O U T	I N E ---------------------------------------
 
 
 sub_577E:				; CODE XREF: RAM:377Dp
@@ -10442,7 +10442,7 @@ sub_577E:				; CODE XREF: RAM:377Dp
 ; End of function sub_577E
 
 
-; ллллллллллллллл S U B	R O U T	I N E ллллллллллллллллллллллллллллллллллллллл
+; --------------- S U B	R O U T	I N E ---------------------------------------
 
 
 sub_5795:				; CODE XREF: sub_5835+Cp
@@ -10462,7 +10462,7 @@ locret_57AA:				; CODE XREF: sub_5795+2j
 ; End of function sub_5795
 
 
-; ллллллллллллллл S U B	R O U T	I N E ллллллллллллллллллллллллллллллллллллллл
+; --------------- S U B	R O U T	I N E ---------------------------------------
 
 
 sub_57AB:				; CODE XREF: RAM:54AAp	RAM:loc_56F5p ...
@@ -10497,7 +10497,7 @@ loc_57B9:				; CODE XREF: RAM:57C8j
 locret_57DB:				; CODE XREF: RAM:57CCj
 		RTS
 
-; ллллллллллллллл S U B	R O U T	I N E ллллллллллллллллллллллллллллллллллллллл
+; --------------- S U B	R O U T	I N E ---------------------------------------
 
 
 sub_57DC:				; CODE XREF: RAM:loc_56E4p
@@ -10543,7 +10543,7 @@ loc_580B:				; CODE XREF: RAM:5804j
 		JSR	sub_3C5C
 		JMP	loc_5209
 
-; ллллллллллллллл S U B	R O U T	I N E ллллллллллллллллллллллллллллллллллллллл
+; --------------- S U B	R O U T	I N E ---------------------------------------
 
 
 sub_5835:				; CODE XREF: RAM:54E3p	RAM:54FAp ...
@@ -10567,7 +10567,7 @@ loc_5844:				; CODE XREF: sub_5835+6j sub_5835+Aj
 ; End of function sub_5835
 
 
-; ллллллллллллллл S U B	R O U T	I N E ллллллллллллллллллллллллллллллллллллллл
+; --------------- S U B	R O U T	I N E ---------------------------------------
 
 
 sub_5857:				; CODE XREF: RAM:3759p
@@ -10627,7 +10627,7 @@ locret_58C0:				; CODE XREF: sub_5857+4Cj sub_5857+56j
 ; ---------------------------------------------------------------------------
 byte_58C1:	.BYTE 0			; DATA XREF: sub_5857+6w sub_5857+46w	...
 
-; ллллллллллллллл S U B	R O U T	I N E ллллллллллллллллллллллллллллллллллллллл
+; --------------- S U B	R O U T	I N E ---------------------------------------
 
 
 sub_58C2:				; CODE XREF: sub_5857+49p
@@ -10716,7 +10716,7 @@ loc_594D:				; CODE XREF: RAM:5927j
 byte_5955:	.BYTE $9B		; DATA XREF: sub_58C2+16w sub_58C2+3Aw ...
 byte_5956:	.BYTE $59		; DATA XREF: sub_58C2+1Bw sub_58C2+3Fw ...
 
-; ллллллллллллллл S U B	R O U T	I N E ллллллллллллллллллллллллллллллллллллллл
+; --------------- S U B	R O U T	I N E ---------------------------------------
 
 
 sub_5957:				; CODE XREF: RAM:593Fp
@@ -10883,7 +10883,7 @@ unk_5AA8:	.BYTE	I_FOOD-SEG_6300	; DATA XREF: sub_5AB4+73r sub_5AB4+F0r
 		.BYTE	I_SILVER-SEG_6300
 		.BYTE	I_COPPER-SEG_6300
 
-; ллллллллллллллл S U B	R O U T	I N E ллллллллллллллллллллллллллллллллллллллл
+; --------------- S U B	R O U T	I N E ---------------------------------------
 
 
 sub_5AB4:				; CODE XREF: RAM:3762p
