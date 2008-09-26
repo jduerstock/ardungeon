@@ -6393,7 +6393,7 @@ aKnownDiseases:	.BYTE "Known Diseases"
 		.BYTE $AC
 		.WORD byte_3F15
 		.BYTE $FF
-		.BYTE $A6,  0,	0
+		MOVEXY	0,0
 		.BYTE $A5
 aCurses:	.BYTE "Curses"
 		.BYTE $D
@@ -9164,7 +9164,7 @@ aStick:		.BYTE "stick",0
 		.BYTE	9
 		.BYTE $82 ; ‚
 		.BYTE	1
-		.BYTE $A6,  0,	0
+		MOVEXY	0,0
 		.BYTE $A5
 aThe:		.BYTE "The"
 		.BYTE $D
@@ -10253,15 +10253,17 @@ loc_5653:				; CODE XREF: sub_51B6+35j
 		RTS
 ; END OF FUNCTION CHUNK	FOR sub_51B6
 ; ---------------------------------------------------------------------------
-unk_565F:	.BYTE $56 ; V		; DATA XREF: sub_51B6+4A0r
-		.BYTE $56 ; V
-		.BYTE $56 ; V
-		.BYTE $57 ; W
-unk_5663:	.BYTE $66 ; f		; DATA XREF: sub_51B6+4A4r
-		.BYTE $A6 ; ¦
-		.BYTE $E9 ; é
-		.BYTE $22 ; "
+unk_565F:	.BYTE	>(loc_5667-1)	; DATA XREF: sub_51B6+4A0r
+		.BYTE	>(loc_56A7-1)
+		.BYTE	>(loc_56EA-1)
+		.BYTE	>(loc_5723-1)
+unk_5663:	.BYTE	<(loc_5667-1)	; DATA XREF: sub_51B6+4A4r
+		.BYTE	<(loc_56A7-1)
+		.BYTE	<(loc_56EA-1)
+		.BYTE	<(loc_5723-1)
 ; ---------------------------------------------------------------------------
+
+loc_5667:
 		LDA	$63BB
 		BNE	loc_566F
 		JMP	loc_5774
@@ -10297,6 +10299,8 @@ loc_5691:				; CODE XREF: RAM:5675j
 		JSR	loc_2BFC
 		JMP	loc_5225
 ; ---------------------------------------------------------------------------
+
+loc_56A7:
 		LDA	$63BC
 		BNE	loc_56AF
 		JMP	loc_5774
@@ -10342,6 +10346,8 @@ loc_56E4:				; CODE XREF: RAM:5701j	RAM:5708j
 		JSR	sub_57DC
 		JMP	loc_5225
 ; ---------------------------------------------------------------------------
+
+loc_56EA:
 		LDA	$63BD
 		BNE	loc_56F5
 		JMP	loc_5774
@@ -10375,6 +10381,8 @@ loc_570C:				; CODE XREF: RAM:5714j
 		INC	$6390
 		JMP	loc_54AF
 ; ---------------------------------------------------------------------------
+
+loc_5723:
 		LDA	$63C1
 		BEQ	loc_5774
 		LDA	#$61 ; 'a'
