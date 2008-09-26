@@ -7563,22 +7563,22 @@ byte_45F5:
 		.BYTE	>off_467E
 
 byte_45FC:
-		.BYTE $11
-		.BYTE $2A ; *
-		.BYTE $3A ; :
-		.BYTE $4A ; J
-		.BYTE $5A ; Z
-		.BYTE $6A ; j
-		.BYTE $7A ; z
+		.BYTE	<byte_4611
+		.BYTE	<byte_462A
+		.BYTE	<byte_463A
+		.BYTE	<byte_464A
+		.BYTE	<byte_465A
+		.BYTE	<byte_466A
+		.BYTE	<byte_467A
 
 byte_4603:
-		.BYTE $46 ; F
-		.BYTE $46 ; F
-		.BYTE $46 ; F
-		.BYTE $46 ; F
-		.BYTE $46 ; F
-		.BYTE $46 ; F
-		.BYTE $46 ; F
+		.BYTE	>byte_4611
+		.BYTE	>byte_462A
+		.BYTE	>byte_463A
+		.BYTE	>byte_464A
+		.BYTE	>byte_465A
+		.BYTE	>byte_466A
+		.BYTE	>byte_467A
 
 byte_460A:
 		.BYTE $20
@@ -7588,6 +7588,8 @@ byte_460A:
 		.BYTE $C0 ; À
 		.BYTE $E0 ; à
 		.BYTE $FF
+
+byte_4611:
 		.BYTE	1
 		.BYTE	0
 		.BYTE	0
@@ -7610,6 +7612,8 @@ byte_4626:
 		.BYTE $80 ; €
 		.BYTE $EC ; ì
 		.BYTE $FF
+
+byte_462A:
 		.BYTE	4
 		.BYTE	3
 		.BYTE	0
@@ -7626,6 +7630,8 @@ byte_4636:
 		.BYTE $80 ; €
 		.BYTE $D0 ; Ð
 		.BYTE $FF
+
+byte_463A:
 		.BYTE	6
 		.BYTE	5
 		.BYTE	0
@@ -7642,6 +7648,8 @@ byte_4646:
 		.BYTE $A0 ;  
 		.BYTE $C0 ; À
 		.BYTE $FF
+
+byte_464A:
 		.BYTE	8
 		.BYTE	7
 		.BYTE	0
@@ -7658,6 +7666,8 @@ byte_4656:
 		.BYTE $C0 ; À
 		.BYTE $F0 ; ð
 		.BYTE $FF
+
+byte_465A:
 		.BYTE	0
 		.BYTE	0
 		.BYTE	9
@@ -7674,6 +7684,8 @@ byte_4666:
 		.BYTE $10
 		.BYTE $20
 		.BYTE $FF
+
+byte_466A:
 		.BYTE	0
 		.BYTE	0
 		.BYTE  $B
@@ -7690,6 +7702,8 @@ byte_4676:
 		.BYTE $60 ; `
 		.BYTE $80 ; €
 		.BYTE $FF
+
+byte_467A:
 		.BYTE	0
 		.BYTE	0
 		.BYTE  $D
@@ -7700,6 +7714,7 @@ off_467E:
 		.WORD aFull		; "    Full    "
 		.WORD aStuffed		; "  Stuffed   "
 		.WORD aBloated		; "  Bloated!  "
+
 aFreezing:	.BYTE "   Freezing!",0  ; DATA XREF: RAM:4618o
 aCold:		.BYTE "        Cold",0  ; DATA XREF: RAM:461Ao
 aChilly:	.BYTE "      Chilly",0  ; DATA XREF: RAM:461Co
