@@ -71,18 +71,13 @@
 	DirEnt	$4000,3,2,566,,4	; unknown song
 	DirEnt	$4000,3,2,575,,23	; tavern talk
 	DirEnt	$4000,1,1,480,,18	; ???
-	DirEnt	$4000,1,1,517,,79	; portal 2
+	DirEnt	$4000,1,1,517,,79	; portal 2		$3B
 	DirEnt	$4000,1,1,676,,1	; ???
-	DirEnt	$4000,1,1,679,,1	; ???
+	DirEnt	$4000,1,1,679,,1	; ???			$3D
 	DirEnt	$4000,3,1,604,$f000,32	; ???
 	DirEnt	$4000,3,2,622,,16	; lost song
 	DirEnt	$4000,3,2,655,,14	; black heart song
 	DirEnt	$4000,2,2,536,,5	; ???
 	DirEnt	$4000,3,1,671,,5	; unknown 4
 	DirEnt	$4000,3,2,684,,5	; unknown 5
-;	.DBYT	$566e,16		; lost song
-;	.DBYT	$568f,14		; black heart song
-;	.DBYT	$4e18,5			; ???
-;	.DBYT	$529f,5			; unknown 4
-;	.DBYT	$56ac,5			; unknown 5
 	.RES	236,$00

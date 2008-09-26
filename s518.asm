@@ -8833,7 +8833,7 @@ loc_4E23:				; CODE XREF: sub_4E0F+Cj
 		BCS	locret_4E22
 
 loc_4E28:				; CODE XREF: sub_4E0F+11j
-		LDA	($41),Y
+		LDA	(off_41),Y
 		BPL	loc_4E49
 		LDA	$6385
 		BPL	loc_4E3D
@@ -8997,7 +8997,7 @@ sub_4EE8:				; CODE XREF: sub_4CCF+2p sub_4EC4p
 		JSR	sub_4B74
 		LDY	#5
 		CLC
-		LDA	($41),Y
+		LDA	(off_41),Y
 		ADC	$41
 		STA	off_43
 		LDA	$42
@@ -9017,7 +9017,7 @@ sub_4EFD:				; CODE XREF: RAM:4C06p	RAM:4C75p
 
 loc_4F05:				; CODE XREF: sub_4EFD+3j
 		LDY	#0
-		LDA	($41),Y
+		LDA	(off_41),Y
 		AND	#$80 ; 'Ђ'
 		PHA
 		LDA	$4B
@@ -9070,8 +9070,8 @@ loc_4F4C:				; CODE XREF: sub_4EFD+37j
 loc_4F55:				; CODE XREF: sub_4EFD+51j
 		PLA
 		LDY	#0
-		ORA	($41),Y
-		STA	($41),Y
+		ORA	(off_41),Y
+		STA	(off_41),Y
 		RTS
 ; End of function sub_4EFD
 
@@ -9392,7 +9392,7 @@ loc_51A1:				; CODE XREF: sub_50B2+4Dp sub_50B2+78p
 		JSR	sub_4B74
 		BEQ	loc_51B4
 		LDY	#0
-		LDA	($41),Y
+		LDA	(off_41),Y
 		BPL	loc_51B4
 		AND	#7
 		CMP	#1
@@ -9448,7 +9448,7 @@ loc_51EE:				; CODE XREF: sub_51B6+33j
 		JSR	sub_4B74
 		JSR	sub_4EC4
 		LDY	#0
-		LDA	($41),Y
+		LDA	(off_41),Y
 		AND	#7
 		STA	byte_627E
 		TAX
@@ -9496,7 +9496,7 @@ unk_5231:	.BYTE $38 ; 8		; DATA XREF: sub_51B6+4Er
 		.BYTE $31 ; 1
 ; ---------------------------------------------------------------------------
 		LDY	#0
-		LDA	($41),Y
+		LDA	(off_41),Y
 		AND	#$78 ; 'x'
 		BNE	loc_5244
 		JMP	loc_5225
@@ -9613,7 +9613,7 @@ loc_52E6:				; CODE XREF: RAM:5302j
 		JSR	sub_4B74
 		BEQ	loc_5300
 		LDY	#0
-		LDA	($41),Y
+		LDA	(off_41),Y
 		CMP	#$82 ; '‚'
 		BNE	loc_5300
 		JSR	sub_4EC4
@@ -9731,7 +9731,7 @@ loc_5390:				; CODE XREF: RAM:5373j	RAM:5380j
 		LDA	#1
 		JSR	loc_2BFC
 		LDY	#0
-		LDA	($41),Y
+		LDA	(off_41),Y
 		AND	#$78 ; 'x'
 		BNE	loc_53F3
 		JMP	loc_5209
@@ -9849,17 +9849,17 @@ sub_5471:				; CODE XREF: RAM:189Cj	RAM:5312p ...
 		LDA	(off_43),Y
 		JSR	sub_548E
 		LDY	#5
-		LDA	($41),Y
+		LDA	(off_41),Y
 		SEC
 		SBC	#4
 		TAY
 		LDA	2
 		ORA	#$30 ; '0'
-		STA	($41),Y
+		STA	(off_41),Y
 		INY
 		LDA	3
 		ORA	#$30 ; '0'
-		STA	($41),Y
+		STA	(off_41),Y
 		RTS
 ; End of function sub_5471
 
@@ -10026,7 +10026,7 @@ loc_5576:				; CODE XREF: RAM:5571j
 		LDY	#2
 		JSR	sub_56D7
 		LDY	#0
-		LDA	($41),Y
+		LDA	(off_41),Y
 		AND	#$78 ; 'x'
 		BEQ	loc_558F
 		LDX	#0
@@ -10155,7 +10155,7 @@ loc_561F:				; CODE XREF: sub_5602+17j
 
 ; ---------------------------------------------------------------------------
 		LDY	#0
-		LDA	($41),Y
+		LDA	(off_41),Y
 		AND	#$78 ; 'x'
 		BEQ	loc_5644
 		LDX	#0
@@ -10584,7 +10584,7 @@ sub_58C2:				; CODE XREF: sub_5857+49p
 		LDA	#$59 ; 'Y'
 		STA	byte_5956
 		LDY	#0
-		LDA	($41),Y
+		LDA	(off_41),Y
 		AND	#$7F ; ''
 		BNE	loc_5904
 		LDA	$4B
@@ -10629,7 +10629,7 @@ loc_5914:				; CODE XREF: RAM:5923j
 		LDA	#8
 		STA	byte_1961
 		LDY	#0
-		LDA	($41),Y
+		LDA	(off_41),Y
 		BNE	loc_5945
 		JSR	sub_5957
 		JMP	loc_594B
@@ -10638,7 +10638,7 @@ loc_5914:				; CODE XREF: RAM:5923j
 loc_5945:				; CODE XREF: RAM:593Dj
 		LDY	#2
 		LDA	#1
-		STA	($41),Y
+		STA	(off_41),Y
 
 loc_594B:				; CODE XREF: RAM:592Ej	RAM:5942j
 		CLC
@@ -10660,15 +10660,15 @@ byte_5956:	.BYTE $59		; DATA XREF: sub_58C2+1Bw sub_58C2+3Fw ...
 
 sub_5957:				; CODE XREF: RAM:593Fp
 		LDY	#$16
-		LDA	($41),Y
+		LDA	(off_41),Y
 		TAX
-		LDA	$5AA8,X
+		LDA	unk_5AA8,X
 		LDY	#$18
 		CPX	#7
 		BCC	loc_5984
 		TAX
 		CLC
-		LDA	($41),Y
+		LDA	(off_41),Y
 		ADC	$6301,X
 		STA	$6301,X
 		DEY
@@ -10684,7 +10684,7 @@ sub_5957:				; CODE XREF: RAM:593Fp
 loc_5984:				; CODE XREF: sub_5957+Cj
 		TAX
 		CLC
-		LDA	($41),Y
+		LDA	(off_41),Y
 		ADC	$6300,X
 		STA	$6300,X
 		BCC	loc_5995
@@ -10791,42 +10791,42 @@ aJewelS:	.BYTE "Jewel(s)",0
 aGold:		.BYTE "Gold",0
 aSilver:	.BYTE "Silver",0
 aCopper:	.BYTE "Copper",0
-unk_5A90:	.BYTE $1A		; DATA XREF: sub_5AB4+111r
-		.BYTE $29 ; )
-		.BYTE $38 ; 8
-		.BYTE $42 ; B
-		.BYTE $4F ; O
-		.BYTE $5B ; [
-		.BYTE $62 ; b
-		.BYTE $6D ; m
-		.BYTE $74 ; t
-		.BYTE $7D ; }
-		.BYTE $82 ; ‚
-		.BYTE $89 ; ‰
-unk_5A9C:	.BYTE $5A ; Z		; DATA XREF: sub_5AB4+116r
-		.BYTE $5A ; Z
-		.BYTE $5A ; Z
-		.BYTE $5A ; Z
-		.BYTE $5A ; Z
-		.BYTE $5A ; Z
-		.BYTE $5A ; Z
-		.BYTE $5A ; Z
-		.BYTE $5A ; Z
-		.BYTE $5A ; Z
-		.BYTE $5A ; Z
-		.BYTE $5A ; Z
-unk_5AA8:	.BYTE $BB ; »		; DATA XREF: sub_5AB4+73r sub_5AB4+F0r
-		.BYTE $BC ; ј
-		.BYTE $BD ; Ѕ
-		.BYTE $C1 ; Б
-		.BYTE $C0 ; А
-		.BYTE $BF ; ї
-		.BYTE $BE ; ѕ
-		.BYTE $B7 ; ·
-		.BYTE $B9 ; №
-		.BYTE $B1 ; ±
-		.BYTE $B3 ; і
-		.BYTE $B5 ; µ
+unk_5A90:	.BYTE	<aFoodPacketS_0	; DATA XREF: sub_5AB4+111r
+		.BYTE	<aWaterFlaskS
+		.BYTE	<aTorchEs
+		.BYTE	<aTimepieceS
+		.BYTE	<aCompassEs
+		.BYTE	<aKeyS
+		.BYTE	<aCrystalS
+		.BYTE	<aGemS
+		.BYTE	<aJewelS
+		.BYTE	<aGold
+		.BYTE	<aSilver
+		.BYTE	<aCopper
+unk_5A9C:	.BYTE	>aFoodPacketS_0	; DATA XREF: sub_5AB4+116r
+		.BYTE	>aWaterFlaskS
+		.BYTE	>aTorchEs
+		.BYTE	>aTimepieceS
+		.BYTE	>aCompassEs
+		.BYTE	>aKeyS
+		.BYTE	>aCrystalS
+		.BYTE	>aGemS
+		.BYTE	>aJewelS
+		.BYTE	>aGold
+		.BYTE	>aSilver
+		.BYTE	>aCopper
+unk_5AA8:	.BYTE	I_FOOD-SEG_6300	; DATA XREF: sub_5AB4+73r sub_5AB4+F0r
+		.BYTE	I_WATER-SEG_6300
+		.BYTE	I_TORCHES-SEG_6300
+		.BYTE	I_TIMEPIECES-SEG_6300
+		.BYTE	I_COMPASSES-SEG_6300
+		.BYTE	I_KEYS-SEG_6300
+		.BYTE	I_CRYSTALS-SEG_6300
+		.BYTE	I_GEMS-SEG_6300
+		.BYTE	I_JEWELS-SEG_6300
+		.BYTE	I_GOLD-SEG_6300
+		.BYTE	I_SILVER-SEG_6300
+		.BYTE	I_COPPER-SEG_6300
 
 ; ЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫ S U B	R O U T	I N E ЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫ
 
