@@ -5,6 +5,7 @@ off_D	= $0D
 off_16	= $16
 off_18	= $18
 off_1D	= $1D
+BLINKFLAG	= $21
 off_3D	= $3D
 off_41	= $41
 off_43	= $43

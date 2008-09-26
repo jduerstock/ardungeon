@@ -962,7 +962,7 @@ sub_1C2C:				; CODE XREF: RAM:181Bj	RAM:loc_1F4Bj ...
 		ADC	#4
 		STA	$1E
 		LDA	$1A
-		ORA	$21
+		ORA	BLINKFLAG
 		STA	(off_1D),Y
 		INY
 		CPY	#$28 ; '('
@@ -1024,7 +1024,7 @@ loc_1C8E:				; CODE XREF: sub_1C84+2j sub_1C88+2j
 		ADC	unk_1FA8,X
 		STA	$20
 		LDA	unk_18C7,X
-		STA	$21
+		STA	BLINKFLAG
 		LDA	#0
 		STA	$24
 		STA	$25
@@ -1068,7 +1068,7 @@ loc_1CD1:				; CODE XREF: sub_1C88+32j
 		SEC
 		SBC	unk_1FA8,X
 		STA	unk_18C4,X
-		LDA	$21
+		LDA	BLINKFLAG
 		STA	unk_18C7,X
 		RTS
 ; End of function sub_1C88
@@ -1077,12 +1077,12 @@ loc_1CD1:				; CODE XREF: sub_1C88+32j
 
 loc_1CE7:
 		LDA	#0
-		STA	$21
+		STA	BLINKFLAG
 		BEQ	loc_1CAB
 
 loc_1CED:
-		LDA	#$80 ; '€'
-		STA	$21
+		LDA	#$80
+		STA	BLINKFLAG
 		BNE	loc_1CAB
 
 loc_1CF3:
@@ -1225,7 +1225,7 @@ loc_1DBD:				; CODE XREF: RAM:1D9Cj
 
 loc_1DC0:
 		LDA	#0
-		STA	$21
+		STA	BLINKFLAG
 		STA	$24
 		JMP	loc_1CAB
 ; ---------------------------------------------------------------------------
