@@ -28,3 +28,15 @@ I_CRYSTALS	= $63BE
 I_KEYS	= $63BF
 I_COMPASSES	= $63C0
 I_TIMEPIECES	= $63C1
+
+BLINKOFF = $A0
+BLINKON = $A1
+MOVECURSOR = $A6
+
+.macro MOVEXY arg1, arg2
+	.BYTE $A6, arg1, arg2
+.endmacro
+
+.macro BLINK arg1
+	.BYTE BLINKON, arg1, BLINKOFF
+.endmacro

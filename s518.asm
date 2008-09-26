@@ -11325,13 +11325,13 @@ loc_5E05:				; CODE XREF: RAM:5DE5j	RAM:5DEAj
 		INC	byte_5DAF
 		RTS
 ; ---------------------------------------------------------------------------
-		.BYTE $A6,  0,	0
+		MOVEXY	0,0
 		.BYTE $A5
 		.BYTE $B4
 		.WORD off_193A
 		.BYTE $28
 		.BYTE $D
-		.BYTE $A6,  3,	2
+		MOVEXY	3,2
 		.BYTE " ("
 		.BYTE $A1
 a1_1:		.BYTE '1'
@@ -11342,7 +11342,7 @@ a1_1:		.BYTE '1'
 		.BYTE $3C ; <
 		.BYTE $19
 		.BYTE $AB ; «
-		.BYTE $A6,  3,	3
+		MOVEXY	3,3
 		.BYTE $20
 		.BYTE $28 ; (
 		.BYTE $A1 ; ¡
@@ -11354,9 +11354,7 @@ a1_1:		.BYTE '1'
 		.BYTE $3E ; >
 		.BYTE $19
 		.BYTE $AB ; «
-		.BYTE $A6 ; ¦
-		.BYTE	3
-		.BYTE	4
+		MOVEXY	3,4
 		.BYTE $20
 		.BYTE $28 ; (
 		.BYTE $A1 ; ¡
@@ -11368,9 +11366,7 @@ a1_1:		.BYTE '1'
 		.BYTE $40 ; @
 		.BYTE $19
 		.BYTE $AB ; «
-		.BYTE $A6 ; ¦
-		.BYTE	3
-		.BYTE	5
+		MOVEXY	3,5
 		.BYTE $20
 		.BYTE $28 ; (
 		.BYTE $A1 ; ¡
@@ -11508,26 +11504,26 @@ aEsc_4:		.BYTE "ESC"
 aToExit_1:	.BYTE "to exit"
 		.BYTE $AE
 aWearInsteadOf:	.BYTE "Wear instead of:",0
-		.BYTE $A6,  0,	0
+		MOVEXY	0,0
 		.BYTE $A5
 aUseAs:		.BYTE "Use as:"
 		.BYTE $D
-		.BYTE $A6, $B,	3
+		MOVEXY	11,3
 		.BYTE $A1
 a1_2:		.BYTE '1'
 		.BYTE $A0
 aPrimaryWeapon:	.BYTE " Primary weapon"
-		.BYTE $A6, $B,	4
+		MOVEXY	11,4
 		.BYTE $A1
 a2_1:		.BYTE '2'
 		.BYTE $A0
 aSecondaryWeapo:.BYTE " Secondary weapon"
-		.BYTE $A6,  0,	7
+		MOVEXY	0,7
 		.BYTE $A5
 aPressNumberOrE:.BYTE "Press number or ESC to exit"
 		.BYTE $D
 		.BYTE $FF
-		.BYTE $A6,  0,	1
+		MOVEXY	0,1
 		.BYTE $A5
 aYourStomachTur:.BYTE "Your stomach turns at"
 		.BYTE $D
