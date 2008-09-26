@@ -7523,22 +7523,22 @@ byte_45D9:
 		.BYTE $98 ; ˜
 
 byte_45E0:
-		.BYTE  $A
-		.BYTE $26 ; &
-		.BYTE $36 ; 6
-		.BYTE $46 ; F
-		.BYTE $56 ; V
-		.BYTE $66 ; f
-		.BYTE $76 ; v
+		.BYTE	<byte_460A
+		.BYTE	<byte_4626
+		.BYTE	<byte_4636
+		.BYTE	<byte_4646
+		.BYTE	<byte_4656
+		.BYTE	<byte_4666
+		.BYTE	<byte_4676
 
 byte_45E7:
-		.BYTE $46 ; F
-		.BYTE $46 ; F
-		.BYTE $46 ; F
-		.BYTE $46 ; F
-		.BYTE $46 ; F
-		.BYTE $46 ; F
-		.BYTE $46 ; F
+		.BYTE	>byte_460A
+		.BYTE	>byte_4626
+		.BYTE	>byte_4636
+		.BYTE	>byte_4646
+		.BYTE	>byte_4656
+		.BYTE	>byte_4666
+		.BYTE	>byte_4676
 
 byte_45EE:
 		.BYTE $18
@@ -7594,6 +7594,8 @@ byte_460A:
 		.WORD aWarm		; "	   Warm"
 		.WORD aHot		; "	    Hot"
 		.WORD aRoasting		; "   Roasting!"
+
+byte_4626:
 		.BYTE $30 ; 0
 		.BYTE $80 ; €
 		.BYTE $EC ; ì
@@ -7606,6 +7608,8 @@ byte_460A:
 		.WORD aFamished		; "Famished    "
 		.WORD aHungry		; "Hungry      "
 		.WORD asc_47E5		; "	       "
+
+byte_4636:
 		.BYTE $40 ; @
 		.BYTE $80 ; €
 		.BYTE $D0 ; Ð
@@ -7618,6 +7622,8 @@ byte_460A:
 		.WORD aParched		; "Parched     "
 		.WORD aThirsty		; "Thirsty     "
 		.WORD asc_47E5		; "	       "
+
+byte_4646:
 		.BYTE $40 ; @
 		.BYTE $A0 ;  
 		.BYTE $C0 ; À
@@ -7630,6 +7636,8 @@ byte_460A:
 		.WORD aTired		; "Tired       "
 		.WORD aWeary		; "Weary       "
 		.WORD asc_47E5		; "	       "
+
+byte_4656:
 		.BYTE $80 ; €
 		.BYTE $C0 ; À
 		.BYTE $F0 ; ð
@@ -7642,6 +7650,8 @@ byte_460A:
 		.WORD aBurdened		; "    Burdened"
 		.WORD aEncumbered	; "  Encumbered"
 		.WORD aImmobilized	; "Immobilized!"
+
+byte_4666:
 		.BYTE	8
 		.BYTE $10
 		.BYTE $20
@@ -7654,6 +7664,8 @@ byte_460A:
 		.WORD aTipsy		; "Tipsy       "
 		.WORD aDrunk		; "Drunk       "
 		.WORD aVeryDrunk	; "Very	Drunk! "
+
+byte_4676:
 		.BYTE $40 ; @
 		.BYTE $60 ; `
 		.BYTE $80 ; €
