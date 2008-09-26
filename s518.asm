@@ -3835,8 +3835,10 @@ loc_2C9B:				; CODE XREF: RAM:185Dj
 		STA	off_16+1
 		RTS
 ; ---------------------------------------------------------------------------
-		.BYTE	0
-		.BYTE $60 ; `
+
+loc_2CAB:
+		BRK
+		RTS
 
 ; --------------- S U B	R O U T	I N E ---------------------------------------
 
@@ -4569,7 +4571,7 @@ loc_30AA:				; CODE XREF: sub_2BFA+43Fj
 		LDX	#$C
 
 loc_30AF:				; CODE XREF: sub_2BFA+4BBj
-		CMP	$3B78,X
+		CMP	byte_3B78,X
 		BEQ	loc_30BA
 		DEX
 		BPL	loc_30AF
@@ -4585,9 +4587,9 @@ loc_30BA:				; CODE XREF: sub_2BFA+4B8j
 
 loc_30C5:				; CODE XREF: sub_2BFA+4C3j
 					; sub_2BFA+4C7j
-		LDA	$3B85,X
+		LDA	byte_3B85,X
 		STA	loc_30D1+1
-		LDA	$3B92,X
+		LDA	byte_3B92,X
 		STA	loc_30D1+2
 ; END OF FUNCTION CHUNK	FOR sub_2BFA
 
@@ -5466,6 +5468,8 @@ loc_3662:				; CODE XREF: RAM:loc_36ECj RAM:375Cj ...
 byte_3681:	.BYTE $FF		; DATA XREF: sub_3635+12w RAM:3665r
 byte_3682:	.BYTE $FF		; DATA XREF: sub_3635+18w RAM:366Br
 ; ---------------------------------------------------------------------------
+
+loc_3683:
 		LDA	byte_197A
 		BEQ	loc_3689
 		RTS
@@ -5550,6 +5554,8 @@ aAckOr:		.BYTE "ack, or "
 		.BYTE " to exit"
 		.BYTE $AE
 ; ---------------------------------------------------------------------------
+
+loc_3756:
 		JSR	sub_3635
 		JSR	sub_5857
 		JMP	loc_3662
@@ -5560,6 +5566,8 @@ loc_375F:				; CODE XREF: RAM:189Fj
 		JSR	sub_5AB4
 		JMP	loc_3662
 ; ---------------------------------------------------------------------------
+
+loc_3768:
 		JSR	sub_3635
 		JSR	loc_5ACB
 		JMP	loc_3662
@@ -5570,10 +5578,14 @@ loc_3771:				; CODE XREF: RAM:18A8j
 		JSR	sub_51B6
 		JMP	loc_3662
 ; ---------------------------------------------------------------------------
+
+loc_377A:
 		JSR	sub_3635
 		JSR	sub_577E
 		JMP	loc_3662
 ; ---------------------------------------------------------------------------
+
+loc_3783:
 		LDA	$7600
 		BEQ	loc_3789
 		RTS
@@ -5615,6 +5627,8 @@ aSaveCharacterq:.BYTE "Save character?"
 		.BYTE $AC
 		.WORD byte_382E
 ; ---------------------------------------------------------------------------
+
+loc_37D6:
 		DEC	$32
 		LDA	#4
 		STA	off_16
@@ -5655,10 +5669,12 @@ aOr:		.BYTE " or "
 		.BYTE $D
 		.BYTE $FF
 ; ---------------------------------------------------------------------------
+
+loc_384A:
 		DEC	$32
-		LDA	#$60 ; '`'
+		LDA	#<a_Paused
 		STA	off_16
-		LDA	#$38 ; '8'
+		LDA	#>a_Paused
 		STA	off_16+1
 		JSR	sub_3CA5
 		JSR	sub_2BB0
@@ -5666,6 +5682,8 @@ aOr:		.BYTE " or "
 		INC	$32
 		RTS
 ; ---------------------------------------------------------------------------
+
+a_Paused:
 		.BYTE $A8
 		MOVEXY	0,2
 		.BYTE $A5
@@ -5963,45 +5981,51 @@ byte_3B74:	.BYTE 1			; DATA XREF: RAM:30F3r
 byte_3B75:	.BYTE 2			; DATA XREF: RAM:30F8r
 byte_3B76:	.BYTE 4			; DATA XREF: RAM:30FDr
 		.BYTE	8
-		.BYTE $47 ; G
-		.BYTE $44 ; D
-		.BYTE $55 ; U
-		.BYTE $43 ; C
-		.BYTE $53 ; S
-		.BYTE $45 ; E
-		.BYTE $51 ; Q
-		.BYTE $50 ; P
-		.BYTE $2C ; ,
-		.BYTE $2E ; .
-		.BYTE $10
-		.BYTE $11
-		.BYTE $13
-		.BYTE $56 ; V
-		.BYTE $68 ; h
-		.BYTE $71 ; q
-		.BYTE $7A ; z
-		.BYTE $83 ; ƒ
-		.BYTE $83 ; ƒ
-		.BYTE $D6 ; Ö
-		.BYTE $4A ; J
-		.BYTE $8C ; Œ
-		.BYTE $71 ; q
-		.BYTE $71 ; q
-		.BYTE $8C ; Œ
-		.BYTE $AB ; «
-		.BYTE $37 ; 7
-		.BYTE $37 ; 7
-		.BYTE $37 ; 7
-		.BYTE $37 ; 7
-		.BYTE $37 ; 7
-		.BYTE $36 ; 6
-		.BYTE $37 ; 7
-		.BYTE $38 ; 8
-		.BYTE $3C ; <
-		.BYTE $3C ; <
-		.BYTE $3C ; <
-		.BYTE $3C ; <
-		.BYTE $2C ; ,
+
+byte_3B78:
+		.BYTE	"G"
+		.BYTE	"D"
+		.BYTE	"U"
+		.BYTE	"C"
+		.BYTE	"S"
+		.BYTE	"E"
+		.BYTE	"Q"
+		.BYTE	"P"
+		.BYTE	","
+		.BYTE	"."
+		.BYTE	$10
+		.BYTE	$11
+		.BYTE	$13
+
+byte_3B85:
+		.BYTE	<loc_3756
+		.BYTE	<loc_3768
+		.BYTE	<loc_3771
+		.BYTE	<loc_377A
+		.BYTE	<loc_3783
+		.BYTE	<loc_3683
+		.BYTE	<loc_37D6
+		.BYTE	<loc_384A
+		.BYTE	<loc_3C8C
+		.BYTE	<loc_3C71
+		.BYTE	<loc_3C71
+		.BYTE	<loc_3C8C
+		.BYTE	<loc_2CAB
+
+byte_3B92:
+		.BYTE	>loc_3756
+		.BYTE	>loc_3768
+		.BYTE	>loc_3771
+		.BYTE	>loc_377A
+		.BYTE	>loc_3783
+		.BYTE	>loc_3683
+		.BYTE	>loc_37D6
+		.BYTE	>loc_384A
+		.BYTE	>loc_3C8C
+		.BYTE	>loc_3C71
+		.BYTE	>loc_3C71
+		.BYTE	>loc_3C8C
+		.BYTE	>loc_2CAB
 unk_3B9F:	.BYTE $48 ; H		; DATA XREF: sub_2BFA+5EAr
 		.BYTE $64 ; d
 		.BYTE $83 ; ƒ
