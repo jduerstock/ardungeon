@@ -4242,9 +4242,9 @@ sub_2E8D:				; CODE XREF: sub_2E43:loc_2E45p
 		STY	$54
 		CLC
 		TXA
-		ADC	#0
+		ADC	#<SEG_6300
 		STA	$45
-		LDA	#$63 ; 'c'
+		LDA	#>SEG_6300
 		ADC	#0
 		STA	$46
 		RTS

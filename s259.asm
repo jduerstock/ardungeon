@@ -45,9 +45,9 @@ loc_764B:				; CODE XREF: RAM:7634j
 loc_765D:				; CODE XREF: RAM:loc_7AC4j
 		LDA	#$3B ; ';'
 		STA	SEGNO
-		LDA	#0
+		LDA	#<SEG_6300
 		STA	SEGADDR
-		LDA	#$63 ; 'c'
+		LDA	#>SEG_6300
 		STA	SEGADDR+1
 		JSR	j_SEGLOAD
 		LDA	#0
@@ -969,9 +969,9 @@ loc_7C08:				; CODE XREF: RAM:7C0Fj
 		JSR	$1827
 		LDA	#$13
 		STA	byte_83CE
-		LDA	#0
+		LDA	#<SEG_6300
 		STA	$76
-		LDA	#$63 ; 'c'
+		LDA	#>SEG_6300
 		STA	$77
 		LDA	byte_83CD
 		ASL	A
@@ -1033,9 +1033,9 @@ loc_7C75:				; CODE XREF: RAM:7C70j
 		DEC	byte_83CE
 		BNE	loc_7C32
 		JSR	$1830
-		LDA	#0
+		LDA	#<SEG_6300
 		STA	$69
-		LDA	#$63 ; 'c'
+		LDA	#>SEG_6300
 		STA	$6A
 		LDA	$638E
 		STA	loc_7CA2+1
@@ -1117,9 +1117,9 @@ loc_7CFB:				; CODE XREF: RAM:7CEEj	RAM:7CF6j
 		STA	$6312
 		LDA	#0
 		STA	$638E
-		LDA	#0
+		LDA	#<SEG_6300
 		STA	$69
-		LDA	#$63 ; 'c'
+		LDA	#>SEG_6300
 		STA	$6A
 		LDY	#0
 		CLC
@@ -1141,9 +1141,9 @@ loc_7D31:				; CODE XREF: RAM:7D34j	RAM:7D39j
 		STA	$232
 		LDA	unk_83C2,Y
 		STA	$233
-		LDA	#0
+		LDA	#<SEG_6300
 		STA	$76
-		LDA	#$63 ; 'c'
+		LDA	#>SEG_6300
 		STA	$77
 		LDA	#$12
 		STA	byte_83CE

@@ -233,9 +233,9 @@ loc_7758:				; CODE XREF: RAM:775Fj
 		STA	$232
 		LDA	unk_7837,X
 		STA	$233
-		LDA	#0
+		LDA	#<SEG_6300
 		STA	$66
-		LDA	#$63 ; 'c'
+		LDA	#>SEG_6300
 		STA	$67
 		LDA	#$13
 		STA	$63
