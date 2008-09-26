@@ -10289,9 +10289,9 @@ loc_566F:				; CODE XREF: RAM:566Aj
 ; ---------------------------------------------------------------------------
 
 loc_5691:				; CODE XREF: RAM:5675j
-		LDA	#$EF ; 'ï'
+		LDA	#<a_YourStomachTurns
 		STA	off_16
-		LDA	#$5F ; '_'
+		LDA	#>a_YourStomachTurns
 		STA	off_16+1
 		LDX	byte_194A
 		JSR	sub_3C5C
@@ -11533,6 +11533,8 @@ aSecondaryWeapo:.BYTE " Secondary weapon"
 aPressNumberOrE:.BYTE "Press number or ESC to exit"
 		.BYTE $D
 		.BYTE $FF
+
+a_YourStomachTurns:
 		MOVEXY	0,1
 		.BYTE $A5
 aYourStomachTur:.BYTE "Your stomach turns at"
