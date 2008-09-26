@@ -1425,17 +1425,17 @@ loc_1EBF:
 		JSR	sub_1F26
 		JSR	sub_1F31
 		STA	$2D
-		LDA	($18),Y
+		LDA	(off_18),Y
 		PHA
 		INY
-		LDA	($18),Y
-		STA	$19
+		LDA	(off_18),Y
+		STA	off_18+1
 		PLA
-		STA	$18
+		STA	off_18
 		LDY	#0
 
 loc_1ED4:				; CODE XREF: RAM:1EBCj	RAM:1EDEj
-		LDA	($18),Y
+		LDA	(off_18),Y
 		BEQ	loc_1EE0
 		JSR	loc_1F3C
 		INY
@@ -1452,9 +1452,9 @@ loc_1EE3:
 		STA	byte_1F24
 		LDA	off_16+1
 		STA	byte_1F25
-		LDA	$18
+		LDA	off_18
 		STA	off_16
-		LDA	$19
+		LDA	off_18+1
 		STA	off_16+1
 		JMP	loc_1CAB
 ; ---------------------------------------------------------------------------
@@ -1466,10 +1466,10 @@ loc_1EFB:
 		LDA	off_16+1
 		STA	byte_1F25
 		LDY	#0
-		LDA	($18),Y
+		LDA	(off_18),Y
 		STA	off_16
 		INY
-		LDA	($18),Y
+		LDA	(off_18),Y
 		STA	off_16+1
 		JMP	loc_1CAB
 ; ---------------------------------------------------------------------------
