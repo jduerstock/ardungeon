@@ -709,14 +709,14 @@ loc_1ABB:				; CODE XREF: RAM:1ABFj
 		DEX
 		BPL	loc_1ABB
 		JSR	sub_1C09
-		LDA	#$F0 ; 'ð'
+		LDA	#<$4F0
 		STA	off_7
-		LDA	#4
+		LDA	#>$4F0
 		STA	off_7+1
-		LDA	#$D
-		STA	9
-		LDA	#5
-		STA	$A
+		LDA	#<$50D
+		STA	off_9
+		LDA	#>$50D
+		STA	off_9+1
 		LDX	#9
 
 loc_1AD6:				; CODE XREF: RAM:1AFEj
@@ -726,42 +726,42 @@ loc_1AD8:				; CODE XREF: RAM:1AE5j
 		LDA	(off_7),Y
 		ORA	#$80 ; '€'
 		STA	(off_7),Y
-		LDA	(9),Y
+		LDA	(off_9),Y
 		ORA	#$80 ; '€'
-		STA	(9),Y
+		STA	(off_9),Y
 		DEY
 		BPL	loc_1AD8
-		LDA	7
+		LDA	off_7
 		CLC
 		ADC	#$28 ; '('
-		STA	7
+		STA	off_7
 		BCC	loc_1AF2
-		INC	8
+		INC	off_7+1
 
 loc_1AF2:				; CODE XREF: RAM:1AEEj
-		LDA	9
+		LDA	off_9
 		CLC
 		ADC	#$28 ; '('
-		STA	9
+		STA	off_9
 		BCC	loc_1AFD
-		INC	$A
+		INC	off_9+1
 
 loc_1AFD:				; CODE XREF: RAM:1AF9j
 		DEX
 		BNE	loc_1AD6
-		LDA	#0
-		STA	9
-		LDA	#8
-		STA	$A
+		LDA	#<$800
+		STA	off_9
+		LDA	#>$800
+		STA	off_9+1
 		LDX	#$C
 		LDY	#0
 		LDA	#$FF
 
 loc_1B0E:				; CODE XREF: RAM:1B11j	RAM:1B16j
-		STA	(9),Y
+		STA	(off_9),Y
 		INY
 		BNE	loc_1B0E
-		INC	$A
+		INC	off_9+1
 		DEX
 		BNE	loc_1B0E
 		RTS
@@ -3824,14 +3824,14 @@ byte_2C9A:	.BYTE $FF		; DATA XREF: sub_2BFA+35w RAM:2C45r ...
 ; ---------------------------------------------------------------------------
 
 loc_2C9B:				; CODE XREF: RAM:185Dj
-		STX	$E
-		STY	$D
+		STX	off_D+1
+		STY	off_D
 		ASL	A
 		TAY
-		LDA	($D),Y
+		LDA	(off_D),Y
 		STA	off_16
 		INY
-		LDA	($D),Y
+		LDA	(off_D),Y
 		STA	off_16+1
 		RTS
 ; ---------------------------------------------------------------------------
