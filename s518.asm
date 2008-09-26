@@ -7047,21 +7047,21 @@ loc_432A:				; CODE XREF: sub_42E7+37j
 		STX	$5C
 
 loc_432E:				; CODE XREF: sub_42E7+8Dj
-		LDA	$45E0,X
-		STA	$58
-		LDA	$45E7,X
-		STA	$59
-		LDA	$45EE,X
-		STA	$5A
-		LDA	$45F5,X
-		STA	$5B
-		LDA	$45D9,X
+		LDA	byte_45E0,X
+		STA	off_58
+		LDA	byte_45E7,X
+		STA	off_58+1
+		LDA	byte_45EE,X
+		STA	off_5A
+		LDA	byte_45F5,X
+		STA	off_5A+1
+		LDA	byte_45D9,X
 		TAY
-		LDA	$6300,Y
+		LDA	SEG_6300,Y
 		LDY	#0
 
 loc_434B:				; CODE XREF: sub_42E7+6Bj
-		CMP	($58),Y
+		CMP	(off_58),Y
 		BCC	loc_4354
 		BEQ	loc_4354
 		INY
@@ -7080,10 +7080,10 @@ loc_4360:				; CODE XREF: sub_42E7+71j
 		TXA
 		ASL	A
 		TAX
-		LDA	($5A),Y
+		LDA	(off_5A),Y
 		STA	$45A3,X
 		INY
-		LDA	($5A),Y
+		LDA	(off_5A),Y
 		STA	$45A4,X
 		DEC	$5C
 		LDX	$5C
@@ -7151,60 +7151,60 @@ loc_43D6:				; CODE XREF: RAM:43DDj
 		STA	$6345,X
 		DEX
 		BPL	loc_43D6
-		LDA	#$3D ; '='
+		LDA	#'='
 ; ---------------------------------------------------------------------------
 		.BYTE $2C ; ,
 ; ---------------------------------------------------------------------------
 
 loc_43E2:				; CODE XREF: RAM:43D2j
-		LDA	#$3A ; ':'
+		LDA	#':'
 		STA	$499
-		LDA	#$49 ; 'I'
-		STA	$58
-		LDA	#$63 ; 'c'
-		STA	$59
+		LDA	#<$6349
+		STA	off_58
+		LDA	#>$6349
+		STA	off_58+1
 		LDX	#6
 
 loc_43F1:				; CODE XREF: RAM:442Ej
 		LDY	#1
-		LDA	($58),Y
+		LDA	(off_58),Y
 		CLC
 		LDY	#2
-		ADC	($58),Y
+		ADC	(off_58),Y
 		BCC	loc_43FE
 		LDA	#$FF
 
 loc_43FE:				; CODE XREF: RAM:43FAj
 		SEC
 		INY
-		SBC	($58),Y
+		SBC	(off_58),Y
 		BCS	loc_4406
 		LDA	#0
 
 loc_4406:				; CODE XREF: RAM:4402j
 		INY
 		SEC
-		SBC	($58),Y
+		SBC	(off_58),Y
 		BCS	loc_440E
 		LDA	#0
 
 loc_440E:				; CODE XREF: RAM:440Aj
 		INY
 		SEC
-		SBC	($58),Y
+		SBC	(off_58),Y
 		BCS	loc_4416
 		LDA	#0
 
 loc_4416:				; CODE XREF: RAM:4412j
 		INY
 		SEC
-		SBC	($58),Y
+		SBC	(off_58),Y
 		BCS	loc_441E
 		LDA	#0
 
 loc_441E:				; CODE XREF: RAM:441Aj
 		LDY	#0
-		STA	($58),Y
+		STA	(off_58),Y
 		LDA	#8
 		CLC
 		ADC	$58
@@ -7512,6 +7512,8 @@ off_45B5:	.WORD asc_47E5		; DATA XREF: RAM:3D79o	sub_42E7+8w ...
 		.WORD loc_44D4
 		.WORD loc_4519
 		.WORD loc_4563
+
+byte_45D9:
 		.BYTE $95 ; •
 		.BYTE $99 ; ™
 		.BYTE $9A ; š
@@ -7519,6 +7521,8 @@ off_45B5:	.WORD asc_47E5		; DATA XREF: RAM:3D79o	sub_42E7+8w ...
 		.BYTE $94 ; ”
 		.BYTE $97 ; —
 		.BYTE $98 ; ˜
+
+byte_45E0:
 		.BYTE  $A
 		.BYTE $26 ; &
 		.BYTE $36 ; 6
@@ -7526,6 +7530,8 @@ off_45B5:	.WORD asc_47E5		; DATA XREF: RAM:3D79o	sub_42E7+8w ...
 		.BYTE $56 ; V
 		.BYTE $66 ; f
 		.BYTE $76 ; v
+
+byte_45E7:
 		.BYTE $46 ; F
 		.BYTE $46 ; F
 		.BYTE $46 ; F
@@ -7533,6 +7539,8 @@ off_45B5:	.WORD asc_47E5		; DATA XREF: RAM:3D79o	sub_42E7+8w ...
 		.BYTE $46 ; F
 		.BYTE $46 ; F
 		.BYTE $46 ; F
+
+byte_45EE:
 		.BYTE $18
 		.BYTE $2E ; .
 		.BYTE $3E ; >
@@ -7540,6 +7548,8 @@ off_45B5:	.WORD asc_47E5		; DATA XREF: RAM:3D79o	sub_42E7+8w ...
 		.BYTE $5E ; ^
 		.BYTE $6E ; n
 		.BYTE $7E ; ~
+
+byte_45F5:
 		.BYTE $46 ; F
 		.BYTE $46 ; F
 		.BYTE $46 ; F
