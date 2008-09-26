@@ -3682,7 +3682,7 @@ loc_2BC8:				; CODE XREF: sub_2BB0+1Bj
 ; End of function sub_2BB0
 
 ; ---------------------------------------------------------------------------
-		.BYTE $A6,  0,	7
+		MOVEXY	0,7
 		.BYTE $A9
 		.BYTE $A5
 		.BYTE "<<< "
@@ -4899,7 +4899,7 @@ loc_32B1:				; CODE XREF: sub_322C+49j sub_322C+8Ej
 ; ---------------------------------------------------------------------------
 		RTS
 ; ---------------------------------------------------------------------------
-		.BYTE $A6,  1,	4
+		MOVEXY	1,4
 aYouAre:	.BYTE "You are "
 		.BYTE $FF
 
@@ -5514,7 +5514,7 @@ loc_36EC:				; CODE XREF: RAM:36AEj	RAM:loc_36E4j
 ; ---------------------------------------------------------------------------
 aExamineInvento:.BYTE "Examine Inventory",0
 aExamineSpells:	.BYTE "Examine Spells",0
-		.BYTE $A6,  0,	2
+		MOVEXY 0,2
 		.BYTE $A5
 aExamine:	.BYTE "Examine "
 		.BYTE $A1
@@ -5601,7 +5601,7 @@ loc_3797:				; CODE XREF: RAM:379Aj
 loc_37BB:				; CODE XREF: RAM:37A1j
 		JMP	loc_3662
 ; ---------------------------------------------------------------------------
-		.BYTE $A6,  0,	2
+		MOVEXY	0,2
 		.BYTE $A5
 aSaveCharacterq:.BYTE "Save character?"
 		.BYTE $D
@@ -5635,7 +5635,7 @@ loc_37FC:				; CODE XREF: RAM:37EDj
 		JMP	sub_3C2D
 ; ---------------------------------------------------------------------------
 		.BYTE $A8
-		.BYTE $A6,  0,	2
+		MOVEXY	0,2
 		.BYTE $A5
 aQuitGameWithou:.BYTE "Quit game without saving character?"
 		.BYTE $D
@@ -5665,7 +5665,7 @@ aN:		.BYTE 'N'
 		RTS
 ; ---------------------------------------------------------------------------
 		.BYTE $A8
-		.BYTE $A6,  0,	2
+		MOVEXY	0,2
 		.BYTE $A5
 aPaused:	.BYTE "(Paused)"
 		.BYTE $D
@@ -5733,7 +5733,7 @@ locret_38CE:				; CODE XREF: sub_386F+40j
 
 ; ---------------------------------------------------------------------------
 byte_38CF:	.BYTE 0			; DATA XREF: sub_386F+2w sub_386F+34w	...
-		.BYTE $A6,  0,	5
+		MOVEXY	0,5
 		.BYTE $AB
 		.BYTE $FF
 		MOVEXY	0,5
@@ -6180,22 +6180,22 @@ locret_3CDD:				; CODE XREF: sub_3CC2+9j
 ; End of function sub_3CC2
 
 ; ---------------------------------------------------------------------------
-		.BYTE $A6,  0,	0
+		MOVEXY	0,0
 aFoodPackets:	.BYTE "Food Packets"
-		.BYTE $A6,$10,	0
+		MOVEXY	16,0
 aTorches:	.BYTE "Torches"
 		.BYTE $A7
 aWaterFlasks:	.BYTE "Water Flasks"
 		.BYTE $D
-		.BYTE $A6,  5,	1
+		MOVEXY	5,1
 		.BYTE $B2
 		.WORD $63BB
 		.BYTE 3
-		.BYTE $A6,$12,	1
+		MOVEXY	18,1
 		.BYTE $B2
 		.WORD $63BD
 		.BYTE 3
-		.BYTE $A6,$21,	1
+		MOVEXY	33,1
 		.BYTE $B2
 		.WORD $63BC
 		.BYTE 3
@@ -6210,7 +6210,7 @@ aYouAreOnLevel:	.BYTE "You are on level "
 		.BYTE $A5
 aOfTheDungeon:	.BYTE "of the Dungeon"
 		.BYTE $D
-		.BYTE $A6,  0,	4
+		MOVEXY	0,4
 		.BYTE $B4
 		.WORD off_45A9
 		.BYTE $C
@@ -6226,90 +6226,90 @@ aOfTheDungeon:	.BYTE "of the Dungeon"
 		.BYTE $B4
 		.WORD off_45AD
 		.BYTE $C
-		.BYTE $A6,$1C,	4
+		MOVEXY	28,4
 		.BYTE $B4
 		.WORD off_45AB
 		.BYTE $C
-		.BYTE $A6,$1C,	5
+		MOVEXY	28,5
 		.BYTE $B4
 		.WORD off_45A3
 		.BYTE $C
-		.BYTE $A6,$1C,	6
+		MOVEXY	28,6
 		.BYTE $B4
 		.WORD off_45B3
 		.BYTE $C
-		.BYTE $A6,$1C,	7
+		MOVEXY	28,7
 		.BYTE $B4
 		.WORD off_45B1
 		.BYTE $C
-		.BYTE $A6, $E,	6
+		MOVEXY	14,6
 		.BYTE $B4
 		.WORD off_45B5
 		.BYTE $C
-		.BYTE $A6, $E,	7
+		MOVEXY	14,7
 		.BYTE $B4
 		.WORD off_45AF
 		.BYTE $C
 		.BYTE $FF
-		.BYTE $A6,  0,	0
+		MOVEXY	0,0
 aGoldCoinsSilve:.BYTE "Gold Coins   Silver Coins   Copper Coins  "
 		.BYTE $B1
 		.WORD $63B1
 		.BYTE 6
-		.BYTE $A6,$10,	1
+		MOVEXY	16,1
 		.BYTE $B1
 		.WORD $63B3
 		.BYTE 6
-		.BYTE $A6,$1F,	1
+		MOVEXY	31,1
 		.BYTE $B1
 		.WORD $63B5
 		.BYTE 6
-		.BYTE $A6, $C,	3
+		MOVEXY	12,3
 aOtherPossessio:.BYTE "Other Possessions"
-		.BYTE $A6,  7,	5
+		MOVEXY	7,5
 aGems:		.BYTE "Gems:"
 		.BYTE $B1
 		.WORD $63B7
 		.BYTE 6
-		.BYTE $A6,$1C,	5
+		MOVEXY	28,5
 aKeys:		.BYTE "Keys:"
 		.BYTE $B2
 		.WORD	I_KEYS
 		.BYTE 3
-		.BYTE $A6,  5,	6
+		MOVEXY	5,6
 aJewels:	.BYTE "Jewels:"
 		.BYTE $B1
 		.WORD $63B9
 		.BYTE 6
-		.BYTE $A6,$17,	6
+		MOVEXY	23,6
 aCompasses:	.BYTE "Compasses:"
 		.BYTE $B2
 		.WORD $63C0
 		.BYTE 3
-		.BYTE $A6,  3,	7
+		MOVEXY	3,7
 aCrystals:	.BYTE "Crystals:"
 		.BYTE $B2
 		.WORD $63BE
 		.BYTE 3
-		.BYTE $A6,$16,	7
+		MOVEXY	22,7
 aTimepieces:	.BYTE "Timepieces:"
 		.BYTE $B2
 		.WORD $63C1
 		.BYTE 3
 		.BYTE $FF
-		.BYTE $A6,  0,	0
+		MOVEXY	0,0
 		.BYTE $A5
 aWeapons:	.BYTE "Weapons"
 		.BYTE $D
 		.BYTE $A3
 		.WORD loc_3F41
-		.BYTE $A6,  0,	1
+		MOVEXY	0,1
 aPrimary:	.BYTE "Primary: "
 		.BYTE $B4
 		.WORD byte_407F
 		.BYTE $1F
 		.BYTE $AB
-		.BYTE $A6,  0,	2
+		MOVEXY	0,2
 aSecondary:	.BYTE "Secondary: "
 		.BYTE $B4
 		.WORD byte_4081
@@ -6324,32 +6324,32 @@ aHead:		.BYTE "Head: "
 		.WORD unk_4083
 		.BYTE $22
 		.BYTE $AB
-		.BYTE $A6,  0,	5
+		MOVEXY	0,5
 aBody:		.BYTE "Body: "
 		.BYTE $B4
 		.WORD unk_4085
 		.BYTE $22
 		.BYTE $AB
-		.BYTE $A6,  0,	6
+		MOVEXY	0,6
 aArms:		.BYTE "Arms: "
 		.BYTE $B4
 		.WORD unk_4087
 		.BYTE $22
 		.BYTE $AB
-		.BYTE $A6,  0,	7
+		MOVEXY	0,7
 aLegs:		.BYTE "Legs: "
 		.BYTE $B4
 		.WORD unk_4089
 		.BYTE $22
 		.BYTE $AB
 		.BYTE $FF
-		.BYTE $A6,  0,	0
+		MOVEXY	0,0
 		.BYTE $A5
 aApparel:	.BYTE "Apparel"
 		.BYTE $D
 		.BYTE $A3
 		.WORD loc_3F8D
-		.BYTE $A6, $A,	2
+		MOVEXY	10,2
 		.BYTE $A2
 		.BYTE $B4
 		.WORD byte_407F
@@ -6375,7 +6375,7 @@ aApparel:	.BYTE "Apparel"
 		.BYTE $AB
 		.BYTE $D
 		.BYTE $FF
-		.BYTE $A6,  0,	0
+		MOVEXY	0,0
 		.BYTE $A5
 aActiveMagic:	.BYTE "Active Magic"
 		.BYTE $D
@@ -6384,7 +6384,7 @@ aActiveMagic:	.BYTE "Active Magic"
 		.BYTE $AC
 		.WORD byte_3F15
 		.BYTE $FF
-		.BYTE $A6,  0,	0
+		MOVEXY	0,0
 		.BYTE $A5
 aKnownDiseases:	.BYTE "Known Diseases"
 		.BYTE $D
