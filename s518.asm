@@ -10837,21 +10837,21 @@ sub_5AB4:				; CODE XREF: RAM:3762p
 		LDA	#>aOffer
 		STA	off_193A+1
 		LDA	#<a_OfferHowMany
-		STA	byte_5CC3
+		STA	off_5CC3
 		LDA	#>a_OfferHowMany
-		STA	byte_5CC4
+		STA	off_5CC3+1
 		JMP	loc_5ADF
 ; ---------------------------------------------------------------------------
 
 loc_5ACB:				; CODE XREF: RAM:376Bp
-		LDA	#$29 ; ')'
+		LDA	#<aDrop
 		STA	off_193A
-		LDA	#$5F ; '_'
+		LDA	#>aDrop
 		STA	off_193A+1
-		LDA	#$6A ; 'j'
-		STA	byte_5CC3
-		LDA	#$5C ; '\'
-		STA	byte_5CC4
+		LDA	#<a_DropHowMany
+		STA	off_5CC3
+		LDA	#>a_DropHowMany
+		STA	off_5CC3+1
 
 loc_5ADF:				; CODE XREF: sub_5AB4+14j
 		LDA	#$57 ; 'W'
@@ -10904,9 +10904,9 @@ loc_5B35:				; CODE XREF: sub_5AB4+78j
 		BEQ	loc_5B0E
 
 loc_5B40:				; CODE XREF: sub_5AB4+B6j
-		LDA	byte_5CC3
+		LDA	off_5CC3
 		STA	off_16
-		LDA	byte_5CC4
+		LDA	off_5CC3+1
 		STA	off_16+1
 		LDX	byte_194A
 		JSR	sub_3C5C
@@ -11053,6 +11053,8 @@ aOfferHowManyq:	.BYTE "Offer how many?"
 		.BYTE $D
 		.BYTE $AC
 		.WORD byte_5C7D
+
+a_DropHowMany:
 		.BYTE $A6,  0,	0
 		.BYTE $A5
 aDropHowManyq:	.BYTE "Drop how many?",$D
@@ -11072,8 +11074,7 @@ a__1:		.BYTE '.'
 aInvalidEntryTr:.BYTE "Invalid entry, try again."
 		.BYTE $D
 		.BYTE $FF
-byte_5CC3:	.BYTE $FF		; DATA XREF: sub_5AB4+Cw sub_5AB4+23w	...
-byte_5CC4:	.BYTE $FF		; DATA XREF: sub_5AB4+11w sub_5AB4+28w ...
+off_5CC3:	.WORD	$FFFF		; DATA XREF: sub_5AB4+Cw sub_5AB4+23w	...
 ; ---------------------------------------------------------------------------
 		LDA	$4B
 		PHA
