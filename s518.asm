@@ -395,8 +395,7 @@ byte_193C:	.BYTE $FF		; DATA XREF: sub_502E+Ew sub_502E+14w	...
 byte_193D:	.BYTE $FF		; DATA XREF: sub_508C+1Ew sub_50B2+29w ...
 unk_193E:	.BYTE $FF		; DATA XREF: RAM:5D6Fo
 		.BYTE $FF
-unk_1940:	.BYTE $FF		; DATA XREF: RAM:5D85o
-		.BYTE $FF
+off_1940:	.WORD	$FFFF		; DATA XREF: RAM:5D85o
 		.BYTE $FF
 		.BYTE $FF
 off_1944:	.WORD	$FFFF		; DATA XREF: RAM:36D4w	sub_51B6+24w ...
@@ -958,7 +957,7 @@ sub_1C2C:				; CODE XREF: RAM:181Bj	RAM:loc_1F4Bj ...
 		STA	$1E
 		LDA	$1A
 		ORA	$21
-		STA	($1D),Y
+		STA	(off_1D),Y
 		INY
 		CPY	#$28 ; '('
 		BCC	loc_1C6C
@@ -1201,15 +1200,15 @@ loc_1D9A:
 		CLC
 		LDA	2
 		ADC	#0
-		STA	9
+		STA	off_9
 		LDA	3
 		ADC	#4
-		STA	$A
+		STA	off_9+1
 		LDY	$1F
 		LDA	#$20 ; ' '
 
 loc_1DB6:				; CODE XREF: RAM:1DBBj
-		STA	(9),Y
+		STA	(off_9),Y
 		INY
 		CPY	#$28 ; '('
 		BCC	loc_1DB6
@@ -9561,23 +9560,25 @@ loc_5225:				; CODE XREF: sub_51B6+2Fj sub_51B6+58j ...
 ; End of function sub_51B6
 
 ; ---------------------------------------------------------------------------
-unk_5229:	.BYTE $52 ; R		; DATA XREF: sub_51B6+4Ar
-		.BYTE $52 ; R
-		.BYTE $54 ; T
-		.BYTE $54 ; T
-		.BYTE $54 ; T
-		.BYTE $55 ; U
-		.BYTE $55 ; U
-		.BYTE $56 ; V
-unk_5231:	.BYTE $38 ; 8		; DATA XREF: sub_51B6+4Er
-		.BYTE $C2 ; Â
-		.BYTE  $E
-		.BYTE $A9 ; ©
-		.BYTE $ED ; í
-		.BYTE	4
-		.BYTE $6A ; j
-		.BYTE $31 ; 1
+unk_5229:	.BYTE	>(loc_5239-1)	; DATA XREF: sub_51B6+4Ar
+		.BYTE	>(loc_52C3-1)
+		.BYTE	>(loc_540F-1)
+		.BYTE	>(loc_54AA-1)
+		.BYTE	>(loc_54EE-1)
+		.BYTE	>(loc_5505-1)
+		.BYTE	>(loc_556B-1)
+		.BYTE	>(loc_5632-1)
+unk_5231:	.BYTE	<(loc_5239-1)	; DATA XREF: sub_51B6+4Er
+		.BYTE	<(loc_52C3-1)
+		.BYTE	<(loc_540F-1)
+		.BYTE	<(loc_54AA-1)
+		.BYTE	<(loc_54EE-1)
+		.BYTE	<(loc_5505-1)
+		.BYTE	<(loc_556B-1)
+		.BYTE	<(loc_5632-1)
 ; ---------------------------------------------------------------------------
+
+loc_5239:
 		LDY	#0
 		LDA	(off_41),Y
 		AND	#$78 ; 'x'
@@ -9672,6 +9673,8 @@ loc_52BD:				; CODE XREF: RAM:52A8j
 		LDA	(off_43),Y
 		JMP	loc_53F3
 ; ---------------------------------------------------------------------------
+
+loc_52C3:
 		LDA	#0
 		STA	byte_627F
 		STA	byte_1961
@@ -9867,6 +9870,8 @@ unk_540B:	.BYTE $57 ; W		; DATA XREF: RAM:loc_5400r
 unk_540D:	.BYTE	8		; DATA XREF: RAM:loc_53F5r
 		.BYTE $10
 ; ---------------------------------------------------------------------------
+
+loc_540F:
 		LDA	$4B
 		STA	byte_627C
 		LDA	off_43
@@ -9976,6 +9981,8 @@ loc_54A4:				; CODE XREF: sub_548E+10j
 ; End of function sub_548E
 
 ; ---------------------------------------------------------------------------
+
+loc_54AA:
 		JSR	sub_57AB
 		BCS	loc_54EB
 
@@ -10022,6 +10029,8 @@ loc_54DD:				; CODE XREF: RAM:54D9j
 loc_54EB:				; CODE XREF: RAM:54ADj	RAM:54E6j
 		JMP	loc_5225
 ; ---------------------------------------------------------------------------
+
+loc_54EE:
 		LDY	#0
 		LDA	(off_43),Y
 		AND	#3
@@ -10036,6 +10045,8 @@ loc_54EB:				; CODE XREF: RAM:54ADj	RAM:54E6j
 loc_5502:				; CODE XREF: RAM:54FDj
 		JMP	loc_5225
 ; ---------------------------------------------------------------------------
+
+loc_5505:
 		LDX	#0
 
 loc_5507:				; CODE XREF: RAM:5511j
@@ -10098,6 +10109,8 @@ loc_555A:				; CODE XREF: RAM:5516j	RAM:5552j
 loc_5568:				; CODE XREF: RAM:5556j	RAM:5563j
 		JMP	loc_5225
 ; ---------------------------------------------------------------------------
+
+loc_556B:
 		DEC	byte_627F
 		LDA	$6398
 		BPL	loc_5576
@@ -10237,6 +10250,8 @@ loc_561F:				; CODE XREF: sub_5602+17j
 ; End of function sub_5602
 
 ; ---------------------------------------------------------------------------
+
+loc_5632:
 		LDY	#0
 		LDA	(off_41),Y
 		AND	#$78 ; 'x'
@@ -11253,7 +11268,7 @@ asc_5D7D:	.BYTE " ("              ; DATA XREF: RAM:5523w
 		BLINK	'3'
 		.BYTE	") "
 		.BYTE $B4
-		.WORD unk_1940
+		.WORD	off_1940
 		.BYTE $1D
 		.BYTE $20
 		.BYTE $AD ; ­
@@ -11361,14 +11376,11 @@ loc_5E05:				; CODE XREF: RAM:5DE5j	RAM:5DEAj
 		.BYTE $19
 		.BYTE $AB ; «
 		MOVEXY	3,4
-		.BYTE $20
-		.BYTE $28 ; (
+		.BYTE	" ("
 		BLINK	"3"
-		.BYTE $29 ; )
-		.BYTE $20
+		.BYTE	") "
 		.BYTE $AD ; ­
-		.BYTE $40 ; @
-		.BYTE $19
+		.WORD	off_1940
 		.BYTE $AB ; «
 		MOVEXY	3,5
 		.BYTE $20
