@@ -3319,7 +3319,7 @@ loc_299D:				; CODE XREF: sub_2979+1Aj sub_2979+1Fj
 
 ; ---------------------------------------------------------------------------
 		.BYTE $A8
-		.BYTE $A6,  0,	1
+		MOVEXY	0,1
 		.BYTE $A5
 aPleaseInsertTh:.BYTE "Please insert The Dungeon Disk "
 		.BYTE $B2
@@ -3335,7 +3335,7 @@ aSide:		.BYTE "Side "
 		.BYTE $20
 aIntoAnyDrive_:	.BYTE "into any drive."
 		.BYTE $D
-		.BYTE $A6,  0,	5
+		MOVEXY	0,5
 		.BYTE $A5
 aPress:		.BYTE "Press "
 		.BYTE $A1
@@ -3344,7 +3344,7 @@ aSpaceBar:	.BYTE "SPACE BAR"
 aToContinue:	.BYTE " to continue"
 		.BYTE $D
 		.BYTE $FF
-		.BYTE $A6,  0,	7
+		MOVEXY	0,7
 		.BYTE $A5
 aOrPress:	.BYTE "or press "
 		.BYTE $A1
@@ -4341,9 +4341,9 @@ loc_2F2E:				; CODE XREF: RAM:2F3Aj
 		STA	$45A3,X
 		DEX
 		BPL	loc_2F2E
-		LDA	#$17
+		LDA	#<a_LevelStats
 		STA	off_16
-		LDA	#$39 ; '9'
+		LDA	#>a_LevelStats
 		STA	off_16+1
 		JSR	sub_1C84
 		LDA	#$69 ; 'i'
@@ -5736,35 +5736,37 @@ byte_38CF:	.BYTE 0			; DATA XREF: sub_386F+2w sub_386F+34w	...
 		.BYTE $A6,  0,	5
 		.BYTE $AB
 		.BYTE $FF
-		.BYTE $A6,  0,	5
+		MOVEXY	0,5
 aThereAreSevera:.BYTE " There are several things here."
 		.BYTE $AB
 		.BYTE $FF
-		.BYTE $A6,  0,	5
+		MOVEXY	0,5
 aThereIsSomethi:.BYTE " There is something here."
 		.BYTE $AB
 		.BYTE $FF
+
+a_LevelStats:
 		.BYTE $A8
-		.BYTE $A6,$1F,	0
+		MOVEXY	31,0
 aLevel:		.BYTE "Level:"
-		.BYTE $A6,  1,	1
+		MOVEXY	1,1
 aStatsStaChrStr:.BYTE "Stats:  STA  CHR  STR  INT  WIS  SKL"
-		.BYTE $A6,  3,	2
+		MOVEXY	3,2
 		.BYTE $7B ; {
-		.BYTE $A6,  1,	3
+		MOVEXY	1,3
 aExperience:	.BYTE "Experience:"
-		.BYTE $A6,$17,	3
+		MOVEXY	23,3
 aHitPoints:	.BYTE "Hit Points:"
 		.BYTE $FF
-		.BYTE $A6,  1,	0
+		MOVEXY	1,0
 		.BYTE $B3
 		.WORD $6321
 		.BYTE $1C
-		.BYTE $A6,$25,	0
+		MOVEXY	37,0
 		.BYTE $B2
 		.WORD $633C
 		.BYTE 2
-		.BYTE $A6,  9,	2
+		MOVEXY	9,2
 		.BYTE $B2
 		.WORD $6349
 		.BYTE 3
@@ -5788,54 +5790,54 @@ aHitPoints:	.BYTE "Hit Points:"
 		.BYTE $B2
 		.WORD $6371
 		.BYTE 3
-		.BYTE $A6, $C,	3
+		MOVEXY	12,3
 		.BYTE $B0
 		.WORD $633D
 		.BYTE $A
-		.BYTE $A6,$22,	3
+		MOVEXY	34,3
 		.BYTE $B1
 		.WORD $6345
 		.BYTE 5
 		.BYTE $FF
-		.BYTE $A6,  0,	4
+		MOVEXY	0,4
 		.BYTE $AB
 		.BYTE $FF
-		.BYTE $A6,  0,	0
+		MOVEXY	0,0
 		.BYTE $A5
 aTheDoorWonTOpe:.BYTE "The door won't open. You may:"
 		.BYTE $D
-		.BYTE $A6,  8,	2
+		MOVEXY	8,2
 		.BYTE "("
 		.BYTE $A1
 a1:		.BYTE '1'
 		.BYTE $A0
 aExamineTheDoor:.BYTE ") Examine the door."
-		.BYTE $A6,  8,	3
+		MOVEXY 8,3
 		.BYTE '('
 		.BYTE $A1
 a2:		.BYTE '2'
 		.BYTE $A0
 aForceTheDoor_:	.BYTE ") Force the door."
-		.BYTE $A6,  8,	4
+		MOVEXY	8,4
 		.BYTE '('
 		.BYTE $A1
 a3:		.BYTE '3'
 		.BYTE $A0
 		.BYTE ") Use a key."
-		.BYTE $A6,  8,	5
+		MOVEXY	8,5
 		.BYTE '('
 		.BYTE $A1
 a4:		.BYTE '4'
 		.BYTE $A0
 aBreakAnEnchant:.BYTE ") Break an enchantment."
-		.BYTE $A6,  8,	7
+		MOVEXY	8,7
 		.BYTE '('
 		.BYTE $A1
 a0:		.BYTE '0'
 		.BYTE $A0
 aLeaveIt_:	.BYTE ") Leave it."
 		.BYTE $FF
-		.BYTE $A6,  0,	2
+		MOVEXY	0,2
 		.BYTE $A5
 aTheDoorAppears:.BYTE "The door appears to "
 		.BYTE $B3
@@ -5843,34 +5845,34 @@ word_3A61:	.WORD $FFFF		; DATA XREF: RAM:3422w	RAM:3428w
 		.BYTE $11
 		.BYTE $D
 		.BYTE $FF
-		.BYTE $A6,  0,	2
+		MOVEXY	0,2
 		.BYTE $A5
 aYouCanTDiscern:.BYTE "You can't discern what bars the door."
 		.BYTE $D
 		.BYTE $FF
-		.BYTE $A6,  0,	2
+		MOVEXY	0,2
 		.BYTE $A5
 aWham:		.BYTE "Wham!"
 		.BYTE $D
 		.BYTE $FF
-		.BYTE $A6,  0,	2
+		MOVEXY	0,2
 		.BYTE $A5
 aTheDoorOpens:	.BYTE "The door opens!"
 		.BYTE $D
 		.BYTE $FF
-		.BYTE $A6,  0,	2
+		MOVEXY	0,2
 		.BYTE $A5
 aTheDoorRemains:.BYTE "The door remains shut."
 		.BYTE $D
 		.BYTE $FF
-		.BYTE $A6,  0,	2
+		MOVEXY	0,2
 		.BYTE $A1
 		.BYTE $A5
 aExamining___:	.BYTE "Examining..."
 		.BYTE $D
 		.BYTE $A0
 		.BYTE $FF
-		.BYTE $A6,  0,	2
+		MOVEXY	0,2
 		.BYTE $A1
 		.BYTE $A5
 aConcentrating_:.BYTE "Concentrating..."
@@ -11568,7 +11570,7 @@ aToTheGround_:	.BYTE "to the ground."
 		.BYTE $D
 		.BYTE $FF
 		.BYTE $A8
-		.BYTE $A6,  0,	2
+		MOVEXY	0,2
 		.BYTE $A5
 aYouDrinkA:	.BYTE "You drink a"
 		.BYTE $D
@@ -11581,7 +11583,7 @@ a__2:		.BYTE '.'
 		.BYTE $D
 		.BYTE $FF
 		.BYTE $A8
-		.BYTE $A6,  0,	3
+		MOVEXY	0,3
 		.BYTE $A5
 aYouNeedACrysta:.BYTE "You need a crystal."
 byte_611A:	.BYTE $D		; DATA XREF: RAM:loc_570Cr
@@ -11628,12 +11630,12 @@ aLitTorch:	.BYTE "Lit Torch",0
 		.BYTE	3
 
 a_YouHaveNone:
-		.BYTE $A6,  0,	3
+		MOVEXY	0,3
 		.BYTE $A5
 aYouHaveNone_:	.BYTE "You have none."
 		.BYTE $D
 		.BYTE $FF
-		.BYTE $A6,  0,	2
+		MOVEXY	0,2
 		.BYTE $A5
 aItIs:		.BYTE "It is "
 		.BYTE $B2
@@ -11674,13 +11676,13 @@ aTh:		.BYTE "th"
 aSt:		.BYTE "st"
 a_Nd:		.BYTE "nd"
 aRd:		.BYTE "rd"
-		.BYTE $A6,  0,	4
+		MOVEXY	0,4
 		.BYTE $A5
 aYouAreCarrying:.BYTE "You are carrying too much!"
 		.BYTE $D
 		.BYTE $FF
 		.BYTE $A8
-		.BYTE $A6,  0,	2
+		MOVEXY	0,2
 		.BYTE $A5
 aYouCastTheSpel:.BYTE "You cast the spell of"
 		.BYTE $D
@@ -11699,12 +11701,12 @@ a__3:		.BYTE ". "
 		.BYTE $A0
 		.BYTE $D
 		.BYTE $FF
-		.BYTE $A6,  0,	3
+		MOVEXY	0,3
 		.BYTE $A5
 aTheSpellFailed:.BYTE "The spell failed!"
 		.BYTE $D
 		.BYTE $FF
-		.BYTE $A6,  0,	2
+		MOVEXY	0,2
 		.BYTE $A3
 		.WORD loc_59E8
 		.BYTE $A5
@@ -11723,7 +11725,7 @@ aAndBackfiredFo:.BYTE "and backfired for "
 		.BYTE $FF
 
 a_SomethingIsOdd:
-		.BYTE $A6,  0,	3
+		MOVEXY	0,3
 		.BYTE $A5 ; ¥
 aSomethingIsOdd:.BYTE "Something is odd here."
 		.BYTE $D
@@ -11766,7 +11768,7 @@ byte_628A:	.BYTE 0			; DATA XREF: RAM:5801w	RAM:62A6o
 		.BYTE $1F
 		.BYTE  $F
 		.BYTE	7
-		.BYTE $A6,  0,	2
+		MOVEXY	0,2
 		.BYTE $A5
 aYouAre_0:	.BYTE "You are "
 		.BYTE $B2
@@ -11775,10 +11777,7 @@ aYouAre_0:	.BYTE "You are "
 aSquaresNorth:	.BYTE " squares North"
 		.BYTE $D
 		.BYTE $A5
-		.BYTE $61 ; a
-		.BYTE $6E ; n
-		.BYTE $64 ; d
-		.BYTE $20
+		.BYTE	"and "
 		.BYTE $B2
 		.WORD byte_6289
 		.BYTE 2
@@ -11792,13 +11791,9 @@ aCornerOfLevel:	.BYTE "corner of level "
 a_:		.BYTE '.'
 		.BYTE $D
 		.BYTE $FF
-		.BYTE $4D ; M
-		.BYTE $53 ; S
-		.BYTE $47 ; G
-		.BYTE $7C ; |
-		.BYTE $19
-		.BYTE $87 ; ‡
-; end of 'RAM'
 
+		; i think this is leftover debugging symbol table
 
-		.END
+		.BYTE	"MSG"
+		.WORD	$197C
+		.BYTE	$87
