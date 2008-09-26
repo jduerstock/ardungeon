@@ -3338,20 +3338,15 @@ aIntoAnyDrive_:	.BYTE "into any drive."
 		MOVEXY	0,5
 		.BYTE $A5
 aPress:		.BYTE "Press "
-		.BYTE $A1
-aSpaceBar:	.BYTE "SPACE BAR"
-		.BYTE $A0
+		BLINK	"SPACE BAR"
 aToContinue:	.BYTE " to continue"
 		.BYTE $D
 		.BYTE $FF
 		MOVEXY	0,7
 		.BYTE $A5
 aOrPress:	.BYTE "or press "
-		.BYTE $A1
-aEsc:		.BYTE "ESC"
-		.BYTE $A0
-		.BYTE $20
-aToAbort:	.BYTE "to abort"
+		BLINK	"ESC"
+aToAbort:	.BYTE " to abort"
 		.BYTE $D
 		.BYTE $FF
 aLoading___:	.BYTE "Loading..."      ; DATA XREF: sub_2CFB+1Ar
@@ -3686,9 +3681,7 @@ loc_2BC8:				; CODE XREF: sub_2BB0+1Bj
 		.BYTE $A9
 		.BYTE $A5
 		.BYTE "<<< "
-		.BYTE $A1
-aPressAnyKeyToC:.BYTE "Press any key to continue"
-		.BYTE $A0
+aPressAnyKeyToC:BLINK	"Press any key to continue"
 		.BYTE $20
 		.BYTE ">>>"
 		.BYTE $D
@@ -5517,31 +5510,20 @@ aExamineSpells:	.BYTE "Examine Spells",0
 		MOVEXY 0,2
 		.BYTE $A5
 aExamine:	.BYTE "Examine "
-		.BYTE $A1
-aI:		.BYTE "I"
-		.BYTE $A0
+		BLINK	"I"
 aTemsOr:	.BYTE "tems or "
-		.BYTE $A1
-aS:		.BYTE "S"
-		.BYTE $A0
+		BLINK	"S"
 aPellsq:	.BYTE "pells?"
 		.BYTE $D
 		.BYTE $FF
 
 aForwardBackEsc:
-		.BYTE $A1
-aF:		.BYTE "F"
-		.BYTE $A0
+		BLINK	"F"
 aOrward:	.BYTE "orward, "
-		.BYTE $A1
-aB:		.BYTE "B"
-		.BYTE $A0
+		BLINK	"B"
 aAckOr:		.BYTE "ack, or "
-		.BYTE $A1
-aEsc_0:		.BYTE "ESC"
-		.BYTE $A0
-		.BYTE $20
-aToExit:	.BYTE "to exit"
+		BLINK	"ESC"
+		.BYTE " to exit"
 		.BYTE $AE
 ; ---------------------------------------------------------------------------
 		JSR	sub_3635
@@ -5642,13 +5624,9 @@ aQuitGameWithou:.BYTE "Quit game without saving character?"
 		.BYTE $D
 byte_382E:	.BYTE $A5		; DATA XREF: RAM:37D4o
 aAreYouSure:	.BYTE "Are you sure ("
-		.BYTE $A1
-aY:		.BYTE 'Y'
-		.BYTE $A0
+		BLINK	'Y'
 aOr:		.BYTE " or "
-		.BYTE $A1
-aN:		.BYTE 'N'
-		.BYTE $A0
+		BLINK	'N'
 		.BYTE ')'
 		.BYTE $D
 		.BYTE $FF
@@ -5808,33 +5786,23 @@ aTheDoorWonTOpe:.BYTE "The door won't open. You may:"
 		.BYTE $D
 		MOVEXY	8,2
 		.BYTE "("
-		.BYTE $A1
-a1:		.BYTE '1'
-		.BYTE $A0
+		BLINK	'1'
 aExamineTheDoor:.BYTE ") Examine the door."
 		MOVEXY 8,3
 		.BYTE '('
-		.BYTE $A1
-a2:		.BYTE '2'
-		.BYTE $A0
+		BLINK	'2'
 aForceTheDoor_:	.BYTE ") Force the door."
 		MOVEXY	8,4
 		.BYTE '('
-		.BYTE $A1
-a3:		.BYTE '3'
-		.BYTE $A0
+		BLINK	'3'
 		.BYTE ") Use a key."
 		MOVEXY	8,5
 		.BYTE '('
-		.BYTE $A1
-a4:		.BYTE '4'
-		.BYTE $A0
+		BLINK	'4'
 aBreakAnEnchant:.BYTE ") Break an enchantment."
 		MOVEXY	8,7
 		.BYTE '('
-		.BYTE $A1
-a0:		.BYTE '0'
-		.BYTE $A0
+		BLINK	'0'
 aLeaveIt_:	.BYTE ") Leave it."
 		.BYTE $FF
 		MOVEXY	0,2
@@ -5866,18 +5834,18 @@ aTheDoorRemains:.BYTE "The door remains shut."
 		.BYTE $D
 		.BYTE $FF
 		MOVEXY	0,2
-		.BYTE $A1
+		.BYTE	BLINKON
 		.BYTE $A5
 aExamining___:	.BYTE "Examining..."
 		.BYTE $D
-		.BYTE $A0
+		.BYTE	BLINKOFF
 		.BYTE $FF
 		MOVEXY	0,2
-		.BYTE $A1
+		.BYTE	BLINKON
 		.BYTE $A5
 aConcentrating_:.BYTE "Concentrating..."
 		.BYTE $D
-		.BYTE $A0
+		.BYTE	BLINKOFF
 		.BYTE $FF
 		.BYTE $FF
 		.BYTE  $B
@@ -10799,17 +10767,11 @@ off_59C1:	.WORD unk_5E53		; DATA XREF: sub_5857+36w sub_58C2+Aw	...
 		.WORD loc_59E5
 		MOVEXY	0,7
 		.BYTE $A5
-		.BYTE $A1
-aY_0:		.BYTE 'Y'
-		.BYTE $A0
+		BLINK	'Y'
 aEs:		.BYTE "es, "
-		.BYTE $A1
-aN_0:		.BYTE 'N'
-		.BYTE $A0
+		BLINK	'N'
 aOOr:		.BYTE "o or "
-		.BYTE $A1
-aEsc_1:		.BYTE "ESC"
-		.BYTE $A0
+		BLINK	"ESC"
 a__0:		.BYTE '.'
 		.BYTE $D
 		.BYTE $FF
@@ -11130,9 +11092,7 @@ aDropHowManyq:	.BYTE "Drop how many?",$D
 byte_5C7D:	MOVEXY	0,7		; DATA XREF: RAM:5C68o
 		.BYTE $A5
 aEnterAmountOrP:.BYTE "Enter amount or press "
-		.BYTE $A1
-aEsc_2:		.BYTE "ESC"
-		.BYTE $A0
+		BLINK	"ESC"
 a__1:		.BYTE '.'
 		.BYTE $D
 		MOVEXY	10,3
@@ -11208,9 +11168,7 @@ aHaveBeenRepair:.BYTE "have been repaired."
 		.WORD loc_5DB6
 		MOVEXY	3,2
 asc_5D51:	.BYTE " ("              ; DATA XREF: RAM:551Bw RAM:5DC3w ...
-		.BYTE $A1
-a1_0:		.BYTE '1'
-		.BYTE $A0
+		BLINK	'1'
 		.BYTE ") "
 		.BYTE $B4
 		.WORD byte_193C
@@ -11224,9 +11182,7 @@ a1_0:		.BYTE '1'
 		.BYTE $A3
 		.WORD loc_5DBB
 asc_5D67:	.BYTE " ("              ; DATA XREF: RAM:551Fw
-		.BYTE $A1
-a2_0:		.BYTE '2'
-		.BYTE $A0
+		BLINK	'2'
 		.BYTE ") "
 		.BYTE $B4
 		.WORD unk_193E
@@ -11240,11 +11196,8 @@ a2_0:		.BYTE '2'
 		.BYTE $A3
 		.WORD loc_5DBB
 asc_5D7D:	.BYTE " ("              ; DATA XREF: RAM:5523w
-		.BYTE $A1
-a3_0:		.BYTE '3'
-		.BYTE $A0
-		.BYTE $29 ; )
-		.BYTE $20
+		BLINK	'3'
+		.BYTE	") "
 		.BYTE $B4
 		.WORD unk_1940
 		.BYTE $1D
@@ -11258,9 +11211,7 @@ a3_0:		.BYTE '3'
 		.BYTE $BB ; »
 		.BYTE $5D ; ]
 asc_5D93:	.BYTE " ("              ; DATA XREF: RAM:5527w
-		.BYTE $A1
-a4_0:		.BYTE '4'
-		.BYTE $A0
+		BLINK	'4'
 		.BYTE $29 ; )
 		.BYTE $20
 		.BYTE $B4 ; ´
@@ -11341,23 +11292,16 @@ loc_5E05:				; CODE XREF: RAM:5DE5j	RAM:5DEAj
 		.BYTE $D
 		MOVEXY	3,2
 		.BYTE " ("
-		.BYTE $A1
-a1_1:		.BYTE '1'
-		.BYTE $A0
-		.BYTE $29 ; )
-		.BYTE $20
+		BLINK	"1"
+		.BYTE	") "
 		.BYTE $AD ; ­
 		.BYTE $3C ; <
 		.BYTE $19
 		.BYTE $AB ; «
 		MOVEXY	3,3
-		.BYTE $20
-		.BYTE $28 ; (
-		.BYTE $A1 ; ¡
-		.BYTE $32 ; 2
-		.BYTE $A0 ;  
-		.BYTE $29 ; )
-		.BYTE $20
+		.BYTE	" ("
+		BLINK	"2"
+		.BYTE	") "
 		.BYTE $AD ; ­
 		.BYTE $3E ; >
 		.BYTE $19
@@ -11365,9 +11309,7 @@ a1_1:		.BYTE '1'
 		MOVEXY	3,4
 		.BYTE $20
 		.BYTE $28 ; (
-		.BYTE $A1 ; ¡
-		.BYTE $33 ; 3
-		.BYTE $A0 ;  
+		BLINK	"3"
 		.BYTE $29 ; )
 		.BYTE $20
 		.BYTE $AD ; ­
@@ -11377,9 +11319,7 @@ a1_1:		.BYTE '1'
 		MOVEXY	3,5
 		.BYTE $20
 		.BYTE $28 ; (
-		.BYTE $A1 ; ¡
-		.BYTE $34 ; 4
-		.BYTE $A0 ;  
+		BLINK	"4"
 		.BYTE $29 ; )
 		.BYTE $20
 		.BYTE $AD ; ­
@@ -11482,34 +11422,21 @@ aOffer:		.BYTE "OFFER",0
 
 a_ItemOrESC:
 aItem:		.BYTE "Item "
-		.BYTE $A1
-		.BYTE '#'
-		.BYTE $A0
+		BLINK	'#'
 aOr_0:		.BYTE " or "
-		.BYTE $A1
-aEsc_3:		.BYTE "ESC"
-		.BYTE $A0
+		BLINK	"ESC"
 aToExit_0:	.BYTE " to exit"
 		.BYTE $AE
 a_ItemForwardBack:
 aItem_0:	.BYTE "Item "
-		.BYTE $A1
-		.BYTE '#'
-		.BYTE $A0
+		BLINK	'#'
 		.BYTE ", "
-		.BYTE $A1
-aF_0:		.BYTE 'F'
-		.BYTE $A0
+		BLINK	'F'
 aOrward_0:	.BYTE "orward, "
-		.BYTE $A1
-aB_0:		.BYTE 'B'
-		.BYTE $A0
+		BLINK	'B'
 aAckOr_0:	.BYTE "ack, or "
-		.BYTE $A1
-aEsc_4:		.BYTE "ESC"
-		.BYTE $A0
-		.BYTE $20
-aToExit_1:	.BYTE "to exit"
+aEsc_4:		BLINK	"ESC"
+		.BYTE " to exit"
 		.BYTE $AE
 aWearInsteadOf:	.BYTE "Wear instead of:",0
 		MOVEXY	0,0
@@ -11517,14 +11444,10 @@ aWearInsteadOf:	.BYTE "Wear instead of:",0
 aUseAs:		.BYTE "Use as:"
 		.BYTE $D
 		MOVEXY	11,3
-		.BYTE $A1
-a1_2:		.BYTE '1'
-		.BYTE $A0
+		BLINK	'1'
 aPrimaryWeapon:	.BYTE " Primary weapon"
 		MOVEXY	11,4
-		.BYTE $A1
-a2_1:		.BYTE '2'
-		.BYTE $A0
+		BLINK	'2'
 aSecondaryWeapo:.BYTE " Secondary weapon"
 		MOVEXY	0,7
 		.BYTE $A5
@@ -11684,17 +11607,13 @@ aYouCastTheSpel:.BYTE "You cast the spell of"
 		.BYTE $D
 		.BYTE $D
 		.BYTE $A5
-		.BYTE $A1
-		.BYTE $7F ; 
-		.BYTE $A0
+		BLINK	$7F
 		.BYTE ' '
 		.BYTE $B4
 		.WORD byte_193C
 		.BYTE $1E
 a__3:		.BYTE ". "
-		.BYTE $A1
-		.BYTE $7F ; 
-		.BYTE $A0
+		BLINK	$7F
 		.BYTE $D
 		.BYTE $FF
 		MOVEXY	0,3
