@@ -10270,7 +10270,7 @@ loc_5667:
 ; ---------------------------------------------------------------------------
 
 loc_566F:				; CODE XREF: RAM:566Aj
-		DEC	$63BB
+		DEC	I_FOOD
 		LDA	$6398
 		BMI	loc_5691
 		LDA	$6399
@@ -10279,7 +10279,7 @@ loc_566F:				; CODE XREF: RAM:566Aj
 		LSR	A
 		LSR	A
 		TAX
-		LDA	unk_6054,X
+		LDA	byte_6054,X
 		LDX	#$99 ; '™'
 		JSR	sub_2E43
 		LDA	#$1C
@@ -10317,9 +10317,9 @@ loc_56AF:				; CODE XREF: RAM:56AAj
 ; ---------------------------------------------------------------------------
 
 loc_56C1:				; CODE XREF: RAM:5573j	RAM:56B5j
-		LDA	#$64 ; 'd'
+		LDA	#<a_YourThroatFails
 		STA	off_16
-		LDA	#$60 ; '`'
+		LDA	#>a_YourThroatFails
 		STA	off_16+1
 		LDX	byte_194A
 		JSR	sub_3C5C
@@ -10767,7 +10767,7 @@ loc_5995:				; CODE XREF: sub_5957+21j sub_5957+2Bj ...
 ; End of function sub_5957
 
 ; ---------------------------------------------------------------------------
-		.BYTE $A6,  0,	0
+		MOVEXY	0,0
 		.BYTE $A5
 aGetq:		.BYTE "GET?"
 		.BYTE $D
@@ -10777,7 +10777,7 @@ aGetq:		.BYTE "GET?"
 		.BYTE $A5
 		.BYTE $AC
 		.WORD byte_59C0
-		.BYTE $A6,  0,	0
+		MOVEXY	0,0
 		.BYTE $A5
 aGetq_0:	.BYTE "GET?"
 		.BYTE $D
@@ -10797,7 +10797,7 @@ off_59C1:	.WORD unk_5E53		; DATA XREF: sub_5857+36w sub_58C2+Aw	...
 		.BYTE $D
 		.BYTE $A3
 		.WORD loc_59E5
-		.BYTE $A6,  0,	7
+		MOVEXY	0,7
 		.BYTE $A5
 		.BYTE $A1
 aY_0:		.BYTE 'Y'
@@ -10828,7 +10828,7 @@ loc_59E8:				; DATA XREF: RAM:59B7o	RAM:6228o
 		STA	byte_18FE
 		RTS
 ; ---------------------------------------------------------------------------
-		.BYTE $A6,  0,	3
+		MOVEXY	0,3
 		.BYTE $A5
 aNothingHere_:	.BYTE "Nothing here."
 		.BYTE $D
@@ -11116,7 +11116,7 @@ loc_5C44:				; CODE XREF: sub_5AB4+13Ej
 
 ; ---------------------------------------------------------------------------
 a_OfferHowMany:
-		.BYTE $A6,  0,	0
+		MOVEXY	0,0
 		.BYTE $A5
 aOfferHowManyq:	.BYTE "Offer how many?"
 		.BYTE $D
@@ -11124,10 +11124,10 @@ aOfferHowManyq:	.BYTE "Offer how many?"
 		.WORD byte_5C7D
 
 a_DropHowMany:
-		.BYTE $A6,  0,	0
+		MOVEXY	0,0
 		.BYTE $A5
 aDropHowManyq:	.BYTE "Drop how many?",$D
-byte_5C7D:	.BYTE $A6,  0,	7	; DATA XREF: RAM:5C68o
+byte_5C7D:	MOVEXY	0,7		; DATA XREF: RAM:5C68o
 		.BYTE $A5
 aEnterAmountOrP:.BYTE "Enter amount or press "
 		.BYTE $A1
@@ -11135,11 +11135,11 @@ aEsc_2:		.BYTE "ESC"
 		.BYTE $A0
 a__1:		.BYTE '.'
 		.BYTE $D
-		.BYTE $A6, $A,	3
+		MOVEXY	10,3
 		.BYTE "> "
 		.BYTE $FF
 a_InvalidEntry:
-		.BYTE $A6,  0,	3
+		MOVEXY	0,3
 		.BYTE $A5
 aInvalidEntryTr:.BYTE "Invalid entry, try again."
 		.BYTE $D
@@ -11185,7 +11185,7 @@ loc_5CEA:				; CODE XREF: RAM:5CD0j
 byte_5D04:	.BYTE 0			; DATA XREF: RAM:loc_5CCAw RAM:5CDCr
 
 a_YourInUseWeap:
-		.BYTE $A6,  0,	2
+		MOVEXY	0,2
 		.BYTE $A5
 aYourInUseWeapo:.BYTE "Your in use weapons and armor"
 		.BYTE $D
@@ -11197,7 +11197,7 @@ aHaveBeenRepair:.BYTE "have been repaired."
 		.BYTE $32 ; 2
 		.BYTE $33 ; 3
 		.BYTE $34 ; 4
-		.BYTE $A6,  0,	0
+		MOVEXY	0,0
 		.BYTE $A2
 		.BYTE $B4
 		.WORD off_193A
@@ -11206,7 +11206,7 @@ aHaveBeenRepair:.BYTE "have been repaired."
 		.BYTE $D
 		.BYTE $A3
 		.WORD loc_5DB6
-		.BYTE $A6,  3,	2
+		MOVEXY	3,2
 asc_5D51:	.BYTE " ("              ; DATA XREF: RAM:551Bw RAM:5DC3w ...
 		.BYTE $A1
 a1_0:		.BYTE '1'
@@ -11220,7 +11220,7 @@ a1_0:		.BYTE '1'
 		.BYTE $AC ; ¬
 		.BYTE $5D ; ]
 		.BYTE $AB
-		.BYTE $A6,  3,	3
+		MOVEXY	3,3
 		.BYTE $A3
 		.WORD loc_5DBB
 asc_5D67:	.BYTE " ("              ; DATA XREF: RAM:551Fw
@@ -11236,7 +11236,7 @@ a2_0:		.BYTE '2'
 		.BYTE $AC ; ¬
 		.BYTE $5D ; ]
 		.BYTE $AB
-		.BYTE $A6,  3,	4
+		MOVEXY	3,4
 		.BYTE $A3
 		.WORD loc_5DBB
 asc_5D7D:	.BYTE " ("              ; DATA XREF: RAM:5523w
@@ -11253,9 +11253,7 @@ a3_0:		.BYTE '3'
 		.BYTE $AC ; ¬
 		.BYTE $5D ; ]
 		.BYTE $AB ; «
-		.BYTE $A6 ; ¦
-		.BYTE	3
-		.BYTE	5
+		MOVEXY	3,5
 		.BYTE $A3 ; £
 		.BYTE $BB ; »
 		.BYTE $5D ; ]
@@ -11547,23 +11545,11 @@ aTheThoughtOfEa:.BYTE "the thought of eating another bite."
 aThePacketSpill:.BYTE "The packet spills onto the ground."
 		.BYTE $D
 		.BYTE $FF
-unk_6054:	.BYTE $30 ; 0		; DATA XREF: RAM:567Fr
-		.BYTE $30 ; 0
-		.BYTE $30 ; 0
-		.BYTE $20
-		.BYTE $20
-		.BYTE $20
-		.BYTE $10
-		.BYTE $10
-		.BYTE $10
-		.BYTE $10
-		.BYTE $10
-		.BYTE $10
-		.BYTE $10
-		.BYTE $10
-		.BYTE $10
-		.BYTE $10
-		.BYTE $A6,  0,	1
+byte_6054:	.BYTE $30,$30,$30,$20,$20,$20,$10,$10	; DATA XREF: RAM:567Fr
+		.BYTE $10,$10,$10,$10,$10,$10,$10,$10
+
+a_YourThroatFails:
+		MOVEXY	0,1
 		.BYTE $A5
 aYourThroatFail:.BYTE "Your throat fails to allow anything"
 		.BYTE $D
