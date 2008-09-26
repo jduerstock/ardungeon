@@ -10709,9 +10709,9 @@ sub_58C2:				; CODE XREF: sub_5857+49p
 		INY
 		LDA	(off_43),Y
 		STA	byte_59E4
-		LDA	#$AB ; '«'
+		LDA	#<a_Getq
 		STA	byte_5955
-		LDA	#$59 ; 'Y'
+		LDA	#>a_Getq
 		STA	byte_5956
 
 loc_5904:				; CODE XREF: sub_58C2+24j RAM:5932j
@@ -10723,14 +10723,16 @@ loc_5904:				; CODE XREF: sub_58C2+24j RAM:5932j
 		JSR	sub_3C5C
 
 loc_5914:				; CODE XREF: RAM:5923j
-		LDA	#$21 ; '!'
+		LDA	#<loc_5921
 		STA	word_1977
-		LDA	#$59 ; 'Y'
+		LDA	#>loc_5921
 		STA	word_1977+1
 		JMP	loc_2FF3
 ; End of function sub_58C2
 
 ; ---------------------------------------------------------------------------
+
+loc_5921:
 		LDA	$31
 		BMI	loc_5914
 		CMP	#$1B
@@ -10822,6 +10824,8 @@ aGetq:		.BYTE "GET?"
 		.BYTE $A5
 		.BYTE $AC
 		.WORD byte_59C0
+
+a_Getq:
 		MOVEXY	0,0
 		.BYTE $A5
 aGetq_0:	.BYTE "GET?"
