@@ -912,13 +912,13 @@ loc_8619:				; CODE XREF: RAM:8611j
 		LSR	$57,X
 		ROR	$A6
 		SBC	#$22 ; '"'
-		LDA	$63BB
+		LDA	I_FOOD
 		BNE	loc_8641
 		JMP	$5774
 ; ---------------------------------------------------------------------------
 
 loc_8641:				; CODE XREF: RAM:863Cj
-		DEC	$63BB
+		DEC	I_FOOD
 		LDA	$6398
 		BMI	loc_8663
 		LDA	$6399

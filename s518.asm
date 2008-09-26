@@ -6189,7 +6189,7 @@ aWaterFlasks:	.BYTE "Water Flasks"
 		.BYTE $D
 		MOVEXY	5,1
 		.BYTE $B2
-		.WORD $63BB
+		.WORD	I_FOOD
 		.BYTE 3
 		MOVEXY	18,1
 		.BYTE $B2
@@ -6964,7 +6964,7 @@ loc_428B:				; CODE XREF: RAM:loc_4283j
 		LDX	#6
 
 loc_429F:				; CODE XREF: RAM:42BBj
-		LDA	$63BB,X
+		LDA	I_FOOD,X
 		LDY	$41F5,X
 
 loc_42A5:				; CODE XREF: RAM:42A9j
@@ -10264,7 +10264,7 @@ unk_5663:	.BYTE	<(loc_5667-1)	; DATA XREF: sub_51B6+4A4r
 ; ---------------------------------------------------------------------------
 
 loc_5667:
-		LDA	$63BB
+		LDA	I_FOOD
 		BNE	loc_566F
 		JMP	loc_5774
 ; ---------------------------------------------------------------------------
@@ -11405,7 +11405,7 @@ unk_5E55:	.BYTE	0		; DATA XREF: RAM:5DBEr	RAM:5DCEr
 		.BYTE $42 ; B
 aFoodPackets_0:	.BYTE "Food Packets: "  ; DATA XREF: RAM:off_5F0Do
 		.BYTE $B2
-		.WORD $63BB
+		.WORD	I_FOOD
 		.BYTE 3
 		.BYTE $AE
 aWaterFlasks_0:	.BYTE "Water Flasks: "  ; DATA XREF: RAM:5F0Fo
