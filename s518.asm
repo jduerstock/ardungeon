@@ -6918,10 +6918,10 @@ loc_424F:				; CODE XREF: RAM:4271j
 		JSR	sub_4B74
 		BEQ	loc_426F
 		LDY	#0
-		LDA	($41),Y
+		LDA	(off_41),Y
 		BPL	loc_426F
 		LDY	#4
-		LDA	($41),Y
+		LDA	(off_41),Y
 		CLC
 		ADC	byte_42E5
 		STA	byte_42E5
@@ -7518,13 +7518,13 @@ off_45B5:	.WORD asc_47E5		; DATA XREF: RAM:3D79o	sub_42E7+8w ...
 		.WORD loc_4563
 
 byte_45D9:
-		.BYTE $95 ; •
-		.BYTE $99 ; ™
-		.BYTE $9A ; š
-		.BYTE $9B ; ›
-		.BYTE $94 ; ”
-		.BYTE $97 ; —
-		.BYTE $98 ; ˜
+		.BYTE	I_TEMPER-SEG_6300
+		.BYTE	I_HUNGER-SEG_6300
+		.BYTE	I_THIRST-SEG_6300
+		.BYTE	I_ENERGY-SEG_6300
+		.BYTE	I_BURDEN-SEG_6300
+		.BYTE	I_DRUNK-SEG_6300
+		.BYTE	I_STOMACH-SEG_6300
 
 byte_45E0:
 		.BYTE	<byte_460A
