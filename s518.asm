@@ -2620,24 +2620,34 @@ byte_25C1:	.BYTE 0			; DATA XREF: sub_2503+3Cw sub_2503+52r
 byte_25C2:	.BYTE 0			; DATA XREF: sub_256B+18w sub_256B+20r
 byte_25C3:	.BYTE 0			; DATA XREF: sub_2503+3Fw sub_256B+2Cr
 byte_25C4:	.BYTE 0			; DATA XREF: sub_2503+5Cw sub_2503+62w ...
+
+byte_25C5:
 		.BYTE $CC ; М
 		.BYTE $B6 ; ¶
 		.BYTE $AD ; ­
+
+byte_25C8:
 		.BYTE $F0 ; р
 		.BYTE $FF
 		.BYTE $EE ; о
 		.BYTE $F8 ; ш
+
+byte_25CC:
 		.BYTE $88 ; €
 		.BYTE $88 ; €
 		.BYTE $72 ; r
 		.BYTE $99 ; ™
 		.BYTE $88 ; €
 		.BYTE $66 ; f
+
+byte_25D2:
 		.BYTE $FC ; ь
 		.BYTE $AD ; ­
 		.BYTE $A2 ; ў
 		.BYTE $99 ; ™
 		.BYTE $F3 ; у
+
+byte_25D7:
 		.BYTE $66 ; f
 		.BYTE $4C ; L
 		.BYTE $4C ; L
@@ -2645,6 +2655,8 @@ byte_25C4:	.BYTE 0			; DATA XREF: sub_2503+5Cw sub_2503+62w ...
 		.BYTE $5B ; [
 		.BYTE $5B ; [
 		.BYTE $5B ; [
+
+byte_25DE:
 		.BYTE $79 ; y
 		.BYTE $90 ; ђ
 		.BYTE $80 ; Ђ
@@ -2664,24 +2676,34 @@ unk_25EB:	.BYTE $A1 ; Ў		; DATA XREF: sub_256B+2Fr
 		.BYTE $A1 ; Ў
 		.BYTE $A1 ; Ў
 		.BYTE $A1 ; Ў
+
+byte_25F1:
 		.BYTE $40 ; @
 		.BYTE	8
 		.BYTE	8
+
+byte_25F4:
 		.BYTE	4
 		.BYTE	1
 		.BYTE	3
 		.BYTE	3
+
+byte_25F8:
 		.BYTE $10
 		.BYTE	8
 		.BYTE	8
 		.BYTE	6
 		.BYTE	5
 		.BYTE	5
+
+byte_25FE:
 		.BYTE $50 ; P
 		.BYTE $2F ; /
 		.BYTE	8
 		.BYTE $26 ; &
 		.BYTE $2F ; /
+
+byte_2603:
 		.BYTE $61 ; a
 		.BYTE  $C
 		.BYTE  $C
@@ -2689,6 +2711,8 @@ unk_25EB:	.BYTE $A1 ; Ў		; DATA XREF: sub_256B+2Fr
 		.BYTE  $C
 		.BYTE $17
 		.BYTE  $C
+
+byte_260A:
 		.BYTE $20
 		.BYTE $40 ; @
 		.BYTE	8
@@ -2702,30 +2726,30 @@ unk_2611:	.BYTE	4		; DATA XREF: sub_2503+36r
 		.BYTE	6
 		.BYTE	8
 		.BYTE	8
-unk_2617:	.BYTE $F1 ; с		; DATA XREF: sub_2503+22r
-		.BYTE $F4 ; ф
-		.BYTE $F8 ; ш
-		.BYTE $FE ; ю
-		.BYTE	3
-		.BYTE  $A
-unk_261D:	.BYTE $25 ; %		; DATA XREF: sub_2503+27r
-		.BYTE $25 ; %
-		.BYTE $25 ; %
-		.BYTE $25 ; %
-		.BYTE $26 ; &
-		.BYTE $26 ; &
-unk_2623:	.BYTE $C5 ; Е		; DATA XREF: sub_2503+18r
-		.BYTE $C8 ; И
-		.BYTE $CC ; М
-		.BYTE $D2 ; Т
-		.BYTE $D7 ; Ч
-		.BYTE $DE ; Ю
-unk_2629:	.BYTE $25 ; %		; DATA XREF: sub_2503+1Dr
-		.BYTE $25 ; %
-		.BYTE $25 ; %
-		.BYTE $25 ; %
-		.BYTE $25 ; %
-		.BYTE $25 ; %
+unk_2617:	.BYTE	<byte_25F1	; DATA XREF: sub_2503+22r
+		.BYTE	<byte_25F4
+		.BYTE	<byte_25F8
+		.BYTE	<byte_25FE
+		.BYTE	<byte_2603
+		.BYTE	<byte_260A
+unk_261D:	.BYTE	>byte_25F1	; DATA XREF: sub_2503+27r
+		.BYTE	>byte_25F4
+		.BYTE	>byte_25F8
+		.BYTE	>byte_25FE
+		.BYTE	>byte_2603
+		.BYTE	>byte_260A
+unk_2623:	.BYTE	<byte_25C5	; DATA XREF: sub_2503+18r
+		.BYTE	<byte_25C8
+		.BYTE	<byte_25CC
+		.BYTE	<byte_25D2
+		.BYTE	<byte_25D7
+		.BYTE	<byte_25DE
+unk_2629:	.BYTE	>byte_25C5	; DATA XREF: sub_2503+1Dr
+		.BYTE	>byte_25C8
+		.BYTE	>byte_25CC
+		.BYTE	>byte_25D2
+		.BYTE	>byte_25D7
+		.BYTE	>byte_25DE
 
 ; ЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫ S U B	R O U T	I N E ЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫ
 
