@@ -10854,9 +10854,9 @@ loc_5ACB:				; CODE XREF: RAM:376Bp
 		STA	off_5CC3+1
 
 loc_5ADF:				; CODE XREF: sub_5AB4+14j
-		LDA	#$57 ; 'W'
+		LDA	#<a_ItemForwardBack
 		STA	off_1944
-		LDA	#$5F ; '_'
+		LDA	#>a_ItemForwardBack
 		STA	off_1944+1
 		LDA	#$C
 		STA	byte_6276
@@ -10914,9 +10914,9 @@ loc_5B40:				; CODE XREF: sub_5AB4+B6j
 		BCS	loc_5B0E
 		BEQ	loc_5B0E
 		BPL	loc_5B6D
-		LDA	#$A4 ; '¤'
+		LDA	#<a_InvalidEntry
 		STA	off_16
-		LDA	#$5C ; '\'
+		LDA	#>a_InvalidEntry
 		STA	off_16+1
 		LDX	byte_194A
 		JSR	sub_3C5C
@@ -11069,6 +11069,7 @@ a__1:		.BYTE '.'
 		.BYTE $A6, $A,	3
 		.BYTE "> "
 		.BYTE $FF
+a_InvalidEntry:
 		.BYTE $A6,  0,	3
 		.BYTE $A5
 aInvalidEntryTr:.BYTE "Invalid entry, try again."
@@ -11425,6 +11426,7 @@ aEsc_3:		.BYTE "ESC"
 		.BYTE $A0
 aToExit_0:	.BYTE " to exit"
 		.BYTE $AE
+a_ItemForwardBack:
 aItem_0:	.BYTE "Item "
 		.BYTE $A1
 		.BYTE '#'
