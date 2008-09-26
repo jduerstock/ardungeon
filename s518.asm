@@ -9590,7 +9590,7 @@ loc_5244:				; CODE XREF: RAM:523Fj
 		LDX	#2
 
 loc_5246:				; CODE XREF: RAM:524Cj
-		CMP	$5260,X
+		CMP	byte_5260,X
 		BEQ	loc_5251
 		DEX
 		BPL	loc_5246
@@ -9604,32 +9604,38 @@ loc_5251:				; CODE XREF: RAM:5249j
 		PHA
 		RTS
 ; ---------------------------------------------------------------------------
-unk_525A:	.BYTE $62 ; b		; DATA XREF: RAM:5255r
-		.BYTE $81 ; Å
-		.BYTE $92 ; í
-unk_525D:	.BYTE $52 ; R		; DATA XREF: RAM:loc_5251r
-		.BYTE $52 ; R
-		.BYTE $52 ; R
+unk_525A:	.BYTE	<(loc_5263-1)	; DATA XREF: RAM:5255r
+		.BYTE	<(loc_5282-1)
+		.BYTE	<(loc_5293-1)
+unk_525D:	.BYTE	>(loc_5263-1)	; DATA XREF: RAM:loc_5251r
+		.BYTE	>(loc_5282-1)
+		.BYTE	>(loc_5293-1)
+
+byte_5260:
 		.BYTE	8
 		.BYTE $10
 		.BYTE $18
 ; ---------------------------------------------------------------------------
-		LDA	$63BE
+
+loc_5263:
+		LDA	I_CRYSTALS
 		BEQ	loc_526E
-		DEC	$63BE
+		DEC	I_CRYSTALS
 		JMP	loc_5209
 ; ---------------------------------------------------------------------------
 
 loc_526E:				; CODE XREF: RAM:5266j
-		LDA	#2
+		LDA	#<a_YouNeedACryst
 		STA	off_16
-		LDA	#$61 ; 'a'
+		LDA	#>a_YouNeedACryst
 		STA	off_16+1
 		LDX	byte_194A
 		JSR	sub_3C5C
 		JSR	sub_2BFA
 		JMP	loc_5225
 ; ---------------------------------------------------------------------------
+
+loc_5282:
 		LDY	#0
 		LDA	(off_43),Y
 		SEC
@@ -9641,6 +9647,8 @@ loc_526E:				; CODE XREF: RAM:5266j
 loc_5290:				; CODE XREF: RAM:528Bj
 		JMP	loc_5209
 ; ---------------------------------------------------------------------------
+
+loc_5293:
 		LDY	#1
 		LDA	(off_43),Y
 		BEQ	loc_52A3
@@ -11567,6 +11575,8 @@ aYouDrinkA:	.BYTE "You drink a"
 a__2:		.BYTE '.'
 		.BYTE $D
 		.BYTE $FF
+
+a_YouNeedACryst:
 		.BYTE $A8
 		MOVEXY	0,3
 		.BYTE $A5
