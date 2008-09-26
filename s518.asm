@@ -644,13 +644,15 @@ loc_1A32:				; CODE XREF: sub_1A0D+29j
 ; End of function sub_1A0D
 
 ; ---------------------------------------------------------------------------
-unk_1A41:	.BYTE $1A		; DATA XREF: sub_1A0D+2Br
-		.BYTE $1A
-		.BYTE $1B
-unk_1A44:	.BYTE $46 ; F		; DATA XREF: sub_1A0D+2Fr
-		.BYTE $64 ; d
-		.BYTE $18
+unk_1A41:	.BYTE	>(loc_1A47-1)	; DATA XREF: sub_1A0D+2Br
+		.BYTE	>(loc_1A65-1)
+		.BYTE	>(loc_1B19-1)
+unk_1A44:	.BYTE	<(loc_1A47-1)	; DATA XREF: sub_1A0D+2Fr
+		.BYTE	<(loc_1A65-1)
+		.BYTE	<(loc_1B19-1)
 ; ---------------------------------------------------------------------------
+
+loc_1A47:
 		LDA	#$55 ; 'U'
 		STA	$200
 		STA	$248
@@ -667,6 +669,8 @@ loc_1A5B:				; CODE XREF: RAM:1A5Fj
 		STA	$253
 		RTS
 ; ---------------------------------------------------------------------------
+
+loc_1A65:
 		LDA	#$2F ; '/'
 		STA	$200
 		STA	$248
@@ -765,6 +769,8 @@ loc_1B0E:				; CODE XREF: RAM:1B11j	RAM:1B16j
 		BNE	loc_1B0E
 		RTS
 ; ---------------------------------------------------------------------------
+
+loc_1B19:
 		JSR	sub_1C09
 		LDA	#<loc_1B2F
 		STA	$200
@@ -10430,16 +10436,16 @@ loc_570C:				; CODE XREF: RAM:5714j
 loc_5723:
 		LDA	$63C1
 		BEQ	loc_5774
-		LDA	#$61 ; 'a'
+		LDA	#<a_ItIs
 		STA	off_16
-		LDA	#$61 ; 'a'
+		LDA	#>a_ItIs
 		STA	off_16+1
 		JSR	sub_2E31
-		LDA	#$73 ; 's'
+		LDA	#'s'
 		LDX	$6309
 		CPX	#1
 		BNE	loc_573E
-		LDA	#$20 ; ' '
+		LDA	#' '
 
 loc_573E:				; CODE XREF: RAM:573Aj
 		STA	aMinutes+6
@@ -11634,6 +11640,8 @@ a_YouHaveNone:
 aYouHaveNone_:	.BYTE "You have none."
 		.BYTE $D
 		.BYTE $FF
+
+a_ItIs:
 		MOVEXY	0,2
 		.BYTE $A5
 aItIs:		.BYTE "It is "
