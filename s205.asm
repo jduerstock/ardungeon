@@ -25,29 +25,29 @@ loc_8014:				; CODE XREF: sub_8000+17j
 		LDA	#>loc_2297
 		STA	off_20E+1
 		LDA	#$4F ; 'O'
-		STA	$20C
+		STA	off_20C
 		LDA	#$22 ; '"'
-		STA	$20D
+		STA	off_20C+1
 		LDA	#$E7 ; 'Á'
-		STA	$20A
+		STA	off_20A
 		LDA	#$21 ; '!'
-		STA	$20B
+		STA	off_20A+1
 		LDA	#$AC ; '¨'
-		STA	$216
+		STA	off_216
 		LDA	#$22 ; '"'
-		STA	$217
+		STA	off_216+1
 		LDA	#$53 ; 'S'
-		STA	$208
+		STA	off_208
 		LDA	#$26 ; '&'
-		STA	$209
+		STA	off_208+1
 		LDA	#$9D ; 'ù'
-		STA	$254
+		STA	off_254
 		LDA	#$19
-		STA	$255
+		STA	off_254+1
 		LDA	#$47 ; 'G'
-		STA	$222
+		STA	off_222
 		LDA	#$23 ; '#'
-		STA	$223
+		STA	off_222+1
 		JSR	sub_819E
 		LDA	$258
 		ASL	A
