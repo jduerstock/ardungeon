@@ -1,4 +1,5 @@
 		.include	"equates.inc"
+		.include	"globals.inc"
 
 ;		.ORG	$1E00
 		.RES	398, $00
@@ -54,9 +55,9 @@ loc_2014:				; CODE XREF: RAM:2017j
 		LDA	#7
 		STA	$237
 		LDA	#$8E ; 'Ž'
-		STA	$20E
+		STA	off_20E
 		LDA	#$22 ; '"'
-		STA	$20F
+		STA	off_20E+1
 		LDA	#$46 ; 'F'
 		STA	$20C
 		LDA	#$22 ; '"'

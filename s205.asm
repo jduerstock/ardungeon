@@ -20,10 +20,10 @@ loc_8014:				; CODE XREF: sub_8000+17j
 		BNE	loc_8014
 		LDA	#7
 		STA	$237
-		LDA	#$97 ; '—'
-		STA	$20E
-		LDA	#$22 ; '"'
-		STA	$20F
+		LDA	#<loc_2297
+		STA	off_20E
+		LDA	#>loc_2297
+		STA	off_20E+1
 		LDA	#$4F ; 'O'
 		STA	$20C
 		LDA	#$22 ; '"'
