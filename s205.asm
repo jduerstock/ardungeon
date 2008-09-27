@@ -24,29 +24,29 @@ loc_8014:				; CODE XREF: sub_8000+17j
 		STA	off_20E
 		LDA	#>loc_2297
 		STA	off_20E+1
-		LDA	#$4F ; 'O'
+		LDA	#<loc_224F
 		STA	off_20C
-		LDA	#$22 ; '"'
+		LDA	#>loc_224F
 		STA	off_20C+1
-		LDA	#$E7 ; 'Á'
+		LDA	#<loc_21E7
 		STA	off_20A
-		LDA	#$21 ; '!'
+		LDA	#>loc_21E7
 		STA	off_20A+1
-		LDA	#$AC ; '¨'
+		LDA	#<loc_22AC
 		STA	off_216
-		LDA	#$22 ; '"'
+		LDA	#>loc_22AC
 		STA	off_216+1
-		LDA	#$53 ; 'S'
+		LDA	#<loc_2653
 		STA	off_208
-		LDA	#$26 ; '&'
+		LDA	#>loc_2653
 		STA	off_208+1
-		LDA	#$9D ; 'ù'
+		LDA	#<byte_199D
 		STA	off_254
-		LDA	#$19
+		LDA	#>byte_199D
 		STA	off_254+1
-		LDA	#$47 ; 'G'
+		LDA	#<loc_2347
 		STA	off_222
-		LDA	#$23 ; '#'
+		LDA	#>loc_2347
 		STA	off_222+1
 		JSR	sub_819E
 		LDA	$258
@@ -84,9 +84,9 @@ sub_809F:				; CODE XREF: RAM:8089p
 		LDA	#0
 
 loc_80A3:				; CODE XREF: sub_809F+Ej
-		STA	$18C1,X
-		STA	$18C4,X
-		STA	$18C7,X
+		STA	byte_18C1,X
+		STA	byte_18C4,X
+		STA	byte_18C7,X
 		DEX
 		BPL	loc_80A3
 		STA	$1F

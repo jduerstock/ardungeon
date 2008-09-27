@@ -1,4 +1,5 @@
 		.include	"equates.inc"
+		.include	"exp_kernel.inc"
 		.include	"globals.inc"
 
 ;		.ORG	$1E00
@@ -105,9 +106,9 @@ loc_2014:				; CODE XREF: RAM:2017j
 		LDA	#0
 
 loc_2095:				; CODE XREF: RAM:209Fj
-		STA	$18C1,X
-		STA	$18C4,X
-		STA	$18C7,X
+		STA	byte_18C1,X
+		STA	byte_18C4,X
+		STA	byte_18C7,X
 		DEX
 		BPL	loc_2095
 		STA	$1F

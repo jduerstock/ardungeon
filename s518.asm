@@ -264,13 +264,13 @@ byte_18BD:	.BYTE 0			; DATA XREF: RAM:1B79r
 byte_18BE:	.BYTE 0			; DATA XREF: RAM:1BC8r
 byte_18BF:	.BYTE 0			; DATA XREF: RAM:1B73r
 		.BYTE	0
-unk_18C1:	.BYTE	0		; DATA XREF: sub_1C88+8r sub_1C88+4Dw
+byte_18C1:	.BYTE	0		; DATA XREF: sub_1C88+8r sub_1C88+4Dw
 		.BYTE	0
 		.BYTE	0
-unk_18C4:	.BYTE	0		; DATA XREF: sub_1C88+Dr sub_1C88+56w
+byte_18C4:	.BYTE	0		; DATA XREF: sub_1C88+Dr sub_1C88+56w
 		.BYTE	0
 		.BYTE	0
-unk_18C7:	.BYTE	0		; DATA XREF: sub_1C88+16r sub_1C88+5Bw
+byte_18C7:	.BYTE	0		; DATA XREF: sub_1C88+16r sub_1C88+5Bw
 		.BYTE	0
 		.BYTE	0
 byte_18CA:	.BYTE	0		; DATA XREF: RAM:loc_1E40r
@@ -1021,13 +1021,13 @@ loc_1C8C:				; CODE XREF: RAM:1818j	RAM:2EE0p
 
 loc_1C8E:				; CODE XREF: sub_1C84+2j sub_1C88+2j
 		STX	$23
-		LDA	unk_18C1,X
+		LDA	byte_18C1,X
 		STA	$1F
-		LDA	unk_18C4,X
+		LDA	byte_18C4,X
 		CLC
 		ADC	unk_1FA8,X
 		STA	$20
-		LDA	unk_18C7,X
+		LDA	byte_18C7,X
 		STA	BLINKFLAG
 		LDA	#0
 		STA	$24
@@ -1067,13 +1067,13 @@ loc_1CCF:				; CODE XREF: sub_1C88+39j
 loc_1CD1:				; CODE XREF: sub_1C88+32j
 		LDX	$23
 		LDA	$1F
-		STA	unk_18C1,X
+		STA	byte_18C1,X
 		LDA	$20
 		SEC
 		SBC	unk_1FA8,X
-		STA	unk_18C4,X
+		STA	byte_18C4,X
 		LDA	BLINKFLAG
-		STA	unk_18C7,X
+		STA	byte_18C7,X
 		RTS
 ; End of function sub_1C88
 
@@ -2010,6 +2010,8 @@ sub_21D1:				; CODE XREF: sub_248E-3EDp
 ; End of function sub_21D1
 
 ; ---------------------------------------------------------------------------
+
+loc_21E7:
 		TYA
 		PHA
 		LDA	$D20F
@@ -2072,6 +2074,8 @@ loc_2248:				; CODE XREF: RAM:223Fj
 		LDA	#$FF
 		STA	$242
 		BNE	loc_2216
+
+loc_224F:
 		TYA
 		PHA
 		INC	off_0
@@ -2129,6 +2133,8 @@ loc_22AA:				; CODE XREF: RAM:229Aj
 		PLA
 		RTI
 ; ---------------------------------------------------------------------------
+
+loc_22AC:
 		PHA
 		LDA	$D20E
 		AND	#$20 ; ' '
@@ -2137,7 +2143,7 @@ loc_22AA:				; CODE XREF: RAM:229Aj
 		STA	$D20E
 		LDA	$236
 		STA	$D20E
-		JMP	($20A)
+		JMP	(off_20A)
 ; ---------------------------------------------------------------------------
 
 loc_22C2:				; CODE XREF: RAM:22B2j
@@ -2225,6 +2231,8 @@ loc_230A:				; CODE XREF: RAM:235Ej
 loc_2344:				; CODE XREF: RAM:2321j	RAM:2329j ...
 		JMP	loc_244B
 ; ---------------------------------------------------------------------------
+
+loc_2347:
 		CLD
 		INC	$252
 		LDX	byte_18B9
@@ -2807,6 +2815,8 @@ loc_2650:				; CODE XREF: sub_2643+2j
 ; End of function sub_2643
 
 ; ---------------------------------------------------------------------------
+
+loc_2653:
 		TXA
 		PHA
 		LDA	$30
