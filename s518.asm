@@ -497,6 +497,8 @@ unk_1987:	.BYTE $80 ; €		; DATA XREF: sub_2CFB:loc_2D18w
 		.BYTE $80 ; €
 		.BYTE $80 ; €
 byte_199C:	.BYTE 0			; DATA XREF: sub_245D+1Cw sub_2503r ...
+
+byte_199D:
 		.BYTE $70 ; p
 		.BYTE $70 ; p
 		.BYTE $30 ; 0
@@ -530,6 +532,8 @@ byte_199C:	.BYTE 0			; DATA XREF: sub_245D+1Cw sub_2503r ...
 		.BYTE $41 ; A
 		.BYTE $9D ; 
 		.BYTE $19
+
+byte_19BE:
 		.BYTE $70 ; p
 		.BYTE $70 ; p
 		.BYTE $30 ; 0
@@ -577,14 +581,14 @@ byte_199C:	.BYTE 0			; DATA XREF: sub_245D+1Cw sub_2503r ...
 		.BYTE	0
 		.BYTE	2
 		.BYTE $41 ; A
-		.BYTE $BE ; ¾
-		.BYTE $19
-unk_19EF:	.BYTE $19		; DATA XREF: sub_1A0D+14r
-		.BYTE $19
-		.BYTE $19
-unk_19F2:	.BYTE $9D ; 		; DATA XREF: sub_1A0D+1Ar
-		.BYTE $BE ; ¾
-		.BYTE $BE ; ¾
+		.WORD	byte_19BE
+
+unk_19EF:	.BYTE	>byte_199D	; DATA XREF: sub_1A0D+14r
+		.BYTE	>byte_19BE
+		.BYTE	>byte_19BE
+unk_19F2:	.BYTE	<byte_199D	; DATA XREF: sub_1A0D+1Ar
+		.BYTE	<byte_19BE
+		.BYTE	<byte_19BE
 		.BYTE $70 ; p
 		.BYTE $70 ; p
 		.BYTE $70 ; p
