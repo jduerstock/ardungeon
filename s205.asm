@@ -306,77 +306,81 @@ loc_8221:				; CODE XREF: sub_819E+Bj
 ; ---------------------------------------------------------------------------
 
 		.SEGMENT	"SEGF900"
+
+loc_F900:
 		LDA	SEGNO
 		CMP	#8
-		BCS	loc_825A
+		BCS	loc_F937
 		STA	$F9CE
-		LDA	#0
-		STA	7
-		LDA	#$AC ; '¬'
-		STA	8
-		LDA	#0
-		STA	9
-		LDA	#$C0 ; 'À'
-		STA	$A
-		LDX	#$10
-		LDY	#0
+		LDA	#<SEG_AC00
+		STA	off_7
+		LDA	#>SEG_AC00
+		STA	off_7+1
+		LDA	#<$C000
+		STA	off_9
+		LDA	#>$C000
+		STA	off_9+1
+		LDX	#>$1000
+		LDY	#<$1000
 		JSR	$2E0D
-		LDA	#0
-		STA	7
-		LDA	#$BC ; '¼'
-		STA	8
-		LDA	#0
-		STA	9
-		LDA	#$D8 ; 'Ø'
-		STA	$A
-		LDX	#4
-		LDY	#0
-		BEQ	loc_8271
+		LDA	#<$BC00
+		STA	off_7
+		LDA	#>$BC00
+		STA	off_7+1
+		LDA	#<$D800
+		STA	off_9
+		LDA	#>$D800
+		STA	off_9+1
+		LDX	#>$400
+		LDY	#<$400
+		BEQ	loc_F94E
 
-loc_825A:				; CODE XREF: RAM:8228j
+loc_F937:				; CODE XREF: RAM:8228j
 		STA	$F9CD
-		LDA	#$F0 ; 'ð'
-		STA	7
-		LDA	#$96 ; '–'
-		STA	8
-		LDA	#0
-		STA	9
-		LDA	#$DC ; 'Ü'
-		STA	$A
-		LDX	#$15
-		LDY	#$10
+		LDA	#<$96F0
+		STA	off_7	
+		LDA	#>$96F0
+		STA	off_7+1
+		LDA	#<$DC00
+		STA	off_9
+		LDA	#>$DC00
+		STA	off_9+1
+		LDX	#>$1510
+		LDY	#<$1510
 
-loc_8271:				; CODE XREF: RAM:8258j
+loc_F94E:				; CODE XREF: RAM:8258j
 		JSR	$2E0D
 		CLC
 		RTS
 ; ---------------------------------------------------------------------------
+
+loc_F953:
 		LDA	SEGNO
 		CMP	#8
 		BCS	loc_82AF
 		CMP	$F9CE
 		BNE	loc_82CD
-		LDA	#0
-		STA	7
-		LDA	#$C0 ; 'À'
-		STA	8
-		LDA	#0
-		STA	9
-		LDA	#$AC ; '¬'
-		STA	$A
-		LDX	#$10
-		LDY	#0
+		LDA	#<$C000
+		STA	off_7
+		LDA	#>$C000
+		STA	off_7+1
+		LDA	#<SEG_AC00
+		STA	off_9
+		LDA	#>SEG_AC00
+		STA	off_9+1
+		LDX	#>$1000
+		LDY	#<$1000
 		JSR	$2E0D
-		LDA	#0
-		STA	7
-		LDA	#$D8 ; 'Ø'
-		STA	8
-		LDA	#0
-		STA	9
-		LDA	#$BC ; '¼'
-		STA	$A
-		LDX	#4
-		LDY	#0
+		LDA	#<$D800
+		STA	off_7
+		LDA	#>$D800
+		STA	off_7+1
+		LDA	#<$BC00
+		STA	off_9
+		LDA	#>$BC00
+		STA	off_9+1
+		LDX	#>$400
+		LDY	#<$400
 		BEQ	loc_82C8
 
 loc_82AF:				; CODE XREF: RAM:827Bj
