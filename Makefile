@@ -69,7 +69,8 @@ s017.bin:
 	cl65 --start-addr 0x0600 -t none s017.asm -o s017.bin
 
 s205.bin:
-	cl65 --start-addr 0x8000 -t none s205.asm -o s205.bin
+	ca65 -o s205.o s205.asm
+	ld65 -o s205.bin -C s205.cfg s205.o
 
 s225.bin:
 	cl65 --start-addr 0x1e00 -t none s225.asm -o s225.bin
