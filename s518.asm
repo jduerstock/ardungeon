@@ -919,7 +919,7 @@ loc_1C0B:				; CODE XREF: sub_1C09+Dj
 unk_1C19:	.BYTE $46 ; F		; DATA XREF: RAM:1B35r
 		.BYTE $68 ; h
 		.BYTE $88 ; ˆ
-unk_1C1C:	.BYTE $B6 ; ¶		; DATA XREF: RAM:loc_23A3r
+byte_1C1C:	.BYTE $B6 ; ¶		; DATA XREF: RAM:loc_23A3r
 		.BYTE $76 ; v
 		.BYTE $9E ; ž
 		.BYTE $34 ; 4
@@ -2255,10 +2255,10 @@ loc_236F:				; CODE XREF: RAM:235Cj
 		STA	$D402
 		LDA	$255
 		STA	$D403
-		LDA	$248
-		STA	$200
-		LDA	$249
-		STA	$201
+		LDA	off_248
+		STA	off_200
+		LDA	off_248+1
+		STA	off_200+1
 		LDA	#$C0 ; 'À'
 		STA	$D40E
 		LDA	$256
@@ -2278,7 +2278,7 @@ loc_23A1:				; CODE XREF: RAM:239Bj
 		LDX	#5
 
 loc_23A3:				; CODE XREF: RAM:23AAj
-		LDA	unk_1C1C,X
+		LDA	byte_1C1C,X
 		STA	$D015,X
 		DEX
 		BNE	loc_23A3
