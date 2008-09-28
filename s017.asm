@@ -6973,9 +6973,9 @@ loc_22C0:				; DATA XREF: RAM:241Eo
 		LDA	#$28 ; '('
 		STA	$D403
 		LDA	#$EE ; 'î'
-		STA	$200
+		STA	off_200
 		LDA	#$28 ; '('
-		STA	$201
+		STA	off_200+1
 		LDA	#$98 ; '˜'
 		STA	$D409
 		LDX	#3
@@ -7007,9 +7007,9 @@ loc_2306:				; DATA XREF: RAM:242Eo
 		LDA	#$C0 ; 'À'
 		STA	$D40E
 		LDA	#$E4 ; 'ä'
-		STA	$200
+		STA	off_200
 		LDA	#$23 ; '#'
-		STA	$201
+		STA	off_200+1
 		LDA	#$8E ; 'Ž'
 		STA	byte_2861
 		LDX	#2
@@ -7037,9 +7037,9 @@ loc_2332:				; DATA XREF: RAM:2424o
 		LDA	#$C0 ; 'À'
 		STA	$D40E
 		LDA	#$9E ; 'ž'
-		STA	$200
+		STA	off_200
 		LDA	#$23 ; '#'
-		STA	$201
+		STA	off_200+1
 		LDX	#2
 
 loc_2343:				; CODE XREF: RAM:234Aj
@@ -7071,9 +7071,9 @@ loc_2368:				; DATA XREF: RAM:2428o
 		LDA	#$C0 ; 'À'
 		STA	$D40E
 		LDA	#$B9 ; '¹'
-		STA	$200
+		STA	off_200
 		LDA	#$23 ; '#'
-		STA	$201
+		STA	off_200+1
 		LDX	#2
 
 loc_2379:				; CODE XREF: RAM:2380j
