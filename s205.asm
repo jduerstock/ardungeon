@@ -2,6 +2,9 @@
 		.include	"exp_kernel.inc"
 		.include	"globals.inc"
 
+loc_F9C9 = $F9C9
+loc_F9AC = $F9AC
+
 ;		.ORG	$8000
 
 sub_8000:				; CODE XREF: RAM:807Ep
@@ -1305,8 +1308,10 @@ loc_8917:				; CODE XREF: RAM:890Fj
 		STA	($41),Y
 
 loc_891D:				; CODE XREF: RAM:8900j	RAM:88F9j
-		LDY	$ACF9
-		SBC	$F9C9,Y
+		.WORD	loc_F9AC
+		.WORD	loc_F9AC
+		.WORD	loc_F9C9
+; ---------------------------------------------------------------------------
 		AND	#$38 ; '8'
 		RTS
 ; ---------------------------------------------------------------------------

@@ -1,4 +1,5 @@
 		.include	"equates.inc"
+		.include	"globals.inc"
 
 
 ;		.ORG	$600
