@@ -2,9 +2,6 @@
 		.include	"exp_kernel.inc"
 		.include	"globals.inc"
 
-loc_F9C9 = $F9C9
-loc_F9AC = $F9AC
-
 ;		.ORG	$8000
 
 		.SEGMENT	"SEG8000"
@@ -253,15 +250,15 @@ sub_819E:				; CODE XREF: sub_8000+64p
 		CMP	$D800
 		BEQ	loc_821C
 		LDA	#$23 ; '#'
-		STA	7
+		STA	off_7
 		LDA	#$82 ; '‚'
-		STA	8
+		STA	off_7+1
 		LDA	#0
-		STA	9
+		STA	off_9
 		LDA	#$F9 ; 'ù'
-		STA	$A
-		LDX	#7
-		LDY	#0
+		STA	off_9+1
+		LDX	#>$700
+		LDY	#<$700
 		JSR	$2E0D
 		LDA	#$80 ; '€'
 		STA	$258
@@ -357,9 +354,9 @@ loc_F94E:				; CODE XREF: RAM:8258j
 loc_F953:
 		LDA	SEGNO
 		CMP	#8
-		BCS	loc_82AF
+		BCS	loc_F98C
 		CMP	$F9CE
-		BNE	loc_82CD
+		BNE	loc_F9AA
 		LDA	#<$C000
 		STA	off_7
 		LDA	#>$C000
@@ -383,19 +380,19 @@ loc_F953:
 		LDY	#<$400
 		BEQ	loc_82C8
 
-loc_82AF:				; CODE XREF: RAM:827Bj
+loc_F98C:				; CODE XREF: RAM:827Bj
 		CMP	$F9CD
-		BNE	loc_82CD
-		LDA	#0
-		STA	7
-		LDA	#$DC ; 'Ü'
-		STA	8
-		LDA	#$F0 ; 'ð'
-		STA	9
-		LDA	#$96 ; '–'
-		STA	$A
-		LDX	#$15
-		LDY	#$10
+		BNE	loc_F9AA
+		LDA	#<$DC00
+		STA	off_7
+		LDA	#>$DC00
+		STA	off_7+1
+		LDA	#<$96F0
+		STA	off_9
+		LDA	#>$96F0
+		STA	off_9+1
+		LDX	#>$1510
+		LDY	#<$1510
 
 loc_82C8:				; CODE XREF: RAM:82ADj
 		JSR	$2E0D
@@ -403,10 +400,12 @@ loc_82C8:				; CODE XREF: RAM:82ADj
 		RTS
 ; ---------------------------------------------------------------------------
 
-loc_82CD:				; CODE XREF: RAM:8280j	RAM:82B2j
+loc_F9AA:				; CODE XREF: RAM:8280j	RAM:82B2j
 		SEC
 		RTS
 ; ---------------------------------------------------------------------------
+
+loc_F9AC:
 		BIT	$D40F
 		BPL	loc_82D7
 		JMP	(off_200)
@@ -428,11 +427,14 @@ loc_82E2:				; CODE XREF: RAM:82DDj
 		STA	$D40F
 		JMP	($222)
 ; ---------------------------------------------------------------------------
+
+loc_F9C9:
 		CLD
 		JMP	($216)
 ; ---------------------------------------------------------------------------
-		.BYTE $FF
-		.BYTE $FF
+
+byte_F9CD:	.BYTE $FF
+byte_F9CE:	.BYTE $FF
 ; ---------------------------------------------------------------------------
 		LDX	#$FF
 
