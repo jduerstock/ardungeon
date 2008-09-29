@@ -2,6 +2,7 @@ off_0 	= $00
 off_7 	= $07
 off_9 	= $09
 off_D	= $0D
+off_10	= $10
 off_16	= $16
 off_18	= $18
 off_1D	= $1D
@@ -55,9 +56,13 @@ BLINKON = $A1
 MOVECURSOR = $A6
 
 .macro MOVEXY arg1, arg2
-	.BYTE $A6, arg1, arg2
+	.BYTE MOVECURSOR, arg1, arg2
 .endmacro
 
 .macro BLINK arg1
 	.BYTE BLINKON, arg1, BLINKOFF
+.endmacro
+
+.macro PRINTBYTE Ptr, Len
+	.BYTE $B2,.LOBYTE(Ptr),.HIBYTE(Ptr),Len
 .endmacro

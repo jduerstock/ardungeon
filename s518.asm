@@ -1695,6 +1695,8 @@ loc_2001:				; CODE XREF: sub_1FE9+Fj sub_1FE9+14j
 ; End of function sub_1FE9
 
 ; ---------------------------------------------------------------------------
+
+byte_2007:
 		.BYTE $A8,$FF
 
 ; --------------- S U B	R O U T	I N E ---------------------------------------
@@ -3373,16 +3375,12 @@ loc_299D:				; CODE XREF: sub_2979+1Aj sub_2979+1Fj
 		MOVEXY	0,1
 		.BYTE $A5
 aPleaseInsertTh:.BYTE "Please insert The Dungeon Disk "
-		.BYTE $B2
-		.WORD byte_1911
-		.BYTE 1
+		PRINTBYTE byte_1911,1
 		.BYTE $D
 		.BYTE $D
 		.BYTE $A5
 aSide:		.BYTE "Side "
-		.BYTE $B2
-		.WORD byte_1910
-		.BYTE 1
+		PRINTBYTE byte_1910,1
 		.BYTE $20
 aIntoAnyDrive_:	.BYTE "into any drive."
 		.BYTE $D
@@ -4346,9 +4344,9 @@ loc_2ECD:				; CODE XREF: RAM:2ED1j
 		STA	off_16+1
 		JSR	loc_1C8C
 		STX	byte_1933
-		LDA	#7
+		LDA	#<byte_2007
 		STA	byte_1913
-		LDA	#$20 ; ' '
+		LDA	#>byte_2007
 		STA	byte_1923
 		LDA	#$19
 		STA	SEGNO
@@ -4462,9 +4460,9 @@ loc_2F80:				; CODE XREF: RAM:1803j	sub_2BFA+435j ...
 
 loc_2FBA:				; CODE XREF: sub_2BFA+3AAj
 					; sub_2BFA+3AEj ...
-		LDA	#0
+		LDA	#<SEG_7600
 		STA	SEGADDR
-		LDA	#$76 ; 'v'
+		LDA	#>SEG_7600
 		STA	SEGADDR+1
 		LDA	$631E
 		CLC
@@ -4586,7 +4584,7 @@ loc_307F:				; CODE XREF: sub_2BFA+416j
 		BCS	loc_30A5
 		AND	#1
 		TAX
-		LDA	$30E1,X
+		LDA	byte_30E1,X
 		STA	$31
 		JMP	loc_30AA
 ; ---------------------------------------------------------------------------
@@ -4641,6 +4639,7 @@ loc_30DE:				; CODE XREF: sub_2BFA+4BDj
 		JMP	(word_1977)
 ; END OF FUNCTION CHUNK	FOR sub_2BFA
 ; ---------------------------------------------------------------------------
+byte_30E1:
 		.BYTE $2C ; ,
 		.BYTE $2E ; .
 ; ---------------------------------------------------------------------------
@@ -4714,7 +4713,7 @@ loc_3151:				; CODE XREF: RAM:3147j
 		ADC	unk_3B4C,X
 		STA	$6316,Y
 		LDY	unk_3B64,X
-		LDA	($10),Y
+		LDA	(off_10),Y
 		LDY	unk_3B6C,X
 		BPL	loc_316D
 		LSR	A
@@ -4771,10 +4770,10 @@ loc_318C:				; CODE XREF: RAM:2F6Dj	RAM:loc_3180j ...
 loc_31B9:				; CODE XREF: sub_2BFA+598j
 		JSR	sub_3531
 		LDY	#2
-		LDA	($10),Y
+		LDA	(off_10),Y
 		STA	byte_1974
 		LDY	#3
-		LDA	($10),Y
+		LDA	(off_10),Y
 		BPL	loc_31F8
 		AND	#$1F
 		STA	byte_195A
@@ -4782,7 +4781,7 @@ loc_31B9:				; CODE XREF: sub_2BFA+598j
 		STA	$631E
 		BIT	byte_1958
 		BMI	loc_320D
-		LDA	($10),Y
+		LDA	(off_10),Y
 		ROL	A
 		ROL	A
 		ROL	A
@@ -4809,7 +4808,7 @@ loc_31F8:				; CODE XREF: sub_2BFA+5CDj
 		STA	$631E
 		LDA	#$FF
 		STA	byte_1959
-		LDA	($10),Y
+		LDA	(off_10),Y
 		ROL	A
 		ROL	A
 		ROL	A
@@ -5303,15 +5302,15 @@ sub_3531:				; CODE XREF: RAM:30EEp
 		LDA	$6314
 		LSR	A
 		ORA	#$B0 ; '°'
-		STA	$11
+		STA	off_10+1
 		LDA	#0
 		ROR	A
-		STA	$10
+		STA	off_10
 		LDA	$6313
 		ASL	A
 		ASL	A
-		ORA	$10
-		STA	$10
+		ORA	off_10
+		STA	off_10
 		RTS
 ; End of function sub_3531
 
@@ -5508,9 +5507,9 @@ loc_3683:
 
 loc_3689:				; CODE XREF: RAM:3686j
 		JSR	sub_3635
-		LDA	#$10
+		LDA	#<byte_3710
 		STA	off_16
-		LDA	#$37 ; '7'
+		LDA	#>byte_3710
 		STA	off_16+1
 		LDX	byte_194A
 		JSR	sub_3C5C
@@ -5566,6 +5565,8 @@ loc_36EC:				; CODE XREF: RAM:36AEj	RAM:loc_36E4j
 ; ---------------------------------------------------------------------------
 aExamineInvento:.BYTE "Examine Inventory",0
 aExamineSpells:	.BYTE "Examine Spells",0
+
+byte_3710:
 		MOVEXY 0,2
 		.BYTE $A5
 aExamine:	.BYTE "Examine "
@@ -5816,33 +5817,19 @@ byte_3969:
 		.WORD $6321
 		.BYTE $1C
 		MOVEXY	37,0
-		.BYTE $B2
-		.WORD $633C
-		.BYTE 2
+		PRINTBYTE $633C,2
 		MOVEXY	9,2
-		.BYTE $B2
-		.WORD $6349
-		.BYTE 3
+		PRINTBYTE $6349,3
 		.BYTE "  "
-		.BYTE $B2
-		.WORD $6351
-		.BYTE 3
+		PRINTBYTE $6351,3
 		.BYTE "  "
-		.BYTE $B2
-		.WORD $6359
-		.BYTE 3
+		PRINTBYTE $6359,3
 		.BYTE "  "
-		.BYTE $B2
-		.WORD $6361
-		.BYTE 3
+		PRINTBYTE $6361,3
 		.BYTE "  "
-		.BYTE $B2
-		.WORD $6369
-		.BYTE 3
+		PRINTBYTE $6369,3
 		.BYTE "  "
-		.BYTE $B2
-		.WORD $6371
-		.BYTE 3
+		PRINTBYTE $6371,3
 		MOVEXY	12,3
 		.BYTE $B0
 		.WORD $633D
@@ -6239,24 +6226,16 @@ aTorches:	.BYTE "Torches"
 aWaterFlasks:	.BYTE "Water Flasks"
 		.BYTE $D
 		MOVEXY	5,1
-		.BYTE $B2
-		.WORD	I_FOOD
-		.BYTE 3
+		PRINTBYTE I_FOOD,3
 		MOVEXY	18,1
-		.BYTE $B2
-		.WORD $63BD
-		.BYTE 3
+		PRINTBYTE $63BD,3
 		MOVEXY	33,1
-		.BYTE $B2
-		.WORD $63BC
-		.BYTE 3
+		PRINTBYTE $63BC,3
 		.BYTE $D
 		.BYTE $D
 		.BYTE $A5
 aYouAreOnLevel:	.BYTE "You are on level "
-		.BYTE $B2
-		.WORD $631D
-		.BYTE 1
+		PRINTBYTE $631D,1
 		.BYTE $D
 		.BYTE $A5
 aOfTheDungeon:	.BYTE "of the Dungeon"
@@ -6326,9 +6305,7 @@ aGems:		.BYTE "Gems:"
 		.BYTE 6
 		MOVEXY	28,5
 aKeys:		.BYTE "Keys:"
-		.BYTE $B2
-		.WORD	I_KEYS
-		.BYTE 3
+		PRINTBYTE I_KEYS,3
 		MOVEXY	5,6
 aJewels:	.BYTE "Jewels:"
 		.BYTE $B1
@@ -6336,19 +6313,13 @@ aJewels:	.BYTE "Jewels:"
 		.BYTE 6
 		MOVEXY	23,6
 aCompasses:	.BYTE "Compasses:"
-		.BYTE $B2
-		.WORD $63C0
-		.BYTE 3
+		PRINTBYTE $63C0,3
 		MOVEXY	3,7
 aCrystals:	.BYTE "Crystals:"
-		.BYTE $B2
-		.WORD $63BE
-		.BYTE 3
+		PRINTBYTE $63BE,3
 		MOVEXY	22,7
 aTimepieces:	.BYTE "Timepieces:"
-		.BYTE $B2
-		.WORD $63C1
-		.BYTE 3
+		PRINTBYTE $63C1,3
 		.BYTE $FF
 
 byte_3E31:
@@ -11361,9 +11332,9 @@ byte_5DAC:	.BYTE 0			; DATA XREF: RAM:5DD8w	RAM:5DFDw
 byte_5DAD:	.BYTE 0			; DATA XREF: RAM:5DDDw	RAM:5E02w
 byte_5DAE:	.BYTE 0			; DATA XREF: RAM:5DB1o	RAM:5DF8w
 byte_5DAF:	.BYTE 0			; DATA XREF: RAM:5DB8w	RAM:loc_5DBBr ...
-		.BYTE $B2
-		.WORD byte_5DAE
-		.BYTE 2
+
+byte_5DB0:
+		PRINTBYTE byte_5DAE,2
 		.BYTE '%'
 		.BYTE $AE
 ; ---------------------------------------------------------------------------
@@ -11400,9 +11371,9 @@ loc_5DD6:				; CODE XREF: RAM:5DCCj
 		LDY	#1
 		LDA	(off_43),Y
 		STA	byte_5DAE
-		LDA	#$B0 ; '°'
+		LDA	#<byte_5DB0
 		STA	byte_5DAC
-		LDA	#$5D ; ']'
+		LDA	#>byte_5DB0
 		STA	byte_5DAD
 
 loc_5E05:				; CODE XREF: RAM:5DE5j	RAM:5DEAj
@@ -11464,39 +11435,25 @@ unk_5E55:	.BYTE	0		; DATA XREF: RAM:5DBEr	RAM:5DCEr
 		.BYTE $2C ; ,
 		.BYTE $42 ; B
 aFoodPackets_0:	.BYTE "Food Packets: "  ; DATA XREF: RAM:off_5F0Do
-		.BYTE $B2
-		.WORD	I_FOOD
-		.BYTE 3
+		PRINTBYTE I_FOOD,3
 		.BYTE $AE
 aWaterFlasks_0:	.BYTE "Water Flasks: "  ; DATA XREF: RAM:5F0Fo
-		.BYTE $B2
-		.WORD $63BC
-		.BYTE 3
+		PRINTBYTE $63BC,3
 		.BYTE $AE
 aUnlitTorches:	.BYTE "Unlit Torches: " ; DATA XREF: RAM:5F11o
-		.BYTE $B2
-		.WORD $63BD
-		.BYTE 3
+		PRINTBYTE $63BD,3
 		.BYTE $AE
 aTimepieces_0:	.BYTE "Timepieces: "    ; DATA XREF: RAM:5F13o
-		.BYTE $B2
-		.WORD $63C1
-		.BYTE 3
+		PRINTBYTE $63C1,3
 		.BYTE $AE
 aCompasses_0:	.BYTE "Compasses: "     ; DATA XREF: RAM:5F15o
-		.BYTE $B2
-		.WORD $63C0
-		.BYTE 3
+		PRINTBYTE $63C0,3
 		.BYTE $AE
 aKeys_0:	.BYTE "Keys: "          ; DATA XREF: RAM:5F17o
-		.BYTE $B2
-		.WORD	I_KEYS
-		.BYTE 3
+		PRINTBYTE I_KEYS,3
 		.BYTE $AE
 aCrystals_0:	.BYTE "Crystals: "      ; DATA XREF: RAM:5F19o
-		.BYTE $B2
-		.WORD $63BE
-		.BYTE 3
+		PRINTBYTE $63BE,3
 		.BYTE $AE
 aGems_0:	.BYTE "Gems: "          ; DATA XREF: RAM:5F1Bo
 		.BYTE $B1
@@ -11759,9 +11716,7 @@ aTheSpellFail_0:.BYTE "The spell failed"
 		.BYTE $D
 		.BYTE $A5
 aAndBackfiredFo:.BYTE "and backfired for "
-		.BYTE $B2
-		.WORD byte_6282
-		.BYTE 2
+		PRINTBYTE byte_6282,2
 		.BYTE '!'
 		.BYTE $D
 		.BYTE $A3 ; £
@@ -11815,23 +11770,17 @@ byte_628A:	.BYTE 0			; DATA XREF: RAM:5801w	RAM:62A6o
 		MOVEXY	0,2
 		.BYTE $A5
 aYouAre_0:	.BYTE "You are "
-		.BYTE $B2
-		.WORD byte_628A
-		.BYTE 2
+		PRINTBYTE byte_628A,2
 aSquaresNorth:	.BYTE " squares North"
 		.BYTE $D
 		.BYTE $A5
 		.BYTE	"and "
-		.BYTE $B2
-		.WORD byte_6289
-		.BYTE 2
+		PRINTBYTE byte_6289,2
 aSquaresEastFro:.BYTE " squares East from the Southwest"
 		.BYTE $D
 		.BYTE $A5
 aCornerOfLevel:	.BYTE "corner of level "
-		.BYTE $B2
-		.WORD $631D
-		.BYTE 1
+		PRINTBYTE $631D,1
 a_:		.BYTE '.'
 		.BYTE $D
 		.BYTE $FF
