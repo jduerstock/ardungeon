@@ -9817,28 +9817,28 @@ loc_5382:				; CODE XREF: RAM:5379j
 		LDA	#1
 		TAY
 		CLC
-		ADC	($47),Y
+		ADC	(off_47),Y
 		CMP	#$60 ; '`'
 		BCC	loc_538E
 		LDA	#$5F ; '_'
 
 loc_538E:				; CODE XREF: RAM:538Aj
-		STA	($47),Y
+		STA	(off_47),Y
 
 loc_5390:				; CODE XREF: RAM:5373j	RAM:5380j
 		LDA	byte_627B
 		STA	$4B
 		JSR	sub_4B74
 		CLC
-		LDA	$41
+		LDA	off_41
 		ADC	#6
 		STA	byte_193C
-		LDA	$42
+		LDA	off_41+1
 		ADC	#0
 		STA	byte_193D
-		LDA	#$E1 ; 'á'
+		LDA	#<a_YouCastTheSpell
 		STA	off_16
-		LDA	#$61 ; 'a'
+		LDA	#>a_YouCastTheSpell
 		STA	off_16+1
 		LDX	byte_194A
 		JSR	sub_3C5C
@@ -9857,15 +9857,15 @@ loc_53CA:				; CODE XREF: RAM:5363j
 		LDX	#$45 ; 'E'
 		LDA	byte_6282
 		JSR	loc_2E66
-		LDA	#$D
+		LDA	#<a_TheSpellFailed
 		STA	off_16
-		LDA	#$62 ; 'b'
+		LDA	#>a_TheSpellFailed
 		STA	off_16+1
 		LDA	byte_6282
 		BEQ	loc_53E7
-		LDA	#$24 ; '$'
+		LDA	#<a_TheSpellBackfired
 		STA	off_16
-		LDA	#$62 ; 'b'
+		LDA	#>a_TheSpellBackfired
 		STA	off_16+1
 
 loc_53E7:				; CODE XREF: RAM:5358j	RAM:53DDj
@@ -11704,6 +11704,7 @@ aRd:		.BYTE "rd"
 aYouAreCarrying:.BYTE "You are carrying too much!"
 		.BYTE $D
 		.BYTE $FF
+a_YouCastTheSpell:
 		.BYTE $A8
 		MOVEXY	0,2
 		.BYTE $A5
@@ -11720,11 +11721,13 @@ a__3:		.BYTE ". "
 		BLINK	$7F
 		.BYTE $D
 		.BYTE $FF
+a_TheSpellFailed:
 		MOVEXY	0,3
 		.BYTE $A5
 aTheSpellFailed:.BYTE "The spell failed!"
 		.BYTE $D
 		.BYTE $FF
+a_TheSpellBackfired:
 		MOVEXY	0,2
 		.BYTE $A3
 		.WORD loc_59E8
