@@ -4352,12 +4352,12 @@ loc_2ECD:				; CODE XREF: RAM:2ED1j
 		STA	byte_1923
 		LDA	#$19
 		STA	SEGNO
-		LDA	#0
+		LDA	#<SEG_7600
 		STA	SEGADDR
-		LDA	#$76 ; 'v'
+		LDA	#>SEG_7600
 		STA	SEGADDR+1
 		JSR	SEGLOAD
-		JSR	$7600
+		JSR	SEG_7600
 		LDA	#2
 		STA	$253
 		LDA	#$FF
@@ -4402,31 +4402,35 @@ loc_2F2E:				; CODE XREF: RAM:2F3Aj
 		DEX
 
 loc_2F58:				; CODE XREF: RAM:2F68j
-		LDA	$2F70,X
-		STA	$1913,X
-		LDA	$2F78,X
-		STA	$1923,X
+		LDA	byte_2F70,X
+		STA	byte_1913,X
+		LDA	byte_2F78,X
+		STA	byte_1923,X
 		STX	byte_1933
 		DEX
 		BPL	loc_2F58
 		JSR	sub_3C2D
 		JMP	loc_318C
 ; ---------------------------------------------------------------------------
-		.BYTE $DE ; Þ
-		.BYTE $84 ; „
-		.BYTE $31 ; 1
-		.BYTE $A2 ; ¢
-		.BYTE $D1 ; Ñ
-		.BYTE $E9 ; é
-		.BYTE	3
+
+byte_2F70:
+		.BYTE	<byte_3CDE
+		.BYTE	<byte_3D84
+		.BYTE	<byte_3E31
+		.BYTE	<byte_3EA2
+		.BYTE	<byte_3ED1
+		.BYTE	<byte_3EE9
+		.BYTE	<byte_3F03
 		.BYTE	0
-		.BYTE $3C ; <
-		.BYTE $3D ; =
-		.BYTE $3E ; >
-		.BYTE $3E ; >
-		.BYTE $3E ; >
-		.BYTE $3E ; >
-		.BYTE $3F ; ?
+
+byte_2F78:
+		.BYTE	>byte_3CDE
+		.BYTE	>byte_3D84
+		.BYTE	>byte_3E31
+		.BYTE	>byte_3EA2
+		.BYTE	>byte_3ED1
+		.BYTE	>byte_3EE9
+		.BYTE	>byte_3F03
 		.BYTE	0
 ; ---------------------------------------------------------------------------
 ; START	OF FUNCTION CHUNK FOR sub_2BFA
@@ -6223,6 +6227,8 @@ locret_3CDD:				; CODE XREF: sub_3CC2+9j
 ; End of function sub_3CC2
 
 ; ---------------------------------------------------------------------------
+
+byte_3CDE:
 		MOVEXY	0,0
 aFoodPackets:	.BYTE "Food Packets"
 		MOVEXY	16,0
@@ -6294,6 +6300,8 @@ aOfTheDungeon:	.BYTE "of the Dungeon"
 		.WORD off_45AF
 		.BYTE $C
 		.BYTE $FF
+
+byte_3D84:
 		MOVEXY	0,0
 aGoldCoinsSilve:.BYTE "Gold Coins   Silver Coins   Copper Coins  "
 		.BYTE $B1
@@ -6340,6 +6348,8 @@ aTimepieces:	.BYTE "Timepieces:"
 		.WORD $63C1
 		.BYTE 3
 		.BYTE $FF
+
+byte_3E31:
 		MOVEXY	0,0
 		.BYTE $A5
 aWeapons:	.BYTE "Weapons"
@@ -6386,6 +6396,8 @@ aLegs:		.BYTE "Legs: "
 		.BYTE $22
 		.BYTE $AB
 		.BYTE $FF
+
+byte_3EA2:
 		MOVEXY	0,0
 		.BYTE $A5
 aApparel:	.BYTE "Apparel"
@@ -6418,6 +6430,8 @@ aApparel:	.BYTE "Apparel"
 		.BYTE $AB
 		.BYTE $D
 		.BYTE $FF
+
+byte_3ED1:
 		MOVEXY	0,0
 		.BYTE $A5
 aActiveMagic:	.BYTE "Active Magic"
@@ -6427,6 +6441,8 @@ aActiveMagic:	.BYTE "Active Magic"
 		.BYTE $AC
 		.WORD byte_3F15
 		.BYTE $FF
+
+byte_3EE9:
 		MOVEXY	0,0
 		.BYTE $A5
 aKnownDiseases:	.BYTE "Known Diseases"
@@ -6436,6 +6452,8 @@ aKnownDiseases:	.BYTE "Known Diseases"
 		.BYTE $AC
 		.WORD byte_3F15
 		.BYTE $FF
+
+byte_3F03:
 		MOVEXY	0,0
 		.BYTE $A5
 aCurses:	.BYTE "Curses"
