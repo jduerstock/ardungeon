@@ -2279,7 +2279,7 @@ loc_23A1:				; CODE XREF: RAM:239Bj
 
 loc_23A3:				; CODE XREF: RAM:23AAj
 		LDA	byte_1C1C,X
-		STA	$D015,X
+		STA	COLPM3,X
 		DEX
 		BNE	loc_23A3
 		STX	byte_18B8
@@ -2384,7 +2384,7 @@ loc_244B:				; CODE XREF: RAM:loc_2344j RAM:2391j
 
 
 sub_2451:				; CODE XREF: RAM:2442p
-		JMP	($224)
+		JMP	(off_224)
 ; End of function sub_2451
 
 

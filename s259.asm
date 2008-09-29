@@ -1913,10 +1913,10 @@ loc_84B1:				; CODE XREF: sub_793Dp
 		STA	$22F
 		LDA	#2
 		STA	$18B9
-		LDA	#$40 ; '@'
-		STA	$224
-		LDA	#$86 ; '†'
-		STA	$225
+		LDA	#<loc_8640
+		STA	off_224
+		LDA	#>loc_8640
+		STA	off_224+1
 		LDA	#$E8 ; 'è'
 		STA	$254
 		LDA	#$85 ; '…'
@@ -2163,6 +2163,8 @@ loc_8613:				; CODE XREF: RAM:8638j
 		PLA
 		RTI
 ; ---------------------------------------------------------------------------
+
+loc_8640:
 		LDA	#$98 ; '˜'
 		STA	$D409
 		LDX	#3

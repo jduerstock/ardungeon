@@ -21,9 +21,9 @@
 		STA	($62),Y
 		JSR	$96F5
 		LDA	$96F3
-		STA	$224
+		STA	off_224
 		LDA	$96F4
-		STA	$225
+		STA	off_224+1
 		LDA	#$FF
 		STA	$22F
 		LDA	#$58 ; 'X'
