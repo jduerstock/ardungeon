@@ -5218,9 +5218,9 @@ loc_34A3:				; CODE XREF: RAM:3475j	RAM:347Cj ...
 		ADC	#1
 		LDX	#$45 ; 'E'
 		JSR	loc_2E66
-		LDA	#$B1 ; '±'
+		LDA	#<a_TheDoorRemains
 		STA	off_16
-		LDA	#$3A ; ':'
+		LDA	#>a_TheDoorRemains
 		STA	off_16+1
 		JMP	loc_343B
 ; ---------------------------------------------------------------------------
@@ -5272,9 +5272,9 @@ loc_34ED:				; CODE XREF: RAM:34F1j
 ; ---------------------------------------------------------------------------
 
 loc_350D:				; CODE XREF: RAM:3501j	RAM:3508j
-		LDA	#$B1 ; '±'
+		LDA	#<a_TheDoorRemains
 		STA	off_16
-		LDA	#$3A ; ':'
+		LDA	#>a_TheDoorRemains
 		STA	off_16+1
 		JMP	loc_343B
 ; ---------------------------------------------------------------------------
@@ -5835,9 +5835,7 @@ byte_3969:
 		MOVEXY	12,3
 		PRINTDWORD $633D,10
 		MOVEXY	34,3
-		.BYTE $B1
-		.WORD $6345
-		.BYTE 5
+		PRINTWORD $6345,5
 		.BYTE $FF
 		MOVEXY	0,4
 		.BYTE $AB
@@ -5892,6 +5890,8 @@ aWham:		.BYTE "Wham!"
 aTheDoorOpens:	.BYTE "The door opens!"
 		.BYTE $D
 		.BYTE $FF
+
+a_TheDoorRemains:
 		MOVEXY	0,2
 		.BYTE $A5
 aTheDoorRemains:.BYTE "The door remains shut."
@@ -6287,32 +6287,22 @@ aOfTheDungeon:	.BYTE "of the Dungeon"
 byte_3D84:
 		MOVEXY	0,0
 aGoldCoinsSilve:.BYTE "Gold Coins   Silver Coins   Copper Coins  "
-		.BYTE $B1
-		.WORD $63B1
-		.BYTE 6
+		PRINTWORD $63B1,6
 		MOVEXY	16,1
-		.BYTE $B1
-		.WORD $63B3
-		.BYTE 6
+		PRINTWORD $63B3,6
 		MOVEXY	31,1
-		.BYTE $B1
-		.WORD $63B5
-		.BYTE 6
+		PRINTWORD $63B5,6
 		MOVEXY	12,3
 aOtherPossessio:.BYTE "Other Possessions"
 		MOVEXY	7,5
 aGems:		.BYTE "Gems:"
-		.BYTE $B1
-		.WORD $63B7
-		.BYTE 6
+		PRINTWORD $63B7,6
 		MOVEXY	28,5
 aKeys:		.BYTE "Keys:"
 		PRINTBYTE I_KEYS,3
 		MOVEXY	5,6
 aJewels:	.BYTE "Jewels:"
-		.BYTE $B1
-		.WORD $63B9
-		.BYTE 6
+		PRINTWORD $63B9,6
 		MOVEXY	23,6
 aCompasses:	.BYTE "Compasses:"
 		PRINTBYTE $63C0,3
@@ -10853,9 +10843,7 @@ aGetq_0:	.BYTE "GET?"
 		.WORD loc_59E8
 		.BYTE $A9
 		.BYTE $A5
-		.BYTE $B1
-		.WORD $59E3
-		.BYTE 6
+		PRINTWORD $59E3,6
 		.BYTE $20
 byte_59C0:	.BYTE $B3		; DATA XREF: RAM:59A9o
 off_59C1:	.WORD unk_5E53		; DATA XREF: sub_5857+36w sub_58C2+Aw	...
@@ -11458,29 +11446,19 @@ aCrystals_0:	.BYTE "Crystals: "      ; DATA XREF: RAM:5F19o
 		PRINTBYTE $63BE,3
 		.BYTE $AE
 aGems_0:	.BYTE "Gems: "          ; DATA XREF: RAM:5F1Bo
-		.BYTE $B1
-		.WORD $63B7
-		.BYTE 6
+		PRINTWORD $63B7,6
 		.BYTE $AE
 aJewels_0:	.BYTE "Jewels: "        ; DATA XREF: RAM:5F1Do
-		.BYTE $B1
-		.WORD $63B9
-		.BYTE 6
+		PRINTWORD $63B9,6
 		.BYTE $AE
 aGold_0:	.BYTE "Gold  : "        ; DATA XREF: RAM:5F1Fo
-		.BYTE $B1
-		.WORD $63B1
-		.BYTE 6
+		PRINTWORD $63B1,6
 		.BYTE $AE
 aSilver_0:	.BYTE "Silver: "        ; DATA XREF: RAM:5F21o
-		.BYTE $B1
-		.WORD $63B3
-		.BYTE 6
+		PRINTWORD $63B3,6
 		.BYTE $AE
 aCopper_0:	.BYTE "Copper: "        ; DATA XREF: RAM:5F23o
-		.BYTE $B1
-		.WORD $63B5
-		.BYTE 6
+		PRINTWORD $63B5,6
 		.BYTE $AE
 off_5F0D:	.WORD aFoodPackets_0	; DATA XREF: sub_50B2+20r sub_50B2+26r
 					; "Food	Packets: "

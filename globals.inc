@@ -67,6 +67,10 @@ MOVECURSOR = $A6
 	.BYTE $B2,.LOBYTE(Ptr),.HIBYTE(Ptr),Len
 .endmacro
 
+.macro PRINTWORD Ptr, Len
+	.BYTE $B1,.LOBYTE(Ptr),.HIBYTE(Ptr),Len
+.endmacro
+
 .macro PRINTDWORD Ptr, Len
 	.BYTE $B0,.LOBYTE(Ptr),.HIBYTE(Ptr),Len
 .endmacro
