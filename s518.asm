@@ -396,11 +396,9 @@ byte_1938:	.BYTE 0			; DATA XREF: sub_2BFA+396w RAM:3627w ...
 byte_1939:	.BYTE 0			; DATA XREF: sub_2BFA+39Cw sub_322C+Br ...
 off_193A:	.WORD	$FFFF		; DATA XREF: RAM:36B3w	RAM:36CAw ...
 off_193C:	.WORD	$FFFF		; DATA XREF: sub_502E+Ew sub_502E+14w	...
-unk_193E:	.BYTE $FF		; DATA XREF: RAM:5D6Fo
-		.BYTE $FF
+off_193E:	.WORD	$FFFF		; DATA XREF: RAM:5D6Fo
 off_1940:	.WORD	$FFFF		; DATA XREF: RAM:5D85o
-		.BYTE $FF
-		.BYTE $FF
+off_1942:	.WORD	$FFFF
 off_1944:	.WORD	$FFFF		; DATA XREF: RAM:36D4w	sub_51B6+24w ...
 byte_1946:	.BYTE 0			; DATA XREF: sub_502E:loc_5032w
 					; sub_508C+6r ...
@@ -11213,9 +11211,7 @@ asc_5D51:	.BYTE " ("              ; DATA XREF: RAM:551Bw RAM:5DC3w ...
 asc_5D67:	.BYTE " ("              ; DATA XREF: RAM:551Fw
 		BLINK	'2'
 		.BYTE ") "
-		.BYTE $B4
-		.WORD unk_193E
-		.BYTE $1D
+		PRINTSTR off_193E,29
 		.BYTE $20
 		.BYTE $AD ; ­
 		.BYTE $AC ; ¬
@@ -11227,9 +11223,7 @@ asc_5D67:	.BYTE " ("              ; DATA XREF: RAM:551Fw
 asc_5D7D:	.BYTE " ("              ; DATA XREF: RAM:5523w
 		BLINK	'3'
 		.BYTE	") "
-		.BYTE $B4
-		.WORD	off_1940
-		.BYTE $1D
+		PRINTSTR off_1940,29
 		.BYTE $20
 		.BYTE $AD ; ­
 		.BYTE $AC ; ¬
@@ -11243,10 +11237,7 @@ asc_5D93:	.BYTE " ("              ; DATA XREF: RAM:5527w
 		BLINK	'4'
 		.BYTE $29 ; )
 		.BYTE $20
-		.BYTE $B4 ; ´
-		.BYTE $42 ; B
-		.BYTE $19
-		.BYTE $1D
+		PRINTSTR off_1942,29
 		.BYTE $20
 		.BYTE $AD ; ­
 		.BYTE $AC ; ¬
@@ -11317,9 +11308,7 @@ loc_5E05:				; CODE XREF: RAM:5DE5j	RAM:5DEAj
 byte_5E09:
 		MOVEXY	0,0
 		.BYTE $A5
-		.BYTE $B4
-		.WORD off_193A
-		.BYTE $28
+		PRINTSTR off_193A,40
 		.BYTE $D
 		MOVEXY	3,2
 		.BYTE " ("
@@ -11499,9 +11488,7 @@ aYouDrinkA:	.BYTE "You drink a"
 		.BYTE $D
 		.BYTE $D
 		.BYTE $A5
-		.BYTE $B4
-		.WORD off_193C
-		.BYTE $26
+		PRINTSTR off_193C,38
 a__2:		.BYTE '.'
 		.BYTE $D
 		.BYTE $FF
@@ -11618,9 +11605,7 @@ aYouCastTheSpel:.BYTE "You cast the spell of"
 		.BYTE $A5
 		BLINK	$7F
 		.BYTE ' '
-		.BYTE $B4
-		.WORD off_193C
-		.BYTE $1E
+		PRINTSTR off_193C,30
 a__3:		.BYTE ". "
 		BLINK	$7F
 		.BYTE $D
