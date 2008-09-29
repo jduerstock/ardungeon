@@ -9,6 +9,7 @@ BLINKFLAG	= $21
 off_3D	= $3D
 off_41	= $41
 off_43	= $43
+off_45	= $45
 off_47	= $47
 off_58	= $58
 off_5A	= $5A
