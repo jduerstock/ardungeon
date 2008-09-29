@@ -5081,9 +5081,9 @@ loc_3397:				; CODE XREF: RAM:3385j
 ; ---------------------------------------------------------------------------
 
 loc_339F:				; CODE XREF: RAM:339Aj	RAM:33EFj ...
-		LDA	#$B0 ; '°'
+		LDA	#<a_TheDoorWontOpen
 		STA	off_16
-		LDA	#$39 ; '9'
+		LDA	#>a_TheDoorWontOpen
 		STA	off_16+1
 		LDX	byte_352E
 		JSR	sub_3C5C
@@ -5093,12 +5093,14 @@ loc_33AD:				; CODE XREF: RAM:33E8j
 		STA	byte_352F
 		LDA	word_1977+1
 		STA	byte_3530
-		LDA	#$C6 ; 'Æ'
+		LDA	#<loc_33C6
 		STA	word_1977
-		LDA	#$33 ; '3'
+		LDA	#>loc_33C6
 		STA	word_1977+1
 		JMP	loc_2FF3
 ; ---------------------------------------------------------------------------
+
+loc_33C6:
 		LDA	byte_352F
 		STA	word_1977
 		LDA	byte_3530
@@ -5831,9 +5833,7 @@ byte_3969:
 		.BYTE "  "
 		PRINTBYTE $6371,3
 		MOVEXY	12,3
-		.BYTE $B0
-		.WORD $633D
-		.BYTE $A
+		PRINTDWORD $633D,10
 		MOVEXY	34,3
 		.BYTE $B1
 		.WORD $6345
@@ -5842,6 +5842,8 @@ byte_3969:
 		MOVEXY	0,4
 		.BYTE $AB
 		.BYTE $FF
+
+a_TheDoorWontOpen:
 		MOVEXY	0,0
 		.BYTE $A5
 aTheDoorWonTOpe:.BYTE "The door won't open. You may:"
