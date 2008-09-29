@@ -884,11 +884,11 @@ locret_85D3:				; CODE XREF: RAM:85BBj
 		LDA	#6
 		ADC	$41
 		STA	$193C
-		STA	7
+		STA	off_7
 		LDA	#0
 		ADC	$42
-		STA	$193D
-		STA	8
+		STA	$193C+1
+		STA	off_7+1
 		LDY	#6
 		LDA	(off_7),Y
 		BNE	loc_85F1
@@ -896,9 +896,9 @@ locret_85D3:				; CODE XREF: RAM:85BBj
 		STA	(off_7),Y
 
 loc_85F1:				; CODE XREF: RAM:85EBj
-		LDA	#$E8 ; 'è'
+		LDA	#<$60E8
 		STA	off_16
-		LDA	#$60 ; '`'
+		LDA	#>$60E8
 		STA	off_16+1
 		LDX	$194A
 		JSR	$3C5C
