@@ -214,9 +214,11 @@ j_SUBSTAT2:
 ; ---------------------------------------------------------------------------
 		JMP	loc_2E45
 ; ---------------------------------------------------------------------------
-		JMP	sub_2E43
+j_ADDSTAT1:
+		JMP	ADDSTAT1
 ; ---------------------------------------------------------------------------
-		JMP	loc_2E40
+j_ADDSTAT2:
+		JMP	ADDSTAT2
 ; ---------------------------------------------------------------------------
 		JMP	loc_2E9E
 ; ---------------------------------------------------------------------------
@@ -4190,7 +4192,7 @@ loc_2E35:				; CODE XREF: sub_2E31+Aj
 
 ; ---------------------------------------------------------------------------
 
-loc_2E40:				; CODE XREF: RAM:187Bj
+ADDSTAT2:				; CODE XREF: RAM:187Bj
 		LDY	#1
 ; ---------------------------------------------------------------------------
 		.BYTE $2C ; ,
@@ -4198,7 +4200,7 @@ loc_2E40:				; CODE XREF: RAM:187Bj
 ; --------------- S U B	R O U T	I N E ---------------------------------------
 
 
-sub_2E43:				; CODE XREF: RAM:1878j	RAM:41C4p ...
+ADDSTAT1:				; CODE XREF: RAM:1878j	RAM:41C4p ...
 		LDY	#0
 
 loc_2E45:				; CODE XREF: RAM:1875j
@@ -4212,26 +4214,26 @@ loc_2E48:				; CODE XREF: RAM:loc_494Dp
 		DEY
 		BMI	loc_2E5B
 
-loc_2E52:				; CODE XREF: sub_2E43+16j
+loc_2E52:				; CODE XREF: ADDSTAT1+16j
 		LDA	(off_45),Y
 		ADC	#0
 		STA	(off_45),Y
 		DEY
 		BPL	loc_2E52
 
-loc_2E5B:				; CODE XREF: sub_2E43+Dj
+loc_2E5B:				; CODE XREF: ADDSTAT1+Dj
 		BCC	locret_2E65
 		TYA
 		LDY	$54
 
-loc_2E60:				; CODE XREF: sub_2E43+20j
+loc_2E60:				; CODE XREF: ADDSTAT1+20j
 		STA	(off_45),Y
 		DEY
 		BPL	loc_2E60
 
-locret_2E65:				; CODE XREF: sub_2E43:loc_2E5Bj
+locret_2E65:				; CODE XREF: ADDSTAT1:loc_2E5Bj
 		RTS
-; End of function sub_2E43
+; End of function ADDSTAT1
 
 ; ---------------------------------------------------------------------------
 
@@ -4282,8 +4284,8 @@ locret_2E8C:				; CODE XREF: SUBSTAT1:loc_2E81j
 ; --------------- S U B	R O U T	I N E ---------------------------------------
 
 
-sub_2E8D:				; CODE XREF: sub_2E43:loc_2E45p
-					; sub_2E69:loc_2E6Bp
+sub_2E8D:				; CODE XREF: ADDSTAT1:loc_2E45p
+					; SUBSTAT1:loc_2E6Bp
 		STA	$51
 		STY	$54
 		CLC
@@ -6857,7 +6859,7 @@ loc_41AE:				; CODE XREF: RAM:419Bj	RAM:41A5j
 		DEC	$6396
 		LDX	#$97 ; '—'
 		LDA	#1
-		JSR	sub_2E43
+		JSR	ADDSTAT1
 		JMP	loc_41DE
 ; ---------------------------------------------------------------------------
 
@@ -7335,10 +7337,10 @@ loc_449D:				; DATA XREF: RAM:45BBo
 		JSR	loc_446F
 		LDX	#$5D ; ']'
 		LDA	#1
-		JSR	sub_2E43
+		JSR	ADDSTAT1
 		LDX	#$7D ; '}'
 		LDA	#1
-		JMP	sub_2E43
+		JMP	ADDSTAT1
 ; ---------------------------------------------------------------------------
 
 loc_44AE:				; DATA XREF: RAM:45BDo
@@ -7348,13 +7350,13 @@ loc_44AE:				; DATA XREF: RAM:45BDo
 		JSR	SUBSTAT2
 		LDX	#$5D ; ']'
 		LDA	#1
-		JSR	sub_2E43
+		JSR	ADDSTAT1
 		LDX	#$75 ; 'u'
 		LDA	#1
-		JSR	sub_2E43
+		JSR	ADDSTAT1
 		LDX	#$7D ; '}'
 		LDA	#1
-		JSR	sub_2E43
+		JSR	ADDSTAT1
 		LDX	#$9B ; '›'
 		LDA	#1
 		JMP	SUBSTAT1
@@ -7376,10 +7378,10 @@ loc_44E9:				; DATA XREF: RAM:45BFo
 		JSR	loc_446F
 		LDX	#$5E ; '^'
 		LDA	#1
-		JSR	sub_2E43
+		JSR	ADDSTAT1
 		LDX	#$7E ; '~'
 		LDA	#1
-		JMP	sub_2E43
+		JMP	ADDSTAT1
 ; ---------------------------------------------------------------------------
 
 loc_44FA:				; DATA XREF: RAM:45C1o
@@ -7389,10 +7391,10 @@ loc_44FA:				; DATA XREF: RAM:45C1o
 		JSR	SUBSTAT2
 		LDX	#$5E ; '^'
 		LDA	#1
-		JSR	sub_2E43
+		JSR	ADDSTAT1
 		LDX	#$7E ; '~'
 		LDA	#1
-		JSR	sub_2E43
+		JSR	ADDSTAT1
 		LDX	#$9B ; '›'
 		LDA	#1
 		JMP	SUBSTAT1
@@ -7417,10 +7419,10 @@ loc_4527:				; DATA XREF: RAM:45C3o
 loc_4530:				; CODE XREF: RAM:452Dj
 		LDX	#$7F ; ''
 		LDA	#1
-		JSR	sub_2E43
+		JSR	ADDSTAT1
 		LDX	#$5F ; '_'
 		LDA	#1
-		JMP	sub_2E43
+		JMP	ADDSTAT1
 ; ---------------------------------------------------------------------------
 
 loc_453E:				; DATA XREF: RAM:45C5o
@@ -7436,13 +7438,13 @@ loc_4547:				; CODE XREF: RAM:4544j
 		JSR	SUBSTAT2
 		LDX	#$7F ; ''
 		LDA	#1
-		JSR	sub_2E43
+		JSR	ADDSTAT1
 		LDX	#$5F ; '_'
 		LDA	#1
-		JSR	sub_2E43
+		JSR	ADDSTAT1
 		LDX	#$77 ; 'w'
 		LDA	#1
-		JMP	sub_2E43
+		JMP	ADDSTAT1
 ; ---------------------------------------------------------------------------
 
 loc_4563:				; DATA XREF: RAM:45D7o
@@ -10335,10 +10337,10 @@ loc_566F:				; CODE XREF: RAM:566Aj
 		TAX
 		LDA	byte_6054,X
 		LDX	#$99 ; '™'
-		JSR	sub_2E43
+		JSR	ADDSTAT1
 		LDA	#$1C
 		LDX	#$98 ; '˜'
-		JSR	sub_2E43
+		JSR	ADDSTAT1
 		JMP	loc_5225
 ; ---------------------------------------------------------------------------
 
@@ -10388,10 +10390,10 @@ sub_56D7:				; CODE XREF: RAM:557Ap	RAM:56BBp
 		PHA
 		TYA
 		LDX	#$98 ; '˜'
-		JSR	sub_2E43
+		JSR	ADDSTAT1
 		PLA
 		LDX	#$9A ; 'š'
-		JMP	sub_2E43
+		JMP	ADDSTAT1
 ; End of function sub_56D7
 
 ; ---------------------------------------------------------------------------
