@@ -2598,9 +2598,9 @@ sub_256B:				; CODE XREF: sub_2503:loc_2562p
 		BEQ	locret_25AA
 		LDY	byte_25C0,X
 		DEY
-		LDA	($F2),Y
+		LDA	(off_F2),Y
 		STA	byte_25BE,X
-		LDA	($F0),Y
+		LDA	(off_F0),Y
 		STA	byte_25C2
 		TXA
 		ASL	A
@@ -4862,9 +4862,9 @@ sub_322C:				; CODE XREF: sub_2BFA:loc_2F80p
 		STA	off_16+1
 		JSR	sub_1C84
 		LDA	$AC01
-		STA	$12
+		STA	off_12
 		LDA	$AC02
-		STA	$13
+		STA	off_12+1
 		LDY	#0
 		LDX	byte_1974
 
@@ -4873,10 +4873,10 @@ loc_3259:				; CODE XREF: sub_322C+3Aj
 		BMI	loc_326B
 
 loc_325C:				; CODE XREF: sub_322C+3Cj
-		LDA	($12),Y
-		INC	$12
+		LDA	(off_12),Y
+		INC	off_12
 		BNE	loc_3264
-		INC	$13
+		INC	off_12+1
 
 loc_3264:				; CODE XREF: sub_322C+34j
 		ORA	#0
@@ -4885,10 +4885,10 @@ loc_3264:				; CODE XREF: sub_322C+34j
 ; ---------------------------------------------------------------------------
 
 loc_326B:				; CODE XREF: sub_322C+2Ej sub_322C+7Aj ...
-		LDA	($12),Y
-		INC	$12
+		LDA	(off_12),Y
+		INC	off_12
 		BNE	loc_3273
-		INC	$13
+		INC	off_12+1
 
 loc_3273:				; CODE XREF: sub_322C+43j
 		ORA	#0
@@ -4896,20 +4896,20 @@ loc_3273:				; CODE XREF: sub_322C+43j
 		BPL	loc_32AB
 		AND	#$7F ; ''
 		TAX
-		LDA	#3
-		STA	$14
-		LDA	#$AC ; '¨'
-		STA	$15
+		LDA	#<$AC03
+		STA	off_14
+		LDA	#>$AC03
+		STA	off_14+1
 
 loc_3284:				; CODE XREF: sub_322C+65j
 		DEX
 		BMI	loc_3297
 
 loc_3287:				; CODE XREF: sub_322C+67j
-		LDA	($14),Y
-		INC	$14
+		LDA	(off_14),Y
+		INC	off_14
 		BNE	loc_328F
-		INC	$15
+		INC	off_14+1
 
 loc_328F:				; CODE XREF: sub_322C+5Fj
 		ORA	#0
@@ -4922,11 +4922,11 @@ locret_3296:				; CODE XREF: sub_322C+6j sub_322C+Ej ...
 ; ---------------------------------------------------------------------------
 
 loc_3297:				; CODE XREF: sub_322C+59j sub_322C+7Cj
-		LDA	($14),Y
+		LDA	(off_14),Y
 		PHP
-		INC	$14
+		INC	off_14
 		BNE	loc_32A0
-		INC	$15
+		INC	off_14+1
 
 loc_32A0:				; CODE XREF: sub_322C+70j
 		AND	#$7F ; ''
@@ -5374,10 +5374,10 @@ sub_3596:				; CODE XREF: sub_2BFA+410p RAM:3583p
 		LDA	byte_195A
 		ASL	A
 		TAY
-		LDA	($12),Y
+		LDA	(off_12),Y
 		STA	byte_191A
 		INY
-		LDA	($12),Y
+		LDA	(off_12),Y
 		STA	byte_192A
 		LDA	#7
 		STA	byte_1933
@@ -6620,7 +6620,7 @@ loc_4003:				; CODE XREF: RAM:400Fj
 
 loc_4020:				; CODE XREF: RAM:405Dj
 		LDY	#0
-		LDA	($3D),Y
+		LDA	(off_3D),Y
 		CMP	#$E0 ; '‡'
 		BCC	loc_404C
 		AND	#$F
@@ -7857,34 +7857,34 @@ loc_4851:				; CODE XREF: RAM:484Cj
 		LDA	(off_3D),Y
 		STA	$4A
 		LDA	off_3D
-		STA	$3F
+		STA	off_3F
 		LDA	off_3D+1
-		STA	$40
+		STA	off_3F+1
 
 loc_486D:				; CODE XREF: RAM:4883j	RAM:488Aj
 		INX
 		CPX	#$40 ; '@'
 		BCS	loc_4893
-		LDA	$3F
+		LDA	off_3F
 		CLC
 		ADC	#$10
-		STA	$3F
+		STA	off_3F
 		BCC	loc_487D
-		INC	$40
+		INC	off_3F+1
 
 loc_487D:				; CODE XREF: RAM:4879j
 		LDY	#0
-		LDA	($3F),Y
+		LDA	(off_3F),Y
 		CMP	#$E0 ; '‡'
 		BCC	loc_486D
 		INY
-		LDA	($3F),Y
+		LDA	(off_3F),Y
 		CMP	$4A
 		BNE	loc_486D
 		DEY
-		LDA	($3F),Y
+		LDA	(off_3F),Y
 		ORA	#8
-		STA	($3F),Y
+		STA	(off_3F),Y
 
 loc_4893:				; CODE XREF: RAM:4859j	RAM:4870j
 		LDY	#6
@@ -7931,10 +7931,10 @@ loc_48B9:				; CODE XREF: RAM:48A8j	RAM:48B1j
 
 loc_48DE:				; CODE XREF: RAM:48C5j
 		LDA	off_45
-		ADC	#0
+		ADC	#<SEG_6300
 		STA	off_45
 		LDA	off_45+1
-		ADC	#$63 ; 'c'
+		ADC	#>SEG_6300
 		STA	off_45+1
 
 loc_48EA:				; CODE XREF: RAM:48DCj
@@ -8163,39 +8163,39 @@ loc_4A08:				; CODE XREF: sub_4A01+Bj
 		DEX
 		BNE	loc_4A08
 		CLC
-		ADC	#0
-		STA	$3F
-		LDA	$40
+		ADC	#<$6500
+		STA	off_3F
+		LDA	off_3F+1
 		AND	#$F
-		ADC	#$65 ; 'e'
-		STA	$40
+		ADC	#>$6500
+		STA	off_3F+1
 		JSR	sub_4A4A
 		LDA	$49
 		TAX
 		INY
-		CMP	($3F),Y
+		CMP	(off_3F),Y
 		BEQ	loc_4A39
 		RTS
 ; ---------------------------------------------------------------------------
 
 loc_4A27:				; CODE XREF: sub_4A01+46j
 		LDY	#0
-		LDA	($3F),Y
+		LDA	(off_3F),Y
 		CMP	#$81 ; 'Å'
 		BCC	loc_4A39
 		INY
-		LDA	($3F),Y
+		LDA	(off_3F),Y
 		CMP	$49
 		BNE	loc_4A39
 		JSR	sub_4A4A
 
 loc_4A39:				; CODE XREF: sub_4A01+23j sub_4A01+2Cj ...
-		LDA	$3F
+		LDA	off_3F
 		CLC
 		ADC	#$10
-		STA	$3F
+		STA	off_3F
 		BCC	loc_4A44
-		INC	$40
+		INC	off_3F+1
 
 loc_4A44:				; CODE XREF: sub_4A01+3Fj
 		INX
@@ -8210,17 +8210,17 @@ loc_4A44:				; CODE XREF: sub_4A01+3Fj
 
 sub_4A4A:				; CODE XREF: sub_4A01+1Ap sub_4A01+35p
 		LDY	#0
-		LDA	($3F),Y
+		LDA	(off_3F),Y
 		CMP	#$F0 ; ''
 		BCC	loc_4A5A
 		LDY	#$10
 		LDA	#$80 ; 'Ä'
-		STA	($3F),Y
+		STA	(off_3F),Y
 		LDY	#0
 
 loc_4A5A:				; CODE XREF: sub_4A4A+6j
 		LDA	#$80 ; 'Ä'
-		STA	($3F),Y
+		STA	(off_3F),Y
 		RTS
 ; End of function sub_4A4A
 
@@ -8332,23 +8332,23 @@ sub_4AC9:				; CODE XREF: RAM:188Aj	RAM:4C1Ep ...
 		LDA	#0
 		STA	$644B,X
 		LDY	#1
-		LDA	($41),Y
+		LDA	(off_41),Y
 		STA	$4F
-		LDA	$41
-		STA	9
+		LDA	off_41
+		STA	off_9
 		CLC
 		ADC	$4F
-		STA	7
-		LDA	$42
+		STA	off_7
+		LDA	off_41+1
 		STA	$A
 		ADC	#0
-		STA	8
+		STA	off_7+1
 		SEC
 		LDA	#0
-		SBC	7
+		SBC	off_7
 		TAY
 		LDA	#$75 ; 'u'
-		SBC	8
+		SBC	off_7+1
 		TAX
 		JSR	sub_2E0D
 		SEC
@@ -8368,13 +8368,13 @@ loc_4B28:				; CODE XREF: sub_4AC9+81j
 		LDA	$644B,X
 		BEQ	loc_4B49
 		SBC	#0
-		CMP	$42
+		CMP	off_41+1
 		BCC	loc_4B49
 		BEQ	loc_4B3E
 		BCS	loc_4B42
 
 loc_4B3E:				; CODE XREF: sub_4AC9+71j
-		CPY	$41
+		CPY	off_41
 		BCC	loc_4B49
 
 loc_4B42:				; CODE XREF: sub_4AC9+73j
@@ -8399,16 +8399,16 @@ sub_4B4D:				; CODE XREF: RAM:1884j	sub_4EFD+32p ...
 		LDA	(off_7),Y
 		JSR	sub_4A83
 		BMI	locret_4B73
-		LDX	#$64 ; 'd'
-		LDY	#$8B ; 'ã'
+		LDX	#>$648B
+		LDY	#<$648B
 		CLC
 		JSR	sub_2DAB
 		LDY	$4F
 		LDX	#0
-		LDA	$41
-		STA	9
-		LDA	$42
-		STA	$A
+		LDA	off_41
+		STA	off_9
+		LDA	off_41+1
+		STA	off_9+1
 		JSR	sub_2E0D
 		LDA	$4B
 
@@ -8423,9 +8423,9 @@ locret_4B73:				; CODE XREF: sub_4B4D+Bj
 sub_4B74:				; CODE XREF: RAM:1887j	RAM:3F6Ep ...
 		TAX
 		LDA	$640B,X
-		STA	$41
+		STA	off_41
 		LDA	$644B,X
-		STA	$42
+		STA	off_41+1
 		RTS
 ; End of function sub_4B74
 
@@ -8458,7 +8458,7 @@ loc_4B86:				; CODE XREF: sub_51B6+5Cp
 		LDY	#2
 		LDA	$4D
 		STA	$4C
-		STA	($41),Y
+		STA	(off_41),Y
 		JSR	sub_4BB3
 		LDA	#$FF
 
@@ -8483,7 +8483,7 @@ locret_4BB2:				; CODE XREF: sub_4BAA+3j
 
 sub_4BB3:				; CODE XREF: sub_4A5F+16p RAM:4BA4p ...
 		LDY	#2
-		LDA	($41),Y
+		LDA	(off_41),Y
 		BNE	loc_4BBA
 		RTS
 ; ---------------------------------------------------------------------------
@@ -8493,7 +8493,7 @@ loc_4BBA:				; CODE XREF: sub_4BB3+4j
 		DEC	byte_1960
 		DEC	byte_195F
 		LDA	#0
-		STA	($41),Y
+		STA	(off_41),Y
 		JSR	sub_4E0F
 		LDA	$4C
 		LDY	#7
@@ -8522,8 +8522,8 @@ loc_4BD6:				; CODE XREF: sub_4BB3+1Dj
 loc_4BE2:				; DATA XREF: RAM:off_4CBFo
 		LDA	#$80 ; 'Ä'
 		LDY	#0
-		ORA	($41),Y
-		STA	($41),Y
+		ORA	(off_41),Y
+		STA	(off_41),Y
 		JSR	sub_4E90
 		LDA	#1
 		PHA
@@ -8533,14 +8533,14 @@ loc_4BE2:				; DATA XREF: RAM:off_4CBFo
 
 loc_4BF5:				; DATA XREF: RAM:4CC1o
 		LDY	#0
-		LDA	($41),Y
+		LDA	(off_41),Y
 		BMI	loc_4BFE
 		JMP	locret_4C9C
 ; ---------------------------------------------------------------------------
 
 loc_4BFE:				; CODE XREF: RAM:4BF9j
 		AND	#$7F ; ''
-		STA	($41),Y
+		STA	(off_41),Y
 		CMP	#$B
 		BNE	loc_4C09
 		JSR	sub_4EFD
@@ -8578,15 +8578,15 @@ loc_4C27:				; CODE XREF: RAM:4C14j
 		STA	$6493
 		LDY	#2
 		LDA	#8
-		STA	($41),Y
+		STA	(off_41),Y
 		LDA	#2
 		PHA
 		LDA	#1
 		BNE	loc_4C95
 
 loc_4C5A:				; DATA XREF: RAM:4CC3o
-		LDX	#$64 ; 'd'
-		LDY	#$8B ; 'ã'
+		LDX	#>$648B
+		LDY	#<$648B
 		LDA	$4B
 		SEC
 		JSR	sub_2DAB
@@ -8597,15 +8597,15 @@ loc_4C5A:				; DATA XREF: RAM:4CC3o
 
 loc_4C6B:				; DATA XREF: RAM:4CC5o
 		LDY	#0
-		LDA	($41),Y
+		LDA	(off_41),Y
 		AND	#$7F ; ''
 		CMP	#$B
 		BNE	loc_4C78
 		JSR	sub_4EFD
 
 loc_4C78:				; CODE XREF: RAM:4C73j
-		LDX	#$64 ; 'd'
-		LDY	#$8B ; 'ã'
+		LDX	#>$648B
+		LDY	#<$648B
 		LDA	$4B
 		JSR	sub_2DE3
 		BCS	loc_4C86
@@ -8613,8 +8613,8 @@ loc_4C78:				; CODE XREF: RAM:4C73j
 ; ---------------------------------------------------------------------------
 
 loc_4C86:				; CODE XREF: RAM:4C81j
-		LDX	#$64 ; 'd'
-		LDY	#$8B ; 'ã'
+		LDX	#>$648B
+		LDY	#<$648B
 		LDA	$4B
 		CLC
 		JSR	sub_2DAB
@@ -8634,7 +8634,7 @@ locret_4C9C:				; CODE XREF: RAM:4BFBj	RAM:4C83j
 
 loc_4C9D:				; DATA XREF: RAM:4CC7o
 		LDY	#0
-		LDA	($41),Y
+		LDA	(off_41),Y
 		CMP	#$8B ; 'ã'
 		BNE	loc_4CAD
 		LDA	$6390
@@ -8858,15 +8858,15 @@ loc_4DCB:				; CODE XREF: sub_4D93+34j
 
 
 sub_4DD4:				; CODE XREF: sub_4CCF+3Dp
-		LDA	#0
-		STA	$3F
-		LDA	#$65 ; 'e'
-		STA	$40
+		LDA	#<$6500
+		STA	off_3F
+		LDA	#>$6500
+		STA	off_3F+1
 		LDX	#$40 ; '@'
 
 loc_4DDE:				; CODE XREF: sub_4DD4+2Fj
 		LDY	#0
-		LDA	($3F),Y
+		LDA	(off_3F),Y
 		CMP	#$81 ; 'Å'
 		BCC	loc_4DF7
 		LDY	#6
@@ -8913,10 +8913,10 @@ sub_4E0F:				; CODE XREF: sub_4BB3+13p
 		AND	#5
 		BEQ	locret_4E22
 		LDY	#3
-		LDA	($41),Y
+		LDA	(off_41),Y
 		BEQ	locret_4E22
 		BPL	loc_4E23
-		CMP	$6385
+		CMP	I_ALIGN
 		BCS	loc_4E28
 
 locret_4E22:				; CODE XREF: RAM:4E09j	sub_4E0F+4j ...
@@ -8924,53 +8924,53 @@ locret_4E22:				; CODE XREF: RAM:4E09j	sub_4E0F+4j ...
 ; ---------------------------------------------------------------------------
 
 loc_4E23:				; CODE XREF: sub_4E0F+Cj
-		CMP	$6385
+		CMP	I_ALIGN
 		BCS	locret_4E22
 
 loc_4E28:				; CODE XREF: sub_4E0F+11j
 		LDA	(off_41),Y
 		BPL	loc_4E49
-		LDA	$6385
+		LDA	I_ALIGN
 		BPL	loc_4E3D
 		LDA	#<aIWasMeantForBe
-		STA	byte_502C
+		STA	off_502C
 		LDA	#>aIWasMeantForBe
-		STA	byte_502D
+		STA	off_502C+1
 		BNE	loc_4E64
 
 loc_4E3D:				; CODE XREF: sub_4E0F+20j
-		LDA	#$E4 ; '‰'
-		STA	byte_502C
-		LDA	#$4F ; 'O'
-		STA	byte_502D
+		LDA	#<aReleaseMeFoulM
+		STA	off_502C
+		LDA	#>aReleaseMeFoulM
+		STA	off_502C+1
 		BNE	loc_4E64
 
 loc_4E49:				; CODE XREF: sub_4E0F+1Bj
-		LDA	$6385
+		LDA	I_ALIGN
 		BMI	loc_4E5A
-		LDA	#$C0 ; '¿'
-		STA	byte_502C
-		LDA	#$4F ; 'O'
-		STA	byte_502D
+		LDA	#<aYourEvilCannot
+		STA	off_502C
+		LDA	#>aYourEvilCannot
+		STA	off_502C+1
 		BNE	loc_4E64
 
 loc_4E5A:				; CODE XREF: sub_4E0F+3Dj
-		LDA	#5
-		STA	byte_502C
-		LDA	#$50 ; 'P'
-		STA	byte_502D
+		LDA	#<aMiserableDoGoo
+		STA	off_502C
+		LDA	#>aMiserableDoGoo
+		STA	off_502C+1
 
 loc_4E64:				; CODE XREF: sub_4E0F+2Cj sub_4E0F+38j ...
 		CLC
 		LDA	#6
-		ADC	$41
+		ADC	off_41
 		STA	byte_502A
-		LDA	$42
+		LDA	off_41+1
 		ADC	#0
 		STA	byte_502B
-		LDA	#$7D ; '}'
+		LDA	#<a_TheScreams
 		STA	off_16
-		LDA	#$4F ; 'O'
+		LDA	#>a_TheScreams
 		STA	off_16+1
 		JSR	sub_3CA5
 		JSR	sub_2BB0
@@ -9198,6 +9198,8 @@ aStick:		.BYTE "stick",0
 		.BYTE	9
 		.BYTE $82 ; Ç
 		.BYTE	1
+
+a_TheScreams:
 		MOVEXY	0,0
 		.BYTE $A5
 aThe:		.BYTE "The"
@@ -9213,7 +9215,7 @@ aScreams:	.BYTE "screams:"
 		.BYTE $D
 		.BYTE $A5
 		.BYTE $B4
-		.WORD byte_502C
+		.WORD off_502C
 		.BYTE $28
 		.BYTE $D
 		.BYTE $FF
@@ -9223,8 +9225,7 @@ aReleaseMeFoulM:.BYTE $22,"Release me foul mortal or pay!",$22,0
 aMiserableDoGoo:.BYTE $22,"Miserable do-gooder you shall pay!",$22,0
 byte_502A:	.BYTE 0			; DATA XREF: sub_4E0F+5Aw RAM:4F87o
 byte_502B:	.BYTE 0			; DATA XREF: sub_4E0F+61w
-byte_502C:	.BYTE 0			; DATA XREF: sub_4E0F+24w sub_4E0F+30w ...
-byte_502D:	.BYTE 0			; DATA XREF: sub_4E0F+29w sub_4E0F+35w ...
+off_502C:	.WORD	0		; DATA XREF: sub_4E0F+24w sub_4E0F+30w ...
 
 ; --------------- S U B	R O U T	I N E ---------------------------------------
 
@@ -9268,9 +9269,9 @@ sub_5049:				; CODE XREF: sub_50B2:loc_515Cp
 ; ---------------------------------------------------------------------------
 
 loc_505C:				; CODE XREF: sub_5049+6j
-		LDA	#$41 ; 'A'
+		LDA	#<byte_5D41
 		STA	off_16
-		LDA	#$5D ; ']'
+		LDA	#>byte_5D41
 		STA	off_16+1
 
 loc_5064:				; CODE XREF: sub_5049+10j
@@ -11251,6 +11252,8 @@ aHaveBeenRepair:.BYTE "have been repaired."
 		.BYTE $32 ; 2
 		.BYTE $33 ; 3
 		.BYTE $34 ; 4
+
+byte_5D41:
 		MOVEXY	0,0
 		.BYTE $A2
 		.BYTE $B4
@@ -11378,6 +11381,8 @@ loc_5E05:				; CODE XREF: RAM:5DE5j	RAM:5DEAj
 		INC	byte_5DAF
 		RTS
 ; ---------------------------------------------------------------------------
+
+byte_5E09:
 		MOVEXY	0,0
 		.BYTE $A5
 		.BYTE $B4

@@ -3,17 +3,22 @@ off_7 	= $07
 off_9 	= $09
 off_D	= $0D
 off_10	= $10
+off_12	= $12
+off_14	= $14
 off_16	= $16
 off_18	= $18
 off_1D	= $1D
 BLINKFLAG	= $21
 off_3D	= $3D
+off_3F	= $3F
 off_41	= $41
 off_43	= $43
 off_45	= $45
 off_47	= $47
 off_58	= $58
 off_5A	= $5A
+off_F0	= $F0
+off_F2	= $F2
 
 off_200 = $0200
 off_208	= $0208
@@ -36,6 +41,7 @@ I_MAXHP		= $6347
 I_CURINT	= $6361
 I_MAXINT	= $6362
 
+I_ALIGN		= $6385
 I_BURDEN	= $6394
 I_TEMPER	= $6395
 I_DRUNK		= $6397
@@ -66,6 +72,10 @@ MOVECURSOR = $A6
 
 .macro BLINK arg1
 	.BYTE BLINKON, arg1, BLINKOFF
+.endmacro
+
+.macro PRINTSTR Ptr, Len
+	.BYTE $B4,.LOBYTE(Ptr),.HIBYTE(Ptr),Len
 .endmacro
 
 .macro PRINTBYTE Ptr, Len

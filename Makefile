@@ -50,95 +50,95 @@ all: $(OBJECTS)
 %.o: %.asm
 	$(CA) $(AFLAGS) $< -o $@
 
-s001.bin:
+s001.bin: s001.asm
 	cl65 --start-addr 0x0600 -t none s001.asm -o s001.bin
 
-s002.bin:
+s002.bin: s002.asm
 	cl65 --start-addr 0x1000 -t none s002.asm -o s002.bin
 
-s006.bin:
+s006.bin: s006.asm
 	cl65 --start-addr 0xbd80 -t none s006.asm -o s006.bin
 
-s011.bin:
+s011.bin: s011.asm
 	cl65 --start-addr 0xbd80 -t none s011.asm -o s011.bin
 
-s016.bin:
+s016.bin: s016.asm
 	cl65 --start-addr 0xb000 -t none s016.asm -o s016.bin
 
-s017.bin:
+s017.bin: s017.asm
 	cl65 --start-addr 0x0600 -t none s017.asm -o s017.bin
 
-s205.bin:
+s205.bin: s205.asm
 	ca65 -o s205.o s205.asm
 	ld65 -o s205.bin -C s205.cfg s205.o
 
-s225.bin:
+s225.bin: s225.asm
 	cl65 --start-addr 0x1e00 -t none s225.asm -o s225.bin
 
-s258.bin:
+s258.bin: s258.asm
 	cl65 --start-addr 0x0100 -t none s258.asm -o s258.bin
 
-s259.bin:
+s259.bin: s259.asm
 	cl65 --start-addr 0x7600 -t none s259.asm -o s259.bin
 	./encrypt.php s259.bin 4102001a983277ddd64843acbaf7d040
 
-s311.bin:
+s311.bin: s311.asm
 	cl65 --start-addr 0x0100 -t none s311.asm -o s311.bin
 
-s312.bin:
+s312.bin: s312.asm
 	cl65 --start-addr 0x7600 -t none s312.asm -o s312.bin
 	./encrypt.php s312.bin 413700204ce23c41cde1a12857f6d83a
 
-s376.bin:
+s376.bin: s376.asm
 	cl65 --start-addr 0x0100 -t none s376.asm -o s376.bin
 
-s377.bin:
+s377.bin: s377.asm
 	cl65 --start-addr 0x9800 -t none s377.asm -o s377.bin
 	./encrypt.php s377.bin 4178002547123a1dffaaa0d4ac13cc22
 
-s451.bin:
+s451.bin: s451.asm
 	cl65 --start-addr 0x0100 -t none s451.asm -o s451.bin
 
-s452.bin:
+s452.bin: s452.asm
 	cl65 --start-addr 0x7600 -t none s452.asm -o s452.bin
 	./encrypt.php s452.bin 41c300074f7512e77eb2f1b645eb0dcd
 
-s466.bin:
+s466.bin: s466.asm
 	cl65 --start-addr 0x0100 -t none s466.asm -o s466.bin
 
-s467.bin:
+s467.bin: s467.asm
 	cl65 --start-addr 0x7600 -t none s467.asm -o s467.bin
 	./encrypt.php s467.bin 41d200064bc5aea0920931376c30af6e
 
-s480.bin:
+s480.bin: s480.asm
 	cl65 --start-addr 0x0100 -t none s480.asm -o s480.bin
 
-s481.bin:
+s481.bin: s481.asm
 	cl65 --start-addr 0x6300 -t none s481.asm -o s481.bin
 	./encrypt.php s481.bin 41e00012ce2968152c088c20cabc4d9d
 
-s517.bin:
+s517.bin: s517.asm
 	cl65 --start-addr 0x0100 -t none s517.asm -o s517.bin
 
-s518.bin:
+s518.bin: s518.asm
 	cl65 --start-addr 0x1400 -t none s518.asm -o s518.bin
 	./encrypt.php s518.bin 4205004fd4eeca7c58be41ff111a97bd
 
-s676.bin:
+s676.bin: s676.asm
 	cl65 --start-addr 0x0100 -t none s676.asm -o s676.bin
 
-s677.bin:
+s677.bin: s677.asm
 	cl65 --start-addr 0x9000 -t none s677.asm -o s677.bin
 	./encrypt.php s677.bin 42a4000198528330ebd15088a888464a
 
-s679.bin:
+s679.bin: s679.asm
 	cl65 --start-addr 0x0100 -t none s679.asm -o s679.bin
 
-s680.bin:
+s680.bin: s680.asm
 	cl65 --start-addr 0x9000 -t none s680.asm -o s680.bin
 	./encrypt.php s680.bin 42a70001985273ef37bb9374faa9db68
 
-s682.bin:
+s682.bin: s682.asm
 	cl65 --start-addr 0x1400 -t none s682.asm -o s682.bin
 
 clean:
