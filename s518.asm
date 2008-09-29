@@ -6249,45 +6249,25 @@ aYouAreOnLevel:	.BYTE "You are on level "
 aOfTheDungeon:	.BYTE "of the Dungeon"
 		.BYTE $D
 		MOVEXY	0,4
-		.BYTE $B4
-		.WORD off_45A9
-		.BYTE $C
+		PRINTSTR off_45A9,12
 		.BYTE $D
-		.BYTE $B4
-		.WORD off_45A7
-		.BYTE $C
+		PRINTSTR off_45A7,12
 		.BYTE $D
-		.BYTE $B4
-		.WORD off_45A5
-		.BYTE $C
+		PRINTSTR off_45A5,12
 		.BYTE $D
-		.BYTE $B4
-		.WORD off_45AD
-		.BYTE $C
+		PRINTSTR off_45AD,12
 		MOVEXY	28,4
-		.BYTE $B4
-		.WORD off_45AB
-		.BYTE $C
+		PRINTSTR off_45AB,12
 		MOVEXY	28,5
-		.BYTE $B4
-		.WORD off_45A3
-		.BYTE $C
+		PRINTSTR off_45A3,12
 		MOVEXY	28,6
-		.BYTE $B4
-		.WORD off_45B3
-		.BYTE $C
+		PRINTSTR off_45B3,12
 		MOVEXY	28,7
-		.BYTE $B4
-		.WORD off_45B1
-		.BYTE $C
+		PRINTSTR off_45B1,12
 		MOVEXY	14,6
-		.BYTE $B4
-		.WORD off_45B5
-		.BYTE $C
+		PRINTSTR off_45B5,12
 		MOVEXY	14,7
-		.BYTE $B4
-		.WORD off_45AF
-		.BYTE $C
+		PRINTSTR off_45AF,12
 		.BYTE $FF
 
 byte_3D84:
@@ -6329,42 +6309,30 @@ aWeapons:	.BYTE "Weapons"
 		.WORD loc_3F41
 		MOVEXY	0,1
 aPrimary:	.BYTE "Primary: "
-		.BYTE $B4
-		.WORD byte_407F
-		.BYTE $1F
+		PRINTSTR off_407F,31
 		.BYTE $AB
 		MOVEXY	0,2
 aSecondary:	.BYTE "Secondary: "
-		.BYTE $B4
-		.WORD byte_4081
-		.BYTE $1D
+		PRINTSTR off_4081,29
 		.BYTE $AB
 		.BYTE $D
 		.BYTE $A5
 aArmor:		.BYTE "Armor"
 		.BYTE $D
 aHead:		.BYTE "Head: "
-		.BYTE $B4
-		.WORD unk_4083
-		.BYTE $22
+		PRINTSTR off_4083,34
 		.BYTE $AB
 		MOVEXY	0,5
 aBody:		.BYTE "Body: "
-		.BYTE $B4
-		.WORD unk_4085
-		.BYTE $22
+		PRINTSTR off_4085,34
 		.BYTE $AB
 		MOVEXY	0,6
 aArms:		.BYTE "Arms: "
-		.BYTE $B4
-		.WORD unk_4087
-		.BYTE $22
+		PRINTSTR off_4087,34
 		.BYTE $AB
 		MOVEXY	0,7
 aLegs:		.BYTE "Legs: "
-		.BYTE $B4
-		.WORD unk_4089
-		.BYTE $22
+		PRINTSTR off_4089,34
 		.BYTE $AB
 		.BYTE $FF
 
@@ -6378,25 +6346,25 @@ aApparel:	.BYTE "Apparel"
 		MOVEXY	10,2
 		.BYTE $A2
 		.BYTE $B4
-		.WORD byte_407F
+		.WORD off_407F
 		.BYTE $1E
 		.BYTE $AB
 		.BYTE $D
 		.BYTE $A2
 		.BYTE $B4
-		.WORD byte_4081
+		.WORD off_4081
 		.BYTE $1E
 		.BYTE $AB
 		.BYTE $D
 		.BYTE $A2
 		.BYTE $B4
-		.WORD unk_4083
+		.WORD off_4083
 		.BYTE $1E
 		.BYTE $AB
 		.BYTE $D
 		.BYTE $A2
 		.BYTE $B4
-		.WORD unk_4085
+		.WORD off_4085
 		.BYTE $1E
 		.BYTE $AB
 		.BYTE $D
@@ -6436,59 +6404,47 @@ aCurses:	.BYTE "Curses"
 		.BYTE $FF
 byte_3F15:	.BYTE $D		; DATA XREF: RAM:3EE6o	RAM:3F00o ...
 		.BYTE $A2
-		.BYTE $B4
-		.WORD byte_407F
-		.BYTE $26
+		PRINTSTR off_407F,38
 		.BYTE $AB
 		.BYTE $D
 		.BYTE $A2
-		.BYTE $B4
-		.WORD byte_4081
-		.BYTE $26
+		PRINTSTR off_4081,38
 		.BYTE $AB
 		.BYTE $D
 		.BYTE $A2
-		.BYTE $B4
-		.WORD unk_4083
-		.BYTE $26
+		PRINTSTR off_4083,38
 		.BYTE $AB
 		.BYTE $D
 		.BYTE $A2
-		.BYTE $B4
-		.WORD unk_4085
-		.BYTE $26
+		PRINTSTR off_4085,38
 		.BYTE $AB
 		.BYTE $D
 		.BYTE $A2
-		.BYTE $B4
-		.WORD unk_4087
-		.BYTE $26
+		PRINTSTR off_4087,38
 		.BYTE $AB
 		.BYTE $D
 		.BYTE $A2
-		.BYTE $B4
-		.WORD unk_4089
-		.BYTE $26
+		PRINTSTR off_4089,38
 		.BYTE $AB
 		.BYTE $D
 		.BYTE $AE
 ; ---------------------------------------------------------------------------
 
 loc_3F41:				; DATA XREF: RAM:3E3Eo
-		LDA	#$6E ; 'n'
-		STA	byte_407F
-		STA	byte_4081
-		LDA	#$40 ; '@'
-		STA	byte_4080
-		STA	byte_4082
+		LDA	#<aBareHand
+		STA	off_407F
+		STA	off_4081
+		LDA	#>aBareHand
+		STA	off_407F+1
+		STA	off_4081+1
 		LDX	#7
 
 loc_3F53:				; CODE XREF: RAM:3F5Fj
-		LDA	#$40 ; '@'
-		STA	unk_4083,X
+		LDA	#>aNone
+		STA	off_4083,X
 		DEX
-		LDA	#$78 ; 'x'
-		STA	unk_4083,X
+		LDA	#<aNone
+		STA	off_4083,X
 		DEX
 		BPL	loc_3F53
 		LDA	#5
@@ -6504,12 +6460,12 @@ loc_3F66:				; CODE XREF: RAM:3F8Aj
 		LDA	byte_407D
 		ASL	A
 		TAY
-		LDA	$41
+		LDA	off_41
 		ADC	#6
-		STA	byte_407F,Y
+		STA	off_407F,Y
 		LDA	#0
-		ADC	$42
-		STA	byte_4080,Y
+		ADC	off_41+1
+		STA	off_407F+1,Y
 
 loc_3F87:				; CODE XREF: RAM:3F6Cj	RAM:3F71j
 		DEC	byte_407D
@@ -6518,18 +6474,18 @@ loc_3F87:				; CODE XREF: RAM:3F6Cj	RAM:3F71j
 ; ---------------------------------------------------------------------------
 
 loc_3F8D:				; DATA XREF: RAM:3EAFo
-		LDA	#$60 ; '`'
-		STA	byte_407F
-		LDA	#$40 ; '@'
-		STA	byte_4080
+		LDA	#<$4060
+		STA	off_407F
+		LDA	#>$4060
+		STA	off_407F+1
 		LDX	#5
 
 loc_3F99:				; CODE XREF: RAM:3FA5j
-		LDA	#$5E ; '^'
-		STA	byte_4081,X
+		LDA	#>$5E53
+		STA	off_4081,X
 		DEX
-		LDA	#$53 ; 'S'
-		STA	byte_4081,X
+		LDA	#<$5E53
+		STA	off_4081,X
 		DEX
 		BPL	loc_3F99
 		LDY	#4
@@ -6572,12 +6528,12 @@ loc_3FCF:				; CODE XREF: RAM:3FF3j
 		ASL	A
 		TAX
 		CLC
-		LDA	$41
+		LDA	off_41
 		ADC	#6
-		STA	byte_407F,X
-		LDA	$42
+		STA	off_407F,X
+		LDA	off_41+1
 		ADC	#0
-		STA	byte_4080,X
+		STA	off_407F+1,X
 
 loc_3FF0:				; CODE XREF: RAM:3FD5j	RAM:3FDAj
 		DEC	byte_407D
@@ -6603,11 +6559,11 @@ loc_3FFC:				; DATA XREF: RAM:3EE3o
 		LDX	#$B
 
 loc_4003:				; CODE XREF: RAM:400Fj
-		LDA	#$5E ; '^'
-		STA	byte_407F,X
+		LDA	#>unk_5E53
+		STA	off_407F,X
 		DEX
-		LDA	#$53 ; 'S'
-		STA	byte_407F,X
+		LDA	#<unk_5E53
+		STA	off_407F,X
 		DEX
 		BPL	loc_4003
 		LDA	#0
@@ -6631,10 +6587,10 @@ loc_4020:				; CODE XREF: RAM:405Dj
 		TAX
 		LDA	$3D
 		ADC	#3
-		STA	byte_407F,X
+		STA	off_407F,X
 		LDA	$3E
 		ADC	#0
-		STA	byte_4080,X
+		STA	off_407F+1,X
 		INC	byte_407D
 		LDA	byte_407D
 		CMP	#6
@@ -6662,18 +6618,12 @@ aBareHand:	.BYTE "Bare hand",0
 aNone:		.BYTE "None",0
 byte_407D:	.BYTE 0			; DATA XREF: RAM:3F63w	RAM:loc_3F66r ...
 byte_407E:	.BYTE 0			; DATA XREF: RAM:3FFEw	RAM:402Ar
-byte_407F:	.BYTE 0			; DATA XREF: RAM:3E4Do	RAM:3EB6o ...
-byte_4080:	.BYTE 0			; DATA XREF: RAM:3F4Bw	RAM:3F84w ...
-byte_4081:	.BYTE 0			; DATA XREF: RAM:3E60o	RAM:3EBDo ...
-byte_4082:	.BYTE 0			; DATA XREF: RAM:3F4Ew
-unk_4083:	.BYTE	0		; DATA XREF: RAM:3E73o	RAM:3EC4o ...
-		.BYTE	0
-unk_4085:	.BYTE	0		; DATA XREF: RAM:3E81o	RAM:3ECBo ...
-		.BYTE	0
-unk_4087:	.BYTE	0		; DATA XREF: RAM:3E8Fo	RAM:3F34o
-		.BYTE	0
-unk_4089:	.BYTE	0		; DATA XREF: RAM:3E9Do	RAM:3F3Bo
-		.BYTE	0
+off_407F:	.WORD	0		; DATA XREF: RAM:3E4Do	RAM:3EB6o ...
+off_4081:	.WORD	0		; DATA XREF: RAM:3E60o	RAM:3EBDo ...
+off_4083:	.WORD	0		; DATA XREF: RAM:3E73o	RAM:3EC4o ...
+off_4085:	.WORD	0		; DATA XREF: RAM:3E81o	RAM:3ECBo ...
+off_4087:	.WORD	0		; DATA XREF: RAM:3E8Fo	RAM:3F34o
+off_4089:	.WORD	0		; DATA XREF: RAM:3E9Do	RAM:3F3Bo
 
 ; --------------- S U B	R O U T	I N E ---------------------------------------
 
@@ -8873,7 +8823,7 @@ loc_4DDE:				; CODE XREF: sub_4DD4+2Fj
 
 loc_4DE8:				; CODE XREF: sub_4DD4+1Dj
 		LDA	(off_43),Y
-		CMP	($3F),Y
+		CMP	(off_3F),Y
 		BNE	loc_4DF7
 		INY
 		CPY	#$F
@@ -9709,7 +9659,7 @@ loc_52C3:
 		LDY	#2
 
 loc_52DA:				; CODE XREF: RAM:52E0j
-		LDA	($47),Y
+		LDA	(off_47),Y
 		STA	byte_6280,Y
 		DEY
 		BPL	loc_52DA
@@ -10198,7 +10148,7 @@ sub_55B7:				; CODE XREF: RAM:1893j	RAM:52B7p ...
 
 loc_55C3:				; CODE XREF: sub_55B7+2Aj
 		LDY	#0
-		LDA	($3D),Y
+		LDA	(off_3D),Y
 		AND	#$83 ; 'ƒ'
 		CMP	$51
 		BNE	loc_55D0
@@ -10430,12 +10380,12 @@ loc_56F5:				; CODE XREF: RAM:56EDj
 
 loc_570C:				; CODE XREF: RAM:5714j
 		LDA	byte_611A,Y
-		STA	($3D),Y
+		STA	(off_3D),Y
 		INY
 		CPY	#$F
 		BNE	loc_570C
 		LDA	$4B
-		STA	($3D),Y
+		STA	(off_3D),Y
 		DEC	$63BD
 		INC	$6390
 		JMP	loc_54AF
@@ -10802,7 +10752,7 @@ sub_5957:				; CODE XREF: RAM:593Fp
 		ADC	$6301,X
 		STA	$6301,X
 		DEY
-		LDA	($41),Y
+		LDA	(off_41),Y
 		ADC	$6300,X
 		STA	$6300,X
 		BCC	loc_5995
@@ -10999,7 +10949,7 @@ loc_5ADF:				; CODE XREF: sub_5AB4+14j
 		STA	byte_1961
 		LDA	#2
 		LDY	#2
-		STA	($41),Y
+		STA	(off_41),Y
 
 loc_5B0E:				; CODE XREF: sub_5AB4+42j sub_5AB4+4Dj ...
 		DEC	byte_195F
@@ -11136,26 +11086,26 @@ loc_5BEA:				; CODE XREF: sub_5AB4+193j
 		JSR	sub_4B74
 		BEQ	loc_5C44
 		LDY	#0
-		LDA	($41),Y
+		LDA	(off_41),Y
 		BNE	loc_5C44
 		LDY	#$16
-		LDA	($41),Y
+		LDA	(off_41),Y
 		CMP	byte_5A17
 		BNE	loc_5C44
 		LDY	#$18
 		CLC
 		LDA	byte_5A19
-		ADC	($41),Y
-		STA	($41),Y
+		ADC	(off_41),Y
+		STA	(off_41),Y
 		DEY
 		LDA	byte_5A18
-		ADC	($41),Y
-		STA	$41,Y
+		ADC	(off_41),Y
+		STA	off_41,Y
 		BCC	loc_5C41
 		LDA	#$FF
-		STA	($41),Y
+		STA	(off_41),Y
 		INY
-		STA	($41),Y
+		STA	(off_41),Y
 
 loc_5C41:				; CODE XREF: sub_5AB4+184j
 		JMP	loc_5B0E
