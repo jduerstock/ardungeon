@@ -5220,7 +5220,7 @@ loc_34A3:				; CODE XREF: RAM:3475j	RAM:347Cj ...
 		AND	#1
 		CLC
 		ADC	#1
-		LDX	#$45 ; 'E'
+		LDX	#I_CURHP-SEG_6300
 		JSR	SUBSTAT2
 		LDA	#<a_TheDoorRemains
 		STA	off_16
@@ -5250,9 +5250,9 @@ loc_34CF:				; CODE XREF: RAM:34C2j
 loc_34D9:				; CODE XREF: RAM:34BDj
 		CMP	#4
 		BNE	loc_3518
-		LDA	#$E1 ; 'á'
+		LDA	#<a_Concentrating
 		STA	off_16
-		LDA	#$3A ; ':'
+		LDA	#>a_Concentrating
 		STA	off_16+1
 		LDX	byte_352E
 		JSR	sub_3C5C
@@ -5267,7 +5267,7 @@ loc_34ED:				; CODE XREF: RAM:34F1j
 		JSR	SUBSTAT1
 		LDA	RANDOM
 		LSR	A
-		CMP	$6361
+		CMP	I_CURINT
 		BCS	loc_350D
 		LDA	byte_1970
 		CMP	#2
@@ -5908,6 +5908,8 @@ aExamining___:	.BYTE "Examining..."
 		.BYTE $D
 		.BYTE	BLINKOFF
 		.BYTE $FF
+
+a_Concentrating:
 		MOVEXY	0,2
 		.BYTE	BLINKON
 		.BYTE $A5
@@ -6825,7 +6827,7 @@ loc_4176:				; CODE XREF: sub_408B+1Ep
 		BNE	loc_4187
 		LDA	#$21 ; '!'
 		STA	byte_4590
-		LDX	#$99 ; '™'
+		LDX	#I_HUNGER-SEG_6300
 		LDA	#1
 		JSR	SUBSTAT1
 
@@ -6834,7 +6836,7 @@ loc_4187:				; CODE XREF: RAM:4179j
 		BNE	loc_4198
 		LDA	#$16
 		STA	byte_4591
-		LDX	#$9A ; 'š'
+		LDX	#I_THIRST-SEG_6300
 		LDA	#1
 		JSR	SUBSTAT1
 
@@ -6845,7 +6847,7 @@ loc_4198:				; CODE XREF: RAM:418Aj
 		STA	byte_4592
 		BIT	byte_1972
 		BMI	loc_41AE
-		LDX	#$9B ; '›'
+		LDX	#I_ENERGY-SEG_6300
 		LDA	#1
 		JSR	SUBSTAT1
 
@@ -6857,7 +6859,7 @@ loc_41AE:				; CODE XREF: RAM:419Bj	RAM:41A5j
 		LDA	$6396
 		BEQ	loc_41CA
 		DEC	$6396
-		LDX	#$97 ; '—'
+		LDX	#I_DRUNK-SEG_6300
 		LDA	#1
 		JSR	ADDSTAT1
 		JMP	loc_41DE
@@ -6880,7 +6882,7 @@ loc_41DE:				; CODE XREF: RAM:41B1j	RAM:41C7j ...
 		BNE	locret_41EF
 		LDA	#2
 		STA	byte_4594
-		LDX	#$98 ; '˜'
+		LDX	#I_STOMACH-SEG_6300
 		LDA	#1
 		JSR	SUBSTAT1
 
@@ -7316,7 +7318,7 @@ loc_447E:				; CODE XREF: RAM:447Bj
 ; ---------------------------------------------------------------------------
 
 loc_4481:				; DATA XREF: RAM:45B7o
-		LDX	#$9B ; '›'
+		LDX	#I_ENERGY-SEG_6300
 		LDA	#1
 		JSR	SUBSTAT1
 		LDX	#$99 ; '™'
@@ -7325,7 +7327,7 @@ loc_4481:				; DATA XREF: RAM:45B7o
 ; ---------------------------------------------------------------------------
 
 loc_448F:				; DATA XREF: RAM:45B9o
-		LDX	#$9B ; '›'
+		LDX	#I_ENERGY-SEG_6300
 		LDA	#1
 		JSR	SUBSTAT1
 		LDX	#$9A ; 'š'
@@ -7357,7 +7359,7 @@ loc_44AE:				; DATA XREF: RAM:45BDo
 		LDX	#$7D ; '}'
 		LDA	#1
 		JSR	ADDSTAT1
-		LDX	#$9B ; '›'
+		LDX	#I_ENERGY-SEG_6300
 		LDA	#1
 		JMP	SUBSTAT1
 ; ---------------------------------------------------------------------------
@@ -7461,14 +7463,14 @@ loc_4563:				; DATA XREF: RAM:45D7o
 
 loc_4578:				; DATA XREF: RAM:45C7o
 		JSR	loc_446F
-		LDX	#$9B ; '›'
+		LDX	#I_ENERGY-SEG_6300
 		LDA	#1
 		JMP	SUBSTAT1
 ; ---------------------------------------------------------------------------
 
 loc_4582:				; DATA XREF: RAM:45C9o
 		JSR	loc_446F
-		LDX	#$9B ; '›'
+		LDX	#I_ENERGY-SEG_6300
 		LDA	#1
 		JMP	SUBSTAT1
 ; ---------------------------------------------------------------------------
@@ -10704,9 +10706,9 @@ sub_58C2:				; CODE XREF: sub_5857+49p
 		LDA	$42
 		ADC	#0
 		STA	off_59C1+1
-		LDA	#$9B ; '›'
+		LDA	#<a_Getq_0
 		STA	byte_5955
-		LDA	#$59 ; 'Y'
+		LDA	#>a_Getq_0
 		STA	byte_5956
 		LDY	#0
 		LDA	(off_41),Y
@@ -10825,6 +10827,8 @@ loc_5995:				; CODE XREF: sub_5957+21j sub_5957+2Bj ...
 ; End of function sub_5957
 
 ; ---------------------------------------------------------------------------
+
+a_Getq_0:
 		MOVEXY	0,0
 		.BYTE $A5
 aGetq:		.BYTE "GET?"
