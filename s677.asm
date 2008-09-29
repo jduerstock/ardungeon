@@ -1,7 +1,6 @@
-;		.ORG	$9000
+		.include	"globals.inc"
 
-off_9		=	$09
-word_0232	=	$0232
+;		.ORG	$9000
 
 loc_9000:
 		JSR	$1827
@@ -16,9 +15,9 @@ loc_900E:
 		STA	$91BE,X
 		INX
 		BNE	loc_900E
-		STX	word_0232
+		STX	word_232
 		INX
-		STX	word_0232+1
+		STX	word_232+1
 		LDA	#<unk_90BE
 		STA	off_9
 		LDA	#>unk_90BE
@@ -57,7 +56,7 @@ loc_9039:
 		NOP
 		NOP
 		NOP
-		INC	$0232
+		INC	word_232
 		NOP
 		NOP
 		NOP

@@ -171,9 +171,9 @@ loc_8104:				; CODE XREF: sub_80D2+25j
 
 loc_8128:				; CODE XREF: sub_80D2+81j
 		LDA	$2501
-		STA	$232
+		STA	word_232
 		LDA	$2502
-		STA	$233
+		STA	word_232+1
 
 loc_8134:				; CODE XREF: sub_80D2+65j
 		JSR	$248E
@@ -182,15 +182,15 @@ loc_8134:				; CODE XREF: sub_80D2+65j
 
 loc_813B:				; CODE XREF: sub_80D2+6Fj
 		LDA	$100,Y
-		STA	(9),Y
+		STA	(off_9),Y
 		INY
 		BPL	loc_813B
-		LDA	9
+		LDA	off_9
 		CLC
 		ADC	#$80 ; '€'
-		STA	9
+		STA	off_9
 		BCC	loc_814E
-		INC	$A
+		INC	off_9+1
 
 loc_814E:				; CODE XREF: sub_80D2+78j
 		INC	$2501
@@ -468,9 +468,9 @@ loc_F9EA:				; CODE XREF: RAM:8314j
 loc_F9F4:
 		LDA	#$80 ; '€'
 		STA	$25D
-		LDY	$233
+		LDY	word_232+1
 		STY	$263
-		LDA	$232
+		LDA	word_232
 		STA	$262
 		LSR	A
 		BCS	loc_FA1E
@@ -540,9 +540,9 @@ loc_FA78:				; CODE XREF: RAM:835Bj
 		BIT	$25B
 		BMI	loc_FAA9
 		LDA	$1903
-		STA	$232
+		STA	word_232
 		LDA	$1904
-		STA	$233
+		STA	word_232+1
 		LDA	#2
 		STA	6
 
@@ -569,9 +569,9 @@ loc_FA9B:				; CODE XREF: RAM:83C7j
 
 loc_FAA9:				; CODE XREF: RAM:839Ej
 		LDA	$260
-		STA	$232
+		STA	word_232
 		LDA	$261
-		STA	$233
+		STA	word_232+1
 		LDA	#2
 		STA	6
 
@@ -607,9 +607,9 @@ loc_FAD7:
 		STA	byte_FBA5+$300,X
 		STA	byte_FBA5+$200,X
 		LDA	$262
-		STA	$232
+		STA	word_232
 		LDA	$263
-		STA	$233
+		STA	word_232+1
 		LDA	#2
 		STA	6
 
@@ -621,9 +621,9 @@ loc_FB03:				; CODE XREF: RAM:842Dj
 
 loc_FB0C:				; CODE XREF: RAM:83E5j
 		LDA	$262
-		STA	$232
+		STA	word_232
 		LDA	$263
-		STA	$233
+		STA	word_232+1
 		LDA	#0
 		STA	$25B
 		LDY	#$FF
@@ -651,9 +651,9 @@ loc_FB46:
 		STA	$FFFF,Y
 		INY
 		BPL	loc_FB43
-		INC	$232
+		INC	word_232
 		BNE	loc_FB54
-		INC	$233
+		INC	word_232+1
 
 loc_FB54:				; CODE XREF: RAM:8472j
 		LDA	#$FE ; 'þ'
@@ -1363,9 +1363,9 @@ loc_891D:				; CODE XREF: RAM:8900j	RAM:88F9j
 		LDA	SEGADDR+1
 		STA	$A
 		LDA	$1903
-		STA	$232
+		STA	word_232
 		LDA	$1904
-		STA	$233
+		STA	word_232+1
 		LDA	$1907
 		STA	$B
 		LDA	$1908
@@ -1414,9 +1414,9 @@ loc_898A:				; CODE XREF: RAM:8991j
 		BEQ	loc_899D
 
 loc_8995:				; CODE XREF: RAM:898Dj
-		INC	$232
+		INC	word_232
 		BNE	loc_899D
-		INC	$233
+		INC	word_232+1
 
 loc_899D:				; CODE XREF: RAM:8993j	RAM:8998j
 		TYA
