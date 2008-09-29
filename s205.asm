@@ -378,9 +378,9 @@ loc_F953:
 		STA	off_9+1
 		LDX	#>$400
 		LDY	#<$400
-		BEQ	loc_82C8
+		BEQ	loc_F9A5
 
-loc_F98C:				; CODE XREF: RAM:827Bj
+loc_F98C:				; CODE XREF: RAM:F958j
 		CMP	$F9CD
 		BNE	loc_F9AA
 		LDA	#<$DC00
@@ -394,7 +394,7 @@ loc_F98C:				; CODE XREF: RAM:827Bj
 		LDX	#>$1510
 		LDY	#<$1510
 
-loc_82C8:				; CODE XREF: RAM:82ADj
+loc_F9A5:				; CODE XREF: RAM:F98Aj
 		JSR	$2E0D
 		CLC
 		RTS
@@ -407,19 +407,19 @@ loc_F9AA:				; CODE XREF: RAM:8280j	RAM:82B2j
 
 loc_F9AC:
 		BIT	$D40F
-		BPL	loc_82D7
+		BPL	loc_F9B4
 		JMP	(off_200)
 ; ---------------------------------------------------------------------------
 
-loc_82D7:				; CODE XREF: RAM:82D2j
+loc_F9B4:				; CODE XREF: RAM:82D2j
 		PHA
 		LDA	$D40F
 		AND	#$20 ; ' '
-		BEQ	loc_82E2
+		BEQ	loc_F9BF
 		JMP	$D800
 ; ---------------------------------------------------------------------------
 
-loc_82E2:				; CODE XREF: RAM:82DDj
+loc_F9BF:				; CODE XREF: RAM:82DDj
 		TXA
 		PHA
 		TYA
@@ -436,32 +436,36 @@ loc_F9C9:
 byte_F9CD:	.BYTE $FF
 byte_F9CE:	.BYTE $FF
 ; ---------------------------------------------------------------------------
+
+loc_F9CF:
 		LDX	#$FF
 
-loc_82F4:				; CODE XREF: RAM:82F9j
+loc_F9D1:				; CODE XREF: RAM:82F9j
 		TXA
 		DEX
-		STA	$FBA5,X
-		BNE	loc_82F4
+		STA	byte_FBA5,X
+		BNE	loc_F9D1
 		STX	$FCA4
 		LDX	#0
 
-loc_8300:				; CODE XREF: RAM:8307j
+loc_F9DD:				; CODE XREF: RAM:8307j
 		TXA
 		INX
-		STA	$FCA5,X
+		STA	byte_FBA5+$100,X
 		CPX	#$FF
-		BNE	loc_8300
+		BNE	loc_F9DD
 		LDA	#$FF
 		LDX	#$FE ; 'þ'
 
-loc_830D:				; CODE XREF: RAM:8314j
-		STA	$FDA5,X
-		STA	$FEA5,X
+loc_F9EA:				; CODE XREF: RAM:8314j
+		STA	byte_FBA5+$200,X
+		STA	byte_FBA5+$300,X
 		DEX
-		BNE	loc_830D
+		BNE	loc_F9EA
 		RTS
 ; ---------------------------------------------------------------------------
+
+loc_F9F4:
 		LDA	#$80 ; '€'
 		STA	$25D
 		LDY	$233
@@ -469,7 +473,7 @@ loc_830D:				; CODE XREF: RAM:8314j
 		LDA	$232
 		STA	$262
 		LSR	A
-		BCS	loc_8341
+		BCS	loc_FA1E
 		ROL	A
 		SEC
 		SBC	#1
@@ -479,60 +483,62 @@ loc_830D:				; CODE XREF: RAM:8314j
 		SBC	#0
 		STA	$261
 		STA	$25F
-		JMP	$FA33
+		JMP	loc_FA33
 ; ---------------------------------------------------------------------------
 
-loc_8341:				; CODE XREF: RAM:8329j
+loc_FA1E:				; CODE XREF: RAM:8329j
 		ROL	A
 		STA	$25E
 		STY	$25F
 		ADC	#1
 		STA	$260
-		BCC	loc_8350
+		BCC	loc_FA2D
 		INY
 
-loc_8350:				; CODE XREF: RAM:834Dj
+loc_FA2D:				; CODE XREF: RAM:834Dj
 		STY	$261
 		ASL	$25D
+
+loc_FA33:
 		LDX	#0
 
-loc_8358:				; CODE XREF: RAM:8364j	RAM:836Fj
-		LDA	$FBA5,X
-		BEQ	loc_839B
+loc_FA35:				; CODE XREF: RAM:8364j	RAM:836Fj
+		LDA	byte_FBA5,X
+		BEQ	loc_FA78
 		TAX
-		LDA	$FDA5,X
+		LDA	byte_FBA5+$200,X
 		CMP	$25E
-		BNE	loc_8358
+		BNE	loc_FA35
 		LDA	$25F
 		ORA	$25C
-		CMP	$FEA5,X
-		BNE	loc_8358
+		CMP	byte_FBA5+$300,X
+		BNE	loc_FA35
 		BIT	$264
-		BPL	loc_837E
+		BPL	loc_FA5B
 		LDA	#$FF
-		STA	$FEA5,X
-		JMP	$FA78
+		STA	byte_FBA5+$300,X
+		JMP	loc_FA78
 ; ---------------------------------------------------------------------------
 
-loc_837E:				; CODE XREF: RAM:8374j
-		JSR	$FB62
-		JSR	$FB73
-		JSR	$FB88
-		STA	$FA6D
-		STY	$FA6E
+loc_FA5B:				; CODE XREF: RAM:8374j
+		JSR	sub_FB62
+		JSR	sub_FB73
+		JSR	sub_FB88
+		STA	loc_FA6C+1
+		STY	loc_FA6C+2
 		LDY	#0
 
-loc_838F:				; CODE XREF: RAM:8396j
+loc_FA6C:				; CODE XREF: RAM:8396j
 		LDA	$FFFF,Y
 		STA	$100,Y
 		INY
-		BPL	loc_838F
+		BPL	loc_FA6C
 		JMP	$FB4C
 ; ---------------------------------------------------------------------------
 
-loc_839B:				; CODE XREF: RAM:835Bj
+loc_FA78:				; CODE XREF: RAM:835Bj
 		BIT	$25B
-		BMI	loc_83CC
+		BMI	loc_FAA9
 		LDA	$1903
 		STA	$232
 		LDA	$1904
@@ -540,28 +546,28 @@ loc_839B:				; CODE XREF: RAM:835Bj
 		LDA	#2
 		STA	6
 
-loc_83B0:				; CODE XREF: RAM:83B7j
+loc_FA8D:				; CODE XREF: RAM:83B7j
 		JSR	$248E
-		BPL	loc_83BC
+		BPL	loc_FA99
 		DEC	6
-		BNE	loc_83B0
+		BNE	loc_FA8D
 
-loc_83B9:				; CODE XREF: RAM:83C4j
-		JMP	$FB0C
+loc_FA96:				; CODE XREF: RAM:83C4j
+		JMP	loc_FB0C
 ; ---------------------------------------------------------------------------
 
-loc_83BC:				; CODE XREF: RAM:83B3j
+loc_FA99:				; CODE XREF: RAM:83B3j
 		LDX	#3
 
-loc_83BE:				; CODE XREF: RAM:83C7j
+loc_FA9B:				; CODE XREF: RAM:83C7j
 		LDA	$100,X
 		CMP	$1905,X
-		BNE	loc_83B9
+		BNE	loc_FA96
 		DEX
-		BPL	loc_83BE
+		BPL	loc_FA9B
 		DEC	$25B
 
-loc_83CC:				; CODE XREF: RAM:839Ej
+loc_FAA9:				; CODE XREF: RAM:839Ej
 		LDA	$260
 		STA	$232
 		LDA	$261
@@ -569,26 +575,28 @@ loc_83CC:				; CODE XREF: RAM:839Ej
 		LDA	#2
 		STA	6
 
-loc_83DC:				; CODE XREF: RAM:83E3j
+loc_FAB9:				; CODE XREF: RAM:83E3j
 		JSR	$248E
-		BPL	loc_83E7
+		BPL	loc_FAC4
 		DEC	6
-		BNE	loc_83DC
-		BEQ	loc_842F
+		BNE	loc_FAB9
+		BEQ	loc_FB0C
 
-loc_83E7:				; CODE XREF: RAM:83DFj
+loc_FAC4:				; CODE XREF: RAM:83DFj
 		LDX	$FDA4
 		JSR	$FB88
-		STY	$FAD9
+		STY	loc_FAD7+2
 		EOR	#$80 ; '€'
-		STA	$FAD8
+		STA	loc_FAD7+1
 		LDY	#0
 
-loc_83F7:				; CODE XREF: RAM:83FEj
+loc_FAD4:				; CODE XREF: RAM:83FEj
 		LDA	$100,Y
+
+loc_FAD7:
 		STA	$FFFF,Y
 		INY
-		BPL	loc_83F7
+		BPL	loc_FAD4
 		LDA	#$FE ; 'þ'
 		STA	PORTB
 		LDA	#$40 ; '@'
@@ -596,8 +604,8 @@ loc_83F7:				; CODE XREF: RAM:83FEj
 		CLI
 		LDX	$FDA4
 		LDA	#$FF
-		STA	$FEA5,X
-		STA	$FDA5,X
+		STA	byte_FBA5+$300,X
+		STA	byte_FBA5+$200,X
 		LDA	$262
 		STA	$232
 		LDA	$263
@@ -605,13 +613,13 @@ loc_83F7:				; CODE XREF: RAM:83FEj
 		LDA	#2
 		STA	6
 
-loc_8426:				; CODE XREF: RAM:842Dj
+loc_FB03:				; CODE XREF: RAM:842Dj
 		JSR	$248E
-		BPL	loc_8443
+		BPL	loc_FB20
 		DEC	6
-		BNE	loc_8426
+		BNE	loc_FB03
 
-loc_842F:				; CODE XREF: RAM:83E5j
+loc_FB0C:				; CODE XREF: RAM:83E5j
 		LDA	$262
 		STA	$232
 		LDA	$263
@@ -622,30 +630,32 @@ loc_842F:				; CODE XREF: RAM:83E5j
 		RTS
 ; ---------------------------------------------------------------------------
 
-loc_8443:				; CODE XREF: RAM:8429j
+loc_FB20:				; CODE XREF: RAM:8429j
 		LDX	$FDA4
 		LDA	$25F
 		ORA	$25C
-		STA	$FEA5,X
+		STA	byte_FBA5+$300,X
 		LDA	$25E
-		STA	$FDA5,X
-		JSR	$FB62
-		JSR	$FB73
-		JSR	$FB88
-		STA	$FB47
-		STY	$FB48
+		STA	byte_FBA5+$200,X
+		JSR	sub_FB62
+		JSR	sub_FB73
+		JSR	sub_FB88
+		STA	loc_FB46+1
+		STY	loc_FB46+2
 		LDY	#0
 
-loc_8466:				; CODE XREF: RAM:846Dj
+loc_FB43:				; CODE XREF: RAM:846Dj
 		LDA	$100,Y
+
+loc_FB46:
 		STA	$FFFF,Y
 		INY
-		BPL	loc_8466
+		BPL	loc_FB43
 		INC	$232
-		BNE	loc_8477
+		BNE	loc_FB54
 		INC	$233
 
-loc_8477:				; CODE XREF: RAM:8472j
+loc_FB54:				; CODE XREF: RAM:8472j
 		LDA	#$FE ; 'þ'
 		STA	PORTB
 		LDA	#$40 ; '@'
@@ -654,24 +664,30 @@ loc_8477:				; CODE XREF: RAM:8472j
 		LDY	#1
 		RTS
 ; ---------------------------------------------------------------------------
-		LDY	$FCA5,X
-		LDA	$FBA5,X
-		STA	$FBA5,Y
+
+sub_FB62:
+		LDY	byte_FBA5+$100,X
+		LDA	byte_FBA5,X
+		STA	byte_FBA5,Y
 		TAY
-		LDA	$FCA5,X
-		STA	$FCA5,Y
+		LDA	byte_FBA5+$100,X
+		STA	byte_FBA5+$100,Y
 		RTS
 ; ---------------------------------------------------------------------------
-		LDA	$FBA5
-		STA	$FBA5,X
-		STX	$FBA5
+
+sub_FB73:
+		LDA	byte_FBA5
+		STA	byte_FBA5,X
+		STX	byte_FBA5
 		TAY
-		LDA	$FCA5,Y
-		STA	$FCA5,X
+		LDA	byte_FBA5+$100,Y
+		STA	byte_FBA5+$100,X
 		TXA
-		STA	$FCA5,Y
+		STA	byte_FBA5+$100,Y
 		RTS
 ; ---------------------------------------------------------------------------
+
+sub_FB88:
 		SEI
 		LDY	#0
 		STY	$D40E
@@ -691,6 +707,9 @@ loc_8477:				; CODE XREF: RAM:8472j
 		LDA	$25D
 		RTS
 ; ---------------------------------------------------------------------------
+
+byte_FBA5:
+
 		.BYTE	2
 ; ---------------------------------------------------------------------------
 		STA	$6283
