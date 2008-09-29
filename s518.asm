@@ -395,8 +395,7 @@ byte_1937:	.BYTE 0			; DATA XREF: sub_2BFA+9w RAM:2C5Fw ...
 byte_1938:	.BYTE 0			; DATA XREF: sub_2BFA+396w RAM:3627w ...
 byte_1939:	.BYTE 0			; DATA XREF: sub_2BFA+39Cw sub_322C+Br ...
 off_193A:	.WORD	$FFFF		; DATA XREF: RAM:36B3w	RAM:36CAw ...
-byte_193C:	.BYTE $FF		; DATA XREF: sub_502E+Ew sub_502E+14w	...
-byte_193D:	.BYTE $FF		; DATA XREF: sub_508C+1Ew sub_50B2+29w ...
+off_193C:	.WORD	$FFFF		; DATA XREF: sub_502E+Ew sub_502E+14w	...
 unk_193E:	.BYTE $FF		; DATA XREF: RAM:5D6Fo
 		.BYTE $FF
 off_1940:	.WORD	$FFFF		; DATA XREF: RAM:5D85o
@@ -6345,27 +6344,19 @@ aApparel:	.BYTE "Apparel"
 		.WORD loc_3F8D
 		MOVEXY	10,2
 		.BYTE $A2
-		.BYTE $B4
-		.WORD off_407F
-		.BYTE $1E
+		PRINTSTR off_407F,30
 		.BYTE $AB
 		.BYTE $D
 		.BYTE $A2
-		.BYTE $B4
-		.WORD off_4081
-		.BYTE $1E
+		PRINTSTR off_4081,30
 		.BYTE $AB
 		.BYTE $D
 		.BYTE $A2
-		.BYTE $B4
-		.WORD off_4083
-		.BYTE $1E
+		PRINTSTR off_4083,30
 		.BYTE $AB
 		.BYTE $D
 		.BYTE $A2
-		.BYTE $B4
-		.WORD off_4085
-		.BYTE $1E
+		PRINTSTR off_4085,30
 		.BYTE $AB
 		.BYTE $D
 		.BYTE $FF
@@ -6481,10 +6472,10 @@ loc_3F8D:				; DATA XREF: RAM:3EAFo
 		LDX	#5
 
 loc_3F99:				; CODE XREF: RAM:3FA5j
-		LDA	#>$5E53
+		LDA	#>unk_5E53
 		STA	off_4081,X
 		DEX
-		LDA	#<$5E53
+		LDA	#<unk_5E53
 		STA	off_4081,X
 		DEX
 		BPL	loc_3F99
@@ -8914,10 +8905,10 @@ loc_4E64:				; CODE XREF: sub_4E0F+2Cj sub_4E0F+38j ...
 		CLC
 		LDA	#6
 		ADC	off_41
-		STA	byte_502A
+		STA	off_502A
 		LDA	off_41+1
 		ADC	#0
-		STA	byte_502B
+		STA	off_502A+1
 		LDA	#<a_TheScreams
 		STA	off_16
 		LDA	#>a_TheScreams
@@ -9155,26 +9146,21 @@ a_TheScreams:
 aThe:		.BYTE "The"
 		.BYTE $D
 		.BYTE $A5
-		.BYTE $B4
-		.WORD byte_502A
-		.BYTE $27
+		PRINTSTR off_502A,39
 		.BYTE $D
 		.BYTE $A5
 aScreams:	.BYTE "screams:"
 		.BYTE $D
 		.BYTE $D
 		.BYTE $A5
-		.BYTE $B4
-		.WORD off_502C
-		.BYTE $28
+		PRINTSTR off_502C,40
 		.BYTE $D
 		.BYTE $FF
 aIWasMeantForBe:.BYTE $22,"I was meant for better than you!",$22,0
 aYourEvilCannot:.BYTE $22,"Your evil cannot compare to mine!",$22,0
 aReleaseMeFoulM:.BYTE $22,"Release me foul mortal or pay!",$22,0
 aMiserableDoGoo:.BYTE $22,"Miserable do-gooder you shall pay!",$22,0
-byte_502A:	.BYTE 0			; DATA XREF: sub_4E0F+5Aw RAM:4F87o
-byte_502B:	.BYTE 0			; DATA XREF: sub_4E0F+61w
+off_502A:	.WORD	0		; DATA XREF: sub_4E0F+5Aw RAM:4F87o
 off_502C:	.WORD	0		; DATA XREF: sub_4E0F+24w sub_4E0F+30w ...
 
 ; --------------- S U B	R O U T	I N E ---------------------------------------
@@ -9192,11 +9178,11 @@ loc_5032:				; CODE XREF: sub_502E+8j
 		LDX	#7
 
 loc_503A:				; CODE XREF: sub_502E+18j
-		LDA	#$5E ; '^'
-		STA	byte_193C,X
+		LDA	#>unk_5E53
+		STA	off_193C,X
 		DEX
-		LDA	#$53 ; 'S'
-		STA	byte_193C,X
+		LDA	#<unk_5E53
+		STA	off_193C,X
 		DEX
 		BPL	loc_503A
 		RTS
@@ -9271,11 +9257,11 @@ loc_5090:				; CODE XREF: sub_508C+23j
 		TAY
 		CLC
 		LDA	#6
-		ADC	$41
-		STA	byte_193C,Y
-		LDA	$42
+		ADC	off_41
+		STA	off_193C,Y
+		LDA	off_41+1
 		ADC	#0
-		STA	byte_193D,Y
+		STA	off_193C+1,Y
 
 loc_50AD:				; CODE XREF: sub_508C+9j
 		DEC	6
@@ -9307,9 +9293,9 @@ loc_50CA:				; CODE XREF: sub_50B2+39j
 		AND	#7
 		TAX
 		LDA	off_5F0D,Y
-		STA	byte_193C,X
+		STA	off_193C,X
 		LDA	off_5F0D+1,Y
-		STA	byte_193D,X
+		STA	off_193C+1,X
 		LDX	byte_6278
 		TXA
 		STA	byte_1946,X
@@ -9774,10 +9760,10 @@ loc_5390:				; CODE XREF: RAM:5373j	RAM:5380j
 		CLC
 		LDA	off_41
 		ADC	#6
-		STA	byte_193C
+		STA	off_193C
 		LDA	off_41+1
 		ADC	#0
-		STA	byte_193D
+		STA	off_193C+1
 		LDA	#<a_YouCastTheSpell
 		STA	off_16
 		LDA	#>a_YouCastTheSpell
@@ -10197,13 +10183,13 @@ locret_5601:				; CODE XREF: sub_55B7+32j
 sub_5602:				; CODE XREF: RAM:loc_558Fp RAM:55B1p
 		CLC
 		LDA	#6
-		ADC	$41
-		STA	byte_193C
-		STA	7
+		ADC	off_41
+		STA	off_193C
+		STA	off_7
 		LDA	#0
-		ADC	$42
-		STA	byte_193D
-		STA	8
+		ADC	off_41+1
+		STA	off_193C+1
+		STA	off_7+1
 		LDY	#6
 		LDA	(off_7),Y
 		BNE	loc_561F
@@ -11206,9 +11192,7 @@ aHaveBeenRepair:.BYTE "have been repaired."
 byte_5D41:
 		MOVEXY	0,0
 		.BYTE $A2
-		.BYTE $B4
-		.WORD off_193A
-		.BYTE $28
+		PRINTSTR off_193A,40
 		.BYTE $AB
 		.BYTE $D
 		.BYTE $A3
@@ -11217,9 +11201,7 @@ byte_5D41:
 asc_5D51:	.BYTE " ("              ; DATA XREF: RAM:551Bw RAM:5DC3w ...
 		BLINK	'1'
 		.BYTE ") "
-		.BYTE $B4
-		.WORD byte_193C
-		.BYTE $1D
+		PRINTSTR off_193C,29
 		.BYTE ' '
 		.BYTE $AD
 		.BYTE $AC ; ¬
@@ -11518,7 +11500,7 @@ aYouDrinkA:	.BYTE "You drink a"
 		.BYTE $D
 		.BYTE $A5
 		.BYTE $B4
-		.WORD byte_193C
+		.WORD off_193C
 		.BYTE $26
 a__2:		.BYTE '.'
 		.BYTE $D
@@ -11637,7 +11619,7 @@ aYouCastTheSpel:.BYTE "You cast the spell of"
 		BLINK	$7F
 		.BYTE ' '
 		.BYTE $B4
-		.WORD byte_193C
+		.WORD off_193C
 		.BYTE $1E
 a__3:		.BYTE ". "
 		BLINK	$7F
