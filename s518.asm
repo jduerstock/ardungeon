@@ -206,9 +206,11 @@ j_SEGLOAD:
 ; ---------------------------------------------------------------------------
 		JMP	loc_2E6B
 ; ---------------------------------------------------------------------------
-		JMP	sub_2E69
+j_SUBSTAT1:
+		JMP	SUBSTAT1
 ; ---------------------------------------------------------------------------
-		JMP	loc_2E66
+j_SUBSTAT2:
+		JMP	SUBSTAT2
 ; ---------------------------------------------------------------------------
 		JMP	loc_2E45
 ; ---------------------------------------------------------------------------
@@ -4233,7 +4235,7 @@ locret_2E65:				; CODE XREF: sub_2E43:loc_2E5Bj
 
 ; ---------------------------------------------------------------------------
 
-loc_2E66:				; CODE XREF: RAM:1872j	RAM:34ADp ...
+SUBSTAT2:				; CODE XREF: RAM:1872j	RAM:34ADp ...
 		LDY	#1
 ; ---------------------------------------------------------------------------
 		.BYTE $2C ; ,
@@ -4241,7 +4243,7 @@ loc_2E66:				; CODE XREF: RAM:1872j	RAM:34ADp ...
 ; --------------- S U B	R O U T	I N E ---------------------------------------
 
 
-sub_2E69:				; CODE XREF: RAM:186Fj	RAM:34F7p ...
+SUBSTAT1:				; CODE XREF: RAM:186Fj	RAM:34F7p ...
 		LDY	#0
 
 loc_2E6B:				; CODE XREF: RAM:186Cj
@@ -4255,26 +4257,26 @@ loc_2E6E:				; CODE XREF: RAM:loc_4953p
 		DEY
 		BMI	loc_2E81
 
-loc_2E78:				; CODE XREF: sub_2E69+16j
+loc_2E78:				; CODE XREF: SUBSTAT1+16j
 		LDA	(off_45),Y
 		SBC	#0
 		STA	(off_45),Y
 		DEY
 		BPL	loc_2E78
 
-loc_2E81:				; CODE XREF: sub_2E69+Dj
+loc_2E81:				; CODE XREF: SUBSTAT1+Dj
 		BCS	locret_2E8C
 		LDA	#0
 		LDY	$54
 
-loc_2E87:				; CODE XREF: sub_2E69+21j
+loc_2E87:				; CODE XREF: SUBSTAT1+21j
 		STA	(off_45),Y
 		DEY
 		BPL	loc_2E87
 
-locret_2E8C:				; CODE XREF: sub_2E69:loc_2E81j
+locret_2E8C:				; CODE XREF: SUBSTAT1:loc_2E81j
 		RTS
-; End of function sub_2E69
+; End of function SUBSTAT1
 
 
 ; --------------- S U B	R O U T	I N E ---------------------------------------
@@ -5217,7 +5219,7 @@ loc_34A3:				; CODE XREF: RAM:3475j	RAM:347Cj ...
 		CLC
 		ADC	#1
 		LDX	#$45 ; 'E'
-		JSR	loc_2E66
+		JSR	SUBSTAT2
 		LDA	#<a_TheDoorRemains
 		STA	off_16
 		LDA	#>a_TheDoorRemains
@@ -5260,7 +5262,7 @@ loc_34ED:				; CODE XREF: RAM:34F1j
 		BNE	loc_34ED
 		LDA	#1
 		LDX	#$65 ; 'e'
-		JSR	sub_2E69
+		JSR	SUBSTAT1
 		LDA	RANDOM
 		LSR	A
 		CMP	$6361
@@ -6823,7 +6825,7 @@ loc_4176:				; CODE XREF: sub_408B+1Ep
 		STA	byte_4590
 		LDX	#$99 ; '™'
 		LDA	#1
-		JSR	sub_2E69
+		JSR	SUBSTAT1
 
 loc_4187:				; CODE XREF: RAM:4179j
 		DEC	byte_4591
@@ -6832,7 +6834,7 @@ loc_4187:				; CODE XREF: RAM:4179j
 		STA	byte_4591
 		LDX	#$9A ; 'š'
 		LDA	#1
-		JSR	sub_2E69
+		JSR	SUBSTAT1
 
 loc_4198:				; CODE XREF: RAM:418Aj
 		DEC	byte_4592
@@ -6843,7 +6845,7 @@ loc_4198:				; CODE XREF: RAM:418Aj
 		BMI	loc_41AE
 		LDX	#$9B ; '›'
 		LDA	#1
-		JSR	sub_2E69
+		JSR	SUBSTAT1
 
 loc_41AE:				; CODE XREF: RAM:419Bj	RAM:41A5j
 		DEC	byte_4593
@@ -6878,7 +6880,7 @@ loc_41DE:				; CODE XREF: RAM:41B1j	RAM:41C7j ...
 		STA	byte_4594
 		LDX	#$98 ; '˜'
 		LDA	#1
-		JSR	sub_2E69
+		JSR	SUBSTAT1
 
 locret_41EF:				; CODE XREF: RAM:41E1j
 		RTS
@@ -7314,19 +7316,19 @@ loc_447E:				; CODE XREF: RAM:447Bj
 loc_4481:				; DATA XREF: RAM:45B7o
 		LDX	#$9B ; '›'
 		LDA	#1
-		JSR	sub_2E69
+		JSR	SUBSTAT1
 		LDX	#$99 ; '™'
 		LDA	#1
-		JMP	sub_2E69
+		JMP	SUBSTAT1
 ; ---------------------------------------------------------------------------
 
 loc_448F:				; DATA XREF: RAM:45B9o
 		LDX	#$9B ; '›'
 		LDA	#1
-		JSR	sub_2E69
+		JSR	SUBSTAT1
 		LDX	#$9A ; 'š'
 		LDA	#1
-		JMP	sub_2E69
+		JMP	SUBSTAT1
 ; ---------------------------------------------------------------------------
 
 loc_449D:				; DATA XREF: RAM:45BBo
@@ -7343,7 +7345,7 @@ loc_44AE:				; DATA XREF: RAM:45BDo
 		JSR	loc_446F
 		LDX	#$45 ; 'E'
 		LDA	#1
-		JSR	loc_2E66
+		JSR	SUBSTAT2
 		LDX	#$5D ; ']'
 		LDA	#1
 		JSR	sub_2E43
@@ -7355,19 +7357,19 @@ loc_44AE:				; DATA XREF: RAM:45BDo
 		JSR	sub_2E43
 		LDX	#$9B ; '›'
 		LDA	#1
-		JMP	sub_2E69
+		JMP	SUBSTAT1
 ; ---------------------------------------------------------------------------
 
 loc_44D4:				; DATA XREF: RAM:45D3o
 		LDX	#$5D ; ']'
 		LDA	#1
-		JSR	sub_2E69
+		JSR	SUBSTAT1
 		LDX	#$75 ; 'u'
 		LDA	#1
-		JSR	sub_2E69
+		JSR	SUBSTAT1
 		LDX	#$7D ; '}'
 		LDA	#1
-		JMP	sub_2E69
+		JMP	SUBSTAT1
 ; ---------------------------------------------------------------------------
 
 loc_44E9:				; DATA XREF: RAM:45BFo
@@ -7384,7 +7386,7 @@ loc_44FA:				; DATA XREF: RAM:45C1o
 		JSR	loc_446F
 		LDX	#$45 ; 'E'
 		LDA	#1
-		JSR	loc_2E66
+		JSR	SUBSTAT2
 		LDX	#$5E ; '^'
 		LDA	#1
 		JSR	sub_2E43
@@ -7393,16 +7395,16 @@ loc_44FA:				; DATA XREF: RAM:45C1o
 		JSR	sub_2E43
 		LDX	#$9B ; '›'
 		LDA	#1
-		JMP	sub_2E69
+		JMP	SUBSTAT1
 ; ---------------------------------------------------------------------------
 
 loc_4519:				; DATA XREF: RAM:45D5o
 		LDX	#$5E ; '^'
 		LDA	#1
-		JSR	sub_2E69
+		JSR	SUBSTAT1
 		LDX	#$7E ; '~'
 		LDA	#1
-		JMP	sub_2E69
+		JMP	SUBSTAT1
 ; ---------------------------------------------------------------------------
 
 loc_4527:				; DATA XREF: RAM:45C3o
@@ -7431,7 +7433,7 @@ loc_453E:				; DATA XREF: RAM:45C5o
 loc_4547:				; CODE XREF: RAM:4544j
 		LDX	#$45 ; 'E'
 		LDA	#1
-		JSR	loc_2E66
+		JSR	SUBSTAT2
 		LDX	#$7F ; ''
 		LDA	#1
 		JSR	sub_2E43
@@ -7446,27 +7448,27 @@ loc_4547:				; CODE XREF: RAM:4544j
 loc_4563:				; DATA XREF: RAM:45D7o
 		LDX	#$7F ; ''
 		LDA	#1
-		JSR	sub_2E69
+		JSR	SUBSTAT1
 		LDX	#$5F ; '_'
 		LDA	#1
-		JSR	sub_2E69
+		JSR	SUBSTAT1
 		LDX	#$77 ; 'w'
 		LDA	#1
-		JMP	sub_2E69
+		JMP	SUBSTAT1
 ; ---------------------------------------------------------------------------
 
 loc_4578:				; DATA XREF: RAM:45C7o
 		JSR	loc_446F
 		LDX	#$9B ; '›'
 		LDA	#1
-		JMP	sub_2E69
+		JMP	SUBSTAT1
 ; ---------------------------------------------------------------------------
 
 loc_4582:				; DATA XREF: RAM:45C9o
 		JSR	loc_446F
 		LDX	#$9B ; '›'
 		LDA	#1
-		JMP	sub_2E69
+		JMP	SUBSTAT1
 ; ---------------------------------------------------------------------------
 
 locret_458C:				; DATA XREF: RAM:45CBo
@@ -9757,7 +9759,7 @@ loc_5328:				; CODE XREF: RAM:5304j
 		SEC
 		LDA	byte_6280
 		SBC	$639B
-		JSR	loc_2E66
+		JSR	SUBSTAT2
 		LDA	#0
 
 loc_533F:				; CODE XREF: RAM:532Fj
@@ -9841,7 +9843,7 @@ loc_5390:				; CODE XREF: RAM:5373j	RAM:5380j
 loc_53CA:				; CODE XREF: RAM:5363j
 		LDX	#$45 ; 'E'
 		LDA	byte_6282
-		JSR	loc_2E66
+		JSR	SUBSTAT2
 		LDA	#<a_TheSpellFailed
 		STA	off_16
 		LDA	#>a_TheSpellFailed
