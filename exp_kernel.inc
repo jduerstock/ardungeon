@@ -10,6 +10,7 @@ SEGNO		= $1909
 SEGADDR		= $190B
 off_193A	= $193A
 off_1944	= $1944
+off_1977	= $1977
 
 byte_199D	= $199D
 

@@ -1136,9 +1136,9 @@ loc_877D:				; CODE XREF: RAM:87A3j	RAM:87A7j
 
 loc_878B:				; CODE XREF: RAM:879Aj
 		LDA	#$C6 ; 'Æ'
-		STA	$1977
+		STA	off_1977
 		LDA	#$57 ; 'W'
-		STA	$1978
+		STA	off_1977+1
 		JMP	$2FF3
 ; ---------------------------------------------------------------------------
 		LDA	$31

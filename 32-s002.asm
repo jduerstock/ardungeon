@@ -1,3 +1,6 @@
+		.include	"globals.inc"
+		.include	"exp_kernel.inc"
+
 ;		.ORG	$7600
 		.BYTE	6
 ; ---------------------------------------------------------------------------
@@ -49,10 +52,10 @@ loc_7644:				; CODE XREF: RAM:7640j
 		STA	off_78D2
 		LDA	off_79C3+1,X
 		STA	off_78D2+1
-		LDA	#$D5 ; 'Õ'
-		STA	$1977
-		LDA	#$76 ; 'v'
-		STA	$1978
+		LDA	#<loc_76D5
+		STA	off_1977
+		LDA	#>loc_76D5
+		STA	off_1977+1
 		LDA	$D20A
 		AND	#$F
 		STA	$6D
@@ -118,6 +121,8 @@ loc_76BA:				; CODE XREF: RAM:77A1j
 		JSR	sub_77F9
 		LDA	$68
 		STA	$6B
+
+loc_76D5:
 		LDA	#0
 		STA	$6C
 
@@ -494,6 +499,8 @@ unk_79F1:	.BYTE	0		; DATA XREF: RAM:loc_7685r
 		.BYTE $F9 ; ù
 		.BYTE $79 ; y
 ; ---------------------------------------------------------------------------
+
+loc_7A2B:
 		PHA
 		TXA
 		PHA
@@ -730,9 +737,9 @@ loc_7BCE:				; CODE XREF: RAM:7BD2j
 		DEX
 		BPL	loc_7BCE
 		LDA	#$2B ; '+'
-		STA	$24A
+		STA	off_24A
 		LDA	#$7A ; 'z'
-		STA	$24B
+		STA	off_24A+1
 		LDA	#$C0 ; 'À'
 		STA	$D40E
 		LDA	#0

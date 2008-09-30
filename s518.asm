@@ -458,7 +458,7 @@ byte_1973:	.BYTE 0			; DATA XREF: sub_2BFA+610w RAM:4149r
 byte_1974:	.BYTE 0			; DATA XREF: sub_2BFA+5C6w sub_322C+8r ...
 byte_1975:	.BYTE 0			; DATA XREF: RAM:30E5w	RAM:3115w ...
 byte_1976:	.BYTE 0			; DATA XREF: RAM:4207w	RAM:422Br ...
-word_1977:	.WORD 0			; DATA XREF: sub_2BFA:loc_2C26r
+off_1977:	.WORD 0			; DATA XREF: sub_2BFA:loc_2C26r
 					; sub_2BFA+3Aw	...
 byte_1979:	.BYTE 0			; DATA XREF: sub_2BFA+41Dr
 					; sub_2BFA+424w ...
@@ -3780,22 +3780,24 @@ loc_2C15:				; CODE XREF: sub_2BFA+1Fj
 ; ---------------------------------------------------------------------------
 
 loc_2C26:				; CODE XREF: sub_2BFA+24j
-		LDA	word_1977
-		STA	byte_2C99
-		LDA	word_1977+1
-		STA	byte_2C9A
-		LDA	#$3F ; '?'
-		STA	word_1977
-		LDA	#$2C ; ','
-		STA	word_1977+1
+		LDA	off_1977
+		STA	off_2C99
+		LDA	off_1977+1
+		STA	off_2C99+1
+		LDA	#<loc_2C3F
+		STA	off_1977
+		LDA	#>loc_2C3F
+		STA	off_1977+1
 		JMP	loc_2FF3
 ; End of function sub_2BFA
 
 ; ---------------------------------------------------------------------------
-		LDA	byte_2C99
-		STA	word_1977
-		LDA	byte_2C9A
-		STA	word_1977+1
+
+loc_2C3F:
+		LDA	off_2C99
+		STA	off_1977
+		LDA	off_2C99+1
+		STA	off_1977+1
 		LDA	$31
 		CMP	#$20 ; ' '
 		BEQ	loc_2C5B
@@ -3831,26 +3833,27 @@ loc_2C69:				; CODE XREF: sub_2C66+6j
 ; ---------------------------------------------------------------------------
 
 loc_2C6F:				; CODE XREF: RAM:1857j	RAM:2C96j
-		LDA	word_1977
-		STA	byte_2C99
-		LDA	word_1977+1
-		STA	byte_2C9A
-		LDA	#$88 ; 'ˆ'
-		STA	word_1977
-		LDA	#$2C ; ','
-		STA	word_1977+1
+		LDA	off_1977
+		STA	off_2C99
+		LDA	off_1977+1
+		STA	off_2C99+1
+		LDA	#<loc_2C88
+		STA	off_1977
+		LDA	#>loc_2C88
+		STA	off_1977+1
 		JMP	loc_2FF3
 ; ---------------------------------------------------------------------------
-		LDA	byte_2C99
-		STA	word_1977
-		LDA	byte_2C9A
-		STA	word_1977+1
+
+loc_2C88:
+		LDA	off_2C99
+		STA	off_1977
+		LDA	off_2C99+1
+		STA	off_1977+1
 		LDA	$31
 		BMI	loc_2C6F
 		RTS
 ; ---------------------------------------------------------------------------
-byte_2C99:	.BYTE $FF		; DATA XREF: sub_2BFA+2Fw RAM:2C3Fr ...
-byte_2C9A:	.BYTE $FF		; DATA XREF: sub_2BFA+35w RAM:2C45r ...
+off_2C99:	.WORD	$FFFF		; DATA XREF: sub_2BFA+2Fw RAM:2C3Fr ...
 ; ---------------------------------------------------------------------------
 
 loc_2C9B:				; CODE XREF: RAM:185Dj
@@ -4497,7 +4500,7 @@ loc_2FE5:				; CODE XREF: sub_2BFA+38Fj
 		JSR	$7601
 
 loc_2FF0:				; CODE XREF: sub_2BFA+3F1j
-		JMP	(word_1977)
+		JMP	(off_1977)
 ; ---------------------------------------------------------------------------
 
 loc_2FF3:				; CODE XREF: RAM:1806j	sub_2BFA+42j ...
@@ -4641,7 +4644,7 @@ loc_30DB:				; CODE XREF: sub_2BFA+483j
 
 loc_30DE:				; CODE XREF: sub_2BFA+4BDj
 					; sub_2BFA+4C9j
-		JMP	(word_1977)
+		JMP	(off_1977)
 ; END OF FUNCTION CHUNK	FOR sub_2BFA
 ; ---------------------------------------------------------------------------
 byte_30E1:
@@ -5094,22 +5097,22 @@ loc_339F:				; CODE XREF: RAM:339Aj	RAM:33EFj ...
 		JSR	sub_3C5C
 
 loc_33AD:				; CODE XREF: RAM:33E8j
-		LDA	word_1977
-		STA	byte_352F
-		LDA	word_1977+1
-		STA	byte_3530
+		LDA	off_1977
+		STA	off_352F
+		LDA	off_1977+1
+		STA	off_352F+1
 		LDA	#<loc_33C6
-		STA	word_1977
+		STA	off_1977
 		LDA	#>loc_33C6
-		STA	word_1977+1
+		STA	off_1977+1
 		JMP	loc_2FF3
 ; ---------------------------------------------------------------------------
 
 loc_33C6:
-		LDA	byte_352F
-		STA	word_1977
-		LDA	byte_3530
-		STA	word_1977+1
+		LDA	off_352F
+		STA	off_1977
+		LDA	off_352F+1
+		STA	off_1977+1
 		LDA	byte_195D
 		BPL	loc_33E6
 		INC	byte_1937
@@ -5298,8 +5301,7 @@ loc_351F:				; CODE XREF: RAM:351Aj
 		JMP	loc_32F3
 ; ---------------------------------------------------------------------------
 byte_352E:	.BYTE 0			; DATA XREF: RAM:3375w	RAM:33A7r ...
-byte_352F:	.BYTE $FF		; DATA XREF: RAM:33B0w	RAM:33C6r
-byte_3530:	.BYTE $FF		; DATA XREF: RAM:33B6w	RAM:33CCr
+off_352F:	.WORD	$FFFF		; DATA XREF: RAM:33B0w	RAM:33C6r
 
 ; --------------- S U B	R O U T	I N E ---------------------------------------
 
@@ -5472,13 +5474,13 @@ sub_3635:				; CODE XREF: RAM:loc_3689p RAM:3756p ...
 		DEC	$32
 		DEC	byte_1937
 		DEC	byte_1971
-		LDA	word_1977
-		STA	byte_3681
-		LDA	word_1977+1
-		STA	byte_3682
-		LDA	#7
+		LDA	off_1977
+		STA	off_3681
+		LDA	off_1977+1
+		STA	off_3681+1
+		LDA	#<byte_2007
 		STA	off_16
-		LDA	#$20 ; ' '
+		LDA	#>byte_2007
 		STA	off_16+1
 		JSR	sub_3CA5
 		LDX	byte_1933
@@ -5490,10 +5492,10 @@ sub_3635:				; CODE XREF: RAM:loc_3689p RAM:3756p ...
 
 loc_3662:				; CODE XREF: RAM:loc_36ECj RAM:375Cj ...
 		JSR	sub_3CC2
-		LDA	byte_3681
-		STA	word_1977
-		LDA	byte_3682
-		STA	word_1977+1
+		LDA	off_3681
+		STA	off_1977
+		LDA	off_3681+1
+		STA	off_1977+1
 		INC	$32
 		INC	byte_1937
 		INC	$F
@@ -5502,8 +5504,7 @@ loc_3662:				; CODE XREF: RAM:loc_36ECj RAM:375Cj ...
 		STA	byte_197A
 		RTS
 ; ---------------------------------------------------------------------------
-byte_3681:	.BYTE $FF		; DATA XREF: sub_3635+12w RAM:3665r
-byte_3682:	.BYTE $FF		; DATA XREF: sub_3635+18w RAM:366Br
+off_3681:	.WORD	$FFFF		; DATA XREF: sub_3635+12w RAM:3665r
 ; ---------------------------------------------------------------------------
 
 loc_3683:
@@ -9217,14 +9218,16 @@ loc_5064:				; CODE XREF: sub_5049+10j
 		JSR	sub_3C61
 
 loc_506A:				; CODE XREF: RAM:5079j
-		LDA	#$77 ; 'w'
-		STA	word_1977
-		LDA	#$50 ; 'P'
-		STA	word_1977+1
+		LDA	#<loc_5077
+		STA	off_1977
+		LDA	#>loc_5077
+		STA	off_1977+1
 		JMP	loc_2FF3
 ; End of function sub_5049
 
 ; ---------------------------------------------------------------------------
+
+loc_5077:
 		LDA	$31
 		BMI	loc_506A
 		CMP	#'1'
@@ -10455,12 +10458,12 @@ sub_5795:				; CODE XREF: sub_5835+Cp
 		BCS	locret_57AA
 		TAY
 		LDA	$644B,Y
-		STA	$A
+		STA	off_9+1
 		LDA	$640B,Y
-		STA	9
+		STA	off_9
 		LDY	#2
 		LDA	#8
-		STA	(9),Y
+		STA	(off_9),Y
 
 locret_57AA:				; CODE XREF: sub_5795+2j
 		RTS
@@ -10471,22 +10474,24 @@ locret_57AA:				; CODE XREF: sub_5795+2j
 
 
 sub_57AB:				; CODE XREF: RAM:54AAp	RAM:loc_56F5p ...
-		LDA	#$96 ; '–'
+		LDA	#<a_UseAs
 		STA	off_16
-		LDA	#$5F ; '_'
+		LDA	#>a_UseAs
 		STA	off_16+1
 		LDX	byte_194A
 		JSR	sub_3C5C
 
 loc_57B9:				; CODE XREF: RAM:57C8j
-		LDA	#$C6 ; 'Æ'
-		STA	word_1977
-		LDA	#$57 ; 'W'
-		STA	word_1977+1
+		LDA	#<loc_57C6
+		STA	off_1977
+		LDA	#>loc_57C6
+		STA	off_1977+1
 		JMP	loc_2FF3
 ; End of function sub_57AB
 
 ; ---------------------------------------------------------------------------
+
+loc_57C6:
 		LDA	$31
 		BMI	loc_57B9
 		CMP	#$1B
@@ -10676,9 +10681,9 @@ loc_5904:				; CODE XREF: sub_58C2+24j RAM:5932j
 
 loc_5914:				; CODE XREF: RAM:5923j
 		LDA	#<loc_5921
-		STA	word_1977
+		STA	off_1977
 		LDA	#>loc_5921
-		STA	word_1977+1
+		STA	off_1977+1
 		JMP	loc_2FF3
 ; End of function sub_58C2
 
@@ -11436,6 +11441,8 @@ aEsc_4:		BLINK	"ESC"
 		.BYTE " to exit"
 		.BYTE $AE
 aWearInsteadOf:	.BYTE "Wear instead of:",0
+
+a_UseAs:
 		MOVEXY	0,0
 		.BYTE $A5
 aUseAs:		.BYTE "Use as:"
