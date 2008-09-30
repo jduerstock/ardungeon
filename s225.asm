@@ -503,10 +503,10 @@ loc_2366:				; CODE XREF: RAM:2353j
 		STA	$D402
 		LDA	$255
 		STA	$D403
-		LDA	$248
-		STA	$200
-		LDA	$249
-		STA	$201
+		LDA	off_248
+		STA	off_200
+		LDA	off_248+1
+		STA	off_200+1
 		LDA	#$C0 ; '�'
 		BRK
 ; 컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴�

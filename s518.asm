@@ -658,12 +658,12 @@ unk_1A44:	.BYTE	<(loc_1A47-1)	; DATA XREF: sub_1A0D+2Fr
 ; ---------------------------------------------------------------------------
 
 loc_1A47:
-		LDA	#$55 ; 'U'
-		STA	$200
-		STA	$248
-		LDA	#$1B
-		STA	$201
-		STA	$249
+		LDA	#<loc_1B55
+		STA	off_200
+		STA	off_248
+		LDA	#>loc_1B55
+		STA	off_200+1
+		STA	off_248+1
 		LDX	#7
 		LDA	#0
 
@@ -676,16 +676,16 @@ loc_1A5B:				; CODE XREF: RAM:1A5Fj
 ; ---------------------------------------------------------------------------
 
 loc_1A65:
-		LDA	#$2F ; '/'
-		STA	$200
-		STA	$248
-		LDA	#$1B
-		STA	$201
-		STA	$249
-		LDA	#$56 ; 'V'
-		STA	$24A
-		LDA	#$1B
-		STA	$24B
+		LDA	#<loc_1B2F
+		STA	off_200
+		STA	off_248
+		LDA	#>loc_1B2F
+		STA	off_200+1
+		STA	off_248+1
+		LDA	#<$1B56
+		STA	off_24A
+		LDA	#>$1B56
+		STA	off_24A+1
 		LDA	#$C0 ; 'À'
 		STA	$D40E
 		LDA	#0
@@ -778,11 +778,11 @@ loc_1B0E:				; CODE XREF: RAM:1B11j	RAM:1B16j
 loc_1B19:
 		JSR	sub_1C09
 		LDA	#<loc_1B2F
-		STA	$200
-		STA	$248
+		STA	off_200
+		STA	off_248
 		LDA	#>loc_1B2F
-		STA	$201
-		STA	$249
+		STA	off_200+1
+		STA	off_248+1
 		JMP	$760A
 ; ---------------------------------------------------------------------------
 
@@ -798,22 +798,26 @@ loc_1B2F:
 		STX	byte_18B8
 		CPX	#4
 		BCC	loc_1B52
-		LDA	$24A
-		STA	$200
-		LDA	$24B
-		STA	$201
+		LDA	off_24A
+		STA	off_200
+		LDA	off_24A+1
+		STA	off_200+1
 
 loc_1B52:				; CODE XREF: RAM:1B44j
 		PLA
 		TAX
 		PLA
+
+loc_1B55:
 		RTI
 ; ---------------------------------------------------------------------------
+
+loc_1B56:
 		PHA
 		LDA	#<loc_1BA2
-		STA	$200
+		STA	off_200
 		LDA	#>loc_1BA2
-		STA	$201
+		STA	off_200+1
 		LDA	byte_18BA
 		STA	$D016
 		LDA	byte_18BB
@@ -846,9 +850,9 @@ loc_1BA0:				; CODE XREF: RAM:1B8Cj
 loc_1BA2:
 		PHA
 		LDA	#<loc_1BB7
-		STA	$200
+		STA	off_200
 		LDA	#>loc_1BB7
-		STA	$201
+		STA	off_200+1
 		LDA	#$C
 		STA	WSYNC
 		STA	$D409
@@ -860,9 +864,9 @@ loc_1BB7:
 		PHA
 		STA	WSYNC
 		LDA	#<sub_1BD6
-		STA	$200
+		STA	off_200
 		LDA	#>sub_1BD6
-		STA	$201
+		STA	off_200+1
 		STA	WSYNC
 		LDA	byte_18BE
 		STA	WSYNC
@@ -875,9 +879,9 @@ loc_1BB7:
 sub_1BD6:
 		PHA
 		LDA	#<sub_1BEB
-		STA	$200
+		STA	off_200
 		LDA	#>sub_1BEB
-		STA	$201
+		STA	off_200+1
 		LDA	#$10
 		STA	WSYNC
 		STA	$D409
