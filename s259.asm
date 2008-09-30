@@ -1515,9 +1515,7 @@ aAreYouSureYouW:.BYTE "Are you sure you want to permanently"
 		.BYTE $D
 		.BYTE $A5
 aRemove:	.BYTE "remove "
-		.BYTE $B4
-		.WORD byte_83BD
-		.BYTE $19
+		PRINTSTR byte_83BD,25
 aq:		.BYTE "?"
 		.BYTE $D
 		.BYTE $D
@@ -1527,50 +1525,34 @@ aYOrN:		.BYTE "(Y or N)"
 		.BYTE $FF
 		.BYTE $AD
 		.WORD byte_82F2
-		.BYTE $A6,  0,	8
+		MOVEXY	0,8
 a1:		.BYTE " (1) "
-		.BYTE $B4
-		.WORD off_82F5
-		.BYTE $19
-		.BYTE $A6,$1E,	8
-		.BYTE $B4
-		.WORD off_82FD
-		.BYTE 7
-		.BYTE $A6,  0, $A
+		PRINTSTR off_82F5,25
+		MOVEXY	30,8
+		PRINTSTR off_82FD,7
+		MOVEXY	0,10
 a2:		.BYTE " (2) "
-		.BYTE $B4
-		.WORD off_82F7
-		.BYTE $19
-		.BYTE $A6,$1E, $A
-		.BYTE $B4
-		.WORD off_82FF
-		.BYTE 7
-		.BYTE $A6,  0, $C
+		PRINTSTR off_82F7,25
+		MOVEXY	30,10
+		PRINTSTR off_82FF,7
+		MOVEXY	0,12
 a3:		.BYTE " (3) "
-		.BYTE $B4
-		.WORD off_82F9
-		.BYTE $19
-		.BYTE $A6,$1E, $C
-		.BYTE $B4
-		.WORD off_8301
-		.BYTE 7
-		.BYTE $A6,  0, $E
+		PRINTSTR off_82F9,25
+		MOVEXY	30,12
+		PRINTSTR off_8301,7
+		MOVEXY	0,14
 a4:		.BYTE " (4) "
-		.BYTE $B4
-		.WORD off_82FB
-		.BYTE $19
-		.BYTE $A6,$1E, $E
-		.BYTE $B4
-		.WORD off_8303
-		.BYTE 7
-		.BYTE $A6,  0,$16
+		PRINTSTR off_82FB,25
+		MOVEXY	30,14
+		PRINTSTR off_8303,7
+		MOVEXY	0,22
 		.BYTE $A5
 aSelect14OrEscT:.BYTE "Select 1-4 or ESC to cancel"
 		.BYTE $D
 		.BYTE $FF
 		.BYTE $AD
 		.WORD byte_82F2
-		.BYTE $A6,  0,	8
+		MOVEXY	0,8
 		.BYTE $A5
 aUnableToLoadTh:.BYTE "Unable to load this character!"
 		.BYTE $D
@@ -1585,7 +1567,7 @@ aProtectedAndTr:.BYTE "protected and try again."
 		.WORD byte_7FC0
 		.BYTE $AD
 		.WORD byte_82F2
-		.BYTE $A6,  0,	8
+		MOVEXY	0,8
 		.BYTE $A5
 aThisCharacterI:.BYTE "This character is in "
 		.BYTE $B4
@@ -2382,9 +2364,7 @@ aThyNameIs:	.BYTE "Thy name is "
 		.BYTE $D
 		.BYTE $A5
 aThySexIs:	.BYTE "Thy sex is "
-		.BYTE $B4
-		.WORD $71
-		.BYTE 6
+		PRINTSTR $71,6
 		.BYTE $2E
 		.BYTE $D
 		.BYTE $D
