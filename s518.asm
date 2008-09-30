@@ -3010,25 +3010,25 @@ loc_279E:				; CODE XREF: sub_2799:loc_27CAj
 
 loc_27A9:				; CODE XREF: sub_2799+25j
 		LDA	$100,Y
-		STA	(9),Y
+		STA	(off_9),Y
 		SEC
-		LDA	$B
+		LDA	word_B
 		SBC	#1
-		STA	$B
+		STA	word_B
 		BCS	loc_27B9
-		DEC	$C
+		DEC	word_B+1
 
 loc_27B9:				; CODE XREF: sub_2799+1Cj
-		ORA	$C
+		ORA	word_B+1
 		BEQ	loc_27CD
 		INY
 		BPL	loc_27A9
 		TYA
 		CLC
-		ADC	9
-		STA	9
+		ADC	off_9
+		STA	off_9
 		BCC	loc_27CA
-		INC	$A
+		INC	off_9+1
 
 loc_27CA:				; CODE XREF: sub_2799+2Dj
 		JMP	loc_279E
@@ -4042,25 +4042,25 @@ unk_2D8A:	.BYTE $2F ; /		; DATA XREF: sub_2CFB:loc_2D7Cr
 
 loc_2D8F:				; CODE XREF: RAM:1854j
 		LDY	#0
-		LDX	$C
+		LDX	word_B+1
 		BEQ	loc_2D9F
 
 loc_2D95:				; CODE XREF: RAM:2D98j	RAM:2D9Dj
-		STA	(9),Y
+		STA	(off_9),Y
 		INY
 		BNE	loc_2D95
-		INC	$A
+		INC	off_9+1
 		DEX
 		BNE	loc_2D95
 
 loc_2D9F:				; CODE XREF: RAM:2D93j
-		LDX	$B
+		LDX	word_B
 		BEQ	locret_2DAA
 
 loc_2DA3:				; CODE XREF: RAM:2DA8j
-		STA	(9),Y
+		STA	(off_9),Y
 		INY
-		CPY	$B
+		CPY	word_B
 		BNE	loc_2DA3
 
 locret_2DAA:				; CODE XREF: RAM:2DA1j
@@ -4145,30 +4145,30 @@ byte_2E05:	.BYTE $80,$40,$20,$10,	8,  4,	2,  1 ;	DATA XREF: sub_2DAB:loc_2DDCr
 
 
 sub_2E0D:				; CODE XREF: RAM:1866j	sub_4AC9+49p ...
-		STY	$B
+		STY	word_B
 		LDY	#0
 		CPX	#0
 		BEQ	loc_2E23
 
 loc_2E15:				; CODE XREF: sub_2E0D+Dj sub_2E0D+14j
 		LDA	(off_7),Y
-		STA	(9),Y
+		STA	(off_9),Y
 		INY
 		BNE	loc_2E15
-		INC	$A
-		INC	8
+		INC	off_9+1
+		INC	off_7+1	
 		DEX
 		BNE	loc_2E15
 
 loc_2E23:				; CODE XREF: sub_2E0D+6j
-		LDA	$B
+		LDA	word_B
 		BEQ	locret_2E30
 
 loc_2E27:				; CODE XREF: sub_2E0D+21j
 		LDA	(off_7),Y
-		STA	(9),Y
+		STA	(off_9),Y
 		INY
-		CPY	$B
+		CPY	word_B
 		BNE	loc_2E27
 
 locret_2E30:				; CODE XREF: sub_2E0D+18j
@@ -4303,15 +4303,15 @@ sub_2E8D:				; CODE XREF: ADDSTAT1:loc_2E45p
 ; ---------------------------------------------------------------------------
 
 loc_2E9E:				; CODE XREF: RAM:187Ej
-		LDA	$B
+		LDA	word_B
 		EOR	#$FF
-		STA	$B
-		LDA	$C
+		STA	word_B
+		LDA	word_B+1
 		EOR	#$FF
-		STA	$C
-		INC	$B
+		STA	word_B+1
+		INC	word_B
 		BNE	loc_2EB0
-		INC	$C
+		INC	word_B+1
 
 loc_2EB0:				; CODE XREF: RAM:2EACj
 		LDY	#0
@@ -4325,9 +4325,9 @@ loc_2EB2:				; CODE XREF: RAM:2EBFj	RAM:2EC3j
 		INC	off_9+1
 
 loc_2EBD:				; CODE XREF: RAM:2EB7j
-		INC	$B
+		INC	word_B
 		BNE	loc_2EB2
-		INC	$C
+		INC	word_B+1
 		BNE	loc_2EB2
 		RTS
 ; ---------------------------------------------------------------------------
