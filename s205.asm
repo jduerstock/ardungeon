@@ -539,9 +539,9 @@ loc_FA6C:				; CODE XREF: RAM:8396j
 loc_FA78:				; CODE XREF: RAM:835Bj
 		BIT	$25B
 		BMI	loc_FAA9
-		LDA	$1903
+		LDA	word_1903
 		STA	word_232
-		LDA	$1904
+		LDA	word_1903+1
 		STA	word_232+1
 		LDA	#2
 		STA	6
@@ -1359,12 +1359,12 @@ loc_891D:				; CODE XREF: RAM:8900j	RAM:88F9j
 		RTS
 ; ---------------------------------------------------------------------------
 		LDA	SEGADDR
-		STA	9
+		STA	off_9
 		LDA	SEGADDR+1
-		STA	$A
-		LDA	$1903
+		STA	off_9+1
+		LDA	word_1903
 		STA	word_232
-		LDA	$1904
+		LDA	word_1903+1
 		STA	word_232+1
 		LDA	$1907
 		STA	$B

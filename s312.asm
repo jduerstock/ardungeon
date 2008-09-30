@@ -30,9 +30,9 @@ loc_7619:				; CODE XREF: sub_7AE7-4D5j
 		LDA	#$94 ; '”'
 		STA	SEGADDR+1
 		LDA	#$13
-		STA	$1903
+		STA	word_1903
 		LDA	#0
-		STA	$1904
+		STA	word_1903+1
 		LDA	#$78 ; 'x'
 		STA	$1907
 		LDA	#0
@@ -54,9 +54,9 @@ loc_7653:				; CODE XREF: sub_7AE7-482j
 		JSR	sub_8D72
 		BCS	loc_766D
 		INC	$190C
-		INC	$1903
+		INC	word_1903
 		BNE	loc_7663
-		INC	$1904
+		INC	word_1903+1
 
 loc_7663:				; CODE XREF: sub_7AE7-489j
 		DEC	$7C
@@ -182,10 +182,10 @@ loc_7719:
 		STA	SEGADDR
 		LDA	#$8E ; 'Ž'
 		STA	SEGADDR+1
-		LDA	$7DB4,X
-		STA	$1903
-		LDA	$7DB8,X
-		STA	$1904
+		LDA	byte_7DB4,X
+		STA	word_1903
+		LDA	byte_7DB8,X
+		STA	word_1903+1
 		LDA	#0
 		STA	$1907
 		LDA	#7
@@ -1392,10 +1392,14 @@ loc_7CCF:				; CODE XREF: RAM:7CBEj	RAM:7CC9j
 		.BYTE $63 ; c
 		.BYTE	0
 		.BYTE	0
+
+byte_7DB4:
 		.BYTE $37 ; 7
 		.BYTE $CB ; Ë
 		.BYTE $5F ; _
 		.BYTE $F3 ; ó
+
+byte_7DB8:
 		.BYTE	0
 		.BYTE	0
 		.BYTE	1
@@ -3450,9 +3454,9 @@ loc_8DA6:				; CODE XREF: sub_8D72+30j
 		INC	word_232+1
 
 loc_8DB6:				; CODE XREF: sub_8D72+3Fj
-		INC	$1903
+		INC	word_1903
 		BNE	loc_8DBE
-		INC	$1904
+		INC	word_1903+1
 
 loc_8DBE:				; CODE XREF: sub_8D72+47j
 		JMP	loc_8D75
@@ -3527,12 +3531,12 @@ loc_8E11:				; CODE XREF: sub_8DD0+3Aj
 
 sub_8E13:				; CODE XREF: sub_8D72p
 		LDA	SEGADDR
-		STA	9
+		STA	off_9
 		LDA	SEGADDR+1
-		STA	$A
-		LDA	$1903
+		STA	off_9+1
+		LDA	word_1903
 		STA	word_232
-		LDA	$1904
+		LDA	word_1903+1
 		STA	word_232+1
 		LDA	$1907
 		STA	$B

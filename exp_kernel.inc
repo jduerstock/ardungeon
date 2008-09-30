@@ -5,7 +5,7 @@ byte_18C1	= $18C1
 byte_18C4	= $18C4
 byte_18C7	= $18C7
 
-
+word_1903	= $1903
 SEGNO		= $1909
 SEGADDR		= $190B
 off_193A	= $193A

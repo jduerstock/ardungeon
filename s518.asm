@@ -341,8 +341,7 @@ word_1903:	.WORD 0			; DATA XREF: sub_28A1+32w sub_2937+Ar
 byte_1905:	.BYTE 0			; DATA XREF: sub_28D7r
 					; sub_2937:loc_2969r
 byte_1906:	.BYTE 0			; DATA XREF: sub_28A1+2Fr
-byte_1907:	.BYTE 0			; DATA XREF: sub_27DE+4Br sub_27DE+62r ...
-byte_1908:	.BYTE 0			; DATA XREF: sub_27DE+26r sub_27DE+73r ...
+word_1907:	.WORD	0		; DATA XREF: sub_27DE+4Br sub_27DE+62r ...
 SEGNO:		.BYTE	0		; DATA XREF: sub_28A1+4r sub_2CC2+2r ...
 		.BYTE	0
 SEGADDR:	.WORD	0		; DATA XREF: sub_27DE+1Cr
@@ -3079,23 +3078,23 @@ loc_27F2:				; CODE XREF: sub_27DE+Bj
 		STY	byte_1901
 		STY	byte_1902
 		LDA	SEGADDR
-		STA	9
+		STA	off_9
 		LDA	SEGADDR+1
-		STA	$A
-		LDX	byte_1908
+		STA	off_9+1
+		LDX	word_1907+1
 		BEQ	loc_2827
-		STX	$C
+		STX	word_B+1
 		LDX	#0
 
 loc_280D:				; CODE XREF: sub_27DE+41j sub_27DE+47j
-		LDA	(9),Y
+		LDA	(off_9),Y
 		LSR	A
 		BCC	loc_2814
 		ORA	#$80 ; '€'
 
 loc_2814:				; CODE XREF: sub_27DE+32j
 		EOR	$100,X
-		STA	(9),Y
+		STA	(off_9),Y
 		INX
 		BPL	loc_281E
 		LDX	#0
@@ -3103,44 +3102,44 @@ loc_2814:				; CODE XREF: sub_27DE+32j
 loc_281E:				; CODE XREF: sub_27DE+3Cj
 		INY
 		BNE	loc_280D
-		INC	$A
-		DEC	$C
+		INC	off_9+1
+		DEC	word_B+1
 		BNE	loc_280D
 
 loc_2827:				; CODE XREF: sub_27DE+29j
 		LDX	#0
-		LDA	byte_1907
+		LDA	word_1907
 		BEQ	loc_2845
 
 loc_282E:				; CODE XREF: sub_27DE+65j
-		LDA	(9),Y
+		LDA	(off_9),Y
 		LSR	A
 		BCC	loc_2835
 		ORA	#$80 ; '€'
 
 loc_2835:				; CODE XREF: sub_27DE+53j
 		EOR	$100,X
-		STA	(9),Y
+		STA	(off_9),Y
 		INX
 		BPL	loc_283F
 		LDX	#0
 
 loc_283F:				; CODE XREF: sub_27DE+5Dj
 		INY
-		CPY	byte_1907
+		CPY	word_1907
 		BCC	loc_282E
 
 loc_2845:				; CODE XREF: sub_27DE+4Ej
 		LDA	SEGADDR
-		STA	9
+		STA	off_9
 		LDA	SEGADDR+1
-		STA	$A
+		STA	off_9+1
 		LDY	#0
-		LDX	byte_1908
+		LDX	word_1907+1
 		BEQ	loc_286C
 
 loc_2856:				; CODE XREF: sub_27DE+87j sub_27DE+8Cj
-		LDA	(9),Y
+		LDA	(off_9),Y
 		CLC
 		ADC	byte_1901
 		STA	byte_1901
@@ -3150,16 +3149,16 @@ loc_2856:				; CODE XREF: sub_27DE+87j sub_27DE+8Cj
 loc_2864:				; CODE XREF: sub_27DE+81j
 		INY
 		BNE	loc_2856
-		INC	$A
+		INC	off_9+1
 		DEX
 		BNE	loc_2856
 
 loc_286C:				; CODE XREF: sub_27DE+76j
-		LDX	byte_1907
+		LDX	word_1907
 		BEQ	loc_2885
 
 loc_2871:				; CODE XREF: sub_27DE+A5j
-		LDA	(9),Y
+		LDA	(off_9),Y
 		CLC
 		ADC	byte_1901
 		STA	byte_1901
@@ -3168,7 +3167,7 @@ loc_2871:				; CODE XREF: sub_27DE+A5j
 
 loc_287F:				; CODE XREF: sub_27DE+9Cj
 		INY
-		CPY	byte_1907
+		CPY	word_1907
 		BCC	loc_2871
 
 loc_2885:				; CODE XREF: sub_27DE+91j
@@ -3310,10 +3309,10 @@ sub_2937:				; CODE XREF: sub_2799p
 		STA	word_232
 		LDA	word_1903+1
 		STA	word_232+1
-		LDA	byte_1907
-		STA	$B
-		LDA	byte_1908
-		STA	$C
+		LDA	word_1907
+		STA	word_B
+		LDA	word_1907+1
+		STA	word_B+1
 		JSR	sub_2979
 		BMI	loc_2976
 		LDX	#$F

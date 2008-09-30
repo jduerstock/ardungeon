@@ -1,6 +1,7 @@
 off_0 	= $00
 off_7 	= $07
 off_9 	= $09
+word_B	= $0B
 off_D	= $0D
 off_10	= $10
 off_12	= $12
