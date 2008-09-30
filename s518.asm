@@ -1773,12 +1773,12 @@ loc_205A:				; CODE XREF: sub_248E-42Dj
 		CLC
 		CLC
 		LDA	#$66 ; 'f'
-		STA	0
+		STA	off_0
 		ADC	#4
-		STA	$23A
+		STA	off_23A
 		LDA	#2
-		STA	1
-		STA	$23B
+		STA	off_0+1
+		STA	off_23A+1
 		LDA	#$34 ; '4'
 		STA	$D303
 		JSR	sub_20F7
@@ -1903,10 +1903,10 @@ sub_2126:				; CODE XREF: sub_248E-3D2p
 		LDA	#$70 ; 'p'
 		STA	off_0
 		ADC	#1
-		STA	$23A
+		STA	off_23A
 		LDA	#2
 		STA	off_0+1
-		STA	$23B
+		STA	off_23A+1
 		LDA	#$FF
 		STA	$245
 		JSR	sub_218E
@@ -2004,11 +2004,11 @@ sub_21D1:				; CODE XREF: sub_248E-3EDp
 		LDA	#0
 		STA	off_0
 		ADC	$234
-		STA	$23A
+		STA	off_23A
 		LDA	#1
 		STA	off_0+1
 		ADC	$235
-		STA	$23B
+		STA	off_23A+1
 		RTS
 ; End of function sub_21D1
 
@@ -2063,9 +2063,9 @@ loc_221A:				; CODE XREF: RAM:2202j
 
 loc_2230:				; CODE XREF: RAM:222Cj
 		LDA	off_0
-		CMP	$23A
+		CMP	off_23A
 		LDA	off_0+1
-		SBC	$23B
+		SBC	off_23A+1
 		BCC	loc_2216
 		LDA	$245
 		BEQ	loc_2248
@@ -2087,9 +2087,9 @@ loc_224F:
 
 loc_2257:				; CODE XREF: RAM:2253j
 		LDA	off_0
-		CMP	$23A
+		CMP	off_23A
 		LDA	off_0+1
-		SBC	$23B
+		SBC	off_23A+1
 		BCC	loc_2284
 		LDA	$243
 		BNE	loc_2275
