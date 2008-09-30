@@ -178,23 +178,23 @@ loc_20F9:				; CODE XREF: RAM:20E8j	RAM:20F2j
 
 loc_211B:				; CODE XREF: RAM:2144j
 		LDA	byte_24C8
-		STA	$232
+		STA	word_232
 		LDA	byte_24C9
-		STA	$233
+		STA	word_232+1
 		JSR	sub_2470
 		LDY	#0
 
 loc_212C:				; CODE XREF: RAM:2132j
 		LDA	$100,Y
-		STA	(9),Y
+		STA	(off_9),Y
 		INY
 		BPL	loc_212C
-		LDA	9
+		LDA	off_9
 		CLC
 		ADC	#$80 ; '€'
-		STA	9
+		STA	off_9
 		BCC	loc_213F
-		INC	$A
+		INC	off_9+1
 
 loc_213F:				; CODE XREF: RAM:213Bj
 		INC	byte_24C8

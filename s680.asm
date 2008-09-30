@@ -1,3 +1,4 @@
+		.include	"globals.inc"
 ;		.ORG	$9000
 
 loc_9000:				; DATA XREF: RAM:loc_90AFw
@@ -13,9 +14,9 @@ loc_900E:				; CODE XREF: RAM:9015j
 		STA	$91BE,X
 		INX
 		BNE	loc_900E
-		STX	$232
+		STX	word_232
 		INX
-		STX	$233
+		STX	word_232+1
 		LDA	#$BE ; 'æ'
 		STA	9
 		LDA	#$90 ; 'ê'

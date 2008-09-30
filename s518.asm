@@ -337,8 +337,7 @@ byte_1900:	.BYTE 0			; DATA XREF: sub_267A+10r
 					; sub_267A:loc_269Fw
 byte_1901:	.BYTE 0			; DATA XREF: sub_27DE+16w sub_27DE+7Br ...
 byte_1902:	.BYTE 0			; DATA XREF: sub_27DE+19w sub_27DE+83w ...
-byte_1903:	.BYTE 0			; DATA XREF: sub_28A1+32w sub_2937+Ar
-byte_1904:	.BYTE 0			; DATA XREF: sub_28A1+2Cw sub_2937+10r
+word_1903:	.WORD 0			; DATA XREF: sub_28A1+32w sub_2937+Ar
 byte_1905:	.BYTE 0			; DATA XREF: sub_28D7r
 					; sub_2937:loc_2969r
 byte_1906:	.BYTE 0			; DATA XREF: sub_28A1+2Fr
@@ -3223,9 +3222,9 @@ loc_28BC:				; CODE XREF: sub_28A1+21j
 		STA	$25C
 		PLA
 		AND	#3
-		STA	byte_1904
+		STA	word_1903+1
 		LDA	byte_1906
-		STA	byte_1903
+		STA	word_1903
 		RTS
 ; End of function sub_28A1
 
@@ -3307,10 +3306,10 @@ sub_2937:				; CODE XREF: sub_2799p
 		STA	9
 		LDA	SEGADDR+1
 		STA	$A
-		LDA	byte_1903
-		STA	$232
-		LDA	byte_1904
-		STA	$233
+		LDA	word_1903
+		STA	word_232
+		LDA	word_1903+1
+		STA	word_232+1
 		LDA	byte_1907
 		STA	$B
 		LDA	byte_1908
@@ -3366,9 +3365,9 @@ loc_298A:				; CODE XREF: sub_2979+18j
 		BEQ	loc_299D
 
 loc_2995:				; CODE XREF: sub_2979+14j
-		INC	$232
+		INC	word_232
 		BNE	loc_299D
-		INC	$233
+		INC	word_232+1
 
 loc_299D:				; CODE XREF: sub_2979+1Aj sub_2979+1Fj
 		TYA

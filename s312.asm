@@ -3445,9 +3445,9 @@ loc_8DA6:				; CODE XREF: sub_8D72+30j
 		SEC
 		INX
 		BPL	loc_8D90
-		INC	$232
+		INC	word_232
 		BNE	loc_8DB6
-		INC	$233
+		INC	word_232+1
 
 loc_8DB6:				; CODE XREF: sub_8D72+3Fj
 		INC	$1903
@@ -3531,9 +3531,9 @@ sub_8E13:				; CODE XREF: sub_8D72p
 		LDA	SEGADDR+1
 		STA	$A
 		LDA	$1903
-		STA	$232
+		STA	word_232
 		LDA	$1904
-		STA	$233
+		STA	word_232+1
 		LDA	$1907
 		STA	$B
 		LDA	$1908

@@ -840,10 +840,10 @@ loc_7B36:				; CODE XREF: RAM:7B3Bj
 		INY
 		DEX
 		BPL	loc_7B36
-		LDA	#2
-		STA	$232
-		LDA	#0
-		STA	$233
+		LDA	#<2
+		STA	word_232
+		LDA	#>2
+		STA	word_232+1
 		LDX	#$7F ; ''
 
 loc_7B49:				; CODE XREF: RAM:7B50j
@@ -977,9 +977,9 @@ loc_7C08:				; CODE XREF: RAM:7C0Fj
 		ASL	A
 		TAY
 		LDA	unk_83C1,Y
-		STA	$232
+		STA	word_232
 		LDA	unk_83C2,Y
-		STA	$233
+		STA	word_232+1
 
 loc_7C32:				; CODE XREF: RAM:7C7Aj
 		JSR	$182D
@@ -1010,9 +1010,9 @@ loc_7C4E:				; CODE XREF: RAM:7C54j
 		STA	($76),Y
 		DEY
 		BPL	loc_7C4E
-		INC	$232
+		INC	word_232
 		BNE	loc_7C5E
-		INC	$233
+		INC	word_232+1
 
 loc_7C5E:				; CODE XREF: RAM:7C59j
 		JSR	$182D
@@ -1024,9 +1024,9 @@ loc_7C65:				; CODE XREF: RAM:7C6Bj
 		STA	($76),Y
 		DEY
 		BMI	loc_7C65
-		INC	$232
+		INC	word_232
 		BNE	loc_7C75
-		INC	$233
+		INC	word_232+1
 
 loc_7C75:				; CODE XREF: RAM:7C70j
 		INC	$77
@@ -1138,9 +1138,9 @@ loc_7D31:				; CODE XREF: RAM:7D34j	RAM:7D39j
 		ASL	A
 		TAY
 		LDA	unk_83C1,Y
-		STA	$232
+		STA	word_232
 		LDA	unk_83C2,Y
-		STA	$233
+		STA	word_232+1
 		LDA	#<SEG_6300
 		STA	$76
 		LDA	#>SEG_6300
@@ -1166,9 +1166,9 @@ loc_7D61:				; CODE XREF: RAM:7D67j
 ; ---------------------------------------------------------------------------
 
 loc_7D77:				; CODE XREF: RAM:7D72j
-		INC	$232
+		INC	word_232
 		BNE	loc_7D7F
-		INC	$233
+		INC	word_232+1
 
 loc_7D7F:				; CODE XREF: RAM:7D7Aj
 		LDY	#$FF
@@ -1187,9 +1187,9 @@ loc_7D81:				; CODE XREF: RAM:7D87j
 ; ---------------------------------------------------------------------------
 
 loc_7D97:				; CODE XREF: RAM:7D92j
-		INC	$232
+		INC	word_232
 		BNE	loc_7D9F
-		INC	$233
+		INC	word_232+1
 
 loc_7D9F:				; CODE XREF: RAM:7D9Aj
 		INC	$77
@@ -1226,10 +1226,10 @@ loc_7DB6:				; CODE XREF: RAM:7DAEj
 		STA	$76
 		LDA	#$8E ; 'Ž'
 		STA	$77
-		LDA	#2
-		STA	$232
-		LDA	#0
-		STA	$233
+		LDA	#<2
+		STA	word_232
+		LDA	#>2
+		STA	word_232+1
 		JSR	$1827
 		LDY	#$7F ; ''
 
@@ -1407,9 +1407,9 @@ loc_7ECD:				; CODE XREF: sub_7ECB+9j
 
 loc_7EDD:				; CODE XREF: sub_7ECB+41j
 		LDA	#2
-		STA	$232
+		STA	word_232
 		LDA	#0
-		STA	$233
+		STA	word_232+1
 		LDA	$230
 		AND	#$F
 		TAX
@@ -1845,9 +1845,9 @@ loc_8440:				; CODE XREF: RAM:8447j
 		DEX
 		BPL	loc_8440
 		LDA	#1
-		STA	$232
+		STA	word_232
 		LDA	#0
-		STA	$233
+		STA	word_232+1
 		JSR	$1827
 		LDA	#$57 ; 'W'
 		LDX	#$80 ; '€'
@@ -1870,9 +1870,9 @@ loc_846F:				; CODE XREF: RAM:8476j
 		DEX
 		BPL	loc_846F
 		LDA	#2
-		STA	$232
+		STA	word_232
 		LDA	#0
-		STA	$233
+		STA	word_232+1
 		JSR	$1827
 		LDA	#$57 ; 'W'
 		LDX	#$80 ; '€'

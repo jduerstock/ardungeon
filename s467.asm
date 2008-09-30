@@ -7,22 +7,22 @@
 loc_7600:				; CODE XREF: RAM:7814j
 		LDA	#0
 		JSR	$180F
-		LDA	#$3E ; '>'
+		LDA	#$3E
 		STA	SEGNO
-		LDA	#0
+		LDA	#<SEG_9000
 		STA	SEGADDR
-		LDA	#$90 ; 'ђ'
+		LDA	#>SEG_9000
 		STA	SEGADDR+1
 		JSR	j_SEGLOAD
 		LDA	RANDOM
 		AND	#7
 		BNE	loc_7621
-		JSR	$9000
+		JSR	SEG_9000
 
 loc_7621:				; CODE XREF: RAM:761Cj	RAM:7677j ...
-		LDA	#$46 ; 'F'
+		LDA	#<byte_7846
 		STA	off_16
-		LDA	#$78 ; 'x'
+		LDA	#>byte_7846
 		STA	off_16+1
 		JSR	$1818
 
@@ -42,9 +42,9 @@ loc_7633:				; CODE XREF: RAM:763Aj
 
 loc_7643:				; CODE XREF: RAM:7672j
 		LDA	#2
-		STA	$232
+		STA	word_232
 		LDA	#0
-		STA	$233
+		STA	word_232+1
 		LDA	$230
 		AND	#$F
 		TAX
@@ -69,7 +69,7 @@ loc_766B:				; CODE XREF: RAM:7667j
 		BPL	loc_7643
 		JSR	$1830
 		JMP	loc_7621
-; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+; ---------------------------------------------------------------------------
 
 loc_767A:				; CODE XREF: RAM:765Bj
 		LDX	#7
@@ -105,7 +105,7 @@ loc_76A4:				; CODE XREF: RAM:76ACj
 		CPX	#4
 		BCC	loc_76A4
 		JMP	loc_7817
-; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+; ---------------------------------------------------------------------------
 
 loc_76B1:				; CODE XREF: RAM:76A7j
 		LDA	#0
@@ -114,7 +114,7 @@ loc_76B1:				; CODE XREF: RAM:76A7j
 		STA	unk_7AC8,X
 		STX	$6300
 		JMP	loc_76F1
-; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+; ---------------------------------------------------------------------------
 
 loc_76C2:				; CODE XREF: RAM:76A0j
 		STX	$62
@@ -122,14 +122,14 @@ loc_76C2:				; CODE XREF: RAM:76A0j
 		CMP	#$7F ; ''
 		BEQ	loc_76CE
 		JMP	loc_7817
-; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+; ---------------------------------------------------------------------------
 
 loc_76CE:				; CODE XREF: RAM:76C9j
 		LDA	unk_7AC4,X
 		CMP	$6311
 		BEQ	loc_76D9
 		JMP	loc_7817
-; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+; ---------------------------------------------------------------------------
 
 loc_76D9:				; CODE XREF: RAM:76D4j
 		LDY	unk_7832,X
@@ -140,7 +140,7 @@ loc_76DE:				; CODE XREF: RAM:76EDj
 		CMP	unk_7AD0,Y
 		BEQ	loc_76E9
 		JMP	loc_7817
-; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+; ---------------------------------------------------------------------------
 
 loc_76E9:				; CODE XREF: RAM:76E4j
 		INY
@@ -167,10 +167,10 @@ loc_7700:				; CODE XREF: RAM:76F8j
 		SEC
 		SBC	#$63 ; 'c'
 		STA	$64E5
-		LDA	#0
-		STA	$64
-		LDA	#$63 ; 'c'
-		STA	$65
+		LDA	#<SEG_6300
+		STA	off_64
+		LDA	#>SEG_6300
+		STA	off_64+1
 		LDY	#0
 		STY	$638E
 		CLC
@@ -178,10 +178,10 @@ loc_7700:				; CODE XREF: RAM:76F8j
 		LDA	$6309
 
 loc_771F:				; CODE XREF: RAM:7722j	RAM:7727j
-		ADC	($64),Y
+		ADC	(off_64),Y
 		INY
 		BNE	loc_771F
-		INC	$65
+		INC	off_64+1
 		DEX
 		BPL	loc_771F
 		STA	$638E
@@ -217,9 +217,9 @@ loc_7758:				; CODE XREF: RAM:775Fj
 		DEX
 		BPL	loc_7758
 		LDA	#2
-		STA	$232
+		STA	word_232
 		LDA	#0
-		STA	$233
+		STA	word_232+1
 		LDA	#'W'
 		LDX	#$80 ; 'Ђ'
 		LDY	#3
@@ -229,14 +229,14 @@ loc_7758:				; CODE XREF: RAM:775Fj
 		LDA	$62
 		ASL	A
 		TAX
-		LDA	unk_7836,X
-		STA	$232
-		LDA	unk_7837,X
-		STA	$233
+		LDA	word_7836,X
+		STA	word_232
+		LDA	word_7836+1,X
+		STA	word_232+1
 		LDA	#<SEG_6300
-		STA	$66
+		STA	off_66
 		LDA	#>SEG_6300
-		STA	$67
+		STA	off_66+1
 		LDA	#$13
 		STA	$63
 		JSR	$1827
@@ -254,9 +254,9 @@ loc_779A:				; CODE XREF: RAM:77A0j
 		LDY	#3
 		JSR	$1833
 		BMI	loc_77EE
-		INC	$232
+		INC	word_232
 		BNE	loc_77B5
-		INC	$233
+		INC	word_232+1
 
 loc_77B5:				; CODE XREF: RAM:77B0j
 		LDY	#$FF
@@ -271,9 +271,9 @@ loc_77B7:				; CODE XREF: RAM:77BDj
 		LDY	#3
 		JSR	$1833
 		BMI	loc_77EE
-		INC	$232
+		INC	word_232
 		BNE	loc_77D2
-		INC	$233
+		INC	word_232+1
 
 loc_77D2:				; CODE XREF: RAM:77CDj
 		INC	$67
@@ -290,7 +290,7 @@ loc_77E6:				; CODE XREF: RAM:77E9j
 		JSR	$181E
 		BMI	loc_77E6
 		JMP	$18B4
-; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+; ---------------------------------------------------------------------------
 
 loc_77EE:				; CODE XREF: RAM:7774j	RAM:77ABj ...
 		JSR	$1830
@@ -304,7 +304,7 @@ loc_77FC:				; CODE XREF: RAM:77FFj
 		JSR	$181E
 		BMI	loc_77FC
 		JMP	loc_772C
-; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+; ---------------------------------------------------------------------------
 		LDA	#$E3 ; 'г'
 		STA	off_16
 		LDA	#$79 ; 'y'
@@ -315,7 +315,7 @@ loc_780F:				; CODE XREF: RAM:7812j
 		JSR	$181E
 		BMI	loc_780F
 		JMP	loc_7600
-; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+; ---------------------------------------------------------------------------
 
 loc_7817:				; CODE XREF: RAM:76AEj	RAM:76CBj ...
 		BIT	$253
@@ -333,20 +333,18 @@ loc_782A:				; CODE XREF: RAM:782Dj
 		JSR	$181E
 		BMI	loc_782A
 		JMP	loc_7621
-; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+; ---------------------------------------------------------------------------
 unk_7832:	.BYTE	0		; DATA XREF: RAM:loc_76D9r RAM:7742r
 		.BYTE $1A
 		.BYTE $34 ; 4
 		.BYTE $4E ; N
-unk_7836:	.BYTE	3		; DATA XREF: RAM:777Dr
-unk_7837:	.BYTE	0		; DATA XREF: RAM:7783r
-		.BYTE $BB ; »
-		.BYTE	0
-		.BYTE $73 ; s
-		.BYTE	1
-		.BYTE $2B ; +
-		.BYTE	2
+word_7836:	.WORD	3		; DATA XREF: RAM:777Dr
+		.WORD	$BB
+		.WORD	$173
+		.WORD	$22B
 aArChar:	.BYTE "AR CHAR!"        ; DATA XREF: RAM:loc_767Cr
+
+byte_7846:
 		.BYTE $AC
 		.WORD byte_7A66
 		.BYTE $A6,  0,	8
