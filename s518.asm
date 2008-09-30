@@ -6712,7 +6712,7 @@ loc_4104:				; CODE XREF: sub_408B+7Dj
 		LDA	#$39 ; '9'
 		STA	off_16+1
 		JSR	sub_1C84
-		DEC	$32
+		DEC	byte_32
 		DEC	$F
 		LDA	#$F0 ; 'ð'
 
@@ -6741,7 +6741,7 @@ byte_413C:	.BYTE 0			; DATA XREF: sub_408B+15w sub_408B+3Aw
 loc_413D:				; CODE XREF: sub_408B+37p
 		LDA	$7600
 		BNE	locret_4171
-		BIT	$32
+		BIT	byte_32
 		BMI	locret_4171
 		LDA	$6382
 		LDX	byte_1973

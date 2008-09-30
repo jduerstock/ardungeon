@@ -2177,7 +2177,7 @@ unk_8293:	.BYTE $C3 ; Ã		; DATA XREF: sub_7A05+1Er
 		.BYTE $A1 ; ¡
 		.BYTE $A0 ;  
 		.BYTE $A8
-		.BYTE $A6,  8,	2
+		MOVEXY	8,2
 aTransferACityC:.BYTE "Transfer a City Character"
 		.BYTE $D
 		.BYTE $D
@@ -2194,7 +2194,7 @@ aReadyWithFewer:.BYTE "ready with fewer than four characters"
 		.BYTE $A5
 aOnIt_:		.BYTE "on it."
 		.BYTE $D
-		.BYTE $A6,  0,$10
+		MOVEXY	0,16
 		.BYTE $A5
 aInsertYourCity:.BYTE "Insert your CITY Character Disk"
 		.BYTE $D
@@ -2212,39 +2212,39 @@ aOrEscToCancel:	.BYTE "or ESC to cancel"
 		.BYTE $D
 		.BYTE $FF
 		.BYTE $A8
-		.BYTE $A6,  7,	2
+		MOVEXY	7,2
 aTransferACit_0:.BYTE "Transfer a City Character"
-		.BYTE $A6,  5,	8
+		MOVEXY	5,8
 a1:		.BYTE "(1) "
 		.BYTE $B3
 		.WORD unk_8688
 		.BYTE $19
-		.BYTE $A6,  5, $A
+		MOVEXY	5,10
 a2:		.BYTE "(2) "
 		.BYTE $B3
 		.WORD unk_86A8
 		.BYTE $19
-		.BYTE $A6,  5, $C
+		MOVEXY	5,12
 a3:		.BYTE "(3) "
 		.BYTE $B3
 		.WORD unk_86C8
 		.BYTE $19
-		.BYTE $A6,  5, $E
+		MOVEXY	5,14
 a4:		.BYTE "(4) "
 		.BYTE $B3
 		.WORD unk_86E8
 		.BYTE $19
-		.BYTE $A6,  0,$12
+		MOVEXY	0,18
 		.BYTE $A5
 aSelectWhichCha:.BYTE "Select which character (1-4) ?"
 		.BYTE $D
-		.BYTE $A6,  0,$16
+		MOVEXY	0,22
 		.BYTE $A5
 aPressEscToCanc:.BYTE "Press ESC to cancel"
 		.BYTE $D
 		.BYTE $FF
 		.BYTE $A8
-		.BYTE $A6,  0,	7
+		MOVEXY	0,7
 		.BYTE $A5
 aThisCharacterI:.BYTE "This character is not by a Dungeon"
 		.BYTE $D
@@ -2274,17 +2274,17 @@ aAndPotions:	.BYTE "and potions!)"
 		.BYTE $D
 		.BYTE $FF
 		.BYTE $A8
-		.BYTE $A6, $C, $C
+		MOVEXY	12,12
 aThereHasBeenA:	.BYTE "There has been a"
 		.BYTE $D
 		.BYTE $D
 		.BYTE $A5
 aDiskError:	.BYTE "DISK ERROR"
-		.BYTE $A6,  8,$16
+		MOVEXY	8,22
 aPressAnyKeyToC:.BYTE "Press any key to continue"
 		.BYTE $FF
 		.BYTE $A8
-		.BYTE $A6,  0,	8
+		MOVEXY	0,8
 		.BYTE $A5
 aIsThisCharacte:.BYTE "Is this character male or female?"
 		.BYTE $D
@@ -2294,33 +2294,33 @@ aMOrF:		.BYTE "(M or F)"
 		.BYTE $D
 		.BYTE $FF
 		.BYTE $A8
-		.BYTE $A6,  0,	5
+		MOVEXY	0,5
 		.BYTE $A5
 aIAmSorryButYou:.BYTE "I am sorry, but your character"
 		.BYTE $D
-		.BYTE $A6,  0,	7
+		MOVEXY	0,7
 		.BYTE $A5
 aCannotEnterThe:.BYTE "cannot enter the Dungeon until"
 		.BYTE $D
-		.BYTE $A6,  0,	9
+		MOVEXY	0,9
 		.BYTE $A5
 aHeIsFreeOfAllC:.BYTE "he is free of all City ailments"
 		.BYTE $D
-		.BYTE $A6,  0, $B
+		MOVEXY	0,11
 		.BYTE $A5
 aAndPoisons_ICh:.BYTE "and poisons.  I charge a fee of"
 		.BYTE $D
-		.BYTE $A6, $C, $D
+		MOVEXY	12,13
 a10000CoppersTo:.BYTE "10,000 coppers to cure you now."
-		.BYTE $A6,  0,$14
+		MOVEXY	0,20
 		.BYTE $A5
 aDoYouWishToPro:.BYTE "Do you wish to proceed (Y or N)?"
 		.BYTE $D
 		.BYTE $FF
 		.BYTE $A8
-		.BYTE $A6,  4, $C
+		MOVEXY	4,12
 aIMSorryYouHave:.BYTE "I'm sorry, you have not the funds."
-		.BYTE $A6,  3,$17
+		MOVEXY	3,23
 aPressAnyKeyT_0:.BYTE "<<< Press any key to continue >>>"
 		.BYTE $FF
 byte_8687:	.BYTE $47		; DATA XREF: sub_79AA+21w sub_79AA+2Er ...

@@ -1423,7 +1423,7 @@ loc_899D:				; CODE XREF: RAM:8993j	RAM:8998j
 		RTS
 ; ---------------------------------------------------------------------------
 		.BYTE $A8
-		.BYTE $A6,  0,	1
+		MOVEXY	0,1
 		.BYTE $A5
 aPleaseInsertTh:.BYTE "Please insert The Dungeon Disk "
 		.BYTE $B2
@@ -1437,7 +1437,7 @@ aPleaseInsertTh:.BYTE "Please insert The Dungeon Disk "
 		.WORD $1910
 		.BYTE 1
 aIntoAnyDrive_:	.BYTE " into any drive.",$D
-		.BYTE $A6,  0,	5
+		MOVEXY	0,5
 		.BYTE $A5
 aPress:		.BYTE "Press "
 		.BYTE $A1

@@ -351,7 +351,7 @@ loc_7836:				; CODE XREF: RAM:7825j	RAM:782Aj
 		.BYTE $A8,$FF
 
 a_YouAreIn:
-		.BYTE $A6,  0,	0
+		MOVEXY	0,0
 		.BYTE $A5
 aYouAreIn:	.BYTE "You are in"
 		.BYTE $B4
@@ -407,7 +407,7 @@ aSearching___:	.BYTE "Searching..."
 		.BYTE $A0
 aHitAnyKeyToSto:.BYTE "(Hit any key to stop.)"
 		.BYTE $FF
-		.BYTE $A6,  0,	3
+		MOVEXY	0,3
 		.BYTE $A5
 aYouGrabTheBagO:.BYTE "You grab the bag of "
 		.BYTE $B4
@@ -421,14 +421,14 @@ aAndRun:	.BYTE " and run!"
 		.BYTE $FF
 
 a_AGuardEscortsYou:
-		.BYTE $A6, $A,	2
+		MOVEXY	10,2
 aAGuardEscortsY:.BYTE "A guard escorts you"
-		.BYTE $A6,  8,	4
+		MOVEXY	8,4
 aOutOfTheBankSV:.BYTE "out of the bank's vault."
 		.BYTE $FF
 
 a_AGuardDragsYou:
-		.BYTE $A6,  7,	4
+		MOVEXY	7,4
 aAGuardDragsYou:.BYTE "A guard drags you outside."
 		.BYTE $FF
 

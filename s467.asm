@@ -347,18 +347,18 @@ aArChar:	.BYTE "AR CHAR!"        ; DATA XREF: RAM:loc_767Cr
 byte_7846:
 		.BYTE $AC
 		.WORD byte_7A66
-		.BYTE $A6,  0,	8
+		MOVEXY	0,8
 		.BYTE $A5
 aPleaseInsertYo:.BYTE "Please insert your character disk"
 		.BYTE $D
-		.BYTE $A6,  0,$16
+		MOVEXY	0,22
 		.BYTE $A5
 aPressAnyKeyT_0:.BYTE "Press any key to continue"
 		.BYTE $D
 		.BYTE $FF
 		.BYTE $AC
 		.WORD byte_7A66
-		.BYTE $A6,  0,	8
+		MOVEXY	0,8
 		.BYTE $A5
 		.BYTE $B3
 		.WORD $6321
@@ -375,7 +375,7 @@ aThankYouForPla:.BYTE "Thank you for playing Alternate Reality"
 		.BYTE $A5
 aTheDungeon_:	.BYTE "The Dungeon."
 		.BYTE $D
-		.BYTE $A6,  0,$18
+		MOVEXY	0,24
 		.BYTE $A5
 aPress:		.BYTE "(Press "
 		.BYTE $A1
@@ -386,18 +386,18 @@ aToPlayAgain:	.BYTE " to play again)"
 		.BYTE $FF
 		.BYTE $AC
 		.WORD byte_7A66
-		.BYTE $A6,  0,	8
+		MOVEXY	0,8
 		.BYTE $A5
 aThatIsNotTheCo:.BYTE "That is not the correct character disk!"
 		.BYTE $D
-		.BYTE $A6,  0,$16
+		MOVEXY	0,22
 		.BYTE $A5
 aPressAnyKeyToC:.BYTE "Press any key to continue"
 		.BYTE $D
 		.BYTE $FF
 		.BYTE $AC
 		.WORD byte_7A66
-		.BYTE $A6,  0,	8
+		MOVEXY	0,8
 		.BYTE $A5
 aErrorWritingTo:.BYTE "Error writing to character disk!"
 		.BYTE $D
@@ -410,14 +410,14 @@ aMakeSureDriveD:.BYTE "Make sure drive door is closed and"
 		.BYTE $A5
 aDiskNotWritePr:.BYTE "disk not write protected."
 		.BYTE $D
-		.BYTE $A6,  0,$16
+		MOVEXY	0,22
 		.BYTE $A5
 aPressAnyKeyToT:.BYTE "Press any key to try again"
 		.BYTE $D
 		.BYTE $FF
 		.BYTE $AC
 		.WORD byte_7A66
-		.BYTE $A6,  0,	8
+		MOVEXY	0,8
 		.BYTE $A5
 aThisCharacterD:.BYTE "This character disk already has four"
 		.BYTE $D
@@ -425,7 +425,7 @@ aThisCharacterD:.BYTE "This character disk already has four"
 		.BYTE $A5
 aCharactersOnIt:.BYTE "characters on it!"
 		.BYTE $D
-		.BYTE $A6,  0,$15
+		MOVEXY	0,21
 		.BYTE $A5
 aInsertAnotherC:.BYTE "Insert another character disk and"
 		.BYTE $D

@@ -73,10 +73,10 @@ loc_7689:				; CODE XREF: RAM:768Cj	RAM:7690j
 		LDA	#2
 		STA	($62),Y
 		JMP	$18B4
-; 컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴�
-		.BYTE $A6,  1,	4
+; ---------------------------------------------------------------------------
+		MOVEXY	1,4
 		.BYTE $AB
-		.BYTE $A6,  1,	4
+		MOVEXY	1,4
 		.BYTE $A5
 		.BYTE $7F
 aWhereAreYouq:	.BYTE "    Where are you?    "
@@ -84,13 +84,13 @@ aWhereAreYouq:	.BYTE "    Where are you?    "
 		.BYTE $D
 		.BYTE $FF
 		.BYTE $A8
-		.BYTE $A6,  0,	2
+		MOVEXY	0,2
 		.BYTE $A5
 		.BYTE $B4
 		.WORD byte_76F6
 		.BYTE $28
 		.BYTE $D
-		.BYTE $A6,  0,	7
+		MOVEXY	0,7
 		.BYTE $A5
 aPress:		.BYTE "(Press "
 		.BYTE $A1

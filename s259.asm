@@ -1462,11 +1462,11 @@ loc_7F2B:				; CODE XREF: sub_7EB0+14j
 ; ---------------------------------------------------------------------------
 		.BYTE $AD
 		.WORD byte_82F2
-		.BYTE $A6,  0,	8
+		MOVEXY	0,8
 		.BYTE $A5
 aPleaseInsertYo:.BYTE "Please insert your character disk"
 		.BYTE $D
-		.BYTE $A6,  0,$16
+		MOVEXY	0,22
 		.BYTE $A5
 aPressSpaceBa_0:.BYTE "Press SPACE BAR to continue"
 		.BYTE $D
@@ -1477,7 +1477,7 @@ aOrEscToCance_0:.BYTE "or ESC to cancel"
 		.BYTE $FF
 		.BYTE $AD
 		.WORD byte_82F2
-		.BYTE $A6,  0,	8
+		MOVEXY	0,8
 		.BYTE $A5
 aThisCharacterD:.BYTE "This character disk has no characters"
 		.BYTE $D
@@ -1485,14 +1485,14 @@ aThisCharacterD:.BYTE "This character disk has no characters"
 		.BYTE $A5
 aOnIt__0:	.BYTE "on it."
 		.BYTE $D
-byte_7FC0:	.BYTE $A6,  0,$16	; DATA XREF: RAM:802Eo	RAM:814Bo ...
+byte_7FC0:	MOVEXY	0,22		; DATA XREF: RAM:802Eo	RAM:814Bo ...
 		.BYTE $A5
 aPressAnyKeyT_0:.BYTE "Press any key to continue"
 		.BYTE $D
 		.BYTE $FF
 		.BYTE $AD
 		.WORD byte_82F2
-		.BYTE $A6,  0,	8
+		MOVEXY	0,8
 		.BYTE $A5
 aUnableToRemove:.BYTE "Unable to remove character!"
 		.BYTE $D
@@ -1500,7 +1500,7 @@ aUnableToRemove:.BYTE "Unable to remove character!"
 		.WORD byte_810D
 		.BYTE $AD
 		.WORD byte_82F2
-		.BYTE $A6,  0,	8
+		MOVEXY	0,8
 		.BYTE $A5
 aThatCharacterH:.BYTE "That Character has been removed."
 		.BYTE $D
@@ -1508,7 +1508,7 @@ aThatCharacterH:.BYTE "That Character has been removed."
 		.WORD byte_7FC0
 		.BYTE $AD
 		.WORD byte_82F2
-		.BYTE $A6,  0,	8
+		MOVEXY	0,8
 		.BYTE $A5
 aAreYouSureYouW:.BYTE "Are you sure you want to permanently"
 		.BYTE $D
@@ -1579,7 +1579,7 @@ aThisCharacterI:.BYTE "This character is in "
 		.WORD byte_7FC0
 		.BYTE $AD
 		.WORD byte_82F2
-		.BYTE $A6,  0,	8
+		MOVEXY	0,8
 		.BYTE $A5
 aThisCharacterW:.BYTE "This character was on his way to"
 		.BYTE $D
@@ -1608,7 +1608,7 @@ aN:		.BYTE 'N'
 		.BYTE $FF
 		.BYTE $AD ; ­
 		.WORD byte_82F2
-		.BYTE $A6,  0,	8
+		MOVEXY	0,8
 		.BYTE $A5
 		.BYTE $B4
 		.WORD byte_83BD
@@ -2169,7 +2169,7 @@ loc_8655:				; CODE XREF: RAM:8659j
 ; ---------------------------------------------------------------------------
 		.BYTE $AC
 		.WORD byte_88C4
-		.BYTE $A6,  0,	8
+		MOVEXY	0,8
 		.BYTE $A5
 aPleaseInsertTh:.BYTE "Please insert the disk to be made into a"
 		.BYTE $D
@@ -2182,7 +2182,7 @@ aWarningThisWil:.BYTE "WARNING: This will erase any data on"
 		.BYTE $D
 		.BYTE $A5
 aTheDisk:	.BYTE "the disk!",$D,$D,$D
-byte_86E5:	.BYTE $A6,  0,$16	; DATA XREF: RAM:87FCo
+byte_86E5:	MOVEXY	0,22		; DATA XREF: RAM:87FCo
 		.BYTE $A5
 aPressSpaceBarT:.BYTE "Press SPACE BAR to continue"
 		.BYTE $D
@@ -2193,7 +2193,7 @@ aOrEscToCancel:	.BYTE "or ESC to cancel"
 		.BYTE $FF
 		.BYTE $AC
 		.WORD byte_88C4
-		.BYTE $A6,  0,	8
+		MOVEXY	0,8
 		.BYTE $A5
 aYouCannotStore:.BYTE "You cannot store characters on an"
 		.BYTE $D
@@ -2202,14 +2202,14 @@ aYouCannotStore:.BYTE "You cannot store characters on an"
 aAlternateRea_0:.BYTE "Alternate Reality disk!",$D,$D,$D
 		.BYTE $A5
 aCallItSelfPres:.BYTE "(Call it self-preservation...)",$D
-byte_877E:	.BYTE $A6,  0,$17	; DATA XREF: RAM:887Eo	RAM:88C2o ...
+byte_877E:	MOVEXY	0,23		; DATA XREF: RAM:887Eo	RAM:88C2o ...
 		.BYTE $A5
 aPressAnyKeyToC:.BYTE "Press any key to continue"
 		.BYTE $D
 		.BYTE $FF
 		.BYTE $AC
 		.WORD byte_88C4
-		.BYTE $A6,  0,	8
+		MOVEXY	0,8
 		.BYTE $A5
 aThisDiskContai:.BYTE "This disk contains information!"
 		.BYTE $D
@@ -2227,7 +2227,7 @@ aBeErased:	.BYTE "be erased!"
 		.WORD byte_86E5
 		.BYTE $AC
 		.WORD byte_88C4
-		.BYTE $A6,  0,	8
+		MOVEXY	0,8
 		.BYTE $A5
 aUnableToFormat:.BYTE "Unable to format this disk!"
 		.BYTE $D
@@ -2247,7 +2247,7 @@ aAndTryAgain_:	.BYTE "and try again."
 		.WORD byte_877E
 		.BYTE $AC
 		.WORD byte_88C4
-		.BYTE $A6,  0,	8
+		MOVEXY	0,8
 		.BYTE $A5
 aCharacterDiskH:.BYTE "Character disk has been created!"
 		.BYTE $D
@@ -2283,7 +2283,7 @@ aArChar:	.BYTE "AR CHAR!"        ; DATA XREF: sub_7ECB:loc_7F10r
 					; RAM:loc_846Fr
 		.BYTE $A8,$FF
 		.BYTE $A8
-		.BYTE $A6,  0, $A
+		MOVEXY	0,10
 		.BYTE $A5
 aYouAreNowJoine:.BYTE "You are now joined.  Prepare to enter"
 		.BYTE $D
@@ -2299,20 +2299,20 @@ aAlternateReali:.BYTE "Alternate Reality"
 		.BYTE $A5
 aTheDungeon:	.BYTE "The Dungeon"
 		.BYTE $D
-		.BYTE $A6,  0,	8
+		MOVEXY	0,8
 aPressNToCreate:.BYTE "Press N to create a new character"
-		.BYTE $A6,  0, $A
+		MOVEXY	0,10
 aPressEToResume:.BYTE "Press E to resume an existing character"
-		.BYTE $A6,  0, $C
+		MOVEXY	0,12
 aPressTToTransf:.BYTE "Press T to transfer a City character"
-		.BYTE $A6,  0, $E
+		MOVEXY	0,14
 aPressUForChara:.BYTE "Press U for character utilities"
 		.BYTE $FF
 		.BYTE $A8
 		.BYTE $A5
 aCreateANewChar:.BYTE "Create a new character"
 		.BYTE $D
-		.BYTE $A6,  0,	3
+		MOVEXY	0,3
 		.BYTE $A5
 aNoteIfYouWishT:.BYTE "NOTE: If you wish to keep this character"
 		.BYTE $D
@@ -2328,15 +2328,15 @@ aReadyWithFewer:.BYTE "ready with fewer than four characters"
 		.BYTE $A5
 aOnIt_:		.BYTE "on it."
 		.BYTE $D
-		.BYTE $A6,  0, $C
+		MOVEXY	0,12
 aEnterName:	.BYTE "Enter name :"
 		.BYTE $FF
-		.BYTE $A6,  0, $E
+		MOVEXY	0,14
 		.BYTE $A5
 aArtThouMaleOrF:.BYTE "Art thou male or female? (M or F)"
 		.BYTE $D
 		.BYTE $FF
-		.BYTE $A6,  0, $E
+		MOVEXY	0,14
 		.BYTE $A5
 aIMSorryButICan:.BYTE "I'm sorry but I can't pronounce"
 		.BYTE $D
@@ -2348,12 +2348,12 @@ aThatNamePlease:.BYTE "that name, please choose another!"
 		.BYTE $AC
 		.WORD byte_877E
 		.BYTE $A8
-		.BYTE $A6,  0, $A
+		MOVEXY	0,10
 		.BYTE $A5
 aCharacterTermi:.BYTE "Character terminated."
 		.BYTE $D
 		.BYTE $FF
-		.BYTE $A6,  0,$11
+		MOVEXY	0,17
 		.BYTE $A5
 aThyNameIs:	.BYTE "Thy name is "
 		.BYTE $B3
@@ -2378,12 +2378,12 @@ a_CharacterUtil:
 		.BYTE $A5
 aCharacterUtili:.BYTE "Character Utilities"
 		.BYTE $D
-		.BYTE $A6,  0, $A
+		MOVEXY	0,10
 a1CreateABlankC:.BYTE "  (1) Create a blank character disk"
 		.BYTE $D
 		.BYTE $D
 a2RemoveACharac:.BYTE "  (2) Remove a character"
-		.BYTE $A6,  0,$16
+		MOVEXY	0,22
 		.BYTE $A5
 aSelect12OrPres:.BYTE "Select 1-2 or press ESC for main menu."
 		.BYTE $D
