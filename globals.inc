@@ -10,6 +10,7 @@ off_16	= $16
 off_18	= $18
 off_1D	= $1D
 BLINKFLAG	= $21
+byte_32	= $32
 off_3D	= $3D
 off_3F	= $3F
 off_41	= $41
@@ -42,6 +43,9 @@ SEG_6300	= $6300
 SEG_7600	= $7600
 SEG_9000	= $9000
 SEG_AC00	= $AC00
+
+I_MINUTES	= $6309
+I_HOURS		= $630A
 
 I_CURHP		= $6345
 I_MAXHP		= $6347

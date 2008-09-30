@@ -2295,7 +2295,7 @@ loc_23A3:				; CODE XREF: RAM:23AAj
 
 loc_23BA:				; CODE XREF: RAM:23B5j
 		JSR	sub_267A
-		LDX	$32
+		LDX	byte_32
 		BMI	loc_242E
 		BIT	byte_1955
 		BPL	loc_23C9
@@ -3707,7 +3707,7 @@ locret_2BAF:				; CODE XREF: sub_2BA5+2j sub_2BA5+6j
 
 
 sub_2BB0:				; CODE XREF: RAM:183Cj	RAM:348Cp ...
-		DEC	$32
+		DEC	byte_32
 		LDX	#$1E
 
 loc_2BB4:				; CODE XREF: sub_2BB0+8j
@@ -3724,7 +3724,7 @@ loc_2BB4:				; CODE XREF: sub_2BB0+8j
 loc_2BC8:				; CODE XREF: sub_2BB0+1Bj
 		JSR	sub_2643
 		BMI	loc_2BC8
-		INC	$32
+		INC	byte_32
 		RTS
 ; End of function sub_2BB0
 
@@ -3753,7 +3753,7 @@ sub_2BFA:				; CODE XREF: RAM:527Cp	RAM:53EDp ...
 
 loc_2BFC:				; CODE XREF: RAM:185Aj	RAM:3443p ...
 		STA	byte_2C64
-		DEC	$32
+		DEC	byte_32
 		DEC	$F
 		DEC	byte_1937
 		LDA	#1
@@ -3805,7 +3805,7 @@ loc_2C3F:
 		BNE	loc_2C0E
 
 loc_2C5B:				; CODE XREF: RAM:2C4Fj
-		INC	$32
+		INC	byte_32
 		INC	$F
 		INC	byte_1937
 		RTS
@@ -3875,7 +3875,7 @@ loc_2CAB:
 
 
 SEGLOAD:				; CODE XREF: j_SEGLOADj	RAM:2EFFp ...
-		DEC	$32
+		DEC	byte_32
 		LDA	#0
 		STA	byte_190E
 
@@ -3887,7 +3887,7 @@ loc_2CB4:				; CODE XREF: SEGLOAD+Fj
 ; ---------------------------------------------------------------------------
 
 loc_2CBF:				; CODE XREF: SEGLOAD+Aj
-		INC	$32
+		INC	byte_32
 		RTS
 ; End of function SEGLOAD
 
@@ -3896,7 +3896,7 @@ loc_2CBF:				; CODE XREF: SEGLOAD+Aj
 
 
 sub_2CC2:				; CODE XREF: RAM:1881j	sub_2BFA+3D8p
-		DEC	$32
+		DEC	byte_32
 		LDA	SEGNO
 		LDX	#3
 
@@ -3928,7 +3928,7 @@ loc_2CE4:				; CODE XREF: sub_2CC2+29j
 		SEC
 
 loc_2CF4:				; CODE XREF: sub_2CC2+19j
-		INC	$32
+		INC	byte_32
 		RTS
 ; End of function sub_2CC2
 
@@ -4180,15 +4180,15 @@ locret_2E30:				; CODE XREF: sub_2E0D+18j
 
 
 sub_2E31:				; CODE XREF: RAM:1869j	RAM:5730p
-		DEC	$32
+		DEC	byte_32
 		LDX	#7
 
 loc_2E35:				; CODE XREF: sub_2E31+Aj
 		LDA	$35,X
-		STA	$6309,X
+		STA	I_MINUTES,X
 		DEX
 		BPL	loc_2E35
-		INC	$32
+		INC	byte_32
 		RTS
 ; End of function sub_2E31
 
@@ -4374,12 +4374,12 @@ loc_2ECD:				; CODE XREF: RAM:2ED1j
 		LDX	#7
 
 loc_2F1F:				; CODE XREF: RAM:2F25j
-		LDA	$6309,X
+		LDA	I_MINUTES,X
 		STA	$35,X
 		DEX
 		BPL	loc_2F1F
 		INX
-		STX	$32
+		STX	byte_32
 		STX	$F
 		LDX	#$13
 
@@ -4692,13 +4692,13 @@ loc_3124:				; CODE XREF: RAM:30F6j
 loc_3127:				; CODE XREF: RAM:3121j
 		STX	byte_317F
 		JSR	sub_32CA
-		LDA	unk_3B44,X
+		LDA	byte_3B44,X
 		EOR	#1
 		TAY
 		LDA	#$11
 		STA	$6316,Y
-		LDY	unk_3B44,X
-		LDA	unk_3B54,X
+		LDY	byte_3B44,X
+		LDA	byte_3B54,X
 		BMI	loc_314A
 		LDA	$6316,Y
 		CLC
@@ -4730,9 +4730,9 @@ loc_3151:				; CODE XREF: RAM:3147j
 loc_316D:				; CODE XREF: RAM:3167j
 		AND	#$F
 		TAY
-		LDA	unk_3B24,Y
+		LDA	byte_3B24,Y
 		STA	loc_317C+1
-		LDA	unk_3B34,Y
+		LDA	byte_3B34,Y
 		STA	loc_317C+2
 
 loc_317C:				; DATA XREF: RAM:3173w	RAM:3179w
@@ -4858,9 +4858,9 @@ sub_322C:				; CODE XREF: sub_2BFA:loc_2F80p
 		CMP	byte_1939
 		BEQ	locret_3296
 		STA	byte_1939
-		LDA	#$BE ; '¾'
+		LDA	#<a_YouAre
 		STA	off_16
-		LDA	#$32 ; '2'
+		LDA	#>a_YouAre
 		STA	off_16+1
 		JSR	sub_1C84
 		LDA	$AC01
@@ -4954,6 +4954,8 @@ loc_32B1:				; CODE XREF: sub_322C+49j sub_322C+8Ej
 ; ---------------------------------------------------------------------------
 		RTS
 ; ---------------------------------------------------------------------------
+
+a_YouAre:
 		MOVEXY	1,4
 aYouAre:	.BYTE "You are "
 		.BYTE $FF
@@ -4978,7 +4980,9 @@ loc_32CE:				; CODE XREF: sub_32CA+Bj
 ; End of function sub_32CA
 
 ; ---------------------------------------------------------------------------
-		LDY	unk_3B44,X
+
+loc_32DA:
+		LDY	byte_3B44,X
 		LDA	unk_3B5C,X
 		CMP	$631B,Y
 		BNE	loc_32ED
@@ -4992,7 +4996,7 @@ loc_32ED:				; CODE XREF: RAM:32E3j
 ; ---------------------------------------------------------------------------
 
 loc_32F3:				; CODE XREF: RAM:33E3j	RAM:352Bj
-		LDY	unk_3B44,X
+		LDY	byte_3B44,X
 		LDA	unk_3B5C,X
 		CMP	$631B,Y
 		BNE	loc_3301
@@ -5002,6 +5006,8 @@ loc_3301:				; CODE XREF: RAM:32FCj
 		STA	$6316,Y
 		JMP	loc_3180
 ; ---------------------------------------------------------------------------
+
+loc_3307:
 		LDA	#$80 ; '€'
 		STA	byte_199C
 		JMP	loc_3314
@@ -5019,10 +5025,12 @@ loc_3314:				; CODE XREF: RAM:330Cj
 
 loc_331E:				; CODE XREF: RAM:3319j
 		LDX	byte_317F
-		LDY	unk_3B44,X
+
+loc_3321:
+		LDY	byte_3B44,X
 		CLC
 		LDA	$6313,Y
-		ADC	unk_3B54,X
+		ADC	byte_3B54,X
 		STA	$6313,Y
 		LDA	#$FF
 		STA	byte_1975
@@ -5033,10 +5041,18 @@ loc_331E:				; CODE XREF: RAM:3319j
 		JSR	sub_3C2D
 		JMP	loc_3180
 ; ---------------------------------------------------------------------------
+
+loc_3344:
 		LDA	#0
 		BEQ	loc_334E
+; ---------------------------------------------------------------------------
+
+loc_3348:
 		LDA	#1
 		BNE	loc_334E
+; ---------------------------------------------------------------------------
+
+loc_334C:
 		LDA	#2
 
 loc_334E:				; CODE XREF: RAM:3346j	RAM:334Aj
@@ -5469,7 +5485,7 @@ sub_3635:				; CODE XREF: RAM:loc_3689p RAM:3756p ...
 		LDA	#$FF
 		STA	byte_197A
 		DEC	$F
-		DEC	$32
+		DEC	byte_32
 		DEC	byte_1937
 		DEC	byte_1971
 		LDA	off_1977
@@ -5494,7 +5510,7 @@ loc_3662:				; CODE XREF: RAM:loc_36ECj RAM:375Cj ...
 		STA	off_1977
 		LDA	off_3681+1
 		STA	off_1977+1
-		INC	$32
+		INC	byte_32
 		INC	byte_1937
 		INC	$F
 		INC	byte_1971
@@ -5667,7 +5683,7 @@ aSaveCharacterq:.BYTE "Save character?"
 ; ---------------------------------------------------------------------------
 
 loc_37D6:
-		DEC	$32
+		DEC	byte_32
 		LDA	#4
 		STA	off_16
 		LDA	#$38 ; '8'
@@ -5688,7 +5704,7 @@ loc_37E3:				; CODE XREF: RAM:37E6j
 ; ---------------------------------------------------------------------------
 
 loc_37FC:				; CODE XREF: RAM:37EDj
-		INC	$32
+		INC	byte_32
 		DEC	byte_1935
 		JMP	sub_3C2D
 ; ---------------------------------------------------------------------------
@@ -5709,7 +5725,7 @@ aOr:		.BYTE " or "
 ; ---------------------------------------------------------------------------
 
 loc_384A:
-		DEC	$32
+		DEC	byte_32
 		LDA	#<a_Paused
 		STA	off_16
 		LDA	#>a_Paused
@@ -5717,7 +5733,7 @@ loc_384A:
 		JSR	sub_3CA5
 		JSR	sub_2BB0
 		JSR	sub_3CC2
-		INC	$32
+		INC	byte_32
 		RTS
 ; ---------------------------------------------------------------------------
 
@@ -5926,39 +5942,39 @@ aConcentrating_:.BYTE "Concentrating..."
 aNeedAKey_:	.BYTE "need a key.",0
 aBeBolted_:	.BYTE "be bolted.",0
 aBeEnchanted:	.BYTE "be enchanted!",0
-unk_3B24:	.BYTE $21 ; !		; DATA XREF: RAM:3170r
-		.BYTE $21 ; !
-		.BYTE $21 ; !
-		.BYTE  $F
-		.BYTE  $F
-		.BYTE	7
-		.BYTE	7
-		.BYTE $21 ; !
-		.BYTE $44 ; D
-		.BYTE $48 ; H
-		.BYTE $4C ; L
-		.BYTE $DA ; Ú
-		.BYTE $DA ; Ú
-		.BYTE $DA ; Ú
-		.BYTE $DA ; Ú
-		.BYTE $DA ; Ú
-unk_3B34:	.BYTE $33 ; 3		; DATA XREF: RAM:3176r
-		.BYTE $33 ; 3
-		.BYTE $33 ; 3
-		.BYTE $33 ; 3
-		.BYTE $33 ; 3
-		.BYTE $33 ; 3
-		.BYTE $33 ; 3
-		.BYTE $33 ; 3
-		.BYTE $33 ; 3
-		.BYTE $33 ; 3
-		.BYTE $33 ; 3
-		.BYTE $32 ; 2
-		.BYTE $32 ; 2
-		.BYTE $32 ; 2
-		.BYTE $32 ; 2
-		.BYTE $32 ; 2
-unk_3B44:	.BYTE	1		; DATA XREF: RAM:312Dr	RAM:3138r ...
+byte_3B24:	.BYTE	<loc_3321	; DATA XREF: RAM:3170r
+		.BYTE	<loc_3321
+		.BYTE	<loc_3321
+		.BYTE	<loc_330F
+		.BYTE	<loc_330F
+		.BYTE	<loc_3307
+		.BYTE	<loc_3307
+		.BYTE	<loc_3321
+		.BYTE	<loc_3344
+		.BYTE	<loc_3348
+		.BYTE	<loc_334C
+		.BYTE	<loc_32DA
+		.BYTE	<loc_32DA
+		.BYTE	<loc_32DA
+		.BYTE	<loc_32DA
+		.BYTE	<loc_32DA
+byte_3B34:	.BYTE	>loc_3321	; DATA XREF: RAM:3176r
+		.BYTE	>loc_3321
+		.BYTE	>loc_3321
+		.BYTE	>loc_330F
+		.BYTE	>loc_330F
+		.BYTE	>loc_3307
+		.BYTE	>loc_3307
+		.BYTE	>loc_3321
+		.BYTE	>loc_3344
+		.BYTE	>loc_3348
+		.BYTE	>loc_334C
+		.BYTE	>loc_32DA
+		.BYTE	>loc_32DA
+		.BYTE	>loc_32DA
+		.BYTE	>loc_32DA
+		.BYTE	>loc_32DA
+byte_3B44:	.BYTE	1		; DATA XREF: RAM:312Dr	RAM:3138r ...
 		.BYTE	0
 		.BYTE	1
 		.BYTE	0
@@ -5974,7 +5990,7 @@ unk_3B4C:	.BYTE $24 ; $		; DATA XREF: RAM:3159r
 		.BYTE $24 ; $
 		.BYTE $24 ; $
 		.BYTE $DC ; Ü
-unk_3B54:	.BYTE $FF		; DATA XREF: RAM:313Br	RAM:3328r
+byte_3B54:	.BYTE $FF		; DATA XREF: RAM:313Br	RAM:3328r
 		.BYTE	1
 		.BYTE	1
 		.BYTE $FF
@@ -10389,7 +10405,7 @@ loc_5723:
 		STA	off_16+1
 		JSR	sub_2E31
 		LDA	#'s'
-		LDX	$6309
+		LDX	I_MINUTES
 		CPX	#1
 		BNE	loc_573E
 		LDA	#' '
@@ -10403,7 +10419,7 @@ loc_573E:				; CODE XREF: RAM:573Aj
 
 loc_5749:				; CODE XREF: RAM:5745j
 		STA	byte_616E
-		LDA	$630A
+		LDA	I_HOURS
 		LDY	#1
 		CMP	#$A
 		BCC	loc_5757
@@ -11562,7 +11578,7 @@ a_ItIs:
 		.BYTE $A5
 aItIs:		.BYTE "It is "
 		.BYTE $B2
-		.WORD $6309
+		.WORD I_MINUTES
 byte_616E:	.BYTE 2			; DATA XREF: RAM:loc_5749w
 		.BYTE $20
 aMinutes:	.BYTE "minutes "        ; DATA XREF: RAM:loc_573Ew
@@ -11570,7 +11586,7 @@ aMinutes:	.BYTE "minutes "        ; DATA XREF: RAM:loc_573Ew
 		.BYTE $A5
 aPastThe:	.BYTE "past the "
 		.BYTE $B2
-		.WORD $630A
+		.WORD I_HOURS
 byte_6186:	.BYTE 2			; DATA XREF: RAM:loc_5757w
 aThHour_:	.BYTE "th hour."        ; DATA XREF: RAM:575Fw RAM:5765w
 		.BYTE $D
