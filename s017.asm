@@ -2387,124 +2387,24 @@ unk_700:	.BYTE	0		; DATA XREF: sub_31A2+50r
 		.BYTE	$0F,$0D,$12,$01,$01,$72,$38
 		.BYTE	$0E,$00
 		.BYTE	"BUILT ON FANTASY",0
-		.BYTE  $F
-		.BYTE	0
-		.BYTE	4
-		.BYTE	1
-		.BYTE	1
-		.BYTE $6C ; l
-		.BYTE $17
-		.BYTE  $F
-		.BYTE	5
-		.BYTE	7
-		.BYTE	1
-		.BYTE	1
-		.BYTE $60 ; `
-		.BYTE $17
-		.BYTE  $F
-		.BYTE	8
-		.BYTE  $B
-		.BYTE	1
-		.BYTE	1
-		.BYTE $6C ; l
-		.BYTE $17
-		.BYTE  $F
-		.BYTE  $C
-		.BYTE  $D
-		.BYTE	1
-		.BYTE	1
-		.BYTE $72 ; r
-		.BYTE $17
-		.BYTE  $F
-		.BYTE  $E
-		.BYTE  $F
-		.BYTE	1
-		.BYTE	1
-		.BYTE $80 ; Ä
-		.BYTE $17
-		.BYTE  $E
-		.BYTE	0
-		.BYTE $41 ; A
-		.BYTE $4E ; N
-		.BYTE $44 ; D
-		.BYTE $20
-		.BYTE $4F ; O
-		.BYTE $54 ; T
-		.BYTE $48 ; H
-		.BYTE $45 ; E
-		.BYTE $52 ; R
-		.BYTE $20
-		.BYTE $49 ; I
-		.BYTE $4C ; L
-		.BYTE $4C ; L
-		.BYTE $55 ; U
-		.BYTE $53 ; S
-		.BYTE $49 ; I
-		.BYTE $4F ; O
-		.BYTE $4E ; N
-		.BYTE	0
-		.BYTE  $F
-		.BYTE	0
-		.BYTE	2
-		.BYTE	1
-		.BYTE	1
-		.BYTE $90 ; ê
-		.BYTE $17
-		.BYTE  $F
-		.BYTE	3
-		.BYTE	4
-		.BYTE	1
-		.BYTE	1
-		.BYTE $51 ; Q
-		.BYTE $38 ; 8
-		.BYTE  $F
-		.BYTE	5
-		.BYTE	8
-		.BYTE	1
-		.BYTE	1
-		.BYTE $60 ; `
-		.BYTE $17
-		.BYTE  $F
-		.BYTE	9
-		.BYTE  $B
-		.BYTE	1
-		.BYTE	1
-		.BYTE $79 ; y
-		.BYTE $17
-		.BYTE  $F
-		.BYTE  $C
-		.BYTE  $D
-		.BYTE	1
-		.BYTE	1
-		.BYTE $51 ; Q
-		.BYTE $38 ; 8
-		.BYTE  $F
-		.BYTE  $E
-		.BYTE $11
-		.BYTE	1
-		.BYTE	1
-		.BYTE $6C ; l
-		.BYTE $2D ; -
-		.BYTE  $E
-		.BYTE	0
-		.BYTE $20
-		.BYTE	0
-		.BYTE $12
-		.BYTE	6
-		.BYTE  $B
-		.BYTE  $E
-		.BYTE	0
-		.BYTE $49 ; I
-		.BYTE $27 ; '
-		.BYTE $44 ; D
-		.BYTE $20
-		.BYTE $52 ; R
-		.BYTE $41 ; A
-		.BYTE $54 ; T
-		.BYTE $48 ; H
-		.BYTE $45 ; E
-		.BYTE $52 ; R
-		.BYTE	0
+		.BYTE	$0F,$00,$04,$01,$01,$6C,$17
+		.BYTE	$0F,$05,$07,$01,$01,$60,$17
+		.BYTE	$0F,$08,$0B,$01,$01,$6C,$17
+		.BYTE	$0F,$0C,$0D,$01,$01,$72,$17
+		.BYTE	$0F,$0E,$0F,$01,$01,$80,$17
+		.BYTE	$0E,$00
+		.BYTE	"AND OTHER ILLUSION",0
+		.BYTE	$0F,$00,$02,$01,$01,$90,$17
+		.BYTE	$0F,$03,$04,$01,$01,$51,$38
+		.BYTE	$0F,$05,$08,$01,$01,$60,$17
+		.BYTE	$0F,$09,$0B,$01,$01,$79,$17
+		.BYTE	$0F,$0C,$0D,$01,$01,$51,$38
+		.BYTE	$0F,$0E,$11,$01,$01,$6C,$2D
+		.BYTE	$0E,$00
+		.BYTE	" ",$00
+		.BYTE	$12,$06,$0B
+		.BYTE	$0E,$00
+		.BYTE	"I'D RATHER",0
 		.BYTE  $F
 		.BYTE	0
 		.BYTE	2
