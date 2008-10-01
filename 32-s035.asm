@@ -32,9 +32,9 @@ loc_7610:				; CODE XREF: RAM:7601j
 		LDA	$6315
 		BNE	loc_7649
 		STA	$63
-		LDA	#<$890B
+		LDA	#<byte_890B
 		STA	$190B
-		LDA	#>$890B
+		LDA	#>byte_890B
 		STA	$190C
 		LDA	#$34 ; '4'
 		STA	$1909
@@ -47,10 +47,10 @@ loc_7649:				; CODE XREF: RAM:7630j
 		STA	$63
 
 loc_764D:				; CODE XREF: RAM:7646j
-		LDA	#<$890B
-		STA	7
-		LDA	#>$890B ; '‰'
-		STA	7+1
+		LDA	#<byte_890B
+		STA	off_7
+		LDA	#>byte_890B ; '‰'
+		STA	off_7+1
 		LDA	#2
 		JSR	$180F
 		LDA	#<$96F0
@@ -76,19 +76,19 @@ loc_764D:				; CODE XREF: RAM:7646j
 		STA	$B
 		LDA	unk_78B4,Y
 		STA	$C
-		LDA	#$F0 ; 'ð'
-		STA	9
-		LDA	#$9F ; 'Ÿ'
-		STA	$A
+		LDA	#<$9FF0
+		STA	off_9
+		LDA	#>$9FF0
+		STA	off_9+1
 		JSR	$187E
-		LDX	#$9F ; 'Ÿ'
-		LDY	#$F0 ; 'ð'
+		LDX	#>$9FF0
+		LDY	#<$9FF0
 		JMP	$96F0
 ; ---------------------------------------------------------------------------
 		LDY	$63
 		LDA	unk_787A,Y
-		LDX	#$75 ; 'u'
-		LDY	#8
+		LDX	#>$7508
+		LDY	#<$7508
 		JSR	$1863
 		BCC	loc_76BA
 		JMP	loc_77CA
@@ -97,12 +97,12 @@ loc_764D:				; CODE XREF: RAM:7646j
 loc_76BA:				; CODE XREF: RAM:76B5j
 		LDY	$63
 		LDA	unk_787C,Y
-		LDX	#$75 ; 'u'
-		LDY	#8
+		LDX	#>$7508
+		LDY	#<$7508
 		JSR	$1863
 		BCC	loc_76CF
-		LDX	#$78 ; 'x'
-		LDY	#$AA ; 'ª'
+		LDX	#>$78AA
+		LDY	#<$78AA
 		JMP	loc_776F
 ; ---------------------------------------------------------------------------
 
@@ -113,8 +113,8 @@ loc_76CF:				; CODE XREF: RAM:76C6j
 ; ---------------------------------------------------------------------------
 
 loc_76D7:				; CODE XREF: RAM:76D2j	RAM:7747j
-		LDX	#$78 ; 'x'
-		LDY	#$86 ; '†'
+		LDX	#>$7886
+		LDY	#<$7886
 		LDA	$63
 		JSR	$185D
 		JSR	sub_786B
@@ -2849,6 +2849,8 @@ aDonTStay:	.BYTE "DON'T STAY",0
 		.BYTE	4
 		.BYTE $A4 ; ¤
 		.BYTE  $B
+
+byte_890B:
 		.BYTE $1B
 		.BYTE	3
 		.BYTE $6F ; o
