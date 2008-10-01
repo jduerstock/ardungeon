@@ -2405,75 +2405,16 @@ unk_700:	.BYTE	0		; DATA XREF: sub_31A2+50r
 		.BYTE	$12,$06,$0B
 		.BYTE	$0E,$00
 		.BYTE	"I'D RATHER",0
-		.BYTE  $F
-		.BYTE	0
-		.BYTE	2
-		.BYTE	1
-		.BYTE	1
-		.BYTE $60 ; `
-		.BYTE $3D ; =
-		.BYTE  $F
-		.BYTE	3
-		.BYTE	5
-		.BYTE	1
-		.BYTE	1
-		.BYTE $55 ; U
-		.BYTE $17
-		.BYTE  $F
-		.BYTE	6
-		.BYTE	9
-		.BYTE	1
-		.BYTE	1
-		.BYTE $48 ; H
-		.BYTE $17
-		.BYTE  $E
-		.BYTE	0
-		.BYTE $54 ; T
-		.BYTE $41 ; A
-		.BYTE $4B ; K
-		.BYTE $45 ; E
-		.BYTE $20
-		.BYTE $4D ; M
-		.BYTE $59 ; Y
-		.BYTE $20
-		.BYTE $43 ; C
-		.BYTE $48 ; H
-		.BYTE $41 ; A
-		.BYTE $4E ; N
-		.BYTE $43 ; C
-		.BYTE $45 ; E
-		.BYTE $53 ; S
-		.BYTE	0
-		.BYTE  $F
-		.BYTE	0
-		.BYTE	3
-		.BYTE	1
-		.BYTE	1
-		.BYTE $55 ; U
-		.BYTE $17
-		.BYTE  $F
-		.BYTE	4
-		.BYTE	6
-		.BYTE	1
-		.BYTE	1
-		.BYTE $60 ; `
-		.BYTE $17
-		.BYTE  $F
-		.BYTE	7
-		.BYTE  $C
-		.BYTE	1
-		.BYTE	1
-		.BYTE $6C ; l
-		.BYTE $17
-		.BYTE  $F
-		.BYTE  $D
-		.BYTE  $E
-		.BYTE	1
-		.BYTE	1
-		.BYTE $72 ; r
-		.BYTE $17
-		.BYTE  $E
-		.BYTE	0
+		.BYTE	$0F,$00,$02,$01,$01,$60,$3D
+		.BYTE	$0F,$03,$05,$01,$01,$55,$17
+		.BYTE	$0F,$06,$09,$01,$01,$48,$17
+		.BYTE	$0E,$00
+		.BYTE	"TAKE MY CHANCES",0
+		.BYTE	$0F,$00,$03,$01,$01,$55,$17
+		.BYTE	$0F,$04,$06,$01,$01,$60,$17
+		.BYTE	$0F,$07,$0C,$01,$01,$6C,$17
+		.BYTE	$0F,$0D,$0E,$01,$01,$72,$17
+		.BYTE	$0E,$00
 		.BYTE	"WITH EARTHLY",0
 		.BYTE	$0F,$00,$03,$01,$01,$60,$38
 		.BYTE	$0F,$04,$09,$01,$01,$5B,$17
@@ -2497,39 +2438,13 @@ unk_700:	.BYTE	0		; DATA XREF: sub_31A2+50r
 		.BYTE	$0F,$0E,$0F,$01,$01,$72,$17
 		.BYTE	$0E,$00
 		.BYTE	"NOWHERE TO RUN",0
-		.BYTE  $F
-		.BYTE	0
-		.BYTE	1
-		.BYTE	1
-		.BYTE	1
-		.BYTE $5B ; [
-		.BYTE $38 ; 8
-		.BYTE  $F
-		.BYTE	2
-		.BYTE	6
-		.BYTE	1
-		.BYTE	1
-		.BYTE $60 ; `
-		.BYTE $17
-		.BYTE  $F
-		.BYTE	7
-		.BYTE	9
-		.BYTE	1
-		.BYTE	1
-		.BYTE $79 ; y
-		.BYTE $17
-		.BYTE  $F
-		.BYTE  $A
-		.BYTE  $D
-		.BYTE	1
-		.BYTE	1
-		.BYTE $A2 ; ¢
-		.BYTE $9D ; ù
-		.BYTE  $E
-		.BYTE	0
-		.BYTE $20
-		.BYTE	0
-		.BYTE $12
+		.BYTE	$0F,$00,$01,$01,$01,$5B,$38
+		.BYTE	$0F,$02,$06,$01,$01,$60,$17
+		.BYTE	$0F,$07,$09,$01,$01,$79,$17
+		.BYTE	$0F,$0A,$0D,$01,$01,$A2,$9D
+		.BYTE	$0E,$00
+		.BYTE	" ",$00
+		.BYTE	$12
 		.BYTE	5
 		.BYTE  $B
 		.BYTE	7
