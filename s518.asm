@@ -3305,7 +3305,7 @@ sub_2937:				; CODE XREF: sub_2799p
 		LDA	SEGADDR
 		STA	off_9
 		LDA	SEGADDR+1
-		STA	off9+1
+		STA	off_9+1
 		LDA	word_1903
 		STA	word_232
 		LDA	word_1903+1
