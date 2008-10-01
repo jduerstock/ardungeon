@@ -2362,199 +2362,31 @@ unk_700:	.BYTE	0		; DATA XREF: sub_31A2+50r
 		.BYTE $2F ; /
 		.BYTE  $F
 		.BYTE  $B
-		.BYTE  $E
-		.BYTE	0
-		.BYTE $48 ; H
-		.BYTE $4F ; O
-		.BYTE $57 ; W
-		.BYTE $20
-		.BYTE $44 ; D
-		.BYTE $4F ; O
-		.BYTE $20
-		.BYTE $59 ; Y
-		.BYTE $4F ; O
-		.BYTE $55 ; U
-		.BYTE	0
-		.BYTE  $F
-		.BYTE	0
-		.BYTE	2
-		.BYTE	1
-		.BYTE	1
-		.BYTE $72 ; r
-		.BYTE $3D ; =
-		.BYTE  $F
-		.BYTE	3
-		.BYTE	5
-		.BYTE	1
-		.BYTE	1
-		.BYTE $6C ; l
-		.BYTE $1C
-		.BYTE  $F
-		.BYTE	6
-		.BYTE	9
-		.BYTE	1
-		.BYTE	1
-		.BYTE $60 ; `
-		.BYTE $1C
-		.BYTE  $E
-		.BYTE	0
-		.BYTE $45 ; E
-		.BYTE $58 ; X
-		.BYTE $50 ; P
-		.BYTE $45 ; E
-		.BYTE $43 ; C
-		.BYTE $54 ; T
-		.BYTE $20
-		.BYTE $55 ; U
-		.BYTE $53 ; S
-		.BYTE $20
-		.BYTE $54 ; T
-		.BYTE $4F ; O
-		.BYTE	0
-		.BYTE  $F
-		.BYTE	0
-		.BYTE	1
-		.BYTE	1
-		.BYTE	1
-		.BYTE $6C ; l
-		.BYTE $1C
-		.BYTE  $F
-		.BYTE	2
-		.BYTE	5
-		.BYTE	1
-		.BYTE	1
-		.BYTE $72 ; r
-		.BYTE $1C
-		.BYTE  $F
-		.BYTE	6
-		.BYTE	8
-		.BYTE	1
-		.BYTE	1
-		.BYTE $80 ; Ä
-		.BYTE $1C
-		.BYTE  $F
-		.BYTE	9
-		.BYTE  $B
-		.BYTE	1
-		.BYTE	1
-		.BYTE $90 ; ê
-		.BYTE $17
-		.BYTE  $E
-		.BYTE	0
-		.BYTE $4C ; L
-		.BYTE $49 ; I
-		.BYTE $56 ; V
-		.BYTE $45 ; E
-		.BYTE $20
-		.BYTE $48 ; H
-		.BYTE $45 ; E
-		.BYTE $52 ; R
-		.BYTE $45 ; E
-		.BYTE $20
-		.BYTE $57 ; W
-		.BYTE $49 ; I
-		.BYTE $54 ; T
-		.BYTE $48 ; H
-		.BYTE $49 ; I
-		.BYTE $4E ; N
-		.BYTE	0
-		.BYTE  $F
-		.BYTE	0
-		.BYTE	3
-		.BYTE	1
-		.BYTE	1
-		.BYTE $72 ; r
-		.BYTE $38 ; 8
-		.BYTE  $F
-		.BYTE	4
-		.BYTE	8
-		.BYTE	1
-		.BYTE	1
-		.BYTE $6C ; l
-		.BYTE $17
-		.BYTE  $F
-		.BYTE	9
-		.BYTE  $D
-		.BYTE	1
-		.BYTE	1
-		.BYTE $60 ; `
-		.BYTE $17
-		.BYTE  $F
-		.BYTE  $E
-		.BYTE  $F
-		.BYTE	1
-		.BYTE	1
-		.BYTE $6C ; l
-		.BYTE $17
-		.BYTE  $E
-		.BYTE	0
-		.BYTE $54 ; T
-		.BYTE $48 ; H
-		.BYTE $49 ; I
-		.BYTE $53 ; S
-		.BYTE $20
-		.BYTE $57 ; W
-		.BYTE $4F ; O
-		.BYTE $52 ; R
-		.BYTE $4C ; L
-		.BYTE $44 ; D
-		.BYTE $20
-		.BYTE $4F ; O
-		.BYTE $46 ; F
-		.BYTE $20
-		.BYTE $59 ; Y
-		.BYTE $4F ; O
-		.BYTE $55 ; U
-		.BYTE $52 ; R
-		.BYTE $53 ; S
-		.BYTE	0
-		.BYTE  $F
-		.BYTE	0
-		.BYTE	3
-		.BYTE	1
-		.BYTE	1
-		.BYTE $72 ; r
-		.BYTE $17
-		.BYTE  $F
-		.BYTE	4
-		.BYTE	9
-		.BYTE	1
-		.BYTE	1
-		.BYTE $80 ; Ä
-		.BYTE $17
-		.BYTE  $F
-		.BYTE  $A
-		.BYTE  $C
-		.BYTE	1
-		.BYTE	1
-		.BYTE $90 ; ê
-		.BYTE $17
-		.BYTE  $F
-		.BYTE  $D
-		.BYTE $12
-		.BYTE	1
-		.BYTE	1
-		.BYTE $72 ; r
-		.BYTE $38 ; 8
-		.BYTE  $E
-		.BYTE	0
-		.BYTE $42 ; B
-		.BYTE $55 ; U
-		.BYTE $49 ; I
-		.BYTE $4C ; L
-		.BYTE $54 ; T
-		.BYTE $20
-		.BYTE $4F ; O
-		.BYTE $4E ; N
-		.BYTE $20
-		.BYTE $46 ; F
-		.BYTE $41 ; A
-		.BYTE $4E ; N
-		.BYTE $54 ; T
-		.BYTE $41 ; A
-		.BYTE $53 ; S
-		.BYTE $59 ; Y
-		.BYTE	0
+		.BYTE	$0E,$00
+		.BYTE	"HOW DO YOU",0
+		.BYTE	$0F,$00,$02,$01,$01,$72,$3D
+		.BYTE	$0F,$03,$05,$01,$01,$6C,$1C
+		.BYTE	$0F,$06,$09,$01,$01,$60,$1C
+		.BYTE	$0E,$00
+		.BYTE	"EXPECT US TO",0
+		.BYTE	$0F,$00,$01,$01,$01,$6C,$1C
+		.BYTE	$0F,$02,$05,$01,$01,$72,$1C
+		.BYTE	$0F,$06,$08,$01,$01,$80,$1C
+		.BYTE	$0F,$09,$0B,$01,$01,$90,$17
+		.BYTE	$0E,$00
+		.BYTE	"LIVE HERE WITHIN",0
+		.BYTE	$0F,$00,$03,$01,$01,$72,$38
+		.BYTE	$0F,$04,$08,$01,$01,$6C,$17
+		.BYTE	$0F,$09,$0D,$01,$01,$60,$17
+		.BYTE	$0F,$0E,$0F,$01,$01,$6C,$17
+		.BYTE	$0E,$00
+		.BYTE	"THIS WORLD OF YOURS",0
+		.BYTE	$0F,$00,$03,$01,$01,$72,$17
+		.BYTE	$0F,$04,$09,$01,$01,$80,$17
+		.BYTE	$0F,$0A,$0C,$01,$01,$90,$17
+		.BYTE	$0F,$0D,$12,$01,$01,$72,$38
+		.BYTE	$0E,$00
+		.BYTE	"BUILT ON FANTASY",0
 		.BYTE  $F
 		.BYTE	0
 		.BYTE	4
