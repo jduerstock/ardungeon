@@ -23,3 +23,13 @@
 		.endscope
 	.endrep
 .endmacro
+
+;
+; double-load immediate
+	.MACRO	dldi	arg1, arg2
+	LDA	#<arg2
+	STA	arg1
+	LDA	#>arg2
+	STA     arg1+1
+        .ENDMACRO
+

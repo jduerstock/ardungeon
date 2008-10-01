@@ -2,13 +2,17 @@
 		.include	"exp_kernel.inc"
 		.include	"globals.inc"
 
+off_63	= $63
+off_65	= $65
+off_67	= $67
+
 ;		.ORG	$7600
 
 loc_7600:				; CODE XREF: sub_7AE7-477j
 					; sub_7AE7-3FDj ...
-		LDA	#$9B ; '›'
+		LDA	#<$829B
 		STA	off_16
-		LDA	#$82 ; '‚'
+		LDA	#>$829B
 		STA	off_16+1
 		JSR	$1818
 
@@ -253,91 +257,91 @@ loc_7793:				; CODE XREF: sub_7AE7-34Dj
 		STA	$6321,Y
 		DEY
 		BPL	loc_7793
-		LDA	#8
-		STA	$63
-		LDA	#$7D ; '}'
-		STA	$64
+		LDA	#<$7D08
+		STA	off_63
+		LDA	#>$7D08
+		STA	off_63+1
 		LDY	#0
 
 loc_77A6:				; CODE XREF: sub_7AE7-31Bj
-		LDA	($63),Y
+		LDA	(off_63),Y
 		STA	$65
 		INY
-		LDA	($63),Y
+		LDA	(off_63),Y
 		BEQ	loc_77CF
 		STA	$66
 		INY
-		LDA	($63),Y
+		LDA	(off_63),Y
 		STA	$67
 		INY
-		LDA	($63),Y
+		LDA	(off_63),Y
 		STA	$68
 		CLC
 		LDA	#4
-		ADC	$63
-		STA	$63
+		ADC	off_63
+		STA	off_63
 		BCC	loc_77C6
-		INC	$64
+		INC	off_63+1
 
 loc_77C6:				; CODE XREF: sub_7AE7-325j
 		LDY	#0
-		LDA	($65),Y
-		STA	($67),Y
+		LDA	(off_65),Y
+		STA	(off_67),Y
 		JMP	loc_77A6
 ; ---------------------------------------------------------------------------
 
 loc_77CF:				; CODE XREF: sub_7AE7-33Aj
 		LDA	#2
 		CLC
-		ADC	$63
-		STA	$63
+		ADC	off_63
+		STA	off_63
 		BCC	loc_77DA
-		INC	$64
+		INC	off_63+1
 
 loc_77DA:				; CODE XREF: sub_7AE7-311j
 					; sub_7AE7-2D4j ...
 		LDY	#0
-		LDA	($63),Y
+		LDA	(off_63),Y
 		STA	$65
 		INY
-		LDA	($63),Y
+		LDA	(off_63),Y
 		BEQ	loc_7820
 		STA	$66
 		INY
-		LDA	($63),Y
+		LDA	(off_63),Y
 		STA	$67
 		INY
-		LDA	($63),Y
+		LDA	(off_63),Y
 		STA	$68
 		TYA
 		SEC
-		ADC	$63
-		STA	$63
+		ADC	off_63
+		STA	off_63
 		BCC	loc_77FB
-		INC	$64
+		INC	off_63+1
 
 loc_77FB:				; CODE XREF: sub_7AE7-2F0j
 		LDY	#0
-		LDA	($65),Y
+		LDA	(off_65),Y
 		INY
-		ORA	($65),Y
+		ORA	(off_65),Y
 		BNE	loc_7816
 		INY
-		LDA	($65),Y
+		LDA	(off_65),Y
 		LDY	#0
-		STA	($67),Y
+		STA	(off_67),Y
 		LDY	#3
-		LDA	($65),Y
+		LDA	(off_65),Y
 		LDY	#1
-		STA	($67),Y
+		STA	(off_67),Y
 		JMP	loc_77DA
 ; ---------------------------------------------------------------------------
 
 loc_7816:				; CODE XREF: sub_7AE7-2E5j
 		LDA	#$FF
-		STA	($67),Y
+		STA	(off_67),Y
 		DEY
-		STA	($67),Y
+		STA	(off_67),Y
 		JMP	loc_77DA
 ; ---------------------------------------------------------------------------
 
@@ -457,16 +461,16 @@ loc_78DC:				; CODE XREF: sub_7AE7-24Aj
 		STA	$64
 		JSR	sub_79AA
 		STA	$63A3
-		LDA	#$5D ; ']'
-		STA	$63
-		LDA	#$92 ; '’'
-		STA	$64
+		LDA	#<$925D
+		STA	off_63
+		LDA	#>$925D
+		STA	off_63+1
 		JSR	sub_79AA
 		STA	$63A4
-		LDA	#$7D ; '}'
-		STA	$63
-		LDA	#$92 ; '’'
-		STA	$64
+		LDA	#<$927D
+		STA	off_63
+		LDA	#>$927D
+		STA	off_63+1
 		JSR	sub_79AA
 		STA	$63A5
 		LDX	#0
