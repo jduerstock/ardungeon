@@ -681,10 +681,7 @@ loc_1A65:
 		LDA	#>loc_1B2F
 		STA	off_200+1
 		STA	off_248+1
-		LDA	#<$1B56
-		STA	off_24A
-		LDA	#>$1B56
-		STA	off_24A+1
+		dldi	off_24A, loc_1B56
 		LDA	#$C0 ; 'À'
 		STA	$D40E
 		LDA	#0
@@ -716,14 +713,8 @@ loc_1ABB:				; CODE XREF: RAM:1ABFj
 		DEX
 		BPL	loc_1ABB
 		JSR	sub_1C09
-		LDA	#<$4F0
-		STA	off_7
-		LDA	#>$4F0
-		STA	off_7+1
-		LDA	#<$50D
-		STA	off_9
-		LDA	#>$50D
-		STA	off_9+1
+		dldi	off_7, $4F0
+		dldi	off_9, $50D
 		LDX	#9
 
 loc_1AD6:				; CODE XREF: RAM:1AFEj
@@ -756,10 +747,7 @@ loc_1AF2:				; CODE XREF: RAM:1AEEj
 loc_1AFD:				; CODE XREF: RAM:1AF9j
 		DEX
 		BNE	loc_1AD6
-		LDA	#<$800
-		STA	off_9
-		LDA	#>$800
-		STA	off_9+1
+		dldi	off_9, $800
 		LDX	#$C
 		LDY	#0
 		LDA	#$FF
@@ -813,10 +801,7 @@ loc_1B55:
 
 loc_1B56:
 		PHA
-		LDA	#<loc_1BA2
-		STA	off_200
-		LDA	#>loc_1BA2
-		STA	off_200+1
+		dldi	off_200, loc_1BA2
 		LDA	byte_18BA
 		STA	$D016
 		LDA	byte_18BB
@@ -848,10 +833,7 @@ loc_1BA0:				; CODE XREF: RAM:1B8Cj
 
 loc_1BA2:
 		PHA
-		LDA	#<loc_1BB7
-		STA	off_200
-		LDA	#>loc_1BB7
-		STA	off_200+1
+		dldi	off_200, loc_1BB7
 		LDA	#$C
 		STA	WSYNC
 		STA	$D409
@@ -862,10 +844,7 @@ loc_1BA2:
 loc_1BB7:
 		PHA
 		STA	WSYNC
-		LDA	#<sub_1BD6
-		STA	off_200
-		LDA	#>sub_1BD6
-		STA	off_200+1
+		dldi	off_200, sub_1BD6
 		STA	WSYNC
 		LDA	byte_18BE
 		STA	WSYNC
@@ -877,10 +856,7 @@ loc_1BB7:
 
 sub_1BD6:
 		PHA
-		LDA	#<sub_1BEB
-		STA	off_200
-		LDA	#>sub_1BEB
-		STA	off_200+1
+		dldi	off_200, sub_1BEB
 		LDA	#$10
 		STA	WSYNC
 		STA	$D409
@@ -4052,12 +4028,10 @@ sub_2DAB:				; CODE XREF: RAM:1860j	RAM:3578p ...
 		STY	loc_2DDF+1
 		PHA
 		LDA	#$1D		; ORA $xxxx,X
-		LDX	#>byte_2E05
-		LDY	#<byte_2E05
+		ldxy	byte_2E05
 		BCS	loc_2DC6
 		LDA	#$3D		; AND $xxxx,X
-		LDX	#>byte_2DFD
-		LDY	#<byte_2DFD
+		ldxy	byte_2DFD
 
 loc_2DC6:				; CODE XREF: sub_2DAB+13j
 		STA	loc_2DDC
@@ -4331,11 +4305,8 @@ loc_2ECD:				; CODE XREF: RAM:2ED1j
 		LDA	#>byte_2007
 		STA	byte_1923
 		LDA	#$19
-		STA	SEGNO
-		LDA	#<SEG_7600
-		STA	SEGADDR
-		LDA	#>SEG_7600
-		STA	SEGADDR+1
+		STA	SEGNO	
+		dldi	SEGADDR, SEG_7600
 		JSR	SEGLOAD
 		JSR	SEG_7600
 		LDA	#2
@@ -4367,15 +4338,9 @@ loc_2F2E:				; CODE XREF: RAM:2F3Aj
 		STA	off_45A3,X
 		DEX
 		BPL	loc_2F2E
-		LDA	#<a_LevelStats
-		STA	off_16
-		LDA	#>a_LevelStats
-		STA	off_16+1
+		dldi	off_16, a_LevelStats
 		JSR	sub_1C84
-		LDA	#<byte_3969
-		STA	off_16
-		LDA	#>byte_3969
-		STA	off_16+1
+		dldi	off_16, byte_3969
 		JSR	sub_1C84
 		LDX	#8
 		STX	byte_1934
@@ -4442,10 +4407,7 @@ loc_2F80:				; CODE XREF: RAM:1803j	sub_2BFA+435j ...
 
 loc_2FBA:				; CODE XREF: sub_2BFA+3AAj
 					; sub_2BFA+3AEj ...
-		LDA	#<SEG_7600
-		STA	SEGADDR
-		LDA	#>SEG_7600
-		STA	SEGADDR+1
+		dldi	SEGADDR, SEG_7600
 		LDA	$631E
 		CLC
 		ADC	#$10
@@ -4834,15 +4796,9 @@ sub_322C:				; CODE XREF: sub_2BFA:loc_2F80p
 		CMP	byte_1939
 		BEQ	locret_3296
 		STA	byte_1939
-		LDA	#<a_YouAre
-		STA	off_16
-		LDA	#>a_YouAre
-		STA	off_16+1
+		dldi	off_16, a_YouAre
 		JSR	sub_1C84
-		LDA	$AC01
-		STA	off_12
-		LDA	$AC02
-		STA	off_12+1
+		dmv	off_12, $AC01
 		LDY	#0
 		LDX	byte_1974
 
@@ -4874,10 +4830,7 @@ loc_3273:				; CODE XREF: sub_322C+43j
 		BPL	loc_32AB
 		AND	#$7F ; ''
 		TAX
-		LDA	#<$AC03
-		STA	off_14
-		LDA	#>$AC03
-		STA	off_14+1
+		dldi	off_14, $AC03
 
 loc_3284:				; CODE XREF: sub_322C+65j
 		DEX
@@ -5079,22 +5032,13 @@ loc_3397:				; CODE XREF: RAM:3385j
 ; ---------------------------------------------------------------------------
 
 loc_339F:				; CODE XREF: RAM:339Aj	RAM:33EFj ...
-		LDA	#<a_TheDoorWontOpen
-		STA	off_16
-		LDA	#>a_TheDoorWontOpen
-		STA	off_16+1
+		dldi	off_16, a_TheDoorWontOpen
 		LDX	byte_352E
 		JSR	sub_3C5C
 
 loc_33AD:				; CODE XREF: RAM:33E8j
-		LDA	off_1977
-		STA	off_352F
-		LDA	off_1977+1
-		STA	off_352F+1
-		LDA	#<loc_33C6
-		STA	off_1977
-		LDA	#>loc_33C6
-		STA	off_1977+1
+		dmv	off_352F, off_1977
+		dldi	off_1977, loc_33C6
 		JMP	loc_2FF3
 ; ---------------------------------------------------------------------------
 
@@ -5216,10 +5160,7 @@ loc_34A3:				; CODE XREF: RAM:3475j	RAM:347Cj ...
 		ADC	#1
 		LDX	#I_CURHP-SEG_6300
 		JSR	SUBSTAT2
-		LDA	#<a_TheDoorRemains
-		STA	off_16
-		LDA	#>a_TheDoorRemains
-		STA	off_16+1
+		dldi	off_16, a_TheDoorRemains
 		JMP	loc_343B
 ; ---------------------------------------------------------------------------
 
@@ -5228,10 +5169,7 @@ loc_34BB:				; CODE XREF: RAM:3456j
 		BNE	loc_34D9
 		LDA	I_KEYS
 		BNE	loc_34CF
-		LDA	#<a_YouHaveNone
-		STA	off_16
-		LDA	#>a_YouHaveNone
-		STA	off_16+1
+		dldi	off_16, a_YouHaveNone
 		JMP	loc_343B
 ; ---------------------------------------------------------------------------
 
@@ -5244,10 +5182,7 @@ loc_34CF:				; CODE XREF: RAM:34C2j
 loc_34D9:				; CODE XREF: RAM:34BDj
 		CMP	#4
 		BNE	loc_3518
-		LDA	#<a_Concentrating
-		STA	off_16
-		LDA	#>a_Concentrating
-		STA	off_16+1
+		dldi	off_16, a_Concentrating
 		LDX	byte_352E
 		JSR	sub_3C5C
 		LDX	#$78 ; 'x'
@@ -5270,10 +5205,7 @@ loc_34ED:				; CODE XREF: RAM:34F1j
 ; ---------------------------------------------------------------------------
 
 loc_350D:				; CODE XREF: RAM:3501j	RAM:3508j
-		LDA	#<a_TheDoorRemains
-		STA	off_16
-		LDA	#>a_TheDoorRemains
-		STA	off_16+1
+		dldi	off_16, a_TheDoorRemains
 		JMP	loc_343B
 ; ---------------------------------------------------------------------------
 
@@ -5468,10 +5400,7 @@ sub_3635:				; CODE XREF: RAM:loc_3689p RAM:3756p ...
 		STA	off_3681
 		LDA	off_1977+1
 		STA	off_3681+1
-		LDA	#<byte_2007
-		STA	off_16
-		LDA	#>byte_2007
-		STA	off_16+1
+		dldi	off_16, byte_2007
 		JSR	sub_3CA5
 		LDX	byte_1933
 		STX	byte_194A
@@ -5505,10 +5434,7 @@ loc_3683:
 
 loc_3689:				; CODE XREF: RAM:3686j
 		JSR	sub_3635
-		LDA	#<byte_3710
-		STA	off_16
-		LDA	#>byte_3710
-		STA	off_16+1
+		dldi	off_16, byte_3710
 		LDX	byte_194A
 		JSR	sub_3C5C
 
@@ -5526,10 +5452,7 @@ loc_369A:				; CODE XREF: RAM:369Dj	RAM:36ACj
 ; ---------------------------------------------------------------------------
 
 loc_36B1:				; CODE XREF: RAM:36A4j
-		LDA	#<aExamineInvento
-		STA	off_193A
-		LDA	#>aExamineInvento
-		STA	off_193A+1
+		dldi	off_193A, aExamineInvento
 		LDA	#$F0 ; 'ð'
 		STA	loc_51B0
 		JMP	loc_36D2
@@ -5538,16 +5461,10 @@ loc_36B1:				; CODE XREF: RAM:36A4j
 loc_36C3:				; CODE XREF: RAM:36A8j
 		LDA	#$D0 ; 'Ð'
 		STA	loc_51B0
-		LDA	#<aExamineSpells
-		STA	off_193A
-		LDA	#>aExamineSpells
-		STA	off_193A+1
+		dldi	off_193A, aExamineSpells
 
 loc_36D2:				; CODE XREF: RAM:36C0j
-		LDA	#<aForwardBackEsc
-		STA	off_1944
-		LDA	#>aForwardBackEsc
-		STA	off_1944+1
+		dldi	off_1944, aForwardBackEsc
 		LDA	#0
 		STA	byte_6276
 		JSR	sub_50B2
@@ -5660,10 +5577,7 @@ aSaveCharacterq:.BYTE "Save character?"
 
 loc_37D6:
 		DEC	byte_32
-		LDA	#4
-		STA	off_16
-		LDA	#$38 ; '8'
-		STA	off_16+1
+		dldi	off_16, $3804
 		JSR	sub_1C88
 
 loc_37E3:				; CODE XREF: RAM:37E6j
@@ -5702,10 +5616,7 @@ aOr:		.BYTE " or "
 
 loc_384A:
 		DEC	byte_32
-		LDA	#<a_Paused
-		STA	off_16
-		LDA	#>a_Paused
-		STA	off_16+1
+		dldi	off_16, a_Paused
 		JSR	sub_3CA5
 		JSR	sub_2BB0
 		JSR	sub_3CC2
@@ -6458,10 +6369,7 @@ loc_3F87:				; CODE XREF: RAM:3F6Cj	RAM:3F71j
 ; ---------------------------------------------------------------------------
 
 loc_3F8D:				; DATA XREF: RAM:3EAFo
-		LDA	#<$4060
-		STA	off_407F
-		LDA	#>$4060
-		STA	off_407F+1
+		dldi	off_407F, aBirthdaySuit
 		LDX	#5
 
 loc_3F99:				; CODE XREF: RAM:3FA5j
@@ -7127,10 +7035,7 @@ loc_43D6:				; CODE XREF: RAM:43DDj
 loc_43E2:				; CODE XREF: RAM:43D2j
 		LDA	#':'
 		STA	$499
-		LDA	#<$6349
-		STA	off_58
-		LDA	#>$6349
-		STA	off_58+1
+		dldi	off_58, $6349
 		LDX	#6
 
 loc_43F1:				; CODE XREF: RAM:442Ej
@@ -7727,10 +7632,7 @@ loc_47F9:				; CODE XREF: RAM:47F4j
 		STA	$6393
 		LDA	#$F0 ; 'ð'
 		STA	$50
-		LDA	#<$6500
-		STA	off_3D
-		LDA	#>$6500
-		STA	off_3D+1
+		dldi	off_3D, $6500
 
 loc_4810:				; CODE XREF: RAM:49ACj
 		LDY	#0
@@ -7887,10 +7789,7 @@ loc_48EA:				; CODE XREF: RAM:48DCj
 		TAY
 		DEY
 		STY	$54
-		LDA	#<loc_4978
-		STA	loc_4936+1
-		LDA	#>loc_4978
-		STA	loc_4936+2
+		dldi	loc_4936+1, loc_4978
 		JMP	loc_4936
 ; ---------------------------------------------------------------------------
 
@@ -8035,10 +7934,7 @@ sub_49B0:				; CODE XREF: RAM:1890j	sub_4CCF+46p ...
 
 loc_49C0:				; CODE XREF: sub_49B0+Aj
 		STX	$56
-		LDA	#<$6500
-		STA	off_3D
-		LDA	#>$6500
-		STA	off_3D+1
+		dldi	off_3D, $6500
 		LDX	#0
 
 loc_49CC:				; CODE XREF: sub_49B0+3Cj
@@ -8333,8 +8229,7 @@ sub_4B4D:				; CODE XREF: RAM:1884j	sub_4EFD+32p ...
 		LDA	(off_7),Y
 		JSR	sub_4A83
 		BMI	locret_4B73
-		LDX	#>$648B
-		LDY	#<$648B
+		ldxy	$648B
 		CLC
 		JSR	sub_2DAB
 		LDY	$4F

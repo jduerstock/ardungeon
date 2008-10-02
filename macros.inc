@@ -39,3 +39,9 @@
 		LDA	source+1
 		STA	dest+1
         .ENDMACRO
+
+	.MACRO	ldxy	arg
+		LDX     #.HIBYTE(arg)
+		LDY     #.LOBYTE(arg)
+        .ENDMACRO
+
