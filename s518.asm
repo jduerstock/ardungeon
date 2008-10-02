@@ -9949,10 +9949,7 @@ loc_54B3:				; CODE XREF: RAM:54B7j
 		BPL	loc_54B3
 		LDA	#0
 		STA	$49
-		LDA	#<$6500
-		STA	off_3D
-		LDA	#>$6500
-		STA	off_3D+1
+		dldi	off_3D, $6500
 
 loc_54C5:				; CODE XREF: RAM:54E1j
 		LDY	#0
@@ -10026,14 +10023,8 @@ loc_5519:				; CODE XREF: RAM:5513j
 		INX
 		STX	asc_5D93	; " ("
 		JSR	sub_502E
-		LDA	#<aWearInsteadOf
-		STA	off_193A
-		LDA	#>aWearInsteadOf
-		STA	off_193A+1
-		LDA	#<a_ItemOrESC
-		STA	off_1944
-		LDA	#>a_ItemOrESC
-		STA	off_1944+1
+		dldi	off_193A, aWearInsteadOf
+		dldi	off_1944, a_ItemOrESC
 		LDX	#3
 
 loc_5543:				; CODE XREF: RAM:554Aj
@@ -10279,10 +10270,7 @@ loc_566F:				; CODE XREF: RAM:566Aj
 ; ---------------------------------------------------------------------------
 
 loc_5691:				; CODE XREF: RAM:5675j
-		LDA	#<a_YourStomachTurns
-		STA	off_16
-		LDA	#>a_YourStomachTurns
-		STA	off_16+1
+		dldi	off_16, a_YourStomachTurns
 		LDX	byte_194A
 		JSR	sub_3C5C
 		LDA	#$10
@@ -10307,10 +10295,7 @@ loc_56AF:				; CODE XREF: RAM:56AAj
 ; ---------------------------------------------------------------------------
 
 loc_56C1:				; CODE XREF: RAM:5573j	RAM:56B5j
-		LDA	#<a_YourThroatFails
-		STA	off_16
-		LDA	#>a_YourThroatFails
-		STA	off_16+1
+		dldi	off_16, a_YourThroatFails
 		LDX	byte_194A
 		JSR	sub_3C5C
 		LDA	#$10
@@ -10375,10 +10360,7 @@ loc_570C:				; CODE XREF: RAM:5714j
 loc_5723:
 		LDA	$63C1
 		BEQ	loc_5774
-		LDA	#<a_ItIs
-		STA	off_16
-		LDA	#>a_ItIs
-		STA	off_16+1
+		dldi	off_16, a_ItIs
 		JSR	sub_2E31
 		LDA	#'s'
 		LDX	I_MINUTES
@@ -10464,18 +10446,12 @@ locret_57AA:				; CODE XREF: sub_5795+2j
 
 
 sub_57AB:				; CODE XREF: RAM:54AAp	RAM:loc_56F5p ...
-		LDA	#<a_UseAs
-		STA	off_16
-		LDA	#>a_UseAs
-		STA	off_16+1
+		dldi	off_16, a_UseAs
 		LDX	byte_194A
 		JSR	sub_3C5C
 
 loc_57B9:				; CODE XREF: RAM:57C8j
-		LDA	#<loc_57C6
-		STA	off_1977
-		LDA	#>loc_57C6
-		STA	off_1977+1
+		dldi	off_1977, loc_57C6
 		JMP	loc_2FF3
 ; End of function sub_57AB
 
@@ -10640,10 +10616,7 @@ sub_58C2:				; CODE XREF: sub_5857+49p
 		LDA	$42
 		ADC	#0
 		STA	off_59C1+1
-		LDA	#<a_Getq_0
-		STA	byte_5955
-		LDA	#>a_Getq_0
-		STA	byte_5956
+		dldi	off_5955, a_Getq_0
 		LDY	#0
 		LDA	(off_41),Y
 		AND	#$7F ; ''
@@ -10656,24 +10629,15 @@ sub_58C2:				; CODE XREF: sub_5857+49p
 		INY
 		LDA	(off_43),Y
 		STA	byte_59E4
-		LDA	#<a_Getq
-		STA	byte_5955
-		LDA	#>a_Getq
-		STA	byte_5956
+		dldi	off_5955, a_Getq
 
 loc_5904:				; CODE XREF: sub_58C2+24j RAM:5932j
-		LDA	byte_5955
-		STA	off_16
-		LDA	byte_5956
-		STA	off_16+1
+		dmv	off_16, off_5955
 		LDX	byte_194A
 		JSR	sub_3C5C
 
 loc_5914:				; CODE XREF: RAM:5923j
-		LDA	#<loc_5921
-		STA	off_1977
-		LDA	#>loc_5921
-		STA	off_1977+1
+		dldi	off_1977, loc_5921
 		JMP	loc_2FF3
 ; End of function sub_58C2
 
@@ -10715,8 +10679,7 @@ loc_594D:				; CODE XREF: RAM:5927j
 		DEC	byte_1960
 		RTS
 ; ---------------------------------------------------------------------------
-byte_5955:	.BYTE $9B		; DATA XREF: sub_58C2+16w sub_58C2+3Aw ...
-byte_5956:	.BYTE $59		; DATA XREF: sub_58C2+1Bw sub_58C2+3Fw ...
+off_5955:	.WORD	$599B		; DATA XREF: sub_58C2+16w sub_58C2+3Aw ...
 
 ; --------------- S U B	R O U T	I N E ---------------------------------------
 
@@ -10891,32 +10854,17 @@ unk_5AA8:	.BYTE	I_FOOD-SEG_6300	; DATA XREF: sub_5AB4+73r sub_5AB4+F0r
 
 
 sub_5AB4:				; CODE XREF: RAM:3762p
-		LDA	#<aOffer
-		STA	off_193A
-		LDA	#>aOffer
-		STA	off_193A+1
-		LDA	#<a_OfferHowMany
-		STA	off_5CC3
-		LDA	#>a_OfferHowMany
-		STA	off_5CC3+1
+		dldi	off_193A, aOffer
+		dldi	off_5CC3, a_OfferHowMany
 		JMP	loc_5ADF
 ; ---------------------------------------------------------------------------
 
 loc_5ACB:				; CODE XREF: RAM:376Bp
-		LDA	#<aDrop
-		STA	off_193A
-		LDA	#>aDrop
-		STA	off_193A+1
-		LDA	#<a_DropHowMany
-		STA	off_5CC3
-		LDA	#>a_DropHowMany
-		STA	off_5CC3+1
+		dldi	off_193A, aDrop
+		dldi	off_5CC3, a_DropHowMany
 
 loc_5ADF:				; CODE XREF: sub_5AB4+14j
-		LDA	#<a_ItemForwardBack
-		STA	off_1944
-		LDA	#>a_ItemForwardBack
-		STA	off_1944+1
+		dldi	off_1944, a_ItemForwardBack
 		LDA	#$C
 		STA	byte_6276
 		LDA	#$F0 ; 'ð'
@@ -10952,12 +10900,12 @@ loc_5B15:				; CODE XREF: sub_5AB4+46j
 		LDY	unk_5AA8,X
 		CPX	#7
 		BCC	loc_5B35
-		LDA	$6300,Y
+		LDA	SEG_6300,Y
 		STA	byte_6285
 		INY
 
 loc_5B35:				; CODE XREF: sub_5AB4+78j
-		LDA	$6300,Y
+		LDA	SEG_6300,Y
 		STA	byte_6286
 		ORA	byte_6285
 		BEQ	loc_5B0E
@@ -10973,10 +10921,7 @@ loc_5B40:				; CODE XREF: sub_5AB4+B6j
 		BCS	loc_5B0E
 		BEQ	loc_5B0E
 		BPL	loc_5B6D
-		LDA	#<a_InvalidEntry
-		STA	off_16
-		LDA	#>a_InvalidEntry
-		STA	off_16+1
+		dldi	off_16, a_InvalidEntry
 		LDX	byte_194A
 		JSR	sub_3C5C
 		JSR	sub_2BFA
@@ -11159,10 +11104,7 @@ loc_5CE5:				; CODE XREF: RAM:5CE1j
 loc_5CEA:				; CODE XREF: RAM:5CD0j
 		DEX
 		BPL	loc_5CCA
-		LDA	#<a_YourInUseWeap
-		STA	off_16
-		LDA	#>a_YourInUseWeap
-		STA	off_16+1
+		dldi	off_16, a_YourInUseWeap
 		LDX	byte_194A
 		JSR	sub_3C5C
 		JSR	sub_2BB0
