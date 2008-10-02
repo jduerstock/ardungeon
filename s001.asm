@@ -1,4 +1,5 @@
 		.INCLUDE "equates.inc"
+		.INCLUDE "macros.inc"
 
 loc_B000	= $B000
 
@@ -9,10 +10,7 @@ byte_600:	.BYTE	1
 		.WORD	loc_606
 ; ---------------------------------------------------------------------------
 loc_606:
-		LDA	#<byte_640
-		STA	SDLST
-		LDA	#>byte_640
-		STA	SDLST+1
+		dldi	SDLST, byte_640
 		LDA	RTCLOK+2
 
 loc_612:
