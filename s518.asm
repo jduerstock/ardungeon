@@ -8747,10 +8747,7 @@ locret_4D92:				; CODE XREF: sub_4CCF+Fj sub_4CCF+4Fj	...
 sub_4D93:				; CODE XREF: sub_4AC9+14p
 					; RAM:loc_4C95p
 		STA	$4C
-		LDA	#<$6500
-		STA	off_3D
-		LDA	#>$6500
-		STA	off_3D+1
+		dldi	off_3D, $6500
 		LDX	#0
 		STX	$49
 
@@ -8792,10 +8789,7 @@ loc_4DCB:				; CODE XREF: sub_4D93+34j
 
 
 sub_4DD4:				; CODE XREF: sub_4CCF+3Dp
-		LDA	#<$6500
-		STA	off_3F
-		LDA	#>$6500
-		STA	off_3F+1
+		dldi	off_3F, $6500
 		LDX	#$40 ; '@'
 
 loc_4DDE:				; CODE XREF: sub_4DD4+2Fj
@@ -8866,33 +8860,22 @@ loc_4E28:				; CODE XREF: sub_4E0F+11j
 		BPL	loc_4E49
 		LDA	I_ALIGN
 		BPL	loc_4E3D
-		LDA	#<aIWasMeantForBe
-		STA	off_502C
-		LDA	#>aIWasMeantForBe
-		STA	off_502C+1
+		dldi	off_502C, aIWasMeantForBe
 		BNE	loc_4E64
 
 loc_4E3D:				; CODE XREF: sub_4E0F+20j
-		LDA	#<aReleaseMeFoulM
-		STA	off_502C
-		LDA	#>aReleaseMeFoulM
-		STA	off_502C+1
+		
+		dldi	off_502C, aReleaseMeFoulM
 		BNE	loc_4E64
 
 loc_4E49:				; CODE XREF: sub_4E0F+1Bj
 		LDA	I_ALIGN
 		BMI	loc_4E5A
-		LDA	#<aYourEvilCannot
-		STA	off_502C
-		LDA	#>aYourEvilCannot
-		STA	off_502C+1
+		dldi	off_502C, aYourEvilCannot
 		BNE	loc_4E64
 
 loc_4E5A:				; CODE XREF: sub_4E0F+3Dj
-		LDA	#<aMiserableDoGoo
-		STA	off_502C
-		LDA	#>aMiserableDoGoo
-		STA	off_502C+1
+		dldi	off_502C, aMiserableDoGoo
 
 loc_4E64:				; CODE XREF: sub_4E0F+2Cj sub_4E0F+38j ...
 		CLC
@@ -8902,10 +8885,7 @@ loc_4E64:				; CODE XREF: sub_4E0F+2Cj sub_4E0F+38j ...
 		LDA	off_41+1
 		ADC	#0
 		STA	off_502A+1
-		LDA	#<a_TheScreams
-		STA	off_16
-		LDA	#>a_TheScreams
-		STA	off_16+1
+		dldi	off_16, a_TheScreams
 		JSR	sub_3CA5
 		JSR	sub_2BB0
 		JSR	sub_3CC2
@@ -9190,28 +9170,19 @@ sub_5049:				; CODE XREF: sub_50B2:loc_515Cp
 		LDA	byte_6277
 		CMP	byte_6276
 		BCS	loc_505C
-		LDA	#9
-		STA	off_16
-		LDA	#$5E ; '^'
-		STA	off_16+1
+		dldi	off_16, byte_5E09
 		JMP	loc_5064
 ; ---------------------------------------------------------------------------
 
 loc_505C:				; CODE XREF: sub_5049+6j
-		LDA	#<byte_5D41
-		STA	off_16
-		LDA	#>byte_5D41
-		STA	off_16+1
+		dldi	off_16, byte_5D41
 
 loc_5064:				; CODE XREF: sub_5049+10j
 		LDX	byte_194A
 		JSR	sub_3C61
 
 loc_506A:				; CODE XREF: RAM:5079j
-		LDA	#<loc_5077
-		STA	off_1977
-		LDA	#>loc_5077
-		STA	off_1977+1
+		dldi	off_1977, loc_5077
 		JMP	loc_2FF3
 ; End of function sub_5049
 
@@ -9570,10 +9541,7 @@ loc_5263:
 ; ---------------------------------------------------------------------------
 
 loc_526E:				; CODE XREF: RAM:5266j
-		LDA	#<a_YouNeedACryst
-		STA	off_16
-		LDA	#>a_YouNeedACryst
-		STA	off_16+1
+		dldi	off_16, a_YouNeedACryst
 		LDX	byte_194A
 		JSR	sub_3C5C
 		JSR	sub_2BFA
@@ -9708,10 +9676,7 @@ loc_5342:				; CODE XREF: RAM:5315j
 		LDA	byte_194D
 		AND	#2
 		BEQ	loc_535B
-		LDA	#<a_SomethingIsOdd
-		STA	off_16
-		LDA	#>a_SomethingIsOdd
-		STA	off_16+1
+		dldi	off_16, a_SomethingIsOdd
 		JMP	loc_53E7
 ; ---------------------------------------------------------------------------
 
@@ -9759,10 +9724,7 @@ loc_5390:				; CODE XREF: RAM:5373j	RAM:5380j
 		LDA	off_41+1
 		ADC	#0
 		STA	off_193C+1
-		LDA	#<a_YouCastTheSpell
-		STA	off_16
-		LDA	#>a_YouCastTheSpell
-		STA	off_16+1
+		dldi	off_16, a_YouCastTheSpell
 		LDX	byte_194A
 		JSR	sub_3C5C
 		LDA	#$82 ; '‚'
@@ -9780,16 +9742,10 @@ loc_53CA:				; CODE XREF: RAM:5363j
 		LDX	#$45 ; 'E'
 		LDA	byte_6282
 		JSR	SUBSTAT2
-		LDA	#<a_TheSpellFailed
-		STA	off_16
-		LDA	#>a_TheSpellFailed
-		STA	off_16+1
+		dldi	off_16, a_TheSpellFailed
 		LDA	byte_6282
 		BEQ	loc_53E7
-		LDA	#<a_TheSpellBackfired
-		STA	off_16
-		LDA	#>a_TheSpellBackfired
-		STA	off_16+1
+		dldi	off_16, a_TheSpellBackfired
 
 loc_53E7:				; CODE XREF: RAM:5358j	RAM:53DDj
 		LDX	byte_194A
