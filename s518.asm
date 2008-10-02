@@ -334,7 +334,7 @@ unk_18D5:	.BYTE $80 ; €		; DATA XREF: sub_2A41+1Ew sub_2A41+55w ...
 		.BYTE	0
 byte_18FE:	.BYTE 0			; DATA XREF: RAM:1E71r	RAM:5816w ...
 byte_18FF:	.BYTE 0			; DATA XREF: RAM:2659r	RAM:2667w ...
-byte_1900:	.BYTE 0			; DATA XREF: sub_267A+10r
+CONSOL_SAVE:	.BYTE 0			; DATA XREF: sub_267A+10r
 					; sub_267A:loc_269Fw
 byte_1901:	.BYTE 0			; DATA XREF: sub_27DE+16w sub_27DE+7Br ...
 byte_1902:	.BYTE 0			; DATA XREF: sub_27DE+19w sub_27DE+83w ...
@@ -2826,13 +2826,13 @@ loc_2676:				; CODE XREF: RAM:2657j	RAM:265Cj ...
 
 sub_267A:				; CODE XREF: RAM:loc_23BAp
 		LDA	#8
-		STA	$D01F
+		STA	CONSOL
 		LDA	$30
 		BPL	loc_26A2
-		LDA	$D01F
-		CMP	#7
+		LDA	CONSOL
+		CMP	#7		; nothing pressed
 		BNE	loc_269F
-		LDA	byte_1900
+		LDA	CONSOL_SAVE
 		CMP	#7
 		BEQ	loc_269F
 		LDX	#$10
@@ -2848,7 +2848,7 @@ loc_269B:				; CODE XREF: sub_267A+1Aj sub_267A+1Ej
 		LDA	#7
 
 loc_269F:				; CODE XREF: sub_267A+Ej sub_267A+15j
-		STA	byte_1900
+		STA	CONSOL_SAVE
 
 loc_26A2:				; CODE XREF: sub_267A+7j
 		LDY	#0
@@ -2873,9 +2873,9 @@ loc_26BD:				; CODE XREF: sub_267A+2Fj sub_267A+3Ej
 		LDA	byte_18FF
 		BEQ	locret_26D0
 		LDY	#1
-		STY	$D01F
+		STY	CONSOL
 		DEY
-		STY	$D01F
+		STY	CONSOL
 		STY	byte_18FF
 
 locret_26D0:				; CODE XREF: sub_267A+48j

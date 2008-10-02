@@ -120,7 +120,7 @@ loc_2095:				; CODE XREF: RAM:209Fj
 		RTS
 ; 컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴�
 		LDA	#7
-		STA	$1900
+		STA	CONSOL_SAVE
 		LDA	#0
 		STA	$2E
 		STA	$18FF

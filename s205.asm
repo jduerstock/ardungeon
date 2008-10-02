@@ -86,7 +86,7 @@ loc_80A3:				; CODE XREF: sub_809F+Ej
 
 sub_80BC:				; CODE XREF: RAM:8086p
 		LDA	#7
-		STA	$1900
+		STA	CONSOL_SAVE
 		LDA	#0
 		STA	$265
 		STA	$2E
@@ -206,8 +206,8 @@ sub_819E:				; CODE XREF: sub_8000+64p
 		SEI
 		LDA	#0
 		STA	byte_258
-		LDA	$D01F
-		CMP	#5
+		LDA	CONSOL
+		CMP	#5		; select pressed
 		BEQ	loc_8221
 		LDA	#$FE ; 'þ'
 		STA	PORTB
@@ -227,7 +227,7 @@ sub_819E:				; CODE XREF: sub_8000+64p
 		LDA	#$80 ; '€'
 		STA	byte_258
 		LDA	CONSOL
-		CMP	#3
+		CMP	#3		; option pressed
 		BEQ	loc_821C
 		LDX	$4000
 		STX	4

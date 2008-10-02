@@ -1,5 +1,6 @@
 		.include	"equates.inc"
 		.include	"globals.inc"
+		.include	"macros.inc"
 
 
 ;		.ORG	$600
@@ -6390,9 +6391,9 @@ loc_2230:				; CODE XREF: sub_222D+13j
 		DEC	$97
 		JSR	sub_2DDB
 		LDA	#8
-		STA	$D01F
-		LDA	$D01F
-		CMP	#6
+		STA	CONSOL
+		LDA	CONSOL
+		CMP	#6		; start pressed
 		BEQ	loc_2278
 		INC	$97
 
@@ -6410,14 +6411,8 @@ loc_2276:				; DATA XREF: RAM:2430o
 		PLA
 
 loc_2278:				; CODE XREF: RAM:226Cj
-		LDA	#$5F ; '_'
-		STA	$222
-		LDA	#$E4 ; 'ä'
-		STA	$223
-		LDA	#$AD ; '­'
-		STA	$230
-		LDA	#$22 ; '"'
-		STA	$231
+		dldi	$222, $E45F
+		dldi	$230, $22AD
 		LDA	#0
 		LDX	#7
 
