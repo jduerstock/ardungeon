@@ -3246,17 +3246,11 @@ loc_28E2:				; CODE XREF: sub_28D7+8j
 		ADC	#1
 		STA	byte_1911
 		STX	byte_1910
-		LDA	#$9F ; 'Ÿ'
-		STA	off_16
-		LDA	#$29 ; ')'
-		STA	off_16+1
+		dldi	off_16, a_PleaseInsert
 		JSR	sub_1C88
 		LDA	byte_190E
 		BEQ	loc_2908
-		LDA	#7
-		STA	off_16
-		LDA	#$2A ; '*'
-		STA	off_16+1
+		dldi	off_16, a_OrPressESC
 		JSR	sub_1C88
 
 loc_2908:				; CODE XREF: sub_28D7+24j sub_28D7+43j ...
@@ -3289,10 +3283,6 @@ loc_2926:				; CODE XREF: sub_28D7+34j sub_28D7+3Bj ...
 sub_292B:				; CODE XREF: sub_28D7+4Ap
 					; sub_28D7:loc_2926p
 		dldi	off_16, byte_2007
-;		LDA	#7
-;		STA	off_16
-;		LDA	#$20 ; ' '
-;		STA	off_16+1
 		JSR	sub_1C88
 		RTS
 ; End of function sub_292B
@@ -3302,18 +3292,9 @@ sub_292B:				; CODE XREF: sub_28D7+4Ap
 
 
 sub_2937:				; CODE XREF: sub_2799p
-		LDA	SEGADDR
-		STA	off_9
-		LDA	SEGADDR+1
-		STA	off_9+1
-		LDA	word_1903
-		STA	word_232
-		LDA	word_1903+1
-		STA	word_232+1
-		LDA	word_1907
-		STA	word_B
-		LDA	word_1907+1
-		STA	word_B+1
+		dmv	off_9, SEGADDR
+		dmv	word_232, word_1903
+		dmv	word_B, word_1907
 		JSR	sub_2979
 		BMI	loc_2976
 		LDX	#$F
@@ -3346,7 +3327,7 @@ loc_2976:				; CODE XREF: sub_2937+23j sub_2937+38j
 
 sub_2979:				; CODE XREF: RAM:1800j
 					; sub_2799:loc_279Ep ...
-		BIT	$258
+		BIT	byte_258
 		BVC	loc_2986
 		BIT	$25A
 		BPL	loc_2986
@@ -3375,6 +3356,8 @@ loc_299D:				; CODE XREF: sub_2979+1Aj sub_2979+1Fj
 ; End of function sub_2979
 
 ; ---------------------------------------------------------------------------
+
+a_PleaseInsert:
 		.BYTE $A8
 		MOVEXY	0,1
 		.BYTE $A5
@@ -3395,6 +3378,8 @@ aPress:		.BYTE "Press "
 aToContinue:	.BYTE " to continue"
 		.BYTE $D
 		.BYTE $FF
+
+a_OrPressESC:
 		MOVEXY	0,7
 		.BYTE $A5
 aOrPress:	.BYTE "or press "
@@ -3716,10 +3701,7 @@ loc_2BB4:				; CODE XREF: sub_2BB0+8j
 		DEX
 		BNE	loc_2BB4
 		JSR	sub_2643
-		LDA	#$D0 ; 'Ð'
-		STA	off_16
-		LDA	#$2B ; '+'
-		STA	off_16+1
+		dldi	off_16, a_PressAnyKey
 		JSR	sub_1C88
 
 loc_2BC8:				; CODE XREF: sub_2BB0+1Bj
@@ -3730,6 +3712,8 @@ loc_2BC8:				; CODE XREF: sub_2BB0+1Bj
 ; End of function sub_2BB0
 
 ; ---------------------------------------------------------------------------
+
+a_PressAnyKey:
 		MOVEXY	0,7
 		.BYTE $A9
 		.BYTE $A5
@@ -3779,14 +3763,8 @@ loc_2C15:				; CODE XREF: sub_2BFA+1Fj
 ; ---------------------------------------------------------------------------
 
 loc_2C26:				; CODE XREF: sub_2BFA+24j
-		LDA	off_1977
-		STA	off_2C99
-		LDA	off_1977+1
-		STA	off_2C99+1
-		LDA	#<loc_2C3F
-		STA	off_1977
-		LDA	#>loc_2C3F
-		STA	off_1977+1
+		dmv	off_2C99, off_1977
+		dldi	off_1977, loc_2C3F
 		JMP	loc_2FF3
 ; End of function sub_2BFA
 
@@ -3837,10 +3815,6 @@ loc_2C6F:				; CODE XREF: RAM:1857j	RAM:2C96j
 		LDA	off_1977+1
 		STA	off_2C99+1
 		dldi	off_1977, loc_2C88
-;		LDA	#<loc_2C88
-;		STA	off_1977
-;		LDA	#>loc_2C88
-;		STA	off_1977+1
 		JMP	loc_2FF3
 ; ---------------------------------------------------------------------------
 
@@ -3974,7 +3948,7 @@ loc_2D18:				; CODE XREF: sub_2CFB+18j
 		STA	$259
 		STA	$25A
 		STA	$25B
-		BIT	$258
+		BIT	byte_258
 		BPL	loc_2D40
 		LDA	SEGNO
 		CMP	#$E
@@ -4012,7 +3986,7 @@ loc_2D62:				; CODE XREF: sub_2CFB+43j sub_2CFB+5Aj ...
 loc_2D67:				; CODE XREF: sub_2CFB+64j
 		LDA	SEGNO
 		LDX	#5
-		BIT	$258
+		BIT	byte_258
 		BVC	loc_2D72
 		DEX
 

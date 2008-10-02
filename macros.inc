@@ -27,9 +27,15 @@
 ;
 ; double-load immediate
 	.MACRO	dldi	arg1, arg2
-	LDA	#<arg2
-	STA	arg1
-	LDA	#>arg2
-	STA     arg1+1
+		LDA	#<arg2
+		STA	arg1
+		LDA	#>arg2
+		STA     arg1+1
         .ENDMACRO
 
+	.MACRO   dmv	dest,source
+		LDA	source
+		STA	dest
+		LDA	source+1
+		STA	dest+1
+        .ENDMACRO

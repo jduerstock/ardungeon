@@ -51,7 +51,7 @@ loc_8014:				; CODE XREF: sub_8000+17j
 		LDA	#>loc_2347
 		STA	off_222+1
 		JSR	sub_819E
-		LDA	$258
+		LDA	byte_258
 		ASL	A
 		ROL	A
 		ROL	A
@@ -234,7 +234,7 @@ a128k:		.BYTE "128K"
 sub_819E:				; CODE XREF: sub_8000+64p
 		SEI
 		LDA	#0
-		STA	$258
+		STA	byte_258
 		LDA	$D01F
 		CMP	#5
 		BEQ	loc_8221
@@ -261,7 +261,7 @@ sub_819E:				; CODE XREF: sub_8000+64p
 		LDY	#<$700
 		JSR	$2E0D
 		LDA	#$80 ; '€'
-		STA	$258
+		STA	byte_258
 		LDA	$D01F
 		CMP	#3
 		BEQ	loc_821C
@@ -288,7 +288,7 @@ loc_8205:				; CODE XREF: sub_819E+5Ej
 		CPX	4
 		BNE	loc_821C
 		LDA	#$C0 ; 'À'
-		STA	$258
+		STA	byte_258
 		JSR	$F9CF
 
 loc_821C:				; CODE XREF: sub_819E+1Dj sub_819E+23j ...
@@ -1395,7 +1395,7 @@ loc_8976:				; CODE XREF: RAM:895Aj	RAM:896Fj
 		LDA	#$FF
 		RTS
 ; ---------------------------------------------------------------------------
-		BIT	$258
+		BIT	byte_258
 		BVC	loc_8986
 		BIT	$25A
 		BPL	loc_8986
