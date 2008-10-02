@@ -1,4 +1,5 @@
 		.include	"globals.inc"
+		.include	"macros.inc"
 
 ;		.ORG	$9000
 
@@ -18,10 +19,7 @@ loc_900E:
 		STX	word_232
 		INX
 		STX	word_232+1
-		LDA	#<unk_90BE
-		STA	off_9
-		LDA	#>unk_90BE
-		STA	off_9+1
+		dldi	off_9, unk_90BE
 		LDA	#3
 		STA	6
 

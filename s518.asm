@@ -11201,8 +11201,7 @@ asc_5D51:	.BYTE " ("              ; DATA XREF: RAM:551Bw RAM:5DC3w ...
 		PRINTSTR off_193C,29
 		.BYTE ' '
 		.BYTE $AD
-		.BYTE $AC ; ¬
-		.BYTE $5D ; ]
+		.WORD	off_5DAC
 		.BYTE $AB
 		MOVEXY	3,3
 		.BYTE $A3
@@ -11213,8 +11212,7 @@ asc_5D67:	.BYTE " ("              ; DATA XREF: RAM:551Fw
 		PRINTSTR off_193E,29
 		.BYTE $20
 		.BYTE $AD ; ­
-		.BYTE $AC ; ¬
-		.BYTE $5D ; ]
+		.WORD	off_5DAC
 		.BYTE $AB
 		MOVEXY	3,4
 		.BYTE $A3
@@ -11225,8 +11223,7 @@ asc_5D7D:	.BYTE " ("              ; DATA XREF: RAM:5523w
 		PRINTSTR off_1940,29
 		.BYTE $20
 		.BYTE $AD ; ­
-		.BYTE $AC ; ¬
-		.BYTE $5D ; ]
+		.WORD	off_5DAC
 		.BYTE $AB ; «
 		MOVEXY	3,5
 		.BYTE $A3 ; £
@@ -11239,20 +11236,17 @@ asc_5D93:	.BYTE " ("              ; DATA XREF: RAM:5527w
 		PRINTSTR off_1942,29
 		.BYTE $20
 		.BYTE $AD ; ­
-		.BYTE $AC ; ¬
-		.BYTE $5D ; ]
+		.WORD	off_5DAC
 		.BYTE $AB ; «
 		.BYTE  $D
 		.BYTE  $D
 		.BYTE $A2 ; ¢
 		.BYTE $AD ; ­
-		.BYTE $44 ; D
-		.BYTE $19
+		.WORD	off_1944
 		.BYTE $AB ; «
 		.BYTE  $D
 		.BYTE $FF
-byte_5DAC:	.BYTE 0			; DATA XREF: RAM:5DD8w	RAM:5DFDw
-byte_5DAD:	.BYTE 0			; DATA XREF: RAM:5DDDw	RAM:5E02w
+off_5DAC:	.WORD	0		; DATA XREF: RAM:5DD8w	RAM:5DFDw
 byte_5DAE:	.BYTE 0			; DATA XREF: RAM:5DB1o	RAM:5DF8w
 byte_5DAF:	.BYTE 0			; DATA XREF: RAM:5DB8w	RAM:loc_5DBBr ...
 
@@ -11279,10 +11273,7 @@ loc_5DBB:				; DATA XREF: RAM:5D65o	RAM:5D7Bo
 		STA	asc_5D51,Y	; " ("
 
 loc_5DD6:				; CODE XREF: RAM:5DCCj
-		LDA	#$54 ; 'T'
-		STA	byte_5DAC
-		LDA	#$5E ; '^'
-		STA	byte_5DAD
+		dldi	off_5DAC, byte_5E54
 		LDA	loc_51B0
 		CMP	#$D0 ; 'Ð'
 		BNE	loc_5E05
@@ -11294,10 +11285,7 @@ loc_5DD6:				; CODE XREF: RAM:5DCCj
 		LDY	#1
 		LDA	(off_43),Y
 		STA	byte_5DAE
-		LDA	#<byte_5DB0
-		STA	byte_5DAC
-		LDA	#>byte_5DB0
-		STA	byte_5DAD
+		dldi	off_5DAC, byte_5DB0
 
 loc_5E05:				; CODE XREF: RAM:5DE5j	RAM:5DEAj
 		INC	byte_5DAF
@@ -11314,22 +11302,20 @@ byte_5E09:
 		BLINK	"1"
 		.BYTE	") "
 		.BYTE $AD ; ­
-		.BYTE $3C ; <
-		.BYTE $19
+		.WORD	off_193C
 		.BYTE $AB ; «
 		MOVEXY	3,3
 		.BYTE	" ("
 		BLINK	"2"
 		.BYTE	") "
 		.BYTE $AD ; ­
-		.BYTE $3E ; >
-		.BYTE $19
+		.WORD	off_193E
 		.BYTE $AB ; «
 		MOVEXY	3,4
 		.BYTE	" ("
 		BLINK	"3"
 		.BYTE	") "
-		.BYTE $AD ; ­
+		.BYTE $AD
 		.WORD	off_1940
 		.BYTE $AB ; «
 		MOVEXY	3,5
@@ -11339,19 +11325,18 @@ byte_5E09:
 		.BYTE $29 ; )
 		.BYTE $20
 		.BYTE $AD ; ­
-		.BYTE $42 ; B
-		.BYTE $19
+		.WORD	off_1942
 		.BYTE $AB ; «
 		.BYTE  $D
 		.BYTE  $D
 		.BYTE $A2 ; ¢
 		.BYTE $AD ; ­
-		.BYTE $44 ; D
-		.BYTE $19
+		.WORD	off_1944
 		.BYTE $AB ; «
 		.BYTE  $D
 		.BYTE $FF
 unk_5E53:	.BYTE	0		; DATA XREF: RAM:off_59C1o
+byte_5E54:	
 		.BYTE $AE ; ®
 unk_5E55:	.BYTE	0		; DATA XREF: RAM:5DBEr	RAM:5DCEr
 		.BYTE $16
