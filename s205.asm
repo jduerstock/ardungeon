@@ -1,6 +1,7 @@
 		.include	"equates.inc"
 		.include	"exp_kernel.inc"
 		.include	"globals.inc"
+		.include	"macros.inc"
 
 ;		.ORG	$8000
 
@@ -22,34 +23,13 @@ loc_8014:				; CODE XREF: sub_8000+17j
 		BNE	loc_8014
 		LDA	#7
 		STA	$237
-		LDA	#<loc_2297
-		STA	off_20E
-		LDA	#>loc_2297
-		STA	off_20E+1
-		LDA	#<loc_224F
-		STA	off_20C
-		LDA	#>loc_224F
-		STA	off_20C+1
-		LDA	#<loc_21E7
-		STA	off_20A
-		LDA	#>loc_21E7
-		STA	off_20A+1
-		LDA	#<loc_22AC
-		STA	off_216
-		LDA	#>loc_22AC
-		STA	off_216+1
-		LDA	#<loc_2653
-		STA	off_208
-		LDA	#>loc_2653
-		STA	off_208+1
-		LDA	#<byte_199D
-		STA	off_254
-		LDA	#>byte_199D
-		STA	off_254+1
-		LDA	#<loc_2347
-		STA	off_222
-		LDA	#>loc_2347
-		STA	off_222+1
+		dldi	off_20E, loc_2297
+		dldi	off_20C, loc_224F
+		dldi	off_20A, loc_21E7
+		dldi	off_216, loc_22AC
+		dldi	off_208, loc_2653
+		dldi	off_254, byte_199D
+		dldi	off_222, loc_2347
 		JSR	sub_819E
 		LDA	byte_258
 		ASL	A
@@ -78,7 +58,7 @@ loc_8014:				; CODE XREF: sub_8000+17j
 		JSR	sub_80D2
 		JMP	$2EC6
 
-; ЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫ S U B	R O U T	I N E ЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫ
+; --------------- S U B	R O U T	I N E ---------------------------------------
 
 
 sub_809F:				; CODE XREF: RAM:8089p
@@ -101,7 +81,7 @@ loc_80A3:				; CODE XREF: sub_809F+Ej
 ; End of function sub_809F
 
 
-; ЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫ S U B	R O U T	I N E ЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫ
+; --------------- S U B	R O U T	I N E ---------------------------------------
 
 
 sub_80BC:				; CODE XREF: RAM:8086p
@@ -118,7 +98,7 @@ sub_80BC:				; CODE XREF: RAM:8086p
 ; End of function sub_80BC
 
 
-; ЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫ S U B	R O U T	I N E ЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫ
+; --------------- S U B	R O U T	I N E ---------------------------------------
 
 
 sub_80D2:				; CODE XREF: RAM:8099p
@@ -160,20 +140,11 @@ loc_8104:				; CODE XREF: sub_80D2+25j
 		STA	$230
 		LDA	#4
 		STA	6
-		LDA	#$80 ; 'Ђ'
-		STA	9
-		LDA	#2
-		STA	$A
-		LDA	#2
-		STA	$2501
-		LDA	#0
-		STA	$2502
+		dldi	off_9, $0280
+		dldi	$2501, $0002
 
 loc_8128:				; CODE XREF: sub_80D2+81j
-		LDA	$2501
-		STA	word_232
-		LDA	$2502
-		STA	word_232+1
+		dmv	word_232, $2501
 
 loc_8134:				; CODE XREF: sub_80D2+65j
 		JSR	$248E
@@ -200,7 +171,7 @@ loc_814E:				; CODE XREF: sub_80D2+78j
 ; End of function sub_80D2
 
 
-; ЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫ S U B	R O U T	I N E ЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫ
+; --------------- S U B	R O U T	I N E ---------------------------------------
 
 
 sub_8158:				; CODE XREF: sub_8000+6Fp
@@ -228,7 +199,7 @@ aqqk:		.BYTE " ??K"
 a64k:		.BYTE " 64K"
 a128k:		.BYTE "128K"
 
-; ЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫ S U B	R O U T	I N E ЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫ
+; --------------- S U B	R O U T	I N E ---------------------------------------
 
 
 sub_819E:				; CODE XREF: sub_8000+64p
@@ -249,20 +220,13 @@ sub_819E:				; CODE XREF: sub_8000+64p
 		DEX
 		CMP	$D800
 		BEQ	loc_821C
-		LDA	#$23 ; '#'
-		STA	off_7
-		LDA	#$82 ; '‚'
-		STA	off_7+1
-		LDA	#0
-		STA	off_9
-		LDA	#$F9 ; 'щ'
-		STA	off_9+1
-		LDX	#>$700
-		LDY	#<$700
+		dldi	off_7, $8223
+		dldi	off_9, $F900
+		ldxy	$700
 		JSR	$2E0D
 		LDA	#$80 ; 'Ђ'
 		STA	byte_258
-		LDA	$D01F
+		LDA	CONSOL
 		CMP	#3
 		BEQ	loc_821C
 		LDX	$4000
