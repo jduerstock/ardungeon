@@ -4,126 +4,42 @@
 
 
 ;		.ORG	$600
-unk_600:	.BYTE	0		; DATA XREF: sub_31A2+3Er
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE $3F ; ?
-		.BYTE $C3 ; Ã
-		.BYTE  $F
-		.BYTE  $F
-		.BYTE  $F
-		.BYTE $3C ; <
-		.BYTE $3C ; <
-		.BYTE $F0 ; ð
-		.BYTE $FC ; ü
-		.BYTE $3F ; ?
-		.BYTE $3C ; <
-		.BYTE $3C ; <
-		.BYTE $3C ; <
-		.BYTE $3C ; <
-		.BYTE $3C ; <
-		.BYTE $F3 ; ó
-		.BYTE  $F
-		.BYTE $3C ; <
-		.BYTE $F0 ; ð
-		.BYTE $F0 ; ð
-		.BYTE $F0 ; ð
-		.BYTE $F0 ; ð
-		.BYTE $FC ; ü
-		.BYTE $3F ; ?
-		.BYTE $FC ; ü
-		.BYTE $3F ; ?
-		.BYTE $3C ; <
-		.BYTE $3C ; <
-		.BYTE $3C ; <
-		.BYTE $3C ; <
-		.BYTE $3C ; <
-		.BYTE $F3 ; ó
+unk_600:	.BYTE	$00,$00,$00,$00,$00,$00,$00,$00	; DATA XREF: sub_31A2+3Er
+		.BYTE	$3F,$C3,$0F,$0F,$0F,$3C,$3C,$F0
+		.BYTE	$FC,$3F,$3C,$3C,$3C,$3C,$3C,$F3
+		.BYTE	$0F,$3C,$F0,$F0,$F0,$F0,$FC,$3F
+		.BYTE	$FC,$3F,$3C,$3C,$3C,$3C,$3C,$F3
+		.BYTE	$FF,$3C,$3C,$3F,$3C,$3C,$3C,$3F
+		.BYTE	$FF,$3C,$3C,$3F,$3C,$3C,$3C,$3C
+		.BYTE	$0F,$3C,$F0,$F0,$F3,$F0,$3C,$0F
+		.BYTE	$F0,$F0,$F0,$F0,$FF,$FC,$F0,$F0
+		.BYTE	$0F,$03,$03,$03,$03,$03,$03,$00
+		.BYTE	$03,$00,$00,$00,$00,$03,$0F,$3C
+		.BYTE	$F0,$3C,$3C,$3F,$3F,$3C,$3C,$F0
+		.BYTE $FC
+		.BYTE $3C
+		.BYTE $3C
+		.BYTE $3C
+		.BYTE $3C
+		.BYTE $3C
+		.BYTE $3F
+		.BYTE $3F
+		.BYTE $F0
+		.BYTE $FC
 		.BYTE $FF
-		.BYTE $3C ; <
-		.BYTE $3C ; <
-		.BYTE $3F ; ?
-		.BYTE $3C ; <
-		.BYTE $3C ; <
-		.BYTE $3C ; <
-		.BYTE $3F ; ?
+		.BYTE $F3
+		.BYTE $F0
+		.BYTE $F0
+		.BYTE $F0
+		.BYTE $F0
+		.BYTE $F0
+		.BYTE $F0
+		.BYTE $FC
 		.BYTE $FF
-		.BYTE $3C ; <
-		.BYTE $3C ; <
-		.BYTE $3F ; ?
-		.BYTE $3C ; <
-		.BYTE $3C ; <
-		.BYTE $3C ; <
-		.BYTE $3C ; <
-		.BYTE  $F
-		.BYTE $3C ; <
-		.BYTE $F0 ; ð
-		.BYTE $F0 ; ð
-		.BYTE $F3 ; ó
-		.BYTE $F0 ; ð
-		.BYTE $3C ; <
-		.BYTE  $F
-		.BYTE $F0 ; ð
-		.BYTE $F0 ; ð
-		.BYTE $F0 ; ð
-		.BYTE $F0 ; ð
-		.BYTE $FF
-		.BYTE $FC ; ü
-		.BYTE $F0 ; ð
-		.BYTE $F0 ; ð
-		.BYTE  $F
-		.BYTE	3
-		.BYTE	3
-		.BYTE	3
-		.BYTE	3
-		.BYTE	3
-		.BYTE	3
-		.BYTE	0
-		.BYTE	3
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	3
-		.BYTE  $F
-		.BYTE $3C ; <
-		.BYTE $F0 ; ð
-		.BYTE $3C ; <
-		.BYTE $3C ; <
-		.BYTE $3F ; ?
-		.BYTE $3F ; ?
-		.BYTE $3C ; <
-		.BYTE $3C ; <
-		.BYTE $F0 ; ð
-		.BYTE $FC ; ü
-		.BYTE $3C ; <
-		.BYTE $3C ; <
-		.BYTE $3C ; <
-		.BYTE $3C ; <
-		.BYTE $3C ; <
-		.BYTE $3F ; ?
-		.BYTE $3F ; ?
-		.BYTE $F0 ; ð
-		.BYTE $FC ; ü
-		.BYTE $FF
-		.BYTE $F3 ; ó
-		.BYTE $F0 ; ð
-		.BYTE $F0 ; ð
-		.BYTE $F0 ; ð
-		.BYTE $F0 ; ð
-		.BYTE $F0 ; ð
-		.BYTE $F0 ; ð
-		.BYTE $FC ; ü
-		.BYTE $FF
-		.BYTE $F3 ; ó
-		.BYTE $F0 ; ð
-		.BYTE $F0 ; ð
-		.BYTE $F0 ; ð
+		.BYTE $F3
+		.BYTE $F0
+		.BYTE $F0
+		.BYTE $F0
 		.BYTE $3F ; ?
 		.BYTE $F0 ; ð
 		.BYTE $F0 ; ð
