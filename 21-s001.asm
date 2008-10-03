@@ -1,10 +1,12 @@
 		.SEGMENT	"SEG_279D"
+
+off_80	= $80
 ;		* =  $279D
 byte_279D:	.BYTE $21		; DATA XREF: RAM:279Fo
 		.BYTE 9
 		.WORD byte_279D
 		.WORD loc_27A3
-; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+; ---------------------------------------------------------------------------
 
 loc_27A3:				; DATA XREF: RAM:27A1o
 		LDY	#$FF
@@ -15,28 +17,28 @@ loc_27A3:				; DATA XREF: RAM:27A1o
 		LDA	#$FF
 		STA	$D301
 		LDA	#$9D ; 'ќ'
-		STA	$80
+		STA	off_80
 		STA	$82
 		LDA	#$27 ; '''
-		STA	$81
+		STA	off_80+1
 		LDA	#$B7 ; '·'
 		STA	$83
 		LDX	#5
 
 loc_27C4:				; CODE XREF: RAM:27C9j	RAM:27D0j
-		LDA	($80),Y
+		LDA	(off_80),Y
 		STA	($82),Y
 		INY
 		BNE	loc_27C4
-		INC	$81
+		INC	off_80+1
 		INC	$83
 		DEX
 		BNE	loc_27C4
 		JMP	$B7D7
-; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+; ---------------------------------------------------------------------------
 		.BYTE	0
 		.BYTE	0
-; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+; ---------------------------------------------------------------------------
 
 		.SEGMENT	"SEG_B7D7"
 ;		* =  $B7D7
@@ -56,8 +58,8 @@ loc_B7ED:				; CODE XREF: RAM:B7EAj
 		STX	$84
 		STY	$85
 		LDA	#0
-		STA	$80
-		STA	$81
+		STA	off_80
+		STA	off_80+1
 		LDA	#1
 		STA	$82
 		STA	$83
@@ -129,7 +131,7 @@ loc_B83C:				; CODE XREF: sub_B82F+Fj
 		RTS
 ; End of function sub_B82F
 
-; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+; ---------------------------------------------------------------------------
 		LDA	#'1'
 		STA	$300
 
@@ -173,7 +175,7 @@ loc_B86D:				; CODE XREF: RAM:B872j
 
 loc_B886:				; CODE XREF: RAM:B8CFj
 		LDX	#2
-		LDA	$80
+		LDA	off_80
 		BNE	loc_B894
 
 loc_B88C:				; CODE XREF: RAM:B890j
@@ -190,7 +192,7 @@ loc_B894:				; CODE XREF: RAM:B88Aj	RAM:B89Bj
 
 loc_B89D:				; CODE XREF: RAM:B892j	RAM:B8DBj
 		LDX	#2
-		LDA	$81
+		LDA	off_80+1
 		BNE	loc_B8AB
 
 loc_B8A3:				; CODE XREF: RAM:B8A7j
@@ -217,17 +219,17 @@ loc_B8C2:				; CODE XREF: RAM:B903j
 		JSR	sub_B80C
 		CMP	#$56 ; 'V'
 		BNE	loc_B8D1
-		LDA	$80
+		LDA	off_80
 		EOR	#1
-		STA	$80
+		STA	off_80
 		BCS	loc_B886
 
 loc_B8D1:				; CODE XREF: RAM:B8C7j
 		CMP	#$46 ; 'F'
 		BNE	loc_B8DD
-		LDA	$81
+		LDA	off_80+1
 		EOR	#1
-		STA	$81
+		STA	off_80+1
 		BCS	loc_B89D
 
 loc_B8DD:				; CODE XREF: RAM:B8D3j
@@ -256,7 +258,7 @@ loc_B901:				; CODE XREF: RAM:B8F1j
 		CMP	#$9B ; '›'
 		BNE	loc_B8C2
 		LDA	#$50 ; 'P'
-		LDX	$80
+		LDX	off_80
 		BNE	loc_B90D
 		LDA	#$57 ; 'W'
 
@@ -398,7 +400,7 @@ loc_B9EC:				; CODE XREF: RAM:B9DEj
 		STA	$301
 		LDA	$8F
 		BNE	loc_BA3A
-		LDA	$81
+		LDA	off_80+1
 		BNE	loc_BA3A
 
 loc_BA03:				; CODE XREF: RAM:BA38j
@@ -474,7 +476,7 @@ loc_BA7D:				; CODE XREF: RAM:BA8Ej
 		DEC	$90
 		BNE	loc_BA7D
 		JMP	loc_BADB
-; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+; ---------------------------------------------------------------------------
 
 loc_BA93:				; CODE XREF: RAM:BA8Aj
 		CLC
@@ -505,7 +507,7 @@ loc_BAB4:				; CODE XREF: RAM:BAAAj
 		BNE	loc_BA53
 		INC	$8F
 		JMP	loc_B931
-; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+; ---------------------------------------------------------------------------
 
 loc_BACE:				; CODE XREF: RAM:BA72j	RAM:BAB2j
 		LDA	#$A8 ; 'Ё'
@@ -513,7 +515,7 @@ loc_BACE:				; CODE XREF: RAM:BA72j	RAM:BAB2j
 		LDX	#6
 		JSR	sub_B80F
 		JMP	loc_BAE0
-; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+; ---------------------------------------------------------------------------
 
 loc_BADB:				; CODE XREF: RAM:BA90j
 		LDX	#7
@@ -524,7 +526,7 @@ loc_BAE0:				; CODE XREF: RAM:BAD8j	RAM:BAE5j
 		CMP	#$9B ; '›'
 		BNE	loc_BAE0
 		JMP	loc_B846
-; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+; ---------------------------------------------------------------------------
 byte_BAEA:	.BYTE $80,$40,$20,$10,	8,  4,	2,  1 ;	DATA XREF: RAM:B9B5r
 					; RAM:BA59r
 unk_BAF2:	.BYTE	0		; DATA XREF: RAM:off_BB3Ao
