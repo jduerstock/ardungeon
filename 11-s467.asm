@@ -50,7 +50,7 @@ loc_7643:				; CODE XREF: RAM:7672j
 		TAX
 		LDA	$24D,X
 		BMI	loc_765D
-		JSR	$182D
+		JSR	j_READSECTOR
 		BPL	loc_767A
 
 loc_765D:				; CODE XREF: RAM:7656j	RAM:7682j

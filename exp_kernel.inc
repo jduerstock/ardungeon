@@ -1,4 +1,5 @@
 .ifndef KERNEL
+j_READSECTOR	= $182D
 j_SEGLOAD	= $1842
 
 byte_18C1	= $18C1
@@ -22,5 +23,6 @@ loc_22AC	= $22AC
 loc_2347	= $2347
 loc_2653	= $2653
 
+READSECTOR	= $248E
 BLOCKMOVE	= $2E0D
 .endif

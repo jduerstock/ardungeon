@@ -1,4 +1,5 @@
 		.include	"globals.inc"
+		.include	"exp_kernel.inc"
 		.include	"macros.inc"
 
 ;		.ORG	$9000
@@ -32,7 +33,7 @@ loc_902C:
 		BPL	loc_902C
 
 loc_9032:
-		JSR	$182D
+		JSR	j_READSECTOR
 
 .ifndef		CRACKED
 

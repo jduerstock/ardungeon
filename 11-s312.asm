@@ -3419,7 +3419,7 @@ loc_8D75:				; CODE XREF: sub_8D72:loc_8DBEj
 		STA	6
 
 loc_8D79:				; CODE XREF: sub_8D72+Ej
-		JSR	$182D
+		JSR	j_READSECTOR
 		BPL	loc_8D82
 		DEC	6
 		BNE	loc_8D79

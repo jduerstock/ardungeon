@@ -1,4 +1,6 @@
 		.include	"globals.inc"
+		.include	"exp_kernel.inc"
+
 ;		.ORG	$9000
 
 loc_9000:				; DATA XREF: RAM:loc_90AFw
@@ -33,7 +35,7 @@ loc_902C:				; CODE XREF: RAM:9030j
 		BPL	loc_902C
 
 loc_9032:				; CODE XREF: RAM:903Fj
-		JSR	$182D
+		JSR	j_READSECTOR
 		BPL	loc_9044
 		LDX	#8
 

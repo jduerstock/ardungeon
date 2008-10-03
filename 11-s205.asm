@@ -147,7 +147,7 @@ loc_8128:				; CODE XREF: sub_80D2+81j
 		dmv	word_232, $2501
 
 loc_8134:				; CODE XREF: sub_80D2+65j
-		JSR	$248E
+		JSR	READSECTOR
 		BMI	loc_8134
 		LDY	#0
 
@@ -476,7 +476,7 @@ loc_FA78:				; CODE XREF: RAM:835Bj
 		STA	6
 
 loc_FA8D:				; CODE XREF: RAM:83B7j
-		JSR	$248E
+		JSR	READSECTOR
 		BPL	loc_FA99
 		DEC	6
 		BNE	loc_FA8D
@@ -505,7 +505,7 @@ loc_FAA9:				; CODE XREF: RAM:839Ej
 		STA	6
 
 loc_FAB9:				; CODE XREF: RAM:83E3j
-		JSR	$248E
+		JSR	READSECTOR
 		BPL	loc_FAC4
 		DEC	6
 		BNE	loc_FAB9
@@ -543,7 +543,7 @@ loc_FAD7:
 		STA	6
 
 loc_FB03:				; CODE XREF: RAM:842Dj
-		JSR	$248E
+		JSR	READSECTOR
 		BPL	loc_FB20
 		DEC	6
 		BNE	loc_FB03
@@ -1336,7 +1336,7 @@ loc_8986:				; CODE XREF: RAM:897Cj	RAM:8981j
 		STA	6
 
 loc_898A:				; CODE XREF: RAM:8991j
-		JSR	$248E
+		JSR	READSECTOR
 		BPL	loc_8995
 		DEC	6
 		BNE	loc_898A

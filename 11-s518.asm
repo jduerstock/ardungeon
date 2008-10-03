@@ -162,7 +162,8 @@
 ; ---------------------------------------------------------------------------
 		JMP	sub_28A1	; $182A
 ; ---------------------------------------------------------------------------
-		JMP	sub_248E	; $182D
+j_READSECTOR:
+		JMP	READSECTOR	; $182D
 ; ---------------------------------------------------------------------------
 		JMP	loc_24C6	; $1830
 ; ---------------------------------------------------------------------------
@@ -1670,7 +1671,7 @@ loc_201D:				; CODE XREF: sub_21B7+17j
 ; --------------- S U B	R O U T	I N E ---------------------------------------
 
 
-sub_2037:				; CODE XREF: sub_248E:loc_20EDp
+sub_2037:				; CODE XREF: READSECTOR:loc_20EDp
 					; sub_20F7+28p
 		LDA	#$C7 ; 'Ç'
 		AND	$236
@@ -1688,20 +1689,20 @@ loc_2046:				; CODE XREF: sub_2037+14j
 ; End of function sub_2037
 
 ; ---------------------------------------------------------------------------
-; START	OF FUNCTION CHUNK FOR sub_248E
+; START	OF FUNCTION CHUNK FOR READSECTOR
 
-loc_204E:				; CODE XREF: sub_248E+12j
+loc_204E:				; CODE XREF: READSECTOR+12j
 		LDA	#1
 		STA	$23F
 
-loc_2053:				; CODE XREF: sub_248E-3A4j
+loc_2053:				; CODE XREF: READSECTOR-3A4j
 		LDA	#$D
 		STA	$23E
 
-loc_2058:				; CODE XREF: sub_248E-3FCj
+loc_2058:				; CODE XREF: READSECTOR-3FCj
 		LDX	#3
 
-loc_205A:				; CODE XREF: sub_248E-42Dj
+loc_205A:				; CODE XREF: READSECTOR-42Dj
 		LDA	$230,X
 		STA	$266,X
 		DEX
@@ -1727,14 +1728,14 @@ loc_205A:				; CODE XREF: sub_248E-42Dj
 		TYA
 		BNE	loc_2097
 
-loc_208F:				; CODE XREF: sub_248E-404j
-					; sub_248E-3E7j
+loc_208F:				; CODE XREF: READSECTOR-404j
+					; READSECTOR-3E7j
 		DEC	$23E
 		BPL	loc_2058
 		JMP	loc_20E5
 ; ---------------------------------------------------------------------------
 
-loc_2097:				; CODE XREF: sub_248E-401j
+loc_2097:				; CODE XREF: READSECTOR-401j
 		LDA	$246
 		BPL	loc_20A9
 		LDA	#$D
@@ -1743,7 +1744,7 @@ loc_2097:				; CODE XREF: sub_248E-401j
 		JSR	sub_20F7
 		BEQ	loc_208F
 
-loc_20A9:				; CODE XREF: sub_248E-3F4j
+loc_20A9:				; CODE XREF: READSECTOR-3F4j
 		LDA	$247
 		ROR	A
 		ROR	A
@@ -1764,41 +1765,41 @@ loc_20A9:				; CODE XREF: sub_248E-3F4j
 		BNE	loc_20E5
 		BEQ	loc_20ED
 
-loc_20CD:				; CODE XREF: sub_248E-3CAj
+loc_20CD:				; CODE XREF: READSECTOR-3CAj
 		JSR	sub_21D1
 		JSR	sub_218E
 
-loc_20D3:				; CODE XREF: sub_248E-3CFj
+loc_20D3:				; CODE XREF: READSECTOR-3CFj
 		LDA	$257
 		BEQ	loc_20DE
 		LDA	$238
 		STA	$23D
 
-loc_20DE:				; CODE XREF: sub_248E-3B8j
+loc_20DE:				; CODE XREF: READSECTOR-3B8j
 		LDA	$23D
 		CMP	#1
 		BEQ	loc_20ED
 
-loc_20E5:				; CODE XREF: sub_248E-3FAj
-					; sub_248E-3C5j
+loc_20E5:				; CODE XREF: READSECTOR-3FAj
+					; READSECTOR-3C5j
 		DEC	$23F
 		BMI	loc_20ED
 		JMP	loc_2053
 ; ---------------------------------------------------------------------------
 
-loc_20ED:				; CODE XREF: sub_248E-3C3j
-					; sub_248E-3ABj ...
+loc_20ED:				; CODE XREF: READSECTOR-3C3j
+					; READSECTOR-3ABj ...
 		JSR	sub_2037
 		LDY	$23D
 		STY	$246
 		RTS
-; END OF FUNCTION CHUNK	FOR sub_248E
+; END OF FUNCTION CHUNK	FOR READSECTOR
 
 ; --------------- S U B	R O U T	I N E ---------------------------------------
 
 
-sub_20F7:				; CODE XREF: sub_248E-40Ap
-					; sub_248E-3EAp
+sub_20F7:				; CODE XREF: READSECTOR-40Ap
+					; READSECTOR-3EAp
 		LDX	#0
 
 loc_20F9:				; CODE XREF: sub_20F7+3j
@@ -1831,7 +1832,7 @@ loc_211A:				; CODE XREF: sub_20F7+26j
 ; --------------- S U B	R O U T	I N E ---------------------------------------
 
 
-sub_2126:				; CODE XREF: sub_248E-3D2p
+sub_2126:				; CODE XREF: READSECTOR-3D2p
 		LDA	#0
 		STA	$239
 		STY	$24C
@@ -1891,7 +1892,7 @@ loc_2186:				; CODE XREF: sub_2126+3Aj sub_2126+3Ej ...
 ; --------------- S U B	R O U T	I N E ---------------------------------------
 
 
-sub_218E:				; CODE XREF: sub_248E-3BEp
+sub_218E:				; CODE XREF: READSECTOR-3BEp
 					; sub_2126+29p
 		LDA	#0
 		STA	$23C
@@ -1938,8 +1939,8 @@ sub_21B7:				; CODE XREF: sub_218E+10p
 ; --------------- S U B	R O U T	I N E ---------------------------------------
 
 
-sub_21D1:				; CODE XREF: sub_248E-3EDp
-					; sub_248E:loc_20CDp
+sub_21D1:				; CODE XREF: READSECTOR-3EDp
+					; READSECTOR:loc_20CDp
 		CLC
 		LDA	#0
 		STA	off_0
@@ -2376,7 +2377,7 @@ loc_247E:				; CODE XREF: sub_245D+2Bj
 ; --------------- S U B	R O U T	I N E ---------------------------------------
 
 
-sub_248E:				; CODE XREF: RAM:182Dj
+READSECTOR:				; CODE XREF: RAM:182Dj
 					; sub_2979:loc_298Ap
 
 ; FUNCTION CHUNK AT 204E SIZE 000000A9 BYTES
@@ -2391,7 +2392,7 @@ loc_2494:				; CODE XREF: RAM:1833j	RAM:24B6p
 		STX	$23D
 		STX	$246
 		JMP	loc_204E
-; End of function sub_248E
+; End of function READSECTOR
 
 ; ---------------------------------------------------------------------------
 		LDA	#0
@@ -3277,7 +3278,7 @@ loc_2986:				; CODE XREF: sub_2979+3j sub_2979+8j
 		STA	6
 
 loc_298A:				; CODE XREF: sub_2979+18j
-		JSR	sub_248E
+		JSR	READSECTOR
 		BPL	loc_2995
 		DEC	6
 		BNE	loc_298A

@@ -982,7 +982,7 @@ loc_7C08:				; CODE XREF: RAM:7C0Fj
 		STA	word_232+1
 
 loc_7C32:				; CODE XREF: RAM:7C7Aj
-		JSR	$182D
+		JSR	j_READSECTOR
 		BPL	loc_7C4C
 
 loc_7C37:				; CODE XREF: RAM:7C61j	RAM:7D74j ...
@@ -1015,7 +1015,7 @@ loc_7C4E:				; CODE XREF: RAM:7C54j
 		INC	word_232+1
 
 loc_7C5E:				; CODE XREF: RAM:7C59j
-		JSR	$182D
+		JSR	j_READSECTOR
 		BMI	loc_7C37
 		LDY	#$FF
 
@@ -1415,7 +1415,7 @@ loc_7EDD:				; CODE XREF: sub_7ECB+41j
 		TAX
 		LDA	$24D,X
 		BMI	loc_7EF7
-		JSR	$182D
+		JSR	j_READSECTOR
 		BPL	loc_7F0E
 
 loc_7EF7:				; CODE XREF: sub_7ECB+25j sub_7ECB+4Bj
