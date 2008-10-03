@@ -27,37 +27,37 @@ unk_600:	.BYTE	$00,$00,$00,$00,$00,$00,$00,$00	; DATA XREF: sub_31A2+3Er
 		.BYTE	$FF,$0F,$3C,$F0,$F0,$F0,$F0,$3F
 		.BYTE	$FC,$3C,$3C,$3C,$3C,$3C,$3C,$0F
 		.BYTE	$F0,$3C,$3C,$3C,$3C,$3C,$0F,$03
-		.BYTE $F0 ; ð
-		.BYTE $F0 ; ð
-		.BYTE $F0 ; ð
-		.BYTE $F3 ; ó
-		.BYTE $F0 ; ð
-		.BYTE $F3 ; ó
-		.BYTE $3F ; ?
-		.BYTE $3C ; <
-		.BYTE $F0 ; ð
-		.BYTE $F0 ; ð
-		.BYTE $3C ; <
+		.BYTE $F0
+		.BYTE $F0
+		.BYTE $F0
+		.BYTE $F3
+		.BYTE $F0
+		.BYTE $F3
+		.BYTE $3F
+		.BYTE $3C
+		.BYTE $F0
+		.BYTE $F0
+		.BYTE $3C
 		.BYTE  $F
 		.BYTE  $F
-		.BYTE $3C ; <
-		.BYTE $F0 ; ð
-		.BYTE $F0 ; ð
-		.BYTE $F0 ; ð
-		.BYTE $3C ; <
-		.BYTE $3C ; <
+		.BYTE $3C
+		.BYTE $F0
+		.BYTE $F0
+		.BYTE $F0
+		.BYTE $3C
+		.BYTE $3C
 		.BYTE  $F
 		.BYTE	3
 		.BYTE	3
 		.BYTE	3
 		.BYTE	3
-		.BYTE $3F ; ?
-		.BYTE $F0 ; ð
+		.BYTE $3F
+		.BYTE $F0
 		.BYTE	0
 		.BYTE	3
 		.BYTE $FF
-		.BYTE $3C ; <
-		.BYTE $F0 ; ð
+		.BYTE $3C
+		.BYTE $F0
 		.BYTE $FF
 		.BYTE	0
 		.BYTE	0
@@ -2846,80 +2846,17 @@ unk_700:	.BYTE	0		; DATA XREF: sub_31A2+50r
 		.BYTE  $F
 		.BYTE $12
 		.BYTE	5
-		.BYTE  $E
-		.BYTE	0
-		.BYTE $41 ; A
-		.BYTE $4E ; N
-		.BYTE $20
-		.BYTE $45 ; E
-		.BYTE $56 ; V
-		.BYTE $49 ; I
-		.BYTE $4C ; L
-		.BYTE $20
-		.BYTE $53 ; S
-		.BYTE $50 ; P
-		.BYTE $45 ; E
-		.BYTE $4C ; L
-		.BYTE $4C ; L
-		.BYTE	0
-		.BYTE  $F
-		.BYTE	0
-		.BYTE	1
-		.BYTE	1
-		.BYTE	1
-		.BYTE $48 ; H
-		.BYTE $23 ; #
-		.BYTE $12
-		.BYTE	5
-		.BYTE  $F
-		.BYTE	2
-		.BYTE	3
-		.BYTE	1
-		.BYTE	1
-		.BYTE $35 ; 5
-		.BYTE  $F
-		.BYTE $12
-		.BYTE	5
-		.BYTE  $F
-		.BYTE	4
-		.BYTE	6
-		.BYTE	1
-		.BYTE	1
-		.BYTE $35 ; 5
-		.BYTE  $F
-		.BYTE $12
-		.BYTE	5
-		.BYTE  $F
-		.BYTE	7
-		.BYTE  $C
-		.BYTE	1
-		.BYTE	1
-		.BYTE $51 ; Q
-		.BYTE $73 ; s
-		.BYTE  $E
-		.BYTE	0
-		.BYTE $20
-		.BYTE	0
-		.BYTE $12
-		.BYTE $2D ; -
-		.BYTE  $E
-		.BYTE	0
-		.BYTE $53 ; S
-		.BYTE $4F ; O
-		.BYTE $4D ; M
-		.BYTE $45 ; E
-		.BYTE $20
-		.BYTE $53 ; S
-		.BYTE $54 ; T
-		.BYTE $49 ; I
-		.BYTE $4C ; L
-		.BYTE $4C ; L
-		.BYTE $20
-		.BYTE $48 ; H
-		.BYTE $45 ; E
-		.BYTE $41 ; A
-		.BYTE $52 ; R
-		.BYTE	0
+		.BYTE	$0E,$00
+		.BYTE	"AN EVIL SPELL",0
+		.BYTE	$0F,$00,$01,$01,$01,$48,$23,$12,$05
+		.BYTE	$0F,$02,$03,$01,$01,$35,$0F,$12,$05
+		.BYTE	$0F,$04,$06,$01,$01,$35,$0F,$12,$05
+		.BYTE	$0F,$07,$0C,$01,$01,$51,$73
+		.BYTE	$0E,$00
+		.BYTE	" ",$00
+		.BYTE	$12,$2D
+		.BYTE	$0E,$00
+		.BYTE	"SOME STILL HEAR",0
 		.BYTE  $F
 		.BYTE	0
 		.BYTE	3
