@@ -1,3 +1,6 @@
+		.include	"globals.inc"
+		.include	"exp_kernel.inc"
+		.include	"macros.inc"
 
 ;		.ORG	$7600
 		.BYTE $11
@@ -26,39 +29,24 @@ loc_7618:				; CODE XREF: RAM:761Fj
 		STA	$750D,X
 		DEX
 		BPL	loc_7618
-		LDA	#$49 ; 'I'
-		STA	$1977
-		LDA	#$76 ; 'v'
-		STA	$1978
-		LDA	#$50 ; 'P'
-		STA	$16
-		LDA	#$7D ; '}'
-		STA	$17
+		dldi	off_1977, off_7649
+		dldi	off_16, byte_7D50
 		JSR	$184B
 		LDA	$1933
 		STA	$65
-		LDA	#$F5 ; 'õ'
-		STA	7
-		LDA	#$85 ; '…'
-		STA	8
+		dldi	off_7, $85F5
 		LDA	#2
 		JSR	$180F
 		RTS
 ; ---------------------------------------------------------------------------
 
 loc_7649:				; CODE XREF: RAM:767Fj	RAM:771Aj ...
-		LDA	#$52 ; 'R'
-		STA	$16
-		LDA	#$7D ; '}'
-		STA	$17
+		dldi	off_16, a_Welcome
 		LDX	$65
 		JSR	$1851
 
 loc_7656:				; CODE XREF: RAM:766Fj
-		LDA	#$66 ; 'f'
-		STA	$1977
-		LDA	#$76 ; 'v'
-		STA	$1978
+		dldi	off_1977, $7666
 		JMP	$1806
 ; ---------------------------------------------------------------------------
 		JMP	loc_76B6
@@ -89,34 +77,24 @@ loc_7683:				; CODE XREF: RAM:768Aj
 		JMP	$180C
 ; ---------------------------------------------------------------------------
 
+; examine weapons and armor
+
 loc_7692:				; CODE XREF: RAM:7673j
-		LDA	#$D8 ; 'Ø'
-		STA	loc_773F+1
-		LDA	#$78 ; 'x'
-		STA	loc_773F+2
-		LDX	#$7D ; '}'
-		LDY	#$27 ; '''
+		dldi	loc_773F+1, $78D8
+		ldxy	$7D27
 		LDA	#8
 		BNE	loc_76C6
 
 loc_76A4:				; CODE XREF: RAM:7677j
-		LDA	#$AD ; '­'
-		STA	loc_773F+1
-		LDA	#$78 ; 'x'
-		STA	loc_773F+2
-		LDX	#$7D ; '}'
-		LDY	#$20 ; ' '
+		dldi	loc_773F+1, $78AD
+		ldxy	$7D20
 		LDA	#4
 		BNE	loc_76C6
 
 loc_76B6:				; CODE XREF: RAM:7663j	RAM:767Bj
-		LDA	#$BD ; '½'
-		STA	loc_773F+1
-		LDA	#$77 ; 'w'
-		STA	loc_773F+2
+		dldi	loc_773F+1, $77BD
 		LDA	#0
-		LDX	#$7D ; '}'
-		LDY	#$2F ; '/'
+		ldxy	$7D2F
 
 loc_76C6:				; CODE XREF: RAM:76A2j	RAM:76B4j
 		STX	$6A
@@ -134,7 +112,7 @@ loc_76D2:				; CODE XREF: RAM:7745j
 		LDA	$640B,X
 		STA	$62
 		LDY	#0
-		LDA	($62),Y
+		LDA	(off_62),Y
 		AND	#$87 ; '‡'
 		CMP	#$84 ; '„'
 		BEQ	loc_76EE
@@ -143,7 +121,7 @@ loc_76D2:				; CODE XREF: RAM:7745j
 
 loc_76EE:				; CODE XREF: RAM:76E8j	RAM:76F4j
 		LDA	($62),Y
-		STA	$7BD2,Y
+		STA	byte_7BD2,Y
 		INY
 		BNE	loc_76EE
 		INC	$66
@@ -397,8 +375,8 @@ loc_787B:				; DATA XREF: sub_7758+120w
 		LDY	#0
 
 loc_7885:				; CODE XREF: sub_7758+136j
-		LDA	$7BD2,Y
-		STA	$7BD0,Y
+		LDA	byte_7BD2,Y
+		STA	byte_7BD0,Y
 		INY
 		CPY	#6
 		BNE	loc_7885
@@ -1305,7 +1283,11 @@ aFair:		.BYTE 'fair',0
 aGood:		.BYTE 'good',0
 aXlnt:		.BYTE 'xlnt',0
 aNone:		.BYTE 'none',0
+
+byte_7D50:
 		.BYTE $A8,$FF
+
+a_Welcome:
 		.BYTE $A6,  0,	0
 		.BYTE $A5
 aWelcome:	.BYTE 'Welcome '

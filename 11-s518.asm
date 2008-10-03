@@ -5000,10 +5000,7 @@ loc_33AD:				; CODE XREF: RAM:33E8j
 ; ---------------------------------------------------------------------------
 
 loc_33C6:
-		LDA	off_352F
-		STA	off_1977
-		LDA	off_352F+1
-		STA	off_1977+1
+		dmv	off_1977, off_352F
 		LDA	byte_195D
 		BPL	loc_33E6
 		INC	byte_1937
@@ -5022,10 +5019,7 @@ loc_33E6:				; CODE XREF: RAM:33D5j
 		BCS	loc_339F
 		CMP	#1
 		BNE	loc_3454
-		LDA	#$CD ; 'Í'
-		STA	off_16
-		LDA	#$3A ; ':'
-		STA	off_16+1
+		dldi	off_16, a_Examining
 		LDX	byte_352E
 		JSR	sub_3C5C
 		LDX	#$F0 ; 'ð'
@@ -5040,22 +5034,19 @@ loc_3405:				; CODE XREF: RAM:3409j
 		LDA	RANDOM
 		LSR	A
 		LSR	A
-		CMP	$6369
+		CMP	I_CURWIS
 		BCS	loc_3449
 
 loc_341C:				; CODE XREF: RAM:3410j
 		LDX	byte_1970
-		LDA	$3AF9,X
+		LDA	byte_3AF9,X
 		STA	word_3A61
-		LDA	$3AFC,X
+		LDA	byte_3AFC,X
 		STA	word_3A61+1
 		LDA	byte_196F
 		ORA	#1
 		STA	byte_196F
-		LDA	#$48 ; 'H'
-		STA	off_16
-		LDA	#$3A ; ':'
-		STA	off_16+1
+		dldi	off_16, a_TheDoorAppears
 
 loc_343B:				; CODE XREF: RAM:3451j	RAM:34B8j ...
 		LDX	byte_352E
@@ -5066,20 +5057,14 @@ loc_343B:				; CODE XREF: RAM:3451j	RAM:34B8j ...
 ; ---------------------------------------------------------------------------
 
 loc_3449:				; CODE XREF: RAM:341Aj
-		LDA	#$66 ; 'f'
-		STA	off_16
-		LDA	#$3A ; ':'
-		STA	off_16+1
+		dldi	off_16, a_YouCantDiscern
 		JMP	loc_343B
 ; ---------------------------------------------------------------------------
 
 loc_3454:				; CODE XREF: RAM:33F3j
 		CMP	#2
 		BNE	loc_34BB
-		LDA	#$91 ; '‘'
-		STA	off_16
-		LDA	#$3A ; ':'
-		STA	off_16+1
+		dldi	off_16, a_Wham
 		LDX	byte_352E
 		JSR	sub_3C5C
 		LDA	#1
@@ -5087,17 +5072,14 @@ loc_3454:				; CODE XREF: RAM:33F3j
 		DEC	byte_195F
 		LDA	RANDOM
 		LSR	A
-		CMP	$6359
+		CMP	I_CURSTR
 		BCS	loc_34A3
 		LDA	byte_1970
 		CMP	#1
 		BNE	loc_34A3
 
 loc_347E:				; CODE XREF: RAM:339Cj	RAM:34D7j ...
-		LDA	#$9C ; 'œ'
-		STA	off_16
-		LDA	#$3A ; ':'
-		STA	off_16+1
+		dldi	off_16, a_TheDoorOpens
 		LDX	byte_352E
 		JSR	sub_3C5C
 		JSR	sub_2BB0
@@ -5689,11 +5671,11 @@ byte_3969:
 		.BYTE "  "
 		PRINTBYTE $6351,3
 		.BYTE "  "
-		PRINTBYTE $6359,3
+		PRINTBYTE I_CURSTR,3
 		.BYTE "  "
-		PRINTBYTE $6361,3
+		PRINTBYTE I_CURINT,3
 		.BYTE "  "
-		PRINTBYTE $6369,3
+		PRINTBYTE I_CURWIS,3
 		.BYTE "  "
 		PRINTBYTE $6371,3
 		MOVEXY	12,3
@@ -5731,6 +5713,8 @@ aBreakAnEnchant:.BYTE ") Break an enchantment."
 		BLINK	'0'
 aLeaveIt_:	.BYTE ") Leave it."
 		.BYTE $FF
+
+a_TheDoorAppears:
 		MOVEXY	0,2
 		.BYTE $A5
 aTheDoorAppears:.BYTE "The door appears to "
@@ -5739,16 +5723,22 @@ word_3A61:	.WORD $FFFF		; DATA XREF: RAM:3422w	RAM:3428w
 		.BYTE $11
 		.BYTE $D
 		.BYTE $FF
+
+a_YouCantDiscern:
 		MOVEXY	0,2
 		.BYTE $A5
 aYouCanTDiscern:.BYTE "You can't discern what bars the door."
 		.BYTE $D
 		.BYTE $FF
+
+a_Wham:
 		MOVEXY	0,2
 		.BYTE $A5
 aWham:		.BYTE "Wham!"
 		.BYTE $D
 		.BYTE $FF
+
+a_TheDoorOpens:
 		MOVEXY	0,2
 		.BYTE $A5
 aTheDoorOpens:	.BYTE "The door opens!"
@@ -5761,6 +5751,8 @@ a_TheDoorRemains:
 aTheDoorRemains:.BYTE "The door remains shut."
 		.BYTE $D
 		.BYTE $FF
+
+a_Examining:
 		MOVEXY	0,2
 		.BYTE	BLINKON
 		.BYTE $A5
@@ -5777,15 +5769,19 @@ aConcentrating_:.BYTE "Concentrating..."
 		.BYTE $D
 		.BYTE	BLINKOFF
 		.BYTE $FF
-		.BYTE $FF
-		.BYTE  $B
-		.BYTE $16
-		.BYTE $3A ; :
-		.BYTE $3B ; ;
-		.BYTE $3B ; ;
-aNeedAKey_:	.BYTE "need a key.",0
-aBeBolted_:	.BYTE "be bolted.",0
-aBeEnchanted:	.BYTE "be enchanted!",0
+
+byte_3AF9:
+		.BYTE	<aNeedAKey_
+		.BYTE	<aBeBolted_
+		.BYTE	<aBeEnchanted
+
+byte_3AFC:
+		.BYTE	>aNeedAKey_
+		.BYTE	>aBeBolted_
+		.BYTE	>aBeEnchanted
+aNeedAKey_:	.BYTE	"need a key.",0
+aBeBolted_:	.BYTE	"be bolted.",0
+aBeEnchanted:	.BYTE	"be enchanted!",0
 byte_3B24:	.BYTE	<loc_3321	; DATA XREF: RAM:3170r
 		.BYTE	<loc_3321
 		.BYTE	<loc_3321
@@ -6714,8 +6710,8 @@ loc_4202:				; CODE XREF: RAM:41FFj
 		STA	byte_1976
 		STA	byte_195E
 		STA	$6394
-		STA	byte_42E5
-		STA	byte_42E6
+		STA	word_42E5
+		STA	word_42E5+1
 		LDA	#3
 		STA	$5C
 
@@ -6756,11 +6752,11 @@ loc_424F:				; CODE XREF: RAM:4271j
 		LDY	#4
 		LDA	(off_41),Y
 		CLC
-		ADC	byte_42E5
-		STA	byte_42E5
-		LDA	byte_42E6
+		ADC	word_42E5
+		STA	word_42E5
+		LDA	word_42E5+1
 		ADC	#0
-		STA	byte_42E6
+		STA	word_42E5+1
 
 loc_426F:				; CODE XREF: RAM:4254j	RAM:425Aj
 		DEC	$4B
@@ -6785,11 +6781,11 @@ loc_4283:				; CODE XREF: RAM:4289j
 
 loc_428B:				; CODE XREF: RAM:loc_4283j
 		CLC
-		ADC	byte_42E5
-		STA	byte_42E5
-		LDA	byte_42E6
+		ADC	word_42E5
+		STA	word_42E5
+		LDA	word_42E5+1
 		ADC	#0
-		STA	byte_42E6
+		STA	word_42E5+1
 		DEX
 		BPL	loc_4275
 		LDX	#6
@@ -6806,39 +6802,38 @@ loc_42A5:				; CODE XREF: RAM:42A9j
 
 loc_42AB:				; CODE XREF: RAM:loc_42A5j
 		CLC
-		ADC	byte_42E5
-		STA	byte_42E5
-		LDA	byte_42E6
+		ADC	word_42E5
+		STA	word_42E5
+		LDA	word_42E5+1
 		ADC	#0
-		STA	byte_42E6
+		STA	word_42E5+1
 		DEX
 		BPL	loc_429F
-		LDA	$6359
+		LDA	I_CURSTR
 		LSR	A
 		STA	loc_42C8+1
-		LDA	byte_42E5
+		LDA	word_42E5
 		SEC
 
 loc_42C8:				; DATA XREF: RAM:42C1w
 		SBC	#$FF
-		STA	byte_42E5
-		LDA	byte_42E6
+		STA	word_42E5
+		LDA	word_42E5+1
 		SBC	#0
-		STA	byte_42E6
+		STA	word_42E5+1
 		BCC	locret_42E4
 		BEQ	loc_42DE
 		LDA	#$FF
-		STA	byte_42E5
+		STA	word_42E5
 
 loc_42DE:				; CODE XREF: RAM:42D7j
-		LDA	byte_42E5
+		LDA	word_42E5
 		STA	$6394
 
 locret_42E4:				; CODE XREF: RAM:42D5j
 		RTS
 ; ---------------------------------------------------------------------------
-byte_42E5:	.BYTE $FF		; DATA XREF: RAM:4210w	RAM:4261r ...
-byte_42E6:	.BYTE $FF		; DATA XREF: RAM:4213w	RAM:4267r ...
+word_42E5:	.WORD	$FFFF		; DATA XREF: RAM:4210w	RAM:4261r ...
 
 ; --------------- S U B	R O U T	I N E ---------------------------------------
 
