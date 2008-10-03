@@ -21,4 +21,6 @@ loc_2297	= $2297
 loc_22AC	= $22AC
 loc_2347	= $2347
 loc_2653	= $2653
+
+BLOCKMOVE	= $2E0D
 .endif

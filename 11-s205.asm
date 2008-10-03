@@ -223,7 +223,7 @@ sub_819E:				; CODE XREF: sub_8000+64p
 		dldi	off_7, $8223
 		dldi	off_9, $F900
 		ldxy	$700
-		JSR	$2E0D
+		JSR	BLOCKMOVE
 		LDA	#$80 ; '€'
 		STA	byte_258
 		LDA	CONSOL
@@ -273,27 +273,13 @@ loc_F900:
 		CMP	#8
 		BCS	loc_F937
 		STA	$F9CE
-		LDA	#<SEG_AC00
-		STA	off_7
-		LDA	#>SEG_AC00
-		STA	off_7+1
-		LDA	#<$C000
-		STA	off_9
-		LDA	#>$C000
-		STA	off_9+1
-		LDX	#>$1000
-		LDY	#<$1000
-		JSR	$2E0D
-		LDA	#<$BC00
-		STA	off_7
-		LDA	#>$BC00
-		STA	off_7+1
-		LDA	#<$D800
-		STA	off_9
-		LDA	#>$D800
-		STA	off_9+1
-		LDX	#>$400
-		LDY	#<$400
+		dldi	off_7, SEG_AC00
+		dldi	off_9, $C000
+		ldxy	$1000
+		JSR	BLOCKMOVE
+		dldi	off_7, $BC00
+		dldi	off_9, $D800
+		ldxy	$400
 		BEQ	loc_F94E
 
 loc_F937:				; CODE XREF: RAM:8228j
@@ -310,7 +296,7 @@ loc_F937:				; CODE XREF: RAM:8228j
 		LDY	#<$1510
 
 loc_F94E:				; CODE XREF: RAM:8258j
-		JSR	$2E0D
+		JSR	BLOCKMOVE
 		CLC
 		RTS
 ; ---------------------------------------------------------------------------
@@ -319,47 +305,26 @@ loc_F953:
 		LDA	SEGNO
 		CMP	#8
 		BCS	loc_F98C
-		CMP	$F9CE
+		CMP	byte_F9CE
 		BNE	loc_F9AA
-		LDA	#<$C000
-		STA	off_7
-		LDA	#>$C000
-		STA	off_7+1
-		LDA	#<SEG_AC00
-		STA	off_9
-		LDA	#>SEG_AC00
-		STA	off_9+1
-		LDX	#>$1000
-		LDY	#<$1000
-		JSR	$2E0D
-		LDA	#<$D800
-		STA	off_7
-		LDA	#>$D800
-		STA	off_7+1
-		LDA	#<$BC00
-		STA	off_9
-		LDA	#>$BC00
-		STA	off_9+1
-		LDX	#>$400
-		LDY	#<$400
+		dldi	off_7, $C000
+		dldi	off_9, SEG_AC00
+		ldxy	$1000
+		JSR	BLOCKMOVE
+		dldi	off_7, $D800
+		dldi	off_9, $BC00
+		ldxy	$400
 		BEQ	loc_F9A5
 
 loc_F98C:				; CODE XREF: RAM:F958j
-		CMP	$F9CD
+		CMP	byte_F9CD
 		BNE	loc_F9AA
-		LDA	#<$DC00
-		STA	off_7
-		LDA	#>$DC00
-		STA	off_7+1
-		LDA	#<$96F0
-		STA	off_9
-		LDA	#>$96F0
-		STA	off_9+1
-		LDX	#>$1510
-		LDY	#<$1510
+		dldi	off_7, $DC00
+		dldi	off_9, $96F0
+		ldxy	$1510
 
 loc_F9A5:				; CODE XREF: RAM:F98Aj
-		JSR	$2E0D
+		JSR	BLOCKMOVE
 		CLC
 		RTS
 ; ---------------------------------------------------------------------------
@@ -397,8 +362,8 @@ loc_F9C9:
 		JMP	($216)
 ; ---------------------------------------------------------------------------
 
-byte_F9CD:	.BYTE $FF
-byte_F9CE:	.BYTE $FF
+byte_F9CD:	.BYTE	$FF
+byte_F9CE:	.BYTE	$FF
 ; ---------------------------------------------------------------------------
 
 loc_F9CF:

@@ -201,7 +201,8 @@ j_SEGLOAD:
 ; ---------------------------------------------------------------------------
 		JMP	sub_2DE3	; $1863
 ; ---------------------------------------------------------------------------
-		JMP	sub_2E0D	; $1866
+j_BLOCKMOVE:
+		JMP	BLOCKMOVE	; $1866
 ; ---------------------------------------------------------------------------
 		JMP	sub_2E31	; $1869
 ; ---------------------------------------------------------------------------
@@ -4055,13 +4056,13 @@ byte_2E05:	.BYTE $80,$40,$20,$10,	8,  4,	2,  1 ;	DATA XREF: sub_2DAB:loc_2DDCr
 ; --------------- S U B	R O U T	I N E ---------------------------------------
 
 
-sub_2E0D:				; CODE XREF: RAM:1866j	sub_4AC9+49p ...
+BLOCKMOVE:				; CODE XREF: RAM:1866j	sub_4AC9+49p ...
 		STY	word_B
 		LDY	#0
 		CPX	#0
 		BEQ	loc_2E23
 
-loc_2E15:				; CODE XREF: sub_2E0D+Dj sub_2E0D+14j
+loc_2E15:				; CODE XREF: BLOCKMOVE+Dj BLOCKMOVE+14j
 		LDA	(off_7),Y
 		STA	(off_9),Y
 		INY
@@ -4071,20 +4072,20 @@ loc_2E15:				; CODE XREF: sub_2E0D+Dj sub_2E0D+14j
 		DEX
 		BNE	loc_2E15
 
-loc_2E23:				; CODE XREF: sub_2E0D+6j
+loc_2E23:				; CODE XREF: BLOCKMOVE+6j
 		LDA	word_B
 		BEQ	locret_2E30
 
-loc_2E27:				; CODE XREF: sub_2E0D+21j
+loc_2E27:				; CODE XREF: BLOCKMOVE+21j
 		LDA	(off_7),Y
 		STA	(off_9),Y
 		INY
 		CPY	word_B
 		BNE	loc_2E27
 
-locret_2E30:				; CODE XREF: sub_2E0D+18j
+locret_2E30:				; CODE XREF: BLOCKMOVE+18j
 		RTS
-; End of function sub_2E0D
+; End of function BLOCKMOVE
 
 
 ; --------------- S U B	R O U T	I N E ---------------------------------------
@@ -8107,9 +8108,9 @@ sub_4AC9:				; CODE XREF: RAM:188Aj	RAM:4C1Ep ...
 		STA	$4B
 		TAX
 		LDA	$640B,X
-		STA	$41
+		STA	off_41
 		LDA	$644B,X
-		STA	$42
+		STA	off_41+1
 		LDA	$4C
 		PHA
 		LDA	#$FF
@@ -8131,17 +8132,17 @@ sub_4AC9:				; CODE XREF: RAM:188Aj	RAM:4C1Ep ...
 		ADC	$4F
 		STA	off_7
 		LDA	off_41+1
-		STA	$A
+		STA	off_9+1
 		ADC	#0
 		STA	off_7+1
 		SEC
-		LDA	#0
+		LDA	#<$7500
 		SBC	off_7
 		TAY
-		LDA	#$75 ; 'u'
+		LDA	#>$7500
 		SBC	off_7+1
 		TAX
-		JSR	sub_2E0D
+		JSR	BLOCKMOVE
 		SEC
 		LDA	$64E4
 		SBC	$4F
@@ -8184,8 +8185,8 @@ loc_4B49:				; CODE XREF: sub_4AC9+69j sub_4AC9+6Fj ...
 
 
 sub_4B4D:				; CODE XREF: RAM:1884j	sub_4EFD+32p ...
-		STY	7
-		STX	8
+		STY	off_7
+		STX	off_7+1
 		LDY	#1
 		LDA	(off_7),Y
 		JSR	sub_4A83
@@ -8199,7 +8200,7 @@ sub_4B4D:				; CODE XREF: RAM:1884j	sub_4EFD+32p ...
 		STA	off_9
 		LDA	off_41+1
 		STA	off_9+1
-		JSR	sub_2E0D
+		JSR	BLOCKMOVE
 		LDA	$4B
 
 locret_4B73:				; CODE XREF: sub_4B4D+Bj
