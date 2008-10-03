@@ -26,6 +26,7 @@ ASM_SOURCES= \
 	32-s035.asm \
 	32-s092.asm \
 	32-s127.asm \
+	32-s383.asm \
 	32-s685.asm
 
 OBJECTS=$(ASM_SOURCES:.asm=.bin)

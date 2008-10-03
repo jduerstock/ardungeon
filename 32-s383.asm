@@ -29,7 +29,7 @@ loc_7618:				; CODE XREF: RAM:761Fj
 		STA	$750D,X
 		DEX
 		BPL	loc_7618
-		dldi	off_1977, off_7649
+		dldi	off_1977, loc_7649
 		dldi	off_16, byte_7D50
 		JSR	$184B
 		LDA	$1933
@@ -401,9 +401,9 @@ loc_7885:				; CODE XREF: sub_7758+136j
 		LDY	#$D
 
 loc_78BD:				; CODE XREF: sub_7758+161j
-		LDA	($43),Y
+		LDA	(off_43),Y
 		DEY
-		STA	($43),Y
+		STA	(off_43),Y
 		RTS
 ; ---------------------------------------------------------------------------
 
@@ -423,29 +423,25 @@ loc_78CC:				; CODE XREF: sub_7758+1E1j
 		JSR	sub_7758
 		LSR	$6F
 		BCC	loc_78E6
-		LDX	#$80 ; '€'
-		LDY	#$8F ; ''
+		ldxy	a_Thy_IsEnchanted
 		JSR	sub_7AC5
 
 loc_78E6:				; CODE XREF: sub_7758+185j
 		LSR	$6F
 		BCC	loc_78F1
-		LDX	#$80 ; '€'
-		LDY	#$AD ; '­'
+		ldxy	a_ThereIsASpecial
 		JSR	sub_7AC5
 
 loc_78F1:				; CODE XREF: sub_7758+190j
 		LSR	$6F
 		BCC	loc_78FC
-		LDX	#$80 ; '€'
-		LDY	#$74 ; 't'
+		ldxy	a_Thy_IsCursed
 		JSR	sub_7AC5
 
 loc_78FC:				; CODE XREF: sub_7758+19Bj
 		LSR	$6F
 		BCC	loc_7907
-		LDX	#$80 ; '€'
-		LDY	#$DD ; 'Ý'
+		ldxy	a_ItTakesTwoHands
 		JSR	sub_7AC5
 
 loc_7907:				; CODE XREF: sub_7758+1A6j
@@ -454,46 +450,41 @@ loc_7907:				; CODE XREF: sub_7758+1A6j
 		CMP	#4
 		BEQ	loc_78C3
 		LDY	#$B
-		LDA	$6359
-		CMP	($62),Y
+		LDA	I_CURSTR
+		CMP	(off_62),Y
 		BCS	loc_7920
-		LDX	#$81 ; ''
-		LDY	#$7D ; '}'
+		ldxy	$817D
 		JSR	sub_7AC5
 
 loc_7920:				; CODE XREF: sub_7758+1BFj
 		LDY	#$C
-		LDA	$6371
-		CMP	($62),Y
+		LDA	I_CURSKL
+		CMP	(off_62),Y
 		BCS	loc_7930
-		LDX	#$81 ; ''
-		LDY	#$E6 ; 'æ'
+		ldxy	$81E6
 		JSR	sub_7AC5
 
 loc_7930:				; CODE XREF: sub_7758+1CFj
 		LDY	#$D
 		JSR	loc_793C
-		LDX	#$82 ; '‚'
-		LDY	#$DA ; 'Ú'
+		ldxy	$82DA
 		JMP	loc_78CC
 ; ---------------------------------------------------------------------------
 
 loc_793C:				; CODE XREF: sub_7758+16Dp
 					; sub_7758+1DAp
-		LDA	($62),Y
+		LDA	(off_62),Y
 		CMP	#$FF
 		BNE	loc_7949
-		LDX	#$82 ; '‚'
-		LDY	#$36 ; '6'
+		ldxy	$8236
 		JMP	loc_7968
 ; ---------------------------------------------------------------------------
 
 loc_7949:				; CODE XREF: sub_7758+1E8j
 		INY
-		CMP	($62),Y
+		CMP	(off_62),Y
 		BNE	loc_7955
-		LDX	#$81 ; ''
-		LDY	#$17
+		ldxy	$8117
 		JMP	loc_7968
 ; ---------------------------------------------------------------------------
 
@@ -505,8 +496,7 @@ loc_7955:				; CODE XREF: sub_7758+1F4j
 		LDA	#$64 ; 'd'
 		STA	2
 		JSR	$18A2
-		LDX	#$81 ; ''
-		LDY	#$3D ; '='
+		ldxy	$813D
 
 loc_7968:				; CODE XREF: sub_7758+1EEj
 					; sub_7758+1FAj
@@ -950,7 +940,7 @@ byte_7BCA:	.BYTE $FF		; DATA XREF: sub_7B60:loc_7B6Br
 		.BYTE  $F
 		.BYTE	5
 		.BYTE $23 ; #
-		.BYTE $FF
+byte_7BD0:	.BYTE $FF
 byte_7BD1:	.BYTE 0			; DATA XREF: sub_7758+142w
 					; sub_7758+148w
 byte_7BD2:	.BYTE $FF		; DATA XREF: sub_7758+77r
@@ -1271,18 +1261,18 @@ unk_7CE5:	.BYTE $7D ; }		; DATA XREF: RAM:7B4Br
 		.BYTE	3
 		.BYTE	4
 		.BYTE	5
-aLow:		.BYTE 'low',0
-aMed:		.BYTE 'med',0
-aHigh:		.BYTE 'high',0
-aVHi:		.BYTE 'v hi',0
-aRepair:	.BYTE 'repair',0
-aExamine:	.BYTE 'examine',0
-aEnchant:	.BYTE 'enchant',0
-aPoor:		.BYTE 'poor',0
-aFair:		.BYTE 'fair',0
-aGood:		.BYTE 'good',0
-aXlnt:		.BYTE 'xlnt',0
-aNone:		.BYTE 'none',0
+aLow:		.BYTE "low",0
+aMed:		.BYTE "med",0
+aHigh:		.BYTE "high",0
+aVHi:		.BYTE "v hi",0
+aRepair:	.BYTE "repair",0
+aExamine:	.BYTE "examine",0
+aEnchant:	.BYTE "enchant",0
+aPoor:		.BYTE "poor",0
+aFair:		.BYTE "fair",0
+aGood:		.BYTE "good",0
+aXlnt:		.BYTE "xlnt",0
+aNone:		.BYTE "none",0
 
 byte_7D50:
 		.BYTE $A8,$FF
@@ -1290,263 +1280,271 @@ byte_7D50:
 a_Welcome:
 		.BYTE $A6,  0,	0
 		.BYTE $A5
-aWelcome:	.BYTE 'Welcome '
+aWelcome:	.BYTE "Welcome "
 		.BYTE $B3
 		.WORD $6321
 		.BYTE $14
-		.BYTE '!'
+		.BYTE "!"
 		.BYTE $D
 		.BYTE $A5
-aIAmTheEnchantr:.BYTE 'I am the Enchantress.'
+aIAmTheEnchantr:.BYTE "I am the Enchantress."
 		.BYTE $D
 		.BYTE $A5
-aWhatWouldTheeA:.BYTE 'What would thee ask of me?'
+aWhatWouldTheeA:.BYTE "What would thee ask of me?"
 		.BYTE $D
 		.BYTE $A6,  5,	3
-		.BYTE '('
+		.BYTE "("
 		.BYTE $A1
-a1:		.BYTE '1'
+a1:		.BYTE "1"
 		.BYTE $A0
-aExamineThyWeap:.BYTE ') Examine thy weapons and armor'
+aExamineThyWeap:.BYTE ") Examine thy weapons and armor"
 		.BYTE $A6,  5,	4
-		.BYTE '('
+		.BYTE "("
 		.BYTE $A1
-a2:		.BYTE '2'
+a2:		.BYTE "2"
 		.BYTE $A0
-aRepairAWeaponO:.BYTE ') Repair a weapon or armor'
+aRepairAWeaponO:.BYTE ") Repair a weapon or armor"
 		.BYTE $A6,  5,	5
 		.BYTE '('
 		.BYTE $A1
 a3:		.BYTE '3'
 		.BYTE $A0
-aEnchantAWeapon:.BYTE ') Enchant a weapon or armor'
+aEnchantAWeapon:.BYTE ") Enchant a weapon or armor"
 		.BYTE $A6,  5,	7
 		.BYTE '('
 		.BYTE $A1
 a0:		.BYTE '0'
 		.BYTE $A0
-aSayGoodbye:	.BYTE ') Say Goodbye'
+aSayGoodbye:	.BYTE ") Say Goodbye"
 		.BYTE $FF
 		.BYTE $A6,  0,	2
 		.BYTE $A5
-aItSAlreadyEnha:.BYTE 'It',$27,'s already enhanced!'
+aItSAlreadyEnha:.BYTE "It's already enhanced!"
 		.BYTE $D
 		.BYTE $FF
 		.BYTE $A6,  0,	0
 		.BYTE $A5
-aWhatShallIDo?:	.BYTE 'What shall I do?'
+aWhatShallIDoq:	.BYTE "What shall I do?"
 		.BYTE $D
 		.BYTE $A6,  5,	2
-		.BYTE '('
+		.BYTE "("
 		.BYTE $A1
-a1_0:		.BYTE '1'
+a1_0:		.BYTE "1"
 		.BYTE $A0
-aExtendTheLifeO:.BYTE ') Extend the life of this weapon.'
+aExtendTheLifeO:.BYTE ") Extend the life of this weapon."
 		.BYTE $A6,  5,	3
-		.BYTE '('
+		.BYTE "("
 		.BYTE $A1
-a2_0:		.BYTE '2'
+a2_0:		.BYTE "2"
 		.BYTE $A0
-aIncreaseItsEff:.BYTE ') Increase its effectiveness.'
+aIncreaseItsEff:.BYTE ") Increase its effectiveness."
 		.BYTE $A6,  5,	4
-		.BYTE '('
+		.BYTE "("
 		.BYTE $A1
-a3_0:		.BYTE '3'
+a3_0:		.BYTE "3"
 		.BYTE $A0
-aAddExtraDamage:.BYTE ') Add extra damage ability.'
+aAddExtraDamage:.BYTE ") Add extra damage ability."
 		.BYTE $A6,  5,	5
-		.BYTE '('
+		.BYTE "("
 		.BYTE $A1
-a4:		.BYTE '4'
+a4:		.BYTE "4"
 		.BYTE $A0
-aDecreaseItsWei:.BYTE ') Decrease its weight.'
+aDecreaseItsWei:.BYTE ") Decrease its weight."
 		.BYTE $A6,  5,	6
-		.BYTE '('
+		.BYTE "("
 		.BYTE $A1
-a5:		.BYTE '5'
+a5:		.BYTE "5"
 		.BYTE $A0
-aLetMeDecideWha:.BYTE ') Let me decide what',$27,'s best.'
+aLetMeDecideWha:.BYTE ") Let me decide what's best."
 		.BYTE $A6,  5,	7
-		.BYTE '('
+		.BYTE "("
 		.BYTE $A1
-a0_0:		.BYTE '0'
+a0_0:		.BYTE "0"
 		.BYTE $A0
-aNothing_:	.BYTE ') Nothing.'
+aNothing_:	.BYTE ") Nothing."
 		.BYTE $FF
 		.BYTE $A6,  0,	2
 		.BYTE $A5
-aICanTEnchantIt:.BYTE 'I can',$27,'t enchant it!'
+aICanTEnchantIt:.BYTE "I can't enchant it!"
 		.BYTE $D
 		.BYTE $FF
 		.BYTE $A6,  0,	0
 		.BYTE $A5
-aWhatShallIDo_0:.BYTE 'What shall I do?'
+aWhatShallIDo_0:.BYTE "What shall I do?"
 		.BYTE $D
 		.BYTE $A6,  5,	2
 		.BYTE '('
 		.BYTE $A1
 a1_1:		.BYTE '1'
 		.BYTE $A0
-aExtendTheLif_0:.BYTE ') Extend the life of thine armor.'
+aExtendTheLif_0:.BYTE ") Extend the life of thine armor."
 		.BYTE $A6,  5,	3
 		.BYTE '('
 		.BYTE $A1
 a2_1:		.BYTE '2'
 		.BYTE $A0
-aIncreaseItsE_0:.BYTE ') Increase its effectiveness.'
+aIncreaseItsE_0:.BYTE ") Increase its effectiveness."
 		.BYTE $A6,  5,	4
 		.BYTE '('
 		.BYTE $A1
 a3_1:		.BYTE '3'
 		.BYTE $A0
-aAddExtraProtec:.BYTE ') Add extra protection.'
+aAddExtraProtec:.BYTE ") Add extra protection."
 		.BYTE $A6,  5,	5
 		.BYTE '('
 		.BYTE $A1
 a4_0:		.BYTE '4'
 		.BYTE $A0
-aDecreaseItsW_0:.BYTE ') Decrease its weight.'
+aDecreaseItsW_0:.BYTE ") Decrease its weight."
 		.BYTE $A6,  5,	6
 		.BYTE '('
 		.BYTE $A1
 a5_0:		.BYTE '5'
 		.BYTE $A0
-aLetMeDecideW_0:.BYTE ') Let me decide what',$27,'s best.'
+aLetMeDecideW_0:.BYTE ") Let me decide what's best."
 		.BYTE $A6,  5,	7
 		.BYTE '('
 		.BYTE $A1
 a0_1:		.BYTE '0'
 		.BYTE $A0
-aNothing:	.BYTE ') Nothing'
+aNothing:	.BYTE ") Nothing"
 		.BYTE $FF
 		.BYTE $A6,  0,	1
 		.BYTE $A5
-aThatWillCostAt:.BYTE 'That will cost at least',$D
+aThatWillCostAt:.BYTE "That will cost at least",$D
 		.BYTE $A3
 		.WORD loc_7BBE
 		.BYTE $A5
 		.BYTE $B2
 		.WORD $6D
 		.BYTE 2
-aCrystalsToPerf:.BYTE ' crystals to perform.'
+aCrystalsToPerf:.BYTE " crystals to perform."
 		.BYTE $D
 		.BYTE $D
 		.BYTE $A3
 		.WORD loc_7BC1
 		.BYTE $A5
-aHowManyDostTho:.BYTE 'How many dost thou offer?'
+aHowManyDostTho:.BYTE "How many dost thou offer?"
 		.BYTE $D
 		.BYTE $A6,$10,	5
-		.BYTE '>'
+		.BYTE ">"
 		.BYTE $FF
 		.BYTE $A6,  0,	2
 		.BYTE $A5
-aIMSorryButThat:.BYTE 'I',$27,'m sorry, but that',$27,'s not enough.'
+aIMSorryButThat:.BYTE "I'm sorry, but that's not enough."
 		.BYTE $D
 		.BYTE $FF
+
+a_Thy_IsCursed:
 		.BYTE $A6,  0,	1
 		.BYTE $A5
-aThy:		.BYTE 'Thy '
+aThy:		.BYTE "Thy "
 		.BYTE $B3
 		.WORD off_7BD8
 		.BYTE $1E
 		.BYTE $D
 		.BYTE $D
 		.BYTE $A5
-aIsCursed:	.BYTE 'is cursed!'
+aIsCursed:	.BYTE "is cursed!"
 		.BYTE $D
 		.BYTE $FF
-		.BYTE $A6,  0,	1
+
+a_Thy_IsEnchanted:
+		MOVEXY	0,1
 		.BYTE $A5
-aThy_0:		.BYTE 'Thy '
+aThy_0:		.BYTE "Thy "
 		.BYTE $B3
 		.WORD off_7BD8
 		.BYTE $1E
 		.BYTE $D
 		.BYTE $D
 		.BYTE $A5
-aIsEnchanted:	.BYTE 'is enchanted!'
+aIsEnchanted:	.BYTE "is enchanted!"
 		.BYTE $D
 		.BYTE $FF
+
+a_ThereIsASpecial:
 		.BYTE $A6,  0,	1
 		.BYTE $A5
-aThereIsASpecia:.BYTE 'There is a special aura'
+aThereIsASpecia:.BYTE "There is a special aura"
 		.BYTE $D
 		.BYTE $D
 		.BYTE $A5
-aAroundThy:	.BYTE 'around thy '
+aAroundThy:	.BYTE "around thy "
 		.BYTE $B3
 		.WORD off_7BD8
 		.BYTE $1E
 a_:		.BYTE '.'
 		.BYTE $D
 		.BYTE $FF
-		.BYTE $A6,  0,	1
+
+a_ItTakesTwoHands:
+		MOVEXY	0,1
 		.BYTE $A5
-aItTakesTwoHand:.BYTE 'It takes two hands to'
+aItTakesTwoHand:.BYTE "It takes two hands to"
 		.BYTE  $D, $D,$A5
-aEffectivelyUse:.BYTE 'effectively use this weapon.'
+aEffectivelyUse:.BYTE "effectively use this weapon."
 		.BYTE $D
 		.BYTE $FF
 		.BYTE $A6,  0,	1
 		.BYTE $A5
-aThy_1:		.BYTE 'Thy '
+aThy_1:		.BYTE "Thy "
 		.BYTE $B3
 		.WORD off_7BD8
 		.BYTE $1E
 		.BYTE $D
 		.BYTE $D
 		.BYTE $A5
-aIsInMintCondit:.BYTE 'is in mint condition!'
+aIsInMintCondit:.BYTE "is in mint condition!"
 		.BYTE $D
 		.BYTE $FF
 		.BYTE $A6,  0,	2
 		.BYTE $A5
-aThy_2:		.BYTE 'Thy '
+aThy_2:		.BYTE "Thy "
 		.BYTE $B3
 		.WORD off_7BD8
 		.BYTE $1E
-aIsWorn:	.BYTE ' is worn!'
+aIsWorn:	.BYTE " is worn!"
 		.BYTE $D
 		.BYTE $FF
 		.BYTE $A6,  0,	2
 		.BYTE $A5
-aIMSorryThouHas:.BYTE 'I',$27,'m sorry, thou hast not the funds.'
+aIMSorryThouHas:.BYTE "I'm sorry, thou hast not the funds."
 		.BYTE $D
 		.BYTE $FF
 		.BYTE $A6,  0,	1
 		.BYTE $A5
-aThouArtNotStro:.BYTE 'Thou art not strong enough'
+aThouArtNotStro:.BYTE "Thou art not strong enough"
 		.BYTE $D
 		.BYTE $D
 		.BYTE $A5
-aToUseThy:	.BYTE 'to use thy '
+aToUseThy:	.BYTE "to use thy "
 		.BYTE $B3
 		.WORD off_7BD8
 		.BYTE $1E
-aWell_:		.BYTE ' well.'
+aWell_:		.BYTE " well."
 		.BYTE $D
 		.BYTE $FF
 		.BYTE $A6,  0,	1
 		.BYTE $A5
-aIMSorryButThou:.BYTE 'I',$27,'m sorry but thou hast'
+aIMSorryButThou:.BYTE "I'm sorry but thou hast"
 		.BYTE $D
 		.BYTE $D
 		.BYTE $A5
-aTooFewCrystals:.BYTE 'too few crystals.'
+aTooFewCrystals:.BYTE "too few crystals."
 		.BYTE $D
 		.BYTE $FF
 		.BYTE $A6,  0,	1
 		.BYTE $A5
-aThouDostNotPos:.BYTE 'Thou dost not possess the skill'
+aThouDostNotPos:.BYTE "Thou dost not possess the skill"
 		.BYTE $D
 		.BYTE $D
 		.BYTE $A5
-aNecessaryToEff:.BYTE 'necessary to effectively use'
+aNecessaryToEff:.BYTE "necessary to effectively use"
 		.BYTE $D
 		.BYTE $D
 		.BYTE $A5
-aThy_4:		.BYTE 'thy '
+aThy_4:		.BYTE "thy "
 		.BYTE $B3
 		.WORD $7BD8
 		.BYTE $1E
@@ -1555,35 +1553,35 @@ a__0:		.BYTE '.'
 		.BYTE $FF
 		.BYTE $A6,  0,	2
 		.BYTE $A5
-aThy_3:		.BYTE 'Thy '
+aThy_3:		.BYTE "Thy "
 		.BYTE $B3
 		.WORD off_7BD8
 		.BYTE $1E
 		.BYTE $D
 		.BYTE $A5
-aIsUnbreakable:	.BYTE 'is unbreakable!'
+aIsUnbreakable:	.BYTE "is unbreakable!"
 		.BYTE $D
 		.BYTE $FF
 		.BYTE $A6,  0,	2
 		.BYTE $A5
-aThouHastNoWeap:.BYTE 'Thou hast no weapons and armor'
+aThouHastNoWeap:.BYTE "Thou hast no weapons and armor"
 		.BYTE $D
 		.BYTE $D
 		.BYTE $A5
-aForMeTo:	.BYTE 'for me to '
+aForMeTo:	.BYTE "for me to "
 		.BYTE $B4
 		.WORD $69
 		.BYTE $1E
-a__1:		.BYTE '.'
+a__1:		.BYTE "."
 		.BYTE $D
 		.BYTE $FF
 		.BYTE $A6,  0,	1
 		.BYTE $A5
-aShallI:	.BYTE 'Shall I '
+aShallI:	.BYTE "Shall I "
 		.BYTE $B4
 		.WORD $69
 		.BYTE $27
-aThy_5:		.BYTE ' thy'
+aThy_5:		.BYTE " thy"
 		.BYTE $D
 		.BYTE $A5
 		.BYTE $B3
@@ -1594,7 +1592,7 @@ aThy_5:		.BYTE ' thy'
 		.BYTE $A5
 		.BYTE $A3
 		.WORD loc_7B53
-aItWillCost:	.BYTE 'It will cost '
+aItWillCost:	.BYTE "It will cost "
 		.BYTE $A3
 		.WORD loc_7BBE
 		.BYTE $B2
@@ -1602,64 +1600,64 @@ aItWillCost:	.BYTE 'It will cost '
 		.BYTE 3
 		.BYTE $A3
 		.WORD loc_7BC1
-aSilvers?:	.BYTE ' silvers? ('
+aSilversq:	.BYTE " silvers? ("
 		.BYTE $A1
-aY:		.BYTE 'Y'
+aY:		.BYTE "Y"
 		.BYTE $A0
-aOr:		.BYTE ' or '
+aOr:		.BYTE " or "
 		.BYTE $A1
-aN:		.BYTE 'N'
+aN:		.BYTE "N"
 		.BYTE $A0
-		.BYTE ')'
+		.BYTE ")"
 		.BYTE $D
 		.BYTE $FF
 		.BYTE $A6,  0,	0
 		.BYTE $A5
-aThy_6:		.BYTE 'Thy '
+aThy_6:		.BYTE "Thy "
 		.BYTE $B3
 		.WORD off_7BD8
 		.BYTE $1E
-aDoesThe:	.BYTE ' does the'
+aDoesThe:	.BYTE " does the"
 		.BYTE $D
 		.BYTE $A5
-aTheFollowingDa:.BYTE 'the following damage:'
+aTheFollowingDa:.BYTE "the following damage:"
 		.BYTE $D
 		.BYTE $D
 		.BYTE $AC
 		.WORD aBlunt		; "Blunt:"
 		.BYTE $A6,  0,	0
 		.BYTE $A5
-aThy_7:		.BYTE 'Thy '
+aThy_7:		.BYTE "Thy "
 		.BYTE $B3
 		.WORD off_7BD8
 		.BYTE $1E
-aProvides:	.BYTE ' provides '
+aProvides:	.BYTE " provides "
 		.BYTE $D
 		.BYTE $A5
-aTheFollowingPr:.BYTE 'the following protection:'
+aTheFollowingPr:.BYTE "the following protection:"
 		.BYTE $D
 		.BYTE $D
-aBlunt:		.BYTE 'Blunt:'          ; DATA XREF: RAM:8309o
+aBlunt:		.BYTE "Blunt:"          ; DATA XREF: RAM:8309o
 		.BYTE $D
-aSharp:		.BYTE 'Sharp:'
+aSharp:		.BYTE "Sharp:"
 		.BYTE $D
-aEarth:		.BYTE 'Earth:'
+aEarth:		.BYTE "Earth:"
 		.BYTE $D
-aAir:		.BYTE 'Air:'
+aAir:		.BYTE "Air:"
 		.BYTE $A6, $D,	3
-aFire:		.BYTE 'Fire:'
+aFire:		.BYTE "Fire:"
 		.BYTE $A6, $D,	4
-aWater:		.BYTE 'Water:'
+aWater:		.BYTE "Water:"
 		.BYTE $A6, $D,	5
-aPower:		.BYTE 'Power:'
+aPower:		.BYTE "Power:"
 		.BYTE $A6, $D,	6
-aMagic:		.BYTE 'Magic:'
+aMagic:		.BYTE "Magic:"
 		.BYTE $A6,$1A,	3
-aGood_0:	.BYTE 'Good:'
+aGood_0:	.BYTE "Good:"
 		.BYTE $A6,$1A,	4
-aEvil:		.BYTE 'Evil:'
+aEvil:		.BYTE "Evil:"
 		.BYTE $A6,$1A,	5
-aCold:		.BYTE 'Cold:'
+aCold:		.BYTE "Cold:"
 		.BYTE $A3
 		.WORD loc_7AD3
 		.BYTE $FF
