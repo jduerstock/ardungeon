@@ -1,6 +1,7 @@
 		.include	"equates.inc"
 		.include	"exp_kernel.inc"
 		.include	"globals.inc"
+		.include	"macros.inc"
 
 ;		.ORG	$1E00
 		.RES	398, $00
@@ -202,10 +203,7 @@ loc_213F:				; CODE XREF: RAM:213Bj
 		BNE	loc_211B
 		JMP	loc_2803
 ; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
-		LDA	#$C
-		STA	$234
-		LDA	#0
-		STA	$235
+		dldi	word_234, $000C
 		LDA	#$4E ; 'N'
 		LDX	#$40 ; '@'
 		LDY	#1
@@ -228,10 +226,7 @@ locret_2164:				; CODE XREF: RAM:215Cj	RAM:2161j
 		LDY	#2
 		JSR	sub_2476
 		PHP
-		LDA	#$80 ; 'Ђ'
-		STA	$234
-		LDA	#0
-		STA	$235
+		dldi	word_234, $0080
 		PLP
 		RTS
 ; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
@@ -248,9 +243,9 @@ locret_2164:				; CODE XREF: RAM:215Cj	RAM:2161j
 		JSR	sub_2476
 		BMI	locret_21AD
 		DEY
-		STA	$234
+		STA	word_234
 		INY
-		STY	$235
+		STY	word_234+1
 
 locret_21AD:				; CODE XREF: RAM:21A3j
 		RTS
