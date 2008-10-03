@@ -22,6 +22,7 @@ off_5A	= $5A
 off_62	= $62
 off_64	= $64
 off_66	= $66
+off_69	= $69
 off_F0	= $F0
 off_F2	= $F2
 

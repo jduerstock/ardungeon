@@ -80,25 +80,25 @@ loc_7683:				; CODE XREF: RAM:768Aj
 ; examine weapons and armor
 
 loc_7692:				; CODE XREF: RAM:7673j
-		dldi	loc_773F+1, $78D8
-		ldxy	$7D27
+		dldi	loc_773F+1, loc_78D8
+		ldxy	aExamine
 		LDA	#8
 		BNE	loc_76C6
 
 loc_76A4:				; CODE XREF: RAM:7677j
-		dldi	loc_773F+1, $78AD
-		ldxy	$7D20
+		dldi	loc_773F+1, loc_78AD
+		ldxy	aRepair
 		LDA	#4
 		BNE	loc_76C6
 
 loc_76B6:				; CODE XREF: RAM:7663j	RAM:767Bj
-		dldi	loc_773F+1, $77BD
+		dldi	loc_773F+1, loc_77BD
 		LDA	#0
-		ldxy	$7D2F
+		ldxy	aEnchant
 
 loc_76C6:				; CODE XREF: RAM:76A2j	RAM:76B4j
-		STX	$6A
-		STY	$69
+		STX	off_69+1
+		STY	off_69
 		STA	$68
 		LDA	#0
 		STA	$66
@@ -108,9 +108,9 @@ loc_76D2:				; CODE XREF: RAM:7745j
 		STX	$67
 		LDA	$644B,X
 		BEQ	loc_7742
-		STA	$63
+		STA	off_62+1
 		LDA	$640B,X
-		STA	$62
+		STA	off_62
 		LDY	#0
 		LDA	(off_62),Y
 		AND	#$87 ; 'á'
@@ -120,25 +120,19 @@ loc_76D2:				; CODE XREF: RAM:7745j
 		BNE	loc_7742
 
 loc_76EE:				; CODE XREF: RAM:76E8j	RAM:76F4j
-		LDA	($62),Y
+		LDA	(off_62),Y
 		STA	byte_7BD2,Y
 		INY
 		BNE	loc_76EE
 		INC	$66
 
 loc_76F8:				; CODE XREF: RAM:7726j
-		LDA	#$8B ; 'ã'
-		STA	$16
-		LDA	#$82 ; 'Ç'
-		STA	$17
+		dldi	off_16, $828B
 		LDX	$65
 		JSR	$1851
 
 loc_7705:				; CODE XREF: RAM:7714j
-		LDA	#$12
-		STA	$1977
-		LDA	#$77 ; 'w'
-		STA	$1978
+		dldi	off_1977, $7712
 		JMP	$1806
 ; ---------------------------------------------------------------------------
 		LDA	$31
@@ -150,9 +144,9 @@ loc_7705:				; CODE XREF: RAM:7714j
 
 loc_771D:				; CODE XREF: RAM:7718j
 		JSR	$183F
-		CMP	#$4E ; 'N'
+		CMP	#'N'
 		BEQ	loc_7742
-		CMP	#$59 ; 'Y'
+		CMP	#'Y'
 		BNE	loc_76F8
 		LDA	$68
 		STA	2
@@ -160,8 +154,7 @@ loc_771D:				; CODE XREF: RAM:7718j
 		STA	3
 		JSR	sub_7B60
 		BCC	loc_773F
-		LDX	#$81 ; 'Å'
-		LDY	#$54 ; 'T'
+		ldxy	a_ImSorryThouHast
 		JSR	sub_7AC5
 		JMP	loc_7649
 ; ---------------------------------------------------------------------------
@@ -180,8 +173,7 @@ loc_7742:				; CODE XREF: RAM:76D7j	RAM:76ECj ...
 ; ---------------------------------------------------------------------------
 
 loc_774E:				; CODE XREF: RAM:7749j
-		LDX	#$82 ; 'Ç'
-		LDY	#$55 ; 'U'
+		ldxy	a_ThouHastNoWeap
 		JSR	sub_7AC5
 		JMP	loc_7649
 
@@ -190,8 +182,8 @@ loc_774E:				; CODE XREF: RAM:7749j
 
 sub_7758:				; CODE XREF: sub_7758:loc_77BDp
 					; sub_7758+180p
-		LDA	#$D2 ; '“'
-		STA	$62
+		LDA	#<byte_7BD2
+		STA	off_62
 		LDA	#0
 		STA	$6F
 		LDA	off_7BD8
@@ -201,18 +193,18 @@ sub_7758:				; CODE XREF: sub_7758:loc_77BDp
 		STA	$6F
 
 loc_776B:				; CODE XREF: sub_7758+Dj
-		LDA	#$7B ; '{'
-		STA	$63
+		LDA	#>byte_7BD2
+		STA	off_62+1
 		CLC
 		LDA	byte_7BD7
-		ADC	$62
-		STA	$62
+		ADC	off_62
+		STA	off_62
 		BCC	loc_777B
-		INC	$63
+		INC	off_62+1
 
 loc_777B:				; CODE XREF: sub_7758+1Fj sub_7758+5Cj ...
 		LDY	#0
-		LDA	($62),Y
+		LDA	(off_62),Y
 		AND	#$87 ; 'á'
 		BEQ	loc_77BA
 		CMP	#$83 ; 'É'
@@ -232,23 +224,23 @@ loc_7790:				; CODE XREF: sub_7758+2Dj
 
 loc_779A:				; CODE XREF: sub_7758+3Aj
 		LDY	#0
-		LDA	($62),Y
+		LDA	(off_62),Y
 		CMP	#$F0 ; ''
 		BCC	loc_77AD
 		CLC
-		LDA	$62
+		LDA	off_62
 		ADC	#$10
-		STA	$62
+		STA	off_62
 		BCC	loc_77AD
-		INC	$63
+		INC	off_62+1
 
 loc_77AD:				; CODE XREF: sub_7758+35j sub_7758+48j ...
-		LDA	$62
+		LDA	off_62
 		CLC
 		ADC	#$10
-		STA	$62
+		STA	off_62
 		BCC	loc_777B
-		INC	$63
+		INC	off_62+1
 		BCC	loc_777B
 
 loc_77BA:				; CODE XREF: sub_7758+29j
@@ -259,8 +251,7 @@ loc_77BD:				; CODE XREF: sub_7758+DCj
 		JSR	sub_7758
 		LSR	$6F
 		BCC	loc_77CB
-		LDX	#$7E ; '~'
-		LDY	#$15
+		ldxy	a_ItsAlreadyEnhanced
 		JMP	sub_7AC5
 ; ---------------------------------------------------------------------------
 
@@ -392,6 +383,8 @@ loc_7885:				; CODE XREF: sub_7758+136j
 		LDY	#$D0 ; '–'
 		JMP	$1884
 ; ---------------------------------------------------------------------------
+
+loc_78AD:
 		JSR	loc_796B
 		LDY	#$10
 		LDA	byte_7BD2
@@ -420,6 +413,8 @@ loc_78CC:				; CODE XREF: sub_7758+1E1j
 		JSR	$1851
 		JMP	$183C
 ; ---------------------------------------------------------------------------
+
+loc_78D8:
 		JSR	sub_7758
 		LSR	$6F
 		BCC	loc_78E6
@@ -1317,6 +1312,8 @@ a0:		.BYTE '0'
 		.BYTE $A0
 aSayGoodbye:	.BYTE ") Say Goodbye"
 		.BYTE $FF
+
+a_ItsAlreadyEnhanced:
 		.BYTE $A6,  0,	2
 		.BYTE $A5
 aItSAlreadyEnha:.BYTE "It's already enhanced!"
@@ -1507,6 +1504,8 @@ aThy_2:		.BYTE "Thy "
 aIsWorn:	.BYTE " is worn!"
 		.BYTE $D
 		.BYTE $FF
+
+a_ImSorryThouHast:
 		.BYTE $A6,  0,	2
 		.BYTE $A5
 aIMSorryThouHas:.BYTE "I'm sorry, thou hast not the funds."
@@ -1562,6 +1561,8 @@ aThy_3:		.BYTE "Thy "
 aIsUnbreakable:	.BYTE "is unbreakable!"
 		.BYTE $D
 		.BYTE $FF
+
+a_ThouHastNoWeap:
 		.BYTE $A6,  0,	2
 		.BYTE $A5
 aThouHastNoWeap:.BYTE "Thou hast no weapons and armor"
@@ -1570,7 +1571,7 @@ aThouHastNoWeap:.BYTE "Thou hast no weapons and armor"
 		.BYTE $A5
 aForMeTo:	.BYTE "for me to "
 		.BYTE $B4
-		.WORD $69
+		.WORD off_69
 		.BYTE $1E
 a__1:		.BYTE "."
 		.BYTE $D
@@ -1579,7 +1580,7 @@ a__1:		.BYTE "."
 		.BYTE $A5
 aShallI:	.BYTE "Shall I "
 		.BYTE $B4
-		.WORD $69
+		.WORD off_69
 		.BYTE $27
 aThy_5:		.BYTE " thy"
 		.BYTE $D
