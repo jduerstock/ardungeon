@@ -186,40 +186,8 @@
 		.BYTE	0
 		.BYTE	0
 		.BYTE	0
-		.BYTE	3
-		.BYTE	3
-		.BYTE	3
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
+		.RES	3,$03
+		.RES	31,$00
 		.BYTE $85 ; …
 		.BYTE $17
 		.BYTE $20
@@ -282,29 +250,19 @@
 		.BYTE	3
 		.BYTE	2
 		.BYTE	2
-		.BYTE $AD ; ­
-		.BYTE $60 ; `
-		.BYTE $19
-		.BYTE $D0 ; Ð
+		.BYTE	$AD
+		.BYTE	$60
+		.BYTE	$19
+		.BYTE	$D0
 		.BYTE	1
 		.RES	1024,$80
-		.BYTE $85 ; …
-		.BYTE $14
+		.BYTE	$85
+		.BYTE	$14
 		.BYTE	0
 		.BYTE	0
 		.BYTE	2
-		.BYTE $11
-		.BYTE $43 ; C
-		.BYTE $68 ; h
-		.BYTE $65 ; e
-		.BYTE $61 ; a
-		.BYTE $70 ; p
-		.BYTE $20
-		.BYTE $52 ; R
-		.BYTE $6F ; o
-		.BYTE $62 ; b
-		.BYTE $65 ; e
-		.BYTE	0
+		.BYTE	$11
+		.BYTE	"Cheap Robe",0
 		.BYTE	0
 		.BYTE	0
 		.BYTE	1
