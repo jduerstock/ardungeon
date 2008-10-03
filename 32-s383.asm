@@ -256,18 +256,16 @@ loc_77BD:				; CODE XREF: sub_7758+DCj
 ; ---------------------------------------------------------------------------
 
 loc_77CB:				; CODE XREF: sub_7758+6Aj sub_7758+CEj ...
-		LDX	#$7E ; '~'
-		LDY	#$31 ; '1'
+		ldxy	a_WhatShallIDo
 		LDA	byte_7BD2
 		AND	#7
 		CMP	#3
 		BEQ	loc_77DC
-		LDX	#$7F ; ''
-		LDY	#$1F
+		ldxy	a_WhatShallIDo_0
 
 loc_77DC:				; CODE XREF: sub_7758+7Ej
-		STX	$17
-		STY	$16
+		STX	off_16+1
+		STY	off_16
 		LDX	$65
 		JSR	$1851
 
@@ -277,16 +275,15 @@ loc_77E5:				; CODE XREF: sub_7758+AEj
 		JSR	$1848
 
 loc_77ED:				; CODE XREF: sub_7758+A5j
-		LDA	#$FB ; 'û'
-		STA	$1977
-		LDA	#$77 ; 'w'
-		STA	$1978
+		dldi	off_1977, loc_77FB
 		JMP	$1806
 ; ---------------------------------------------------------------------------
 
 locret_77FA:				; CODE XREF: sub_7758+AAj
 		RTS
 ; ---------------------------------------------------------------------------
+
+loc_77FB:
 		LDA	$31
 		BMI	loc_77ED
 		SEC
@@ -296,14 +293,11 @@ locret_77FA:				; CODE XREF: sub_7758+AAj
 		BCS	loc_77E5
 		TAX
 		STX	$6E
-		LDA	$7BCA,X
+		LDA	byte_7BCA,X
 		STA	$6D
 
 loc_7810:				; CODE XREF: sub_7758+CAj
-		LDA	#$EF ; 'ï'
-		STA	$16
-		LDA	#$7F ; ''
-		STA	$17
+		dldi	off_16, a_ThatWillCostAt
 		LDX	$65
 		JSR	$1851
 		JSR	$18AE
@@ -1319,6 +1313,8 @@ a_ItsAlreadyEnhanced:
 aItSAlreadyEnha:.BYTE "It's already enhanced!"
 		.BYTE $D
 		.BYTE $FF
+
+a_WhatShallIDo:
 		.BYTE $A6,  0,	0
 		.BYTE $A5
 aWhatShallIDoq:	.BYTE "What shall I do?"
@@ -1365,6 +1361,8 @@ aNothing_:	.BYTE ") Nothing."
 aICanTEnchantIt:.BYTE "I can't enchant it!"
 		.BYTE $D
 		.BYTE $FF
+
+a_WhatShallIDo_0:
 		.BYTE $A6,  0,	0
 		.BYTE $A5
 aWhatShallIDo_0:.BYTE "What shall I do?"
@@ -1406,6 +1404,8 @@ a0_1:		.BYTE '0'
 		.BYTE $A0
 aNothing:	.BYTE ") Nothing"
 		.BYTE $FF
+
+a_ThatWillCostAt:
 		.BYTE $A6,  0,	1
 		.BYTE $A5
 aThatWillCostAt:.BYTE "That will cost at least",$D
