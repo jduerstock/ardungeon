@@ -24,7 +24,8 @@ ASM_SOURCES= \
 	32-s002.asm \
 	32-s035.asm \
 	32-s092.asm \
-	32-s127.asm
+	32-s127.asm \
+	32-s685.asm
 
 OBJECTS=$(ASM_SOURCES:.asm=.bin)
 
@@ -161,6 +162,12 @@ all: $(OBJECTS)
 
 32-s127.bin: 32-s127.asm
 	cl65 --start-addr 0x7600 -t none 32-s127.asm -o 32-s127.bin
+
+32-s383.bin: 32-s383.asm
+	cl65 --start-addr 0x7600 -t none 32-s383.asm -o 32-s383.bin
+
+32-s685.bin: 32-s685.asm
+	cl65 --start-addr 0x96F0 -t none 32-s685.asm -o 32-s685.bin
 
 clean:
 	$(RM) -f $(OBJECTS) *.*~ *.bin.crypt *.o ar11.img
