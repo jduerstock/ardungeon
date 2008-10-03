@@ -16,94 +16,17 @@ unk_600:	.BYTE	$00,$00,$00,$00,$00,$00,$00,$00	; DATA XREF: sub_31A2+3Er
 		.BYTE	$0F,$03,$03,$03,$03,$03,$03,$00
 		.BYTE	$03,$00,$00,$00,$00,$03,$0F,$3C
 		.BYTE	$F0,$3C,$3C,$3F,$3F,$3C,$3C,$F0
-		.BYTE $FC
-		.BYTE $3C
-		.BYTE $3C
-		.BYTE $3C
-		.BYTE $3C
-		.BYTE $3C
-		.BYTE $3F
-		.BYTE $3F
-		.BYTE $F0
-		.BYTE $FC
-		.BYTE $FF
-		.BYTE $F3
-		.BYTE $F0
-		.BYTE $F0
-		.BYTE $F0
-		.BYTE $F0
-		.BYTE $F0
-		.BYTE $F0
-		.BYTE $FC
-		.BYTE $FF
-		.BYTE $F3
-		.BYTE $F0
-		.BYTE $F0
-		.BYTE $F0
-		.BYTE $3F ; ?
-		.BYTE $F0 ; ð
-		.BYTE $F0 ; ð
-		.BYTE $F0 ; ð
-		.BYTE $F0 ; ð
-		.BYTE $F0 ; ð
-		.BYTE $FC ; ü
-		.BYTE $3F ; ?
-		.BYTE $FF
-		.BYTE $3C ; <
-		.BYTE $3C ; <
-		.BYTE $3C ; <
-		.BYTE $3C ; <
-		.BYTE $3C ; <
-		.BYTE $3C ; <
-		.BYTE $F0 ; ð
-		.BYTE $3F ; ?
-		.BYTE $FC ; ü
-		.BYTE $F0 ; ð
-		.BYTE $F0 ; ð
-		.BYTE $F0 ; ð
-		.BYTE $F0 ; ð
-		.BYTE $F0 ; ð
-		.BYTE $3F ; ?
-		.BYTE $FC ; ü
-		.BYTE $3F ; ?
-		.BYTE $3C ; <
-		.BYTE $3C ; <
-		.BYTE $3C ; <
-		.BYTE $3C ; <
-		.BYTE $3C ; <
-		.BYTE $F0 ; ð
-		.BYTE  $F
-		.BYTE $3C ; <
-		.BYTE $3C ; <
-		.BYTE  $F
-		.BYTE	0
-		.BYTE	0
-		.BYTE $3C ; <
-		.BYTE $33 ; 3
-		.BYTE $FF
-		.BYTE  $F
-		.BYTE $3C ; <
-		.BYTE $F0 ; ð
-		.BYTE $F0 ; ð
-		.BYTE $F0 ; ð
-		.BYTE $F0 ; ð
-		.BYTE $3F ; ?
-		.BYTE $FC ; ü
-		.BYTE $3C ; <
-		.BYTE $3C ; <
-		.BYTE $3C ; <
-		.BYTE $3C ; <
-		.BYTE $3C ; <
-		.BYTE $3C ; <
-		.BYTE  $F
-		.BYTE $F0 ; ð
-		.BYTE $3C ; <
-		.BYTE $3C ; <
-		.BYTE $3C ; <
-		.BYTE $3C ; <
-		.BYTE $3C ; <
-		.BYTE  $F
-		.BYTE	3
+		.BYTE	$FC,$3C,$3C,$3C,$3C,$3C,$3F,$3F
+		.BYTE	$F0,$FC,$FF,$F3,$F0,$F0,$F0,$F0
+		.BYTE	$F0,$F0,$FC,$FF,$F3,$F0,$F0,$F0
+		.BYTE	$3F,$F0,$F0,$F0,$F0,$F0,$FC,$3F
+		.BYTE	$FF,$3C,$3C,$3C,$3C,$3C,$3C,$F0
+		.BYTE	$3F,$FC,$F0,$F0,$F0,$F0,$F0,$3F
+		.BYTE	$FC,$3F,$3C,$3C,$3C,$3C,$3C,$F0
+		.BYTE	$0F,$3C,$3C,$0F,$00,$00,$3C,$33
+		.BYTE	$FF,$0F,$3C,$F0,$F0,$F0,$F0,$3F
+		.BYTE	$FC,$3C,$3C,$3C,$3C,$3C,$3C,$0F
+		.BYTE	$F0,$3C,$3C,$3C,$3C,$3C,$0F,$03
 		.BYTE $F0 ; ð
 		.BYTE $F0 ; ð
 		.BYTE $F0 ; ð
