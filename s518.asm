@@ -291,46 +291,7 @@ byte_18CA:	.BYTE	0		; DATA XREF: RAM:loc_1E40r
 		.BYTE	0
 byte_18D4:	.BYTE 0			; DATA XREF: sub_2A41:loc_2A47w
 					; sub_2A41+50r
-unk_18D5:	.BYTE $80 ; €		; DATA XREF: sub_2A41+1Ew sub_2A41+55w ...
-		.BYTE $80 ; €
-		.BYTE $80 ; €
-		.BYTE $80 ; €
-		.BYTE $80 ; €
-		.BYTE $80 ; €
-		.BYTE $80 ; €
-		.BYTE $80 ; €
-		.BYTE $80 ; €
-		.BYTE $80 ; €
-		.BYTE $80 ; €
-		.BYTE $80 ; €
-		.BYTE $80 ; €
-		.BYTE $80 ; €
-		.BYTE $80 ; €
-		.BYTE $80 ; €
-		.BYTE $80 ; €
-		.BYTE $80 ; €
-		.BYTE $80 ; €
-		.BYTE $80 ; €
-		.BYTE $80 ; €
-		.BYTE $80 ; €
-		.BYTE $80 ; €
-		.BYTE $80 ; €
-		.BYTE $80 ; €
-		.BYTE $80 ; €
-		.BYTE $80 ; €
-		.BYTE $80 ; €
-		.BYTE $80 ; €
-		.BYTE $80 ; €
-		.BYTE $80 ; €
-		.BYTE $80 ; €
-		.BYTE $80 ; €
-		.BYTE $80 ; €
-		.BYTE $80 ; €
-		.BYTE $80 ; €
-		.BYTE $80 ; €
-		.BYTE $80 ; €
-		.BYTE $80 ; €
-		.BYTE $80 ; €
+unk_18D5:	.RES	40,$80 		; DATA XREF: sub_2A41+1Ew sub_2A41+55w ...
 		.BYTE	0
 byte_18FE:	.BYTE 0			; DATA XREF: RAM:1E71r	RAM:5816w ...
 byte_18FF:	.BYTE 0			; DATA XREF: RAM:2659r	RAM:2667w ...
