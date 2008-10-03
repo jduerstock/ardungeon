@@ -207,7 +207,7 @@ loc_774E:				; CODE XREF: RAM:7749j
 		JSR	sub_7AC5
 		JMP	loc_7649
 
-; ллллллллллллллл S U B	R O U T	I N E ллллллллллллллллллллллллллллллллллллллл
+; --------------- S U B	R O U T	I N E ---------------------------------------
 
 
 sub_7758:				; CODE XREF: sub_7758:loc_77BDp
@@ -775,7 +775,7 @@ loc_7AC2:				; DATA XREF: RAM:7AA9w	RAM:7AB3r ...
 		LDA	#$FF
 		RTS
 
-; ллллллллллллллл S U B	R O U T	I N E ллллллллллллллллллллллллллллллллллллллл
+; --------------- S U B	R O U T	I N E ---------------------------------------
 
 
 sub_7AC5:				; CODE XREF: RAM:7739p	RAM:7752p ...
@@ -884,7 +884,7 @@ loc_7B53:				; DATA XREF: RAM:82A9o
 locret_7B5F:				; CODE XREF: RAM:7B55j
 		RTS
 
-; ллллллллллллллл S U B	R O U T	I N E ллллллллллллллллллллллллллллллллллллллл
+; --------------- S U B	R O U T	I N E ---------------------------------------
 
 
 sub_7B60:				; CODE XREF: RAM:7730p
@@ -3937,7 +3937,7 @@ byte_85F4:	.BYTE 0			; DATA XREF: RAM:loc_85BAw RAM:85CAr ...
 		.BYTE $FF
 		.BYTE $FF
 		.BYTE $D5 ; е
-		.BYTE $DB ; л
+		.BYTE $DB ; -
 		.BYTE	7
 		.BYTE $FF
 		.BYTE $FF

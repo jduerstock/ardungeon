@@ -65,7 +65,7 @@ loc_B7ED:				; CODE XREF: RAM:B7EAj
 		STA	$83
 		JMP	$E474
 
-; ллллллллллллллл S U B	R O U T	I N E ллллллллллллллллллллллллллллллллллллллл
+; --------------- S U B	R O U T	I N E ---------------------------------------
 
 
 sub_B800:				; CODE XREF: sub_B80F+2p RAM:B850p
@@ -81,7 +81,7 @@ loc_B803:				; CODE XREF: sub_B800+9j
 ; End of function sub_B800
 
 
-; ллллллллллллллл S U B	R O U T	I N E ллллллллллллллллллллллллллллллллллллллл
+; --------------- S U B	R O U T	I N E ---------------------------------------
 
 
 sub_B80C:				; CODE XREF: RAM:loc_B8C2p
@@ -90,7 +90,7 @@ sub_B80C:				; CODE XREF: RAM:loc_B8C2p
 ; End of function sub_B80C
 
 
-; ллллллллллллллл S U B	R O U T	I N E ллллллллллллллллллллллллллллллллллллллл
+; --------------- S U B	R O U T	I N E ---------------------------------------
 
 
 sub_B80F:				; CODE XREF: RAM:B93Ep	RAM:B94Ap ...
@@ -115,7 +115,7 @@ loc_B826:				; CODE XREF: sub_B80F+1Dj
 ; End of function sub_B80F
 
 
-; ллллллллллллллл S U B	R O U T	I N E ллллллллллллллллллллллллллллллллллллллл
+; --------------- S U B	R O U T	I N E ---------------------------------------
 
 
 sub_B82F:				; CODE XREF: RAM:B848p	RAM:B933p ...

@@ -244,7 +244,7 @@ loc_77F7:				; CODE XREF: RAM:77FEj
 		STY	$AC00
 		JMP	$180C
 
-; ллллллллллллллл S U B	R O U T	I N E ллллллллллллллллллллллллллллллллллллллл
+; --------------- S U B	R O U T	I N E ---------------------------------------
 
 
 sub_7809:				; CODE XREF: RAM:loc_77CAp
@@ -266,7 +266,7 @@ loc_781B:				; CODE XREF: sub_7809+Ej
 ; End of function sub_7809
 
 
-; ллллллллллллллл S U B	R O U T	I N E ллллллллллллллллллллллллллллллллллллллл
+; --------------- S U B	R O U T	I N E ---------------------------------------
 
 
 sub_781D:				; CODE XREF: sub_7809+Bp
@@ -278,7 +278,7 @@ sub_781D:				; CODE XREF: sub_7809+Bp
 ; End of function sub_781D
 
 
-; ллллллллллллллл S U B	R O U T	I N E ллллллллллллллллллллллллллллллллллллллл
+; --------------- S U B	R O U T	I N E ---------------------------------------
 
 
 sub_782A:				; CODE XREF: RAM:loc_76CFp
@@ -321,7 +321,7 @@ loc_785B:				; CODE XREF: sub_782A+Bj sub_782A+13j	...
 ; End of function sub_782A
 
 
-; ллллллллллллллл S U B	R O U T	I N E ллллллллллллллллллллллллллллллллллллллл
+; --------------- S U B	R O U T	I N E ---------------------------------------
 
 
 sub_7861:				; CODE XREF: RAM:773Fp	RAM:7752p ...
@@ -332,7 +332,7 @@ sub_7861:				; CODE XREF: RAM:773Fp	RAM:7752p ...
 ; End of function sub_7861
 
 
-; ллллллллллллллл S U B	R O U T	I N E ллллллллллллллллллллллллллллллллллллллл
+; --------------- S U B	R O U T	I N E ---------------------------------------
 
 
 sub_786B:				; CODE XREF: RAM:76E0p	RAM:7780p
@@ -341,7 +341,7 @@ sub_786B:				; CODE XREF: RAM:76E0p	RAM:7780p
 ; End of function sub_786B
 
 
-; ллллллллллллллл S U B	R O U T	I N E ллллллллллллллллллллллллллллллллллллллл
+; --------------- S U B	R O U T	I N E ---------------------------------------
 
 
 sub_7870:				; CODE XREF: RAM:7774p

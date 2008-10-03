@@ -557,7 +557,7 @@ locret_79A9:				; CODE XREF: sub_7AE7-145j
 		RTS
 ; END OF FUNCTION CHUNK	FOR sub_7AE7
 
-; ЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫ S U B	R O U T	I N E ЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫ
+; --------------- S U B	R O U T	I N E ---------------------------------------
 
 
 sub_79AA:				; CODE XREF: sub_7AE7-200p
@@ -628,7 +628,7 @@ loc_7A02:				; CODE XREF: sub_79AA+18j sub_79AA+25j
 ; End of function sub_79AA
 
 
-; ЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫ S U B	R O U T	I N E ЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫ
+; --------------- S U B	R O U T	I N E ---------------------------------------
 
 
 sub_7A05:				; CODE XREF: sub_7A36+8p
@@ -674,7 +674,7 @@ loc_7A31:				; CODE XREF: sub_7A05+21j
 ; End of function sub_7A05
 
 
-; ЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫ S U B	R O U T	I N E ЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫ
+; --------------- S U B	R O U T	I N E ---------------------------------------
 
 
 sub_7A36:				; CODE XREF: sub_7AE7-1B8p
@@ -804,7 +804,7 @@ loc_7AE2:				; CODE XREF: sub_7AE7+13j
 		JMP	loc_7600
 ; END OF FUNCTION CHUNK	FOR sub_7AE7
 
-; ЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫ S U B	R O U T	I N E ЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫ
+; --------------- S U B	R O U T	I N E ---------------------------------------
 
 
 sub_7AE7:				; CODE XREF: sub_7AE7-2BCp
@@ -843,7 +843,7 @@ loc_7AF2:				; CODE XREF: sub_7AE7+17j
 ; End of function sub_7AE7
 
 
-; ЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫ S U B	R O U T	I N E ЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫ
+; --------------- S U B	R O U T	I N E ---------------------------------------
 
 
 sub_7B1C:				; CODE XREF: sub_7AE7:loc_7820p
@@ -875,7 +875,7 @@ loc_7B3B:				; CODE XREF: sub_7B1C+25j
 ; End of function sub_7B1C
 
 
-; ЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫ S U B	R O U T	I N E ЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫ
+; --------------- S U B	R O U T	I N E ---------------------------------------
 
 
 sub_7B46:				; CODE XREF: sub_7B1C+1Ap
@@ -900,7 +900,7 @@ locret_7B5E:				; CODE XREF: sub_7B46+Cj
 ; End of function sub_7B46
 
 
-; ЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫ S U B	R O U T	I N E ЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫ
+; --------------- S U B	R O U T	I N E ---------------------------------------
 
 
 sub_7B5F:				; CODE XREF: sub_7B1C+Ap sub_7B1C+Dp ...
@@ -926,7 +926,7 @@ loc_7B71:				; CODE XREF: sub_7B5F+19j
 ; End of function sub_7B5F
 
 
-; ЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫ S U B	R O U T	I N E ЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫ
+; --------------- S U B	R O U T	I N E ---------------------------------------
 
 
 sub_7B7C:				; CODE XREF: sub_7B5F+9p sub_7B5F+Cp
@@ -948,7 +948,7 @@ locret_7B90:				; CODE XREF: sub_7B7C+8j
 ; End of function sub_7B7C
 
 
-; ЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫ S U B	R O U T	I N E ЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫ
+; --------------- S U B	R O U T	I N E ---------------------------------------
 
 
 sub_7B91:				; CODE XREF: sub_7AE7-27Dp
@@ -1021,7 +1021,7 @@ locret_7BFC:				; CODE XREF: sub_7B91+5Fj
 ; End of function sub_7B91
 
 
-; ЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫ S U B	R O U T	I N E ЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫ
+; --------------- S U B	R O U T	I N E ---------------------------------------
 
 
 sub_7BFD:				; CODE XREF: sub_7B91:loc_7B9Bp
@@ -1055,7 +1055,7 @@ locret_7C26:				; CODE XREF: sub_7BFD+19j sub_7C27+19j
 ; End of function sub_7BFD
 
 
-; ЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫ S U B	R O U T	I N E ЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫ
+; --------------- S U B	R O U T	I N E ---------------------------------------
 
 
 sub_7C27:				; CODE XREF: sub_7B91:loc_7BBEp
@@ -1304,7 +1304,7 @@ loc_7CCF:				; CODE XREF: RAM:7CBEj	RAM:7CC9j
 		.BYTE $8F ; Џ
 		.BYTE $3D ; =
 		.BYTE $63 ; c
-		.BYTE $DB ; Ы
+		.BYTE $DB ; -
 		.BYTE $8F ; Џ
 		.BYTE $3E ; >
 		.BYTE $63 ; c
@@ -1340,7 +1340,7 @@ loc_7CCF:				; CODE XREF: RAM:7CBEj	RAM:7CC9j
 		.BYTE $94 ; ”
 		.BYTE $C0 ; А
 		.BYTE $63 ; c
-		.BYTE $DB ; Ы
+		.BYTE $DB ; -
 		.BYTE $94 ; ”
 		.BYTE $BD ; Ѕ
 		.BYTE $63 ; c
@@ -3407,7 +3407,7 @@ aPotionOfInebri:.BYTE "Potion of Inebriation",0
 		.BYTE	0
 		.BYTE	0
 
-; ЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫ S U B	R O U T	I N E ЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫ
+; --------------- S U B	R O U T	I N E ---------------------------------------
 
 
 sub_8D72:				; CODE XREF: sub_7AE7:loc_7653p
@@ -3486,7 +3486,7 @@ loc_8DC8:				; CODE XREF: sub_8D72+13j
 		SEC
 		JMP	$1830
 
-; ЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫ S U B	R O U T	I N E ЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫ
+; --------------- S U B	R O U T	I N E ---------------------------------------
 
 
 sub_8DD0:				; CODE XREF: sub_8D72:loc_8D82p
@@ -3530,7 +3530,7 @@ loc_8E11:				; CODE XREF: sub_8DD0+3Aj
 ; End of function sub_8DD0
 
 
-; ЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫ S U B	R O U T	I N E ЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫ
+; --------------- S U B	R O U T	I N E ---------------------------------------
 
 
 sub_8E13:				; CODE XREF: sub_8D72p
