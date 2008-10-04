@@ -397,7 +397,7 @@ byte_1960:	.BYTE 0			; DATA XREF: sub_2BFA+3A2w
 					; RAM:loc_41FCr ...
 byte_1961:	.BYTE 0			; DATA XREF: sub_51B6+62w RAM:52C8w ...
 byte_1962:	.BYTE 0			; DATA XREF: RAM:23F3w	sub_408B+Dr ...
-		.BYTE	0
+byte_1963:	.BYTE	0
 		.BYTE	0
 		.BYTE	0
 		.BYTE	0
@@ -6684,11 +6684,15 @@ loc_41DE:				; CODE XREF: RAM:41B1j	RAM:41C7j ...
 locret_41EF:				; CODE XREF: RAM:41E1j
 		RTS
 ; ---------------------------------------------------------------------------
+
+byte_41F0:
 		.BYTE	4
 		.BYTE	4
 		.BYTE	4
 		.BYTE	3
 		.BYTE	3
+
+byte_41F5:
 		.BYTE	1
 		.BYTE	0
 		.BYTE	0
@@ -6770,7 +6774,7 @@ loc_4275:				; CODE XREF: RAM:429Bj
 		LDA	$63B1,Y
 		STA	$58
 		LDA	$63B2,Y
-		LDY	$41F0,X
+		LDY	byte_41F0,X
 
 loc_4283:				; CODE XREF: RAM:4289j
 		BEQ	loc_428B
@@ -6792,7 +6796,7 @@ loc_428B:				; CODE XREF: RAM:loc_4283j
 
 loc_429F:				; CODE XREF: RAM:42BBj
 		LDA	I_FOOD,X
-		LDY	$41F5,X
+		LDY	byte_41F5,X
 
 loc_42A5:				; CODE XREF: RAM:42A9j
 		BEQ	loc_42AB
@@ -6839,36 +6843,27 @@ word_42E5:	.WORD	$FFFF		; DATA XREF: RAM:4210w	RAM:4261r ...
 
 
 sub_42E7:				; CODE XREF: sub_408B+21p sub_408B+47p
-		LDA	#$E5 ; 'å'
+		LDA	#<asc_47E5
 		STA	off_45B1
 		STA	off_45B3
 		STA	off_45B5
-		LDA	#$47 ; 'G'
+		LDA	#>asc_47E5
 		STA	off_45B1+1
 		STA	off_45B3+1
 		STA	off_45B5+1
-		BIT	$6391
+		BIT	I_DISEASE
 		BPL	loc_430C
-		LDA	#$CB ; 'Ë'
-		STA	off_45B1
-		LDA	#$47 ; 'G'
-		STA	off_45B1+1
+		dldi	off_45B1, aDiseased
 
 loc_430C:				; CODE XREF: sub_42E7+19j
-		BIT	$6392
+		BIT	I_POISON
 		BPL	loc_431B
-		LDA	#$BE ; '¾'
-		STA	off_45B3
-		LDA	#$47 ; 'G'
-		STA	off_45B3+1
+		dldi	off_45B3, aPoisoned
 
 loc_431B:				; CODE XREF: sub_42E7+28j
-		BIT	$6393
+		BIT	I_CURSE
 		BPL	loc_432A
-		LDA	#$D8 ; 'Ø'
-		STA	off_45B5
-		LDA	#$47 ; 'G'
-		STA	off_45B5+1
+		dldi	off_45B5, aCursed
 
 loc_432A:				; CODE XREF: sub_42E7+37j
 		LDX	#6
@@ -6897,10 +6892,10 @@ loc_434B:				; CODE XREF: sub_42E7+6Bj
 
 loc_4354:				; CODE XREF: sub_42E7+66j sub_42E7+68j
 		TYA
-		CMP	$1963,X
+		CMP	byte_1963,X
 		BEQ	loc_4360
 		DEC	byte_195F
-		STA	$1963,X
+		STA	byte_1963,X
 
 loc_4360:				; CODE XREF: sub_42E7+71j
 		ASL	A
@@ -6909,10 +6904,10 @@ loc_4360:				; CODE XREF: sub_42E7+71j
 		ASL	A
 		TAX
 		LDA	(off_5A),Y
-		STA	$45A3,X
+		STA	off_45A3,X
 		INY
 		LDA	(off_5A),Y
-		STA	$45A4,X
+		STA	off_45A3+1,X
 		DEC	$5C
 		LDX	$5C
 		BPL	loc_432E
@@ -6936,7 +6931,7 @@ loc_4381:				; CODE XREF: RAM:43B7j
 		STA	off_58
 		LDA	byte_4603,X
 		STA	off_58+1
-		LDY	$1963,X
+		LDY	byte_1963,X
 		LDA	(off_58),Y
 		BEQ	loc_43B3
 		ASL	A
@@ -7579,9 +7574,9 @@ loc_47F2:				; CODE XREF: sub_408B:loc_40A6p
 
 loc_47F9:				; CODE XREF: RAM:47F4j
 		STA	$49
-		STA	$6391
-		STA	$6392
-		STA	$6393
+		STA	I_DISEASE
+		STA	I_POISON
+		STA	I_CURSE
 		LDA	#$F0 ; 'ð'
 		STA	$50
 		dldi	off_3D, $6500
