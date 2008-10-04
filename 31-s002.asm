@@ -5544,8 +5544,7 @@ loc_9618:				; CODE XREF: sub_9550+C0j sub_9550+C5j
 
 sub_961C:				; CODE XREF: sub_950E+2Ep sub_9550+27p
 		JSR	$1830
-		LDX	#$A6 ; '¦'
-		LDY	#$B7 ; '·'
+		ldxy	$A6B7
 		JSR	sub_8EEF
 		JMP	$183C
 ; End of function sub_961C
@@ -5641,7 +5640,7 @@ loc_968B:				; CODE XREF: sub_962B+68j
 
 loc_96A6:				; CODE XREF: sub_962B+70j sub_962B+74j ...
 		LDA	$100,X
-		STA	(9),Y
+		STA	(off_9),Y
 		INY
 		INX
 		BPL	loc_96A6
@@ -5650,36 +5649,36 @@ loc_96A6:				; CODE XREF: sub_962B+70j sub_962B+74j ...
 		TYA
 		STA	$96
 		CLC
-		ADC	9
-		STA	9
+		ADC	off_9
+		STA	off_9
 		BCC	loc_96BF
-		INC	$A
+		INC	off_9+1
 
 loc_96BF:				; CODE XREF: sub_962B+90j
-		LDA	$B
+		LDA	word_B
 		SEC
 		SBC	$96
-		STA	$B
-		LDA	$C
+		STA	word_B
+		LDA	word_B+1
 		SBC	#0
-		STA	$C
-		ORA	$B
+		STA	word_B+1
+		ORA	word_B
 		BNE	loc_9654
 		BEQ	loc_96E8
 
 loc_96D2:				; CODE XREF: sub_962B+79j sub_962B+B0j
 		LDA	$100,X
-		STA	(9),Y
+		STA	(off_9),Y
 		INX
 		INY
-		CPY	$B
+		CPY	word_B
 		BCC	loc_96D2
-		LDA	$B
+		LDA	word_B
 		CLC
-		ADC	9
-		STA	9
+		ADC	off_9
+		STA	off_9
 		BCC	loc_96E8
-		INC	$A
+		INC	off_9+1
 
 loc_96E8:				; CODE XREF: sub_962B+A5j sub_962B+B9j
 		CLC
@@ -5703,11 +5702,11 @@ loc_96F2:				; CODE XREF: RAM:970Aj
 		ASL	A
 		TAY
 		CLC
-		LDA	(7),Y
+		LDA	(off_7),Y
 		ADC	$D6
 		STA	$D6
 		INY
-		LDA	(7),Y
+		LDA	(off_7),Y
 		ADC	$D7
 		STA	$D7
 		INC	$8B
@@ -5718,23 +5717,23 @@ loc_970C:				; CODE XREF: RAM:96F6j
 		TAY
 
 loc_970E:				; CODE XREF: RAM:972Dj
-		LDA	(7),Y
-		STA	$B
+		LDA	(off_7),Y
+		STA	word_B
 		INY
 		LDA	(7),Y
-		STA	$C
-		ORA	$B
+		STA	word_B+1
+		ORA	word_B
 		BNE	locret_9730
 		DEY
 		DEY
 		DEY
 		SEC
 		LDA	$D6
-		SBC	(7),Y
+		SBC	(off_7),Y
 		STA	$D6
 		INY
 		LDA	$D7
-		SBC	(7),Y
+		SBC	(off_7),Y
 		STA	$D7
 		DEY
 		JMP	loc_970E
@@ -5801,14 +5800,14 @@ loc_9786:				; CODE XREF: RAM:9783j
 		BVC	loc_979A
 		LDY	#1
 		LDA	#0
-		STA	$62
-		LDA	($62),Y
-		STA	$62
+		STA	off_62
+		LDA	(off_62),Y
+		STA	off_62
 		DEC	$D2
 
 loc_979A:				; CODE XREF: RAM:9788j	RAM:978Cj ...
 		LDY	#0
-		LDA	($62),Y
+		LDA	(off_62),Y
 		BPL	loc_97D8
 		AND	#$7F ; ''
 		CLC
@@ -5820,12 +5819,12 @@ loc_979A:				; CODE XREF: RAM:9788j	RAM:978Cj ...
 		STA	$D002
 		STA	$D003
 		INY
-		LDA	($62),Y
+		LDA	(off_62),Y
 		STA	byte_987E
 		CLC
-		LDA	$62
+		LDA	off_62
 		ADC	#2
-		STA	$62
+		STA	off_62
 		LDA	#0
 		LDX	#$10
 
@@ -5842,18 +5841,18 @@ loc_97D8:				; CODE XREF: RAM:979Ej
 		CMP	#$40 ; '@'
 		BCC	loc_97E3
 		INY
-		LDA	($62),Y
+		LDA	(off_62),Y
 		STA	$62
 		BNE	loc_979A
 
 loc_97E3:				; CODE XREF: RAM:97DAj
 		TAX
 		INY
-		LDA	($62),Y
+		LDA	(off_62),Y
 		STA	$D3
-		LDA	$9871,X
+		LDA	byte_9871,X
 		STA	$D6
-		LDA	$9877,X
+		LDA	byte_9877,X
 		STA	$D7
 		CLC
 		LDA	byte_987E
