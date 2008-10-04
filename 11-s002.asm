@@ -60,7 +60,7 @@
 	DirEnt	$4000,3,1,236,,176	; ???
 	DirEnt	$4000,1,1,451,,7	; ???
 	DirEnt	$4000,2,2,509,,4	; unknown 2
-	DirEnt	$4000,1,1,466,,6	; ???
+	DirEnt	$4000,1,1,466,,6	; save character	$19
 	DirEnt	$4000,2,2,518,$8000,8	; unknown 3
 	DirEnt	$4000,3,2,494,$8000,7	; unknown 3
 	DirEnt	$4000,3,2,510,$8000,7	; picture 7
