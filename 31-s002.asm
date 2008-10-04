@@ -6143,136 +6143,38 @@ aBattleOptions:	.BYTE "Battle Options"
 		BLINK	"0"
 		.BYTE	") Leave"
 		.BYTE $FF
-		.BYTE $A6 ; ¦
-		.BYTE	0
-		.BYTE	0
-		.BYTE $A5 ; ¥
-		.BYTE $59 ; Y
-		.BYTE $6F ; o
-		.BYTE $75 ; u
-		.BYTE $20
-		.BYTE $73 ; s
-		.BYTE $75 ; u
-		.BYTE $72 ; r
-		.BYTE $70 ; p
-		.BYTE $72 ; r
-		.BYTE $69 ; i
-		.BYTE $73 ; s
-		.BYTE $65 ; e
-		.BYTE $20
-		.BYTE $74 ; t
-		.BYTE $68 ; h
-		.BYTE $65 ; e
-		.BYTE $20
-		.BYTE $B4 ; ´
-		.BYTE	1
-		.BYTE $AA ; ª
-		.BYTE $14
-		.BYTE $2E ; .
-		.BYTE  $D
-		.BYTE $A5 ; ¥
-		.BYTE $41 ; A
-		.BYTE $74 ; t
-		.BYTE $74 ; t
-		.BYTE $65 ; e
-		.BYTE $6D ; m
-		.BYTE $70 ; p
-		.BYTE $74 ; t
-		.BYTE $20
-		.BYTE $74 ; t
-		.BYTE $6F ; o
-		.BYTE $3A ; :
-		.BYTE  $D
-		.BYTE $A6 ; ¦
-		.BYTE  $A
-		.BYTE	3
-		.BYTE $28 ; (
-		.BYTE $A1 ; ¡
-		.BYTE $31 ; 1
-		.BYTE $A0 ;  
-		.BYTE $29 ; )
-		.BYTE $20
-		.BYTE $77 ; w
-		.BYTE $61 ; a
-		.BYTE $79 ; y
-		.BYTE $6C ; l
-		.BYTE $61 ; a
-		.BYTE $79 ; y
-		.BYTE $20
-		.BYTE $74 ; t
-		.BYTE $68 ; h
-		.BYTE $65 ; e
-		.BYTE $20
-		.BYTE $B4 ; ´
-		.BYTE	1
-		.BYTE $AA ; ª
-		.BYTE $14
-		.BYTE $2E ; .
-		.BYTE $A6 ; ¦
-		.BYTE  $A
-		.BYTE	4
-		.BYTE $28 ; (
-		.BYTE $A1 ; ¡
-		.BYTE $32 ; 2
-		.BYTE $A0 ;  
-		.BYTE $29 ; )
-		.BYTE $20
-		.BYTE $73 ; s
-		.BYTE $6E ; n
-		.BYTE $61 ; a
-		.BYTE $74 ; t
-		.BYTE $63 ; c
-		.BYTE $68 ; h
-		.BYTE $20
-		.BYTE $73 ; s
-		.BYTE $6F ; o
-		.BYTE $6D ; m
-		.BYTE $65 ; e
-		.BYTE $74 ; t
-		.BYTE $68 ; h
-		.BYTE $69 ; i
-		.BYTE $6E ; n
-		.BYTE $67 ; g
-		.BYTE $2E ; .
-		.BYTE $A6 ; ¦
-		.BYTE  $A
-		.BYTE	5
-		.BYTE $28 ; (
-		.BYTE $A1 ; ¡
-		.BYTE $33 ; 3
-		.BYTE $A0 ;  
-		.BYTE $29 ; )
-		.BYTE $20
-		.BYTE $6E ; n
-		.BYTE $6F ; o
-		.BYTE $6E ; n
-		.BYTE $65 ; e
-		.BYTE $20
-		.BYTE $6F ; o
-		.BYTE $66 ; f
-		.BYTE $20
-		.BYTE $74 ; t
-		.BYTE $68 ; h
-		.BYTE $65 ; e
-		.BYTE $73 ; s
-		.BYTE $65 ; e
-		.BYTE $2E ; .
-		.BYTE $A6 ; ¦
-		.BYTE  $A
-		.BYTE	7
-		.BYTE $28 ; (
-		.BYTE $A1 ; ¡
-		.BYTE $30 ; 0
-		.BYTE $A0 ;  
-		.BYTE $29 ; )
-		.BYTE $20
-		.BYTE $4C ; L
-		.BYTE $65 ; e
-		.BYTE $61 ; a
-		.BYTE $76 ; v
-		.BYTE $65 ; e
-		.BYTE $2E ; .
-		.BYTE $FF
+		MOVEXY	0,0
+		.BYTE	$A5
+		.BYTE	"You surprise the "
+		.BYTE	$B4
+		.WORD	$AA01
+		.BYTE	$14
+		.BYTE	"."
+		.BYTE	$D
+		.BYTE	$A5
+		.BYTE	"Attempt to:"
+		.BYTE	$D
+		MOVEXY	10,3
+		.BYTE	"("
+		BLINK	"1"
+		.BYTE	") waylay the "
+		.BYTE	$B4
+		.WORD	$AA01
+		.BYTE	$14
+		.BYTE	"."
+		MOVEXY	10,4
+		.BYTE	"("
+		BLINK	"2"
+		.BYTE	") snatch something."
+		MOVEXY	10,5
+		.BYTE	"("
+		BLINK	"3"
+		.BYTE	") none of these."
+		MOVEXY	10,7
+		.BYTE	"("
+		BLINK	"0"
+		.BYTE	") Leave."
+		.BYTE	$FF
 		.BYTE $59 ; Y
 		.BYTE $6F ; o
 		.BYTE $75 ; u
