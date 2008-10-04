@@ -6093,141 +6093,36 @@ aThePalace:	.BYTE "The Palace",0
 		.BYTE $A5
 aBattleOptions:	.BYTE "Battle Options"
 		.BYTE $D
-		.BYTE $A6, $A,	2
-		.BYTE '('
-		.BYTE $A1
-a1:		.BYTE '1'
-		.BYTE $A0
-		.BYTE $29 ; )
-		.BYTE $20
-		.BYTE $41 ; A
-		.BYTE $74 ; t
-		.BYTE $74 ; t
-		.BYTE $61 ; a
-		.BYTE $63 ; c
-		.BYTE $6B ; k
-		.BYTE $A6 ; ¦
-		.BYTE  $A
-		.BYTE	3
-		.BYTE $28 ; (
-		.BYTE $A1 ; ¡
-		.BYTE $32 ; 2
-		.BYTE $A0 ;  
-		.BYTE $29 ; )
-		.BYTE $20
-		.BYTE $43 ; C
-		.BYTE $68 ; h
-		.BYTE $61 ; a
-		.BYTE $72 ; r
-		.BYTE $67 ; g
-		.BYTE $65 ; e
-		.BYTE $A6 ; ¦
-		.BYTE  $A
-		.BYTE	4
-		.BYTE $28 ; (
-		.BYTE $A1 ; ¡
-		.BYTE $33 ; 3
-		.BYTE $A0 ;  
-		.BYTE $29 ; )
-		.BYTE $20
-		.BYTE $41 ; A
-		.BYTE $69 ; i
-		.BYTE $6D ; m
-		.BYTE $65 ; e
-		.BYTE $64 ; d
-		.BYTE $20
-		.BYTE $41 ; A
-		.BYTE $74 ; t
-		.BYTE $74 ; t
-		.BYTE $61 ; a
-		.BYTE $63 ; c
-		.BYTE $6B ; k
-		.BYTE $A6 ; ¦
-		.BYTE  $A
-		.BYTE	5
-		.BYTE $28 ; (
-		.BYTE $A1 ; ¡
-		.BYTE $34 ; 4
-		.BYTE $A0 ;  
-		.BYTE $29 ; )
-		.BYTE $20
-		.BYTE $54 ; T
-		.BYTE $72 ; r
-		.BYTE $61 ; a
-		.BYTE $6E ; n
-		.BYTE $73 ; s
-		.BYTE $61 ; a
-		.BYTE $63 ; c
-		.BYTE $74 ; t
-		.BYTE $A6 ; ¦
-		.BYTE  $A
-		.BYTE	6
-		.BYTE $28 ; (
-		.BYTE $A1 ; ¡
-		.BYTE $35 ; 5
-		.BYTE $A0 ;  
-		.BYTE $29 ; )
-		.BYTE $20
-		.BYTE $53 ; S
-		.BYTE $77 ; w
-		.BYTE $69 ; i
-		.BYTE $74 ; t
-		.BYTE $63 ; c
-		.BYTE $68 ; h
-		.BYTE $20
-		.BYTE $77 ; w
-		.BYTE $65 ; e
-		.BYTE $61 ; a
-		.BYTE $70 ; p
-		.BYTE $6F ; o
-		.BYTE $6E ; n
-		.BYTE $A6 ; ¦
-		.BYTE  $A
-		.BYTE	7
-		.BYTE $28 ; (
-		.BYTE $A1 ; ¡
-		.BYTE $30 ; 0
-		.BYTE $A0 ;  
-		.BYTE $29 ; )
-		.BYTE $20
-		.BYTE $54 ; T
-		.BYTE $75 ; u
-		.BYTE $72 ; r
-		.BYTE $6E ; n
-		.BYTE $20
-		.BYTE $61 ; a
-		.BYTE $6E ; n
-		.BYTE $64 ; d
-		.BYTE $20
-		.BYTE $72 ; r
-		.BYTE $75 ; u
-		.BYTE $6E ; n
-		.BYTE $21 ; !
+		MOVEXY	10,2
+		.BYTE	"("
+		BLINK	"1"
+		.BYTE	") Attack"
+		MOVEXY	10,3
+		.BYTE	"("
+		BLINK	"2"
+		.BYTE	") Charge"
+		MOVEXY	10,4
+		.BYTE	"("
+		BLINK	"3"
+		.BYTE	") Aimed Attack"
+		MOVEXY	10,5
+		.BYTE	"("
+		BLINK	"4"
+		.BYTE	") Transact"
+		MOVEXY	10,6
+		.BYTE	"("
+		BLINK	"5"
+		.BYTE	") Switch weapon"
+		MOVEXY	10,7
+		.BYTE	"("
+		BLINK	"0"
+		.BYTE	") Turn and run!"
 		.BYTE $FF
-		.BYTE $A6 ; ¦
-		.BYTE	0
-		.BYTE	0
-		.BYTE $A5 ; ¥
-		.BYTE $54 ; T
-		.BYTE $72 ; r
-		.BYTE $61 ; a
-		.BYTE $6E ; n
-		.BYTE $73 ; s
-		.BYTE $61 ; a
-		.BYTE $63 ; c
-		.BYTE $74 ; t
-		.BYTE $20
-		.BYTE $4F ; O
-		.BYTE $70 ; p
-		.BYTE $74 ; t
-		.BYTE $69 ; i
-		.BYTE $6F ; o
-		.BYTE $6E ; n
-		.BYTE $73 ; s
-		.BYTE  $D
-		.BYTE $A6 ; ¦
-		.BYTE  $F
-		.BYTE	2
+		MOVEXY	0,0
+		.BYTE	$A5
+		.BYTE	"Transact Options"
+		.BYTE	$D
+		MOVEXY	15,2
 		.BYTE $28 ; (
 		.BYTE $A1 ; ¡
 		.BYTE $31 ; 1
