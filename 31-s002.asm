@@ -6012,30 +6012,30 @@ aJewels:	.BYTE "jewels",0
 aGold:		.BYTE "gold",0
 aSilver:	.BYTE "silver",0
 aCopper:	.BYTE "copper",0
-unk_98F5:	.BYTE $A0 ;  		; DATA XREF: sub_7EA5+5r RAM:8D45r
-		.BYTE $A5 ; ¥
-		.BYTE $AB ; «
-		.BYTE $B3 ; ³
-		.BYTE $BE ; ¾
-		.BYTE $C8 ; È
-		.BYTE $CD ; Í
-		.BYTE $D6 ; Ö
-		.BYTE $DB ; -
-		.BYTE $E2 ; â
-		.BYTE $E7 ; ç
-		.BYTE $EE ; î
-unk_9901:	.BYTE $98 ; ˜		; DATA XREF: sub_7EA5+Br RAM:8D4Br
-		.BYTE $98 ; ˜
-		.BYTE $98 ; ˜
-		.BYTE $98 ; ˜
-		.BYTE $98 ; ˜
-		.BYTE $98 ; ˜
-		.BYTE $98 ; ˜
-		.BYTE $98 ; ˜
-		.BYTE $98 ; ˜
-		.BYTE $98 ; ˜
-		.BYTE $98 ; ˜
-		.BYTE $98 ; ˜
+unk_98F5:	.BYTE	<aFood		; DATA XREF: sub_7EA5+5r RAM:8D45r
+		.BYTE	<aWater
+		.BYTE	<aTorches
+		.BYTE	<aTimepieces
+		.BYTE	<aCompasses
+		.BYTE	<aKeys
+		.BYTE	<aCrystals
+		.BYTE	<aGems
+		.BYTE	<aJewels
+		.BYTE	<aGold
+		.BYTE	<aSilver
+		.BYTE	<aCopper
+unk_9901:	.BYTE	>aFood		; DATA XREF: sub_7EA5+Br RAM:8D4Br
+		.BYTE	>aWater
+		.BYTE	>aTorches
+		.BYTE	>aTimepieces
+		.BYTE	>aCompasses
+		.BYTE	>aKeys
+		.BYTE	>aCrystals
+		.BYTE	>aGems
+		.BYTE	>aJewels
+		.BYTE	>aGold
+		.BYTE	>aSilver
+		.BYTE	>aCopper
 		.BYTE $AC ; ¬
 		.WORD byte_7665
 aIsStunned_:	.BYTE "is stunned."
