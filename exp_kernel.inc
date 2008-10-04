@@ -1,6 +1,7 @@
 .ifndef KERNEL
 j_READSECTOR	= $182D
 j_SEGLOAD	= $1842
+j_LOADINV	= $1887
 
 byte_18C1	= $18C1
 byte_18C4	= $18C4

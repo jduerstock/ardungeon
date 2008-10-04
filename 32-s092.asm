@@ -1,3 +1,5 @@
+		.include	"globals.inc"
+		.include	"exp_kernel.inc"
 
 ;		.ORG	$7600
 		.BYTE	8
@@ -170,10 +172,10 @@ sub_7728:				; CODE XREF: RAM:loc_7686p
 loc_7730:				; CODE XREF: sub_7728+34j
 		LDA	$64
 		STA	$4B
-		JSR	$1887
+		JSR	j_LOADINV
 		BEQ	loc_775A
 		LDY	#0
-		LDA	($41),Y
+		LDA	(off_41),Y
 		CMP	#$87 ; '‡'
 		BNE	loc_775A
 		JSR	$1896

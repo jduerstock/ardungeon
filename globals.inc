@@ -46,6 +46,7 @@ byte_258 = $0258
 SEG_6300	= $6300
 SEG_7600	= $7600
 SEG_9000	= $9000
+SEG_96F0	= $96F0
 SEG_AC00	= $AC00
 
 I_MINUTES	= $6309
@@ -119,3 +120,6 @@ MOVECURSOR = $A6
 	.BYTE $B0,.LOBYTE(Ptr),.HIBYTE(Ptr),Len
 .endmacro
 
+.macro STRSUB arg1
+	.BYTE $AC,.LOBYTE(arg1),.HIBYTE(arg1)
+.endmacro

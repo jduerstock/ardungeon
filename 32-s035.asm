@@ -105,7 +105,7 @@ loc_76E3:				; CODE XREF: RAM:76F2j
 		BNE	loc_7745
 		LDA	$64
 		STA	$4B
-		JSR	$1887
+		JSR	j_LOADINV
 		LDY	#2
 		LDA	#$10
 		STA	(off_41),Y
@@ -288,7 +288,7 @@ sub_782A:				; CODE XREF: RAM:loc_76CFp
 loc_782E:				; CODE XREF: sub_782A+33j
 		LDA	$64
 		STA	$4B
-		JSR	$1887
+		JSR	j_LOADINV
 		BEQ	loc_785B
 		LDY	#0
 		LDA	(off_41),Y

@@ -1,3 +1,5 @@
+		.include	"globals.inc"
+		.include	"exp_kernel.inc"
 
 ;		.ORG	$7600
 		.BYTE  $B
@@ -351,10 +353,10 @@ sub_7843:				; CODE XREF: RAM:76DAp
 loc_7847:				; CODE XREF: sub_7843+2Bj
 		LDA	$65
 		STA	$4B
-		JSR	$1887
+		JSR	j_LOADINV
 		BEQ	loc_786C
 		LDY	#0
-		LDA	($41),Y
+		LDA	(off_41),Y
 		CMP	#$87 ; 'á'
 		BNE	loc_786C
 		JSR	$1896
@@ -390,10 +392,10 @@ sub_7872:				; CODE XREF: RAM:loc_775Bp
 loc_787A:				; CODE XREF: sub_7872+39j
 		LDA	$65
 		STA	$4B
-		JSR	$1887
+		JSR	j_LOADINV
 		BEQ	loc_78A9
 		LDY	#0
-		LDA	($41),Y
+		LDA	(off_41),Y
 		CMP	#$81 ; 'Å'
 		BNE	loc_78A9
 		LDX	$66

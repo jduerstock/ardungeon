@@ -229,7 +229,8 @@ j_ADDSTAT2:
 ; ---------------------------------------------------------------------------
 		JMP	sub_4B4D	; $1884
 ; ---------------------------------------------------------------------------
-		JMP	sub_4B74	; $1887
+j_LOADINV:
+		JMP	LOADINV		; $1887
 ; ---------------------------------------------------------------------------
 		JMP	sub_4AC9	; $188A
 ; ---------------------------------------------------------------------------
@@ -4262,9 +4263,9 @@ loc_2ECD:				; CODE XREF: RAM:2ED1j
 		LDA	#2
 		STA	$253
 		LDA	#$FF
-		STA	$AC00
-		STA	$7600
-		STA	$96F0
+		STA	SEG_AC00
+		STA	SEG_7600
+		STA	SEG_96F0
 		STA	byte_1935
 		LDA	#1
 		JSR	sub_1A0D
@@ -4642,7 +4643,7 @@ loc_3183:				; CODE XREF: RAM:180Cj	sub_2BFA+3DDj
 
 loc_318C:				; CODE XREF: RAM:2F6Dj	RAM:loc_3180j ...
 		LDA	$6315
-		CMP	$AC00
+		CMP	SEG_AC00
 		BEQ	loc_31B9
 		TAX
 		LDA	unk_3225,X
@@ -4736,7 +4737,7 @@ unk_3225:	.BYTE	1		; DATA XREF: sub_2BFA+59Br
 
 
 sub_322C:				; CODE XREF: sub_2BFA:loc_2F80p
-		LDA	$AC00
+		LDA	SEG_AC00
 		CMP	$6315
 		BNE	locret_3296
 		LDA	byte_1974
@@ -5489,8 +5490,7 @@ a_SaveCharacter:
 aSaveCharacterq:.BYTE "Save character?"
 		.BYTE $D
 		.BYTE $D
-		.BYTE $AC
-		.WORD byte_382E
+		STRSUB	byte_382E
 ; ---------------------------------------------------------------------------
 
 loc_37D6:
@@ -6198,8 +6198,7 @@ aActiveMagic:	.BYTE "Active Magic"
 		.BYTE $D
 		.BYTE $A3
 		.WORD loc_3FFC
-		.BYTE $AC
-		.WORD byte_3F15
+		STRSUB byte_3F15
 		.BYTE $FF
 
 byte_3EE9:
@@ -6209,8 +6208,7 @@ aKnownDiseases:	.BYTE "Known Diseases"
 		.BYTE $D
 		.BYTE $A3
 		.WORD loc_3FF6
-		.BYTE $AC
-		.WORD byte_3F15
+		STRSUB byte_3F15
 		.BYTE $FF
 
 byte_3F03:
@@ -6220,8 +6218,7 @@ aCurses:	.BYTE "Curses"
 		.BYTE $D
 		.BYTE $A3
 		.WORD loc_3FF9
-		.BYTE $AC
-		.WORD byte_3F15
+		STRSUB byte_3F15
 		.BYTE $FF
 byte_3F15:	.BYTE $D		; DATA XREF: RAM:3EE6o	RAM:3F00o ...
 		.BYTE $A2
@@ -6275,7 +6272,7 @@ loc_3F66:				; CODE XREF: RAM:3F8Aj
 		LDX	byte_407D
 		LDA	$639C,X
 		BMI	loc_3F87
-		JSR	sub_4B74
+		JSR	LOADINV
 		BEQ	loc_3F87
 		CLC
 		LDA	byte_407D
@@ -6340,7 +6337,7 @@ loc_3FCF:				; CODE XREF: RAM:3FF3j
 		LDX	byte_407D
 		LDA	$63A2,X
 		BMI	loc_3FF0
-		JSR	sub_4B74
+		JSR	LOADINV
 		BEQ	loc_3FF0
 		LDA	byte_407D
 		ASL	A
@@ -6532,10 +6529,7 @@ loc_4120:				; CODE XREF: sub_408B+99j
 		BNE	loc_4120
 		LDA	#$35 ; '5'
 		STA	SEGNO
-		LDA	#0
-		STA	SEGADDR
-		LDA	#$76 ; 'v'
-		STA	SEGADDR+1
+		dldi	SEGADDR, SEG_7600
 		JSR	SEGLOAD
 		JMP	$7600
 ; ---------------------------------------------------------------------------
@@ -6549,7 +6543,7 @@ byte_413C:	.BYTE 0			; DATA XREF: sub_408B+15w sub_408B+3Aw
 ; ---------------------------------------------------------------------------
 
 loc_413D:				; CODE XREF: sub_408B+37p
-		LDA	$7600
+		LDA	SEG_7600
 		BNE	locret_4171
 		BIT	byte_32
 		BMI	locret_4171
@@ -6697,7 +6691,7 @@ loc_421A:				; CODE XREF: RAM:423Fj
 		LDA	$63A2,X
 		BMI	loc_423D
 		STA	$4B
-		JSR	sub_4B74
+		JSR	LOADINV
 		JSR	sub_4EC4
 		LDY	#0
 		LDA	byte_1976
@@ -6721,7 +6715,7 @@ loc_423D:				; CODE XREF: RAM:421Fj
 
 loc_424F:				; CODE XREF: RAM:4271j
 		LDA	$4B
-		JSR	sub_4B74
+		JSR	LOADINV
 		BEQ	loc_426F
 		LDY	#0
 		LDA	(off_41),Y
@@ -8169,14 +8163,14 @@ locret_4B73:				; CODE XREF: sub_4B4D+Bj
 ; --------------- S U B	R O U T	I N E ---------------------------------------
 
 
-sub_4B74:				; CODE XREF: RAM:1887j	RAM:3F6Ep ...
+LOADINV:				; CODE XREF: RAM:1887j	RAM:3F6Ep ...
 		TAX
 		LDA	$640B,X
 		STA	off_41
 		LDA	$644B,X
 		STA	off_41+1
 		RTS
-; End of function sub_4B74
+; End of function LOADINV
 
 ; ---------------------------------------------------------------------------
 		LDX	#1
@@ -8202,7 +8196,7 @@ loc_4B86:				; CODE XREF: sub_51B6+5Cp
 		STX	$4D
 		JSR	sub_4BAA
 		LDA	$4B
-		JSR	sub_4B74
+		JSR	LOADINV
 		BEQ	locret_4BA9
 		LDY	#2
 		LDA	$4D
@@ -8218,7 +8212,7 @@ locret_4BA9:				; CODE XREF: RAM:4B9Aj
 
 
 sub_4BAA:				; CODE XREF: RAM:4B92p
-		JSR	sub_4B74
+		JSR	LOADINV
 		BEQ	locret_4BB2
 		JSR	sub_4BB3
 
@@ -8307,7 +8301,7 @@ loc_4C09:				; CODE XREF: RAM:4C04j
 		JSR	sub_4AC9
 		PLA
 		STA	$4B
-		JSR	sub_4B74
+		JSR	LOADINV
 
 loc_4C27:				; CODE XREF: RAM:4C14j
 		LDX	$6493
@@ -8641,7 +8635,7 @@ locret_4E05:				; CODE XREF: sub_4DD4+21j
 ; ---------------------------------------------------------------------------
 
 loc_4E06:				; CODE XREF: RAM:188Dj
-		JSR	sub_4B74
+		JSR	LOADINV
 		BEQ	locret_4E22
 		LDA	#4
 		STA	$4C
@@ -8816,7 +8810,7 @@ locret_4EE7:				; CODE XREF: sub_4EC4+1Fj
 
 sub_4EE8:				; CODE XREF: sub_4CCF+2p sub_4EC4p
 		LDA	$4B
-		JSR	sub_4B74
+		JSR	LOADINV
 		LDY	#5
 		CLC
 		LDA	(off_41),Y
@@ -9031,7 +9025,7 @@ loc_5090:				; CODE XREF: sub_508C+23j
 		LDX	6
 		LDA	byte_1946,X
 		BMI	loc_50AD
-		JSR	sub_4B74
+		JSR	LOADINV
 		LDA	6
 		ASL	A
 		TAY
@@ -9201,7 +9195,7 @@ sub_5198:				; CODE XREF: sub_50B2+36p
 ; ---------------------------------------------------------------------------
 
 loc_51A1:				; CODE XREF: sub_50B2+4Dp sub_50B2+78p
-		JSR	sub_4B74
+		JSR	LOADINV
 		BEQ	loc_51B4
 		LDY	#0
 		LDA	(off_41),Y
@@ -9229,7 +9223,7 @@ sub_51B6:				; CODE XREF: RAM:3774p
 		LDA	#0
 		STA	byte_627F
 		LDA	#4
-		LDX	$7600
+		LDX	SEG_7600
 		CPX	#1
 		BNE	loc_51C6
 		LDA	#0
@@ -9238,16 +9232,10 @@ loc_51C6:				; CODE XREF: sub_51B6+Cj
 		STA	byte_6276
 		LDA	#$F0 ; 'ð'
 		STA	loc_51B0
-		LDA	#$25 ; '%'
-		STA	off_193A
-		LDA	#$5F ; '_'
-		STA	off_193A+1
+		dldi	off_193A, aUse
 
 loc_51D8:				; CODE XREF: sub_577E+14j
-		LDA	#$57 ; 'W'
-		STA	off_1944
-		LDA	#$5F ; '_'
-		STA	off_1944+1
+		dldi	off_1944, a_ItemForwardBack
 		JSR	sub_50B2
 		BCS	loc_5225
 		CMP	#$80
@@ -9257,7 +9245,7 @@ loc_51D8:				; CODE XREF: sub_577E+14j
 
 loc_51EE:				; CODE XREF: sub_51B6+33j
 		STA	$4B
-		JSR	sub_4B74
+		JSR	LOADINV
 		JSR	sub_4EC4
 		LDY	#0
 		LDA	(off_41),Y
@@ -9273,7 +9261,7 @@ loc_51EE:				; CODE XREF: sub_51B6+33j
 
 loc_5209:				; CODE XREF: RAM:524Ej	RAM:526Bj ...
 		LDA	$4B
-		JSR	sub_4B74
+		JSR	LOADINV
 		BEQ	loc_5225
 		LDA	$4B
 		JSR	loc_4B86
@@ -9431,7 +9419,7 @@ loc_52DA:				; CODE XREF: RAM:52E0j
 
 loc_52E6:				; CODE XREF: RAM:5302j
 		LDA	$4B
-		JSR	sub_4B74
+		JSR	LOADINV
 		BEQ	loc_5300
 		LDY	#0
 		LDA	(off_41),Y
@@ -9530,7 +9518,7 @@ loc_538E:				; CODE XREF: RAM:538Aj
 loc_5390:				; CODE XREF: RAM:5373j	RAM:5380j
 		LDA	byte_627B
 		STA	$4B
-		JSR	sub_4B74
+		JSR	LOADINV
 		CLC
 		LDA	off_41
 		ADC	#6
@@ -9608,7 +9596,7 @@ loc_540F:
 		LDA	$639C
 		BMI	loc_546D
 		STA	$4B
-		JSR	sub_4B74
+		JSR	LOADINV
 		JSR	sub_4EC4
 		LDY	#0
 		LDA	(off_43),Y
@@ -10371,7 +10359,7 @@ byte_58C1:	.BYTE 0			; DATA XREF: sub_5857+6w sub_5857+46w	...
 
 sub_58C2:				; CODE XREF: sub_5857+49p
 		LDA	$4B
-		JSR	sub_4B74
+		JSR	LOADINV
 		LDA	#6
 		CLC
 		ADC	$41
@@ -10497,8 +10485,7 @@ aGetq:		.BYTE "GET?"
 		.BYTE $D
 		.BYTE $A9
 		.BYTE $A5
-		.BYTE $AC
-		.WORD byte_59C0
+		STRSUB byte_59C0
 
 a_Getq:
 		MOVEXY	0,0
@@ -10638,7 +10625,7 @@ loc_5ADF:				; CODE XREF: sub_5AB4+14j
 		CMP	#$80
 		BCS	loc_5B15
 		STA	$4B
-		JSR	sub_4B74
+		JSR	LOADINV
 		BEQ	loc_5B0E
 		LDA	#9
 		STA	byte_1961
@@ -10775,7 +10762,7 @@ loc_5BEA:				; CODE XREF: sub_5AB4+193j
 		BNE	loc_5C44
 		LDA	$64D4,X
 		STA	$4B
-		JSR	sub_4B74
+		JSR	LOADINV
 		BEQ	loc_5C44
 		LDY	#0
 		LDA	(off_41),Y
@@ -10819,8 +10806,7 @@ a_OfferHowMany:
 		.BYTE $A5
 aOfferHowManyq:	.BYTE "Offer how many?"
 		.BYTE $D
-		.BYTE $AC
-		.WORD byte_5C7D
+		STRSUB byte_5C7D
 
 a_DropHowMany:
 		MOVEXY	0,0
@@ -10852,7 +10838,7 @@ loc_5CCA:				; CODE XREF: RAM:5CEBj
 		LDA	$639C,X
 		BMI	loc_5CEA
 		STA	$4B
-		JSR	sub_4B74
+		JSR	LOADINV
 		JSR	sub_4EC4
 		LDY	#$10
 		LDX	byte_5D04
@@ -10986,7 +10972,7 @@ loc_5DD6:				; CODE XREF: RAM:5DCCj
 		LDA	byte_1946,X
 		BMI	loc_5E05
 		STA	$4B
-		JSR	sub_4B74
+		JSR	LOADINV
 		JSR	sub_4EC4
 		LDY	#1
 		LDA	(off_43),Y
@@ -11110,6 +11096,7 @@ aOr_0:		.BYTE " or "
 		BLINK	"ESC"
 aToExit_0:	.BYTE " to exit"
 		.BYTE $AE
+
 a_ItemForwardBack:
 aItem_0:	.BYTE "Item "
 		BLINK	'#'

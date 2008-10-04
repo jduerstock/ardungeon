@@ -20,7 +20,7 @@
 		STA	$1935
 		STA	$1938
 		STA	$1939
-		STA	$AC00
+		STA	SEG_AC00
 		STA	$194B
 		BIT	$265
 		BMI	loc_764B
@@ -1496,16 +1496,14 @@ aPressAnyKeyT_0:.BYTE "Press any key to continue"
 		.BYTE $A5
 aUnableToRemove:.BYTE "Unable to remove character!"
 		.BYTE $D
-		.BYTE $AC
-		.WORD byte_810D
+		STRSUB byte_810D
 		.BYTE $AD
 		.WORD byte_82F2
 		MOVEXY	0,8
 		.BYTE $A5
 aThatCharacterH:.BYTE "That Character has been removed."
 		.BYTE $D
-		.BYTE $AC
-		.WORD byte_7FC0
+		STRSUB byte_7FC0
 		.BYTE $AD
 		.WORD byte_82F2
 		MOVEXY	0,8
@@ -1563,8 +1561,7 @@ aMakeSureYourDi:.BYTE "Make sure your disk is not write"
 		.BYTE $A5
 aProtectedAndTr:.BYTE "protected and try again."
 		.BYTE $D
-		.BYTE $AC
-		.WORD byte_7FC0
+		STRSUB byte_7FC0
 		.BYTE $AD
 		.WORD byte_82F2
 		MOVEXY	0,8
@@ -1575,8 +1572,7 @@ aThisCharacterI:.BYTE "This character is in "
 		.BYTE $F
 		.BYTE '!'
 		.BYTE $D
-		.BYTE $AC
-		.WORD byte_7FC0
+		STRSUB byte_7FC0
 		.BYTE $AD
 		.WORD byte_82F2
 		MOVEXY	0,8
@@ -1650,8 +1646,7 @@ a_:		.BYTE "."
 		.BYTE $A3
 		.WORD loc_82D8
 		.BYTE $D
-		.BYTE $AC
-		.WORD byte_7FC0
+		STRSUB byte_7FC0
 		.BYTE $A8
 		.BYTE $A5
 aResumeExisting:.BYTE "Resume Existing Character"
@@ -2167,8 +2162,7 @@ loc_8655:				; CODE XREF: RAM:8659j
 		STA	$D01A
 		RTS
 ; ---------------------------------------------------------------------------
-		.BYTE $AC
-		.WORD byte_88C4
+		STRSUB byte_88C4
 		MOVEXY	0,8
 		.BYTE $A5
 aPleaseInsertTh:.BYTE "Please insert the disk to be made into a"
@@ -2191,8 +2185,7 @@ aPressSpaceBarT:.BYTE "Press SPACE BAR to continue"
 aOrEscToCancel:	.BYTE "or ESC to cancel"
 		.BYTE $D
 		.BYTE $FF
-		.BYTE $AC
-		.WORD byte_88C4
+		STRSUB byte_88C4
 		MOVEXY	0,8
 		.BYTE $A5
 aYouCannotStore:.BYTE "You cannot store characters on an"
@@ -2207,8 +2200,7 @@ byte_877E:	MOVEXY	0,23		; DATA XREF: RAM:887Eo	RAM:88C2o ...
 aPressAnyKeyToC:.BYTE "Press any key to continue"
 		.BYTE $D
 		.BYTE $FF
-		.BYTE $AC
-		.WORD byte_88C4
+		STRSUB byte_88C4
 		MOVEXY	0,8
 		.BYTE $A5
 aThisDiskContai:.BYTE "This disk contains information!"
@@ -2223,10 +2215,8 @@ aBeErased:	.BYTE "be erased!"
 		.BYTE $D
 		.BYTE $D
 		.BYTE $D
-		.BYTE $AC
-		.WORD byte_86E5
-		.BYTE $AC
-		.WORD byte_88C4
+		STRSUB byte_86E5
+		STRSUB byte_88C4
 		MOVEXY	0,8
 		.BYTE $A5
 aUnableToFormat:.BYTE "Unable to format this disk!"
@@ -2243,10 +2233,8 @@ aAndTheDiskIsNo:.BYTE "and the disk is not write protected"
 aAndTryAgain_:	.BYTE "and try again."
 		.BYTE $D
 		.BYTE $D
-		.BYTE $AC
-		.WORD byte_877E
-		.BYTE $AC
-		.WORD byte_88C4
+		STRSUB byte_877E
+		STRSUB byte_88C4
 		MOVEXY	0,8
 		.BYTE $A5
 aCharacterDiskH:.BYTE "Character disk has been created!"
@@ -2255,8 +2243,7 @@ aCharacterDiskH:.BYTE "Character disk has been created!"
 		.BYTE $A5
 aNoErrorsEncoun:.BYTE "No errors encountered."
 		.BYTE $D
-		.BYTE $AC
-		.WORD byte_877E
+		STRSUB byte_877E
 byte_88C4:	.BYTE $A8		; DATA XREF: RAM:8663o	RAM:871Ao ...
 		.BYTE $A5
 aCreateCharacte:.BYTE "Create Character Disk"
@@ -2345,8 +2332,7 @@ aIMSorryButICan:.BYTE "I'm sorry but I can't pronounce"
 aThatNamePlease:.BYTE "that name, please choose another!"
 		.BYTE $D
 		.BYTE $A5
-		.BYTE $AC
-		.WORD byte_877E
+		STRSUB byte_877E
 		.BYTE $A8
 		MOVEXY	0,10
 		.BYTE $A5
