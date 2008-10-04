@@ -5172,6 +5172,8 @@ sub_3531:				; CODE XREF: RAM:30EEp
 ; End of function sub_3531
 
 ; ---------------------------------------------------------------------------
+
+loc_3548:
 		LDA	byte_195A
 		ldxy	$7500
 		JSR	sub_2DE3
@@ -5186,6 +5188,8 @@ loc_355C:				; CODE XREF: RAM:3552j	RAM:356Ej
 		STA	byte_1959
 		JMP	loc_320D
 ; ---------------------------------------------------------------------------
+
+loc_3564:
 		LDA	byte_195A
 		ldxy	$7504
 		JSR	sub_2DE3
@@ -5198,6 +5202,8 @@ loc_355C:				; CODE XREF: RAM:3552j	RAM:356Ej
 		STA	byte_1979
 		JMP	loc_320D
 ; ---------------------------------------------------------------------------
+
+loc_3583:
 		JSR	sub_3596
 		BCS	loc_358B
 		JMP	loc_320D
@@ -5237,6 +5243,8 @@ loc_35BF:				; CODE XREF: sub_3596+3j
 ; End of function sub_3596
 
 ; ---------------------------------------------------------------------------
+
+loc_35C1:
 		LDA	byte_195A
 		ASL	A
 		ASL	A
@@ -5584,16 +5592,10 @@ loc_38A6:				; CODE XREF: sub_386F+1Aj sub_386F+22j ...
 		STX	byte_1938
 		TXA
 		BEQ	loc_38CB
-		LDA	#$F9 ; 'ù'
-		STA	off_16
-		LDA	#$38 ; '8'
-		STA	off_16+1
+		dldi	off_16, a_ThereIsSomething
 		CPX	#2
 		BCC	loc_38CB
-		LDA	#$D5 ; 'Õ'
-		STA	off_16
-		LDA	#$38 ; '8'
-		STA	off_16+1
+		dldi	off_16, a_ThereAreSeveral
 
 loc_38CB:				; CODE XREF: sub_386F+46j sub_386F+52j
 		JSR	sub_1C84
@@ -5607,10 +5609,13 @@ byte_38CF:	.BYTE 0			; DATA XREF: sub_386F+2w sub_386F+34w	...
 		MOVEXY	0,5
 		.BYTE $AB
 		.BYTE $FF
+
+a_ThereAreSeveral:
 		MOVEXY	0,5
 aThereAreSevera:.BYTE " There are several things here."
 		.BYTE $AB
 		.BYTE $FF
+a_ThereIsSomething:
 		MOVEXY	0,5
 aThereIsSomethi:.BYTE " There is something here."
 		.BYTE $AB
@@ -5881,14 +5886,14 @@ byte_3B92:
 		.BYTE	>loc_3C71
 		.BYTE	>loc_3C8C
 		.BYTE	>loc_2CAB
-unk_3B9F:	.BYTE $48 ; H		; DATA XREF: sub_2BFA+5EAr
-		.BYTE $64 ; d
-		.BYTE $83 ; ƒ
-		.BYTE $C1 ; Á
-unk_3BA3:	.BYTE $35 ; 5		; DATA XREF: sub_2BFA+5F0r
-		.BYTE $35 ; 5
-		.BYTE $35 ; 5
-		.BYTE $35 ; 5
+unk_3B9F:	.BYTE	<loc_3548	; DATA XREF: sub_2BFA+5EAr
+		.BYTE	<loc_3564
+		.BYTE	<loc_3583
+		.BYTE	<loc_35C1
+unk_3BA3:	.BYTE	>loc_3548	; DATA XREF: sub_2BFA+5F0r
+		.BYTE	>loc_3564
+		.BYTE	>loc_3583
+		.BYTE	>loc_35C1
 byte_3BA7:	.BYTE $12,$1E,	0,$FF	; DATA XREF: RAM:35C7r	RAM:35CDr ...
 		.BYTE $12,$1B,	0,  3
 		.BYTE $13,$1B,	0,  1
@@ -5935,10 +5940,7 @@ sub_3C2D:				; CODE XREF: RAM:1848j	RAM:2F6Ap ...
 		LDX	byte_1933
 		CPX	byte_1935
 		BEQ	loc_3C40
-		LDA	#7
-		STA	off_16
-		LDA	#$20 ; ' '
-		STA	off_16+1
+		dldi	off_16, byte_2007
 		JSR	sub_1C88
 
 loc_3C40:				; CODE XREF: sub_3C2D+6j
@@ -8351,8 +8353,7 @@ loc_4C6B:				; DATA XREF: RAM:4CC5o
 		JSR	sub_4EFD
 
 loc_4C78:				; CODE XREF: RAM:4C73j
-		LDX	#>$648B
-		LDY	#<$648B
+		ldxy	$648B
 		LDA	$4B
 		JSR	sub_2DE3
 		BCS	loc_4C86
@@ -8360,8 +8361,7 @@ loc_4C78:				; CODE XREF: RAM:4C73j
 ; ---------------------------------------------------------------------------
 
 loc_4C86:				; CODE XREF: RAM:4C81j
-		LDX	#>$648B
-		LDY	#<$648B
+		ldxy	$648B
 		LDA	$4B
 		CLC
 		JSR	sub_2DAB
@@ -8820,11 +8820,11 @@ sub_4EE8:				; CODE XREF: sub_4CCF+2p sub_4EC4p
 		LDY	#5
 		CLC
 		LDA	(off_41),Y
-		ADC	$41
+		ADC	off_41
 		STA	off_43
-		LDA	$42
+		LDA	off_41+1
 		ADC	#0
-		STA	$44
+		STA	off_43+1
 		RTS
 ; End of function sub_4EE8
 
@@ -8867,8 +8867,7 @@ loc_4F22:				; CODE XREF: sub_4EFD+20j
 		PHA
 		LDA	$4B
 		JSR	sub_4AC9
-		LDX	#$4F ; 'O'
-		LDY	#$5D ; ']'
+		ldxy	byte_4F5D
 		JSR	sub_4B4D
 		PLA
 		TAX
@@ -8898,6 +8897,8 @@ loc_4F55:				; CODE XREF: sub_4EFD+51j
 ; End of function sub_4EFD
 
 ; ---------------------------------------------------------------------------
+
+byte_4F5D:
 		.BYTE	3
 		.BYTE $20
 		.BYTE	0
@@ -10104,8 +10105,7 @@ loc_56F2:				; CODE XREF: RAM:56F8j
 loc_56F5:				; CODE XREF: RAM:56EDj
 		JSR	sub_57AB
 		BCS	loc_56F2
-		LDX	#$61 ; 'a'
-		LDY	#$29 ; ')'
+		ldxy	byte_6129
 		JSR	sub_4B4D
 		BMI	loc_56E4
 		LDA	#$88 ; 'ˆ'
@@ -10388,10 +10388,10 @@ sub_58C2:				; CODE XREF: sub_5857+49p
 		JSR	sub_4EC4
 		LDY	#1
 		LDA	(off_43),Y
-		STA	byte_59E3
+		STA	word_59E3
 		INY
 		LDA	(off_43),Y
-		STA	byte_59E4
+		STA	word_59E3+1
 		dldi	off_5955, a_Getq
 
 loc_5904:				; CODE XREF: sub_58C2+24j RAM:5932j
@@ -10511,7 +10511,7 @@ aGetq_0:	.BYTE "GET?"
 		.WORD loc_59E8
 		.BYTE $A9
 		.BYTE $A5
-		PRINTWORD $59E3,6
+		PRINTWORD word_59E3,6
 		.BYTE $20
 byte_59C0:	.BYTE $B3		; DATA XREF: RAM:59A9o
 off_59C1:	.WORD unk_5E53		; DATA XREF: sub_5857+36w sub_58C2+Aw	...
@@ -10529,8 +10529,7 @@ aOOr:		.BYTE "o or "
 a__0:		.BYTE '.'
 		.BYTE $D
 		.BYTE $FF
-byte_59E3:	.BYTE 0			; DATA XREF: sub_58C2+2Fw
-byte_59E4:	.BYTE 0			; DATA XREF: sub_58C2+35w
+word_59E3:	.WORD	0			; DATA XREF: sub_58C2+2Fw
 ; ---------------------------------------------------------------------------
 
 loc_59E5:				; DATA XREF: RAM:59C6o	RAM:6257o
@@ -11206,6 +11205,8 @@ byte_611A:	.BYTE $D		; DATA XREF: RAM:loc_570Cr
 		.BYTE	1
 		.BYTE	0
 		.BYTE	8
+
+byte_6129:
 		.BYTE $8B ; ‹
 		.BYTE $24 ; $
 		.BYTE	4
