@@ -6123,72 +6123,25 @@ aBattleOptions:	.BYTE "Battle Options"
 		.BYTE	"Transact Options"
 		.BYTE	$D
 		MOVEXY	15,2
-		.BYTE $28 ; (
-		.BYTE $A1 ; ¡
-		.BYTE $31 ; 1
-		.BYTE $A0 ;  
-		.BYTE $29 ; )
-		.BYTE $20
-		.BYTE $4F ; O
-		.BYTE $66 ; f
-		.BYTE $66 ; f
-		.BYTE $65 ; e
-		.BYTE $72 ; r
-		.BYTE $A6 ; ¦
-		.BYTE  $F
-		.BYTE	3
-		.BYTE $28 ; (
-		.BYTE $A1 ; ¡
-		.BYTE $32 ; 2
-		.BYTE $A0 ;  
-		.BYTE $29 ; )
-		.BYTE $20
-		.BYTE $42 ; B
-		.BYTE $6C ; l
-		.BYTE $75 ; u
-		.BYTE $66 ; f
-		.BYTE $66 ; f
-		.BYTE $A6 ; ¦
-		.BYTE  $F
-		.BYTE	4
-		.BYTE $28 ; (
-		.BYTE $A1 ; ¡
-		.BYTE $33 ; 3
-		.BYTE $A0 ;  
-		.BYTE $29 ; )
-		.BYTE $20
-		.BYTE $54 ; T
-		.BYTE $72 ; r
-		.BYTE $69 ; i
-		.BYTE $63 ; c
-		.BYTE $6B ; k
-		.BYTE $A6 ; ¦
-		.BYTE  $F
-		.BYTE	5
-		.BYTE $28 ; (
-		.BYTE $A1 ; ¡
-		.BYTE $34 ; 4
-		.BYTE $A0 ;  
-		.BYTE $29 ; )
-		.BYTE $20
-		.BYTE $48 ; H
-		.BYTE $61 ; a
-		.BYTE $69 ; i
-		.BYTE $6C ; l
-		.BYTE $A6 ; ¦
-		.BYTE  $F
-		.BYTE	6
-		.BYTE $28 ; (
-		.BYTE $A1 ; ¡
-		.BYTE $30 ; 0
-		.BYTE $A0 ;  
-		.BYTE $29 ; )
-		.BYTE $20
-		.BYTE $4C ; L
-		.BYTE $65 ; e
-		.BYTE $61 ; a
-		.BYTE $76 ; v
-		.BYTE $65 ; e
+		.BYTE	"("
+		BLINK	"1"
+		.BYTE	") Offer"
+		MOVEXY	15,3
+		.BYTE	"("
+		BLINK	"2"
+		.BYTE	") Bluff"
+		MOVEXY	15,4
+		.BYTE	"("
+		BLINK	"3"
+		.BYTE	") Trick"
+		MOVEXY	15,5
+		.BYTE	"("
+		BLINK	"4"
+		.BYTE	") Hail"
+		MOVEXY	15,6
+		.BYTE	"("
+		BLINK	"0"
+		.BYTE	") Leave"
 		.BYTE $FF
 		.BYTE $A6 ; ¦
 		.BYTE	0
