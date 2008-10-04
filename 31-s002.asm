@@ -6235,218 +6235,39 @@ aSister:	.BYTE	"sister",0
 		MOVEXY	0,3
 		.BYTE	$A5
 		.BYTE	"You wait for an opening.",$D,$FF
-		.BYTE $AC ; ¨
-		.BYTE  $E
-		.BYTE $9D ; ù
-		.BYTE $68 ; h
-		.BYTE $61 ; a
-		.BYTE $70 ; p
-		.BYTE $70 ; p
-		.BYTE $69 ; i
-		.BYTE $6C ; l
-		.BYTE $79 ; y
-		.BYTE $20
-		.BYTE $61 ; a
-		.BYTE $63 ; c
-		.BYTE $63 ; c
-		.BYTE $65 ; e
-		.BYTE $70 ; p
-		.BYTE $74 ; t
-		.BYTE $2E ; .
-		.BYTE  $D
-		.BYTE $FF
-		.BYTE $A6 ; ¶
-		.BYTE	0
-		.BYTE	2
-		.BYTE $A5 ; •
-		.BYTE $49 ; I
-		.BYTE $6E ; n
-		.BYTE $20
-		.BYTE $79 ; y
-		.BYTE $6F ; o
-		.BYTE $75 ; u
-		.BYTE $72 ; r
-		.BYTE $20
-		.BYTE $69 ; i
-		.BYTE $6E ; n
-		.BYTE $65 ; e
-		.BYTE $62 ; b
-		.BYTE $72 ; r
-		.BYTE $69 ; i
-		.BYTE $61 ; a
-		.BYTE $74 ; t
-		.BYTE $65 ; e
-		.BYTE $64 ; d
-		.BYTE $20
-		.BYTE $73 ; s
-		.BYTE $74 ; t
-		.BYTE $61 ; a
-		.BYTE $74 ; t
-		.BYTE $65 ; e
-		.BYTE $2C ; ,
-		.BYTE $20
-		.BYTE $79 ; y
-		.BYTE $6F ; o
-		.BYTE $75 ; u
-		.BYTE  $D
-		.BYTE $A5 ; •
-		.BYTE $AE ; Æ
-		.BYTE $AC ; ¨
-		.BYTE  $E
-		.BYTE $9D ; ù
-		.BYTE $66 ; f
-		.BYTE $65 ; e
-		.BYTE $65 ; e
-		.BYTE $6C ; l
-		.BYTE $20
-		.BYTE $74 ; t
-		.BYTE $68 ; h
-		.BYTE $61 ; a
-		.BYTE $74 ; t
-		.BYTE $20
-		.BYTE $72 ; r
-		.BYTE $65 ; e
-		.BYTE $61 ; a
-		.BYTE $73 ; s
-		.BYTE $6F ; o
-		.BYTE $6E ; n
-		.BYTE $69 ; i
-		.BYTE $6E ; n
-		.BYTE $67 ; g
-		.BYTE $20
-		.BYTE $77 ; w
-		.BYTE $69 ; i
-		.BYTE $74 ; t
-		.BYTE $68 ; h
-		.BYTE $20
-		.BYTE $74 ; t
-		.BYTE $68 ; h
-		.BYTE $65 ; e
-		.BYTE  $D
-		.BYTE $A5 ; •
-		.BYTE $B4 ; ¥
-		.BYTE	1
-		.BYTE $AA ; ™
-		.BYTE $10
-		.BYTE $20
-		.BYTE $69 ; i
-		.BYTE $73 ; s
-		.BYTE $20
-		.BYTE $74 ; t
-		.BYTE $68 ; h
-		.BYTE $65 ; e
-		.BYTE $20
-		.BYTE $62 ; b
-		.BYTE $65 ; e
-		.BYTE $73 ; s
-		.BYTE $74 ; t
-		.BYTE $20
-		.BYTE $63 ; c
-		.BYTE $6F ; o
-		.BYTE $75 ; u
-		.BYTE $72 ; r
-		.BYTE $73 ; s
-		.BYTE $65 ; e
-		.BYTE $2E ; .
-		.BYTE  $D
-		.BYTE $FF
-		.BYTE $AC ; ¨
-		.BYTE $53 ; S
-		.BYTE $76 ; v
-		.BYTE $61 ; a
-		.BYTE $70 ; p
-		.BYTE $70 ; p
-		.BYTE $65 ; e
-		.BYTE $61 ; a
-		.BYTE $72 ; r
-		.BYTE $73 ; s
-		.BYTE  $D
-		.BYTE $A5 ; •
-		.BYTE $73 ; s
-		.BYTE $74 ; t
-		.BYTE $72 ; r
-		.BYTE $65 ; e
-		.BYTE $6E ; n
-		.BYTE $67 ; g
-		.BYTE $74 ; t
-		.BYTE $68 ; h
-		.BYTE $65 ; e
-		.BYTE $6E ; n
-		.BYTE $65 ; e
-		.BYTE $64 ; d
-		.BYTE $20
-		.BYTE $62 ; b
-		.BYTE $79 ; y
-		.BYTE $20
-		.BYTE $79 ; y
-		.BYTE $6F ; o
-		.BYTE $75 ; u
-		.BYTE $72 ; r
-		.BYTE $20
-		.BYTE $61 ; a
-		.BYTE $74 ; t
-		.BYTE $74 ; t
-		.BYTE $61 ; a
-		.BYTE $63 ; c
-		.BYTE $6B ; k
-		.BYTE $21 ; !
-		.BYTE  $D
-		.BYTE $FF
-		.BYTE $A6 ; ¶
-		.BYTE	0
-		.BYTE	2
-		.BYTE $A5 ; •
-		.BYTE $59 ; Y
-		.BYTE $6F ; o
-		.BYTE $75 ; u
-		.BYTE $20
-		.BYTE $61 ; a
-		.BYTE $72 ; r
-		.BYTE $65 ; e
-		.BYTE $20
-		.BYTE $73 ; s
-		.BYTE $74 ; t
-		.BYTE $75 ; u
-		.BYTE $6E ; n
-		.BYTE $6E ; n
-		.BYTE $65 ; e
-		.BYTE $64 ; d
-		.BYTE $2E ; .
-		.BYTE  $D
-		.BYTE $A3 ; £
-		.BYTE $AF ; Ø
-		.BYTE $9D ; ù
-		.BYTE $A9 ; ©
-		.BYTE $91 ; ë
-		.BYTE $85 ; Ö
-		.BYTE $16
-		.BYTE $A9 ; ©
-		.BYTE $98 ; ò
-		.BYTE $85 ; Ö
-		.BYTE $17
-		.BYTE $60 ; `
-		.BYTE $A6 ; ¶
-		.BYTE	0
-		.BYTE	3
-		.BYTE $A5 ; •
-		.BYTE $B4 ; ¥
-		.BYTE $3C ; <
-		.BYTE $9E ; û
-		.BYTE $19
-		.BYTE $20
-		.BYTE $6E ; n
-		.BYTE $6F ; o
-		.BYTE $74 ; t
-		.BYTE $20
-		.BYTE $6C ; l
-		.BYTE $6F ; o
-		.BYTE $61 ; a
-		.BYTE $64 ; d
-		.BYTE $65 ; e
-		.BYTE $64 ; d
-		.BYTE $2E ; .
-		.BYTE  $D
-		.BYTE $FF
+		.BYTE	$AC
+		.WORD	$9D0E
+		.BYTE	"happily accept.",$D,$FF
+		MOVEXY	0,2
+		.BYTE	$A5
+		.BYTE	"In your inebriated state, you",$D,$A5,$AE
+		.BYTE	$AC
+		.WORD	$9D0E
+		.BYTE	"feel that reasoning with the",$D,$A5
+		.BYTE	$B4
+		.WORD	$AA01
+		.BYTE	$10
+		.BYTE	" is the best course.",$D,$FF
+		.BYTE	$AC
+		.WORD	$7653
+		.BYTE	"appears",$D,$A5
+		.BYTE	"strengthened by your attack!",$D,$FF
+		MOVEXY	0,2
+		.BYTE	$A5
+		.BYTE	"You are stunned.",$D
+		.BYTE	$A3
+		.WORD	$9DAF
+
+loc_9DAF:	
+		dldi	off_16, $9891
+		RTS
+
+		MOVEXY	0,3
+		.BYTE	$A5
+		.BYTE	$B4
+		.WORD	$9E3C
+		.BYTE	$19
+		.BYTE	" not loaded.",$D,$FF
 		.BYTE $AC ; ¨
 		.BYTE $65 ; e
 		.BYTE $76 ; v
