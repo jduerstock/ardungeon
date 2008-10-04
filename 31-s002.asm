@@ -5929,48 +5929,48 @@ loc_9841:				; CODE XREF: sub_9827+1Fj
 ; ---------------------------------------------------------------------------
 
 byte_984C:
-		.BYTE $18
-		.BYTE $58 ; X
-		.BYTE $98 ; ˜
-		.BYTE $18
-		.BYTE $58 ; X
-		.BYTE $98 ; ˜
-		.BYTE $18
-		.BYTE $58 ; X
-		.BYTE $98 ; ˜
+		.BYTE	<$0818
+		.BYTE	<$0958
+		.BYTE	<$0A98
+		.BYTE	<$0C18
+		.BYTE	<$0D58
+		.BYTE	<$0E98
+		.BYTE	<$1018
+		.BYTE	<$1158
+		.BYTE	<$1298
 
 byte_9855:
-		.BYTE	8
-		.BYTE	9
-		.BYTE  $A
-		.BYTE  $C
-		.BYTE  $D
-		.BYTE  $E
-		.BYTE $10
-		.BYTE $11
-		.BYTE $12
+		.BYTE	>$0818
+		.BYTE	>$0958
+		.BYTE	>$0A98
+		.BYTE	>$0C18
+		.BYTE	>$0D58
+		.BYTE	>$0E98
+		.BYTE	>$1018
+		.BYTE	>$1158
+		.BYTE	>$1298
 
 byte_985E:
-		.BYTE $F8 ; ø
-		.BYTE $38 ; 8
-		.BYTE $78 ; x
-		.BYTE $F8 ; ø
-		.BYTE $38 ; 8
-		.BYTE $78 ; x
-		.BYTE $F8 ; ø
-		.BYTE $38 ; 8
-		.BYTE $78 ; x
+		.BYTE	<$08F8
+		.BYTE	<$0A38
+		.BYTE	<$0B78
+		.BYTE	<$0CF8
+		.BYTE	<$0E38
+		.BYTE	<$0F78
+		.BYTE	<$10F8
+		.BYTE	<$1238
+		.BYTE	<$1378
 
 byte_9867:
-		.BYTE	8
-		.BYTE  $A
-		.BYTE  $B
-		.BYTE  $C
-		.BYTE  $E
-		.BYTE  $F
-		.BYTE $10
-		.BYTE $12
-		.BYTE $13
+		.BYTE	>$08F8
+		.BYTE	>$0A38
+		.BYTE	>$0B78
+		.BYTE	>$0CF8
+		.BYTE	>$0E38
+		.BYTE	>$0F78
+		.BYTE	>$10F8
+		.BYTE	>$1238
+		.BYTE	>$1378
 byte_9870:	.BYTE 0			; DATA XREF: sub_84CF-D52r
 					; sub_9550+A8w
 byte_9871:	.BYTE 0			; DATA XREF: sub_9550+5Fw
