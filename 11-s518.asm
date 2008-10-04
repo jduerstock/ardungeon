@@ -7671,11 +7671,11 @@ loc_48B9:				; CODE XREF: RAM:48A8j	RAM:48B1j
 		LDA	(off_3D),Y
 		TAX
 		LDA	off_45
-		ADC	$640B,X
+		ADC	INVARRL,X
 		STA	off_45
 		LDA	off_45+1
 		AND	#$7F ; ''
-		ADC	$644B,X
+		ADC	INVARRH,X
 		STA	off_45+1
 		BNE	loc_48EA
 
@@ -7980,11 +7980,11 @@ sub_4A5F:				; CODE XREF: sub_408Bp
 		STX	$4B
 
 loc_4A69:				; CODE XREF: sub_4A5F+1Fj
-		LDA	$644B,X
+		LDA	INVARRH,X
 		BEQ	loc_4A78
-		STA	$42
-		LDA	$640B,X
-		STA	$41
+		STA	off_41+1
+		LDA	INVARRL,X
+		STA	off_41
 		JSR	sub_4BB3
 
 loc_4A78:				; CODE XREF: sub_4A5F+Dj
@@ -8007,7 +8007,7 @@ sub_4A83:				; CODE XREF: sub_4B4D+8p
 		LDX	#$3F ; '?'
 
 loc_4A87:				; CODE XREF: sub_4A83+Aj
-		LDA	$644B,X
+		LDA	INVARRH,X
 		BEQ	loc_4A91
 		DEX
 		BPL	loc_4A87
@@ -8017,12 +8017,12 @@ loc_4A91:				; CODE XREF: sub_4A83+7j
 		STX	$4B
 		CLC
 		LDA	$64E4
-		STA	$640B,X
-		STA	$41
+		STA	INVARRL,X
+		STA	off_41
 		ADC	$4F
 		TAY
 		LDA	$64E5
-		STA	$644B,X
+		STA	INVARRH,X
 		STA	$42
 		ADC	#0
 		TAX
@@ -8047,7 +8047,7 @@ locret_4ABE:				; CODE XREF: sub_4A83+Cj
 loc_4ABF:				; CODE XREF: sub_4A83+2Dj sub_4A83+31j
 		LDX	$4B
 		LDA	#0
-		STA	$644B,X
+		STA	INVARRH,X
 		LDA	#$FF
 		RTS
 ; End of function sub_4A83
@@ -8059,9 +8059,9 @@ loc_4ABF:				; CODE XREF: sub_4A83+2Dj sub_4A83+31j
 sub_4AC9:				; CODE XREF: RAM:188Aj	RAM:4C1Ep ...
 		STA	$4B
 		TAX
-		LDA	$640B,X
+		LDA	INVARRL,X
 		STA	off_41
-		LDA	$644B,X
+		LDA	INVARRH,X
 		STA	off_41+1
 		LDA	$4C
 		PHA
@@ -8106,7 +8106,7 @@ sub_4AC9:				; CODE XREF: RAM:188Aj	RAM:4C1Ep ...
 
 loc_4B28:				; CODE XREF: sub_4AC9+81j
 		SEC
-		LDA	$640B,X
+		LDA	INVARRL,X
 		SBC	$4F
 		TAY
 		LDA	$644B,X
@@ -8124,7 +8124,7 @@ loc_4B3E:				; CODE XREF: sub_4AC9+71j
 loc_4B42:				; CODE XREF: sub_4AC9+73j
 		STA	$644B,X
 		TYA
-		STA	$640B,X
+		STA	INVARRL,X
 
 loc_4B49:				; CODE XREF: sub_4AC9+69j sub_4AC9+6Fj ...
 		DEX
@@ -8165,7 +8165,7 @@ locret_4B73:				; CODE XREF: sub_4B4D+Bj
 
 LOADINV:				; CODE XREF: RAM:1887j	RAM:3F6Ep ...
 		TAX
-		LDA	$640B,X
+		LDA	INVARRL,X
 		STA	off_41
 		LDA	$644B,X
 		STA	off_41+1
@@ -8561,9 +8561,9 @@ sub_4D93:				; CODE XREF: sub_4AC9+14p
 loc_4DA1:				; CODE XREF: sub_4D93+3Ej
 		LDY	#0
 		LDA	(off_3D),Y
-		CMP	#$81 ; 'Å'
+		CMP	#$81
 		BCC	loc_4DC0
-		CMP	#$E0 ; '‡'
+		CMP	#$E0
 		BCS	loc_4DC0
 		LDY	#$F
 		LDA	(off_3D),Y
@@ -10185,7 +10185,7 @@ sub_5795:				; CODE XREF: sub_5835+Cp
 		TAY
 		LDA	$644B,Y
 		STA	off_9+1
-		LDA	$640B,Y
+		LDA	INVARRL,Y
 		STA	off_9
 		LDY	#2
 		LDA	#8
@@ -10362,9 +10362,9 @@ sub_58C2:				; CODE XREF: sub_5857+49p
 		JSR	LOADINV
 		LDA	#6
 		CLC
-		ADC	$41
+		ADC	off_41
 		STA	off_59C1
-		LDA	$42
+		LDA	off_41+1
 		ADC	#0
 		STA	off_59C1+1
 		dldi	off_5955, a_Getq_0

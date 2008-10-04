@@ -404,11 +404,11 @@ loc_787A:				; CODE XREF: sub_7872+39j
 		TXA
 		ASL	A
 		TAX
-		LDA	$41
+		LDA	off_41
 		CLC
 		ADC	#6
 		BCC	loc_789E
-		INC	$42
+		INC	off_41+1
 
 loc_789E:				; CODE XREF: sub_7872+28j
 		STA	$7910,X

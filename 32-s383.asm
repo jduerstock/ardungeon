@@ -106,10 +106,10 @@ loc_76C6:				; CODE XREF: RAM:76A2j	RAM:76B4j
 
 loc_76D2:				; CODE XREF: RAM:7745j
 		STX	$67
-		LDA	$644B,X
+		LDA	INVARRH,X
 		BEQ	loc_7742
 		STA	off_62+1
-		LDA	$640B,X
+		LDA	INVARRL,X
 		STA	off_62
 		LDY	#0
 		LDA	(off_62),Y
