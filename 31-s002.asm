@@ -1,6 +1,10 @@
 		.include	"globals.inc"
 		.include	"macros.inc"
 
+
+off_D6	= $D6
+off_F4	= $F4
+
 ;		.ORG	$7600
 		.BYTE	1
 ; ---------------------------------------------------------------------------
@@ -5851,23 +5855,23 @@ loc_97E3:				; CODE XREF: RAM:97DAj
 		LDA	(off_62),Y
 		STA	$D3
 		LDA	byte_9871,X
-		STA	$D6
+		STA	off_D6
 		LDA	byte_9877,X
-		STA	$D7
+		STA	off_D6+1
 		CLC
 		LDA	byte_987E
-		ADC	#$51 ; 'Q'
-		STA	$F4
-		LDA	#$BC ; '¼'
-		STA	$F5
+		ADC	#<$BC51
+		STA	off_F4
+		LDA	#>$BC51
+		STA	off_F4+1
 		LDX	#4
 
 loc_9801:				; CODE XREF: RAM:9818j
 		LDY	#$3B ; ';'
 
 loc_9803:				; CODE XREF: RAM:9808j
-		LDA	($D6),Y
-		STA	($F4),Y
+		LDA	(off_D6),Y
+		STA	(off_F4),Y
 		DEY
 		BPL	loc_9803
 		LDA	$D6
@@ -5902,19 +5906,19 @@ sub_9827:				; CODE XREF: RAM:77ECp
 
 loc_9829:				; CODE XREF: sub_9827+22j
 		LDY	#$37 ; '7'
-		LDA	$984C,X
-		STA	7
-		LDA	$9855,X
-		STA	8
-		LDA	$985E,X
-		STA	9
-		LDA	$9867,X
-		STA	$A
+		LDA	byte_984C,X
+		STA	off_7
+		LDA	byte_9855,X
+		STA	off_7+1
+		LDA	byte_985E,X
+		STA	off_9
+		LDA	byte_9867,X
+		STA	off_9+1
 		LDA	#$FF
 
 loc_9841:				; CODE XREF: sub_9827+1Fj
-		STA	(7),Y
-		STA	(9),Y
+		STA	(off_7),Y
+		STA	(off_9),Y
 		DEY
 		BPL	loc_9841
 		DEX
@@ -5923,6 +5927,8 @@ loc_9841:				; CODE XREF: sub_9827+1Fj
 ; End of function sub_9827
 
 ; ---------------------------------------------------------------------------
+
+byte_984C:
 		.BYTE $18
 		.BYTE $58 ; X
 		.BYTE $98 ; ˜
@@ -5932,6 +5938,8 @@ loc_9841:				; CODE XREF: sub_9827+1Fj
 		.BYTE $18
 		.BYTE $58 ; X
 		.BYTE $98 ; ˜
+
+byte_9855:
 		.BYTE	8
 		.BYTE	9
 		.BYTE  $A
@@ -5941,6 +5949,8 @@ loc_9841:				; CODE XREF: sub_9827+1Fj
 		.BYTE $10
 		.BYTE $11
 		.BYTE $12
+
+byte_985E:
 		.BYTE $F8 ; ø
 		.BYTE $38 ; 8
 		.BYTE $78 ; x
@@ -5950,6 +5960,8 @@ loc_9841:				; CODE XREF: sub_9827+1Fj
 		.BYTE $F8 ; ø
 		.BYTE $38 ; 8
 		.BYTE $78 ; x
+
+byte_9867:
 		.BYTE	8
 		.BYTE  $A
 		.BYTE  $B
