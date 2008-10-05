@@ -1473,7 +1473,7 @@ loc_7F47:				; CODE XREF: RAM:7F3Bj
 		DEC	$A1
 		DEC	$A1
 		LDY	#$11
-		LDA	($64),Y
+		LDA	(off_64),Y
 		BPL	loc_7F5F
 		INC	$A0
 		INC	$A0
@@ -3725,19 +3725,19 @@ loc_8C35:				; CODE XREF: sub_8C0F+1Fj
 		JSR	$1887
 		BEQ	loc_8C33
 		LDY	#0
-		LDA	($41),Y
+		LDA	(off_41),Y
 		STA	$80
 		BNE	loc_8C9A
 		JSR	$1896
 		LDY	#0
-		LDA	($43),Y
+		LDA	(off_43),Y
 		STA	$81
 		INY
-		LDA	($43),Y
+		LDA	(off_43),Y
 		STA	$82
 		STA	9
 		INY
-		LDA	($43),Y
+		LDA	(off_43),Y
 		STA	$83
 		STA	$A
 		LDX	#2
@@ -3788,11 +3788,11 @@ loc_8C9A:				; CODE XREF: sub_8C0F+38j
 		STA	$81
 		JSR	$1896
 		LDY	#0
-		LDA	($43),Y
+		LDA	(off_43),Y
 		CMP	#2
 		BNE	loc_8CB6
 		INY
-		LDA	($43),Y
+		LDA	(off_43),Y
 		CMP	#0
 		BNE	loc_8CB6
 		STA	$81
@@ -3957,16 +3957,13 @@ sub_8D7E:				; CODE XREF: RAM:7954p	sub_7ECE+9p ...
 		LDA	#6
 		ADC	off_41
 		STA	byte_9E3C
-		STA	byte_9E3E
+		STA	off_9E3E
 		LDA	off_41+1
 		ADC	#0
 		STA	byte_9E3D
-		STA	byte_9E3F
+		STA	off_9E3E+1
 		JSR	$1896
-		LDA	$43
-		STA	$64
-		LDA	$44
-		STA	$65
+		dmv	off_64, off_43
 
 loc_8DC3:				; CODE XREF: sub_8D7E+20j
 		LDA	#0
@@ -3975,13 +3972,10 @@ loc_8DC3:				; CODE XREF: sub_8D7E+20j
 		BMI	loc_8DDE
 		STA	$A9
 		LDY	#$12
-		LDA	($64),Y
+		LDA	(off_64),Y
 		BEQ	loc_8E11
 		STA	$96
-		LDA	$64
-		STA	$66
-		LDA	$65
-		STA	$67
+		dmv	off_66, off_64
 
 loc_8DDE:				; CODE XREF: sub_8D7E+4Cj
 		LDA	$639D
@@ -3990,31 +3984,28 @@ loc_8DDE:				; CODE XREF: sub_8D7E+4Cj
 		JSR	$1887
 		JSR	$1896
 		LDY	#$12
-		LDA	($43),Y
+		LDA	(off_43),Y
 		BEQ	loc_8E11
 		CMP	$96
 		BCC	loc_8E11
 		LDA	$639D
 		STA	$A9
-		LDA	$43
-		STA	$66
-		LDA	$44
-		STA	$67
+		dmv	off_66, off_43
 		CLC
-		LDA	$41
+		LDA	off_41
 		ADC	#6
-		STA	byte_9E3E
-		LDA	$42
+		STA	off_9E3E
+		LDA	off_41+1
 		ADC	#0
-		STA	byte_9E3F
+		STA	off_9E3E+1
 
 loc_8E11:				; CODE XREF: sub_8D7E+54j sub_8D7E+63j ...
 		LDA	#2
 		CLC
-		ADC	$66
-		STA	$66
+		ADC	off_66
+		STA	off_66
 		BCC	locret_8E1C
-		INC	$67
+		INC	off_66+1
 
 locret_8E1C:				; CODE XREF: sub_8D7E+9Aj
 		RTS
@@ -4072,7 +4063,7 @@ loc_8E34:				; CODE XREF: RAM:8E2Fj
 		BEQ	locret_8E6E
 		SEC
 		SBC	#1
-		STA	($43),Y
+		STA	(off_43),Y
 		BEQ	loc_8E6F
 		CMP	#5
 		BCS	locret_8E6E
@@ -4087,7 +4078,7 @@ locret_8E6E:				; CODE XREF: sub_8E31:loc_8E34j
 loc_8E6F:				; CODE XREF: sub_8E31+30j
 		LDY	#2
 		LDA	#$10
-		STA	($41),Y
+		STA	(off_41),Y
 		ldxy	$9E1C
 		JSR	sub_8E7F
 		JMP	sub_8D7E
@@ -4171,7 +4162,7 @@ loc_8EC8:				; CODE XREF: sub_8EA7+Aj sub_8EA7+15j
 sub_8ECE:				; CODE XREF: RAM:770Dj	sub_88B0-EC3p ...
 		LDA	#2
 ; ---------------------------------------------------------------------------
-		.BYTE $2C
+		.BYTE	$2C
 ; ---------------------------------------------------------------------------
 
 loc_8ED1:				; CODE XREF: RAM:770Aj	RAM:783Ap ...
@@ -5158,24 +5149,22 @@ loc_9445:				; CODE XREF: RAM:9442j
 
 loc_9454:				; DATA XREF: RAM:9448w
 		SBC	#$FF
-		STA	($43),Y
+		STA	(off_43),Y
 		BCC	loc_945C
 		BNE	loc_9469
 
 loc_945C:				; CODE XREF: RAM:9458j
 		LDY	#2
 		LDA	#$10
-		STA	($41),Y
-		LDX	#$A2 ; '¢'
-		LDY	#$EB ; 'ë'
+		STA	(off_41),Y
+		ldxy	$A2EB
 		JMP	sub_8E7F
 ; ---------------------------------------------------------------------------
 
 loc_9469:				; CODE XREF: RAM:945Aj
 		CMP	#4
 		BCS	locret_9474
-		LDX	#$A2 ; '¢'
-		LDY	#$CD ; 'Í'
+		ldxy	$A2CD
 		JMP	sub_8E7F
 ; ---------------------------------------------------------------------------
 
@@ -6246,8 +6235,7 @@ loc_9DAF:
 		.BYTE	$AE
 byte_9E3C:	.BYTE 0			; DATA XREF: sub_8D7E+Dw sub_8D7E+2Aw
 byte_9E3D:	.BYTE 0			; DATA XREF: sub_8D7E+12w sub_8D7E+34w
-byte_9E3E:	.BYTE 0			; DATA XREF: sub_8D7E+2Dw sub_8D7E+89w ...
-byte_9E3F:	.BYTE 0			; DATA XREF: sub_8D7E+37w sub_8D7E+90w
+off_9E3E:	.WORD	0		; DATA XREF: sub_8D7E+2Dw sub_8D7E+89w ...
 		.BYTE	"bare hand",0
 		.BYTE	$AC
 		.WORD	$7653
@@ -6366,7 +6354,7 @@ off_9F7E:	.WORD	0		; DATA XREF: RAM:8774w	RAM:9F91w ...
 		BIT	$639C
 		BMI	loc_9F8E
 		LDY	#$F
-		LDA	($64),Y
+		LDA	(off_64),Y
 		AND	#7
 		TAX
 
@@ -9502,7 +9490,7 @@ aYouBlockWithYo:.BYTE "You block with your"
 		.BYTE $D
 		.BYTE $A5
 		.BYTE $B4
-		.WORD byte_9E3E
+		.WORD off_9E3E
 		.BYTE $1E
 a_:		.BYTE "."
 		.BYTE $D
