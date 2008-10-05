@@ -4,6 +4,7 @@
 		.include	"exp_kernel.inc"
 
 off_68	= $68
+off_6E	= $6E
 off_D6	= $D6
 off_F4	= $F4
 
@@ -97,7 +98,7 @@ byte_7698:	.BYTE 0			; DATA XREF: sub_8560+2w
 		.BYTE	0
 byte_769B:	.BYTE 0			; DATA XREF: sub_84CF+26w
 		.BYTE $1D
-		.BYTE $FF
+byte_769D:	.BYTE $FF
 		.BYTE $FF
 		.BYTE $FF
 		.BYTE $FF
@@ -157,8 +158,7 @@ byte_769B:	.BYTE 0			; DATA XREF: sub_84CF+26w
 		.BYTE	0
 		.BYTE	0
 		.BYTE	0
-byte_76D9:	.BYTE 0			; DATA XREF: sub_7EA5+8w sub_7EA5+1Ew	...
-byte_76DA:	.BYTE 0			; DATA XREF: sub_7EA5+Ew sub_7EA5+25w	...
+off_76D9:	.WORD	0		; DATA XREF: sub_7EA5+8w sub_7EA5+1Ew	...
 off_76DB:	.WORD	0		; DATA XREF: sub_7B59+A2w sub_7B59+C5w ...
 		.BYTE	0
 		.BYTE	0
@@ -310,8 +310,8 @@ loc_77B6:				; CODE XREF: sub_84CF-D1Ej
 loc_77BE:				; CODE XREF: RAM:7601j
 		LDA	#$FF
 		STA	$1937
-		dldi	off_1977, $77FA
-		dldi	off_16, $9881
+		dldi	off_1977, loc_77FA
+		dldi	off_16, byte_9881
 		JSR	$184B
 		LDX	$1933
 		STX	byte_A892
@@ -321,12 +321,11 @@ loc_77BE:				; CODE XREF: RAM:7601j
 		STA	$758A
 		STA	$758B
 		JSR	sub_9827
-		LDA	#$58 ; 'X'
-		STA	$224
-		LDA	#$97 ; 'ó'
-		STA	$225
+		dldi	off_224, $9758
 		RTS
 ; ---------------------------------------------------------------------------
+
+loc_77FA:
 		TSX
 		STX	$72
 		LDA	#0
@@ -1359,9 +1358,9 @@ sub_7EA5:				; CODE XREF: RAM:7710j	sub_7DD2+B1p
 		BMI	loc_7EB7
 		TAX
 		LDA	unk_98F5,X
-		STA	byte_76D9
+		STA	off_76D9
 		LDA	unk_9901,X
-		STA	byte_76DA
+		STA	off_76D9+1
 		RTS
 ; ---------------------------------------------------------------------------
 
@@ -1372,10 +1371,10 @@ loc_7EB7:				; CODE XREF: sub_7EA5+2j
 		CLC
 		LDA	$41
 		ADC	#6
-		STA	byte_76D9
+		STA	off_76D9
 		LDA	$42
 		ADC	#0
-		STA	byte_76DA
+		STA	off_76D9+1
 		RTS
 ; End of function sub_7EA5
 
@@ -1456,21 +1455,14 @@ loc_7F2E:				; CODE XREF: RAM:7EFFj	RAM:7F03j ...
 ; ---------------------------------------------------------------------------
 
 loc_7F31:				; CODE XREF: RAM:7EFBj
-		LDA	#$33 ; '3'
-		STA	byte_76D9
-		LDA	#$A7 ; 'ß'
-		STA	byte_76DA
+		dldi	off_76D9, $A733
 		BNE	loc_7F47
 
 loc_7F3D:				; CODE XREF: RAM:7F2Cj
-		LDA	#$2C ; ','
-		STA	byte_76D9
-		LDA	#$A7 ; 'ß'
-		STA	byte_76DA
+		dldi	off_76D9, $A72C
 
 loc_7F47:				; CODE XREF: RAM:7F3Bj
-		LDX	#$A7 ; 'ß'
-		LDY	#$16
+		ldxy	$A716
 		JMP	loc_8ED1
 ; ---------------------------------------------------------------------------
 		JMP	loc_8160
@@ -2546,27 +2538,24 @@ sub_8560:				; CODE XREF: RAM:7758j	sub_84CF+29p
 		LDA	#$21 ; '!'
 		STA	byte_7698
 		LDY	#0
-		LDA	byte_AA01
-		STA	$6E
-		LDA	byte_AA02
-		STA	$6F
+		dmv	off_6E, off_AA01
 
 loc_8571:				; CODE XREF: sub_8560+19j
-		LDA	($6E),Y
-		STA	$769D,Y
+		LDA	(off_6E),Y
+		STA	byte_769D,Y
 		BEQ	loc_857B
 		INY
 		BNE	loc_8571
 
 loc_857B:				; CODE XREF: sub_8560+16j
 		LDA	#$20 ; ' '
-		STA	$769D,Y
+		STA	byte_769D,Y
 		INY
 		LDX	#0
 
 loc_8583:				; CODE XREF: sub_8560+2Dj
-		LDA	$A888,X
-		STA	$769D,Y
+		LDA	aCorpse,X
+		STA	byte_769D,Y
 		INY
 		INX
 		CPX	#7
@@ -3372,9 +3361,9 @@ loc_8A3F:				; CODE XREF: RAM:8A3Cj
 
 loc_8A40:				; CODE XREF: RAM:8A3Aj
 		LDA	$A5DB,X
-		STA	byte_76D9
+		STA	off_76D9
 		LDA	$A5DE,X
-		STA	byte_76DA
+		STA	off_76D9+1
 		LDX	#$A5 ; '•'
 		LDY	#$8A ; 'ä'
 		JMP	loc_8ED1
@@ -3401,9 +3390,9 @@ loc_8A68:				; CODE XREF: RAM:8A5Ej
 		ADC	$A7
 		STA	$638E
 		LDA	$A5DB,X
-		STA	byte_76D9
+		STA	off_76D9
 		LDA	$A5DE,X
-		STA	byte_76DA
+		STA	off_76D9+1
 		LDX	#$A6 ; '¶'
 		LDY	#$C
 		JMP	sub_8ECE
@@ -3901,11 +3890,10 @@ loc_8D2E:				; CODE XREF: sub_8CCB+50j sub_8CCB+59j
 		BNE	loc_8D58
 		INC	$6300,X
 		LDA	unk_98F5,Y
-		STA	byte_76D9
+		STA	off_76D9
 		LDA	unk_9901,Y
-		STA	byte_76DA
-		LDX	#$9C ; 'ú'
-		LDY	#$39 ; '9'
+		STA	off_76D9+1
+		ldxy	$9C39
 		JSR	loc_8ED1
 
 loc_8D58:				; CODE XREF: RAM:8D40j
@@ -4066,14 +4054,14 @@ loc_8E34:				; CODE XREF: RAM:8E2Fj
 		BMI	locret_8E6E
 		CLC
 		LDA	#6
-		ADC	$41
-		STA	byte_76D9
+		ADC	off_41
+		STA	off_76D9
 		LDA	#0
-		ADC	$42
-		STA	byte_76DA
+		ADC	off_41+1
+		STA	off_76D9+1
 		JSR	$1896
 		LDY	#$F
-		LDA	($43),Y
+		LDA	(off_43),Y
 		CMP	#$FF
 		BEQ	locret_8E6E
 		SEC
@@ -5012,12 +5000,11 @@ sub_9337:				; CODE XREF: RAM:8842p	RAM:8978p
 		STA	byte_A89F
 		TAX
 		LDA	$A572,X
-		STA	byte_76D9
+		STA	off_76D9
 		LDA	$A57E,X
-		STA	byte_76DA
+		STA	off_76D9+1
 		dldi	off_76DB, $76DF
-		LDX	#$A2 ; '¢'
-		LDY	#$35 ; '5'
+		ldxy	$A235
 		JSR	sub_8EEF
 
 loc_9358:				; CODE XREF: sub_7B59:loc_7C6Dp
@@ -5284,7 +5271,8 @@ loc_94C5:				; CODE XREF: sub_88B0:loc_79A4p
 		SEC
 
 loc_94D2:				; CODE XREF: RAM:94CCj
-		BIT	$18
+		.BYTE	$24
+		CLC
 		RTS
 
 ; --------------- S U B	R O U T	I N E ---------------------------------------
@@ -5380,14 +5368,14 @@ sub_950E:				; CODE XREF: sub_7B59p	sub_950E+31j
 
 loc_9542:				; CODE XREF: sub_950E+2Cj
 		LDY	#0
-		LDX	$A
-		LDA	9
+		LDX	off_9+1
+		LDA	off_9
 		BEQ	loc_954B
 		INX
 
 loc_954B:				; CODE XREF: sub_950E+3Aj
-		STY	$62
-		STX	$63
+		STY	off_62
+		STX	off_62+1
 		RTS
 ; End of function sub_950E
 
@@ -5434,19 +5422,19 @@ loc_9594:				; CODE XREF: sub_9550+48j
 		STA	$D01B
 		LDY	#0
 		STY	$D2
-		LDA	($62),Y
+		LDA	(off_62),Y
 		STA	byte_9871
-		LDA	$63
+		LDA	off_62+1
 		STA	byte_9877
 
 loc_95B7:				; CODE XREF: sub_9550+7Bj
 		CLC
-		LDA	$9871,Y
-		ADC	#$F0 ; ''
-		STA	$9872,Y
-		LDA	$9877,Y
+		LDA	byte_9871,Y
+		ADC	#$F0
+		STA	byte_9871+1,Y
+		LDA	byte_9877,Y
 		ADC	#0
-		STA	$9878,Y
+		STA	byte_9877+1,Y
 		INY
 		CPY	#5
 		BCC	loc_95B7
@@ -5461,10 +5449,10 @@ loc_95B7:				; CODE XREF: sub_9550+7Bj
 
 loc_95E1:				; CODE XREF: sub_9550+85j
 		LDY	#2
-		LDA	($62),Y
+		LDA	(off_62),Y
 		STA	byte_987F
 		INY
-		LDA	($62),Y
+		LDA	(off_62),Y
 		STA	byte_9880
 
 loc_95EE:				; CODE XREF: sub_9550+8Fj
@@ -5535,10 +5523,10 @@ loc_963D:				; CODE XREF: sub_962B+Bj
 		LDA	$D7
 		ASL	$D6
 		ROL	A
-		ADC	$232
-		STA	$232
+		ADC	word_232
+		STA	word_232
 		BCC	loc_9652
-		INC	$233
+		INC	word_232+1
 
 loc_9652:				; CODE XREF: sub_962B+22j
 		LSR	$D6
@@ -5562,9 +5550,9 @@ loc_9667:				; CODE XREF: sub_962B+5Cj
 		STA	$25B
 		INC	$230
 		LDA	$230
-		CMP	#$35 ; '5'
+		CMP	#'5'
 		BCC	loc_967F
-		LDA	#$31 ; '1'
+		LDA	#'1'
 		STA	$230
 
 loc_967F:				; CODE XREF: sub_962B+4Dj
@@ -5940,6 +5928,8 @@ byte_987D:	.BYTE $78		; DATA XREF: RAM:9770r	RAM:97A5w
 byte_987E:	.BYTE $B		; DATA XREF: RAM:97B9w	RAM:97F4r
 byte_987F:	.BYTE 0			; DATA XREF: sub_9550+89w sub_9550+95w ...
 byte_9880:	.BYTE 0			; DATA XREF: sub_9550+8Cw sub_9550+9Bw ...
+
+byte_9881:
 		.BYTE $A8
 		.BYTE $FF
 		.BYTE $A6,  0,	1
@@ -7978,139 +7968,47 @@ unk_A491:	.BYTE $A3 ; £		; DATA XREF: RAM:8777r
 		.BYTE $DE ; ﬁ
 		.BYTE $76 ; v
 		.BYTE $60 ; `
-		.BYTE $A3 ; £
-		.BYTE $F1 ; Ò
-		.BYTE $A6 ; ¶
-		.BYTE $A6 ; ¶
-		.BYTE	0
-		.BYTE	3
-		.BYTE $A5 ; •
-		.BYTE $B4 ; ¥
-		.BYTE $D9 ; Ÿ
-		.BYTE $76 ; v
-		.BYTE $27 ; '
-		.BYTE  $D
-		.BYTE $FF
-		.BYTE $43 ; C
-		.BYTE $68 ; h
-		.BYTE $65 ; e
-		.BYTE $63 ; c
-		.BYTE $6B ; k
-		.BYTE $20
-		.BYTE $64 ; d
-		.BYTE $69 ; i
-		.BYTE $73 ; s
-		.BYTE $6B ; k
-		.BYTE $20
-		.BYTE $69 ; i
-		.BYTE $6E ; n
-		.BYTE $20
-		.BYTE $64 ; d
-		.BYTE $72 ; r
-		.BYTE $69 ; i
-		.BYTE $76 ; v
-		.BYTE $65 ; e
-		.BYTE $20
-		.BYTE $20
-		.BYTE $2E ; .
-		.BYTE	0
-		.BYTE $49 ; I
-		.BYTE $6E ; n
-		.BYTE $73 ; s
-		.BYTE $65 ; e
-		.BYTE $72 ; r
-		.BYTE $74 ; t
-		.BYTE $20
-		.BYTE $44 ; D
-		.BYTE $69 ; i
-		.BYTE $73 ; s
-		.BYTE $6B ; k
-		.BYTE $20
-		.BYTE $33 ; 3
-		.BYTE $20
-		.BYTE $53 ; S
-		.BYTE $69 ; i
-		.BYTE $64 ; d
-		.BYTE $65 ; e
-		.BYTE $20
-		.BYTE $31 ; 1
-		.BYTE $2E ; .
-		.BYTE	0
-		.BYTE $A9 ; ©
-		.BYTE $DB ; -
-		.BYTE $8D ; ç
-		.BYTE $D9 ; Ÿ
-		.BYTE $76 ; v
-		.BYTE $A9 ; ©
-		.BYTE $A6 ; ¶
-		.BYTE $8D ; ç
-		.BYTE $DA ; ⁄
-		.BYTE $76 ; v
-		.BYTE $2C ; ,
-		.BYTE $58 ; X
-		.BYTE	2
-		.BYTE $70 ; p
-		.BYTE $15
-		.BYTE $A9 ; ©
-		.BYTE $C4 ; -
-		.BYTE $8D ; ç
-		.BYTE $D9 ; Ÿ
-		.BYTE $76 ; v
-		.BYTE $A9 ; ©
-		.BYTE $A6 ; ¶
-		.BYTE $8D ; ç
-		.BYTE $DA ; ⁄
-		.BYTE $76 ; v
-		.BYTE $38 ; 8
-		.BYTE $AD ; ≠
-		.BYTE $30 ; 0
-		.BYTE	2
-		.BYTE $E9 ; È
-		.BYTE $30 ; 0
-		.BYTE	9
-		.BYTE $30 ; 0
-		.BYTE $8D ; ç
-		.BYTE $D8 ; ÿ
-		.BYTE $A6 ; ¶
-		.BYTE $60 ; `
-		.BYTE $A6 ; ¶
-		.BYTE	0
-		.BYTE	3
-		.BYTE $A5 ; •
-		.BYTE $59 ; Y
-		.BYTE $6F ; o
-		.BYTE $75 ; u
-		.BYTE $20
-		.BYTE $B4 ; ¥
-		.BYTE $D9 ; Ÿ
-		.BYTE $76 ; v
+
+byte_A6B7:
+		.BYTE	$A3
+		.WORD	$A6F1
+		MOVEXY	0,3
+		.BYTE	$A5
+		.BYTE	$B4
+		.WORD	$76D9
+		.BYTE	$27
+		.BYTE	$D
+		.BYTE	$FF
+aCheckDiskIn:	.BYTE	"Check disk in drive "
+byte_A6D8:	.BYTE	" "
+		.BYTE	".",0
+aInsertDisk3:	.BYTE	"Insert Disk 3 Side 1.",0
+
+loc_A6F1:				; DATA XREF: RAM:A6B8o
+		dldi	off_76D9, aInsertDisk3
+		BIT	$258
+		BVS	locret_A715
+		dldi	off_76D9, aCheckDiskIn
+		SEC
+		LDA	$230
+		SBC     #'0'
+		ORA     #'0'
+		STA     byte_A6D8
+
+locret_A715:				; CODE XREF: RAM:A6FEj
+		RTS
+
+		MOVEXY	0,3
+		.BYTE	$A5
+		.BYTE	"You "
+		.BYTE	$B4
+		.WORD	$76D9
 		.BYTE	8
-		.BYTE $20
-		.BYTE $65 ; e
-		.BYTE $73 ; s
-		.BYTE $63 ; c
-		.BYTE $61 ; a
-		.BYTE $70 ; p
-		.BYTE $65 ; e
-		.BYTE $2E ; .
-		.BYTE  $D
-		.BYTE $FF
-		.BYTE $64 ; d
-		.BYTE $69 ; i
-		.BYTE $64 ; d
-		.BYTE $6E ; n
-		.BYTE $27 ; '
-		.BYTE $74 ; t
-		.BYTE	0
-		.BYTE $63 ; c
-		.BYTE $61 ; a
-		.BYTE $6E ; n
-		.BYTE $27 ; '
-		.BYTE $74 ; t
-		.BYTE	0
-		.BYTE $AC ; ¨
-		.BYTE $65 ; e
-		.BYTE $76 ; v
+		.BYTE	" escape.",$D,$FF
+		.BYTE	"didn't",0
+		.BYTE	"can't",0
+		.BYTE	$AC
+		.WORD	$7665
 		.BYTE $73 ; s
 		.BYTE $65 ; e
 		.BYTE $65 ; e
@@ -8443,13 +8341,7 @@ unk_A491:	.BYTE $A3 ; £		; DATA XREF: RAM:8777r
 		.BYTE $A7 ; ß
 		.BYTE $A8 ; ®
 		.BYTE $A8 ; ®
-		.BYTE $63 ; c
-		.BYTE $6F ; o
-		.BYTE $72 ; r
-		.BYTE $70 ; p
-		.BYTE $73 ; s
-		.BYTE $65 ; e
-		.BYTE	0
+aCorpse:	.BYTE	"corpse",0
 		.BYTE  $B
 		.BYTE  $E
 		.BYTE	8
@@ -8824,8 +8716,7 @@ byte_A8A0:	.BYTE 0			; DATA XREF: sub_7B59+40w sub_7B59+48r ...
 		.BYTE $88 ; à
 byte_AA00:	.BYTE $A9		; CODE XREF: RAM:7804p
 					; DATA XREF: RAM:760Fr	...
-byte_AA01:	.BYTE $FF		; DATA XREF: sub_8560+7r
-byte_AA02:	.BYTE $85		; DATA XREF: sub_8560+Cr
+off_AA01:	.WORD $85FF		; DATA XREF: sub_8560+7r
 		.BYTE $A6 ; ¶
 		.BYTE $85 ; Ö
 		.BYTE $AF ; Ø
