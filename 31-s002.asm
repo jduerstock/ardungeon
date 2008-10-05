@@ -6392,22 +6392,22 @@ unk_9F66:	.BYTE	>aHack		; DATA XREF: RAM:9F94r
 		.BYTE	>aZap
 		.BYTE	>aPunch
 		.BYTE	>aHit
-unk_9F6E:	.BYTE $30 ; 0		; DATA XREF: RAM:9FA0r
-		.BYTE $36 ; 6
-		.BYTE $3B ; ;
-		.BYTE $42 ; B
-		.BYTE $49 ; I
-		.BYTE $4E ; N
-		.BYTE $54 ; T
-		.BYTE $5A ; Z
-unk_9F76:	.BYTE $9F ; Ÿ		; DATA XREF: RAM:9FA6r
-		.BYTE $9F ; Ÿ
-		.BYTE $9F ; Ÿ
-		.BYTE $9F ; Ÿ
-		.BYTE $9F ; Ÿ
-		.BYTE $9F ; Ÿ
-		.BYTE $9F ; Ÿ
-		.BYTE $9F ; Ÿ
+unk_9F6E:	.BYTE	<aSlash		; DATA XREF: RAM:9FA0r
+		.BYTE	<aStab
+		.BYTE	<aWallop
+		.BYTE	<aImpale
+		.BYTE	<aLash
+		.BYTE	<aBlast
+		.BYTE	<aWhomp
+		.BYTE	<aHit_0
+unk_9F76:	.BYTE	>aSlash		; DATA XREF: RAM:9FA6r
+		.BYTE	>aStab
+		.BYTE	>aWallop
+		.BYTE	>aImpale
+		.BYTE	>aLash
+		.BYTE	>aBlast
+		.BYTE	>aWhomp
+		.BYTE	>aHit_0
 byte_9F7E:	.BYTE 0			; DATA XREF: RAM:8774w	RAM:9F91w ...
 byte_9F7F:	.BYTE 0			; DATA XREF: RAM:877Aw	RAM:9F97w ...
 ; ---------------------------------------------------------------------------
