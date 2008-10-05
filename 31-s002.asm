@@ -2714,8 +2714,7 @@ loc_8642:				; CODE XREF: RAM:863Fj
 		INC	$A4
 		CMP	#$40 ; '@'
 		BCC	loc_8674
-		LDX	#$A2 ; '¢'
-		LDY	#$86 ; 'Ü'
+		ldxy	$A286
 		JMP	sub_8ECE
 ; ---------------------------------------------------------------------------
 
@@ -2750,8 +2749,7 @@ loc_8690:				; CODE XREF: RAM:868Cj
 		LDX	$77
 		JSR	sub_8F15
 		BPL	loc_869E
-		LDX	#$A2 ; '¢'
-		LDY	#$7A ; 'z'
+		ldxy	$A27A
 		JMP	sub_8ECE
 ; ---------------------------------------------------------------------------
 
@@ -2766,22 +2764,21 @@ loc_86A2:				; CODE XREF: RAM:loc_869Ej
 		LDX	#1
 		JSR	sub_8F0D
 		BMI	loc_86B5
-		LDX	#$9D ; 'ù'
-		LDY	#$EB ; 'Î'
+		ldxy	$9DEB
 		JMP	sub_8ECE
 ; ---------------------------------------------------------------------------
 
 loc_86B5:				; CODE XREF: RAM:86ACj
 		LDY	#0
-		LDA	($6A),Y
+		LDA	(off_6A),Y
 		INY
-		ORA	($6A),Y
+		ORA	(off_6A),Y
 		STA	$8E
 		BEQ	loc_86E5
 		LDY	#$12
-		LDA	$67
+		LDA	off_66+1
 		BEQ	loc_86E5
-		LDA	($66),Y
+		LDA	(off_66),Y
 		BEQ	loc_86E5
 		CLC
 		ADC	$6371
@@ -2794,8 +2791,7 @@ loc_86D2:				; CODE XREF: RAM:86CEj
 		LDX	#3
 		JSR	sub_8F0D
 		BMI	loc_86E5
-		LDX	#$A4 ; '§'
-		LDY	#$B1 ; '±'
+		ldxy	$A4B1
 		JSR	sub_8ECE
 		JMP	loc_8E2D
 ; ---------------------------------------------------------------------------
@@ -2806,7 +2802,7 @@ loc_86E5:				; CODE XREF: RAM:86BEj	RAM:86C4j ...
 
 loc_86E9:				; CODE XREF: RAM:8718j
 		LDY	$8B
-		LDA	($6A),Y
+		LDA	(off_6A),Y
 		JSR	sub_8F8E
 		STA	$63DD,Y
 		CPY	#2
@@ -2862,11 +2858,11 @@ loc_8730:				; CODE XREF: RAM:8721j	RAM:8726j
 
 loc_8751:				; CODE XREF: RAM:8747j
 		LDY	#$F
-		LDA	($6A),Y
+		LDA	(off_6A),Y
 		AND	#7
 		STA	$8F
 		LDY	#0
-		LDA	($68),Y
+		LDA	(off_68),Y
 		BPL	loc_8765
 		LDA	$8F
 		ORA	#$10
@@ -2885,8 +2881,7 @@ loc_876F:				; CODE XREF: RAM:8767j
 		STA	off_9F7E
 		LDA	unk_A491,X
 		STA	off_9F7E+1
-		LDX	#$A3 ; '£'
-		LDY	#$4B ; 'K'
+		ldxy	$A34B
 		JSR	sub_8ECE
 		LDA	byte_A89C
 		CMP	#1
@@ -2925,20 +2920,18 @@ loc_87BB:				; CODE XREF: RAM:87ACj
 		JSR	$1887
 		LDY	#2
 		LDA	#2
-		STA	($41),Y
-		LDX	#$A5 ; '•'
-		LDY	#$E1 ; '·'
+		STA	(off_41),Y
+		ldxy	$A5E1
 		JMP	loc_87E2
 ; ---------------------------------------------------------------------------
 
 loc_87D4:				; CODE XREF: RAM:87BDj
 		BIT	$A5
 		BMI	loc_87E5
-		LDA	#$80 ; 'Ä'
+		LDA	#$80
 		ORA	$A5
 		STA	$A5
-		LDX	#$A3 ; '£'
-		LDY	#$2A ; '*'
+		ldxy	$A32A
 
 loc_87E2:				; CODE XREF: RAM:87B8j	RAM:87D1j
 		JSR	sub_8ECE
@@ -2951,16 +2944,16 @@ loc_87E5:				; CODE XREF: RAM:8789j	RAM:8793j ...
 		ORA	$A4
 		BEQ	locret_880C
 		LDY	#2
-		LDA	($68),Y
+		LDA	(off_68),Y
 		CMP	#1
 		BNE	locret_880C
-		LDY	$68
-		LDX	$69
+		LDY	off_68
+		LDX	off_68+1
 		JSR	$1884
 		BMI	locret_880C
 		LDA	#7
 		LDY	#0
-		STA	($41),Y
+		STA	(off_41),Y
 		JSR	sub_9081
 
 locret_880C:				; CODE XREF: RAM:87E8j	RAM:87F0j ...
@@ -2993,8 +2986,7 @@ loc_881D:				; CODE XREF: RAM:8818j
 		STA	$B2,X
 		LDA	byte_AA23
 		STA	$B3,X
-		LDX	#$A2 ; '¢'
-		LDY	#3
+		ldxy	$A203
 		JMP	loc_8ED1
 ; ---------------------------------------------------------------------------
 
@@ -3161,13 +3153,11 @@ loc_88FC:				; CODE XREF: sub_88B0+5j sub_88B0+48j
 		LDA	byte_AA20
 		AND	#2
 		BEQ	loc_891C
-		LDX	#$A4 ; '§'
-		LDY	#$DC ; '‹'
+		ldxy	$A4DC
 		BNE	loc_8920
 
 loc_891C:				; CODE XREF: sub_88B0+64j
-		LDX	#$A4 ; '§'
-		LDY	#$D1 ; '—'
+		ldxy	$A4D1
 
 loc_8920:				; CODE XREF: sub_88B0+6Aj
 		JSR	loc_8ED1
@@ -3245,28 +3235,28 @@ loc_8993:				; CODE XREF: RAM:897Fj	RAM:8982j ...
 		PHA
 		RTS
 ; ---------------------------------------------------------------------------
-unk_899F:	.BYTE $B4 ; ¥		; DATA XREF: RAM:899Ar
-		.BYTE $DB ; -
-		.BYTE $DE ; ﬁ
-		.BYTE $EE ; Ó
-		.BYTE $52 ; R
-		.BYTE $83 ; É
-		.BYTE $89 ; â
-		.BYTE $8F ; è
-		.BYTE $95 ; ï
-		.BYTE $99 ; ô
-		.BYTE $A6 ; ¶
-unk_89AA:	.BYTE $89 ; â		; DATA XREF: RAM:8996r
-		.BYTE $89 ; â
-		.BYTE $89 ; â
-		.BYTE $89 ; â
-		.BYTE $8A ; ä
-		.BYTE $8A ; ä
-		.BYTE $8A ; ä
-		.BYTE $8A ; ä
-		.BYTE $8A ; ä
-		.BYTE $8A ; ä
-		.BYTE $8A ; ä
+unk_899F:	.BYTE	<(sub_89B5-1)	; DATA XREF: RAM:899Ar
+		.BYTE	<(sub_89DC-1)
+		.BYTE	<(sub_89DF-1)
+		.BYTE	<(sub_89EF-1)
+		.BYTE	<(loc_8A53-1)
+		.BYTE	<(sub_8A84-1)
+		.BYTE	<(sub_8A8A-1)
+		.BYTE	<(sub_8A90-1)
+		.BYTE	<(sub_8A96-1)
+		.BYTE	<(sub_8A9A-1)
+		.BYTE	<(sub_8AA7-1)
+unk_89AA:	.BYTE	>(sub_89B5-1)	; DATA XREF: RAM:8996r
+		.BYTE	>(sub_89DC-1)
+		.BYTE	>(sub_89DF-1)
+		.BYTE	>(sub_89EF-1)
+		.BYTE	>(loc_8A53-1)
+		.BYTE	>(sub_8A84-1)
+		.BYTE	>(sub_8A8A-1)
+		.BYTE	>(sub_8A90-1)
+		.BYTE	>(sub_8A96-1)
+		.BYTE	>(sub_8A9A-1)
+		.BYTE	>(sub_8AA7-1)
 
 ; --------------- S U B	R O U T	I N E ---------------------------------------
 
@@ -3300,10 +3290,12 @@ loc_89D8:				; CODE XREF: sub_89B5+9j sub_89B5+Dj ...
 ; End of function sub_89B5
 
 ; ---------------------------------------------------------------------------
+sub_89DC:
 		LDX	#2
 ; ---------------------------------------------------------------------------
-		.BYTE $2C ; ,
+		.BYTE	$2C
 ; ---------------------------------------------------------------------------
+sub_89DF:
 		LDX	#5
 		CLC
 		LDA	$AA24,X
@@ -3315,6 +3307,7 @@ loc_89EB:				; CODE XREF: RAM:89E7j
 		STA	$AA24,X
 		RTS
 ; ---------------------------------------------------------------------------
+sub_89EF:
 		LDA	#3
 		STA	$88
 		LDA	byte_AA0D
@@ -3400,17 +3393,27 @@ loc_8A68:				; CODE XREF: RAM:8A5Ej
 		LDY	#$C
 		JMP	sub_8ECE
 ; ---------------------------------------------------------------------------
+
+sub_8A84:
 		LDX	#4
 		LDA	#$46 ; 'F'
 		BNE	loc_8A9E
+
+sub_8A8A:
 		LDX	#$A
 		LDA	#$46 ; 'F'
 		BNE	loc_8A9E
+
+sub_8A90:
 		LDX	#6
 		LDA	#$28 ; '('
 		BNE	loc_8A9E
+
+sub_8A96:				; huh?!
 		LDX	#7
 		LDA	#$46 ; 'F'
+
+sub_8A9A:
 		LDX	#3
 		LDA	#$46 ; 'F'
 
@@ -3419,6 +3422,8 @@ loc_8A9E:				; CODE XREF: RAM:8A88j	RAM:8A8Ej ...
 		STA	$63DD,X
 		JMP	loc_8A01
 ; ---------------------------------------------------------------------------
+
+sub_8AA7:
 		LDA	$639C
 		BMI	locret_8ABE
 		JSR	$1887
