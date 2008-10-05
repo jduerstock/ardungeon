@@ -1,7 +1,8 @@
 		.include	"globals.inc"
 		.include	"macros.inc"
+		.include	"exp_kernel.inc"
 
-
+off_68	= $68
 off_D6	= $D6
 off_F4	= $F4
 
@@ -17,8 +18,7 @@ locret_7607:
 ; ---------------------------------------------------------------------------
 		JMP	loc_776D
 ; ---------------------------------------------------------------------------
-byte_760B:	.BYTE 0			; DATA XREF: RAM:7619w	RAM:765Bo
-byte_760C:	.BYTE 0			; DATA XREF: RAM:761Fw
+off_760B:	.WORD	0		; DATA XREF: RAM:7619w	RAM:765Bo
 ; ---------------------------------------------------------------------------
 
 loc_760D:				; DATA XREF: RAM:7657o
@@ -29,9 +29,9 @@ loc_760D:				; DATA XREF: RAM:7657o
 
 loc_7616:				; CODE XREF: RAM:7612j
 		LDA	unk_7643,X
-		STA	byte_760B
+		STA	off_760B
 		LDA	unk_764B,X
-		STA	byte_760C
+		STA	off_760B+1
 		RTS
 ; ---------------------------------------------------------------------------
 aThe:		.BYTE "The",0
@@ -64,7 +64,7 @@ byte_7656:
 		.WORD loc_760D
 		.BYTE $A5
 		.BYTE $B4
-		.WORD byte_760B
+		.WORD off_760B
 		.BYTE 3
 		.BYTE ' '
 		.BYTE $B4
@@ -309,14 +309,8 @@ loc_77B6:				; CODE XREF: sub_84CF-D1Ej
 loc_77BE:				; CODE XREF: RAM:7601j
 		LDA	#$FF
 		STA	$1937
-		LDA	#$FA ; '˙'
-		STA	$1977
-		LDA	#$77 ; 'w'
-		STA	$1978
-		LDA	#$81 ; 'Å'
-		STA	$16
-		LDA	#$98 ; 'ò'
-		STA	$17
+		dldi	off_1977, $77FA
+		dldi	off_16, $9881
 		JSR	$184B
 		LDX	$1933
 		STX	byte_A892
@@ -442,8 +436,7 @@ loc_789C:				; CODE XREF: sub_88B0-1010j
 loc_78B4:				; CODE XREF: sub_88B0-1001j
 		LDA	$638E
 		BEQ	loc_78C3
-		LDX	#$9D ; 'ù'
-		LDY	#$97 ; 'ó'
+		ldxy	$9D97
 		JSR	loc_8ED1
 		JMP	loc_79F9
 ; ---------------------------------------------------------------------------
@@ -468,8 +461,7 @@ loc_78CC:				; CODE XREF: sub_88B0-FE9j
 		STA	$1961
 
 loc_78DD:				; CODE XREF: RAM:7919j	RAM:7963j
-		LDX	#$9A ; 'ö'
-		LDY	#$4B ; 'K'
+		ldxy	$9A4B
 		JSR	sub_8EEF
 
 loc_78E4:				; CODE XREF: RAM:7912j
@@ -484,10 +476,7 @@ loc_78E7:				; CODE XREF: sub_88B0-FC6j
 		STA	$1937
 		LDA	#6
 		STA	byte_A894
-		LDA	#8
-		STA	$1977
-		LDA	#$79 ; 'y'
-		STA	$1978
+		dldi	off_1977, $7908
 		JMP	$1806
 ; END OF FUNCTION CHUNK	FOR sub_88B0
 ; ---------------------------------------------------------------------------
@@ -517,8 +506,7 @@ loc_7931:				; DATA XREF: RAM:792Bw
 		BCS	loc_7941
 		LDA	#4
 		STA	byte_A894
-		LDX	#$9D ; 'ù'
-		LDY	#$32 ; '2'
+		ldxy	$9D32
 		JSR	loc_8ED1
 
 loc_7941:				; CODE XREF: RAM:7920j	RAM:7925j ...
@@ -530,8 +518,7 @@ loc_7941:				; CODE XREF: RAM:7920j	RAM:7925j ...
 		STX	$639D
 		STY	$639C
 		JSR	sub_8D7E
-		LDX	#$A0 ; '†'
-		LDY	#$C1 ; '¡'
+		ldxy	$A0C1
 		JSR	sub_8EEF
 		LDA	#1
 		JSR	$185A
@@ -618,8 +605,7 @@ loc_79E3:				; CODE XREF: sub_88B0-EEFj
 		LDA	$A5
 		AND	#$7F ; ''
 		STA	$A5
-		LDX	#$A2 ; '¢'
-		LDY	#$4E ; 'N'
+		ldxy	$A24E
 		JSR	sub_8ECE
 
 loc_79F0:				; CODE XREF: sub_88B0-EF3j
@@ -670,13 +656,11 @@ loc_7A28:				; CODE XREF: sub_88B0-E94j
 		JSR	sub_9509
 		LDA	#0
 		STA	$C3,X
-		LDX	#$9C ; 'ú'
-		LDY	#$B3 ; '≥'
+		ldxy	$9CB3
 		BNE	loc_7A47
 
 loc_7A43:				; CODE XREF: sub_88B0-E7Cj
-		LDX	#$A1 ; '°'
-		LDY	#$E7 ; 'Á'
+		ldxy	$A1E7
 
 loc_7A47:				; CODE XREF: sub_88B0-E6Fj
 		JSR	sub_8ECE
@@ -733,8 +717,7 @@ loc_7A9F:				; CODE XREF: sub_88B0-E1Dj
 		LDA	$C3
 		AND	#$BF ; 'ø'
 		STA	$C3
-		LDX	#$A2 ; '¢'
-		LDY	#$6D ; 'm'
+		ldxy	$A26D
 		JSR	sub_8ECE
 
 loc_7AAC:				; CODE XREF: sub_88B0-E24j
@@ -761,8 +744,7 @@ loc_7AC2:				; CODE XREF: sub_88B0:loc_78C9j
 		LDA	$1959
 		BNE	loc_7AD2
 		LDA	$195A
-		LDX	#$75 ; 'u'
-		LDY	#0
+		ldxy	$7500
 		SEC
 		JSR	$1860
 
@@ -772,38 +754,35 @@ loc_7AD2:				; CODE XREF: sub_84CF-A0Aj
 		LDA	#$FF
 		STA	$1959
 		LDY	#0
-		LDA	($68),Y
+		LDA	(off_68),Y
 		CMP	#3
 		BNE	loc_7B1E
 		DEC	$197B
-		LDA	$68
-		STA	7
-		LDA	$69
-		STA	8
+		dmv	off_7, off_68
 		LDY	#5
-		LDA	(7),Y
+		LDA	(off_7),Y
 		CLC
-		ADC	7
-		STA	7
+		ADC	off_7
+		STA	off_7
 		BCC	loc_7AFD
-		INC	8
+		INC	off_7+1
 
 loc_7AFD:				; CODE XREF: sub_84CF-9D6j
 		LDY	#$F
-		LDA	(7),Y
+		LDA	(off_7),Y
 		CMP	#$FF
 		BEQ	loc_7B10
 		JSR	$1899
-		CMP	(7),Y
+		CMP	(off_7),Y
 		BCS	loc_7B0E
 		ADC	#1
 
 loc_7B0E:				; CODE XREF: sub_84CF-9C5j
-		STA	(7),Y
+		STA	(off_7),Y
 
 loc_7B10:				; CODE XREF: sub_84CF-9CCj
-		LDX	$69
-		LDY	$68
+		LDX	off_68+1
+		LDY	off_68
 		JSR	$1884
 		BMI	loc_7B1E
 		STA	$4B
@@ -835,14 +814,8 @@ loc_7B38:				; CODE XREF: sub_84CF-9A1j
 ; START	OF FUNCTION CHUNK FOR sub_88B0
 
 loc_7B42:				; CODE XREF: sub_88B0-FFFj
-		LDA	#0
-		STA	$6345
-		LDA	#0
-		STA	$6346
-		LDA	#0
-		STA	$6347
-		LDA	#0
-		STA	$6348
+		dldi	$6345, 0
+		dldi	$6347, 0
 		JMP	loc_776D
 ; END OF FUNCTION CHUNK	FOR sub_88B0
 
