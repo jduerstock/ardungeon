@@ -812,6 +812,8 @@ loc_7B38:				; CODE XREF: sub_84CF-9A1j
 ; ---------------------------------------------------------------------------
 ; START	OF FUNCTION CHUNK FOR sub_88B0
 
+;		zero current and max hp
+
 loc_7B42:				; CODE XREF: sub_88B0-FFFj
 		dldi	$6345, 0
 		dldi	$6347, 0
@@ -3804,8 +3806,7 @@ loc_8CB8:				; CODE XREF: RAM:loc_8B18j
 loc_8CBB:				; CODE XREF: RAM:7752j	RAM:8BAAj ...
 		JSR	loc_90CD
 		JSR	sub_9067
-		LDX	#$A1 ; '¡'
-		LDY	#$F
+		ldxy	$A10F
 		JSR	loc_8ED1
 		JMP	loc_776D
 
@@ -3870,8 +3871,7 @@ loc_8D04:				; CODE XREF: sub_8CCB+4j
 ; ---------------------------------------------------------------------------
 
 loc_8D27:				; CODE XREF: sub_8CCB+40j sub_8CCB+47j
-		LDX	#$9B ; '›'
-		LDY	#$F4 ; 'ô'
+		ldxy	$9BF4
 
 loc_8D2B:				; CODE XREF: sub_8CCB+37j
 		JSR	loc_8ED1
@@ -3921,8 +3921,7 @@ sub_8D6E:				; CODE XREF: sub_8CCB:loc_8B80p
 ; START	OF FUNCTION CHUNK FOR sub_88B0
 
 loc_8D74:				; CODE XREF: RAM:7740j	sub_88B0-DF4j ...
-		LDX	#$A4 ; '¤'
-		LDY	#$EC ; 'ì'
+		ldxy	$A4EC
 		JSR	loc_8ED1
 		JMP	loc_776D
 ; END OF FUNCTION CHUNK	FOR sub_88B0
@@ -3932,10 +3931,7 @@ loc_8D74:				; CODE XREF: RAM:7740j	sub_88B0-DF4j ...
 
 sub_8D7E:				; CODE XREF: RAM:7954p	sub_7ECE+9p ...
 		JSR	sub_8E1D
-		LDA	#0
-		STA	$64
-		LDA	#$64 ; 'd'
-		STA	$65
+		dldi	off_64, $6400
 		LDA	#$1F
 		STA	byte_9E3C
 		LDA	#$A0 ; ' '
@@ -3949,10 +3945,10 @@ sub_8D7E:				; CODE XREF: RAM:7954p	sub_7ECE+9p ...
 		JSR	$1887
 		CLC
 		LDA	#6
-		ADC	$41
+		ADC	off_41
 		STA	byte_9E3C
 		STA	byte_9E3E
-		LDA	$42
+		LDA	off_41+1
 		ADC	#0
 		STA	byte_9E3D
 		STA	byte_9E3F
@@ -5354,7 +5350,7 @@ sub_950E:				; CODE XREF: sub_7B59p	sub_950E+31j
 		JSR	$1827
 		LDA	#$80 ; '€'
 		STA	$25A
-		dldi	off_7, $AC97
+		dldi	off_7, byte_AC97
 		LDA	$8D
 		STA	$96
 		JSR	loc_96EA
@@ -5632,8 +5628,8 @@ loc_96E8:				; CODE XREF: sub_962B+A5j sub_962B+B9j
 
 loc_96EA:				; CODE XREF: sub_950E+14p sub_9550+Dp
 		LDA	#0
-		STA	$D6
-		STA	$D7
+		STA	off_D6
+		STA	off_D6+1
 
 loc_96F0:				; DATA XREF: sub_84CF:loc_7785w
 		STA	$8B
@@ -5646,12 +5642,12 @@ loc_96F2:				; CODE XREF: RAM:970Aj
 		TAY
 		CLC
 		LDA	(off_7),Y
-		ADC	$D6
-		STA	$D6
+		ADC	off_D6
+		STA	off_D6
 		INY
 		LDA	(off_7),Y
-		ADC	$D7
-		STA	$D7
+		ADC	off_D6+1
+		STA	off_D6+1
 		INC	$8B
 		BNE	loc_96F2
 
@@ -5663,7 +5659,7 @@ loc_970E:				; CODE XREF: RAM:972Dj
 		LDA	(off_7),Y
 		STA	word_B
 		INY
-		LDA	(7),Y
+		LDA	(off_7),Y
 		STA	word_B+1
 		ORA	word_B
 		BNE	locret_9730
@@ -5671,13 +5667,13 @@ loc_970E:				; CODE XREF: RAM:972Dj
 		DEY
 		DEY
 		SEC
-		LDA	$D6
+		LDA	off_D6
 		SBC	(off_7),Y
-		STA	$D6
+		STA	off_D6
 		INY
-		LDA	$D7
+		LDA	off_D6+1
 		SBC	(off_7),Y
-		STA	$D7
+		STA	off_D6+1
 		DEY
 		JMP	loc_970E
 ; ---------------------------------------------------------------------------
@@ -7549,22 +7545,7 @@ unk_A491:	.BYTE $A3 ; £		; DATA XREF: RAM:8777r
 		.BYTE $74 ; t
 		.BYTE $79 ; y
 		.BYTE	0
-		.BYTE $46 ; F
-		.BYTE $69 ; i
-		.BYTE $6E ; n
-		.BYTE $67 ; g
-		.BYTE $65 ; e
-		.BYTE $72 ; r
-		.BYTE $20
-		.BYTE $6F ; o
-		.BYTE $66 ; f
-		.BYTE $20
-		.BYTE $44 ; D
-		.BYTE $65 ; e
-		.BYTE $61 ; a
-		.BYTE $74 ; t
-		.BYTE $68 ; h
-		.BYTE	0
+		.BYTE	"Finger of Death",0
 		.BYTE $50 ; P
 		.BYTE $61 ; a
 		.BYTE $72 ; r
@@ -7575,15 +7556,7 @@ unk_A491:	.BYTE $A3 ; £		; DATA XREF: RAM:8777r
 		.BYTE $69 ; i
 		.BYTE $73 ; s
 		.BYTE	0
-		.BYTE $46 ; F
-		.BYTE $69 ; i
-		.BYTE $72 ; r
-		.BYTE $65 ; e
-		.BYTE $62 ; b
-		.BYTE $61 ; a
-		.BYTE $6C ; l
-		.BYTE $6C ; l
-		.BYTE	0
+		.BYTE	"Fireball",0
 		.BYTE $43 ; C
 		.BYTE $6F ; o
 		.BYTE $6C ; l
@@ -7604,17 +7577,7 @@ unk_A491:	.BYTE $A3 ; £		; DATA XREF: RAM:8777r
 		.BYTE $6E ; n
 		.BYTE $67 ; g
 		.BYTE	0
-		.BYTE $4D ; M
-		.BYTE $69 ; i
-		.BYTE $6E ; n
-		.BYTE $64 ; d
-		.BYTE $20
-		.BYTE $46 ; F
-		.BYTE $6C ; l
-		.BYTE $61 ; a
-		.BYTE $69 ; i
-		.BYTE $6C ; l
-		.BYTE	0
+		.BYTE	"Mind Flail",0
 		.BYTE $53 ; S
 		.BYTE $75 ; u
 		.BYTE $66 ; f
@@ -7971,11 +7934,11 @@ unk_A491:	.BYTE $A3 ; £		; DATA XREF: RAM:8777r
 
 byte_A6B7:
 		.BYTE	$A3
-		.WORD	$A6F1
+		.WORD	loc_A6F1
 		MOVEXY	0,3
 		.BYTE	$A5
 		.BYTE	$B4
-		.WORD	$76D9
+		.WORD	off_76D9
 		.BYTE	$27
 		.BYTE	$D
 		.BYTE	$FF
@@ -9382,6 +9345,8 @@ byte_AC00:	.BYTE $C2		; DATA XREF: sub_84CF-D4Dw
 		.BYTE $AC ; ¬
 		.BYTE $AC ; ¬
 		.BYTE $AC ; ¬
+
+byte_AC97:
 		.BYTE $46 ; F
 		.BYTE	2
 		.BYTE $1D
