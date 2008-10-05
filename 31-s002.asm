@@ -3360,8 +3360,7 @@ loc_8A40:				; CODE XREF: RAM:8A3Aj
 		STA	off_76D9
 		LDA	$A5DE,X
 		STA	off_76D9+1
-		LDX	#$A5 ; '•'
-		LDY	#$8A ; 'ä'
+		ldxy	$A58A
 		JMP	loc_8ED1
 ; ---------------------------------------------------------------------------
 
@@ -3389,8 +3388,7 @@ loc_8A68:				; CODE XREF: RAM:8A5Ej
 		STA	off_76D9
 		LDA	$A5DE,X
 		STA	off_76D9+1
-		LDX	#$A6 ; '¶'
-		LDY	#$C
+		ldxy	$A60C
 		JMP	sub_8ECE
 ; ---------------------------------------------------------------------------
 
@@ -3430,9 +3428,8 @@ sub_8AA7:
 		BEQ	locret_8ABE
 		LDY	#2
 		LDA	#2
-		STA	($41),Y
-		LDX	#$A5 ; '•'
-		LDY	#$E1 ; '·'
+		STA	(off_41),Y
+		ldxy	$A5E1
 		JSR	sub_8E7F
 
 locret_8ABE:				; CODE XREF: RAM:8AAAj	RAM:8AAFj
@@ -3446,8 +3443,7 @@ loc_8ABF:				; CODE XREF: RAM:loc_7FA0j
 loc_8AC2:				; CODE XREF: RAM:8AD9j	RAM:8B01j
 		LDA	#$FF
 		STA	$1961
-		LDX	#$9A ; 'ö'
-		LDY	#$CF ; 'œ'
+		ldxy	$9ACF
 		JSR	sub_8EEF
 		LDA	#5
 		JSR	sub_901C
@@ -3469,8 +3465,7 @@ loc_8AE4:				; CODE XREF: RAM:8AEDj
 		STA	$6494,X
 		DEX
 		BPL	loc_8AE4
-		LDX	#$98 ; 'ò'
-		LDY	#$81 ; 'Å'
+		ldxy	$9881
 		JSR	sub_8EEF
 		JSR	$189F
 		JSR	sub_8EF9
@@ -3509,26 +3504,26 @@ loc_8B1C:				; CODE XREF: RAM:8B09j
 ; ---------------------------------------------------------------------------
 
 loc_8B27:				; CODE XREF: RAM:8B22j
-		LDA	unk_8B37,X
+		LDA	byte_8B37,X
 		PHA
-		LDA	unk_8B30,X
+		LDA	byte_8B30,X
 		PHA
 		RTS
 ; ---------------------------------------------------------------------------
-unk_8B30:	.BYTE $7F ; 		; DATA XREF: RAM:8B2Br
-		.BYTE $8E ; é
-		.BYTE $B2 ; ≤
-		.BYTE $F3 ; Û
-		.BYTE $7F ; 
-		.BYTE $30 ; 0
-		.BYTE $5A ; Z
-unk_8B37:	.BYTE $8B ; ã		; DATA XREF: RAM:loc_8B27r
-		.BYTE $8B ; ã
-		.BYTE $8B ; ã
-		.BYTE $8B ; ã
-		.BYTE $8B ; ã
-		.BYTE $8D ; ç
-		.BYTE $8D ; ç
+byte_8B30:	.BYTE	<(loc_8B80-1)	; DATA XREF: RAM:8B2Br
+		.BYTE	<(loc_8B8F-1)
+		.BYTE	<(loc_8BB3-1)
+		.BYTE	<(loc_8BF4-1)
+		.BYTE	<(loc_8B80-1)
+		.BYTE	<(loc_8D31-1)
+		.BYTE	<(loc_8D5B-1)
+byte_8B37:	.BYTE	>(loc_8B80-1)	; DATA XREF: RAM:loc_8B27r
+		.BYTE	>(loc_8B8F-1)
+		.BYTE	>(loc_8BB3-1)
+		.BYTE	>(loc_8BF4-1)
+		.BYTE	>(loc_8B80-1)
+		.BYTE	>(loc_8D31-1)
+		.BYTE	>(loc_8D5B-1)
 
 ; --------------- S U B	R O U T	I N E ---------------------------------------
 
@@ -3601,6 +3596,8 @@ loc_8B80:				; CODE XREF: RAM:7755j	RAM:8BAFj ...
 		RTS
 ; END OF FUNCTION CHUNK	FOR sub_8CCB
 ; ---------------------------------------------------------------------------
+
+loc_8B8F:
 		BCS	loc_8B94
 		JMP	locret_8BB2
 ; ---------------------------------------------------------------------------
@@ -3627,6 +3624,7 @@ loc_8BAD:				; CODE XREF: RAM:8BA8j
 locret_8BB2:				; CODE XREF: RAM:8B91j	RAM:loc_8BADj
 		RTS
 ; ---------------------------------------------------------------------------
+loc_8BB3:
 		BCS	loc_8BBB
 		JSR	sub_8CCB
 		JMP	loc_8B80
@@ -3674,6 +3672,8 @@ loc_8BDC:				; CODE XREF: RAM:8BE1j
 locret_8BF3:				; CODE XREF: RAM:8BEEj
 		RTS
 ; ---------------------------------------------------------------------------
+
+loc_8BF4:
 		JSR	sub_8CCB
 		BCC	loc_8C0C
 		LDA	#7
@@ -3887,6 +3887,8 @@ loc_8D2E:				; CODE XREF: sub_8CCB+50j sub_8CCB+59j
 ; End of function sub_8CCB
 
 ; ---------------------------------------------------------------------------
+
+loc_8D31:
 		JSR	sub_8CCB
 		LDA	#6
 		JSR	$1899
@@ -3905,6 +3907,8 @@ loc_8D2E:				; CODE XREF: sub_8CCB+50j sub_8CCB+59j
 loc_8D58:				; CODE XREF: RAM:8D40j
 		JMP	loc_8D74
 ; ---------------------------------------------------------------------------
+
+loc_8D5B:
 		JSR	sub_8CCB
 		LDA	#5
 		JSR	$1899
