@@ -1,3 +1,4 @@
+		.include	"equates.inc"
 		.include	"globals.inc"
 		.include	"macros.inc"
 		.include	"exp_kernel.inc"
@@ -357,13 +358,12 @@ loc_7824:				; CODE XREF: RAM:780Dj	RAM:781Fj
 		BCC	loc_787B
 
 loc_7836:				; CODE XREF: RAM:782Dj
-		LDX	#$98 ; '˜'
-		LDY	#$83 ; 'ƒ'
+		ldxy	$9883
 		JSR	loc_8ED1
 		DEC	$638E
-		LDA	byte_AA14
+		LDA	off_AA13+1
 		BEQ	loc_784B
-		LDX	byte_AA13
+		LDX	off_AA13
 		JMP	loc_94E7
 ; ---------------------------------------------------------------------------
 
@@ -499,7 +499,7 @@ loc_78E7:				; CODE XREF: sub_88B0-FC6j
 		ASL	A
 		ASL	A
 		STA	loc_7931+1
-		LDA	$D20A
+		LDA	RANDOM
 
 loc_7931:				; DATA XREF: RAM:792Bw
 		CMP	#$FF
@@ -840,7 +840,7 @@ loc_7B74:				; CODE XREF: sub_7B59+13j sub_7B59+18j
 		LDX	$A88F,Y
 		JSR	nullsub_1
 		LDX	#0
-		LDA	$D20A
+		LDA	RANDOM
 		CMP	#$B0 ; '°'
 		BCC	loc_7B89
 		INX
@@ -862,7 +862,7 @@ loc_7B89:				; CODE XREF: sub_7B59+28j sub_7B59+2Dj
 		LDX	#$B
 
 loc_7B9E:				; CODE XREF: sub_7B59+5Bj
-		LDA	$D20A
+		LDA	RANDOM
 		CMP	byte_A8A0
 		BCC	loc_7BAA
 		LDA	#0
@@ -1109,13 +1109,13 @@ unk_7D31:	.BYTE	1		; DATA XREF: sub_7C9E+14r
 ; ---------------------------------------------------------------------------
 
 loc_7D38:				; CODE XREF: RAM:7746j
-		LDA	$D20A
+		LDA	RANDOM
 		BPL	loc_7D40
 		JMP	loc_7D82
 ; ---------------------------------------------------------------------------
 
 loc_7D40:				; CODE XREF: RAM:7D3Bj
-		LDA	$D20A
+		LDA	RANDOM
 		BPL	loc_7D48
 		JMP	loc_7D4B
 ; ---------------------------------------------------------------------------
@@ -1125,13 +1125,13 @@ loc_7D48:				; CODE XREF: RAM:7D43j
 ; ---------------------------------------------------------------------------
 
 loc_7D4B:				; CODE XREF: RAM:7D45j
-		LDA	$D20A
+		LDA	RANDOM
 		AND	#$7F ; ''
 		JMP	loc_7D58
 ; ---------------------------------------------------------------------------
 
 loc_7D53:				; CODE XREF: RAM:loc_7D48j
-		LDA	$D20A
+		LDA	RANDOM
 		ORA	#$80 ; '€'
 
 loc_7D58:				; CODE XREF: RAM:7D50j
@@ -1187,7 +1187,7 @@ loc_7D9B:				; CODE XREF: RAM:7D8Ej	RAM:7D96j
 loc_7DB3:				; CODE XREF: RAM:7DAAj
 		LDA	$6385
 		BMI	loc_7DBD
-		LDA	$D20A
+		LDA	RANDOM
 		BMI	locret_7DC5
 
 loc_7DBD:				; CODE XREF: RAM:7DB1j	RAM:7DB6j
@@ -1255,7 +1255,7 @@ loc_7DFE:				; CODE XREF: sub_7DD2+22j sub_7DD2+27j
 		STA	$96
 		CMP	$74
 		BNE	loc_7E23
-		LDA	$D20A
+		LDA	RANDOM
 		AND	#3
 		STA	$97
 		BNE	loc_7E19
@@ -1266,7 +1266,7 @@ loc_7DFE:				; CODE XREF: sub_7DD2+22j sub_7DD2+27j
 ; ---------------------------------------------------------------------------
 
 loc_7E19:				; CODE XREF: sub_7DD2+3Bj
-		LDA	$D20A
+		LDA	RANDOM
 		AND	#3
 		CLC
 		ADC	$96
@@ -1343,7 +1343,7 @@ loc_7E8A:				; CODE XREF: sub_7DD2+9Aj
 loc_7E98:				; CODE XREF: sub_7DD2+44j sub_7DD2+BDj ...
 		LDA	#0
 		STA	$97
-		LDA	$D20A
+		LDA	RANDOM
 		AND	#1
 		STA	$C2
 		SEC
@@ -1491,7 +1491,7 @@ loc_7F5F:				; CODE XREF: RAM:7F59j
 		INC	$A0
 		INC	$A0
 		INC	$9B
-		LDA	$D20A
+		LDA	RANDOM
 		AND	#3
 		BEQ	loc_7F77
 		JMP	loc_8160
@@ -1512,12 +1512,12 @@ loc_7F77:				; CODE XREF: RAM:7F72j
 		BIT	byte_AA21
 		BVS	loc_7FA0
 		BPL	loc_7F9B
-		LDA	$D20A
+		LDA	RANDOM
 		CMP	#$30 ; '0'
 		BCS	loc_7FA3
 
 loc_7F9B:				; CODE XREF: RAM:7F92j
-		LDA	$D20A
+		LDA	RANDOM
 		BMI	loc_7FA3
 
 loc_7FA0:				; CODE XREF: RAM:7F90j
@@ -2029,7 +2029,7 @@ loc_827F:				; CODE XREF: RAM:824Ej	RAM:8265j ...
 		LDA	($64),Y
 		CMP	#1
 		BEQ	loc_828E
-		LDA	$D20A
+		LDA	RANDOM
 		CMP	#$40 ; '@'
 		BCS	loc_8291
 
@@ -2037,10 +2037,10 @@ loc_828E:				; CODE XREF: RAM:8285j
 		JSR	sub_8E31
 
 loc_8291:				; CODE XREF: RAM:828Cj
-		LDA	$D20A
+		LDA	RANDOM
 		CMP	$252
 		BNE	loc_82AC
-		LDA	$D20A
+		LDA	RANDOM
 		BMI	loc_82A8
 		LDA	#1
 		LDX	#$5A ; 'Z'
@@ -2176,10 +2176,10 @@ loc_8354:				; CODE XREF: RAM:8349j
 		BCS	loc_83A5
 
 loc_836E:				; CODE XREF: RAM:8356j	RAM:8360j
-		LDA	$D20A
+		LDA	RANDOM
 		CMP	#$40 ; '@'
 		BCS	loc_83A5
-		LDA	$D20A
+		LDA	RANDOM
 		BMI	loc_8395
 		LDA	byte_AA20
 		AND	#8
@@ -2387,10 +2387,10 @@ loc_8468:				; CODE XREF: RAM:loc_7F2Ej
 		LDA	#$23 ; '#'
 		JSR	$1899
 		STA	$195C
-		LDA	$D20A
+		LDA	RANDOM
 		AND	#3
 		STA	$6312
-		LDA	$D20A
+		LDA	RANDOM
 		BMI	loc_849D
 		JSR	sub_886F
 		BCC	loc_849D
@@ -2480,7 +2480,7 @@ loc_84FE:				; CODE XREF: sub_84CF+24j
 		BEQ	loc_851A
 		CMP	#$40 ; '@'
 		BEQ	loc_8521
-		LDA	$D20A
+		LDA	RANDOM
 		CMP	#$40 ; '@'
 		BCS	loc_8521
 
@@ -2510,13 +2510,13 @@ sub_852B:				; CODE XREF: sub_84CF-993p
 		BEQ	locret_855F
 		DEX
 		BNE	loc_8538
-		LDA	$D20A
+		LDA	RANDOM
 		BMI	locret_855F
 
 loc_8538:				; CODE XREF: sub_852B+6j
 		LDA	byte_AA0B
 		BEQ	locret_855F
-		LDA	$D20A
+		LDA	RANDOM
 		CMP	byte_A8A0
 		BCS	loc_854F
 		LDA	byte_AA0B
@@ -2527,7 +2527,7 @@ loc_8538:				; CODE XREF: sub_852B+6j
 		STA	$758A
 
 loc_854F:				; CODE XREF: sub_852B+18j
-		LDA	$D20A
+		LDA	RANDOM
 		CMP	byte_A8A0
 		BCS	locret_855F
 		LDA	byte_AA0B
@@ -2714,10 +2714,10 @@ loc_8642:				; CODE XREF: RAM:863Fj
 		BCC	locret_8641
 		LDA	byte_AA27
 		BEQ	loc_8665
-		LDA	$D20A
+		LDA	RANDOM
 		CMP	#$10
 		BCS	loc_8665
-		LDA	$D20A
+		LDA	RANDOM
 		INC	$A2
 		INC	$A4
 		CMP	#$40 ; '@'
@@ -2730,7 +2730,7 @@ loc_8642:				; CODE XREF: RAM:863Fj
 loc_8665:				; CODE XREF: RAM:864Aj	RAM:8651j
 		LDA	$76
 		BNE	loc_8674
-		LDA	$D20A
+		LDA	RANDOM
 		CMP	#$20 ; ' '
 		BCS	loc_8674
 		INC	$A2
@@ -2847,7 +2847,7 @@ loc_8716:				; CODE XREF: RAM:870Cj
 		STA	byte_A89C
 		LDA	$8E
 		BEQ	loc_8730
-		LDA	$D20A
+		LDA	RANDOM
 		BMI	loc_8730
 		LDA	#3
 		JSR	$1899
@@ -2952,7 +2952,7 @@ loc_87E2:				; CODE XREF: RAM:87B8j	RAM:87D1j
 		JSR	sub_8ECE
 
 loc_87E5:				; CODE XREF: RAM:8789j	RAM:8793j ...
-		LDA	$D20A
+		LDA	RANDOM
 		BMI	locret_880C
 		LDA	$A7
 		ORA	$A8
@@ -2982,7 +2982,7 @@ loc_880D:				; CODE XREF: RAM:76FBj	RAM:loc_8895j
 ; ---------------------------------------------------------------------------
 
 loc_8813:				; CODE XREF: RAM:8810j
-		LDA	$D20A
+		LDA	RANDOM
 		CMP	#$20 ; ' '
 		BCC	loc_881D
 
@@ -3065,7 +3065,7 @@ loc_8880:				; CODE XREF: RAM:7701j
 loc_8886:				; CODE XREF: RAM:8883j
 		JSR	sub_94FE
 		BCS	loc_8895
-		LDA	$D20A
+		LDA	RANDOM
 		CMP	#$50 ; 'P'
 		BCS	loc_8895
 		JMP	loc_8965
@@ -3084,7 +3084,7 @@ loc_8898:				; CODE XREF: RAM:7704j
 loc_889E:				; CODE XREF: RAM:889Bj
 		JSR	sub_94FE
 		BCS	loc_88AD
-		LDA	$D20A
+		LDA	RANDOM
 		CMP	#$50 ; 'P'
 		BCS	loc_88AD
 		JMP	loc_8965
@@ -3131,11 +3131,11 @@ loc_88C4:				; CODE XREF: sub_88B0+Bj sub_88B0+10j
 loc_88D5:				; CODE XREF: sub_88B0+1Cj
 		LDA	$93
 		BEQ	loc_88DE
-		LDA	$D20A
+		LDA	RANDOM
 		BMI	loc_88E5
 
 loc_88DE:				; CODE XREF: sub_88B0+27j
-		LDA	$D20A
+		LDA	RANDOM
 		CMP	#$30 ; '0'
 		BCS	loc_88C2
 
@@ -3196,7 +3196,7 @@ loc_8920:				; CODE XREF: sub_88B0+6Aj
 ; ---------------------------------------------------------------------------
 
 loc_8942:				; CODE XREF: sub_88B0+83j sub_88B0+85j ...
-		LDA	$D20A
+		LDA	RANDOM
 		BPL	loc_894A
 		JSR	sub_90C3
 
@@ -3846,7 +3846,7 @@ loc_8CD8:				; CODE XREF: sub_8CCB+Aj
 		LDX	#7
 		JSR	sub_8F0D
 		BMI	loc_8CFE
-		LDA	$D20A
+		LDA	RANDOM
 		CMP	#4
 		BCS	loc_8CFB
 		LDX	#$52 ; 'R'
@@ -3871,7 +3871,7 @@ loc_8D04:				; CODE XREF: sub_8CCB+4j
 		JSR	sub_8F0D
 		BMI	loc_8D27
 		INC	$97
-		LDA	$D20A
+		LDA	RANDOM
 		CMP	#3
 		BCS	loc_8D2E
 		LDX	$62
@@ -4062,7 +4062,7 @@ loc_8E34:				; CODE XREF: RAM:8E2Fj
 		STA	$4B
 		JSR	$1887
 		BEQ	locret_8E6E
-		LDA	$D20A
+		LDA	RANDOM
 		BMI	locret_8E6E
 		CLC
 		LDA	#6
@@ -4297,7 +4297,7 @@ loc_8F51:				; CODE XREF: sub_8F15+36j
 
 loc_8F59:				; CODE XREF: sub_8F15+3Aj sub_8F15+40j
 		STA	$79
-		LDA	$D20A
+		LDA	RANDOM
 		STA	$96
 		CMP	$79
 		BCS	loc_8F7D
@@ -4323,7 +4323,7 @@ loc_8F7A:				; CODE XREF: sub_8F15+57j sub_8F15+5Fj ...
 loc_8F7D:				; CODE XREF: sub_8F15+4Dj
 		LDA	#$80 ; '€'
 		STA	$78
-		LDA	$D20A
+		LDA	RANDOM
 		CMP	#8
 		BCS	loc_8F7A
 		LDA	#$FF
@@ -4363,7 +4363,7 @@ sub_8FAA:				; CODE XREF: sub_7C9E+46p sub_7C9E+64p ...
 		STA	$7B
 
 loc_8FB0:				; CODE XREF: sub_8FAA+1Dj
-		LDA	$D20A
+		LDA	RANDOM
 		LDX	$88
 		BEQ	loc_8FC9
 		JSR	sub_9049
@@ -4424,7 +4424,7 @@ loc_9005:				; CODE XREF: RAM:9001j
 		ASL	A
 		ASL	A
 		STA	loc_900F+1
-		LDA	$D20A
+		LDA	RANDOM
 
 loc_900F:				; DATA XREF: RAM:9009w
 		CMP	#$FF
@@ -5163,7 +5163,7 @@ loc_942D:				; CODE XREF: RAM:9431j
 		BPL	loc_942D
 		CMP	#0
 		BEQ	locret_9474
-		LDA	$D20A
+		LDA	RANDOM
 		CMP	#$40 ; '@'
 		BCS	locret_9474
 		LDA	#3
@@ -5248,7 +5248,7 @@ sub_948D:				; CODE XREF: sub_88B0-F38p RAM:7F62p ...
 		AND	#$7F ; ''
 		ORA	$AC
 		BNE	loc_94B2
-		LDA	$D20A
+		LDA	RANDOM
 		BPL	loc_94B0
 		LDA	#1
 		LDX	#$85 ; '…'
@@ -5297,7 +5297,7 @@ sub_94D5:				; CODE XREF: RAM:7812p	RAM:781Cp
 		CLC
 		ADC	$96
 		STA	$96
-		LDA	$D20A
+		LDA	RANDOM
 		CMP	$96
 		RTS
 ; End of function sub_94D5
@@ -8843,8 +8843,7 @@ byte_AA0F:	.BYTE $53		; DATA XREF: RAM:8095w	RAM:813Dw ...
 byte_AA10:	.BYTE $AB		; DATA XREF: RAM:loc_7819r
 byte_AA11:	.BYTE $8D		; DATA XREF: sub_7C78r
 byte_AA12:	.BYTE $20		; DATA XREF: sub_7C78+3r
-byte_AA13:	.BYTE $63		; DATA XREF: RAM:7845r
-byte_AA14:	.BYTE $85		; DATA XREF: RAM:7840r
+off_AA13:	.WORD	$8563		; DATA XREF: RAM:7845r
 byte_AA15:	.BYTE $8D		; DATA XREF: sub_7DC6r
 byte_AA16:	.BYTE $4C		; DATA XREF: RAM:loc_784Br sub_7DC6+3r
 byte_AA17:	.BYTE $32		; DATA XREF: sub_7B59+E4r sub_7B59+EEw ...
