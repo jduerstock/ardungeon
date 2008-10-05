@@ -6376,22 +6376,22 @@ aLash:		.BYTE "lash",0
 aBlast:		.BYTE "blast",0
 aWhomp:		.BYTE "whomp",0
 aHit_0:		.BYTE "hit",0
-unk_9F5E:	.BYTE	8		; DATA XREF: RAM:loc_9F8Er
-		.BYTE  $D
-		.BYTE $12
-		.BYTE $17
-		.BYTE $1D
-		.BYTE $22 ; "
-		.BYTE $26 ; &
-		.BYTE $2C ; ,
-unk_9F66:	.BYTE $9F ; Ÿ		; DATA XREF: RAM:9F94r
-		.BYTE $9F ; Ÿ
-		.BYTE $9F ; Ÿ
-		.BYTE $9F ; Ÿ
-		.BYTE $9F ; Ÿ
-		.BYTE $9F ; Ÿ
-		.BYTE $9F ; Ÿ
-		.BYTE $9F ; Ÿ
+unk_9F5E:	.BYTE	<aHack		; DATA XREF: RAM:loc_9F8Er
+		.BYTE	<aPoke
+		.BYTE	<aBash
+		.BYTE	<aSpear
+		.BYTE	<aWhip
+		.BYTE	<aZap
+		.BYTE	<aPunch
+		.BYTE	<aHit
+unk_9F66:	.BYTE	>aHack		; DATA XREF: RAM:9F94r
+		.BYTE	>aPoke
+		.BYTE	>aBash
+		.BYTE	>aSpear
+		.BYTE	>aWhip
+		.BYTE	>aZap
+		.BYTE	>aPunch
+		.BYTE	>aHit
 unk_9F6E:	.BYTE $30 ; 0		; DATA XREF: RAM:9FA0r
 		.BYTE $36 ; 6
 		.BYTE $3B ; ;
