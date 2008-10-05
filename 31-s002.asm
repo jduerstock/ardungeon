@@ -2917,9 +2917,9 @@ loc_8765:				; CODE XREF: RAM:875Dj
 loc_876F:				; CODE XREF: RAM:8767j
 		LDX	$8F
 		LDA	unk_A471,X
-		STA	byte_9F7E
+		STA	off_9F7E
 		LDA	unk_A491,X
-		STA	byte_9F7F
+		STA	off_9F7E+1
 		LDX	#$A3 ; '£'
 		LDY	#$4B ; 'K'
 		JSR	sub_8ECE
@@ -6312,7 +6312,7 @@ byte_9E3F:	.BYTE 0			; DATA XREF: sub_8D7E+37w sub_8D7E+90w
 		.BYTE	$A5
 		.BYTE	"You "
 		.BYTE	$B4
-		.WORD	$9F7E
+		.WORD	off_9F7E
 		.BYTE	$F
 		.BYTE	" the "
 		.BYTE	$B4
@@ -6408,8 +6408,7 @@ unk_9F76:	.BYTE	>aSlash		; DATA XREF: RAM:9FA6r
 		.BYTE	>aBlast
 		.BYTE	>aWhomp
 		.BYTE	>aHit_0
-byte_9F7E:	.BYTE 0			; DATA XREF: RAM:8774w	RAM:9F91w ...
-byte_9F7F:	.BYTE 0			; DATA XREF: RAM:877Aw	RAM:9F97w ...
+off_9F7E:	.WORD	0		; DATA XREF: RAM:8774w	RAM:9F91w ...
 ; ---------------------------------------------------------------------------
 		LDX	#6
 		BIT	$639C
@@ -6421,16 +6420,16 @@ byte_9F7F:	.BYTE 0			; DATA XREF: RAM:877Aw	RAM:9F97w ...
 
 loc_9F8E:				; CODE XREF: RAM:9F85j
 		LDA	unk_9F5E,X
-		STA	byte_9F7E
+		STA	off_9F7E
 		LDA	unk_9F66,X
-		STA	byte_9F7F
+		STA	off_9F7E+1
 		LDA	$9B
 		BMI	locret_9FAC
 		BEQ	locret_9FAC
 		LDA	unk_9F6E,X
-		STA	byte_9F7E
+		STA	off_9F7E
 		LDA	unk_9F76,X
-		STA	byte_9F7F
+		STA	off_9F7E+1
 
 locret_9FAC:				; CODE XREF: RAM:9F9Cj	RAM:9F9Ej
 		RTS
@@ -7392,220 +7391,38 @@ aIsHitFor:	.BYTE " is hit for"
 		.BYTE $A3 ; £
 		.BYTE $A3 ; £
 		.BYTE $A3 ; £
-		.BYTE $68 ; h
-		.BYTE $61 ; a
-		.BYTE $63 ; c
-		.BYTE $6B ; k
-		.BYTE $73 ; s
-		.BYTE	0
-		.BYTE $70 ; p
-		.BYTE $6F ; o
-		.BYTE $6B ; k
-		.BYTE $65 ; e
-		.BYTE $73 ; s
-		.BYTE	0
-		.BYTE $62 ; b
-		.BYTE $61 ; a
-		.BYTE $73 ; s
-		.BYTE $68 ; h
-		.BYTE $65 ; e
-		.BYTE $73 ; s
-		.BYTE	0
-		.BYTE $73 ; s
-		.BYTE $70 ; p
-		.BYTE $65 ; e
-		.BYTE $61 ; a
-		.BYTE $72 ; r
-		.BYTE $73 ; s
-		.BYTE	0
-		.BYTE $77 ; w
-		.BYTE $68 ; h
-		.BYTE $69 ; i
-		.BYTE $70 ; p
-		.BYTE $73 ; s
-		.BYTE	0
-		.BYTE $7A ; z
-		.BYTE $61 ; a
-		.BYTE $70 ; p
-		.BYTE $73 ; s
-		.BYTE	0
-		.BYTE $70 ; p
-		.BYTE $75 ; u
-		.BYTE $6E ; n
-		.BYTE $63 ; c
-		.BYTE $68 ; h
-		.BYTE $65 ; e
-		.BYTE $73 ; s
-		.BYTE	0
-		.BYTE $68 ; h
-		.BYTE $69 ; i
-		.BYTE $74 ; t
-		.BYTE $73 ; s
-		.BYTE	0
-		.BYTE $73 ; s
-		.BYTE $6C ; l
-		.BYTE $61 ; a
-		.BYTE $73 ; s
-		.BYTE $68 ; h
-		.BYTE $65 ; e
-		.BYTE $73 ; s
-		.BYTE	0
-		.BYTE $73 ; s
-		.BYTE $74 ; t
-		.BYTE $61 ; a
-		.BYTE $62 ; b
-		.BYTE $73 ; s
-		.BYTE	0
-		.BYTE $73 ; s
-		.BYTE $6D ; m
-		.BYTE $61 ; a
-		.BYTE $73 ; s
-		.BYTE $68 ; h
-		.BYTE $65 ; e
-		.BYTE $73 ; s
-		.BYTE	0
-		.BYTE $69 ; i
-		.BYTE $6D ; m
-		.BYTE $70 ; p
-		.BYTE $61 ; a
-		.BYTE $6C ; l
-		.BYTE $65 ; e
-		.BYTE $73 ; s
-		.BYTE	0
-		.BYTE $6C ; l
-		.BYTE $61 ; a
-		.BYTE $73 ; s
-		.BYTE $68 ; h
-		.BYTE $65 ; e
-		.BYTE $73 ; s
-		.BYTE	0
-		.BYTE $62 ; b
-		.BYTE $6C ; l
-		.BYTE $61 ; a
-		.BYTE $73 ; s
-		.BYTE $74 ; t
-		.BYTE $73 ; s
-		.BYTE	0
-		.BYTE $77 ; w
-		.BYTE $68 ; h
-		.BYTE $61 ; a
-		.BYTE $63 ; c
-		.BYTE $6B ; k
-		.BYTE $73 ; s
-		.BYTE	0
-		.BYTE $68 ; h
-		.BYTE $69 ; i
-		.BYTE $74 ; t
-		.BYTE $73 ; s
-		.BYTE	0
-		.BYTE $63 ; c
-		.BYTE $6C ; l
-		.BYTE $61 ; a
-		.BYTE $77 ; w
-		.BYTE $73 ; s
-		.BYTE	0
-		.BYTE $6B ; k
-		.BYTE $69 ; i
-		.BYTE $63 ; c
-		.BYTE $6B ; k
-		.BYTE $73 ; s
-		.BYTE	0
-		.BYTE $62 ; b
-		.BYTE $69 ; i
-		.BYTE $74 ; t
-		.BYTE $65 ; e
-		.BYTE $73 ; s
-		.BYTE	0
-		.BYTE $74 ; t
-		.BYTE $65 ; e
-		.BYTE $61 ; a
-		.BYTE $72 ; r
-		.BYTE $73 ; s
-		.BYTE	0
-		.BYTE $63 ; c
-		.BYTE $68 ; h
-		.BYTE $6F ; o
-		.BYTE $6B ; k
-		.BYTE $65 ; e
-		.BYTE $73 ; s
-		.BYTE	0
-		.BYTE $6C ; l
-		.BYTE $61 ; a
-		.BYTE $73 ; s
-		.BYTE $68 ; h
-		.BYTE $65 ; e
-		.BYTE $73 ; s
-		.BYTE	0
-		.BYTE $62 ; b
-		.BYTE $75 ; u
-		.BYTE $72 ; r
-		.BYTE $6E ; n
-		.BYTE $73 ; s
-		.BYTE	0
-		.BYTE $73 ; s
-		.BYTE $74 ; t
-		.BYTE $69 ; i
-		.BYTE $6E ; n
-		.BYTE $67 ; g
-		.BYTE $73 ; s
-		.BYTE	0
-		.BYTE $72 ; r
-		.BYTE $69 ; i
-		.BYTE $70 ; p
-		.BYTE $73 ; s
-		.BYTE	0
-		.BYTE $73 ; s
-		.BYTE $74 ; t
-		.BYTE $6F ; o
-		.BYTE $6D ; m
-		.BYTE $70 ; p
-		.BYTE $73 ; s
-		.BYTE	0
-		.BYTE $67 ; g
-		.BYTE $6E ; n
-		.BYTE $61 ; a
-		.BYTE $77 ; w
-		.BYTE $73 ; s
-		.BYTE	0
-		.BYTE $72 ; r
-		.BYTE $65 ; e
-		.BYTE $6E ; n
-		.BYTE $64 ; d
-		.BYTE $73 ; s
-		.BYTE	0
-		.BYTE $61 ; a
-		.BYTE $73 ; s
-		.BYTE $70 ; p
-		.BYTE $68 ; h
-		.BYTE $79 ; y
-		.BYTE $78 ; x
-		.BYTE $69 ; i
-		.BYTE $61 ; a
-		.BYTE $74 ; t
-		.BYTE $65 ; e
-		.BYTE $73 ; s
-		.BYTE	0
-		.BYTE $77 ; w
-		.BYTE $61 ; a
-		.BYTE $6C ; l
-		.BYTE $6C ; l
-		.BYTE $6F ; o
-		.BYTE $70 ; p
-		.BYTE $73 ; s
-		.BYTE	0
-		.BYTE $66 ; f
-		.BYTE $72 ; r
-		.BYTE $69 ; i
-		.BYTE $65 ; e
-		.BYTE $73 ; s
-		.BYTE	0
-		.BYTE $73 ; s
-		.BYTE $74 ; t
-		.BYTE $69 ; i
-		.BYTE $6E ; n
-		.BYTE $67 ; g
-		.BYTE $73 ; s
-		.BYTE	0
+		.BYTE	"hacks",0
+		.BYTE	"pokes",0
+		.BYTE	"bashes",0
+		.BYTE	"spears",0
+		.BYTE	"whips",0
+		.BYTE	"zaps",0
+		.BYTE	"punches",0
+		.BYTE	"hits",0
+		.BYTE	"slashes",0
+		.BYTE	"stabs",0
+		.BYTE	"smashes",0
+		.BYTE	"impales",0
+		.BYTE	"lashes",0
+		.BYTE	"blasts",0
+		.BYTE	"whacks",0
+		.BYTE	"hits",0
+		.BYTE	"claws",0
+		.BYTE	"kicks",0
+		.BYTE	"bites",0
+		.BYTE	"tears",0
+		.BYTE	"chokes",0
+		.BYTE	"lashes",0
+		.BYTE	"burns",0
+		.BYTE	"stings",0
+		.BYTE	"rips",0
+		.BYTE	"stomps",0
+		.BYTE	"gnaws",0
+		.BYTE	"rends",0
+		.BYTE	"asphyxiates",0
+		.BYTE	"wallops",0
+		.BYTE	"fries",0
+		.BYTE	"stings",0
 unk_A471:	.BYTE $9B ; ›		; DATA XREF: RAM:8771r
 		.BYTE $A1 ; ¡
 		.BYTE $A7 ; §
