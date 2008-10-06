@@ -161,8 +161,7 @@ byte_769D:	.BYTE $FF
 		.BYTE	0
 off_76D9:	.WORD	0		; DATA XREF: sub_7EA5+8w sub_7EA5+1Ew	...
 off_76DB:	.WORD	0		; DATA XREF: sub_7B59+A2w sub_7B59+C5w ...
-		.BYTE	0
-		.BYTE	0
+off_76DD:	.WORD	0
 		.BYTE	0
 unk_76E0:	.BYTE	0		; DATA XREF: sub_7DD2+A3r
 		.BYTE	0
@@ -5954,11 +5953,10 @@ unk_9901:	.BYTE	>aFood		; DATA XREF: sub_7EA5+Br RAM:8D4Br
 		.BYTE	>aGold
 		.BYTE	>aSilver
 		.BYTE	>aCopper
-		.BYTE $AC ; ¨
-		.WORD byte_7665
-aIsStunned_:	.BYTE "is stunned."
-		.BYTE $D
-		.BYTE $FF
+		.BYTE	$AC
+		.WORD	byte_7665
+aIsStunned_:	.BYTE	"is stunned.",$D,$FF
+
 aTheLightWizard:.BYTE "The Light Wizards",0
 aTheDarkWizards:.BYTE "The Dark Wizards",0
 aTheGuildOfOrde:.BYTE "The Guild of Order",0
@@ -5975,6 +5973,8 @@ aThePaladins:	.BYTE "The Paladins",0
 aTheMercenaryGu:.BYTE "The Mercenary Guild",0
 aAFriend:	.BYTE "a friend",0
 aThePalace:	.BYTE "The Palace",0
+
+byte_9A2B:
 		.BYTE $1D
 		.BYTE $2F ; /
 		.BYTE $40 ; @
@@ -5991,6 +5991,8 @@ aThePalace:	.BYTE "The Palace",0
 		.BYTE	3
 		.BYTE $17
 		.BYTE $20
+
+byte_9A3B:
 		.BYTE $99 ; ô
 		.BYTE $99 ; ô
 		.BYTE $99 ; ô
@@ -6816,185 +6818,79 @@ sBlink:		.BYTE	"Blink",0
 		.BYTE	$A3
 		.WORD	$9F02
 		.BYTE	$FF
-		.BYTE	"repel",0
-		.BYTE	"resist",0
-		.BYTE	"fail to resist",0
-		.BYTE $BF ; ø
-		.BYTE $C5 ; ≈
-		.BYTE $CC ; Ã
-		.BYTE $A5 ; •
-		.BYTE $A5 ; •
-		.BYTE $A5 ; •
-		.BYTE $A6 ; ¶
-		.BYTE	0
-		.BYTE	3
-		.BYTE $A5 ; •
-		.BYTE $59 ; Y
-		.BYTE $6F ; o
-		.BYTE $75 ; u
-		.BYTE $72 ; r
-		.BYTE $20
-		.BYTE $B4 ; ¥
-		.BYTE $3C ; <
-		.BYTE $9E ; û
-		.BYTE $19
-		.BYTE $20
-		.BYTE $69 ; i
-		.BYTE $73 ; s
-		.BYTE $20
-		.BYTE $68 ; h
-		.BYTE $75 ; u
-		.BYTE $72 ; r
-		.BYTE $6C ; l
-		.BYTE $65 ; e
-		.BYTE $64 ; d
-		.BYTE  $D
-		.BYTE $A5 ; •
-		.BYTE $66 ; f
-		.BYTE $72 ; r
-		.BYTE $6F ; o
-		.BYTE $6D ; m
-		.BYTE $20
-		.BYTE $79 ; y
-		.BYTE $6F ; o
-		.BYTE $75 ; u
-		.BYTE $72 ; r
-		.BYTE $20
-		.BYTE $67 ; g
-		.BYTE $72 ; r
-		.BYTE $61 ; a
-		.BYTE $73 ; s
-		.BYTE $70 ; p
-		.BYTE $21 ; !
-		.BYTE  $D
-		.BYTE $FF
-		.BYTE $A6 ; ¶
-		.BYTE	0
-		.BYTE	3
-		.BYTE $A5 ; •
-		.BYTE $59 ; Y
-		.BYTE $6F ; o
-		.BYTE $75 ; u
-		.BYTE $20
-		.BYTE $B4 ; ¥
-		.BYTE $D9 ; Ÿ
-		.BYTE $76 ; v
-		.BYTE $28 ; (
-		.BYTE $20
-		.BYTE $69 ; i
-		.BYTE $74 ; t
-		.BYTE $73 ; s
-		.BYTE $20
-		.BYTE $70 ; p
-		.BYTE $6F ; o
-		.BYTE $77 ; w
-		.BYTE $65 ; e
-		.BYTE $72 ; r
-		.BYTE $2E ; .
-		.BYTE  $D
-		.BYTE $FF
-		.BYTE $A3 ; £
-		.BYTE $59 ; Y
-		.BYTE $A6 ; ¶
-		.BYTE $A3 ; £
-		.BYTE $A8 ; ®
-		.BYTE $A6 ; ¶
-		.BYTE $A6 ; ¶
-		.BYTE	0
-		.BYTE	2
-		.BYTE $A5 ; •
-		.BYTE $59 ; Y
-		.BYTE $6F ; o
-		.BYTE $75 ; u
-		.BYTE $20
-		.BYTE $65 ; e
-		.BYTE $6E ; n
-		.BYTE $63 ; c
-		.BYTE $6F ; o
-		.BYTE $75 ; u
-		.BYTE $6E ; n
-		.BYTE $74 ; t
-		.BYTE $65 ; e
-		.BYTE $72 ; r
-		.BYTE $20
-		.BYTE $B2 ; ≤
-		.BYTE	0
-		.BYTE $AA ; ™
+aRepel:		.BYTE	"repel",0
+aResist:	.BYTE	"resist",0
+aFailToResist:	.BYTE	"fail to resist",0
+		
+		.BYTE	<aRepel
+		.BYTE	<aResist
+		.BYTE	<aFailToResist
+		.BYTE	>aRepel
+		.BYTE	>aResist
+		.BYTE	>aFailToResist
+
+		MOVEXY	0,3
+		.BYTE	$A5
+		.BYTE	"Your "
+		.BYTE	$B4
+		.WORD	$9E3C
+		.BYTE	$19
+		.BYTE	" is hurled",$D,$A5
+		.BYTE	"from your grasp!",$D,$FF
+		MOVEXY	0,3
+		.BYTE	$A5
+		.BYTE	"You "
+		.BYTE	$B4
+		.WORD	$76D9
+		.BYTE	$28
+		.BYTE	" its power.",$D,$FF
+		.BYTE	$A3
+		.WORD	$A659
+		.BYTE	$A3
+		.WORD	$A6A8
+		MOVEXY	0,2
+		.BYTE	$A5
+		.BYTE	"You encounter "
+		.BYTE	$B2
+		.WORD	$AA00
 		.BYTE	1
-		.BYTE $20
-		.BYTE $B4 ; ¥
-		.BYTE $D9 ; Ÿ
-		.BYTE $76 ; v
-		.BYTE $14
-		.BYTE  $D
-		.BYTE $A5 ; •
-		.BYTE $6F ; o
-		.BYTE $66 ; f
-		.BYTE $20
-		.BYTE $B4 ; ¥
-		.BYTE $DD ; ›
-		.BYTE $76 ; v
-		.BYTE $19
-		.BYTE $2E ; .
-		.BYTE  $D
-		.BYTE  $D
-		.BYTE $A5 ; •
-		.BYTE $B4 ; ¥
-		.BYTE $DB ; -
-		.BYTE $76 ; v
-		.BYTE $28 ; (
-		.BYTE  $D
-		.BYTE $FF
-		.BYTE $AD ; ≠
-		.BYTE	1
-		.BYTE $AA ; ™
-		.BYTE $8D ; ç
-		.BYTE $D9 ; Ÿ
-		.BYTE $76 ; v
-		.BYTE $AD ; ≠
-		.BYTE	2
-		.BYTE $AA ; ™
-		.BYTE $8D ; ç
-		.BYTE $DA ; ⁄
-		.BYTE $76 ; v
-		.BYTE $AD ; ≠
-		.BYTE	0
-		.BYTE $AA ; ™
-		.BYTE $C9 ; …
-		.BYTE	1
-		.BYTE $F0 ; 
-		.BYTE  $C
-		.BYTE $AD ; ≠
-		.BYTE	3
-		.BYTE $AA ; ™
-		.BYTE $8D ; ç
-		.BYTE $D9 ; Ÿ
-		.BYTE $76 ; v
-		.BYTE $AD ; ≠
-		.BYTE	4
-		.BYTE $AA ; ™
-		.BYTE $8D ; ç
-		.BYTE $DA ; ⁄
-		.BYTE $76 ; v
-		.BYTE $60 ; `
+		.BYTE	" "
+		.BYTE	$B4
+		.WORD	$76D9
+		.BYTE	$14
+		.BYTE	$D
+		.BYTE	$A5
+		.BYTE	"of "
+		.BYTE	$B4
+		.WORD	off_76DD
+		.BYTE	$19
+		.BYTE	".",$D,$D,$A5
+		.BYTE	$B4
+		.WORD	$76DB
+		.BYTE	$28
+		.BYTE	$D,$FF
+
+loc_A659:				; DATA XREF: RAM:A626o
+		dmv off_76D9, off_AA01
+		LDA	byte_AA00
+		CMP	#1
+		BEQ	locret_A678
+		dmv	off_76D9, off_AA03
+
+locret_A678:				; CODE XREF: RAM:A66Aj
+		RTS
+
 		.BYTE	$22,"Die, outcast!",$22,0
 		.BYTE	$22,"Hail friend!",$22,0
 		.BYTE	$22,"Begone offal!",$22,0
-		.BYTE $A6 ; ¶
-		.BYTE $A6 ; ¶
-		.BYTE $BD ; Ω
-		.BYTE $2B ; +
-		.BYTE $9A ; ö
-		.BYTE $8D ; ç
-		.BYTE $DD ; ›
-		.BYTE $76 ; v
-		.BYTE $BD ; Ω
-		.BYTE $3B ; ;
-		.BYTE $9A ; ö
-		.BYTE $8D ; ç
-		.BYTE $DE ; ﬁ
-		.BYTE $76 ; v
-		.BYTE $60 ; `
+
+loc_A6A8:				; DATA XREF: RAM:A629o
+		LDX     $A6
+		LDA     byte_9A2B,X
+		STA     off_76DD
+		LDA     byte_9A3B,X
+		STA     off_76DD+1
+		RTS
 
 byte_A6B7:
 		.BYTE	$A3
