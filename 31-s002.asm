@@ -7888,73 +7888,10 @@ aRewarded:	.BYTE	"rewarded",0
 aPunished:	.BYTE	"punished",0
 		MOVEXY	0,3
 		.BYTE	$A5
-		.BYTE $22 ; "
-		.BYTE $50 ; P
-		.BYTE $72 ; r
-		.BYTE $65 ; e
-		.BYTE $70 ; p
-		.BYTE $61 ; a
-		.BYTE $72 ; r
-		.BYTE $65 ; e
-		.BYTE $2C ; ,
-		.BYTE $20
-		.BYTE $74 ; t
-		.BYTE $68 ; h
-		.BYTE $65 ; e
-		.BYTE $20
-		.BYTE $41 ; A
-		.BYTE $70 ; p
-		.BYTE $6F ; o
-		.BYTE $63 ; c
-		.BYTE $61 ; a
-		.BYTE $6C ; l
-		.BYTE $79 ; y
-		.BYTE $70 ; p
-		.BYTE $73 ; s
-		.BYTE $65 ; e
-		.BYTE $20
-		.BYTE $69 ; i
-		.BYTE $73 ; s
-		.BYTE $20
-		.BYTE $73 ; s
-		.BYTE $6F ; o
-		.BYTE $6F ; o
-		.BYTE $6E ; n
-		.BYTE $2E ; .
-		.BYTE $22 ; "
-		.BYTE  $D
-		.BYTE $FF
-		.BYTE $A6 ; ¦
-		.BYTE	0
-		.BYTE	3
-		.BYTE $A5 ; ¥
-		.BYTE $22 ; "
-		.BYTE $42 ; B
-		.BYTE $65 ; e
-		.BYTE $77 ; w
-		.BYTE $61 ; a
-		.BYTE $72 ; r
-		.BYTE $65 ; e
-		.BYTE $20
-		.BYTE $6F ; o
-		.BYTE $66 ; f
-		.BYTE $20
-		.BYTE $66 ; f
-		.BYTE $61 ; a
-		.BYTE $6C ; l
-		.BYTE $73 ; s
-		.BYTE $65 ; e
-		.BYTE $20
-		.BYTE $61 ; a
-		.BYTE $6C ; l
-		.BYTE $61 ; a
-		.BYTE $72 ; r
-		.BYTE $6D ; m
-		.BYTE $73 ; s
-		.BYTE $2E ; .
-		.BYTE $22 ; "
-		.BYTE  $D
-		.BYTE $FF
+		.BYTE	$22,"Prepare, the Apocalypse is soon.",$22,$D,$FF
+		MOVEXY	0,3
+		.BYTE	$A5
+		.BYTE	$22,"Beware of false alarms.",$22,$D,$FF
 		.BYTE $51 ; Q
 		.BYTE $78 ; x
 		.BYTE $C0 ; À

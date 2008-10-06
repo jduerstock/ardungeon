@@ -2916,7 +2916,7 @@ sub_2788:				; CODE XREF: sub_275Bp
 		BCC	locret_2798
 
 loc_2793:				; CODE XREF: sub_2788+5j
-		LDA	#$31 ; '1'
+		LDA	#'1'
 		STA	$230
 
 locret_2798:				; CODE XREF: sub_2788+9j
