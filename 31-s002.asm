@@ -6472,331 +6472,93 @@ locret_A0A2:				; CODE XREF: RAM:A08Aj
 
 byte_A0A3:	.BYTE	0
 		.BYTE	0
-byte_A0A5:	.BYTE $41 ; A
-		.BYTE $45 ; E
-		.BYTE $49 ; I
-		.BYTE $4F ; O
-		.BYTE $55 ; U
-		.BYTE $A3 ; £
-		.BYTE $4F ; O
-		.BYTE $A0 ;  
-		.BYTE $A6 ; ¦
-		.BYTE	0
-		.BYTE	5
-		.BYTE $A2 ; ¢
-		.BYTE $59 ; Y
-		.BYTE $6F ; o
-		.BYTE $75 ; u
-		.BYTE $20
-		.BYTE $66 ; f
-		.BYTE $61 ; a
-		.BYTE $63 ; c
-		.BYTE $65 ; e
-		.BYTE $AC ; ¬
-		.BYTE $3E ; >
-		.BYTE $A0 ;  
-		.BYTE $A6 ; ¦
-		.BYTE	0
-		.BYTE	5
-		.BYTE $A9 ; ©
-		.BYTE $FF
-		.BYTE $A6 ; ¦
-		.BYTE	0
-		.BYTE	3
-		.BYTE $A5 ; ¥
-		.BYTE $53 ; S
-		.BYTE $77 ; w
-		.BYTE $69 ; i
-		.BYTE $74 ; t
-		.BYTE $63 ; c
-		.BYTE $68 ; h
-		.BYTE $69 ; i
-		.BYTE $6E ; n
-		.BYTE $67 ; g
-		.BYTE $20
-		.BYTE $74 ; t
-		.BYTE $6F ; o
-		.BYTE $20
-		.BYTE $B4 ; ´
-		.BYTE $3C ; <
-		.BYTE $9E ; ž
-		.BYTE $19
-		.BYTE $2E ; .
-		.BYTE  $D
-		.BYTE $FF
-		.BYTE $A6 ; ¦
-		.BYTE	0
-		.BYTE	3
-		.BYTE $A5 ; ¥
-		.BYTE $59 ; Y
-		.BYTE $6F ; o
-		.BYTE $75 ; u
-		.BYTE $20
-		.BYTE $6D ; m
-		.BYTE $69 ; i
-		.BYTE $73 ; s
-		.BYTE $73 ; s
-		.BYTE $2E ; .
-		.BYTE  $D
-		.BYTE $FF
-		.BYTE $AC ; ¬
-		.BYTE $65 ; e
-		.BYTE $76 ; v
-		.BYTE $73 ; s
-		.BYTE $6B ; k
-		.BYTE $69 ; i
-		.BYTE $6C ; l
-		.BYTE $6C ; l
-		.BYTE $66 ; f
-		.BYTE $75 ; u
-		.BYTE $6C ; l
-		.BYTE $6C ; l
-		.BYTE $79 ; y
-		.BYTE $20
-		.BYTE  $D
-		.BYTE $A5 ; ¥
-		.BYTE $64 ; d
-		.BYTE $65 ; e
-		.BYTE $66 ; f
-		.BYTE $6C ; l
-		.BYTE $65 ; e
-		.BYTE $63 ; c
-		.BYTE $74 ; t
-		.BYTE $73 ; s
-		.BYTE $20
-		.BYTE $79 ; y
-		.BYTE $6F ; o
-		.BYTE $75 ; u
-		.BYTE $72 ; r
-		.BYTE $20
-		.BYTE $61 ; a
-		.BYTE $74 ; t
-		.BYTE $74 ; t
-		.BYTE $61 ; a
-		.BYTE $63 ; c
-		.BYTE $6B ; k
-		.BYTE $2E ; .
-		.BYTE  $D
-		.BYTE $FF
-		.BYTE $A6 ; ¦
-		.BYTE	0
-		.BYTE	3
-		.BYTE $A3 ; £
-		.BYTE $15
-		.BYTE $A1 ; ¡
-		.BYTE $A9 ; ©
-		.BYTE $2D ; -
-		.BYTE $85 ; …
-		.BYTE $16
-		.BYTE $A9 ; ©
-		.BYTE $A1 ; ¡
-		.BYTE $85 ; …
-		.BYTE $17
-		.BYTE $AD ; ­
-		.BYTE	0
-		.BYTE $AA ; ª
-		.BYTE $C9 ; É
-		.BYTE	1
-		.BYTE $F0 ; ð
-		.BYTE	8
-		.BYTE $A9 ; ©
-		.BYTE $4A ; J
-		.BYTE $85 ; …
-		.BYTE $16
-		.BYTE $A9 ; ©
-		.BYTE $A1 ; ¡
-		.BYTE $85 ; …
-		.BYTE $17
-		.BYTE $60 ; `
-		.BYTE $A5 ; ¥
-		.BYTE $54 ; T
-		.BYTE $68 ; h
-		.BYTE $65 ; e
-		.BYTE $20
-		.BYTE $B4 ; ´
-		.BYTE	1
-		.BYTE $AA ; ª
-		.BYTE $10
-		.BYTE $20
-		.BYTE $74 ; t
-		.BYTE $61 ; a
-		.BYTE $6B ; k
-		.BYTE $65 ; e
-		.BYTE $73 ; s
-		.BYTE $20
-		.BYTE $79 ; y
-		.BYTE $6F ; o
-		.BYTE $75 ; u
-		.BYTE $72 ; r
-		.BYTE $20
-		.BYTE $6F ; o
-		.BYTE $66 ; f
-		.BYTE $66 ; f
-		.BYTE $65 ; e
-		.BYTE $72 ; r
-		.BYTE $2E ; .
-		.BYTE  $D
-		.BYTE $FF
-		.BYTE $A5 ; ¥
-		.BYTE $54 ; T
-		.BYTE $68 ; h
-		.BYTE $65 ; e
-		.BYTE $20
-		.BYTE $B4 ; ´
-		.BYTE	3
-		.BYTE $AA ; ª
-		.BYTE $10
-		.BYTE $20
-		.BYTE $74 ; t
-		.BYTE $61 ; a
-		.BYTE $6B ; k
-		.BYTE $65 ; e
-		.BYTE $20
-		.BYTE $79 ; y
-		.BYTE $6F ; o
-		.BYTE $75 ; u
-		.BYTE $72 ; r
-		.BYTE $20
-		.BYTE $6F ; o
-		.BYTE $66 ; f
-		.BYTE $66 ; f
-		.BYTE $65 ; e
-		.BYTE $72 ; r
-		.BYTE $2E ; .
-		.BYTE  $D
-		.BYTE $FF
-		.BYTE $A3 ; £
-		.BYTE $81 ; 
-		.BYTE $A1 ; ¡
-		.BYTE $A5 ; ¥
-		.BYTE $54 ; T
-		.BYTE $68 ; h
-		.BYTE $65 ; e
-		.BYTE $20
-		.BYTE $B4 ; ´
-		.BYTE	1
-		.BYTE $AA ; ª
-		.BYTE $10
-		.BYTE $20
-		.BYTE $AD ; ­
-		.BYTE $A8 ; ¨
-		.BYTE $A1 ; ¡
-		.BYTE $2E ; .
-		.BYTE  $D
-		.BYTE $FF
-		.BYTE $54 ; T
-		.BYTE $68 ; h
-		.BYTE $65 ; e
-		.BYTE	0
-		.BYTE $4F ; O
-		.BYTE $6E ; n
-		.BYTE $65 ; e
-		.BYTE	0
-		.BYTE $A9 ; ©
-		.BYTE $AA ; ª
-		.BYTE $8D ; 
-		.BYTE $A8 ; ¨
-		.BYTE $A1 ; ¡
-		.BYTE $A9 ; ©
-		.BYTE $A1 ; ¡
-		.BYTE $8D ; 
-		.BYTE $A9 ; ©
-		.BYTE $A1 ; ¡
-		.BYTE $A5 ; ¥
-		.BYTE $78 ; x
-		.BYTE $10
-		.BYTE	1
-		.BYTE $60 ; `
-		.BYTE $F0 ; ð
-		.BYTE  $B
-		.BYTE $A9 ; ©
-		.BYTE $C0 ; À
-		.BYTE $8D ; 
-		.BYTE $A8 ; ¨
-		.BYTE $A1 ; ¡
-		.BYTE $A9 ; ©
-		.BYTE $A1 ; ¡
-		.BYTE $8D ; 
-		.BYTE $A9 ; ©
-		.BYTE $A1 ; ¡
-		.BYTE $60 ; `
-		.BYTE $A9 ; ©
-		.BYTE $D4 ; Ô
-		.BYTE $8D ; 
-		.BYTE $A8 ; ¨
-		.BYTE $A1 ; ¡
-		.BYTE $A9 ; ©
-		.BYTE $A1 ; ¡
-		.BYTE $8D ; 
-		.BYTE $A9 ; ©
-		.BYTE $A1 ; ¡
-		.BYTE $60 ; `
-		.BYTE	0
-		.BYTE	0
-		.BYTE $74 ; t
-		.BYTE $61 ; a
-		.BYTE $6B ; k
-		.BYTE $65 ; e
-		.BYTE $73 ; s
-		.BYTE $20
-		.BYTE $74 ; t
-		.BYTE $68 ; h
-		.BYTE $65 ; e
-		.BYTE $20
-		.BYTE $66 ; f
-		.BYTE $75 ; u
-		.BYTE $6C ; l
-		.BYTE $6C ; l
-		.BYTE $20
-		.BYTE $65 ; e
-		.BYTE $66 ; f
-		.BYTE $66 ; f
-		.BYTE $65 ; e
-		.BYTE $63 ; c
-		.BYTE $74 ; t
-		.BYTE $AE ; ®
-		.BYTE $72 ; r
-		.BYTE $65 ; e
-		.BYTE $73 ; s
-		.BYTE $69 ; i
-		.BYTE $73 ; s
-		.BYTE $74 ; t
-		.BYTE $73 ; s
-		.BYTE $20
-		.BYTE $74 ; t
-		.BYTE $68 ; h
-		.BYTE $65 ; e
-		.BYTE $20
-		.BYTE $65 ; e
-		.BYTE $66 ; f
-		.BYTE $66 ; f
-		.BYTE $65 ; e
-		.BYTE $63 ; c
-		.BYTE $74 ; t
-		.BYTE $73 ; s
-		.BYTE $AE ; ®
-		.BYTE $72 ; r
-		.BYTE $65 ; e
-		.BYTE $70 ; p
-		.BYTE $65 ; e
-		.BYTE $6C ; l
-		.BYTE $73 ; s
-		.BYTE $20
-		.BYTE $74 ; t
-		.BYTE $68 ; h
-		.BYTE $65 ; e
-		.BYTE $20
-		.BYTE $65 ; e
-		.BYTE $66 ; f
-		.BYTE $66 ; f
-		.BYTE $65 ; e
-		.BYTE $63 ; c
-		.BYTE $74 ; t
-		.BYTE $73 ; s
-		.BYTE $AE ; ®
-		.BYTE $A6 ; ¦
-		.BYTE	0
-		.BYTE	3
+byte_A0A5:	.BYTE	"AEIOU"
+		.BYTE	$A3
+		.WORD	$A04F
+		MOVEXY	0,5
+		.BYTE	$A2
+		.BYTE	"You face"
+		.BYTE	$AC
+		.WORD	$A03E
+		MOVEXY	0,5
+		.BYTE	$A9
+		.BYTE	$FF
+		MOVEXY	0,3
+		.BYTE	$A5
+		.BYTE	"Switching to "
+		.BYTE	$B4
+		.WORD	$9E3C
+		.BYTE	$19
+		.BYTE	".",$D,$FF
+		MOVEXY	0,3
+		.BYTE	$A5
+		.BYTE	"You miss.",$D,$FF
+		.BYTE	$AC
+		.WORD	$7665
+		.BYTE	"skillfully ",$D,$A5
+		.BYTE	"deflects your attack.",$D,$FF
+		MOVEXY	0,3
+		.BYTE	$A3
+		.WORD	$A115
+
+loc_A115:				; DATA XREF: RAM:A113o
+		dldi	off_16, $A12D
+		LDA	byte_AA00
+		CMP	#1
+		BEQ	locret_A12C
+		dldi	off_16, $A14A
+
+locret_A12C:				; CODE XREF: RAM:A122j
+		RTS
+
+		.BYTE	$A5
+		.BYTE	"The "
+		.BYTE	$B4
+		.WORD	$AA01
+		.BYTE	$10
+		.BYTE	" takes your offer.",$D,$FF
+		.BYTE	$A5
+		.BYTE	"The "
+		.BYTE	$B4
+		.WORD	$AA03
+		.BYTE	$10
+		.BYTE	" take your offer.",$D,$FF
+		.BYTE	$A3
+		.WORD	$A181
+		.BYTE	$A5
+		.BYTE	"The "
+		.BYTE	$B4
+		.WORD	$AA01
+		.BYTE	$10
+		.BYTE	" "
+		.BYTE	$AD
+		.WORD	$A1A8
+		.BYTE	".",$D,$FF
+		.BYTE	"The",0
+		.BYTE	"One",0
+
+loc_A181:				; DATA XREF: RAM:A167o
+		dldi	off_A1A8, $A1AA
+		LDA	$78
+		BPL	loc_A190
+		RTS
+; ---------------------------------------------------------------------------
+
+loc_A190:				; CODE XREF: RAM:A18Dj
+		BEQ	loc_A19D
+		dldi	off_A1A8, $A1C0
+		RTS
+; ---------------------------------------------------------------------------
+
+loc_A19D:				; CODE XREF: RAM:loc_A190j
+		dldi	off_A1A8, $A1D4
+		RTS
+
+off_A1A8:	.WORD	0
+		.BYTE	"takes the full effect",$AE
+		.BYTE	"resists the effects",$AE
+		.BYTE	"repels the effects",$AE
+		MOVEXY	0,3
 		.BYTE $A5 ; ¥
 		.BYTE $2E ; .
 		.BYTE $2E ; .
