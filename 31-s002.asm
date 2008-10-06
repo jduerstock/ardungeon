@@ -7853,211 +7853,27 @@ locret_A715:				; CODE XREF: RAM:A6FEj
 		.BYTE	"can't",0
 		.BYTE	$AC
 		.WORD	$7665
-		.BYTE $73 ; s
-		.BYTE $65 ; e
-		.BYTE $65 ; e
-		.BYTE $6D ; m
-		.BYTE $73 ; s
-		.BYTE $20
-		.BYTE $75 ; u
-		.BYTE $6E ; n
-		.BYTE $69 ; i
-		.BYTE $6E ; n
-		.BYTE $74 ; t
-		.BYTE $65 ; e
-		.BYTE $72 ; r
-		.BYTE $65 ; e
-		.BYTE $73 ; s
-		.BYTE $74 ; t
-		.BYTE $65 ; e
-		.BYTE $64 ; d
-		.BYTE $2E ; .
-		.BYTE  $D
-		.BYTE $FF
-		.BYTE $AC ; ¨
-		.BYTE $65 ; e
-		.BYTE $76 ; v
-		.BYTE $6D ; m
-		.BYTE $75 ; u
-		.BYTE $6D ; m
-		.BYTE $62 ; b
-		.BYTE $6C ; l
-		.BYTE $65 ; e
-		.BYTE $73 ; s
-		.BYTE  $D
-		.BYTE $A5 ; •
-		.BYTE $73 ; s
-		.BYTE $6F ; o
-		.BYTE $6D ; m
-		.BYTE $65 ; e
-		.BYTE $74 ; t
-		.BYTE $68 ; h
-		.BYTE $69 ; i
-		.BYTE $6E ; n
-		.BYTE $67 ; g
-		.BYTE $20
-		.BYTE $75 ; u
-		.BYTE $6E ; n
-		.BYTE $69 ; i
-		.BYTE $6E ; n
-		.BYTE $74 ; t
-		.BYTE $65 ; e
-		.BYTE $6C ; l
-		.BYTE $6C ; l
-		.BYTE $69 ; i
-		.BYTE $67 ; g
-		.BYTE $69 ; i
-		.BYTE $62 ; b
-		.BYTE $6C ; l
-		.BYTE $65 ; e
-		.BYTE $2E ; .
-		.BYTE  $D
-		.BYTE $FF
-		.BYTE $A6 ; ¶
-		.BYTE	0
-		.BYTE	3
-		.BYTE $A5 ; •
-		.BYTE $22 ; "
-		.BYTE $44 ; D
-		.BYTE $6F ; o
-		.BYTE $6E ; n
-		.BYTE $27 ; '
-		.BYTE $74 ; t
-		.BYTE $20
-		.BYTE $74 ; t
-		.BYTE $65 ; e
-		.BYTE $6C ; l
-		.BYTE $6C ; l
-		.BYTE $20
-		.BYTE $74 ; t
-		.BYTE $68 ; h
-		.BYTE $65 ; e
-		.BYTE $20
-		.BYTE $70 ; p
-		.BYTE $65 ; e
-		.BYTE $61 ; a
-		.BYTE $73 ; s
-		.BYTE $61 ; a
-		.BYTE $6E ; n
-		.BYTE $74 ; t
-		.BYTE $73 ; s
-		.BYTE $20
-		.BYTE $68 ; h
-		.BYTE $6F ; o
-		.BYTE $77 ; w
-		.BYTE $20
-		.BYTE $67 ; g
-		.BYTE $6F ; o
-		.BYTE $6F ; o
-		.BYTE $64 ; d
-		.BYTE  $D
-		.BYTE $A5 ; •
-		.BYTE $74 ; t
-		.BYTE $68 ; h
-		.BYTE $65 ; e
-		.BYTE $20
-		.BYTE $70 ; p
-		.BYTE $65 ; e
-		.BYTE $61 ; a
-		.BYTE $72 ; r
-		.BYTE $73 ; s
-		.BYTE $20
-		.BYTE $61 ; a
-		.BYTE $72 ; r
-		.BYTE $65 ; e
-		.BYTE $20
-		.BYTE $77 ; w
-		.BYTE $69 ; i
-		.BYTE $74 ; t
-		.BYTE $68 ; h
-		.BYTE $20
-		.BYTE $74 ; t
-		.BYTE $68 ; h
-		.BYTE $65 ; e
-		.BYTE $20
-		.BYTE $63 ; c
-		.BYTE $68 ; h
-		.BYTE $65 ; e
-		.BYTE $65 ; e
-		.BYTE $73 ; s
-		.BYTE $65 ; e
-		.BYTE $21 ; !
-		.BYTE $22 ; "
-		.BYTE  $D
-		.BYTE $FF
-		.BYTE $A6 ; ¶
-		.BYTE	0
-		.BYTE	3
-		.BYTE $A5 ; •
-		.BYTE $22 ; "
-		.BYTE $52 ; R
-		.BYTE $75 ; u
-		.BYTE $6E ; n
-		.BYTE $21 ; !
-		.BYTE $20
-		.BYTE $54 ; T
-		.BYTE $68 ; h
-		.BYTE $65 ; e
-		.BYTE $20
-		.BYTE $44 ; D
-		.BYTE $65 ; e
-		.BYTE $76 ; v
-		.BYTE $6F ; o
-		.BYTE $75 ; u
-		.BYTE $72 ; r
-		.BYTE $65 ; e
-		.BYTE $72 ; r
-		.BYTE $20
-		.BYTE $63 ; c
-		.BYTE $6F ; o
-		.BYTE $6D ; m
-		.BYTE $65 ; e
-		.BYTE $73 ; s
-		.BYTE $21 ; !
-		.BYTE $22 ; "
-		.BYTE  $D
-		.BYTE $FF
-		.BYTE $A6 ; ¶
-		.BYTE	0
-		.BYTE	3
-		.BYTE $A3 ; £
-		.BYTE	9
-		.BYTE $A8 ; ®
-		.BYTE $A5 ; •
-		.BYTE $22 ; "
-		.BYTE $4E ; N
-		.BYTE $6F ; o
-		.BYTE $20
-		.BYTE $67 ; g
-		.BYTE $6F ; o
-		.BYTE $6F ; o
-		.BYTE $64 ; d
-		.BYTE $20
-		.BYTE $64 ; d
-		.BYTE $65 ; e
-		.BYTE $65 ; e
-		.BYTE $64 ; d
-		.BYTE $20
-		.BYTE $65 ; e
-		.BYTE $76 ; v
-		.BYTE $65 ; e
-		.BYTE $72 ; r
-		.BYTE $20
-		.BYTE $67 ; g
-		.BYTE $6F ; o
-		.BYTE $65 ; e
-		.BYTE $73 ; s
-		.BYTE $20
-		.BYTE $75 ; u
-		.BYTE $6E ; n
-		.BYTE $B4 ; ¥
-		.BYTE $D9 ; Ÿ
-		.BYTE $76 ; v
-		.BYTE  $A
-		.BYTE $2E ; .
-		.BYTE $22 ; "
-		.BYTE  $D
-		.BYTE $FF
+		.BYTE	"seems uninterested.",$D,$FF
+		.BYTE	$AC
+		.WORD	$7665
+		.BYTE	"mumbles",$D,$A5
+		.BYTE	"something unintelligible.",$D,$FF
+		MOVEXY	0,3
+		.BYTE	$A5
+		.BYTE	$22,"Don't tell the peasants how good",$D,$A5
+		.BYTE	"the pears are with the cheese!",$22,$D,$FF
+		MOVEXY	0,3
+		.BYTE	$A5
+		.BYTE	$22,"Run! The Devourer comes!",$22,$D,$FF
+		MOVEXY	0,3
+		.BYTE	$A3
+		.WORD	$A809
+		.BYTE	$A5
+		.BYTE	$22,"No good deed ever goes un"
+		.BYTE	$B4
+		.WORD	$76D9
+		.BYTE	$A
+		.BYTE	".",$22,$D,$FF
 		.BYTE $A9 ; ©
 		.BYTE $23 ; #
 		.BYTE $8D ; ç
