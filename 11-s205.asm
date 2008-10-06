@@ -136,8 +136,8 @@ loc_8104:				; CODE XREF: sub_80D2+25j
 		BPL	loc_80E4
 		LDA	$24E,X
 		BMI	loc_80E0
-		LDA	#$31 ; '1'
-		STA	$230
+		LDA	#'1'
+		STA	byte_230
 		LDA	#4
 		STA	6
 		dldi	off_9, $0280

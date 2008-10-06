@@ -1645,11 +1645,11 @@ sub_2009:				; CODE XREF: sub_20F7+Dp
 		STA	$237
 		STA	$D20F
 		LDA	#$C7 ; 'Ç'
-		AND	$236
+		AND	byte_236
 		ORA	#$10
 
 loc_201D:				; CODE XREF: sub_21B7+17j
-		STA	$236
+		STA	byte_236
 		STA	$D20E
 		LDA	#$28 ; '('
 		STA	$D208
@@ -1668,8 +1668,8 @@ loc_201D:				; CODE XREF: sub_21B7+17j
 sub_2037:				; CODE XREF: READSECTOR:loc_20EDp
 					; sub_20F7+28p
 		LDA	#$C7 ; 'Ç'
-		AND	$236
-		STA	$236
+		AND	byte_236
+		STA	byte_236
 		STA	$D20E
 		LDX	#6
 		LDA	#0
@@ -1697,7 +1697,7 @@ loc_2058:				; CODE XREF: READSECTOR-3FCj
 		LDX	#3
 
 loc_205A:				; CODE XREF: READSECTOR-42Dj
-		LDA	$230,X
+		LDA	byte_230,X
 		STA	$266,X
 		DEX
 		BPL	loc_205A
@@ -1924,7 +1924,7 @@ sub_21B7:				; CODE XREF: sub_218E+10p
 		STA	$D20F
 		STA	SKREST
 		LDA	#$C7 ; 'Ç'
-		AND	$236
+		AND	byte_236
 		ORA	#$20 ; ' '
 		JMP	loc_201D
 ; End of function sub_21B7
@@ -2035,9 +2035,9 @@ loc_2257:				; CODE XREF: RAM:2253j
 		BNE	loc_2280
 
 loc_2275:				; CODE XREF: RAM:2266j
-		LDA	$236
+		LDA	byte_236
 		ORA	#8
-		STA	$236
+		STA	byte_236
 		STA	$D20E
 
 loc_2280:				; CODE XREF: RAM:2273j	RAM:2294j
@@ -2062,9 +2062,9 @@ loc_2297:
 		LDA	$243
 		BEQ	loc_22AA
 		STA	$241
-		LDA	$236
+		LDA	byte_236
 		AND	#$F7 ; '÷'
-		STA	$236
+		STA	byte_236
 		STA	$D20E
 
 loc_22AA:				; CODE XREF: RAM:229Aj
@@ -2079,7 +2079,7 @@ loc_22AC:
 		BNE	loc_22C2
 		LDA	#$DF ; 'ß'
 		STA	$D20E
-		LDA	$236
+		LDA	byte_236
 		STA	$D20E
 		JMP	(off_20A)
 ; ---------------------------------------------------------------------------
@@ -2093,7 +2093,7 @@ loc_22C6:				; CODE XREF: RAM:22D8j
 		LDA	unk_2301,X
 		CPX	#1
 		BNE	loc_22D2
-		AND	$236
+		AND	byte_236
 		BEQ	loc_22D7
 
 loc_22D2:				; CODE XREF: RAM:22CBj
@@ -2108,7 +2108,7 @@ loc_22D7:				; CODE XREF: RAM:22D0j
 loc_22DC:				; CODE XREF: RAM:22D5j
 		EOR	#$FF
 		STA	$D20E
-		LDA	$236
+		LDA	byte_236
 		STA	$D20E
 		LDA	unk_2304,X
 		STA	loc_22F4+1
@@ -2348,7 +2348,7 @@ sub_245D:				; CODE XREF: RAM:1827j	sub_275B+3p
 		LDA	#$80
 		STA	$253
 		LDX	#0
-		STX	$236
+		STX	byte_236
 		STX	$D20E
 		JSR	sub_2454
 		STX	$D01A
@@ -2409,7 +2409,7 @@ loc_24C6:				; CODE XREF: RAM:1830j
 					; sub_275B:loc_2782j ...
 		PHP
 		LDA	#$40 ; '@'
-		STA	$236
+		STA	byte_236
 		STA	$D20E
 		LDA	#3
 		STA	$D20F
@@ -2871,14 +2871,14 @@ sub_275B:				; CODE XREF: RAM:1824j	sub_2CFB+52p
 
 ; FUNCTION CHUNK AT 24C6 SIZE 0000001F BYTES
 
-		JSR	sub_2788
+		JSR	CHKDRVNO
 		JSR	sub_245D
 		JSR	sub_28A1
 		LDA	#4
 		STA	byte_190F
 
 loc_2769:				; CODE XREF: sub_275B+24j
-		LDA	$230
+		LDA	byte_230
 		AND	#$F
 		TAX
 		LDA	$24D,X
@@ -2887,7 +2887,7 @@ loc_2769:				; CODE XREF: sub_275B+24j
 		BCC	loc_2782
 
 loc_2779:				; CODE XREF: sub_275B+17j
-		JSR	sub_2785
+		JSR	INCDRVNO
 		DEC	byte_190F
 		BNE	loc_2769
 		SEC
@@ -2900,28 +2900,28 @@ loc_2782:				; CODE XREF: sub_275B+1Cj
 ; --------------- S U B	R O U T	I N E ---------------------------------------
 
 
-sub_2785:				; CODE XREF: sub_275B:loc_2779p
-		INC	$230
-; End of function sub_2785
+INCDRVNO:				; CODE XREF: sub_275B:loc_2779p
+		INC	byte_230
+; End of function INCDRVNO
 
 
 ; --------------- S U B	R O U T	I N E ---------------------------------------
 
 
-sub_2788:				; CODE XREF: sub_275Bp
-		LDA	$230
+CHKDRVNO:				; CODE XREF: sub_275Bp
+		LDA	byte_230
 		CMP	#'1'
 		BCC	loc_2793
 		CMP	#'5'
 		BCC	locret_2798
 
-loc_2793:				; CODE XREF: sub_2788+5j
+loc_2793:				; CODE XREF: CHKDRVNO+5j
 		LDA	#'1'
-		STA	$230
+		STA	byte_230
 
-locret_2798:				; CODE XREF: sub_2788+9j
+locret_2798:				; CODE XREF: CHKDRVNO+9j
 		RTS
-; End of function sub_2788
+; End of function CHKDRVNO
 
 
 ; --------------- S U B	R O U T	I N E ---------------------------------------
@@ -3143,7 +3143,7 @@ loc_28AA:				; CODE XREF: sub_28A1+Dj
 
 loc_28BC:				; CODE XREF: sub_28A1+21j
 		LDA	(off_7),Y
-		STA	$1905,Y
+		STA	byte_1905,Y
 		DEY
 		BPL	loc_28BC
 		PHA
