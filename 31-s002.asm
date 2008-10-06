@@ -357,7 +357,7 @@ loc_7824:				; CODE XREF: RAM:780Dj	RAM:781Fj
 		BCC	loc_787B
 
 loc_7836:				; CODE XREF: RAM:782Dj
-		ldxy	$9883
+		ldxy	a_SurprisedNoOptions
 		JSR	loc_8ED1
 		DEC	$638E
 		LDA	off_AA13+1
@@ -435,7 +435,7 @@ loc_789C:				; CODE XREF: sub_88B0-1010j
 loc_78B4:				; CODE XREF: sub_88B0-1001j
 		LDA	$638E
 		BEQ	loc_78C3
-		ldxy	$9D97
+		ldxy	a_YouAreStunned
 		JSR	loc_8ED1
 		JMP	loc_79F9
 ; ---------------------------------------------------------------------------
@@ -460,7 +460,7 @@ loc_78CC:				; CODE XREF: sub_88B0-FE9j
 		STA	$1961
 
 loc_78DD:				; CODE XREF: RAM:7919j	RAM:7963j
-		ldxy	$9A4B
+		ldxy	a_BattleOptions
 		JSR	sub_8EEF
 
 loc_78E4:				; CODE XREF: RAM:7912j
@@ -505,7 +505,7 @@ loc_7931:				; DATA XREF: RAM:792Bw
 		BCS	loc_7941
 		LDA	#4
 		STA	byte_A894
-		ldxy	$9D32
+		ldxy	a_FeelThatReasoning
 		JSR	loc_8ED1
 
 loc_7941:				; CODE XREF: RAM:7920j	RAM:7925j ...
@@ -517,7 +517,7 @@ loc_7941:				; CODE XREF: RAM:7920j	RAM:7925j ...
 		STX	$639D
 		STY	$639C
 		JSR	sub_8D7E
-		ldxy	$A0C1
+		ldxy	a_SwitchingTo
 		JSR	sub_8EEF
 		LDA	#1
 		JSR	$185A
@@ -604,7 +604,7 @@ loc_79E3:				; CODE XREF: sub_88B0-EEFj
 		LDA	$A5
 		AND	#$7F ; ''
 		STA	$A5
-		ldxy	$A24E
+		ldxy	a_YouRiseFromThe
 		JSR	sub_8ECE
 
 loc_79F0:				; CODE XREF: sub_88B0-EF3j
@@ -655,11 +655,11 @@ loc_7A28:				; CODE XREF: sub_88B0-E94j
 		JSR	sub_9509
 		LDA	#0
 		STA	$C3,X
-		ldxy	$9CB3
+		ldxy	a_BreaksTheSpell
 		BNE	loc_7A47
 
 loc_7A43:				; CODE XREF: sub_88B0-E7Cj
-		ldxy	$A1E7
+		ldxy	a_IsBewildered
 
 loc_7A47:				; CODE XREF: sub_88B0-E6Fj
 		JSR	sub_8ECE
@@ -716,7 +716,7 @@ loc_7A9F:				; CODE XREF: sub_88B0-E1Dj
 		LDA	$C3
 		AND	#$BF ; '¿'
 		STA	$C3
-		ldxy	$A26D
+		ldxy	a_GetsUp
 		JSR	sub_8ECE
 
 loc_7AAC:				; CODE XREF: sub_88B0-E24j
@@ -904,16 +904,13 @@ loc_7BD9:				; CODE XREF: sub_7B59+8Dj
 		INX
 		DEY
 		BNE	loc_7BD9
-		LDA	#$29 ; ')'
-		STA	$16
-		LDA	#$A0 ; ' '
-		STA	$17
+		dldi	off_16, $A029
 		JSR	$1812
 		LDA	$A6
 		CMP	#$E
 		BCS	locret_7C77
 		dldi	off_76DB, byte_76DF
-		ldxy	$A625
+		ldxy	a_YouEncounter
 		JSR	sub_8EEF
 		LDX	$A6
 		LDA	$63C2,X
@@ -1461,7 +1458,7 @@ loc_7F3D:				; CODE XREF: RAM:7F2Cj
 		dldi	off_76D9, $A72C
 
 loc_7F47:				; CODE XREF: RAM:7F3Bj
-		ldxy	$A716
+		ldxy	a_You_Escape
 		JMP	loc_8ED1
 ; ---------------------------------------------------------------------------
 
@@ -1523,8 +1520,7 @@ loc_7FA0:				; CODE XREF: RAM:7F90j
 ; ---------------------------------------------------------------------------
 
 loc_7FA3:				; CODE XREF: RAM:7F8Bj	RAM:7F99j ...
-		LDX	#$A7 ; '§'
-		LDY	#$39 ; '9'
+		ldxy	a_SeemsUninterested
 		JMP	loc_8ED1
 ; ---------------------------------------------------------------------------
 
@@ -1559,11 +1555,9 @@ loc_7FD7:				; CODE XREF: RAM:7FCFj
 ; ---------------------------------------------------------------------------
 
 loc_7FDA:				; CODE XREF: RAM:7FD5j
-		LDX	#$9F ; 'Ÿ'
-		LDY	#$AD ; '­'
+		ldxy	a_The_PointsOfDamage	
 		JSR	loc_8ED1
-		LDX	#$98 ; '˜'
-		LDY	#$81 ; ''
+		ldxy	byte_9881
 		JSR	sub_8EEF
 		LDX	#2
 
@@ -3472,7 +3466,7 @@ loc_8AE4:				; CODE XREF: RAM:8AEDj
 		STA	$6494,X
 		DEX
 		BPL	loc_8AE4
-		ldxy	$9881
+		ldxy	byte_9881
 		JSR	sub_8EEF
 		JSR	$189F
 		JSR	sub_8EF9
@@ -4097,7 +4091,7 @@ loc_8E6F:				; CODE XREF: sub_8E31+30j
 sub_8E7F:				; CODE XREF: RAM:776Aj	RAM:8ABBp ...
 		JSR	sub_8EEF
 		JSR	$183C
-		ldxy	$9881
+		ldxy	byte_9881
 		JSR	sub_8EEF
 		JMP	sub_8EF9
 ; End of function sub_8E7F
@@ -4181,7 +4175,7 @@ loc_8ED1:				; CODE XREF: RAM:770Aj	RAM:783Ap ...
 		DEC	$32
 		JSR	$185A
 		INC	$32
-		ldxy	$9881
+		ldxy	byte_9881
 		JSR	sub_8EEF
 		LDX	#2
 
@@ -5913,12 +5907,15 @@ byte_987F:	.BYTE 0			; DATA XREF: sub_9550+89w sub_9550+95w ...
 byte_9880:	.BYTE 0			; DATA XREF: sub_9550+8Cw sub_9550+9Bw ...
 
 byte_9881:
-		.BYTE $A8
-		.BYTE $FF
+		.BYTE $A8,$FF
+
+a_SurprisedNoOptions:
 		.BYTE $A6,  0,	1
 		.BYTE $A5
 aSurprised:	.BYTE "SURPRISED"
 		.BYTE $D
+
+a_NoOptions:
 		.BYTE $D
 		.BYTE $A5
 aNoOptions_:	.BYTE "No options."
@@ -6017,6 +6014,7 @@ byte_9A3B:
 		.BYTE	>aAFriend
 		.BYTE	>aThePalace
 
+a_BattleOptions:
 		.BYTE $A6,  0,	0
 		.BYTE $A5
 aBattleOptions:	.BYTE "Battle Options"
@@ -6182,10 +6180,12 @@ locret_9CA3:                            ; CODE XREF: RAM:9C97j
 
 aBrother:	.BYTE	"brother",0
 aSister:	.BYTE	"sister",0
-		
+
+a_BreaksTheSpell:
 		.BYTE	$AC
 		.WORD	$7653
 		.BYTE	"breaks the spell.",$D,$FF
+
 		MOVEXY	0,2
 		.BYTE	$A5
 		.BYTE	"The "
@@ -6205,6 +6205,8 @@ aSister:	.BYTE	"sister",0
 		MOVEXY	0,2
 		.BYTE	$A5
 		.BYTE	"In your inebriated state, you",$D,$A5,$AE
+
+a_FeelThatReasoning:
 		.BYTE	$AC
 		.WORD	$9D0E
 		.BYTE	"feel that reasoning with the",$D,$A5
@@ -6216,6 +6218,8 @@ aSister:	.BYTE	"sister",0
 		.WORD	$7653
 		.BYTE	"appears",$D,$A5
 		.BYTE	"strengthened by your attack!",$D,$FF
+
+a_YouAreStunned:
 		MOVEXY	0,2
 		.BYTE	$A5
 		.BYTE	"You are stunned.",$D
@@ -6223,7 +6227,7 @@ aSister:	.BYTE	"sister",0
 		.WORD	$9DAF
 
 loc_9DAF:	
-		dldi	off_16, $9891
+		dldi	off_16, a_NoOptions
 		RTS
 
 		MOVEXY	0,3
@@ -6397,9 +6401,11 @@ loc_9F8E:				; CODE XREF: RAM:9F85j
 locret_9FAC:				; CODE XREF: RAM:9F9Cj	RAM:9F9Ej
 		RTS
 ; ---------------------------------------------------------------------------
-		.BYTE $A3 ; £
+
+a_The_PointsOfDamage:
+		.BYTE $A3
 		.WORD loc_9EFC
-		.BYTE $A3 ; £
+		.BYTE $A3
 		.WORD loc_9FDD
 		.BYTE $A6,  0,	3
 		.BYTE $A5
@@ -6507,6 +6513,8 @@ byte_A0A5:	.BYTE	"AEIOU"
 		MOVEXY	0,5
 		.BYTE	$A9
 		.BYTE	$FF
+
+a_SwitchingTo:
 		MOVEXY	0,3
 		.BYTE	$A5
 		.BYTE	"Switching to "
@@ -6582,6 +6590,8 @@ off_A1A8:	.WORD	0
 		.BYTE	"takes the full effect",$AE
 		.BYTE	"resists the effects",$AE
 		.BYTE	"repels the effects",$AE
+
+a_IsBewildered:
 		MOVEXY	0,3
 		.BYTE	$A5
 		.BYTE	"..."
@@ -6589,6 +6599,7 @@ off_A1A8:	.WORD	0
 		.WORD	$AA01
 		.BYTE	$10
 		.BYTE	" is bewildered,",$D,$FF
+
 		.BYTE	$AC
 		.WORD	$7665
 		.BYTE	"drinks a potion",$D,$A5
@@ -6605,9 +6616,13 @@ off_A1A8:	.WORD	0
 		.WORD	$76DB
 		.BYTE	$1E
 		.BYTE	$D,$FF
+
+a_YouRiseFromThe:
 		MOVEXY	0,3
 		.BYTE	$A5
 		.BYTE	"You rise from the ground.",$D,$FF
+
+a_GetsUp:
 		.BYTE	$AC
 		.WORD	$7665
 		.BYTE	"gets up.",$D,$FF
@@ -6866,6 +6881,8 @@ aFailToResist:	.BYTE	"fail to resist",0
 		.WORD	$76D9
 		.BYTE	$28
 		.BYTE	" its power.",$D,$FF
+
+a_YouEncounter:
 		.BYTE	$A3
 		.WORD	$A659
 		.BYTE	$A3
@@ -6943,18 +6960,22 @@ loc_A6F1:				; DATA XREF: RAM:A6B8o
 locret_A715:				; CODE XREF: RAM:A6FEj
 		RTS
 
+a_You_Escape:
 		MOVEXY	0,3
 		.BYTE	$A5
 		.BYTE	"You "
 		.BYTE	$B4
-		.WORD	$76D9
+		.WORD	off_76D9
 		.BYTE	8
 		.BYTE	" escape.",$D,$FF
 		.BYTE	"didn't",0
 		.BYTE	"can't",0
+
+a_SeemsUninterested:
 		.BYTE	$AC
 		.WORD	$7665
 		.BYTE	"seems uninterested.",$D,$FF
+
 		.BYTE	$AC
 		.WORD	$7665
 		.BYTE	"mumbles",$D,$A5
