@@ -4370,9 +4370,11 @@ loc_8FC9:				; CODE XREF: sub_8F8E+14j sub_8FAA+Bj
 
 loc_8FD2:				; CODE XREF: RAM:772Bj	RAM:8FE5j ...
 		DEC	$32
-		dldi	off_1977, $8FE1
+		dldi	off_1977, loc_8FE1
 		JMP	$1806
 ; ---------------------------------------------------------------------------
+
+loc_8FE1:
 		INC	$32
 		LDA	$31
 		BMI	loc_8FD2
@@ -4488,10 +4490,7 @@ sub_9072:				; CODE XREF: sub_88B0-E29p
 					; sub_84BA:loc_84C5p ...
 		LDA	$8A
 		BEQ	sub_9067
-		LDA	#$AA ; 'ª'
-		STA	$16
-		LDA	#$A0 ; ' '
-		STA	$17
+		dldi	off_16, $A0AA
 		JMP	$1812
 ; End of function sub_9072
 
