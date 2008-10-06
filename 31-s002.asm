@@ -162,8 +162,8 @@ byte_769D:	.BYTE $FF
 off_76D9:	.WORD	0		; DATA XREF: sub_7EA5+8w sub_7EA5+1Ew	...
 off_76DB:	.WORD	0		; DATA XREF: sub_7B59+A2w sub_7B59+C5w ...
 off_76DD:	.WORD	0
-		.BYTE	0
-unk_76E0:	.BYTE	0		; DATA XREF: sub_7DD2+A3r
+byte_76DF:	.BYTE	0
+byte_76E0:	.BYTE	0
 		.BYTE	0
 		.BYTE	0
 		.BYTE	0
@@ -912,9 +912,8 @@ loc_7BD9:				; CODE XREF: sub_7B59+8Dj
 		LDA	$A6
 		CMP	#$E
 		BCS	locret_7C77
-		dldi	off_76DB, $76DF
-		LDX	#$A6 ; '¶'
-		LDY	#$25 ; '%'
+		dldi	off_76DB, byte_76DF
+		ldxy	$A625
 		JSR	sub_8EEF
 		LDX	$A6
 		LDA	$63C2,X
@@ -992,24 +991,24 @@ loc_7C83:				; CODE XREF: sub_7C78+6j
 ; End of function sub_7C78
 
 ; ---------------------------------------------------------------------------
-unk_7C8C:	.BYTE $9D ; ù		; DATA XREF: sub_7C78+Fr
-		.BYTE $9D ; ù
-		.BYTE $37 ; 7
-		.BYTE $9D ; ù
-		.BYTE $9D ; ù
-		.BYTE $4A ; J
-		.BYTE $52 ; R
-		.BYTE $81 ; Å
-		.BYTE $9D ; ù
-unk_7C95:	.BYTE $7C ; |		; DATA XREF: sub_7C78:loc_7C83r
-		.BYTE $7C ; |
-		.BYTE $7D ; }
-		.BYTE $7C ; |
-		.BYTE $7C ; |
-		.BYTE $7D ; }
-		.BYTE $7D ; }
-		.BYTE $7D ; }
-		.BYTE $7C ; |
+unk_7C8C:	.BYTE	<(sub_7C9E-1)	; DATA XREF: sub_7C78+Fr
+		.BYTE	<(sub_7C9E-1)
+		.BYTE	<(loc_7D38-1)
+		.BYTE	<(sub_7C9E-1)
+		.BYTE	<(sub_7C9E-1)
+		.BYTE	<(loc_7D4B-1)
+		.BYTE	<(loc_7D53-1)
+		.BYTE	<(loc_7D82-1)
+		.BYTE	<(sub_7C9E-1)
+unk_7C95:	.BYTE	>(sub_7C9E-1)	; DATA XREF: sub_7C78:loc_7C83r
+		.BYTE	>(sub_7C9E-1)
+		.BYTE	>(loc_7D38-1)
+		.BYTE	>(sub_7C9E-1)
+		.BYTE	>(sub_7C9E-1)
+		.BYTE	>(loc_7D4B-1)
+		.BYTE	>(loc_7D53-1)
+		.BYTE	>(loc_7D82-1)
+		.BYTE	>(sub_7C9E-1)
 
 ; --------------- S U B	R O U T	I N E ---------------------------------------
 
@@ -1138,7 +1137,7 @@ loc_7D53:				; CODE XREF: RAM:loc_7D48j
 loc_7D58:				; CODE XREF: RAM:7D50j
 		STA	byte_AA0C
 		JSR	sub_7C9E
-		dldi	off_76DB, $76DF
+		dldi	off_76DB, byte_76DF
 
 loc_7D68:				; CODE XREF: RAM:7D7Fj
 		LDA	byte_AA0C
@@ -1221,8 +1220,7 @@ sub_7DD2:				; CODE XREF: RAM:782Fp
 
 ; FUNCTION CHUNK AT 849D SIZE 0000001D BYTES
 
-		LDX	#$9B ; 'õ'
-		LDY	#$2A ; '*'
+		ldxy	a_YouSurpriseThe
 		JSR	sub_8EEF
 		LDA	#4
 		JSR	sub_901C
@@ -1260,8 +1258,7 @@ loc_7DFE:				; CODE XREF: sub_7DD2+22j sub_7DD2+27j
 		AND	#3
 		STA	$97
 		BNE	loc_7E19
-		LDX	#$9C ; 'ú'
-		LDY	#$24 ; '$'
+		ldxy	a_AttemptFailed
 		JSR	loc_8ED1
 		JMP	loc_7E98
 ; ---------------------------------------------------------------------------
@@ -1313,8 +1310,7 @@ loc_7E61:				; CODE XREF: sub_7DD2+79j sub_7DD2+87j
 		STX	$94
 		LDA	$AA2B,X
 		BNE	loc_7E6F
-		LDX	#$9B ; 'õ'
-		LDY	#$B6 ; '∂'
+		ldxy	a_GrabNothing
 		JMP	loc_7E8A
 ; ---------------------------------------------------------------------------
 
@@ -1322,15 +1318,14 @@ loc_7E6F:				; CODE XREF: sub_7DD2+94j
 		PHA
 		LDA	#0
 		STA	$AA2B,X
-		LDY	unk_76E0,X
+		LDY	byte_76E0,X
 		LDA	unk_76EC,X
 		TAX
 		PLA
 		JSR	$1875
 		JSR	sub_8EF9
 		JSR	sub_7EA5
-		LDX	#$9B ; 'õ'
-		LDY	#$D1 ; '—'
+		ldxy	a_GrabSome
 
 loc_7E8A:				; CODE XREF: sub_7DD2+9Aj
 		JSR	loc_8ED1
@@ -1399,21 +1394,23 @@ sub_7ECE:				; CODE XREF: sub_88B0:loc_796Cp
 ; End of function sub_7ECE
 
 ; ---------------------------------------------------------------------------
-unk_7EE6:	.BYTE $F3 ; Û		; DATA XREF: sub_7ECE+13r
-		.BYTE $4D ; M
-		.BYTE $50 ; P
-		.BYTE $61 ; a
-		.BYTE $7D ; }
-		.BYTE $A9 ; ©
-		.BYTE $AA ; ™
-unk_7EED:	.BYTE $7E ; ~		; DATA XREF: sub_7ECE+Fr
-		.BYTE $7F ; 
-		.BYTE $7F ; 
-		.BYTE $7F ; 
-		.BYTE $7F ; 
-		.BYTE $7F ; 
-		.BYTE $7F ; 
+unk_7EE6:	.BYTE	<(loc_7EF4-1)	; DATA XREF: sub_7ECE+13r
+		.BYTE	<(loc_7F4E-1)
+		.BYTE	<(loc_7F51-1)
+		.BYTE	<(loc_7F62-1)
+		.BYTE	<(loc_7F7E-1)
+		.BYTE	<(loc_7FAA-1)
+		.BYTE	<(loc_7FAB-1)
+unk_7EED:	.BYTE	>(loc_7EF4-1)	; DATA XREF: sub_7ECE+Fr
+		.BYTE	>(loc_7F4E-1)
+		.BYTE	>(loc_7F51-1)
+		.BYTE	>(loc_7F62-1)
+		.BYTE	>(loc_7F7E-1)
+		.BYTE	>(loc_7FAA-1)
+		.BYTE	>(loc_7FAB-1)
 ; ---------------------------------------------------------------------------
+
+loc_7EF4:
 		LDA	#$FB ; '˚'
 		STA	$A1
 		BIT	byte_AA20
@@ -1467,8 +1464,12 @@ loc_7F47:				; CODE XREF: RAM:7F3Bj
 		ldxy	$A716
 		JMP	loc_8ED1
 ; ---------------------------------------------------------------------------
+
+loc_7F4E:
 		JMP	loc_8160
 ; ---------------------------------------------------------------------------
+
+loc_7F51:
 		DEC	$A1
 		DEC	$A1
 		LDY	#$11
@@ -1480,6 +1481,8 @@ loc_7F47:				; CODE XREF: RAM:7F3Bj
 loc_7F5F:				; CODE XREF: RAM:7F59j
 		JMP	loc_8160
 ; ---------------------------------------------------------------------------
+
+loc_7F62:
 		JSR	sub_948D
 		INC	$A1
 		INC	$A0
@@ -1492,10 +1495,11 @@ loc_7F5F:				; CODE XREF: RAM:7F59j
 ; ---------------------------------------------------------------------------
 
 loc_7F77:				; CODE XREF: RAM:7F72j
-		LDX	#$9C ; 'ú'
-		LDY	#$DC ; '‹'
+		ldxy	$9CDC
 		JMP	loc_8ED1
 ; ---------------------------------------------------------------------------
+
+loc_7F7E:
 		LDA	#0
 		STA	$97
 		STA	$C2
@@ -1523,8 +1527,12 @@ loc_7FA3:				; CODE XREF: RAM:7F8Bj	RAM:7F99j ...
 		LDY	#$39 ; '9'
 		JMP	loc_8ED1
 ; ---------------------------------------------------------------------------
+
+loc_7FAA:
 		RTS
 ; ---------------------------------------------------------------------------
+
+loc_7FAB:
 		JSR	sub_8EF9
 		DEC	$A1
 		JSR	sub_8061
@@ -3853,13 +3861,12 @@ loc_8CFB:				; CODE XREF: sub_8CCB+27j
 ; ---------------------------------------------------------------------------
 
 loc_8CFE:				; CODE XREF: sub_8CCB+12j sub_8CCB+20j
-		LDX	#$9C ; 'ú'
-		LDY	#$C
+		ldxy	a_IsntGoingForIt
 		BNE	loc_8D2B
 
 loc_8D04:				; CODE XREF: sub_8CCB+4j
 		SEC
-		LDA	$6361
+		LDA	I_CURINT
 		SBC	byte_AA27
 		BCC	loc_8D27
 		LDX	#6
@@ -3876,7 +3883,7 @@ loc_8D04:				; CODE XREF: sub_8CCB+4j
 ; ---------------------------------------------------------------------------
 
 loc_8D27:				; CODE XREF: sub_8CCB+40j sub_8CCB+47j
-		ldxy	$9BF4
+		ldxy	a_YourTrickFailed
 
 loc_8D2B:				; CODE XREF: sub_8CCB+37j
 		JSR	loc_8ED1
@@ -4983,7 +4990,7 @@ sub_9337:				; CODE XREF: RAM:8842p	RAM:8978p
 		STA	off_76D9
 		LDA	$A57E,X
 		STA	off_76D9+1
-		dldi	off_76DB, $76DF
+		dldi	off_76DB, byte_76DF
 		ldxy	$A235
 		JSR	sub_8EEF
 
@@ -5062,9 +5069,9 @@ loc_93B7:				; CODE XREF: RAM:93B2j
 loc_93C5:				; CODE XREF: RAM:93C1j
 		CLC
 		LDA	#6
-		ADC	$41
+		ADC	off_41
 		STA	$70
-		LDA	$42
+		LDA	off_41+1
 		ADC	#0
 		STA	$71
 		LDA	#0
@@ -6064,6 +6071,8 @@ aBattleOptions:	.BYTE "Battle Options"
 		BLINK	"0"
 		.BYTE	") Leave"
 		.BYTE $FF
+
+a_YouSurpriseThe:
 		MOVEXY	0,0
 		.BYTE	$A5
 		.BYTE	"You surprise the "
@@ -6096,19 +6105,25 @@ aBattleOptions:	.BYTE "Battle Options"
 		BLINK	"0"
 		.BYTE	") Leave."
 		.BYTE	$FF
+
+a_YouGrab:
 		.BYTE	"You grab ",0
+
+a_GrabNothing:
 		MOVEXY	0,2
 		.BYTE	$A5
 		.BYTE	$B3
-		.WORD	$9BAC
+		.WORD	a_YouGrab
 		.BYTE	$A
 		.BYTE	"nothing of value."
 		.BYTE	$D
 		.BYTE	$FF
+
+a_GrabSome:
 		MOVEXY	0,2	
 		.BYTE	$A5
 		.BYTE	$B3
-		.WORD	$9BAC
+		.WORD	a_YouGrab
 		.BYTE	$A
 		.BYTE	"some of the"
 		.BYTE	$D
@@ -6121,12 +6136,18 @@ aBattleOptions:	.BYTE "Battle Options"
 		.WORD	$76D9
 		.BYTE	$14
 		.BYTE	".",$D,$FF
+
+a_YourTrickFailed:
 		MOVEXY	0,3
 		.BYTE	$A5
 		.BYTE	"Your trick failed.",$D,$FF
+
+a_IsntGoingForIt:
 		.BYTE	$AC
 		.WORD	$7665
-		.BYTE	"isn't going for it.",$D,$FF	
+		.BYTE	"isn't going for it.",$D,$FF
+
+a_AttemptFailed:
 		MOVEXY	0,3
 		.BYTE	$A5
 		.BYTE	"Attempt failed.",$D,$FF
