@@ -6559,100 +6559,24 @@ off_A1A8:	.WORD	0
 		.BYTE	"resists the effects",$AE
 		.BYTE	"repels the effects",$AE
 		MOVEXY	0,3
-		.BYTE $A5 ; ¥
-		.BYTE $2E ; .
-		.BYTE $2E ; .
-		.BYTE $2E ; .
-		.BYTE $B4 ; ´
-		.BYTE	1
-		.BYTE $AA ; ª
-		.BYTE $10
-		.BYTE $20
-		.BYTE $69 ; i
-		.BYTE $73 ; s
-		.BYTE $20
-		.BYTE $62 ; b
-		.BYTE $65 ; e
-		.BYTE $77 ; w
-		.BYTE $69 ; i
-		.BYTE $6C ; l
-		.BYTE $64 ; d
-		.BYTE $65 ; e
-		.BYTE $72 ; r
-		.BYTE $65 ; e
-		.BYTE $64 ; d
-		.BYTE $2C ; ,
-		.BYTE  $D
-		.BYTE $FF
-		.BYTE $AC ; ¬
-		.BYTE $65 ; e
-		.BYTE $76 ; v
-		.BYTE $64 ; d
-		.BYTE $72 ; r
-		.BYTE $69 ; i
-		.BYTE $6E ; n
-		.BYTE $6B ; k
-		.BYTE $73 ; s
-		.BYTE $20
-		.BYTE $61 ; a
-		.BYTE $20
-		.BYTE $70 ; p
-		.BYTE $6F ; o
-		.BYTE $74 ; t
-		.BYTE $69 ; i
-		.BYTE $6F ; o
-		.BYTE $6E ; n
-		.BYTE  $D
-		.BYTE $A5 ; ¥
-		.BYTE $61 ; a
-		.BYTE $6E ; n
-		.BYTE $64 ; d
-		.BYTE $20
-		.BYTE $69 ; i
-		.BYTE $73 ; s
-		.BYTE $20
-		.BYTE $68 ; h
-		.BYTE $65 ; e
-		.BYTE $61 ; a
-		.BYTE $6C ; l
-		.BYTE $65 ; e
-		.BYTE $64 ; d
-		.BYTE $2E ; .
-		.BYTE  $D
-		.BYTE $FF
-		.BYTE $62 ; b
-		.BYTE $75 ; u
-		.BYTE $74 ; t
-		.BYTE $20
-		.BYTE $69 ; i
-		.BYTE $74 ; t
-		.BYTE $20
-		.BYTE $66 ; f
-		.BYTE $61 ; a
-		.BYTE $69 ; i
-		.BYTE $6C ; l
-		.BYTE $73 ; s
-		.BYTE $21 ; !
-		.BYTE	0
-		.BYTE $AC ; ¬
-		.BYTE $53 ; S
-		.BYTE $76 ; v
-		.BYTE $63 ; c
-		.BYTE $61 ; a
-		.BYTE $73 ; s
-		.BYTE $74 ; t
-		.BYTE $73 ; s
-		.BYTE  $D
-		.BYTE $A5 ; ¥
-		.BYTE $B4 ; ´
-		.BYTE $D9 ; Ù
-		.BYTE $76 ; v
-		.BYTE $14
-		.BYTE $2E ; .
-		.BYTE $2E ; .
-		.BYTE $2E ; .
-		.BYTE  $D
-		.BYTE $A5 ; ¥
+		.BYTE	$A5
+		.BYTE	"..."
+		.BYTE	$B4
+		.WORD	$AA01
+		.BYTE	$10
+		.BYTE	" is bewildered,",$D,$FF
+		.BYTE	$AC
+		.WORD	$7665
+		.BYTE	"drinks a potion",$D,$A5
+		.BYTE	"and is healed.",$D,$FF
+		.BYTE	"but it fails!",0
+		.BYTE	$AC
+		.WORD	$7653
+		.BYTE	"casts",$D,$A5
+		.BYTE	$B4
+		.WORD	$76D9
+		.BYTE	$14
+		.BYTE	"...",$D,$A5
 		.BYTE $B4 ; ´
 		.BYTE $DB ; -
 		.BYTE $76 ; v
