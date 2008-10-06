@@ -6649,145 +6649,112 @@ aAtYourLegs:	.BYTE	"at your legs",0
 		.BYTE	>aYou_0
 		.BYTE	>aAtYourArm
 		.BYTE	>aAtYourLegs
-		.BYTE	"hacks",0
-		.BYTE	"pokes",0
-		.BYTE	"bashes",0
-		.BYTE	"spears",0
-		.BYTE	"whips",0
-		.BYTE	"zaps",0
-		.BYTE	"punches",0
-		.BYTE	"hits",0
-		.BYTE	"slashes",0
-		.BYTE	"stabs",0
-		.BYTE	"smashes",0
-		.BYTE	"impales",0
-		.BYTE	"lashes",0
-		.BYTE	"blasts",0
-		.BYTE	"whacks",0
-		.BYTE	"hits",0
-		.BYTE	"claws",0
-		.BYTE	"kicks",0
-		.BYTE	"bites",0
-		.BYTE	"tears",0
-		.BYTE	"chokes",0
-		.BYTE	"lashes",0
-		.BYTE	"burns",0
-		.BYTE	"stings",0
-		.BYTE	"rips",0
-		.BYTE	"stomps",0
-		.BYTE	"gnaws",0
-		.BYTE	"rends",0
-		.BYTE	"asphyxiates",0
-		.BYTE	"wallops",0
-		.BYTE	"fries",0
-		.BYTE	"stings",0
-unk_A471:	.BYTE $9B ; ›		; DATA XREF: RAM:8771r
-		.BYTE $A1 ; ¡
-		.BYTE $A7 ; §
-		.BYTE $AE ; ®
-		.BYTE $B5 ; µ
-		.BYTE $BB ; »
-		.BYTE $C0 ; À
-		.BYTE $C8 ; È
-		.BYTE $CD ; Í
-		.BYTE $D5 ; Õ
-		.BYTE $DB ; -
-		.BYTE $E3 ; ã
-		.BYTE $EB ; ë
-		.BYTE $F2 ; ò
-		.BYTE $F9 ; ù
-		.BYTE	0
-		.BYTE	5
-		.BYTE  $B
-		.BYTE $11
-		.BYTE $17
-		.BYTE $1D
-		.BYTE $24 ; $
-		.BYTE $2B ; +
-		.BYTE $31 ; 1
-		.BYTE $38 ; 8
-		.BYTE $3D ; =
-		.BYTE $44 ; D
-		.BYTE $4A ; J
-		.BYTE $50 ; P
-		.BYTE $5C ; \
-		.BYTE $64 ; d
-		.BYTE $6A ; j
-unk_A491:	.BYTE $A3 ; £		; DATA XREF: RAM:8777r
-		.BYTE $A3 ; £
-		.BYTE $A3 ; £
-		.BYTE $A3 ; £
-		.BYTE $A3 ; £
-		.BYTE $A3 ; £
-		.BYTE $A3 ; £
-		.BYTE $A3 ; £
-		.BYTE $A3 ; £
-		.BYTE $A3 ; £
-		.BYTE $A3 ; £
-		.BYTE $A3 ; £
-		.BYTE $A3 ; £
-		.BYTE $A3 ; £
-		.BYTE $A3 ; £
-		.BYTE $A4 ; ¤
-		.BYTE $A4 ; ¤
-		.BYTE $A4 ; ¤
-		.BYTE $A4 ; ¤
-		.BYTE $A4 ; ¤
-		.BYTE $A4 ; ¤
-		.BYTE $A4 ; ¤
-		.BYTE $A4 ; ¤
-		.BYTE $A4 ; ¤
-		.BYTE $A4 ; ¤
-		.BYTE $A4 ; ¤
-		.BYTE $A4 ; ¤
-		.BYTE $A4 ; ¤
-		.BYTE $A4 ; ¤
-		.BYTE $A4 ; ¤
-		.BYTE $A4 ; ¤
-		.BYTE $A4 ; ¤
-		.BYTE $A6 ; ¦
-		.BYTE	0
-		.BYTE	2
-		.BYTE $A5 ; ¥
-		.BYTE $59 ; Y
-		.BYTE $6F ; o
-		.BYTE $75 ; u
-		.BYTE $20
-		.BYTE $62 ; b
-		.BYTE $6C ; l
-		.BYTE $6F ; o
-		.BYTE $63 ; c
-		.BYTE $6B ; k
-		.BYTE $20
-		.BYTE $77 ; w
-		.BYTE $69 ; i
-		.BYTE $74 ; t
-		.BYTE $68 ; h
-		.BYTE $20
-		.BYTE $79 ; y
-		.BYTE $6F ; o
-		.BYTE $75 ; u
-		.BYTE $72 ; r
-		.BYTE  $D
-		.BYTE $A5 ; ¥
-		.BYTE $B4 ; ´
-		.BYTE $3E ; >
-		.BYTE $9E ; ž
-		.BYTE $1E
-		.BYTE $2E ; .
-		.BYTE  $D
-		.BYTE $FF
-		.BYTE $AC ; ¬
-		.BYTE $53 ; S
-		.BYTE $76 ; v
-		.BYTE $66 ; f
-		.BYTE $6C ; l
-		.BYTE $65 ; e
-		.BYTE $65 ; e
-		.BYTE $73 ; s
-		.BYTE $21 ; !
-		.BYTE  $D
-		.BYTE $FF
+aHacks:		.BYTE	"hacks",0
+aPokes:		.BYTE	"pokes",0
+aBashes:	.BYTE	"bashes",0
+aSpears:	.BYTE	"spears",0
+aWhips:		.BYTE	"whips",0
+aZaps:		.BYTE	"zaps",0
+aPunches:	.BYTE	"punches",0
+aHits_0:	.BYTE	"hits",0
+aSlashes:	.BYTE	"slashes",0
+aStabs:		.BYTE	"stabs",0
+aSmashes:	.BYTE	"smashes",0
+aImpales:	.BYTE	"impales",0
+aLashes:	.BYTE	"lashes",0
+aBlasts:	.BYTE	"blasts",0
+aWhacks:	.BYTE	"whacks",0
+aHits:		.BYTE	"hits",0
+aClaws:		.BYTE	"claws",0
+aKicks:		.BYTE	"kicks",0
+aBites:		.BYTE	"bites",0
+aTears:		.BYTE	"tears",0
+aChokes:	.BYTE	"chokes",0
+aLashes_0:	.BYTE	"lashes",0
+aBurns:		.BYTE	"burns",0
+aStings:	.BYTE	"stings",0
+aRips:		.BYTE	"rips",0
+aStomps:	.BYTE	"stomps",0
+aGnaws:		.BYTE	"gnaws",0
+aRends:		.BYTE	"rends",0
+aAsphyxiates:	.BYTE	"asphyxiates",0
+aWallops:	.BYTE	"wallops",0
+aFries:		.BYTE	"fries",0
+aStings_0:	.BYTE	"stings",0
+unk_A471:	.BYTE	<aHacks			; DATA XREF: RAM:8771r
+		.BYTE	<aPokes
+		.BYTE	<aBashes
+		.BYTE	<aSpears
+		.BYTE	<aWhips
+		.BYTE	<aZaps
+		.BYTE	<aPunches
+		.BYTE	<aHits_0
+		.BYTE	<aSlashes
+		.BYTE	<aStabs
+		.BYTE	<aSmashes
+		.BYTE	<aImpales
+		.BYTE	<aLashes
+		.BYTE	<aBlasts
+		.BYTE	<aWhacks
+		.BYTE	<aHits
+		.BYTE	<aClaws
+		.BYTE	<aKicks
+		.BYTE	<aBites
+		.BYTE	<aTears
+		.BYTE	<aChokes
+		.BYTE	<aLashes_0
+		.BYTE	<aBurns
+		.BYTE	<aStings
+		.BYTE	<aRips
+		.BYTE	<aStomps
+		.BYTE	<aGnaws
+		.BYTE	<aRends
+		.BYTE	<aAsphyxiates
+		.BYTE	<aWallops
+		.BYTE	<aFries
+		.BYTE	<aStings_0
+unk_A491:	.BYTE	>aHacks			; DATA XREF: RAM:8777r
+		.BYTE	>aPokes
+		.BYTE	>aBashes
+		.BYTE	>aSpears
+		.BYTE	>aWhips
+		.BYTE	>aZaps
+		.BYTE	>aPunches
+		.BYTE	>aHits_0
+		.BYTE	>aSlashes
+		.BYTE	>aStabs
+		.BYTE	>aSmashes
+		.BYTE	>aImpales
+		.BYTE	>aLashes
+		.BYTE	>aBlasts
+		.BYTE	>aWhacks
+		.BYTE	>aHits
+		.BYTE	>aClaws
+		.BYTE	>aKicks
+		.BYTE	>aBites
+		.BYTE	>aTears
+		.BYTE	>aChokes
+		.BYTE	>aLashes_0
+		.BYTE	>aBurns
+		.BYTE	>aStings
+		.BYTE	>aRips
+		.BYTE	>aStomps
+		.BYTE	>aGnaws
+		.BYTE	>aRends
+		.BYTE	>aAsphyxiates
+		.BYTE	>aWallops
+		.BYTE	>aFries
+		.BYTE	>aStings_0
+		MOVEXY	0,2
+		.BYTE	$A5
+		.BYTE	"You block with your",$D,$A5
+		.BYTE	$B4
+		.WORD	$9E3E
+		.BYTE	$1E
+		.BYTE	".",$D,$FF
+		.BYTE	$AC
+		.WORD	$7653
+		.BYTE	"flees!",$D,$FF
 		.BYTE $AC ; ¬
 		.BYTE $53 ; S
 		.BYTE $76 ; v
