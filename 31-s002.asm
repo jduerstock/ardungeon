@@ -7750,53 +7750,9 @@ unk_A491:	.BYTE $A3 ; £		; DATA XREF: RAM:8777r
 		.BYTE $DA ; Ú
 		.BYTE $76 ; v
 		.BYTE $60 ; `
-		.BYTE $22 ; "
-		.BYTE $44 ; D
-		.BYTE $69 ; i
-		.BYTE $65 ; e
-		.BYTE $2C ; ,
-		.BYTE $20
-		.BYTE $6F ; o
-		.BYTE $75 ; u
-		.BYTE $74 ; t
-		.BYTE $63 ; c
-		.BYTE $61 ; a
-		.BYTE $73 ; s
-		.BYTE $74 ; t
-		.BYTE $21 ; !
-		.BYTE $22 ; "
-		.BYTE	0
-		.BYTE $22 ; "
-		.BYTE $48 ; H
-		.BYTE $61 ; a
-		.BYTE $69 ; i
-		.BYTE $6C ; l
-		.BYTE $20
-		.BYTE $66 ; f
-		.BYTE $72 ; r
-		.BYTE $69 ; i
-		.BYTE $65 ; e
-		.BYTE $6E ; n
-		.BYTE $64 ; d
-		.BYTE $21 ; !
-		.BYTE $22 ; "
-		.BYTE	0
-		.BYTE $22 ; "
-		.BYTE $42 ; B
-		.BYTE $65 ; e
-		.BYTE $67 ; g
-		.BYTE $6F ; o
-		.BYTE $6E ; n
-		.BYTE $65 ; e
-		.BYTE $20
-		.BYTE $6F ; o
-		.BYTE $66 ; f
-		.BYTE $66 ; f
-		.BYTE $61 ; a
-		.BYTE $6C ; l
-		.BYTE $21 ; !
-		.BYTE $22 ; "
-		.BYTE	0
+		.BYTE	$22,"Die, outcast!",$22,0
+		.BYTE	$22,"Hail friend!",$22,0
+		.BYTE	$22,"Begone offal!",$22,0
 		.BYTE $A6 ; ¦
 		.BYTE $A6 ; ¦
 		.BYTE $BD ; ½
