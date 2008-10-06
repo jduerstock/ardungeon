@@ -5957,58 +5957,59 @@ unk_9901:	.BYTE	>aFood		; DATA XREF: sub_7EA5+Br RAM:8D4Br
 		.WORD	byte_7665
 aIsStunned_:	.BYTE	"is stunned.",$D,$FF
 
-aTheLightWizard:.BYTE "The Light Wizards",0
-aTheDarkWizards:.BYTE "The Dark Wizards",0
-aTheGuildOfOrde:.BYTE "The Guild of Order",0
-aTheGuildOfChao:.BYTE "The Guild of Chaos",0
-aTheGuildOfLaw:	.BYTE "The Guild of Law",0
-aTheThievesGuil:.BYTE "The Thieves Guild",0
-aTheGreenWizard:.BYTE "The Green Wizards",0
-aTheRedWizards:	.BYTE "The Red Wizards",0
-aTheStarWizards:.BYTE "The Star Wizards",0
-aTheBlueWizards:.BYTE "The Blue Wizards",0
-aThePhysiciansG:.BYTE "The Physicians Guild",0
-aTheAssassinsGu:.BYTE "The Assassins Guild",0
-aThePaladins:	.BYTE "The Paladins",0
-aTheMercenaryGu:.BYTE "The Mercenary Guild",0
-aAFriend:	.BYTE "a friend",0
-aThePalace:	.BYTE "The Palace",0
+aTheLightWizard:.BYTE	"The Light Wizards",0
+aTheDarkWizards:.BYTE	"The Dark Wizards",0
+aTheGuildOfOrde:.BYTE	"The Guild of Order",0
+aTheGuildOfChao:.BYTE	"The Guild of Chaos",0
+aTheGuildOfLaw:	.BYTE	"The Guild of Law",0
+aTheThievesGuil:.BYTE	"The Thieves Guild",0
+aTheGreenWizard:.BYTE	"The Green Wizards",0
+aTheRedWizards:	.BYTE	"The Red Wizards",0
+aTheStarWizards:.BYTE	"The Star Wizards",0
+aTheBlueWizards:.BYTE	"The Blue Wizards",0
+aThePhysiciansG:.BYTE	"The Physicians Guild",0
+aTheAssassinsGu:.BYTE	"The Assassins Guild",0
+aThePaladins:	.BYTE	"The Paladins",0
+aTheMercenaryGu:.BYTE	"The Mercenary Guild",0
+aAFriend:	.BYTE	"a friend",0
+aThePalace:	.BYTE	"The Palace",0
 
 byte_9A2B:
-		.BYTE $1D
-		.BYTE $2F ; /
-		.BYTE $40 ; @
-		.BYTE $53 ; S
-		.BYTE $66 ; f
-		.BYTE $77 ; w
-		.BYTE $89 ; ‰
-		.BYTE $9B ; ›
-		.BYTE $AB ; «
-		.BYTE $BC ; ¼
-		.BYTE $CD ; Í
-		.BYTE $E2 ; â
-		.BYTE $F6 ; ö
-		.BYTE	3
-		.BYTE $17
-		.BYTE $20
+		.BYTE	<aTheLightWizard
+		.BYTE	<aTheDarkWizards
+		.BYTE	<aTheGuildOfOrde
+		.BYTE	<aTheGuildOfChao
+		.BYTE	<aTheGuildOfLaw
+		.BYTE	<aTheThievesGuil
+		.BYTE	<aTheGreenWizard
+		.BYTE	<aTheRedWizards
+		.BYTE	<aTheStarWizards
+		.BYTE	<aTheBlueWizards
+		.BYTE	<aThePhysiciansG
+		.BYTE	<aTheAssassinsGu
+		.BYTE	<aThePaladins
+		.BYTE	<aTheMercenaryGu
+		.BYTE	<aAFriend
+		.BYTE	<aThePalace
 
 byte_9A3B:
-		.BYTE $99 ; ™
-		.BYTE $99 ; ™
-		.BYTE $99 ; ™
-		.BYTE $99 ; ™
-		.BYTE $99 ; ™
-		.BYTE $99 ; ™
-		.BYTE $99 ; ™
-		.BYTE $99 ; ™
-		.BYTE $99 ; ™
-		.BYTE $99 ; ™
-		.BYTE $99 ; ™
-		.BYTE $99 ; ™
-		.BYTE $99 ; ™
-		.BYTE $9A ; š
-		.BYTE $9A ; š
-		.BYTE $9A ; š
+		.BYTE	>aTheLightWizard
+		.BYTE	>aTheDarkWizards
+		.BYTE	>aTheGuildOfOrde
+		.BYTE	>aTheGuildOfChao
+		.BYTE	>aTheGuildOfLaw
+		.BYTE	>aTheThievesGuil
+		.BYTE	>aTheGreenWizard
+		.BYTE	>aTheRedWizards
+		.BYTE	>aTheStarWizards
+		.BYTE	>aTheBlueWizards
+		.BYTE	>aThePhysiciansG
+		.BYTE	>aTheAssassinsGu
+		.BYTE	>aThePaladins
+		.BYTE	>aTheMercenaryGu
+		.BYTE	>aAFriend
+		.BYTE	>aThePalace
+
 		.BYTE $A6,  0,	0
 		.BYTE $A5
 aBattleOptions:	.BYTE "Battle Options"
