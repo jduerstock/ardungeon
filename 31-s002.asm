@@ -6577,196 +6577,42 @@ off_A1A8:	.WORD	0
 		.WORD	$76D9
 		.BYTE	$14
 		.BYTE	"...",$D,$A5
-		.BYTE $B4 ; ´
-		.BYTE $DB ; -
-		.BYTE $76 ; v
-		.BYTE $1E
-		.BYTE  $D
-		.BYTE $FF
-		.BYTE $A6 ; ¦
-		.BYTE	0
-		.BYTE	3
-		.BYTE $A5 ; ¥
-		.BYTE $59 ; Y
-		.BYTE $6F ; o
-		.BYTE $75 ; u
-		.BYTE $20
-		.BYTE $72 ; r
-		.BYTE $69 ; i
-		.BYTE $73 ; s
-		.BYTE $65 ; e
-		.BYTE $20
-		.BYTE $66 ; f
-		.BYTE $72 ; r
-		.BYTE $6F ; o
-		.BYTE $6D ; m
-		.BYTE $20
-		.BYTE $74 ; t
-		.BYTE $68 ; h
-		.BYTE $65 ; e
-		.BYTE $20
-		.BYTE $67 ; g
-		.BYTE $72 ; r
-		.BYTE $6F ; o
-		.BYTE $75 ; u
-		.BYTE $6E ; n
-		.BYTE $64 ; d
-		.BYTE $2E ; .
-		.BYTE  $D
-		.BYTE $FF
-		.BYTE $AC ; ¬
-		.BYTE $65 ; e
-		.BYTE $76 ; v
-		.BYTE $67 ; g
-		.BYTE $65 ; e
-		.BYTE $74 ; t
-		.BYTE $73 ; s
-		.BYTE $20
-		.BYTE $75 ; u
-		.BYTE $70 ; p
-		.BYTE $2E ; .
-		.BYTE  $D
-		.BYTE $FF
-		.BYTE $AC ; ¬
-		.BYTE $65 ; e
-		.BYTE $76 ; v
-		.BYTE $6D ; m
-		.BYTE $69 ; i
-		.BYTE $73 ; s
-		.BYTE $73 ; s
-		.BYTE $65 ; e
-		.BYTE $73 ; s
-		.BYTE $2E ; .
-		.BYTE  $D
-		.BYTE $FF
-		.BYTE $AC ; ¬
-		.BYTE $65 ; e
-		.BYTE $76 ; v
-		.BYTE $77 ; w
-		.BYTE $61 ; a
-		.BYTE $69 ; i
-		.BYTE $74 ; t
-		.BYTE $73 ; s
-		.BYTE  $D
-		.BYTE $A5 ; ¥
-		.BYTE $66 ; f
-		.BYTE $6F ; o
-		.BYTE $72 ; r
-		.BYTE $20
-		.BYTE $61 ; a
-		.BYTE $6E ; n
-		.BYTE $20
-		.BYTE $6F ; o
-		.BYTE $70 ; p
-		.BYTE $65 ; e
-		.BYTE $6E ; n
-		.BYTE $69 ; i
-		.BYTE $6E ; n
-		.BYTE $67 ; g
-		.BYTE $2E ; .
-		.BYTE  $D
-		.BYTE $FF
-		.BYTE $A6 ; ¦
-		.BYTE	0
-		.BYTE	3
-		.BYTE $A5 ; ¥
-		.BYTE $59 ; Y
-		.BYTE $6F ; o
-		.BYTE $75 ; u
-		.BYTE $20
-		.BYTE $66 ; f
-		.BYTE $65 ; e
-		.BYTE $65 ; e
-		.BYTE $6C ; l
-		.BYTE $20
-		.BYTE $73 ; s
-		.BYTE $74 ; t
-		.BYTE $72 ; r
-		.BYTE $65 ; e
-		.BYTE $6E ; n
-		.BYTE $67 ; g
-		.BYTE $74 ; t
-		.BYTE $68 ; h
-		.BYTE $65 ; e
-		.BYTE $6E ; n
-		.BYTE $65 ; e
-		.BYTE $64 ; d
-		.BYTE $20
-		.BYTE $66 ; f
-		.BYTE $72 ; r
-		.BYTE $6F ; o
-		.BYTE $6D ; m
-		.BYTE $20
-		.BYTE $74 ; t
-		.BYTE $68 ; h
-		.BYTE $65 ; e
-		.BYTE $20
-		.BYTE $61 ; a
-		.BYTE $74 ; t
-		.BYTE $74 ; t
-		.BYTE $61 ; a
-		.BYTE $63 ; c
-		.BYTE $6B ; k
-		.BYTE $21 ; !
-		.BYTE  $D
-		.BYTE $FF
-		.BYTE $A6 ; ¦
-		.BYTE	0
-		.BYTE	2
-		.BYTE $A5 ; ¥
-		.BYTE $59 ; Y
-		.BYTE $6F ; o
-		.BYTE $75 ; u
-		.BYTE $72 ; r
-		.BYTE $20
-		.BYTE $B4 ; ´
-		.BYTE $70 ; p
-		.BYTE	0
-		.BYTE $14
-		.BYTE  $D
-		.BYTE $A5 ; ¥
-		.BYTE $69 ; i
-		.BYTE $73 ; s
-		.BYTE $20
-		.BYTE $77 ; w
-		.BYTE $65 ; e
-		.BYTE $61 ; a
-		.BYTE $6B ; k
-		.BYTE $65 ; e
-		.BYTE $6E ; n
-		.BYTE $69 ; i
-		.BYTE $6E ; n
-		.BYTE $67 ; g
-		.BYTE $2E ; .
-		.BYTE  $D
-		.BYTE $FF
-		.BYTE $A6 ; ¦
-		.BYTE	0
-		.BYTE	3
-		.BYTE $A5 ; ¥
-		.BYTE $59 ; Y
-		.BYTE $6F ; o
-		.BYTE $75 ; u
-		.BYTE $72 ; r
-		.BYTE $20
-		.BYTE $B4 ; ´
-		.BYTE $70 ; p
-		.BYTE	0
-		.BYTE $14
-		.BYTE $20
-		.BYTE $68 ; h
-		.BYTE $61 ; a
-		.BYTE $73 ; s
-		.BYTE $20
-		.BYTE $62 ; b
-		.BYTE $72 ; r
-		.BYTE $6F ; o
-		.BYTE $6B ; k
-		.BYTE $65 ; e
-		.BYTE $6E ; n
-		.BYTE $2E ; .
-		.BYTE  $D
-		.BYTE $FF
+		.BYTE	$B4
+		.WORD	$76DB
+		.BYTE	$1E
+		.BYTE	$D,$FF
+		MOVEXY	0,3
+		.BYTE	$A5
+		.BYTE	"You rise from the ground.",$D,$FF
+		.BYTE	$AC
+		.WORD	$7665
+		.BYTE	"gets up.",$D,$FF
+		.BYTE	$AC
+		.WORD	$7665
+		.BYTE	"misses.",$D,$FF
+		.BYTE	$AC
+		.WORD	$7665
+		.BYTE	"waits",$D,$A5
+		.BYTE	"for an opening.",$D,$FF
+		MOVEXY	0,3
+		.BYTE	$A5
+		.BYTE	"You feel strengthened from the attack!",$D,$FF
+		MOVEXY	0,2
+		.BYTE	$A5
+		.BYTE	"Your "
+		.BYTE	$B4
+		.WORD	$70
+		.BYTE	$14
+		.BYTE	$D
+		.BYTE	$A5
+		.BYTE	"is weakening.",$D,$FF
+		MOVEXY	0,3
+		.BYTE	$A5
+		.BYTE	"Your "
+		.BYTE	$B4
+		.WORD	$70
+		.BYTE	$14
+		.BYTE	" has broken.",$D,$FF
 		.BYTE $A6 ; ¦
 		.BYTE	0
 		.BYTE	3
