@@ -7867,61 +7867,27 @@ locret_A715:				; CODE XREF: RAM:A6FEj
 		.BYTE	$22,"Run! The Devourer comes!",$22,$D,$FF
 		MOVEXY	0,3
 		.BYTE	$A3
-		.WORD	$A809
+		.WORD	loc_A809
 		.BYTE	$A5
 		.BYTE	$22,"No good deed ever goes un"
 		.BYTE	$B4
 		.WORD	$76D9
 		.BYTE	$A
 		.BYTE	".",$22,$D,$FF
-		.BYTE $A9 ; ©
-		.BYTE $23 ; #
-		.BYTE $8D ; ç
-		.BYTE $D9 ; Ÿ
-		.BYTE $76 ; v
-		.BYTE $A9 ; ©
-		.BYTE $A8 ; ®
-		.BYTE $8D ; ç
-		.BYTE $DA ; ⁄
-		.BYTE $76 ; v
-		.BYTE $AD ; ≠
-		.BYTE  $C
-		.BYTE $AA ; ™
-		.BYTE $30 ; 0
-		.BYTE  $A
-		.BYTE $A9 ; ©
-		.BYTE $2C ; ,
-		.BYTE $8D ; ç
-		.BYTE $D9 ; Ÿ
-		.BYTE $76 ; v
-		.BYTE $A9 ; ©
-		.BYTE $A8 ; ®
-		.BYTE $8D ; ç
-		.BYTE $DA ; ⁄
-		.BYTE $76 ; v
-		.BYTE $60 ; `
-		.BYTE $72 ; r
-		.BYTE $65 ; e
-		.BYTE $77 ; w
-		.BYTE $61 ; a
-		.BYTE $72 ; r
-		.BYTE $64 ; d
-		.BYTE $65 ; e
-		.BYTE $64 ; d
-		.BYTE	0
-		.BYTE $70 ; p
-		.BYTE $75 ; u
-		.BYTE $6E ; n
-		.BYTE $69 ; i
-		.BYTE $73 ; s
-		.BYTE $68 ; h
-		.BYTE $65 ; e
-		.BYTE $64 ; d
-		.BYTE	0
-		.BYTE $A6 ; ¶
-		.BYTE	0
-		.BYTE	3
-		.BYTE $A5 ; •
+
+loc_A809:					; DATA XREF: RAM:A7E4o
+		dldi	off_76D9, aRewarded
+		LDA	byte_AA0C
+		BMI	locret_A822
+		dldi	off_76D9, aPunished
+
+locret_A822:
+		RTS
+
+aRewarded:	.BYTE	"rewarded",0
+aPunished:	.BYTE	"punished",0
+		MOVEXY	0,3
+		.BYTE	$A5
 		.BYTE $22 ; "
 		.BYTE $50 ; P
 		.BYTE $72 ; r
