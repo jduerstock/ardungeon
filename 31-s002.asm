@@ -6755,228 +6755,70 @@ unk_A491:	.BYTE	>aHacks			; DATA XREF: RAM:8777r
 		.BYTE	$AC
 		.WORD	$7653
 		.BYTE	"flees!",$D,$FF
-		.BYTE $AC ; ¬
-		.BYTE $53 ; S
-		.BYTE $76 ; v
-		.BYTE $66 ; f
-		.BYTE $6C ; l
-		.BYTE $69 ; i
-		.BYTE $65 ; e
-		.BYTE $73 ; s
-		.BYTE $20
-		.BYTE $61 ; a
-		.BYTE $77 ; w
-		.BYTE $61 ; a
-		.BYTE $79 ; y
-		.BYTE $21 ; !
-		.BYTE  $D
-		.BYTE $FF
-		.BYTE $AC ; ¬
-		.BYTE $53 ; S
-		.BYTE $76 ; v
-		.BYTE $6C ; l
-		.BYTE $65 ; e
-		.BYTE $61 ; a
-		.BYTE $76 ; v
-		.BYTE $65 ; e
-		.BYTE $73 ; s
-		.BYTE $2E ; .
-		.BYTE  $D
-		.BYTE $FF
-		.BYTE $50 ; P
-		.BYTE $72 ; r
-		.BYTE $6F ; o
-		.BYTE $74 ; t
-		.BYTE $65 ; e
-		.BYTE $63 ; c
-		.BYTE $74 ; t
-		.BYTE $69 ; i
-		.BYTE $6F ; o
-		.BYTE $6E ; n
-		.BYTE	0
-		.BYTE $53 ; S
-		.BYTE $74 ; t
-		.BYTE $72 ; r
-		.BYTE $65 ; e
-		.BYTE $6E ; n
-		.BYTE $67 ; g
-		.BYTE $74 ; t
-		.BYTE $68 ; h
-		.BYTE	0
-		.BYTE $41 ; A
-		.BYTE $67 ; g
-		.BYTE $69 ; i
-		.BYTE $6C ; l
-		.BYTE $69 ; i
-		.BYTE $74 ; t
-		.BYTE $79 ; y
-		.BYTE	0
-		.BYTE	"Finger of Death",0
-		.BYTE $50 ; P
-		.BYTE $61 ; a
-		.BYTE $72 ; r
-		.BYTE $61 ; a
-		.BYTE $6C ; l
-		.BYTE $79 ; y
-		.BYTE $73 ; s
-		.BYTE $69 ; i
-		.BYTE $73 ; s
-		.BYTE	0
-		.BYTE	"Fireball",0
-		.BYTE $43 ; C
-		.BYTE $6F ; o
-		.BYTE $6C ; l
-		.BYTE $64 ; d
-		.BYTE $20
-		.BYTE $43 ; C
-		.BYTE $6F ; o
-		.BYTE $6E ; n
-		.BYTE $65 ; e
-		.BYTE	0
-		.BYTE $4C ; L
-		.BYTE $69 ; i
-		.BYTE $67 ; g
-		.BYTE $68 ; h
-		.BYTE $74 ; t
-		.BYTE $6E ; n
-		.BYTE $69 ; i
-		.BYTE $6E ; n
-		.BYTE $67 ; g
-		.BYTE	0
-		.BYTE	"Mind Flail",0
-		.BYTE $53 ; S
-		.BYTE $75 ; u
-		.BYTE $66 ; f
-		.BYTE $66 ; f
-		.BYTE $6F ; o
-		.BYTE $63 ; c
-		.BYTE $61 ; a
-		.BYTE $74 ; t
-		.BYTE $69 ; i
-		.BYTE $6F ; o
-		.BYTE $6E ; n
-		.BYTE	0
-		.BYTE $52 ; R
-		.BYTE $65 ; e
-		.BYTE $70 ; p
-		.BYTE $75 ; u
-		.BYTE $6C ; l
-		.BYTE $73 ; s
-		.BYTE $69 ; i
-		.BYTE $6F ; o
-		.BYTE $6E ; n
-		.BYTE	0
-		.BYTE $42 ; B
-		.BYTE $6C ; l
-		.BYTE $69 ; i
-		.BYTE $6E ; n
-		.BYTE $6B ; k
-		.BYTE	0
-		.BYTE $F8 ; ø
-		.BYTE	3
-		.BYTE  $C
-		.BYTE $14
-		.BYTE $24 ; $
-		.BYTE $2E ; .
-		.BYTE $37 ; 7
-		.BYTE $41 ; A
-		.BYTE $4B ; K
-		.BYTE $56 ; V
-		.BYTE $62 ; b
-		.BYTE $6C ; l
-		.BYTE $A4 ; ¤
-		.BYTE $A5 ; ¥
-		.BYTE $A5 ; ¥
-		.BYTE $A5 ; ¥
-		.BYTE $A5 ; ¥
-		.BYTE $A5 ; ¥
-		.BYTE $A5 ; ¥
-		.BYTE $A5 ; ¥
-		.BYTE $A5 ; ¥
-		.BYTE $A5 ; ¥
-		.BYTE $A5 ; ¥
-		.BYTE $A5 ; ¥
-		.BYTE $A6 ; ¦
-		.BYTE	0
-		.BYTE	2
-		.BYTE $A3 ; £
-		.BYTE $FC ; ü
-		.BYTE $9E ; ž
-		.BYTE $A5 ; ¥
-		.BYTE $59 ; Y
-		.BYTE $6F ; o
-		.BYTE $75 ; u
-		.BYTE $20
-		.BYTE $B4 ; ´
-		.BYTE $D9 ; Ù
-		.BYTE $76 ; v
-		.BYTE $28 ; (
-		.BYTE $20
-		.BYTE $74 ; t
-		.BYTE $68 ; h
-		.BYTE $65 ; e
-		.BYTE $20
-		.BYTE $73 ; s
-		.BYTE $70 ; p
-		.BYTE $65 ; e
-		.BYTE $6C ; l
-		.BYTE $6C ; l
-		.BYTE  $D
-		.BYTE $A5 ; ¥
-		.BYTE $61 ; a
-		.BYTE $6E ; n
-		.BYTE $64 ; d
-		.BYTE $20
-		.BYTE $61 ; a
-		.BYTE $72 ; r
-		.BYTE $65 ; e
-		.BYTE $20
-		.BYTE $68 ; h
-		.BYTE $69 ; i
-		.BYTE $74 ; t
-		.BYTE $20
-		.BYTE $66 ; f
-		.BYTE $6F ; o
-		.BYTE $72 ; r
-		.BYTE $20
-		.BYTE $B1 ; ±
-		.BYTE $A7 ; §
-		.BYTE	0
+		.BYTE	$AC
+		.WORD	$7653
+		.BYTE	"flies away!",$D,$FF
+		.BYTE	$AC
+		.WORD	$7653
+		.BYTE	"leaves.",$D,$FF
+sProtection:	.BYTE	"Protection",0
+sStrength:	.BYTE	"Strength",0
+sAgility:	.BYTE	"Agility",0
+sFingerOfDeath:	.BYTE	"Finger of Death",0
+sParalysis:	.BYTE	"Paralysis",0
+sFireball:	.BYTE	"Fireball",0
+sColdCone:	.BYTE	"Cold Cone",0
+sLightning:	.BYTE	"Lightning",0
+sMindFlail:	.BYTE	"Mind Flail",0
+sSuffocation:	.BYTE	"Suffocation",0
+sRepulsion:	.BYTE	"Repulsion",0
+sBlink:		.BYTE	"Blink",0
+
+		.BYTE	<sProtection
+		.BYTE	<sStrength
+		.BYTE	<sAgility
+		.BYTE	<sFingerOfDeath
+		.BYTE	<sParalysis
+		.BYTE	<sFireball
+		.BYTE	<sColdCone
+		.BYTE	<sLightning
+		.BYTE	<sMindFlail
+		.BYTE	<sSuffocation
+		.BYTE	<sRepulsion
+		.BYTE	<sBlink
+		.BYTE	>sProtection
+		.BYTE	>sStrength
+		.BYTE	>sAgility
+		.BYTE	>sFingerOfDeath
+		.BYTE	>sParalysis
+		.BYTE	>sFireball
+		.BYTE	>sColdCone
+		.BYTE	>sLightning
+		.BYTE	>sMindFlail
+		.BYTE	>sSuffocation
+		.BYTE	>sRepulsion
+		.BYTE	>sBlink
+
+		MOVEXY	0,2
+		.BYTE	$A3
+		.WORD	$9EFC
+		.BYTE $A5
+		.BYTE	"You "
+		.BYTE	$B4
+		.WORD	$76D9
+		.BYTE	$28
+		.BYTE	" the spell",$D,$A5
+		.BYTE	"and are hit for "
+		.BYTE	$B1
+		.WORD	$A7
 		.BYTE	6
-		.BYTE $2E ; .
-		.BYTE  $D
-		.BYTE $A3 ; £
-		.BYTE	2
-		.BYTE $9F ; Ÿ
-		.BYTE $FF
-		.BYTE $72 ; r
-		.BYTE $65 ; e
-		.BYTE $70 ; p
-		.BYTE $65 ; e
-		.BYTE $6C ; l
-		.BYTE	0
-		.BYTE $72 ; r
-		.BYTE $65 ; e
-		.BYTE $73 ; s
-		.BYTE $69 ; i
-		.BYTE $73 ; s
-		.BYTE $74 ; t
-		.BYTE	0
-		.BYTE $66 ; f
-		.BYTE $61 ; a
-		.BYTE $69 ; i
-		.BYTE $6C ; l
-		.BYTE $20
-		.BYTE $74 ; t
-		.BYTE $6F ; o
-		.BYTE $20
-		.BYTE $72 ; r
-		.BYTE $65 ; e
-		.BYTE $73 ; s
-		.BYTE $69 ; i
-		.BYTE $73 ; s
-		.BYTE $74 ; t
-		.BYTE	0
+		.BYTE	".",$D
+		.BYTE	$A3
+		.WORD	$9F02
+		.BYTE	$FF
+		.BYTE	"repel",0
+		.BYTE	"resist",0
+		.BYTE	"fail to resist",0
 		.BYTE $BF ; ¿
 		.BYTE $C5 ; Å
 		.BYTE $CC ; Ì
