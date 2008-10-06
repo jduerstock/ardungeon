@@ -6380,12 +6380,9 @@ locret_9FAC:				; CODE XREF: RAM:9F9Cj	RAM:9F9Ej
 		.WORD loc_9FDD
 		.BYTE $A6,  0,	3
 		.BYTE $A5
-		.BYTE $54 ; T
-		.BYTE $68 ; h
-		.BYTE $65 ; e
-		.BYTE $20
+		.BYTE	"The "
 		.BYTE $AD
-		.WORD byte_9FDB
+		.WORD off_9FDB
 		.BYTE $D
 		.BYTE $A5
 		.BYTE $B1
@@ -6396,184 +6393,87 @@ aPointsOfDamage:.BYTE " points of damage."
 		.BYTE $A3
 		.WORD unk_9F02
 		.BYTE $FF
-byte_9FDB:	.BYTE 0			; DATA XREF: RAM:9FBCo	RAM:9FDFw ...
-byte_9FDC:	.BYTE 0			; DATA XREF: RAM:9FE4w	RAM:9FFAw
+off_9FDB:	.WORD	0		; DATA XREF: RAM:9FBCo	RAM:9FDFw ...
 ; ---------------------------------------------------------------------------
 
 loc_9FDD:				; DATA XREF: RAM:9FB1o
-		LDA	#$FE ; '˛'
-		STA	byte_9FDB
-		LDA	#$9F ; 'ü'
-		STA	byte_9FDC
+		dldi	off_9FDB, $9FFE
 		LDA	byte_AA00
 		CMP	#1
 		BEQ	locret_9FFD
 		LDA	$63E8
 		BEQ	locret_9FFD
-		LDA	#$E
-		STA	byte_9FDB
-		LDA	#$A0 ; '†'
-		STA	byte_9FDC
+		dldi	off_9FDB, $A00E
 
 locret_9FFD:				; CODE XREF: RAM:9FECj	RAM:9FF1j
 		RTS
 ; ---------------------------------------------------------------------------
-		.BYTE $B4
-		.WORD $AA01
-		.BYTE $10
-aIsHitFor:	.BYTE " is hit for"
-		.BYTE $AE
-		.BYTE $B4
-		.WORD $AA03
-		.BYTE $10
-		.BYTE $20
-		.BYTE $61 ; a
-		.BYTE $72 ; r
-		.BYTE $65 ; e
-		.BYTE $20
-		.BYTE $68 ; h
-		.BYTE $69 ; i
-		.BYTE $74 ; t
-		.BYTE $20
-		.BYTE $66 ; f
-		.BYTE $6F ; o
-		.BYTE $72 ; r
-		.BYTE $AE ; Æ
-		.BYTE $62 ; b
-		.BYTE $61 ; a
-		.BYTE $72 ; r
-		.BYTE $65 ; e
-		.BYTE $20
-		.BYTE $68 ; h
-		.BYTE $61 ; a
-		.BYTE $6E ; n
-		.BYTE $64 ; d
-		.BYTE	0
-		.BYTE $A3 ; £
-		.BYTE $4F ; O
-		.BYTE $A0 ; †
-		.BYTE $A6 ; ¶
-		.BYTE	0
-		.BYTE	5
-		.BYTE $A9 ; ©
-		.BYTE $A2 ; ¢
-		.BYTE $59 ; Y
-		.BYTE $6F ; o
-		.BYTE $75 ; u
-		.BYTE $20
-		.BYTE $65 ; e
-		.BYTE $6E ; n
-		.BYTE $63 ; c
-		.BYTE $6F ; o
-		.BYTE $75 ; u
-		.BYTE $6E ; n
-		.BYTE $74 ; t
-		.BYTE $65 ; e
-		.BYTE $72 ; r
-		.BYTE $20
-		.BYTE $61 ; a
-		.BYTE $B3 ; ≥
-		.BYTE $A3 ; £
-		.BYTE $A0 ; †
+		.BYTE	$B4
+		.WORD	$AA01
+		.BYTE	$10
+aIsHitFor:	.BYTE	" is hit for",$AE
+		.BYTE	$B4
+		.WORD	$AA03
+		.BYTE	$10
+		.BYTE	" are hit for",$AE
+		.BYTE	"bare hand",0
+		.BYTE	$A3
+		.WORD	$A04F
+		MOVEXY	0,5
+		.BYTE	$A9
+		.BYTE	$A2
+		.BYTE	"You encounter "
+aA:		.BYTE	"a"
+		.BYTE	$B3
+		.WORD	$A0A3
 		.BYTE	1
-		.BYTE $20
-		.BYTE $B4 ; ¥
-		.BYTE $4D ; M
-		.BYTE $A0 ; †
-		.BYTE $10
-		.BYTE $2E ; .
-		.BYTE $AB ; ´
-		.BYTE  $D
-		.BYTE $FF
+		.BYTE	" "
+		.BYTE	$B4
+		.WORD	$A04D
+		.BYTE	$10
+		.BYTE	"."
+		.BYTE	$AB
+		.BYTE	$D
+		.BYTE	$FF
+off_A04D:	.WORD	0
+loc_A04F:				; DATA XREF: RAM:A02Ao
+		dmv	off_A04D, off_AA01
+		dmv	loc_A073+1, off_AA01	
+		LDA	#'a'
+		STA	aA
+		LDX	#4
+		LDY	#0
+		STY	byte_A0A3
+
+loc_A073:				; DATA XREF: RAM:A05Ew
+					; RAM:A064w
+		LDA	$FFFF
+		JSR	$183F
+
+loc_A079:				; CODE XREF: RAM:A084j
+		CMP	byte_A0A5,X
+		BNE	loc_A083
+		LDA	#'n'
+		STA	byte_A0A3
+
+loc_A083:				; CODE XREF: RAM:A07Cj
+		DEX
+		BPL	loc_A079
+		LDA	$8A
+		CMP	#1
+		BEQ	locret_A0A2
+		ORA	#$30 ; '0'
+		STA	aA
+		LDA	#0
+		STA	byte_A0A3
+		dmv	off_A04D, off_AA03
+
+locret_A0A2:				; CODE XREF: RAM:A08Aj
+		RTS
+
+byte_A0A3:	.BYTE	0
 		.BYTE	0
-		.BYTE	0
-		.BYTE $AD ; ≠
-		.BYTE	1
-		.BYTE $AA ; ™
-		.BYTE $8D ; ç
-		.BYTE $4D ; M
-		.BYTE $A0 ; †
-		.BYTE $AD ; ≠
-		.BYTE	2
-		.BYTE $AA ; ™
-		.BYTE $8D ; ç
-		.BYTE $4E ; N
-		.BYTE $A0 ; †
-		.BYTE $AD ; ≠
-		.BYTE	1
-		.BYTE $AA ; ™
-		.BYTE $8D ; ç
-		.BYTE $74 ; t
-		.BYTE $A0 ; †
-		.BYTE $AD ; ≠
-		.BYTE	2
-		.BYTE $AA ; ™
-		.BYTE $8D ; ç
-		.BYTE $75 ; u
-		.BYTE $A0 ; †
-		.BYTE $A9 ; ©
-		.BYTE $61 ; a
-		.BYTE $8D ; ç
-		.BYTE $3F ; ?
-		.BYTE $A0 ; †
-		.BYTE $A2 ; ¢
-		.BYTE	4
-		.BYTE $A0 ; †
-		.BYTE	0
-		.BYTE $8C ; å
-		.BYTE $A3 ; £
-		.BYTE $A0 ; †
-		.BYTE $AD ; ≠
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $20
-		.BYTE $3F ; ?
-		.BYTE $18
-		.BYTE $DD ; ›
-		.BYTE $A5 ; •
-		.BYTE $A0 ; †
-		.BYTE $D0 ; –
-		.BYTE	5
-		.BYTE $A9 ; ©
-		.BYTE $6E ; n
-		.BYTE $8D ; ç
-		.BYTE $A3 ; £
-		.BYTE $A0 ; †
-		.BYTE $CA ;  
-		.BYTE $10
-		.BYTE $F3 ; Û
-		.BYTE $A5 ; •
-		.BYTE $8A ; ä
-		.BYTE $C9 ; …
-		.BYTE	1
-		.BYTE $F0 ; 
-		.BYTE $16
-		.BYTE	9
-		.BYTE $30 ; 0
-		.BYTE $8D ; ç
-		.BYTE $3F ; ?
-		.BYTE $A0 ; †
-		.BYTE $A9 ; ©
-		.BYTE	0
-		.BYTE $8D ; ç
-		.BYTE $A3 ; £
-		.BYTE $A0 ; †
-		.BYTE $AD ; ≠
-		.BYTE	3
-		.BYTE $AA ; ™
-		.BYTE $8D ; ç
-		.BYTE $4D ; M
-		.BYTE $A0 ; †
-		.BYTE $AD ; ≠
-		.BYTE	4
-		.BYTE $AA ; ™
-		.BYTE $8D ; ç
-		.BYTE $4E ; N
-		.BYTE $A0 ; †
-		.BYTE $60 ; `
-		.BYTE	0
-		.BYTE	0
-		.BYTE $41 ; A
+byte_A0A5:	.BYTE $41 ; A
 		.BYTE $45 ; E
 		.BYTE $49 ; I
 		.BYTE $4F ; O
@@ -8660,9 +8560,8 @@ byte_A8A0:	.BYTE 0			; DATA XREF: sub_7B59+40w sub_7B59+48r ...
 		.BYTE $88 ; à
 byte_AA00:	.BYTE $A9		; CODE XREF: RAM:7804p
 					; DATA XREF: RAM:760Fr	...
-off_AA01:	.WORD $85FF		; DATA XREF: sub_8560+7r
-		.BYTE $A6 ; ¶
-		.BYTE $85 ; Ö
+off_AA01:	.WORD	$85FF		; DATA XREF: sub_8560+7r
+off_AA03:	.WORD	$85A6
 		.BYTE $AF ; Ø
 		.BYTE $AD ; ≠
 		.BYTE $59 ; Y
