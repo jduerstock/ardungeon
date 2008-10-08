@@ -1,5 +1,6 @@
 		.include	"globals.inc"
 		.include	"exp_kernel.inc"
+		.include	"macros.inc"
 
 ;		.ORG	$9000
 
@@ -19,10 +20,7 @@ loc_900E:				; CODE XREF: RAM:9015j
 		STX	word_232
 		INX
 		STX	word_232+1
-		LDA	#$BE ; 'æ'
-		STA	9
-		LDA	#$90 ; 'ê'
-		STA	$A
+		dldi	off_9, $90BE
 		LDA	#3
 		STA	6
 

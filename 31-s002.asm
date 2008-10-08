@@ -3,6 +3,7 @@
 		.include	"macros.inc"
 		.include	"exp_kernel.inc"
 
+off_2	= $02
 off_68	= $68
 off_6A	= $6A
 off_6E	= $6E
@@ -796,10 +797,10 @@ loc_7B1E:				; CODE XREF: sub_84CF-9ECj
 loc_7B25:				; CODE XREF: sub_84CF-995j
 		LDX	$96
 		LDA	#0
-		STA	2
+		STA	off_2
 		LDA	$AA2B,X
 		BEQ	loc_7B38
-		STA	3
+		STA	off_2+1
 		JSR	$18AB
 		DEC	$197B
 
@@ -904,7 +905,7 @@ loc_7BD9:				; CODE XREF: sub_7B59+8Dj
 		INX
 		DEY
 		BNE	loc_7BD9
-		dldi	off_16, $A029
+		dldi	off_16, a_YouEncounterA
 		JSR	$1812
 		LDA	$A6
 		CMP	#$E
@@ -1492,7 +1493,7 @@ loc_7F62:
 ; ---------------------------------------------------------------------------
 
 loc_7F77:				; CODE XREF: RAM:7F72j
-		ldxy	$9CDC
+		ldxy	a_YouWaitForOpening
 		JMP	loc_8ED1
 ; ---------------------------------------------------------------------------
 
@@ -1589,22 +1590,22 @@ loc_8010:				; CODE XREF: RAM:7FFAj	RAM:8001j
 loc_8014:				; CODE XREF: RAM:8058j
 		JSR	sub_810E
 		LDA	$A7
-		STA	2
+		STA	off_2
 		LDA	$A8
-		STA	3
+		STA	off_2+1
 		LDA	$78
 		BMI	loc_802D
 		BNE	loc_8029
-		LSR	2
-		ROR	3
+		LSR	off_2
+		ROR	off_2+1
 
 loc_8029:				; CODE XREF: RAM:8023j
-		LSR	2
-		ROR	3
+		LSR	off_2
+		ROR	off_2+1
 
 loc_802D:				; CODE XREF: RAM:8021j
-		LDA	2
-		ORA	3
+		LDA	off_2
+		ORA	off_2+1
 		BEQ	loc_8050
 		LDX	$8C
 		LDA	$C3,X
@@ -1612,10 +1613,10 @@ loc_802D:				; CODE XREF: RAM:8021j
 		STA	$C3,X
 		SEC
 		LDA	$B3,X
-		SBC	3
+		SBC	off_2+1
 		STA	$B3,X
 		LDA	$B2,X
-		SBC	2
+		SBC	off_2
 		STA	$B2,X
 		BCS	loc_8050
 		LDA	#0
@@ -1857,7 +1858,7 @@ loc_8160:				; CODE XREF: RAM:7F4Ej	RAM:loc_7F5Fj ...
 		INY
 		LDA	(off_64),Y
 		BNE	loc_817C
-		ldxy	$9DB8
+		ldxy	a_NotLoaded
 		JMP	loc_8ED1
 ; ---------------------------------------------------------------------------
 
@@ -2009,7 +2010,7 @@ loc_824C:				; CODE XREF: RAM:8247j
 		LDX	#1
 		JSR	sub_8F15
 		BMI	loc_8261
-		ldxy	$9DCE
+		ldxy	a_DodgesOutOfThe
 		JMP	loc_8ED1
 ; ---------------------------------------------------------------------------
 
@@ -2024,7 +2025,7 @@ loc_8261:				; CODE XREF: RAM:8258j
 		LDX	#3
 		JSR	sub_8F15
 		BMI	loc_827F
-		ldxy	$A0E8
+		ldxy	a_SkillfullyDeflects
 		JSR	loc_8ED1
 		JMP	sub_8E31
 ; ---------------------------------------------------------------------------
@@ -2194,7 +2195,7 @@ loc_836E:				; CODE XREF: RAM:8356j	RAM:8360j
 		LDA	$C3
 		ORA	#$40 ; '@'
 		STA	$C3
-		ldxy	$9E4A
+		ldxy	a_IsKnockedDown
 		JSR	loc_8ED1
 		JMP	loc_83A5
 ; ---------------------------------------------------------------------------
@@ -2204,11 +2205,11 @@ loc_8395:				; CODE XREF: RAM:8378j
 		AND	#$10
 		BNE	loc_83A5
 		INC	$C2
-		ldxy	$9E7C
+		ldxy	a_IsStaggered
 		JSR	loc_8ED1
 
 loc_83A5:				; CODE XREF: RAM:8351j	RAM:835Aj ...
-		ldxy	$9E8F
+		ldxy	a_You_The_WithYour
 		JSR	loc_8ED1
 		RTS
 
@@ -2358,7 +2359,7 @@ loc_844D:				; CODE XREF: sub_8400+9j sub_8400+2Aj	...
 ; ---------------------------------------------------------------------------
 
 loc_8451:				; CODE XREF: RAM:8249j
-		ldxy	$A0D9
+		ldxy	a_YouMiss
 		JSR	sub_8EEF
 		LDA	#1
 		JSR	$185A
@@ -2369,10 +2370,10 @@ loc_8451:				; CODE XREF: RAM:8249j
 
 sub_845E:				; CODE XREF: sub_92D0+34p
 		CLC
-		ADC	2
-		STA	2
+		ADC	off_2
+		STA	off_2
 		BCC	locret_8467
-		INC	3
+		INC	off_2+1
 
 locret_8467:				; CODE XREF: sub_845E+5j
 		RTS
@@ -4265,13 +4266,13 @@ loc_8F3D:				; CODE XREF: sub_8F15+1Bj
 		STA	$79
 		LDX	$77
 		JSR	sub_9049
-		LDA	3
+		LDA	off_2+1
 		BEQ	loc_8F51
 		LDA	#$F4 ; 'ô'
 		BMI	loc_8F59
 
 loc_8F51:				; CODE XREF: sub_8F15+36j
-		LDA	2
+		LDA	off_2
 		CMP	#$F5 ; 'õ'
 		BCC	loc_8F59
 		LDA	#$F4 ; 'ô'
@@ -4319,7 +4320,7 @@ loc_8F7D:				; CODE XREF: sub_8F15+4Dj
 sub_8F8E:				; CODE XREF: RAM:7FB8p	RAM:82CCp ...
 		STX	byte_A896
 		STY	byte_A897
-		STA	2
+		STA	off_2
 		LDX	#0
 		STX	$7B
 		STX	$7A
@@ -4329,7 +4330,7 @@ sub_8F8E:				; CODE XREF: RAM:7FB8p	RAM:82CCp ...
 		LSR	A
 		STA	$87
 		BEQ	loc_8FC9
-		LDA	2
+		LDA	off_2
 		AND	#$F
 		STA	$88
 ; End of function sub_8F8E
@@ -4453,23 +4454,23 @@ sub_9049:				; CODE XREF: sub_8F15+31p sub_8FAA+Dp
 		STA	4
 		STX	5
 		LDA	#0
-		STA	3
+		STA	off_2+1
 		LDX	#8
 
 loc_9053:				; CODE XREF: sub_9049+19j
 		ASL	A
-		ROL	3
+		ROL	off_2+1
 		ASL	5
 		BCC	loc_9061
 		CLC
 		ADC	4
 		BCC	loc_9061
-		INC	3
+		INC	off_2+1
 
 loc_9061:				; CODE XREF: sub_9049+Fj sub_9049+14j
 		DEX
 		BNE	loc_9053
-		STA	2
+		STA	off_2
 		RTS
 ; End of function sub_9049
 
@@ -4927,9 +4928,9 @@ loc_92E8:				; CODE XREF: sub_92D0+11j
 
 loc_92F6:				; CODE XREF: sub_810Ep	sub_92D0+1Dj
 		LDA	byte_AA0D
-		STA	2
+		STA	off_2
 		LDA	#0
-		STA	3
+		STA	off_2+1
 		LDX	#6
 
 loc_9301:				; CODE XREF: sub_92D0+38j
@@ -4938,10 +4939,10 @@ loc_9301:				; CODE XREF: sub_92D0+38j
 		DEX
 		BPL	loc_9301
 		LDX	#3
-		LDA	2
+		LDA	off_2
 
 loc_930E:				; CODE XREF: sub_92D0+42j
-		LSR	3
+		LSR	off_2+1
 		ROR	A
 		DEX
 		BNE	loc_930E
@@ -4980,9 +4981,9 @@ locret_9336:				; CODE XREF: sub_9319+15j
 sub_9337:				; CODE XREF: RAM:8842p	RAM:8978p
 		STA	byte_A89F
 		TAX
-		LDA	$A572,X
+		LDA	byte_A572,X
 		STA	off_76D9
-		LDA	$A57E,X
+		LDA	byte_A57E,X
 		STA	off_76D9+1
 		dldi	off_76DB, byte_76DF
 		ldxy	$A235
@@ -6196,6 +6197,8 @@ a_BreaksTheSpell:
 		.BYTE	$AC
 		.WORD	$AA42
 		.BYTE	".",$D,$FF
+
+a_YouWaitForOpening:
 		MOVEXY	0,3
 		.BYTE	$A5
 		.BYTE	"You wait for an opening.",$D,$FF
@@ -6230,12 +6233,15 @@ loc_9DAF:
 		dldi	off_16, a_NoOptions
 		RTS
 
+a_NotLoaded:
 		MOVEXY	0,3
 		.BYTE	$A5
 		.BYTE	$B4
 		.WORD	$9E3C
 		.BYTE	$19
 		.BYTE	" not loaded.",$D,$FF
+
+a_DodgesOutOfThe:
 		.BYTE	$AC
 		.WORD	$7665
 		.BYTE	$D
@@ -6264,15 +6270,21 @@ byte_9E3C:	.BYTE 0			; DATA XREF: sub_8D7E+Dw sub_8D7E+2Aw
 byte_9E3D:	.BYTE 0			; DATA XREF: sub_8D7E+12w sub_8D7E+34w
 off_9E3E:	.WORD	0		; DATA XREF: sub_8D7E+2Dw sub_8D7E+89w ...
 		.BYTE	"bare hand",0
+
+a_IsKnockedDown:
 		.BYTE	$AC
 		.WORD	$7653
 		.BYTE	"is knocked down",$D,$A5
 		.BYTE	"by the force of your attack.",$D,$FF
+
+a_IsStaggered:
 		.BYTE	$AC
 		.WORD	$7653
 		.BYTE	"is staggered",$D
 		.BYTE	$AC
 		.WORD	$9E5D
+
+a_You_The_WithYour:
 		MOVEXY	0,2
 		.BYTE	$A3
 		.WORD	$9F80
@@ -6446,6 +6458,8 @@ aIsHitFor:	.BYTE	" is hit for",$AE
 		.BYTE	$10
 		.BYTE	" are hit for",$AE
 		.BYTE	"bare hand",0
+
+a_YouEncounterA:
 		.BYTE	$A3
 		.WORD	$A04F
 		MOVEXY	0,5
@@ -6522,9 +6536,13 @@ a_SwitchingTo:
 		.WORD	$9E3C
 		.BYTE	$19
 		.BYTE	".",$D,$FF
+
+a_YouMiss:
 		MOVEXY	0,3
 		.BYTE	$A5
 		.BYTE	"You miss.",$D,$FF
+
+a_SkillfullyDeflects:
 		.BYTE	$AC
 		.WORD	$7665
 		.BYTE	"skillfully ",$D,$A5
@@ -6813,6 +6831,7 @@ sSuffocation:	.BYTE	"Suffocation",0
 sRepulsion:	.BYTE	"Repulsion",0
 sBlink:		.BYTE	"Blink",0
 
+byte_A572:
 		.BYTE	<sProtection
 		.BYTE	<sStrength
 		.BYTE	<sAgility
@@ -6825,6 +6844,8 @@ sBlink:		.BYTE	"Blink",0
 		.BYTE	<sSuffocation
 		.BYTE	<sRepulsion
 		.BYTE	<sBlink
+
+byte_A57E:
 		.BYTE	>sProtection
 		.BYTE	>sStrength
 		.BYTE	>sAgility
