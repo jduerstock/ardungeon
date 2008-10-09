@@ -26,7 +26,8 @@ ASM_SOURCES= \
 	21-s092.asm 21-s093.asm \
 	22-s001.asm 22-s002.asm \
 	31-s001.asm 31-s002.asm \
-	31-s115.asm \
+	31-s114.asm 31-s115.asm \
+	31-s199.asm 31-s200.asm \
 	31-s236.asm \
 	32-s001.asm 32-s002.asm \
 	32-s035.asm \
@@ -200,6 +201,13 @@ all: $(OBJECTS)
 31-s115.bin: 31-s115.asm
 	cl65 --start-addr 0x7600 -t none 31-s115.asm -o 31-s115.bin
 	./encrypt.php 31-s115.bin 5072002ab373dd0bb46538f8f006a515
+
+31-s199.bin: 31-s199.asm
+	cl65 --start-addr 0x0100 -t none 31-s199.asm -o 31-s199.bin
+
+31-s200.bin: 31-s200.asm
+	cl65 --start-addr 0x7600 -t none 31-s200.asm -o 31-s200.bin
+	./encrypt.php 31-s200.bin 50c70012858d6deaeda0885b036337d8
 
 31-s236.bin: 31-s236.asm
 	cl65 --start-addr 0x0100 -t none 31-s236.asm -o 31-s236.bin
