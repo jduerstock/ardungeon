@@ -375,6 +375,8 @@ sub_98A4:				; CODE XREF: RAM:9962p	RAM:9AACp
 ; End of function sub_98A4
 
 ; ---------------------------------------------------------------------------
+
+sub_98B5:
 		LDA	#$80 ; '€'
 		STA	unk_96FE,X
 		CPX	#4
@@ -387,6 +389,8 @@ sub_98A4:				; CODE XREF: RAM:9962p	RAM:9AACp
 locret_98C9:				; CODE XREF: RAM:98BCj
 		RTS
 ; ---------------------------------------------------------------------------
+
+sub_98CA:
 		STA	unk_971C,X
 		INY
 		LDA	($F4),Y
@@ -400,6 +404,8 @@ locret_98C9:				; CODE XREF: RAM:98BCj
 		STA	unk_9730,X
 		JMP	sub_9B17
 ; ---------------------------------------------------------------------------
+
+sub_98E9:
 		STA	unk_9720,X
 		STA	$F9
 		INY
@@ -424,9 +430,12 @@ locret_98C9:				; CODE XREF: RAM:98BCj
 		LDA	#2
 		JMP	loc_988E
 ; ---------------------------------------------------------------------------
+sub_991A:
 		LDA	#1
 		JMP	loc_988E
 ; ---------------------------------------------------------------------------
+
+sub_991F:
 		STA	loc_9928+1
 		INY
 		LDA	($F4),Y
@@ -456,6 +465,8 @@ loc_9941:				; CODE XREF: RAM:995Aj
 		STA	$970D,X
 		JMP	sub_9856
 ; ---------------------------------------------------------------------------
+
+sub_994D:
 		CMP	$D20A
 		BCC	loc_995D
 		INC	$F4
@@ -471,6 +482,8 @@ loc_995D:				; CODE XREF: RAM:9950j
 		LDA	#3
 		JMP	loc_988E
 ; ---------------------------------------------------------------------------
+
+sub_9962:
 		JSR	sub_98A4
 		STA	($FB),Y
 		LDA	#3
@@ -826,14 +839,14 @@ unk_9BA3:	.BYTE	0		; DATA XREF: RAM:98C0r	RAM:9AF0r
 		.BYTE	2
 		.BYTE	4
 		.BYTE	8
-unk_9BA7:	.BYTE $B4 ; ´		; DATA XREF: sub_9856+20r
-		.BYTE $C9 ; É
-		.BYTE $E8 ; è
-		.BYTE $19
-		.BYTE $1E
-		.BYTE $40 ; @
-		.BYTE $4C ; L
-		.BYTE $61 ; a
+unk_9BA7:	.BYTE	<(sub_98B5-1)	; DATA XREF: sub_9856+20r
+		.BYTE	<(sub_98CA-1)
+		.BYTE	<(sub_98E9-1)
+		.BYTE	<(sub_991A-1)
+		.BYTE	<(sub_991F-1)
+		.BYTE	<(loc_9941-1)
+		.BYTE	<(sub_994D-1)
+		.BYTE	<(sub_9962-1)
 		.BYTE	0
 		.BYTE	0
 		.BYTE $6B ; k
@@ -846,14 +859,14 @@ unk_9BA7:	.BYTE $B4 ; ´		; DATA XREF: sub_9856+20r
 		.BYTE $AB ; «
 		.BYTE $E3 ; ã
 		.BYTE $FF
-unk_9BBB:	.BYTE $98 ; ˜		; DATA XREF: sub_9856+1Cr
-		.BYTE $98 ; ˜
-		.BYTE $98 ; ˜
-		.BYTE $99 ; ™
-		.BYTE $99 ; ™
-		.BYTE $99 ; ™
-		.BYTE $99 ; ™
-		.BYTE $99 ; ™
+unk_9BBB:	.BYTE	>(sub_98B5-1)	; DATA XREF: sub_9856+1Cr
+		.BYTE	>(sub_98CA-1)
+		.BYTE	>(sub_98E9-1)
+		.BYTE	>(sub_991A-1)
+		.BYTE	>(sub_991F-1)
+		.BYTE	>(loc_9941-1)
+		.BYTE	>(sub_994D-1)
+		.BYTE	>(sub_9962-1)
 		.BYTE	0
 		.BYTE	0
 		.BYTE $99 ; ™
