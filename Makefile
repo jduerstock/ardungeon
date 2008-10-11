@@ -35,9 +35,9 @@ ASM_SOURCES= \
 	31-s671.asm 31-s672.asm \
 	31-s682.asm \
 	32-s001.asm 32-s002.asm \
-	32-s035.asm \
-	32-s092.asm \
-	32-s127.asm \
+	32-s034.asm 32-s035.asm \
+	32-s091.asm 32-s092.asm \
+	32-s126.asm 32-s127.asm \
 	32-s383.asm \
 	32-s685.asm
 
@@ -261,11 +261,20 @@ all: $(OBJECTS)
 32-s002.bin: 32-s002.asm
 	cl65 --start-addr 0x7600 -t none 32-s002.asm -o 32-s002.bin
 
+32-s034.bin: 32-s034.asm
+	cl65 --start-addr 0x0100 -t none 32-s034.asm -o 32-s034.bin
+
 32-s035.bin: 32-s035.asm
 	cl65 --start-addr 0x7600 -t none 32-s035.asm -o 32-s035.bin
 
+32-s091.bin: 32-s091.asm
+	cl65 --start-addr 0x0100 -t none 32-s091.asm -o 32-s091.bin
+
 32-s092.bin: 32-s092.asm
 	cl65 --start-addr 0x7600 -t none 32-s092.asm -o 32-s092.bin
+
+32-s126.bin: 32-s126.asm
+	cl65 --start-addr 0x0100 -t none 32-s126.asm -o 32-s126.bin
 
 32-s127.bin: 32-s127.asm
 	cl65 --start-addr 0x7600 -t none 32-s127.asm -o 32-s127.bin
