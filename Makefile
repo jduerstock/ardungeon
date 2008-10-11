@@ -29,8 +29,11 @@ ASM_SOURCES= \
 	31-s114.asm 31-s115.asm \
 	31-s199.asm 31-s200.asm \
 	31-s236.asm \
+	31-s588.asm \
 	31-s589.asm 31-s590.asm \
-	31-s605.asm \
+	31-s604.asm 31-s605.asm \
+	31-s671.asm 31-s672.asm \
+	31-s682.asm \
 	32-s001.asm 32-s002.asm \
 	32-s035.asm \
 	32-s092.asm \
@@ -63,6 +66,16 @@ all: $(OBJECTS)
 	cat 11-s679.bin 11-s680.bin.crypt >> ar11.img
 	cat 11-s682.bin >> ar11.img
 	sha1sum -c ar11.sha1
+	cat 31-s001.bin 31-s002.bin.crypt > ar31.img
+	cat 31-s114.bin 31-s115.bin.crypt >> ar31.img
+	cat 31-s199.bin 31-s200.bin.crypt >> ar31.img 
+	cat 31-s236.bin.crypt >> ar31.img
+	cat 31-s588.bin >> ar31.img
+	cat 31-s589.bin 31-s590.bin.crypt >> ar31.img
+	cat 31-s604.bin 31-s605.bin.crypt >> ar31.img
+	cat 31-s671.bin 31-s672.bin.crypt >> ar31.img
+	cat 31-s682.bin >> ar31.img
+	sha1sum -c ar31.sha1
 
 %.o: %.asm
 	$(CA) $(AFLAGS) $< -o $@
@@ -215,6 +228,9 @@ all: $(OBJECTS)
 	cl65 --start-addr 0x0100 -t none 31-s236.asm -o 31-s236.bin
 	./encrypt.php 31-s236.bin 00000000000000000000000000000000
 
+31-s588.bin: 31-s588.asm
+	cl65 --start-addr 0x1400 -t none 31-s588.asm -o 31-s588.bin
+
 31-s589.bin: 31-s589.asm
 	cl65 --start-addr 0x0100 -t none 31-s589.asm -o 31-s589.bin
 
@@ -227,7 +243,17 @@ all: $(OBJECTS)
 
 31-s605.bin: 31-s605.asm
 	cl65 --start-addr 0x7600 -t none 31-s605.asm -o 31-s605.bin
-	./encrypt.php 31-s605.bin 524d00074f752ca80d01c68231b9a298
+	./encrypt.php 31-s605.bin 525cf020b96d3e0fea81bd265e2a247b
+
+31-s671.bin: 31-s671.asm
+	cl65 --start-addr 0x0100 -t none 31-s671.asm -o 31-s671.bin
+
+31-s672.bin: 31-s672.asm
+	cl65 --start-addr 0x96f0 -t none 31-s672.asm -o 31-s672.bin
+	./encrypt.php 31-s672.bin 529f0005669d88b13ed148e210e57f83
+
+31-s682.bin: 31-s682.asm
+	cl65 --start-addr 0x1400 -t none 31-s682.asm -o 31-s682.bin
 
 32-s001.bin: 32-s001.asm
 	cl65 --start-addr 0x0100 -t none 32-s001.asm -o 32-s001.bin
@@ -251,4 +277,4 @@ all: $(OBJECTS)
 	cl65 --start-addr 0x96F0 -t none 32-s685.asm -o 32-s685.bin
 
 clean:
-	$(RM) -f $(OBJECTS) *.*~ *.bin.crypt *.o ar11.img
+	$(RM) -f $(OBJECTS) *.*~ *.bin.crypt *.o ar11.img ar31.img
