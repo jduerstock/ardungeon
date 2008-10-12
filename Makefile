@@ -44,6 +44,7 @@ ASM_SOURCES= \
 	32-s382.asm 32-s383.asm \
 	32-s431.asm 32-s432.asm \
 	32-s494.asm 32-s495.asm \
+	32-s510.asm 32-s511.asm \
 	32-s685.asm
 
 OBJECTS=$(ASM_SOURCES:.asm=.bin)
@@ -319,6 +320,12 @@ all: $(OBJECTS)
 
 32-s495.bin: 32-s495.asm
 	cl65 --start-addr 0x96F0 -t none 32-s495.asm -o 32-s495.bin
+
+32-s510.bin: 32-s510.asm
+	cl65 --start-addr 0x0100 -t none 32-s510.asm -o 32-s510.bin
+
+32-s511.bin: 32-s511.asm
+	cl65 --start-addr 0x890B -t none 32-s511.asm -o 32-s511.bin
 
 32-s685.bin: 32-s685.asm
 	cl65 --start-addr 0x96F0 -t none 32-s685.asm -o 32-s685.bin

@@ -303,13 +303,13 @@ loc_7814:				; CODE XREF: RAM:7821j
 loc_781E:				; CODE XREF: RAM:7819j
 		JSR	sub_8027
 		BMI	loc_7814
-		CMP	#$31 ; '1'
+		CMP	#'1'
 		BNE	loc_782A
 		JMP	loc_7867
 ; ---------------------------------------------------------------------------
 
 loc_782A:				; CODE XREF: RAM:7825j
-		CMP	#$32 ; '2'
+		CMP	#'2'
 		BNE	loc_7839
 		LDA	#0
 		STA	$7F
@@ -319,7 +319,7 @@ loc_782A:				; CODE XREF: RAM:7825j
 ; ---------------------------------------------------------------------------
 
 loc_7839:				; CODE XREF: RAM:782Cj
-		CMP	#$33 ; '3'
+		CMP	#'3'
 		BNE	loc_7848
 		LDA	#$F
 		STA	$7F
@@ -329,13 +329,13 @@ loc_7839:				; CODE XREF: RAM:782Cj
 ; ---------------------------------------------------------------------------
 
 loc_7848:				; CODE XREF: RAM:783Bj
-		CMP	#$34 ; '4'
+		CMP	#'4'
 		BNE	loc_784F
 		JMP	loc_7CF1
 ; ---------------------------------------------------------------------------
 
 loc_784F:				; CODE XREF: RAM:784Aj
-		CMP	#$30 ; '0'
+		CMP	#'0'
 		BNE	loc_780C
 
 loc_7853:				; CODE XREF: RAM:781Bj	RAM:loc_7C31j
@@ -1575,10 +1575,7 @@ sub_8022:				; CODE XREF: RAM:loc_77F4p RAM:7809p ...
 
 sub_8027:				; CODE XREF: RAM:loc_781Ep
 					; RAM:loc_787Ap ...
-		LDA	#$34 ; '4'
-		STA	$1977
-		LDA	#$80 ; '€'
-		STA	$1978
+		dldi	off_1977, $8034
 		JMP	$1806
 ; End of function sub_8027
 
