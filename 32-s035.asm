@@ -810,7 +810,7 @@ loc_7FF4:				; CODE XREF: RAM:7FF0j
 		CMP	#$2D ; '-'
 		BCC	loc_7FD4
 		LDA	#$2D ; '-'
-		STA	7
+		STA	off_7
 		LDX	#0
 		STX	6
 		dldi	off_F0, $BDA9

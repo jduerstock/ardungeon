@@ -25,14 +25,8 @@
 		STA	$225
 		LDA	#$FF
 		STA	$22F
-		LDA	#$58 ; 'X'
-		STA	7
-		LDA	#$77 ; 'w'
-		STA	8
-		LDA	#$F0 ; 'ð'
-		STA	9
-		LDA	#$9F ; 'Ÿ'
-		STA	$A
+		dldi	off_7, $7758
+		dldi	off_9, $9FF0
 		LDA	#$20 ; ' '
 		STA	$B
 		LDA	#5

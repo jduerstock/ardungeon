@@ -91,15 +91,15 @@ loc_76A0:				; CODE XREF: sub_769B+2j
 		TAX
 		DEX
 		LDA	unk_9543,X
-		STA	7
+		STA	off_7
 		LDA	unk_9549,X
-		STA	8
+		STA	off_7+1
 		LDA	$D20A
 		STA	byte_78DE
 		LDY	#0
 
 loc_76B4:				; CODE XREF: sub_769B+21j
-		LDA	(7),Y
+		LDA	(off_7),Y
 		CMP	byte_78DE
 		BCS	loc_76BE
 		INY
@@ -111,13 +111,13 @@ loc_76BE:				; CODE XREF: sub_769B+1Ej
 		TAY
 		INY
 		LDA	unk_947A,X
-		STA	7
+		STA	off_7
 		LDA	unk_9480,X
-		STA	8
-		LDA	(7),Y
+		STA	off_7+1
+		LDA	(off_7),Y
 		TAX
 		DEY
-		LDA	(7),Y
+		LDA	(off_7),Y
 		TAY
 ; End of function sub_769B
 
@@ -275,33 +275,33 @@ loc_77D6:				; CODE XREF: sub_773A+E0j
 		JSR	$1887
 		BEQ	loc_7817
 		LDY	#0
-		LDA	($41),Y
+		LDA	(off_41),Y
 		AND	#$7F ; ''
 		CMP	#3
 		BNE	loc_7817
 		CLC
-		LDA	$41
+		LDA	off_41
 		ADC	#6
-		STA	7
-		LDA	$42
+		STA	off_7
+		LDA	off_41+1
 		ADC	#0
-		STA	8
+		STA	off_7+1
 		LDY	#0
-		LDA	(7),Y
+		LDA	(off_7),Y
 		CMP	#$7F ; ''
 		BNE	loc_7808
 		LDA	7
 		CLC
 		ADC	#2
-		STA	7
+		STA	off_7
 		BCC	loc_7808
-		INC	8
+		INC	off_7+1
 
 loc_7808:				; CODE XREF: sub_773A+C1j sub_773A+CAj
 		LDY	#$E
 
 loc_780A:				; CODE XREF: sub_773A+D8j
-		LDA	(7),Y
+		LDA	(off_7),Y
 		CMP	aMirroredShield,Y ; "Mirrored Shield"
 		BNE	loc_7817
 		DEY
