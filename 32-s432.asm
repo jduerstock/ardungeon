@@ -1,3 +1,6 @@
+		.include	"globals.inc"
+		.include	"exp_kernel.inc"
+		.include	"macros.inc"
 
 ;		.ORG	$7600
 		.BYTE	$1D
@@ -59,12 +62,9 @@ loc_7620:				; CODE XREF: RAM:7627j
 		STA	8
 		LDA	#2
 		JSR	$180F
-		LDA	#$F0 ; 'ð'
-		STA	$190B
-		LDA	#$9E ; 'ž'
-		STA	$190C
+		dldi	SEGADDR, $9EF0
 		LDA	#$3A ; ':'
-		STA	$1909
+		STA	SEGNO
 		JSR	$1842
 
 loc_767D:				; CODE XREF: RAM:7684j
@@ -73,18 +73,12 @@ loc_767D:				; CODE XREF: RAM:7684j
 		CMP	#3
 		BEQ	loc_767D
 		ADC	#$37 ; '7'
-		STA	$1909
-		LDA	#0
-		STA	$190B
-		LDA	#$8A ; 'Š'
-		STA	$190C
+		STA	SEGNO
+		dldi	SEGADDR, $8A00
 		JSR	$1842
-		LDA	#$F0 ; 'ð'
-		STA	$190B
-		LDA	#$96 ; '–'
-		STA	$190C
+		dldi	SEGADDR, $96F0
 		LDA	#$F
-		STA	$1909
+		STA	SEGNO
 		JSR	$1842
 		JSR	$96F5
 		LDA	#$71 ; 'q'

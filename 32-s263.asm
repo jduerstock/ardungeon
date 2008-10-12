@@ -1,3 +1,6 @@
+		.include	"globals.inc"
+		.include	"exp_kernel.inc"
+		.include	"macros.inc"
 
 		.ORG	$7600
 		.BYTE $D
@@ -102,12 +105,9 @@ loc_76B0:				; CODE XREF: RAM:7632j
 		STA	$62
 		DEC	$1937
 		DEC	$1971
-		LDA	#$F0 ; 'ð'
-		STA	$190B
-		LDA	#$96 ; '–'
-		STA	$190C
+		dldi	SEGADDR, $96F0
 		LDA	#$33 ; '3'
-		STA	$1909
+		STA	SEGNO
 		JSR	$1842
 		LDA	#$F0 ; 'ð'
 		STA	7

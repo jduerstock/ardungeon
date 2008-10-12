@@ -1,3 +1,6 @@
+		.include	"exp_kernel.inc"
+		.include	"macros.inc"
+
 ;		.ORG	$7600
 		.BYTE	0
 ; ---------------------------------------------------------------------------
@@ -123,11 +126,8 @@ loc_76CF:				; CODE XREF: RAM:76A3j	RAM:76A8j ...
 		PLA
 		CLC
 		ADC	#7
-		STA	$1909
-		LDA	#$F0 ; 'ð'
-		STA	$190B
-		LDA	#$96 ; '–'
-		STA	$190C
+		STA	SEGNO
+		dldi	SEGADDR, $96F0
 		JSR	$1842
 
 loc_76F1:				; CODE XREF: RAM:76D5j

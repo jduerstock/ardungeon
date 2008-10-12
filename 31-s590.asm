@@ -1,13 +1,12 @@
+		.include	"exp_kernel.inc"
+		.include	"macros.inc"
 
 ;		.ORG	$7600
 		.BYTE $EA ; ê
 ; ---------------------------------------------------------------------------
 		LDA	#$F
-		STA	$1909
-		LDA	#$F0 ; 'ð'
-		STA	$190B
-		LDA	#$96 ; '–'
-		STA	$190C
+		STA	SEGNO
+		dldi	SEGADDR, $96F0
 		JSR	$1842
 		LDA	#1
 		JSR	$180F

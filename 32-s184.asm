@@ -1,4 +1,7 @@
-
+		.include	"globals.inc"
+		.include	"exp_kernel.inc"
+		.include	"macros.inc"
+		
 ;		.ORG	$7600
 		.BYTE	$C
 ; ---------------------------------------------------------------------------
@@ -68,26 +71,17 @@ loc_7661:				; CODE XREF: RAM:765Aj
 		LDA	#$76 ; 'v'
 		STA	$1978
 		LDA	#$F
-		STA	$1909
-		LDA	#$F0 ; 'ð'
-		STA	$190B
-		LDA	#$96 ; '–'
-		STA	$190C
+		STA	SEGNO
+		dldi	SEGADDR, $96F0
 		JSR	$1842
 		LDA	$67
 		LSR	A
 		LDA	#$40 ; '@'
 		ADC	#0
-		STA	$1909
-		LDA	#$F0 ; 'ð'
-		STA	$190B
-		LDA	#$9F ; 'Ÿ'
-		STA	$190C
+		STA	SEGNO
+		dldi	SEGADDR, $9FF0
 		JSR	$1842
-		LDA	#$30 ; '0'
-		STA	$16
-		LDA	#$82 ; '‚'
-		STA	$17
+		dldi	off_16, $8230
 		JSR	$184B
 		LDA	$1933
 		STA	$66
