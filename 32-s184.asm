@@ -193,10 +193,7 @@ loc_776F:				; CODE XREF: RAM:7773j
 		BPL	loc_776F
 		ASL	A
 		BCC	loc_77A8
-		LDA	#$33 ; '3'
-		STA	$16
-		LDA	#$8E ; 'Ž'
-		STA	$17
+		dldi	off_16, $8E33
 		LDX	$66
 		JSR	$1851
 

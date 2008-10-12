@@ -98,10 +98,7 @@ loc_7693:				; CODE XREF: RAM:76A4j
 		STA	$751E
 
 loc_76B0:				; CODE XREF: RAM:7632j
-		LDA	#$40 ; '@'
-		STA	$16
-		LDA	#$80 ; '€'
-		STA	$17
+		dldi	off_16, $8040
 		JSR	$184B
 		LDA	$1933
 		STA	$62
