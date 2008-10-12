@@ -2,6 +2,8 @@
 		.include	"exp_kernel.inc"
 		.include	"macros.inc"
 
+off_67 = $67
+
 		.ORG	$7600
 		.BYTE $D
 ; ---------------------------------------------------------------------------
@@ -463,11 +465,11 @@ loc_7908:				; CODE XREF: RAM:78F5j
 ; ---------------------------------------------------------------------------
 
 loc_791D:				; CODE XREF: RAM:7914j
-		STA	7
+		STA	off_7
 		LDA	$6C
 		STA	$89
 		LDA	#0
-		STA	8
+		STA	off_7+1
 		STA	$8A
 		JSR	sub_7FAF
 		LDA	#3
@@ -1210,9 +1212,9 @@ loc_7DD5:				; CODE XREF: RAM:7DBFj
 		SBC	$8A
 		STA	$63B7,X
 		LDA	$89
-		STA	$67
+		STA	off_67
 		LDA	$8A
-		STA	$68
+		STA	off_67+1
 		LDX	#$A
 		LDY	#0
 		LDA	$6C
@@ -1221,10 +1223,7 @@ loc_7DD5:				; CODE XREF: RAM:7DBFj
 		STA	$7A
 		LDA	#0
 		STA	$8A
-		LDA	$67
-		STA	7
-		LDA	$68
-		STA	8
+		dmv	off_7, off_67
 		JSR	sub_7FAF
 		LDA	4
 		ORA	5
@@ -1252,10 +1251,7 @@ loc_7E2A:				; CODE XREF: RAM:7E18j
 		STA	$89
 		LDA	#0
 		STA	$8A
-		LDA	$67
-		STA	7
-		LDA	$68
-		STA	8
+		dmv	off_7, off_67
 		JSR	sub_7FAF
 		LDX	#$A
 		LDY	$8A
@@ -3265,14 +3261,8 @@ loc_9466:				; CODE XREF: RAM:946Aj
 		STA	$D407
 		LDA	#4
 		STA	$D01B
-		LDA	#0
-		STA	7
-		LDA	#$BC ; '¼'
-		STA	8
-		LDA	#$F0 ; 'ð'
-		STA	9
-		LDA	#4
-		STA	$A
+		dldi	off_7, $BC00
+		dldi	off_9, $04F0
 		LDA	#0
 		STA	6
 
@@ -3305,7 +3295,7 @@ loc_94B4:				; CODE XREF: RAM:94B0j
 		CMP	#$2D ; '-'
 		BCC	loc_9494
 		LDA	#$2D ; '-'
-		STA	7
+		STA	off_7
 		LDX	#0
 		STX	6
 		LDA	#$A9 ; '©'

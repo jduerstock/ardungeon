@@ -1,5 +1,6 @@
 		.include	"globals.inc"
 		.include	"exp_kernel.inc"
+		.include	"macros.inc"
 
 ;		.ORG	$7600
 		.BYTE	8
@@ -18,10 +19,7 @@ loc_760D:				; CODE XREF: RAM:7604j	RAM:7607j
 ; ---------------------------------------------------------------------------
 
 loc_7610:				; CODE XREF: RAM:7601j
-		LDA	#$DB ; '-'
-		STA	7
-		LDA	#$7B ; '{'
-		STA	8
+		dldi	off_7, $7BDB
 		LDA	#2
 		JSR	$180F
 		LDA	#$FF
@@ -2733,10 +2731,7 @@ loc_855E:				; CODE XREF: RAM:8562j
 		STA	$D407
 		LDA	#4
 		STA	$D01B
-		LDA	#0
-		STA	7
-		LDA	#$BC ; '¼'
-		STA	8
+		dldi	off_7, $BC00
 		LDA	#$F0 ; 'ð'
 		STA	9
 		LDA	#4
@@ -2773,7 +2768,7 @@ loc_85AC:				; CODE XREF: RAM:85A8j
 		CMP	#$2D ; '-'
 		BCC	loc_858C
 		LDA	#$2D ; '-'
-		STA	7
+		STA	off_7
 		LDX	#0
 		STX	6
 		LDA	#$A9 ; '©'

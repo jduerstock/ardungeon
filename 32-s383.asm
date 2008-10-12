@@ -331,11 +331,11 @@ loc_784B:				; CODE XREF: sub_7758+E7j
 		LDA	#0
 		SEC
 		SBC	$64E4
-		STA	7
+		STA	off_7
 		LDA	#$75 ; 'u'
 		SBC	$64E5
 		BNE	loc_786A
-		LDA	7
+		LDA	off_7
 		CMP	#$10
 		BCS	loc_786A
 		LDX	#$7F ; ''
@@ -478,9 +478,9 @@ loc_7949:				; CODE XREF: sub_7758+1E8j
 ; ---------------------------------------------------------------------------
 
 loc_7955:				; CODE XREF: sub_7758+1F4j
-		STA	7
+		STA	off_7
 		LDA	#0
-		STA	8
+		STA	off_7+1
 		STA	3
 		LDA	#$64 ; 'd'
 		STA	2
@@ -777,14 +777,14 @@ loc_7AE6:				; CODE XREF: RAM:7AD6j
 		LDA	byte_7BD2
 		LSR	A
 		PHP
-		LDA	($62),Y
+		LDA	(off_62),Y
 		AND	#$F
 		CLC
-		STA	7
+		STA	off_7
 		LDA	#0
 
 loc_7B10:				; CODE XREF: RAM:7B13j
-		ADC	7
+		ADC	off_7
 		DEX
 		BNE	loc_7B10
 		LSR	A
@@ -1861,14 +1861,8 @@ loc_84D9:				; CODE XREF: RAM:84DDj
 		STA	$D407
 		LDA	#4
 		STA	$D01B
-		LDA	#0
-		STA	7
-		LDA	#$BC ; '¼'
-		STA	8
-		LDA	#$F0 ; 'ð'
-		STA	9
-		LDA	#4
-		STA	$A
+		dldi	off_7, $BC00	
+		dldi	off_9, $04F0
 		LDA	#0
 		STA	6
 
@@ -1901,7 +1895,7 @@ loc_8527:				; CODE XREF: RAM:8523j
 		CMP	#$2D ; '-'
 		BCC	loc_8507
 		LDA	#$2D ; '-'
-		STA	7
+		STA	off_7
 		LDX	#0
 		STX	6
 		LDA	#$A9 ; '©'

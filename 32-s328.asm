@@ -1,3 +1,5 @@
+		.include	"globals.inc"
+		.include	"macros.inc"
 
 ;		.ORG	$7600
 		.BYTE	$10
@@ -51,10 +53,7 @@ loc_7640:				; CODE XREF: RAM:7624j
 		JSR	$184B
 		LDA	$1933
 		STA	$67
-		LDA	#$53 ; 'S'
-		STA	7
-		LDA	#$89 ; '‰'
-		STA	8
+		dldi	off_7, $8953
 		LDA	#2
 		JSR	$180F
 		LDA	#0
@@ -1305,14 +1304,8 @@ loc_8837:				; CODE XREF: RAM:883Bj
 		STA	$D407
 		LDA	#4
 		STA	$D01B
-		LDA	#0
-		STA	7
-		LDA	#$BC ; '¼'
-		STA	8
-		LDA	#$F0 ; 'ð'
-		STA	9
-		LDA	#4
-		STA	$A
+		dldi	off_7, $BC00
+		dldi	off_9, $04F0
 		LDA	#0
 		STA	6
 
@@ -1345,7 +1338,7 @@ loc_8885:				; CODE XREF: RAM:8881j
 		CMP	#$2D ; '-'
 		BCC	loc_8865
 		LDA	#$2D ; '-'
-		STA	7
+		STA	off_7
 		LDX	#0
 		STX	6
 		LDA	#$A9 ; '©'
