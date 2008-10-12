@@ -1,14 +1,12 @@
 		.include	"exp_kernel.inc"
 		.include	"globals.inc"
+		.include	"macros.inc"
 
 ;		.ORG	$7600
 		NOP
 		LDA	#$F
 		STA	SEGNO
-		LDA	#$F0 ; 'ð'
-		STA	SEGADDR
-		LDA	#$96 ; '–'
-		STA	SEGADDR+1
+		dldi	SEGADDR, $96F0
 		JSR	j_SEGLOAD
 		LDA	#1
 		JSR	$180F
@@ -26,14 +24,8 @@
 		STA	off_224+1
 		LDA	#$FF
 		STA	$22F
-		LDA	#$58 ; 'X'
-		STA	7
-		LDA	#$77 ; 'w'
-		STA	8
-		LDA	#$F0 ; 'ð'
-		STA	9
-		LDA	#$9F ; 'Ÿ'
-		STA	$A
+		dldi	off_7, $7758
+		dldi	off_9, $9FF0
 		LDA	#$20 ; ' '
 		STA	$B
 		LDA	#5

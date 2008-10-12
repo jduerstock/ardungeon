@@ -1,6 +1,7 @@
 		.include	"equates.inc"
 		.include	"exp_kernel.inc"
 		.include	"globals.inc"
+		.include	"macros.inc"
 
 ;		.ORG	$7600
 		LDA	#0
@@ -1959,14 +1960,8 @@ loc_851B:				; CODE XREF: RAM:851Fj
 		STA	$D407
 		LDA	#4
 		STA	$D01B
-		LDA	#$C0 ; 'À'
-		STA	7
-		LDA	#$BB ; '»'
-		STA	8
-		LDA	#0
-		STA	9
-		LDA	#4
-		STA	$A
+		dldi	off_7, $BBC0
+		dldi	off_9, $0400
 		LDA	#0
 		STA	6
 
@@ -1979,9 +1974,9 @@ loc_8549:				; CODE XREF: RAM:856Fj
 loc_8551:				; CODE XREF: RAM:855Cj
 		LSR	4
 		BCC	loc_855B
-		LDA	(9),Y
-		ORA	#$80 ; '€'
-		STA	(9),Y
+		LDA	(off_9),Y
+		ORA	#$80
+		STA	(off_9),Y
 
 loc_855B:				; CODE XREF: RAM:8553j
 		DEY
@@ -1998,12 +1993,12 @@ loc_8569:				; CODE XREF: RAM:8565j
 		LDA	6
 		CMP	#$78 ; 'x'
 		BCC	loc_8549
-		LDA	7
+		LDA	off_7
 		CLC
 		ADC	#$78 ; 'x'
-		STA	7
+		STA	off_7
 		BCC	loc_857C
-		INC	8
+		INC	off_7+1
 
 loc_857C:				; CODE XREF: RAM:8578j
 		LDX	#0

@@ -3425,10 +3425,7 @@ loc_2ABA:				; CODE XREF: sub_2AA0+26j
 		STX	6
 
 loc_2ACB:				; CODE XREF: sub_2AA0+56j
-		LDA	#$A
-		STA	7
-		LDA	#0
-		STA	8
+		dldi	off_7, $000A
 		JSR	sub_2B47
 		LDA	4
 		ORA	5
@@ -9585,10 +9582,7 @@ unk_540D:	.BYTE	8		; DATA XREF: RAM:loc_53F5r
 loc_540F:
 		LDA	$4B
 		STA	byte_627C
-		LDA	off_43
-		STA	7
-		LDA	off_43+1
-		STA	8
+		dmv	off_7, off_43
 		LDY	#0
 		LDA	(off_7),Y
 		CMP	#1
@@ -10723,9 +10717,9 @@ loc_5BB8:				; CODE XREF: RAM:18ABj
 		LDA	3
 		STA	byte_5A19
 		LDA	unk_5A90,X
-		STA	7
+		STA	off_7
 		LDA	unk_5A9C,X
-		STA	8
+		STA	off_7+1
 		LDY	#0
 
 loc_5BD1:				; CODE XREF: sub_5AB4+125j
