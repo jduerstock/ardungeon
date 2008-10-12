@@ -43,29 +43,17 @@ loc_7620:				; CODE XREF: RAM:7627j
 		JSR	$184B
 		LDA	$1933
 		STA	$64
-		LDA	#$E2 ; 'â'
-		STA	7
-		LDA	#$89 ; '‰'
-		STA	8
-		LDA	#0
-		STA	9
-		LDA	#$9C ; 'œ'
-		STA	$A
-		LDA	#$54 ; 'T'
-		STA	$B
-		LDA	#2
-		STA	$C
+		dldi	off_7, $89E2
+		dldi	off_9, $9C00
+		dldi	word_B, $0254
 		JSR	$187E
-		LDA	#$36 ; '6'
-		STA	7
-		LDA	#$8C ; 'Œ'
-		STA	8
+		dldi	off_7, $8C36
 		LDA	#2
 		JSR	$180F
 		dldi	SEGADDR, $9EF0
-		LDA	#$3A ; ':'
+		LDA	#$3A		; tavern talk
 		STA	SEGNO
-		JSR	$1842
+		JSR	j_SEGLOAD
 
 loc_767D:				; CODE XREF: RAM:7684j
 		LDA	$D20A
@@ -75,11 +63,11 @@ loc_767D:				; CODE XREF: RAM:7684j
 		ADC	#$37 ; '7'
 		STA	SEGNO
 		dldi	SEGADDR, $8A00
-		JSR	$1842
+		JSR	j_SEGLOAD
 		dldi	SEGADDR, $96F0
 		LDA	#$F
 		STA	SEGNO
-		JSR	$1842
+		JSR	j_SEGLOAD
 		JSR	$96F5
 		LDA	#$71 ; 'q'
 		STA	$224
@@ -1003,9 +991,9 @@ sub_7C50:				; CODE XREF: RAM:78B7p	RAM:7CE3p ...
 		LSR	A
 		TAX
 		LDA	unk_7C79,X
-		STA	7
+		STA	off_7
 		LDA	unk_7C81,X
-		STA	8
+		STA	off_7+1
 		JSR	$18A2
 		LDA	3
 		RTS
@@ -2572,29 +2560,23 @@ loc_8B1A:				; CODE XREF: RAM:8B1Ej
 		STA	$D407
 		LDA	#4
 		STA	$D01B
-		LDA	#0
-		STA	7
-		LDA	#$BC ; '¼'
-		STA	8
-		LDA	#$F0 ; 'ð'
-		STA	9
-		LDA	#4
-		STA	$A
+		dldi	off_7, $BC00
+		dldi	off_9, $04F0
 		LDA	#0
 		STA	6
 
 loc_8B48:				; CODE XREF: RAM:8B6Ej
 		LDY	6
-		LDA	(7),Y
+		LDA	(off_7),Y
 		STA	4
 		LDY	#7
 
 loc_8B50:				; CODE XREF: RAM:8B5Bj
 		LSR	4
 		BCC	loc_8B5A
-		LDA	(9),Y
+		LDA	(off_9),Y
 		ORA	#$80 ; '€'
-		STA	(9),Y
+		STA	(off_9),Y
 
 loc_8B5A:				; CODE XREF: RAM:8B52j
 		DEY
@@ -2612,7 +2594,7 @@ loc_8B68:				; CODE XREF: RAM:8B64j
 		CMP	#$2D ; '-'
 		BCC	loc_8B48
 		LDA	#$2D ; '-'
-		STA	7
+		STA	off_7
 		LDX	#0
 		STX	6
 		LDA	#$A9 ; '©'
@@ -2638,7 +2620,7 @@ loc_8B93:				; CODE XREF: RAM:8BB0j
 
 loc_8B95:				; CODE XREF: RAM:8BAEj
 		LDY	6
-		LDA	(7),Y
+		LDA	(off_7),Y
 		LDY	#4
 
 loc_8B9B:				; CODE XREF: RAM:8BA0j

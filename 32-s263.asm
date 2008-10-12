@@ -108,11 +108,8 @@ loc_76B0:				; CODE XREF: RAM:7632j
 		dldi	SEGADDR, $96F0
 		LDA	#$33 ; '3'
 		STA	SEGNO
-		JSR	$1842
-		LDA	#$F0 ; 'ð'
-		STA	7
-		LDA	#$96 ; '–'
-		STA	8
+		JSR	j_SEGLOAD
+		dldi	off_7, $96F0
 		LDA	#2
 		JSR	$180F
 		LDA	#3

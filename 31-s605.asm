@@ -128,7 +128,7 @@ loc_76CF:				; CODE XREF: RAM:76A3j	RAM:76A8j ...
 		ADC	#7
 		STA	SEGNO
 		dldi	SEGADDR, $96F0
-		JSR	$1842
+		JSR	j_SEGLOAD
 
 loc_76F1:				; CODE XREF: RAM:76D5j
 		JSR	sub_7AD4

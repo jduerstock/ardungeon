@@ -1,3 +1,4 @@
+		.include	"globals.inc"
 		.include	"exp_kernel.inc"
 		.include	"macros.inc"
 
@@ -7,7 +8,7 @@
 		LDA	#$F
 		STA	SEGNO
 		dldi	SEGADDR, $96F0
-		JSR	$1842
+		JSR	j_SEGLOAD
 		LDA	#1
 		JSR	$180F
 		LDA	$254

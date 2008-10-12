@@ -73,14 +73,14 @@ loc_7661:				; CODE XREF: RAM:765Aj
 		LDA	#$F
 		STA	SEGNO
 		dldi	SEGADDR, $96F0
-		JSR	$1842
+		JSR	j_SEGLOAD
 		LDA	$67
 		LSR	A
 		LDA	#$40 ; '@'
 		ADC	#0
 		STA	SEGNO
 		dldi	SEGADDR, $9FF0
-		JSR	$1842
+		JSR	j_SEGLOAD
 		dldi	off_16, $8230
 		JSR	$184B
 		LDA	$1933

@@ -31,7 +31,7 @@ loc_7610:				; CODE XREF: RAM:7601j
 		dldi	SEGADDR, byte_890B
 		LDA	#$34 ; '4'
 		STA	SEGNO
-		JSR	$1842
+		JSR	j_SEGLOAD
 		JMP	loc_764D
 ; ---------------------------------------------------------------------------
 
@@ -46,7 +46,7 @@ loc_764D:				; CODE XREF: RAM:7646j
 		dldi	SEGADDR, $96F0
 		LDA	#$F
 		STA	SEGNO
-		JSR	$1842
+		JSR	j_SEGLOAD
 		JSR	$96F5
 		dmv	off_224, $96F3
 		DEC	$22F
