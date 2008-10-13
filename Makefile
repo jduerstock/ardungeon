@@ -48,6 +48,9 @@ ASM_SOURCES= \
 	32-s526.asm 32-s527.asm \
 	32-s553.asm 32-s554.asm \
 	32-s566.asm 32-s567.asm \
+	32-s575.asm 32-s576.asm \
+	32-s622.asm 32-s623.asm \
+	32-s655.asm 32-s656.asm \
 	32-s684.asm 32-s685.asm
 
 OBJECTS=$(ASM_SOURCES:.asm=.bin)
@@ -85,6 +88,24 @@ all: $(OBJECTS)
 	cat 31-s671.bin 31-s672.bin.crypt >> ar31.img
 	cat 31-s682.bin >> ar31.img
 	sha1sum -c ar31.sha1
+	cat 32-s001.bin 32-s002.bin.crypt > ar32.img
+	cat 32-s034.bin 32-s035.bin.crypt >> ar32.img
+	cat 32-s091.bin 32-s092.bin.crypt >> ar32.img
+	cat 32-s126.bin 32-s127.bin.crypt >> ar32.img
+	cat 32-s183.bin 32-s184.bin.crypt >> ar32.img
+	cat 32-s262.bin 32-s263.bin.crypt >> ar32.img
+	cat 32-s327.bin 32-s328.bin.crypt >> ar32.img
+	cat 32-s382.bin 32-s383.bin.crypt >> ar32.img
+	cat 32-s431.bin 32-s432.bin.crypt >> ar32.img
+	cat 32-s494.bin 32-s495.bin.crypt >> ar32.img
+	cat 32-s510.bin 32-s511.bin.crypt >> ar32.img
+	cat 32-s526.bin 32-s527.bin.crypt >> ar32.img
+	cat 32-s553.bin 32-s554.bin.crypt >> ar32.img
+	cat 32-s566.bin 32-s567.bin.crypt >> ar32.img
+	cat 32-s575.bin 32-s576.bin.crypt >> ar32.img
+	cat 32-s622.bin 32-s623.bin.crypt >> ar32.img
+	cat 32-s655.bin 32-s656.bin.crypt >> ar32.img
+	cat 32-s684.bin 32-s685.bin.crypt >> ar32.img
 
 %.o: %.asm
 	$(CA) $(AFLAGS) $< -o $@
@@ -269,90 +290,126 @@ all: $(OBJECTS)
 
 32-s002.bin: 32-s002.asm
 	cl65 --start-addr 0x7600 -t none 32-s002.asm -o 32-s002.bin
+	./encrypt.php 32-s002.bin 54010010a05fd0547bd9ae31b386849c
 
 32-s034.bin: 32-s034.asm
 	cl65 --start-addr 0x0100 -t none 32-s034.asm -o 32-s034.bin
 
 32-s035.bin: 32-s035.asm
 	cl65 --start-addr 0x7600 -t none 32-s035.asm -o 32-s035.bin
+	./encrypt.php 32-s035.bin 5422001cc443275ea2a1a8a800a5da1e
 
 32-s091.bin: 32-s091.asm
 	cl65 --start-addr 0x0100 -t none 32-s091.asm -o 32-s091.bin
 
 32-s092.bin: 32-s092.asm
 	cl65 --start-addr 0x7600 -t none 32-s092.asm -o 32-s092.bin
+	./encrypt.php 32-s092.bin 545b00112026f08728733f4de9dceb2c
 
 32-s126.bin: 32-s126.asm
 	cl65 --start-addr 0x0100 -t none 32-s126.asm -o 32-s126.bin
 
 32-s127.bin: 32-s127.asm
 	cl65 --start-addr 0x7600 -t none 32-s127.asm -o 32-s127.bin
+	./encrypt.php 32-s127.bin 547e001cd04061c7b2e9e2a38787b592
 
 32-s183.bin: 32-s183.asm
 	cl65 --start-addr 0x0100 -t none 32-s183.asm -o 32-s183.bin
 
 32-s184.bin: 32-s184.asm
 	cl65 --start-addr 0x7600 -t none 32-s184.asm -o 32-s184.bin
+	./encrypt.php 32-s184.bin 54b70027140ebef8a25661c5160a2805
 
 32-s262.bin: 32-s262.asm
 	cl65 --start-addr 0x0100 -t none 32-s262.asm -o 32-s262.bin
 
 32-s263.bin: 32-s263.asm
 	cl65 --start-addr 0x7600 -t none 32-s263.asm -o 32-s263.bin
+	./encrypt.php 32-s263.bin 550600204b948601bd9f8bbeccff9b70
 
 32-s327.bin: 32-s327.asm
 	cl65 --start-addr 0x0100 -t none 32-s327.asm -o 32-s327.bin
 
 32-s328.bin: 32-s328.asm
 	cl65 --start-addr 0x7600 -t none 32-s328.asm -o 32-s328.bin
+	./encrypt.php 32-s328.bin 5547001b9df7abe47b3c558d4a969e51
 
 32-s382.bin: 32-s382.asm
 	cl65 --start-addr 0x0100 -t none 32-s382.asm -o 32-s382.bin
 
 32-s383.bin: 32-s383.asm
 	cl65 --start-addr 0x7600 -t none 32-s383.asm -o 32-s383.bin
+	./encrypt.php 32-s383.bin 557e0018f5430fe6e47fe06607cbbcb2
 
 32-s431.bin: 32-s431.asm
 	cl65 --start-addr 0x0100 -t none 32-s431.asm -o 32-s431.bin
 
 32-s432.bin: 32-s432.asm
 	cl65 --start-addr 0x7600 -t none 32-s432.asm -o 32-s432.bin
+	./encrypt.php 32-s432.bin 55af001f7b462cdfe12dfa0facb0bd3e
 
 32-s494.bin: 32-s494.asm
 	cl65 --start-addr 0x0100 -t none 32-s494.asm -o 32-s494.bin
 
 32-s495.bin: 32-s495.asm
 	cl65 --start-addr 0x96F0 -t none 32-s495.asm -o 32-s495.bin
+	./encrypt.php 32-s495.bin 55ee800795b90cbc9502b50cdb7e93d2
 
 32-s510.bin: 32-s510.asm
 	cl65 --start-addr 0x0100 -t none 32-s510.asm -o 32-s510.bin
 
 32-s511.bin: 32-s511.asm
 	cl65 --start-addr 0x890B -t none 32-s511.asm -o 32-s511.bin
+	./encrypt.php 32-s511.bin 55fe800714cfcd4f32c02942e0be7cc1
 
 32-s526.bin: 32-s526.asm
 	cl65 --start-addr 0x0100 -t none 32-s526.asm -o 32-s526.bin
 
 32-s527.bin: 32-s527.asm
 	cl65 --start-addr 0x8A00 -t none 32-s527.asm -o 32-s527.bin
+	./encrypt.php 32-s527.bin 560e000df6e170d349d75895b4c8857a
 
 32-s553.bin: 32-s553.asm
 	cl65 --start-addr 0x0100 -t none 32-s553.asm -o 32-s553.bin
 
 32-s554.bin: 32-s554.asm
 	cl65 --start-addr 0x8A00 -t none 32-s554.asm -o 32-s554.bin
+	./encrypt.php 32-s554.bin 56290006753cd7db9ee05661f2768f85
 
 32-s566.bin: 32-s566.asm
 	cl65 --start-addr 0x0100 -t none 32-s566.asm -o 32-s566.bin
 
 32-s567.bin: 32-s567.asm
 	cl65 --start-addr 0x8A00 -t none 32-s567.asm -o 32-s567.bin
+	./encrypt.php 32-s567.bin 56360004a2ce1f783637657983d63b83
+
+32-s575.bin: 32-s575.asm
+	cl65 --start-addr 0x0100 -t none 32-s575.asm -o 32-s575.bin
+
+32-s576.bin: 32-s576.asm
+	cl65 --start-addr 0x9EF0 -t none 32-s576.asm -o 32-s576.bin
+	./encrypt.php 32-s576.bin 563f0017b55e3818cc9f5161e346851b
+
+32-s622.bin: 32-s622.asm
+	cl65 --start-addr 0x0100 -t none 32-s622.asm -o 32-s622.bin
+
+32-s623.bin: 32-s623.asm
+	cl65 --start-addr 0x9FF0 -t none 32-s623.asm -o 32-s623.bin
+	./encrypt.php 32-s623.bin 566e00102139428c5333f472a9792e0d
+
+32-s655.bin: 32-s655.asm
+	cl65 --start-addr 0x0100 -t none 32-s655.asm -o 32-s655.bin
+
+32-s656.bin: 32-s656.asm
+	cl65 --start-addr 0x9FF0 -t none 32-s656.asm -o 32-s656.bin
+	./encrypt.php 32-s656.bin 568f000ef9b4d14b437b2e8928108dd7
 
 32-s684.bin: 32-s684.asm
 	cl65 --start-addr 0x0100 -t none 32-s684.asm -o 32-s684.bin
 
 32-s685.bin: 32-s685.asm
 	cl65 --start-addr 0x96F0 -t none 32-s685.asm -o 32-s685.bin
+	./encrypt.php 32-s685.bin 56ac00056a9ea390ed15fd6cb04c2891
 
 clean:
-	$(RM) -f $(OBJECTS) *.*~ *.bin.crypt *.o ar11.img ar31.img
+	$(RM) -f $(OBJECTS) *.*~ *.bin.crypt *.o ar11.img ar31.img ar32.img
