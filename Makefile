@@ -51,7 +51,8 @@ ASM_SOURCES= \
 	32-s575.asm 32-s576.asm \
 	32-s622.asm 32-s623.asm \
 	32-s655.asm 32-s656.asm \
-	32-s684.asm 32-s685.asm
+	32-s684.asm 32-s685.asm \
+	32-s695.asm
 
 OBJECTS=$(ASM_SOURCES:.asm=.bin)
 
@@ -106,6 +107,7 @@ all: $(OBJECTS)
 	cat 32-s622.bin 32-s623.bin.crypt >> ar32.img
 	cat 32-s655.bin 32-s656.bin.crypt >> ar32.img
 	cat 32-s684.bin 32-s685.bin.crypt >> ar32.img
+	cat 32-s695.bin >> ar32.img
 
 %.o: %.asm
 	$(CA) $(AFLAGS) $< -o $@
@@ -410,6 +412,9 @@ all: $(OBJECTS)
 32-s685.bin: 32-s685.asm
 	cl65 --start-addr 0x96F0 -t none 32-s685.asm -o 32-s685.bin
 	./encrypt.php 32-s685.bin 56ac00056a9ea390ed15fd6cb04c2891
+
+32-s695.bin: 32-s695.asm
+	cl65 --start-addr 0x1000 -t none 32-s695.asm -o 32-s695.bin
 
 clean:
 	$(RM) -f $(OBJECTS) *.*~ *.bin.crypt *.o ar11.img ar31.img ar32.img
