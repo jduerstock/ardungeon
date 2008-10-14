@@ -1,3 +1,8 @@
+		.include	"globals.inc"
+		.include	"exp_kernel.inc"
+		.include	"macros.inc"
+
+off_63	= $63
 
 ;		.ORG	$7600
 		.BYTE	$17
@@ -23,42 +28,29 @@ loc_7610:				; CODE XREF: RAM:7601j
 		LDA	#2
 		JSR	$180F
 		DEC	$1937
-		LDA	#$3B ; ';'
-		STA	$1977
-		LDA	#$76 ; 'v'
-		STA	$1978
-		LDA	#$E4 ; 'ä'
-		STA	$16
-		LDA	#$76 ; 'v'
-		STA	$17
+		dldi	off_1977, loc_763B
+		dldi	off_16, $76E4
 		JSR	$184B
 		LDA	$1933
 		STA	$62
 		RTS
 ; ---------------------------------------------------------------------------
-		LDA	#$E6 ; 'æ'
-		STA	$16
-		LDA	#$76 ; 'v'
-		STA	$17
+
+loc_763B:
+		dldi	off_16, $76E6
 		JSR	sub_76C4
 		LDX	#$75 ; 'u'
 		LDY	#8
 		LDA	#2
 		JSR	$1863
 		BCC	loc_765F
-		LDA	#$57 ; 'W'
-		STA	$16
-		LDA	#$77 ; 'w'
-		STA	$17
+		dldi	off_16, $7757
 		JSR	sub_76C4
 		JMP	loc_76AD
 ; ---------------------------------------------------------------------------
 
 loc_765F:				; CODE XREF: RAM:764Fj
-		LDA	#$CE ; 'Î'
-		STA	$63
-		LDA	#$76 ; 'v'
-		STA	$64
+		dldi	off_63, $76CE
 		LDA	#$B
 		STA	$65
 		LDX	#$75 ; 'u'
@@ -69,19 +61,19 @@ loc_765F:				; CODE XREF: RAM:764Fj
 
 loc_7675:				; CODE XREF: RAM:769Aj
 		LDY	#0
-		LDA	($63),Y
+		LDA	(off_63),Y
 		STA	$16
 		INY
-		LDA	($63),Y
+		LDA	(off_63),Y
 		STA	$17
 		LDX	$62
 		JSR	$1851
-		LDA	$63
+		LDA	off_63
 		CLC
 		ADC	#2
-		STA	$63
+		STA	off_63
 		BCC	loc_7690
-		INC	$64
+		INC	off_63+1
 
 loc_7690:				; CODE XREF: RAM:768Cj
 		JSR	$183C

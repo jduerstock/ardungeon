@@ -35,14 +35,8 @@ loc_7625:				; CODE XREF: RAM:762Cj
 		STA	$750D,X
 		DEX
 		BPL	loc_7625
-		LDA	#$5D ; ']'
-		STA	$1977
-		LDA	#$76 ; 'v'
-		STA	$1978
-		LDA	#$6E ; 'n'
-		STA	$16
-		LDA	#$7C ; '|'
-		STA	$17
+		dldi	off_1977, loc_765D
+		dldi	off_16, $7C6E
 		JSR	$184B
 		LDA	$1933
 		STA	$66
@@ -61,6 +55,8 @@ loc_764B:				; CODE XREF: RAM:7652j
 		STX	byte_96F0
 		JMP	$180C
 ; ---------------------------------------------------------------------------
+
+loc_765D:
 		JSR	$1869
 		LDA	$630F
 		CMP	$753E
@@ -91,10 +87,7 @@ loc_768C:				; CODE XREF: RAM:766Ej	RAM:76A8j ...
 		JSR	$1851
 
 loc_7699:				; CODE XREF: RAM:76B6j
-		LDA	#$AD ; '­'
-		STA	$1977
-		LDA	#$76 ; 'v'
-		STA	$1978
+		dldi	off_1977, loc_76AD
 		JMP	$1806
 ; END OF FUNCTION CHUNK	FOR sub_78D8
 ; ---------------------------------------------------------------------------
@@ -104,6 +97,8 @@ loc_76A6:				; CODE XREF: RAM:76BEj
 		BNE	loc_768C
 		JMP	loc_775D
 ; ---------------------------------------------------------------------------
+
+loc_76AD:
 		JSR	$1821
 		AND	#2
 		BNE	loc_7649

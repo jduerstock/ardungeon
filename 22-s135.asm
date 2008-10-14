@@ -1,3 +1,6 @@
+		.include	"globals.inc"
+		.include	"exp_kernel.inc"
+		.include	"macros.inc"
 
 ;		.ORG	$7600
 		.BYTE $13
@@ -26,49 +29,35 @@ loc_7619:				; CODE XREF: RAM:7620j
 		STA	$750D,X
 		DEX
 		BPL	loc_7619
-		LDA	#$4A ; 'J'
-		STA	$1977
-		LDA	#$76 ; 'v'
-		STA	$1978
-		LDA	#$B1 ; '±'
-		STA	$16
-		LDA	#$77 ; 'w'
-		STA	$17
+		dldi	off_1977, loc_764A
+		dldi	off_16, $77B1
 		JSR	$184B
 		LDA	$1933
 		STA	$68
-		LDA	#$34 ; '4'
-		STA	7
-		LDA	#$7C ; '|'
-		STA	8
+		dldi	off_7, $7C34
 		LDA	#2
 		JSR	$180F
 		RTS
 ; ---------------------------------------------------------------------------
-		LDA	#$B3 ; '³'
-		STA	$16
-		LDA	#$77 ; 'w'
-		STA	$17
+
+loc_764A:
+		dldi	off_16, $77B3
 		LDX	$68
 		JSR	$1851
 		LDA	#$A
 		JSR	$185A
 
 loc_765C:				; CODE XREF: RAM:768Aj	RAM:76CBj ...
-		LDA	#8
-		STA	$16
-		LDA	#$78 ; 'x'
-		STA	$17
+		dldi	off_16, $7808
 		LDX	$68
 		JSR	$1851
 
 loc_7669:				; CODE XREF: RAM:7682j
-		LDA	#$76 ; 'v'
-		STA	$1977
-		LDA	#$76 ; 'v'
-		STA	$1978
+		dldi	off_1977, loc_7676
 		JMP	$1806
 ; ---------------------------------------------------------------------------
+
+loc_7676:
 		JSR	$1821
 		AND	#2
 		BEQ	loc_7680
@@ -80,14 +69,11 @@ loc_767D:				; CODE XREF: RAM:7686j
 loc_7680:				; CODE XREF: RAM:767Bj
 		LDA	$31
 		BMI	loc_7669
-		CMP	#$30 ; '0'
+		CMP	#'0'
 		BEQ	loc_767D
-		CMP	#$31 ; '1'
+		CMP	#'1'
 		BNE	loc_765C
-		LDA	#$B1 ; '±'
-		STA	$16
-		LDA	#$77 ; 'w'
-		STA	$17
+		dldi	off_16, $77B1
 		LDX	$68
 		JSR	$1851
 		JSR	$189F

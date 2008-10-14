@@ -41,29 +41,22 @@ loc_7628:				; CODE XREF: RAM:7619j
 		JSR	$184B
 		LDA	$1933
 		STA	$62
-		LDA	#$48 ; 'H'
-		STA	$1977
-		LDA	#$76 ; 'v'
-		STA	$1978
+		dldi	off_1977, loc_7648
 		RTS
 ; ---------------------------------------------------------------------------
+
+loc_7648:
 		LDX	#$75 ; 'u'
 		LDY	#8
 		LDA	#1
 		JSR	$1863
 		BCC	loc_765E
-		LDA	#$D1 ; 'Ñ'
-		STA	$16
-		LDA	#$77 ; 'w'
-		STA	$17
+		dldi	off_16, $77D1
 		JMP	loc_76F6
 ; ---------------------------------------------------------------------------
 
 loc_765E:				; CODE XREF: RAM:7651j
-		LDA	#$5E ; '^'
-		STA	$16
-		LDA	#$77 ; 'w'
-		STA	$17
+		dldi	off_16, $775E
 		LDX	$62
 		JSR	$1851
 		JSR	sub_770F
