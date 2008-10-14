@@ -64,17 +64,10 @@ loc_767D:				; CODE XREF: RAM:7684j
 		STA	SEGNO
 		JSR	j_SEGLOAD
 		JSR	$96F5
-		LDA	#$71 ; 'q'
-		STA	$224
-		LDA	#$7D ; '}'
-		STA	$225
-		LDA	$96F3
-		STA	loc_7DF9+1
-		LDA	$96F4
-		STA	loc_7DF9+2
+		dldi	off_224, $7D71
+		dmv	loc_7DF9+1, $96F3
 		DEC	$22F
-		LDX	#$8A ; 'Š'
-		LDY	#0
+		ldxy	$8A00
 		JMP	$96F0
 ; ---------------------------------------------------------------------------
 		JSR	$1869
