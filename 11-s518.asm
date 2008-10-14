@@ -3700,12 +3700,9 @@ loc_2C26:				; CODE XREF: sub_2BFA+24j
 ; ---------------------------------------------------------------------------
 
 loc_2C3F:
-		LDA	off_2C99
-		STA	off_1977
-		LDA	off_2C99+1
-		STA	off_1977+1
+		dmv	off_1977, off_2C99
 		LDA	$31
-		CMP	#$20 ; ' '
+		CMP	#' '
 		BEQ	loc_2C5B
 		DEC	byte_2C63
 		BNE	loc_2C13
@@ -3739,19 +3736,13 @@ loc_2C69:				; CODE XREF: sub_2C66+6j
 ; ---------------------------------------------------------------------------
 
 loc_2C6F:				; CODE XREF: RAM:1857j	RAM:2C96j
-		LDA	off_1977
-		STA	off_2C99
-		LDA	off_1977+1
-		STA	off_2C99+1
+		dmv	off_2C99, off_1977
 		dldi	off_1977, loc_2C88
 		JMP	loc_2FF3
 ; ---------------------------------------------------------------------------
 
 loc_2C88:
-		LDA	off_2C99
-		STA	off_1977
-		LDA	off_2C99+1
-		STA	off_1977+1
+		dmv	off_1977, off_2C99
 		LDA	$31
 		BMI	loc_2C6F
 		RTS
@@ -6483,10 +6474,7 @@ loc_40CD:				; CODE XREF: sub_408B+7j sub_408B+3Dj
 		BEQ	loc_40EB
 		JSR	sub_42E7
 		JSR	loc_43C6
-		LDA	#$69 ; 'i'
-		STA	off_16
-		LDA	#$39 ; '9'
-		STA	off_16+1
+		dldi	off_16, byte_3969
 		JSR	sub_1C84
 		JSR	sub_3C2D
 		LDA	#0
@@ -6513,10 +6501,7 @@ loc_4104:				; CODE XREF: sub_408B+7Dj
 		BPL	loc_4104
 		LDA	#1
 		JSR	sub_1A0D
-		LDA	#$69 ; 'i'
-		STA	off_16
-		LDA	#$39 ; '9'
-		STA	off_16+1
+		dldi	off_16, byte_3969
 		JSR	sub_1C84
 		DEC	byte_32
 		DEC	$F
