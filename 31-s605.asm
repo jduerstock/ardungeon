@@ -28,10 +28,7 @@ loc_7612:				; CODE XREF: RAM:7601j
 		JSR	$180F
 
 loc_761E:				; CODE XREF: RAM:7617j
-		LDA	#$41 ; 'A'
-		STA	$1977
-		LDA	#$76 ; 'v'
-		STA	$1978
+		dldi	off_1977, loc_7641
 		LDX	#$48 ; 'H'
 
 loc_762A:				; CODE XREF: RAM:7630j
@@ -47,6 +44,8 @@ loc_762A:				; CODE XREF: RAM:7630j
 		STX	byte_7855
 		RTS
 ; ---------------------------------------------------------------------------
+
+loc_7641:
 		BIT	$1975
 		BMI	loc_7649
 		JMP	loc_76F7
@@ -215,12 +214,11 @@ loc_776F:				; CODE XREF: RAM:775Cj
 		JSR	sub_7EBC
 
 loc_777C:				; CODE XREF: RAM:7764j	RAM:776Cj ...
-		LDA	#$89 ; '‰'
-		STA	$1977
-		LDA	#$77 ; 'w'
-		STA	$1978
+		dldi	off_1977, loc_7789
 		JMP	$1806
 ; ---------------------------------------------------------------------------
+
+loc_7789:
 		LDA	$31
 		CMP	#$20 ; ' '
 		BNE	loc_7797
@@ -257,17 +255,14 @@ loc_77C5:				; CODE XREF: RAM:77BBj
 		AND	#$F
 		BEQ	loc_777C
 		JSR	loc_7EE4
-		LDA	#$41 ; 'A'
-		STA	$1977
-		LDA	#$76 ; 'v'
-		STA	$1978
+		dldi	off_1977, loc_7641
 		LDX	#0
 		STX	$1954
 		DEX
 		STX	byte_7855
 		JMP	$1809
 
-; ЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫ S U B	R O U T	I N E ЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫ
+; --------------- S U B	R O U T	I N E ---------------------------------------
 
 
 sub_77E5:				; CODE XREF: RAM:76DAp	RAM:7703p ...
@@ -281,7 +276,7 @@ loc_77E7:				; CODE XREF: sub_77E5+6j
 ; End of function sub_77E5
 
 
-; ЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫ S U B	R O U T	I N E ЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫ
+; --------------- S U B	R O U T	I N E ---------------------------------------
 
 
 sub_77EE:				; CODE XREF: RAM:loc_7720p
@@ -408,7 +403,7 @@ loc_787B:				; DATA XREF: RAM:786Aw	RAM:7870w
 		BPL	loc_7858
 		RTS
 
-; ЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫ S U B	R O U T	I N E ЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫ
+; --------------- S U B	R O U T	I N E ---------------------------------------
 
 
 sub_7888:				; CODE XREF: sub_7AD4p
@@ -655,7 +650,7 @@ loc_79F5:				; CODE XREF: RAM:78E7j	RAM:7951j
 locret_7A1E:				; CODE XREF: RAM:7942j	RAM:7949j ...
 		RTS
 
-; ЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫ S U B	R O U T	I N E ЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫ
+; --------------- S U B	R O U T	I N E ---------------------------------------
 
 
 sub_7A1F:				; CODE XREF: sub_7AD4+D7p
@@ -788,7 +783,7 @@ unk_7AD0:	.BYTE $FB ; ы		; DATA XREF: RAM:7A6Dr
 		.BYTE	4
 		.BYTE	2
 
-; ЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫ S U B	R O U T	I N E ЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫ
+; --------------- S U B	R O U T	I N E ---------------------------------------
 
 
 sub_7AD4:				; CODE XREF: RAM:loc_76F1p
@@ -1253,7 +1248,7 @@ unk_7DE8:	.BYTE $DD ; Э		; DATA XREF: sub_7AD4+3Dr
 		.BYTE	0
 		.BYTE $DD ; Э
 
-; ЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫ S U B	R O U T	I N E ЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫ
+; --------------- S U B	R O U T	I N E ---------------------------------------
 
 
 sub_7DEC:				; CODE XREF: sub_7AD4+1CFp
@@ -1283,7 +1278,7 @@ loc_7DFB:				; CODE XREF: sub_7DEC+12j
 ; End of function sub_7DEC
 
 
-; ЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫ S U B	R O U T	I N E ЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫ
+; --------------- S U B	R O U T	I N E ---------------------------------------
 
 
 sub_7E0D:				; CODE XREF: sub_7AD4+A6p sub_7AD4+B4p ...
@@ -1312,7 +1307,7 @@ loc_7E1B:				; CODE XREF: sub_7E0D+11j
 ; End of function sub_7E0D
 
 
-; ЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫ S U B	R O U T	I N E ЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫ
+; --------------- S U B	R O U T	I N E ---------------------------------------
 
 
 sub_7E2D:				; CODE XREF: sub_7AD4+135p
@@ -1342,7 +1337,7 @@ loc_7E3B:				; CODE XREF: sub_7E2D+11j
 ; End of function sub_7E2D
 
 
-; ЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫ S U B	R O U T	I N E ЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫ
+; --------------- S U B	R O U T	I N E ---------------------------------------
 
 
 sub_7E4D:				; CODE XREF: RAM:764Cp
@@ -1411,7 +1406,7 @@ loc_7EB1:				; CODE XREF: sub_7E4D+10j sub_7E4D+15j ...
 ; End of function sub_7E4D
 
 
-; ЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫ S U B	R O U T	I N E ЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫ
+; --------------- S U B	R O U T	I N E ---------------------------------------
 
 
 sub_7EBC:				; CODE XREF: RAM:7779p
@@ -1426,7 +1421,7 @@ sub_7EBC:				; CODE XREF: RAM:7779p
 ; End of function sub_7EBC
 
 
-; ЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫ S U B	R O U T	I N E ЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫ
+; --------------- S U B	R O U T	I N E ---------------------------------------
 
 
 sub_7EC7:				; CODE XREF: RAM:7769p
@@ -1650,7 +1645,7 @@ unk_7FC5:	.BYTE $58 ; X		; DATA XREF: RAM:7867r
 		.BYTE $D8 ; Ш
 		.BYTE $D9 ; Щ
 		.BYTE $DA ; Ъ
-		.BYTE $DB ; Ы
+		.BYTE $DB ; -
 		.BYTE $DC ; Ь
 		.BYTE $DD ; Э
 		.BYTE $DE ; Ю
@@ -1674,7 +1669,7 @@ unk_7FC5:	.BYTE $58 ; X		; DATA XREF: RAM:7867r
 		.BYTE $D8 ; Ш
 		.BYTE $D9 ; Щ
 		.BYTE $DA ; Ъ
-		.BYTE $DB ; Ы
+		.BYTE $DB ; -
 		.BYTE $DC ; Ь
 		.BYTE $DD ; Э
 		.BYTE $DE ; Ю
@@ -1698,7 +1693,7 @@ unk_7FC5:	.BYTE $58 ; X		; DATA XREF: RAM:7867r
 		.BYTE $D8 ; Ш
 		.BYTE $D9 ; Щ
 		.BYTE $DA ; Ъ
-		.BYTE $DB ; Ы
+		.BYTE $DB ; -
 		.BYTE $DC ; Ь
 		.BYTE $DD ; Э
 		.BYTE $DE ; Ю
@@ -3364,7 +3359,7 @@ unk_8AFD:	.BYTE $7B ; {		; DATA XREF: RAM:785Br	RAM:78A4r
 		.BYTE $A5 ; Ґ
 		.BYTE $B7 ; ·
 		.BYTE $C9 ; Й
-		.BYTE $DB ; Ы
+		.BYTE $DB ; -
 		.BYTE $ED ; н
 		.BYTE $FF
 		.BYTE $11
@@ -3742,7 +3737,7 @@ unk_8CA3:	.BYTE $5F ; _		; DATA XREF: RAM:loc_7A7Br
 					; sub_7AD4:loc_7B2Ar
 		.BYTE $33 ; 3
 		.BYTE	7
-		.BYTE $DB ; Ы
+		.BYTE $DB ; -
 		.BYTE $AF ; Ї
 		.BYTE $83 ; ѓ
 		.BYTE $57 ; W

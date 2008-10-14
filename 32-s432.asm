@@ -1341,7 +1341,7 @@ loc_7E44:				; CODE XREF: RAM:7F25j
 
 loc_7E60:				; CODE XREF: RAM:7E8Dj	RAM:7ED0j
 		LDX	$64
-		dldi	off_16, $8586
+		dldi	off_16, $85B6
 		JSR	$1851
 
 loc_7E6D:				; CODE XREF: RAM:7E7Cj

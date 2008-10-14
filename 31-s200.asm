@@ -1,4 +1,6 @@
+		.include	"equates.inc"
 		.include	"globals.inc"
+		.include	"exp_kernel.inc"
 		.include	"macros.inc"
 ;		.ORG	$7600
 		.BYTE  $F
@@ -19,14 +21,8 @@ loc_760D:				; CODE XREF: RAM:7604j	RAM:7607j
 loc_7610:				; CODE XREF: RAM:7601j
 		LDA	#$FF
 		STA	$1937
-		LDA	#$3C ; '<'
-		STA	$1977
-		LDA	#$76 ; 'v'
-		STA	$1978
-		LDA	#$2C ; ','
-		STA	$16
-		LDA	#$79 ; 'y'
-		STA	$17
+		dldi	off_1977, loc_763C
+		dldi	off_16, $792C
 		JSR	$184B
 		LDA	$1933
 		STA	$62
@@ -34,6 +30,8 @@ loc_7610:				; CODE XREF: RAM:7601j
 		LDA	#2
 		JMP	$180F
 ; ---------------------------------------------------------------------------
+
+loc_763C:
 		LDA	#$3F ; '?'
 		STA	$72
 
@@ -72,26 +70,22 @@ loc_7673:				; CODE XREF: RAM:76AEj	RAM:76C0j ...
 		STA	$66
 		LDA	unk_7905,Y
 		STA	$67
-		LDA	#$2E ; '.'
-		STA	$16
-		LDA	#$79 ; 'y'
-		STA	$17
+		dldi	off_16, $792E
 		LDX	$62
 		JSR	$1851
 
 loc_768D:				; CODE XREF: RAM:76A3j
-		LDA	#$9A ; 'š'
-		STA	$1977
-		LDA	#$76 ; 'v'
-		STA	$1978
+		dldi	off_1977, loc_769A
 		JMP	$1806
 ; ---------------------------------------------------------------------------
+
+loc_769A:
 		JSR	$1821
 		AND	#2
 		BNE	loc_76A9
 		LDA	$31
 		BMI	loc_768D
-		CMP	#$30 ; '0'
+		CMP	#'0'
 		BNE	loc_76AC
 
 loc_76A9:				; CODE XREF: RAM:769Fj
@@ -99,24 +93,18 @@ loc_76A9:				; CODE XREF: RAM:769Fj
 ; ---------------------------------------------------------------------------
 
 loc_76AC:				; CODE XREF: RAM:76A7j
-		CMP	#$31 ; '1'
+		CMP	#'1'
 		BNE	loc_7673
 
 loc_76B0:				; CODE XREF: RAM:76D1j
-		LDA	#$4E ; 'N'
-		STA	$16
-		LDA	#$7A ; 'z'
-		STA	$17
+		dldi	off_16, $7A4E
 		LDX	$62
 		JSR	$1851
 		JSR	$18AE
 		BCS	loc_7673
 		BEQ	loc_7673
 		BPL	loc_76D4
-		LDA	#$BB ; '»'
-		STA	$16
-		LDA	#$7A ; 'z'
-		STA	$17
+		dldi	off_16, $7ABB
 		JSR	sub_7872
 		JMP	loc_76B0
 ; ---------------------------------------------------------------------------
@@ -124,10 +112,7 @@ loc_76B0:				; CODE XREF: RAM:76D1j
 loc_76D4:				; CODE XREF: RAM:76C4j
 		JSR	sub_787C
 		BCC	loc_76E7
-		LDA	#$DC ; 'Ü'
-		STA	$16
-		LDA	#$7A ; 'z'
-		STA	$17
+		dldi	off_16, $7ADC
 		JSR	sub_7872
 		JMP	loc_7673
 ; ---------------------------------------------------------------------------
@@ -229,13 +214,10 @@ loc_777C:				; CODE XREF: RAM:7773j
 
 loc_7784:				; CODE XREF: RAM:7779j	RAM:777Ej
 		LDA	$6386
-		LDA	#$EC ; 'ì'
-		STA	$16
-		LDA	#$7B ; '{'
-		STA	$17
+		dldi	off_16, $7BEC
 		LDX	$62
 		JSR	$1851
-		LDA	$D20A
+		LDA	RANDOM
 		AND	#3
 		LDY	$7525
 		CLC
@@ -251,12 +233,11 @@ loc_7784:				; CODE XREF: RAM:7779j	RAM:777Ej
 		JSR	$181E
 
 loc_77B7:				; CODE XREF: RAM:77F0j	RAM:7814j
-		LDA	#$C4 ; '-'
-		STA	$1977
-		LDA	#$77 ; 'w'
-		STA	$1978
+		dldi	off_1977, loc_77C4
 		JMP	$1806
 ; ---------------------------------------------------------------------------
+
+loc_77C4:
 		LDA	$63
 		CMP	$65
 		BCS	loc_7817

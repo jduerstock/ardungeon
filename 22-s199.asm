@@ -1,3 +1,4 @@
+		.include	"equates.inc"
 		.include	"globals.inc"
 		.include	"exp_kernel.inc"
 		.include	"macros.inc"
@@ -696,17 +697,13 @@ loc_7A48:				; CODE XREF: RAM:7A3Fj
 		ADC	#0
 		STA	$80
 		JSR	$1884
-		LDA	$D20A
+		LDA	RANDOM
 		CMP	#$33 ; '3'
 		BCS	loc_7A83
 		LDA	$73
-		LDX	#$75 ; 'u'
-		LDY	#$59 ; 'Y'
+		ldxy	$7559
 		JSR	$1860
-		LDA	#$C
-		STA	$16
-		LDA	#$81 ; 'Å'
-		STA	$17
+		dldi	off_16, $810C
 		LDX	$66
 		JSR	$1851
 		LDA	#6
@@ -715,19 +712,17 @@ loc_7A48:				; CODE XREF: RAM:7A3Fj
 loc_7A83:				; CODE XREF: RAM:7A66j
 		LDA	#1
 		JSR	$1899
-		LDX	#$84 ; 'Ñ'
-		LDY	#$D5 ; '’'
+		ldxy	$84D5
 		JSR	$185D
 		LDX	$66
 		JSR	$1851
 
 loc_7A94:				; CODE XREF: RAM:7AA3j	RAM:7AAEj
-		LDA	#$A1 ; '°'
-		STA	$1977
-		LDA	#$7A ; 'z'
-		STA	$1978
+		dldi	off_1977, loc_7AA1
 		JMP	$1806
 ; ---------------------------------------------------------------------------
+
+loc_7AA1:
 		LDA	$31
 		BMI	loc_7A94
 		JSR	j_UPPER
