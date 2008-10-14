@@ -1,3 +1,4 @@
+		.include	"equates.inc"
 		.include	"globals.inc"
 		.include	"exp_kernel.inc"
 		.include	"macros.inc"
@@ -32,14 +33,8 @@ loc_7620:				; CODE XREF: RAM:7627j
 		STA	$750D,X
 		DEX
 		BPL	loc_7620
-		LDA	#$CD ; 'Н'
-		STA	$1977
-		LDA	#$76 ; 'v'
-		STA	$1978
-		LDA	#$52 ; 'R'
-		STA	$16
-		LDA	#$82 ; '‚'
-		STA	$17
+		dldi	off_1977, $76CD
+		dldi	off_16, $8252
 		JSR	$184B
 		LDA	$1933
 		STA	$64
@@ -56,7 +51,7 @@ loc_7620:				; CODE XREF: RAM:7627j
 		JSR	j_SEGLOAD
 
 loc_767D:				; CODE XREF: RAM:7684j
-		LDA	$D20A
+		LDA	RANDOM
 		AND	#3
 		CMP	#3
 		BEQ	loc_767D
@@ -211,18 +206,17 @@ loc_77A5:				; CODE XREF: RAM:77C7j
 		JSR	$1848
 
 loc_77AD:				; CODE XREF: RAM:77BCj
-		LDA	#$BA ; 'є'
-		STA	$1977
-		LDA	#$77 ; 'w'
-		STA	$1978
+		dldi	off_1977, loc_77BA
 		JMP	$1806
 ; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
+
+loc_77BA:
 		LDA	$31
 		BMI	loc_77AD
-		JSR	$183F
-		CMP	#$4E ; 'N'
+		JSR	j_UPPER
+		CMP	#'N'
 		BEQ	loc_77F7
-		CMP	#$59 ; 'Y'
+		CMP	#'Y'
 		BNE	loc_77A5
 		LDA	$71
 		BPL	loc_77D2
@@ -389,10 +383,10 @@ loc_78C9:				; CODE XREF: RAM:78D8j
 ; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
 		LDA	$31
 		BMI	loc_78C9
-		JSR	$183F
-		CMP	#$4E ; 'N'
+		JSR	j_UPPER
+		CMP	#'N'
 		BEQ	loc_78F4
-		CMP	#$59 ; 'Y'
+		CMP	#'Y'
 		BNE	loc_78BC
 		LDA	$71
 		STA	2
@@ -736,7 +730,7 @@ loc_7AE4:				; CODE XREF: RAM:7AF3j
 ; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
 		LDA	$31
 		BMI	loc_7AE4
-		JSR	$183F
+		JSR	j_UPPER
 		CMP	#$46 ; 'F'
 		BNE	loc_7B0C
 		LDY	$78
@@ -870,10 +864,10 @@ loc_7BBB:				; CODE XREF: RAM:7BCAj
 ; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
 		LDA	$31
 		BMI	loc_7BBB
-		JSR	$183F
-		CMP	#$4E ; 'N'
+		JSR	j_UPPER
+		CMP	#'N'
 		BEQ	loc_7BDA
-		CMP	#$59 ; 'Y'
+		CMP	#'Y'
 		BNE	loc_7BAE
 		JMP	loc_7ABA
 ; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
@@ -1415,18 +1409,15 @@ loc_7EAD:				; CODE XREF: RAM:7F21j
 		JSR	$1851
 
 loc_7EBA:				; CODE XREF: RAM:7EC9j
-		LDA	#$C7 ; 'З'
-		STA	$1977
-		LDA	#$7E ; '~'
-		STA	$1978
+		dldi	off_1977,$7EC7
 		JMP	$1806
 ; ДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДДД
 		LDA	$31
 		BMI	loc_7EBA
-		JSR	$183F
-		CMP	#$4E ; 'N'
+		JSR	j_UPPER
+		CMP	#'N'
 		BEQ	loc_7E60
-		CMP	#$59 ; 'Y'
+		CMP	#'Y'
 		BNE	loc_7E9D
 		LDA	#0
 		STA	3

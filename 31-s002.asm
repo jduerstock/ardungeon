@@ -4379,7 +4379,7 @@ loc_8FE1:
 		INC	$32
 		LDA	$31
 		BMI	loc_8FD2
-		JSR	$183F
+		JSR	j_UPPER
 		CMP	#'Y'
 		BEQ	loc_901A
 		CMP	#'N'
@@ -6491,7 +6491,7 @@ loc_A04F:				; DATA XREF: RAM:A02Ao
 loc_A073:				; DATA XREF: RAM:A05Ew
 					; RAM:A064w
 		LDA	$FFFF
-		JSR	$183F
+		JSR	j_UPPER
 
 loc_A079:				; CODE XREF: RAM:A084j
 		CMP	byte_A0A5,X

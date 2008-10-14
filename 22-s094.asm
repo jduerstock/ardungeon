@@ -1,4 +1,5 @@
-
+		.include	"exp_kernel.inc"
+		
 ;		.ORG	$7600
 		.BYTE $E
 ; ---------------------------------------------------------------------------
@@ -241,7 +242,7 @@ loc_778B:				; CODE XREF: sub_776D+29j
 		DEY
 		BMI	loc_779A
 		LDA	$18D5,Y
-		JSR	$183F
+		JSR	j_UPPER
 		CMP	($67),Y
 		BEQ	loc_778B
 

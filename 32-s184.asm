@@ -361,28 +361,26 @@ loc_787A:				; CODE XREF: RAM:789Fj	RAM:7DABj
 		JSR	$1848
 
 loc_7882:				; CODE XREF: RAM:7891j
-		LDA	#$8F ; 'è'
-		STA	$1977
-		LDA	#$78 ; 'x'
-		STA	$1978
+		dldi	off_1977, loc_788F
 		JMP	$1806
 ; ---------------------------------------------------------------------------
+
+loc_788F:
 		LDA	$31
 		BMI	loc_7882
-		JSR	$183F
-		CMP	#$4E ; 'N'
+		JSR	j_UPPER
+		CMP	#'N'
 		BNE	loc_789D
 		JMP	loc_7968
 ; ---------------------------------------------------------------------------
 
 loc_789D:				; CODE XREF: RAM:7898j
-		CMP	#$59 ; 'Y'
+		CMP	#'Y'
 		BNE	loc_787A
 		LDA	$69
 		JSR	sub_7B11
 		BCC	loc_78B2
-		LDX	#$8D ; 'ç'
-		LDY	#$FE ; '˛'
+		ldxy	$8DFE
 		JSR	sub_78FC
 		JMP	loc_7968
 ; ---------------------------------------------------------------------------
@@ -716,10 +714,7 @@ locret_7A9A:				; CODE XREF: RAM:7AC6j
 ; ---------------------------------------------------------------------------
 
 loc_7A9B:				; DATA XREF: RAM:7B81o
-		LDA	#$3E ; '>'
-		STA	$16
-		LDA	#$86 ; 'Ü'
-		STA	$17
+		dldi	off_16, $863E
 		LDX	$66
 		JSR	$1851
 
@@ -729,18 +724,17 @@ loc_7AA8:				; CODE XREF: RAM:7ACAj
 		JSR	$1848
 
 loc_7AB0:				; CODE XREF: RAM:7ABFj
-		LDA	#$BD ; 'Ω'
-		STA	$1977
-		LDA	#$7A ; 'z'
-		STA	$1978
+		dldi	off_1977, loc_7ABD
 		JMP	$1806
 ; ---------------------------------------------------------------------------
+
+loc_7ABD:
 		LDA	$31
 		BMI	loc_7AB0
-		JSR	$183F
-		CMP	#$4E ; 'N'
+		JSR	j_UPPER
+		CMP	#'N'
 		BEQ	locret_7A9A
-		CMP	#$59 ; 'Y'
+		CMP	#'Y'
 		BNE	loc_7AA8
 		JMP	sub_7AE2
 
@@ -998,26 +992,25 @@ loc_7C35:				; CODE XREF: RAM:7C66j	RAM:7C75j ...
 		JSR	$1848
 
 loc_7C3D:				; CODE XREF: RAM:7C4Fj
-		LDA	#$4D ; 'M'
-		STA	$1977
-		LDA	#$7C ; '|'
-		STA	$1978
+		dldi	off_1977, loc_7C4D
 		JMP	$1806
 ; ---------------------------------------------------------------------------
 
 loc_7C4A:				; CODE XREF: RAM:7C79j
 		JMP	loc_7BF2
 ; ---------------------------------------------------------------------------
+
+loc_7C4D:
 		LDA	$31
 		BMI	loc_7C3D
-		JSR	$183F
+		JSR	j_UPPER
 		CMP	#$1B
 		BNE	loc_7C5B
 		JMP	loc_7B85
 ; ---------------------------------------------------------------------------
 
 loc_7C5B:				; CODE XREF: RAM:7C56j
-		CMP	#$46 ; 'F'
+		CMP	#'F'
 		BNE	loc_7C6C
 		CLC
 		LDA	$85
@@ -1028,7 +1021,7 @@ loc_7C5B:				; CODE XREF: RAM:7C56j
 		BNE	loc_7BF2
 
 loc_7C6C:				; CODE XREF: RAM:7C5Dj
-		CMP	#$42 ; 'B'
+		CMP	#'B'
 		BNE	loc_7C7B
 		LDA	$85
 		SEC
@@ -1160,18 +1153,17 @@ loc_7D43:				; CODE XREF: RAM:7D65j
 		JSR	$1848
 
 loc_7D4B:				; CODE XREF: RAM:7D5Aj
-		LDA	#$58 ; 'X'
-		STA	$1977
-		LDA	#$7D ; '}'
-		STA	$1978
+		dldi	off_1977, loc_7D58
 		JMP	$1806
 ; ---------------------------------------------------------------------------
+
+loc_7D58:
 		LDA	$31
 		BMI	loc_7D4B
-		JSR	$183F
-		CMP	#$4E ; 'N'
+		JSR	j_UPPER
+		CMP	#'N'
 		BEQ	locret_7D8B
-		CMP	#$59 ; 'Y'
+		CMP	#'Y'
 		BNE	loc_7D43
 		LDA	#$78 ; 'x'
 		JSR	sub_7B11
@@ -1295,22 +1287,21 @@ loc_7E21:				; CODE XREF: RAM:7E44j
 		JSR	$1848
 
 loc_7E29:				; CODE XREF: RAM:7E39j
-		LDA	#$37 ; '7'
-		STA	$1977
-		LDA	#$7E ; '~'
-		STA	$1978
+		dldi	off_1977, loc_7E37
 		JMP	$1806
 ; ---------------------------------------------------------------------------
 
 locret_7E36:				; CODE XREF: RAM:7E40j
 		RTS
 ; ---------------------------------------------------------------------------
+
+loc_7E37:
 		LDA	$31
 		BMI	loc_7E29
-		JSR	$183F
-		CMP	#$4E ; 'N'
+		JSR	j_UPPER
+		CMP	#'N'
 		BEQ	locret_7E36
-		CMP	#$59 ; 'Y'
+		CMP	#'Y'
 		BNE	loc_7E21
 		LDA	$79
 		STA	3
@@ -1402,10 +1393,7 @@ loc_7ED8:				; CODE XREF: RAM:7F0Bj
 		JSR	$1848
 
 loc_7EE0:				; CODE XREF: RAM:7EF8j
-		LDA	#$F6 ; 'ˆ'
-		STA	$1977
-		LDA	#$7E ; '~'
-		STA	$1978
+		dldi	off_1977, loc_7EF6
 		JMP	$1806
 ; ---------------------------------------------------------------------------
 
@@ -1420,16 +1408,18 @@ loc_7EF0:				; CODE XREF: RAM:7EA0j
 loc_7EF3:				; CODE XREF: RAM:7EA9j	RAM:7EAFj
 		JMP	loc_7F57
 ; ---------------------------------------------------------------------------
+
+loc_7EF6:
 		LDA	$31
 		BMI	loc_7EE0
 		CMP	#$1B
 		BEQ	locret_7F5C
-		JSR	$183F
-		CMP	#$4E ; 'N'
+		JSR	j_UPPER
+		CMP	#'N'
 		BEQ	loc_7F57
 		CMP	#$1B
 		BEQ	locret_7F5C
-		CMP	#$59 ; 'Y'
+		CMP	#'Y'
 		BNE	loc_7ED8
 		JSR	loc_80F8
 		LDA	$79
@@ -1497,20 +1487,19 @@ loc_7F6A:				; CODE XREF: RAM:7F90j
 		JSR	$1848
 
 loc_7F72:				; CODE XREF: RAM:7F81j
-		LDA	#$7F ; ''
-		STA	$1977
-		LDA	#$7F ; ''
-		STA	$1978
+		dldi	off_1977, loc_7F7F
 		JMP	$1806
 ; ---------------------------------------------------------------------------
+
+loc_7F7F:
 		LDA	$31
 		BMI	loc_7F72
 		CMP	#$1B
 		BEQ	locret_7F5C
-		JSR	$183F
-		CMP	#$4E ; 'N'
+		JSR	j_UPPER
+		CMP	#'N'
 		BEQ	locret_7F5C
-		CMP	#$59 ; 'Y'
+		CMP	#'Y'
 		BNE	loc_7F6A
 		LDX	$67
 		LDA	$94C8,X
@@ -1551,10 +1540,7 @@ loc_7FD3:				; CODE XREF: RAM:7FFFj
 		JSR	$1848
 
 loc_7FDB:				; CODE XREF: RAM:7FF0j
-		LDA	#$EE ; 'Ó'
-		STA	$1977
-		LDA	#$7F ; ''
-		STA	$1978
+		dldi	off_1977, loc_7FEE
 		JMP	$1806
 ; ---------------------------------------------------------------------------
 
@@ -1565,14 +1551,16 @@ loc_7FE8:				; CODE XREF: RAM:7FA4j	RAM:7FFBj
 loc_7FEB:				; CODE XREF: RAM:7FA9j	RAM:7FF7j
 		JMP	loc_80C9
 ; ---------------------------------------------------------------------------
+
+loc_7FEE:
 		LDA	$31
 		BMI	loc_7FDB
-		JSR	$183F
-		CMP	#$4E ; 'N'
+		JSR	j_UPPER
+		CMP	#'N'
 		BEQ	loc_7FEB
 		CMP	#$1B
 		BEQ	loc_7FE8
-		CMP	#$59 ; 'Y'
+		CMP	#'Y'
 		BNE	loc_7FD3
 		LDA	#$64 ; 'd'
 		JSR	sub_7B11
@@ -1811,18 +1799,17 @@ loc_816F:				; CODE XREF: RAM:8191j
 		JSR	$1848
 
 loc_8177:				; CODE XREF: RAM:8186j
-		LDA	#$84 ; 'Ñ'
-		STA	$1977
-		LDA	#$81 ; 'Å'
-		STA	$1978
+		dldi	off_1977, loc_8184
 		JMP	$1806
 ; ---------------------------------------------------------------------------
+
+loc_8184:
 		LDA	$31
 		BMI	loc_8177
-		JSR	$183F
-		CMP	#$4E ; 'N'
+		JSR	j_UPPER
+		CMP	#'N'
 		BEQ	loc_81A4
-		CMP	#$59 ; 'Y'
+		CMP	#'Y'
 		BNE	loc_816F
 		LDA	loc_81A4+1
 		STA	$4B

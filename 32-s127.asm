@@ -222,22 +222,18 @@ loc_777A:				; CODE XREF: RAM:7784j
 		INY
 		CPX	#8
 		BNE	loc_777A
-		LDA	#$D4 ; 'Ô'
-		STA	$16
-		LDA	#$7A ; 'z'
-		STA	$17
+		dldi	off_16, $7AD4
 		JSR	sub_78B8
 
 loc_7791:				; CODE XREF: RAM:77CFj	RAM:77D3j
-		LDA	#$9E ; 'ž'
-		STA	$1977
-		LDA	#$77 ; 'w'
-		STA	$1978
+		dldi	off_1977, loc_779E
 		JMP	$1806
 ; ---------------------------------------------------------------------------
+
+loc_779E:
 		LDA	$31
-		JSR	$183F
-		CMP	#$46 ; 'F'
+		JSR	j_UPPER
+		CMP	#'F'
 		BNE	loc_77B1
 		INC	$64
 		LDA	$64
@@ -251,7 +247,7 @@ loc_77B1:				; CODE XREF: RAM:77A5j	RAM:77C0j
 loc_77B3:				; CODE XREF: RAM:77ADj	RAM:77BCj
 		JMP	loc_7772
 ; ---------------------------------------------------------------------------
-		CMP	#$42 ; 'B'
+		CMP	#'B'
 		BNE	loc_77C2
 		DEC	$64
 		BPL	loc_77B3

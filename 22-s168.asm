@@ -1,3 +1,6 @@
+		.include	"globals.inc"
+		.include	"exp_kernel.inc"
+		.include	"macros.inc"
 
 ;		.ORG	$7600
 		.BYTE	$14
@@ -80,39 +83,32 @@ loc_7677:				; CODE XREF: RAM:76A6j
 		JSR	$1851
 
 loc_7689:				; CODE XREF: RAM:7698j
-		LDA	#$96 ; '–'
-		STA	$1977
-		LDA	#$76 ; 'v'
-		STA	$1978
+		dldi	off_1977, loc_7696
 		JMP	$1806
 ; ---------------------------------------------------------------------------
+
+loc_7696:
 		LDA	$31
 		BMI	loc_7689
-		JSR	$183F
-		CMP	#$59 ; 'Y'
+		JSR	j_UPPER
+		CMP	#'Y'
 		BNE	loc_76A4
 		JMP	loc_76AB
 ; ---------------------------------------------------------------------------
 
 loc_76A4:				; CODE XREF: RAM:769Fj
-		CMP	#$4E ; 'N'
+		CMP	#'N'
 		BNE	loc_7677
 		JMP	loc_76FE
 ; ---------------------------------------------------------------------------
 
 loc_76AB:				; CODE XREF: RAM:76A1j
-		LDA	#2
-		STA	$16
-		LDA	#$79 ; 'y'
-		STA	$17
+		dldi	off_16, $7902
 		LDX	$62
 		JSR	$1851
 		LDA	#$F
 		JSR	$185A
-		LDA	#$5C ; '\'
-		STA	$16
-		LDA	#$77 ; 'w'
-		STA	$17
+		dldi	off_16, $775C
 		LDX	$62
 		JSR	$1851
 		LDA	$64

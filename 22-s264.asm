@@ -1,4 +1,6 @@
-
+		.include	"globals.inc"
+		.include	"exp_kernel.inc"
+		.include	"macros.inc"
 
 ;		.ORG	$7600
 		.BYTE	$26
@@ -119,17 +121,16 @@ loc_76A6:				; CODE XREF: RAM:76BEj
 		JSR	$1851
 
 loc_76CD:				; CODE XREF: RAM:76E5j
-		LDA	#$DA ; 'Ú'
-		STA	$1977
-		LDA	#$76 ; 'v'
-		STA	$1978
+		dldi	off_1977, loc_76DA
 		JMP	$1806
 ; ---------------------------------------------------------------------------
+
+loc_76DA:
 		LDA	$31
-		JSR	$183F
-		CMP	#$4E ; 'N'
+		JSR	j_UPPER
+		CMP	#'N'
 		BEQ	loc_768C
-		CMP	#$59 ; 'Y'
+		CMP	#'Y'
 		BNE	loc_76CD
 		LDX	#0
 		STX	$78
@@ -218,15 +219,14 @@ loc_775D:				; CODE XREF: RAM:76AAj
 		JSR	$1851
 
 loc_7773:				; CODE XREF: RAM:7782j	RAM:778Dj
-		LDA	#$80 ; '€'
-		STA	$1977
-		LDA	#$77 ; 'w'
-		STA	$1978
+		dldi	off_1977, loc_7780
 		JMP	$1806
 ; ---------------------------------------------------------------------------
+
+loc_7780:
 		LDA	$31
 		BMI	loc_7773
-		JSR	$183F
+		JSR	j_UPPER
 		CMP	#'N'
 		BEQ	loc_77B4
 		CMP	#'Y'
@@ -264,24 +264,20 @@ loc_77B4:				; CODE XREF: RAM:7764j	RAM:7789j ...
 ; ---------------------------------------------------------------------------
 
 loc_77D1:				; CODE XREF: RAM:77C0j
-		LDA	#$70 ; 'p'
-		STA	$16
-		LDA	#$7C ; '|'
-		STA	$17
+		dldi	off_16, $7C70
 		LDX	$66
 		JSR	$1851
 
 loc_77DE:				; CODE XREF: RAM:77CEj	RAM:77EDj ...
-		LDA	#$EB ; 'ë'
-		STA	$1977
-		LDA	#$77 ; 'w'
-		STA	$1978
+		dldi	off_1977, loc_77EB
 		JMP	$1806
 ; ---------------------------------------------------------------------------
+
+loc_77EB:
 		LDA	$31
 		BMI	loc_77DE
-		JSR	$183F
-		CMP	#$46 ; 'F'
+		JSR	j_UPPER
+		CMP	#'F'
 		BNE	loc_7806
 		LDY	$73
 		BMI	loc_77DE
@@ -294,7 +290,7 @@ loc_77DE:				; CODE XREF: RAM:77CEj	RAM:77EDj ...
 		BPL	loc_77B4
 
 loc_7806:				; CODE XREF: RAM:77F4j
-		CMP	#$42 ; 'B'
+		CMP	#'B'
 		BNE	loc_7813
 		LDX	$67
 		DEX
@@ -354,15 +350,14 @@ loc_785F:				; CODE XREF: RAM:7842j
 		JSR	$1851
 
 loc_786C:				; CODE XREF: RAM:787Bj	RAM:7886j
-		LDA	#$79 ; 'y'
-		STA	$1977
-		LDA	#$78 ; 'x'
-		STA	$1978
+		dldi	off_1977, loc_7879
 		JMP	$1806
 ; ---------------------------------------------------------------------------
+
+loc_7879:
 		LDA	$31
 		BMI	loc_786C
-		JSR	$183F
+		JSR	j_UPPER
 		CMP	#$4E ; 'N'
 		BEQ	loc_788B
 		CMP	#$59 ; 'Y'

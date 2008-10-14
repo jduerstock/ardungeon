@@ -175,7 +175,8 @@ j_READSECTOR:
 ; ---------------------------------------------------------------------------
 		JMP	sub_2BB0	; $183C
 ; ---------------------------------------------------------------------------
-		JMP	sub_2BA5	; $183F
+j_UPPER:
+		JMP	UPPER		; $183F
 ; ---------------------------------------------------------------------------
 j_SEGLOAD:
 		JMP	SEGLOAD		; $1842
@@ -3603,17 +3604,18 @@ unk_2B9D:	.BYTE	1		; DATA XREF: sub_2B6B+1Fr
 ; --------------- S U B	R O U T	I N E ---------------------------------------
 
 
-sub_2BA5:				; CODE XREF: RAM:183Fj
+UPPER:					; CODE XREF: RAM:183Fj
 					; sub_2BFA:loc_30AAp ...
-		CMP	#$61 ; 'a'
+		CMP	#'a'
 		BCC	locret_2BAF
 		CMP	#$7B ; '{'
 		BCS	locret_2BAF
-		SBC	#$1F
+		SBC	#$1F		; this is #$1F instead of #$20 because
+					; the borrow (carry) flag is clear
 
-locret_2BAF:				; CODE XREF: sub_2BA5+2j sub_2BA5+6j
+locret_2BAF:				; CODE XREF: UPPER+2j UPPER+6j
 		RTS
-; End of function sub_2BA5
+; End of function UPPER
 
 
 ; --------------- S U B	R O U T	I N E ---------------------------------------
@@ -4488,7 +4490,7 @@ loc_30A5:				; CODE XREF: sub_2BFA+48Fj
 
 loc_30AA:				; CODE XREF: sub_2BFA+43Fj
 					; sub_2BFA+4A8j
-		JSR	sub_2BA5
+		JSR	UPPER
 		LDX	#$C
 
 loc_30AF:				; CODE XREF: sub_2BFA+4BBj
@@ -5361,7 +5363,7 @@ loc_3689:				; CODE XREF: RAM:3686j
 loc_369A:				; CODE XREF: RAM:369Dj	RAM:36ACj
 		JSR	sub_2643
 		BMI	loc_369A
-		JSR	sub_2BA5
+		JSR	UPPER
 		CMP	#'I'
 		BEQ	loc_36B1
 		CMP	#'S'
@@ -5466,7 +5468,7 @@ loc_3789:				; CODE XREF: RAM:3786j
 loc_3797:				; CODE XREF: RAM:379Aj
 		JSR	sub_2643
 		BMI	loc_3797
-		JSR	sub_2BA5
+		JSR	UPPER
 		CMP	#'Y'
 		BNE	loc_37BB
 		JSR	sub_3CC2
@@ -5498,7 +5500,7 @@ loc_37D6:
 loc_37E3:				; CODE XREF: RAM:37E6j
 		JSR	sub_2643
 		BMI	loc_37E3
-		JSR	sub_2BA5
+		JSR	UPPER
 		CMP	#$59 ; 'Y'
 		BNE	loc_37FC
 		LDA	#0
@@ -9006,7 +9008,7 @@ loc_5077:
 ; ---------------------------------------------------------------------------
 
 loc_5087:				; CODE XREF: RAM:507Dj	RAM:5081j
-		JSR	sub_2BA5
+		JSR	UPPER
 		SEC
 		RTS
 
@@ -10393,7 +10395,7 @@ loc_5921:
 		BMI	loc_5914
 		CMP	#$1B
 		BEQ	loc_594D
-		JSR	sub_2BA5
+		JSR	UPPER
 		CMP	#'N'
 		BEQ	loc_594B
 		CMP	#'Y'

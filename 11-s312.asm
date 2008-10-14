@@ -1,6 +1,7 @@
 		.include	"equates.inc"
 		.include	"exp_kernel.inc"
 		.include	"globals.inc"
+		.include	"macros.inc"
 
 off_63	= $63
 off_65	= $65
@@ -218,21 +219,18 @@ loc_775A:				; CODE XREF: sub_7AE7-38Aj
 ; ---------------------------------------------------------------------------
 
 loc_7762:				; CODE XREF: sub_7AE7-39Aj
-		LDA	#$32 ; '2'
-		STA	off_16
-		LDA	#$85 ; '…'
-		STA	off_16+1
+		dldi	off_16, $8532
 		JSR	$1818
 
 loc_776D:				; CODE XREF: sub_7AE7-377j
 					; sub_7AE7-36Aj
 		JSR	$181E
 		BMI	loc_776D
-		JSR	$183F
+		JSR	j_UPPER
 		LDX	#$80 ; '€'
-		CMP	#$46 ; 'F'
+		CMP	#'F'
 		BEQ	loc_7781
-		CMP	#$4D ; 'M'
+		CMP	#'M'
 		BNE	loc_776D
 		LDX	#0
 
@@ -421,14 +419,14 @@ loc_78AA:				; CODE XREF: sub_7AE7-23Aj
 					; sub_7AE7-22Cj
 		JSR	$181E
 		BMI	loc_78AA
-		JSR	$183F
-		CMP	#$59 ; 'Y'
+		JSR	j_UPPER
+		CMP	#'Y'
 		BNE	loc_78B9
 		JMP	loc_797B
 ; ---------------------------------------------------------------------------
 
 loc_78B9:				; CODE XREF: sub_7AE7-233j
-		CMP	#$4E ; 'N'
+		CMP	#'N'
 		BNE	loc_78AA
 		JMP	loc_7600
 ; ---------------------------------------------------------------------------
@@ -812,15 +810,12 @@ sub_7AE7:				; CODE XREF: sub_7AE7-2BCp
 ; FUNCTION CHUNK AT 7600 SIZE 000003AA BYTES
 ; FUNCTION CHUNK AT 7AD2 SIZE 00000015 BYTES
 
-		LDA	#$65 ; 'e'
-		STA	off_16
-		LDA	#$85 ; '…'
-		STA	off_16+1
+		dldi	off_16, $8565
 		JSR	$1818
 
 loc_7AF2:				; CODE XREF: sub_7AE7+17j
 		JSR	$181E
-		JSR	$183F
+		JSR	j_UPPER
 		CMP	#'N'
 		BEQ	loc_7AE2
 		CMP	#'Y'

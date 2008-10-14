@@ -1,3 +1,7 @@
+		.include	"equates.inc"
+		.include	"globals.inc"
+		.include	"exp_kernel.inc"
+		.include	"macros.inc"
 
 ;		.ORG	$7600
 		.BYTE $1A
@@ -27,7 +31,7 @@ loc_7616:				; CODE XREF: RAM:7601j
 		LDA	#$85 ; '…'
 		STA	byte_86BC
 		STA	byte_86CC
-		LDA	$D20A
+		LDA	RANDOM
 		AND	#1
 		STA	byte_86C0
 
@@ -94,62 +98,37 @@ loc_76A0:				; CODE XREF: RAM:7698j
 		LDA	$869F,X
 		STA	$69
 		BNE	loc_76B4
-		LDA	#$63 ; 'c'
-		STA	$1977
-		LDA	#$77 ; 'w'
-		STA	$1978
+		dldi	off_1977, $7763
 		JMP	loc_76D0
 ; ---------------------------------------------------------------------------
 
 loc_76B4:				; CODE XREF: RAM:76A5j
-		LDA	#$2A ; '*'
-		STA	$1977
-		LDA	#$77 ; 'w'
-		STA	$1978
-		LDA	#$AA ; 'Є'
-		STA	$190B
-		LDA	#$89 ; '‰'
-		STA	$190C
+		dldi	off_1977, $772A
+		dldi	SEGADDR, $89AA
 		LDA	#$32 ; '2'
-		STA	$1909
-		JSR	$1842
+		STA	SEGNO
+		JSR	j_SEGLOAD
 
 loc_76D0:				; CODE XREF: RAM:76B1j
-		LDA	#$14
-		STA	$16
-		LDA	#$7E ; '~'
-		STA	$17
+		dldi	off_16, $7E14
 		JSR	$184B
 		LDA	$1933
 		STA	$6A
-		LDA	#$F0 ; 'р'
-		STA	$190B
-		LDA	#$96 ; '–'
-		STA	$190C
+		dldi	SEGADDR, $96F0
 		LDA	#$F
-		STA	$1909
-		JSR	$1842
-		LDA	#$F0 ; 'р'
-		STA	$190B
-		LDA	#$A2 ; 'ў'
-		STA	$190C
+		STA	SEGNO
+		JSR	j_SEGLOAD
+		dldi	SEGADDR, $A2F0
 		LDA	#$30 ; '0'
-		STA	$1909
-		JSR	$1842
-		LDA	#$AA ; 'Є'
-		STA	7
-		LDA	#$89 ; '‰'
-		STA	8
+		STA	SEGNO
+		JSR	j_SEGLOAD
+		dldi	off_7, $89AA
 		LDA	#2
 		JSR	$180F
 		JSR	$96F5
-		LDA	$96F3
-		STA	$224
-		LDA	$96F4
-		STA	$225
+		dmv	off_224, $96F3
 		DEC	$22F
-		LDX	#$A2 ; 'ў'
-		LDY	#$F0 ; 'р'
+		ldxy	$A2F0
 		JMP	$96F0
 ; ---------------------------------------------------------------------------
 
@@ -356,26 +335,20 @@ loc_786C:				; CODE XREF: RAM:7864j
 ; ---------------------------------------------------------------------------
 
 loc_787A:				; CODE XREF: RAM:79FFj
-		LDA	#$D7 ; 'Ч'
-		STA	$16
-		LDA	#$7C ; '|'
-		STA	$17
+		dldi	off_16, $7CD7
 		LDX	$6A
 		JSR	$1851
 
 loc_7887:				; CODE XREF: RAM:7896j	RAM:78A1j
-		LDA	#$94 ; '”'
-		STA	$1977
-		LDA	#$78 ; 'x'
-		STA	$1978
+		dldi	off_1977, $7894
 		JMP	$1806
 ; ---------------------------------------------------------------------------
 		LDA	$31
 		BMI	loc_7887
-		JSR	$183F
-		CMP	#$59 ; 'Y'
+		JSR	j_UPPER
+		CMP	#'Y'
 		BEQ	loc_78A6
-		CMP	#$4E ; 'N'
+		CMP	#'N'
 		BNE	loc_7887
 		JMP	loc_77A1
 ; ---------------------------------------------------------------------------
@@ -652,8 +625,8 @@ loc_7A74:				; CODE XREF: RAM:7A70j
 
 loc_7A78:				; CODE XREF: RAM:7A6Cj
 		LDA	#$FF
-		STA	($62),Y
-		LDA	$D20A
+		STA	(off_62),Y
+		LDA	RANDOM
 		AND	#1
 		CLC
 		ADC	#1
@@ -695,12 +668,11 @@ loc_7AB5:				; CODE XREF: RAM:7AAAj
 		STA	$1955
 
 loc_7ABA:				; CODE XREF: RAM:7AD3j
-		LDA	#$C7 ; 'З'
-		STA	$1977
-		LDA	#$7A ; 'z'
-		STA	$1978
+		dldi	off_1977, loc_7AC7
 		JMP	$1806
 ; ---------------------------------------------------------------------------
+
+loc_7AC7:
 		JSR	$1869
 		LDA	$630A
 		CMP	#$A
@@ -717,12 +689,12 @@ loc_7AD5:				; CODE XREF: RAM:7AB3j	RAM:7ACFj
 		ASL	A
 		TAX
 		LDA	off_7B1C,X
-		STA	$62
+		STA	off_62
 		LDA	off_7B1C+1,X
-		STA	$63
+		STA	off_62+1
 		LDY	#3
 		LDA	#$FF
-		STA	($62),Y
+		STA	(off_62),Y
 		JMP	loc_77A1
 
 ; ЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫ S U B	R O U T	I N E ЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫ
@@ -740,12 +712,11 @@ loc_7AFB:				; CODE XREF: sub_7AF7+5j sub_7AF7+1Dj
 		PHA
 		TXA
 		PHA
-		LDA	#$E
-		STA	$1977
-		LDA	#$7B ; '{'
-		STA	$1978
+		dldi	off_1977, loc_7B0E
 		JMP	$1806
 ; ---------------------------------------------------------------------------
+
+loc_7B0E:
 		PLA
 		TAX
 		LDY	#0
@@ -778,7 +749,7 @@ off_7B1C:	.WORD byte_7F56		; DATA XREF: RAM:7A37r	RAM:7AE4r ...
 		.WORD byte_7BD9
 		.WORD byte_7BD9
 		.WORD byte_7BD9
-		.BYTE $A6,  0,	2
+		MOVEXY	0,2
 		.BYTE $A5
 aIMSorryButWeCa:.BYTE $22,"I'm sorry but we can do nothing for"
 		.BYTE $D
