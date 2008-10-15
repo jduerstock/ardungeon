@@ -2284,17 +2284,9 @@ aWelcomeToThe:	.BYTE "Welcome to the "
 a__5:		.BYTE "."
 		.BYTE $D
 		.BYTE $A6,  5,	3
-		.BYTE "("
-		.BYTE $A1
-a1:		.BYTE "1"
-		.BYTE $A0
-aApplyForGuildM:.BYTE ") Apply for Guild membership."
+		MenuItem "1","Apply for Guild membership."
 		.BYTE $A6,  5,	5
-		.BYTE "("
-		.BYTE $A1
-a0:		.BYTE "0"
-		.BYTE $A0
-aLeave_:	.BYTE ") Leave."
+		MenuItem "0","Leave."
 		.BYTE $FF
 		.BYTE $A6,  0,	2
 		.BYTE $A5
@@ -2309,23 +2301,11 @@ aYouAreAtYourLo:.BYTE "You are at your locker."
 aWhatDoYouWantT:.BYTE "What do you want to do?"
 		.BYTE $D
 		.BYTE $A6,  7,	3
-		.BYTE "("
-		.BYTE $A1
-a1_0:		.BYTE "1"
-		.BYTE $A0
-aMakeADeposit:	.BYTE ") Make a deposit"
+		MenuItem "1","Make a deposit"
 		.BYTE $A6,  7,	4
-		.BYTE "("
-		.BYTE $A1
-a2:		.BYTE "2"
-		.BYTE $A0
-aMakeAWithdrawa:.BYTE ") Make a withdrawal"
+		MenuItem "2","Make a withdrawal"
 		.BYTE $A6,  7,	6
-		.BYTE "("
-		.BYTE $A1
-a0_0:		.BYTE "0"
-		.BYTE $A0
-aGoBackToMainRo:.BYTE ") Go back to main room"
+		MenuItem "0","Go back to main room"
 		.BYTE $FF
 		.BYTE $A6,  0,	0
 		.BYTE $A5
@@ -2336,11 +2316,7 @@ aGoBackToMainRo:.BYTE ") Go back to main room"
 		.BYTE $A3
 		.WORD loc_90BD
 		.BYTE $A6,  5,	2
-		.BYTE "("
-		.BYTE $A1
-a1_1:		.BYTE "1"
-		.BYTE $A0
-		.BYTE ") "
+		MenuItem "1",""
 		.BYTE $B4
 		.WORD $71
 		.BYTE $14
@@ -2349,11 +2325,7 @@ a1_1:		.BYTE "1"
 		.WORD $79
 		.BYTE 6
 		.BYTE $A6,  5,	3
-		.BYTE '('
-		.BYTE $A1
-a2_0:		.BYTE '2'
-		.BYTE $A0
-		.BYTE ") "
+		MenuItem "2",""
 		.BYTE $B4
 		.WORD $73
 		.BYTE $14
@@ -2362,11 +2334,7 @@ a2_0:		.BYTE '2'
 		.WORD $7B
 		.BYTE 6
 		.BYTE $A6,  5,	4
-		.BYTE '('
-		.BYTE $A1
-a3:		.BYTE '3'
-		.BYTE $A0
-		.BYTE ") "
+		MenuItem "3",""
 		.BYTE $B4
 		.WORD $75
 		.BYTE $14
@@ -2375,11 +2343,7 @@ a3:		.BYTE '3'
 		.WORD $7D
 		.BYTE 6
 		.BYTE $A6,  5,	5
-		.BYTE '('
-		.BYTE $A1
-a4:		.BYTE '4'
-		.BYTE $A0
-		.BYTE ") "
+		MenuItem "4",""
 		.BYTE $B4
 		.WORD $77
 		.BYTE $14
@@ -2389,21 +2353,13 @@ a4:		.BYTE '4'
 		.BYTE 6
 		.BYTE $A6,  0,	7
 aItem:		.BYTE "Item "
-		.BYTE $A1
-		.BYTE '#'
-		.BYTE $A0
+		BLINK '#'
 		.BYTE ", "
-		.BYTE $A1
-aF:		.BYTE 'F'
-		.BYTE $A0
+aF:		BLINK 'F'
 aOrward:	.BYTE "orward, "
-		.BYTE $A1
-aB:		.BYTE 'B'
-		.BYTE $A0
+aB:		BLINK 'B'
 aAckOr:		.BYTE "ack, or "
-		.BYTE $A1
-aEsc:		.BYTE "ESC"
-		.BYTE $A0
+aEsc:		BLINK "ESC"
 aToExit:	.BYTE " to exit"
 		.BYTE $A3
 		.WORD $90C0
@@ -2595,17 +2551,9 @@ aPrivilegesInBu:.BYTE "privileges in but one guild."
 aDoYouWant:	.BYTE "Do you want:"
 		.BYTE $D
 		.BYTE $A6,  5,	5
-		.BYTE "("
-		.BYTE $A1
-a1_2:		.BYTE "1"
-		.BYTE $A0
-aFullMembership:.BYTE ") Full membership or"
+		MenuItem "1","Full membership or"
 		.BYTE $A6,  5,	6
-		.BYTE "("
-		.BYTE $A1
-a2_1:		.BYTE "2"
-		.BYTE $A0
-aAssociateMembe:.BYTE ") Associate membership"
+		MenuItem "2","Associate membership"
 		.BYTE $FF
 		.BYTE $A6,  0,	2
 		.BYTE $A3
@@ -2649,52 +2597,24 @@ aDoYouStillWish:.BYTE "Do you still wish to join? "
 		.BYTE $D
 		.BYTE $FF
 		.BYTE $A6,  7,	1
-		.BYTE "("
-		.BYTE $A1
-a1_3:		.BYTE "1"
-		.BYTE $A0
-		.BYTE ") "
+		MenuItem "1",""
 		.BYTE $B4
 		.WORD $6C
 		.BYTE $19
 		.BYTE $A6,  7,	2
-		.BYTE "("
-		.BYTE $A1
-a2_2:		.BYTE "2"
-		.BYTE $A0
-aHaveCursesRemo:.BYTE ") Have curses removed"
+		MenuItem "2","Have curses removed"
 		.BYTE $A6,  7,	3
-		.BYTE "("
-		.BYTE $A1
-a3_0:		.BYTE "3"
-		.BYTE $A0
-aLearnGuildSpel:.BYTE ") Learn Guild spells"
+		MenuItem "3","Learn Guild spells"
 		.BYTE $A6,  7,	4
-		.BYTE "("
-		.BYTE $A1
-a4_0:		.BYTE "4"
-		.BYTE $A0
-aPracticeGuildS:.BYTE ") Practice Guild spells"
+		MenuItem "4","Practice Guild spells"
 		.BYTE $A6,  7,	5
-		.BYTE "("
-		.BYTE $A1
-a5:		.BYTE "5"
-		.BYTE $A0
-aResignFromTheG:.BYTE ") Resign from the Guild"
+		MenuItem "5","Resign from the Guild"
 		.BYTE $A3
 		.WORD loc_904B
 		.BYTE $A6,  7,	6
-		.BYTE "("
-		.BYTE $A1
-a6:		.BYTE "6"
-		.BYTE $A0
-aCheckYourGuild:.BYTE ") Check your Guild locker"
+		MenuItem "6","Check your Guild locker"
 		.BYTE $A6,  7,	7
-		.BYTE "("
-		.BYTE $A1
-a0_1:		.BYTE "0"
-		.BYTE $A0
-aLeave:		.BYTE ") Leave"
+		MenuItem "0","Leave"
 		.BYTE $FF
 aChargeYourGuil:.BYTE "Charge your Guild Ring",0
 aReplaceYourGui:.BYTE "Replace your Guild Ring",0
