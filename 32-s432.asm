@@ -1820,23 +1820,11 @@ aOutOfHere:	.BYTE "out of here!"
 aWhereDostThouW:.BYTE "Where dost thou wish to sit?"
 		.BYTE $D
 		.BYTE $A6, $C,	5
-		.BYTE "("
-		.BYTE $A1
-a1:		.BYTE "1"
-		.BYTE $A0
-aAtTheBar:	.BYTE ") At the bar"
+		MenuItem "1","At the bar"
 		.BYTE $A6, $C,	6
-		.BYTE "("
-		.BYTE $A1
-a2:		.BYTE "2"
-		.BYTE $A0
-aAtATable:	.BYTE ") At a table"
+		MenuItem "2","At a table"
 		.BYTE $A6, $C,	7
-		.BYTE "("
-		.BYTE $A1
-a0:		.BYTE "0"
-		.BYTE $A0
-aLeave:		.BYTE ") Leave"
+		MenuItem "0","Leave"
 		.BYTE $FF
 byte_8428:	.BYTE $A3		; DATA XREF: RAM:8551o
 		.WORD loc_8459
@@ -1913,52 +1901,24 @@ a_:		.BYTE "."
 aWhatDostThouWi:.BYTE "What dost thou wish?"
 		.BYTE $D
 		.BYTE $A6,  5,	4
-		.BYTE '('
-		.BYTE $A1
-a1_0:		.BYTE '1'
-		.BYTE $A0
-aOrderSomething:.BYTE ") Order something"
+		MenuItem "1","Order something"
 		.BYTE $A6,  5,	5
-		.BYTE '('
-		.BYTE $A1
-a2_0:		.BYTE '2'
-		.BYTE $A0
-aBuyARoundForTh:.BYTE ") Buy a round for the house"
+		MenuItem "2","Buy a round for the house"
 		.BYTE $A6,  5,	7
-		.BYTE "("
-		.BYTE $A1
-a0_0:		.BYTE "0"
-		.BYTE $A0
-aLeave_0:	.BYTE ") Leave"
+		MenuItem "0","Leave"
 		.BYTE $FF
 		.BYTE $A6,  0,	0
 		.BYTE $A5
 aDostThouWish_0:.BYTE "Dost thou wish to:"
 		.BYTE $D
 		.BYTE $A6,  5,	2
-		.BYTE "("
-		.BYTE $A1
-a1_1:		.BYTE "1"
-		.BYTE $A0
-aBuyHimADrink:	.BYTE ") Buy him a drink"
+		MenuItem "1","Buy him a drink"
 		.BYTE $A6,  5,	3
-		.BYTE "("
-		.BYTE $A1
-a2_1:		.BYTE "2"
-		.BYTE $A0
-aBuyHimAMeal:	.BYTE ") Buy him a meal"
+		MenuItem "2","Buy him a meal"
 		.BYTE $A6,  5,	4
-		.BYTE '('
-		.BYTE $A1
-a3:		.BYTE '3'
-		.BYTE $A0
-aTransact:	.BYTE ") Transact"
+		MenuItem "3","Transact"
 		.BYTE $A6,  5,	6
-		.BYTE '('
-		.BYTE $A1
-a0_1:		.BYTE '0'
-		.BYTE $A0
-aIgnoreHim:	.BYTE ") Ignore him"
+		MenuItem "0","Ignore him"
 		.BYTE $FF
 		.BYTE $A6,  0,	2
 		.BYTE $A5
@@ -2033,11 +1993,7 @@ aN_1:		.BYTE "N"
 aWhatWouldThouL:.BYTE "What would thou like?"
 		.BYTE $D
 		.BYTE $A6,  0,	2
-		.BYTE '('
-		.BYTE $A1
-a1_2:		.BYTE '1'
-		.BYTE $A0
-		.BYTE ") "
+		MenuItem "1",""
 		.BYTE $B4
 		.WORD $69
 		.BYTE $1E
@@ -2049,11 +2005,7 @@ aSilvers:	.BYTE "silvers"
 		.BYTE $A3
 		.WORD loc_8946
 		.BYTE $D
-		.BYTE "("
-		.BYTE $A1
-a2_2:		.BYTE "2"
-		.BYTE $A0
-		.BYTE ") "
+		MenuItem "2",""
 		.BYTE $B4
 		.WORD $6B
 		.BYTE $1E
@@ -2065,11 +2017,7 @@ aSilvers_0:	.BYTE "silvers"
 		.BYTE $A3
 		.WORD loc_8949
 		.BYTE $D
-		.BYTE "("
-		.BYTE $A1
-a3_0:		.BYTE '3'
-		.BYTE $A0
-		.BYTE ") "
+		MenuItem "3",""
 		.BYTE $B4
 		.WORD $6D
 		.BYTE $1E
@@ -2081,11 +2029,7 @@ aSilvers_1:	.BYTE "silvers"
 		.BYTE $A3
 		.WORD loc_894C
 		.BYTE $D
-		.BYTE "("
-		.BYTE $A1
-a4:		.BYTE "4"
-		.BYTE $A0
-		.BYTE ") "
+		MenuItem "4",""
 		.BYTE $B4
 		.WORD $6F
 		.BYTE $1E

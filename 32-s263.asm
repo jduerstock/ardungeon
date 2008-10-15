@@ -1657,36 +1657,16 @@ aQuitThyJesting:.BYTE "Quit thy jesting and make a"
 		.BYTE $A5
 aSeriousOffer:	.BYTE "serious offer!",$D
 		.BYTE $FF
-byte_81A6:	.BYTE $A6,  5,	3	; DATA XREF: RAM:8091o	RAM:80CFo ...
-		.BYTE '('
-		.BYTE $A1
-a1:		.BYTE '1'
-		.BYTE $A0
-aStockingUpOnPr:.BYTE ") Stocking up on provisions"
+byte_81A6:	MOVEXY	5,3		; DATA XREF: RAM:8091o	RAM:80CFo ...
+		MenuItem "1","Stocking up on provisions"
 		.BYTE $A6,  5,	4
-		.BYTE '('
-		.BYTE $A1
-a2:		.BYTE '2'
-		.BYTE $A0
-aSelectingBattl:.BYTE ") Selecting battle gear"
+		MenuItem "2","Selecting battle gear"
 		.BYTE $A6,  5,	5
-		.BYTE '('
-		.BYTE $A1
-a3:		.BYTE '3'
-		.BYTE $A0
-aChoosingSomeAp:.BYTE ") Choosing some apparel"
+		MenuItem "3","Choosing some apparel"
 		.BYTE $A6,  5,	6
-		.BYTE '('
-		.BYTE $A1
-a4:		.BYTE '4'
-		.BYTE $A0
-aExchangingCurr:.BYTE ") Exchanging currency"
+		MenuItem "4","Exchanging currency"
 		.BYTE $A6,  5,	7
-		.BYTE '('
-		.BYTE $A1
-a0:		.BYTE '0'
-		.BYTE $A0
-aLeave:		.BYTE ") Leave"
+		MenuItem "0","Leave"
 		.BYTE $FF
 		.BYTE $A6,  0,	1
 		.BYTE $A5
