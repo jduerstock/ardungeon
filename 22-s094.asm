@@ -49,10 +49,7 @@ loc_7652:				; CODE XREF: RAM:7642j
 		LDA	$6310
 		CMP	$7527
 		BNE	loc_7673
-		LDA	#$F1 ; 'ñ'
-		STA	$16
-		LDA	#$77 ; 'w'
-		STA	$17
+		dldi	off_16, $77F1
 		JSR	sub_779C
 		JMP	loc_7750
 ; ---------------------------------------------------------------------------
@@ -70,10 +67,7 @@ loc_7673:				; CODE XREF: RAM:765Bj	RAM:7663j
 		BNE	loc_76C0
 
 loc_768C:				; CODE XREF: RAM:7684j
-		LDA	#$37 ; '7'
-		STA	$16
-		LDA	#$78 ; 'x'
-		STA	$17
+		dldi	off_16, $7837
 		JSR	sub_77A6
 		JSR	$183C
 		LDA	#0
@@ -269,14 +263,14 @@ sub_77A6:				; CODE XREF: RAM:7694p	sub_76F2+16p ...
 ; End of function sub_77A6
 
 ; ---------------------------------------------------------------------------
-unk_77AB:	.BYTE $68 ; h		; DATA XREF: sub_76F2+2r
-		.BYTE $4C ; L
-		.BYTE $3B ; ;
-		.BYTE $26 ; &
-unk_77AF:	.BYTE $79 ; y		; DATA XREF: sub_76F2+7r
-		.BYTE $7A ; z
-		.BYTE $7B ; {
-		.BYTE $7C ; |
+unk_77AB:	.BYTE	<$7968		; DATA XREF: sub_76F2+2r
+		.BYTE	<$7A4C
+		.BYTE	<$7B3B
+		.BYTE	<$7C26
+unk_77AF:	.BYTE	>$7968		; DATA XREF: sub_76F2+7r
+		.BYTE	>$7A4C
+		.BYTE	>$7B3B
+		.BYTE	>$7C26
 unk_77B3:	.BYTE $CF ; Ï		; DATA XREF: sub_776D+12r
 		.BYTE $D8 ; Ø
 		.BYTE $DE ; Þ
@@ -303,7 +297,7 @@ unk_77C7:	.BYTE	1		; DATA XREF: sub_76F2+11r
 		.BYTE	0
 unk_77CB:	.BYTE	9		; DATA XREF: sub_776D+2r
 		.BYTE	6
-		.BYTE  $A
+		.BYTE	10
 		.BYTE	7
 aShipwreck:	.BYTE "SHIPWRECK"
 aOracle:	.BYTE "ORACLE"
