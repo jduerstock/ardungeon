@@ -5659,25 +5659,15 @@ a_TheDoorWontOpen:
 aTheDoorWonTOpe:.BYTE "The door won't open. You may:"
 		.BYTE $D
 		MOVEXY	8,2
-		.BYTE "("
-		BLINK	'1'
-aExamineTheDoor:.BYTE ") Examine the door."
+		MenuItem "1","Examine the door."
 		MOVEXY 8,3
-		.BYTE '('
-		BLINK	'2'
-aForceTheDoor_:	.BYTE ") Force the door."
+		MenuItem "2","Force the door."
 		MOVEXY	8,4
-		.BYTE '('
-		BLINK	'3'
-		.BYTE ") Use a key."
+		MenuItem "3","Use a key."
 		MOVEXY	8,5
-		.BYTE '('
-		BLINK	'4'
-aBreakAnEnchant:.BYTE ") Break an enchantment."
+		MenuItem "4","Break an enchantment."
 		MOVEXY	8,7
-		.BYTE '('
-		BLINK	'0'
-aLeaveIt_:	.BYTE ") Leave it."
+		MenuItem "0","Leave it."
 		.BYTE $FF
 
 a_TheDoorAppears:
