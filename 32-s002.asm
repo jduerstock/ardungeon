@@ -335,17 +335,14 @@ aYouSeeABagOf:	.BYTE "You see a bag of "
 		.BYTE $D
 		.BYTE $D
 		.BYTE $D
-aDoYou:		.BYTE "Do you ("
-		BLINK	'1'
-aGrabTheBagAndR:.BYTE ") Grab the bag and run,"
+aDoYou:		.BYTE "Do you "
+		MenuItem "1","Grab the bag and run,"
 		.BYTE $D
-		.BYTE "       ("
-		BLINK	'2'
-aSearchForSomet:.BYTE ") Search for something else or"
+		.BYTE "       "
+		MenuItem "2","Search for something else or"
 		.BYTE $D
-		.BYTE "       ("
-a0:		BLINK	'0'
-aLeaveq:	.BYTE ") Leave?"
+		.BYTE "       "
+		MenuItem "0","Leave?"
 		.BYTE $FF
 off_78D0:	.WORD byte_78E2		; DATA XREF: RAM:7717w	RAM:786Ao ...
 off_78D2:	.WORD aSideTheFirstCi	; DATA XREF: RAM:7647w	RAM:764Dw
