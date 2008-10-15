@@ -1681,76 +1681,32 @@ aExchangeqICanT:.BYTE "exchange?!  I can't spend all day"
 aCountingCoins:	.BYTE "counting coins!",$D
 		.BYTE $FF
 byte_8292:	.BYTE $A6,  9,	3	; DATA XREF: RAM:8E58o	RAM:8E8Co
-		.BYTE '('
-		.BYTE $A1
-a1_0:		.BYTE '1'
-		.BYTE $A0
-aProvisions:	.BYTE ") Provisions"
+		MenuItem "1","Provisions"
 		.BYTE $A6,  9,	4
-		.BYTE '('
-		.BYTE $A1
-a2_0:		.BYTE '2'
-		.BYTE $A0
-aBattleGear:	.BYTE ") Battle gear"
+		MenuItem "2","Battle gear"
 		.BYTE $A6,  9,	5
-		.BYTE '('
-		.BYTE $A1
-a3_0:		.BYTE '3'
-		.BYTE $A0
-aClothing:	.BYTE ") Clothing"
+		MenuItem "3","Clothing"
 		.BYTE $A6,  9,	6
-		.BYTE '('
-		.BYTE $A1
-a4_0:		.BYTE '4'
-		.BYTE $A0
-aCurrencyExchan:.BYTE ") Currency exchange"
+		MenuItem "4","Currency exchange"
 		.BYTE $A6,  9,	7
-		.BYTE '('
-		.BYTE $A1
-a0_0:		.BYTE '0'
-		.BYTE $A0
-aLeave_0:	.BYTE ") Leave"
+		MenuItem "0","Leave"
 		.BYTE $FF
 		.BYTE $A6,  0,	0
 		.BYTE $A5
 aWhatProvisions:.BYTE "What provisions are you interested in?"
 		.BYTE $D
 		.BYTE $A6,  6,	2
-		.BYTE '('
-		.BYTE $A1
-a1_1:		.BYTE '1'
-		.BYTE $A0
-aNourishingFood:.BYTE ") Nourishing food packets"
+		MenuItem "1","Nourishing food packets"
 		.BYTE $A6,  6,	3
-		.BYTE '('
-		.BYTE $A1
-a2_1:		.BYTE '2'
-		.BYTE $A0
-aDeliciousWater:.BYTE ") Delicious water flasks"
+		MenuItem "2","Delicious water flasks"
 		.BYTE $A6,  6,	4
-		.BYTE '('
-		.BYTE $A1
-a3_1:		.BYTE '3'
-		.BYTE $A0
-aBrightTorches:	.BYTE ") Bright torches"
+		MenuItem "3","Bright torches"
 		.BYTE $A6,  6,	5
-		.BYTE '('
-		.BYTE $A1
-a4_1:		.BYTE '4'
-		.BYTE $A0
-aReliableCompas:.BYTE ") Reliable compasses"
+		MenuItem "4","Reliable compasses"
 		.BYTE $A6,  6,	6
-		.BYTE '('
-		.BYTE $A1
-a5:		.BYTE '5'
-		.BYTE $A0
-aAccurateTimepi:.BYTE ") Accurate timepieces"
+		MenuItem "5","Accurate timepieces"
 		.BYTE $A6,  6,	7
-		.BYTE '('
-		.BYTE $A1
-a0_1:		.BYTE '0'
-		.BYTE $A0
-aBuySomethingEl:.BYTE ") Buy something else"
+		MenuItem "0","Buy something else"
 		.BYTE $FF
 		.BYTE $A6,  0,	0
 		.BYTE $A3
