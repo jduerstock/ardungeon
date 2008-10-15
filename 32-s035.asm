@@ -402,17 +402,9 @@ aThouHastBrough:.BYTE "Thou hast brought my treasure!"
 byte_78FB:	.BYTE $A6,  6,	1	; DATA XREF: RAM:78D8o
 aGiveMeTheRingH:.BYTE "Give me the ring half!"
 		.BYTE $A6,  6,	3
-		.BYTE '('
-		.BYTE $A1
-a1:		.BYTE '1'
-		.BYTE $A0
-aGiveUpTheRingO:.BYTE ") Give up the ring or"
+		MenuItem "1","Give up the ring or"
 		.BYTE $A6,  6,	4
-		.BYTE '('
-		.BYTE $A1
-a2:		.BYTE '2'
-		.BYTE $A0
-aRefuseToGiveIt:.BYTE ") Refuse to give it up."
+		MenuItem "2","Refuse to give it up."
 		.BYTE $FF
 byte_794F:	.BYTE $A6,  0,	2	; DATA XREF: RAM:788Ao
 		.BYTE $A5
@@ -508,17 +500,11 @@ aWhatShallYouDo:.BYTE "What shall you do?"
 		.BYTE $D
 		.BYTE $A6,  4,	4
 		.BYTE '('
-		.BYTE $A1
-a1_0:		.BYTE '1'
-		.BYTE $A0
+a1_0:		BLINK '1'
 		.BYTE $AE
 aSRingOr:	.BYTE "'s ring or"   ; DATA XREF: RAM:7C1Co RAM:7C34o
 		.BYTE $A6,  4,	5
-		.BYTE '('
-		.BYTE $A1
-a0:		.BYTE '0'
-		.BYTE $A0
-aLeaveq:	.BYTE ") Leave?"
+		MenuItem "0","Leave?"
 		.BYTE $FF
 byte_7C6F:	.BYTE $A6,  0,	2	; DATA XREF: RAM:789Eo
 		.BYTE $A5

@@ -472,11 +472,7 @@ aDoNotTakeYourI:.BYTE "do not take your intrusi"
 		.BYTE $A6,  9,	1
 aThisIsAnEmptyC:.BYTE "This is an empty cell."
 		.BYTE $A6,$10,	3
-		.BYTE '('
-		.BYTE $A1
-a0:		.BYTE '0'
-		.BYTE $A0
-aLeave:		.BYTE ") Leave"
+		MenuItem "0","Leave"
 		.BYTE $FF
 		.BYTE $A6,  1,	0
 aHailFriend_IAm:.BYTE "Hail, Friend. I am Ozob, Acrinimiril's"
@@ -497,17 +493,9 @@ aThereIsAPrison:.BYTE "There is a prisoner chained here."
 aWhatDoYouDoq:	.BYTE "What do you do?"
 		.BYTE $D
 		.BYTE $A6,  4,	3
-		.BYTE '('
-		.BYTE $A1
-a1:		.BYTE '1'
-		.BYTE $A0
-aUnlockHisChain:.BYTE ") Unlock his chains with a key"
+		MenuItem "1","Unlock his chains with a key"
 		.BYTE $A6, $E,	5
-		.BYTE '('
-		.BYTE $A1
-a0_0:		.BYTE '0'
-		.BYTE $A0
-aLeave_0:	.BYTE ") Leave"
+		MenuItem "0","Leave"
 		.BYTE $FF
 		.BYTE $A6,  0,	2
 		.BYTE $A5
@@ -536,55 +524,33 @@ aYouHaveNoKeys_:.BYTE "You have no keys."
 aWhichSpellWoul:.BYTE "Which spell would you like to replace?"
 		.BYTE $D
 		.BYTE $D
-		.BYTE '('
-		.BYTE $A1
-a1_0:		.BYTE '1'
-		.BYTE $A0
-		.BYTE ") "
+		MenuItem "1",""
 		.BYTE $B4
 		.WORD $7928
 		.BYTE $20
 		.BYTE $D
-		.BYTE '('
-		.BYTE $A1
-a2:		.BYTE '2'
-		.BYTE $A0
-		.BYTE ") "
+		MenuItem "2",""
 		.BYTE $B4
 		.WORD $792A
 		.BYTE $20
 		.BYTE $D
-		.BYTE '('
-		.BYTE $A1
-a3:		.BYTE '3'
-		.BYTE $A0
-		.BYTE ") "
+		MenuItem "3",""
 		.BYTE $B4
 		.WORD $792C
 		.BYTE $20
 		.BYTE $D
-		.BYTE '('
-		.BYTE $A1
-a4:		.BYTE '4'
-		.BYTE $A0
-		.BYTE ") "
+		MenuItem "4",""
 		.BYTE $B4
 		.WORD $792E
 		.BYTE $20
 		.BYTE $D
 		.BYTE $D
 aItem:		.BYTE "Item #, "
-		.BYTE $A1
-aF:		.BYTE 'F'
-		.BYTE $A0
+aF:		BLINK 'F'
 aOrward:	.BYTE "orward, "
-		.BYTE $A1
-aB:		.BYTE "B"
-		.BYTE $A0
+aB:		BLINK "B"
 aAckOr:		.BYTE "ack, or "
-		.BYTE $A1
-aStop:		.BYTE "STOP"
-		.BYTE $A0
+aStop:		BLINK "STOP"
 aToExit:	.BYTE " to exit"
 		.BYTE $FF
 		.BYTE $A6,  0,	2
@@ -620,17 +586,9 @@ aBlowsInQuickSu:.BYTE "blows in quick succession and get"
 aDroppedItemsDu:.BYTE "dropped items during combat."
 		.BYTE $D
 		.BYTE $A6,  5,	6
-		.BYTE '('
-		.BYTE $A1
-a1_1:		.BYTE '1'
-		.BYTE $A0
-aLearnTheSpellF:.BYTE ") Learn the spell from Ozob"
+		MenuItem "1","Learn the spell from Ozob"
 		.BYTE $A6,  5,	7
-		.BYTE '('
-		.BYTE $A1
-a2_0:		.BYTE '2'
-		.BYTE $A0
-aRefuseTheSpell:.BYTE ") Refuse the Spell"
+		MenuItem "2","Refuse the Spell"
 		.BYTE $FF
 		.BYTE $A6,  0,	2
 		.BYTE $A5

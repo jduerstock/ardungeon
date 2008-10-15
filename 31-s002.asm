@@ -6021,54 +6021,32 @@ a_BattleOptions:
 aBattleOptions:	.BYTE "Battle Options"
 		.BYTE $D
 		MOVEXY	10,2
-		.BYTE	"("
-		BLINK	"1"
-		.BYTE	") Attack"
+		MenuItem "1","Attack"
 		MOVEXY	10,3
-		.BYTE	"("
-		BLINK	"2"
-		.BYTE	") Charge"
+		MenuItem "2","Charge"
 		MOVEXY	10,4
-		.BYTE	"("
-		BLINK	"3"
-		.BYTE	") Aimed Attack"
+		MenuItem "3","Aimed Attack"
 		MOVEXY	10,5
-		.BYTE	"("
-		BLINK	"4"
-		.BYTE	") Transact"
+		MenuItem "4","Transact"
 		MOVEXY	10,6
-		.BYTE	"("
-		BLINK	"5"
-		.BYTE	") Switch weapon"
+		MenuItem "5","Switch weapon"
 		MOVEXY	10,7
-		.BYTE	"("
-		BLINK	"0"
-		.BYTE	") Turn and run!"
+		MenuItem "0","Turn and run!"
 		.BYTE $FF
 		MOVEXY	0,0
 		.BYTE	$A5
 		.BYTE	"Transact Options"
 		.BYTE	$D
 		MOVEXY	15,2
-		.BYTE	"("
-		BLINK	"1"
-		.BYTE	") Offer"
+		MenuItem "1","Offer"
 		MOVEXY	15,3
-		.BYTE	"("
-		BLINK	"2"
-		.BYTE	") Bluff"
+		MenuItem "2","Bluff"
 		MOVEXY	15,4
-		.BYTE	"("
-		BLINK	"3"
-		.BYTE	") Trick"
+		MenuItem "3","Trick"
 		MOVEXY	15,5
-		.BYTE	"("
-		BLINK	"4"
-		.BYTE	") Hail"
+		MenuItem "4","Hail"
 		MOVEXY	15,6
-		.BYTE	"("
-		BLINK	"0"
-		.BYTE	") Leave"
+		MenuItem "0","Leave"
 		.BYTE $FF
 
 a_YouSurpriseThe:

@@ -503,17 +503,9 @@ unk_7929:	.BYTE	4		; DATA XREF: RAM:77FAr
 aWouldsTThouLik:.BYTE "Woulds't thou like to"
 		.BYTE $D
 		.BYTE $A6, $E,	4
-		.BYTE '('
-		.BYTE $A1
-a1:		.BYTE '1'
-		.BYTE $A0
-aSleep:		.BYTE ") Sleep"
+		MenuItem "1","Sleep"
 		.BYTE $A6, $E,	5
-		.BYTE '('
-		.BYTE $A1
-a0:		.BYTE '0'
-		.BYTE $A0
-aLeave:		.BYTE ") Leave"
+		MenuItem "0","Leave"
 		.BYTE $FF
 		.BYTE $A6,  0,	2
 		.BYTE $A5
