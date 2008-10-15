@@ -821,17 +821,11 @@ aImpartInsightF:.BYTE "impart insight for a small offering."
 		.BYTE $AC
 		.WORD aDoYou		; "Do you ("
 		.BYTE $A6,  7,	2
-aDoYou:		.BYTE "Do you ("        ; DATA XREF: RAM:7C5Co RAM:7CC3o ...
-		.BYTE $A1
-a1:		.BYTE "1"
-		.BYTE $A0
-aMakeAnOffering:.BYTE ") make an offering"
+aDoYou:		.BYTE "Do you "        ; DATA XREF: RAM:7C5Co RAM:7CC3o ...
+		MenuItem "1","make an offering"
 		.BYTE $D
-aOr:		.BYTE "           or ("
-		.BYTE $A1
-a2:		.BYTE "2"
-		.BYTE $A0
-aLeaveq:	.BYTE ") leave?"
+aOr:		.BYTE "           or "
+		MenuItem "2","leave?"
 		.BYTE $FF
 byte_7FB0:	.BYTE $A6,  0,	2	; DATA XREF: RAM:7A63o
 		.BYTE $A5
