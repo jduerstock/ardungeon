@@ -1785,17 +1785,9 @@ aOf:		.BYTE "of "
 aSilvers_:	.BYTE " silvers."
 		.BYTE $D
 byte_84F3:	.BYTE $A6, $B,	6	; DATA XREF: RAM:855Bo
-		.BYTE '('
-		.BYTE $A1
-a1_2:		.BYTE '1'
-		.BYTE $A0
-aAgreeToSale:	.BYTE ") Agree to sale"
+		MenuItem "1","Agree to sale"
 		.BYTE $A6, $B,	7
-		.BYTE '('
-		.BYTE $A1
-a2_2:		.BYTE '2'
-		.BYTE $A0
-aForgetIt:	.BYTE ") Forget it"
+		MenuItem "2","Forget it"
 		.BYTE $A3
 		.WORD loc_8037
 		.BYTE $FF
@@ -1904,29 +1896,13 @@ aYouOnlyHave:	.BYTE "You only have "
 aWhatWouldYouLi:.BYTE "What would you like to exchange?"
 		.BYTE $D
 		.BYTE $A6,  8,	3
-		.BYTE "("
-		.BYTE $A1
-a1_3:		.BYTE "1"
-		.BYTE $A0
-aGemsForCoins:	.BYTE ") Gems for coins"
+		MenuItem "1","Gems for coins"
 		.BYTE $A6,  8,	4
-		.BYTE "("
-		.BYTE $A1
-a2_3:		.BYTE "2"
-		.BYTE $A0
-aJewelsForCoins:.BYTE ") Jewels for coins"
+		MenuItem "2","Jewels for coins"
 		.BYTE $A6,  8,	5
-		.BYTE "("
-		.BYTE $A1
-a3_2:		.BYTE "3"
-		.BYTE $A0
-aSilverCopperCo:.BYTE ") Silver & copper coins"
+		MenuItem "3","Silver & copper coins"
 		.BYTE $A6,  8,	7
-		.BYTE '('
-		.BYTE $A1
-a0_2:		.BYTE '0'
-		.BYTE $A0
-aDone:		.BYTE ") Done"
+		MenuItem "0","Done"
 		.BYTE $FF
 		.BYTE $A6,  0,	2
 		.BYTE $A3
@@ -2091,29 +2067,13 @@ aSilversq_0:	.BYTE " silvers?"
 		.BYTE $D
 		.BYTE $D
 byte_89FC:	.BYTE $A6,  8,	4	; DATA XREF: RAM:89CCo	RAM:8A8Bo ...
-		.BYTE '('
-		.BYTE $A1
-a1_4:		.BYTE '1'
-		.BYTE $A0
-aAgreeToPrice:	.BYTE ") Agree to price"
+		MenuItem "1","Agree to price"
 		.BYTE $A6,  8,	5
-		.BYTE '('
-		.BYTE $A1
-a2_4:		.BYTE '2'
-		.BYTE $A0
-aMakeAnOffer:	.BYTE ") Make an offer"
+		MenuItem "2","Make an offer"
 		.BYTE $A6,  8,	6
-		.BYTE '('
-		.BYTE $A1
-a3_3:		.BYTE '3'
-		.BYTE $A0
-aLookAtTheNextI:.BYTE ") Look at the next item"
+		MenuItem "3","Look at the next item"
 		.BYTE $A6,  8,	7
-		.BYTE '('
-		.BYTE $A1
-a0_3:		.BYTE '0'
-		.BYTE $A0
-aBuySomething_0:.BYTE ") Buy something else"
+		MenuItem "0","Buy something else"
 		.BYTE $A3
 		.WORD loc_8037
 		.BYTE $FF
