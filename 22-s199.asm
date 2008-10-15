@@ -1142,29 +1142,13 @@ aIShallSeeYouTh:.BYTE "I shall see you then.",$D
 		.BYTE $AD
 		.WORD byte_7E13
 		.BYTE $A6,  5,	3
-		.BYTE "("
-		.BYTE $A1
-a1:		.BYTE "1"
-		.BYTE $A0
-aExamineMyWares:.BYTE ") Examine my wares."
+		MenuItem "1","Examine my wares."
 		.BYTE $A6,  5,	4
-		.BYTE "("
-		.BYTE $A1
-a2:		.BYTE "2"
-		.BYTE $A0
-aSellWeaponsOrA:.BYTE ") Sell weapons or armor."
+		MenuItem "2","Sell weapons or armor."
 		.BYTE $A6,  5,	5
-		.BYTE "("
-		.BYTE $A1
-a3:		.BYTE "3"
-		.BYTE $A0
-aHaveACustomWea:.BYTE ") Have a custom weapon made."
+		MenuItem "3","Have a custom weapon made."
 		.BYTE $A6,  5,	6
-		.BYTE "("
-		.BYTE $A1
-a0:		.BYTE "0"
-		.BYTE $A0
-aLeave_:	.BYTE ") Leave."
+		MenuItem "0","Leave."
 		.BYTE $FF
 byte_7E13:	.BYTE $1B		; DATA XREF: RAM:7746w	RAM:7DA5o
 byte_7E14:	.BYTE $7E		; DATA XREF: RAM:774Cw
@@ -1329,11 +1313,7 @@ unk_800F:	.BYTE $C0 ; À		; DATA XREF: RAM:7EDAo
 		.BYTE $A5
 aWhatWouldstTho:.BYTE "What wouldst thou like?",$D
 		.BYTE $A6,  0,	2
-		.BYTE "("
-		.BYTE $A1
-a1_0:		.BYTE "1"
-		.BYTE $A0
-		.BYTE ") "
+		MenuItem "1",""
 		.BYTE $B4
 		.WORD $6B
 		.BYTE $1C
@@ -1346,11 +1326,7 @@ aGemsJewels:	.BYTE " gems/jewels"
 		.WORD loc_81C2
 		.BYTE $D
 		.BYTE $A6,  0,	3
-		.BYTE "("
-		.BYTE $A1
-a2_0:		.BYTE "2"
-		.BYTE $A0
-		.BYTE ") "
+		MenuItem "2",""
 		.BYTE $B4
 		.WORD $6D
 		.BYTE $1C
@@ -1363,11 +1339,7 @@ aGemsJewels_0:	.BYTE " gems/jewels"
 		.WORD loc_81C5
 		.BYTE $D
 		.BYTE $A6,  0,	4
-		.BYTE "("
-		.BYTE $A1
-a3_0:		.BYTE "3"
-		.BYTE $A0
-		.BYTE ") "
+		MenuItem "3",""
 		.BYTE $B4
 		.WORD $6F
 		.BYTE $1C
@@ -1380,11 +1352,7 @@ aGemsJewels_1:	.BYTE " gems/jewels"
 		.WORD $81C8
 		.BYTE $D
 		.BYTE $A6,  0,	5
-		.BYTE "("
-		.BYTE $A1
-a4:		.BYTE "4"
-		.BYTE $A0
-		.BYTE ") "
+		MenuItem "4",""
 		.BYTE $B4
 		.WORD $71
 		.BYTE $1C
@@ -1396,17 +1364,11 @@ a4:		.BYTE "4"
 aGemsJewels_2:	.BYTE "gems/jewels"
 		.BYTE $A6,  0,	7
 		.BYTE $A5
-		.BYTE $A1
-aF:		.BYTE "F"
-		.BYTE $A0
+aF:		BLINK "F"
 aOrward:	.BYTE "orward, "
-		.BYTE $A1
-aB:		.BYTE "B"
-		.BYTE $A0
+aB:		BLINK "B"
 aAckwardOr:	.BYTE "ackward or "
-		.BYTE $A1
-aEsc:		.BYTE "ESC"
-		.BYTE $A0
+aEsc:		BLINK "ESC"
 aToExit:	.BYTE " to exit",$D
 		.BYTE $FF
 		.BYTE $A6,  0,	1
@@ -1633,35 +1595,15 @@ aInterestedInq:	.BYTE "interested in?"
 		.BYTE $D
 		.BYTE $D
 		.BYTE $A6, $C,	3
-		.BYTE "("
-		.BYTE $A1
-a1_1:		.BYTE "1"
-		.BYTE $A0
-aSword:		.BYTE ") Sword"
+		MenuItem "1","Sword"
 		.BYTE $A6, $C,	4
-		.BYTE "("
-		.BYTE $A1
-a2_1:		.BYTE "2"
-		.BYTE $A0
-aAxe:		.BYTE ") Axe"
+		MenuItem "2","Axe"
 		.BYTE $A6, $C,	5
-		.BYTE "("
-		.BYTE $A1
-a3_1:		.BYTE "3"
-		.BYTE $A0
-aMace:		.BYTE ") Mace"
+		MenuItem "3","Mace"
 		.BYTE $A6, $C,	6
-		.BYTE "("
-		.BYTE $A1
-a4_0:		.BYTE "4"
-		.BYTE $A0
-aHammer:	.BYTE ") Hammer"
+		MenuItem "4","Hammer"
 		.BYTE $A6, $C,	7
-		.BYTE "("
-		.BYTE $A1
-a0_0:		.BYTE "0"
-		.BYTE $A0
-aNotInterested:	.BYTE ") Not interested"
+		MenuItem "0","Not interested"
 		.BYTE $FF
 		.BYTE $A6,  0,	0
 		.BYTE $A5

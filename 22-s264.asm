@@ -567,23 +567,11 @@ aWelcomeToLucky:.BYTE "Welcome to Lucky's Potion Brewery!"
 aHowCanIHelpYou:.BYTE "How can I help you?"
 		.BYTE $D
 		.BYTE $A6,  6,	4
-		.BYTE '('
-		.BYTE $A1
-a1:		.BYTE '1'
-		.BYTE $A0
-aPurchaseAPotio:.BYTE ") Purchase a potion"
+		MenuItem "1","Purchase a potion"
 		.BYTE $A6,  6,	5
-		.BYTE '('
-		.BYTE $A1
-a2:		.BYTE '2'
-		.BYTE $A0
-aHaveAPotionIde:.BYTE ") Have a potion identified"
+		MenuItem "2","Have a potion identified"
 		.BYTE $A6,  6,	7
-		.BYTE '('
-		.BYTE $A1
-a0:		.BYTE '0'
-		.BYTE $A0
-aLeave:		.BYTE ") Leave"
+		MenuItem "0","Leave"
 		.BYTE $FF
 		.BYTE $A6,  0,	2
 		.BYTE $A5
@@ -707,11 +695,7 @@ aPotionsForMeTo:.BYTE "potions for me to identify!"
 aWhatWouldThouL:.BYTE "What would thou like?"
 		.BYTE $D
 		.BYTE $A6,  0,	2
-		.BYTE '('
-		.BYTE $A1
-a1_0:		.BYTE '1'
-		.BYTE $A0
-		.BYTE ") "
+		MenuItem "1",""
 		.BYTE $B4
 		.WORD $68
 		.BYTE $1E
@@ -723,11 +707,7 @@ aSilvers:	.BYTE "silvers"
 		.BYTE $A3
 		.WORD loc_7D25
 		.BYTE $D
-		.BYTE '('
-		.BYTE $A1
-a2_0:		.BYTE '2'
-		.BYTE $A0
-		.BYTE ") "
+		MenuItem "2",""
 		.BYTE $B4
 		.WORD $6A
 		.BYTE $1E
@@ -739,11 +719,7 @@ aSilvers_0:	.BYTE "silvers"
 		.BYTE $A3
 		.WORD loc_7D28
 		.BYTE $D
-		.BYTE '('
-		.BYTE $A1
-a3:		.BYTE '3'
-		.BYTE $A0
-		.BYTE ") "
+		MenuItem "3",""
 		.BYTE $B4
 		.WORD $6C
 		.BYTE $1E
@@ -755,11 +731,7 @@ aSilvers_1:	.BYTE "silvers"
 		.BYTE $A3
 		.WORD loc_7D2B
 		.BYTE $D
-		.BYTE '('
-		.BYTE $A1
-a4:		.BYTE '4'
-		.BYTE $A0
-		.BYTE ") "
+		MenuItem "4",""
 		.BYTE $B4
 		.WORD $6E
 		.BYTE $1E
