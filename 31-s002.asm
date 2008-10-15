@@ -6084,25 +6084,17 @@ a_YouSurpriseThe:
 		.BYTE	"Attempt to:"
 		.BYTE	$D
 		MOVEXY	10,3
-		.BYTE	"("
-		BLINK	"1"
-		.BYTE	") waylay the "
+		MenuItem "1","waylay the "
 		.BYTE	$B4
 		.WORD	$AA01
 		.BYTE	$14
 		.BYTE	"."
 		MOVEXY	10,4
-		.BYTE	"("
-		BLINK	"2"
-		.BYTE	") snatch something."
+		MenuItem "2","snatch something."
 		MOVEXY	10,5
-		.BYTE	"("
-		BLINK	"3"
-		.BYTE	") none of these."
+		MenuItem "3","none of these."
 		MOVEXY	10,7
-		.BYTE	"("
-		BLINK	"0"
-		.BYTE	") Leave."
+		MenuItem "0","Leave."
 		.BYTE	$FF
 
 a_YouGrab:
