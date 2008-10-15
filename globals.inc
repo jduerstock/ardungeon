@@ -127,3 +127,7 @@ MOVECURSOR = $A6
 .macro STRSUB arg1
 	.BYTE $AC,.LOBYTE(arg1),.HIBYTE(arg1)
 .endmacro
+
+.macro MenuItem	Num, Choice
+	.BYTE	"(",BLINKON,Num,BLINKOFF,") ",Choice
+.endmacro
