@@ -1282,29 +1282,13 @@ aIAmTheEnchantr:.BYTE "I am the Enchantress."
 aWhatWouldTheeA:.BYTE "What would thee ask of me?"
 		.BYTE $D
 		.BYTE $A6,  5,	3
-		.BYTE "("
-		.BYTE $A1
-a1:		.BYTE "1"
-		.BYTE $A0
-aExamineThyWeap:.BYTE ") Examine thy weapons and armor"
+		MenuItem "1","Examine thy weapons and armor"
 		.BYTE $A6,  5,	4
-		.BYTE "("
-		.BYTE $A1
-a2:		.BYTE "2"
-		.BYTE $A0
-aRepairAWeaponO:.BYTE ") Repair a weapon or armor"
+		MenuItem "2","Repair a weapon or armor"
 		.BYTE $A6,  5,	5
-		.BYTE '('
-		.BYTE $A1
-a3:		.BYTE '3'
-		.BYTE $A0
-aEnchantAWeapon:.BYTE ") Enchant a weapon or armor"
+		MenuItem "3","Enchant a weapon or armor"
 		.BYTE $A6,  5,	7
-		.BYTE '('
-		.BYTE $A1
-a0:		.BYTE '0'
-		.BYTE $A0
-aSayGoodbye:	.BYTE ") Say Goodbye"
+		MenuItem "0","Say Goodbye"
 		.BYTE $FF
 
 a_ItsAlreadyEnhanced:
@@ -1320,41 +1304,17 @@ a_WhatShallIDo:
 aWhatShallIDoq:	.BYTE "What shall I do?"
 		.BYTE $D
 		.BYTE $A6,  5,	2
-		.BYTE "("
-		.BYTE $A1
-a1_0:		.BYTE "1"
-		.BYTE $A0
-aExtendTheLifeO:.BYTE ") Extend the life of this weapon."
+		MenuItem "1","Extend the life of this weapon."
 		.BYTE $A6,  5,	3
-		.BYTE "("
-		.BYTE $A1
-a2_0:		.BYTE "2"
-		.BYTE $A0
-aIncreaseItsEff:.BYTE ") Increase its effectiveness."
+		MenuItem "2","Increase its effectiveness."
 		.BYTE $A6,  5,	4
-		.BYTE "("
-		.BYTE $A1
-a3_0:		.BYTE "3"
-		.BYTE $A0
-aAddExtraDamage:.BYTE ") Add extra damage ability."
+		MenuItem "3","Add extra damage ability."
 		.BYTE $A6,  5,	5
-		.BYTE "("
-		.BYTE $A1
-a4:		.BYTE "4"
-		.BYTE $A0
-aDecreaseItsWei:.BYTE ") Decrease its weight."
+		MenuItem "4","Decrease its weight."
 		.BYTE $A6,  5,	6
-		.BYTE "("
-		.BYTE $A1
-a5:		.BYTE "5"
-		.BYTE $A0
-aLetMeDecideWha:.BYTE ") Let me decide what's best."
+		MenuItem "5","Let me decide what's best."
 		.BYTE $A6,  5,	7
-		.BYTE "("
-		.BYTE $A1
-a0_0:		.BYTE "0"
-		.BYTE $A0
-aNothing_:	.BYTE ") Nothing."
+		MenuItem "0","Nothing."
 		.BYTE $FF
 		.BYTE $A6,  0,	2
 		.BYTE $A5
@@ -1368,41 +1328,17 @@ a_WhatShallIDo_0:
 aWhatShallIDo_0:.BYTE "What shall I do?"
 		.BYTE $D
 		.BYTE $A6,  5,	2
-		.BYTE '('
-		.BYTE $A1
-a1_1:		.BYTE '1'
-		.BYTE $A0
-aExtendTheLif_0:.BYTE ") Extend the life of thine armor."
+		MenuItem "1","Extend the life of thine armor."
 		.BYTE $A6,  5,	3
-		.BYTE '('
-		.BYTE $A1
-a2_1:		.BYTE '2'
-		.BYTE $A0
-aIncreaseItsE_0:.BYTE ") Increase its effectiveness."
+		MenuItem "2","Increase its effectiveness."
 		.BYTE $A6,  5,	4
-		.BYTE '('
-		.BYTE $A1
-a3_1:		.BYTE '3'
-		.BYTE $A0
-aAddExtraProtec:.BYTE ") Add extra protection."
+		MenuItem "3","Add extra protection."
 		.BYTE $A6,  5,	5
-		.BYTE '('
-		.BYTE $A1
-a4_0:		.BYTE '4'
-		.BYTE $A0
-aDecreaseItsW_0:.BYTE ") Decrease its weight."
+		MenuItem "4","Decrease its weight."
 		.BYTE $A6,  5,	6
-		.BYTE '('
-		.BYTE $A1
-a5_0:		.BYTE '5'
-		.BYTE $A0
-aLetMeDecideW_0:.BYTE ") Let me decide what's best."
+		MenuItem "5","Let me decide what's best."
 		.BYTE $A6,  5,	7
-		.BYTE '('
-		.BYTE $A1
-a0_1:		.BYTE '0'
-		.BYTE $A0
-aNothing:	.BYTE ") Nothing"
+		MenuItem "0","Nothing"
 		.BYTE $FF
 
 a_ThatWillCostAt:

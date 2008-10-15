@@ -2111,23 +2111,11 @@ aIWillWrapThatU:.BYTE "I will wrap that up for you."
 		.BYTE $D
 		.BYTE $FF
 		.BYTE $A6, $A,	2
-		.BYTE "("
-		.BYTE $A1
-a1_3:		.BYTE "1"
-		.BYTE $A0
-aSayGoodbye:	.BYTE ") Say goodbye"
+		MenuItem "1","Say goodbye"
 		.BYTE $A6, $A,	4
-		.BYTE "("
-		.BYTE $A1
-a2_3:		.BYTE "2"
-		.BYTE $A0
-aLeaveATip:	.BYTE ") Leave a tip"
+		MenuItem "2","Leave a tip"
 		.BYTE $A6, $A,	7
-		.BYTE "("
-		.BYTE $A1
-a0_2:		.BYTE "0"
-		.BYTE $A0
-aLeaveQuietly:	.BYTE ") Leave quietly"
+		MenuItem "0","Leave quietly"
 		.BYTE $FF
 ; ---------------------------------------------------------------------------
 
