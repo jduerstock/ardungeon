@@ -201,7 +201,8 @@ j_SEGLOAD:
 ; ---------------------------------------------------------------------------
 		JMP	sub_2DAB	; $1860
 ; ---------------------------------------------------------------------------
-		JMP	sub_2DE3	; $1863
+j_TESTBIT:
+		JMP	TESTBIT		; $1863
 ; ---------------------------------------------------------------------------
 j_BLOCKMOVE:
 		JMP	BLOCKMOVE	; $1866
@@ -3260,7 +3261,7 @@ sub_2979:				; CODE XREF: RAM:1800j
 					; sub_2799:loc_279Ep ...
 		BIT	byte_258
 		BVC	loc_2986
-		BIT	$25A
+		BIT	byte_25A
 		BPL	loc_2986
 		JMP	$F9F4
 ; ---------------------------------------------------------------------------
@@ -3318,8 +3319,11 @@ aOrPress:	.BYTE "or press "
 aToAbort:	.BYTE " to abort"
 		.BYTE $D
 		.BYTE $FF
-aLoading___:	.BYTE "Loading..."      ; DATA XREF: sub_2CFB+1Ar
-aEncounter:	.BYTE "Encounter!",0    ; DATA XREF: sub_2CFB:loc_2D0Er
+aLoading___:	.BYTE "Loading..."	; DATA XREF: sub_2CFB+1Ar
+aEncounter:	.BYTE "Encounter!"	; DATA XREF: sub_2CFB:loc_2D0Er
+
+byte_2A38:
+		.BYTE	0
 		.BYTE	1
 		.BYTE $EF ; ï
 		.BYTE $FF
@@ -3866,7 +3870,7 @@ loc_2D18:				; CODE XREF: sub_2CFB+18j
 		LDA	#0
 		STA	$264
 		STA	$259
-		STA	$25A
+		STA	byte_25A
 		STA	$25B
 		BIT	byte_258
 		BPL	loc_2D40
@@ -3879,10 +3883,9 @@ loc_2D18:				; CODE XREF: sub_2CFB+18j
 
 loc_2D40:				; CODE XREF: sub_2CFB+34j sub_2CFB+3Bj
 		LDA	SEGNO
-		LDX	#$2A ; '*'
-		LDY	#$38 ; '8'
-		JSR	sub_2DE3
-		ROR	$25A
+		ldxy	$2A38
+		JSR	TESTBIT
+		ROR	byte_25A
 		JSR	sub_275B
 		BCS	loc_2D5C
 		BIT	$259
@@ -4007,7 +4010,7 @@ loc_2DDF:				; DATA XREF: sub_2DAB+9w sub_2DAB+3w
 ; --------------- S U B	R O U T	I N E ---------------------------------------
 
 
-sub_2DE3:				; CODE XREF: RAM:1863j	sub_2CFB+4Cp ...
+TESTBIT:				; CODE XREF: RAM:1863j	sub_2CFB+4Cp ...
 		STX	loc_2DF3+2
 		STY	loc_2DF3+1
 		PHA
@@ -5167,7 +5170,7 @@ sub_3531:				; CODE XREF: RAM:30EEp
 loc_3548:
 		LDA	byte_195A
 		ldxy	$7500
-		JSR	sub_2DE3
+		JSR	TESTBIT
 		BCS	loc_355C
 		LDA	#$FF
 		STA	byte_195D
@@ -5183,7 +5186,7 @@ loc_355C:				; CODE XREF: RAM:3552j	RAM:356Ej
 loc_3564:
 		LDA	byte_195A
 		ldxy	$7504
-		JSR	sub_2DE3
+		JSR	TESTBIT
 		BCS	loc_355C
 		LDA	byte_195A
 		ldxy	$7504
@@ -8323,7 +8326,7 @@ loc_4C6B:				; DATA XREF: RAM:4CC5o
 loc_4C78:				; CODE XREF: RAM:4C73j
 		ldxy	$648B
 		LDA	$4B
-		JSR	sub_2DE3
+		JSR	TESTBIT
 		BCS	loc_4C86
 		JMP	locret_4C9C
 ; ---------------------------------------------------------------------------

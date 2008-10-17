@@ -740,9 +740,9 @@ loc_7ABA:				; CODE XREF: sub_7AB6+7j
 		BCS	locret_7AFF
 
 loc_7AC8:				; CODE XREF: sub_7AB6+47j
-		LDY	#$59 ; 'Y'
-		LDX	#$75 ; 'u'
-		JSR	$1863
+		LDY	#<$7559
+		LDX	#>$7559
+		JSR	j_TESTBIT
 		BCC	loc_7AF7
 		LDX	$7C
 		LDY	$7B

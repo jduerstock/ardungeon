@@ -20,10 +20,7 @@ loc_760D:				; CODE XREF: RAM:7604j	RAM:7607j
 ; ---------------------------------------------------------------------------
 
 loc_7611:				; CODE XREF: RAM:7601j
-		LDA	#$9B ; '›'
-		STA	7
-		LDA	#$88 ; 'ˆ'
-		STA	8
+		dldi	off_7, $889B
 		LDA	#2
 		JSR	$180F
 		LDA	#$FF
@@ -381,9 +378,9 @@ loc_7892:				; CODE XREF: sub_788E+7j
 		BCS	locret_78D7
 
 loc_78A0:				; CODE XREF: sub_788E+47j
-		LDY	#$42 ; 'B'
-		LDX	#$75 ; 'u'
-		JSR	$1863
+		LDY	#<$7542
+		LDX	#>$7542
+		JSR	j_TESTBIT
 		BCC	loc_78CF
 		LDX	$79
 		LDY	$78

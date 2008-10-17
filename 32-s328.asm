@@ -541,7 +541,7 @@ loc_79D1:				; CODE XREF: RAM:79CAj
 		LDA	($64),Y
 		LDX	$63
 		LDY	$62
-		JSR	$1863
+		JSR	j_TESTBIT
 		LDY	#2
 		LDA	($64),Y
 		BPL	loc_79F5

@@ -389,9 +389,8 @@ loc_789D:				; CODE XREF: sub_773A+1Dj sub_773A+33j ...
 
 
 sub_78A1:				; CODE XREF: sub_773A+Cp sub_773A+22p	...
-		LDX	#$75 ; 'u'
-		LDY	#8
-		JMP	$1863
+		ldxy	$7508
+		JMP	j_TESTBIT
 ; End of function sub_78A1
 
 

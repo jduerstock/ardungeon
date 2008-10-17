@@ -5331,7 +5331,7 @@ sub_9509:				; CODE XREF: sub_88B0:loc_79CAp
 sub_950E:				; CODE XREF: sub_7B59p	sub_950E+31j
 		JSR	$1827
 		LDA	#$80 ; '€'
-		STA	$25A
+		STA	byte_25A
 		dldi	off_7, byte_AC97
 		LDA	$8D
 		STA	$96

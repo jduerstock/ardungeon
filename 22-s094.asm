@@ -188,9 +188,8 @@ loc_7752:				; CODE XREF: RAM:7759j
 
 
 sub_775E:				; CODE XREF: RAM:763Fp	RAM:7681p ...
-		LDX	#$75 ; 'u'
-		LDY	#8
-		JMP	$1863
+		ldxy	$7508
+		JMP	j_TESTBIT
 ; End of function sub_775E
 
 
@@ -198,8 +197,7 @@ sub_775E:				; CODE XREF: RAM:763Fp	RAM:7681p ...
 
 
 sub_7765:				; CODE XREF: sub_76F2+27p
-		LDX	#$75 ; 'u'
-		LDY	#8
+		ldxy	$7508
 		SEC
 		JMP	$1860
 ; End of function sub_7765

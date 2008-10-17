@@ -138,25 +138,22 @@ loc_7711:				; CODE XREF: RAM:770Bj	RAM:7798j
 		STA	$69
 
 loc_7715:				; CODE XREF: RAM:7743j
-		LDX	#$75 ; 'u'
-		LDY	#$12
-		JSR	$1863
+		ldxy	$7512
+		JSR	j_TESTBIT
 		BCS	loc_772F
 		LDA	$D20A
-		CMP	#$20 ; ' '
+		CMP	#$20
 		LDA	$69
-		LDX	#$75 ; 'u'
-		LDY	#$12
+		ldxy	$7512
 		JSR	$1860
 		JMP	loc_773D
 ; ---------------------------------------------------------------------------
 
 loc_772F:				; CODE XREF: RAM:771Cj
 		LDA	$D20A
-		CMP	#$20 ; ' '
+		CMP	#$20
 		LDA	$69
-		LDX	#$75 ; 'u'
-		LDY	#$12
+		ldxy	$7512
 		JSR	$1860
 
 loc_773D:				; CODE XREF: RAM:772Cj
@@ -576,9 +573,8 @@ loc_79D2:				; CODE XREF: RAM:7836j	RAM:7845j ...
 
 loc_79E4:				; CODE XREF: RAM:7AA8j
 		LDA	$71
-		LDX	#$75 ; 'u'
-		LDY	#$12
-		JSR	$1863
+		ldxy	$7512
+		JSR	j_TESTBIT
 		BCS	loc_79F2
 		JMP	loc_7A98
 ; ---------------------------------------------------------------------------

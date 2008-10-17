@@ -1052,9 +1052,9 @@ loc_7CAA:				; CODE XREF: RAM:7CADj
 		LDA	$7B
 
 loc_7CB4:				; CODE XREF: RAM:7CF7j
-		LDY	#$36 ; '6'
-		LDX	#$75 ; 'u'
-		JSR	$1863
+		LDY	#<$7536
+		LDX	#>$7536
+		JSR	j_TESTBIT
 		BCC	loc_7CF1
 		LDA	$7C
 		ASL	A
@@ -1157,10 +1157,9 @@ loc_7D4D:				; CODE XREF: RAM:7D02p	RAM:7D2Ep
 
 loc_7D56:				; CODE XREF: RAM:7D6Aj
 		STY	$69
-		LDX	#$75 ; 'u'
-		LDY	#$36 ; '6'
+		ldxy	$7536
 		LDA	$69
-		JSR	$1863
+		JSR	j_TESTBIT
 		BCC	loc_7D65
 		INC	$6D
 

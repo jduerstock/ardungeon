@@ -207,60 +207,60 @@ sub_819E:				; CODE XREF: sub_8000+64p
 		LDA	#0
 		STA	byte_258
 		LDA	CONSOL
-		CMP	#5		; select pressed
-		BEQ	loc_8221
-		LDA	#$FE ; 'þ'
-		STA	PORTB
-		LDA	$D800
-		TAX
-		INX
-		STX	$D800
-		CPX	$D800
-		BNE	loc_821C
-		DEX
-		CMP	$D800
-		BEQ	loc_821C
-		dldi	off_7, $8223
-		dldi	off_9, $F900
-		ldxy	$700
-		JSR	BLOCKMOVE
-		LDA	#$80 ; '€'
-		STA	byte_258
+		CMP	#5		; if select pressed
+		BEQ	loc_8221	; skip memory tests
+		LDA	#$FE		; try turning off
+		STA	PORTB		; the OS ROM
+		LDA	$D800		; load an OS location
+		TAX			; copy it to X
+		INX			; add 1
+		STX	$D800		; store it back
+		CPX	$D800		; did it change?
+		BNE	loc_821C	; no, exit
+		DEX			; subtract 1
+		CMP	$D800		; test original value
+		BEQ	loc_821C	; if the same, exit
+		dldi	off_7, $8223	; copy from the end of this block
+		dldi	off_9, loc_F900	; to $F900
+		ldxy	$700		; copy $700 bytes
+		JSR	BLOCKMOVE	; move it!
+		LDA	#$80		; set the memory flag
+		STA	byte_258	; $80 = 64K machine
 		LDA	CONSOL
-		CMP	#3		; option pressed
-		BEQ	loc_821C
-		LDX	$4000
-		STX	4
-		LDA	#$E2 ; 'â'
+		CMP	#3		; if option pressed
+		BEQ	loc_821C	; skip XE extended RAM test
+		LDX	$4000		; load top of XE bank
+		STX	4		; save it
+		LDA	#$E2		; enable XE bank
 		STA	PORTB
-		INX
-		STX	$4000
-		LDA	#$FE ; 'þ'
+		INX			; add 1
+		STX	$4000		; save it back
+		LDA	#$FE		; disable XE bank
 		STA	PORTB
-		CPX	$4000
-		BNE	loc_8205
-		DEX
-		STX	$4000
-		JMP	loc_821C
+		CPX	$4000		; did it change?
+		BNE	loc_8205	; yes, skip restore
+		DEX			; no, subtract 1
+		STX	$4000		; restore original byte
+		JMP	loc_821C	; leave
 ; ---------------------------------------------------------------------------
 
 loc_8205:				; CODE XREF: sub_819E+5Ej
-		LDA	#$E2 ; 'â'
+		LDA	#$E2		; enable XE bank
 		STA	PORTB
-		DEC	$4000
-		LDX	$4000
-		CPX	4
-		BNE	loc_821C
-		LDA	#$C0 ; 'À'
-		STA	byte_258
-		JSR	$F9CF
+		DEC	$4000		; subtract 1 from test byte
+		LDX	$4000		; load it again
+		CPX	4		; test v. saved value
+		BNE	loc_821C	; if it's different, bail
+		LDA	#$C0		; set 128K bit
+		STA	byte_258	; in memory flag
+		JSR	loc_F9CF	; perform XE RAM init
 
 loc_821C:				; CODE XREF: sub_819E+1Dj sub_819E+23j ...
-		LDA	#$FE ; 'þ'
+		LDA	#$FE		; turn OS ROM off
 		STA	PORTB
 
 loc_8221:				; CODE XREF: sub_819E+Bj
-		CLI
+		CLI			; enable interrupts
 		RTS
 ; End of function sub_819E
 
@@ -370,10 +370,10 @@ loc_F9CF:
 		LDX	#$FF
 
 loc_F9D1:				; CODE XREF: RAM:82F9j
-		TXA
-		DEX
-		STA	byte_FBA5,X
-		BNE	loc_F9D1
+		TXA			; A = X
+		DEX			; subtract 1
+		STA	byte_FBA5,X	; save it in $FBA5+X
+		BNE	loc_F9D1	; keep going until 0
 		STX	$FCA4
 		LDX	#0
 
@@ -1323,7 +1323,7 @@ loc_8976:				; CODE XREF: RAM:895Aj	RAM:896Fj
 ; ---------------------------------------------------------------------------
 		BIT	byte_258
 		BVC	loc_8986
-		BIT	$25A
+		BIT	byte_25A
 		BPL	loc_8986
 		JMP	$F9F4
 ; ---------------------------------------------------------------------------

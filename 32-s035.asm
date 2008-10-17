@@ -68,7 +68,7 @@ loc_764D:				; CODE XREF: RAM:7646j
 		LDY	$63
 		LDA	unk_787A,Y
 		ldxy	$7508
-		JSR	$1863
+		JSR	j_TESTBIT
 		BCC	loc_76BA
 		JMP	loc_77CA
 ; ---------------------------------------------------------------------------
@@ -77,7 +77,7 @@ loc_76BA:				; CODE XREF: RAM:76B5j
 		LDY	$63
 		LDA	unk_787C,Y
 		ldxy	$7508
-		JSR	$1863
+		JSR	j_TESTBIT
 		BCC	loc_76CF
 		ldxy	$78AA
 		JMP	loc_776F
@@ -250,7 +250,7 @@ loc_77F7:				; CODE XREF: RAM:77FEj
 sub_7809:				; CODE XREF: RAM:loc_77CAp
 		LDA	#$17
 		ldxy	$7508
-		JSR	$1863
+		JSR	j_TESTBIT
 		BCS	loc_7819
 		JSR	sub_781D
 		BCC	loc_781B
@@ -273,7 +273,7 @@ sub_781D:				; CODE XREF: sub_7809+Bp
 		LDY	$63
 		LDA	unk_787E,Y
 		ldxy	$7508
-		JSR	$1863
+		JSR	j_TESTBIT
 		RTS
 ; End of function sub_781D
 
