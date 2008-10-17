@@ -199,7 +199,8 @@ j_SEGLOAD:
 ; ---------------------------------------------------------------------------
 		JMP	loc_2C9B	; $185D
 ; ---------------------------------------------------------------------------
-		JMP	sub_2DAB	; $1860
+j_SETBIT:
+		JMP	SETBIT		; $1860
 ; ---------------------------------------------------------------------------
 j_TESTBIT:
 		JMP	TESTBIT		; $1863
@@ -993,9 +994,9 @@ loc_1CB8:				; CODE XREF: sub_1C88+28j
 		BCS	loc_1CCF
 		LDX	$23
 		TAY
-		LDA	unk_1FD4,Y
+		LDA	byte_1FD4,Y
 		PHA
-		LDA	unk_1FBF,Y
+		LDA	byte_1FBF,Y
 		PHA
 		RTS
 ; ---------------------------------------------------------------------------
@@ -1021,12 +1022,12 @@ loc_1CD1:				; CODE XREF: sub_1C88+32j
 
 ; ---------------------------------------------------------------------------
 
-loc_1CE7:
+PRTOP_A0:				; blink off
 		LDA	#0
 		STA	BLINKFLAG
 		BEQ	loc_1CAB
 
-loc_1CED:
+PRTOP_A1:				; blink on
 		LDA	#$80
 		STA	BLINKFLAG
 		BNE	loc_1CAB
@@ -1051,22 +1052,19 @@ sub_1D07:				; CODE XREF: RAM:1D01p
 
 ; ---------------------------------------------------------------------------
 
-loc_1D0A:
+PRTOP_A5:
 		LDA	#0
 		STA	byte_1F23
 
 loc_1D0F:				; CODE XREF: RAM:1D28j
 		STA	$25
 		STA	$26
-		LDA	off_16
-		STA	$27
-		LDA	off_16+1
-		STA	$28
+		dmv	$27, off_16
 		LDA	#$80
 		STA	$24
 		BMI	loc_1CAB
 
-loc_1D21:
+PRTOP_A2:
 		LDA	#$80
 		STA	byte_1F23
 		LDA	#0
@@ -1083,10 +1081,7 @@ loc_1D2A:
 ; ---------------------------------------------------------------------------
 
 loc_1D3B:
-		LDA	off_16
-		STA	$27
-		LDA	off_16+1
-		STA	$28
+		dmv	$27, off_16
 		LDA	#$C0 ; 'À'
 		STA	$24
 		LDA	#0
@@ -1394,23 +1389,14 @@ loc_1EE0:				; CODE XREF: RAM:1ED6j
 
 loc_1EE3:
 		JSR	sub_1F26
-		LDA	off_16
-		STA	off_1F24
-		LDA	off_16+1
-		STA	off_1F24+1
-		LDA	off_18
-		STA	off_16
-		LDA	off_18+1
-		STA	off_16+1
+		dmv	off_1F24, off_16
+		dmv	off_16, off_18
 		JMP	loc_1CAB
 ; ---------------------------------------------------------------------------
 
 loc_1EFB:
 		JSR	sub_1F26
-		LDA	off_16
-		STA	off_1F24
-		LDA	off_16+1
-		STA	off_1F24+1
+		dmv	off_1F24, off_16
 		LDY	#0
 		LDA	(off_18),Y
 		STA	off_16
@@ -1421,13 +1407,10 @@ loc_1EFB:
 ; ---------------------------------------------------------------------------
 
 loc_1F16:
-		LDA	off_1F24
-		STA	off_16
-		LDA	off_1F24+1
-		STA	off_16+1
+		dmv	off_16, off_1F24
 		JMP	loc_1CAB
 ; ---------------------------------------------------------------------------
-byte_1F23:	.BYTE 0			; DATA XREF: RAM:1D0Cw	RAM:1D23w ...
+byte_1F23:	.BYTE	0		; DATA XREF: RAM:1D0Cw	RAM:1D23w ...
 off_1F24:	.WORD	0		; DATA XREF: RAM:1EE8w	RAM:1F00w ...
 
 ; --------------- S U B	R O U T	I N E ---------------------------------------
@@ -1435,9 +1418,9 @@ off_1F24:	.WORD	0		; DATA XREF: RAM:1EE8w	RAM:1F00w ...
 
 sub_1F26:				; CODE XREF: RAM:1CF3p	RAM:1CFEp ...
 		JSR	sub_1F31
-		STA	$18
+		STA	off_18
 		JSR	sub_1F31
-		STA	$19
+		STA	off_18+1
 		RTS
 ; End of function sub_1F26
 
@@ -1562,12 +1545,12 @@ unk_1FB7:	.BYTE	2		; DATA XREF: RAM:1E55r
 		.BYTE	9
 		.BYTE	9
 		.BYTE	9
-unk_1FBF:	.BYTE	<(loc_1CE7-1)	; DATA XREF: sub_1C88+42r
-		.BYTE	<(loc_1CED-1)
-		.BYTE	<(loc_1D21-1)
+byte_1FBF:	.BYTE	<(PRTOP_A0-1)	; DATA XREF: sub_1C88+42r
+		.BYTE	<(PRTOP_A1-1)
+		.BYTE	<(PRTOP_A2-1)
 		.BYTE	<(loc_1CFE-1)
 		.BYTE	<(loc_1CF3-1)
-		.BYTE	<(loc_1D0A-1)
+		.BYTE	<(PRTOP_A5-1)
 		.BYTE	<(loc_1D2A-1)
 		.BYTE	<(loc_1D3B-1)
 		.BYTE	<(loc_1D50-1)
@@ -1583,12 +1566,12 @@ unk_1FBF:	.BYTE	<(loc_1CE7-1)	; DATA XREF: sub_1C88+42r
 		.BYTE	<(loc_1DEC-1)
 		.BYTE	<(loc_1EB4-1)
 		.BYTE	<(loc_1EBF-1)
-unk_1FD4:	.BYTE	>(loc_1CE7-1)	; DATA XREF: sub_1C88+3Er
-		.BYTE	>(loc_1CED-1)
-		.BYTE	>(loc_1D21-1)
+byte_1FD4:	.BYTE	>(PRTOP_A0-1)	; DATA XREF: sub_1C88+3Er
+		.BYTE	>(PRTOP_A1-1)
+		.BYTE	>(PRTOP_A2-1)
 		.BYTE	>(loc_1CFE-1)
 		.BYTE	>(loc_1CF3-1)
-		.BYTE	>(loc_1D0A-1)
+		.BYTE	>(PRTOP_A5-1)
 		.BYTE	>(loc_1D2A-1)
 		.BYTE	>(loc_1D3B-1)
 		.BYTE	>(loc_1D50-1)
@@ -3968,7 +3951,7 @@ locret_2DAA:				; CODE XREF: RAM:2DA1j
 ; --------------- S U B	R O U T	I N E ---------------------------------------
 
 
-sub_2DAB:				; CODE XREF: RAM:1860j	RAM:3578p ...
+SETBIT:					; CODE XREF: RAM:1860j	RAM:3578p ...
 		STX	loc_2DD9+2
 		STX	loc_2DDF+2
 		STY	loc_2DD9+1
@@ -3980,7 +3963,7 @@ sub_2DAB:				; CODE XREF: RAM:1860j	RAM:3578p ...
 		LDA	#$3D		; AND $xxxx,X
 		ldxy	byte_2DFD
 
-loc_2DC6:				; CODE XREF: sub_2DAB+13j
+loc_2DC6:				; CODE XREF: SETBIT+13j
 		STA	loc_2DDC
 		STY	loc_2DDC+1
 		STX	loc_2DDC+2
@@ -3994,17 +3977,17 @@ loc_2DC6:				; CODE XREF: sub_2DAB+13j
 		LSR	A
 		TAY
 
-loc_2DD9:				; DATA XREF: sub_2DAB+6w sub_2DABw
+loc_2DD9:				; DATA XREF: SETBIT+6w SETBITw
 		LDA	$FFFF,Y
 
-loc_2DDC:				; DATA XREF: sub_2DAB:loc_2DC6w
-					; sub_2DAB+1Ew	...
+loc_2DDC:				; DATA XREF: SETBIT:loc_2DC6w
+					; SETBIT+1Ew	...
 		ORA	byte_2E05,X
 
-loc_2DDF:				; DATA XREF: sub_2DAB+9w sub_2DAB+3w
+loc_2DDF:				; DATA XREF: SETBIT+9w SETBIT+3w
 		STA	$FFFF,Y
 		RTS
-; End of function sub_2DAB
+; End of function SETBIT
 
 
 ; --------------- S U B	R O U T	I N E ---------------------------------------
@@ -4035,7 +4018,7 @@ locret_2DFC:				; CODE XREF: sub_2DE3+16j
 
 ; ---------------------------------------------------------------------------
 byte_2DFD:	.BYTE $7F,$BF,$DF,$EF,$F7,$FB,$FD,$FE
-byte_2E05:	.BYTE $80,$40,$20,$10,	8,  4,	2,  1 ;	DATA XREF: sub_2DAB:loc_2DDCr
+byte_2E05:	.BYTE $80,$40,$20,$10,	8,  4,	2,  1 ;	DATA XREF: SETBIT:loc_2DDCr
 					; sub_2DE3+13r
 
 ; --------------- S U B	R O U T	I N E ---------------------------------------
@@ -5191,7 +5174,7 @@ loc_3564:
 		LDA	byte_195A
 		ldxy	$7504
 		SEC
-		JSR	sub_2DAB
+		JSR	SETBIT
 		LDA	#$FF
 		STA	byte_1979
 		JMP	loc_320D
@@ -8122,7 +8105,7 @@ sub_4B4D:				; CODE XREF: RAM:1884j	sub_4EFD+32p ...
 		BMI	locret_4B73
 		ldxy	$648B
 		CLC
-		JSR	sub_2DAB
+		JSR	SETBIT
 		LDY	$4F
 		LDX	#0
 		LDA	off_41
@@ -8305,11 +8288,10 @@ loc_4C27:				; CODE XREF: RAM:4C14j
 		BNE	loc_4C95
 
 loc_4C5A:				; DATA XREF: RAM:4CC3o
-		LDX	#>$648B
-		LDY	#<$648B
+		ldxy	$648B
 		LDA	$4B
 		SEC
-		JSR	sub_2DAB
+		JSR	SETBIT
 		LDA	#4
 		PHA
 		LDA	#8
@@ -8335,7 +8317,7 @@ loc_4C86:				; CODE XREF: RAM:4C81j
 		ldxy	$648B
 		LDA	$4B
 		CLC
-		JSR	sub_2DAB
+		JSR	SETBIT
 		LDA	#8
 		PHA
 		LDA	#4

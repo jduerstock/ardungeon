@@ -1877,18 +1877,10 @@ aDostThouWishTo:.BYTE "dost thou wish to leave?"
 		.BYTE $FF
 		.BYTE $A6,  0,	1
 		.BYTE $A5
-aLeavingAlready:.BYTE "Leaving already?  You haven't"
-		.BYTE $D
-		.BYTE $D
-		.BYTE $A5
-aFinishedYourMe:.BYTE "finished your meal.  I'll wrap it"
-		.BYTE $D
-		.BYTE $D
-		.BYTE $A5
-aInAPacketForYo:.BYTE "in a packet for you."
-		.BYTE $D
-		.BYTE $FF
-		.BYTE $A6,  0,	0
+aLeavingAlready:.BYTE "Leaving already?  You haven't",$D,$D,$A5
+aFinishedYourMe:.BYTE "finished your meal.  I'll wrap it",$D,$D,$A5
+aInAPacketForYo:.BYTE "in a packet for you.",$D,$FF
+		MOVEXY	0,0
 		.BYTE $A2
 		.BYTE $AC
 		.WORD byte_8428
@@ -1897,29 +1889,26 @@ a_:		.BYTE "."
 		.BYTE $D
 		.BYTE $D
 		.BYTE $A5
-aWhatDostThouWi:.BYTE "What dost thou wish?"
-		.BYTE $D
-		.BYTE $A6,  5,	4
+aWhatDostThouWi:.BYTE	"What dost thou wish?",$D
+		MOVEXY	5,4
 		MenuItem "1","Order something"
-		.BYTE $A6,  5,	5
+		MOVEXY	5,5
 		MenuItem "2","Buy a round for the house"
-		.BYTE $A6,  5,	7
+		MOVEXY	5,7
 		MenuItem "0","Leave"
-		.BYTE $FF
-		.BYTE $A6,  0,	0
-		.BYTE $A5
-aDostThouWish_0:.BYTE "Dost thou wish to:"
-		.BYTE $D
-		.BYTE $A6,  5,	2
+		.BYTE	$FF
+		MOVEXY	0,0
+aDostThouWish_0:.BYTE $A5,"Dost thou wish to:",$D
+		MOVEXY	5,2
 		MenuItem "1","Buy him a drink"
-		.BYTE $A6,  5,	3
+		MOVEXY	5,3
 		MenuItem "2","Buy him a meal"
-		.BYTE $A6,  5,	4
+		MOVEXY	5,4
 		MenuItem "3","Transact"
-		.BYTE $A6,  5,	6
+		MOVEXY	5,6
 		MenuItem "0","Ignore him"
 		.BYTE $FF
-		.BYTE $A6,  0,	2
+		MOVEXY	0,2
 		.BYTE $A5
 aThankYouPlease:.BYTE "Thank you!  Please come again."
 		.BYTE $D

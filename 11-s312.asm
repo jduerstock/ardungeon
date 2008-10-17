@@ -504,9 +504,9 @@ loc_7946:				; CODE XREF: sub_7AE7-16Ej
 		LDA	#$17
 		JSR	$1899
 		TAX
-		LDA	$8748,X
+		LDA	byte_8748,X
 		STA	$63
-		LDA	$8760,X
+		LDA	byte_8760,X
 		STA	$64
 		LDA	RANDOM
 		CLC
@@ -2454,9 +2454,11 @@ unk_86E8:	.BYTE	0		; DATA XREF: sub_7AE7-467w RAM:83E5o
 		.BYTE	0
 aCheckingCharac:.BYTE "   Checking Character Disk...   "
 aReadingCityCha:.BYTE "   Reading City Character...    " ; DATA XREF: sub_7AE7:loc_773Br
-		.BYTE $78
-		.BYTE $C3 ; √
-		.BYTE  $D
+
+byte_8748:
+		.BYTE	<byte_8778
+		.BYTE	<byte_87C3
+		.BYTE	<byte_880D
 		.BYTE $5B ; [
 		.BYTE $A5 ; •
 		.BYTE $D0 ; –
@@ -2478,9 +2480,11 @@ aReadingCityCha:.BYTE "   Reading City Character...    " ; DATA XREF: sub_7AE7:l
 		.BYTE $E3 ; „
 		.BYTE  $C
 		.BYTE $45 ; E
-		.BYTE $87 ; á
-		.BYTE $87 ; á
-		.BYTE $88 ; à
+
+byte_8760:
+		.BYTE	>byte_8778
+		.BYTE	>byte_87C3
+		.BYTE	>byte_880D
 		.BYTE $88 ; à
 		.BYTE $88 ; à
 		.BYTE $88 ; à
@@ -2502,101 +2506,30 @@ aReadingCityCha:.BYTE "   Reading City Character...    " ; DATA XREF: sub_7AE7:l
 		.BYTE $8C ; å
 		.BYTE $8D ; ç
 		.BYTE $8D ; ç
-		.BYTE	6
-		.BYTE $4B ; K
-		.BYTE	1
-		.BYTE	0
-		.BYTE	1
-		.BYTE $1A
-aPotionOfFleetn:.BYTE "Potion of Fleetness",0
-		.BYTE $84 ; Ñ
-		.BYTE $FF
-		.BYTE $C4 ; -
-		.BYTE	1
-		.BYTE $E0 ; ‡
-		.BYTE	1
-		.BYTE $ED ; Ì
-		.BYTE $FE ; ˛
-		.BYTE	0
-		.BYTE $91 ; ë
-		.BYTE $7B ; {
-		.BYTE	0
-		.BYTE	1
-		.BYTE	0
-		.BYTE $40 ; @
-		.BYTE	0
-		.BYTE $84 ; Ñ
-		.BYTE	0
-		.BYTE $44 ; D
-		.BYTE	1
-		.BYTE	1
-		.BYTE	0
-		.BYTE $ED ; Ì
-		.BYTE $FE ; ˛
-		.BYTE	0
-		.BYTE $81 ; Å
-		.BYTE $7B ; {
-		.BYTE	0
-		.BYTE	1
-		.BYTE	0
-		.BYTE $40 ; @
-		.BYTE	0
-		.BYTE $EC ; Ï
-		.BYTE	0
-		.BYTE $44 ; D
-aFleetness:	.BYTE "Fleetness",0
-		.BYTE $E4 ; ‰
-		.BYTE $60 ; `
-		.BYTE $F5 ; ı
-		.BYTE	0
-		.BYTE	6
-		.BYTE $4A ; J
-		.BYTE	1
-		.BYTE	0
-		.BYTE	1
-		.BYTE $19
-aPotionOfStreng:.BYTE "Potion of Strength",0
-		.BYTE $84 ; Ñ
-		.BYTE $FF
-		.BYTE $C4 ; -
-		.BYTE	1
-		.BYTE $E0 ; ‡
-		.BYTE	1
-		.BYTE $ED ; Ì
-		.BYTE $FE ; ˛
-		.BYTE	0
-		.BYTE $91 ; ë
-		.BYTE $5B ; [
-		.BYTE	0
-		.BYTE	1
-		.BYTE	0
-		.BYTE $14
-		.BYTE	0
-		.BYTE $84 ; Ñ
-		.BYTE	0
-		.BYTE $44 ; D
-		.BYTE	1
-		.BYTE	1
-		.BYTE	0
-		.BYTE $ED ; Ì
-		.BYTE $FE ; ˛
-		.BYTE	0
-		.BYTE $81 ; Å
-		.BYTE $5B ; [
-		.BYTE	0
-		.BYTE	1
-		.BYTE	0
-		.BYTE $14
-		.BYTE	0
-		.BYTE $EC ; Ï
-		.BYTE	0
-		.BYTE $44 ; D
-aStrength:	.BYTE "Strength",0
-		.BYTE $53 ; S
-		.BYTE $74 ; t
-		.BYTE $72 ; r
-		.BYTE $65 ; e
-		.BYTE	0
+
+byte_8778:
+		.BYTE	$06,$4B,$01,$00,$01,$1A
+aPotionOfFleetn:.BYTE	"Potion of Fleetness",0
+		.BYTE	$84,$FF,$C4,$01,$E0,$01,$ED,$FE
+		.BYTE	$00,$91,$7B,$00,$01,$00,$40,$00
+		.BYTE	$84,$00,$44,$01,$01,$00,$ED,$FE
+		.BYTE	$00,$81,$7B,$00,$01,$00,$40,$00
+		.BYTE	$EC,$00,$44
+aFleetness:	.BYTE	"Fleetness",0
+		.BYTE	$E4,$60,$F5,$00
+
+byte_87C3:
+		.BYTE	$06,$4A,$01,$00,$01,$19
+aPotionOfStreng:.BYTE	"Potion of Strength",0
+		.BYTE	$84,$FF,$C4,$01,$E0,$01,$ED,$FE
+		.BYTE	$00,$91,$5B,$00,$01,$00,$14,$00
+		.BYTE	$84,$00,$44,$01,$01,$00,$ED,$FE
+		.BYTE	$00,$81,$5B,$00,$01,$00,$14,$00
+		.BYTE	$EC,$00,$44
+aStrength:	.BYTE	"Strength",0
+		.BYTE	"Stre",0
+
+byte_880D:
 		.BYTE	6
 		.BYTE $4E ; N
 		.BYTE	1

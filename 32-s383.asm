@@ -373,8 +373,7 @@ loc_7885:				; CODE XREF: sub_7758+136j
 		INC	byte_7BD5
 		INC	byte_7BD1
 		INC	byte_7BD5
-		LDX	#$7B ; '{'
-		LDY	#$D0 ; 'Ð'
+		ldxy	byte_7BD0
 		JMP	$1884
 ; ---------------------------------------------------------------------------
 
@@ -1399,17 +1398,12 @@ aIsEnchanted:	.BYTE "is enchanted!"
 a_ThereIsASpecial:
 		.BYTE $A6,  0,	1
 		.BYTE $A5
-aThereIsASpecia:.BYTE "There is a special aura"
-		.BYTE $D
-		.BYTE $D
-		.BYTE $A5
+aThereIsASpecia:.BYTE "There is a special aura",$D,$D,$A5
 aAroundThy:	.BYTE "around thy "
 		.BYTE $B3
 		.WORD off_7BD8
 		.BYTE $1E
-a_:		.BYTE '.'
-		.BYTE $D
-		.BYTE $FF
+a_:		.BYTE '.',$D,$FF
 
 a_ItTakesTwoHands:
 		MOVEXY	0,1
@@ -1481,7 +1475,7 @@ aNecessaryToEff:.BYTE "necessary to effectively use"
 		.BYTE $A5
 aThy_4:		.BYTE "thy "
 		.BYTE $B3
-		.WORD $7BD8
+		.WORD off_7BD8
 		.BYTE $1E
 a__0:		.BYTE '.'
 		.BYTE $D

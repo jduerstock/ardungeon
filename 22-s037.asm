@@ -137,16 +137,13 @@ loc_772A:				; CODE XREF: RAM:77A3j	RAM:7877j
 		LDA	#4
 		JSR	j_TESTBIT
 		BCS	loc_7758
-		LDX	#$75 ; 'u'
-		LDY	#8
+		ldxy	$7508
 		LDA	#4
 		SEC
-		JSR	$1860
-		LDX	#$87 ; '‡'
-		LDY	#$11
+		JSR	j_SETBIT
+		ldxy	$8711
 		JSR	$1884
-		LDX	#$86 ; '†'
-		LDY	#$D3 ; 'Ó'
+		ldxy	$86D3
 		JSR	$1884
 		dldi	off_16, $7C67
 		JMP	loc_7915
