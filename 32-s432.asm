@@ -86,10 +86,7 @@ loc_76E6:				; CODE XREF: RAM:76DCj
 		LDA	$630F
 		STA	$7535
 		JSR	loc_7CFA
-		LDA	#$44 ; 'D'
-		STA	$16
-		LDA	#$83 ; 'ƒ'
-		STA	$17
+		dldi	off_16, $8344
 		LDA	#$80 ; '€'
 		STA	$753D
 		JMP	loc_773C
@@ -134,10 +131,7 @@ loc_7734:				; CODE XREF: RAM:7722j	RAM:772Dj
 		JSR	$185D
 
 loc_773C:				; CODE XREF: RAM:76FFj
-		LDA	$16
-		STA	$67
-		LDA	$17
-		STA	$68
+		dmv	$67, off_16
 		JSR	$1869
 		LDA	$630F
 		STA	$7534
@@ -182,10 +176,7 @@ loc_7769:				; CODE XREF: RAM:7771j
 		STA	$71
 
 loc_7791:				; CODE XREF: RAM:7787j
-		LDA	#$FE ; 'þ'
-		STA	$16
-		LDA	#$86 ; '†'
-		STA	$17
+		dldi	off_16, $86FE
 		CLC
 		LDA	$71
 		ADC	#$32 ; '2'
@@ -242,10 +233,7 @@ loc_77F7:				; CODE XREF: RAM:7764j	RAM:777Cj ...
 ; ---------------------------------------------------------------------------
 
 loc_7800:				; CODE XREF: RAM:778Bj
-		LDA	#$A8 ; '¨'
-		STA	$16
-		LDA	#$83 ; 'ƒ'
-		STA	$17
+		dldi	off_16, $83A8
 		LDX	$64
 		JSR	$1851
 		JSR	sub_7CA1
@@ -254,10 +242,7 @@ loc_7800:				; CODE XREF: RAM:778Bj
 
 loc_7813:				; CODE XREF: RAM:77FBj	RAM:7852j
 		LDX	$64
-		LDA	#$CA ; 'Ê'
-		STA	$16
-		LDA	#$83 ; 'ƒ'
-		STA	$17
+		dldi	off_16, $83CA
 		JSR	$1851
 
 loc_7820:				; CODE XREF: RAM:7839j
@@ -294,16 +279,10 @@ loc_784C:				; CODE XREF: RAM:783Fj
 ; ---------------------------------------------------------------------------
 
 loc_7857:				; CODE XREF: RAM:784Ej
-		LDA	#$63 ; 'c'
-		STA	$67
-		LDA	#$82 ; '‚'
-		STA	$68
+		dldi	$67, $8263
 
 loc_785F:				; CODE XREF: RAM:7849j	RAM:loc_78F4j ...
-		LDA	#$4C ; 'L'
-		STA	$16
-		LDA	#$85 ; '…'
-		STA	$17
+		dldi	off_16, $854C
 		LDX	$64
 		JSR	$1851
 
@@ -358,10 +337,7 @@ loc_78A7:				; CODE XREF: RAM:78A2j
 		STA	$71
 
 loc_78BC:				; CODE XREF: RAM:78E3j
-		LDA	#$45 ; 'E'
-		STA	$16
-		LDA	#$86 ; '†'
-		STA	$17
+		dldi	off_16, $8645
 		LDX	$64
 		JSR	$1851
 
@@ -391,10 +367,7 @@ loc_78F4:				; CODE XREF: RAM:78DFj
 ; ---------------------------------------------------------------------------
 
 loc_78F7:				; CODE XREF: RAM:78B4j
-		LDA	#$88 ; 'ˆ'
-		STA	$16
-		LDA	#$83 ; 'ƒ'
-		STA	$17
+		dldi	off_16, $8388
 
 loc_78FF:				; CODE XREF: RAM:7929j	RAM:7AD4j
 		LDX	$64
@@ -419,10 +392,7 @@ loc_790A:				; CODE XREF: RAM:78F0j	RAM:7B3Bj ...
 
 loc_791E:				; CODE XREF: RAM:791Aj
 		STA	$753D
-		LDA	#$AD ; '­'
-		STA	$16
-		LDA	#$86 ; '†'
-		STA	$17
+		dldi	off_16, $86AD
 		JMP	loc_78FF
 
 ; ÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛ S U B	R O U T	I N E ÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛ
@@ -517,10 +487,7 @@ loc_7992:				; CODE XREF: RAM:7971j	RAM:798Bj
 
 loc_79A7:				; CODE XREF: RAM:79A3j
 		STA	$63BB
-		LDA	#$EE ; 'î'
-		STA	$16
-		LDA	#$84 ; '„'
-		STA	$17
+		dldi	off_16, $84EE
 		LDX	$64
 		JSR	$1851
 		JSR	sub_7CA1
@@ -543,10 +510,7 @@ loc_79CB:				; CODE XREF: RAM:79C7j
 		STA	$72
 
 loc_79D0:				; CODE XREF: RAM:7A18j	RAM:7A1Aj ...
-		LDA	#$FE ; 'þ'
-		STA	$16
-		LDA	#$88 ; 'ˆ'
-		STA	$17
+		dldi	off_16, $88FE
 		LDX	$64
 		JSR	$1851
 
@@ -576,10 +540,7 @@ loc_7A04:				; CODE XREF: RAM:79F4j
 		BNE	loc_7A47
 
 loc_7A08:				; CODE XREF: RAM:7A31j
-		LDA	#$BA ; 'º'
-		STA	$16
-		LDA	#$84 ; '„'
-		STA	$17
+		dldi	off_16, $84BA
 		LDX	$64
 		JSR	$1851
 		JSR	$18AE
@@ -587,10 +548,7 @@ loc_7A08:				; CODE XREF: RAM:7A31j
 		BMI	loc_79D0
 		JSR	sub_7BF0
 		BCC	loc_7A34
-		LDA	#$6F ; 'o'
-		STA	$16
-		LDA	#$84 ; '„'
-		STA	$17
+		dldi	off_16, $846F
 		LDX	$64
 		JSR	$1851
 		JSR	sub_7CA1
@@ -651,10 +609,7 @@ loc_7A7C:				; CODE XREF: RAM:7A64j	RAM:7A68j ...
 		STA	$753D
 		LDA	2
 		BMI	loc_7A9A
-		LDA	#$21 ; '!'
-		STA	$16
-		LDA	#$86 ; '†'
-		STA	$17
+		dldi	off_16, $8621
 		LDX	$64
 		JSR	$1851
 		JSR	sub_7CA1
@@ -695,10 +650,7 @@ loc_7ABA:				; CODE XREF: RAM:7ACAj	RAM:7AFEj ...
 		BPL	loc_7AD7
 		DEC	$7D
 		BPL	loc_7ABA
-		LDA	#$A
-		STA	$16
-		LDA	#$88 ; 'ˆ'
-		STA	$17
+		dldi	off_16, $880A
 		JMP	loc_78FF
 ; ---------------------------------------------------------------------------
 
@@ -826,16 +778,10 @@ loc_7B9A:				; CODE XREF: RAM:7B8Ej
 		LDA	#1
 		JSR	$1899
 		JSR	$185D
-		LDA	$16
-		STA	$92
-		LDA	$17
-		STA	$93
+		dmv	$92, off_16
 
 loc_7BAE:				; CODE XREF: RAM:7BD5j
-		LDA	$92
-		STA	$16
-		LDA	$93
-		STA	$17
+		dmv	off_16, $92
 		LDX	$64
 		JSR	$1851
 
@@ -1839,44 +1785,26 @@ aThouArtEating:	.BYTE "Thou art eating "
 loc_8459:				; DATA XREF: RAM:8429o
 		LDA	$7A
 		BEQ	loc_8466
-		LDA	#$44 ; 'D'
-		STA	$16
-		LDA	#$84 ; '„'
-		STA	$17
+		dldi	off_16, $8444
 		RTS
 ; ---------------------------------------------------------------------------
 
 loc_8466:				; CODE XREF: RAM:845Bj
-		LDA	#$2B ; '+'
-		STA	$16
-		LDA	#$84 ; '„'
-		STA	$17
+		dldi	off_16, $842B
 		RTS
 ; ---------------------------------------------------------------------------
-		.BYTE $A6,  0,	1
-		.BYTE $A5
-aYourGenerosity:.BYTE "Your generosity is greatly appreciated."
-		.BYTE $D
-		.BYTE $D
-		.BYTE $A5
-aHoweverYourHum:.BYTE "However, your humor is not."
-		.BYTE $D
-		.BYTE $FF
-		.BYTE $A6,  0,	0
-		.BYTE $A5
-aHowManySilvers:.BYTE "How many silvers"
-		.BYTE $D
-		.BYTE $A5
-aDostThouWishTo:.BYTE "dost thou wish to leave?"
-		.BYTE $D
-		.BYTE $A6,$10,	5
-		.BYTE ">"
-		.BYTE $FF
-		.BYTE $A6,  0,	1
-		.BYTE $A5
-aLeavingAlready:.BYTE "Leaving already?  You haven't",$D,$D,$A5
-aFinishedYourMe:.BYTE "finished your meal.  I'll wrap it",$D,$D,$A5
-aInAPacketForYo:.BYTE "in a packet for you.",$D,$FF
+		MOVEXY	0,1
+aYourGenerosity:.BYTE	$A5,"Your generosity is greatly appreciated.",$D,$D
+aHoweverYourHum:.BYTE	$A5,"However, your humor is not.",$D,$FF
+		MOVEXY	0,0
+aHowManySilvers:.BYTE	$A5,"How many silvers",$D
+aDostThouWishTo:.BYTE	$A5,"dost thou wish to leave?",$D
+		MOVEXY	16,5
+		.BYTE	">",$FF
+		MOVEXY	0,1
+aLeavingAlready:.BYTE	$A5,"Leaving already?  You haven't",$D,$D
+aFinishedYourMe:.BYTE	$A5,"finished your meal.  I'll wrap it",$D,$D
+aInAPacketForYo:.BYTE	$A5,"in a packet for you.",$D,$FF
 		MOVEXY	0,0
 		.BYTE $A2
 		.BYTE $AC
@@ -2127,10 +2055,7 @@ loc_894C:				; DATA XREF: RAM:87C3o
 		LDX	#3
 		LDA	$75,X
 		BPL	locret_896D
-		LDA	#$DE ; 'Þ'
-		STA	$16
-		LDA	#$87 ; '‡'
-		STA	$17
+		dldi	off_16, $87DE
 		RTS
 ; ---------------------------------------------------------------------------
 
