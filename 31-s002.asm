@@ -6084,8 +6084,7 @@ a_GrabNothing:
 		.WORD	a_YouGrab
 		.BYTE	$A
 		.BYTE	"nothing of value."
-		.BYTE	$D
-		.BYTE	$FF
+		.BYTE	$D,$FF
 
 a_GrabSome:
 		MOVEXY	0,2	
@@ -6138,8 +6137,7 @@ a_AttemptFailed:
 		.WORD	off_76DB
 		.BYTE	$A
 		.BYTE	".",$22
-		.BYTE	$D
-		.BYTE	$FF
+		.BYTE	$D,$FF
 		dldi	off_76DB, aBrother
 		BIT     $633B
 		BPL     locret_9CA3
@@ -6261,7 +6259,7 @@ a_You_The_WithYour:
 		.BYTE	"You "
 		.BYTE	$B4
 		.WORD	off_9F7E
-		.BYTE	$F
+		.BYTE	15
 		.BYTE	" the "
 		.BYTE	$B4
 		.WORD	$AA01

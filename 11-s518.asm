@@ -3655,7 +3655,7 @@ sub_2BFA:				; CODE XREF: RAM:527Cp	RAM:53EDp ...
 loc_2BFC:				; CODE XREF: RAM:185Aj	RAM:3443p ...
 		STA	byte_2C64
 		DEC	byte_32
-		DEC	$F
+		DEC	byte_F
 		DEC	byte_1937
 		LDA	#1
 		STA	byte_2C65
@@ -3698,7 +3698,7 @@ loc_2C3F:
 
 loc_2C5B:				; CODE XREF: RAM:2C4Fj
 		INC	byte_32
-		INC	$F
+		INC	byte_F
 		INC	byte_1937
 		RTS
 ; ---------------------------------------------------------------------------
@@ -4254,7 +4254,7 @@ loc_2F1F:				; CODE XREF: RAM:2F25j
 		BPL	loc_2F1F
 		INX
 		STX	byte_32
-		STX	$F
+		STX	byte_F
 		LDX	#$13
 
 loc_2F2E:				; CODE XREF: RAM:2F3Aj
@@ -5297,7 +5297,7 @@ unk_3630:	.BYTE $85 ; …		; DATA XREF: RAM:35EFw	RAM:loc_3616r
 sub_3635:				; CODE XREF: RAM:loc_3689p RAM:3756p ...
 		LDA	#$FF
 		STA	byte_197A
-		DEC	$F
+		DEC	byte_F
 		DEC	byte_32
 		DEC	byte_1937
 		DEC	byte_1971
@@ -5316,7 +5316,7 @@ loc_3662:				; CODE XREF: RAM:loc_36ECj RAM:375Cj ...
 		dmv	off_1977, off_3681
 		INC	byte_32
 		INC	byte_1937
-		INC	$F
+		INC	byte_F
 		INC	byte_1971
 		LDA	#0
 		STA	byte_197A
@@ -6480,7 +6480,7 @@ loc_4104:				; CODE XREF: sub_408B+7Dj
 		dldi	off_16, byte_3969
 		JSR	sub_1C84
 		DEC	byte_32
-		DEC	$F
+		DEC	byte_F
 		LDA	#$F0 ; 'ð'
 
 loc_4120:				; CODE XREF: sub_408B+99j
@@ -7494,7 +7494,7 @@ asc_47E5:	.BYTE "            ",0  ; DATA XREF: RAM:off_45A3o
 ; ---------------------------------------------------------------------------
 
 loc_47F2:				; CODE XREF: sub_408B:loc_40A6p
-		LDA	$F
+		LDA	byte_F
 		BEQ	loc_47F9
 		JMP	locret_49AF
 ; ---------------------------------------------------------------------------
@@ -7933,9 +7933,9 @@ loc_4A5A:				; CODE XREF: sub_4A4A+6j
 
 
 sub_4A5F:				; CODE XREF: sub_408Bp
-		LDA	$F
+		LDA	byte_F
 		BNE	locret_4A82
-		DEC	$F
+		DEC	byte_F
 		LDX	#0
 		STX	$4B
 
@@ -7952,7 +7952,7 @@ loc_4A78:				; CODE XREF: sub_4A5F+Dj
 		LDX	$4B
 		CPX	#$40 ; '@'
 		BCC	loc_4A69
-		INC	$F
+		INC	byte_F
 
 locret_4A82:				; CODE XREF: sub_4A5F+2j
 		RTS
@@ -10779,10 +10779,7 @@ a__1:		.BYTE '.'
 		.BYTE $FF
 a_InvalidEntry:
 		MOVEXY	0,3
-		.BYTE $A5
-aInvalidEntryTr:.BYTE "Invalid entry, try again."
-		.BYTE $D
-		.BYTE $FF
+aInvalidEntryTr:.BYTE $A5,"Invalid entry, try again.",$D,$FF
 off_5CC3:	.WORD	$FFFF		; DATA XREF: sub_5AB4+Cw sub_5AB4+23w	...
 ; ---------------------------------------------------------------------------
 		LDA	$4B

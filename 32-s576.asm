@@ -1,248 +1,181 @@
 
+		.include	"globals.inc"
+
 		.ORG	$9EF0
-		.WORD byte_9FDC
-		.WORD byte_9FDC
-		.WORD byte_A003
-		.WORD byte_A003
-		.WORD byte_A022
-		.WORD byte_A022
-		.WORD byte_A04E
-		.WORD byte_A04E
-		.WORD byte_A091
-		.WORD byte_A091
-		.WORD byte_A0B7
-		.WORD byte_A0B7
-		.WORD byte_A12C
-		.WORD byte_A12C
-		.WORD byte_A178
-		.WORD byte_A178
-		.WORD byte_A1D6
-		.WORD byte_A1D6
-		.WORD byte_A231
-		.WORD byte_A231
-		.WORD byte_A26A
-		.WORD byte_A2A1
-		.WORD byte_A2DE
-		.WORD byte_A302
-		.WORD byte_A332
-		.WORD byte_A36D
-		.WORD byte_A3A6
-		.WORD byte_A3D5
-		.WORD byte_A3FB
-		.WORD byte_A417
-		.WORD byte_A44F
-		.WORD byte_A47E
-		.WORD byte_A4C1
-		.WORD byte_A4E7
-		.WORD byte_A511
-		.WORD byte_A534
-		.WORD byte_A56F
-		.WORD byte_A589
-		.WORD byte_A5D6
-		.WORD byte_A619
-		.WORD byte_A64E
-		.WORD byte_A685
-		.WORD byte_A6C4
-		.WORD byte_A6EA
-		.WORD byte_A714
-		.WORD byte_A73B
-		.WORD byte_A77E
-		.WORD byte_A7A7
-		.WORD byte_A7CF
-		.WORD byte_A802
-		.WORD byte_A831
-		.WORD byte_A862
-		.WORD byte_A893
-		.WORD byte_A8BB
-		.WORD byte_A8DC
-		.WORD byte_A911
-		.WORD byte_A94A
-		.WORD byte_A974
-		.WORD byte_A99F
-		.WORD byte_A9CA
-		.WORD byte_A9EC
-		.WORD byte_AA1E
-		.WORD byte_AA4A
-		.WORD byte_AA7A
-		.WORD byte_AAC2
-		.WORD byte_AAE7
-		.WORD byte_AB27
-		.WORD byte_AB4B
-		.WORD byte_AB70
-		.WORD byte_ABB0
-		.WORD byte_ABE3
-		.WORD byte_AC0C
-		.WORD byte_AC33
-		.WORD byte_AC87
-		.WORD byte_ACC7
-		.WORD byte_AD02
-		.WORD byte_AD29
-		.WORD byte_AD48
-		.WORD byte_AD61
-		.WORD byte_ADA2
-		.WORD byte_ADCD
-		.WORD byte_ADF2
-		.WORD byte_AE21
-		.WORD byte_AE4A
-		.WORD byte_AE80
-		.WORD byte_AEB9
-		.WORD byte_AEE3
-		.WORD byte_AF1F
-		.WORD byte_AF53
-		.WORD byte_AF7E
-		.WORD byte_AFB2
-		.WORD byte_AFE8
-		.WORD byte_B02E
-		.WORD byte_B059
-		.WORD byte_B092
-		.WORD byte_B0BF
-		.WORD byte_B10B
-		.WORD byte_B130
-		.WORD byte_B159
-		.WORD byte_B1A5
-		.WORD byte_B1C1
-		.WORD byte_B1E3
-		.WORD byte_B224
-		.WORD byte_B248
-		.WORD byte_B281
-		.WORD byte_B2BE
-		.WORD byte_B301
-		.WORD byte_B33C
-		.WORD byte_B37A
-		.WORD byte_B3B2
-		.WORD byte_B3D9
-		.WORD byte_B40C
-		.WORD byte_B430
-		.WORD byte_B46B
-		.WORD byte_B48F
-		.WORD byte_B4C0
-		.WORD byte_B509
-		.WORD byte_B53C
-byte_9FDC:	.BYTE $A6,  0,	2	; DATA XREF: RAM:9EF0o	RAM:9EF2o
-		.BYTE $A5
-aASlyLookingStr:.BYTE "A sly looking stranger sits down."
-		.BYTE $D
-		.BYTE $FF
-byte_A003:	.BYTE $A6,  0,	2	; DATA XREF: RAM:9EF4o	RAM:9EF6o
-		.BYTE $A5
-aASloppyGuyStum:.BYTE "A sloppy guy stumbles in."
-		.BYTE $D
-		.BYTE $FF
-byte_A022:	.BYTE $A6,  0,	2	; DATA XREF: RAM:9EF8o	RAM:9EFAo
-		.BYTE $A5
-aADwarfWearingA:.BYTE "A dwarf wearing a raincoat walks over."
-		.BYTE $D
-		.BYTE $FF
-byte_A04E:	.BYTE $A6,  0,	1	; DATA XREF: RAM:9EFCo	RAM:9EFEo
-		.BYTE $A5
-aAHumanWearingA:.BYTE "A human wearing a fur-lined outfit"
-		.BYTE $D
-		.BYTE $D
-		.BYTE $A5
-aSaysHelloAdven:.BYTE "says ",$22,"Hello Adventurer!",$22
-		.BYTE $D
-		.BYTE $FF
-byte_A091:	.BYTE $A6,  0,	2	; DATA XREF: RAM:9F00o	RAM:9F02o
-		.BYTE $A5
-aALargeBurlyHum:.BYTE "A large, burly human approaches."
-		.BYTE $D
-		.BYTE $FF
-byte_A0B7:	.BYTE $A6,  0,	1	; DATA XREF: RAM:9F04o	RAM:9F06o
-		.BYTE $A5
-aItSTooBadTheyB:.BYTE "It's too bad they beefed up"
-		.BYTE $D
-		.BYTE $D
-		.BYTE $A5
-aTheSecurityInT:.BYTE "the security in the Dungeon."
-		.BYTE $D
-		.BYTE $D
-		.BYTE $A5
-aItUsedToBeAnEa:.BYTE "It used to be an easy life stealing"
-		.BYTE $D
-		.BYTE $D
-		.BYTE $A5
-aFromOthers_:	.BYTE "from others."
-		.BYTE $D
-		.BYTE $FF
-byte_A12C:	.BYTE $A6,  0,	2	; DATA XREF: RAM:9F08o	RAM:9F0Ao
-		.BYTE $A5
-aItSBeen___:	.BYTE "It's been..."
-		.BYTE $D
-		.BYTE $D
-		.BYTE $A5
-aWhyICanTRememb:.BYTE "Why, I can't remember the"
-		.BYTE $D
-		.BYTE $D
-		.BYTE $A5
-aLastTimeIVeHad:.BYTE "last time I've had a drink."
-		.BYTE $D
-		.BYTE $FF
-byte_A178:	.BYTE $A6,  0,	1	; DATA XREF: RAM:9F0Co	RAM:9F0Eo
-		.BYTE $A5
-aIMTired_IVeJus:.BYTE "I'm tired. I've just finished"
-		.BYTE $D
-		.BYTE $D
-		.BYTE $A5
-aAShowInTheCity:.BYTE "a show in The City. I hate"
-		.BYTE $D
-		.BYTE $D
-		.BYTE $A5
-aDancingButItSA:.BYTE "dancing, but it's a living."
-		.BYTE $D
-		.BYTE $FF
-byte_A1D6:	.BYTE $A6,  0,	1	; DATA XREF: RAM:9F10o	RAM:9F12o
-		.BYTE $A5
-aIVeJustLostATh:.BYTE "I've just lost a third of"
-		.BYTE $D
-		.BYTE $D
-		.BYTE $A5
-aWhatIOwn_YouSu:.BYTE "what I own. You sure can't"
-		.BYTE $D
-		.BYTE $D
-		.BYTE $A5
-aTrustTheBanksA:.BYTE "trust the banks around here.",$D
-		.BYTE $FF
-byte_A231:	.BYTE $A6,  0,	2	; DATA XREF: RAM:9F14o	RAM:9F16o
-		.BYTE $A5
-aGreetingsAdven:.BYTE "Greetings Adventurer."
-		.BYTE $D
-		.BYTE $D
-		.BYTE $A5
-aIMKnownAsSalin:.BYTE "I'm known as Salin Wauthra."
-		.BYTE $D
-		.BYTE $FF
-byte_A26A:	.BYTE $A6,  0,	2	; DATA XREF: RAM:9F18o
-		.BYTE $A5
-aAWiseOracleDwe:.BYTE "A wise oracle dwells beneath"
-		.BYTE $D
-		.BYTE $D
-		.BYTE $A5
-aTheFloatingGat:.BYTE "the Floating Gate."
-		.BYTE $D
-		.BYTE $FF
-byte_A2A1:	.BYTE $A6,  0,	2	; DATA XREF: RAM:9F1Ao
-		.BYTE $A5
-aBankVaultBasem:.BYTE "Bank vault basements can be found"
-		.BYTE $D
-		.BYTE $D
-		.BYTE $A5
-aOnTheFirstLeve:.BYTE "on the first level."
-		.BYTE $D
-		.BYTE $FF
-byte_A2DE:	.BYTE $A6,  0,	3	; DATA XREF: RAM:9F1Co
-		.BYTE $A5
-aAcrinimirilSTo:.BYTE "Acrinimiril's Tomb is haunted."
-		.BYTE $D
-		.BYTE $FF
-byte_A302:	.BYTE $A6,  0,	2	; DATA XREF: RAM:9F1Eo
-		.BYTE $A5
-aTheChapelDispe:.BYTE "The Chapel dispenses"
-		.BYTE $D
-		.BYTE $D
-		.BYTE $A5
-aPragmaticSalva:.BYTE "pragmatic salvation"
-		.BYTE $D
-		.BYTE $FF
+		.WORD	byte_9FDC
+		.WORD	byte_9FDC
+		.WORD	byte_A003
+		.WORD	byte_A003
+		.WORD	byte_A022
+		.WORD	byte_A022
+		.WORD	byte_A04E
+		.WORD	byte_A04E
+		.WORD	byte_A091
+		.WORD	byte_A091
+		.WORD	byte_A0B7
+		.WORD	byte_A0B7
+		.WORD	byte_A12C
+		.WORD	byte_A12C
+		.WORD	byte_A178
+		.WORD	byte_A178
+		.WORD	byte_A1D6
+		.WORD	byte_A1D6
+		.WORD	byte_A231
+		.WORD	byte_A231
+		.WORD	byte_A26A
+		.WORD	byte_A2A1
+		.WORD	byte_A2DE
+		.WORD	byte_A302
+		.WORD	byte_A332
+		.WORD	byte_A36D
+		.WORD	byte_A3A6
+		.WORD	byte_A3D5
+		.WORD	byte_A3FB
+		.WORD	byte_A417
+		.WORD	byte_A44F
+		.WORD	byte_A47E
+		.WORD	byte_A4C1
+		.WORD	byte_A4E7
+		.WORD	byte_A511
+		.WORD	byte_A534
+		.WORD	byte_A56F
+		.WORD	byte_A589
+		.WORD	byte_A5D6
+		.WORD	byte_A619
+		.WORD	byte_A64E
+		.WORD	byte_A685
+		.WORD	byte_A6C4
+		.WORD	byte_A6EA
+		.WORD	byte_A714
+		.WORD	byte_A73B
+		.WORD	byte_A77E
+		.WORD	byte_A7A7
+		.WORD	byte_A7CF
+		.WORD	byte_A802
+		.WORD	byte_A831
+		.WORD	byte_A862
+		.WORD	byte_A893
+		.WORD	byte_A8BB
+		.WORD	byte_A8DC
+		.WORD	byte_A911
+		.WORD	byte_A94A
+		.WORD	byte_A974
+		.WORD	byte_A99F
+		.WORD	byte_A9CA
+		.WORD	byte_A9EC
+		.WORD	byte_AA1E
+		.WORD	byte_AA4A
+		.WORD	byte_AA7A
+		.WORD	byte_AAC2
+		.WORD	byte_AAE7
+		.WORD	byte_AB27
+		.WORD	byte_AB4B
+		.WORD	byte_AB70
+		.WORD	byte_ABB0
+		.WORD	byte_ABE3
+		.WORD	byte_AC0C
+		.WORD	byte_AC33
+		.WORD	byte_AC87
+		.WORD	byte_ACC7
+		.WORD	byte_AD02
+		.WORD	byte_AD29
+		.WORD	byte_AD48
+		.WORD	byte_AD61
+		.WORD	byte_ADA2
+		.WORD	byte_ADCD
+		.WORD	byte_ADF2
+		.WORD	byte_AE21
+		.WORD	byte_AE4A
+		.WORD	byte_AE80
+		.WORD	byte_AEB9
+		.WORD	byte_AEE3
+		.WORD	byte_AF1F
+		.WORD	byte_AF53
+		.WORD	byte_AF7E
+		.WORD	byte_AFB2
+		.WORD	byte_AFE8
+		.WORD	byte_B02E
+		.WORD	byte_B059
+		.WORD	byte_B092
+		.WORD	byte_B0BF
+		.WORD	byte_B10B
+		.WORD	byte_B130
+		.WORD	byte_B159
+		.WORD	byte_B1A5
+		.WORD	byte_B1C1
+		.WORD	byte_B1E3
+		.WORD	byte_B224
+		.WORD	byte_B248
+		.WORD	byte_B281
+		.WORD	byte_B2BE
+		.WORD	byte_B301
+		.WORD	byte_B33C
+		.WORD	byte_B37A
+		.WORD	byte_B3B2
+		.WORD	byte_B3D9
+		.WORD	byte_B40C
+		.WORD	byte_B430
+		.WORD	byte_B46B
+		.WORD	byte_B48F
+		.WORD	byte_B4C0
+		.WORD	byte_B509
+		.WORD	byte_B53C
+byte_9FDC:	MOVEXY	0,2
+		.BYTE $A5,"A sly looking stranger sits down.",$D,$FF
+
+byte_A003:	MOVEXY	0,2
+		.BYTE $A5,"A sloppy guy stumbles in.",$D,$FF
+
+byte_A022:	MOVEXY	0,2
+		.BYTE $A5,"A dwarf wearing a raincoat walks over.",$D,$FF
+
+byte_A04E:	MOVEXY	0,1
+		.BYTE $A5,"A human wearing a fur-lined outfit",$D,$D
+		.BYTE $A5,"says ",$22,"Hello Adventurer!",$22,$D,$FF
+
+byte_A091:	MOVEXY	0,2
+		.BYTE $A5,"A large, burly human approaches.",$D,$FF
+
+byte_A0B7:	MOVEXY	0,1
+		.BYTE $A5,"It's too bad they beefed up",$D,$D
+		.BYTE $A5,"the security in the Dungeon.",$D,$D
+		.BYTE $A5,"It used to be an easy life stealing",$D,$D
+		.BYTE $A5,"from others.",$D,$FF
+
+byte_A12C:	MOVEXY	0,2
+		.BYTE $A5,"It's been...",$D,$D
+		.BYTE $A5,"Why, I can't remember the",$D,$D
+		.BYTE $A5,"last time I've had a drink.",$D,$FF
+
+byte_A178:	MOVEXY	0,1
+		.BYTE $A5,"I'm tired. I've just finished",$D,$D
+		.BYTE $A5,"a show in The City. I hate",$D,$D
+		.BYTE $A5,"dancing, but it's a living.",$D,$FF
+
+byte_A1D6:	MOVEXY	0,1
+		.BYTE $A5,"I've just lost a third of",$D,$D
+		.BYTE $A5,"what I own. You sure can't",$D,$D
+		.BYTE $A5,"trust the banks around here.",$D,$FF
+
+byte_A231:	MOVEXY	0,2
+		.BYTE $A5,"Greetings Adventurer.",$D,$D
+		.BYTE $A5,"I'm known as Salin Wauthra.",$D,$FF
+
+byte_A26A:	MOVEXY	0,2
+		.BYTE $A5,"A wise oracle dwells beneath",$D,$D
+		.BYTE $A5,"the Floating Gate.",$D,$FF
+
+byte_A2A1:	MOVEXY	0,2
+		.BYTE $A5,"Bank vault basements can be found",$D,$D
+		.BYTE $A5,"on the first level.",$D,$FF
+
+byte_A2DE:	MOVEXY	0,3
+		.BYTE $A5,"Acrinimiril's Tomb is haunted.",$D,$FF
+
+byte_A302:	MOVEXY	0,2
+		.BYTE $A5,"The Chapel dispenses",$D,$D
+		.BYTE $A5,"pragmatic salvation",$D,$FF
+
 byte_A332:	.BYTE $A6,  0,	2	; DATA XREF: RAM:9F20o
 		.BYTE $A5
 aAFountainThatH:.BYTE "A fountain that heals wounds"

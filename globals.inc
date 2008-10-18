@@ -3,6 +3,7 @@ off_7 	= $07
 off_9 	= $09
 word_B	= $0B
 off_D	= $0D
+byte_F	= $0F
 off_10	= $10
 off_12	= $12
 off_14	= $14

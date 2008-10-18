@@ -750,10 +750,7 @@ loc_7AD3:				; DATA XREF: RAM:8393o	RAM:839Eo
 		BPL	loc_7AE6
 		LDY	#$A
 		STY	byte_83A0
-		LDA	#$95 ; '•'
-		STA	$16
-		LDA	#$83 ; 'ƒ'
-		STA	$17
+		dldi	off_16, $8395
 		RTS
 ; ---------------------------------------------------------------------------
 
@@ -807,10 +804,7 @@ loc_7B25:				; CODE XREF: RAM:7AF6j	RAM:7AFBj ...
 loc_7B2F:				; CODE XREF: RAM:7B50j
 		DEY
 		STY	byte_83A0
-		LDA	#$96 ; '–'
-		STA	$16
-		LDA	#$83 ; 'ƒ'
-		STA	$17
+		dldi	off_16, $8396
 		RTS
 ; ---------------------------------------------------------------------------
 
@@ -832,10 +826,7 @@ loc_7B46:				; CODE XREF: RAM:7B3Fj	RAM:7B41j
 loc_7B53:				; DATA XREF: RAM:82A9o
 		LDA	$68
 		BNE	locret_7B5F
-		LDA	#$CC ; 'Ì'
-		STA	$16
-		LDA	#$82 ; '‚'
-		STA	$17
+		dldi	off_16, $82CC
 
 locret_7B5F:				; CODE XREF: RAM:7B55j
 		RTS

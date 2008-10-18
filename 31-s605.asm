@@ -1,3 +1,4 @@
+		.include	"globals.inc"
 		.include	"exp_kernel.inc"
 		.include	"macros.inc"
 
@@ -39,7 +40,7 @@ loc_762A:				; CODE XREF: RAM:7630j
 		STX	$1975
 		INX
 		STX	$32
-		STX	$F
+		STX	byte_F
 		STX	$1937
 		STX	byte_7855
 		RTS

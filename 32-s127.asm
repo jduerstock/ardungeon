@@ -159,7 +159,7 @@ loc_76FD:				; CODE XREF: RAM:76DDj
 
 loc_772C:				; CODE XREF: RAM:77C9j
 		DEC	$32
-		DEC	$F
+		DEC	byte_F
 		DEC	$1937
 		dldi	off_16, $7B9C
 		JSR	sub_78B8
@@ -407,7 +407,7 @@ sub_78B8:				; CODE XREF: RAM:76B6p	RAM:773Bp ...
 
 sub_78BD:				; CODE XREF: RAM:7755p	RAM:77C6p ...
 		INC	$32
-		INC	$F
+		INC	byte_F
 		INC	$1937
 		RTS
 ; End of function sub_78BD
