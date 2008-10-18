@@ -688,7 +688,7 @@ loc_7A48:				; CODE XREF: RAM:7A3Fj
 		BCS	loc_7A83
 		LDA	$73
 		ldxy	$7559
-		JSR	$1860
+		JSR	j_SETBIT
 		dldi	off_16, $810C
 		LDX	$66
 		JSR	$1851
@@ -837,10 +837,9 @@ sub_7B50:				; CODE XREF: RAM:7667p
 
 loc_7B54:				; CODE XREF: sub_7B50+10j
 		LDA	$7C
-		LDX	#$75 ; 'u'
-		LDY	#$59 ; 'Y'
+		ldxy	$7559
 		SEC
-		JSR	$1860
+		JSR	j_SETBIT
 		DEC	$7C
 		BPL	loc_7B54
 		RTS
@@ -887,15 +886,13 @@ loc_7B9B:				; CODE XREF: sub_7B63+12j sub_7B63+1Aj ...
 		DEC	$4B
 		BPL	loc_7B70
 		JSR	$18A5
-		LDX	#$85 ; '…'
-		LDY	#$55 ; 'U'
+		ldxy	$8555
 		JSR	$1884
 		JSR	$18A5
 		SEC
 		LDA	#$17
-		LDX	#$75 ; 'u'
-		LDY	#8
-		JMP	$1860
+		ldxy	$7508
+		JMP	j_SETBIT
 ; End of function sub_7B63
 
 ; ---------------------------------------------------------------------------
@@ -904,10 +901,7 @@ loc_7B9B:				; CODE XREF: sub_7B63+12j sub_7B63+1Aj ...
 ; ---------------------------------------------------------------------------
 
 loc_7BBB:				; CODE XREF: RAM:779Ej
-		LDA	#$6B ; 'k'
-		STA	$16
-		LDA	#$82 ; '‚'
-		STA	$17
+		dldi	off_16, $826B
 		LDX	$66
 		JSR	$1851
 

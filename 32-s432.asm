@@ -817,9 +817,8 @@ loc_7B86:				; CODE XREF: RAM:7B82j
 		BCS	loc_7B9A
 		LDA	$75,X
 		CLC
-		LDX	#$75 ; 'u'
-		LDY	#$36 ; '6'
-		JSR	$1860
+		ldxy	$7536
+		JSR	j_SETBIT
 
 loc_7B9A:				; CODE XREF: RAM:7B8Ej
 		LDX	#$82 ; '‚'
@@ -1112,10 +1111,9 @@ loc_7CFC:				; CODE XREF: RAM:7D25j	RAM:7D28j
 		CLC
 		ADC	unk_7F34,X
 		STX	loc_7D23+1
-		LDX	#$75 ; 'u'
-		LDY	#$36 ; '6'
+		ldxy	$7536
 		SEC
-		JSR	$1860
+		JSR	j_SETBIT
 
 loc_7D23:				; DATA XREF: RAM:7D18w
 		LDX	#$FF
@@ -1135,10 +1133,9 @@ loc_7D37:				; CODE XREF: RAM:7D4Aj
 		LDA	#$28 ; '('
 		JSR	$1899
 		STX	loc_7D47+1
-		LDX	#$75 ; 'u'
-		LDY	#$36 ; '6'
+		ldxy	$7536
 		SEC
-		JSR	$1860
+		JSR	j_SETBIT
 
 loc_7D47:				; DATA XREF: RAM:7D3Cw
 		LDX	#$FF
@@ -1910,14 +1907,9 @@ aDostThouWish_0:.BYTE $A5,"Dost thou wish to:",$D
 		.BYTE $FF
 		MOVEXY	0,2
 		.BYTE $A5
-aThankYouPlease:.BYTE "Thank you!  Please come again."
-		.BYTE $D
-		.BYTE $FF
-		.BYTE $A6,  0,	1
-		.BYTE $A5
-aARoundForTheHo:.BYTE "A round for the house will cost"
-		.BYTE $D
-		.BYTE $D
+aThankYouPlease:.BYTE "Thank you!  Please come again.",$D,$FF
+		MOVEXY	0,1
+aARoundForTheHo:.BYTE $A5,"A round for the house will cost",$D,$D
 		.BYTE $A5
 		.BYTE $A3
 		.WORD loc_893D

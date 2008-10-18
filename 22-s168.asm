@@ -100,22 +100,17 @@ loc_76AB:				; CODE XREF: RAM:76A1j
 		LDA	#$10
 		STA	($41),Y
 		JSR	$18A5
-		LDX	#$75 ; 'u'
-		LDY	#8
+		ldxy	$7508
 		LDA	#1
 		SEC
-		JSR	$1860
-		LDX	#$79 ; 'y'
-		LDY	#$53 ; 'S'
+		JSR	j_SETBIT
+		ldxy	$7953
 		JSR	$1884
 		JMP	loc_76FE
 ; ---------------------------------------------------------------------------
 
 loc_76EE:				; CODE XREF: RAM:7671j	RAM:7675j ...
-		LDA	#$E
-		STA	$16
-		LDA	#$78 ; 'x'
-		STA	$17
+		dldi	off_16, $780E
 
 loc_76F6:				; CODE XREF: RAM:765Bj
 		LDX	$62
@@ -133,7 +128,7 @@ loc_7700:				; CODE XREF: RAM:7707j
 		STX	$AC00
 		JMP	$180C
 
-; ллллллллллллллл S U B	R O U T	I N E ллллллллллллллллллллллллллллллллллллллл
+; --------------- S U B	R O U T	I N E ---------------------------------------
 
 
 sub_770F:				; CODE XREF: RAM:766Bp	RAM:76FBp
@@ -142,7 +137,7 @@ sub_770F:				; CODE XREF: RAM:766Bp	RAM:76FBp
 ; End of function sub_770F
 
 
-; ллллллллллллллл S U B	R O U T	I N E ллллллллллллллллллллллллллллллллллллллл
+; --------------- S U B	R O U T	I N E ---------------------------------------
 
 
 sub_7714:				; CODE XREF: RAM:loc_7677p
@@ -1116,7 +1111,7 @@ byte_7BF0:	.BYTE 0			; DATA XREF: RAM:loc_7BB6w RAM:7BC6r ...
 		.BYTE  $F
 		.BYTE $3F ; ?
 		.BYTE $3F ; ?
-		.BYTE $DB ; л
+		.BYTE $DB ; -
 		.BYTE $FF
 		.BYTE $FE ; ў
 		.BYTE $FA ; њ

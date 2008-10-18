@@ -746,7 +746,7 @@ loc_7AC2:				; CODE XREF: sub_88B0:loc_78C9j
 		LDA	$195A
 		ldxy	$7500
 		SEC
-		JSR	$1860
+		JSR	j_SETBIT
 
 loc_7AD2:				; CODE XREF: sub_84CF-A0Aj
 		JSR	loc_9734
@@ -3193,10 +3193,9 @@ loc_8952:				; CODE XREF: sub_88B0+9Dj
 		LDA	$1959
 		BNE	loc_8962
 		LDA	$195A
-		LDX	#$75 ; 'u'
-		LDY	#0
+		ldxy	$7500
 		SEC
-		JSR	$1860
+		JSR	j_SETBIT
 
 loc_8962:				; CODE XREF: sub_88B0+A5j
 		JMP	loc_776D

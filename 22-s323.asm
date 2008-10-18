@@ -49,11 +49,10 @@ loc_765F:				; CODE XREF: RAM:764Fj
 		dldi	off_63, $76CE
 		LDA	#$B
 		STA	$65
-		LDX	#$75 ; 'u'
-		LDY	#8
+		ldxy	$7508
 		LDA	#2
 		SEC
-		JSR	$1860
+		JSR	j_SETBIT
 
 loc_7675:				; CODE XREF: RAM:769Aj
 		LDY	#0
@@ -78,13 +77,11 @@ loc_7690:				; CODE XREF: RAM:768Cj
 		SBC	#1
 		STA	$65
 		BNE	loc_7675
-		LDX	#$75 ; 'u'
-		LDY	#8
+		ldxy	$7508
 		SEC
 		LDA	#$14
-		JSR	$1860
-		LDX	#$7C ; '|'
-		LDY	#$1A
+		JSR	j_SETBIT
+		ldxy	$7C1A
 		JSR	$1884
 
 loc_76AD:				; CODE XREF: RAM:765Cj

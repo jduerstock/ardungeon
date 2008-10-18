@@ -319,13 +319,9 @@ loc_781A:				; CODE XREF: RAM:7815j
 		CMP	#$33 ; '3'
 		BCS	loc_785F
 		LDA	$70
-		LDX	#$75 ; 'u'
-		LDY	#$42 ; 'B'
-		JSR	$1860
-		LDA	#$4D ; 'M'
-		STA	$16
-		LDA	#$7A ; 'z'
-		STA	$17
+		ldxy	$7542
+		JSR	j_SETBIT
+		dldi	off_16, $7A4D
 
 loc_7855:				; CODE XREF: RAM:77B1j
 		LDX	$66
@@ -334,10 +330,7 @@ loc_7855:				; CODE XREF: RAM:77B1j
 		JSR	$185A
 
 loc_785F:				; CODE XREF: RAM:7842j
-		LDA	#$78 ; 'x'
-		STA	$16
-		LDA	#$7A ; 'z'
-		STA	$17
+		dldi	off_16, $7A78
 		LDX	$66
 		JSR	$1851
 
@@ -350,9 +343,9 @@ loc_7879:
 		LDA	$31
 		BMI	loc_786C
 		JSR	j_UPPER
-		CMP	#$4E ; 'N'
+		CMP	#'N'
 		BEQ	loc_788B
-		CMP	#$59 ; 'Y'
+		CMP	#'Y'
 		BNE	loc_786C
 		JMP	loc_77B4
 ; ---------------------------------------------------------------------------
@@ -496,10 +489,9 @@ loc_7942:				; CODE XREF: RAM:7689p
 loc_7946:				; CODE XREF: RAM:7955j
 		LDA	#$14
 		JSR	$1899
-		LDX	#$75 ; 'u'
-		LDY	#$42 ; 'B'
+		ldxy	$7542
 		CLC
-		JSR	$1860
+		JSR	j_SETBIT
 		DEC	$79
 		BPL	loc_7946
 
@@ -527,10 +519,9 @@ loc_7967:				; CODE XREF: RAM:7963j
 		BCS	loc_7983
 		LDA	#$14
 		JSR	$1899
-		LDX	#$75 ; 'u'
-		LDY	#$42 ; 'B'
+		ldxy	$7542
 		SEC
-		JSR	$1860
+		JSR	j_SETBIT
 		JMP	loc_7957
 ; ---------------------------------------------------------------------------
 
@@ -543,10 +534,9 @@ loc_7989:				; CODE XREF: RAM:799Cj
 		LDA	#$14
 		JSR	$1899
 		STX	loc_7999+1
-		LDX	#$75 ; 'u'
-		LDY	#$42 ; 'B'
+		ldxy	$7542
 		SEC
-		JSR	$1860
+		JSR	j_SETBIT
 
 loc_7999:				; DATA XREF: RAM:798Ew
 		LDX	#$FF
@@ -556,7 +546,7 @@ loc_7999:				; DATA XREF: RAM:798Ew
 locret_799E:				; CODE XREF: RAM:7985j
 		RTS
 ; ---------------------------------------------------------------------------
-		.BYTE $A6,  0,	1
+		MOVEXY	0,1
 		.BYTE $A5
 aWelcomeToLucky:.BYTE "Welcome to Lucky's Potion Brewery!"
 		.BYTE $D

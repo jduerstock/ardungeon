@@ -412,10 +412,9 @@ loc_78C1:				; CODE XREF: RAM:785Bj
 loc_78EA:				; CODE XREF: RAM:78E6j
 		STA	$754C
 		LDA	#0
-		LDX	#$75 ; 'u'
-		LDY	#8
+		ldxy	$7508
 		SEC
-		JSR	$1860
+		JSR	j_SETBIT
 		DEC	$195F
 		LDA	#$8E ; 'Ž'
 		STA	$16

@@ -978,20 +978,20 @@ loc_1C8E:				; CODE XREF: sub_1C84+2j sub_1C88+2j
 		STA	$26
 
 loc_1CAB:				; CODE XREF: sub_1C88+2Dj RAM:1CEBj ...
-		JSR	sub_1F31
-		CMP	#$80
-		BCS	loc_1CB8
-		JSR	loc_1F3C
-		JMP	loc_1CAB
+		JSR	LDA_off16	; get next byte
+		CMP	#$80		; is the high bit set?
+		BCS	loc_1CB8	; yes, go process it
+		JSR	loc_1F3C	; no, print it
+		JMP	loc_1CAB	; loop
 ; ---------------------------------------------------------------------------
 
 loc_1CB8:				; CODE XREF: sub_1C88+28j
-		CMP	#$FF
-		BEQ	loc_1CD1
+		CMP	#$FF		; is it $FF
+		BEQ	loc_1CD1	; yes, end of string
 		SEC
-		SBC	#$A0 ; ' '
+		SBC	#$A0
 		CMP	#$15
-		BCS	loc_1CCF
+		BCS	BAD_PRTOP
 		LDX	$23
 		TAY
 		LDA	byte_1FD4,Y
@@ -1001,7 +1001,7 @@ loc_1CB8:				; CODE XREF: sub_1C88+28j
 		RTS
 ; ---------------------------------------------------------------------------
 
-loc_1CCF:				; CODE XREF: sub_1C88+39j
+BAD_PRTOP:				; CODE XREF: sub_1C88+39j
 		BRK
 ; ---------------------------------------------------------------------------
 		RTS
@@ -1038,7 +1038,7 @@ loc_1CF3:
 		JSR	sub_1E9D
 		JMP	loc_1CAB
 ; ---------------------------------------------------------------------------
-loc_1CFE:
+PRTOP_A3:
 		JSR	sub_1F26
 		JSR	sub_1D07
 		JMP	loc_1CAB
@@ -1071,9 +1071,9 @@ PRTOP_A2:
 		BEQ	loc_1D0F
 
 loc_1D2A:
-		JSR	sub_1F31
+		JSR	LDA_off16
 		STA	$1F
-		JSR	sub_1F31
+		JSR	LDA_off16
 		CLC
 		ADC	unk_1FA8,X
 		STA	$20
@@ -1204,7 +1204,7 @@ loc_1DEC:
 		STA	$2C
 
 loc_1DF9:				; CODE XREF: RAM:1DD6j	RAM:1DE9j
-		JSR	sub_1F31
+		JSR	LDA_off16
 		STA	$2D
 		SED
 		LDA	#0
@@ -1357,14 +1357,14 @@ loc_1EB1:				; CODE XREF: sub_1EA8+5j
 
 loc_1EB4:
 		JSR	sub_1F26
-		JSR	sub_1F31
+		JSR	LDA_off16
 		STA	$2D
 		JMP	loc_1ED4
 ; ---------------------------------------------------------------------------
 
 loc_1EBF:
 		JSR	sub_1F26
-		JSR	sub_1F31
+		JSR	LDA_off16
 		STA	$2D
 		LDA	(off_18),Y
 		PHA
@@ -1417,9 +1417,9 @@ off_1F24:	.WORD	0		; DATA XREF: RAM:1EE8w	RAM:1F00w ...
 
 
 sub_1F26:				; CODE XREF: RAM:1CF3p	RAM:1CFEp ...
-		JSR	sub_1F31
+		JSR	LDA_off16
 		STA	off_18
-		JSR	sub_1F31
+		JSR	LDA_off16
 		STA	off_18+1
 		RTS
 ; End of function sub_1F26
@@ -1428,7 +1428,7 @@ sub_1F26:				; CODE XREF: RAM:1CF3p	RAM:1CFEp ...
 ; --------------- S U B	R O U T	I N E ---------------------------------------
 
 
-sub_1F31:				; CODE XREF: sub_1C88:loc_1CABp
+LDA_off16:				; CODE XREF: sub_1C88:loc_1CABp
 					; RAM:1D2Ap ...
 		LDY	#0
 		LDA	(off_16),Y
@@ -1436,9 +1436,9 @@ sub_1F31:				; CODE XREF: sub_1C88:loc_1CABp
 		BNE	locret_1F3B
 		INC	off_16+1
 
-locret_1F3B:				; CODE XREF: sub_1F31+6j
+locret_1F3B:				; CODE XREF: LDA_off16+6j
 		RTS
-; End of function sub_1F31
+; End of function LDA_off16
 
 ; ---------------------------------------------------------------------------
 
@@ -1548,7 +1548,7 @@ unk_1FB7:	.BYTE	2		; DATA XREF: RAM:1E55r
 byte_1FBF:	.BYTE	<(PRTOP_A0-1)	; DATA XREF: sub_1C88+42r
 		.BYTE	<(PRTOP_A1-1)
 		.BYTE	<(PRTOP_A2-1)
-		.BYTE	<(loc_1CFE-1)
+		.BYTE	<(PRTOP_A3-1)
 		.BYTE	<(loc_1CF3-1)
 		.BYTE	<(PRTOP_A5-1)
 		.BYTE	<(loc_1D2A-1)
@@ -1560,7 +1560,7 @@ byte_1FBF:	.BYTE	<(PRTOP_A0-1)	; DATA XREF: sub_1C88+42r
 		.BYTE	<(loc_1EE3-1)
 		.BYTE	<(loc_1EFB-1)
 		.BYTE	<(loc_1F16-1)
-		.BYTE	<(loc_1CCF-1)
+		.BYTE	<(BAD_PRTOP-1)
 		.BYTE	<(loc_1DC9-1)
 		.BYTE	<(loc_1DD9-1)
 		.BYTE	<(loc_1DEC-1)
@@ -1569,7 +1569,7 @@ byte_1FBF:	.BYTE	<(PRTOP_A0-1)	; DATA XREF: sub_1C88+42r
 byte_1FD4:	.BYTE	>(PRTOP_A0-1)	; DATA XREF: sub_1C88+3Er
 		.BYTE	>(PRTOP_A1-1)
 		.BYTE	>(PRTOP_A2-1)
-		.BYTE	>(loc_1CFE-1)
+		.BYTE	>(PRTOP_A3-1)
 		.BYTE	>(loc_1CF3-1)
 		.BYTE	>(PRTOP_A5-1)
 		.BYTE	>(loc_1D2A-1)
@@ -1581,7 +1581,7 @@ byte_1FD4:	.BYTE	>(PRTOP_A0-1)	; DATA XREF: sub_1C88+3Er
 		.BYTE	>(loc_1EE3-1)
 		.BYTE	>(loc_1EFB-1)
 		.BYTE	>(loc_1F16-1)
-		.BYTE	>(loc_1CCF-1)
+		.BYTE	>(BAD_PRTOP-1)
 		.BYTE	>(loc_1DC9-1)
 		.BYTE	>(loc_1DD9-1)
 		.BYTE	>(loc_1DEC-1)

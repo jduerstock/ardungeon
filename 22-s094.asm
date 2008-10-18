@@ -118,7 +118,7 @@ loc_76D0:				; CODE XREF: RAM:76CBj
 		STA	$6314
 		JMP	loc_7E5C
 
-; ллллллллллллллл S U B	R O U T	I N E ллллллллллллллллллллллллллллллллллллллл
+; --------------- S U B	R O U T	I N E ---------------------------------------
 
 
 sub_76F2:				; CODE XREF: RAM:loc_769Ep RAM:76C8p
@@ -184,7 +184,7 @@ loc_7752:				; CODE XREF: RAM:7759j
 		BPL	loc_7752
 		JMP	loc_7E5C
 
-; ллллллллллллллл S U B	R O U T	I N E ллллллллллллллллллллллллллллллллллллллл
+; --------------- S U B	R O U T	I N E ---------------------------------------
 
 
 sub_775E:				; CODE XREF: RAM:763Fp	RAM:7681p ...
@@ -193,17 +193,17 @@ sub_775E:				; CODE XREF: RAM:763Fp	RAM:7681p ...
 ; End of function sub_775E
 
 
-; ллллллллллллллл S U B	R O U T	I N E ллллллллллллллллллллллллллллллллллллллл
+; --------------- S U B	R O U T	I N E ---------------------------------------
 
 
 sub_7765:				; CODE XREF: sub_76F2+27p
 		ldxy	$7508
 		SEC
-		JMP	$1860
+		JMP	j_SETBIT
 ; End of function sub_7765
 
 
-; ллллллллллллллл S U B	R O U T	I N E ллллллллллллллллллллллллллллллллллллллл
+; --------------- S U B	R O U T	I N E ---------------------------------------
 
 
 sub_776D:				; CODE XREF: sub_76F2+19p
@@ -241,7 +241,7 @@ loc_779A:				; CODE XREF: sub_776D+1Fj
 ; End of function sub_776D
 
 
-; ллллллллллллллл S U B	R O U T	I N E ллллллллллллллллллллллллллллллллллллллл
+; --------------- S U B	R O U T	I N E ---------------------------------------
 
 
 sub_779C:				; CODE XREF: RAM:766Dp	sub_76F2+59p
@@ -252,7 +252,7 @@ sub_779C:				; CODE XREF: RAM:766Dp	sub_76F2+59p
 ; End of function sub_779C
 
 
-; ллллллллллллллл S U B	R O U T	I N E ллллллллллллллллллллллллллллллллллллллл
+; --------------- S U B	R O U T	I N E ---------------------------------------
 
 
 sub_77A6:				; CODE XREF: RAM:7694p	sub_76F2+16p ...

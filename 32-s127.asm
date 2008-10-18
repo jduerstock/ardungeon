@@ -282,28 +282,17 @@ loc_77F1:				; CODE XREF: RAM:77EDj
 		JSR	sub_78AE
 
 loc_7809:				; CODE XREF: RAM:7758j
-		LDX	#$75 ; 'u'
-		LDY	#8
+		ldxy	$7508
 		SEC
 		LDA	#$13
-		JSR	$1860
-		LDX	#$78 ; 'x'
-		LDY	#$EF ; 'ï'
+		JSR	j_SETBIT
+		ldxy	byte_78EF
 		JSR	$1884
-		LDA	#$6A ; 'j'
-		STA	$16
-		LDA	#$7D ; '}'
-		STA	$17
+		dldi	off_16, $7D6A
 		JSR	sub_78AE
-		LDA	#$12
-		STA	$16
-		LDA	#$7E ; '~'
-		STA	$17
+		dldi	off_16, $7E12
 		JSR	sub_78AE
-		LDA	#$E5 ; 'å'
-		STA	$16
-		LDA	#$7D ; '}'
-		STA	$17
+		dldi	off_16, $7DE5
 		JSR	sub_78AE
 
 loc_783B:				; CODE XREF: RAM:loc_7683j
@@ -452,6 +441,8 @@ aTemporalFugue:	.BYTE "Temporal Fugue",0
 byte_78EC:	.BYTE $A		; DATA XREF: RAM:77F4w
 		.BYTE	4
 		.BYTE $FF
+
+byte_78EF:
 		.BYTE $87 ; ‡
 		.BYTE $15
 		.BYTE	0

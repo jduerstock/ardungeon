@@ -186,7 +186,7 @@ loc_775A:				; CODE XREF: sub_7728+Fj sub_7728+17j	...
 sub_7766:				; CODE XREF: RAM:7702p
 		ldxy	$7508
 		SEC
-		JMP	$1860
+		JMP	j_SETBIT
 ; End of function sub_7766
 
 

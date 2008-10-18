@@ -112,27 +112,23 @@ loc_76E3:				; CODE XREF: RAM:76F2j
 		JSR	$18A5
 		LDY	$63
 		LDA	unk_787C,Y
-		LDX	#$75 ; 'u'
-		LDY	#8
+		ldxy	$7508
 		SEC
-		JSR	$1860
+		JSR	j_SETBIT
 		LDY	$63
 		LDA	unk_7880,Y
-		LDX	#$75 ; 'u'
-		LDY	#8
+		ldxy	$7508
 		SEC
-		JSR	$1860
+		JSR	j_SETBIT
 		LDY	$63
 		LDA	unk_787E,Y
-		LDX	#$75 ; 'u'
-		LDY	#8
+		ldxy	$7508
 		CLC
-		JSR	$1860
+		JSR	j_SETBIT
 		LDX	#$85 ; '…'
 		LDA	#4
 		JSR	$186F
-		LDX	#$78 ; 'x'
-		LDY	#$8A ; 'Š'
+		ldxy	$788A
 		LDA	$63
 		JSR	$185D
 		JSR	sub_7861
@@ -201,10 +197,9 @@ loc_77A6:				; CODE XREF: RAM:7796j	RAM:77F2j
 loc_77B2:				; CODE XREF: RAM:7755j
 		LDY	$63
 		LDA	unk_787A,Y
-		LDX	#$75 ; 'u'
-		LDY	#8
+		ldxy	$7508
 		SEC
-		JSR	$1860
+		JSR	j_SETBIT
 		LDY	$63
 		LDA	unk_7882,Y
 		STA	$6320

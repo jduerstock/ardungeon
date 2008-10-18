@@ -1,3 +1,4 @@
+		.include	"equates.inc"
 		.include	"globals.inc"
 		.include	"exp_kernel.inc"
 		.include	"macros.inc"
@@ -67,12 +68,11 @@ loc_7672:				; CODE XREF: RAM:765Cj
 		STA	$69
 
 loc_767B:				; CODE XREF: RAM:768Dj
-		LDA	$D20A
-		CMP	#$30 ; '0'
-		LDX	#$75 ; 'u'
-		LDY	#$12
+		LDA	RANDOM
+		CMP	#$30
+		ldxy	$7512
 		LDA	$69
-		JSR	$1860
+		JSR	j_SETBIT
 		DEC	$69
 		LDA	$69
 		BPL	loc_767B
@@ -145,7 +145,7 @@ loc_7715:				; CODE XREF: RAM:7743j
 		CMP	#$20
 		LDA	$69
 		ldxy	$7512
-		JSR	$1860
+		JSR	j_SETBIT
 		JMP	loc_773D
 ; ---------------------------------------------------------------------------
 
@@ -154,7 +154,7 @@ loc_772F:				; CODE XREF: RAM:771Cj
 		CMP	#$20
 		LDA	$69
 		ldxy	$7512
-		JSR	$1860
+		JSR	j_SETBIT
 
 loc_773D:				; CODE XREF: RAM:772Cj
 		DEC	$69
@@ -812,16 +812,14 @@ loc_7B37:				; CODE XREF: RAM:7B24j
 ; ---------------------------------------------------------------------------
 
 loc_7B64:				; CODE XREF: RAM:7B3Ej
-		LDA	$D20A
-		CMP	#$C0 ; '¿'
-		LDX	#$75 ; 'u'
-		LDY	#$12
+		LDA	RANDOM
+		CMP	#$C0
+		ldxy	$7512
 		LDA	$71
-		JSR	$1860
+		JSR	j_SETBIT
 		LDA	#2
 		JSR	$1899
-		LDX	#$8C ; 'å'
-		LDY	#$D7 ; '◊'
+		ldxy	$8CD7
 		JSR	$185D
 		JSR	sub_8022
 		JSR	sub_801D
@@ -838,27 +836,18 @@ loc_7B8A:				; CODE XREF: RAM:7A91j	RAM:7BC2j ...
 		CMP	#6
 		BCC	loc_7BA0
 		JSR	sub_7F6D
-		LDA	#$B3 ; '≥'
-		STA	$16
-		LDA	#$85 ; 'Ö'
-		STA	$17
+		dldi	off_16, $85B3
 		JMP	loc_7C3C
 ; ---------------------------------------------------------------------------
 
 loc_7BA0:				; CODE XREF: RAM:7B90j	RAM:7C81j ...
-		LDA	#$AF ; 'Ø'
-		STA	$16
-		LDA	#$8C ; 'å'
-		STA	$17
+		dldi	off_16, $8CAF
 		JSR	sub_8022
 		JSR	sub_7FA1
 		BCS	loc_7B87
 		BEQ	loc_7B87
 		BPL	loc_7BC5
-		LDA	#$C5 ; '≈'
-		STA	$16
-		LDA	#$86 ; 'Ü'
-		STA	$17
+		dldi	off_16,  $86C5
 		JSR	sub_8022
 		JSR	sub_801D
 		JMP	loc_7B8A
@@ -870,10 +859,7 @@ loc_7BC5:				; CODE XREF: RAM:7BB2j
 		LDA	$8A
 		BEQ	loc_7BE1
 		JSR	sub_7F6D
-		LDA	#$74 ; 't'
-		STA	$16
-		LDA	#$81 ; 'Å'
-		STA	$17
+		dldi	off_16, $8174
 		JSR	sub_8022
 		JSR	sub_801D
 		JMP	loc_7B8A
@@ -923,10 +909,7 @@ loc_7C18:				; CODE XREF: RAM:7BF7j
 		JSR	$1899
 		CMP	#$14
 		BCS	loc_7BF9
-		LDA	#$5D ; ']'
-		STA	$16
-		LDA	#$85 ; 'Ö'
-		STA	$17
+		dldi	off_16, $855D
 		JSR	sub_8022
 		LDA	#8
 		JSR	$185A
@@ -936,20 +919,16 @@ loc_7C31:
 ; ---------------------------------------------------------------------------
 
 loc_7C34:				; DATA XREF: RAM:off_7C10o
-		LDA	#$B6 ; '∂'
-		STA	$16
-		LDA	#$8D ; 'ç'
-		STA	$17
+		dldi	off_16, $8DB6
 
 loc_7C3C:				; CODE XREF: RAM:7B9Dj
 		JSR	sub_8022
 		LDA	#8
 		JSR	$185A
 		LDA	$71
-		LDX	#$75 ; 'u'
-		LDY	#$12
+		ldxy	$7512
 		CLC
-		JSR	$1860
+		JSR	j_SETBIT
 		JMP	loc_77FF
 ; ---------------------------------------------------------------------------
 
