@@ -8482,7 +8482,7 @@ loc_2DC1:				; CODE XREF: sub_2D99+35j
 		DEX
 		BPL	loc_2DC1
 		LDA	#3
-		STA	$D20F
+		STA	SKCTL
 		LDA	#0
 		STA	byte_2CB6
 

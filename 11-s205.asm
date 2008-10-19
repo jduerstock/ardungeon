@@ -9,9 +9,9 @@
 
 sub_8000:				; CODE XREF: RAM:807Ep
 		LDA	#$40 ; '@'
-		STA	$236
+		STA	AR_POKMSK
 		LDA	#0
-		STA	$D20E
+		STA	IRQEN
 		STA	$D40E
 		STA	$22F
 		STA	$256
@@ -39,8 +39,8 @@ loc_8014:				; CODE XREF: sub_8000+17j
 		JSR	sub_8158
 		LDA	#$40 ; '@'
 		STA	$D40E
-		LDA	$236
-		STA	$D20E
+		LDA	AR_POKMSK
+		STA	IRQEN
 		RTS
 ; End of function sub_8000
 
@@ -53,8 +53,8 @@ loc_8014:				; CODE XREF: sub_8000+17j
 		LDA	#0
 		JSR	$1A0D
 		LDA	#$40 ; '@'
-		STA	$236
-		STA	$D20E
+		STA	AR_POKMSK
+		STA	IRQEN
 		JSR	sub_80D2
 		JMP	$2EC6
 

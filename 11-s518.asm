@@ -1628,14 +1628,14 @@ sub_2009:				; CODE XREF: sub_20F7+Dp
 		AND	$237
 		ORA	#$20 ; ' '
 		STA	$237
-		STA	$D20F
+		STA	SKCTL
 		LDA	#$C7 ; 'Ç'
-		AND	byte_236
+		AND	AR_POKMSK
 		ORA	#$10
 
 loc_201D:				; CODE XREF: sub_21B7+17j
-		STA	byte_236
-		STA	$D20E
+		STA	AR_POKMSK
+		STA	IRQEN
 		LDA	#$28 ; '('
 		STA	$D208
 		LDA	#$A0 ; ' '
@@ -1653,9 +1653,9 @@ loc_201D:				; CODE XREF: sub_21B7+17j
 sub_2037:				; CODE XREF: READSECTOR:loc_20EDp
 					; sub_20F7+28p
 		LDA	#$C7 ; 'Ç'
-		AND	byte_236
-		STA	byte_236
-		STA	$D20E
+		AND	AR_POKMSK
+		STA	AR_POKMSK
+		STA	IRQEN
 		LDX	#6
 		LDA	#0
 
@@ -1906,10 +1906,10 @@ sub_21B7:				; CODE XREF: sub_218E+10p
 		AND	$237
 		ORA	#$10
 		STA	$237
-		STA	$D20F
+		STA	SKCTL
 		STA	SKREST
 		LDA	#$C7 ; 'Ç'
-		AND	byte_236
+		AND	AR_POKMSK
 		ORA	#$20 ; ' '
 		JMP	loc_201D
 ; End of function sub_21B7
@@ -1937,7 +1937,7 @@ sub_21D1:				; CODE XREF: READSECTOR-3EDp
 loc_21E7:
 		TYA
 		PHA
-		LDA	$D20F
+		LDA	SKSTAT
 		STA	SKREST
 		BMI	loc_21F6
 		LDY	#$8C ; 'Œ'
@@ -2020,10 +2020,10 @@ loc_2257:				; CODE XREF: RAM:2253j
 		BNE	loc_2280
 
 loc_2275:				; CODE XREF: RAM:2266j
-		LDA	byte_236
+		LDA	AR_POKMSK
 		ORA	#8
-		STA	byte_236
-		STA	$D20E
+		STA	AR_POKMSK
+		STA	IRQEN
 
 loc_2280:				; CODE XREF: RAM:2273j	RAM:2294j
 		PLA
@@ -2047,10 +2047,10 @@ loc_2297:
 		LDA	$243
 		BEQ	loc_22AA
 		STA	$241
-		LDA	byte_236
+		LDA	AR_POKMSK
 		AND	#$F7 ; '÷'
-		STA	byte_236
-		STA	$D20E
+		STA	AR_POKMSK
+		STA	IRQEN
 
 loc_22AA:				; CODE XREF: RAM:229Aj
 		PLA
@@ -2059,13 +2059,13 @@ loc_22AA:				; CODE XREF: RAM:229Aj
 
 loc_22AC:
 		PHA
-		LDA	$D20E
+		LDA	IRQST
 		AND	#$20 ; ' '
 		BNE	loc_22C2
 		LDA	#$DF ; 'ß'
-		STA	$D20E
-		LDA	byte_236
-		STA	$D20E
+		STA	IRQEN
+		LDA	AR_POKMSK
+		STA	IRQEN
 		JMP	(off_20A)
 ; ---------------------------------------------------------------------------
 
@@ -2078,11 +2078,11 @@ loc_22C6:				; CODE XREF: RAM:22D8j
 		LDA	unk_2301,X
 		CPX	#1
 		BNE	loc_22D2
-		AND	byte_236
+		AND	AR_POKMSK
 		BEQ	loc_22D7
 
 loc_22D2:				; CODE XREF: RAM:22CBj
-		BIT	$D20E
+		BIT	IRQST
 		BEQ	loc_22DC
 
 loc_22D7:				; CODE XREF: RAM:22D0j
@@ -2092,9 +2092,9 @@ loc_22D7:				; CODE XREF: RAM:22D0j
 
 loc_22DC:				; CODE XREF: RAM:22D5j
 		EOR	#$FF
-		STA	$D20E
-		LDA	byte_236
-		STA	$D20E
+		STA	IRQEN
+		LDA	AR_POKMSK
+		STA	IRQEN
 		LDA	unk_2304,X
 		STA	loc_22F4+1
 		LDA	#2
@@ -2333,8 +2333,8 @@ sub_245D:				; CODE XREF: RAM:1827j	sub_275B+3p
 		LDA	#$80
 		STA	$253
 		LDX	#0
-		STX	byte_236
-		STX	$D20E
+		STX	AR_POKMSK
+		STX	IRQEN
 		JSR	sub_2454
 		STX	$D01A
 		STX	COLPF2
@@ -2394,10 +2394,10 @@ loc_24C6:				; CODE XREF: RAM:1830j
 					; sub_275B:loc_2782j ...
 		PHP
 		LDA	#$40 ; '@'
-		STA	byte_236
-		STA	$D20E
+		STA	AR_POKMSK
+		STA	IRQEN
 		LDA	#3
-		STA	$D20F
+		STA	SKCTL
 		LDA	#0
 		STA	$D208
 		LDA	#1
@@ -2743,7 +2743,7 @@ loc_2653:
 		BPL	loc_2676
 		LDA	byte_18FF
 		BNE	loc_2676
-		LDA	$D20F
+		LDA	SKSTAT
 		AND	#$20 ; ' '
 		BEQ	loc_2676
 		LDA	#4
@@ -2791,7 +2791,7 @@ loc_269F:				; CODE XREF: sub_267A+Ej sub_267A+15j
 
 loc_26A2:				; CODE XREF: sub_267A+7j
 		LDY	#0
-		LDA	$D20F
+		LDA	SKSTAT
 		AND	#4
 		BNE	loc_26BD
 		LDX	#4

@@ -42,9 +42,9 @@ aClrzp:		.BYTE	"CLRZP"
 		.BYTE	"MAIN"
 ; ---------------------------------------------------------------------------
 		LDA	#$40 ; '@'
-		STA	$236
+		STA	AR_POKMSK
 		LDA	#0
-		STA	$D20E
+		STA	IRQEN
 		STA	$D40E
 		STA	$22F
 		STA	$256
@@ -86,8 +86,8 @@ loc_2014:				; CODE XREF: RAM:2017j
 		STA	$223
 		LDA	#$40 ; '@'
 		STA	$D40E
-		LDA	$236
-		STA	$D20E
+		LDA	AR_POKMSK
+		STA	IRQEN
 		RTS
 ; ---------------------------------------------------------------------------
 		JSR	$7600
@@ -98,8 +98,8 @@ loc_2014:				; CODE XREF: RAM:2017j
 		LDA	#1
 		JSR	$1A0D
 		LDA	#$40 ; '@'
-		STA	$236
-		STA	$D20E
+		STA	AR_POKMSK
+		STA	IRQEN
 		JSR	$76C1
 		JMP	loc_2E3B
 ; ---------------------------------------------------------------------------
@@ -264,7 +264,7 @@ aSystemInitiali:.BYTE "      System Initialization     "
 ; ---------------------------------------------------------------------------
 		TYA
 		PHA
-		LDA	$D20F
+		LDA	SKSTAT
 		STA	SKREST
 		BMI	loc_21ED
 		LDY	#$8C ; 'Œ'
@@ -345,10 +345,10 @@ loc_224E:				; CODE XREF: RAM:224Aj
 		BNE	loc_2277
 
 loc_226C:				; CODE XREF: RAM:225Dj
-		LDA	$236
+		LDA	AR_POKMSK
 		ORA	#8
-		STA	$236
-		STA	$D20E
+		STA	AR_POKMSK
+		STA	IRQEN
 
 loc_2277:				; CODE XREF: RAM:226Aj	RAM:228Bj
 		PLA
@@ -370,23 +370,23 @@ loc_227B:				; CODE XREF: RAM:2258j
 		LDA	$243
 		BEQ	loc_22A1
 		STA	$241
-		LDA	$236
+		LDA	AR_POKMSK
 		AND	#$F7 ; '÷'
-		STA	$236
-		STA	$D20E
+		STA	AR_POKMSK
+		STA	IRQEN
 
 loc_22A1:				; CODE XREF: RAM:2291j
 		PLA
 		RTI
 ; ---------------------------------------------------------------------------
 		PHA
-		LDA	$D20E
+		LDA	IRQST
 		AND	#$20 ; ' '
 		BNE	loc_22B9
 		LDA	#$DF ; 'ß'
-		STA	$D20E
-		LDA	$236
-		STA	$D20E
+		STA	IRQEN
+		LDA	AR_POKMSK
+		STA	IRQEN
 		JMP	($20A)
 ; ---------------------------------------------------------------------------
 
@@ -399,11 +399,11 @@ loc_22BD:				; CODE XREF: RAM:22CFj
 		LDA	unk_22F8,X
 		CPX	#1
 		BNE	loc_22C9
-		AND	$236
+		AND	AR_POKMSK
 		BEQ	loc_22CE
 
 loc_22C9:				; CODE XREF: RAM:22C2j
-		BIT	$D20E
+		BIT	IRQST
 		BEQ	loc_22D3
 
 loc_22CE:				; CODE XREF: RAM:22C7j
@@ -413,9 +413,9 @@ loc_22CE:				; CODE XREF: RAM:22C7j
 
 loc_22D3:				; CODE XREF: RAM:22CCj
 		EOR	#$FF
-		STA	$D20E
-		LDA	$236
-		STA	$D20E
+		STA	IRQEN
+		LDA	AR_POKMSK
+		STA	IRQEN
 		LDA	unk_22FB,X
 		STA	loc_22EB+1
 		LDA	#2

@@ -64,8 +64,7 @@ unk_764B:	.BYTE	>aThe		; DATA XREF: RAM:761Cr
 		.BYTE	>a8th
 unk_7653:	MOVEXY	0,2		; DATA XREF: RAM:AD54o	RAM:AD5Fo ...
 byte_7656:
-		.BYTE $A3
-		.WORD loc_760D
+		STRJSR	loc_760D
 		.BYTE $A5
 		.BYTE $B4
 		.WORD off_760B
@@ -77,8 +76,7 @@ byte_7656:
 		.BYTE $20
 		.BYTE $AE ; ®
 byte_7665:	MOVEXY	0,3		; DATA XREF: RAM:990Eo
-		.BYTE $A3
-		.WORD loc_766B
+		STRJSR	loc_766B
 ; ---------------------------------------------------------------------------
 
 loc_766B:				; DATA XREF: RAM:7669o
@@ -86,14 +84,11 @@ loc_766B:				; DATA XREF: RAM:7669o
 		RTS
 ; ---------------------------------------------------------------------------
 		MOVEXY	0,7
-		.BYTE $A5
-aDostThouYieldq:.BYTE "Dost thou yield? ("
+aDostThouYieldq:.BYTE $A5,"Dost thou yield? ("
 		BLINK	'Y'
 		.BYTE " or "
 		BLINK	'N'
-		.BYTE ')'
-		.BYTE $D
-		.BYTE $FF
+		.BYTE ')',$D,$FF
 		.BYTE $87 ; ‡
 byte_7698:	.BYTE 0			; DATA XREF: sub_8560+2w
 		.BYTE	2
@@ -961,8 +956,7 @@ loc_7C63:				; CODE XREF: sub_7B59+CDj
 loc_7C6D:				; CODE XREF: sub_7B59:loc_7C4Aj
 					; sub_7B59+FEj
 		JSR	loc_9358
-		LDX	#$A6 ; '¦'
-		LDY	#$25 ; '%'
+		ldxy	$A625
 		JSR	loc_8ED1
 
 locret_7C77:				; CODE XREF: sub_7B59+9Ej
@@ -981,15 +975,15 @@ sub_7C78:				; CODE XREF: sub_7B59+3p
 ; ---------------------------------------------------------------------------
 
 loc_7C83:				; CODE XREF: sub_7C78+6j
-		LDA	unk_7C95,X
+		LDA	byte_7C95,X
 		PHA
-		LDA	unk_7C8C,X
+		LDA	byte_7C8C,X
 		PHA
 		RTS
 ; End of function sub_7C78
 
 ; ---------------------------------------------------------------------------
-unk_7C8C:	.BYTE	<(sub_7C9E-1)	; DATA XREF: sub_7C78+Fr
+byte_7C8C:	.BYTE	<(sub_7C9E-1)	; DATA XREF: sub_7C78+Fr
 		.BYTE	<(sub_7C9E-1)
 		.BYTE	<(loc_7D38-1)
 		.BYTE	<(sub_7C9E-1)
@@ -998,7 +992,7 @@ unk_7C8C:	.BYTE	<(sub_7C9E-1)	; DATA XREF: sub_7C78+Fr
 		.BYTE	<(loc_7D53-1)
 		.BYTE	<(loc_7D82-1)
 		.BYTE	<(sub_7C9E-1)
-unk_7C95:	.BYTE	>(sub_7C9E-1)	; DATA XREF: sub_7C78:loc_7C83r
+byte_7C95:	.BYTE	>(sub_7C9E-1)	; DATA XREF: sub_7C78:loc_7C83r
 		.BYTE	>(sub_7C9E-1)
 		.BYTE	>(loc_7D38-1)
 		.BYTE	>(sub_7C9E-1)
@@ -5442,7 +5436,7 @@ loc_95EE:				; CODE XREF: sub_9550+8Fj
 		STA	$22F
 		JSR	$1830
 		LDA	#3
-		STA	$D20F
+		STA	SKCTL
 		LDA	#0
 		STA	$D208
 		LDX	#$83 ; 'ƒ'
@@ -5464,7 +5458,7 @@ loc_9618:				; CODE XREF: sub_9550+C0j sub_9550+C5j
 
 sub_961C:				; CODE XREF: sub_950E+2Ep sub_9550+27p
 		JSR	$1830
-		ldxy	$A6B7
+		ldxy	byte_A6B7
 		JSR	sub_8EEF
 		JMP	$183C
 ; End of function sub_961C
@@ -6014,11 +6008,9 @@ byte_9A3B:
 		.BYTE	>aAFriend
 		.BYTE	>aThePalace
 
-a_BattleOptions:
-		.BYTE $A6,  0,	0
-		.BYTE $A5
-aBattleOptions:	.BYTE "Battle Options"
-		.BYTE $D
+a_BattleOptions:	
+		MOVEXY	0,0
+aBattleOptions:	.BYTE $A5,"Battle Options",$D
 		MOVEXY	10,2
 		MenuItem "1","Attack"
 		MOVEXY	10,3
@@ -6033,9 +6025,7 @@ aBattleOptions:	.BYTE "Battle Options"
 		MenuItem "0","Turn and run!"
 		.BYTE $FF
 		MOVEXY	0,0
-		.BYTE	$A5
-		.BYTE	"Transact Options"
-		.BYTE	$D
+		.BYTE	$A5,"Transact Options",$D
 		MOVEXY	15,2
 		MenuItem "1","Offer"
 		MOVEXY	15,3
@@ -6050,16 +6040,12 @@ aBattleOptions:	.BYTE "Battle Options"
 
 a_YouSurpriseThe:
 		MOVEXY	0,0
-		.BYTE	$A5
-		.BYTE	"You surprise the "
+		.BYTE	$A5,"You surprise the "
 		.BYTE	$B4
 		.WORD	$AA01
 		.BYTE	$14
-		.BYTE	"."
-		.BYTE	$D
-		.BYTE	$A5
-		.BYTE	"Attempt to:"
-		.BYTE	$D
+		.BYTE	".",$D
+		.BYTE	$A5,"Attempt to:",$D
 		MOVEXY	10,3
 		MenuItem "1","waylay the "
 		.BYTE	$B4
@@ -6106,8 +6092,7 @@ a_GrabSome:
 
 a_YourTrickFailed:
 		MOVEXY	0,3
-		.BYTE	$A5
-		.BYTE	"Your trick failed.",$D,$FF
+		.BYTE	$A5,"Your trick failed.",$D,$FF
 
 a_IsntGoingForIt:
 		.BYTE	$AC
@@ -6116,10 +6101,8 @@ a_IsntGoingForIt:
 
 a_AttemptFailed:
 		MOVEXY	0,3
-		.BYTE	$A5
-		.BYTE	"Attempt failed.",$D,$FF
-		.BYTE	$A3
-		.WORD	$9C8A
+		.BYTE	$A5,"Attempt failed.",$D,$FF
+		STRJSR	sub_9C8A
 		.BYTE	$AC
 		.WORD	$7653
 		.BYTE	"sees you have no"
@@ -6138,6 +6121,9 @@ a_AttemptFailed:
 		.BYTE	$A
 		.BYTE	".",$22
 		.BYTE	$D,$FF
+
+; ---------------------------------------------------------------------------
+sub_9C8A:
 		dldi	off_76DB, aBrother
 		BIT     $633B
 		BPL     locret_9CA3
@@ -6145,6 +6131,7 @@ a_AttemptFailed:
 	
 locret_9CA3:                            ; CODE XREF: RAM:9C97j
 		RTS
+; ---------------------------------------------------------------------------
 
 aBrother:	.BYTE	"brother",0
 aSister:	.BYTE	"sister",0
@@ -6167,14 +6154,13 @@ a_BreaksTheSpell:
 
 a_YouWaitForOpening:
 		MOVEXY	0,3
-		.BYTE	$A5
-		.BYTE	"You wait for an opening.",$D,$FF
+		.BYTE	$A5,"You wait for an opening.",$D,$FF
 		.BYTE	$AC
 		.WORD	$9D0E
 		.BYTE	"happily accept.",$D,$FF
 		MOVEXY	0,2
-		.BYTE	$A5
-		.BYTE	"In your inebriated state, you",$D,$A5,$AE
+		.BYTE	$A5,"In your inebriated state, you",$D
+		.BYTE	$A5,$AE
 
 a_FeelThatReasoning:
 		.BYTE	$AC
@@ -6191,8 +6177,7 @@ a_FeelThatReasoning:
 
 a_YouAreStunned:
 		MOVEXY	0,2
-		.BYTE	$A5
-		.BYTE	"You are stunned.",$D
+		.BYTE	$A5,"You are stunned.",$D
 		.BYTE	$A3
 		.WORD	$9DAF
 
@@ -6212,22 +6197,17 @@ a_DodgesOutOfThe:
 		.BYTE	$AC
 		.WORD	$7665
 		.BYTE	$D
-		.BYTE	$A5
-		.BYTE	"dodges out of the way.",$D,$FF
+		.BYTE	$A5,"dodges out of the way.",$D,$FF
 		MOVEXY	0,3
-		.BYTE	$A5
-		.BYTE	"You dodge the blow.",$D,$FF
+		.BYTE	$A5,"You dodge the blow.",$D,$FF
 		.BYTE	$AC
 		.WORD	$9E2D
-		.BYTE	$A5
-		.BYTE	"is about to break.",$D,$FF
+		.BYTE	$A5,"is about to break.",$D,$FF
 		.BYTE	$AC
 		.WORD	$9E2D
-		.BYTE	$A5
-		.BYTE	"has broken.",$D,$FF
+		.BYTE	$A5,"has broken.",$D,$FF
 		MOVEXY	0,2	
-		.BYTE	$A5
-		.BYTE	"Your "
+		.BYTE	$A5,"Your "
 		.BYTE	$B4
 		.WORD	$76D9
 		.BYTE	$1F

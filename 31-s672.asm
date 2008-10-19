@@ -1,3 +1,4 @@
+		.include	"equates.inc"
 
 ;		.ORG	$96F0
 		JMP	loc_97B5
@@ -224,7 +225,7 @@ loc_97DD:				; CODE XREF: RAM:97EAj
 		DEX
 		BPL	loc_97DD
 		LDA	#3
-		STA	$D20F
+		STA	SKCTL
 		LDA	#0
 		STA	byte_96F8
 
