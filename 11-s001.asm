@@ -3,6 +3,7 @@
 
 loc_B000	= $B000
 
+		.SEGMENT	"BOOTSTRAP"
 ;		.ORG	$600
 byte_600:	.BYTE	1
 		.BYTE	1

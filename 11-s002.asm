@@ -11,6 +11,8 @@
 	.endif
 .endmacro
 
+	.SEGMENT	"SEGDIR"
+;	.ORG	$0280
 	DirEnt	,3,1,7,$300,4		; ???			; $00
 	DirEnt	$4000,2,1,10,,20	; map 1			; $01
 	DirEnt	$4000,2,1,51,,20	; map 2			; $02

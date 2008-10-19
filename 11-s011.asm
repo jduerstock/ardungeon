@@ -1,5 +1,8 @@
 	.include	"macros.inc"
 
+	.SEGMENT	"BOOTTXT2"
+;	.ORG	$BD80
+
 	StrAtasciiToANTIC	"          DATASOFT (R) PRESENTS         "
 	StrAtasciiToANTIC	"              "
 	StrAtasciiToANTIC	"       |  Alternate Reality (R) |       "

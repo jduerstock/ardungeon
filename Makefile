@@ -66,6 +66,8 @@ OBJECTS=$(ASM_SOURCES:.asm=.bin)
 SUMS=$(ASM_SOURCES:.asm=.sha1)
 
 all: $(OBJECTS)
+	ld65 -C 11-s001.cfg 11-s001.o 11-s002.o 11-s006.o 11-s011.o
+	sha1sum -c 11-s001.sha1 11-s002.sha1 11-s006.sha1 11-s011.sha1
 	cat 11-s001.bin > ar11.img
 	cat 11-s002.bin >> ar11.img
 	cat 11-s006.bin >> ar11.img
@@ -120,20 +122,16 @@ all: $(OBJECTS)
 	$(CA) $(AFLAGS) $< -o $@
 
 11-s001.bin: 11-s001.asm
-	cl65 --start-addr 0x0600 -t none 11-s001.asm -o 11-s001.bin
-	sha1sum -c 11-s001.sha1
+	ca65 -o 11-s001.o 11-s001.asm
 
 11-s002.bin: 11-s002.asm
-	cl65 --start-addr 0x1000 -t none 11-s002.asm -o 11-s002.bin
-	sha1sum -c 11-s002.sha1
+	ca65 -o 11-s002.o 11-s002.asm
 
 11-s006.bin: 11-s006.asm
-	cl65 --start-addr 0xbd80 -t none 11-s006.asm -o 11-s006.bin
-	sha1sum -c 11-s006.sha1
+	ca65 -o 11-s006.o 11-s006.asm
 
 11-s011.bin: 11-s011.asm
-	cl65 --start-addr 0xbd80 -t none 11-s011.asm -o 11-s011.bin
-	sha1sum -c 11-s011.sha1
+	ca65 -o 11-s011.o 11-s011.asm
 
 11-s016.bin: 11-s016.asm
 	cl65 --start-addr 0xb000 -t none 11-s016.asm -o 11-s016.bin
