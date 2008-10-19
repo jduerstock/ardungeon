@@ -1408,8 +1408,7 @@ unk_7F3C:	.BYTE	4		; DATA XREF: RAM:7D05r
 aMeal:		.BYTE "meal",0
 aDrink:		.BYTE "drink",0
 		MOVEXY	0,1
-		.BYTE $A3
-		.WORD loc_893D
+		STRJSR	loc_893D
 		.BYTE $A5
 aThe:		.BYTE "The "
 		.BYTE $B4
@@ -1422,8 +1421,7 @@ aWillCostYou:	.BYTE " will cost you "
 aSilvers_:	.BYTE " silvers."
 		.BYTE $D
 		.BYTE $D
-		.BYTE $A3
-		.WORD loc_8940
+		STRJSR	loc_8940
 		.BYTE $A5
 aOk:		.BYTE "OK ("
 		.BYTE $A1
@@ -1768,8 +1766,7 @@ aWhereDostThouW:.BYTE "Where dost thou wish to sit?"
 		.BYTE $A6, $C,	7
 		MenuItem "0","Leave"
 		.BYTE $FF
-byte_8428:	.BYTE $A3		; DATA XREF: RAM:8551o
-		.WORD loc_8459
+byte_8428:	STRJSR	loc_8459	; DATA XREF: RAM:8551o
 aThouArtSitting:.BYTE "Thou art sitting at "
 		.BYTE $B4
 		.WORD $67
@@ -1839,14 +1836,12 @@ aThankYouPlease:.BYTE "Thank you!  Please come again.",$D,$FF
 		MOVEXY	0,1
 aARoundForTheHo:.BYTE $A5,"A round for the house will cost",$D,$D
 		.BYTE $A5
-		.BYTE $A3
-		.WORD loc_893D
+		STRJSR	loc_893D
 		.BYTE $B2
 		.WORD $71
 		.BYTE 3
 aSilvers__0:	.BYTE " silvers."
-		.BYTE $A3
-		.WORD loc_8940
+		STRJSR	loc_8940
 		.BYTE $D
 		.BYTE $D
 		.BYTE $D
@@ -1862,62 +1857,43 @@ aN_0:		.BYTE 'N'
 		.BYTE ')'
 		.BYTE $D
 		.BYTE $FF
-		.BYTE $A6,  0,	2
-		.BYTE $A5
-aIMSorryYouHave:.BYTE "I'm sorry, you have not the funds."
-		.BYTE $D
-		.BYTE $A6,  0,	7
-		.BYTE $A5
-aNoteWeDoNotAcc:.BYTE "Note: We do not accept coppers here."
-		.BYTE $D
-		.BYTE $FF
-		.BYTE $A6,  0,	1
-		.BYTE $A5
-aDostThouWish_1:.BYTE "Dost thou wish to sell that fine"
-		.BYTE $D
-		.BYTE $D
-		.BYTE $A3
-		.WORD loc_893D
-		.BYTE $A5
-aDragonMeatFor:	.BYTE "dragon meat for "
+		MOVEXY	0,2
+aIMSorryYouHave:.BYTE $A5,"I'm sorry, you have not the funds.",$D
+		MOVEXY	0,7
+aNoteWeDoNotAcc:.BYTE $A5,"Note: We do not accept coppers here.",$D,$FF
+		MOVEXY	0,1
+aDostThouWish_1:.BYTE $A5,"Dost thou wish to sell that fine",$D,$D
+		STRJSR	loc_893D
+aDragonMeatFor:	.BYTE $A5,"dragon meat for "
 		.BYTE $B2
 		.WORD $71
 		.BYTE 2
 aGoldsq:	.BYTE " golds? ("
-		.BYTE $A1
-aY_1:		.BYTE "Y"
-		.BYTE $A0
+aY_1:		BLINK	"Y"
 aOr_1:		.BYTE " or "
-		.BYTE $A1
-aN_1:		.BYTE "N"
-		.BYTE $A0
-		.BYTE ')'
-		.BYTE $D
-		.BYTE $A3
-		.WORD $8940
+aN_1:		BLINK	"N"
+		.BYTE ')',$D
+		STRJSR	loc_8940
 		.BYTE $FF
-		.BYTE $A6,  0,	0
-		.BYTE $A5
-aWhatWouldThouL:.BYTE "What would thou like?"
-		.BYTE $D
-		.BYTE $A6,  0,	2
+		MOVEXY	0,0
+aWhatWouldThouL:.BYTE $A5,"What would thou like?",$D
+		MOVEXY	0,2
 		MenuItem "1",""
 		.BYTE $B4
 		.WORD $69
 		.BYTE $1E
-		.BYTE $A6,$1B,	2
+		MOVEXY	27,2
 		.BYTE $B2
 		.WORD $71
 		.BYTE 4
 aSilvers:	.BYTE "silvers"
-		.BYTE $A3
-		.WORD loc_8946
+		STRJSR	loc_8946
 		.BYTE $D
 		MenuItem "2",""
 		.BYTE $B4
 		.WORD $6B
 		.BYTE $1E
-		.BYTE $A6,$1B,	3
+		MOVEXY	27,3
 		.BYTE $B2
 		.WORD $72
 		.BYTE 4

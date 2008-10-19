@@ -2602,34 +2602,18 @@ unk_700:	.BYTE	0		; DATA XREF: sub_31A2+50r
 		.BYTE  $B
 		.BYTE $12
 		.BYTE $28 ; (
-		.BYTE  $E
-		.BYTE	0
-		.BYTE $53 ; S
-		.BYTE $4F ; O
-		.BYTE $4D ; M
-		.BYTE $45 ; E
-		.BYTE $20
-		.BYTE $54 ; T
-		.BYTE $48 ; H
-		.BYTE $4F ; O
-		.BYTE $55 ; U
-		.BYTE $47 ; G
-		.BYTE $48 ; H
-		.BYTE $54 ; T
-		.BYTE $20
-		.BYTE $49 ; I
-		.BYTE $54 ; T
-		.BYTE	0
-		.BYTE  $F
-		.BYTE	0
-		.BYTE	3
-		.BYTE	1
-		.BYTE	1
-		.BYTE $48 ; H
-		.BYTE  $F
-		.BYTE $12
-		.BYTE	5
-		.BYTE  $F
+		.BYTE	$0E,$00
+		.BYTE	"SOME THOUGHT IT",0
+		.BYTE	$0F
+		.BYTE	$00
+		.BYTE	$03
+		.BYTE	$01
+		.BYTE	$01
+		.BYTE	$48
+		.BYTE	$0F
+		.BYTE	$12
+		.BYTE	$05
+		.BYTE	$0F
 		.BYTE	4
 		.BYTE  $B
 		.BYTE	1
@@ -2647,23 +2631,8 @@ unk_700:	.BYTE	0		; DATA XREF: sub_31A2+50r
 		.BYTE  $F
 		.BYTE $12
 		.BYTE	5
-		.BYTE  $E
-		.BYTE	0
-		.BYTE $41 ; A
-		.BYTE $20
-		.BYTE $57 ; W
-		.BYTE $49 ; I
-		.BYTE $53 ; S
-		.BYTE $48 ; H
-		.BYTE $49 ; I
-		.BYTE $4E ; N
-		.BYTE $47 ; G
-		.BYTE $20
-		.BYTE $57 ; W
-		.BYTE $45 ; E
-		.BYTE $4C ; L
-		.BYTE $4C ; L
-		.BYTE	0
+		.BYTE	$0E,$00
+		.BYTE	"A WISHING WELL",0
 		.BYTE  $F
 		.BYTE	0
 		.BYTE	0
