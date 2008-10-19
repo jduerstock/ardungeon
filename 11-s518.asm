@@ -1039,9 +1039,9 @@ loc_1CF3:
 		JMP	loc_1CAB
 ; ---------------------------------------------------------------------------
 PRTOP_A3:
-		JSR	sub_1F26
-		JSR	sub_1D07
-		JMP	loc_1CAB
+		JSR	sub_1F26	; load function address from string
+		JSR	sub_1D07	; JSR to it
+		JMP	loc_1CAB	; continue processing
 
 ; --------------- S U B	R O U T	I N E ---------------------------------------
 

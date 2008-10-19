@@ -110,6 +110,10 @@ MOVECURSOR = $A6
 	.BYTE BLINKON, arg1, BLINKOFF
 .endmacro
 
+.macro	STRJSR Ptr
+	.BYTE $A3,.LOBYTE(Ptr),.HIBYTE(Ptr)
+.endmacro
+
 .macro PRINTSTR Ptr, Len
 	.BYTE $B4,.LOBYTE(Ptr),.HIBYTE(Ptr),Len
 .endmacro

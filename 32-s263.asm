@@ -41,25 +41,13 @@ loc_7623:				; CODE XREF: RAM:762Aj
 		STA	$751F
 		LDA	$6310
 		STA	$7520
-		LDA	#$25 ; '%'
-		STA	byte_8F1C
-		LDA	#$8F ; 'è'
-		STA	byte_8F1D
-		LDA	#$20 ; ' '
-		STA	byte_8F1E
-		LDA	#$8F ; 'è'
-		STA	byte_8F1F
+		dldi	off_8F1C, aJeff
+		dldi	off_8F1E, aOmar
 		LDA	$630A
 		CMP	#$C
 		BCC	loc_7672
-		LDA	#$20 ; ' '
-		STA	byte_8F1C
-		LDA	#$8F ; 'è'
-		STA	byte_8F1D
-		LDA	#$25 ; '%'
-		STA	byte_8F1E
-		LDA	#$8F ; 'è'
-		STA	byte_8F1F
+		dldi	off_8F1C, aOmar
+		dldi	off_8F1E, aJeff
 
 loc_7672:				; CODE XREF: RAM:765Cj
 		LDA	#$FF
@@ -141,7 +129,7 @@ loc_7715:				; CODE XREF: RAM:7743j
 		ldxy	$7512
 		JSR	j_TESTBIT
 		BCS	loc_772F
-		LDA	$D20A
+		LDA	RANDOM
 		CMP	#$20
 		LDA	$69
 		ldxy	$7512
@@ -150,7 +138,7 @@ loc_7715:				; CODE XREF: RAM:7743j
 ; ---------------------------------------------------------------------------
 
 loc_772F:				; CODE XREF: RAM:771Cj
-		LDA	$D20A
+		LDA	RANDOM
 		CMP	#$20
 		LDA	$69
 		ldxy	$7512
@@ -166,7 +154,7 @@ loc_773D:				; CODE XREF: RAM:772Cj
 loc_7747:				; CODE XREF: RAM:775Cj
 		LDA	$7516,X
 		BNE	loc_775B
-		LDA	$D20A
+		LDA	RANDOM
 		CMP	#$20 ; ' '
 		BCC	loc_775B
 		LDA	#$14
@@ -256,10 +244,7 @@ loc_77D6:
 		LDA	$751B
 		CMP	#$FF
 		BNE	loc_77ED
-		LDA	#$FB ; '˚'
-		STA	$16
-		LDA	#$80 ; 'Ä'
-		STA	$17
+		dldi	off_16, $80FB
 		LDA	#1
 		STA	$751B
 		JMP	loc_77F4
@@ -348,10 +333,7 @@ loc_7855:				; CODE XREF: RAM:785Cj
 ; ---------------------------------------------------------------------------
 
 loc_7867:				; CODE XREF: RAM:7827j	RAM:78CBj ...
-		LDA	#$F3 ; 'Û'
-		STA	$16
-		LDA	#$82 ; 'Ç'
-		STA	$17
+		dldi	off_16, $82F3
 		JSR	sub_8022
 
 loc_7872:				; CODE XREF: RAM:788Bj
@@ -402,29 +384,20 @@ loc_78B4:				; CODE XREF: RAM:78A6j	RAM:78AAj ...
 		LDA	$7516,X
 		STA	$6D
 		BNE	loc_78CE
-		LDA	#8
-		STA	$16
-		LDA	#$84 ; 'Ñ'
-		STA	$17
+		dldi	off_16, $8408
 		JSR	sub_8022
 		JSR	sub_801D
 		JMP	loc_7867
 ; ---------------------------------------------------------------------------
 
 loc_78CE:				; CODE XREF: RAM:78BBj	RAM:78F0j ...
-		LDA	#$C7 ; '«'
-		STA	$16
-		LDA	#$83 ; 'É'
-		STA	$17
+		dldi	off_16, $83C7
 		JSR	sub_8022
 		JSR	sub_7FA1
 		BCS	loc_7867
 		BEQ	loc_7867
 		BPL	loc_78F3
-		LDA	#$C5 ; '≈'
-		STA	$16
-		LDA	#$86 ; 'Ü'
-		STA	$17
+		dldi	off_16, $86C5
 		JSR	sub_8022
 		JSR	sub_801D
 		JMP	loc_78CE
@@ -435,10 +408,7 @@ loc_78F3:				; CODE XREF: RAM:78E0j
 		BEQ	loc_7908
 
 loc_78F7:				; CODE XREF: RAM:790Cj
-		LDA	#$78 ; 'x'
-		STA	$16
-		LDA	#$84 ; 'Ñ'
-		STA	$17
+		dldi	off_16, $8478
 		JSR	sub_8022
 		JSR	sub_801D
 		JMP	loc_78CE
@@ -485,18 +455,12 @@ loc_7946:				; CODE XREF: RAM:79CCj
 		LDA	$6E
 		CMP	#1
 		BNE	loc_7957
-		LDA	#$1F
-		STA	$16
-		LDA	#$85 ; 'Ö'
-		STA	$17
+		dldi	off_16, $851F
 		JMP	loc_795F
 ; ---------------------------------------------------------------------------
 
 loc_7957:				; CODE XREF: RAM:794Aj
-		LDA	#$9D ; 'ù'
-		STA	$16
-		LDA	#$84 ; 'Ñ'
-		STA	$17
+		dldi	off_16, $849D
 
 loc_795F:				; CODE XREF: RAM:7954j
 		JSR	sub_8022
@@ -516,8 +480,7 @@ loc_7962:				; CODE XREF: RAM:7965j
 		JSR	sub_7F6D
 		LDA	#2
 		JSR	$1899
-		LDX	#$85 ; 'Ö'
-		LDY	#$F1 ; 'Ò'
+		ldxy	$85F1
 		JSR	$185D
 		JSR	sub_8022
 		JSR	sub_801D
@@ -533,15 +496,14 @@ loc_7993:				; CODE XREF: RAM:7976j
 		LDA	$6E
 		LDX	$8F17,Y
 		JSR	$1878
-		LDA	$D20A
+		LDA	RANDOM
 		AND	#1
 		BIT	$633B
 		BPL	loc_79B2
 		ORA	#2
 
 loc_79B2:				; CODE XREF: RAM:79AEj
-		LDX	#$86 ; 'Ü'
-		LDY	#$62 ; 'b'
+		ldxy	$8662
 		JSR	$185D
 		JSR	sub_8022
 		JSR	sub_801D
@@ -633,10 +595,7 @@ loc_7A41:				; CODE XREF: RAM:loc_7B87j
 					; RAM:loc_7C6Ej ...
 		LDA	$7B
 		BEQ	loc_7A50
-		LDA	#$5B ; '['
-		STA	$16
-		LDA	#$8B ; 'ã'
-		STA	$17
+		dldi	off_16, $8B5B
 		JMP	loc_7A6F
 ; ---------------------------------------------------------------------------
 
@@ -704,28 +663,19 @@ loc_7AAB:				; CODE XREF: RAM:7AA6j
 		BEQ	loc_7AC9
 		BIT	$88
 		BPL	loc_7ABE
-		LDA	#$85 ; 'Ö'
-		STA	$16
-		LDA	#$8B ; 'ã'
-		STA	$17
+		dldi	off_16, $8B85
 		JMP	loc_7B01
 ; ---------------------------------------------------------------------------
 
 loc_7ABE:				; CODE XREF: RAM:7AB1j
-		LDA	#$10
-		STA	$16
-		LDA	#$8C ; 'å'
-		STA	$17
+		dldi	off_16, $8C10
 		JMP	loc_7AE0
 ; ---------------------------------------------------------------------------
 
 loc_7AC9:				; CODE XREF: RAM:7AADj
 		BIT	$88
 		BPL	loc_7AD8
-		LDA	#$C1 ; '¡'
-		STA	$16
-		LDA	#$8B ; 'ã'
-		STA	$17
+		dldi	off_16, $8BC1
 		JMP	loc_7B01
 ; ---------------------------------------------------------------------------
 
@@ -781,10 +731,7 @@ loc_7B16:				; CODE XREF: RAM:7A8Aj	RAM:7CEEj
 		TAX
 		JSR	$1884
 		BPL	loc_7B37
-		LDA	#$59 ; 'Y'
-		STA	$16
-		LDA	#$8D ; 'ç'
-		STA	$17
+		dldi	off_16, $8D59
 		JSR	sub_8022
 		JSR	sub_801D
 		JMP	loc_77FF
@@ -959,10 +906,7 @@ loc_7C6E:				; CODE XREF: RAM:7C65j
 ; ---------------------------------------------------------------------------
 
 loc_7C71:				; DATA XREF: RAM:7C14o
-		LDA	#$3B ; ';'
-		STA	$16
-		LDA	#$8B ; 'ã'
-		STA	$17
+		dldi	off_16, $8B3B
 		JSR	sub_8022
 		LDA	#8
 		JSR	$185A
@@ -970,10 +914,7 @@ loc_7C71:				; DATA XREF: RAM:7C14o
 ; ---------------------------------------------------------------------------
 
 loc_7C84:				; DATA XREF: RAM:7C16o
-		LDA	#$F7 ; '˜'
-		STA	$16
-		LDA	#$8A ; 'ä'
-		STA	$17
+		dldi	off_16, $8AF7
 		JSR	sub_8022
 		LDA	#8
 		JSR	$185A
@@ -1033,8 +974,7 @@ loc_7CD8:				; CODE XREF: RAM:7CD1j	RAM:7CD3j
 loc_7CDC:				; CODE XREF: RAM:7BF2j	RAM:loc_7C6Bj ...
 		LDA	#2
 		JSR	$1899
-		LDX	#$8A ; 'ä'
-		LDY	#$AF ; 'Ø'
+		ldxy	$8AAF
 		JSR	$185D
 		JSR	sub_8022
 		JSR	sub_801D
@@ -1042,10 +982,7 @@ loc_7CDC:				; CODE XREF: RAM:7BF2j	RAM:loc_7C6Bj ...
 ; ---------------------------------------------------------------------------
 
 loc_7CF1:				; CODE XREF: RAM:784Cj	RAM:loc_7D6Ej ...
-		LDA	#3
-		STA	$16
-		LDA	#$87 ; 'á'
-		STA	$17
+		dldi	off_16, $8703
 		JSR	sub_8022
 
 loc_7CFC:				; CODE XREF: RAM:7D67j
@@ -1066,10 +1003,7 @@ loc_7D04:				; CODE XREF: RAM:7D07j
 		STA	$76
 		LDA	$63B8
 		STA	$77
-		LDA	#$35 ; '5'
-		STA	byte_7D6C
-		LDA	#$88 ; 'à'
-		STA	byte_7D6D
+		dldi	off_7D6C, $8835
 		LDA	#0
 		STA	$81
 		JMP	loc_7D71
@@ -1082,10 +1016,7 @@ loc_7D30:				; CODE XREF: RAM:7D0Bj
 		CLC
 		ADC	$66
 		STA	$6C
-		LDA	#$B8 ; '∏'
-		STA	byte_7D6C
-		LDA	#$87 ; 'á'
-		STA	byte_7D6D
+		dldi	off_7D6C, $87B8
 		LDA	$63B9
 		STA	$76
 		LDA	$63BA
@@ -1110,8 +1041,7 @@ loc_7D65:				; CODE XREF: RAM:7D59j
 		BNE	loc_7CFC
 		JMP	loc_77FF
 ; ---------------------------------------------------------------------------
-byte_7D6C:	.BYTE $4C		; DATA XREF: RAM:7D21w	RAM:7D3Ew ...
-byte_7D6D:	.BYTE $F6		; DATA XREF: RAM:7D26w	RAM:7D43w ...
+off_7D6C:	.WORD	$F64C		; DATA XREF: RAM:7D21w	RAM:7D3Ew ...
 ; ---------------------------------------------------------------------------
 
 loc_7D6E:				; CODE XREF: RAM:7D8Bj	RAM:7D8Dj
@@ -1119,10 +1049,7 @@ loc_7D6E:				; CODE XREF: RAM:7D8Bj	RAM:7D8Dj
 ; ---------------------------------------------------------------------------
 
 loc_7D71:				; CODE XREF: RAM:7D2Dj	RAM:7D54j ...
-		LDA	byte_7D6C
-		STA	$16
-		LDA	byte_7D6D
-		STA	$17
+		dmv	off_16, off_7D6C
 		JSR	sub_8022
 		LDA	#0
 		STA	$72
@@ -1285,10 +1212,7 @@ loc_7E9C:				; CODE XREF: RAM:7E92j
 ; ---------------------------------------------------------------------------
 
 loc_7EB5:				; CODE XREF: RAM:7D62j
-		LDA	#$A6 ; '¶'
-		STA	$16
-		LDA	#$88 ; 'à'
-		STA	$17
+		dldi	off_16, $88A6
 		JSR	sub_8022
 
 loc_7EC0:				; CODE XREF: RAM:7ED9j
@@ -1567,123 +1491,93 @@ loc_803A:				; DATA XREF: RAM:83CBo	RAM:847Co ...
 ; ---------------------------------------------------------------------------
 		.BYTE $A8,$FF
 		.BYTE $A8
-		.BYTE $A6,  0,	2
-aWhichItem531q:	.BYTE "Which item (5-31) ?"
-		.BYTE $FF
-byte_805A:	.BYTE $A6,  0,	0	; DATA XREF: RAM:8DFBo
+		MOVEXY	0,2
+aWhichItem531q:	.BYTE "Which item (5-31) ?",$FF
+byte_805A:	MOVEXY	0,0		; DATA XREF: RAM:8DFBo
 		.BYTE $A5
 aWelcome:	.BYTE "Welcome "
 		.BYTE $B3
 		.WORD $6321
 		.BYTE $1C
-		.BYTE '!'
-		.BYTE $D
-		.BYTE $A5
-aWhatCan:	.BYTE "What can "
+		.BYTE '!',$D
+aWhatCan:	.BYTE $A5,"What can "
 		.BYTE $B4
-		.WORD byte_8F1C
+		.WORD off_8F1C
 		.BYTE 4
-aHelpYouWithTod:.BYTE " help you with today?"
-		.BYTE $D
+aHelpYouWithTod:.BYTE " help you with today?",$D
 		.BYTE $AC
 		.WORD byte_81A6
-byte_8093:	.BYTE $A6,  0,	0	; DATA XREF: RAM:8DF9o
-		.BYTE $A5
-aGreetingsAdven:.BYTE "Greetings adventurer, what may I"
-		.BYTE $D
-		.BYTE $A5
-aHelpYouWithT_0:.BYTE "help you with today?"
-		.BYTE $D
+byte_8093:	MOVEXY	0,0		; DATA XREF: RAM:8DF9o
+aGreetingsAdven:.BYTE $A5,"Greetings adventurer, what may I",$D
+aHelpYouWithT_0:.BYTE $A5,"help you with today?",$D
 		.BYTE $AC
 		.WORD byte_81A6
-byte_80D1:	.BYTE $A6,  0,	0	; DATA XREF: RAM:8DF7o
-		.BYTE $A5
-aWelcomeWhatCan:.BYTE "Welcome, what can I help you with?"
-		.BYTE $D
+byte_80D1:	MOVEXY	0,0		; DATA XREF: RAM:8DF7o
+aWelcomeWhatCan:.BYTE $A5,"Welcome, what can I help you with?",$D
 		.BYTE $AC
 		.WORD byte_81A6
-		.BYTE $A6,  0,	0
-		.BYTE $A5
-aWelcomeToOurSh:.BYTE "Welcome to our shoppe. I am "
+		MOVEXY	0,0
+aWelcomeToOurSh:.BYTE $A5,"Welcome to our shoppe. I am "
 		.BYTE $B4
-		.WORD byte_8F1C
+		.WORD off_8F1C
 		.BYTE 4
 		.BYTE ", "
 		.BYTE $B4
-		.WORD byte_8F1E
+		.WORD off_8F1E
 		.BYTE 4
-aS:		.BYTE "'s"
-		.BYTE $D
-		.BYTE $A5
-aTwinBrother_Ho:.BYTE "twin brother.  How can I help you?"
-		.BYTE $D
+aS:		.BYTE "'s",$D
+aTwinBrother_Ho:.BYTE $A5,"twin brother.  How can I help you?",$D
 		.BYTE $AC
 		.WORD byte_81A6
-byte_814F:	.BYTE $A6,  0,	0	; DATA XREF: RAM:8DF5o
-		.BYTE $A5
-aWhatAreYouHere:.BYTE "What are you here for, churl?",$D
+byte_814F:	MOVEXY	0,0		; DATA XREF: RAM:8DF5o
+aWhatAreYouHere:.BYTE $A5,"What are you here for, churl?",$D
 		.BYTE $AC
 		.WORD byte_81A6
-		.BYTE $A6,  0,	1
-		.BYTE $A5
-aQuitThyJesting:.BYTE "Quit thy jesting and make a"
-		.BYTE $D
-		.BYTE $D
-		.BYTE $A5
-aSeriousOffer:	.BYTE "serious offer!",$D
-		.BYTE $FF
+		MOVEXY	0,1
+aQuitThyJesting:.BYTE $A5,"Quit thy jesting and make a",$D,$D
+aSeriousOffer:	.BYTE $A5,"serious offer!",$D,$FF
 byte_81A6:	MOVEXY	5,3		; DATA XREF: RAM:8091o	RAM:80CFo ...
 		MenuItem "1","Stocking up on provisions"
-		.BYTE $A6,  5,	4
+		MOVEXY	5,4
 		MenuItem "2","Selecting battle gear"
-		.BYTE $A6,  5,	5
+		MOVEXY	5,5
 		MenuItem "3","Choosing some apparel"
-		.BYTE $A6,  5,	6
+		MOVEXY	5,6
 		MenuItem "4","Exchanging currency"
-		.BYTE $A6,  5,	7
+		MOVEXY	5,7
 		MenuItem "0","Leave"
 		.BYTE $FF
-		.BYTE $A6,  0,	1
-		.BYTE $A5
-aWhatDoYouThink:.BYTE "What do you think this is?  Gram's Gold"
-		.BYTE $D
-		.BYTE $D
-		.BYTE $A5
-aExchangeqICanT:.BYTE "exchange?!  I can't spend all day"
-		.BYTE $D
-		.BYTE $D
-		.BYTE $A5
-aCountingCoins:	.BYTE "counting coins!",$D
-		.BYTE $FF
-byte_8292:	.BYTE $A6,  9,	3	; DATA XREF: RAM:8E58o	RAM:8E8Co
+		MOVEXY	0,1
+aWhatDoYouThink:.BYTE $A5,"What do you think this is?  Gram's Gold",$D,$D
+aExchangeqICanT:.BYTE $A5,"exchange?!  I can't spend all day",$D,$D
+aCountingCoins:	.BYTE $A5,"counting coins!",$D,$FF
+byte_8292:	MOVEXY	9,3		; DATA XREF: RAM:8E58o	RAM:8E8Co
 		MenuItem "1","Provisions"
-		.BYTE $A6,  9,	4
+		MOVEXY	9,4
 		MenuItem "2","Battle gear"
-		.BYTE $A6,  9,	5
+		MOVEXY	9,5
 		MenuItem "3","Clothing"
-		.BYTE $A6,  9,	6
+		MOVEXY	9,6
 		MenuItem "4","Currency exchange"
-		.BYTE $A6,  9,	7
+		MOVEXY	9,7
 		MenuItem "0","Leave"
 		.BYTE $FF
-		.BYTE $A6,  0,	0
-		.BYTE $A5
-aWhatProvisions:.BYTE "What provisions are you interested in?"
-		.BYTE $D
-		.BYTE $A6,  6,	2
+		MOVEXY	0,0
+aWhatProvisions:.BYTE $A5,"What provisions are you interested in?",$D
+		MOVEXY	6,2
 		MenuItem "1","Nourishing food packets"
-		.BYTE $A6,  6,	3
+		MOVEXY	6,3
 		MenuItem "2","Delicious water flasks"
-		.BYTE $A6,  6,	4
+		MOVEXY	6,4
 		MenuItem "3","Bright torches"
-		.BYTE $A6,  6,	5
+		MOVEXY	6,5
 		MenuItem "4","Reliable compasses"
-		.BYTE $A6,  6,	6
+		MOVEXY	6,6
 		MenuItem "5","Accurate timepieces"
-		.BYTE $A6,  6,	7
+		MOVEXY	6,7
 		MenuItem "0","Buy something else"
 		.BYTE $FF
-		.BYTE $A6,  0,	0
+		MOVEXY	0,0
 		.BYTE $A3
 		.WORD loc_803A
 		.BYTE $A5
@@ -2302,10 +2196,8 @@ aTimepieces:	.BYTE "timepieces",0
 		.BYTE $BD ; Ω
 		.BYTE $C0 ; ¿
 		.BYTE $C1 ; ¡
-byte_8F1C:	.BYTE $20		; DATA XREF: RAM:7645w	RAM:7660w ...
-byte_8F1D:	.BYTE $8F		; DATA XREF: RAM:764Aw	RAM:7665w
-byte_8F1E:	.BYTE $25		; DATA XREF: RAM:764Fw	RAM:766Aw ...
-byte_8F1F:	.BYTE $8F		; DATA XREF: RAM:7654w	RAM:766Fw
+off_8F1C:	.WORD	aOmar		; DATA XREF: RAM:7645w	RAM:7660w ...
+off_8F1E:	.WORD	aJeff		; DATA XREF: RAM:764Fw	RAM:766Aw ...
 aOmar:		.BYTE "Omar",0
 aJeff:		.BYTE "Jeff",0
 unk_8F2A:	.BYTE	4		; DATA XREF: RAM:789Ar
