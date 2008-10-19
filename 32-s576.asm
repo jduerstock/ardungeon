@@ -121,129 +121,94 @@
 		.WORD	byte_B509
 		.WORD	byte_B53C
 byte_9FDC:	MOVEXY	0,2
-		.BYTE $A5,"A sly looking stranger sits down.",$D,$FF
+		.BYTE	$A5,"A sly looking stranger sits down.",$D,$FF
 
 byte_A003:	MOVEXY	0,2
-		.BYTE $A5,"A sloppy guy stumbles in.",$D,$FF
+		.BYTE	$A5,"A sloppy guy stumbles in.",$D,$FF
 
 byte_A022:	MOVEXY	0,2
-		.BYTE $A5,"A dwarf wearing a raincoat walks over.",$D,$FF
+		.BYTE	$A5,"A dwarf wearing a raincoat walks over.",$D,$FF
 
 byte_A04E:	MOVEXY	0,1
-		.BYTE $A5,"A human wearing a fur-lined outfit",$D,$D
-		.BYTE $A5,"says ",$22,"Hello Adventurer!",$22,$D,$FF
+		.BYTE	$A5,"A human wearing a fur-lined outfit",$D,$D
+		.BYTE	$A5,"says ",$22,"Hello Adventurer!",$22,$D,$FF
 
 byte_A091:	MOVEXY	0,2
-		.BYTE $A5,"A large, burly human approaches.",$D,$FF
+		.BYTE	$A5,"A large, burly human approaches.",$D,$FF
 
 byte_A0B7:	MOVEXY	0,1
-		.BYTE $A5,"It's too bad they beefed up",$D,$D
-		.BYTE $A5,"the security in the Dungeon.",$D,$D
-		.BYTE $A5,"It used to be an easy life stealing",$D,$D
-		.BYTE $A5,"from others.",$D,$FF
+		.BYTE	$A5,"It's too bad they beefed up",$D,$D
+		.BYTE	$A5,"the security in the Dungeon.",$D,$D
+		.BYTE	$A5,"It used to be an easy life stealing",$D,$D
+		.BYTE	$A5,"from others.",$D,$FF
 
 byte_A12C:	MOVEXY	0,2
-		.BYTE $A5,"It's been...",$D,$D
-		.BYTE $A5,"Why, I can't remember the",$D,$D
-		.BYTE $A5,"last time I've had a drink.",$D,$FF
+		.BYTE	$A5,"It's been...",$D,$D
+		.BYTE	$A5,"Why, I can't remember the",$D,$D
+		.BYTE	$A5,"last time I've had a drink.",$D,$FF
 
 byte_A178:	MOVEXY	0,1
-		.BYTE $A5,"I'm tired. I've just finished",$D,$D
-		.BYTE $A5,"a show in The City. I hate",$D,$D
-		.BYTE $A5,"dancing, but it's a living.",$D,$FF
+		.BYTE	$A5,"I'm tired. I've just finished",$D,$D
+		.BYTE	$A5,"a show in The City. I hate",$D,$D
+		.BYTE	$A5,"dancing, but it's a living.",$D,$FF
 
 byte_A1D6:	MOVEXY	0,1
-		.BYTE $A5,"I've just lost a third of",$D,$D
-		.BYTE $A5,"what I own. You sure can't",$D,$D
-		.BYTE $A5,"trust the banks around here.",$D,$FF
+		.BYTE	$A5,"I've just lost a third of",$D,$D
+		.BYTE	$A5,"what I own. You sure can't",$D,$D
+		.BYTE	$A5,"trust the banks around here.",$D,$FF
 
 byte_A231:	MOVEXY	0,2
-		.BYTE $A5,"Greetings Adventurer.",$D,$D
-		.BYTE $A5,"I'm known as Salin Wauthra.",$D,$FF
+		.BYTE	$A5,"Greetings Adventurer.",$D,$D
+		.BYTE	$A5,"I'm known as Salin Wauthra.",$D,$FF
 
 byte_A26A:	MOVEXY	0,2
-		.BYTE $A5,"A wise oracle dwells beneath",$D,$D
-		.BYTE $A5,"the Floating Gate.",$D,$FF
+		.BYTE	$A5,"A wise oracle dwells beneath",$D,$D
+		.BYTE	$A5,"the Floating Gate.",$D,$FF
 
 byte_A2A1:	MOVEXY	0,2
-		.BYTE $A5,"Bank vault basements can be found",$D,$D
-		.BYTE $A5,"on the first level.",$D,$FF
+		.BYTE	$A5,"Bank vault basements can be found",$D,$D
+		.BYTE	$A5,"on the first level.",$D,$FF
 
 byte_A2DE:	MOVEXY	0,3
-		.BYTE $A5,"Acrinimiril's Tomb is haunted.",$D,$FF
+		.BYTE	$A5,"Acrinimiril's Tomb is haunted.",$D,$FF
 
 byte_A302:	MOVEXY	0,2
-		.BYTE $A5,"The Chapel dispenses",$D,$D
-		.BYTE $A5,"pragmatic salvation",$D,$FF
+		.BYTE	$A5,"The Chapel dispenses",$D,$D
+		.BYTE	$A5,"pragmatic salvation",$D,$FF
 
-byte_A332:	.BYTE $A6,  0,	2	; DATA XREF: RAM:9F20o
-		.BYTE $A5
-aAFountainThatH:.BYTE "A fountain that heals wounds"
-		.BYTE $D
-		.BYTE $D
-		.BYTE $A5
-aIsOnTheFirstLe:.BYTE "is on the first level."
-		.BYTE $D
-		.BYTE $FF
-byte_A36D:	.BYTE $A6,  0,	2	; DATA XREF: RAM:9F22o
-		.BYTE $A5
-aTheTrollKingEa:.BYTE "The Troll King eats"
-		.BYTE $D
-		.BYTE $D
-		.BYTE $A5
-aPunksLikeYouFo:.BYTE "punks like you for breakfast."
-		.BYTE $D
-		.BYTE $FF
-byte_A3A6:	.BYTE $A6,  0,	2	; DATA XREF: RAM:9F24o
-		.BYTE $A5
-aTheGoblinKing:	.BYTE "The Goblin King"
-		.BYTE $D
-		.BYTE $D
-		.BYTE $A5
-aIsAnUnderhande:.BYTE "is an underhanded fink.",$D
-		.BYTE $FF
-byte_A3D5:	.BYTE $A6,  0,	3	; DATA XREF: RAM:9F26o
-		.BYTE $A5
-aThereIsNoHonor:.BYTE "There is no honor among Thieves."
-		.BYTE $D
-		.BYTE $FF
-byte_A3FB:	.BYTE $A6,  0,	3	; DATA XREF: RAM:9F28o
-		.BYTE $A5
-aAllMagicHasAPr:.BYTE "All magic has a price."
-		.BYTE $D
-		.BYTE $FF
-byte_A417:	.BYTE $A6,  0,	2	; DATA XREF: RAM:9F2Ao
-		.BYTE $A5
-aTheGuildsOfThe:.BYTE "The Guilds of the undercity"
-		.BYTE $D
-		.BYTE $D
-		.BYTE $A5
-aWarUponEachOth:.BYTE "war upon each other."
-		.BYTE $D
-		.BYTE $FF
-byte_A44F:	.BYTE $A6,  0,	2	; DATA XREF: RAM:9F2Co
-		.BYTE $A5
-aTheRiverLeadsT:.BYTE "The river leads to"
-		.BYTE $D
-		.BYTE $D
-		.BYTE $A5
-aLandsOfTheUnde:.BYTE "lands of the Undead."
-		.BYTE $D
-		.BYTE $FF
-byte_A47E:	.BYTE $A6,  0,	2	; DATA XREF: RAM:9F2Eo
-		.BYTE $A5
-aThereIsAFounta:.BYTE "There is a fountain that cures disease"
-		.BYTE $D
-		.BYTE $D
-		.BYTE $A5
-aOnTheSecondLev:.BYTE "on the second level."
-		.BYTE $D
-		.BYTE $FF
-byte_A4C1:	.BYTE $A6,  0,	3	; DATA XREF: RAM:9F30o
-		.BYTE $A5
-aYouCanAlwaysTr:.BYTE "You can always trust the guards."
-		.BYTE $D
-		.BYTE $FF
+byte_A332:	MOVEXY	0,2
+		.BYTE	$A5,"A fountain that heals wounds",$D,$D
+		.BYTE	$A5,"is on the first level.",$D,$FF
+
+byte_A36D:	MOVEXY	0,2
+		.BYTE	$A5,"The Troll King eats",$D,$D
+		.BYTE	$A5,"punks like you for breakfast.",$D,$FF
+
+byte_A3A6:	MOVEXY	0,2
+		.BYTE	$A5,"The Goblin King",$D,$D
+		.BYTE	$A5,"is an underhanded fink.",$D,$FF
+
+byte_A3D5:	MOVEXY	0,3
+		.BYTE	$A5,"There is no honor among Thieves.",$D,$FF
+
+byte_A3FB:	MOVEXY	0,3
+		.BYTE	$A5,"All magic has a price.",$D,$FF
+
+byte_A417:	MOVEXY	0,2
+		.BYTE	$A5,"The Guilds of the undercity",$D,$D
+		.BYTE	$A5,"war upon each other.",$D,$FF
+
+byte_A44F:	MOVEXY	0,2
+		.BYTE	$A5,"The river leads to",$D,$D
+		.BYTE	$A5,"lands of the Undead.",$D,$FF
+
+byte_A47E:	MOVEXY	0,2
+		.BYTE	$A5,"There is a fountain that cures disease",$D,$D
+		.BYTE	$A5,"on the second level.",$D,$FF
+
+byte_A4C1:	MOVEXY	0,3
+		.BYTE	$A5,"You can always trust the guards.",$D,$FF
+
 byte_A4E7:	.BYTE $A6,  0,	3	; DATA XREF: RAM:9F32o
 		.BYTE $A5
 aStepLightlyInT:.BYTE "Step lightly in the crystal caverns."
