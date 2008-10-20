@@ -1,3 +1,4 @@
+		.include	"equates.inc"
 		.include	"globals.inc"
 		.include	"exp_kernel.inc"
 		.include	"macros.inc"
@@ -2538,7 +2539,7 @@ loc_881C:				; CODE XREF: RAM:8820j
 		LDA	#$86 ; '†'
 		STA	$24B
 		LDA	#$C0 ; 'À'
-		STA	$D40E
+		STA	NMIEN
 		LDA	#0
 		STA	$18B8
 		STA	$253

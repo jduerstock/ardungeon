@@ -3104,7 +3104,7 @@ loc_9503:				; CODE XREF: RAM:9507j
 		LDA	#$93 ; '“'
 		STA	$24B
 		LDA	#$C0 ; 'À'
-		STA	$D40E
+		STA	NMIEN
 		LDA	#0
 		STA	$18B8
 		STA	$253

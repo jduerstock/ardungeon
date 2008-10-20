@@ -2437,8 +2437,8 @@ loc_8983:				; CODE XREF: RAM:8987j
 		STA	$24A
 		LDA	#$87 ; '‡'
 		STA	$24B
-		LDA	#$C0 ; 'À'
-		STA	$D40E
+		LDA	#$C0
+		STA	NMIEN
 		LDA	#0
 		STA	$18B8
 		STA	$253

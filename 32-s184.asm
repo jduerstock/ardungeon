@@ -1,3 +1,4 @@
+		.include	"equates.inc"
 		.include	"globals.inc"
 		.include	"exp_kernel.inc"
 		.include	"macros.inc"
@@ -23,14 +24,8 @@ loc_760D:				; CODE XREF: RAM:7604j	RAM:7607j
 
 loc_7617:				; CODE XREF: RAM:7601j
 		dldi	off_7, $95BC
-		LDA	#0
-		STA	9
-		LDA	#$B0 ; '°'
-		STA	$A
-		LDA	#$80 ; '€'
-		STA	$B
-		LDA	#6
-		STA	$C
+		dldi	off_9, $B000
+		dldi	word_B, $680
 		JSR	$187E
 		DEC	$1937
 		LDX	#4
@@ -3201,7 +3196,7 @@ loc_9381:				; CODE XREF: RAM:9385j
 		LDA	#$91 ; '‘'
 		STA	$24B
 		LDA	#$C0 ; 'À'
-		STA	$D40E
+		STA	NMIEN
 		LDA	#0
 		STA	$18B8
 		STA	$253

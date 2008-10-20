@@ -2428,7 +2428,7 @@ loc_8BB7:				; CODE XREF: RAM:8BBBj
 		LDA	#$9C ; 'œ'
 		STA	$24B
 		LDA	#$C0 ; 'À'
-		STA	$D40E
+		STA	NMIEN
 		LDA	#0
 		STA	$18B8
 		STA	$253

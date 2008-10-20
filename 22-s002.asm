@@ -1,3 +1,4 @@
+		.include	"equates.inc"
 		.include	"globals.inc"
 		.include	"exp_kernel.inc"
 		.include	"macros.inc"
@@ -574,8 +575,8 @@ loc_7BF2:				; CODE XREF: RAM:7BF6j
 		STA	$24A
 		LDA	#$7A ; 'z'
 		STA	$24B
-		LDA	#$C0 ; 'À'
-		STA	$D40E
+		LDA	#$C0
+		STA	NMIEN
 		LDA	#0
 		STA	$18B8
 		STA	$253
@@ -584,28 +585,28 @@ loc_7BF2:				; CODE XREF: RAM:7BF6j
 
 loc_7C10:				; CODE XREF: RAM:7B20p	RAM:7B2Bp ...
 		LDY	#0
-		LDA	(7),Y
-		INC	7
+		LDA	(off_7),Y
+		INC	off_7
 		BNE	loc_7C1A
-		INC	8
+		INC	off_7+1
 
 loc_7C1A:				; CODE XREF: RAM:7C16j
 		CMP	#$1B
 		BEQ	loc_7C29
-		STA	(9),Y
-		INC	9
+		STA	(off_9),Y
+		INC	off_9
 		BNE	loc_7C26
-		INC	$A
+		INC	off_9+1
 
 loc_7C26:				; CODE XREF: RAM:7C22j
 		JMP	loc_7C10
 ; ---------------------------------------------------------------------------
 
 loc_7C29:				; CODE XREF: RAM:7C1Cj
-		LDA	(7),Y
-		INC	7
+		LDA	(off_7),Y
+		INC	off_7
 		BNE	loc_7C31
-		INC	8
+		INC	off_7+1
 
 loc_7C31:				; CODE XREF: RAM:7C2Dj
 		CMP	#$FF
@@ -615,9 +616,9 @@ loc_7C31:				; CODE XREF: RAM:7C2Dj
 
 loc_7C36:				; CODE XREF: RAM:7C33j
 		STA	byte_7C70
-		ADC	9
+		ADC	off_9
 		STA	loc_7C49+1
-		LDA	$A
+		LDA	off_9+1
 		ADC	#0
 		CMP	#$14
 		BNE	loc_7C4E

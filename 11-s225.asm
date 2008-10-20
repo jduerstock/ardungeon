@@ -45,7 +45,7 @@ aClrzp:		.BYTE	"CLRZP"
 		STA	AR_POKMSK
 		LDA	#0
 		STA	IRQEN
-		STA	$D40E
+		STA	NMIEN
 		STA	$22F
 		STA	$256
 		TAX
@@ -56,36 +56,15 @@ loc_2014:				; CODE XREF: RAM:2017j
 		BNE	loc_2014
 		LDA	#7
 		STA	$237
-		LDA	#$8E ; 'Ž'
-		STA	off_20E
-		LDA	#$22 ; '"'
-		STA	off_20E+1
-		LDA	#$46 ; 'F'
-		STA	$20C
-		LDA	#$22 ; '"'
-		STA	$20D
-		LDA	#$DE ; 'Þ'
-		STA	$20A
-		LDA	#$21 ; '!'
-		STA	$20B
-		LDA	#$A3 ; '£'
-		STA	$216
-		LDA	#$22 ; '"'
-		STA	$217
-		LDA	#$1A
-		STA	$208
-		LDA	#$26 ; '&'
-		STA	$209
-		LDA	#$9D ; ''
-		STA	$254
-		LDA	#$19
-		STA	$255
-		LDA	#$3E ; '>'
-		STA	$222
-		LDA	#$23 ; '#'
-		STA	$223
+		dldi	off_20E, $228E
+		dldi	$20C, $2246
+		dldi	$20A, $21DE
+		dldi	$216, $22A3
+		dldi	$208, $261A	
+		dldi	$254, $199D
+		dldi	$222, $233E
 		LDA	#$40 ; '@'
-		STA	$D40E
+		STA	NMIEN
 		LDA	AR_POKMSK
 		STA	IRQEN
 		RTS
@@ -454,7 +433,7 @@ loc_2301:				; CODE XREF: RAM:2355j
 		LDA	#$19
 		STA	$D403
 		LDA	#$40 ; '@'
-		STA	$D40E
+		STA	NMIEN
 		LDA	#$21 ; '!'
 		STA	$D400
 		LDA	$239

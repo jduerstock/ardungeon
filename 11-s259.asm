@@ -2023,7 +2023,7 @@ loc_85BA:				; CODE XREF: RAM:85B2j
 		LDA	#$86 ; '†'
 		STA	$249
 		LDA	#$C0 ; 'À'
-		STA	$D40E
+		STA	NMIEN
 		DEC	$22F
 		LDA	#0
 		STA	$18B8

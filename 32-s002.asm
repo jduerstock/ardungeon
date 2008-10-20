@@ -1,3 +1,4 @@
+		.include	"equates.inc"
 		.include	"globals.inc"
 		.include	"exp_kernel.inc"
 		.include	"macros.inc"
@@ -683,8 +684,8 @@ loc_7BCE:				; CODE XREF: RAM:7BD2j
 		DEX
 		BPL	loc_7BCE
 		dldi	off_24A, $7A2B
-		LDA	#$C0 ; 'À'
-		STA	$D40E
+		LDA	#$C0
+		STA	NMIEN
 		LDA	#0
 		STA	$18B8
 		STA	$253

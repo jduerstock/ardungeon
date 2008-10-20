@@ -645,8 +645,8 @@ loc_1A65:
 		STA	off_200+1
 		STA	off_248+1
 		dldi	off_24A, loc_1B56
-		LDA	#$C0 ; 'À'
-		STA	$D40E
+		LDA	#$C0
+		STA	NMIEN
 		LDA	#0
 		STA	byte_18B8
 		LDA	#$34 ; '4'
@@ -2131,8 +2131,8 @@ loc_230A:				; CODE XREF: RAM:235Ej
 		STA	$D402
 		LDA	#$19
 		STA	$D403
-		LDA	#$40 ; '@'
-		STA	$D40E
+		LDA	#$40
+		STA	NMIEN
 		LDA	#$21 ; '!'
 		STA	$D400
 		LDA	$239
@@ -2178,12 +2178,9 @@ loc_236F:				; CODE XREF: RAM:235Cj
 		STA	$D402
 		LDA	$255
 		STA	$D403
-		LDA	off_248
-		STA	off_200
-		LDA	off_248+1
-		STA	off_200+1
-		LDA	#$C0 ; 'À'
-		STA	$D40E
+		dmv	off_200, off_248
+		LDA	#$C0
+		STA	NMIEN
 		LDA	$256
 		BEQ	loc_2394
 		JMP	loc_244B

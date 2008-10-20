@@ -5,7 +5,9 @@ ASM_SOURCES= \
 	11-s001.asm \
 	11-s002.asm \
 	11-s006.asm \
-	11-s011.asm \
+	11-s011.asm
+
+ASM2_SOURCES= \
 	11-s016.asm \
 	11-s017.asm \
 	11-s205.asm \
@@ -61,11 +63,13 @@ ASM_SOURCES= \
 	32-s684.asm 32-s685.asm \
 	32-s695.asm
 
-OBJECTS=$(ASM_SOURCES:.asm=.bin)
+OBJECTS=$(ASM_SOURCES:.asm=.o)
+
+BINARIES=$(ASM2_SOURCES:.asm=.bin)
 
 SUMS=$(ASM_SOURCES:.asm=.sha1)
 
-all: $(OBJECTS)
+all: $(BINARIES) $(OBJECTS) 
 	ld65 -C 11-s001.cfg 11-s001.o 11-s002.o 11-s006.o 11-s011.o
 	sha1sum -c 11-s001.sha1 11-s002.sha1 11-s006.sha1 11-s011.sha1
 	cat 11-s001.bin > ar11.img
@@ -121,16 +125,16 @@ all: $(OBJECTS)
 %.o: %.asm
 	$(CA) $(AFLAGS) $< -o $@
 
-11-s001.bin: 11-s001.asm
+11-s001.o: 11-s001.asm
 	ca65 -o 11-s001.o 11-s001.asm
 
-11-s002.bin: 11-s002.asm
+11-s002.o: 11-s002.asm
 	ca65 -o 11-s002.o 11-s002.asm
 
-11-s006.bin: 11-s006.asm
+11-s006.o: 11-s006.asm
 	ca65 -o 11-s006.o 11-s006.asm
 
-11-s011.bin: 11-s011.asm
+11-s011.o: 11-s011.asm
 	ca65 -o 11-s011.o 11-s011.asm
 
 11-s016.bin: 11-s016.asm

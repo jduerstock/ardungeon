@@ -12,7 +12,7 @@ sub_8000:				; CODE XREF: RAM:807Ep
 		STA	AR_POKMSK
 		LDA	#0
 		STA	IRQEN
-		STA	$D40E
+		STA	NMIEN
 		STA	$22F
 		STA	$256
 		TAX
@@ -38,7 +38,7 @@ loc_8014:				; CODE XREF: sub_8000+17j
 		AND	#3
 		JSR	sub_8158
 		LDA	#$40 ; '@'
-		STA	$D40E
+		STA	NMIEN
 		LDA	AR_POKMSK
 		STA	IRQEN
 		RTS
@@ -335,14 +335,14 @@ loc_F9AA:				; CODE XREF: RAM:8280j	RAM:82B2j
 ; ---------------------------------------------------------------------------
 
 loc_F9AC:
-		BIT	$D40F
+		BIT	NMIST
 		BPL	loc_F9B4
 		JMP	(off_200)
 ; ---------------------------------------------------------------------------
 
 loc_F9B4:				; CODE XREF: RAM:82D2j
 		PHA
-		LDA	$D40F
+		LDA	NMIST
 		AND	#$20 ; ' '
 		BEQ	loc_F9BF
 		JMP	$D800
@@ -353,7 +353,7 @@ loc_F9BF:				; CODE XREF: RAM:82DDj
 		PHA
 		TYA
 		PHA
-		STA	$D40F
+		STA	NMIRES
 		JMP	($222)
 ; ---------------------------------------------------------------------------
 
@@ -526,19 +526,16 @@ loc_FAD7:
 		STA	$FFFF,Y
 		INY
 		BPL	loc_FAD4
-		LDA	#$FE ; 'þ'
+		LDA	#$FE
 		STA	PORTB
-		LDA	#$40 ; '@'
-		STA	$D40E
+		LDA	#$40
+		STA	NMIEN
 		CLI
 		LDX	$FDA4
 		LDA	#$FF
 		STA	byte_FBA5+$300,X
 		STA	byte_FBA5+$200,X
-		LDA	$262
-		STA	word_232
-		LDA	$263
-		STA	word_232+1
+		dmv	word_232, $262
 		LDA	#2
 		STA	6
 
@@ -549,10 +546,7 @@ loc_FB03:				; CODE XREF: RAM:842Dj
 		BNE	loc_FB03
 
 loc_FB0C:				; CODE XREF: RAM:83E5j
-		LDA	$262
-		STA	word_232
-		LDA	$263
-		STA	word_232+1
+		dmv	word_232, $262
 		LDA	#0
 		STA	$25B
 		LDY	#$FF
@@ -585,10 +579,10 @@ loc_FB46:
 		INC	word_232+1
 
 loc_FB54:				; CODE XREF: RAM:8472j
-		LDA	#$FE ; 'þ'
+		LDA	#$FE
 		STA	PORTB
-		LDA	#$40 ; '@'
-		STA	$D40E
+		LDA	#$40
+		STA	NMIEN
 		CLI
 		LDY	#1
 		RTS
@@ -619,7 +613,7 @@ sub_FB73:
 sub_FB88:
 		SEI
 		LDY	#0
-		STY	$D40E
+		STY	NMIEN
 		TXA
 		ASL	A
 		ROL	A

@@ -6169,7 +6169,7 @@ loc_22B0:				; DATA XREF: RAM:off_241Co
 		LDA	#$22 ; '"'
 		STA	$D403
 		LDA	#$40 ; '@'
-		STA	$D40E
+		STA	NMIEN
 		RTS
 ; ---------------------------------------------------------------------------
 
@@ -6177,7 +6177,7 @@ loc_22C0:				; DATA XREF: RAM:241Eo
 		LDA	#$3E ; '>'
 		STA	$D400
 		LDA	#$C0 ; 'À'
-		STA	$D40E
+		STA	NMIEN
 		LDA	#0
 		STA	$D402
 		LDA	#$28 ; '('
@@ -6202,7 +6202,7 @@ loc_22E5:				; CODE XREF: RAM:22ECj
 
 loc_22F5:				; DATA XREF: RAM:2420o
 		LDA	#$40 ; '@'
-		STA	$D40E
+		STA	NMIEN
 		LDX	#2
 
 loc_22FC:				; CODE XREF: RAM:2303j
@@ -6215,7 +6215,7 @@ loc_22FC:				; CODE XREF: RAM:2303j
 
 loc_2306:				; DATA XREF: RAM:242Eo
 		LDA	#$C0 ; 'À'
-		STA	$D40E
+		STA	NMIEN
 		LDA	#$E4 ; 'ä'
 		STA	off_200
 		LDA	#$23 ; '#'
@@ -6244,12 +6244,9 @@ loc_2328:				; CODE XREF: RAM:232Fj
 ; ---------------------------------------------------------------------------
 
 loc_2332:				; DATA XREF: RAM:2424o
-		LDA	#$C0 ; 'À'
-		STA	$D40E
-		LDA	#$9E ; 'ž'
-		STA	off_200
-		LDA	#$23 ; '#'
-		STA	off_200+1
+		LDA	#$C0
+		STA	NMIEN
+		dldi	off_200, $239E
 		LDX	#2
 
 loc_2343:				; CODE XREF: RAM:234Aj
@@ -6263,8 +6260,8 @@ loc_2343:				; CODE XREF: RAM:234Aj
 ; ---------------------------------------------------------------------------
 
 loc_2352:				; DATA XREF: RAM:2426o
-		LDA	#$40 ; '@'
-		STA	$D40E
+		LDA	#$40
+		STA	NMIEN
 		LDX	#2
 
 loc_2359:				; CODE XREF: RAM:2360j
@@ -6278,8 +6275,8 @@ loc_2359:				; CODE XREF: RAM:2360j
 ; ---------------------------------------------------------------------------
 
 loc_2368:				; DATA XREF: RAM:2428o
-		LDA	#$C0 ; 'À'
-		STA	$D40E
+		LDA	#$C0
+		STA	NMIEN
 		LDA	#$B9 ; '¹'
 		STA	off_200
 		LDA	#$23 ; '#'
@@ -6297,8 +6294,8 @@ loc_2379:				; CODE XREF: RAM:2380j
 ; ---------------------------------------------------------------------------
 
 loc_2388:				; DATA XREF: RAM:242Ao	RAM:242Co
-		LDA	#$40 ; '@'
-		STA	$D40E
+		LDA	#$40
+		STA	NMIEN
 		LDX	#2
 
 loc_238F:				; CODE XREF: RAM:2396j

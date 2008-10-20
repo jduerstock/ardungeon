@@ -1,3 +1,4 @@
+		.include	"equates.inc"
 		.include	"globals.inc"
 		.include	"exp_kernel.inc"
 		.include	"macros.inc"
@@ -841,8 +842,8 @@ loc_8043:				; CODE XREF: RAM:8047j
 		DEX
 		BPL	loc_8043
 		dldi	off_24A, $7EA0
-		LDA	#$C0 ; 'À'
-		STA	$D40E
+		LDA	#$C0
+		STA	NMIEN
 		LDA	#0
 		STA	$18B8
 		STA	$253

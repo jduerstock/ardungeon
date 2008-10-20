@@ -985,7 +985,7 @@ loc_7FC0:				; CODE XREF: RAM:7FC4j
 		LDA	#$7E ; '~'
 		STA	$24B
 		LDA	#$C0 ; 'À'
-		STA	$D40E
+		STA	NMIEN
 		LDA	#0
 		STA	$18B8
 		STA	$253
