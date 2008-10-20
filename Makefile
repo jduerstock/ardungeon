@@ -5,10 +5,10 @@ ASM_SOURCES= \
 	11-s001.asm \
 	11-s002.asm \
 	11-s006.asm \
-	11-s011.asm
+	11-s011.asm \
+	11-s016.asm 
 
 ASM2_SOURCES= \
-	11-s016.asm \
 	11-s017.asm \
 	11-s205.asm \
 	11-s225.asm \
@@ -70,8 +70,8 @@ BINARIES=$(ASM2_SOURCES:.asm=.bin)
 SUMS=$(ASM_SOURCES:.asm=.sha1)
 
 all: $(BINARIES) $(OBJECTS) 
-	ld65 -C 11-s001.cfg 11-s001.o 11-s002.o 11-s006.o 11-s011.o
-	sha1sum -c 11-s001.sha1 11-s002.sha1 11-s006.sha1 11-s011.sha1
+	ld65 -C 11-s001.cfg $(OBJECTS)
+	sha1sum -c 11-s001.sha1 11-s002.sha1 11-s006.sha1 11-s011.sha1 11-s016.sha1
 	cat 11-s001.bin > ar11.img
 	cat 11-s002.bin >> ar11.img
 	cat 11-s006.bin >> ar11.img
@@ -138,8 +138,7 @@ all: $(BINARIES) $(OBJECTS)
 	ca65 -o 11-s011.o 11-s011.asm
 
 11-s016.bin: 11-s016.asm
-	cl65 --start-addr 0xb000 -t none 11-s016.asm -o 11-s016.bin
-	sha1sum -c 11-s016.sha1
+	ca65 -o 11-s016.o 11-s016.asm
 
 11-s017.bin: 11-s017.asm
 	cl65 --start-addr 0x0600 -t none 11-s017.asm -o 11-s017.bin

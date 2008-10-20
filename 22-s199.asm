@@ -72,10 +72,7 @@ loc_766B:
 loc_7687:				; CODE XREF: RAM:7680j
 		LDA	byte_84C0
 		BEQ	loc_76A1
-		LDA	#$33 ; '3'
-		STA	$16
-		LDA	#$7D ; '}'
-		STA	$17
+		dldi	off_16, $7D33
 		LDX	$66
 		JSR	$1851
 		LDA	#$A
@@ -93,8 +90,7 @@ loc_76A1:				; CODE XREF: RAM:768Aj
 		JSR	$18A5
 		LDA	#0
 		STA	$755E
-		LDX	#$83 ; 'É'
-		LDY	#$E8 ; 'Ë'
+		ldxy	$83E8
 		JSR	sub_7879
 
 loc_76BE:				; CODE XREF: RAM:766Ej
@@ -139,10 +135,7 @@ loc_76F7:				; CODE XREF: RAM:76CDj	RAM:76D5j ...
 		LDA	#3
 		CMP	$73
 		BNE	loc_7735
-		LDA	#$57 ; 'W'
-		STA	$16
-		LDA	#$7F ; ''
-		STA	$17
+		dldi	off_16, $7F57
 		LDX	$66
 		JSR	$1851
 
@@ -182,10 +175,7 @@ loc_7735:				; CODE XREF: RAM:76FFj	RAM:772Cj ...
 loc_774F:				; CODE XREF: RAM:7738j
 		LDA	#$FF
 		STA	byte_7D1E
-		LDA	#$A1 ; '°'
-		STA	$16
-		LDA	#$7D ; '}'
-		STA	$17
+		dldi	off_16, $7DA1
 		LDX	$66
 		JSR	$1851
 
@@ -233,18 +223,12 @@ loc_77A1:				; CODE XREF: RAM:779Cj
 ; ---------------------------------------------------------------------------
 
 loc_77A8:				; CODE XREF: RAM:7798j	RAM:7CECj
-		LDA	#$6D ; 'm'
-		STA	$16
-		LDA	#$7E ; '~'
-		STA	$17
+		dldi	off_16, $7E6D
 		LDX	$66
 		JSR	$1851
 		LDA	#2
 		JSR	$185A
-		LDA	#$31 ; '1'
-		STA	$16
-		LDA	#$7D ; '}'
-		STA	$17
+		dldi	off_16, $7D31
 		LDX	$66
 		JSR	$1851
 		JSR	$189F
@@ -609,10 +593,7 @@ loc_79D6:				; CODE XREF: RAM:79CDj
 ; ---------------------------------------------------------------------------
 
 loc_79E3:				; CODE XREF: RAM:79C9j
-		LDA	#$38 ; '8'
-		STA	$16
-		LDA	#$80 ; 'Ä'
-		STA	$17
+		dldi	off_16, $8038
 		LDX	$66
 		JSR	$1851
 
@@ -937,10 +918,7 @@ loc_7BEF:				; CODE XREF: RAM:7BEAj
 		STA	byte_84BE
 		LDA	unk_849E,X
 		STA	byte_84BF
-		LDA	#$EA ; 'Í'
-		STA	$16
-		LDA	#$82 ; 'Ç'
-		STA	$17
+		dldi	off_16, $82EA
 		LDX	$66
 		JSR	$1851
 		JSR	$18AE
@@ -964,8 +942,7 @@ loc_7C2E:				; CODE XREF: RAM:7C22j
 		STA	$7E
 		JSR	loc_7B06
 		BCC	loc_7C4C
-		LDX	#$7E ; '~'
-		LDY	#$8D ; 'ç'
+		ldxy	$7E8D
 
 loc_7C3F:				; CODE XREF: RAM:7C49j
 		JSR	sub_7879
@@ -975,16 +952,12 @@ loc_7C42:				; CODE XREF: RAM:7C16j	RAM:7C18j ...
 ; ---------------------------------------------------------------------------
 
 loc_7C45:				; CODE XREF: RAM:7C2Cj
-		LDX	#$7E ; '~'
-		LDY	#$E0 ; '‡'
+		ldxy	$7EE0
 		JMP	loc_7C3F
 ; ---------------------------------------------------------------------------
 
 loc_7C4C:				; CODE XREF: RAM:7C39j
-		LDA	#$61 ; 'a'
-		STA	$16
-		LDA	#$83 ; 'É'
-		STA	$17
+		dldi	off_16, $8361
 		LDX	$66
 		JSR	$1851
 		LDA	#$12

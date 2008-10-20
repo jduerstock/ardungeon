@@ -1,6 +1,6 @@
 		.include	"macros.inc"
 
-
+		.SEGMENT	"BOOTCONT"
 byte_600	= $600
 loc_2000	= $2000
 byte_BD80	= $BD80

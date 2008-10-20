@@ -173,10 +173,7 @@ loc_7767:				; CODE XREF: RAM:779Fj
 		INY
 		LDA	($43),Y
 		BNE	loc_779D
-		LDA	#$42 ; 'B'
-		STA	$16
-		LDA	#$7B ; '{'
-		STA	$17
+		dldi	off_16, $7B42
 		LDX	$6A
 		JSR	$1851
 		LDA	#$10
@@ -394,10 +391,7 @@ loc_78F4:				; CODE XREF: RAM:78FBj
 		STA	$AC00
 		JMP	$180C
 ; ---------------------------------------------------------------------------
-		LDA	#$2E ; '.'
-		STA	$16
-		LDA	#$7D ; '}'
-		STA	$17
+		dldi	off_16, $7D2E
 
 loc_7915:				; CODE XREF: RAM:7755j	RAM:799Cj ...
 		LDX	$6A
@@ -409,10 +403,7 @@ loc_7915:				; CODE XREF: RAM:7755j	RAM:799Cj ...
 		JSR	$185A
 		JMP	loc_77A1
 ; ---------------------------------------------------------------------------
-		LDA	#$14
-		STA	$16
-		LDA	#$7E ; '~'
-		STA	$17
+		dldi	off_16, $7E14
 		LDX	$6A
 		JSR	$1851
 		JSR	$189F

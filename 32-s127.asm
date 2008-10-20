@@ -75,10 +75,7 @@ loc_7686:				; CODE XREF: RAM:765Aj
 		LDA	$7555
 		BNE	loc_76A3
 		INC	$7555
-		LDA	#$5A ; 'Z'
-		STA	$16
-		LDA	#$79 ; 'y'
-		STA	$17
+		dldi	off_16, $795A
 		LDX	$62
 		JSR	$1851
 		LDA	#$F
@@ -87,17 +84,11 @@ loc_7686:				; CODE XREF: RAM:765Aj
 ; ---------------------------------------------------------------------------
 
 loc_76A3:				; CODE XREF: RAM:7689j
-		LDA	#$6A ; 'j'
-		STA	$16
-		LDA	#$7A ; 'z'
-		STA	$17
+		dldi	off_16, $7A6A
 		JSR	sub_78AE
 
 loc_76AE:				; CODE XREF: RAM:76A0j	RAM:76EFj
-		LDA	#$FF
-		STA	$16
-		LDA	#$79 ; 'y'
-		STA	$17
+		dldi	off_16, $79FF
 		JSR	sub_78B8
 
 loc_76B9:				; CODE XREF: RAM:76D8j
@@ -124,10 +115,7 @@ loc_76D6:				; CODE XREF: RAM:76D1j
 		BCC	loc_76FD
 		LDA	$63BF
 		BEQ	loc_76F2
-		LDA	#$98 ; '˜'
-		STA	$16
-		LDA	#$7A ; 'z'
-		STA	$17
+		dldi	off_16, $7A98
 
 loc_76EC:				; CODE XREF: RAM:76FAj
 		JSR	sub_78AE
@@ -135,10 +123,7 @@ loc_76EC:				; CODE XREF: RAM:76FAj
 ; ---------------------------------------------------------------------------
 
 loc_76F2:				; CODE XREF: RAM:76E2j
-		LDA	#$BD ; '½'
-		STA	$16
-		LDA	#$7A ; 'z'
-		STA	$17
+		dldi	off_16, $7ABD
 		JMP	loc_76EC
 ; ---------------------------------------------------------------------------
 
@@ -273,13 +258,9 @@ loc_77F1:				; CODE XREF: RAM:77EDj
 		CLC
 		ADC	#$A
 		STA	byte_78EC
-		LDX	#$78 ; 'x'
-		LDY	#$C5 ; 'Å'
+		ldxy	$78C5
 		JSR	$1884
-		LDA	#7
-		STA	$16
-		LDA	#$7D ; '}'
-		STA	$17
+		dldi	off_16, $7D07
 		JSR	sub_78AE
 
 loc_7809:				; CODE XREF: RAM:7758j
