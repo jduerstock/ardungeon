@@ -1653,7 +1653,7 @@ byte_83A1:	.BYTE $70		; DATA XREF: RAM:83D1o
 		LDX	#$70 ; 'p'
 		LDY	#$90 ; 'ê'
 		STA	$D40A
-		STA	$D000
+		STA	HPOSP0
 		STX	$D001
 		STY	$D002
 		STA	$D40A
@@ -1765,7 +1765,7 @@ loc_84C2:				; CODE XREF: RAM:84C6j	RAM:84CCj
 		LDX	#7
 
 loc_84D0:				; CODE XREF: RAM:84D4j
-		STA	$D000,X
+		STA	HPOSP0,X
 		DEX
 		BPL	loc_84D0
 		LDA	#3

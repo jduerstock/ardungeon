@@ -2210,7 +2210,7 @@ aPressTToTran:	.BYTE "Press T to tran",0
 		LDX	#$70 ; 'p'
 		LDY	#$90 ; 'ê'
 		STA	$D40A
-		STA	$D000
+		STA	HPOSP0
 		STX	$D001
 		STY	$D002
 		STA	$D40A
@@ -2319,7 +2319,7 @@ loc_8B03:				; CODE XREF: RAM:8B07j	RAM:8B0Dj
 		LDX	#7
 
 loc_8B11:				; CODE XREF: RAM:8B15j
-		STA	$D000,X
+		STA	HPOSP0,X
 		DEX
 		BPL	loc_8B11
 		LDA	#3
