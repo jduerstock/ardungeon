@@ -672,13 +672,42 @@
 	BCS	:+
 	RTS
 :	LDA	$AA00
-	.BYTE	$c9,$08,$b0,$5c,$ad,$0a,$d2,$c9,$40,$b0,$55 ; |.`......\....@.U|
-	.BYTE	$a9,$df,$8d,$d9,$76,$a9,$76,$8d,$da,$76,$a2,$ad,$a0,$ba,$20,$28 ; |....v.v..v.... (|
-	.BYTE	$77,$a9,$d4,$8d,$d9,$76,$a9,$ad,$8d,$da,$76,$a2,$28,$20,$37,$77 ; |w....v....v.( 7w|
-	.BYTE	$ca,$d0,$fa,$ad,$0a,$d2,$c9,$40,$b0,$24,$a9,$e6,$8d,$d9,$76,$a9 ; |.......@.$....v.|
-	.BYTE	$ad,$8d,$da,$76,$ad,$00,$aa,$0a,$aa,$ad,$22,$aa,$95,$b2,$ad,$23 ; |...v......"....#|
-	.BYTE	$aa,$95,$b3,$a9,$00,$95,$c2,$95,$c3,$ee,$00,$aa,$e6,$8a,$a2,$ad ; |................|
-	.BYTE	$a0,$ba,$4c,$0a,$77,$4c,$f8,$76,$ac,$65,$76,$73,$75,$6d,$6d,$6f ; |..L.wL.v.evsummo|
+	CMP	#$08
+	BCS	:+++
+	LDA	RANDOM
+	CMP	#$40
+	BCS	:+++
+	dldi	$76D9, $76DF
+	ldxy	$ADBA
+	JSR	$7728
+	dldi	$76D9, $ADD4
+	LDX	#$28
+:	JSR	$7737
+	DEX
+	BNE	:-
+	LDA	RANDOM
+	CMP	#$40
+	.BYTE	$B0,$24
+	dldi	$76D9, $ADE6
+	LDA	$AA00
+	ASL	A
+	TAX	
+	LDA	$AA22
+	STA	$B2,X
+	LDA	$AA23
+	STA	$B3,X
+	LDA	#$00
+	STA	$C2,X
+	STA	$C3,X
+	INC	$AA00
+	INC	$8A
+:	ldxy	$ADBA
+	JMP	$770A
+:	JMP	$76F8
+
+	.BYTE	$AC
+	.WORD	$7665
+	.BYTE	"summo"		
 	.BYTE	$6e,$73,$20,$68,$65,$6c,$70,$2e,$2e,$2e,$0d,$a5,$b4,$d9,$76,$1e ; |ns help.......v.|
 	.BYTE	$0d,$ff,$62,$75,$74,$20,$6e,$6f,$6e,$65,$20,$61,$72,$72,$69,$76 ; |..but none arriv|
 	.BYTE	$65,$73,$2e,$00,$61,$6e,$64,$20,$61,$6e,$6f,$74,$68,$65,$72,$20 ; |es..and another |
