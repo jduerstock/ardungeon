@@ -35,10 +35,7 @@
 		LDX	#$9F ; 'Ÿ'
 		LDY	#$F0 ; 'ð'
 		JSR	$96F0
-		LDA	#$A3 ; '£'
-		STA	$16
-		LDA	#$76 ; 'v'
-		STA	$17
+		dldi	off_16, $76A3
 		JSR	$1812
 		LDA	#3
 		JSR	$1899
@@ -47,10 +44,7 @@
 		STA	byte_76F6
 		LDA	unk_76FC,X
 		STA	byte_76F7
-		LDA	#$C5 ; 'Å'
-		STA	$16
-		LDA	#$76 ; 'v'
-		STA	$17
+		dldi	off_16, $76C5
 		JSR	$1815
 		JSR	$181E
 

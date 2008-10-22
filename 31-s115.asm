@@ -5310,23 +5310,16 @@ unk_9557:	.BYTE $8E ; Ž		; DATA XREF: RAM:7680r
 byte_955F:	.BYTE 0			; DATA XREF: RAM:9C35o	RAM:9C5Cw ...
 byte_9560:	.BYTE 0			; DATA XREF: RAM:9C61w	RAM:9C70w
 		.BYTE $A8,$FF
-		.BYTE $A6,  0,	2
-		.BYTE $A5
-aSealedInAnEnve:.BYTE "Sealed in an envelope is a trump card."
-		.BYTE $D
-		.BYTE $FF
-		.BYTE $A6,  0,	1
-		.BYTE $A5
-aAPowerfulButFe:.BYTE "A powerful but feminine voice says:"
-		.BYTE $D
-		.BYTE $D
-		.BYTE $A5
-aForThyVictoryI:.BYTE $22,"For thy victory I give thee these"
-		.BYTE $D
-		.BYTE $A5
-aSandalsToMakeT:.BYTE "sandals to make thee quick and agile.",$22
-		.BYTE $D
-		.BYTE $FF
+
+a_TrumpCard:
+		MOVEXY	0,2
+		.BYTE	$A5,"Sealed in an envelope is a trump card.",$D,$FF
+
+		MOVEXY	0,1
+aAPowerfulButFe:.BYTE	$A5,"A powerful but feminine voice says:",$D,$D
+aForThyVictoryI:.BYTE	$A5,$22,"For thy victory I give thee these",$D
+aSandalsToMakeT:.BYTE	$A5,"sandals to make thee quick and agile.",$22,$D,$FF
+
 		.BYTE $A6,  0,	2
 		.BYTE $A5
 aAfterSomePryin:.BYTE "After some prying, a small chest"
@@ -5546,67 +5539,37 @@ locret_9C73:				; CODE XREF: RAM:9C67j
 ; ---------------------------------------------------------------------------
 aMan:		.BYTE "man",0
 aWoman:		.BYTE "woman",0
-		.BYTE $A6,  0,	2
-		.BYTE $A5
-aThereAre10Quar:.BYTE "There are 10 quarrels in"
-		.BYTE $D
-		.BYTE $A5
-aAMetallicClipH:.BYTE "a metallic clip here."
-		.BYTE $D
-		.BYTE $FF
-		.BYTE $A6,  0,	2
-		.BYTE $A5
-aThereIsALongEl:.BYTE "There is a long electrum rod here."
-		.BYTE $D
-		.BYTE $FF
-		.BYTE $A6,  0,	0
-		.BYTE $A5
-aThereIsADarkCo:.BYTE "There is a dark cowl here."
-		.BYTE $D
-		.BYTE $FF
-		.BYTE $A6,  0,	0
-		.BYTE $A5
-aAGoldenAppleRe:.BYTE "A golden apple rests on a golden"
-		.BYTE $D
-		.BYTE $A5
-aPillow_Inscrib:.BYTE "pillow.  Inscribed on the apple"
-		.BYTE $D
-		.BYTE $A5
-aAreTheWords_0:	.BYTE "are the words:"
-		.BYTE $D
-		.BYTE $D
-		.BYTE $A5
-aForThePrettyOn:.BYTE $22,"For the pretty one.",$22
-		.BYTE $D
-		.BYTE $FF
-		.BYTE $A6,  0,	2
-		.BYTE $A5
-aThereIsEvidenc:.BYTE "There is evidence of small"
-		.BYTE $D
-		.BYTE $A5
-aWeaponsFireHer:.BYTE "weapons fire here."
-		.BYTE $D
-		.BYTE $FF
-		.BYTE $A6,  0,	2
-		.BYTE $A5
-aThereAreSomeDi:.BYTE "There are some disgusting stains"
-		.BYTE $D
-		.BYTE $A5
-aOnTheFloorAndA:.BYTE "on the floor and an odd looking"
-		.BYTE $D
-		.BYTE $A5
-aSilveryQuilted:.BYTE "silvery quilted vest."
-		.BYTE $D
-		.BYTE $FF
-		.BYTE $A6,  0,	2
-		.BYTE $A5
-aAnEnergyPistol:.BYTE "An energy pistol is hanging"
-		.BYTE $D
-		.BYTE $A5
-aOnAWallRack_:	.BYTE "on a wall rack."
-		.BYTE $D
-		.BYTE $FF
-unk_9E2E:	.BYTE $63 ; c		; DATA XREF: RAM:7645r
+
+		MOVEXY	0,2
+aThereAre10Quar:.BYTE $A5,"There are 10 quarrels in",$D
+aAMetallicClipH:.BYTE $A5,"a metallic clip here.",$D,$FF
+
+		MOVEXY	0,2
+aThereIsALongEl:.BYTE	$A5,"There is a long electrum rod here.",$D,$FF
+
+		MOVEXY	0,0
+aThereIsADarkCo:.BYTE	$A5,"There is a dark cowl here.",$D,$FF
+
+		MOVEXY	0,0
+aAGoldenAppleRe:.BYTE $A5,"A golden apple rests on a golden",$D
+aPillow_Inscrib:.BYTE $A5,"pillow.  Inscribed on the apple",$D
+aAreTheWords_0:	.BYTE $A5,"are the words:",$D,$D
+aForThePrettyOn:.BYTE $A5,$22,"For the pretty one.",$22,$D,$FF
+
+		MOVEXY	0,2
+aThereIsEvidenc:.BYTE	$A5,"There is evidence of small",$D
+aWeaponsFireHer:.BYTE	$A5,"weapons fire here.",$D,$FF
+
+		MOVEXY	0,2
+aThereAreSomeDi:.BYTE	$A5,"There are some disgusting stains",$D
+aOnTheFloorAndA:.BYTE	$A5,"on the floor and an odd looking",$D
+aSilveryQuilted:.BYTE	$A5,"silvery quilted vest.",$D,$FF
+
+		MOVEXY	0,2
+aAnEnergyPistol:.BYTE	$A5,"An energy pistol is hanging",$D
+aOnAWallRack_:	.BYTE	$A5,"on a wall rack.",$D,$FF
+
+unk_9E2E:	.BYTE	<a_TrumpCard	; DATA XREF: RAM:7645r
 		.BYTE $8F ; 
 		.BYTE	5
 		.BYTE $4B ; K
@@ -5638,7 +5601,7 @@ unk_9E2E:	.BYTE $63 ; c		; DATA XREF: RAM:7645r
 		.BYTE $6A ; j
 		.BYTE $9E ; ž
 		.BYTE $FC ; ü
-unk_9E4E:	.BYTE $95 ; •		; DATA XREF: RAM:764Ar
+unk_9E4E:	.BYTE	>a_TrumpCard	; DATA XREF: RAM:764Ar
 		.BYTE $95 ; •
 		.BYTE $96 ; –
 		.BYTE $96 ; –
