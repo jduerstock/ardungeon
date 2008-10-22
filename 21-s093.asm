@@ -1,5 +1,5 @@
 
-;		.ORg	$AC00
+;		.ORG	$AC00
 		.BYTE 2
 		.WORD aToastLev1_3	; "toast! LEV 1.3"
 aAtA:		.BYTE "at a"
