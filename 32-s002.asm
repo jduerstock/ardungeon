@@ -25,7 +25,7 @@ loc_7610:				; CODE XREF: RAM:7601j
 		LDX	#2
 
 loc_7616:				; CODE XREF: RAM:7620j
-		LDA	$D20A
+		LDA	RANDOM
 		AND	#7
 		ADC	$66
 		STA	$66
@@ -55,7 +55,7 @@ loc_7644:				; CODE XREF: RAM:7640j
 		LDA	off_79C3+1,X
 		STA	off_78D2+1
 		dldi	off_1977, loc_76D5
-		LDA	$D20A
+		LDA	RANDOM
 		AND	#$F
 		STA	$6D
 		LDA	$7583,X
@@ -105,7 +105,7 @@ loc_76BA:				; CODE XREF: RAM:77A1j
 		dldi	off_16, a_Searching
 		LDX	$67
 		JSR	$1851
-		LDA	$D20A
+		LDA	RANDOM
 		AND	#3
 		ADC	#2
 		JSR	sub_77F9
@@ -117,7 +117,7 @@ loc_76D5:
 		STA	$6C
 
 loc_76D9:				; CODE XREF: RAM:76E4j
-		LDA	$D20A
+		LDA	RANDOM
 		CMP	$6C
 		BCC	loc_76E2
 		STA	$6C

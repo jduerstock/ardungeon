@@ -709,7 +709,7 @@ loc_7A83:
 		JSR	loc_7AA7
 		ORA	$6F
 		STA	$6F
-		LDA	$D20A
+		LDA	RANDOM
 		AND	#3
 		CLC
 		ADC	#2

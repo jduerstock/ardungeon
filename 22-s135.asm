@@ -110,17 +110,17 @@ loc_76CE:				; CODE XREF: RAM:76C5j
 		JSR	$1887
 		LDA	#6
 		CLC
-		ADC	$41
+		ADC	off_41
 		STA	$66
 		LDA	#0
-		ADC	$42
+		ADC	off_41+1
 		STA	$67
 		JSR	$1869
 		LDX	#3
 		LDA	$630A
 		BNE	loc_775E
 		LDY	#0
-		LDA	($41),Y
+		LDA	(off_41),Y
 		CMP	#7
 		BEQ	loc_771D
 		CMP	#0
@@ -129,22 +129,19 @@ loc_76CE:				; CODE XREF: RAM:76C5j
 		JSR	$1896
 		LDX	#3
 		LDY	#0
-		LDA	($43),Y
+		LDA	(off_43),Y
 		CMP	#$B
 		BNE	loc_775E
 		INY
-		LDA	($43),Y
+		LDA	(off_43),Y
 		BNE	loc_7711
 		INY
-		LDA	($43),Y
+		LDA	(off_43),Y
 		CMP	#2
 		BCC	loc_775E
 
 loc_7711:				; CODE XREF: RAM:7708j
-		LDA	#$13
-		STA	$16
-		LDA	#$79 ; 'y'
-		STA	$17
+		dldi	off_16, $7913
 		LDX	#0
 		BEQ	loc_7766
 
@@ -153,16 +150,13 @@ loc_771D:				; CODE XREF: RAM:76F0j
 		JSR	$1896
 		LDX	#3
 		LDY	#0
-		LDA	($43),Y
+		LDA	(off_43),Y
 		CMP	#2
 		BNE	loc_775E
 		INY
-		LDA	($43),Y
+		LDA	(off_43),Y
 		BNE	loc_775E
-		LDA	#$8E ; 'Ž'
-		STA	$16
-		LDA	#$79 ; 'y'
-		STA	$17
+		dldi	off_16, $798E
 		LDX	$68
 		JSR	$1851
 		LDA	#$F
@@ -171,7 +165,7 @@ loc_771D:				; CODE XREF: RAM:76F0j
 		JSR	$1887
 		LDY	#2
 		LDA	#$10
-		STA	($41),Y
+		STA	(off_41),Y
 		JSR	$18A5
 		LDA	$6385
 		CMP	#$B8 ; '¸'
@@ -183,10 +177,7 @@ loc_775B:				; CODE XREF: RAM:7756j
 ; ---------------------------------------------------------------------------
 
 loc_775E:				; CODE XREF: RAM:76E8j	RAM:76F4j ...
-		LDA	#$AE ; '®'
-		STA	$16
-		LDA	#$78 ; 'x'
-		STA	$17
+		dldi	off_16, $78AE
 
 loc_7766:				; CODE XREF: RAM:771Bj
 		LDA	unk_77AB,X
@@ -229,100 +220,52 @@ unk_77AD:	.BYTE	2		; DATA XREF: RAM:7777r
 		.BYTE $1E
 		.BYTE	1
 		.BYTE $A8,$FF
-		.BYTE $A6,  0,	1
-		.BYTE $A5
-aYouAreAtARiver:.BYTE "You are at a river crossing."
-		.BYTE $D
-		.BYTE $A5
-aTheRiverLooksT:.BYTE "The river looks too swift to safely"
-		.BYTE $D
-		.BYTE $A5
-aSwimAcross_:	.BYTE "swim across.",$D
-		.BYTE $FF
-		.BYTE $A6,  0,	0
-		.BYTE $A5
-aAGhostlyFigure:.BYTE "A ghostly figure is waiting"
-		.BYTE $D
-		.BYTE $A6,  9,	1
-aForYouAtTheDoc:.BYTE "for you at the dock"
-		.BYTE $A3
-		.WORD locret_79DF
-		.BYTE $2E ; .
-		.BYTE $A3
-		.WORD locret_79DF
-		.BYTE $2E ; .
-		.BYTE $A3
-		.WORD locret_79DF
-		.BYTE $2E ; .
-		.BYTE $D
-		.BYTE $A5
-aHeSlowlyOpensH:.BYTE "He slowly opens his"
-		.BYTE $D
-		.BYTE $A5
-aOutstretchedHa:.BYTE "outstretched hand."
-		.BYTE $D
-		.BYTE $D
-aDoYou:		.BYTE "   Do you ("
-		.BYTE $A1
-a1:		.BYTE "1"
-		.BYTE $A0
-aOfferSomething:.BYTE ") Offer something or"
-		.BYTE $D
-		.BYTE "          ("
-		.BYTE $A1
-		.BYTE "0"
-		.BYTE $A0
-aLeave:		.BYTE ") Leave"
-		.BYTE $FF
-		.BYTE $A6,  0,	0
-		.BYTE $A5
-aTheMysteriousB:.BYTE "The mysterious boatman takes"
-		.BYTE $D
-		.BYTE $D
-		.BYTE $A5
-aYour:		.BYTE "your "
+		MOVEXY	0,1
+aYouAreAtARiver:.BYTE	$A5,"You are at a river crossing.",$D
+aTheRiverLooksT:.BYTE	$A5,"The river looks too swift to safely",$D
+aSwimAcross_:	.BYTE	$A5,"swim across.",$D,$FF
+		MOVEXY	0,0		
+aAGhostlyFigure:.BYTE	$A5,"A ghostly figure is waiting",$D
+		MOVEXY	9,1
+aForYouAtTheDoc:.BYTE	"for you at the dock"
+		STRJSR	locret_79DF
+		.BYTE	"."
+		STRJSR	locret_79DF
+		.BYTE	"."
+		STRJSR	locret_79DF
+		.BYTE	".",$D
+aHeSlowlyOpensH:.BYTE	$A5,"He slowly opens his",$D
+aOutstretchedHa:.BYTE	$A5,"outstretched hand.",$D,$D
+aDoYou:		.BYTE	"   Do you ("
+a1:		BLINK	"1"
+aOfferSomething:.BYTE	") Offer something or",$D
+		.BYTE	"          ("
+		BLINK	"0"
+aLeave:		.BYTE	") Leave",$FF
+
+		MOVEXY	0,0
+aTheMysteriousB:.BYTE $A5,"The mysterious boatman takes",$D,$D
+aYour:		.BYTE $A5,"your "
 		.BYTE $B4
 		.WORD $66
 		.BYTE $12
-		.BYTE $20
-aAndProceedsTo:	.BYTE "and proceeds to"
-		.BYTE $D
-		.BYTE $D
-		.BYTE $A5
-aTakeYouDownThe:.BYTE "take you down the river in his boat."
-		.BYTE $D
-		.BYTE $FF
-		.BYTE $A6,  0,	0
-		.BYTE $A5
-aTheMysteriou_0:.BYTE "The mysterious boatman takes his"
-		.BYTE $D
-		.BYTE $D
-		.BYTE $A5
-aFeeAndPlacesIt:.BYTE "fee and places it in his pouch."
-		.BYTE $D
-		.BYTE $D
-		.BYTE $A5
-aHeThenRowsYouA:.BYTE "He then rows you across the"
-		.BYTE $D
-		.BYTE $D
-		.BYTE $A5
-aRiverInHisBoat:.BYTE "river in his boat.",$D
-		.BYTE $FF
-		.BYTE $A6,  0,	1
-		.BYTE $A5
-aTheBoatmanTake:.BYTE "The boatman takes the"
-		.BYTE $D
-		.BYTE $D
-		.BYTE $A5
-		.BYTE $B4
-		.WORD $66
-		.BYTE $12
-		.BYTE $D
-		.BYTE $D
-		.BYTE $A5
-aAndPlacesItInH:.BYTE "and places it in his boat."
-		.BYTE $D
-		.BYTE $FF
+aAndProceedsTo:	.BYTE " and proceeds to",$D,$D
+aTakeYouDownThe:.BYTE $A5,"take you down the river in his boat.",$D,$FF
+
+		MOVEXY	0,0
+aTheMysteriou_0:.BYTE $A5,"The mysterious boatman takes his",$D,$D
+aFeeAndPlacesIt:.BYTE $A5,"fee and places it in his pouch.",$D,$D
+aHeThenRowsYouA:.BYTE $A5,"He then rows you across the",$D,$D
+aRiverInHisBoat:.BYTE $A5,"river in his boat.",$D,$FF
+
+		MOVEXY	0,1
+aTheBoatmanTake:.BYTE	$A5,"The boatman takes the",$D,$D
+		.BYTE	$A5
+		.BYTE	$B4
+		.WORD	$66
+		.BYTE	$12
+		.BYTE	$D,$D
+aAndPlacesItInH:.BYTE	$A5,"and places it in his boat.",$D,$FF
 ; ---------------------------------------------------------------------------
 		LDX	#$64 ; 'd'
 
@@ -545,16 +488,16 @@ loc_7B18:				; CODE XREF: RAM:7B1Cj
 
 loc_7B46:				; CODE XREF: RAM:7B6Cj
 		LDY	6
-		LDA	(7),Y
+		LDA	(off_7),Y
 		STA	4
 		LDY	#7
 
 loc_7B4E:				; CODE XREF: RAM:7B59j
 		LSR	4
 		BCC	loc_7B58
-		LDA	(9),Y
+		LDA	(off_9),Y
 		ORA	#$80 ; '€'
-		STA	(9),Y
+		STA	(off_9),Y
 
 loc_7B58:				; CODE XREF: RAM:7B50j
 		DEY

@@ -24,6 +24,11 @@
 	.endrep
 .endmacro
 
+
+	.MACRO	ldi	arg1, arg2
+		LDA	#arg2
+		STA	arg1
+	.ENDMACRO
 ;
 ; double-load immediate
 	.MACRO	dldi	arg1, arg2

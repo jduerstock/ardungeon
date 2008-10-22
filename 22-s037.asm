@@ -451,8 +451,7 @@ loc_7963:				; CODE XREF: RAM:795Bj
 		DEC	$6385
 
 loc_7990:				; CODE XREF: RAM:7983j	RAM:798Bj
-		LDX	#$7B ; '{'
-		LDY	#$30 ; '0'
+		ldxy	$7B30
 
 loc_7994:				; CODE XREF: RAM:79B7j
 		LDA	#2
@@ -460,12 +459,11 @@ loc_7994:				; CODE XREF: RAM:79B7j
 		JSR	$185D
 		JMP	loc_7915
 ; ---------------------------------------------------------------------------
-		LDX	#$7B ; '{'
-		LDY	#$36 ; '6'
+
+		ldxy	$7B36
 		LDA	$1969
 		BEQ	loc_79AC
-		LDX	#$7B ; '{'
-		LDY	#$3C ; '<'
+		ldxy	$7B3C
 
 loc_79AC:				; CODE XREF: RAM:79A6j
 		LDA	#$FF
@@ -474,23 +472,18 @@ loc_79AC:				; CODE XREF: RAM:79A6j
 		DEC	$195F
 		JMP	loc_7994
 ; ---------------------------------------------------------------------------
-		LDA	#$4B ; 'K'
-		STA	$16
-		LDA	#$7E ; '~'
-		STA	$17
+
+		dldi	off_16, $7E4B
 		LDX	$6A
 		JSR	$1851
 		LDA	#$A
 		JSR	$185A
-		LDA	#$81 ; ''
-		STA	$62
-		LDA	#$86 ; '†'
-		STA	$63
+		dldi	off_62, byte_8681
 		LDY	#0
 		LDA	$6385
 
 loc_79D9:				; CODE XREF: RAM:79E2j
-		CMP	($62),Y
+		CMP	(off_62),Y
 		BCC	loc_79E4
 		BEQ	loc_79E4
 		INY
@@ -500,11 +493,11 @@ loc_79D9:				; CODE XREF: RAM:79E2j
 
 loc_79E4:				; CODE XREF: RAM:79DBj	RAM:79DDj
 		INY
-		LDA	($62),Y
-		STA	$16
+		LDA	(off_62),Y
+		STA	off_16
 		INY
-		LDA	($62),Y
-		STA	$17
+		LDA	(off_62),Y
+		STA	off_16+1
 		LDX	$6A
 		JSR	$1851
 		LDA	#$A
@@ -1069,21 +1062,20 @@ aThySoulIsDarkA:.BYTE "Thy soul is dark and fearsome."
 		.BYTE $D
 		.BYTE $FF
 byte_8660:	.BYTE $A6,  0,	3	; DATA XREF: RAM:8682o
-		.BYTE $A5
-aThySoulIsBlack:.BYTE "Thy soul is black as pitch!"
-		.BYTE $D
-		.BYTE $FF
-		.BYTE $4A ; J
+aThySoulIsBlack:.BYTE $A5,"Thy soul is black as pitch!",$D,$FF
+
+byte_8681:
+		.BYTE $4A
 		.WORD byte_8660
-		.BYTE $64 ; d
+		.BYTE $64
 		.WORD byte_863C
-		.BYTE $77 ; w
+		.BYTE $77
 		.WORD byte_8602
-		.BYTE $87 ; ‡
+		.BYTE $87
 		.WORD byte_85D0
-		.BYTE $96 ; –
+		.BYTE $96
 		.WORD byte_85A4
-		.BYTE $E1 ; á
+		.BYTE $E1
 		.WORD byte_857C
 		.BYTE $FF
 		.WORD byte_8547

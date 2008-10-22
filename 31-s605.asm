@@ -1,3 +1,4 @@
+		.include	"equates.inc"
 		.include	"globals.inc"
 		.include	"exp_kernel.inc"
 		.include	"macros.inc"
@@ -61,7 +62,7 @@ loc_7649:				; CODE XREF: RAM:7644j
 		LDA	$1912
 		CMP	#1
 		BNE	loc_766E
-		LDA	$D20A
+		LDA	RANDOM
 		CMP	#$EC ; 'ì'
 		BCC	loc_766E
 		LDX	#$77 ; 'w'
@@ -96,7 +97,7 @@ loc_766E:				; CODE XREF: RAM:765Bj	RAM:7662j
 loc_76A0:				; CODE XREF: RAM:7654j	RAM:766Bj ...
 		LDA	byte_7855
 		BPL	loc_76CF
-		LDA	$D20A
+		LDA	RANDOM
 		BPL	loc_76CF
 		LDX	$6394
 		INX

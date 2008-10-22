@@ -409,7 +409,7 @@ sub_792C:				; CODE XREF: RAM:78AFp	RAM:loc_7DE1p
 		LDY	$7C89,X
 
 loc_793F:				; CODE XREF: sub_792C+1Ej
-		LDA	$D20A
+		LDA	RANDOM
 		AND	#1
 		CLC
 		ADC	$83
@@ -764,7 +764,7 @@ loc_7B77:				; CODE XREF: RAM:7B73j
 
 loc_7B86:				; CODE XREF: RAM:7B82j
 		STA	$6396
-		LDA	$D20A
+		LDA	RANDOM
 		CMP	#$20 ; ' '
 		BCS	loc_7B9A
 		LDA	$75,X
@@ -1195,7 +1195,7 @@ loc_7DDA:				; CODE XREF: RAM:7DD6j
 
 loc_7DE1:				; CODE XREF: RAM:7DCEj
 		JSR	sub_792C
-		LDA	$D20A
+		LDA	RANDOM
 		AND	#$3F ; '?'
 		LDX	$8D
 		BEQ	loc_7DF1
@@ -1219,7 +1219,7 @@ loc_7DFC:				; CODE XREF: RAM:78A4j
 		LDA	#0
 		STA	$7B
 		JSR	loc_7CA6
-		LDA	$D20A
+		LDA	RANDOM
 		AND	#3
 		TAX
 		CMP	#3
@@ -1242,7 +1242,7 @@ loc_7E19:				; CODE XREF: RAM:7E10j
 		STA	$8E
 		LDA	#$89 ; '‰'
 		STA	$8F
-		LDA	$D20A
+		LDA	RANDOM
 		LDY	#0
 
 loc_7E2F:				; CODE XREF: RAM:7E36j

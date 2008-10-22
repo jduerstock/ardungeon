@@ -1,3 +1,4 @@
+		.include	"equates.inc"
 		.include	"globals.inc"
 		.include	"exp_kernel.inc"
 		.include	"macros.inc"
@@ -19,7 +20,7 @@ loc_7608:				; CODE XREF: RAM:7601j
 		JSR	$184B
 		LDX	$1933
 		STX	byte_78DF
-		dldi	off_1977, $763B
+		dldi	off_1977, loc_763B
 		RTS
 ; ---------------------------------------------------------------------------
 
@@ -27,19 +28,21 @@ loc_7627:				; CODE XREF: RAM:7659j	RAM:7664j ...
 		INC	$1937
 		JSR	$184E
 		LDA	#$FF
-		STA	$1959
+		STA	byte_1959
 		STA	a_Cloak+5
 		DEC	$197B
 		JMP	$180C
 ; ---------------------------------------------------------------------------
-		LDA	$1959
+
+loc_763B:
+		LDA	byte_1959
 		CMP	#1
 		BNE	loc_7667
-		LDX	$195A
+		LDX	byte_195A
 		LDA	unk_9E2E,X
-		STA	$16
+		STA	off_16
 		LDA	unk_9E4E,X
-		STA	$17
+		STA	off_16+1
 		LDY	unk_9486,X
 		LDA	unk_94A6,X
 		TAX
@@ -94,7 +97,7 @@ loc_76A0:				; CODE XREF: sub_769B+2j
 		STA	off_7
 		LDA	unk_9549,X
 		STA	off_7+1
-		LDA	$D20A
+		LDA	RANDOM
 		STA	byte_78DE
 		LDY	#0
 
@@ -133,10 +136,10 @@ sub_76D3:				; CODE XREF: RAM:7656p	RAM:7684p
 		AND	#7
 		CMP	#6
 		BNE	loc_76F8
-		LDA	$D20A
+		LDA	RANDOM
 		CMP	#$40 ; '@'
 		BCC	loc_76F8
-		LDA	$D20A
+		LDA	RANDOM
 		LSR	A
 		CMP	$6369
 		BCC	loc_76F8
@@ -318,7 +321,7 @@ loc_7817:				; CODE XREF: sub_773A+A2j sub_773A+ACj ...
 ; ---------------------------------------------------------------------------
 
 loc_7824:				; CODE XREF: sub_773A+94j sub_773A+DAj
-		LDA	$D20A
+		LDA	RANDOM
 		CMP	$6385
 		BCS	loc_7849
 		LDA	#$15

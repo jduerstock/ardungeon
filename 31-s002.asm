@@ -279,7 +279,7 @@ loc_776D:				; CODE XREF: RAM:7608j	sub_84CF-990j ...
 
 loc_7785:				; CODE XREF: sub_84CF-D4Fj
 		STA	loc_96F0
-		STA	$1959
+		STA	byte_1959
 		LDA	$195B
 		STA	$6316
 		LDA	$195C
@@ -738,9 +738,9 @@ loc_7ABF:				; CODE XREF: sub_88B0-DFDj
 
 loc_7AC2:				; CODE XREF: sub_88B0:loc_78C9j
 					; sub_88B0-EF8j ...
-		LDA	$1959
+		LDA	byte_1959
 		BNE	loc_7AD2
-		LDA	$195A
+		LDA	byte_195A
 		ldxy	$7500
 		SEC
 		JSR	j_SETBIT
@@ -749,7 +749,7 @@ loc_7AD2:				; CODE XREF: sub_84CF-A0Aj
 		JSR	loc_9734
 		JSR	sub_9067
 		LDA	#$FF
-		STA	$1959
+		STA	byte_1959
 		LDY	#0
 		LDA	(off_68),Y
 		CMP	#3
@@ -2406,7 +2406,7 @@ loc_849D:				; CODE XREF: sub_7DD2:loc_7DEEj
 		JSR	loc_9734
 		JSR	sub_9067
 		JSR	sub_9272
-		LDA	$1959
+		LDA	byte_1959
 		BNE	loc_84B7
 		LDA	$6318
 		STA	$6313
@@ -3186,9 +3186,9 @@ loc_894A:				; CODE XREF: sub_88B0+95j
 		JSR	sub_852B
 
 loc_8952:				; CODE XREF: sub_88B0+9Dj
-		LDA	$1959
+		LDA	byte_1959
 		BNE	loc_8962
-		LDA	$195A
+		LDA	byte_195A
 		ldxy	$7500
 		SEC
 		JSR	j_SETBIT

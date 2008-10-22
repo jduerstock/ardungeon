@@ -316,7 +316,7 @@ loc_781A:				; CODE XREF: RAM:7815j
 		STX	$70
 		TAX
 		JSR	$1884
-		LDA	$D20A
+		LDA	RANDOM
 		CMP	#$33 ; '3'
 		BCS	loc_785F
 		LDA	$70

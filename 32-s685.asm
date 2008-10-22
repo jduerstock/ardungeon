@@ -334,7 +334,7 @@ locret_9884:				; CODE XREF: sub_9856+5j
 ; ---------------------------------------------------------------------------
 
 loc_9885:				; CODE XREF: sub_9856+19j sub_9856+35j
-		LDA	$D20A
+		LDA	RANDOM
 		STA	$D01A
 		JMP	loc_9885
 ; End of function sub_9856
@@ -469,7 +469,7 @@ loc_9941:				; CODE XREF: RAM:995Aj
 ; ---------------------------------------------------------------------------
 
 sub_994D:
-		CMP	$D20A
+		CMP	RANDOM
 		BCC	loc_995D
 		INC	$F4
 		BNE	loc_9958
@@ -701,7 +701,7 @@ loc_9ABF:				; CODE XREF: RAM:9AB8j
 		STA	$F7
 
 loc_9AC4:				; CODE XREF: RAM:9ACDj
-		LDA	$D20A
+		LDA	RANDOM
 		AND	$F7
 		CMP	($F4),Y
 		BEQ	loc_9ACF
