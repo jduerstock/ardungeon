@@ -562,6 +562,8 @@ loc_79B6:				; CODE XREF: sub_7758+250j
 loc_79C4:				; CODE XREF: sub_7758+264j
 		LDA	#3
 		BNE	loc_79AC
+
+loc_79C8:
 		LDY	#$C
 		LDA	byte_7BD2
 		AND	#7
@@ -588,6 +590,8 @@ loc_79E8:				; CODE XREF: sub_7758+28Cj
 ; End of function sub_7758
 
 ; ---------------------------------------------------------------------------
+
+loc_79EE:
 		LDA	$6D
 		SEC
 		SBC	#$A
@@ -654,6 +658,8 @@ loc_7A3C:				; CODE XREF: RAM:7A2Fj	RAM:7A34j
 locret_7A42:				; CODE XREF: RAM:7A3Aj	RAM:7A47j
 		RTS
 ; ---------------------------------------------------------------------------
+
+loc_7A43:
 		LDA	byte_7BD6
 		LSR	A
 		BEQ	locret_7A42
@@ -666,19 +672,21 @@ locret_7A42:				; CODE XREF: RAM:7A3Aj	RAM:7A47j
 		STA	byte_7BD6
 		RTS
 ; ---------------------------------------------------------------------------
-		LDA	$D20A
+
+loc_7A59:
+		LDA	RANDOM
 		AND	#3
 		TAX
-		LDA	$7CD2,X
+		LDA	byte_7CD2,X
 		STA	loc_7A7D+1
-		LDA	$7CD7,X
+		LDA	byte_7CD7,X
 		STA	loc_7A7D+2
-		LDA	$D20A
+		LDA	RANDOM
 		AND	#3
 		TAX
-		LDA	unk_7CD2,X
+		LDA	byte_7CD2,X
 		STA	loc_7A80+1
-		LDA	unk_7CD7,X
+		LDA	byte_7CD7,X
 		STA	loc_7A80+2
 
 loc_7A7D:				; DATA XREF: RAM:7A62w	RAM:7A68w
@@ -687,6 +695,8 @@ loc_7A7D:				; DATA XREF: RAM:7A62w	RAM:7A68w
 loc_7A80:				; DATA XREF: RAM:7A74w	RAM:7A7Aw
 		JMP	$FFFF
 ; ---------------------------------------------------------------------------
+
+loc_7A83:
 		LDX	#2
 		JSR	loc_7AA7
 		ADC	#1
@@ -756,12 +766,12 @@ loc_7AD3:				; DATA XREF: RAM:8393o	RAM:839Eo
 ; ---------------------------------------------------------------------------
 
 loc_7AE6:				; CODE XREF: RAM:7AD6j
-		LDA	$7CF8,Y
-		STA	byte_8397
-		LDA	$7D03,Y
-		STA	byte_8398
+		LDA	byte_7CF8,Y
+		STA	byte_8396+1
+		LDA	byte_7D03,Y
+		STA	byte_8396+2
 		LDX	#4
-		LDA	($62),Y
+		LDA	(off_62),Y
 		BEQ	loc_7B25
 		DEX
 		CMP	#$FF
@@ -790,16 +800,16 @@ loc_7B10:				; CODE XREF: RAM:7B13j
 		BCS	loc_7B3C
 
 loc_7B1B:				; CODE XREF: RAM:7B23j
-		CMP	$7CF4,X
+		CMP	byte_7CF4,X
 		BCC	loc_7B25
 		BEQ	loc_7B25
 		INX
 		BNE	loc_7B1B
 
 loc_7B25:				; CODE XREF: RAM:7AF6j	RAM:7AFBj ...
-		LDA	$7CEA,X
+		LDA	byte_7CEA,X
 		STA	$6B
-		LDA	$7CEF,X
+		LDA	byte_7CEF,X
 		STA	$6C
 
 loc_7B2F:				; CODE XREF: RAM:7B50j
@@ -810,7 +820,7 @@ loc_7B2F:				; CODE XREF: RAM:7B50j
 ; ---------------------------------------------------------------------------
 
 loc_7B3C:				; CODE XREF: RAM:7B19j	RAM:7B44j
-		CMP	$7CDC,X
+		CMP	byte_7CDC,X
 		BCC	loc_7B46
 		BEQ	loc_7B46
 		INX
@@ -1181,44 +1191,54 @@ off_7BD8:	.WORD $FF		; DATA XREF: sub_7758+8r RAM:807Do ...
 		.BYTE	0
 		.BYTE $FF
 		.BYTE	0
-unk_7CD2:	.BYTE $C8 ; È		; DATA XREF: RAM:7A71r
-		.BYTE $EE ; î
-		.BYTE $83 ; ƒ
-		.BYTE $43 ; C
-		.BYTE $59 ; Y
-unk_7CD7:	.BYTE $79 ; y		; DATA XREF: RAM:7A77r
-		.BYTE $79 ; y
-		.BYTE $7A ; z
-		.BYTE $7A ; z
-		.BYTE $7A ; z
-		.BYTE  $A
-		.BYTE $14
-		.BYTE $1E
-		.BYTE $FF
-unk_7CE0:	.BYTE  $E		; DATA XREF: RAM:loc_7B46r
-		.BYTE $12
-		.BYTE $16
-		.BYTE $1B
-		.BYTE $4B ; K
-unk_7CE5:	.BYTE $7D ; }		; DATA XREF: RAM:7B4Br
-		.BYTE $7D ; }
-		.BYTE $7D ; }
-		.BYTE $7D ; }
-		.BYTE $7D ; }
-		.BYTE $37 ; 7
-		.BYTE $3C ; <
-		.BYTE $41 ; A
-		.BYTE $46 ; F
-		.BYTE $4B ; K
-		.BYTE $7D ; }
-		.BYTE $7D ; }
-		.BYTE $7D ; }
-		.BYTE $7D ; }
-		.BYTE $7D ; }
+byte_7CD2:	.BYTE	<loc_79C8	; DATA XREF: RAM:7A71r
+		.BYTE	<loc_79EE
+		.BYTE	<loc_7A83
+		.BYTE	<loc_7A43
+		.BYTE	<loc_7A59
+byte_7CD7:	.BYTE	>loc_79C8	; DATA XREF: RAM:7A77r
+		.BYTE	>loc_79EE
+		.BYTE	>loc_7A83
+		.BYTE	>loc_7A43
+		.BYTE	>loc_7A59
+
+byte_7CDC:
+		.BYTE	$A
+		.BYTE	$14
+		.BYTE	$1E
+		.BYTE	$FF
+unk_7CE0:	.BYTE	<aLow		; DATA XREF: RAM:loc_7B46r
+		.BYTE	<aMed
+		.BYTE	<aHigh
+		.BYTE	<aVHi
+		.BYTE	<aNone
+unk_7CE5:	.BYTE	>aLow		; DATA XREF: RAM:7B4Br
+		.BYTE	>aMed
+		.BYTE	>aHigh
+		.BYTE	>aVHi
+		.BYTE	>aNone
+
+byte_7CEA:
+		.BYTE	<aPoor
+		.BYTE	<aFair
+		.BYTE	<aGood
+		.BYTE	<aXlnt
+		.BYTE	<aNone
+
+byte_7CEF:
+		.BYTE	>aPoor
+		.BYTE	>aFair
+		.BYTE	>aGood
+		.BYTE	>aXlnt
+		.BYTE	>aNone
+
+byte_7CF4:
 		.BYTE	2
 		.BYTE	5
 		.BYTE  $A
 		.BYTE $FF
+
+byte_7CF8:
 		.BYTE	7
 		.BYTE	7
 		.BYTE	7
@@ -1230,6 +1250,8 @@ unk_7CE5:	.BYTE $7D ; }		; DATA XREF: RAM:7B4Br
 		.BYTE $21 ; !
 		.BYTE $21 ; !
 		.BYTE $21 ; !
+
+byte_7D03:
 		.BYTE	3
 		.BYTE	4
 		.BYTE	5
@@ -1584,9 +1606,9 @@ aCold:		.BYTE "Cold:"
 		.BYTE $A3
 		.WORD loc_7AD3
 		.BYTE $FF
-		.BYTE $A6 ; ¦
-byte_8397:	.BYTE $FF		; DATA XREF: RAM:7AE9w
-byte_8398:	.BYTE $FF		; DATA XREF: RAM:7AEFw
+
+byte_8396:
+		MOVEXY	$FF, $FF
 		.BYTE $B4
 		.WORD $6B
 		.BYTE $1E
