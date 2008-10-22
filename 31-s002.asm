@@ -7186,79 +7186,44 @@ byte_A8A0:	.BYTE 0			; DATA XREF: sub_7B59+40w sub_7B59+48r ...
 		JMP	$1806
 :		RTS
 		LDA	$31
-		
-		.BYTE $30 ; 0
-		.BYTE $EE ; Ó
-		.BYTE $20
-		.BYTE $3F ; ?
-		.BYTE $18
-		.BYTE $C9 ; …
-		.BYTE $4E ; N
-		.BYTE $F0 ; 
-		.BYTE $F4 ; Ù
-		.BYTE $C9 ; …
-		.BYTE $59 ; Y
-		.BYTE $D0 ; –
-		.BYTE $DB ; -
-		.BYTE $A5 ; •
-		.BYTE $79 ; y
-		.BYTE $85 ; Ö
-		.BYTE	3
-		.BYTE $A5 ; •
-		.BYTE $7A ; z
-		.BYTE $85 ; Ö
-		.BYTE	2
-		.BYTE $20
-		.BYTE $17
-		.BYTE $7B ; {
-		.BYTE $90 ; ê
-		.BYTE	3
-		.BYTE $4C ; L
-		.BYTE $6E ; n
-		.BYTE $7D ; }
-		.BYTE $20
-		.BYTE $16
-		.BYTE $79 ; y
-		.BYTE $A0 ; †
-		.BYTE	2
-		.BYTE $A5 ; •
-		.BYTE $71 ; q
-		.BYTE $18
-		.BYTE $71 ; q
-		.BYTE $64 ; d
-		.BYTE $91 ; ë
-		.BYTE $64 ; d
-		.BYTE $A2 ; ¢
-		.BYTE	0
-		.BYTE $38 ; 8
-		.BYTE $E9 ; È
-		.BYTE  $A
-		.BYTE $90 ; ê
-		.BYTE	3
-		.BYTE $E8 ; Ë
-		.BYTE $D0 ; –
-		.BYTE $F9 ; ˘
-		.BYTE $69 ; i
-		.BYTE  $A
-		.BYTE $86 ; Ü
-		.BYTE $79 ; y
-		.BYTE	9
-		.BYTE $30 ; 0
-		.BYTE $85 ; Ö
-		.BYTE $72 ; r
-		.BYTE $A0 ; †
-		.BYTE	5
-		.BYTE $B1 ; ±
-		.BYTE $62 ; b
-		.BYTE $38 ; 8
-		.BYTE $E9 ; È
-		.BYTE	3
-		.BYTE $A8 ; ®
-		.BYTE $A5 ; •
-		.BYTE $72 ; r
-		.BYTE $91 ; ë
-		.BYTE $62 ; b
-		.BYTE $88 ; à
+		BMI	:--
+		JSR	$183F
+		CMP	#'N'
+		BEQ	:-
+		CMP	#'Y'
+		BNE	:---
+		LDA	$79
+		STA	$03
+		LDA	$7A
+		STA	$02
+		JSR	$7B17
+		BCC	:+
+		JMP	$7D6E
+:		JSR	$7916
+		LDY	#$02
+		LDA	$71
+		CLC	
+		ADC	($64),Y
+		STA	($64),Y
+		LDX	#$00
+		SEC
+:		SBC	#$0A
+:		BCC	:+
+		INX
+		BNE	:--
+:		ADC	#$0A
+		STX	$79
+		ORA	#$30
+		STA	$72
+		LDY	#$05
+		LDA	($62),Y
+		SEC
+		SBC	#$03
+		TAY
+		LDA	$72
+		STA	($62),Y
+		DEY		
+
 byte_AA00:	.BYTE $A9		; CODE XREF: RAM:7804p
 					; DATA XREF: RAM:760Fr	...
 off_AA01:	.WORD	$85FF		; DATA XREF: sub_8560+7r
