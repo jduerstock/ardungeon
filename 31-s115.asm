@@ -15,7 +15,7 @@ locret_7607:
 
 loc_7608:				; CODE XREF: RAM:7601j
 		DEC	$1937
-		dldi	off_16, $9561
+		dldi	off_16, byte_9561
 		JSR	$184B
 		LDX	$1933
 		STX	byte_78DF
@@ -28,7 +28,7 @@ loc_7627:				; CODE XREF: RAM:7659j	RAM:7664j ...
 		JSR	$184E
 		LDA	#$FF
 		STA	$1959
-		STA	aACloakDancesTo+1
+		STA	a_Cloak+5
 		DEC	$197B
 		JMP	$180C
 ; ---------------------------------------------------------------------------
@@ -454,7 +454,7 @@ byte_78E3:	.BYTE 0			; DATA XREF: sub_773A+6Fw sub_773A+80r
 byte_78E4:	.BYTE 0			; DATA XREF: sub_773A+3Dw sub_773A+4Ew ...
 byte_78E5:	.BYTE 0			; DATA XREF: sub_773A+38w
 					; sub_773A:loc_777Ar ...
-unk_78E6:	.BYTE $10		; DATA XREF: RAM:93ACo
+i_TheStarCard:	.BYTE $10		; DATA XREF: RAM:93ACo
 		.BYTE $28
 		.BYTE	0
 		.BYTE	0
@@ -479,7 +479,9 @@ aTheStarCard:	.BYTE "The Star (card)",0
 		.BYTE	0
 		.BYTE	0
 		.BYTE	1
-unk_790E:	.BYTE $10		; DATA XREF: RAM:93AEo
+
+i_TheFoolCard:
+		.BYTE $10		; DATA XREF: RAM:93AEo
 		.BYTE $48 ; H
 		.BYTE	0
 		.BYTE	0
@@ -532,7 +534,9 @@ aLuck:		.BYTE "Luck",0
 		.BYTE	0
 		.BYTE	0
 		.BYTE	1
-unk_7956:	.BYTE $10		; DATA XREF: RAM:93B0o
+
+i_TheHeirophantCard:
+		.BYTE $10		; DATA XREF: RAM:93B0o
 		.BYTE $2E ; .
 		.BYTE	0
 		.BYTE	0
@@ -557,7 +561,9 @@ aTheHeirophantC:.BYTE "The Heirophant (card)",0
 		.BYTE	0
 		.BYTE	0
 		.BYTE	1
-unk_7984:	.BYTE $10		; DATA XREF: RAM:93B2o
+
+i_DeathCard:
+		.BYTE $10		; DATA XREF: RAM:93B2o
 		.BYTE $25 ; %
 		.BYTE	0
 		.BYTE	0
@@ -582,7 +588,9 @@ aDeathCard:	.BYTE "Death (card)",0
 		.BYTE	0
 		.BYTE	0
 		.BYTE	1
-unk_79A9:	.BYTE $10		; DATA XREF: RAM:93B4o
+
+i_AceOfCupsCard:
+		.BYTE $10		; DATA XREF: RAM:93B4o
 		.BYTE $24 ; $
 		.BYTE	0
 		.BYTE	0
@@ -607,7 +615,9 @@ aAceOfCups:	.BYTE "Ace of Cups",0
 		.BYTE	0
 		.BYTE	0
 		.BYTE	1
-unk_79CD:	.BYTE $10		; DATA XREF: RAM:93B6o
+
+i_TheChariotCard:
+		.BYTE $10		; DATA XREF: RAM:93B6o
 		.BYTE $2B ; +
 		.BYTE	0
 		.BYTE	0
@@ -632,7 +642,9 @@ aTheChariotCard:.BYTE "The Chariot (card)",0
 		.BYTE	0
 		.BYTE	0
 		.BYTE	1
-unk_79F8:	.BYTE $10		; DATA XREF: RAM:93B8o
+
+i_StrengthCard:
+		.BYTE $10		; DATA XREF: RAM:93B8o
 		.BYTE $28 ; (
 		.BYTE	0
 		.BYTE	0
@@ -657,7 +669,9 @@ aStrengthCard:	.BYTE "Strength (card)",0
 		.BYTE	0
 		.BYTE	0
 		.BYTE	1
-unk_7A20:	.BYTE $10		; DATA XREF: RAM:93BAo
+
+i_AceOfWandsCard:
+		.BYTE $10		; DATA XREF: RAM:93BAo
 		.BYTE $35 ; 5
 		.BYTE	0
 		.BYTE	0
@@ -698,7 +712,9 @@ aAceOfWands:	.BYTE "Ace of Wands",0
 		.BYTE	0
 		.BYTE	0
 		.BYTE	1
-unk_7A55:	.BYTE $10		; DATA XREF: RAM:93BCo
+
+i_TemperanceCard:
+		.BYTE $10		; DATA XREF: RAM:93BCo
 		.BYTE $2A ; *
 		.BYTE	0
 		.BYTE	0
@@ -723,7 +739,9 @@ aTemperanceCard:.BYTE "Temperance (card)",0
 		.BYTE	0
 		.BYTE	0
 		.BYTE	1
-unk_7A7F:	.BYTE $10		; DATA XREF: RAM:93BEo
+
+i_KingOfWandsCard:
+		.BYTE $10		; DATA XREF: RAM:93BEo
 		.BYTE $46 ; F
 		.BYTE	0
 		.BYTE	0
@@ -768,7 +786,9 @@ aKingOfWands:	.BYTE "King of Wands",0
 aFireInvuln_:	.BYTE "Fire Invuln.",0
 		.BYTE	0
 		.BYTE	1
-unk_7AC5:	.BYTE $10		; DATA XREF: RAM:93C0o
+
+i_PageOfCupsCard:
+		.BYTE $10		; DATA XREF: RAM:93C0o
 		.BYTE $3C ; <
 		.BYTE	0
 		.BYTE	0
@@ -809,7 +829,9 @@ aPageOfCupsCard:.BYTE "Page of Cups (card)",0
 		.BYTE	0
 		.BYTE	0
 		.BYTE	1
-unk_7B01:	.BYTE $10		; DATA XREF: RAM:93C2o
+
+i_AceOfPentaclesCard:
+		.BYTE $10		; DATA XREF: RAM:93C2o
 		.BYTE $29 ; )
 		.BYTE	0
 		.BYTE	0
@@ -834,7 +856,9 @@ aAceOfPentacles:.BYTE "Ace of Pentacles",0
 		.BYTE	0
 		.BYTE	0
 		.BYTE	1
-unk_7B2A:	.BYTE $10		; DATA XREF: RAM:93C4o
+
+i_HighPriestessCard:
+		.BYTE $10		; DATA XREF: RAM:93C4o
 		.BYTE $4E ; N
 		.BYTE	0
 		.BYTE	0
@@ -881,55 +905,21 @@ aProtection:	.BYTE "Protection",0
 		.BYTE	0
 		.BYTE	0
 		.BYTE	1
-unk_7B78:	.BYTE	8		; DATA XREF: RAM:93CCo
-		.BYTE $21 ; !
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE $10
-aColdWand:	.BYTE "Cold Wand",0
-		.BYTE $88 ; à
-		.BYTE $FF
-		.BYTE $44 ; D
-		.BYTE	1
-		.BYTE	1
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	1
-		.BYTE $E7 ; Á
-		.BYTE	0
-		.BYTE	2
-		.BYTE	1
-		.BYTE $66 ; f
-		.BYTE	0
-		.BYTE	0
-unk_7B99:	.BYTE	8		; DATA XREF: RAM:93CEo
-		.BYTE $21 ; !
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
+
+i_ColdWand:
+		.BYTE	$08,$21,$00,$00,$00
+		.BYTE	$10
+aColdWand:	.BYTE	"Cold Wand",0
+		.BYTE	$88,$FF,$44,$01,$01,$00,$00,$00,$00,$01,$E7,$00,$02,$01,$66,$00,$00
+
+i_FireWand:
+		.BYTE	$08,$21,$00,$00,$00
 		.BYTE $10
 aFireWand:	.BYTE "Fire Wand",0
-		.BYTE $88 ; à
-		.BYTE $FF
-		.BYTE $44 ; D
-		.BYTE	1
-		.BYTE	1
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	1
-		.BYTE $E1 ; ·
-		.BYTE	0
-		.BYTE	2
-		.BYTE	7
-		.BYTE $66 ; f
-		.BYTE	0
-		.BYTE	0
-unk_7BBA:	.BYTE	8		; DATA XREF: RAM:93D0o
+		.BYTE	$88,$FF,$44,$01,$01,$00,$00,$00,$00,$01,$E1,$00,$02,$07,$66,$00,$00
+
+i_ParalysisWand:
+		.BYTE	8		; DATA XREF: RAM:93D0o
 		.BYTE $26 ; &
 		.BYTE	0
 		.BYTE	0
@@ -953,7 +943,9 @@ aParalysisWand:	.BYTE "Paralysis Wand",0
 		.BYTE	5
 		.BYTE	0
 		.BYTE	0
-unk_7BE0:	.BYTE $10		; DATA XREF: RAM:93D2o
+
+i_EyeOfVulnerability:
+		.BYTE $10		; DATA XREF: RAM:93D2o
 		.BYTE $2C ; ,
 		.BYTE	0
 		.BYTE	0
@@ -978,7 +970,9 @@ aEyeOfVulnerabi:.BYTE "Eye of Vulnerabilty",0
 		.BYTE	0
 		.BYTE	0
 		.BYTE	3
-unk_7C0C:	.BYTE	8		; DATA XREF: RAM:93D4o
+
+i_LightWand:
+		.BYTE	8		; DATA XREF: RAM:93D4o
 		.BYTE $42 ; B
 		.BYTE	0
 		.BYTE	0
@@ -1029,7 +1023,9 @@ aLight:		.BYTE "Light",0
 		.BYTE	1
 		.BYTE	0
 		.BYTE	0
-unk_7C4E:	.BYTE	8		; DATA XREF: RAM:93D6o
+
+i_HealingWand:
+		.BYTE	8		; DATA XREF: RAM:93D6o
 		.BYTE $24 ; $
 		.BYTE	0
 		.BYTE	0
@@ -1053,7 +1049,8 @@ aHealingWand:	.BYTE "Healing Wand",0
 		.BYTE $32 ; 2
 		.BYTE	0
 		.BYTE	0
-unk_7C72:	.BYTE $10		; DATA XREF: RAM:93A0o
+i_FrostbladeScroll:
+		.BYTE $10		; DATA XREF: RAM:93A0o
 		.BYTE $4A ; J
 		.BYTE	0
 		.BYTE	0
@@ -1100,7 +1097,9 @@ aFrostblade:	.BYTE "Frostblade",0
 		.BYTE	0
 		.BYTE	0
 		.BYTE	1
-unk_7CBC:	.BYTE $10		; DATA XREF: RAM:93A2o
+
+i_FirebladeScroll:
+		.BYTE $10		; DATA XREF: RAM:93A2o
 		.BYTE $49 ; I
 		.BYTE	0
 		.BYTE	0
@@ -1148,7 +1147,9 @@ aFireblade:	.BYTE "Fireblade",0
 		.BYTE	0
 		.BYTE	0
 		.BYTE	1
-unk_7D05:	.BYTE $10		; DATA XREF: RAM:93A4o
+
+i_CloutScroll:
+		.BYTE $10		; DATA XREF: RAM:93A4o
 		.BYTE $45 ; E
 		.BYTE	0
 		.BYTE	0
@@ -1200,7 +1201,9 @@ aClout:		.BYTE "Clout",0
 		.BYTE	0
 		.BYTE	0
 		.BYTE	1
-unk_7D4A:	.BYTE $18		; DATA XREF: RAM:93A6o
+
+i_RenewScroll:
+		.BYTE $18		; DATA XREF: RAM:93A6o
 		.BYTE $18
 		.BYTE	0
 		.BYTE	0
@@ -1212,7 +1215,9 @@ aRenewScroll:	.BYTE "Renew Scroll",0
 		.BYTE	1
 		.BYTE	1
 		.BYTE $10
-unk_7D62:	.BYTE $18		; DATA XREF: RAM:93A8o
+
+i_RemoveCurseScroll:
+		.BYTE $18		; DATA XREF: RAM:93A8o
 		.BYTE $1F
 		.BYTE	0
 		.BYTE	0
@@ -1224,7 +1229,9 @@ aRemoveCurseScr:.BYTE "Remove Curse Scroll",0
 		.BYTE	1
 		.BYTE	6
 		.BYTE	8
-unk_7D81:	.BYTE $10		; DATA XREF: RAM:93AAo
+
+i_WizardEyeScroll:
+		.BYTE $10		; DATA XREF: RAM:93AAo
 		.BYTE $6A ; j
 		.BYTE	0
 		.BYTE	0
@@ -1303,7 +1310,9 @@ aWizardEye:	.BYTE "Wizard Eye",0
 		.BYTE	0
 		.BYTE	0
 		.BYTE	1
-unk_7DEB:	.BYTE $10		; DATA XREF: RAM:93D8o
+
+i_RubyEye:
+		.BYTE $10		; DATA XREF: RAM:93D8o
 		.BYTE $21 ; !
 		.BYTE	0
 		.BYTE	0
@@ -1328,7 +1337,9 @@ aRubyEye:	.BYTE "Ruby Eye",0
 		.BYTE	0
 		.BYTE	0
 		.BYTE	3
-unk_7E0C:	.BYTE $10		; DATA XREF: RAM:93DAo
+
+i_EmeraldEye:
+		.BYTE $10		; DATA XREF: RAM:93DAo
 		.BYTE $24 ; $
 		.BYTE	0
 		.BYTE	0
@@ -1353,7 +1364,9 @@ aEmeraldEye:	.BYTE "Emerald Eye",0
 		.BYTE	0
 		.BYTE	0
 		.BYTE	3
-unk_7E30:	.BYTE $10		; DATA XREF: RAM:93DCo
+
+i_SapphireEye:
+		.BYTE $10		; DATA XREF: RAM:93DCo
 		.BYTE $25 ; %
 		.BYTE	0
 		.BYTE	0
@@ -1378,7 +1391,9 @@ aSapphireEye:	.BYTE "Sapphire Eye",0
 		.BYTE	0
 		.BYTE	0
 		.BYTE	3
-unk_7E55:	.BYTE $10		; DATA XREF: RAM:93DEo
+
+i_AmberEye:
+		.BYTE $10		; DATA XREF: RAM:93DEo
 		.BYTE $22 ; "
 		.BYTE	0
 		.BYTE	0
@@ -1403,7 +1418,9 @@ aAmberEye:	.BYTE "Amber Eye",0
 		.BYTE	0
 		.BYTE	0
 		.BYTE	3
-unk_7E77:	.BYTE $10		; DATA XREF: RAM:93E0o
+
+i_WizardsEye:
+		.BYTE $10		; DATA XREF: RAM:93E0o
 		.BYTE $45 ; E
 		.BYTE	0
 		.BYTE	0
@@ -1450,7 +1467,9 @@ aWizardEye_0:	.BYTE "Wizard Eye",0
 		.BYTE	0
 		.BYTE	0
 		.BYTE	3
-unk_7EBC:	.BYTE $10		; DATA XREF: RAM:93E2o
+
+i_HypnoticEye:
+		.BYTE $10		; DATA XREF: RAM:93E2o
 		.BYTE $25 ; %
 		.BYTE	0
 		.BYTE	0
@@ -1475,7 +1494,9 @@ aHypnoticEye:	.BYTE "Hypnotic Eye",0
 		.BYTE	0
 		.BYTE	0
 		.BYTE	3
-unk_7EE1:	.BYTE $10		; DATA XREF: RAM:93C6o
+
+i_TomeOfKnowledge:
+		.BYTE $10		; DATA XREF: RAM:93C6o
 		.BYTE $2A ; *
 		.BYTE	0
 		.BYTE	0
@@ -1500,7 +1521,9 @@ aTomeOfKnowledg:.BYTE "Tome of Knowledge",0
 		.BYTE	0
 		.BYTE	0
 		.BYTE	1
-unk_7F0B:	.BYTE $10		; DATA XREF: RAM:93C8o
+
+i_TomeOfUnderstanding:
+		.BYTE $10		; DATA XREF: RAM:93C8o
 		.BYTE $2E ; .
 		.BYTE	0
 		.BYTE	0
@@ -1525,7 +1548,9 @@ aTomeOfUndersta:.BYTE "Tome of Understanding",0
 		.BYTE	0
 		.BYTE	0
 		.BYTE	1
-unk_7F39:	.BYTE $10		; DATA XREF: RAM:93CAo
+
+i_TomeOfLeadership:
+		.BYTE $10		; DATA XREF: RAM:93CAo
 		.BYTE $2B ; +
 		.BYTE	0
 		.BYTE	0
@@ -1550,7 +1575,9 @@ aTomeOfLeadersh:.BYTE "Tome of Leadership",0
 		.BYTE	0
 		.BYTE	0
 		.BYTE	1
-unk_7F64:	.BYTE $10		; DATA XREF: RAM:93E4o
+
+i_BronzeHorn:
+		.BYTE $10		; DATA XREF: RAM:93E4o
 		.BYTE $24 ; $
 		.BYTE	0
 		.BYTE	0
@@ -1575,7 +1602,9 @@ aBronzeHorn:	.BYTE "Bronze Horn",0
 		.BYTE	0
 		.BYTE	0
 		.BYTE	7
-unk_7F88:	.BYTE $10		; DATA XREF: RAM:93E6o
+
+i_SilverHorn:
+		.BYTE $10		; DATA XREF: RAM:93E6o
 		.BYTE $24 ; $
 		.BYTE	0
 		.BYTE	0
@@ -1600,7 +1629,9 @@ aSilverHorn:	.BYTE "Silver Horn",0
 		.BYTE	0
 		.BYTE	0
 		.BYTE	7
-unk_7FAC:	.BYTE $10		; DATA XREF: RAM:93E8o
+
+i_GoldHorn:
+		.BYTE $10		; DATA XREF: RAM:93E8o
 		.BYTE $22 ; "
 		.BYTE	0
 		.BYTE	0
@@ -1625,7 +1656,9 @@ aGoldHorn:	.BYTE "Gold Horn",0
 		.BYTE	0
 		.BYTE	0
 		.BYTE	7
-unk_7FCE:	.BYTE $10		; DATA XREF: RAM:93EAo
+
+i_GoldHorn2:
+		.BYTE $10		; DATA XREF: RAM:93EAo
 		.BYTE $22 ; "
 		.BYTE	0
 		.BYTE	0
@@ -2471,7 +2504,8 @@ unk_8531:	.BYTE	6		; DATA XREF: RAM:9470o	RAM:9E8Ao
 aPotionOfAntido:.BYTE "Potion of Antidote",0
 		.BYTE	0
 		.BYTE $82 ; Ç
-unk_854C:	.BYTE $16		; DATA XREF: RAM:9472o	RAM:9E8Co
+i_PotionRestoration:
+		.BYTE $16		; DATA XREF: RAM:9472o	RAM:9E8Co
 		.BYTE $2D ; -
 		.BYTE	0
 		.BYTE	0
@@ -2583,7 +2617,9 @@ aPotionOfInebri:.BYTE "Potion of Inebriation",0
 		.BYTE $FF
 		.BYTE	0
 		.BYTE	0
-unk_8608:	.BYTE	3		; DATA XREF: RAM:93ECo
+
+i_CrystalShield:
+		.BYTE	3		; DATA XREF: RAM:93ECo
 		.BYTE $49 ; I
 		.BYTE	0
 		.BYTE	0
@@ -2642,7 +2678,9 @@ aCrystalShield:	.BYTE "Crystal Shield",0
 		.BYTE $FF
 		.BYTE $AA ; ™
 		.BYTE $60 ; `
-unk_8651:	.BYTE	3		; DATA XREF: RAM:93EEo
+
+i_ShieldOfGalahad:
+		.BYTE	3		; DATA XREF: RAM:93EEo
 		.BYTE $5C ; \
 		.BYTE	0
 		.BYTE $90 ; ê
@@ -2717,7 +2755,9 @@ aShieldOfGalaha:.BYTE "Shield of Galahad",0
 		.BYTE $FF
 		.BYTE $AA ; ™
 		.BYTE $70 ; p
-unk_86AD:	.BYTE	3		; DATA XREF: RAM:93F0o
+
+i_SpikedShield:
+		.BYTE	3		; DATA XREF: RAM:93F0o
 		.BYTE $28 ; (
 		.BYTE	0
 		.BYTE	0
@@ -2744,7 +2784,9 @@ aSpikedShield:	.BYTE "Spiked Shield",0
 		.BYTE $32 ; 2
 		.BYTE $AA ; ™
 		.BYTE $60 ; `
-unk_86D5:	.BYTE	3		; DATA XREF: RAM:93F2o
+
+i_ShieldOfMordred:
+		.BYTE	3		; DATA XREF: RAM:93F2o
 		.BYTE $5C ; \
 		.BYTE	0
 		.BYTE $70 ; p
@@ -2819,7 +2861,9 @@ aShieldOfMordre:.BYTE "Shield of Mordred",0
 		.BYTE $FF
 		.BYTE $AA ; ™
 		.BYTE $60 ; `
-unk_8731:	.BYTE	3		; DATA XREF: RAM:93F4o
+
+i_SpiritShield:
+		.BYTE	3		; DATA XREF: RAM:93F4o
 		.BYTE $48 ; H
 		.BYTE	0
 		.BYTE	0
@@ -2878,7 +2922,9 @@ aSpiritShield:	.BYTE "Spirit Shield",0
 		.BYTE $FF
 		.BYTE $82 ; Ç
 		.BYTE $70 ; p
-unk_8779:	.BYTE	3		; DATA XREF: RAM:93F6o
+
+i_IronwoodBoken:
+		.BYTE	3		; DATA XREF: RAM:93F6o
 		.BYTE $49 ; I
 		.BYTE	0
 		.BYTE	0
@@ -2937,7 +2983,9 @@ aIronwoodBoken:	.BYTE "Ironwood Boken",0
 		.BYTE $30 ; 0
 		.BYTE $82 ; Ç
 		.BYTE $30 ; 0
-unk_87C2:	.BYTE	3		; DATA XREF: RAM:93F8o
+
+i_IronFan:
+		.BYTE	3		; DATA XREF: RAM:93F8o
 		.BYTE $23 ; #
 		.BYTE	0
 		.BYTE	0
@@ -2964,7 +3012,9 @@ aIronFan:	.BYTE "Iron Fan",0
 		.BYTE $20
 		.BYTE $8A ; ä
 		.BYTE $58 ; X
-unk_87E5:	.BYTE	3		; DATA XREF: RAM:93FAo
+
+i_TowerShield:
+		.BYTE	3		; DATA XREF: RAM:93FAo
 		.BYTE $27
 		.BYTE	0
 		.BYTE	0
@@ -2991,7 +3041,9 @@ aTowerShield:	.BYTE "Tower Shield",0
 		.BYTE $80 ; Ä
 		.BYTE $AA ; ™
 		.BYTE $80 ; Ä
-unk_880C:	.BYTE	3		; DATA XREF: RAM:93FCo
+
+i_Crossbow:
+		.BYTE	3		; DATA XREF: RAM:93FCo
 		.BYTE $28 ; (
 		.BYTE	0
 		.BYTE	0
@@ -3278,7 +3330,7 @@ aPantherGloves:	.BYTE "Panther Gloves",0
 		.BYTE $11
 		.BYTE $40 ; @
 		.BYTE $40 ; @
-unk_897D:	.BYTE	4		; DATA XREF: RAM:940Co
+i_HelmOfLight:	.BYTE	4		; DATA XREF: RAM:940Co
 		.BYTE $43 ; C
 		.BYTE	0
 		.BYTE	0
@@ -3540,7 +3592,8 @@ aTruesilverHelm:.BYTE "Truesilver helm",0
 		.BYTE $21 ; !
 		.BYTE $F0 ; 
 		.BYTE $F0 ; 
-unk_8AFC:	.BYTE	4		; DATA XREF: RAM:941Eo
+i_TruesilverCoat:
+		.BYTE	4		; DATA XREF: RAM:941Eo
 		.BYTE $25 ; %
 		.BYTE	0
 		.BYTE	0
@@ -4233,7 +4286,7 @@ aBloodstone:	.BYTE "Bloodstone",0
 		.BYTE	0
 		.BYTE	2
 		.BYTE	8
-		.BYTE	5
+i_WingedSandals:.BYTE	5
 		.BYTE $38 ; 8
 		.BYTE	0
 		.BYTE	0
@@ -4275,6 +4328,7 @@ aWingedSandals:	.BYTE "Winged Sandals",0
 		.BYTE	0
 		.BYTE	8
 		.BYTE	0
+i_MorganasTiara:
 		.BYTE	5
 		.BYTE $29 ; )
 		.BYTE	0
@@ -4301,6 +4355,8 @@ aMorganaSTiara:	.BYTE "Morgana's Tiara",0
 		.BYTE	0
 		.BYTE  $B
 		.BYTE	1
+
+i_CloakOfLevitation:
 		.BYTE	5
 		.BYTE $3D ; =
 		.BYTE	0
@@ -4343,6 +4399,8 @@ aCloakOfLevitat:.BYTE "Cloak of Levitation",0
 		.BYTE	0
 		.BYTE	4
 		.BYTE	1
+
+i_CrystalBreastplate:
 		.BYTE	4
 		.BYTE $29 ; )
 		.BYTE	0
@@ -4969,53 +5027,53 @@ aBeamWeapon25:	.BYTE "Beam Weapon [25]",0
 		.BYTE $30 ; 0
 		.BYTE	5
 		.BYTE $FF
-		.WORD unk_7C72
-		.WORD unk_7CBC
-		.WORD unk_7D05
-		.WORD unk_7D4A
-		.WORD unk_7D62
-		.WORD unk_7D81
-		.WORD unk_78E6
-		.WORD unk_790E
-		.WORD unk_7956
-		.WORD unk_7984
-		.WORD unk_79A9
-		.WORD unk_79CD
-		.WORD unk_79F8
-		.WORD unk_7A20
-		.WORD unk_7A55
-		.WORD unk_7A7F
-		.WORD unk_7AC5
-		.WORD unk_7B01
-		.WORD unk_7B2A
-		.WORD unk_7EE1
-		.WORD unk_7F0B
-		.WORD unk_7F39
-		.WORD unk_7B78
-		.WORD unk_7B99
-		.WORD unk_7BBA
-		.WORD unk_7BE0
-		.WORD unk_7C0C
-		.WORD unk_7C4E
-		.WORD unk_7DEB
-		.WORD unk_7E0C
-		.WORD unk_7E30
-		.WORD unk_7E55
-		.WORD unk_7E77
-		.WORD unk_7EBC
-		.WORD unk_7F64
-		.WORD unk_7F88
-		.WORD unk_7FAC
-		.WORD unk_7FCE
-		.WORD unk_8608
-		.WORD unk_8651
-		.WORD unk_86AD
-		.WORD unk_86D5
-		.WORD unk_8731
-		.WORD unk_8779
-		.WORD unk_87C2
-		.WORD unk_87E5
-		.WORD unk_880C
+		.WORD	i_FrostbladeScroll
+		.WORD	i_FirebladeScroll
+		.WORD	i_CloutScroll
+		.WORD	i_RenewScroll
+		.WORD	i_RemoveCurseScroll
+		.WORD	i_WizardEyeScroll
+		.WORD	i_TheStarCard
+		.WORD	i_TheFoolCard
+		.WORD	i_TheHeirophantCard
+		.WORD	i_DeathCard
+		.WORD	i_AceOfCupsCard
+		.WORD	i_TheChariotCard
+		.WORD	i_StrengthCard
+		.WORD	i_AceOfWandsCard
+		.WORD	i_TemperanceCard
+		.WORD	i_KingOfWandsCard
+		.WORD	i_PageOfCupsCard
+		.WORD	i_AceOfPentaclesCard
+		.WORD	i_HighPriestessCard
+		.WORD	i_TomeOfKnowledge
+		.WORD	i_TomeOfUnderstanding
+		.WORD	i_TomeOfLeadership
+		.WORD	i_ColdWand
+		.WORD	i_FireWand
+		.WORD	i_ParalysisWand
+		.WORD	i_EyeOfVulnerability
+		.WORD	i_LightWand
+		.WORD	i_HealingWand
+		.WORD	i_RubyEye
+		.WORD	i_EmeraldEye
+		.WORD	i_SapphireEye
+		.WORD	i_AmberEye
+		.WORD	i_WizardsEye
+		.WORD	i_HypnoticEye
+		.WORD	i_BronzeHorn
+		.WORD	i_SilverHorn
+		.WORD	i_GoldHorn
+		.WORD	i_GoldHorn2
+		.WORD	i_CrystalShield
+		.WORD	i_ShieldOfGalahad
+		.WORD	i_SpikedShield
+		.WORD	i_ShieldOfMordred
+		.WORD	i_SpiritShield
+		.WORD	i_IronwoodBoken
+		.WORD	i_IronFan
+		.WORD	i_TowerShield
+		.WORD	i_Crossbow
 		.WORD unk_8834
 		.WORD unk_8856
 		.WORD unk_888B
@@ -5023,7 +5081,7 @@ aBeamWeapon25:	.BYTE "Beam Weapon [25]",0
 		.WORD unk_88FB
 		.WORD unk_891A
 		.WORD unk_8939
-		.WORD unk_897D
+		.WORD	i_HelmOfLight
 		.WORD unk_89C0
 		.WORD unk_89E8
 		.WORD unk_8A2C
@@ -5032,7 +5090,7 @@ aBeamWeapon25:	.BYTE "Beam Weapon [25]",0
 		.WORD unk_8A95
 		.WORD unk_8AB6
 		.WORD unk_8AD7
-		.WORD unk_8AFC
+		.WORD	i_TruesilverCoat
 		.WORD unk_8B21
 		.WORD unk_8B4B
 		.WORD unk_8B74
@@ -5074,7 +5132,7 @@ aBeamWeapon25:	.BYTE "Beam Weapon [25]",0
 		.WORD unk_84C7
 		.WORD unk_8515
 		.WORD unk_8531
-		.WORD unk_854C
+		.WORD	i_PotionRestoration
 		.WORD unk_8579
 		.WORD unk_85A2
 		.WORD unk_85DB
@@ -5090,15 +5148,15 @@ unk_9480:	.BYTE $93 ; ì		; DATA XREF: sub_769B+2Cr
 		.BYTE $94 ; î
 		.BYTE $94 ; î
 		.BYTE $94 ; î
-unk_9486:	.BYTE $E6 ; Ê		; DATA XREF: RAM:764Fr
-		.BYTE $6F ; o
-		.BYTE $4C ; L
-		.BYTE $A7 ; ß
-		.BYTE $7D ; }
-		.BYTE $FC ; ¸
-		.BYTE $D0 ; –
-		.BYTE  $D
-		.BYTE $C5 ; ≈
+unk_9486:	.BYTE	<i_TheStarCard	; DATA XREF: RAM:764Fr
+		.BYTE	<i_WingedSandals
+		.BYTE	<i_PotionRestoration
+		.BYTE	<i_MorganasTiara
+		.BYTE	<i_HelmOfLight
+		.BYTE	<i_TruesilverCoat
+		.BYTE	<i_CloakOfLevitation
+		.BYTE	<i_CrystalBreastplate
+		.BYTE	<i_PageOfCupsCard
 		.BYTE $36 ; 6
 		.BYTE $9E ; û
 		.BYTE $84 ; Ñ
@@ -5122,15 +5180,15 @@ unk_9486:	.BYTE $E6 ; Ê		; DATA XREF: RAM:764Fr
 		.BYTE  $A
 		.BYTE $35 ; 5
 		.BYTE $75 ; u
-unk_94A6:	.BYTE $78 ; x		; DATA XREF: RAM:7652r
-		.BYTE $8F ; è
-		.BYTE $85 ; Ö
-		.BYTE $8F ; è
-		.BYTE $89 ; â
-		.BYTE $8A ; ä
-		.BYTE $8F ; è
-		.BYTE $90 ; ê
-		.BYTE $7A ; z
+unk_94A6:	.BYTE	>i_TheStarCard	; DATA XREF: RAM:7652r
+		.BYTE	>i_WingedSandals
+		.BYTE	>i_PotionRestoration
+		.BYTE	>i_MorganasTiara
+		.BYTE	>i_HelmOfLight
+		.BYTE	>i_TruesilverCoat
+		.BYTE	>i_CloakOfLevitation
+		.BYTE	>i_CrystalBreastplate
+		.BYTE	>i_PageOfCupsCard
 		.BYTE $90 ; ê
 		.BYTE $92 ; í
 		.BYTE $79 ; y
@@ -5307,60 +5365,49 @@ unk_9557:	.BYTE $8E ; é		; DATA XREF: RAM:7680r
 		.BYTE $8E ; é
 		.BYTE $8F ; è
 		.BYTE $8F ; è
-byte_955F:	.BYTE 0			; DATA XREF: RAM:9C35o	RAM:9C5Cw ...
-byte_9560:	.BYTE 0			; DATA XREF: RAM:9C61w	RAM:9C70w
+off_955F:	.WORD	0		; DATA XREF: RAM:9C35o	RAM:9C5Cw ...
+
+byte_9561:
 		.BYTE $A8,$FF
 
 a_TrumpCard:
 		MOVEXY	0,2
 		.BYTE	$A5,"Sealed in an envelope is a trump card.",$D,$FF
 
+a_Sandals:
 		MOVEXY	0,1
-aAPowerfulButFe:.BYTE	$A5,"A powerful but feminine voice says:",$D,$D
-aForThyVictoryI:.BYTE	$A5,$22,"For thy victory I give thee these",$D
-aSandalsToMakeT:.BYTE	$A5,"sandals to make thee quick and agile.",$22,$D,$FF
+		.BYTE	$A5,"A powerful but feminine voice says:",$D,$D
+		.BYTE	$A5,$22,"For thy victory I give thee these",$D
+		.BYTE	$A5,"sandals to make thee quick and agile.",$22,$D,$FF
 
-		.BYTE $A6,  0,	2
-		.BYTE $A5
-aAfterSomePryin:.BYTE "After some prying, a small chest"
-		.BYTE $D
-		.BYTE $A5
-aOpensToRevealA:.BYTE "opens to reveal a potion vial."
-		.BYTE $D
-		.BYTE $FF
-		.BYTE $A6,  0,	2
-		.BYTE $A5
-aYouFindADainty:.BYTE "You find a dainty little crown."
-		.BYTE $D
-		.BYTE $FF
-		.BYTE $A6,  0,	2
-		.BYTE $A5
-aAHelmGlowingWi:.BYTE "A helm glowing with runes floats"
-		.BYTE $D
-		.BYTE $A5
-aInMidairBefore:.BYTE "in midair before you."
-		.BYTE $D
-		.BYTE $FF
-		.BYTE $A6,  0,	2
-		.BYTE $A5
-aAChainMailCoat:.BYTE "A chain-mail coat gleems with an"
-		.BYTE $D
-		.BYTE $A5
-aAlmostMagicalL:.BYTE "almost magical lustre."
-		.BYTE $D
-		.BYTE $FF
-		.BYTE $A6,  0,	3
-		.BYTE $A5
-aACloakDancesTo:.BYTE "A cloak dances to and fro before you.",$D ; DATA XREF: RAM:7632w
-		.BYTE $FF
-		.BYTE $A6,  0,	2
-		.BYTE $A5
-aThereIsAGliste:.BYTE "There is a glistening breastplate that"
-		.BYTE $D
-		.BYTE $A5
-aLooksAsIfItWas:.BYTE "looks as if it was made just for you."
-		.BYTE $D
-		.BYTE $FF
+a_Potion:
+		MOVEXY	0,2
+		.BYTE	$A5,"After some prying, a small chest",$D
+		.BYTE	$A5,"opens to reveal a potion vial.",$D,$FF
+
+a_Crown:
+		MOVEXY	0,2
+		.BYTE	$A5,"You find a dainty little crown.",$D,$FF
+
+a_Helm:
+		MOVEXY	0,2
+		.BYTE	$A5,"A helm glowing with runes floats",$D
+		.BYTE	$A5,"in midair before you.",$D,$FF
+
+a_Chainmail:
+		MOVEXY	0,2
+		.BYTE	$A5,"A chain-mail coat gleems with an",$D
+		.BYTE	$A5,"almost magical lustre.",$D,$FF
+
+a_Cloak:
+		MOVEXY	0,3
+		.BYTE	$A5,"A cloak dances to and fro before you.",$D,$FF
+
+a_Breastplate:
+		MOVEXY	0,2
+		.BYTE $A5,"There is a glistening breastplate that",$D
+		.BYTE $A5,"looks as if it was made just for you.",$D,$FF
+
 		.BYTE $A6,  0,	2
 		.BYTE $A5
 aAStraightSingl:.BYTE "A straight, single-edged, evil-looking"
@@ -5489,50 +5536,32 @@ aMechanicalWork:.BYTE "mechanical workmanship lies here."
 		.BYTE $D
 		.BYTE $FF
 		.BYTE $A6,  0,	2
-		.BYTE $A5
-aABlueVioletQua:.BYTE "A blue-violet quartz rod lies"
-		.BYTE $D
-		.BYTE $A5
-aOnAPurpleDais_:.BYTE "on a purple dais."
-		.BYTE $D
-		.BYTE $FF
+aABlueVioletQua:.BYTE $A5,"A blue-violet quartz rod lies",$D
+aOnAPurpleDais_:.BYTE $A5,"on a purple dais.",$D,$FF
 		.BYTE $A3
 		.WORD loc_9C5A
 		.BYTE $A6,  0,	0
-		.BYTE $A5
-aANoteReads:	.BYTE "A note reads:"
-		.BYTE $D
+aANoteReads:	.BYTE $A5,"A note reads:",$D
 		.BYTE $B3
 		.WORD $6321
 		.BYTE $19
-		.BYTE ","
-		.BYTE $D
-		.BYTE $D
+		.BYTE ",",$D,$D
 aCongratulation:.BYTE "   Congratulations my good "
 		.BYTE $B4
-		.WORD byte_955F
+		.WORD off_955F
 		.BYTE 5
-aOn:		.BYTE " on"
-		.BYTE $D
-aGettingThisFar:.BYTE "getting this far."
-		.BYTE $D
-		.BYTE $D
+aOn:		.BYTE " on",$D
+aGettingThisFar:.BYTE "getting this far.",$D,$D
 		.BYTE $A7
 aAFriend:	.BYTE "A friend",$D
 		.BYTE $FF
 ; ---------------------------------------------------------------------------
 
 loc_9C5A:				; DATA XREF: RAM:9BFEo
-		LDA	#$74 ; 't'
-		STA	byte_955F
-		LDA	#$9C ; 'ú'
-		STA	byte_9560
+		dldi	off_955F, aMan
 		BIT	$633B
 		BPL	locret_9C73
-		LDA	#$78 ; 'x'
-		STA	byte_955F
-		LDA	#$9C ; 'ú'
-		STA	byte_9560
+		dldi	off_955F, aWoman
 
 locret_9C73:				; CODE XREF: RAM:9C67j
 		RTS
@@ -5570,12 +5599,12 @@ aAnEnergyPistol:.BYTE	$A5,"An energy pistol is hanging",$D
 aOnAWallRack_:	.BYTE	$A5,"on a wall rack.",$D,$FF
 
 unk_9E2E:	.BYTE	<a_TrumpCard	; DATA XREF: RAM:7645r
-		.BYTE $8F ; è
-		.BYTE	5
-		.BYTE $4B ; K
-		.BYTE $70 ; p
-		.BYTE $AD ; ≠
-		.BYTE $EB ; Î
+		.BYTE	<a_Sandals
+		.BYTE	<a_Potion
+		.BYTE	<a_Crown
+		.BYTE	<a_Helm
+		.BYTE	<a_Chainmail
+		.BYTE	<a_Cloak
 		.BYTE $16
 		.BYTE $63 ; c
 		.BYTE $69 ; i
@@ -5602,12 +5631,12 @@ unk_9E2E:	.BYTE	<a_TrumpCard	; DATA XREF: RAM:7645r
 		.BYTE $9E ; û
 		.BYTE $FC ; ¸
 unk_9E4E:	.BYTE	>a_TrumpCard	; DATA XREF: RAM:764Ar
-		.BYTE $95 ; ï
-		.BYTE $96 ; ñ
-		.BYTE $96 ; ñ
-		.BYTE $96 ; ñ
-		.BYTE $96 ; ñ
-		.BYTE $96 ; ñ
+		.BYTE	>a_Sandals
+		.BYTE	>a_Potion
+		.BYTE	>a_Crown
+		.BYTE	>a_Helm
+		.BYTE	>a_Chainmail
+		.BYTE	>a_Cloak
 		.BYTE $97 ; ó
 		.BYTE $95 ; ï
 		.BYTE $97 ; ó
@@ -5648,7 +5677,7 @@ unk_9E4E:	.BYTE	>a_TrumpCard	; DATA XREF: RAM:764Ar
 		.WORD unk_84C7
 		.WORD unk_8515
 		.WORD unk_8531
-		.WORD unk_854C
+		.WORD 	i_PotionRestoration
 		.WORD unk_8579
 		.WORD unk_85A2
 		.WORD unk_85DB
