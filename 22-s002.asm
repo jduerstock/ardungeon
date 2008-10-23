@@ -85,9 +85,9 @@ loc_76A3:				; CODE XREF: RAM:7691j
 		LDA	#$10
 		JSR	$1878
 		LDX	$63
-		LDA	$79F7,X
+		LDA	byte_79F7,X
 		PHA
-		LDA	$79F4,X
+		LDA	byte_79F4,X
 		PHA
 		RTS
 ; ---------------------------------------------------------------------------
@@ -107,6 +107,8 @@ loc_76C2:				; CODE XREF: RAM:76C9j
 		STX	$AC00
 		JMP	$180C
 ; ---------------------------------------------------------------------------
+
+loc_76D1:
 		LDA	$6347
 		CMP	$6345
 		BNE	loc_76E4
@@ -136,6 +138,8 @@ loc_7700:				; CODE XREF: RAM:76A0j	RAM:771Ej ...
 		JSR	sub_774E
 		JMP	loc_764F
 ; ---------------------------------------------------------------------------
+
+loc_7706:
 		LDA	#$81 ; 'Ѓ'
 		STA	$51
 		JSR	$1893
@@ -148,6 +152,8 @@ loc_7700:				; CODE XREF: RAM:76A0j	RAM:771Ej ...
 		JSR	$1851
 		JMP	loc_7700
 ; ---------------------------------------------------------------------------
+
+loc_7721:
 		LDA	#$FF
 		STA	$639B
 		LDA	#2
@@ -170,7 +176,7 @@ loc_773A:				; CODE XREF: RAM:76E1j
 		JSR	$1851
 		JMP	loc_7700
 
-; ЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫ S U B	R O U T	I N E ЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫ
+; --------------- S U B	R O U T	I N E ---------------------------------------
 
 
 sub_774E:				; CODE XREF: RAM:loc_7700p
@@ -180,24 +186,17 @@ sub_774E:				; CODE XREF: RAM:loc_7700p
 ; End of function sub_774E
 
 ; ---------------------------------------------------------------------------
-		.BYTE $A6,  0,	1
+		MOVEXY	0,1
 		.BYTE $A5
 		.BYTE $B4
 		.WORD byte_778E
 		.BYTE $28
 		.BYTE $D
-		.BYTE $A6,  5,	3
-aDoYou:		.BYTE "Do you ("
-		.BYTE $A1
-a1:		.BYTE "1"
-		.BYTE $A0
-aTakeADrinkOr:	.BYTE ") Take a drink or"
-		.BYTE $A6, $C,	4
-		.BYTE "("
-		.BYTE $A1
-a0:		.BYTE "0"
-		.BYTE $A0
-aLeaveq:	.BYTE ") Leave?"
+		MOVEXY	5,3
+aDoYou:		.BYTE "Do you "
+		MenuItem "1","Take a drink or"
+		MOVEXY	12,4
+		MenuItem "0","Leave?"
 		.BYTE $FF
 byte_778E:	.BYTE $FF		; DATA XREF: RAM:7654w	RAM:775Bo
 byte_778F:	.BYTE $FF		; DATA XREF: RAM:765Aw
@@ -223,78 +222,59 @@ aYouInARoomWith:.BYTE "You in a room with a sparkling fountain.",0
 		.WORD byte_7965
 		.WORD byte_7986
 		.WORD byte_79C0
-byte_7827:	.BYTE $A6,  0,	3	; DATA XREF: RAM:780Fo
-		.BYTE $A5
-aYouFeelMuchBet:.BYTE "You feel much better!",$D
-		.BYTE $FF
-byte_7842:	.BYTE $A6,  0,	3	; DATA XREF: RAM:7811o
-		.BYTE $A5
-aAhhNowYouFeelM:.BYTE "Ahh!  Now you feel much better!",$D
-		.BYTE $FF
-byte_7867:	.BYTE $A6,  0,	3	; DATA XREF: RAM:7813o
-		.BYTE $A5
-aYouFeelRejuven:.BYTE "You feel rejuvenated!",$D
-		.BYTE $FF
-byte_7882:	.BYTE $A6,  0,	3	; DATA XREF: RAM:7815o
-		.BYTE $A5
-aYourHealthImpr:.BYTE "Your health improves rapidly!",$D
-		.BYTE $FF
-byte_78A5:	.BYTE $A6,  0,	2	; DATA XREF: RAM:7817o
-		.BYTE $A5
-aYouFeelAWaveOf:.BYTE "You feel a wave of relief"
-		.BYTE $D
-		.BYTE $D
-		.BYTE $A5
-aSweepOverYou:	.BYTE "sweep over you!",$D
-		.BYTE $FF
-byte_78D6:	.BYTE $A6,  0,	3	; DATA XREF: RAM:7819o
-		.BYTE $A5
-aEveryCellInYou:.BYTE "Every cell in your body seems purified!"
-		.BYTE $D
-		.BYTE $FF
-byte_7903:	.BYTE $A6,  0,	3	; DATA XREF: RAM:781Bo
-		.BYTE $A5
-aAllOfASuddenYo:.BYTE "All of a sudden you feel very rested!",$D
-		.BYTE $FF
-byte_792E:	.BYTE $A6,  0,	3	; DATA XREF: RAM:781Do
-		.BYTE $A5
-aYouFeelRevital:.BYTE "You feel revitalized!",$D
-		.BYTE $FF
-byte_7949:	.BYTE $A6,  0,	3	; DATA XREF: RAM:781Fo
-		.BYTE $A5
-aYourFatigueVan:.BYTE "Your fatigue vanishes!",$D
-		.BYTE $FF
-byte_7965:	.BYTE $A6,  0,	3	; DATA XREF: RAM:7821o
-		.BYTE $A5
-aTheWaterTastes:.BYTE "The water tastes delicious!",$D
-		.BYTE $FF
-byte_7986:	.BYTE $A6,  0,	2	; DATA XREF: RAM:7823o
-		.BYTE $A5
-aTheWaterIsCool:.BYTE "The water is cool, clear and"
-		.BYTE $D
-		.BYTE $D
-		.BYTE $A5
-aReallyHitsTheS:.BYTE "really hits the spot!",$D
-		.BYTE $FF
-byte_79C0:	.BYTE $A6,  0,	2	; DATA XREF: RAM:7825o
-		.BYTE $A5
-aAhhTheWaterTas:.BYTE "Ahh!  The water tastes"
-		.BYTE $D
-		.BYTE $D
-		.BYTE $A5
-aAbsolutelyMarv:.BYTE "absolutely marvelous!",$D
-		.BYTE $FF
-		.BYTE $D0 ; Р
-		.BYTE	5
-		.BYTE $20
-		.BYTE $76 ; v
-		.BYTE $77 ; w
-		.BYTE $77 ; w
-		.BYTE $A6,  0,	2
-		.BYTE $A5
-aYouAreTooBloat:.BYTE "You are too bloated to drink!"
-		.BYTE $D
-		.BYTE $FF
+
+byte_7827:	MOVEXY	0,3
+		.BYTE	$A5,"You feel much better!",$D,$FF
+
+byte_7842:	MOVEXY	0,3
+		.BYTE	$A5,"Ahh!  Now you feel much better!",$D,$FF
+
+byte_7867:	MOVEXY	0,3
+		.BYTE	$A5,"You feel rejuvenated!",$D,$FF
+
+byte_7882:	MOVEXY	0,3
+		.BYTE	$A5,"Your health improves rapidly!",$D,$FF
+
+byte_78A5:	MOVEXY	0,2
+		.BYTE	$A5,"You feel a wave of relief",$D,$D
+		.BYTE	$A5,"sweep over you!",$D,$FF
+
+byte_78D6:	MOVEXY	0,3
+		.BYTE	$A5,"Every cell in your body seems purified!",$D,$FF
+
+byte_7903:	MOVEXY	0,3
+		.BYTE	$A5,"All of a sudden you feel very rested!",$D,$FF
+
+byte_792E:	MOVEXY	0,3
+		.BYTE	$A5,"You feel revitalized!",$D,$FF
+
+byte_7949:	MOVEXY	0,3
+		.BYTE	$A5,"Your fatigue vanishes!",$D,$FF
+
+byte_7965:	MOVEXY	0,3
+		.BYTE	$A5,"The water tastes delicious!",$D,$FF
+
+byte_7986:	MOVEXY	0,2
+		.BYTE	$A5,"The water is cool, clear and",$D,$D
+		.BYTE	$A5,"really hits the spot!",$D,$FF
+
+byte_79C0:	MOVEXY	0,2
+		.BYTE	$A5,"Ahh!  The water tastes",$D,$D
+		.BYTE	$A5,"absolutely marvelous!",$D,$FF
+
+byte_79F4:
+		.BYTE	<(loc_76D1-1)
+		.BYTE	<(loc_7706-1)
+		.BYTE	<(loc_7721-1)
+
+byte_79F7:
+		.BYTE	>(loc_76D1-1)
+		.BYTE	>(loc_7706-1)
+		.BYTE	>(loc_7721-1)
+
+		MOVEXY	0,2
+		.BYTE	$A5,"You are too bloated to drink!",$D,$FF
+
 unk_7A1D:	.BYTE $70 ; p		; DATA XREF: RAM:7A4Do
 		.BYTE $70 ; p
 		.BYTE $30 ; 0
@@ -2689,7 +2669,7 @@ byte_7C70:	.BYTE 0			; DATA XREF: RAM:loc_7C36w RAM:7C46r ...
 		.BYTE $30 ; 0
 		.BYTE	0
 		.BYTE	7
-		.BYTE $DB ; Ы
+		.BYTE $DB ; -
 		.BYTE $E0 ; а
 		.BYTE $10
 		.BYTE	0
