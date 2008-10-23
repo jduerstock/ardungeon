@@ -319,240 +319,125 @@ byte_AA7A:	MOVEXY	0,1
 		.BYTE	$A5,"Be careful when dealing with",$D,$D
 		.BYTE	$A5,$22,"Honest",$22," Omar and his brother Jeff.",$D,$FF
 
-byte_AAC2:	.BYTE $A6,  0,	2	; DATA XREF: RAM:9F70o
-		.BYTE $A5
-aTheDwarfLovesS:.BYTE "The Dwarf loves sparkling gems."
-		.BYTE $D
-		.BYTE $FF
-byte_AAE7:	.BYTE $A6,  0,	2	; DATA XREF: RAM:9F72o
-		.BYTE $A5
-aGreedyAdventur:.BYTE "Greedy adventurers are often visited by"
-		.BYTE $D
-		.BYTE $D
-		.BYTE $A5
-aByTheDevourer:	.BYTE "by the Devourer!"
-		.BYTE $D
-		.BYTE $FF
-byte_AB27:	.BYTE $A6,  0,	2	; DATA XREF: RAM:9F74o
-		.BYTE $A5
-aReadTheGuidebo:.BYTE "Read the Guidebook thoroughly!"
-		.BYTE $D
-		.BYTE $FF
-byte_AB4B:	.BYTE $A6,  0,	2	; DATA XREF: RAM:9F76o
-		.BYTE $A5
-aSermonsAreGood:.BYTE "Sermons are good for your soul."
-		.BYTE $D
-		.BYTE $FF
-byte_AB70:	.BYTE $A6,  0,	2	; DATA XREF: RAM:9F78o
-		.BYTE $A5
-aAboutHalfTheRu:.BYTE "About half the rumors you hear"
-		.BYTE $D
-		.BYTE $D
-		.BYTE $A5
-aInTheDungeonAr:.BYTE "in the Dungeon are false."
-		.BYTE $D
-		.BYTE $FF
-byte_ABB0:	.BYTE $A6,  0,	2	; DATA XREF: RAM:9F7Ao
-		.BYTE $A5
-aBewareTheScrea:.BYTE "Beware the screamer that"
-		.BYTE $D
-		.BYTE $D
-		.BYTE $A5
-aWalksOnTheWind:.BYTE "walks on the wind."
-		.BYTE $D
-		.BYTE $FF
-byte_ABE3:	.BYTE $A6,  0,	3	; DATA XREF: RAM:9F7Co
-		.BYTE $A5
-aLockedDoorsReq:.BYTE "Locked doors require skill to pass."
-		.BYTE $D
-		.BYTE $FF
-byte_AC0C:	.BYTE $A6,  0,	3	; DATA XREF: RAM:9F7Eo
-		.BYTE $A5
-aMuggersCanMake:.BYTE "Muggers can make powerful allies."
-		.BYTE $D
-		.BYTE $FF
-byte_AC33:	.BYTE $A6,  0,	2	; DATA XREF: RAM:9F80o
-		.BYTE $A5
-aOccumGetsTheBe:.BYTE "Occum gets the best weapons for his shop"
-		.BYTE $D
-		.BYTE $D
-		.BYTE $A5
-aByCapturingThe:.BYTE "by capturing them in a clever trap."
-		.BYTE $D
-		.BYTE $FF
-byte_AC87:	.BYTE $A6,  0,	2	; DATA XREF: RAM:9F82o
-		.BYTE $A5
-aKeepAnEyeOnYou:.BYTE "Keep an eye on your purse"
-		.BYTE $D
-		.BYTE $D
-		.BYTE $A5
-aIfYouSleepAtTh:.BYTE "if you sleep at the Sanctuary."
-		.BYTE $D
-		.BYTE $FF
-byte_ACC7:	.BYTE $A6,  0,	2	; DATA XREF: RAM:9F84o
-		.BYTE $A5
-aThereAreMagica:.BYTE "There are magical baths"
-		.BYTE $D
-		.BYTE $D
-		.BYTE $A5
-aHiddenOnTheFou:.BYTE "hidden on the fourth level."
-		.BYTE $D
-		.BYTE $FF
-byte_AD02:	.BYTE $A6,  0,	3	; DATA XREF: RAM:9F86o
-		.BYTE $A5
-aAllGoblinsHave:.BYTE "All goblins have a hidden zipper."
-		.BYTE $D
-		.BYTE $FF
-byte_AD29:	.BYTE $A6,  0,	3	; DATA XREF: RAM:9F88o
-		.BYTE $A5
-aSeekTheLegOfJe:.BYTE "Seek the leg of Jeerbeef."
-		.BYTE $D
-		.BYTE $FF
-byte_AD48:	.BYTE $A6,  0,	3	; DATA XREF: RAM:9F8Ao
-		.BYTE $A5
-aBeKindToZombie:.BYTE "Be kind to zombies."
-		.BYTE $D
-		.BYTE $FF
-byte_AD61:	.BYTE $A6,  0,	2	; DATA XREF: RAM:9F8Co
-		.BYTE $A5
-aTheThirdLevelO:.BYTE "The third level of the dungeon"
-		.BYTE $D
-		.BYTE $D
-		.BYTE $A5
-aIsPatrolledByE:.BYTE "is patrolled by elephants."
-		.BYTE $D
-		.BYTE $FF
-byte_ADA2:	.BYTE $A6,  0,	3	; DATA XREF: RAM:9F8Eo
-		.BYTE $A5
-aTheTroglodytes:.BYTE "The Troglodytes are valuable friends."
-		.BYTE $D
-		.BYTE $FF
-byte_ADCD:	.BYTE $A6,  0,	3	; DATA XREF: RAM:9F90o
-		.BYTE $A5
-aDonTDrinkFromT:.BYTE "Don't drink from the fountains."
-		.BYTE $D
-		.BYTE $FF
-byte_ADF2:	.BYTE $A6,  0,	2	; DATA XREF: RAM:9F92o
-		.BYTE $A5
-aTheTrollTyrant:.BYTE "The Troll Tyrant is fair"
-		.BYTE $D
-		.BYTE $D
-		.BYTE $A5
-aAndHonorable_:	.BYTE "and honorable."
-		.BYTE $D
-		.BYTE $FF
-byte_AE21:	.BYTE $A6,  0,	3	; DATA XREF: RAM:9F94o
-		.BYTE $A5
-aTheGoblinLordI:.BYTE "The Goblin Lord is a decent fellow."
-		.BYTE $D
-		.BYTE $FF
-byte_AE4A:	.BYTE $A6,  0,	2	; DATA XREF: RAM:9F96o
-		.BYTE $A5
-aBlackMagicIsMo:.BYTE "Black Magic is more powerful"
-		.BYTE $D
-		.BYTE $D
-		.BYTE $A5
-aThanWhiteMagic:.BYTE "than White Magic."
-		.BYTE $D
-		.BYTE $FF
-byte_AE80:	.BYTE $A6,  0,	2	; DATA XREF: RAM:9F98o
-		.BYTE $A5
-aTheThievesGuil:.BYTE "The Thieves' Guild is a"
-		.BYTE $D
-		.BYTE $D
-		.BYTE $A5
-aTrustworthyOrg:.BYTE "Trustworthy organization.",$D
-		.BYTE $FF
-byte_AEB9:	.BYTE $A6,  0,	3	; DATA XREF: RAM:9F9Ao
-		.BYTE $A5
-aMyDogToldMeToW:.BYTE "My dog told me to watch out for you."
-		.BYTE $D
-		.BYTE $FF
-byte_AEE3:	.BYTE $A6,  0,	2	; DATA XREF: RAM:9F9Co
-		.BYTE $A5
-aSeekMagicalKno:.BYTE "Seek magical knowledge"
-		.BYTE $D
-		.BYTE $D
-		.BYTE $A5
-aAtTheGreenWiza:.BYTE "at the Green Wizards Academy."
-		.BYTE $D
-		.BYTE $FF
-byte_AF1F:	.BYTE $A6,  0,	2	; DATA XREF: RAM:9F9Eo
-		.BYTE $A5
-aNeverEatAnythi:.BYTE "Never eat anything"
-		.BYTE $D
-		.BYTE $D
-		.BYTE $A5
-aYouDidnTKillYo:.BYTE "you didn't kill yourself.",$D
-		.BYTE $FF
-byte_AF53:	.BYTE $A6,  0,	3	; DATA XREF: RAM:9FA0o
-		.BYTE $A5
-aTheRedWizardsT:.BYTE "The Red Wizards teach the Black Arts."
-		.BYTE $D
-		.BYTE $FF
-byte_AF7E:	.BYTE $A6,  0,	2	; DATA XREF: RAM:9FA2o
-		.BYTE $A5
-aBewareTheClown:.BYTE "Beware the Clown that"
-		.BYTE $D
-		.BYTE $D
-		.BYTE $A5
-aLaughsByTheBed:.BYTE "laughs by the bedside.",$D
-		.BYTE $FF
-byte_AFB2:	.BYTE $A6,  0,	2	; DATA XREF: RAM:9FA4o
-		.BYTE $A5
-aTheGuildsConsp:.BYTE "The Guilds conspire together"
-		.BYTE $D
-		.BYTE $D
-		.BYTE $A5
-aAgainstTheKing:.BYTE "against the King."
-		.BYTE $D
-		.BYTE $FF
-byte_AFE8:	.BYTE $A6,  0,	2	; DATA XREF: RAM:9FA6o
-		.BYTE $A5
-aThoseAboutToDi:.BYTE "Those about to die dwell beneath"
-		.BYTE $D
-		.BYTE $D
-		.BYTE $A5
-aTheArenaOnTheT:.BYTE "the Arena on the third level."
-		.BYTE $D
-		.BYTE $FF
-byte_B02E:	.BYTE $A6,  0,	3	; DATA XREF: RAM:9FA8o
-		.BYTE $A5
-aTheyNeedANewJe:.BYTE "They need a new jester at the Palace."
-		.BYTE $D
-		.BYTE $FF
-byte_B059:	.BYTE $A6,  0,	2	; DATA XREF: RAM:9FAAo
-		.BYTE $A5
-aThePalacePriso:.BYTE "The Palace Prison is full of"
-		.BYTE $D
-		.BYTE $D
-		.BYTE $A5
-aConvictsAndMad:.BYTE "convicts and madmen.",$D
-		.BYTE $FF
-byte_B092:	.BYTE $A6,  0,	3	; DATA XREF: RAM:9FACo
-		.BYTE $A5
-aBewareTheBoatm:.BYTE "Beware the boatman on the second level."
-		.BYTE $D
-		.BYTE $FF
-byte_B0BF:	.BYTE $A6,  0,	2	; DATA XREF: RAM:9FAEo
-		.BYTE $A5
-aThereIsAFoun_0:.BYTE "There is a fountain on the fourth level"
-		.BYTE $D
-		.BYTE $D
-		.BYTE $A5
-aThatMakesYouIn:.BYTE "that makes you invulnerable."
-		.BYTE $D
-		.BYTE $FF
-byte_B10B:	.BYTE $A6,  0,	3	; DATA XREF: RAM:9FB0o
-		.BYTE $A5
-aMutilationHasI:.BYTE "Mutilation has its good points."
-		.BYTE $D
-		.BYTE $FF
-byte_B130:	.BYTE $A6,  0,	3	; DATA XREF: RAM:9FB2o
-		.BYTE $A5
-aBewareOfThePoi:.BYTE "Beware of the poisoner named Lucky."
-		.BYTE $D
-		.BYTE $FF
+byte_AAC2:	MOVEXY	0,2
+		.BYTE	$A5,"The Dwarf loves sparkling gems.",$D,$FF
+	
+byte_AAE7:	MOVEXY	0,2
+		.BYTE	$A5,"Greedy adventurers are often visited by",$D,$D
+		.BYTE	$A5,"by the Devourer!",$D,$FF
+
+byte_AB27:	MOVEXY	0,2
+		.BYTE	$A5,"Read the Guidebook thoroughly!",$D,$FF
+
+byte_AB4B:	MOVEXY	0,2
+		.BYTE	$A5,"Sermons are good for your soul.",$D,$FF
+
+byte_AB70:	MOVEXY	0,2
+		.BYTE	$A5,"About half the rumors you hear",$D,$D
+		.BYTE	$A5,"in the Dungeon are false.",$D,$FF
+
+byte_ABB0:	MOVEXY	0,2
+		.BYTE	$A5,"Beware the screamer that",$D,$D
+		.BYTE	$A5,"walks on the wind.",$D,$FF
+
+byte_ABE3:	MOVEXY	0,3
+		.BYTE	$A5,"Locked doors require skill to pass.",$D,$FF
+
+byte_AC0C:	MOVEXY	0,3
+		.BYTE	$A5,"Muggers can make powerful allies.",$D,$FF
+
+byte_AC33:	MOVEXY	0,2
+		.BYTE	$A5,"Occum gets the best weapons for his shop",$D,$D
+		.BYTE	$A5,"by capturing them in a clever trap.",$D,$FF
+
+byte_AC87:	MOVEXY	0,2
+		.BYTE	$A5,"Keep an eye on your purse",$D,$D
+		.BYTE	$A5,"if you sleep at the Sanctuary.",$D,$FF
+
+byte_ACC7:	MOVEXY	0,2
+		.BYTE	$A5,"There are magical baths",$D,$D
+		.BYTE	$A5,"hidden on the fourth level.",$D,$FF
+
+byte_AD02:	MOVEXY	0,3
+		.BYTE	$A5,"All goblins have a hidden zipper.",$D,$FF
+
+byte_AD29:	MOVEXY	0,3
+		.BYTE	$A5,"Seek the leg of Jeerbeef.",$D,$FF
+
+byte_AD48:	MOVEXY	0,3
+		.BYTE	$A5,"Be kind to zombies.",$D,$FF
+
+byte_AD61:	MOVEXY	0,2
+		.BYTE	$A5,"The third level of the dungeon",$D,$D
+		.BYTE	$A5,"is patrolled by elephants.",$D,$FF
+
+byte_ADA2:	MOVEXY	0,3
+		.BYTE	$A5,"The Troglodytes are valuable friends.",$D,$FF
+
+byte_ADCD:	MOVEXY	0,3
+		.BYTE	$A5,"Don't drink from the fountains.",$D,$FF
+
+byte_ADF2:	MOVEXY	0,2
+		.BYTE	$A5,"The Troll Tyrant is fair",$D,$D
+		.BYTE	$A5,"and honorable.",$D,$FF
+
+byte_AE21:	MOVEXY	0,3
+		.BYTE	$A5,"The Goblin Lord is a decent fellow.",$D,$FF
+
+byte_AE4A:	MOVEXY	0,2
+		.BYTE	$A5,"Black Magic is more powerful",$D,$D
+		.BYTE	$A5,"than White Magic.",$D,$FF
+
+byte_AE80:	MOVEXY	0,2
+		.BYTE	$A5,"The Thieves' Guild is a",$D,$D
+		.BYTE	$A5,"Trustworthy organization.",$D,$FF
+
+byte_AEB9:	MOVEXY	0,3
+		.BYTE	$A5,"My dog told me to watch out for you.",$D,$FF
+
+byte_AEE3:	MOVEXY	0,2
+		.BYTE	$A5,"Seek magical knowledge",$D,$D
+		.BYTE	$A5,"at the Green Wizards Academy.",$D,$FF
+
+byte_AF1F:	MOVEXY	0,2
+		.BYTE	$A5,"Never eat anything",$D,$D
+		.BYTE	$A5,"you didn't kill yourself.",$D,$FF
+
+byte_AF53:	MOVEXY	0,3
+		.BYTE	$A5,"The Red Wizards teach the Black Arts.",$D,$FF
+
+byte_AF7E:	MOVEXY	0,2
+		.BYTE	$A5,"Beware the Clown that",$D,$D
+		.BYTE	$A5,"laughs by the bedside.",$D,$FF
+
+byte_AFB2:	MOVEXY	0,2
+		.BYTE	$A5,"The Guilds conspire together",$D,$D
+		.BYTE	$A5,"against the King.",$D,$FF
+	
+byte_AFE8:	MOVEXY	0,2
+		.BYTE	$A5,"Those about to die dwell beneath",$D,$D
+		.BYTE	$A5,"the Arena on the third level.",$D,$FF
+
+byte_B02E:	MOVEXY	0,3
+		.BYTE	$A5,"They need a new jester at the Palace.",$D,$FF
+	
+byte_B059:	MOVEXY	0,2
+		.BYTE	$A5,"The Palace Prison is full of",$D,$D
+		.BYTE	$A5,"convicts and madmen.",$D,$FF
+
+byte_B092:	MOVEXY	0,3
+		.BYTE	$A5,"Beware the boatman on the second level.",$D,$FF
+
+byte_B0BF:	MOVEXY	0,2
+		.BYTE	$A5,"There is a fountain on the fourth level",$D,$D
+		.BYTE	$A5,"that makes you invulnerable.",$D,$FF
+
+byte_B10B:	MOVEXY	0,3
+		.BYTE	$A5,"Mutilation has its good points.",$D,$FF
+
+byte_B130:	MOVEXY	0,3
+		.BYTE	$A5,"Beware of the poisoner named Lucky.",$D,$FF
+
 byte_B159:	MOVEXY	0,2
 		.BYTE	$A5,"The Clothes Horse will let you ride him",$D,$D
 		.BYTE	$A5,"if you bring him a nice hat.",$D,$FF
