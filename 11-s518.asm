@@ -6041,25 +6041,25 @@ aYouAreOnLevel:	.BYTE "You are on level "
 aOfTheDungeon:	.BYTE "of the Dungeon"
 		.BYTE $D
 		MOVEXY	0,4
-		PRINTSTR off_45A9,12
+		PRINTSTRP off_45A9,12
 		.BYTE $D
-		PRINTSTR off_45A7,12
+		PRINTSTRP off_45A7,12
 		.BYTE $D
-		PRINTSTR off_45A5,12
+		PRINTSTRP off_45A5,12
 		.BYTE $D
-		PRINTSTR off_45AD,12
+		PRINTSTRP off_45AD,12
 		MOVEXY	28,4
-		PRINTSTR off_45AB,12
+		PRINTSTRP off_45AB,12
 		MOVEXY	28,5
-		PRINTSTR off_45A3,12
+		PRINTSTRP off_45A3,12
 		MOVEXY	28,6
-		PRINTSTR off_45B3,12
+		PRINTSTRP off_45B3,12
 		MOVEXY	28,7
-		PRINTSTR off_45B1,12
+		PRINTSTRP off_45B1,12
 		MOVEXY	14,6
-		PRINTSTR off_45B5,12
+		PRINTSTRP off_45B5,12
 		MOVEXY	14,7
-		PRINTSTR off_45AF,12
+		PRINTSTRP off_45AF,12
 		.BYTE $FF
 
 byte_3D84:
@@ -6101,30 +6101,30 @@ aWeapons:	.BYTE "Weapons"
 		.WORD loc_3F41
 		MOVEXY	0,1
 aPrimary:	.BYTE "Primary: "
-		PRINTSTR off_407F,31
+		PRINTSTRP off_407F,31
 		.BYTE $AB
 		MOVEXY	0,2
 aSecondary:	.BYTE "Secondary: "
-		PRINTSTR off_4081,29
+		PRINTSTRP off_4081,29
 		.BYTE $AB
 		.BYTE $D
 		.BYTE $A5
 aArmor:		.BYTE "Armor"
 		.BYTE $D
 aHead:		.BYTE "Head: "
-		PRINTSTR off_4083,34
+		PRINTSTRP off_4083,34
 		.BYTE $AB
 		MOVEXY	0,5
 aBody:		.BYTE "Body: "
-		PRINTSTR off_4085,34
+		PRINTSTRP off_4085,34
 		.BYTE $AB
 		MOVEXY	0,6
 aArms:		.BYTE "Arms: "
-		PRINTSTR off_4087,34
+		PRINTSTRP off_4087,34
 		.BYTE $AB
 		MOVEXY	0,7
 aLegs:		.BYTE "Legs: "
-		PRINTSTR off_4089,34
+		PRINTSTRP off_4089,34
 		.BYTE $AB
 		.BYTE $FF
 
@@ -6137,19 +6137,19 @@ aApparel:	.BYTE "Apparel"
 		.WORD loc_3F8D
 		MOVEXY	10,2
 		.BYTE $A2
-		PRINTSTR off_407F,30
+		PRINTSTRP off_407F,30
 		.BYTE $AB
 		.BYTE $D
 		.BYTE $A2
-		PRINTSTR off_4081,30
+		PRINTSTRP off_4081,30
 		.BYTE $AB
 		.BYTE $D
 		.BYTE $A2
-		PRINTSTR off_4083,30
+		PRINTSTRP off_4083,30
 		.BYTE $AB
 		.BYTE $D
 		.BYTE $A2
-		PRINTSTR off_4085,30
+		PRINTSTRP off_4085,30
 		.BYTE $AB
 		.BYTE $D
 		.BYTE $FF
@@ -6185,27 +6185,27 @@ aCurses:	.BYTE "Curses"
 		.BYTE $FF
 byte_3F15:	.BYTE $D		; DATA XREF: RAM:3EE6o	RAM:3F00o ...
 		.BYTE $A2
-		PRINTSTR off_407F,38
+		PRINTSTRP off_407F,38
 		.BYTE $AB
 		.BYTE $D
 		.BYTE $A2
-		PRINTSTR off_4081,38
+		PRINTSTRP off_4081,38
 		.BYTE $AB
 		.BYTE $D
 		.BYTE $A2
-		PRINTSTR off_4083,38
+		PRINTSTRP off_4083,38
 		.BYTE $AB
 		.BYTE $D
 		.BYTE $A2
-		PRINTSTR off_4085,38
+		PRINTSTRP off_4085,38
 		.BYTE $AB
 		.BYTE $D
 		.BYTE $A2
-		PRINTSTR off_4087,38
+		PRINTSTRP off_4087,38
 		.BYTE $AB
 		.BYTE $D
 		.BYTE $A2
-		PRINTSTR off_4089,38
+		PRINTSTRP off_4089,38
 		.BYTE $AB
 		.BYTE $D
 		.BYTE $AE
@@ -8883,14 +8883,14 @@ a_TheScreams:
 aThe:		.BYTE "The"
 		.BYTE $D
 		.BYTE $A5
-		PRINTSTR off_502A,39
+		PRINTSTRP off_502A,39
 		.BYTE $D
 		.BYTE $A5
 aScreams:	.BYTE "screams:"
 		.BYTE $D
 		.BYTE $D
 		.BYTE $A5
-		PRINTSTR off_502C,40
+		PRINTSTRP off_502C,40
 		.BYTE $D
 		.BYTE $FF
 aIWasMeantForBe:.BYTE $22,"I was meant for better than you!",$22,0
@@ -10831,7 +10831,7 @@ aHaveBeenRepair:.BYTE "have been repaired."
 byte_5D41:
 		MOVEXY	0,0
 		.BYTE $A2
-		PRINTSTR off_193A,40
+		PRINTSTRP off_193A,40
 		.BYTE $AB
 		.BYTE $D
 		.BYTE $A3
@@ -10840,7 +10840,7 @@ byte_5D41:
 asc_5D51:	.BYTE " ("              ; DATA XREF: RAM:551Bw RAM:5DC3w ...
 		BLINK	'1'
 		.BYTE ") "
-		PRINTSTR off_193C,29
+		PRINTSTRP off_193C,29
 		.BYTE ' '
 		.BYTE $AD
 		.WORD	off_5DAC
@@ -10851,7 +10851,7 @@ asc_5D51:	.BYTE " ("              ; DATA XREF: RAM:551Bw RAM:5DC3w ...
 asc_5D67:	.BYTE " ("              ; DATA XREF: RAM:551Fw
 		BLINK	'2'
 		.BYTE ") "
-		PRINTSTR off_193E,29
+		PRINTSTRP off_193E,29
 		.BYTE $20
 		.BYTE $AD ; ­
 		.WORD	off_5DAC
@@ -10862,7 +10862,7 @@ asc_5D67:	.BYTE " ("              ; DATA XREF: RAM:551Fw
 asc_5D7D:	.BYTE " ("              ; DATA XREF: RAM:5523w
 		BLINK	'3'
 		.BYTE	") "
-		PRINTSTR off_1940,29
+		PRINTSTRP off_1940,29
 		.BYTE $20
 		.BYTE $AD ; ­
 		.WORD	off_5DAC
@@ -10875,7 +10875,7 @@ asc_5D93:	.BYTE " ("              ; DATA XREF: RAM:5527w
 		BLINK	'4'
 		.BYTE $29 ; )
 		.BYTE $20
-		PRINTSTR off_1942,29
+		PRINTSTRP off_1942,29
 		.BYTE $20
 		.BYTE $AD ; ­
 		.WORD	off_5DAC
@@ -10937,7 +10937,7 @@ loc_5E05:				; CODE XREF: RAM:5DE5j	RAM:5DEAj
 byte_5E09:
 		MOVEXY	0,0
 		.BYTE $A5
-		PRINTSTR off_193A,40
+		PRINTSTRP off_193A,40
 		.BYTE $D
 		MOVEXY	3,2
 		.BYTE " ("
@@ -11117,7 +11117,7 @@ aYouDrinkA:	.BYTE "You drink a"
 		.BYTE $D
 		.BYTE $D
 		.BYTE $A5
-		PRINTSTR off_193C,38
+		PRINTSTRP off_193C,38
 a__2:		.BYTE '.'
 		.BYTE $D
 		.BYTE $FF
@@ -11236,7 +11236,7 @@ aYouCastTheSpel:.BYTE "You cast the spell of"
 		.BYTE $A5
 		BLINK	$7F
 		.BYTE ' '
-		PRINTSTR off_193C,30
+		PRINTSTRP off_193C,30
 a__3:		.BYTE ". "
 		BLINK	$7F
 		.BYTE $D

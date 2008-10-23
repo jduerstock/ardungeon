@@ -586,4 +586,4 @@ all: $(BINARIES) $(OBJECTS)
 	sha1sum -c 32-s695.sha1
 
 clean:
-	$(RM) -f $(OBJECTS) *.*~ *.bin.crypt *.o ar11.img ar31.img ar32.img
+	$(RM) -f $(OBJECTS) *.*~ *.bin *.bin.crypt *.o ar11.img ar31.img ar32.img

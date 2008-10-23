@@ -114,11 +114,11 @@ MOVECURSOR = $A6
 	.BYTE $A3,.LOBYTE(Ptr),.HIBYTE(Ptr)
 .endmacro
 
-.macro PRINTSTR Ptr, Len
+.macro PRINTSTRP Ptr, Len
 	.BYTE $B4,.LOBYTE(Ptr),.HIBYTE(Ptr),Len
 .endmacro
 
-.macro PRINTSTRP Ptr, Len
+.macro PRINTSTR Ptr, Len
 	.BYTE $B3,.LOBYTE(Ptr),.HIBYTE(Ptr),Len
 .endmacro
 

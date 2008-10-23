@@ -1481,13 +1481,9 @@ aThatCharacterH:.BYTE "That Character has been removed."
 		.BYTE $AD
 		.WORD byte_82F2
 		MOVEXY	0,8
-		.BYTE $A5
-aAreYouSureYouW:.BYTE "Are you sure you want to permanently"
-		.BYTE $D
-		.BYTE $D
-		.BYTE $A5
-aRemove:	.BYTE "remove "
-		PRINTSTR byte_83BD,25
+aAreYouSureYouW:.BYTE $A5,"Are you sure you want to permanently",$D,$D
+aRemove:	.BYTE $A5,"remove "
+		PRINTSTRP byte_83BD,25
 aq:		.BYTE "?"
 		.BYTE $D
 		.BYTE $D
@@ -1499,24 +1495,24 @@ aYOrN:		.BYTE "(Y or N)"
 		.WORD byte_82F2
 		MOVEXY	0,8
 a1:		.BYTE " (1) "
-		PRINTSTR off_82F5,25
+		PRINTSTRP off_82F5,25
 		MOVEXY	30,8
-		PRINTSTR off_82FD,7
+		PRINTSTRP off_82FD,7
 		MOVEXY	0,10
 a2:		.BYTE " (2) "
-		PRINTSTR off_82F7,25
+		PRINTSTRP off_82F7,25
 		MOVEXY	30,10
-		PRINTSTR off_82FF,7
+		PRINTSTRP off_82FF,7
 		MOVEXY	0,12
 a3:		.BYTE " (3) "
-		PRINTSTR off_82F9,25
+		PRINTSTRP off_82F9,25
 		MOVEXY	30,12
-		PRINTSTR off_8301,7
+		PRINTSTRP off_8301,7
 		MOVEXY	0,14
 a4:		.BYTE " (4) "
-		PRINTSTR off_82FB,25
+		PRINTSTRP off_82FB,25
 		MOVEXY	30,14
-		PRINTSTR off_8303,7
+		PRINTSTRP off_8303,7
 		MOVEXY	0,22
 		.BYTE $A5
 aSelect14OrEscT:.BYTE "Select 1-4 or ESC to cancel"
@@ -2318,7 +2314,7 @@ aThyNameIs:	.BYTE "Thy name is "
 		.BYTE $D
 		.BYTE $A5
 aThySexIs:	.BYTE "Thy sex is "
-		PRINTSTR $71,6
+		PRINTSTRP $71,6
 		.BYTE $2E
 		.BYTE $D
 		.BYTE $D

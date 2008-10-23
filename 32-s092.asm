@@ -105,8 +105,7 @@ loc_76E5:				; CODE XREF: RAM:76C5j
 		STA	$7589
 		LDA	#$18
 		JSR	sub_7766
-		LDX	#$77 ; 'w'
-		LDY	#$80 ; '€'
+		ldxy	byte_7780
 		JSR	$1884
 		dldi	off_16, $7B86
 		JSR	sub_776E
@@ -194,11 +193,9 @@ sub_7778:				; CODE XREF: RAM:766Dp	RAM:7678p ...
 ; End of function sub_7778
 
 ; ---------------------------------------------------------------------------
-		.BYTE	7
-		.BYTE $22 ; "
-		.BYTE	1
-		.BYTE	0
-		.BYTE	0
+
+byte_7780:
+		.BYTE	$07,$22,$01,$00,$00
 		.BYTE  $F
 aPacCard:	.BYTE "PAC card",0
 		.BYTE $88 ; ˆ
@@ -221,26 +218,15 @@ aPacCard:	.BYTE "PAC card",0
 		.BYTE	2
 		.BYTE	1
 		.BYTE $A8,$FF
-		.BYTE $A6,  0,	3
-		.BYTE $A5
-aTheTombIsEmpty:.BYTE "The tomb is empty."
-		.BYTE $D
-		.BYTE $FF
-		.BYTE $A6,  0,	0
-		.BYTE $A5
-aTheGhostlyForm:.BYTE "The ghostly form of Acrinimiril floats"
-		.BYTE $D
-		.BYTE $D
-		.BYTE $A5
-aAboveTheTombAn:.BYTE "above the tomb and in a voice that"
-		.BYTE $D
-		.BYTE $D
-		.BYTE $A5
-aSpeaksIntoYour:.BYTE "speaks into your mind says:"
-		.BYTE $D
-		.BYTE $D
-		.BYTE $A5
-aComeForward:	.BYTE $22,"Come forward "
+
+		MOVEXY	0,3
+		.BYTE $A5,"The tomb is empty.",$D,$FF
+
+		MOVEXY	0,0
+		.BYTE	$A5,"The ghostly form of Acrinimiril floats",$D,$D
+		.BYTE	$A5,"above the tomb and in a voice that",$D,$D
+		.BYTE	$A5,"speaks into your mind says:",$D,$D
+		.BYTE	$A5,$22,"Come forward "
 		.BYTE $B3
 		.WORD $6321
 		.BYTE $18
