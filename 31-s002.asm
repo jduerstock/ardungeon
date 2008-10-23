@@ -3226,13 +3226,13 @@ loc_8972:				; CODE XREF: RAM:896Ej
 
 loc_8993:				; CODE XREF: RAM:897Fj	RAM:8982j ...
 		LDX	byte_A89F
-		LDA	unk_89AA,X
+		LDA	byte_89AA,X
 		PHA
-		LDA	unk_899F,X
+		LDA	byte_899F,X
 		PHA
 		RTS
 ; ---------------------------------------------------------------------------
-unk_899F:	.BYTE	<(sub_89B5-1)	; DATA XREF: RAM:899Ar
+byte_899F:	.BYTE	<(sub_89B5-1)	; DATA XREF: RAM:899Ar
 		.BYTE	<(sub_89DC-1)
 		.BYTE	<(sub_89DF-1)
 		.BYTE	<(sub_89EF-1)
@@ -3243,7 +3243,7 @@ unk_899F:	.BYTE	<(sub_89B5-1)	; DATA XREF: RAM:899Ar
 		.BYTE	<(sub_8A96-1)
 		.BYTE	<(sub_8A9A-1)
 		.BYTE	<(sub_8AA7-1)
-unk_89AA:	.BYTE	>(sub_89B5-1)	; DATA XREF: RAM:8996r
+byte_89AA:	.BYTE	>(sub_89B5-1)	; DATA XREF: RAM:8996r
 		.BYTE	>(sub_89DC-1)
 		.BYTE	>(sub_89DF-1)
 		.BYTE	>(sub_89EF-1)
@@ -3353,9 +3353,9 @@ loc_8A3F:				; CODE XREF: RAM:8A3Cj
 		INX
 
 loc_8A40:				; CODE XREF: RAM:8A3Aj
-		LDA	$A5DB,X
+		LDA	byte_A5DB,X
 		STA	off_76D9
-		LDA	$A5DE,X
+		LDA	byte_A5DE,X
 		STA	off_76D9+1
 		ldxy	$A58A
 		JMP	loc_8ED1
@@ -3381,9 +3381,9 @@ loc_8A68:				; CODE XREF: RAM:8A5Ej
 		LDA	$638E
 		ADC	$A7
 		STA	$638E
-		LDA	$A5DB,X
+		LDA	byte_A5DB,X
 		STA	off_76D9
-		LDA	$A5DE,X
+		LDA	byte_A5DE,X
 		STA	off_76D9+1
 		ldxy	$A60C
 		JMP	sub_8ECE
@@ -6481,8 +6481,7 @@ byte_A0A5:	.BYTE	"AEIOU"
 
 a_SwitchingTo:
 		MOVEXY	0,3
-		.BYTE	$A5
-		.BYTE	"Switching to "
+		.BYTE	$A5,"Switching to "
 		.BYTE	$B4
 		.WORD	$9E3C
 		.BYTE	$19
@@ -6490,14 +6489,13 @@ a_SwitchingTo:
 
 a_YouMiss:
 		MOVEXY	0,3
-		.BYTE	$A5
-		.BYTE	"You miss.",$D,$FF
+		.BYTE	$A5,"You miss.",$D,$FF
 
 a_SkillfullyDeflects:
 		.BYTE	$AC
 		.WORD	$7665
-		.BYTE	"skillfully ",$D,$A5
-		.BYTE	"deflects your attack.",$D,$FF
+		.BYTE	"skillfully ",$D
+		.BYTE	$A5,"deflects your attack.",$D,$FF
 		MOVEXY	0,3
 		.BYTE	$A3
 		.WORD	$A115
@@ -6512,22 +6510,19 @@ loc_A115:				; DATA XREF: RAM:A113o
 locret_A12C:				; CODE XREF: RAM:A122j
 		RTS
 
-		.BYTE	$A5
-		.BYTE	"The "
+		.BYTE	$A5,"The "
 		.BYTE	$B4
 		.WORD	$AA01
 		.BYTE	$10
 		.BYTE	" takes your offer.",$D,$FF
-		.BYTE	$A5
-		.BYTE	"The "
+		.BYTE	$A5,"The "
 		.BYTE	$B4
 		.WORD	$AA03
 		.BYTE	$10
 		.BYTE	" take your offer.",$D,$FF
 		.BYTE	$A3
 		.WORD	$A181
-		.BYTE	$A5
-		.BYTE	"The "
+		.BYTE	$A5,"The "
 		.BYTE	$B4
 		.WORD	$AA01
 		.BYTE	$10
@@ -6827,10 +6822,13 @@ byte_A57E:
 aRepel:		.BYTE	"repel",0
 aResist:	.BYTE	"resist",0
 aFailToResist:	.BYTE	"fail to resist",0
-		
+
+byte_A5DB:	
 		.BYTE	<aRepel
 		.BYTE	<aResist
 		.BYTE	<aFailToResist
+
+byte_A5DE:
 		.BYTE	>aRepel
 		.BYTE	>aResist
 		.BYTE	>aFailToResist
@@ -6843,8 +6841,7 @@ aFailToResist:	.BYTE	"fail to resist",0
 		.BYTE	" is hurled",$D,$A5
 		.BYTE	"from your grasp!",$D,$FF
 		MOVEXY	0,3
-		.BYTE	$A5
-		.BYTE	"You "
+		.BYTE	$A5,"You "
 		.BYTE	$B4
 		.WORD	$76D9
 		.BYTE	$28
@@ -6854,8 +6851,7 @@ a_YouEncounter:
 		STRJSR	sub_A659
 		STRJSR	sub_A6A8
 		MOVEXY	0,2
-		.BYTE	$A5
-		.BYTE	"You encounter "
+		.BYTE	$A5,"You encounter "
 		.BYTE	$B2
 		.WORD	$AA00
 		.BYTE	1
@@ -6864,8 +6860,7 @@ a_YouEncounter:
 		.WORD	$76D9
 		.BYTE	$14
 		.BYTE	$D
-		.BYTE	$A5
-		.BYTE	"of "
+		.BYTE	$A5,"of "
 		.BYTE	$B4
 		.WORD	off_76DD
 		.BYTE	$19
@@ -7208,9 +7203,9 @@ byte_A8A0:	.BYTE 0			; DATA XREF: sub_7B59+40w sub_7B59+48r ...
 		LDX	#$00
 		SEC
 :		SBC	#$0A
-:		BCC	:+
+		BCC	:+
 		INX
-		BNE	:--
+		BNE	:-
 :		ADC	#$0A
 		STX	$79
 		ORA	#$30

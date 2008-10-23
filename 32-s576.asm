@@ -209,227 +209,116 @@ byte_A47E:	MOVEXY	0,2
 byte_A4C1:	MOVEXY	0,3
 		.BYTE	$A5,"You can always trust the guards.",$D,$FF
 
-byte_A4E7:	.BYTE $A6,  0,	3	; DATA XREF: RAM:9F32o
-		.BYTE $A5
-aStepLightlyInT:.BYTE "Step lightly in the crystal caverns."
-		.BYTE $D
-		.BYTE $FF
-byte_A511:	.BYTE $A6,  0,	3	; DATA XREF: RAM:9F34o
-		.BYTE $A5
-aLuckySGotTheBr:.BYTE "Lucky's got the brew for you."
-		.BYTE $D
-		.BYTE $FF
-byte_A534:	.BYTE $A6,  0,	2	; DATA XREF: RAM:9F36o
-		.BYTE $A5
-aYouCanTrustWha:.BYTE "You can trust what you hear"
-		.BYTE $D
-		.BYTE $D
-		.BYTE $A5
-aFromTheHorseSM:.BYTE "from the Horse's mouth."
-		.BYTE $D
-		.BYTE $FF
-byte_A56F:	.BYTE $A6,  0,	3	; DATA XREF: RAM:9F38o
-		.BYTE $A5
-aNeverTrustADem:.BYTE "Never trust a demon."
-		.BYTE $D
-		.BYTE $FF
-byte_A589:	.BYTE $A6,  0,	2	; DATA XREF: RAM:9F3Ao
-		.BYTE $A5
-aTheDwarfOnTheS:.BYTE "The dwarf on the second level is"
-		.BYTE $D
-		.BYTE $D
-		.BYTE $A5
-aInterestedInOl:.BYTE "interested in old weapons and armor."
-		.BYTE $D
-		.BYTE $FF
-byte_A5D6:	.BYTE $A6,  0,	2	; DATA XREF: RAM:9F3Co
-		.BYTE $A5
-aASpecialFounta:.BYTE "A special fountain on the third level"
-		.BYTE $D
-		.BYTE $D
-		.BYTE $A5
-aCanEnlivenYour:.BYTE "can enliven your day."
-		.BYTE $D
-		.BYTE $FF
-byte_A619:	.BYTE $A6,  0,	2	; DATA XREF: RAM:9F3Eo
-		.BYTE $A5
-aThereIsADreade:.BYTE "There is a dreaded dragon"
-		.BYTE $D
-		.BYTE $D
-		.BYTE $A5
-aOnTheThirdLeve:.BYTE "on the third level."
-		.BYTE $D
-		.BYTE $FF
-byte_A64E:	.BYTE $A6,  0,	2	; DATA XREF: RAM:9F40o
-		.BYTE $A5
-aBewareTheGaunt:.BYTE "Beware the gauntlet of doom"
-		.BYTE $D
-		.BYTE $D
-		.BYTE $A5
-aOnTheThirdLe_0:.BYTE "on the third level."
-		.BYTE $D
-		.BYTE $FF
-byte_A685:	.BYTE $A6,  0,	2	; DATA XREF: RAM:9F42o
-		.BYTE $A5
-aThereIsAVerySp:.BYTE "There is a very special door"
-		.BYTE $D
-		.BYTE $D
-		.BYTE $A5
-aHiddenOnTheThi:.BYTE "hidden on the third level."
-		.BYTE $D
-		.BYTE $FF
-byte_A6C4:	.BYTE $A6,  0,	3	; DATA XREF: RAM:9F44o
-		.BYTE $A5
-aEvilMagicTakes:.BYTE "Evil magic takes a special toll."
-		.BYTE $D
-		.BYTE $FF
-byte_A6EA:	.BYTE $A6,  0,	3	; DATA XREF: RAM:9F46o
-		.BYTE $A5
-aSeekTheWaysOfT:.BYTE "Seek the ways of the Wizards of Law."
-		.BYTE $D
-		.BYTE $FF
-byte_A714:	.BYTE $A6,  0,	3	; DATA XREF: RAM:9F48o
-		.BYTE $A5
-aWeReBeingWatch:.BYTE "We're being watched all the time."
-		.BYTE $D
-		.BYTE $FF
-byte_A73B:	.BYTE $A6,  0,	2	; DATA XREF: RAM:9F4Ao
-		.BYTE $A5
-aTheMusicHeardI:.BYTE "The music heard in the tavern"
-		.BYTE $D
-		.BYTE $D
-		.BYTE $A5
-aComesFromBeyon:.BYTE "comes from beyond this world."
-		.BYTE $D
-		.BYTE $FF
-byte_A77E:	.BYTE $A6,  0,	3	; DATA XREF: RAM:9F4Co
-		.BYTE $A5
-aTheTemptations:.BYTE "The temptations of evil are strong."
-		.BYTE $D
-		.BYTE $FF
-byte_A7A7:	.BYTE $A6,  0,	2	; DATA XREF: RAM:9F4Eo
-		.BYTE $A5
-aFruitJuiceIs:	.BYTE "Fruit juice is"
-		.BYTE $D
-		.BYTE $A5
-aVeryInvigorati:.BYTE "very invigorating."
-		.BYTE $D
-		.BYTE $FF
-byte_A7CF:	.BYTE $A6,  0,	1	; DATA XREF: RAM:9F50o
-		.BYTE $A5
-aManyGreatTreas:.BYTE "Many great treasures"
-		.BYTE $D
-		.BYTE $D
-		.BYTE $A5
-aAreCarefullyGu:.BYTE "are carefully guarded."
-		.BYTE $D
-		.BYTE $FF
-byte_A802:	.BYTE $A6,  0,	1	; DATA XREF: RAM:9F52o
-		.BYTE $A5
-aBeSureYourFrie:.BYTE "Be sure your friends"
-		.BYTE $D
-		.BYTE $D
-		.BYTE $A5
-aAreNotYourFoes:.BYTE "are not your foes."
-		.BYTE $D
-		.BYTE $FF
-byte_A831:	.BYTE $A6,  0,	1	; DATA XREF: RAM:9F54o
-		.BYTE $A5
-aAlwaysLeaveATi:.BYTE "Always leave a tip"
-		.BYTE $D
-		.BYTE $D
-		.BYTE $A5
-aForServicesRen:.BYTE "for services rendered."
-		.BYTE $D
-		.BYTE $FF
-byte_A862:	.BYTE $A6,  0,	1	; DATA XREF: RAM:9F56o
-		.BYTE $A5
-aThePureInHeart:.BYTE "The pure in heart know"
-		.BYTE $D
-		.BYTE $D
-		.BYTE $A5
-aHowToShowMercy:.BYTE "how to show mercy."
-		.BYTE $D
-		.BYTE $FF
-byte_A893:	.BYTE $A6,  0,	2	; DATA XREF: RAM:9F58o
-		.BYTE $A5
-aTheOracleAlway:.BYTE "The Oracle always tells the truth."
-		.BYTE $D
-		.BYTE $FF
-byte_A8BB:	.BYTE $A6,  0,	2	; DATA XREF: RAM:9F5Ao
-		.BYTE $A5
-aNeverFightFire:.BYTE "Never fight fire with fire."
-		.BYTE $D
-		.BYTE $FF
-byte_A8DC:	.BYTE $A6,  0,	2	; DATA XREF: RAM:9F5Co
-		.BYTE $A5
-aTheTrulyBraveA:.BYTE "The truly brave are not"
-		.BYTE $D
-		.BYTE $D
-		.BYTE $A5
-aAfraidToMakePe:.BYTE "afraid to make peace."
-		.BYTE $D
-		.BYTE $FF
-byte_A911:	.BYTE $A6,  0,	1	; DATA XREF: RAM:9F5Eo
-aInTheRoomsOfCo:.BYTE "In the Rooms of Confusion,"
-		.BYTE $D
-		.BYTE $D
-		.BYTE $A5
-aSeekOutASecret:.BYTE "seek out a secret door."
-		.BYTE $D
-		.BYTE $FF
-byte_A94A:	.BYTE $A6,  0,	2	; DATA XREF: RAM:9F60o
-		.BYTE $A5
-aFineClothingAt:.BYTE "Fine clothing attracts more friends."
-		.BYTE $D
-		.BYTE $FF
-byte_A974:	.BYTE $A6,  0,	2	; DATA XREF: RAM:9F62o
-		.BYTE $A5
-aGluttonyIsHaza:.BYTE "Gluttony is hazardous to your health."
-		.BYTE $D
-		.BYTE $FF
-byte_A99F:	.BYTE $A6,  0,	2	; DATA XREF: RAM:9F64o
-		.BYTE $A5
-aSomeTreasuresA:.BYTE "Some treasures are better left alone."
-		.BYTE $D
-		.BYTE $FF
-byte_A9CA:	.BYTE $A6,  0,	2	; DATA XREF: RAM:9F66o
-		.BYTE $A5
-aCrossTheRiverA:.BYTE "Cross the river at midnight."
-		.BYTE $D
-		.BYTE $FF
-byte_A9EC:	.BYTE $A6,  0,	1	; DATA XREF: RAM:9F68o
-		.BYTE $A5
-aOneMagicRing:	.BYTE "One magic ring"
-		.BYTE $D
-		.BYTE $D
-		.BYTE $A5
-aCanCauseALotOf:.BYTE "can cause a lot of trouble."
-		.BYTE $D
-		.BYTE $FF
-byte_AA1E:	.BYTE $A6,  0,	2	; DATA XREF: RAM:9F6Ao
-		.BYTE $A5
-aAnsweringRiddl:.BYTE "Answering riddles brings great reward."
-		.BYTE $D
-		.BYTE $FF
-byte_AA4A:	.BYTE $A6,  0,	1	; DATA XREF: RAM:9F6Co
-		.BYTE $A5
-aGiveAGenerousD:.BYTE "Give a generous donation at"
-		.BYTE $D
-		.BYTE $D
-		.BYTE $A5
-aTheRetreat_:	.BYTE "the Retreat."
-		.BYTE $D
-		.BYTE $FF
-byte_AA7A:	.BYTE $A6,  0,	1	; DATA XREF: RAM:9F6Eo
-		.BYTE $A5
-aBeCarefulWhenD:.BYTE "Be careful when dealing with"
-		.BYTE $D
-		.BYTE $D
-		.BYTE $A5
-aHonestOmarAndH:.BYTE $22,"Honest",$22," Omar and his brother Jeff."
-		.BYTE $D
-		.BYTE $FF
+byte_A4E7:	MOVEXY	0,3
+		.BYTE	$A5,"Step lightly in the crystal caverns.",$D,$FF
+
+byte_A511:	MOVEXY	0,3
+		.BYTE	$A5,"Lucky's got the brew for you.",$D,$FF
+
+byte_A534:	MOVEXY	0,2
+		.BYTE	$A5,"You can trust what you hear",$D,$D
+		.BYTE	$A5,"from the Horse's mouth.",$D,$FF
+
+byte_A56F:	MOVEXY	0,3
+		.BYTE	$A5,"Never trust a demon.",$D,$FF
+
+byte_A589:	MOVEXY	0,2
+		.BYTE	$A5,"The dwarf on the second level is",$D,$D
+		.BYTE	$A5,"interested in old weapons and armor.",$D,$FF
+
+byte_A5D6:	MOVEXY	0,2
+		.BYTE	$A5,"A special fountain on the third level",$D,$D
+		.BYTE	$A5,"can enliven your day.",$D,$FF
+
+byte_A619:	MOVEXY	0,2
+		.BYTE	$A5,"There is a dreaded dragon",$D,$D
+		.BYTE	$A5,"on the third level.",$D,$FF
+
+byte_A64E:	MOVEXY	0,2
+		.BYTE	$A5,"Beware the gauntlet of doom",$D,$D
+		.BYTE	$A5,"on the third level.",$D,$FF
+
+byte_A685:	MOVEXY	0,2
+		.BYTE	$A5,"There is a very special door",$D,$D
+		.BYTE	$A5,"hidden on the third level.",$D,$FF
+
+byte_A6C4:	MOVEXY	0,3
+		.BYTE	$A5,"Evil magic takes a special toll.",$D,$FF
+
+byte_A6EA:	MOVEXY	0,3
+		.BYTE	$A5,"Seek the ways of the Wizards of Law.",$D,$FF
+
+byte_A714:	MOVEXY	0,3
+		.BYTE	$A5,"We're being watched all the time.",$D,$FF
+
+byte_A73B:	MOVEXY	0,2
+		.BYTE	$A5,"The music heard in the tavern",$D,$D
+		.BYTE	$A5,"comes from beyond this world.",$D,$FF
+
+byte_A77E:	MOVEXY	0,3
+		.BYTE	$A5,"The temptations of evil are strong.",$D,$FF
+
+byte_A7A7:	MOVEXY	0,2
+		.BYTE	$A5,"Fruit juice is",$D
+		.BYTE	$A5,"very invigorating.",$D,$FF
+
+byte_A7CF:	MOVEXY	0,1
+		.BYTE	$A5,"Many great treasures",$D,$D
+		.BYTE	$A5,"are carefully guarded.",$D,$FF
+
+byte_A802:	MOVEXY	0,1
+		.BYTE	$A5,"Be sure your friends",$D,$D
+		.BYTE	$A5,"are not your foes.",$D,$FF
+
+byte_A831:	MOVEXY	0,1
+		.BYTE	$A5,"Always leave a tip",$D,$D
+		.BYTE	$A5,"for services rendered.",$D,$FF
+
+byte_A862:	MOVEXY	0,1
+		.BYTE	$A5,"The pure in heart know",$D,$D
+		.BYTE	$A5,"how to show mercy.",$D,$FF
+
+byte_A893:	MOVEXY	0,2
+		.BYTE	$A5,"The Oracle always tells the truth.",$D,$FF
+
+byte_A8BB:	MOVEXY	0,2
+		.BYTE	$A5,"Never fight fire with fire.",$D,$FF
+
+byte_A8DC:	MOVEXY	0,2
+		.BYTE	$A5,"The truly brave are not",$D,$D
+		.BYTE	$A5,"afraid to make peace.",$D,$FF
+
+byte_A911:	MOVEXY	0,1
+		.BYTE	"In the Rooms of Confusion,",$D,$D
+		.BYTE	$A5,"seek out a secret door.",$D,$FF
+
+byte_A94A:	MOVEXY	0,2
+		.BYTE	$A5,"Fine clothing attracts more friends.",$D,$FF
+
+byte_A974:	MOVEXY	0,2
+		.BYTE	$A5,"Gluttony is hazardous to your health.",$D,$FF
+
+byte_A99F:	MOVEXY	0,2
+		.BYTE	$A5,"Some treasures are better left alone.",$D,$FF
+
+byte_A9CA:	MOVEXY	0,2
+		.BYTE	$A5,"Cross the river at midnight.",$D,$FF
+
+byte_A9EC:	MOVEXY	0,1
+		.BYTE	$A5,"One magic ring",$D,$D
+		.BYTE	$A5,"can cause a lot of trouble.",$D,$FF
+
+byte_AA1E:	MOVEXY	0,2
+		.BYTE	$A5,"Answering riddles brings great reward.",$D,$FF
+
+byte_AA4A:	MOVEXY	0,1
+		.BYTE	$A5,"Give a generous donation at",$D,$D
+		.BYTE	$A5,"the Retreat.",$D,$FF
+
+byte_AA7A:	MOVEXY	0,1
+		.BYTE	$A5,"Be careful when dealing with",$D,$D
+		.BYTE	$A5,$22,"Honest",$22," Omar and his brother Jeff.",$D,$FF
+
 byte_AAC2:	.BYTE $A6,  0,	2	; DATA XREF: RAM:9F70o
 		.BYTE $A5
 aTheDwarfLovesS:.BYTE "The Dwarf loves sparkling gems."
@@ -664,177 +553,77 @@ byte_B130:	.BYTE $A6,  0,	3	; DATA XREF: RAM:9FB2o
 aBewareOfThePoi:.BYTE "Beware of the poisoner named Lucky."
 		.BYTE $D
 		.BYTE $FF
-byte_B159:	.BYTE $A6,  0,	2	; DATA XREF: RAM:9FB4o
-		.BYTE $A5
-aTheClothesHors:.BYTE "The Clothes Horse will let you ride him"
-		.BYTE $D
-		.BYTE $D
-		.BYTE $A5
-aIfYouBringHimA:.BYTE "if you bring him a nice hat."
-		.BYTE $D
-		.BYTE $FF
-byte_B1A5:	.BYTE $A6,  0,	3	; DATA XREF: RAM:9FB6o
-		.BYTE $A5
-aDemonsAreGreat:.BYTE "Demons are great guys."
-		.BYTE $D
-		.BYTE $FF
-byte_B1C1:	.BYTE $A6,  0,	3	; DATA XREF: RAM:9FB8o
-		.BYTE $A5
-aSeekTheDwarfBy:.BYTE "Seek the Dwarf by the Wharf."
-		.BYTE $D
-		.BYTE $FF
-byte_B1E3:	.BYTE $A6,  0,	2	; DATA XREF: RAM:9FBAo
-		.BYTE $A5
-aTheFountainOnT:.BYTE "The fountain on the third level"
-		.BYTE $D
-		.BYTE $D
-		.BYTE $A5
-aFlowsDirectlyF:.BYTE "flows directly from Hell."
-		.BYTE $D
-		.BYTE $FF
-byte_B224:	.BYTE $A6,  0,	3	; DATA XREF: RAM:9FBCo
-		.BYTE $A5
-aTheGreatWyrmLi:.BYTE "The Great Wyrm likes to bluff."
-		.BYTE $D
-		.BYTE $FF
-byte_B248:	.BYTE $A6,  0,	2	; DATA XREF: RAM:9FBEo
-		.BYTE $A5
-aTheThirdLevelI:.BYTE "The third level is actually"
-		.BYTE $D
-		.BYTE $D
-		.BYTE $A5
-aSaferThanTheFi:.BYTE "safer than the first."
-		.BYTE $D
-		.BYTE $FF
-byte_B281:	.BYTE $A6,  0,	2	; DATA XREF: RAM:9FC0o
-		.BYTE $A5
-aIfYouPushSomet:.BYTE "If you push something hard enough,"
-		.BYTE $D
-		.BYTE $D
-		.BYTE $A5
-aItWillFallOver:.BYTE "it will fall over."
-		.BYTE $D
-		.BYTE $FF
-byte_B2BE:	.BYTE $A6,  0,	2	; DATA XREF: RAM:9FC2o
-		.BYTE $A5
-aTwoAndTwoDoesN:.BYTE "Two and two does not always equal four"
-		.BYTE $D
-		.BYTE $D
-		.BYTE $A5
-aOnTheFourthLev:.BYTE "on the fourth level."
-		.BYTE $D
-		.BYTE $FF
-byte_B301:	.BYTE $A6,  0,	2	; DATA XREF: RAM:9FC4o
-		.BYTE $A5
-aSeekTheTelepor:.BYTE "Seek the teleporters"
-		.BYTE $D
-		.BYTE $D
-		.BYTE $A5
-aToRapidlyTrave:.BYTE "to rapidly travel The Dungeon."
-		.BYTE $D
-		.BYTE $FF
-byte_B33C:	.BYTE $A6,  0,	2	; DATA XREF: RAM:9FC6o
-		.BYTE $A5
-aLookOutForTheG:.BYTE "Look out for the guy"
-		.BYTE $D
-		.BYTE $D
-		.BYTE $A5
-aWithTheHighArc:.BYTE "with the high arches in his feet."
-		.BYTE $D
-		.BYTE $FF
-byte_B37A:	.BYTE $A6,  0,	2	; DATA XREF: RAM:9FC8o
-		.BYTE $A5
-aExploringTheTh:.BYTE "Exploring the third level"
-		.BYTE $D
-		.BYTE $D
-		.BYTE $A5
-aRequiresHighSt:.BYTE "requires high stamina."
-		.BYTE $D
-		.BYTE $FF
-byte_B3B2:	.BYTE $A6,  0,	3	; DATA XREF: RAM:9FCAo
-		.BYTE $A5
-aTheOneWingedDo:.BYTE "The one-winged dog flies tonight."
-		.BYTE $D
-		.BYTE $FF
-byte_B3D9:	.BYTE $A6,  0,	2	; DATA XREF: RAM:9FCCo
-		.BYTE $A5
-aYouCanGetRichQ:.BYTE "You can get rich quick"
-		.BYTE $D
-		.BYTE $D
-		.BYTE $A5
-aOnTheFourthL_0:.BYTE "on the fourth level."
-		.BYTE $D
-		.BYTE $FF
-byte_B40C:	.BYTE $A6,  0,	3	; DATA XREF: RAM:9FCEo
-		.BYTE $A5
-aArmorTakesSkil:.BYTE "Armor takes skill to use well."
-		.BYTE $D
-		.BYTE $FF
-byte_B430:	.BYTE $A6,  0,	2	; DATA XREF: RAM:9FD0o
-		.BYTE $A5
-aAnUnspeakableH:.BYTE "An unspeakable horror dwells"
-		.BYTE $D
-		.BYTE $D
-		.BYTE $A5
-aAtTheCenterOfT:.BYTE "at the center of time."
-		.BYTE $D
-		.BYTE $FF
-byte_B46B:	.BYTE $A6,  0,	3	; DATA XREF: RAM:9FD2o
-		.BYTE $A5
-aAvoidTheElfInT:.BYTE "Avoid the elf in the raincoat."
-		.BYTE $D
-		.BYTE $FF
-byte_B48F:	.BYTE $A6,  0,	2	; DATA XREF: RAM:9FD4o
-		.BYTE $A5
-aQuestForTheMan:.BYTE "Quest for the man"
-		.BYTE $D
-		.BYTE $D
-		.BYTE $A5
-aInThePurpleTro:.BYTE "in the purple trousers."
-		.BYTE $D
-		.BYTE $FF
-byte_B4C0:	.BYTE $A6,  0,	2	; DATA XREF: RAM:9FD6o
-		.BYTE $A5
-aNeverAllowAnEn:.BYTE "Never allow an enemy to surrender,"
-		.BYTE $D
-		.BYTE $D
-		.BYTE $A5
-aTheyHaveNothin:.BYTE "They have nothing true to say."
-		.BYTE $D
-		.BYTE $FF
-byte_B509:	.BYTE $A6,  0,	2	; DATA XREF: RAM:9FD8o
-		.BYTE $A5
-aWalkBackwardsT:.BYTE "Walk backwards through"
-		.BYTE $D
-		.BYTE $D
-		.BYTE $A5
-aTheHallOfMirro:.BYTE "the Hall of Mirrors."
-		.BYTE $D
-		.BYTE $FF
-byte_B53C:	.BYTE $A6,  0,	2	; DATA XREF: RAM:9FDAo
-		.BYTE $A5
-aThereSMoneyToB:.BYTE "There's money to be made"
-		.BYTE $D
-		.BYTE $D
-		.BYTE $A5
-aInTheBlacksmit:.BYTE "in the blacksmithing trade."
-		.BYTE $D
-		.BYTE $FF
-		.BYTE	0,  0,	0,  0,	0,  0,	0,  0
-		.BYTE	0,  0,	0,  0,	0,  0,	0,  0
-		.BYTE	0,  0,	0,  0,	0,  0,	0,  0
-		.BYTE	0,  0,	0,  0,	0,  0,	0,  0
-		.BYTE	0,  0,	0,  0,	0,  0,	0,  0
-		.BYTE	0,  0,	0,  0,	0,  0,	0,  0
-		.BYTE	0,  0,	0,  0,	0,  0,	0,  0
-		.BYTE	0,  0,	0,  0,	0,  0,	0,  0
-		.BYTE	0,  0,	0,  0,	0,  0,	0,  0
-		.BYTE	0,  0,	0,  0,	0,  0,	0,  0
-		.BYTE	0,  0,	0,  0,	0,  0,	0,  0
-		.BYTE	0,  0,	0,  0,	0,  0,	0,  0
-		.BYTE	0,  0,	0,  0,	0,  0,	0,  0
-		.BYTE	0,  0,	0,  0,	0,  0,	0,  0
-		.BYTE	0,  0,	0,  0,	0,  0,	0,  0
+byte_B159:	MOVEXY	0,2
+		.BYTE	$A5,"The Clothes Horse will let you ride him",$D,$D
+		.BYTE	$A5,"if you bring him a nice hat.",$D,$FF
 
+byte_B1A5:	MOVEXY	0,3
+		.BYTE	$A5,"Demons are great guys.",$D,$FF
+	
+byte_B1C1:	MOVEXY	0,3
+		.BYTE	$A5,"Seek the Dwarf by the Wharf.",$D,$FF
+	
+byte_B1E3:	MOVEXY	0,2
+		.BYTE	$A5,"The fountain on the third level",$D,$D
+		.BYTE	$A5,"flows directly from Hell.",$D,$FF
 
-		.END
+byte_B224:	MOVEXY	0,3
+		.BYTE	$A5,"The Great Wyrm likes to bluff.",$D,$FF
+
+byte_B248:	MOVEXY	0,2
+		.BYTE	$A5,"The third level is actually",$D,$D
+		.BYTE	$A5,"safer than the first.",$D,$FF
+
+byte_B281:	MOVEXY	0,2
+		.BYTE	$A5,"If you push something hard enough,",$D,$D
+		.BYTE	$A5,"it will fall over.",$D,$FF
+
+byte_B2BE:	MOVEXY	0,2
+		.BYTE	$A5,"Two and two does not always equal four",$D,$D
+		.BYTE	$A5,"on the fourth level.",$D,$FF
+
+byte_B301:	MOVEXY	0,2
+		.BYTE	$A5,"Seek the teleporters",$D,$D
+		.BYTE	$A5,"to rapidly travel The Dungeon.",$D,$FF
+
+byte_B33C:	MOVEXY	0,2
+		.BYTE	$A5,"Look out for the guy",$D,$D
+		.BYTE	$A5,"with the high arches in his feet.",$D,$FF
+
+byte_B37A:	MOVEXY	0,2
+		.BYTE	$A5,"Exploring the third level",$D,$D
+		.BYTE	$A5,"requires high stamina.",$D,$FF
+
+byte_B3B2:	MOVEXY	0,3
+		.BYTE	$A5,"The one-winged dog flies tonight.",$D,$FF
+
+byte_B3D9:	MOVEXY	0,2
+		.BYTE	$A5,"You can get rich quick",$D,$D
+		.BYTE	$A5,"on the fourth level.",$D,$FF
+
+byte_B40C:	MOVEXY	0,3
+		.BYTE	$A5,"Armor takes skill to use well.",$D,$FF
+
+byte_B430:	MOVEXY	0,2
+		.BYTE	$A5,"An unspeakable horror dwells",$D,$D
+		.BYTE	$A5,"at the center of time.",$D,$FF
+
+byte_B46B:	MOVEXY	0,3
+		.BYTE	$A5,"Avoid the elf in the raincoat.",$D,$FF
+
+byte_B48F:	MOVEXY	0,2
+		.BYTE	$A5,"Quest for the man",$D,$D
+		.BYTE	$A5,"in the purple trousers.",$D,$FF
+
+byte_B4C0:	MOVEXY	0,2
+		.BYTE	$A5,"Never allow an enemy to surrender,",$D,$D
+		.BYTE	$A5,"They have nothing true to say.",$D,$FF
+
+byte_B509:	MOVEXY	0,2
+		.BYTE	$A5,"Walk backwards through",$D,$D
+		.BYTE	$A5,"the Hall of Mirrors.",$D,$FF
+
+byte_B53C:	MOVEXY	0,2
+		.BYTE	$A5,"There's money to be made",$D,$D
+		.BYTE	$A5,"in the blacksmithing trade.",$D,$FF
+		.RES	120,$00
