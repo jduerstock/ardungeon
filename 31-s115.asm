@@ -4029,17 +4029,21 @@ aStealthSuit:	.BYTE "Stealth Suit",0
 		.BYTE	0
 		.BYTE $F1 ; ñ
 		.BYTE	3
-		.BYTE	7
-		.BYTE $14
+
+i_SilverKey:
+:		.BYTE	7
+		.BYTE	:++-:-
 		.BYTE	0
 		.BYTE	0
 		.BYTE	0
-		.BYTE $11
+		.BYTE	:+-:-
 aSilverKey:	.BYTE "Silver Key",0
-		.BYTE	0
+:		.BYTE	0
 		.BYTE	2
 		.BYTE	7
-		.BYTE	7
+
+i_GoblinRingHalf:
+:		.BYTE	7
 		.BYTE $1A
 		.BYTE	0
 		.BYTE	0
@@ -5216,16 +5220,16 @@ unk_94A6:	.BYTE	>i_TheStarCard	; DATA XREF: RAM:7652r
 		.BYTE	>i_GaussRifle
 		.BYTE	>i_SolarSuit
 		.BYTE	>i_BeamWeapon
-		.BYTE $3C ; <
-		.BYTE $50 ; P
+		.BYTE	<i_SilverKey
+		.BYTE	<i_GoblinRingHalf
 		.BYTE $6A ; j
 		.BYTE $83 ; ƒ
 		.BYTE $98 ; ˜
 		.BYTE $BA ; º
 		.BYTE	4
 		.BYTE $4B ; K
-		.BYTE $8E ; Ž
-		.BYTE $8E ; Ž
+		.BYTE	>i_SilverKey
+		.BYTE	>i_GoblinRingHalf
 		.BYTE $8E ; Ž
 		.BYTE $8E ; Ž
 		.BYTE $8E ; Ž
