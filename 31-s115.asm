@@ -81,7 +81,7 @@ loc_768C:				; CODE XREF: RAM:766Aj	RAM:7671j ...
 		JSR	sub_769B
 		JMP	loc_7627
 
-; ЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫ S U B	R O U T	I N E ЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫ
+; --------------- S U B	R O U T	I N E ---------------------------------------
 
 
 sub_769B:				; CODE XREF: RAM:768Fp	RAM:7695p
@@ -125,7 +125,7 @@ loc_76BE:				; CODE XREF: sub_769B+1Ej
 ; End of function sub_769B
 
 
-; ЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫ S U B	R O U T	I N E ЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫ
+; --------------- S U B	R O U T	I N E ---------------------------------------
 
 
 sub_76D3:				; CODE XREF: RAM:7656p	RAM:7684p
@@ -183,7 +183,7 @@ locret_7739:				; CODE XREF: sub_76D3+3j
 ; End of function sub_76D3
 
 
-; ЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫ S U B	R O U T	I N E ЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫ
+; --------------- S U B	R O U T	I N E ---------------------------------------
 
 
 sub_773A:				; CODE XREF: RAM:766Ep
@@ -388,7 +388,7 @@ loc_789D:				; CODE XREF: sub_773A+1Dj sub_773A+33j ...
 ; End of function sub_773A
 
 
-; ЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫ S U B	R O U T	I N E ЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫ
+; --------------- S U B	R O U T	I N E ---------------------------------------
 
 
 sub_78A1:				; CODE XREF: sub_773A+Cp sub_773A+22p	...
@@ -397,7 +397,7 @@ sub_78A1:				; CODE XREF: sub_773A+Cp sub_773A+22p	...
 ; End of function sub_78A1
 
 
-; ЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫ S U B	R O U T	I N E ЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫ
+; --------------- S U B	R O U T	I N E ---------------------------------------
 
 
 sub_78A8:				; CODE XREF: sub_773A+13p sub_773A+29p ...
@@ -429,7 +429,7 @@ loc_78B0:				; CODE XREF: sub_78D5+3j
 ; End of function sub_78A8
 
 
-; ЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫ S U B	R O U T	I N E ЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫ
+; --------------- S U B	R O U T	I N E ---------------------------------------
 
 
 sub_78D5:				; CODE XREF: sub_773A:loc_77A4p
@@ -872,13 +872,13 @@ aParalysisWand:	.BYTE "Paralysis Wand",0
 
 i_EyeOfVulnerability:
 :		.BYTE $10		; DATA XREF: RAM:93D2o
-		.BYTE $2C ; ,
+		.BYTE	:++-:-
 		.BYTE	0
 		.BYTE	0
 		.BYTE	1
-		.BYTE $1A
+		.BYTE	:+-:-
 aEyeOfVulnerabi:.BYTE "Eye of Vulnerabilty",0
-		.BYTE $88 ; €
+:		.BYTE $88 ; €
 		.BYTE $FF
 		.BYTE $44 ; D
 		.BYTE	1
@@ -898,14 +898,14 @@ aEyeOfVulnerabi:.BYTE "Eye of Vulnerabilty",0
 		.BYTE	3
 
 i_LightWand:
-		.BYTE	8		; DATA XREF: RAM:93D4o
-		.BYTE $42 ; B
+:		.BYTE	8		; DATA XREF: RAM:93D4o
+		.BYTE	:++-:-
 		.BYTE	0
 		.BYTE	0
 		.BYTE	0
-		.BYTE $11
+		.BYTE	:+-:-
 aLightWand:	.BYTE "Light Wand",0
-		.BYTE $88 ; €
+:		.BYTE $88 ; €
 		.BYTE $FF
 		.BYTE $C4 ; -
 		.BYTE	1
@@ -951,14 +951,14 @@ aLight:		.BYTE "Light",0
 		.BYTE	0
 
 i_HealingWand:
-		.BYTE	8		; DATA XREF: RAM:93D6o
-		.BYTE $24 ; $
+:		.BYTE	8		; DATA XREF: RAM:93D6o
+		.BYTE	:++-:-
 		.BYTE	0
 		.BYTE	0
 		.BYTE	0
-		.BYTE $13
+		.BYTE	:+-:-
 aHealingWand:	.BYTE "Healing Wand",0
-		.BYTE $88 ; €
+:		.BYTE $88 ; €
 		.BYTE $FF
 		.BYTE $44 ; D
 		.BYTE	1
@@ -975,15 +975,16 @@ aHealingWand:	.BYTE "Healing Wand",0
 		.BYTE $32 ; 2
 		.BYTE	0
 		.BYTE	0
+
 i_FrostbladeScroll:
-		.BYTE $10		; DATA XREF: RAM:93A0o
-		.BYTE $4A ; J
+:		.BYTE $10		; DATA XREF: RAM:93A0o
+		.BYTE	:++-:-
 		.BYTE	0
 		.BYTE	0
 		.BYTE	0
-		.BYTE $18
+		.BYTE	:+-:-
 aFrostbladeScro:.BYTE "Frostblade Scroll",0
-		.BYTE $87 ; ‡
+:		.BYTE $87 ; ‡
 		.BYTE $FF
 		.BYTE $C4 ; -
 		.BYTE	1
@@ -1025,14 +1026,14 @@ aFrostblade:	.BYTE "Frostblade",0
 		.BYTE	1
 
 i_FirebladeScroll:
-		.BYTE $10		; DATA XREF: RAM:93A2o
-		.BYTE $49 ; I
+:		.BYTE $10		; DATA XREF: RAM:93A2o
+		.BYTE	:++-:-
 		.BYTE	0
 		.BYTE	0
 		.BYTE	0
-		.BYTE $17
+		.BYTE	:+-:-
 aFirebladeScrol:.BYTE "Fireblade Scroll",0
-		.BYTE $87 ; ‡
+:		.BYTE $87 ; ‡
 		.BYTE $FF
 		.BYTE $C4 ; -
 		.BYTE	1
@@ -1075,14 +1076,14 @@ aFireblade:	.BYTE "Fireblade",0
 		.BYTE	1
 
 i_CloutScroll:
-		.BYTE $10		; DATA XREF: RAM:93A4o
-		.BYTE $45 ; E
+:		.BYTE $10		; DATA XREF: RAM:93A4o
+		.BYTE	:++-:-
 		.BYTE	0
 		.BYTE	0
 		.BYTE	0
-		.BYTE $13
+		.BYTE	:+-:-
 aCloutScroll:	.BYTE "Clout Scroll",0
-		.BYTE $87 ; ‡
+:		.BYTE $87 ; ‡
 		.BYTE $FF
 		.BYTE $C4 ; -
 		.BYTE	1
@@ -1225,13 +1226,13 @@ aWizardEye:	.BYTE "Wizard Eye",0
 
 i_RubyEye:
 :		.BYTE $10		; DATA XREF: RAM:93D8o
-		.BYTE $21 ; !
+		.BYTE	:++-:-
 		.BYTE	0
 		.BYTE	0
 		.BYTE	0
-		.BYTE  $F
+		.BYTE	:+-:-
 aRubyEye:	.BYTE "Ruby Eye",0
-		.BYTE $88 ; €
+:		.BYTE $88 ; €
 		.BYTE $FF
 		.BYTE $44 ; D
 		.BYTE	1
@@ -1251,14 +1252,14 @@ aRubyEye:	.BYTE "Ruby Eye",0
 		.BYTE	3
 
 i_EmeraldEye:
-		.BYTE $10		; DATA XREF: RAM:93DAo
-		.BYTE $24 ; $
+:		.BYTE $10		; DATA XREF: RAM:93DAo
+		.BYTE	:++-:-
 		.BYTE	0
 		.BYTE	0
 		.BYTE	0
-		.BYTE $12
+		.BYTE	:+-:-
 aEmeraldEye:	.BYTE "Emerald Eye",0
-		.BYTE $88 ; €
+:		.BYTE $88 ; €
 		.BYTE $FF
 		.BYTE $44 ; D
 		.BYTE	1
@@ -1278,14 +1279,14 @@ aEmeraldEye:	.BYTE "Emerald Eye",0
 		.BYTE	3
 
 i_SapphireEye:
-		.BYTE $10		; DATA XREF: RAM:93DCo
-		.BYTE $25 ; %
+:		.BYTE $10		; DATA XREF: RAM:93DCo
+		.BYTE	:++-:-
 		.BYTE	0
 		.BYTE	0
 		.BYTE	0
-		.BYTE $13
+		.BYTE	:+-:-
 aSapphireEye:	.BYTE "Sapphire Eye",0
-		.BYTE $88 ; €
+:		.BYTE $88 ; €
 		.BYTE $FF
 		.BYTE $44 ; D
 		.BYTE	1
@@ -1305,14 +1306,14 @@ aSapphireEye:	.BYTE "Sapphire Eye",0
 		.BYTE	3
 
 i_AmberEye:
-		.BYTE $10		; DATA XREF: RAM:93DEo
-		.BYTE $22 ; "
+:		.BYTE $10		; DATA XREF: RAM:93DEo
+		.BYTE	:++-:-
 		.BYTE	0
 		.BYTE	0
 		.BYTE	0
-		.BYTE $10
+		.BYTE	:+-:-
 aAmberEye:	.BYTE "Amber Eye",0
-		.BYTE $88 ; €
+:		.BYTE $88 ; €
 		.BYTE $FF
 		.BYTE $44 ; D
 		.BYTE	1
@@ -1332,7 +1333,7 @@ aAmberEye:	.BYTE "Amber Eye",0
 		.BYTE	3
 
 i_WizardsEye:
-		.BYTE $10		; DATA XREF: RAM:93E0o
+:		.BYTE $10		; DATA XREF: RAM:93E0o
 		.BYTE $45 ; E
 		.BYTE	0
 		.BYTE	0
