@@ -47,11 +47,13 @@ loc_7649:				; CODE XREF: RAM:767Fj	RAM:771Aj ...
 		JSR	$1851
 
 loc_7656:				; CODE XREF: RAM:766Fj
-		dldi	off_1977, $7666
+		dldi	off_1977, loc_7666
 		JMP	$1806
 ; ---------------------------------------------------------------------------
 		JMP	loc_76B6
 ; ---------------------------------------------------------------------------
+
+loc_7666:
 		JSR	$1821
 		AND	#2
 		BNE	loc_7681
@@ -309,8 +311,7 @@ loc_7810:				; CODE XREF: sub_7758+CAj
 		SEC
 		SBC	$6D
 		BCS	loc_7837
-		LDX	#$80 ; '€'
-		LDY	#$4D ; 'M'
+		ldxy	$804D
 		JSR	sub_7AC5
 		JMP	loc_77BD
 ; ---------------------------------------------------------------------------
@@ -321,8 +322,7 @@ loc_7837:				; CODE XREF: sub_7758+D3j
 		SEC
 		SBC	2
 		BCS	loc_784B
-		LDX	#$81 ; ''
-		LDY	#$B5 ; 'µ'
+		ldxy	$81B5
 		JSR	sub_7AC5
 		JMP	loc_77CB
 ; ---------------------------------------------------------------------------
@@ -339,8 +339,7 @@ loc_784B:				; CODE XREF: sub_7758+E7j
 		LDA	off_7
 		CMP	#$10
 		BCS	loc_786A
-		LDX	#$7F ; ''
-		LDY	#6
+		ldxy	$7F06
 		JMP	sub_7AC5
 ; ---------------------------------------------------------------------------
 
@@ -502,32 +501,32 @@ loc_7972:				; CODE XREF: sub_7758:loc_786Ap
 		LDA	#$D2 ; 'Ò'
 		CLC
 		ADC	byte_7BD7
-		STA	$62
+		STA	off_62
 		LDA	#$7B ; '{'
 		ADC	#0
-		STA	$63
+		STA	off_62+1
 		LDY	#0
 
 loc_7982:				; CODE XREF: sub_7758+243j
 					; sub_7758+247j
-		LDA	($62),Y
+		LDA	(off_62),Y
 		BEQ	loc_79A1
 		CMP	#$F0 ; 'ð'
 		BCC	loc_7995
-		LDA	$62
+		LDA	off_62
 		ADC	#$F
-		STA	$62
+		STA	off_62
 		BCC	loc_7995
-		INC	$63
+		INC	off_62+1
 		CLC
 
 loc_7995:				; CODE XREF: sub_7758+230j
 					; sub_7758+238j
-		LDA	$62
+		LDA	off_62
 		ADC	#$10
-		STA	$62
+		STA	off_62
 		BCC	loc_7982
-		INC	$63
+		INC	off_62+1
 		BNE	loc_7982
 
 loc_79A1:				; CODE XREF: sub_7758:loc_77BAj
@@ -540,10 +539,10 @@ loc_79A1:				; CODE XREF: sub_7758:loc_77BAj
 
 loc_79AC:				; CODE XREF: sub_7758+26Ej
 		CLC
-		ADC	$62
-		STA	$62
+		ADC	off_62
+		STA	off_62
 		BCC	locret_79B5
-		INC	$63
+		INC	off_62+1
 
 locret_79B5:				; CODE XREF: sub_7758+259j
 					; sub_7758+281j
@@ -552,7 +551,7 @@ locret_79B5:				; CODE XREF: sub_7758+259j
 
 loc_79B6:				; CODE XREF: sub_7758+250j
 		LDY	#$12
-		LDA	($62),Y
+		LDA	(off_62),Y
 		AND	#$40 ; '@'
 		BEQ	loc_79C4
 		LDA	#8
@@ -572,20 +571,20 @@ loc_79C8:
 		LDY	#$E
 
 loc_79D5:				; CODE XREF: sub_7758+279j
-		LDA	($62),Y
+		LDA	(off_62),Y
 		CMP	#3
 		BCC	locret_79B5
 		LDX	#$14
 		JSR	loc_7AA7
 		ADC	#5
-		ADC	($62),Y
+		ADC	(off_62),Y
 		BCC	loc_79E8
 		LDA	#$FF
 
 loc_79E8:				; CODE XREF: sub_7758+28Cj
-		STA	($62),Y
+		STA	(off_62),Y
 		DEY
-		STA	($62),Y
+		STA	(off_62),Y
 		RTS
 ; End of function sub_7758
 
@@ -606,15 +605,15 @@ loc_7A00:				; CODE XREF: RAM:7A1Bj
 		LDY	#$A
 
 loc_7A02:				; CODE XREF: RAM:7A18j
-		LDA	($62),Y
+		LDA	(off_62),Y
 		BEQ	loc_7A17
 		AND	#$F
 		CMP	#$F
 		BEQ	loc_7A17
 		CLC
-		LDA	($62),Y
+		LDA	(off_62),Y
 		ADC	#1
-		STA	($62),Y
+		STA	(off_62),Y
 		DEC	$6F
 		BEQ	locret_7A1D
 
@@ -640,12 +639,12 @@ loc_7A2B:				; CODE XREF: RAM:7A40j
 		LDY	#$A
 
 loc_7A2D:				; CODE XREF: RAM:7A3Dj
-		LDA	($62),Y
+		LDA	(off_62),Y
 		BEQ	loc_7A3C
 		CLC
 		ADC	#$10
 		BCS	loc_7A3C
-		STA	($62),Y
+		STA	(off_62),Y
 		DEC	$6F
 		BEQ	locret_7A42
 
@@ -715,7 +714,7 @@ loc_7A83:
 		ADC	#2
 		TAY
 		LDA	$6F
-		STA	($62),Y
+		STA	(off_62),Y
 		RTS
 ; ---------------------------------------------------------------------------
 
@@ -850,7 +849,7 @@ sub_7B60:				; CODE XREF: RAM:7730p
 
 loc_7B62:				; CODE XREF: sub_7B60+9j
 		LDA	$63B1,Y
-		STA	$7BC7,Y
+		STA	byte_7BC7,Y
 		DEY
 		BPL	loc_7B62
 
@@ -898,7 +897,7 @@ loc_7BA0:				; CODE XREF: sub_7B60+15j
 		LDY	#3
 
 loc_7BB3:				; CODE XREF: sub_7B60+5Aj
-		LDA	$7BC7,Y
+		LDA	byte_7BC7,Y
 		STA	$63B1,Y
 		DEY
 		BPL	loc_7BB3
@@ -1280,106 +1279,77 @@ byte_7D50:
 		.BYTE $A8,$FF
 
 a_Welcome:
-		.BYTE $A6,  0,	0
-		.BYTE $A5
-aWelcome:	.BYTE "Welcome "
-		.BYTE $B3
-		.WORD $6321
-		.BYTE $14
-		.BYTE "!"
-		.BYTE $D
-		.BYTE $A5
-aIAmTheEnchantr:.BYTE "I am the Enchantress."
-		.BYTE $D
-		.BYTE $A5
-aWhatWouldTheeA:.BYTE "What would thee ask of me?"
-		.BYTE $D
-		.BYTE $A6,  5,	3
+		MOVEXY	0,0
+		.BYTE	$A5,"Welcome "
+		PRINTSTR $6321,20
+		.BYTE	"!",$D
+		.BYTE	$A5,"I am the Enchantress.",$D
+		.BYTE	$A5,"What would thee ask of me?",$D
+		MOVEXY	5,3
 		MenuItem "1","Examine thy weapons and armor"
-		.BYTE $A6,  5,	4
+		MOVEXY	5,4
 		MenuItem "2","Repair a weapon or armor"
-		.BYTE $A6,  5,	5
+		MOVEXY	5,5
 		MenuItem "3","Enchant a weapon or armor"
-		.BYTE $A6,  5,	7
+		MOVEXY	5,7
 		MenuItem "0","Say Goodbye"
 		.BYTE $FF
 
 a_ItsAlreadyEnhanced:
-		.BYTE $A6,  0,	2
-		.BYTE $A5
-aItSAlreadyEnha:.BYTE "It's already enhanced!"
-		.BYTE $D
-		.BYTE $FF
+		MOVEXY	0,2
+		.BYTE	$A5,"It's already enhanced!",$D,$FF
 
 a_WhatShallIDo:
-		.BYTE $A6,  0,	0
-		.BYTE $A5
-aWhatShallIDoq:	.BYTE "What shall I do?"
-		.BYTE $D
-		.BYTE $A6,  5,	2
+		MOVEXY	0,0
+		.BYTE	$A5,"What shall I do?",$D
+		MOVEXY	5,2
 		MenuItem "1","Extend the life of this weapon."
-		.BYTE $A6,  5,	3
+		MOVEXY	5,3
 		MenuItem "2","Increase its effectiveness."
-		.BYTE $A6,  5,	4
+		MOVEXY	5,4
 		MenuItem "3","Add extra damage ability."
-		.BYTE $A6,  5,	5
+		MOVEXY	5,5
 		MenuItem "4","Decrease its weight."
-		.BYTE $A6,  5,	6
+		MOVEXY	5,6
 		MenuItem "5","Let me decide what's best."
-		.BYTE $A6,  5,	7
+		MOVEXY	5,7
 		MenuItem "0","Nothing."
 		.BYTE $FF
-		.BYTE $A6,  0,	2
-		.BYTE $A5
-aICanTEnchantIt:.BYTE "I can't enchant it!"
-		.BYTE $D
-		.BYTE $FF
+
+		MOVEXY	0,2
+		.BYTE	$A5,"I can't enchant it!",$D,$FF
 
 a_WhatShallIDo_0:
-		.BYTE $A6,  0,	0
-		.BYTE $A5
-aWhatShallIDo_0:.BYTE "What shall I do?"
-		.BYTE $D
-		.BYTE $A6,  5,	2
+		MOVEXY	0,0
+		.BYTE	$A5,"What shall I do?",$D
+		MOVEXY	5,2
 		MenuItem "1","Extend the life of thine armor."
-		.BYTE $A6,  5,	3
+		MOVEXY	5,3
 		MenuItem "2","Increase its effectiveness."
-		.BYTE $A6,  5,	4
+		MOVEXY	5,4
 		MenuItem "3","Add extra protection."
-		.BYTE $A6,  5,	5
+		MOVEXY	5,5
 		MenuItem "4","Decrease its weight."
-		.BYTE $A6,  5,	6
+		MOVEXY	5,6
 		MenuItem "5","Let me decide what's best."
-		.BYTE $A6,  5,	7
+		MOVEXY	5,7
 		MenuItem "0","Nothing"
-		.BYTE $FF
+		.BYTE	$FF
 
 a_ThatWillCostAt:
-		.BYTE $A6,  0,	1
-		.BYTE $A5
-aThatWillCostAt:.BYTE "That will cost at least",$D
-		.BYTE $A3
-		.WORD loc_7BBE
-		.BYTE $A5
-		.BYTE $B2
-		.WORD $6D
-		.BYTE 2
-aCrystalsToPerf:.BYTE " crystals to perform."
-		.BYTE $D
-		.BYTE $D
-		.BYTE $A3
-		.WORD loc_7BC1
-		.BYTE $A5
-aHowManyDostTho:.BYTE "How many dost thou offer?"
-		.BYTE $D
-		.BYTE $A6,$10,	5
-		.BYTE ">"
-		.BYTE $FF
-		.BYTE $A6,  0,	2
-		.BYTE $A5
-aIMSorryButThat:.BYTE "I'm sorry, but that's not enough."
-		.BYTE $D
-		.BYTE $FF
+		MOVEXY	0,1
+		.BYTE	$A5,"That will cost at least",$D
+		STRJSR	loc_7BBE
+		.BYTE	$A5
+		PRINTBYTE $6D,2
+		.BYTE	" crystals to perform.",$D,$D
+		STRJSR	loc_7BC1
+		.BYTE	$A5,"How many dost thou offer?",$D
+		MOVEXY	16,5
+		.BYTE	">",$FF
+
+		MOVEXY	0,2
+		.BYTE $A5,"I'm sorry, but that's not enough.",$D,$FF
 
 a_Thy_IsCursed:
 		.BYTE $A6,  0,	1
@@ -1545,29 +1515,19 @@ aItWillCost:	.BYTE "It will cost "
 		.BYTE 3
 		.BYTE $A3
 		.WORD loc_7BC1
-aSilversq:	.BYTE " silvers? ("
-		.BYTE $A1
-aY:		.BYTE "Y"
-		.BYTE $A0
-aOr:		.BYTE " or "
-		.BYTE $A1
-aN:		.BYTE "N"
-		.BYTE $A0
-		.BYTE ")"
-		.BYTE $D
-		.BYTE $FF
-		.BYTE $A6,  0,	0
-		.BYTE $A5
-aThy_6:		.BYTE "Thy "
+aSilversq:	.BYTE	" silvers? ("
+aY:		BLINK	"Y"
+aOr:		.BYTE	" or "
+aN:		BLINK	"N"
+		.BYTE	")",$D,$FF
+
+		MOVEXY	0,0
+aThy_6:		.BYTE	$A5,"Thy "
 		.BYTE $B3
 		.WORD off_7BD8
 		.BYTE $1E
-aDoesThe:	.BYTE " does the"
-		.BYTE $D
-		.BYTE $A5
-aTheFollowingDa:.BYTE "the following damage:"
-		.BYTE $D
-		.BYTE $D
+aDoesThe:	.BYTE " does the",$D
+aTheFollowingDa:.BYTE $A5,"the following damage:",$D,$D
 		.BYTE $AC
 		.WORD aBlunt		; "Blunt:"
 		.BYTE $A6,  0,	0
@@ -1576,18 +1536,11 @@ aThy_7:		.BYTE "Thy "
 		.BYTE $B3
 		.WORD off_7BD8
 		.BYTE $1E
-aProvides:	.BYTE " provides "
-		.BYTE $D
-		.BYTE $A5
-aTheFollowingPr:.BYTE "the following protection:"
-		.BYTE $D
-		.BYTE $D
-aBlunt:		.BYTE "Blunt:"          ; DATA XREF: RAM:8309o
-		.BYTE $D
-aSharp:		.BYTE "Sharp:"
-		.BYTE $D
-aEarth:		.BYTE "Earth:"
-		.BYTE $D
+aProvides:	.BYTE " provides ",$D
+aTheFollowingPr:.BYTE $A5,"the following protection:",$D,$D
+aBlunt:		.BYTE "Blunt:",$D	; DATA XREF: RAM:8309o
+aSharp:		.BYTE "Sharp:",$D
+aEarth:		.BYTE "Earth:",$D
 aAir:		.BYTE "Air:"
 		.BYTE $A6, $D,	3
 aFire:		.BYTE "Fire:"
@@ -1865,7 +1818,7 @@ loc_8552:				; CODE XREF: RAM:856Fj
 
 loc_8554:				; CODE XREF: RAM:856Dj
 		LDY	6
-		LDA	(7),Y
+		LDA	(off_7),Y
 		LDY	#4
 
 loc_855A:				; CODE XREF: RAM:855Fj
@@ -1905,28 +1858,28 @@ loc_8576:				; CODE XREF: RAM:857Aj
 
 loc_8594:				; CODE XREF: RAM:84A4p	RAM:84AFp ...
 		LDY	#0
-		LDA	(7),Y
-		INC	7
+		LDA	(off_7),Y
+		INC	off_7
 		BNE	loc_859E
-		INC	8
+		INC	off_7+1
 
 loc_859E:				; CODE XREF: RAM:859Aj
 		CMP	#$1B
 		BEQ	loc_85AD
-		STA	(9),Y
-		INC	9
+		STA	(off_9),Y
+		INC	off_9
 		BNE	loc_85AA
-		INC	$A
+		INC	off_9+1
 
 loc_85AA:				; CODE XREF: RAM:85A6j
 		JMP	loc_8594
 ; ---------------------------------------------------------------------------
 
 loc_85AD:				; CODE XREF: RAM:85A0j
-		LDA	(7),Y
-		INC	7
+		LDA	(off_7),Y
+		INC	off_7
 		BNE	loc_85B5
-		INC	8
+		INC	off_7+1
 
 loc_85B5:				; CODE XREF: RAM:85B1j
 		CMP	#$FF
@@ -1936,9 +1889,9 @@ loc_85B5:				; CODE XREF: RAM:85B1j
 
 loc_85BA:				; CODE XREF: RAM:85B7j
 		STA	byte_85F4
-		ADC	9
+		ADC	off_9
 		STA	loc_85CD+1
-		LDA	$A
+		LDA	off_9+1
 		ADC	#0
 		CMP	#$14
 		BNE	loc_85D2
@@ -1949,25 +1902,25 @@ loc_85CD:				; DATA XREF: RAM:85BFw
 		STA	byte_85F4
 
 loc_85D2:				; CODE XREF: RAM:85C8j
-		LDA	(7),Y
-		INC	7
+		LDA	(off_7),Y
+		INC	off_7
 		BNE	loc_85DA
-		INC	8
+		INC	off_7+1
 
 loc_85DA:				; CODE XREF: RAM:85D6j
 		LDY	byte_85F4
 
 loc_85DD:				; CODE XREF: RAM:85E0j
-		STA	(9),Y
+		STA	(off_9),Y
 		DEY
 		BPL	loc_85DD
 		INC	byte_85F4
 		LDA	byte_85F4
 		CLC
-		ADC	9
-		STA	9
+		ADC	off_9
+		STA	off_9
 		BCC	loc_85F1
-		INC	$A
+		INC	off_9+1
 
 loc_85F1:				; CODE XREF: RAM:85EDj
 		JMP	loc_8594

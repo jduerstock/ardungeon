@@ -872,13 +872,13 @@ aParalysisWand:	.BYTE "Paralysis Wand",0
 
 i_EyeOfVulnerability:
 :		.BYTE $10		; DATA XREF: RAM:93D2o
-		.BYTE $2C ; ,
+		.BYTE	:++-:-
 		.BYTE	0
 		.BYTE	0
 		.BYTE	1
-		.BYTE $1A
+		.BYTE	:+-:-
 aEyeOfVulnerabi:.BYTE "Eye of Vulnerabilty",0
-		.BYTE $88 ; ˆ
+:		.BYTE $88 ; ˆ
 		.BYTE $FF
 		.BYTE $44 ; D
 		.BYTE	1
@@ -898,14 +898,14 @@ aEyeOfVulnerabi:.BYTE "Eye of Vulnerabilty",0
 		.BYTE	3
 
 i_LightWand:
-		.BYTE	8		; DATA XREF: RAM:93D4o
-		.BYTE $42 ; B
+:		.BYTE	8		; DATA XREF: RAM:93D4o
+		.BYTE	:++-:-
 		.BYTE	0
 		.BYTE	0
 		.BYTE	0
-		.BYTE $11
+		.BYTE	:+-:-
 aLightWand:	.BYTE "Light Wand",0
-		.BYTE $88 ; ˆ
+:		.BYTE $88 ; ˆ
 		.BYTE $FF
 		.BYTE $C4 ; -
 		.BYTE	1
@@ -951,7 +951,7 @@ aLight:		.BYTE "Light",0
 		.BYTE	0
 
 i_HealingWand:
-		.BYTE	8		; DATA XREF: RAM:93D6o
+:		.BYTE	8		; DATA XREF: RAM:93D6o
 		.BYTE $24 ; $
 		.BYTE	0
 		.BYTE	0
