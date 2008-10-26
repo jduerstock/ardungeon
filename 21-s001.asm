@@ -1,3 +1,5 @@
+		.include	"macros.inc"
+
 		.SEGMENT	"SEG_279D"
 
 off_80	= $80
@@ -307,14 +309,8 @@ loc_B948:				; CODE XREF: RAM:B93Aj
 		STA	$306
 		LDA	#$80 ; '€'
 		STA	$308
-		LDA	$87
-		STA	$30A
-		LDA	$88
-		STA	$30B
-		LDA	#0
-		STA	$304
-		LDA	#4
-		STA	$305
+		dmv	$30A, $87
+		dldi	$304, $400
 
 loc_B970:				; CODE XREF: RAM:B9D3j
 		LDA	#3
@@ -332,10 +328,7 @@ loc_B974:				; CODE XREF: RAM:B985j
 		BEQ	loc_B9BA
 
 loc_B989:				; CODE XREF: RAM:B981j
-		LDA	$304
-		STA	$F6
-		LDA	$305
-		STA	$F7
+		dmv	$F6, $304
 		LDY	#$7F ; ''
 
 loc_B995:				; CODE XREF: RAM:B99Aj
@@ -392,10 +385,7 @@ loc_B9E5:				; CODE XREF: RAM:B9EAj
 		BNE	loc_B9E5
 
 loc_B9EC:				; CODE XREF: RAM:B9DEj
-		LDA	$30A
-		STA	$87
-		LDA	$30B
-		STA	$88
+		dmv	$87, $30A
 		LDA	$83
 		STA	$301
 		LDA	$8F
@@ -432,14 +422,8 @@ loc_BA31:				; CODE XREF: RAM:BA36j
 loc_BA3A:				; CODE XREF: RAM:B9FDj	RAM:BA01j ...
 		LDX	#3
 		JSR	sub_B80F
-		LDA	#0
-		STA	$304
-		LDA	#4
-		STA	$305
-		LDA	$89
-		STA	$30A
-		LDA	$8A
-		STA	$30B
+		dldi	$304, $400
+		dmv	$30A, $89
 
 loc_BA53:				; CODE XREF: RAM:BA68j	RAM:BA70j ...
 		LDX	$8D

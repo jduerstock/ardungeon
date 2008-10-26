@@ -30,38 +30,10 @@ unk_600:	.BYTE	$00,$00,$00,$00,$00,$00,$00,$00	; DATA XREF: sub_31A2+3Er
 		.BYTE	$F0,$F0,$F0,$F3,$F0,$F3,$3F,$3C
 		.BYTE	$F0,$F0,$3C,$0F,$0F,$3C,$F0,$F0
 		.BYTE	$F0,$3C,$3C,$0F,$03,$03,$03,$03
-		.BYTE $3F
-		.BYTE $F0
-		.BYTE	0
-		.BYTE	3
-		.BYTE $FF
-		.BYTE $3C
-		.BYTE $F0
-		.BYTE $FF
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	3
-		.BYTE	3
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE $3F ; ?
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	3
-		.BYTE	3
-		.BYTE	3
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
+		.BYTE	$3F,$F0,$00,$03,$FF,$3C,$F0,$FF
+		.BYTE	$00,$00,$00,$00,$00,$03,$03,$00
+		.BYTE	$00,$00,$00,$00,$3F,$00,$00,$00
+		.BYTE	$00,$03,$03,$03,$00,$00,$00,$00
 		.BYTE	3
 		.BYTE  $F
 		.BYTE  $F

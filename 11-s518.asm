@@ -6886,25 +6886,25 @@ byte_43C5:	.BYTE 0			; DATA XREF: RAM:437Aw	RAM:43BEr
 ; ---------------------------------------------------------------------------
 
 loc_43C6:				; CODE XREF: sub_408B+27p sub_408B+4Ap
-		LDA	$6346
+		LDA	$6346		; is I_CURHP < I_MAXHP ?
 		CMP	$6348
 		LDA	$6345
 		SBC	$6347
-		BCC	loc_43E2
+		BCC	loc_43E2	; yes, jump
 		LDX	#1
 
 loc_43D6:				; CODE XREF: RAM:43DDj
-		LDA	$6347,X
-		STA	$6345,X
+		LDA	$6347,X		; no
+		STA	$6345,X		; I_CURHP = I_MAXHP
 		DEX
 		BPL	loc_43D6
-		LDA	#'='
+		LDA	#'='		; set status bar to "HP="
 ; ---------------------------------------------------------------------------
 		.BYTE $2C ; ,
 ; ---------------------------------------------------------------------------
 
 loc_43E2:				; CODE XREF: RAM:43D2j
-		LDA	#':'
+		LDA	#':'		; set status bar to "HP:"
 		STA	$499
 		dldi	off_58, $6349
 		LDX	#6
