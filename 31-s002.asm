@@ -288,7 +288,7 @@ loc_7785:				; CODE XREF: sub_84CF-D4Fj
 		STA	$1958
 		STA	$1937
 		DEC	$195F
-		DEC	$1960
+		DEC	byte_1960
 		JSR	$184E
 		LDX	$72
 		TXS
@@ -4200,7 +4200,7 @@ sub_8EF9:				; CODE XREF: RAM:7713j	sub_84CF-D5Fp ...
 		PHA
 		LDA	#0
 		STA	$32
-		DEC	$1960
+		DEC	byte_1960
 		DEC	$195F
 		JSR	$18A5
 		PLA

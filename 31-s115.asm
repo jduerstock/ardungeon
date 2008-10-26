@@ -3,6 +3,19 @@
 		.include	"exp_kernel.inc"
 		.include	"macros.inc"
 
+.macro Item Type,Unknown1,Unknown2,Weight,Name
+:		.BYTE	Type
+		.BYTE	:++-:-
+		.BYTE	Unknown1
+		.BYTE	Unknown2
+		.BYTE	Weight
+		.BYTE	:+-:-
+		.BYTE	Name
+		.BYTE	0
+:
+.endmacro
+
+
 ;		.ORG	$7600
 		.BYTE 2
 ; ---------------------------------------------------------------------------
@@ -458,12 +471,14 @@ byte_78E4:	.BYTE 0			; DATA XREF: sub_773A+3Dw sub_773A+4Ew ...
 byte_78E5:	.BYTE 0			; DATA XREF: sub_773A+38w
 					; sub_773A:loc_777Ar ...
 i_TheStarCard:
-:		.BYTE	$10		; DATA XREF: RAM:93ACo
-		.BYTE	:++-:-
-		.BYTE	$00,$00,$00
-		.BYTE	:+-:-
-aTheStarCard:	.BYTE	"The Star (card)",0
-:		.BYTE	$88,$FF,$44,$01,$01,$00,$00,$00,$00,$81,$BE,$00,$01,$00,$19,$00,$00,$01
+;:		.BYTE	$10		; DATA XREF: RAM:93ACo
+;		.BYTE	:++-:-
+;		.BYTE	$00,$00,$00
+;		.BYTE	:+-:-
+;aTheStarCard:	.BYTE	"The Star (card)",0
+;:
+		Item	$10,$00,$00,$00,"The Star (card)"		
+		.BYTE	$88,$FF,$44,$01,$01,$00,$00,$00,$00,$81,$BE,$00,$01,$00,$19,$00,$00,$01
 
 i_TheFoolCard:
 :		.BYTE	$10		; DATA XREF: RAM:93AEo

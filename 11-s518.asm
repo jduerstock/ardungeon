@@ -6243,10 +6243,10 @@ loc_3F66:				; CODE XREF: RAM:3F8Aj
 		TAY
 		LDA	off_41
 		ADC	#6
-		STA	off_407F,Y
-		LDA	#0
-		ADC	off_41+1
-		STA	off_407F+1,Y
+		STA	off_407F,Y	; off_407F = off_41 + 6
+		LDA	#0		; which is pointer to the
+		ADC	off_41+1	; item's name
+		STA	off_407F+1,Y	
 
 loc_3F87:				; CODE XREF: RAM:3F6Cj	RAM:3F71j
 		DEC	byte_407D
@@ -6308,9 +6308,9 @@ loc_3FCF:				; CODE XREF: RAM:3FF3j
 		CLC
 		LDA	off_41
 		ADC	#6
-		STA	off_407F,X
-		LDA	off_41+1
-		ADC	#0
+		STA	off_407F,X	; off_407F = off_41 + 6
+		LDA	off_41+1	; which is a pointer to
+		ADC	#0		; the item's name
 		STA	off_407F+1,X
 
 loc_3FF0:				; CODE XREF: RAM:3FD5j	RAM:3FDAj
@@ -6637,7 +6637,7 @@ loc_4202:				; CODE XREF: RAM:41FFj
 		STA	byte_1960
 		STA	byte_1976
 		STA	byte_195E
-		STA	$6394
+		STA	I_BURDEN
 		STA	word_42E5
 		STA	word_42E5+1
 		LDA	#3
@@ -6675,7 +6675,7 @@ loc_424F:				; CODE XREF: RAM:4271j
 		JSR	LOADINV
 		BEQ	loc_426F
 		LDY	#0
-		LDA	(off_41),Y
+		LDA	(off_41),Y	; is item type < $80?
 		BPL	loc_426F
 		LDY	#4
 		LDA	(off_41),Y
@@ -6756,7 +6756,7 @@ loc_42C8:				; DATA XREF: RAM:42C1w
 
 loc_42DE:				; CODE XREF: RAM:42D7j
 		LDA	word_42E5
-		STA	$6394
+		STA	I_BURDEN
 
 locret_42E4:				; CODE XREF: RAM:42D5j
 		RTS
@@ -6979,7 +6979,7 @@ loc_4446:				; CODE XREF: RAM:4441j
 		STA	$6383
 
 loc_4452:				; CODE XREF: RAM:444Bj
-		LDA	$6394
+		LDA	I_BURDEN
 		CMP	#$E0 ; 'à'
 		BCC	locret_445E
 		LDA	#2
@@ -8775,7 +8775,7 @@ sub_4EE8:				; CODE XREF: sub_4CCF+2p sub_4EC4p
 		LDA	off_41+1
 		ADC	#0
 		STA	off_43+1
-		RTS
+		RTS			; off_43 = first byte after item name
 ; End of function sub_4EE8
 
 
