@@ -379,8 +379,9 @@ all: $(BINARIES) $(OBJECTS)
 	sha1sum -c 31-s200.sha1
 	./encrypt.php 31-s200.bin 50c70012858d6deaeda0885b036337d8
 
-31-s236.bin: 31-s236.asm
-	cl65 --start-addr 0x0100 -t none 31-s236.asm -o 31-s236.bin
+31-s236.bin: 31-s236.asm 31-s236.cfg
+	ca65 -o 31-s236.o 31-s236.asm
+	ld65 -o 31-s236.bin -C 31-s236.cfg 31-s236.o
 	sha1sum -c 31-s236.sha1
 	./encrypt.php 31-s236.bin 00000000000000000000000000000000
 
