@@ -10,6 +10,12 @@ off_6E	= $6E
 off_D6	= $D6
 off_F4	= $F4
 
+byte_AA00 = $AA00
+off_AA01 = $AA01
+off_AA03 = $AA03
+off_AA05 = $AA05
+byte_AA24 = $AA24
+byte_AA2B = $AA2B
 byte_AA37 = $AA37
 
 ;		.ORG	$7600
@@ -73,7 +79,7 @@ byte_7656:
 		.BYTE 3
 		.BYTE ' '
 		.BYTE $B4
-		.WORD $AA01
+		.WORD off_AA01
 		.BYTE $14
 		.BYTE $20
 		.BYTE $AE ; ®
@@ -545,10 +551,10 @@ loc_797B:				; CODE XREF: sub_88B0-F3Aj
 		BEQ	loc_79A0
 		DEC	$97
 		INC	$A0
-		INC	$A0
+		INC	$A0		; A0 +=2
 		INC	$9B
 		INC	$9B
-		INC	$9B
+		INC	$9B		; 9B +=3
 		LDA	byte_AA21
 		ORA	#$20 ; ' '
 		STA	byte_AA21
@@ -795,7 +801,7 @@ loc_7B25:				; CODE XREF: sub_84CF-995j
 		LDX	$96
 		LDA	#0
 		STA	off_2
-		LDA	$AA2B,X
+		LDA	byte_AA2B,X
 		BEQ	loc_7B38
 		STA	off_2+1
 		JSR	$18AB
@@ -868,11 +874,11 @@ loc_7B9E:				; CODE XREF: sub_7B59+5Bj
 		BEQ	loc_7BB0
 
 loc_7BAA:				; CODE XREF: sub_7B59+4Bj
-		LDA	$AA2B,X
+		LDA	byte_AA2B,X
 		JSR	$1899
 
 loc_7BB0:				; CODE XREF: sub_7B59+4Fj
-		STA	$AA2B,X
+		STA	byte_AA2B,X
 		DEX
 		BPL	loc_7B9E
 		LDA	$6385
@@ -1072,7 +1078,7 @@ loc_7CF9:				; CODE XREF: sub_7C9E+79j
 		LDA	#$FF
 
 loc_7D12:				; CODE XREF: sub_7C9E+70j
-		STA	$AA24,X
+		STA	byte_AA24,X
 
 loc_7D15:				; CODE XREF: sub_7C9E+6Cj
 		DEC	$96
@@ -1285,7 +1291,7 @@ loc_7E40:				; CODE XREF: sub_7DD2+69j sub_7DD2+C3j
 		LDX	#$B
 
 loc_7E48:				; CODE XREF: sub_7DD2+7Cj
-		LDA	$AA2B,X
+		LDA	byte_AA2B,X
 		BNE	loc_7E61
 		DEX
 		BPL	loc_7E48
@@ -1294,7 +1300,7 @@ loc_7E50:				; CODE XREF: sub_7DD2+72j
 		LDA	#$B
 		JSR	$1899
 		TAX
-		LDA	$AA2B,X
+		LDA	byte_AA2B,X
 		BNE	loc_7E61
 		LDA	#$B
 		JSR	$1899
@@ -1302,7 +1308,7 @@ loc_7E50:				; CODE XREF: sub_7DD2+72j
 
 loc_7E61:				; CODE XREF: sub_7DD2+79j sub_7DD2+87j
 		STX	$94
-		LDA	$AA2B,X
+		LDA	byte_AA2B,X
 		BNE	loc_7E6F
 		ldxy	a_GrabNothing
 		JMP	loc_7E8A
@@ -1311,7 +1317,7 @@ loc_7E61:				; CODE XREF: sub_7DD2+79j sub_7DD2+87j
 loc_7E6F:				; CODE XREF: sub_7DD2+94j
 		PHA
 		LDA	#0
-		STA	$AA2B,X
+		STA	byte_AA2B,X
 		LDY	byte_76E0,X
 		LDA	unk_76EC,X
 		TAX
@@ -3295,13 +3301,13 @@ sub_89DC:
 sub_89DF:
 		LDX	#5
 		CLC
-		LDA	$AA24,X
+		LDA	byte_AA24,X
 		ADC	#$10
 		BCC	loc_89EB
 		LDA	#$FF
 
 loc_89EB:				; CODE XREF: RAM:89E7j
-		STA	$AA24,X
+		STA	byte_AA24,X
 		RTS
 ; ---------------------------------------------------------------------------
 sub_89EF:
@@ -4536,7 +4542,7 @@ sub_90C3:				; CODE XREF: sub_88B0+97p
 		LDA	#0
 
 loc_90C7:				; CODE XREF: sub_90C3+8j
-		STA	$AA2B,X
+		STA	byte_AA2B,X
 		DEX
 		BPL	loc_90C7
 
@@ -4845,9 +4851,9 @@ loc_9283:				; CODE XREF: sub_9280+6j
 sub_9289:				; CODE XREF: sub_7B59+31p RAM:8869p
 		ASL	A
 		TAX
-		LDA	$AA05,X
+		LDA	off_AA05,X
 		STA	off_68
-		LDA	$AA06,X
+		LDA	off_AA05+1,X
 		STA	off_68+1
 		CLC
 		LDA	off_68
@@ -4929,7 +4935,7 @@ loc_92F6:				; CODE XREF: sub_810Ep	sub_92D0+1Dj
 		LDX	#6
 
 loc_9301:				; CODE XREF: sub_92D0+38j
-		LDA	$AA24,X
+		LDA	byte_AA24,X
 		JSR	sub_845E
 		DEX
 		BPL	loc_9301
@@ -5334,7 +5340,7 @@ sub_950E:				; CODE XREF: sub_7B59p	sub_950E+31j
 		STA	$96
 		JSR	loc_96EA
 		dldi	word_232, $00EC
-		dldi	off_9, $AA00
+		dldi	off_9, byte_AA00
 		JSR	sub_962B
 		BCC	loc_9542
 		JSR	sub_961C
@@ -6046,14 +6052,14 @@ a_YouSurpriseThe:
 		MOVEXY	0,0
 		.BYTE	$A5,"You surprise the "
 		.BYTE	$B4
-		.WORD	$AA01
+		.WORD	off_AA01
 		.BYTE	$14
 		.BYTE	".",$D
 		.BYTE	$A5,"Attempt to:",$D
 		MOVEXY	10,3
 		MenuItem "1","waylay the "
 		.BYTE	$B4
-		.WORD	$AA01
+		.WORD	off_AA01
 		.BYTE	$14
 		.BYTE	"."
 		MOVEXY	10,4
@@ -6086,7 +6092,7 @@ a_GrabSome:
 		.BYTE	$D
 		.BYTE	$A5
 		.BYTE	$B4
-		.WORD	$AA01
+		.WORD	off_AA01
 		.BYTE	$14
 		.BYTE	"'s "
 		.BYTE	$B4
@@ -6149,7 +6155,7 @@ a_BreaksTheSpell:
 		.BYTE	$A5
 		.BYTE	"The "
 		.BYTE	$B4
-		.WORD	$AA01
+		.WORD	off_AA01
 		.BYTE	$10
 		.BYTE	" "
 		.BYTE	$AC
@@ -6171,7 +6177,7 @@ a_FeelThatReasoning:
 		.WORD	$9D0E
 		.BYTE	"feel that reasoning with the",$D,$A5
 		.BYTE	$B4
-		.WORD	$AA01
+		.WORD	off_AA01
 		.BYTE	$10
 		.BYTE	" is the best course.",$D,$FF
 		.BYTE	$AC
@@ -6246,7 +6252,7 @@ a_You_The_WithYour:
 		.BYTE	15
 		.BYTE	" the "
 		.BYTE	$B4
-		.WORD	$AA01
+		.WORD	off_AA01
 		.BYTE	$14
 		.BYTE	$D
 		.BYTE	$A5
@@ -6401,11 +6407,11 @@ locret_9FFD:				; CODE XREF: RAM:9FECj	RAM:9FF1j
 		RTS
 ; ---------------------------------------------------------------------------
 		.BYTE	$B4
-		.WORD	$AA01
+		.WORD	off_AA01
 		.BYTE	$10
 aIsHitFor:	.BYTE	" is hit for",$AE
 		.BYTE	$B4
-		.WORD	$AA03
+		.WORD	off_AA03
 		.BYTE	$10
 		.BYTE	" are hit for",$AE
 		.BYTE	"bare hand",0
@@ -6512,19 +6518,19 @@ locret_A12C:				; CODE XREF: RAM:A122j
 
 		.BYTE	$A5,"The "
 		.BYTE	$B4
-		.WORD	$AA01
+		.WORD	off_AA01
 		.BYTE	$10
 		.BYTE	" takes your offer.",$D,$FF
 		.BYTE	$A5,"The "
 		.BYTE	$B4
-		.WORD	$AA03
+		.WORD	off_AA03
 		.BYTE	$10
 		.BYTE	" take your offer.",$D,$FF
 		.BYTE	$A3
 		.WORD	$A181
 		.BYTE	$A5,"The "
 		.BYTE	$B4
-		.WORD	$AA01
+		.WORD	off_AA01
 		.BYTE	$10
 		.BYTE	" "
 		.BYTE	$AD
@@ -6560,7 +6566,7 @@ a_IsBewildered:
 		.BYTE	$A5
 		.BYTE	"..."
 		.BYTE	$B4
-		.WORD	$AA01
+		.WORD	off_AA01
 		.BYTE	$10
 		.BYTE	" is bewildered,",$D,$FF
 
@@ -7219,10 +7225,11 @@ byte_A8A0:	.BYTE 0			; DATA XREF: sub_7B59+40w sub_7B59+48r ...
 		STA	($62),Y
 		DEY		
 
-byte_AA00:	.BYTE $A9		; CODE XREF: RAM:7804p
-					; DATA XREF: RAM:760Fr	...
-off_AA01:	.WORD	$85FF		; DATA XREF: sub_8560+7r
-off_AA03:	.WORD	$85A6
+		.BYTE	$A9
+		.BYTE	$FF
+		.BYTE	$85
+		.BYTE	$A6
+		.BYTE	$85
 		.BYTE $AF ; ¯
 		.BYTE $AD ; ­
 		.BYTE $59 ; Y
@@ -7257,7 +7264,7 @@ byte_AA21:	.BYTE $11		; DATA XREF: sub_88B0-F1Br
 byte_AA22:	.BYTE $8D		; DATA XREF: sub_7B59:loc_7BD9r
 					; sub_7C9E+54w	...
 byte_AA23:	.BYTE $4C		; DATA XREF: sub_7B59+85r sub_7C9E+4Cr ...
-byte_AA24:	.BYTE $19		; DATA XREF: sub_88B0-E1Br
+		.BYTE $19		; DATA XREF: sub_88B0-E1Br
 					; sub_7C9E+69r
 		.BYTE $AE ; ®
 byte_AA26:	.BYTE $4C		; DATA XREF: RAM:86FCr
@@ -7888,160 +7895,83 @@ byte_AC00:	.BYTE $C2		; DATA XREF: sub_84CF-D4Dw
 		.BYTE $AC ; ¬
 
 byte_AC97:
-		.BYTE $46 ; F
-		.BYTE	2
-		.BYTE $1D
-		.BYTE	5
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE $12
-		.BYTE	1
-		.BYTE $AD ; ­
-		.BYTE	1
-		.BYTE $36 ; 6
-		.BYTE	1
-		.BYTE $9F ; Ÿ
-		.BYTE	0
-		.BYTE $F7 ; ÷
-		.BYTE	0
-		.BYTE $F9 ; ù
-		.BYTE	3
-		.BYTE	0
-		.BYTE	0
-		.BYTE $98 ; ˜
-		.BYTE	0
-		.BYTE $D0 ; Ð
-		.BYTE	0
-		.BYTE $15
-		.BYTE	1
-		.BYTE $37 ; 7
-		.BYTE	3
-		.BYTE $B4 ; ´
-		.BYTE	1
-		.BYTE	0
-		.BYTE	0
-		.BYTE $D2 ; Ò
-		.BYTE	1
-		.BYTE $4B ; K
-		.BYTE	1
-		.BYTE $B9 ; ¹
-		.BYTE	0
-		.BYTE $F8 ; ø
-		.BYTE	0
-		.BYTE $C4 ; -
-		.BYTE	0
-		.BYTE $C0 ; À
-		.BYTE	0
-		.BYTE $B7 ; ·
-		.BYTE	0
-		.BYTE $7F ; 
-		.BYTE	1
-		.BYTE	0
-		.BYTE	0
-		.BYTE $EF ; ï
-		.BYTE	0
-		.BYTE $46 ; F
-		.BYTE	1
-		.BYTE $B9 ; ¹
-		.BYTE	0
-		.BYTE $9C ; œ
-		.BYTE	0
-		.BYTE $C5 ; Å
-		.BYTE	0
-		.BYTE $3E ; >
-		.BYTE	1
-		.BYTE $E4 ; ä
-		.BYTE	0
-		.BYTE $96 ; –
-		.BYTE	0
-		.BYTE $BA ; º
-		.BYTE	0
-		.BYTE $E9 ; é
-		.BYTE	0
-		.BYTE	1
-		.BYTE	1
-		.BYTE $D1 ; Ñ
-		.BYTE	0
-		.BYTE $C1 ; Á
-		.BYTE	0
-		.BYTE $BE ; ¾
-		.BYTE	0
-		.BYTE $BC ; ¼
-		.BYTE	0
-		.BYTE	4
-		.BYTE	1
-		.BYTE $AB ; «
-		.BYTE	0
-		.BYTE $A5 ; ¥
-		.BYTE	0
-		.BYTE  $B
-		.BYTE	1
-		.BYTE $18
-		.BYTE	1
-		.BYTE $C3 ; Ã
-		.BYTE	0
-		.BYTE $D6 ; Ö
-		.BYTE	0
-		.BYTE $DB ; -
-		.BYTE	0
-		.BYTE $BE ; ¾
-		.BYTE	0
-		.BYTE $C6 ; Æ
-		.BYTE	0
-		.BYTE $84 ; „
-		.BYTE	1
-		.BYTE $B2 ; ²
-		.BYTE	0
-		.BYTE $8A ; Š
-		.BYTE	0
-		.BYTE  $B
-		.BYTE	1
-		.BYTE $C0 ; À
-		.BYTE	0
-		.BYTE $CD ; Í
-		.BYTE	0
-		.BYTE $84 ; „
-		.BYTE	0
-		.BYTE $87 ; ‡
-		.BYTE	0
-		.BYTE $8C ; Œ
-		.BYTE	0
-		.BYTE $E2 ; â
-		.BYTE	0
-		.BYTE $A9 ; ©
-		.BYTE	0
-		.BYTE $76 ; v
-		.BYTE	0
-		.BYTE $BF ; ¿
-		.BYTE	0
-		.BYTE $BC ; ¼
-		.BYTE	0
-		.BYTE	4
-		.BYTE	1
-		.BYTE $BB ; »
-		.BYTE	0
-		.BYTE $A6 ; ¦
-		.BYTE	0
-		.BYTE $83 ; ƒ
-		.BYTE	0
-		.BYTE $D3 ; Ó
-		.BYTE	0
-		.BYTE  $E
-		.BYTE	2
-		.BYTE $D7 ; ×
-		.BYTE	0
-		.BYTE $DB ; -
-		.BYTE	0
-		.BYTE $E5 ; å
-		.BYTE	0
-		.BYTE $82 ; ‚
-		.BYTE	0
-		.BYTE $B4 ; ´
-		.BYTE	0
+		.WORD	$0246
+		.WORD	$051D
+		.WORD	0
+		.WORD	0
+		.WORD	0
+		.WORD	$0112
+		.WORD	$01AD
+		.WORD	$0136
+		.WORD	$009F
+		.WORD	$00F7
+		.WORD	$03F9
+		.WORD	0
+		.WORD	$0098
+		.WORD	$00D0
+		.WORD	$0115
+		.WORD	$0337
+		.WORD	$01B4
+		.WORD	0
+		.WORD	$01D2
+		.WORD	$014B
+		.WORD	$00B9
+		.WORD	$00F8
+		.WORD	$00C4
+		.WORD	$00C0
+		.WORD	$00B7
+		.WORD	$017F
+		.WORD	0
+		.WORD	$00EF
+		.WORD	$0146
+		.WORD	$00B9
+		.WORD	$009C
+		.WORD	$00C5
+		.WORD	$013E
+		.WORD	$00E4
+		.WORD	$0096
+		.WORD	$00BA
+		.WORD	$00E9
+		.WORD	$0101
+		.WORD	$00D1
+		.WORD	$00C1
+		.WORD	$00BE
+		.WORD	$00BC
+		.WORD	$0104
+		.WORD	$00AB
+		.WORD	$00A5
+		.WORD	$010B
+		.WORD	$0118
+		.WORD	$00C3
+		.WORD	$00D6
+		.WORD	$00DB
+		.WORD	$00BE
+		.WORD	$00C6
+		.WORD	$0184
+		.WORD	$00B2
+		.WORD	$008A
+		.WORD	$010B
+		.WORD	$00C0
+		.WORD	$00CD
+		.WORD	$0084
+		.WORD	$0087
+		.WORD	$008C
+		.WORD	$00E2
+		.WORD	$00A9
+		.WORD	$0076
+		.WORD	$00BF
+		.WORD	$00BC
+		.WORD	$0104
+		.WORD	$00BB
+		.WORD	$00A6
+		.WORD	$0083
+		.WORD	$00D3
+		.WORD	$020E
+		.WORD	$00D7
+		.WORD	$00DB
+		.WORD	$00E5
+		.WORD	$0082
+		.WORD	$00B4
 		.BYTE $A4 ; ¤
 		.BYTE $A4 ; ¤
 		.BYTE $A6,  0,	2

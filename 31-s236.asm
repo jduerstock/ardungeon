@@ -17,23 +17,33 @@
 	.SEGMENT	"MONST01"
 
 	.BYTE	$01
-	.WORD	aDevourer,$AA78,$AA79,$AA79,$AA79
+	.WORD	aDevourer,byte_AA78,i_SlimyTentacle,i_SlimyTentacle,i_SlimyTentacle
 	.BYTE	$00,$80,$0b,$04,$ff ; |.....|
-	.BYTE	$c8,$00,$00,$3e,$ac,$00,$00,$00,$00,$a2,$aa,$00,$00,$00,$04,$00 ; |...>............|
+	.BYTE	$c8,$00,$00
+	.WORD	loc_AC3E
+	.BYTE	$00,$00,$00,$00
+	.WORD	loc_AAA2
+	.BYTE	$00,$00,$00,$04,$00 ; |...>............|
 	.BYTE	$49,$a8,$00,$48,$14,$08,$1e,$00,$16,$3c,$32,$00,$00,$00,$00,$00 ; |I..H.....<2.....|
 	.BYTE	$00,$00,$00,$00,$00,$00,$00
 	.BYTE	$55,$55,$33,$33,$33,$33,$33,$33,$33,$33,$33
 	.BYTE	"dissolves in a puddle",$0D,$A5
 	.BYTE	"of thick smelly ooze.",$AE
+
 aDevourer:
 	.BYTE	"devourer",0
+
+byte_AA78:
 	.BYTE	$00
+
+i_SlimyTentacle:
 	Item	$FF,$00,$00,$02,"slimy tentacle"
 	.BYTE	$00,$ff ; |..|
 	.BYTE	$00,$28,$12,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00 ; |.(..............|
 	.BYTE	$85,$00
-
-:	JSR	$7707
+:
+loc_AAA2:
+	JSR	$7707
 	LDA	RANDOM
 	CMP	#$30
 	BCS	:+
@@ -43,13 +53,17 @@ aDevourer:
 	CMP	#$30
 	BCC	:+
 	JMP	$76FE
-:	JSR	$AAD1
+
+sub_AABC:
+:	JSR	sub_AAD1
 	JSR	$7710
-	ldxy	$AB7C
+	ldxy	a_YouStruggle
 	LDA	$93
 	BEQ	:+
-	ldxy	$AC0D
+	ldxy	byte_AC0D
 :	JMP	$776A
+
+sub_AAD1:
 	LDA	#$00
 	STA	$93
 	STA	$95
@@ -131,9 +145,12 @@ aDevourer:
 	STA	(off_7),Y
 :	RTS
 
+a_YouStruggle:
 	MOVEXY	0,2
 	.BYTE	$A5,"You struggle desperately against the",$0D
 	.BYTE	$A5,"sucking force of it's gaping maw.",$0D,$FF
+
+a_SomeOfYour:
 	MOVEXY	0,2
 	.BYTE	$A5,"Some of your "
 	.BYTE	$B4
@@ -141,13 +158,20 @@ aDevourer:
 	.BYTE	20
 	.BYTE	" goes",$0D,$A5
 	.BYTE	"flying into the mouth of the Devourer.",$0D,$FF
-	.BYTE	$A3
-	.WORD	$AC10
-	dldi	off_16, $ABC9
+
+byte_AC0D:
+	STRJSR	loc_AC10
+;	.BYTE	$A3
+;	.WORD	$AC10
+
+loc_AC10:
+	dldi	off_16, a_SomeOfYour
 	BIT	$94
 	BPL	:+
-	dldi	off_16, $AC25
+	dldi	off_16, byte_AC25
 :	RTS
+
+byte_AC25:
 	.BYTE	$AC
 	.WORD	$7653
 	.BYTE	"sucks up your",$0D,$A5
@@ -155,7 +179,9 @@ aDevourer:
 	.WORD	$76D9
 	.BYTE	$20
 	.BYTE	".",$0D,$FF
-	JSR	$AABC
+
+loc_AC3E:
+	JSR	sub_AABC
 	JMP	$771F
 	.BYTE	$00,$00
 
