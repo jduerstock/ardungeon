@@ -553,6 +553,8 @@ loc_AC3E:
 	.BYTE	$16
 	.BYTE	"!",$22,$0D,$FF
 
+	.SEGMENT	"MONST04"
+
 	.BYTE	$02
 	.WORD	$AA47,$AA4E,$AA9B,$AA56,$AA9B
 	.BYTE	$64,$40,$01,$05,$28,$1c,$c0,$aa,$00,$00,$00,$00,$00,$00,$02,$ab ; |d@..(...........|
