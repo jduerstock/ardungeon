@@ -3056,13 +3056,7 @@ aQuarrels10:	.BYTE "Quarrels [10]",0
 		.BYTE	0
 		.BYTE	0
 i_ChaosClub:
-		.BYTE	3		; DATA XREF: RAM:9400o
-		.BYTE $35 ; 5
-		.BYTE	0
-		.BYTE $7F ; 
-		.BYTE  $A
-		.BYTE $11
-aChaosClub:	.BYTE "Chaos Club",0
+		Item	$03,$00,$7F,$0A,"Chaos Club"
 		.BYTE $88 ; ˆ
 		.BYTE $FF
 		.BYTE $A5 ; ¥
@@ -3099,6 +3093,7 @@ aChaosClub:	.BYTE "Chaos Club",0
 		.BYTE $80 ; €
 		.BYTE $AA ; ª
 		.BYTE $80 ; €
+:
 i_ShortSword:
 		.BYTE	3		; DATA XREF: RAM:9402o
 		.BYTE $26 ; &
@@ -3128,13 +3123,7 @@ aShortSword:	.BYTE "Short Sword",0
 		.BYTE $80 ; €
 		.BYTE $10
 i_HolyHandGrenade:
-		.BYTE $10		; DATA XREF: RAM:9404o
-		.BYTE $4A ; J
-		.BYTE	0
-		.BYTE $80 ; €
-		.BYTE	2
-		.BYTE $18
-aHolyHandGrenad:.BYTE "Holy Hand Grenade",0
+		Item	$10,$00,$80,$02,"Holy Hand Grenade"
 		.BYTE $88 ; ˆ
 		.BYTE $FF
 		.BYTE $44 ; D
@@ -3185,6 +3174,7 @@ aHolyHandGrenad:.BYTE "Holy Hand Grenade",0
 		.BYTE	0
 		.BYTE	0
 		.BYTE	1
+:
 i_Pike:
 		.BYTE	3		; DATA XREF: RAM:9406o
 		.BYTE $1F
