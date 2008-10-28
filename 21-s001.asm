@@ -1,3 +1,4 @@
+		.include	"equates.inc"
 		.include	"macros.inc"
 
 		.SEGMENT	"SEG_279D"
@@ -309,7 +310,7 @@ loc_B948:				; CODE XREF: RAM:B93Aj
 		STA	$306
 		LDA	#$80 ; '€'
 		STA	$308
-		dmv	$30A, $87
+		dmv	DAUX, $87
 		dldi	$304, $400
 
 loc_B970:				; CODE XREF: RAM:B9D3j
@@ -353,9 +354,9 @@ loc_B99E:				; CODE XREF: RAM:B997j
 		STA	$91,X
 
 loc_B9BA:				; CODE XREF: RAM:B987j	RAM:B99Cj
-		INC	$30A
+		INC	DAUX
 		BNE	loc_B9C2
-		INC	$30B
+		INC	DAUX+1
 
 loc_B9C2:				; CODE XREF: RAM:B9BDj
 		DEC	$8C
@@ -385,7 +386,7 @@ loc_B9E5:				; CODE XREF: RAM:B9EAj
 		BNE	loc_B9E5
 
 loc_B9EC:				; CODE XREF: RAM:B9DEj
-		dmv	$87, $30A
+		dmv	$87, DAUX
 		LDA	$83
 		STA	$301
 		LDA	$8F
@@ -401,11 +402,11 @@ loc_BA03:				; CODE XREF: RAM:BA38j
 		LDA	#$40 ; '@'
 		STA	$303
 		LDA	#0
-		STA	$30B
+		STA	DAUX+1
 		STA	$304
 		LDA	#1
 		STA	$305
-		STA	$30A
+		STA	DAUX
 		LDA	#$E0 ; 'à'
 		STA	$306
 		JSR	$E459
@@ -423,7 +424,7 @@ loc_BA3A:				; CODE XREF: RAM:B9FDj	RAM:BA01j ...
 		LDX	#3
 		JSR	sub_B80F
 		dldi	$304, $400
-		dmv	$30A, $89
+		dmv	DAUX, $89
 
 loc_BA53:				; CODE XREF: RAM:BA68j	RAM:BA70j ...
 		LDX	$8D
@@ -431,9 +432,9 @@ loc_BA53:				; CODE XREF: RAM:BA68j	RAM:BA70j ...
 		LDA	$91,X
 		AND	byte_BAEA,Y
 		BNE	loc_BA74
-		INC	$30A
+		INC	DAUX
 		BNE	loc_BA66
-		INC	$30B
+		INC	DAUX+1
 
 loc_BA66:				; CODE XREF: RAM:BA61j
 		DEC	$8E
@@ -465,12 +466,12 @@ loc_BA7D:				; CODE XREF: RAM:BA8Ej
 loc_BA93:				; CODE XREF: RAM:BA8Aj
 		CLC
 		LDA	#1
-		ADC	$30A
-		STA	$30A
+		ADC	DAUX
+		STA	DAUX
 		STA	$89
 		LDA	#0
-		ADC	$30B
-		STA	$30B
+		ADC	DAUX+1
+		STA	DAUX+1
 		STA	$8A
 		DEC	$8E
 		BPL	loc_BAB4

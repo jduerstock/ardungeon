@@ -1,3 +1,4 @@
+		.include	"equates.inc"
 		.include	"macros.inc"
 
 		.SEGMENT	"BOOTCONT"
@@ -9,8 +10,8 @@ byte_BD80	= $BD80
 loc_B000:
 		LDX	loc_B000-1
 		LDA	byte_B043,X
-		STA	$30A
-		dldi	$0304, byte_BD80
+		STA	DAUX
+		dldi	DBUF, byte_BD80
 		LDA	#5
 		STA	$80
 		JSR	sub_B045
@@ -21,8 +22,8 @@ loc_B026:				; CODE XREF: RAM:B028j
 		CMP	$14
 		BEQ	loc_B026
 		LDA	#17
-		STA	$30A
-		dldi	$0304, byte_600
+		STA	DAUX
+		dldi	DBUF, byte_600
 		LDA	#188
 		STA	$80
 		JSR	sub_B045
@@ -35,17 +36,17 @@ byte_B043:	.BYTE 11		; DATA XREF: RAM:B003r
 
 
 sub_B045:				; CODE XREF: RAM:B017p	RAM:B03Dp ...
-		JSR	$E453
+		JSR	DSKINV
 		BMI	sub_B045
 		CLC
-		LDA	$304
+		LDA	DBUF
 		ADC	#128
-		STA	$304
+		STA	DBUF
 		BCC	loc_B058
-		INC	$305
+		INC	DBUF+1
 
 loc_B058:				; CODE XREF: sub_B045+Ej
-		INC	$30A
+		INC	DAUX
 		DEC	$80
 		BNE	sub_B045
 		RTS

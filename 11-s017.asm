@@ -5366,34 +5366,19 @@ loc_1E18:				; CODE XREF: RAM:1E1Cj
 loc_1E2A:				; CODE XREF: RAM:1E2Cj
 		CMP	$14
 		BEQ	loc_1E2A
-		LDA	#5
-		STA	$30A
-		LDA	#2
-		STA	$30B
-		LDA	#0
-		STA	$304
-		LDA	#1
-		STA	$305
+		dldi	DAUX, $0205
+		dldi	DBUF, $100
 
 loc_1E42:				; CODE XREF: RAM:1E45j
-		JSR	$E453
+		JSR	DSKINV
 		BMI	loc_1E42
-		INC	$30A
-		LDA	#0
-		STA	$304
-		LDA	#$14
-		STA	$305
+		INC	DAUX
+		dldi	DBUF, $1400
 		LDA	#158
 		STA	$88
 		JSR	unk_6368
-		LDA	#205
-		STA	$30A
-		LDA	#0
-		STA	$30B
-		LDA	#0
-		STA	$304
-		LDA	#$80 ; '€'
-		STA	$305
+		dldi	DAUX, 205
+		dldi	DBUF, $8000
 		LDA	#$14
 		STA	$88
 		JSR	unk_6368
@@ -5402,7 +5387,7 @@ loc_1E42:				; CODE XREF: RAM:1E45j
 ; ---------------------------------------------------------------------------
 
 loc_1E7C:				; CODE XREF: RAM:1E86j	RAM:1EA0j
-		JSR	$E453
+		JSR	DSKINV
 		BPL	loc_1E88
 		LDA	#$34 ; '4'
 		STA	$D01A
@@ -5410,16 +5395,16 @@ loc_1E7C:				; CODE XREF: RAM:1E86j	RAM:1EA0j
 
 loc_1E88:				; CODE XREF: RAM:1E7Fj
 		CLC
-		LDA	$304
+		LDA	DBUF
 		ADC	#$80 ; '€'
-		STA	$304
+		STA	DBUF
 		BCC	loc_1E96
-		INC	$305
+		INC	DBUF+1
 
 loc_1E96:				; CODE XREF: RAM:1E91j
-		INC	$30A
+		INC	DAUX
 		BNE	loc_1E9E
-		INC	$30B
+		INC	DAUX+1
 
 loc_1E9E:				; CODE XREF: RAM:1E99j
 		DEC	$88
@@ -8201,15 +8186,8 @@ byte_2CB9:	.BYTE 0			; DATA XREF: RAM:2FDFw	RAM:3042r ...
 byte_2CBA:	.BYTE 0			; DATA XREF: RAM:2FE2w	RAM:3051r ...
 byte_2CBB:	.BYTE 0			; DATA XREF: RAM:2FD8w	RAM:3027r ...
 unk_2CBC:	.BYTE $FF		; DATA XREF: RAM:loc_2FE5w RAM:302Aw ...
-		.BYTE $A6 ; ¦
-		.BYTE	0
-		.BYTE	2
-		.BYTE $A5 ; ¥
-		.BYTE $59 ; Y
-		.BYTE $6F ; o
-		.BYTE $75 ; u
-		.BYTE $72 ; r
-		.BYTE $20
+		MOVEXY	0,2
+		.BYTE	$A5,"Your "
 		.BYTE $B4 ; ´
 		.BYTE $70 ; p
 		.BYTE	0
