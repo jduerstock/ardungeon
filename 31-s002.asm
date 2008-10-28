@@ -7895,7 +7895,7 @@ byte_AC00:	.BYTE $C2		; DATA XREF: sub_84CF-D4Dw
 		.BYTE $AC ; ¬
 
 byte_AC97:
-		.WORD	$0246
+		.WORD	$0246	; devourer
 		.WORD	$051D
 		.WORD	0
 		.WORD	0
