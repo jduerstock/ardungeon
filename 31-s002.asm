@@ -1386,22 +1386,22 @@ sub_7ECE:				; CODE XREF: sub_88B0:loc_796Cp
 		JSR	sub_8EF9
 		JSR	sub_8D7E
 		LDX	byte_A894
-		LDA	unk_7EED,X
+		LDA	byte_7EED,X
 		PHA
-		LDA	unk_7EE6,X
+		LDA	byte_7EE6,X
 		PHA
 		RTS
 ; End of function sub_7ECE
 
 ; ---------------------------------------------------------------------------
-unk_7EE6:	.BYTE	<(loc_7EF4-1)	; DATA XREF: sub_7ECE+13r
+byte_7EE6:	.BYTE	<(loc_7EF4-1)	; DATA XREF: sub_7ECE+13r
 		.BYTE	<(loc_7F4E-1)
 		.BYTE	<(loc_7F51-1)
 		.BYTE	<(loc_7F62-1)
 		.BYTE	<(loc_7F7E-1)
 		.BYTE	<(loc_7FAA-1)
 		.BYTE	<(loc_7FAB-1)
-unk_7EED:	.BYTE	>(loc_7EF4-1)	; DATA XREF: sub_7ECE+Fr
+byte_7EED:	.BYTE	>(loc_7EF4-1)	; DATA XREF: sub_7ECE+Fr
 		.BYTE	>(loc_7F4E-1)
 		.BYTE	>(loc_7F51-1)
 		.BYTE	>(loc_7F62-1)
@@ -1650,9 +1650,9 @@ sub_8061:				; CODE XREF: RAM:7FB0p
 		BCS	locret_8080
 		TAX
 		DEX
-		LDA	unk_808A,X
+		LDA	byte_808A,X
 		PHA
-		LDA	unk_8081,X
+		LDA	byte_8081,X
 		PHA
 		LDX	#$98 ; 'ò'
 		LDY	#$81 ; 'Å'
@@ -1665,7 +1665,7 @@ locret_8080:				; CODE XREF: sub_8061+3j sub_8061+7j
 ; End of function sub_8061
 
 ; ---------------------------------------------------------------------------
-unk_8081:	.BYTE	<(loc_8093-1)		; DATA XREF: sub_8061+Fr
+byte_8081:	.BYTE	<(loc_8093-1)		; DATA XREF: sub_8061+Fr
 		.BYTE	<(loc_80A0-1)
 		.BYTE	<(loc_80B7-1)
 		.BYTE	<(loc_80DC-1)
@@ -1674,7 +1674,7 @@ unk_8081:	.BYTE	<(loc_8093-1)		; DATA XREF: sub_8061+Fr
 		.BYTE	<(loc_8125-1)
 		.BYTE	<(loc_813B-1)
 		.BYTE	<(loc_8141-1)
-unk_808A:	.BYTE	>(loc_8093-1)		; DATA XREF: sub_8061+Br
+byte_808A:	.BYTE	>(loc_8093-1)		; DATA XREF: sub_8061+Br
 		.BYTE	>(loc_80A0-1)
 		.BYTE	>(loc_80B7-1)
 		.BYTE	>(loc_80DC-1)
@@ -3270,11 +3270,11 @@ sub_89B5:				; CODE XREF: sub_7C9E+8Fp
 loc_89B7:				; CODE XREF: sub_89B5+24j
 		LDA	byte_AA37,X
 		BEQ	loc_89CF
-		CMP	#$81 ; 'Å'
+		CMP	#$81
 		BCS	loc_89D8
 		CMP	#$10
 		BCC	loc_89D8
-		AND	#$F0 ; ''
+		AND	#$F0
 		BNE	loc_89CF
 		LDA	#0
 		STA	byte_AA37,X

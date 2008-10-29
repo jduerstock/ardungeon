@@ -3786,268 +3786,54 @@ aJunaiSSword:	.BYTE "Junai's Sword",0
 		.BYTE $24 ; $
 
 i_Loadstone:
-		.BYTE	7
-		.BYTE $21 ; !
-		.BYTE	1
-		.BYTE	0
-		.BYTE $FF
-		.BYTE $10
-aLoadstone:	.BYTE "Loadstone",0
-		.BYTE $88 ; à
-		.BYTE $FF
-		.BYTE	2
-		.BYTE	1
-		.BYTE	1
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	1
-		.BYTE	2
-		.BYTE $80 ; Ä
-		.BYTE	1
-		.BYTE	0
-		.BYTE	1
-		.BYTE	0
-		.BYTE	0
+		Item	$07,$01,$00,$FF,"Loadstone"
+		.BYTE	$88,$FF,$02,$01,$01,$00,$00,$00,$00,$01,$02,$80,$01,$00,$01,$00
+		.BYTE	$00
 
 i_IronPalmSalve:
-		.BYTE $10
-		.BYTE $28 ; (
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE $16
-aIronPalmSalve:	.BYTE "Iron Palm Salve",0
-		.BYTE $88 ; à
-		.BYTE $FF
-		.BYTE	4
-		.BYTE	1
-		.BYTE	1
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE $81 ; Å
-		.BYTE	0
-		.BYTE	1
-		.BYTE	1
-		.BYTE	0
-		.BYTE $20
-		.BYTE	0
-		.BYTE	0
-		.BYTE	1
+		Item	$10,$00,$00,$00,"Iron Palm Salve"
+		.BYTE	$88,$FF,$04,$01,$01,$00,$00,$00,$00,$81,$00,$01,$01,$00,$20,$00
+		.BYTE	$00,$01
 
 i_SwordOfTheAdept:
-		.BYTE	3
-		.BYTE $2D ; -
-		.BYTE	0
-		.BYTE	0
-		.BYTE  $A
-		.BYTE $19
-aSwordOfTheAdep:.BYTE "Sword of The Adept",0
-		.BYTE	0
-		.BYTE $FF
-		.BYTE	0
-		.BYTE	0
-		.BYTE $27
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE $10
-		.BYTE $10
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $98 ; ò
-		.BYTE $50 ; P
+		Item	$03,$00,$00,$0A,"Sword of The Adept"
+		.BYTE	$00,$FF,$00
+		.BYTE	$00,$27,$00,$00,$00,$00,$00,$00,$00,$00,$00
+		.BYTE	$10,$10,$FF,$FF,$98,$50
 
 i_RazorIce:
-		.BYTE	3
-		.BYTE $24 ; $
-		.BYTE	0
-		.BYTE	0
-		.BYTE	7
-		.BYTE $10
-aRazorIce:	.BYTE "Razor Ice",0
-		.BYTE	0
-		.BYTE $FF
-		.BYTE	0
-		.BYTE	0
-		.BYTE $27
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE $18
-		.BYTE	0
-		.BYTE	0
-		.BYTE $20
-		.BYTE $20
-		.BYTE $90 ; ê
-		.BYTE $50 ; P
+		Item	$03,$00,$00,$07,"Razor Ice"
+		.BYTE	$00,$FF,$00
+		.BYTE	$00,$27,$00,$00,$00,$00,$00,$00,$00,$00,$18
+		.BYTE	$00,$00,$20,$20,$90,$50
 
 i_Whetstone:
-		.BYTE $18
-		.BYTE $15
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE $10
-aWhetstone:	.BYTE "Whetstone",0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	1
-		.BYTE $10
+		Item	$18,$00,$00,$00,"Whetstone"
+		.BYTE	$00,$00,$00,$01,$10
 
 i_SaurianBrandy:
-		.BYTE $10
-		.BYTE $37 ; 7
-		.BYTE	0
-		.BYTE	0
-		.BYTE	2
-		.BYTE $15
-aSaurianBrandy:	.BYTE "Saurian Brandy",0
-		.BYTE $88 ; à
-		.BYTE $FF
-		.BYTE $44 ; D
-		.BYTE	1
-		.BYTE	1
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	1
-		.BYTE $97 ; ó
-		.BYTE	0
-		.BYTE	1
-		.BYTE	0
-		.BYTE $FF
-		.BYTE	0
-		.BYTE $88 ; à
-		.BYTE $FF
-		.BYTE $44 ; D
-		.BYTE	1
-		.BYTE	1
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE $81 ; Å
-		.BYTE $4A ; J
-		.BYTE	0
-		.BYTE	1
-		.BYTE	0
-		.BYTE	1
-		.BYTE	0
-		.BYTE	0
-		.BYTE  $A
+		Item	$10,$00,$00,$02,"Saurian Brandy"
+		.BYTE	$88,$FF,$44,$01,$01,$00,$00,$00,$00,$01,$97,$00,$01,$00,$FF,$00
+		.BYTE	$88,$FF,$44,$01,$01,$00,$00,$00,$00,$81,$4A,$00,$01,$00,$01,$00
+		.BYTE	$00,$0A
 
 i_BluePearlDagger:
-		.BYTE	3
-		.BYTE $2C ; ,
-		.BYTE	0
-		.BYTE $7F ; 
-		.BYTE	2
-		.BYTE $18
-aBluePearlDagge:.BYTE "Blue Pearl Dagger",0
-		.BYTE	0
-		.BYTE $FF
-		.BYTE	0
-		.BYTE	0
-		.BYTE $33 ; 3
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE $16
-		.BYTE	0
-		.BYTE $10
-		.BYTE $10
-		.BYTE $20
-		.BYTE $20
-		.BYTE $12
-		.BYTE	8
+		Item	$03,$00,$7F,$02,"Blue Pearl Dagger"
+		.BYTE	$00,$FF,$00
+		.BYTE	$00,$33,$00,$00,$00,$00,$00,$00,$00,$16,$00
+		.BYTE	$10,$10,$20,$20,$12,$08
 
 i_SixPack:
-		.BYTE $10
-		.BYTE $35 ; 5
-		.BYTE	0
-		.BYTE	0
-		.BYTE	4
-		.BYTE $13
-aSixPack6:	.BYTE "Six pack [6]",0
-		.BYTE $88 ; à
-		.BYTE $FF
-		.BYTE $44 ; D
-		.BYTE	1
-		.BYTE	1
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE $81 ; Å
-		.BYTE $96 ; ñ
-		.BYTE	0
-		.BYTE	3
-		.BYTE	2
-		.BYTE	8
-		.BYTE	0
-		.BYTE $88 ; à
-		.BYTE $FF
-		.BYTE	4
-		.BYTE	1
-		.BYTE	1
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE $91 ; ë
-		.BYTE $10
-		.BYTE $80 ; Ä
-		.BYTE	1
-		.BYTE	0
-		.BYTE	1
-		.BYTE	0
-		.BYTE	0
-		.BYTE	6
+		Item	$10,$00,$00,$04,"Six pack [6]"
+		.BYTE	$88,$FF,$44,$01,$01,$00,$00,$00,$00,$81,$96,$00,$03,$02,$08,$00
+		.BYTE	$88,$FF,$04,$01,$01,$00,$00,$00,$00,$91,$10,$80,$01,$00,$01,$00
+		.BYTE	$00,$06
 
 i_MelvinsHelm:
-		.BYTE	4
-		.BYTE $23 ; #
-		.BYTE	0
-		.BYTE	0
-		.BYTE $12
-		.BYTE $14
-aMelvinSHelm:	.BYTE "Melvin's Helm",0
-		.BYTE	0
-		.BYTE	0
-		.BYTE  $F
-		.BYTE  $F
-		.BYTE  $F
-		.BYTE  $F
-		.BYTE  $F
-		.BYTE  $F
-		.BYTE  $F
-		.BYTE  $F
-		.BYTE  $F
-		.BYTE  $F
-		.BYTE  $F
-		.BYTE $FF
-		.BYTE $FF
+		Item	$04,$00,$00,$12,"Melvin's Helm"
+		.BYTE	$00,$00
+		.BYTE	$0F,$0F,$0F,$0F,$0F,$0F,$0F,$0F,$0F,$0F,$0F
+		.BYTE	$FF,$FF
 
 i_AmethystRod:
 		Item	$07,$00,$00,$01,"Amethyst Rod"
