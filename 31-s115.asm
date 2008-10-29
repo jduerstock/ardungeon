@@ -470,114 +470,38 @@ byte_78E4:	.BYTE 0			; DATA XREF: sub_773A+3Dw sub_773A+4Ew ...
 byte_78E5:	.BYTE 0			; DATA XREF: sub_773A+38w
 					; sub_773A:loc_777Ar ...
 i_TheStarCard:
-;:		.BYTE	$10		; DATA XREF: RAM:93ACo
-;		.BYTE	:++-:-
-;		.BYTE	$00,$00,$00
-;		.BYTE	:+-:-
-;aTheStarCard:	.BYTE	"The Star (card)",0
-;:
 		Item	$10,$00,$00,$00,"The Star (card)"		
-		.BYTE	$88,$FF,$44,$01,$01,$00,$00,$00,$00,$81,$BE,$00,$01,$00,$19,$00,$00,$01
+		.BYTE	$88,$FF,$44,$01,$01,$00,$00,$00,$00,$81,$BE,$00,$01,$00,$19,$00
+		.BYTE	$00,$01
 
 i_TheFoolCard:
-:		.BYTE	$10		; DATA XREF: RAM:93AEo
-		.BYTE	:++-:-
-		.BYTE	$00,$00,$00
-		.BYTE	:+-:-
-aTheFoolCard:	.BYTE	"The Fool (card)",0
-:		.BYTE	$88,$FF,$C4,$01,$D2,$02,$0D,$F0,$00,$91,$84,$00,$01,$00,$01,$00
+		Item	$10,$00,$00,$00,"The Fool (card)"
+		.BYTE	$88,$FF,$C4,$01,$D2,$02,$0D,$F0,$00,$91,$84,$00,$01,$00,$01,$00
 		.BYTE	$88,$FF,$44,$01,$01,$00,$00,$00,$00,$81,$84,$00,$01,$00,$01,$00
 		.BYTE	$EC,$00,$44
 aLuck:		.BYTE	"Luck",0
-		.BYTE	$00,$00,$00,$00,$00,$00,$00,$00,$00,$01
+		.BYTE	$00,$00,$00,$00,$00,$00,$00,$00
+		.BYTE	$00,$01
 
 i_TheHeirophantCard:
-:		.BYTE	$10		; DATA XREF: RAM:93B0o
-		.BYTE	:++-:-
-		.BYTE	$00,$00,$00
-		.BYTE	:+-:-
-aTheHeirophantC:.BYTE	"The Heirophant (card)",0
-:		.BYTE	$88,$FF,$44,$01,$01,$00,$00,$00,$00,$01,$20,$00,$01,$00,$0F,$00
+		Item	$10,$00,$00,$00,"The Heirophant (card)"
+		.BYTE	$88,$FF,$44,$01,$01,$00,$00,$00,$00,$01,$20,$00,$01,$00,$0F,$00
 		.BYTE	$00,$01
 
 i_DeathCard:
-:		.BYTE	$10		; DATA XREF: RAM:93B2o
-		.BYTE	:++-:-
-		.BYTE	$00,$00,$00
-		.BYTE 	:+-:-
-aDeathCard:	.BYTE "Death (card)",0
-:		.BYTE $88 ; à
-		.BYTE $FF
-		.BYTE $44 ; D
-		.BYTE	1
-		.BYTE	1
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	2
-		.BYTE $DD ; ›
-		.BYTE	0
-		.BYTE	2
-		.BYTE	8
-		.BYTE $F8 ; ¯
-		.BYTE	0
-		.BYTE	0
-		.BYTE	1
+		Item	$10,$00,$00,$00,"Death (card)"
+		.BYTE	$88,$FF,$44,$01,$01,$00,$00,$00,$00,$02,$DD,$00,$02,$08,$F8,$00
+		.BYTE	$00,$01
 
 i_AceOfCupsCard:
-:		.BYTE $10		; DATA XREF: RAM:93B4o
-		.BYTE	:++-:-
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	:+-:-
-aAceOfCups:	.BYTE "Ace of Cups",0
-:		.BYTE $88 ; à
-		.BYTE $FF
-		.BYTE $44 ; D
-		.BYTE	1
-		.BYTE	1
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE $D1 ; —
-		.BYTE $C2 ; ¬
-		.BYTE	0
-		.BYTE $10
-		.BYTE	1
-		.BYTE $8F ; è
-		.BYTE	0
-		.BYTE	0
-		.BYTE	1
+		Item	$10,$00,$00,$00,"Ace of Cups"
+		.BYTE	$88,$FF,$44,$01,$01,$00,$00,$00,$00,$D1,$C2,$00,$10,$01,$8F,$00
+		.BYTE	$00,$01
 
 i_TheChariotCard:
-:		.BYTE $10		; DATA XREF: RAM:93B6o
-		.BYTE	:++-:-
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	:+-:-
-aTheChariotCard:.BYTE "The Chariot (card)",0
-:		.BYTE $88 ; à
-		.BYTE $FF
-		.BYTE $44 ; D
-		.BYTE	1
-		.BYTE	1
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE $81 ; Å
-		.BYTE $72 ; r
-		.BYTE	0
-		.BYTE	1
-		.BYTE	0
-		.BYTE	1
-		.BYTE	0
-		.BYTE	0
-		.BYTE	1
+		Item	$10,$00,$00,$00,"The Chariot (card)"
+		.BYTE	$88,$FF,$44,$01,$01,$00,$00,$00,$00,$81,$72,$00,$01,$00,$01,$00
+		.BYTE	$00,$01
 
 i_StrengthCard:
 :		.BYTE $10		; DATA XREF: RAM:93B8o
@@ -3176,116 +3100,24 @@ i_HolyHandGrenade:
 		.BYTE	1
 :
 i_Pike:
-		.BYTE	3		; DATA XREF: RAM:9406o
-		.BYTE $1F
-		.BYTE	0
-		.BYTE	0
-		.BYTE  $A
-		.BYTE  $B
-aPike:		.BYTE "Pike",0
-		.BYTE	0
-		.BYTE $FF
-		.BYTE	0
-		.BYTE $22 ; "
-		.BYTE $1A
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE $14
-		.BYTE	8
-		.BYTE $30 ; 0
-		.BYTE $30 ; 0
-		.BYTE $C3 ; √
-		.BYTE $23 ; #
+		Item	$03,$00,$00,$0A,"Pike"
+		.BYTE	$00,$FF,$00
+		.BYTE	$22,$1A,$00,$00,$00,$00,$00,$00,$00,$00,$00
+		.BYTE	$14,$08,$30,$30,$C3,$23
 i_Dirk:
-		.BYTE	3		; DATA XREF: RAM:9408o
-		.BYTE $1F
-		.BYTE	0
-		.BYTE	0
-		.BYTE  $A
-		.BYTE  $B
-		.BYTE	"Dirk",0
-		.BYTE	0
-		.BYTE $FF
-		.BYTE	0
-		.BYTE	0
-		.BYTE $23 ; #
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	4
-		.BYTE $10
-		.BYTE $10
-		.BYTE $10
-		.BYTE $81 ; Å
-		.BYTE $F4 ; Ù
+		Item	$03,$00,$00,$0A,"Dirk"
+		.BYTE	$00,$FF,$00
+		.BYTE	$00,$23,$00,$00,$00,$00,$00,$00,$00,$00,$00
+		.BYTE	$04,$10,$10,$10,$81,$F4
+:
 i_PantherGloves:
-		.BYTE	4		; DATA XREF: RAM:940Ao
-		.BYTE $44 ; D
-		.BYTE	0
-		.BYTE	0
-		.BYTE	2
-		.BYTE $15
-aPantherGloves:	.BYTE "Panther Gloves",0
-		.BYTE $88 ; à
-		.BYTE $FF
-		.BYTE	4
-		.BYTE	1
-		.BYTE	1
-		.BYTE	0
-		.BYTE $AF ; Ø
-		.BYTE $DE ; ﬁ
-		.BYTE	0
-		.BYTE $81 ; Å
-		.BYTE	0
-		.BYTE	1
-		.BYTE	2
-		.BYTE	1
-		.BYTE $22 ; "
-		.BYTE	0
-		.BYTE $88 ; à
-		.BYTE $FF
-		.BYTE	8
-		.BYTE	1
-		.BYTE	1
-		.BYTE	0
-		.BYTE $AF ; Ø
-		.BYTE $DE ; ﬁ
-		.BYTE	0
-		.BYTE $91 ; ë
-		.BYTE	0
-		.BYTE	1
-		.BYTE	2
-		.BYTE	1
-		.BYTE $22 ; "
-		.BYTE	0
-		.BYTE	0
-		.BYTE	2
-		.BYTE $22 ; "
-		.BYTE $23 ; #
-		.BYTE	0
-		.BYTE	0
-		.BYTE $11
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE $11
-		.BYTE $40 ; @
-		.BYTE $40 ; @
+		Item	$04,$00,$00,$02,"Panther Gloves"
+		.BYTE	$88,$FF,$04,$01,$01,$00,$AF,$DE,$00,$81,$00,$01,$02,$01,$22,$00
+		.BYTE	$88,$FF,$08,$01,$01,$00,$AF,$DE,$00,$91,$00,$01,$02,$01,$22,$00
+		.BYTE	$00,$02
+		.BYTE	$22,$23,$00,$00,$11,$00,$00,$00,$00,$00,$11
+		.BYTE	$40,$40
+:
 i_HelmOfLight:
 		.BYTE	4		; DATA XREF: RAM:940Co
 		.BYTE $43 ; C
