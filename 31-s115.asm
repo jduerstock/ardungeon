@@ -4434,89 +4434,19 @@ aGaussRifle95:	.BYTE "Gauss Rifle [95]",0
 		.BYTE	0
 
 i_SolarSuit:
-		.BYTE	4
-		.BYTE $40 ; @
-		.BYTE	0
-		.BYTE	0
-		.BYTE $12
-		.BYTE $11
-aSolarSuit:	.BYTE "Solar Suit",0
-		.BYTE $88 ; ˆ
-		.BYTE $FF
-		.BYTE	4
-		.BYTE	1
-		.BYTE	1
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE $E1 ; á
-		.BYTE $88 ; ˆ
-		.BYTE	0
-		.BYTE	1
-		.BYTE	0
-		.BYTE	4
-		.BYTE	0
-		.BYTE $88 ; ˆ
-		.BYTE $FF
-		.BYTE	4
-		.BYTE	1
-		.BYTE	1
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE $D1 ; Ñ
-		.BYTE $88 ; ˆ
-		.BYTE	0
-		.BYTE	1
-		.BYTE	0
-		.BYTE $FB ; û
-		.BYTE	0
-		.BYTE	0
-		.BYTE	1
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE $F0 ; ð
-		.BYTE	0
-		.BYTE $FF
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE $20
-		.BYTE $20
+		Item	$04,$00,$00,$12,"Solar Suit"
+		.BYTE	$88,$FF,$04,$01,$01,$00,$00,$00,$00,$E1,$88,$00,$01,$00,$04,$00
+		.BYTE	$88,$FF,$04,$01,$01,$00,$00,$00,$00,$D1,$88,$00,$01,$00,$FB,$00
+		.BYTE	$00,$01
+		.BYTE	$00,$00,$00,$00,$F0,$00,$FF,$00,$00,$00,$00
+		.BYTE	$20,$20
 
 i_BeamWeapon:
-		.BYTE	3
-		.BYTE $2B ; +
-		.BYTE	0
-		.BYTE	0
-		.BYTE	7
-		.BYTE $17
-aBeamWeapon25:	.BYTE "Beam Weapon [25]",0
-		.BYTE	0
-		.BYTE	5
-		.BYTE $19
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE $18
-		.BYTE	0
-		.BYTE $58 ; X
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	8
-		.BYTE  $C
-		.BYTE $30 ; 0
-		.BYTE $30 ; 0
-		.BYTE	5
-		.BYTE $FF
+		Item	$03,$00,$00,$07,"Beam Weapon [25]"
+		.BYTE	$00,$05,$19
+		.BYTE	$00,$00,$00,$00,$18,$00,$58,$00,$00,$00,$00
+		.BYTE	$08,$0C,$30,$30,$05,$FF
+:
 off_93A0:
 		.WORD	i_FrostbladeScroll
 		.WORD	i_FirebladeScroll
