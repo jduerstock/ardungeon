@@ -504,464 +504,91 @@ i_TheChariotCard:
 		.BYTE	$00,$01
 
 i_StrengthCard:
-:		.BYTE $10		; DATA XREF: RAM:93B8o
-		.BYTE	:++-:-
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	:+-:-
-aStrengthCard:	.BYTE "Strength (card)",0
-:		.BYTE $88 ; à
-		.BYTE $FF
-		.BYTE $44 ; D
-		.BYTE	1
-		.BYTE	1
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE $81 ; Å
-		.BYTE $5A ; Z
-		.BYTE	0
-		.BYTE	1
-		.BYTE	0
-		.BYTE	1
-		.BYTE	0
-		.BYTE	0
-		.BYTE	1
+		Item	$10,$00,$00,$00,"Strength (card)"
+		.BYTE	$88,$FF,$44,$01,$01,$00,$00,$00,$00,$81,$5A,$00,$01,$00,$01,$00
+		.BYTE	$00,$01
 
 i_AceOfWandsCard:
-:		.BYTE $10		; DATA XREF: RAM:93BAo
-		.BYTE	:++-:-
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	:+-:-
-aAceOfWands:	.BYTE "Ace of Wands",0
-:		.BYTE $88 ; à
-		.BYTE $FF
-		.BYTE $44 ; D
-		.BYTE	1
-		.BYTE	1
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	1
-		.BYTE $9B ; õ
-		.BYTE	0
-		.BYTE	1
-		.BYTE	0
-		.BYTE $FF
-		.BYTE	0
-		.BYTE $88 ; à
-		.BYTE $FF
-		.BYTE $44 ; D
-		.BYTE	1
-		.BYTE	1
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	1
-		.BYTE $4F ; O
-		.BYTE	0
-		.BYTE	7
-		.BYTE	8
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	1
+		Item	$10,$00,$00,$00,"Ace of Wands"
+		.BYTE	$88,$FF,$44,$01,$01,$00,$00,$00,$00,$01,$9B,$00,$01,$00,$FF,$00
+		.BYTE	$88,$FF,$44,$01,$01,$00,$00,$00,$00,$01,$4F,$00,$07,$08,$00,$00
+		.BYTE	$00,$01
 
 i_TemperanceCard:
-:		.BYTE $10		; DATA XREF: RAM:93BCo
-		.BYTE	:++-:-
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	:+-:-
-aTemperanceCard:.BYTE "Temperance (card)",0
-:		.BYTE $88 ; à
-		.BYTE $FF
-		.BYTE $44 ; D
-		.BYTE	1
-		.BYTE	1
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	2
-		.BYTE $96 ; ñ
-		.BYTE	0
-		.BYTE	1
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	1
+		Item	$10,$00,$00,$00,"Temperance (card)"
+		.BYTE	$88,$FF,$44,$01,$01,$00,$00,$00,$00,$02,$96,$00,$01,$00,$00,$00
+		.BYTE	$00,$01
 
 i_KingOfWandsCard:
-:		.BYTE $10		; DATA XREF: RAM:93BEo
-		.BYTE	:++-:-
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	:+-:-
-aKingOfWands:	.BYTE "King of Wands",0
-:		.BYTE $88 ; à
-		.BYTE $FF
-		.BYTE $C4 ; -
-		.BYTE	1
-		.BYTE $B9 ; π
-		.BYTE	0
-		.BYTE $19
-		.BYTE $11
-		.BYTE	0
-		.BYTE	1
-		.BYTE $AA ; ™
-		.BYTE	0
-		.BYTE	1
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE $88 ; à
-		.BYTE	0
-		.BYTE $44 ; D
-		.BYTE	1
-		.BYTE	1
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	1
-		.BYTE $AA ; ™
-		.BYTE	0
-		.BYTE	1
-		.BYTE	0
-		.BYTE $80 ; Ä
-		.BYTE	0
-		.BYTE $EC ; Ï
-		.BYTE	0
-		.BYTE $44 ; D
+		Item	$10,$00,$00,$00,"King of Wands"
+		.BYTE	$88,$FF,$C4,$01,$B9,$00,$19,$11,$00,$01,$AA,$00,$01,$00,$00,$00
+		.BYTE	$88,$00,$44,$01,$01,$00,$00,$00,$00,$01,$AA,$00,$01,$00,$80,$00
+		.BYTE	$EC,$00,$44
 aFireInvuln_:	.BYTE "Fire Invuln.",0
-		.BYTE	0
-		.BYTE	1
+		.BYTE	$00,$01
 
 i_PageOfCupsCard:
-:		.BYTE $10		; DATA XREF: RAM:93C0o
-		.BYTE	:++-:-
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	:+-:-
-aPageOfCupsCard:.BYTE "Page of Cups (card)",0
-:		.BYTE $88 ; à
-		.BYTE $FF
-		.BYTE $44 ; D
-		.BYTE	1
-		.BYTE	1
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	1
-		.BYTE $99 ; ô
-		.BYTE	0
-		.BYTE	2
-		.BYTE	1
-		.BYTE $FF
-		.BYTE	0
-		.BYTE $88 ; à
-		.BYTE $FF
-		.BYTE $44 ; D
-		.BYTE	1
-		.BYTE	1
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	2
-		.BYTE $4D ; M
-		.BYTE	0
-		.BYTE	7
-		.BYTE	8
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	1
+		Item	$10,$00,$00,$00,"Page of Cups (card)"
+		.BYTE	$88,$FF,$44,$01,$01,$00,$00,$00,$00,$01,$99,$00,$02,$01,$FF,$00
+		.BYTE	$88,$FF,$44,$01,$01,$00,$00,$00,$00,$02,$4D,$00,$07,$08,$00,$00
+		.BYTE	$00,$01
 
 i_AceOfPentaclesCard:
-:		.BYTE $10		; DATA XREF: RAM:93C2o
-		.BYTE	:++-:-
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	:+-:-
-aAceOfPentacles:.BYTE "Ace of Pentacles",0
-:		.BYTE $88 ; à
-		.BYTE $FF
-		.BYTE $44 ; D
-		.BYTE	1
-		.BYTE	1
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE $82 ; Ç
-		.BYTE $B1 ; ±
-		.BYTE	0
-		.BYTE	1
-		.BYTE	0
-		.BYTE $64 ; d
-		.BYTE	0
-		.BYTE	0
-		.BYTE	1
+		Item	$10,$00,$00,$00,"Ace of Pentacles"
+		.BYTE	$88,$FF,$44,$01,$01,$00,$00,$00,$00,$82,$B1,$00,$01,$00,$64,$00
+		.BYTE	$00,$01
 
 i_HighPriestessCard:
-:		.BYTE $10		; DATA XREF: RAM:93C4o
-		.BYTE	:++-:-
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	:+-:-
-aHighPriestessC:.BYTE "High Priestess (card)",0
-:		.BYTE $88 ; à
-		.BYTE $FF
-		.BYTE $C4 ; -
-		.BYTE	1
-		.BYTE $F5 ; ı
-		.BYTE	0
-		.BYTE $99 ; ô
-		.BYTE $64 ; d
-		.BYTE	0
-		.BYTE $91 ; ë
-		.BYTE $A6 ; ¶
-		.BYTE	0
-		.BYTE  $B
-		.BYTE	1
-		.BYTE	6
-		.BYTE	0
-		.BYTE $88 ; à
-		.BYTE	0
-		.BYTE $44 ; D
-		.BYTE	1
-		.BYTE	1
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE $81 ; Å
-		.BYTE $A6 ; ¶
-		.BYTE	0
-		.BYTE  $B
-		.BYTE	1
-		.BYTE	6
-		.BYTE	0
-		.BYTE $EC ; Ï
-		.BYTE	0
-		.BYTE $44 ; D
+		Item	$10,$00,$00,$00,"High Priestess (card)"
+		.BYTE	$88,$FF,$C4,$01,$F5,$00,$99,$64,$00,$91,$A6,$00,$0B,$01,$06,$00
+		.BYTE	$88,$00,$44,$01,$01,$00,$00,$00,$00,$81,$A6,$00,$0B,$01,$06,$00
+		.BYTE	$EC,$00,$44
 aProtection:	.BYTE "Protection",0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	1
+		.BYTE	$00,$00
+		.BYTE	$00,$01
 
 i_ColdWand:
-:		.BYTE	$08
-		.BYTE	:++-:-
-		.BYTE	$00,$00,$00
-		.BYTE	:+-:-
-aColdWand:	.BYTE	"Cold Wand",0
-:		.BYTE	$88,$FF,$44,$01,$01,$00,$00,$00,$00,$01,$E7,$00,$02,$01,$66,$00,$00
+		Item	$08,$00,$00,$00,"Cold Wand"
+		.BYTE	$88,$FF,$44,$01,$01,$00,$00,$00,$00,$01,$E7,$00,$02,$01,$66,$00
+		.BYTE	$00
 
 i_FireWand:
-:		.BYTE	$08
-		.BYTE	:++-:-
-		.BYTE	$00,$00,$00
-		.BYTE	:+-:-
-aFireWand:	.BYTE	"Fire Wand",0
-:		.BYTE	$88,$FF,$44,$01,$01,$00,$00,$00,$00,$01,$E1,$00,$02,$07,$66,$00,$00
+		Item	$08,$00,$00,$00,"Fire Wand"
+		.BYTE	$88,$FF,$44,$01,$01,$00,$00,$00,$00,$01,$E1,$00,$02,$07,$66,$00
+		.BYTE	$00
 
 i_ParalysisWand:
-:		.BYTE	8		; DATA XREF: RAM:93D0o
-		.BYTE	:++-:-
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	:+-:-
-aParalysisWand:	.BYTE "Paralysis Wand",0
-:		.BYTE $88 ; à
-		.BYTE $FF
-		.BYTE $44 ; D
-		.BYTE	1
-		.BYTE	1
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	1
-		.BYTE $F0 ; 
-		.BYTE	0
-		.BYTE	1
-		.BYTE	0
-		.BYTE	5
-		.BYTE	0
-		.BYTE	0
+		Item	$08,$00,$00,$00,"Paralysis Wand"
+		.BYTE	$88,$FF,$44,$01,$01,$00,$00,$00,$00,$01,$F0,$00,$01,$00,$05,$00
+		.BYTE	$00
 
 i_EyeOfVulnerability:
-:		.BYTE $10		; DATA XREF: RAM:93D2o
-		.BYTE	:++-:-
-		.BYTE	0
-		.BYTE	0
-		.BYTE	1
-		.BYTE	:+-:-
-aEyeOfVulnerabi:.BYTE "Eye of Vulnerabilty",0
-:		.BYTE $88 ; à
-		.BYTE $FF
-		.BYTE $44 ; D
-		.BYTE	1
-		.BYTE	1
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	1
-		.BYTE $F0 ; 
-		.BYTE	0
-		.BYTE	1
-		.BYTE	0
-		.BYTE	9
-		.BYTE	0
-		.BYTE	0
-		.BYTE	3
+		Item	$10,$00,$00,$01,"Eye of Vulnerabilty" ; [sic]
+		.BYTE	$88,$FF,$44,$01,$01,$00,$00,$00,$00,$01,$F0,$00,$01,$00,$09,$00
+		.BYTE	$00,$03
 
 i_LightWand:
-:		.BYTE	8		; DATA XREF: RAM:93D4o
-		.BYTE	:++-:-
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	:+-:-
-aLightWand:	.BYTE "Light Wand",0
-:		.BYTE $88 ; à
-		.BYTE $FF
-		.BYTE $C4 ; -
-		.BYTE	1
-		.BYTE $D2 ; “
-		.BYTE	2
-		.BYTE $AD ; ≠
-		.BYTE $DE ; ﬁ
-		.BYTE	0
-		.BYTE $91 ; ë
-		.BYTE $90 ; ê
-		.BYTE	0
-		.BYTE	1
-		.BYTE	0
-		.BYTE	1
-		.BYTE	0
-		.BYTE $EC ; Ï
-		.BYTE	0
-		.BYTE $44 ; D
-aLight:		.BYTE "Light",0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE $88 ; à
-		.BYTE $FF
-		.BYTE $44 ; D
-		.BYTE	1
-		.BYTE	1
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE $81 ; Å
-		.BYTE $90 ; ê
-		.BYTE	0
-		.BYTE	1
-		.BYTE	0
-		.BYTE	1
-		.BYTE	0
-		.BYTE	0
+		Item	$08,$00,$00,$00,"Light Wand"
+		.BYTE	$88,$FF,$C4,$01,$D2,$02,$AD,$DE,$00,$91,$90,$00,$01,$00,$01,$00
+		.BYTE	$EC,$00,$44
+		.BYTE	"Light",0
+		.BYTE	$00,$00,$00,$00,$00,$00,$00
+		.BYTE	$88,$FF,$44,$01,$01,$00,$00,$00,$00,$81,$90,$00,$01,$00,$01,$00
+		.BYTE	$00
 
 i_HealingWand:
-:		.BYTE	8		; DATA XREF: RAM:93D6o
-		.BYTE	:++-:-
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	:+-:-
-aHealingWand:	.BYTE "Healing Wand",0
-:		.BYTE $88 ; à
-		.BYTE $FF
-		.BYTE $44 ; D
-		.BYTE	1
-		.BYTE	1
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE $82 ; Ç
-		.BYTE $45 ; E
-		.BYTE	0
-		.BYTE	1
-		.BYTE	0
-		.BYTE $32 ; 2
-		.BYTE	0
-		.BYTE	0
+		Item	$08,$00,$00,$00,"Healing Wand"
+		.BYTE	$88,$FF,$44,$01,$01,$00,$00,$00,$00,$82,$45,$00,$01,$00,$32,$00
+		.BYTE	$00
 
 i_FrostbladeScroll:
-:		.BYTE $10		; DATA XREF: RAM:93A0o
-		.BYTE	:++-:-
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	:+-:-
-aFrostbladeScro:.BYTE "Frostblade Scroll",0
-:		.BYTE $87 ; á
-		.BYTE $FF
-		.BYTE $C4 ; -
-		.BYTE	1
-		.BYTE $3D ; =
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	1
-		.BYTE $DC ; ‹
-		.BYTE	0
-		.BYTE	1
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE $84 ; Ñ
-		.BYTE	0
-		.BYTE $44 ; D
-		.BYTE	1
-		.BYTE	1
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	1
-		.BYTE $DC ; ‹
-		.BYTE	0
-		.BYTE	1
-		.BYTE	0
-		.BYTE $24 ; $
-		.BYTE	0
-		.BYTE $EC ; Ï
-		.BYTE	0
-		.BYTE $44 ; D
-aFrostblade:	.BYTE "Frostblade",0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	1
+		Item	$10,$00,$00,$00,"Frostblade Scroll"
+		.BYTE	$87,$FF,$C4,$01,$3D,$00,$00,$00,$00,$01,$DC,$00,$01,$00,$00,$00
+		.BYTE	$84,$00,$44,$01,$01,$00,$00,$00,$00,$01,$DC,$00,$01,$00,$24,$00
+		.BYTE	$EC,$00,$44
+		.BYTE "Frostblade",0
+		.BYTE	$00,$00
+		.BYTE	$00,$01
 
 i_FirebladeScroll:
 :		.BYTE $10		; DATA XREF: RAM:93A2o
