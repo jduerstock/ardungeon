@@ -322,7 +322,7 @@ loc_7808:				; CODE XREF: sub_773A+C1j sub_773A+CAj
 
 loc_780A:				; CODE XREF: sub_773A+D8j
 		LDA	(off_7),Y
-		CMP	aMirroredShield,Y ; "Mirrored Shield"
+		CMP	i_MirroredShield+6,Y ; "Mirrored Shield"
 		BNE	loc_7817
 		DEY
 		BPL	loc_780A
@@ -3458,332 +3458,56 @@ aPacCard:	.BYTE "PAC card",0
 		.BYTE	0
 		.BYTE	2
 		.BYTE	1
-		.BYTE	3
-		.BYTE $4A ; J
-		.BYTE	0
-		.BYTE	0
-		.BYTE  $A
-		.BYTE $16
-aMirroredShield:.BYTE "Mirrored Shield",0 ; DATA XREF: sub_773A+D2r
-		.BYTE $88 ; à
-		.BYTE $FF
-		.BYTE	4
-		.BYTE	1
-		.BYTE	1
-		.BYTE	0
-		.BYTE	1
-		.BYTE	0
-		.BYTE	0
-		.BYTE $81 ; Å
-		.BYTE $AC ; ¨
-		.BYTE	0
-		.BYTE	1
-		.BYTE	0
-		.BYTE  $A
-		.BYTE	0
-		.BYTE $88 ; à
-		.BYTE $FF
-		.BYTE	8
-		.BYTE	1
-		.BYTE	1
-		.BYTE	0
-		.BYTE	1
-		.BYTE	0
-		.BYTE	0
-		.BYTE $91 ; ë
-		.BYTE $AC ; ¨
-		.BYTE	0
-		.BYTE	1
-		.BYTE	0
-		.BYTE  $A
-		.BYTE	0
-		.BYTE	0
-		.BYTE $FF
-		.BYTE	0
-		.BYTE $14
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE $10
-		.BYTE $10
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $82 ; Ç
-		.BYTE $60 ; `
-		.BYTE	7
-		.BYTE $47 ; G
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE $14
-aReforgedRing:	.BYTE "Reforged Ring",0
-		.BYTE $88 ; à
-		.BYTE $FF
-		.BYTE	1
-		.BYTE	0
-		.BYTE $EE ; Ó
-		.BYTE	2
-		.BYTE $EE ; Ó
-		.BYTE	2
-		.BYTE	0
-		.BYTE	3
-		.BYTE $99 ; ô
-		.BYTE	0
-		.BYTE	1
-		.BYTE	0
-		.BYTE $FF
-		.BYTE	0
-		.BYTE $88 ; à
-		.BYTE	0
-		.BYTE	1
-		.BYTE	0
-		.BYTE $D0 ; –
-		.BYTE	2
-		.BYTE $DC ; ‹
-		.BYTE	5
-		.BYTE	0
-		.BYTE $91 ; ë
-		.BYTE $85 ; Ö
-		.BYTE	0
-		.BYTE	1
-		.BYTE	0
-		.BYTE	1
-		.BYTE	0
-		.BYTE $88 ; à
-		.BYTE $FF
-		.BYTE	1
-		.BYTE	0
-		.BYTE $EE ; Ó
-		.BYTE	2
-		.BYTE $EE ; Ó
-		.BYTE	2
-		.BYTE	0
-		.BYTE	3
-		.BYTE $4D ; M
-		.BYTE	0
-		.BYTE	7
-		.BYTE	8
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	2
-		.BYTE	2
-		.BYTE	7
-		.BYTE $24 ; $
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE $11
-aBloodstone:	.BYTE "Bloodstone",0
-		.BYTE $88 ; à
-		.BYTE $FF
-		.BYTE	1
-		.BYTE	0
-		.BYTE $DC ; ‹
-		.BYTE	5
-		.BYTE $DC ; ‹
-		.BYTE	5
-		.BYTE	0
-		.BYTE	2
-		.BYTE $45 ; E
-		.BYTE	0
-		.BYTE	1
-		.BYTE	0
-		.BYTE $FF
-		.BYTE	0
-		.BYTE	0
-		.BYTE	2
-		.BYTE	8
+
+i_MirroredShield:
+		Item	$03,$00,$00,$0A,"Mirrored Shield"
+		.BYTE	$88,$FF,$04,$01,$01,$00,$01,$00,$00,$81,$AC,$00,$01,$00,$0A,$00
+		.BYTE	$88,$FF,$08,$01,$01,$00,$01,$00,$00,$91,$AC,$00,$01,$00,$0A,$00
+		.BYTE	$00,$FF,$00
+		.BYTE	$14,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00
+		.BYTE	$10,$10,$FF,$FF,$82,$60
+
+i_ReforgedRing:
+		Item	$07,$00,$00,$00,"Reforged Ring"
+		.BYTE	$88,$FF,$01,$00,$EE,$02,$EE,$02,$00,$03,$99,$00,$01,$00,$FF,$00
+		.BYTE	$88,$00,$01,$00,$D0,$02,$DC,$05,$00,$91,$85,$00,$01,$00,$01,$00
+		.BYTE	$88,$FF,$01,$00,$EE,$02,$EE,$02,$00,$03,$4D,$00,$07,$08,$00,$00
+		.BYTE	$00,$02,$02
+
+i_Bloodstone:
+		Item	$07,$00,$00,$00,"Bloodstone"
+		.BYTE	$88,$FF,$01,$00,$DC,$05,$DC,$05,$00,$02,$45,$00,$01,$00,$FF,$00
+		.BYTE	$00,$02,$08
+	
 i_WingedSandals:
-		.BYTE	5
-		.BYTE $38 ; 8
-		.BYTE	0
-		.BYTE	0
-		.BYTE	1
-		.BYTE $15
-aWingedSandals:	.BYTE "Winged Sandals",0
-		.BYTE $88 ; à
-		.BYTE $FF
-		.BYTE	4
-		.BYTE	1
-		.BYTE	1
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE $81 ; Å
-		.BYTE $73 ; s
-		.BYTE	0
-		.BYTE	2
-		.BYTE	8
-		.BYTE $32 ; 2
-		.BYTE	0
-		.BYTE $88 ; à
-		.BYTE $FF
-		.BYTE	8
-		.BYTE	1
-		.BYTE	1
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE $91 ; ë
-		.BYTE $73 ; s
-		.BYTE	0
-		.BYTE	2
-		.BYTE	8
-		.BYTE $32 ; 2
-		.BYTE	0
-		.BYTE	0
-		.BYTE	8
-		.BYTE	0
+		Item	$05,$00,$00,$01,"Winged Sandals"
+		.BYTE	$88,$FF,$04,$01,$01,$00,$00,$00,$00,$81,$73,$00,$02,$08,$32,$00
+		.BYTE	$88,$FF,$08,$01,$01,$00,$00,$00,$00,$91,$73,$00,$02,$08,$32,$00
+		.BYTE	$00,$08,$00
+
 i_MorganasTiara:
-		.BYTE	5
-		.BYTE $29 ; )
-		.BYTE	0
-		.BYTE	0
-		.BYTE	1
-		.BYTE $16
-aMorganaSTiara:	.BYTE "Morgana's Tiara",0
-		.BYTE $88 ; à
-		.BYTE $FF
-		.BYTE $84 ; Ñ
-		.BYTE	0
-		.BYTE	1
-		.BYTE	0
-		.BYTE $11
-		.BYTE	0
-		.BYTE	0
-		.BYTE $82 ; Ç
-		.BYTE $45 ; E
-		.BYTE	0
-		.BYTE	1
-		.BYTE	0
-		.BYTE	1
-		.BYTE	0
-		.BYTE	0
-		.BYTE  $B
-		.BYTE	1
+		Item	$05,$00,$00,$01,"Morgana's Tiara"
+		.BYTE	$88,$FF,$84,$00,$01,$00,$11,$00,$00,$82,$45,$00,$01,$00,$01,$00
+		.BYTE	$00,$0B,$01
 
 i_CloakOfLevitation:
-		.BYTE	5
-		.BYTE $3D ; =
-		.BYTE	0
-		.BYTE	0
-		.BYTE	1
-		.BYTE $1A
-aCloakOfLevitat:.BYTE "Cloak of Levitation",0
-		.BYTE $88 ; à
-		.BYTE $FF
-		.BYTE	4
-		.BYTE	1
-		.BYTE	1
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE $81 ; Å
-		.BYTE $7B ; {
-		.BYTE	0
-		.BYTE	1
-		.BYTE	0
-		.BYTE $60 ; `
-		.BYTE	0
-		.BYTE $88 ; à
-		.BYTE $FF
-		.BYTE	8
-		.BYTE	1
-		.BYTE	1
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE $91 ; ë
-		.BYTE $7B ; {
-		.BYTE	0
-		.BYTE	1
-		.BYTE	0
-		.BYTE $60 ; `
-		.BYTE	0
-		.BYTE	0
-		.BYTE	4
-		.BYTE	1
+		Item	$05,$00,$00,$01,"Cloak of Levitation"	
+		.BYTE	$88,$FF,$04,$01,$01,$00,$00,$00,$00,$81,$7B,$00,$01,$00,$60,$00
+		.BYTE	$88,$FF,$08,$01,$01,$00,$00,$00,$00,$91,$7B,$00,$01,$00,$60,$00
+		.BYTE	$00,$04,$01
 
 i_CrystalBreastplate:
-		.BYTE	4
-		.BYTE $29 ; )
-		.BYTE	0
-		.BYTE	0
-		.BYTE $12
-		.BYTE $1A
-aCrystalBreastp:.BYTE "Crystal Breastplate",0
-		.BYTE	0
-		.BYTE	1
-		.BYTE $34 ; 4
-		.BYTE $34 ; 4
-		.BYTE $12
-		.BYTE $12
-		.BYTE $12
-		.BYTE $12
-		.BYTE $11
-		.BYTE $12
-		.BYTE $12
-		.BYTE $12
-		.BYTE $34 ; 4
-		.BYTE $FF
-		.BYTE $FF
+		Item	$04,$00,$00,$12,"Crystal Breastplate"
+		.BYTE	$00,$01
+		.BYTE	$34,$34,$12,$12,$12,$12,$11,$12,$12,$12,$34
+		.BYTE	$FF,$FF
 
 i_JunaisSword:
-		.BYTE	3
-		.BYTE $38 ; 8
-		.BYTE	0
-		.BYTE $7F ; 
-		.BYTE  $C
-		.BYTE $14
-aJunaiSSword:	.BYTE "Junai's Sword",0
-		.BYTE $88 ; à
-		.BYTE $FF
-		.BYTE $A1 ; °
-		.BYTE $FF
-		.BYTE	1
-		.BYTE	0
-		.BYTE $1A
-		.BYTE	0
-		.BYTE	0
-		.BYTE $92 ; í
-		.BYTE $45 ; E
-		.BYTE	0
-		.BYTE	1
-		.BYTE	0
-		.BYTE	1
-		.BYTE	0
-		.BYTE	0
-		.BYTE $FF
-		.BYTE	0
-		.BYTE	0
-		.BYTE $2A ; *
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE $22 ; "
-		.BYTE $22 ; "
-		.BYTE	0
-		.BYTE $10
-		.BYTE $10
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $90 ; ê
-		.BYTE $24 ; $
+		Item	$03,$00,$7F,$0C,"Junai's Sword"
+		.BYTE	$88,$FF,$A1,$FF,$01,$00,$1A,$00,$00,$92,$45,$00,$01,$00,$01,$00
+		.BYTE	$00,$FF,$00
+		.BYTE	$00,$2A,$00,$00,$00,$00,$00,$00,$22,$22,$00
+		.BYTE	$10,$10,$FF,$FF,$90,$24
 
 i_Loadstone:
 		Item	$07,$01,$00,$FF,"Loadstone"

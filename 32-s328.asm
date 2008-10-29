@@ -45,7 +45,7 @@ loc_7618:				; CODE XREF: RAM:761Fj
 
 loc_7640:				; CODE XREF: RAM:7624j
 		dldi	off_1977, loc_766C
-		dldi	off_16, $7A6D
+		dldi	off_16, byte_7A6D
 		JSR	$184B
 		LDA	$1933
 		STA	$67
@@ -385,7 +385,7 @@ loc_78EA:				; CODE XREF: RAM:78E6j
 		SEC
 		JSR	j_SETBIT
 		DEC	$195F
-		dldi	off_16, $818E
+		dldi	off_16, byte_818E
 		JSR	sub_7A37
 		LDA	#6
 		JSR	$185A
@@ -581,77 +581,37 @@ sub_7A3C:				; CODE XREF: RAM:loc_77E9p RAM:784Bp ...
 		.WORD byte_7FE6
 		.WORD byte_7EB9
 		.WORD byte_7F0B
-		.BYTE $A8,$FF
-byte_7A6F:	.BYTE $A6,  0,	2	; DATA XREF: RAM:7A5Fo
-		.BYTE $A5
-aICanGiveWordsO:.BYTE "I can give words of wisdom but once"
-		.BYTE $D
-		.BYTE $D
-		.BYTE $A5
-aPerDay_ReturnT:.BYTE "per day.  Return tommorow."
-		.BYTE $D
-		.BYTE $FF
-byte_7AB5:	.BYTE $A6,  0,	2	; DATA XREF: RAM:7A61o
-		.BYTE $A5
-aYouReturnTooSo:.BYTE "You return too soon,"
-		.BYTE $D
-		.BYTE $D
-		.BYTE $A5
-aWaitUntilTommo:.BYTE "wait until tommorrow"
-		.BYTE $D
-		.BYTE $D
-		.BYTE $A5
-aForMyWisdom:	.BYTE "for my wisdom!"
-		.BYTE $D
-		.BYTE $FF
-		.BYTE $A6,  0,	1
-		.BYTE $A5
-aIAmSorryButYou:.BYTE "I am sorry but your offering is not"
-		.BYTE $D
-		.BYTE $D
-		.BYTE $A5
-aEnoughForMyWis:.BYTE "enough for my wisdom."
-		.BYTE $D
-		.BYTE $FF
-		.BYTE $A6,  0,	1
-		.BYTE $A5
-aISeeYouHaveRet:.BYTE "I see you have returned.  Be more"
-		.BYTE $D
-		.BYTE $D
-		.BYTE $A5
-aRespectfulAndY:.BYTE "respectful and you shall receive"
-		.BYTE $D
-		.BYTE $D
-		.BYTE $A5
-aKnowledge_:	.BYTE "knowledge."
-		.BYTE $D
-		.BYTE $FF
-		.BYTE $A6,  0,	2
-		.BYTE $A5
-aICanOnlyAccept:.BYTE "I can only accept an offering of gold."
-		.BYTE $D
-		.BYTE $FF
-		.BYTE $A6,  0,	2
-		.BYTE $A5
-aMyPatienceWith:.BYTE "My patience with thee has ended."
-		.BYTE $D
-		.BYTE $D
-		.BYTE $A5
-aReturnTommorow:.BYTE "Return tommorow with a more suitable"
-		.BYTE $D
-		.BYTE $D
-		.BYTE $A5
-aOffering_:	.BYTE "offering."
-		.BYTE $D
-		.BYTE $FF
-byte_7C14:	.BYTE $A6,  0,	1	; DATA XREF: RAM:7A49o
-		.BYTE $A5
-aWelcomeToTheOr:.BYTE "Welcome to the Oracle."
-		.BYTE $D
-		.BYTE $D
-		.BYTE $A5
-aWhatDostThouOf:.BYTE "What dost thou offer for my knowledge?"
-		.BYTE $D
+byte_7A6D:	.BYTE	$A8,$FF
+
+byte_7A6F:	MOVEXY	0,2		; DATA XREF: RAM:7A5Fo
+		.BYTE	$A5,"I can give words of wisdom but once",$0D,$0D
+		.BYTE	$A5,"per day.  Return tommorow.",$0D,$FF
+
+byte_7AB5:	MOVEXY	0,2		; DATA XREF: RAM:7A61o
+		.BYTE	$A5,"You return too soon,",$0D,$0D
+		.BYTE	$A5,"wait until tommorrow",$0D,$0D
+		.BYTE	$A5,"for my wisdom!",$0D,$FF
+
+		MOVEXY	0,1
+		.BYTE	$A5,"I am sorry but your offering is not",$0D,$0D
+		.BYTE	$A5,"enough for my wisdom.",$0D,$FF
+
+		MOVEXY	0,1
+		.BYTE	$A5,"I see you have returned.  Be more",$0D,$0D
+		.BYTE	$A5,"respectful and you shall receive",$0D,$0D
+		.BYTE	$A5,"knowledge.",$0D,$FF
+
+		MOVEXY	0,2
+aICanOnlyAccept:.BYTE	$A5,"I can only accept an offering of gold.",$0D,$FF
+
+		MOVEXY	0,2
+		.BYTE	$A5,"My patience with thee has ended.",$0D,$0D
+		.BYTE	$A5,"Return tommorow with a more suitable",$0D,$0D
+		.BYTE	$A5,"offering.",$0D,$FF
+
+byte_7C14:	MOVEXY	0,1		; DATA XREF: RAM:7A49o
+aWelcomeToTheOr:.BYTE	$A5,"Welcome to the Oracle.",$0D,$0D
+aWhatDostThouOf:.BYTE	$A5,"What dost thou offer for my knowledge?",$0D
 		.BYTE $A6,  7,	6
 		.BYTE $AC
 		.WORD aDoYou		; "Do you ("
@@ -685,18 +645,10 @@ aRewardTheeWith:.BYTE "reward thee with knowledge."
 		.BYTE $A6,  7,	6
 		.BYTE $AC
 		.WORD aDoYou		; "Do you ("
-		.BYTE $A6,  0,	0
-		.BYTE $A5
-aFoolishHumanTh:.BYTE "Foolish human, thou must make an"
-		.BYTE $D
-		.BYTE $D
-		.BYTE $A5
-aOfferingOfSuff:.BYTE "offering of sufficient value before I"
-		.BYTE $D
-		.BYTE $D
-		.BYTE $A5
-aWillImpartAnyO:.BYTE "will impart any of my wisdom to thee."
-		.BYTE $D
+		MOVEXY	0,0
+		.BYTE	$A5,"Foolish human, thou must make an",$0D,$0D
+		.BYTE	$A5,"offering of sufficient value before I",$0D,$0D
+		.BYTE	$A5,"will impart any of my wisdom to thee.",$0D
 		.BYTE $A6,  7,	6
 		.BYTE $AC
 		.WORD aDoYou		; "Do you ("
@@ -875,28 +827,14 @@ aOffering:	.BYTE "offering!"
 		.BYTE $FF
 byte_814B:	.BYTE $A6,  0,	2	; DATA XREF: RAM:7A53o
 		.BYTE $A5
-aTryAgainWhenYo:.BYTE "Try again when you have something"
-		.BYTE $D
-		.BYTE $D
-		.BYTE $A5
-aWorthwhileToOf:.BYTE "worthwhile to offer me!"
-		.BYTE $D
-		.BYTE $FF
+aTryAgainWhenYo:.BYTE "Try again when you have something",$0D,$0D
+aWorthwhileToOf:.BYTE $A5,"worthwhile to offer me!",$0D,$FF
 byte_818C:	.BYTE 0			; DATA XREF: RAM:782Dw	RAM:7FC2o ...
 byte_818D:	.BYTE 0			; DATA XREF: RAM:7834w
-		.BYTE $A6,  0,	1
-		.BYTE $A5
-aYouHaveJustDes:.BYTE "You have just destroyed the ring of"
-		.BYTE $D
-		.BYTE $D
-		.BYTE $A5
-aEvilForRidding:.BYTE "Evil!  For ridding the world of"
-		.BYTE $D
-		.BYTE $D
-		.BYTE $A5
-aThisEvilArtifa:.BYTE "this evil artifact I shall reward you!"
-		.BYTE $D
-		.BYTE $FF
+byte_818E:	.BYTE $A6,  0,	1
+aYouHaveJustDes:.BYTE $A5,"You have just destroyed the ring of",$0D,$0D
+aEvilForRidding:.BYTE $A5,"Evil!  For ridding the world of",$0D,$0D
+aThisEvilArtifa:.BYTE $A5,"this evil artifact I shall reward you!",$0D,$FF
 		.WORD word_821A
 		.WORD word_826A
 		.WORD word_8359
