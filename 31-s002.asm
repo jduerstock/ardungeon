@@ -846,12 +846,12 @@ loc_7B74:				; CODE XREF: sub_7B59+13j sub_7B59+18j
 		JSR	nullsub_1
 		LDX	#0
 		LDA	RANDOM
-		CMP	#$B0 ; '°'
-		BCC	loc_7B89
+		CMP	#$B0		; is RANDOM <= $B0 ?
+		BCC	loc_7B89	; pick first weapon
 		INX
-		CMP	#$F8 ; 'ø'
-		BCC	loc_7B89
-		INX
+		CMP	#$F8		; <= $F8 ?
+		BCC	loc_7B89	; pick second weapon
+		INX			; else, pick third weapon
 
 loc_7B89:				; CODE XREF: sub_7B59+28j sub_7B59+2Dj
 		TXA
@@ -4849,19 +4849,19 @@ loc_9283:				; CODE XREF: sub_9280+6j
 
 
 sub_9289:				; CODE XREF: sub_7B59+31p RAM:8869p
-		ASL	A
+		ASL	A		; input(A) = monster weapon #
 		TAX
 		LDA	off_AA05,X
 		STA	off_68
-		LDA	off_AA05+1,X
-		STA	off_68+1
+		LDA	off_AA05+1,X	; copy monster weapon pointer
+		STA	off_68+1	; to off_68
 		CLC
 		LDA	off_68
 		ADC	#6
 		STA	$6C
 		LDA	off_68+1
 		ADC	#0
-		STA	$6D
+		STA	$6D		; off_6C = off_68 + 6
 		LDY	#5
 		CLC
 		LDA	off_68

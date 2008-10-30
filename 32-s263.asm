@@ -2671,98 +2671,31 @@ aGreenCapWithFe:.BYTE "Green Cap with Feather",0
 		.BYTE	0
 		.BYTE	2
 		.BYTE	1
-unk_91E0:	.BYTE	5		; DATA XREF: RAM:8F85o
-		.BYTE $1C
-		.BYTE	1
-		.BYTE	0
-		.BYTE	1
-		.BYTE $19
-aFloppyLeatherH:.BYTE "Floppy Leather Hat",0
-		.BYTE	0
-		.BYTE	3
-		.BYTE	2
-unk_91FC:	.BYTE	5		; DATA XREF: RAM:8F87o
-		.BYTE $19
-		.BYTE	1
-		.BYTE	0
-		.BYTE	1
-		.BYTE $16
-aLeatherSandals:.BYTE "Leather Sandals",0
-		.BYTE	0
-		.BYTE	2
-		.BYTE	1
-unk_9215:	.BYTE	5		; DATA XREF: RAM:8F89o
-		.BYTE $1C
-		.BYTE	1
-		.BYTE	0
-		.BYTE	2
-		.BYTE $19
-aHighLeatherBoo:.BYTE "High Leather Boots",0
-		.BYTE	0
-		.BYTE	4
-		.BYTE	4
-unk_9231:	.BYTE	5		; DATA XREF: RAM:8F8Bo
-		.BYTE $33 ; 3
-		.BYTE	1
-		.BYTE	0
-		.BYTE	2
-		.BYTE $10
-aSnowshoes:	.BYTE "Snowshoes",0
-		.BYTE $88 ; à
-		.BYTE $FF
-		.BYTE	4
-		.BYTE	1
-		.BYTE	1
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE $81 ; Å
-		.BYTE $7C ; |
-		.BYTE	0
-		.BYTE	1
-		.BYTE	1
-		.BYTE  $A
-		.BYTE	0
-		.BYTE $88 ; à
-		.BYTE $FF
-		.BYTE	4
-		.BYTE	1
-		.BYTE	1
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE $91 ; ë
-		.BYTE $7C ; |
-		.BYTE	0
-		.BYTE	1
-		.BYTE	1
-		.BYTE  $A
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-unk_9264:	.BYTE	5		; DATA XREF: RAM:8F8Do
-		.BYTE $1B
-		.BYTE	1
-		.BYTE	0
-		.BYTE	1
-		.BYTE $18
-aWhiteCottonRob:.BYTE "White Cotton Robe",0
-		.BYTE	0
-		.BYTE	1
-		.BYTE	2
-unk_927F:	.BYTE	5		; DATA XREF: RAM:8F8Fo
-		.BYTE $1C
-		.BYTE	1
-		.BYTE	0
-		.BYTE	1
-		.BYTE $19
-aWhiteCottonTun:.BYTE "White Cotton Tunic",0
-		.BYTE	0
-		.BYTE	2
-		.BYTE	2
+unk_91E0:
+		Item	$05,$01,$00,$01,"Floppy Leather Hat"
+		.BYTE	$00,$03,$02
+
+unk_91FC:
+		Item	$05,$01,$00,$01,"Leather Sandals"
+		.BYTE	$00,$02,$01
+
+unk_9215:
+		Item	$05,$01,$00,$02,"High Leather Boots"
+		.BYTE	$00,$04,$04
+
+unk_9231:
+		Item	$05,$01,$00,$02,"Snowshoes"
+		.BYTE	$88,$FF,$04,$01,$01,$00,$00,$00,$00,$81,$7C,$00,$01,$01,$0A,$00
+		.BYTE	$88,$FF,$04,$01,$01,$00,$00,$00,$00,$91,$7C,$00,$01,$01,$0A,$00
+		.BYTE	$00,$00,$00
+	
+unk_9264:
+		Item	$05,$01,$00,$01,"White Cotton Robe"
+		.BYTE	$00,$01,$02
+
+unk_927F:
+		Item	$05,$01,$00,$01,"White Cotton Tunic"
+		.BYTE	$00,$02,$02
 
 unk_929B:
 		Item	$05,$01,$00,$01,"Brown Cotton Breeches"
