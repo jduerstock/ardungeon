@@ -70,7 +70,7 @@ BINARIES=$(ASM2_SOURCES:.asm=.bin)
 
 SUMS=$(ASM_SOURCES:.asm=.sha1)
 
-all: $(BINARIES) $(OBJECTS) 
+all: $(BINARIES) $(OBJECTS) ar32.img
 	ld65 -C 11-s001.cfg $(OBJECTS)
 	sha1sum -c 11-s001.sha1 11-s002.sha1 11-s006.sha1 11-s011.sha1 11-s016.sha1
 	cat 11-s001.bin > ar11.img
@@ -102,26 +102,6 @@ all: $(BINARIES) $(OBJECTS)
 	cat 31-s671.bin 31-s672.bin.crypt >> ar31.img
 	cat 31-s682.bin >> ar31.img
 	sha1sum -c ar31.sha1
-	cat 32-s001.bin 32-s002.bin.crypt > ar32.img
-	cat 32-s034.bin 32-s035.bin.crypt >> ar32.img
-	cat 32-s091.bin 32-s092.bin.crypt >> ar32.img
-	cat 32-s126.bin 32-s127.bin.crypt >> ar32.img
-	cat 32-s183.bin 32-s184.bin.crypt >> ar32.img
-	cat 32-s262.bin 32-s263.bin.crypt >> ar32.img
-	cat 32-s327.bin 32-s328.bin.crypt >> ar32.img
-	cat 32-s382.bin 32-s383.bin.crypt >> ar32.img
-	cat 32-s431.bin 32-s432.bin.crypt >> ar32.img
-	cat 32-s494.bin 32-s495.bin.crypt >> ar32.img
-	cat 32-s510.bin 32-s511.bin.crypt >> ar32.img
-	cat 32-s526.bin 32-s527.bin.crypt >> ar32.img
-	cat 32-s553.bin 32-s554.bin.crypt >> ar32.img
-	cat 32-s566.bin 32-s567.bin.crypt >> ar32.img
-	cat 32-s575.bin 32-s576.bin.crypt >> ar32.img
-	cat 32-s622.bin 32-s623.bin.crypt >> ar32.img
-	cat 32-s655.bin 32-s656.bin.crypt >> ar32.img
-	cat 32-s684.bin 32-s685.bin.crypt >> ar32.img
-	cat 32-s695.bin >> ar32.img
-	sha1sum -c ar32.sha1
 
 %.o: %.asm
 	$(CA) $(AFLAGS) $< -o $@
@@ -585,6 +565,37 @@ all: $(BINARIES) $(OBJECTS)
 32-s695.bin: 32-s695.asm
 	cl65 --start-addr 0x1000 -t none 32-s695.asm -o 32-s695.bin
 	sha1sum -c 32-s695.sha1
+
+ar32.img: 32-s001.bin 32-s002.bin.crypt 32-s034.bin 32-s035.bin.crypt \
+	32-s091.bin 32-s092.bin.crypt 32-s126.bin 32-s127.bin.crypt \
+	32-s183.bin 32-s184.bin.crypt 32-s262.bin 32-s263.bin.crypt \
+	32-s327.bin 32-s328.bin.crypt 32-s382.bin 32-s383.bin.crypt \
+	32-s431.bin 32-s432.bin.crypt 32-s494.bin 32-s495.bin.crypt \
+	32-s510.bin 32-s511.bin.crypt 32-s526.bin 32-s527.bin.crypt \
+	32-s553.bin 32-s554.bin.crypt 32-s566.bin 32-s567.bin.crypt \
+	32-s575.bin 32-s576.bin.crypt 32-s622.bin 32-s623.bin.crypt \
+	32-s655.bin 32-s656.bin.crypt 32-s684.bin 32-s685.bin.crypt \
+	32-s695.bin
+	cat 32-s001.bin 32-s002.bin.crypt > ar32.img
+	cat 32-s034.bin 32-s035.bin.crypt >> ar32.img
+	cat 32-s091.bin 32-s092.bin.crypt >> ar32.img
+	cat 32-s126.bin 32-s127.bin.crypt >> ar32.img
+	cat 32-s183.bin 32-s184.bin.crypt >> ar32.img
+	cat 32-s262.bin 32-s263.bin.crypt >> ar32.img
+	cat 32-s327.bin 32-s328.bin.crypt >> ar32.img
+	cat 32-s382.bin 32-s383.bin.crypt >> ar32.img
+	cat 32-s431.bin 32-s432.bin.crypt >> ar32.img
+	cat 32-s494.bin 32-s495.bin.crypt >> ar32.img
+	cat 32-s510.bin 32-s511.bin.crypt >> ar32.img
+	cat 32-s526.bin 32-s527.bin.crypt >> ar32.img
+	cat 32-s553.bin 32-s554.bin.crypt >> ar32.img
+	cat 32-s566.bin 32-s567.bin.crypt >> ar32.img
+	cat 32-s575.bin 32-s576.bin.crypt >> ar32.img
+	cat 32-s622.bin 32-s623.bin.crypt >> ar32.img
+	cat 32-s655.bin 32-s656.bin.crypt >> ar32.img
+	cat 32-s684.bin 32-s685.bin.crypt >> ar32.img
+	cat 32-s695.bin >> ar32.img
+	sha1sum -c ar32.sha1
 
 clean:
 	$(RM) -f $(OBJECTS) *.*~ *.bin *.bin.crypt *.o ar11.img ar31.img ar32.img

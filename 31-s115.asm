@@ -475,7 +475,7 @@ byte_78E4:	.BYTE 0			; DATA XREF: sub_773A+3Dw sub_773A+4Ew ...
 byte_78E5:	.BYTE 0			; DATA XREF: sub_773A+38w
 					; sub_773A:loc_777Ar ...
 i_TheStarCard:
-		Item	$10,$00,$00,$00,"The Star (card)"		
+		Item	$10,$00,$00,$00,"The Star (card)"
 		.BYTE	$88,$FF,$44,$01,$01,$00,$00,$00,$00,$81,$BE,$00,$01,$00,$19,$00
 		.BYTE	$00,$01
 
@@ -2745,304 +2745,84 @@ aGoldenGreaves:	.BYTE "Golden Greaves",0
 		.BYTE $50 ; P
 		.BYTE $50 ; P
 i_PlateHelm:
-		.BYTE	4		; DATA XREF: RAM:9412o
-		.BYTE $20
-		.BYTE	0
-		.BYTE	0
-		.BYTE	6
-		.BYTE $11
-aPlateHelm:	.BYTE "Plate Helm",0
-		.BYTE	0
-		.BYTE	0
-		.BYTE $25 ; %
-		.BYTE $33 ; 3
-		.BYTE	0
-		.BYTE	0
-		.BYTE $11
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE $60 ; `
-		.BYTE $60 ; `
+		Item	$04,$00,$00,$06,"Plate Helm"
+		.BYTE	$00,$00
+		.BYTE	$25,$33,$00,$00,$11,$00,$00,$00,$00,$00,$00
+		.BYTE	$60,$60
+
 i_PlateGauntlets:
-		.BYTE	4		; DATA XREF: RAM:9414o
-		.BYTE $25 ; %
-		.BYTE	0
-		.BYTE	0
-		.BYTE	6
-		.BYTE $16
-aPlateGauntlets:.BYTE "Plate Gauntlets",0
-		.BYTE	0
-		.BYTE	2
-		.BYTE $25 ; %
-		.BYTE $33 ; 3
-		.BYTE	0
-		.BYTE	0
-		.BYTE $11
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE $80 ; €
-		.BYTE $80 ; €
+		Item	$04,$00,$00,$06,"Plate Gauntlets"
+		.BYTE	$00,$02
+		.BYTE	$25,$33,$00,$00,$11,$00,$00,$00,$00,$00,$00
+		.BYTE	$80,$80
+
 i_PlateLeggings:
-		.BYTE	4		; DATA XREF: RAM:9416o
-		.BYTE $24 ; $
-		.BYTE	0
-		.BYTE	0
-		.BYTE	2
-		.BYTE $15
-aPlateLeggings:	.BYTE "Plate Leggings",0
-		.BYTE	0
-		.BYTE	3
-		.BYTE $25 ; %
-		.BYTE $33 ; 3
-		.BYTE	0
-		.BYTE	0
-		.BYTE $11
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE $80 ; €
-		.BYTE $80 ; €
+		Item	$04,$00,$00,$02,"Plate Leggings"
+		.BYTE	$00,$03
+		.BYTE	$25,$33,$00,$00,$11,$00,$00,$00,$00,$00,$00
+		.BYTE	$80,$80
+
 i_PlateArmor:
-		.BYTE	4		; DATA XREF: RAM:9418o
-		.BYTE $21 ; !
-		.BYTE	0
-		.BYTE	0
-		.BYTE $10
-		.BYTE $12
-aPlateArmor:	.BYTE "Plate Armor",0
-		.BYTE	0
-		.BYTE	1
-		.BYTE $25 ; %
-		.BYTE $33 ; 3
-		.BYTE	0
-		.BYTE	0
-		.BYTE $11
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE $80 ; €
-		.BYTE $80 ; €
+		Item	$04,$00,$00,$10,"Plate Armor"
+		.BYTE	$00,$01
+		.BYTE	$25,$33,$00,$00,$11,$00,$00,$00,$00,$00,$00
+		.BYTE	$80,$80
+
 i_ScaleArmor:
-		.BYTE	4		; DATA XREF: RAM:941Ao
-		.BYTE $21 ; !
-		.BYTE	0
-		.BYTE	0
-		.BYTE	2
-		.BYTE $12
-aScaleArmor:	.BYTE "Scale armor",0
-		.BYTE	0
-		.BYTE	1
-		.BYTE $32 ; 2
-		.BYTE $32 ; 2
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE $70 ; p
-		.BYTE $70 ; p
+		Item	$04,$00,$00,$02,"Scale armor"
+		.BYTE	$00,$01
+		.BYTE	$32,$32,$00,$00,$00,$00,$00,$00,$00,$00,$00
+		.BYTE	$70,$70
+
 i_TruesilverHelm:
-		.BYTE	4		; DATA XREF: RAM:941Co
-		.BYTE $25 ; %
-		.BYTE	0
-		.BYTE	0
-		.BYTE	2
-		.BYTE $16
-aTruesilverHelm:.BYTE "Truesilver helm",0
-		.BYTE	0
-		.BYTE	0
-		.BYTE $33 ; 3
-		.BYTE $33 ; 3
-		.BYTE $11
-		.BYTE $11
-		.BYTE $11
-		.BYTE $11
-		.BYTE $11
-		.BYTE $22 ; "
-		.BYTE $22 ; "
-		.BYTE $22 ; "
-		.BYTE $21 ; !
-		.BYTE $F0 ; ð
-		.BYTE $F0 ; ð
+		Item	$04,$00,$00,$02,"Truesilver helm"
+		.BYTE	$00,$00
+		.BYTE	$33,$33,$11,$11,$11,$11,$11,$22,$22,$22,$21
+		.BYTE	$F0,$F0
+
 i_TruesilverCoat:
-		.BYTE	4		; DATA XREF: RAM:941Eo
-		.BYTE $25 ; %
-		.BYTE	0
-		.BYTE	0
-		.BYTE	5
-		.BYTE $16
-aTruesilverCoat:.BYTE "Truesilver coat",0
-		.BYTE	0
-		.BYTE	1
-		.BYTE $33 ; 3
-		.BYTE $33 ; 3
-		.BYTE $11
-		.BYTE $11
-		.BYTE $11
-		.BYTE $11
-		.BYTE $11
-		.BYTE $22 ; "
-		.BYTE $22 ; "
-		.BYTE $22 ; "
-		.BYTE $11
-		.BYTE $F0 ; ð
-		.BYTE $F0 ; ð
+		Item	$04,$00,$00,$05,"Truesilver coat"
+		.BYTE	$00,$01
+		.BYTE	$33,$33,$11,$11,$11,$11,$11,$22,$22,$22,$11
+		.BYTE	$F0,$F0
+
 i_TruesilverGauntlets:
-		.BYTE	4		; DATA XREF: RAM:9420o
-		.BYTE $2A ; *
-		.BYTE	0
-		.BYTE	0
-		.BYTE	3
-		.BYTE $1B
-aTruesilverGuan:.BYTE "Truesilver guantlets",0
-		.BYTE	0
-		.BYTE	2
-		.BYTE $33 ; 3
-		.BYTE $33 ; 3
-		.BYTE $11
-		.BYTE $11
-		.BYTE $11
-		.BYTE $11
-		.BYTE $11
-		.BYTE $22 ; "
-		.BYTE $22 ; "
-		.BYTE $22 ; "
-		.BYTE $11
-		.BYTE $F0 ; ð
-		.BYTE $F0 ; ð
+		Item	$04,$00,$00,$03,"Truesilver guantlets"
+		.BYTE	$00,$02
+		.BYTE	$33,$33,$11,$11,$11,$11,$11,$22,$22,$22,$11
+		.BYTE	$F0,$F0
+
 i_TruesilverLeggings:
-		.BYTE	4		; DATA XREF: RAM:9422o
-		.BYTE $29 ; )
-		.BYTE	0
-		.BYTE	0
-		.BYTE	4
-		.BYTE $1A
-aTruesilverLegg:.BYTE "Truesilver leggings",0
-		.BYTE	0
-		.BYTE	3
-		.BYTE $33 ; 3
-		.BYTE $33 ; 3
-		.BYTE $11
-		.BYTE $11
-		.BYTE $11
-		.BYTE $11
-		.BYTE $11
-		.BYTE $22 ; "
-		.BYTE $22 ; "
-		.BYTE $22 ; "
-		.BYTE $11
-		.BYTE $F0 ; ð
-		.BYTE $F0 ; ð
+		Item	$04,$00,$00,$04,"Truesilver leggings"
+		.BYTE	$00,$03
+		.BYTE	$33,$33,$11,$11,$11,$11,$11,$22,$22,$22,$11
+		.BYTE	$F0,$F0
+
 i_CuirbouilliHelm:
-		.BYTE	4		; DATA XREF: RAM:9424o
-		.BYTE $26 ; &
-		.BYTE	0
-		.BYTE	0
-		.BYTE	3
-		.BYTE $17
-aCuirbouilliHel:.BYTE "Cuirbouilli Helm",0
-		.BYTE	0
-		.BYTE	0
-		.BYTE $23 ; #
-		.BYTE $23 ; #
-		.BYTE	0
-		.BYTE	0
-		.BYTE $11
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE $40 ; @
-		.BYTE $40 ; @
+		Item	$04,$00,$00,$03,"Cuirbouilli Helm"
+		.BYTE	$00,$00
+		.BYTE	$23,$23,$00,$00,$11,$00,$00,$00,$00,$00,$00
+		.BYTE	$40,$40
+
 i_BronzeBreastplate:
-		.BYTE	4		; DATA XREF: RAM:9426o
-		.BYTE $28 ; (
-		.BYTE	0
-		.BYTE	0
-		.BYTE  $C
-		.BYTE $19
-aBronzeBreastpl:.BYTE "Bronze Breastplate",0
-		.BYTE	0
-		.BYTE	1
-		.BYTE $24 ; $
-		.BYTE $24 ; $
-		.BYTE	0
-		.BYTE	0
-		.BYTE $11
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE $50 ; P
-		.BYTE $50 ; P
+		Item	$04,$00,$00,$0C,"Bronze Breastplate"
+		.BYTE	$00,$01
+		.BYTE	$24,$24,$00,$00,$11,$00,$00,$00,$00,$00,$00
+		.BYTE	$50,$50
+
 i_BronzeBracers:
-		.BYTE	4		; DATA XREF: RAM:9428o
-		.BYTE $24 ; $
-		.BYTE	0
-		.BYTE	0
-		.BYTE	4
-		.BYTE $15
-aBronzeBracers:	.BYTE "Bronze Bracers",0
-		.BYTE	0
-		.BYTE	2
-		.BYTE $24 ; $
-		.BYTE $24 ; $
-		.BYTE	0
-		.BYTE	0
-		.BYTE $11
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE $40 ; @
-		.BYTE $40 ; @
+		Item	$04,$00,$00,$04,"Bronze Bracers"
+		.BYTE	$00,$02
+		.BYTE	$24,$24,$00,$00,$11,$00,$00,$00,$00,$00,$00
+		.BYTE	$40,$40
+
 i_WhiteLinenShirt:
-		.BYTE	5		; DATA XREF: RAM:942Ao
-		.BYTE $1B
-		.BYTE	0
-		.BYTE	0
-		.BYTE	1
-		.BYTE $18
-aWhiteLinenShir:.BYTE "White Linen Shirt",0
-		.BYTE	0
-		.BYTE	1
-		.BYTE	1
+		Item	$05,$00,$00,$01,"White Linen Shirt"
+		.BYTE	$00,$01,$01
 
 i_BlackSilkKimono:
-		.BYTE	5		; DATA XREF: RAM:942Co
-		.BYTE $1B
-		.BYTE	0
-		.BYTE	0
-		.BYTE	1
-		.BYTE $18
-aBlackSilkKimon:.BYTE "Black Silk Kimono",0
-		.BYTE	0
-		.BYTE	2
-		.BYTE $FF
+		Item	$05,$00,$00,$01,"Black Silk Kimono"
+		.BYTE	$00,$02,$FF
 
 i_CheapRobe:
 		Item	$05,$00,$00,$01,"Cheap Robe"
@@ -3071,7 +2851,7 @@ i_CrystalBelt:
 i_BlueSuedeShoes:
 		Item	$05,$00,$00,$01,"Blue Suede Shoes"
 		.BYTE	$00,$04,$01
-	
+
 i_BlackWoolenBreeches:
 		Item	$05,$00,$00,$01,"Black Woolen Breeches"
 		.BYTE	$00,$02,$02
@@ -3152,7 +2932,7 @@ i_Bloodstone:
 		Item	$07,$00,$00,$00,"Bloodstone"
 		.BYTE	$88,$FF,$01,$00,$DC,$05,$DC,$05,$00,$02,$45,$00,$01,$00,$FF,$00
 		.BYTE	$00,$02,$08
-	
+
 i_WingedSandals:
 		Item	$05,$00,$00,$01,"Winged Sandals"
 		.BYTE	$88,$FF,$04,$01,$01,$00,$00,$00,$00,$81,$73,$00,$02,$08,$32,$00
@@ -3165,7 +2945,7 @@ i_MorganasTiara:
 		.BYTE	$00,$0B,$01
 
 i_CloakOfLevitation:
-		Item	$05,$00,$00,$01,"Cloak of Levitation"	
+		Item	$05,$00,$00,$01,"Cloak of Levitation"
 		.BYTE	$88,$FF,$04,$01,$01,$00,$00,$00,$00,$81,$7B,$00,$01,$00,$60,$00
 		.BYTE	$88,$FF,$08,$01,$01,$00,$00,$00,$00,$91,$7B,$00,$01,$00,$60,$00
 		.BYTE	$00,$04,$01
