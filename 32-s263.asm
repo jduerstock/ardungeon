@@ -3,6 +3,23 @@
 		.include	"exp_kernel.inc"
 		.include	"macros.inc"
 
+;
+; note: this macro must have a ":" label afterwards
+; if it is not followed by another Item
+;
+
+.macro Item Type,Unknown1,Unknown2,Weight,Name
+:		.BYTE	Type
+		.BYTE	:++-:-
+		.BYTE	Unknown1
+		.BYTE	Unknown2
+		.BYTE	Weight
+		.BYTE	:+-:-
+		.BYTE	Name
+		.BYTE	0
+:
+.endmacro
+
 off_67 = $67
 
 		.ORG	$7600
@@ -1281,7 +1298,7 @@ loc_7F4F:				; CODE XREF: RAM:7F40j	RAM:7F45j
 		JSR	sub_7F82
 		JMP	loc_7CF1
 
-; ллллллллллллллл S U B	R O U T	I N E ллллллллллллллллллллллллллллллллллллллл
+; --------------- S U B	R O U T	I N E ---------------------------------------
 
 
 sub_7F6D:				; CODE XREF: RAM:7978p	RAM:797Bp ...
@@ -1299,7 +1316,7 @@ locret_7F81:				; CODE XREF: sub_7F6D+3j sub_7F6D+8j
 ; End of function sub_7F6D
 
 
-; ллллллллллллллл S U B	R O U T	I N E ллллллллллллллллллллллллллллллллллллллл
+; --------------- S U B	R O U T	I N E ---------------------------------------
 
 
 sub_7F82:				; CODE XREF: RAM:79BFp	RAM:79C2p ...
@@ -1321,7 +1338,7 @@ locret_7FA0:				; CODE XREF: sub_7F82+8j sub_7F82+17j
 ; End of function sub_7F82
 
 
-; ллллллллллллллл S U B	R O U T	I N E ллллллллллллллллллллллллллллллллллллллл
+; --------------- S U B	R O U T	I N E ---------------------------------------
 
 
 sub_7FA1:				; CODE XREF: RAM:78D9p	RAM:7BABp ...
@@ -1336,7 +1353,7 @@ sub_7FA1:				; CODE XREF: RAM:78D9p	RAM:7BABp ...
 ; End of function sub_7FA1
 
 
-; ллллллллллллллл S U B	R O U T	I N E ллллллллллллллллллллллллллллллллллллллл
+; --------------- S U B	R O U T	I N E ---------------------------------------
 
 
 sub_7FAF:				; CODE XREF: RAM:7929p	RAM:7E09p ...
@@ -1353,7 +1370,7 @@ sub_7FAF:				; CODE XREF: RAM:7929p	RAM:7E09p ...
 ; End of function sub_7FAF
 
 
-; ллллллллллллллл S U B	R O U T	I N E ллллллллллллллллллллллллллллллллллллллл
+; --------------- S U B	R O U T	I N E ---------------------------------------
 
 
 sub_7FC3:				; CODE XREF: RAM:7DF6p	RAM:7E43p ...
@@ -1366,7 +1383,7 @@ sub_7FC3:				; CODE XREF: RAM:7DF6p	RAM:7E43p ...
 ; End of function sub_7FC3
 
 
-; ллллллллллллллл S U B	R O U T	I N E ллллллллллллллллллллллллллллллллллллллл
+; --------------- S U B	R O U T	I N E ---------------------------------------
 
 
 sub_7FCF:				; CODE XREF: RAM:7973p	RAM:7B3Bp ...
@@ -1429,7 +1446,7 @@ loc_8012:				; CODE XREF: sub_7FCF+4Aj
 ; End of function sub_7FCF
 
 
-; ллллллллллллллл S U B	R O U T	I N E ллллллллллллллллллллллллллллллллллллллл
+; --------------- S U B	R O U T	I N E ---------------------------------------
 
 
 sub_801D:				; CODE XREF: RAM:78C8p	RAM:78EDp ...
@@ -1438,7 +1455,7 @@ sub_801D:				; CODE XREF: RAM:78C8p	RAM:78EDp ...
 ; End of function sub_801D
 
 
-; ллллллллллллллл S U B	R O U T	I N E ллллллллллллллллллллллллллллллллллллллл
+; --------------- S U B	R O U T	I N E ---------------------------------------
 
 
 sub_8022:				; CODE XREF: RAM:loc_77F4p RAM:7809p ...
@@ -1447,7 +1464,7 @@ sub_8022:				; CODE XREF: RAM:loc_77F4p RAM:7809p ...
 ; End of function sub_8022
 
 
-; ллллллллллллллл S U B	R O U T	I N E ллллллллллллллллллллллллллллллллллллллл
+; --------------- S U B	R O U T	I N E ---------------------------------------
 
 
 sub_8027:				; CODE XREF: RAM:loc_781Ep
@@ -1570,34 +1587,22 @@ aHowMany:	.BYTE "How many "
 		.BYTE $B4
 		.WORD $6A
 		.BYTE $13
-aDoYouWant:	.BYTE " do you want"
-		.BYTE $D
-		.BYTE $D
-		.BYTE $A5
-aAt_0:		.BYTE "at "
+aDoYouWant:	.BYTE " do you want",$0D,$0D
+aAt_0:		.BYTE $A5,"at "
 		.BYTE $B2
 		.WORD $6C
 		.BYTE 2
 aSilversEachq:	.BYTE " silvers each?"
 		.BYTE $D
 		.BYTE $A6,$10,	4
-		.BYTE $3E ; >
+		.BYTE	">"
 		.BYTE $A3
 		.WORD loc_8037
 		.BYTE $FF
 		.BYTE $A6,  0,	1
-		.BYTE $A5
-aIMSorryButISee:.BYTE "I'm sorry, but I seem to be out of"
-		.BYTE $D
-		.BYTE $D
-		.BYTE $A5
-aStockInThatPar:.BYTE "stock in that particular item.  I"
-		.BYTE $D
-		.BYTE $D
-		.BYTE $A5
-aExpectMyNextSh:.BYTE "expect my next shipment tommorow."
-		.BYTE $D
-		.BYTE $FF
+aIMSorryButISee:.BYTE $A5,"I'm sorry, but I seem to be out of",$0D,$0D
+aStockInThatPar:.BYTE $A5,"stock in that particular item.  I",$0D,$0D
+aExpectMyNextSh:.BYTE $A5,"expect my next shipment tommorow.",$0D,$FF
 		.BYTE $A6,  0,	2
 		.BYTE $A3
 		.WORD loc_803A
@@ -2758,56 +2763,27 @@ aWhiteCottonTun:.BYTE "White Cotton Tunic",0
 		.BYTE	0
 		.BYTE	2
 		.BYTE	2
-unk_929B:	.BYTE	5		; DATA XREF: RAM:8F91o
-		.BYTE $1F
-		.BYTE	1
-		.BYTE	0
-		.BYTE	1
-		.BYTE $1C
-aBrownCottonBre:.BYTE "Brown Cotton Breeches",0
-		.BYTE	0
-		.BYTE	2
-		.BYTE	3
-unk_92BA:	.BYTE	5		; DATA XREF: RAM:8F93o
-		.BYTE $1C
-		.BYTE	1
-		.BYTE	0
-		.BYTE	1
-		.BYTE $19
-aGreenCottonSki:.BYTE "Green Cotton Skirt",0
-		.BYTE	0
-		.BYTE	2
-		.BYTE	3
-unk_92D6:	.BYTE	5		; DATA XREF: RAM:8F95o
-		.BYTE $1D
-		.BYTE	1
-		.BYTE	0
-		.BYTE	1
-		.BYTE $1A
-aFlowingPurpleC:.BYTE "Flowing Purple Cape",0
-		.BYTE	0
-		.BYTE  $A
-		.BYTE	3
-unk_92F3:	.BYTE	5		; DATA XREF: RAM:8F97o
-		.BYTE $1D
-		.BYTE	1
-		.BYTE	0
-		.BYTE	1
-		.BYTE $1A
-aBlueWoolenSwea:.BYTE "Blue Woolen Sweater",0
-		.BYTE	0
-		.BYTE	5
-		.BYTE  $F
-unk_9310:	.BYTE	5		; DATA XREF: RAM:8F99o
-		.BYTE $1E
-		.BYTE	1
-		.BYTE	0
-		.BYTE	1
-		.BYTE $1B
-aHeavyLeatherJa:.BYTE "Heavy Leather Jacket",0
-		.BYTE	0
-		.BYTE  $F
-		.BYTE  $F
+
+unk_929B:
+		Item	$05,$01,$00,$01,"Brown Cotton Breeches"
+		.BYTE	$00,$02,$03
+
+unk_92BA:
+		Item	$05,$01,$00,$01,"Green Cotton Skirt"
+		.BYTE	$00,$02,$03
+
+unk_92D6:
+		Item	$05,$01,$00,$01,"Flowing Purple Cape"
+		.BYTE	$00,$0A,$03
+
+unk_92F3:
+		Item	$05,$01,$00,$01,"Blue Woolen Sweater"
+		.BYTE	$00,$05,$0F
+
+unk_9310:
+		Item	$05,$01,$00,$01,"Heavy Leather Jacket"
+		.BYTE	$00,$0F,$0F
+:
 unk_932E:	.BYTE $70 ; p		; DATA XREF: RAM:935Eo
 		.BYTE $70 ; p
 		.BYTE $30 ; 0
@@ -3165,133 +3141,8 @@ loc_956A:				; CODE XREF: RAM:956Dj
 loc_957E:				; CODE XREF: RAM:957Aj
 		JMP	loc_9521
 ; ---------------------------------------------------------------------------
-byte_9581:	.BYTE 0			; DATA XREF: RAM:loc_9547w RAM:9557r ...
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
+byte_9581:	.RES	127,$00		; DATA XREF: RAM:loc_9547w RAM:9557r ...
+
 ; end of 'RAM'
 
 

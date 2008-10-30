@@ -3031,6 +3031,7 @@ aWhiteLinenShir:.BYTE "White Linen Shirt",0
 		.BYTE	0
 		.BYTE	1
 		.BYTE	1
+
 i_BlackSilkKimono:
 		.BYTE	5		; DATA XREF: RAM:942Co
 		.BYTE $1B
@@ -3042,136 +3043,24 @@ aBlackSilkKimon:.BYTE "Black Silk Kimono",0
 		.BYTE	0
 		.BYTE	2
 		.BYTE $FF
+
 i_CheapRobe:
-		.BYTE	5		; DATA XREF: RAM:942Eo
-		.BYTE $14
-		.BYTE	0
-		.BYTE	0
-		.BYTE	1
-		.BYTE $11
-aCheapRobe:	.BYTE "Cheap Robe",0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	1
+		Item	$05,$00,$00,$01,"Cheap Robe"
+		.BYTE	$00,$00,$01
+
 i_ElvenCloak:
-		.BYTE	5		; DATA XREF: RAM:9430o
-		.BYTE $55 ; U
-		.BYTE	0
-		.BYTE	0
-		.BYTE	1
-		.BYTE $12
-aElvenCloak:	.BYTE "Elven Cloak",0
-		.BYTE $88 ; à
-		.BYTE $FF
-		.BYTE	4
-		.BYTE	1
-		.BYTE	1
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE $91 ; ë
-		.BYTE $82 ; Ç
-		.BYTE	0
-		.BYTE	1
-		.BYTE	0
-		.BYTE	4
-		.BYTE	0
-		.BYTE $88 ; à
-		.BYTE $FF
-		.BYTE	4
-		.BYTE	1
-		.BYTE	1
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE $81 ; Å
-		.BYTE $8D ; ç
-		.BYTE	0
-		.BYTE	1
-		.BYTE	0
-		.BYTE	1
-		.BYTE	0
-		.BYTE $88 ; à
-		.BYTE $FF
-		.BYTE	8
-		.BYTE	1
-		.BYTE	1
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE $81 ; Å
-		.BYTE $82 ; Ç
-		.BYTE	0
-		.BYTE	1
-		.BYTE	0
-		.BYTE	4
-		.BYTE	0
-		.BYTE $88 ; à
-		.BYTE $FF
-		.BYTE	8
-		.BYTE	1
-		.BYTE	1
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE $91 ; ë
-		.BYTE $8D ; ç
-		.BYTE	0
-		.BYTE	1
-		.BYTE	0
-		.BYTE	1
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	1
+		Item	$05,$00,$00,$01,"Elven Cloak"
+		.BYTE	$88,$FF,$04,$01,$01,$00,$00,$00,$00,$91,$82,$00,$01,$00,$04,$00
+		.BYTE	$88,$FF,$04,$01,$01,$00,$00,$00,$00,$81,$8D,$00,$01,$00,$01,$00
+		.BYTE	$88,$FF,$08,$01,$01,$00,$00,$00,$00,$81,$82,$00,$01,$00,$04,$00
+		.BYTE	$88,$FF,$08,$01,$01,$00,$00,$00,$00,$91,$8D,$00,$01,$00,$01,$00
+		.BYTE	$00,$00,$01
 
 i_ElvenBoots:
-		.BYTE	5		; DATA XREF: RAM:9432o
-		.BYTE $35 ; 5
-		.BYTE	0
-		.BYTE	0
-		.BYTE	1
-		.BYTE $12
-aElvenBoots:	.BYTE "Elven Boots",0
-		.BYTE $88 ; à
-		.BYTE $FF
-		.BYTE	4
-		.BYTE	1
-		.BYTE	1
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE $81 ; Å
-		.BYTE $7B ; {
-		.BYTE	0
-		.BYTE	1
-		.BYTE	0
-		.BYTE $20
-		.BYTE	0
-		.BYTE $88 ; à
-		.BYTE $FF
-		.BYTE	8
-		.BYTE	1
-		.BYTE	1
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE $91 ; ë
-		.BYTE $7B ; {
-		.BYTE	0
-		.BYTE	1
-		.BYTE	0
-		.BYTE $20
-		.BYTE	0
-		.BYTE	0
-		.BYTE	1
-		.BYTE	1
+		Item	$05,$00,$00,$01,"Elven Boots"
+		.BYTE	$88,$FF,$04,$01,$01,$00,$00,$00,$00,$81,$7B,$00,$01,$00,$20,$00
+		.BYTE	$88,$FF,$08,$01,$01,$00,$00,$00,$00,$91,$7B,$00,$01,$00,$20,$00
+		.BYTE	$00,$01,$01
 
 i_CrystalBelt:
 		Item	$05,$00,$00,$01,"Crystal Belt"
