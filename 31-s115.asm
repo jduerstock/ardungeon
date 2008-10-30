@@ -3128,6 +3128,7 @@ aElvenCloak:	.BYTE "Elven Cloak",0
 		.BYTE	0
 		.BYTE	0
 		.BYTE	1
+
 i_ElvenBoots:
 		.BYTE	5		; DATA XREF: RAM:9432o
 		.BYTE $35 ; 5
@@ -3171,293 +3172,77 @@ aElvenBoots:	.BYTE "Elven Boots",0
 		.BYTE	0
 		.BYTE	1
 		.BYTE	1
+
 i_CrystalBelt:
-		.BYTE	5		; DATA XREF: RAM:9434o
-		.BYTE $36 ; 6
-		.BYTE	0
-		.BYTE	0
-		.BYTE	1
-		.BYTE $13
-aCrystalBelt:	.BYTE "Crystal Belt",0
-		.BYTE $88 ; à
-		.BYTE $FF
-		.BYTE	4
-		.BYTE	1
-		.BYTE	1
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE $81 ; Å
-		.BYTE $4B ; K
-		.BYTE	0
-		.BYTE	1
-		.BYTE	0
-		.BYTE $14
-		.BYTE	0
-		.BYTE $88 ; à
-		.BYTE $FF
-		.BYTE	8
-		.BYTE	1
-		.BYTE	1
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE $91 ; ë
-		.BYTE $4B ; K
-		.BYTE	0
-		.BYTE	1
-		.BYTE	0
-		.BYTE $14
-		.BYTE	0
-		.BYTE	0
-		.BYTE	3
-		.BYTE	1
+		Item	$05,$00,$00,$01,"Crystal Belt"
+		.BYTE	$88,$FF,$04,$01,$01,$00,$00,$00,$00,$81,$4B,$00,$01,$00,$14,$00
+		.BYTE	$88,$FF,$08,$01,$01,$00,$00,$00,$00,$91,$4B,$00,$01,$00,$14,$00
+		.BYTE	$00,$03,$01
+
 i_BlueSuedeShoes:
-		.BYTE	5		; DATA XREF: RAM:9436o
-		.BYTE $1A
-		.BYTE	0
-		.BYTE	0
-		.BYTE	1
-		.BYTE $17
-aBlueSuedeShoes:.BYTE "Blue Suede Shoes",0
-		.BYTE	0
-		.BYTE	4
-		.BYTE	1
+		Item	$05,$00,$00,$01,"Blue Suede Shoes"
+		.BYTE	$00,$04,$01
+	
 i_BlackWoolenBreeches:
-		.BYTE	5		; DATA XREF: RAM:9438o
-		.BYTE $1F
-		.BYTE	0
-		.BYTE	0
-		.BYTE	1
-		.BYTE $1C
-aBlackWoolenBre:.BYTE "Black Woolen Breeches",0
-		.BYTE	0
-		.BYTE	2
-		.BYTE	2
+		Item	$05,$00,$00,$01,"Black Woolen Breeches"
+		.BYTE	$00,$02,$02
+
 i_SilverBrocadedBodice:
-		.BYTE	5		; DATA XREF: RAM:943Ao
-		.BYTE $20
-		.BYTE	0
-		.BYTE	0
-		.BYTE	1
-		.BYTE $1D
-aSilverBrocaded:.BYTE "Silver Brocaded Bodice",0
-		.BYTE	0
-		.BYTE	2
-		.BYTE	1
+		Item	$05,$00,$00,$01,"Silver Brocaded Bodice"
+		.BYTE	$00,$02,$01
+
 i_RedPlaidKilt:
-		.BYTE	5		; DATA XREF: RAM:943Co
-		.BYTE $18
-		.BYTE	0
-		.BYTE	0
-		.BYTE	1
-		.BYTE $15
-aRedPlaidKilt:	.BYTE "Red Plaid Kilt",0
-		.BYTE	0
-		.BYTE	3
-		.BYTE	1
+		Item	$05,$00,$00,$01,"Red Plaid Kilt"
+		.BYTE	$00,$03,$01
+
 i_GoldSilkPantaloons:
-		.BYTE	5		; DATA XREF: RAM:943Eo
-		.BYTE $1E
-		.BYTE	0
-		.BYTE	0
-		.BYTE	1
-		.BYTE $1B
-aGoldSilkPantal:.BYTE "Gold Silk Pantaloons",0
-		.BYTE	0
-		.BYTE	3
-		.BYTE	0
+		Item	$05,$00,$00,$01,"Gold Silk Pantaloons"
+		.BYTE	$00,$03,$00
+
 i_LeatherJerkin:
-		.BYTE	5		; DATA XREF: RAM:9440o
-		.BYTE $18
-		.BYTE	0
-		.BYTE	0
-		.BYTE	1
-		.BYTE $15
-aLeatherJerkin:	.BYTE "Leather Jerkin",0
-		.BYTE	0
-		.BYTE	1
-		.BYTE	1
+		Item	$05,$00,$00,$01,"Leather Jerkin"
+		.BYTE	$00,$01,$01
+
 i_FloppyLeatherHat:
-		.BYTE	5		; DATA XREF: RAM:9442o
-		.BYTE $1C
-		.BYTE	0
-		.BYTE	0
-		.BYTE	1
-		.BYTE $19
-aFloppyLeatherH:.BYTE "Floppy Leather Hat",0
-		.BYTE	0
-		.BYTE	1
-		.BYTE	1
+		Item	$05,$00,$00,$01,"Floppy Leather Hat"
+		.BYTE	$00,$01,$01
+
 i_BlackCottonPartlet:
-		.BYTE	5		; DATA XREF: RAM:9444o
-		.BYTE $1E
-		.BYTE	0
-		.BYTE	0
-		.BYTE	1
-		.BYTE $1B
-aBlackCottonPar:.BYTE "Black Cotton Partlet",0
-		.BYTE	0
-		.BYTE	1
-		.BYTE	2
+		Item	$05,$00,$00,$01,"Black Cotton Partlet"
+		.BYTE	$00,$01,$02
+
 i_SilverSash:
-		.BYTE	5		; DATA XREF: RAM:9446o
-		.BYTE $35 ; 5
-		.BYTE	0
-		.BYTE	0
-		.BYTE	1
-		.BYTE $12
-aSilverSash:	.BYTE "Silver Sash",0
-		.BYTE $88 ; à
-		.BYTE $FF
-		.BYTE	4
-		.BYTE	1
-		.BYTE	1
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE $81 ; Å
-		.BYTE $73 ; s
-		.BYTE	0
-		.BYTE	1
-		.BYTE	0
-		.BYTE $10
-		.BYTE	0
-		.BYTE $88 ; à
-		.BYTE $FF
-		.BYTE	8
-		.BYTE	1
-		.BYTE	1
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE $91 ; ë
-		.BYTE $73 ; s
-		.BYTE	0
-		.BYTE	1
-		.BYTE	0
-		.BYTE $10
-		.BYTE	0
-		.BYTE	0
-		.BYTE	4
-		.BYTE	0
+		Item	$05,$00,$00,$01,"Silver Sash"
+		.BYTE	$88,$FF,$04,$01,$01,$00,$00,$00,$00,$81,$73,$00,$01,$00,$10,$00
+		.BYTE	$88,$FF,$08,$01,$01,$00,$00,$00,$00,$91,$73,$00,$01,$00,$10,$00
+		.BYTE	$00,$04,$00
+
 i_StealthSuit:
-		.BYTE	5		; DATA XREF: RAM:9448o
-		.BYTE $36 ; 6
-		.BYTE	0
-		.BYTE	0
-		.BYTE	1
-		.BYTE $13
-aStealthSuit:	.BYTE "Stealth Suit",0
-		.BYTE $88 ; à
-		.BYTE $FF
-		.BYTE	4
-		.BYTE	1
-		.BYTE	1
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE $81 ; Å
-		.BYTE $81 ; Å
-		.BYTE	0
-		.BYTE	1
-		.BYTE	0
-		.BYTE $40 ; @
-		.BYTE	0
-		.BYTE $88 ; à
-		.BYTE $FF
-		.BYTE	8
-		.BYTE	1
-		.BYTE	1
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE $91 ; ë
-		.BYTE $81 ; Å
-		.BYTE	0
-		.BYTE	1
-		.BYTE	0
-		.BYTE $40 ; @
-		.BYTE	0
-		.BYTE	0
-		.BYTE $F1 ; Ò
-		.BYTE	3
+		Item	$05,$00,$00,$01,"Stealth Suit"
+		.BYTE	$88,$FF,$04,$01,$01,$00,$00,$00,$00,$81,$81,$00,$01,$00,$40,$00
+		.BYTE	$88,$FF,$08,$01,$01,$00,$00,$00,$00,$91,$81,$00,$01,$00,$40,$00
+		.BYTE	$00,$F1,$03
 
 i_SilverKey:
-:		.BYTE	7
-		.BYTE	:++-:-
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	:+-:-
-aSilverKey:	.BYTE "Silver Key",0
-:		.BYTE	0
-		.BYTE	2
-		.BYTE	7
+		Item	$07,$00,$00,$00,"Silver Key"
+		.BYTE	$00,$02,$07
 
 i_GoblinRingHalf:
-:		.BYTE	7
-		.BYTE $1A
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE $17
-aGoblinRingHalf:.BYTE "Goblin Ring Half",0
-		.BYTE	0
-		.BYTE	2
-		.BYTE	3
-		.BYTE	7
-		.BYTE $19
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE $16
-aTrollRingHalf:	.BYTE "Troll Ring Half",0
-		.BYTE	0
-		.BYTE	2
-		.BYTE	4
-		.BYTE	7
-		.BYTE $15
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE $12
-aStaffPiece:	.BYTE "Staff Piece",0
-		.BYTE	0
-		.BYTE	2
-		.BYTE	6
-		.BYTE	7
-		.BYTE $22 ; "
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE  $F
-aPacCard:	.BYTE "PAC card",0
-		.BYTE $88 ; à
-		.BYTE $FF
-		.BYTE	4
-		.BYTE	1
-		.BYTE	1
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE $E1 ; ·
-		.BYTE $88 ; à
-		.BYTE	0
-		.BYTE	1
-		.BYTE	0
-		.BYTE	1
-		.BYTE	0
-		.BYTE	0
-		.BYTE	2
-		.BYTE	1
+		Item	$07,$00,$00,$00,"Goblin Ring Half"
+		.BYTE	$00,$02,$03
+
+i_TrollRingHalf:
+		Item	$07,$00,$00,$00,"Troll Ring Half"
+		.BYTE	$00,$02,$04
+
+i_StaffPiece:
+		Item	$07,$00,$00,$00,"Staff Piece"
+		.BYTE	$00,$02,$06
+
+i_PacCard:
+		Item	$07,$00,$00,$00,"PAC card"
+		.BYTE	$88,$FF,$04,$01,$01,$00,$00,$00,$00,$E1,$88,$00,$01,$00,$01,$00
+		.BYTE	$00,$02,$01
 
 i_MirroredShield:
 		Item	$03,$00,$00,$0A,"Mirrored Shield"
