@@ -1624,29 +1624,13 @@ aWelcome:	.BYTE "Welcome "
 		.BYTE $B3
 		.WORD $6321
 		.BYTE $19
-		.BYTE "!"
-		.BYTE $D
-		.BYTE $D
-		.BYTE $A5
-aIHaveYourCusto:.BYTE "I have your custom weapon right here!"
-		.BYTE $D
-		.BYTE $D
-		.BYTE $A5
-aItIsIndeedAMig:.BYTE "It is indeed a mighty weapon!"
-		.BYTE $D
-		.BYTE $FF
-		.BYTE $A6,  0,	1
-		.BYTE $A5
-aINeedMoreMetal:.BYTE "I need more metal for my forge, sell"
-		.BYTE $D
-		.BYTE $D
-		.BYTE $A5
-aMeSomeOfYoursA:.BYTE "me some of yours and then I"
-		.BYTE $D
-		.BYTE $D
-		.BYTE $A5
-aYourWeapon_:	.BYTE "your weapon.",$D
-		.BYTE $FF
+		.BYTE "!",$0D,$0D
+aIHaveYourCusto:.BYTE $A5,"I have your custom weapon right here!",$0D,$0D
+aItIsIndeedAMig:.BYTE $A5,"It is indeed a mighty weapon!",$0D,$FF
+		MOVEXY	0,1
+aINeedMoreMetal:.BYTE $A5,"I need more metal for my forge, sell",$0D,$0D
+aMeSomeOfYoursA:.BYTE $A5,"me some of yours and then I",$0D,$0D
+aYourWeapon_:	.BYTE $A5,"your weapon.",$0D,$FF
 unk_849A:	.BYTE $A8 ; ¨		; DATA XREF: RAM:7BFAr
 		.BYTE $AE ; ®
 		.BYTE $B2 ; ²
@@ -1701,18 +1685,12 @@ unk_84DD:	.BYTE $85 ; …		; DATA XREF: RAM:7C6Cr
 		.BYTE $85 ; …
 		.BYTE $85 ; …
 		.BYTE $A6,  0,	1
-		.BYTE $A5
-aVeryWellThenIS:.BYTE "Very well then, I shall simply call"
-		.BYTE $D
-		.BYTE $D
-		.BYTE $A5
-aItThe:		.BYTE "it the "
+aVeryWellThenIS:.BYTE $A5,"Very well then, I shall simply call",$0D,$0D
+aItThe:		.BYTE $A5,"it the "
 		.BYTE $B4
 		.WORD $81
 		.BYTE $12
-		.BYTE $2E ; .
-		.BYTE $D
-		.BYTE $FF
+		.BYTE ".",$0D,$FF
 aDwarvenSword:	.BYTE "Dwarven Sword",0
 aDwarvenBattleA:.BYTE "Dwarven Battle-Ax",0
 aDwarvenMace:	.BYTE "Dwarven Mace",0
@@ -2206,7 +2184,7 @@ unk_87AE:	.BYTE $70 ; p		; DATA XREF: RAM:87DEo
 		LDY	$BC5D
 		LDA	$BC5A
 		STA	$D40A
-		STA	$D01A
+		STA	COLBK
 		STX	$D016
 		STY	$D018
 		LDX	#$23 ; '#'
@@ -2230,7 +2208,7 @@ loc_8844:				; CODE XREF: RAM:8869j
 		LDA	#0
 		STA	$D40A
 		STA	$D018
-		STA	$D01A
+		STA	COLBK
 		LDA	#$E
 		STA	$D017
 		LDA	#$14

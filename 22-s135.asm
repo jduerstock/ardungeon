@@ -367,7 +367,7 @@ unk_79E0:	.BYTE $70 ; p		; DATA XREF: RAM:7A10o
 		LDY	$BC5D
 		LDA	$BC5A
 		STA	$D40A
-		STA	$D01A
+		STA	COLBK
 		STX	$D016
 		STY	$D018
 		LDX	#$23 ; '#'
@@ -391,7 +391,7 @@ loc_7A76:				; CODE XREF: RAM:7A9Bj
 		LDA	#0
 		STA	$D40A
 		STA	$D018
-		STA	$D01A
+		STA	COLBK
 		LDA	#$E
 		STA	$D017
 		LDA	#$14

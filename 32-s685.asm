@@ -335,7 +335,7 @@ locret_9884:				; CODE XREF: sub_9856+5j
 
 loc_9885:				; CODE XREF: sub_9856+19j sub_9856+35j
 		LDA	RANDOM
-		STA	$D01A
+		STA	COLBK
 		JMP	loc_9885
 ; End of function sub_9856
 

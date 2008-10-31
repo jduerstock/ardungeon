@@ -775,7 +775,7 @@ loc_1B56:
 		STA	$D019
 		LDA	byte_18BD
 		STA	WSYNC
-		STA	$D01A
+		STA	COLBK
 		LDA	#8
 		STA	$D409
 		LDA	$7600
@@ -812,7 +812,7 @@ loc_1BB7:
 		LDA	byte_18BE
 		STA	WSYNC
 		STA	WSYNC
-		STA	$D01A
+		STA	COLBK
 		PLA
 		RTI
 ; ---------------------------------------------------------------------------
@@ -832,7 +832,7 @@ sub_1BEB:
 		LDA	#0
 		STA	WSYNC
 		STA	COLPF2
-		STA	$D01A
+		STA	COLBK
 		STA	$D012
 		STA	$D013
 		LDA	#$E
@@ -2333,7 +2333,7 @@ sub_245D:				; CODE XREF: RAM:1827j	sub_275B+3p
 		STX	AR_POKMSK
 		STX	IRQEN
 		JSR	sub_2454
-		STX	$D01A
+		STX	COLBK
 		STX	COLPF2
 		TXA
 		STA	byte_199C

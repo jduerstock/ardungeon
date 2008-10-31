@@ -236,6 +236,7 @@ unk_76EC:	.BYTE $BB ; »		; DATA XREF: sub_7DD2+A6r RAM:8D3Ar
 ; ---------------------------------------------------------------------------
 		JMP	sub_9280
 ; ---------------------------------------------------------------------------
+					; $773A
 		JMP	loc_84ED
 ; ---------------------------------------------------------------------------
 		JMP	sub_8CCB
@@ -2587,7 +2588,7 @@ loc_8598:				; CODE XREF: RAM:775Bj	sub_84CF+2Cj
 		STA	(off_9),Y
 		INY
 		LDA	$8D
-		STA	(9),Y
+		STA	(off_9),Y
 		CLC
 		ldxy	$7697
 		DEC	$197B
@@ -5365,7 +5366,7 @@ loc_954B:				; CODE XREF: sub_950E+3Aj
 
 
 sub_9550:				; CODE XREF: sub_7B59+Bp sub_9550+2Dj
-		dldi	off_7, $A8A1
+		dldi	off_7, word_A8A1
 		LDA	byte_AA1D
 		STA	$96
 		JSR	loc_96EA
@@ -7023,44 +7024,25 @@ byte_A89E:	.BYTE 0			; DATA XREF: sub_88B0:loc_7AACw
 					; sub_88B0-DFBr ...
 byte_A89F:	.BYTE 0			; DATA XREF: RAM:8975w	RAM:loc_8993r ...
 byte_A8A0:	.BYTE 0			; DATA XREF: sub_7B59+40w sub_7B59+48r ...
-		.BYTE $DC ; Ü
-		.BYTE	2
-		.BYTE $EC ; ì
-		.BYTE	1
-		.BYTE $EA ; ê
-		.BYTE	1
-		.BYTE $EE ; î
-		.BYTE	1
-		.BYTE $EE ; î
-		.BYTE	1
-		.BYTE $EA ; ê
-		.BYTE	1
-		.BYTE $EE ; î
-		.BYTE	1
-		.BYTE $EA ; ê
-		.BYTE	1
-		.BYTE $EA ; ê
-		.BYTE	1
-		.BYTE $E2 ; â
-		.BYTE	2
-		.BYTE $E0 ; à
-		.BYTE	2
-		.BYTE $EA ; ê
-		.BYTE	1
-		.BYTE $F8 ; ø
-		.BYTE	0
-		.BYTE $EA ; ê
-		.BYTE	1
-		.BYTE $C0 ; À
-		.BYTE	4
-		.BYTE $F8 ; ø
-		.BYTE	0
-		.BYTE $E0 ; à
-		.BYTE	2
-		.BYTE $F8 ; ø
-		.BYTE	0
-		.BYTE $E2 ; â
-		.BYTE	2
+word_A8A1:	.WORD	$02DC
+		.WORD	$01EC
+		.WORD	$01EA
+		.WORD	$01EE
+		.WORD	$01EE
+		.WORD	$01EA
+		.WORD	$01EE
+		.WORD	$01EA
+		.WORD	$01EA
+		.WORD	$02E2
+		.WORD	$02E0
+		.WORD	$01EA
+		.WORD	$00F8
+		.WORD	$01EA
+		.WORD	$04C0
+		.WORD	$00F8
+		.WORD	$02E0
+		.WORD	$00F8
+		.WORD	$02E2
 		.BYTE $CE ; Î
 		.BYTE	3
 		.BYTE	6

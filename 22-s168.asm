@@ -409,7 +409,7 @@ unk_799D:	.BYTE $70 ; p		; DATA XREF: RAM:79CDo
 		LDY	$BC5D
 		LDA	$BC5A
 		STA	$D40A
-		STA	$D01A
+		STA	COLBK
 		STX	$D016
 		STY	$D018
 		LDX	#$23 ; '#'
@@ -433,7 +433,7 @@ loc_7A33:				; CODE XREF: RAM:7A58j
 		LDA	#0
 		STA	$D40A
 		STA	$D018
-		STA	$D01A
+		STA	COLBK
 		LDA	#$E
 		STA	$D017
 		LDA	#$14

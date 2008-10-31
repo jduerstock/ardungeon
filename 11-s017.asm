@@ -5390,7 +5390,7 @@ loc_1E7C:				; CODE XREF: RAM:1E86j	RAM:1EA0j
 		JSR	DSKINV
 		BPL	loc_1E88
 		LDA	#$34 ; '4'
-		STA	$D01A
+		STA	COLBK
 		BNE	loc_1E7C
 
 loc_1E88:				; CODE XREF: RAM:1E7Fj
@@ -5497,7 +5497,7 @@ loc_1F13:				; DATA XREF: RAM:1E08r
 
 loc_1F19:				; CODE XREF: RAM:1F0Fj	RAM:1F16j
 		LDA	#$1E
-		STA	$D01A
+		STA	COLBK
 		JMP	$E477
 ; ---------------------------------------------------------------------------
 		.BYTE $70 ; p
@@ -6801,7 +6801,7 @@ loc_265D:				; CODE XREF: sub_25A3+BEj sub_25A3+C4j
 		LDA	#$47 ; 'G'
 		STA	$88
 		LDA	byte_27A5
-		STA	$D01A
+		STA	COLBK
 		LDA	#$10
 		STA	$6800
 		LDA	#$70 ; 'p'
@@ -8552,7 +8552,7 @@ locret_2E75:				; CODE XREF: sub_2E47+5j
 
 loc_2E76:				; CODE XREF: sub_2E47+19j sub_2E47+35j
 		LDA	RANDOM
-		STA	$D01A
+		STA	COLBK
 		JMP	loc_2E76
 ; End of function sub_2E47
 

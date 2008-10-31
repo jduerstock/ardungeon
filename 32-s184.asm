@@ -2949,7 +2949,7 @@ unk_91AC:	.BYTE $70 ; p		; DATA XREF: RAM:91DCo
 		LDY	$BC5D
 		LDA	$BC5A
 		STA	$D40A
-		STA	$D01A
+		STA	COLBK
 		STX	$D016
 		STY	$D018
 		LDX	#$23 ; '#'
@@ -2973,7 +2973,7 @@ loc_9242:				; CODE XREF: RAM:9267j
 		LDA	#0
 		STA	$D40A
 		STA	$D018
-		STA	$D01A
+		STA	COLBK
 		LDA	#$E
 		STA	$D017
 		LDA	#$14

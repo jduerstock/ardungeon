@@ -286,7 +286,7 @@ loc_77F2:				; CODE XREF: RAM:77F6j
 
 loc_77FF:				; CODE XREF: RAM:7820j
 		LDA	unk_7A75,X
-		STA	$D01A
+		STA	COLBK
 		DEX
 		TXA
 		AND	#$F
@@ -2123,64 +2123,32 @@ loc_8655:				; CODE XREF: RAM:8659j
 		DEX
 		BPL	loc_8655
 		LDA	$BCB0
-		STA	$D01A
+		STA	COLBK
 		RTS
 ; ---------------------------------------------------------------------------
-		STRSUB byte_88C4
+		STRSUB	byte_88C4
 		MOVEXY	0,8
-		.BYTE $A5
-aPleaseInsertTh:.BYTE "Please insert the disk to be made into a"
-		.BYTE $D
-		.BYTE $D
-		.BYTE $A5
-aCharacterDiskI:.BYTE "character disk in drive 1.",$D,$D,$D
-		.BYTE $A5
-aWarningThisWil:.BYTE "WARNING: This will erase any data on"
-		.BYTE $D
-		.BYTE $D
-		.BYTE $A5
-aTheDisk:	.BYTE "the disk!",$D,$D,$D
+aPleaseInsertTh:.BYTE	$A5,"Please insert the disk to be made into a",$0D,$0D
+aCharacterDiskI:.BYTE	$A5,"character disk in drive 1.",$D,$D,$D
+aWarningThisWil:.BYTE	$A5,"WARNING: This will erase any data on",$0D,$0D
+aTheDisk:	.BYTE	$A5,"the disk!",$D,$D,$D
 byte_86E5:	MOVEXY	0,22		; DATA XREF: RAM:87FCo
-		.BYTE $A5
-aPressSpaceBarT:.BYTE "Press SPACE BAR to continue"
-		.BYTE $D
-		.BYTE $D
-		.BYTE $A5
-aOrEscToCancel:	.BYTE "or ESC to cancel"
-		.BYTE $D
-		.BYTE $FF
-		STRSUB byte_88C4
+aPressSpaceBarT:.BYTE	$A5,"Press SPACE BAR to continue",$0D,$0D
+aOrEscToCancel:	.BYTE	$A5,"or ESC to cancel",$0D,$FF
+		STRSUB	byte_88C4
 		MOVEXY	0,8
-		.BYTE $A5
-aYouCannotStore:.BYTE "You cannot store characters on an"
-		.BYTE $D
-		.BYTE $D
-		.BYTE $A5
-aAlternateRea_0:.BYTE "Alternate Reality disk!",$D,$D,$D
-		.BYTE $A5
-aCallItSelfPres:.BYTE "(Call it self-preservation...)",$D
+aYouCannotStore:.BYTE	$A5,"You cannot store characters on an",$0D,$0D
+aAlternateRea_0:.BYTE	$A5,"Alternate Reality disk!",$D,$D,$D
+aCallItSelfPres:.BYTE	$A5,"(Call it self-preservation...)",$D
 byte_877E:	MOVEXY	0,23		; DATA XREF: RAM:887Eo	RAM:88C2o ...
-		.BYTE $A5
-aPressAnyKeyToC:.BYTE "Press any key to continue"
-		.BYTE $D
-		.BYTE $FF
-		STRSUB byte_88C4
+aPressAnyKeyToC:.BYTE	$A5,"Press any key to continue",$0D,$FF
+		STRSUB	byte_88C4
 		MOVEXY	0,8
-		.BYTE $A5
-aThisDiskContai:.BYTE "This disk contains information!"
-		.BYTE $D
-		.BYTE $D
-		.BYTE $A5
-aIfYouContinueT:.BYTE "If you continue this information will"
-		.BYTE $D
-		.BYTE $D
-		.BYTE $A5
-aBeErased:	.BYTE "be erased!"
-		.BYTE $D
-		.BYTE $D
-		.BYTE $D
-		STRSUB byte_86E5
-		STRSUB byte_88C4
+aThisDiskContai:.BYTE	$A5,"This disk contains information!",$0D,$0D
+aIfYouContinueT:.BYTE	$A5,"If you continue this information will",$0D,$0D
+aBeErased:	.BYTE	$A5,"be erased!",$0D,$0D,$0D
+		STRSUB	byte_86E5
+		STRSUB	byte_88C4
 		MOVEXY	0,8
 		.BYTE $A5
 aUnableToFormat:.BYTE "Unable to format this disk!"
