@@ -1412,532 +1412,89 @@ aPotionOfInfraV:.BYTE "Potion of Infra-Vision",0
 		.BYTE $44 ; D
 aInfraVision:	.BYTE "Infra-Vision",0
 		.BYTE	0
-unk_8515:	.BYTE  $E		; DATA XREF: RAM:946Eo	RAM:9E88o
-		.BYTE $1C
-		.BYTE	0
-		.BYTE	0
-		.BYTE	1
-		.BYTE $1A
-aPotionOfCleans:.BYTE "Potion of Cleansing",0
-		.BYTE	0
-		.BYTE $81 ; Å
-unk_8531:	.BYTE	6		; DATA XREF: RAM:9470o	RAM:9E8Ao
-		.BYTE $1B
-		.BYTE	0
-		.BYTE	0
-		.BYTE	1
-		.BYTE $19
-aPotionOfAntido:.BYTE "Potion of Antidote",0
-		.BYTE	0
-		.BYTE $82 ; Ç
+
+unk_8515:
+		Item	$0E,$00,$00,$01,"Potion of Cleansing"
+		.BYTE	$00,$81
+
+unk_8531:
+		Item	$06,$00,$00,$01,"Potion of Antidote"
+		.BYTE	$00,$82
+
 i_PotionOfRestoration:
-		.BYTE $16		; DATA XREF: RAM:9472o	RAM:9E8Co
-		.BYTE $2D ; -
-		.BYTE	0
-		.BYTE	0
-		.BYTE	1
-		.BYTE $1C
-aPotionOfRestor:.BYTE "Potion of Restoration",0
-		.BYTE $84 ; Ñ
-		.BYTE $FF
-		.BYTE $C4 ; -
-		.BYTE	1
-		.BYTE	1
-		.BYTE	0
-		.BYTE $ED ; Ì
-		.BYTE $FE ; ˛
-		.BYTE	0
-		.BYTE	1
-		.BYTE $45 ; E
-		.BYTE	0
-		.BYTE	2
-		.BYTE	1
-		.BYTE $FF
-		.BYTE	0
-		.BYTE	0
-unk_8579:	.BYTE $16		; DATA XREF: RAM:9474o	RAM:9E8Eo
-		.BYTE $29 ; )
-		.BYTE	0
-		.BYTE	0
-		.BYTE	1
-		.BYTE $18
-aPotionOfHealin:.BYTE "Potion of Healing",0
-		.BYTE $84 ; Ñ
-		.BYTE $FF
-		.BYTE $C4 ; -
-		.BYTE	1
-		.BYTE	1
-		.BYTE	0
-		.BYTE $ED ; Ì
-		.BYTE $FE ; ˛
-		.BYTE	0
-		.BYTE $82 ; Ç
-		.BYTE $45 ; E
-		.BYTE	0
-		.BYTE	1
-		.BYTE	0
-		.BYTE $19
-		.BYTE	0
-		.BYTE	0
-unk_85A2:	.BYTE	6		; DATA XREF: RAM:9476o	RAM:9E90o
-		.BYTE $39 ; 9
-		.BYTE	0
-		.BYTE	0
-		.BYTE	1
-		.BYTE $18
-aPotionOfHemloc:.BYTE "Potion of Hemlock",0
-		.BYTE $82 ; Ç
-		.BYTE $FF
-		.BYTE $C4 ; -
-		.BYTE	0
-		.BYTE	1
-		.BYTE	0
-		.BYTE $14
-		.BYTE	0
-		.BYTE	2
-		.BYTE $92 ; í
-		.BYTE $45 ; E
-		.BYTE	0
-		.BYTE	1
-		.BYTE	0
-		.BYTE	2
-		.BYTE	0
-		.BYTE $82 ; Ç
-		.BYTE	0
-		.BYTE $44 ; D
-		.BYTE	0
-		.BYTE	4
-		.BYTE	0
-		.BYTE $3C ; <
-		.BYTE	0
-		.BYTE	0
-		.BYTE $92 ; í
-		.BYTE $47 ; G
-		.BYTE	0
-		.BYTE	1
-		.BYTE	0
-		.BYTE	1
-		.BYTE	0
-		.BYTE	0
-unk_85DB:	.BYTE	6		; DATA XREF: RAM:9478o	RAM:9E92o
-		.BYTE $2D ; -
-		.BYTE	0
-		.BYTE	0
-		.BYTE	1
-		.BYTE $1C
-aPotionOfInebri:.BYTE "Potion of Inebriation",0
-		.BYTE $84 ; Ñ
-		.BYTE $FF
-		.BYTE $44 ; D
-		.BYTE	1
-		.BYTE	1
-		.BYTE	0
-		.BYTE $ED ; Ì
-		.BYTE $FE ; ˛
-		.BYTE	0
-		.BYTE	1
-		.BYTE $97 ; ó
-		.BYTE	0
-		.BYTE	1
-		.BYTE	0
-		.BYTE $FF
-		.BYTE	0
-		.BYTE	0
+		Item	$16,$00,$00,$01,"Potion of Restoration"
+		.BYTE	$84,$FF,$C4,$01,$01,$00,$ED,$FE,$00,$01,$45,$00,$02,$01,$FF,$00
+		.BYTE	$00
+
+unk_8579:
+		Item	$16,$00,$00,$01,"Potion of Healing"
+		.BYTE	$84,$FF,$C4,$01,$01,$00,$ED,$FE,$00,$82,$45,$00,$01,$00,$19,$00
+		.BYTE	$00
+
+unk_85A2:
+		Item	$06,$00,$00,$01,"Potion of Hemlock"
+		.BYTE	$82,$FF,$C4,$00,$01,$00,$14,$00,$02,$92,$45,$00,$01,$00,$02,$00
+		.BYTE	$82,$00,$44,$00,$04,$00,$3C,$00,$00,$92,$47,$00,$01,$00,$01,$00
+		.BYTE	$00
+
+unk_85DB:
+		Item	$06,$00,$00,$01,"Potion of Inebriation"
+		.BYTE	$84,$FF,$44,$01,$01,$00,$ED,$FE,$00,$01,$97,$00,$01,$00,$FF,$00
+		.BYTE	$00
 
 i_CrystalShield:
-		.BYTE	3		; DATA XREF: RAM:93ECo
-		.BYTE $49 ; I
-		.BYTE	0
-		.BYTE	0
-		.BYTE	6
-		.BYTE $15
-aCrystalShield:	.BYTE "Crystal Shield",0
-		.BYTE $88 ; à
-		.BYTE $FF
-		.BYTE	4
-		.BYTE	1
-		.BYTE	1
-		.BYTE	0
-		.BYTE	1
-		.BYTE	0
-		.BYTE	0
-		.BYTE $81 ; Å
-		.BYTE $B0 ; ∞
-		.BYTE	0
-		.BYTE	1
-		.BYTE	0
-		.BYTE	4
-		.BYTE	0
-		.BYTE $88 ; à
-		.BYTE $FF
-		.BYTE	8
-		.BYTE	1
-		.BYTE	1
-		.BYTE	0
-		.BYTE	1
-		.BYTE	0
-		.BYTE	0
-		.BYTE $91 ; ë
-		.BYTE $B0 ; ∞
-		.BYTE	0
-		.BYTE	1
-		.BYTE	0
-		.BYTE	4
-		.BYTE	0
-		.BYTE	0
-		.BYTE $FF
-		.BYTE	0
-		.BYTE $15
-		.BYTE $12
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE $13
-		.BYTE $10
-		.BYTE $10
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $AA ; ™
-		.BYTE $60 ; `
+		Item	$03,$00,$00,$06,"Crystal Shield"
+		.BYTE	$88,$FF,$04,$01,$01,$00,$01,$00,$00,$81,$B0,$00,$01,$00,$04,$00
+		.BYTE	$88,$FF,$08,$01,$01,$00,$01,$00,$00,$91,$B0,$00,$01,$00,$04,$00
+		.BYTE	$00,$FF,$00
+		.BYTE	$15,$12,$00,$00,$00,$00,$00,$00,$00,$00,$13
+		.BYTE	$10,$10,$FF,$FF,$AA,$60
 
 i_ShieldOfGalahad:
-		.BYTE	3		; DATA XREF: RAM:93EEo
-		.BYTE $5C ; \
-		.BYTE	0
-		.BYTE $90 ; ê
-		.BYTE  $F
-		.BYTE $18
-aShieldOfGalaha:.BYTE "Shield of Galahad",0
-		.BYTE $88 ; à
-		.BYTE $FF
-		.BYTE	4
-		.BYTE	1
-		.BYTE	1
-		.BYTE	0
-		.BYTE	1
-		.BYTE	0
-		.BYTE	0
-		.BYTE $81 ; Å
-		.BYTE $A6 ; ¶
-		.BYTE	0
-		.BYTE  $B
-		.BYTE	1
-		.BYTE	2
-		.BYTE	0
-		.BYTE $88 ; à
-		.BYTE $FF
-		.BYTE	8
-		.BYTE	1
-		.BYTE	1
-		.BYTE	0
-		.BYTE	1
-		.BYTE	0
-		.BYTE	0
-		.BYTE $91 ; ë
-		.BYTE $A6 ; ¶
-		.BYTE	0
-		.BYTE  $B
-		.BYTE	1
-		.BYTE	2
-		.BYTE	0
-		.BYTE $88 ; à
-		.BYTE $FF
-		.BYTE $25 ; %
-		.BYTE	1
-		.BYTE	1
-		.BYTE	0
-		.BYTE	1
-		.BYTE	0
-		.BYTE	0
-		.BYTE $92 ; í
-		.BYTE $45 ; E
-		.BYTE	0
-		.BYTE	1
-		.BYTE	0
-		.BYTE	3
-		.BYTE	0
-		.BYTE	0
-		.BYTE $FF
-		.BYTE	0
-		.BYTE $17
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE $34 ; 4
-		.BYTE	0
-		.BYTE	0
-		.BYTE $20
-		.BYTE $20
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $AA ; ™
-		.BYTE $70 ; p
+		Item	$03,$00,$90,$0F,"Shield of Galahad"
+		.BYTE	$88,$FF,$04,$01,$01,$00,$01,$00,$00,$81,$A6,$00,$0B,$01,$02,$00
+		.BYTE	$88,$FF,$08,$01,$01,$00,$01,$00,$00,$91,$A6,$00,$0B,$01,$02,$00
+		.BYTE	$88,$FF,$25,$01,$01,$00,$01,$00,$00,$92,$45,$00,$01,$00,$03,$00
+		.BYTE	$00,$FF,$00
+		.BYTE	$17,$00,$00,$00,$00,$00,$00,$00,$34,$00,$00
+		.BYTE	$20,$20,$FF,$FF,$AA,$70
 
 i_SpikedShield:
-		.BYTE	3		; DATA XREF: RAM:93F0o
-		.BYTE $28 ; (
-		.BYTE	0
-		.BYTE	0
-		.BYTE  $F
-		.BYTE $14
-aSpikedShield:	.BYTE "Spiked Shield",0
-		.BYTE	0
-		.BYTE $FF
-		.BYTE	0
-		.BYTE $15
-		.BYTE $12
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE $12
-		.BYTE $12
-		.BYTE $32 ; 2
-		.BYTE $32 ; 2
-		.BYTE $AA ; ™
-		.BYTE $60 ; `
+		Item	$03,$00,$00,$0F,"Spiked Shield"
+		.BYTE	$00,$FF,$00
+		.BYTE	$15,$12,$00,$00,$00,$00,$00,$00,$00,$00,$00
+		.BYTE	$12,$12,$32,$32,$AA,$60
 
 i_ShieldOfMordred:
-		.BYTE	3		; DATA XREF: RAM:93F2o
-		.BYTE $5C ; \
-		.BYTE	0
-		.BYTE $70 ; p
-		.BYTE  $F
-		.BYTE $18
-aShieldOfMordre:.BYTE "Shield of Mordred",0
-		.BYTE $88 ; à
-		.BYTE $FF
-		.BYTE	4
-		.BYTE	1
-		.BYTE	1
-		.BYTE	0
-		.BYTE	1
-		.BYTE	0
-		.BYTE	0
-		.BYTE $81 ; Å
-		.BYTE $A6 ; ¶
-		.BYTE	0
-		.BYTE  $B
-		.BYTE	1
-		.BYTE	2
-		.BYTE	0
-		.BYTE $88 ; à
-		.BYTE $FF
-		.BYTE	8
-		.BYTE	1
-		.BYTE	1
-		.BYTE	0
-		.BYTE	1
-		.BYTE	0
-		.BYTE	0
-		.BYTE $91 ; ë
-		.BYTE $A6 ; ¶
-		.BYTE	0
-		.BYTE  $B
-		.BYTE	1
-		.BYTE	2
-		.BYTE	0
-		.BYTE $88 ; à
-		.BYTE $FF
-		.BYTE $25 ; %
-		.BYTE	1
-		.BYTE	1
-		.BYTE	0
-		.BYTE	1
-		.BYTE	0
-		.BYTE	0
-		.BYTE $92 ; í
-		.BYTE $45 ; E
-		.BYTE	0
-		.BYTE	1
-		.BYTE	0
-		.BYTE	3
-		.BYTE	0
-		.BYTE	0
-		.BYTE $FF
-		.BYTE	0
-		.BYTE $17
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE $34 ; 4
-		.BYTE	0
-		.BYTE $10
-		.BYTE $10
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $AA ; ™
-		.BYTE $60 ; `
+		Item	$03,$00,$70,$0F,"Shield of Mordred"
+		.BYTE	$88,$FF,$04,$01,$01,$00,$01,$00,$00,$81,$A6,$00,$0B,$01,$02,$00
+		.BYTE	$88,$FF,$08,$01,$01,$00,$01,$00,$00,$91,$A6,$00,$0B,$01,$02,$00
+		.BYTE	$88,$FF,$25,$01,$01,$00,$01,$00,$00,$92,$45,$00,$01,$00,$03,$00
+		.BYTE	$00,$FF,$00
+		.BYTE	$17,$00,$00,$00,$00,$00,$00,$00,$00,$34,$00
+		.BYTE	$10,$10,$FF,$FF,$AA,$60
 
 i_SpiritShield:
-		.BYTE	3		; DATA XREF: RAM:93F4o
-		.BYTE $48 ; H
-		.BYTE	0
-		.BYTE	0
-		.BYTE  $F
-		.BYTE $14
-aSpiritShield:	.BYTE "Spirit Shield",0
-		.BYTE $88 ; à
-		.BYTE $FF
-		.BYTE	4
-		.BYTE	1
-		.BYTE	1
-		.BYTE	0
-		.BYTE	1
-		.BYTE	0
-		.BYTE	0
-		.BYTE $81 ; Å
-		.BYTE $AD ; ≠
-		.BYTE	0
-		.BYTE	1
-		.BYTE	0
-		.BYTE $10
-		.BYTE	0
-		.BYTE $88 ; à
-		.BYTE $FF
-		.BYTE	8
-		.BYTE	1
-		.BYTE	1
-		.BYTE	0
-		.BYTE	1
-		.BYTE	0
-		.BYTE	0
-		.BYTE $91 ; ë
-		.BYTE $AD ; ≠
-		.BYTE	0
-		.BYTE	1
-		.BYTE	0
-		.BYTE $10
-		.BYTE	0
-		.BYTE	0
-		.BYTE $FF
-		.BYTE	0
-		.BYTE $15
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE $34 ; 4
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE $10
-		.BYTE $10
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $82 ; Ç
-		.BYTE $70 ; p
+		Item	$03,$00,$00,$0F,"Spirit Shield"
+		.BYTE	$88,$FF,$04,$01,$01,$00,$01,$00,$00,$81,$AD,$00,$01,$00,$10,$00
+		.BYTE	$88,$FF,$08,$01,$01,$00,$01,$00,$00,$91,$AD,$00,$01,$00,$10,$00
+		.BYTE	$00,$FF,$00
+		.BYTE	$15,$00,$00,$00,$00,$00,$00,$34,$00,$00,$00
+		.BYTE	$10,$10,$FF,$FF,$82,$70
 
 i_IronwoodBoken:
-		.BYTE	3		; DATA XREF: RAM:93F6o
-		.BYTE $49 ; I
-		.BYTE	0
-		.BYTE	0
-		.BYTE	8
-		.BYTE $15
-aIronwoodBoken:	.BYTE "Ironwood Boken",0
-		.BYTE $88 ; à
-		.BYTE $FF
-		.BYTE	4
-		.BYTE	1
-		.BYTE	1
-		.BYTE	0
-		.BYTE	1
-		.BYTE	0
-		.BYTE	0
-		.BYTE $81 ; Å
-		.BYTE $5B ; [
-		.BYTE	0
-		.BYTE	1
-		.BYTE	0
-		.BYTE $14
-		.BYTE	0
-		.BYTE $88 ; à
-		.BYTE $FF
-		.BYTE	8
-		.BYTE	1
-		.BYTE	1
-		.BYTE	0
-		.BYTE	1
-		.BYTE	0
-		.BYTE	0
-		.BYTE $91 ; ë
-		.BYTE $5B ; [
-		.BYTE	0
-		.BYTE	1
-		.BYTE	0
-		.BYTE $14
-		.BYTE	0
-		.BYTE	0
-		.BYTE $FF
-		.BYTE	0
-		.BYTE $35 ; 5
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE $20
-		.BYTE $16
-		.BYTE $30 ; 0
-		.BYTE $30 ; 0
-		.BYTE $82 ; Ç
-		.BYTE $30 ; 0
+		Item	$03,$00,$00,$08,"Ironwood Boken"
+		.BYTE	$88,$FF,$04,$01,$01,$00,$01,$00,$00,$81,$5B,$00,$01,$00,$14,$00
+		.BYTE	$88,$FF,$08,$01,$01,$00,$01,$00,$00,$91,$5B,$00,$01,$00,$14,$00
+		.BYTE	$00,$FF,$00
+		.BYTE	$35,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00
+		.BYTE	$20,$16,$30,$30,$82,$30
 
 i_IronFan:
-		.BYTE	3		; DATA XREF: RAM:93F8o
-		.BYTE $23 ; #
-		.BYTE	0
-		.BYTE	0
-		.BYTE	2
-		.BYTE  $F
-aIronFan:	.BYTE "Iron Fan",0
-		.BYTE	0
-		.BYTE $FF
-		.BYTE	0
-		.BYTE $23 ; #
-		.BYTE $22 ; "
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE $10
-		.BYTE $32 ; 2
-		.BYTE $20
-		.BYTE $20
-		.BYTE $8A ; ä
-		.BYTE $58 ; X
+		Item	$03,$00,$00,$02,"Iron Fan"
+		.BYTE	$00,$FF,$00
+		.BYTE	$23,$22,$00,$00,$00,$00,$00,$00,$00,$00,$00
+		.BYTE	$10,$32,$20,$20,$8A,$58
 
 i_TowerShield:
 		Item	$03,$00,$00,$14,"Tower Shield"
