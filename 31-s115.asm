@@ -674,283 +674,49 @@ i_TomeOfUnderstanding:
 		.BYTE	$00,$01
 
 i_TomeOfLeadership:
-:		.BYTE $10		; DATA XREF: RAM:93CAo
-		.BYTE	:++-:-
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	:+-:-
-aTomeOfLeadersh:.BYTE "Tome of Leadership",0
-:		.BYTE $88 ; à
-		.BYTE $FF
-		.BYTE $44 ; D
-		.BYTE	1
-		.BYTE	1
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE $81 ; Å
-		.BYTE $52 ; R
-		.BYTE	0
-		.BYTE	1
-		.BYTE	0
-		.BYTE	1
-		.BYTE	0
-		.BYTE	0
-		.BYTE	1
+		Item	$10,$00,$00,$00,"Tome of Leadership"
+		.BYTE	$88,$FF,$44,$01,$01,$00,$00,$00,$00,$81,$52,$00,$01,$00,$01,$00
+		.BYTE	$00,$01
 
 i_BronzeHorn:
-:		.BYTE $10		; DATA XREF: RAM:93E4o
-		.BYTE	:++-:-
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	:+-:-
-aBronzeHorn:	.BYTE "Bronze Horn",0
-:		.BYTE $88 ; à
-		.BYTE $FF
-		.BYTE $44 ; D
-		.BYTE	1
-		.BYTE	1
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE $81 ; Å
-		.BYTE $BB ; ª
-		.BYTE	0
-		.BYTE	2
-		.BYTE	1
-		.BYTE	5
-		.BYTE	0
-		.BYTE	0
-		.BYTE	7
+		Item	$10,$00,$00,$00,"Bronze Horn"
+		.BYTE	$88,$FF,$44,$01,$01,$00,$00,$00,$00,$81,$BB,$00,$02,$01,$05,$00
+		.BYTE	$00,$07
 
 i_SilverHorn:
-:		.BYTE $10		; DATA XREF: RAM:93E6o
-		.BYTE	:++-:-
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	:+-:-
-aSilverHorn:	.BYTE "Silver Horn",0
-:		.BYTE $88 ; à
-		.BYTE $FF
-		.BYTE $44 ; D
-		.BYTE	1
-		.BYTE	1
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	1
-		.BYTE $E5 ; Â
-		.BYTE	0
-		.BYTE	2
-		.BYTE	3
-		.BYTE $F4 ; Ù
-		.BYTE	0
-		.BYTE	0
-		.BYTE	7
+		Item	$10,$00,$00,$00,"Silver Horn"
+		.BYTE	$88,$FF,$44,$01,$01,$00,$00,$00,$00,$01,$E5,$00,$02,$03,$F4,$00
+		.BYTE	$00,$07
 
 i_GoldHorn:
-:		.BYTE $10		; DATA XREF: RAM:93E8o
-		.BYTE 	:++-:-
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	:+-:-
-aGoldHorn:	.BYTE "Gold Horn",0
-:		.BYTE $88 ; à
-		.BYTE $FF
-		.BYTE $44 ; D
-		.BYTE	1
-		.BYTE	1
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	2
-		.BYTE $45 ; E
-		.BYTE	0
-		.BYTE	1
-		.BYTE	0
-		.BYTE $FF
-		.BYTE	0
-		.BYTE	0
-		.BYTE	7
+		Item	$10,$00,$00,$00,"Gold Horn"
+		.BYTE	$88,$FF,$44,$01,$01,$00,$00,$00,$00,$02,$45,$00,$01,$00,$FF,$00
+		.BYTE	$00,$07
 
 i_GoldHorn2:
-:		.BYTE $10		; DATA XREF: RAM:93EAo
-		.BYTE	:++-:-
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	:+-:-
-aGoldHorn_0:	.BYTE "Gold Horn",0
-:		.BYTE $88 ; à
-		.BYTE $FF
-		.BYTE $44 ; D
-		.BYTE	1
-		.BYTE	1
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	1
-		.BYTE $20
-		.BYTE	0
-		.BYTE	1
-		.BYTE	0
-		.BYTE $46 ; F
-		.BYTE	0
-		.BYTE	0
-		.BYTE	1
+		Item	$10,$00,$00,$00,"Gold Horn"
+		.BYTE	$88,$FF,$44,$01,$01,$00,$00,$00,$00,$01,$20,$00,$01,$00,$46,$00
+		.BYTE	$00,$01
 
 i_PotionOfFleetness:
-:		.BYTE	6		; DATA XREF: RAM:944Ao
-		.BYTE	:++-:-
-		.BYTE	0
-		.BYTE	0
-		.BYTE	1
-		.BYTE	:+-:-
-aPotionOfFleetn:.BYTE "Potion of Fleetness",0
-:		.BYTE $84 ; Ñ
-		.BYTE $FF
-		.BYTE $C4 ; -
-		.BYTE	1
-		.BYTE $E0 ; ‡
-		.BYTE	1
-		.BYTE $ED ; Ì
-		.BYTE $FE ; ˛
-		.BYTE	0
-		.BYTE $91 ; ë
-		.BYTE $7B ; {
-		.BYTE	0
-		.BYTE	1
-		.BYTE	0
-		.BYTE $64 ; d
-		.BYTE	0
-		.BYTE $84 ; Ñ
-		.BYTE	0
-		.BYTE $44 ; D
-		.BYTE	1
-		.BYTE	1
-		.BYTE	0
-		.BYTE $ED ; Ì
-		.BYTE $FE ; ˛
-		.BYTE	0
-		.BYTE $81 ; Å
-		.BYTE $7B ; {
-		.BYTE	0
-		.BYTE	1
-		.BYTE	0
-		.BYTE $64 ; d
-		.BYTE	0
-		.BYTE $EC ; Ï
-		.BYTE	0
-		.BYTE $44 ; D
-aFleetness:	.BYTE "Fleetness",0
-		.BYTE $20
-		.BYTE $73 ; s
-		.BYTE $6D ; m
+		Item	$06,$00,$00,$01,"Potion of Fleetness"
+		.BYTE	$84,$FF,$C4,$01,$E0,$01,$ED,$FE,$00,$91,$7B,$00,$01,$00,$64,$00
+		.BYTE	$84,$00,$44,$01,$01,$00,$ED,$FE,$00,$81,$7B,$00,$01,$00,$64,$00
+		.BYTE	$EC,$00,$44,"Fleetness",$00,$20,$73,$6D
 		.BYTE	0
 
 i_PotionOfStrength:
-:		.BYTE	6		; DATA XREF: RAM:944Co
-		.BYTE	:++-:-
-		.BYTE	0
-		.BYTE	0
-		.BYTE	1
-		.BYTE	:+-:-
-aPotionOfStreng:.BYTE "Potion of Strength",0
-:		.BYTE $84 ; Ñ
-		.BYTE $FF
-		.BYTE $C4 ; -
-		.BYTE	1
-		.BYTE $E0 ; ‡
-		.BYTE	1
-		.BYTE $ED ; Ì
-		.BYTE $FE ; ˛
-		.BYTE	0
-		.BYTE $91 ; ë
-		.BYTE $5B ; [
-		.BYTE	0
-		.BYTE	1
-		.BYTE	0
-		.BYTE $14
-		.BYTE	0
-		.BYTE $84 ; Ñ
-		.BYTE	0
-		.BYTE $44 ; D
-		.BYTE	1
-		.BYTE	1
-		.BYTE	0
-		.BYTE $ED ; Ì
-		.BYTE $FE ; ˛
-		.BYTE	0
-		.BYTE $81 ; Å
-		.BYTE $5B ; [
-		.BYTE	0
-		.BYTE	1
-		.BYTE	0
-		.BYTE $14
-		.BYTE	0
-		.BYTE $EC ; Ï
-		.BYTE	0
-		.BYTE $44 ; D
-aStrength:	.BYTE "Strength",0
-		.BYTE $65 ; e
-		.BYTE $20
-		.BYTE $63 ; c
-		.BYTE $72 ; r
-		.BYTE	0
+		Item	$06,$00,$00,$01,"Potion of Strength"
+		.BYTE	$84,$FF,$C4,$01,$E0,$01,$ED,$FE,$00,$91,$5B,$00,$01,$00,$14,$00
+		.BYTE	$84,$00,$44,$01,$01,$00,$ED,$FE,$00,$81,$5B,$00,$01,$00,$14,$00
+		.BYTE	$EC,$00,$44,"Strength",$00,$65,$20,$63,$72
+		.BYTE	$00
 
 i_PotionOfIntelligence:
-:		.BYTE	6		; DATA XREF: RAM:944Eo
-		.BYTE	:++-:-
-		.BYTE	0
-		.BYTE	0
-		.BYTE	1
-		.BYTE	:+-:-
-aPotionOfIntell:.BYTE "Potion of Intelligence",0
-:		.BYTE $84 ; Ñ
-		.BYTE $FF
-		.BYTE $C4 ; -
-		.BYTE	1
-		.BYTE $E0 ; ‡
-		.BYTE	1
-		.BYTE $ED ; Ì
-		.BYTE $FE ; ˛
-		.BYTE	0
-		.BYTE $91 ; ë
-		.BYTE $63 ; c
-		.BYTE	0
-		.BYTE	1
-		.BYTE	0
-		.BYTE $14
-		.BYTE	0
-		.BYTE $84 ; Ñ
-		.BYTE	0
-		.BYTE $44 ; D
-		.BYTE	1
-		.BYTE	1
-		.BYTE	0
-		.BYTE $ED ; Ì
-		.BYTE $FE ; ˛
-		.BYTE	0
-		.BYTE $81 ; Å
-		.BYTE $63 ; c
-		.BYTE	0
-		.BYTE	1
-		.BYTE	0
-		.BYTE $14
-		.BYTE	0
-		.BYTE $EC ; Ï
-		.BYTE	0
-		.BYTE $44 ; D
-aIntelligence:	.BYTE "Intelligence",0
+		Item	$06,$00,$00,$01,"Potion of Intelligence"
+		.BYTE	$84,$FF,$C4,$01,$E0,$01,$ED,$FE,$00,$91,$63,$00,$01,$00,$14,$00
+		.BYTE	$84,$00,$44,$01,$01,$00,$ED,$FE,$00,$81,$63,$00,$01,$00,$14,$00
+		.BYTE	$EC,$00,$44,"Intelligence",$00
 		.BYTE	0
 
 i_PotionOfCharisma:
@@ -2174,40 +1940,17 @@ aIronFan:	.BYTE "Iron Fan",0
 		.BYTE $58 ; X
 
 i_TowerShield:
-		.BYTE	3		; DATA XREF: RAM:93FAo
-		.BYTE $27
-		.BYTE	0
-		.BYTE	0
-		.BYTE $14
-		.BYTE $13
-aTowerShield:	.BYTE "Tower Shield",0
-		.BYTE	0
-		.BYTE $FF
-		.BYTE	0
-		.BYTE $17
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE $19
-		.BYTE $10
-		.BYTE $80 ; Ä
-		.BYTE $80 ; Ä
-		.BYTE $AA ; ™
-		.BYTE $80 ; Ä
+		Item	$03,$00,$00,$14,"Tower Shield"
+		.BYTE	$00,$FF,$00
+		.BYTE	$17,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00
+		.BYTE	$19,$10,$80,$80,$AA,$80
 
 i_Crossbow:
 		Item	$03,$00,$00,$03,"Crossbow [03]"
 		.BYTE	$00,$03,$03
 		.BYTE	$00,$2A,$00,$00,$00,$00,$00,$00,$00,$00,$00
 		.BYTE	$10,$10,$40,$40,$1F,$00
-:
+
 i_Quarrels:
 		Item	$02,$00,$00,$01,"Quarrels [10]"
 		.BYTE	$00,$03,$0A
@@ -2251,140 +1994,28 @@ i_PantherGloves:
 		.BYTE	$00,$02
 		.BYTE	$22,$23,$00,$00,$11,$00,$00,$00,$00,$00,$11
 		.BYTE	$40,$40
-:
+
 i_HelmOfLight:
-		.BYTE	4		; DATA XREF: RAM:940Co
-		.BYTE $43 ; C
-		.BYTE	0
-		.BYTE	0
-		.BYTE	2
-		.BYTE $14
-aHelmOfLight:	.BYTE "Helm of Light",0
-		.BYTE $88 ; à
-		.BYTE $FF
-		.BYTE	4
-		.BYTE	1
-		.BYTE	1
-		.BYTE	0
-		.BYTE $AF ; Ø
-		.BYTE $DE ; ﬁ
-		.BYTE	0
-		.BYTE $81 ; Å
-		.BYTE $90 ; ê
-		.BYTE	0
-		.BYTE	1
-		.BYTE	0
-		.BYTE	1
-		.BYTE	0
-		.BYTE $88 ; à
-		.BYTE $FF
-		.BYTE	8
-		.BYTE	1
-		.BYTE	1
-		.BYTE	0
-		.BYTE $AF ; Ø
-		.BYTE $DE ; ﬁ
-		.BYTE	0
-		.BYTE $91 ; ë
-		.BYTE $90 ; ê
-		.BYTE	0
-		.BYTE	1
-		.BYTE	0
-		.BYTE	1
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE $23 ; #
-		.BYTE $24 ; $
-		.BYTE	0
-		.BYTE	0
-		.BYTE $11
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE $60 ; `
-		.BYTE $60 ; `
+		Item	$04,$00,$00,$02,"Helm of Light"
+		.BYTE	$88,$FF,$04,$01,$01,$00,$AF,$DE,$00,$81,$90,$00,$01,$00,$01,$00
+		.BYTE	$88,$FF,$08,$01,$01,$00,$AF,$DE,$00,$91,$90,$00,$01,$00,$01,$00
+		.BYTE	$00,$00
+		.BYTE	$23,$24,$00,$00,$11,$00,$00,$00,$00,$00,$00
+		.BYTE	$60,$60
+
 i_DragonskinHauberk:
-		.BYTE	4		; DATA XREF: RAM:940Eo
-		.BYTE $28 ; (
-		.BYTE	0
-		.BYTE	0
-		.BYTE  $A
-		.BYTE $19
-aDragonskinHaub:.BYTE "Dragonskin Hauberk",0
-		.BYTE	0
-		.BYTE	1
-		.BYTE $34 ; 4
-		.BYTE $34 ; 4
-		.BYTE	0
-		.BYTE	0
-		.BYTE $34 ; 4
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE $FE ; ˛
-		.BYTE $FE ; ˛
+		Item	$04,$00,$00,$0A,"Dragonskin Hauberk"
+		.BYTE	$00,$01
+		.BYTE	$34,$34,$00,$00,$34,$00,$00,$00,$00,$00,$00
+		.BYTE	$FE,$FE
+
 i_GoldenGreaves:
-		.BYTE	4		; DATA XREF: RAM:9410o
-		.BYTE $44 ; D
-		.BYTE	0
-		.BYTE	0
-		.BYTE	4
-		.BYTE $15
-aGoldenGreaves:	.BYTE "Golden Greaves",0
-		.BYTE $88 ; à
-		.BYTE $FF
-		.BYTE	4
-		.BYTE	1
-		.BYTE	1
-		.BYTE	0
-		.BYTE $AF ; Ø
-		.BYTE $DE ; ﬁ
-		.BYTE	0
-		.BYTE $81 ; Å
-		.BYTE $4B ; K
-		.BYTE	0
-		.BYTE	1
-		.BYTE	0
-		.BYTE $19
-		.BYTE	0
-		.BYTE $88 ; à
-		.BYTE $FF
-		.BYTE	8
-		.BYTE	1
-		.BYTE	1
-		.BYTE	0
-		.BYTE $AF ; Ø
-		.BYTE $DE ; ﬁ
-		.BYTE	0
-		.BYTE $91 ; ë
-		.BYTE $4B ; K
-		.BYTE	0
-		.BYTE	1
-		.BYTE	0
-		.BYTE $19
-		.BYTE	0
-		.BYTE	0
-		.BYTE	3
-		.BYTE $32 ; 2
-		.BYTE $42 ; B
-		.BYTE $11
-		.BYTE $11
-		.BYTE $11
-		.BYTE $11
-		.BYTE $11
-		.BYTE $11
-		.BYTE $11
-		.BYTE $11
-		.BYTE $22 ; "
-		.BYTE $50 ; P
-		.BYTE $50 ; P
+		Item	$04,$00,$00,$04,"Golden Greaves"
+		.BYTE	$88,$FF,$04,$01,$01,$00,$AF,$DE,$00,$81,$4B,$00,$01,$00,$19,$00
+		.BYTE	$88,$FF,$08,$01,$01,$00,$AF,$DE,$00,$91,$4B,$00,$01,$00,$19,$00
+		.BYTE	$00,$03
+		.BYTE	$32,$42,$11,$11,$11,$11,$11,$11,$11,$11,$22
+		.BYTE	$50,$50
 i_PlateHelm:
 		Item	$04,$00,$00,$06,"Plate Helm"
 		.BYTE	$00,$00
