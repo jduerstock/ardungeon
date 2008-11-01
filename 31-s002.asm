@@ -7043,32 +7043,19 @@ word_A8A1:	.WORD	$02DC
 		.WORD	$02E0
 		.WORD	$00F8
 		.WORD	$02E2
-		.BYTE $CE ; Î
-		.BYTE	3
-		.BYTE	6
-		.BYTE	2
-		.BYTE	6
-		.BYTE	2
-		.BYTE $EE ; î
-		.BYTE	1
-		.BYTE $D2 ; Ò
-		.BYTE	3
-		.BYTE $EA ; ê
-		.BYTE	1
-		.BYTE $CE ; Î
-		.BYTE	3
-		.BYTE $E2 ; â
-		.BYTE	2
-		.BYTE  $A
-		.BYTE	1
-		.BYTE $D2 ; Ò
-		.BYTE	3
-		.BYTE $EA ; ê
-		.BYTE	1
-		.BYTE $EA ; ê
-		.BYTE	1
-		.BYTE $EA ; ê
-		.BYTE	1
+		.WORD	$03CE
+		.WORD	$0206
+		.WORD	$0206
+		.WORD	$01EE
+		.WORD	$03D2
+		.WORD	$01EA
+		.WORD	$03CE
+		.WORD	$02E2
+		.WORD	$010A
+		.WORD	$03D2
+		.WORD	$01EA
+		.WORD	$01EA
+		.WORD	$01EA
 		.BYTE $B2 ; ²
 		.BYTE	5
 		.BYTE $EE ; î

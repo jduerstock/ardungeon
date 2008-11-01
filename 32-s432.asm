@@ -95,35 +95,26 @@ loc_76E6:				; CODE XREF: RAM:76DCj
 loc_7702:				; CODE XREF: RAM:76E4j
 		LDA	$753D
 		BPL	loc_7725
-		LDA	#$21 ; '!'
-		STA	$65
-		LDA	#$63 ; 'c'
-		STA	$66
+		dldi	$65, $6321
 		LDA	$753D
 		CMP	#$C0 ; 'À'
 		BCC	loc_771E
-		LDA	#$54 ; 'T'
-		STA	$65
-		LDA	#$82 ; '‚'
-		STA	$66
+		dldi	$65, $8254
 
 loc_771E:				; CODE XREF: RAM:7714j
-		LDX	#$82 ; '‚'
-		LDY	#$77 ; 'w'
+		ldxy	$8277
 		JMP	loc_7734
 ; ---------------------------------------------------------------------------
 
 loc_7725:				; CODE XREF: RAM:7705j
 		CMP	#$40 ; '@'
 		BCC	loc_7730
-		LDX	#$82 ; '‚'
-		LDY	#$71 ; 'q'
+		ldxy	$8271
 		JMP	loc_7734
 ; ---------------------------------------------------------------------------
 
 loc_7730:				; CODE XREF: RAM:7727j
-		LDX	#$82 ; '‚'
-		LDY	#$6B ; 'k'
+		ldxy	$826B
 
 loc_7734:				; CODE XREF: RAM:7722j	RAM:772Dj
 		LDA	#2
@@ -261,19 +252,16 @@ loc_7837:				; CODE XREF: RAM:7832j
 		LDA	$31
 		BMI	loc_7820
 		LDA	$31
-		CMP	#$31 ; '1'
+		CMP	#'1'
 		BNE	loc_784C
-		LDA	#$5B ; '['
-		STA	$67
-		LDA	#$82 ; '‚'
-		STA	$68
+		dldi	$67, $825B
 		JMP	loc_785F
 ; ---------------------------------------------------------------------------
 
 loc_784C:				; CODE XREF: RAM:783Fj
-		CMP	#$32 ; '2'
+		CMP	#'2'
 		BEQ	loc_7857
-		CMP	#$30 ; '0'
+		CMP	#'0'
 		BNE	loc_7813
 		JMP	loc_7A9A
 ; ---------------------------------------------------------------------------
@@ -1476,66 +1464,18 @@ off_7F8D:	.WORD unk_7FE1		; DATA XREF: RAM:7CC5r	RAM:7CCFr
 		.WORD unk_8222
 		.WORD unk_8234
 		.WORD unk_8245
-unk_7FE1:	.BYTE	5		; DATA XREF: RAM:off_7F8Do
-		.BYTE $12
-		.BYTE	2
-		.BYTE	0
-aRackOfLamb:	.BYTE "Rack of Lamb",0
-unk_7FF2:	.BYTE	6		; DATA XREF: RAM:7F8Fo
-		.BYTE $18
-		.BYTE	4
-		.BYTE	0
-aRoastBeef:	.BYTE "Roast Beef",0
-unk_8001:	.BYTE	4		; DATA XREF: RAM:7F91o
-		.BYTE $11
-		.BYTE	2
-		.BYTE	0
-aRoastFowl:	.BYTE "Roast Fowl",0
-unk_8010:	.BYTE $1E		; DATA XREF: RAM:7F93o
-		.BYTE $20
-		.BYTE	4
-		.BYTE	0
-aRoastDragon:	.BYTE "Roast Dragon",0
-unk_8021:	.BYTE	4		; DATA XREF: RAM:7F95o
-		.BYTE  $D
-		.BYTE	1
-		.BYTE	0
-aSpareRibs:	.BYTE "Spare Ribs",0
-unk_8030:	.BYTE	7		; DATA XREF: RAM:7F97o
-		.BYTE $14
-		.BYTE	2
-		.BYTE	0
-aRoastMutton:	.BYTE "Roast Mutton",0
-unk_8041:	.BYTE  $A		; DATA XREF: RAM:7F99o
-		.BYTE $16
-		.BYTE	3
-		.BYTE	0
-aLegOfDragon:	.BYTE "Leg of Dragon",0
-unk_8053:	.BYTE $28 ; (		; DATA XREF: RAM:7F9Bo
-		.BYTE $14
-		.BYTE	4
-		.BYTE	0
-aABurger:	.BYTE "a Burger",0
-unk_8060:	.BYTE	6		; DATA XREF: RAM:7F9Do
-		.BYTE  $E
-		.BYTE	2
-		.BYTE	0
-aRoastPig:	.BYTE "Roast Pig",0
-unk_806E:	.BYTE	6		; DATA XREF: RAM:7F9Fo
-		.BYTE $10
-		.BYTE	2
-		.BYTE	0
-aSausages:	.BYTE "Sausages",0
-unk_807B:	.BYTE  $A		; DATA XREF: RAM:7FA1o
-		.BYTE $14
-		.BYTE	2
-		.BYTE	0
-aFilletOfBeef:	.BYTE "Fillet of Beef",0
-unk_808E:	.BYTE	7		; DATA XREF: RAM:7FA3o
-		.BYTE $10
-		.BYTE	4
-		.BYTE	0
-aRagoutOfBeef:	.BYTE "Ragout of Beef",0
+unk_7FE1:	.BYTE	$05,$12,$02,$00,"Rack of Lamb",0
+unk_7FF2:	.BYTE	$06,$18,$04,$00,"Roast Beef",0
+unk_8001:	.BYTE	$04,$11,$02,$00,"Roast Fowl",0
+unk_8010:	.BYTE	$1E,$20,$04,$00,"Roast Dragon",0
+unk_8021:	.BYTE	$04,$0D,$01,$00,"Spare Ribs",0
+unk_8030:	.BYTE	$07,$14,$02,$00,"Roast Mutton",0
+unk_8041:	.BYTE	$0A,$16,$03,$00,"Leg of Dragon",0
+unk_8053:	.BYTE	$28,$14,$04,$00,"a Burger",0
+unk_8060:	.BYTE	$06,$0E,$02,$00,"Roast Pig",0
+unk_806E:	.BYTE	$06,$10,$02,$00,"Sausages",0
+unk_807B:	.BYTE  	$0A,$14,$02,$00,"Fillet of Beef",0
+unk_808E:	.BYTE	$07,$10,$04,$00,"Ragout of Beef",0
 unk_80A1:	.BYTE  $A		; DATA XREF: RAM:7FA5o
 		.BYTE $18
 		.BYTE	4
@@ -1851,12 +1791,8 @@ aDostThouStillW:.BYTE "Dost thou still wish to buy? ("
 aY_0:		.BYTE 'Y'
 		.BYTE $A0
 aOr_0:		.BYTE " or "
-		.BYTE $A1
-aN_0:		.BYTE 'N'
-		.BYTE $A0
-		.BYTE ')'
-		.BYTE $D
-		.BYTE $FF
+aN_0:		BLINK 'N'
+		.BYTE ')',$0D,$FF
 		MOVEXY	0,2
 aIMSorryYouHave:.BYTE $A5,"I'm sorry, you have not the funds.",$D
 		MOVEXY	0,7
@@ -1924,29 +1860,15 @@ aSilvers_1:	.BYTE "silvers"
 aSilvers_2:	.BYTE "silvers"
 		.BYTE $A6,  0,	7
 		.BYTE $A5
-		.BYTE $A1
-aF:		.BYTE "F"
-		.BYTE $A0
+aF:		BLINK "F"
 aOrward:	.BYTE "orward, "
-		.BYTE $A1
-aB:		.BYTE "B"
-		.BYTE $A0
+aB:		BLINK "B"
 aAckwardOr:	.BYTE "ackward or "
-		.BYTE $A1
-aEsc:		.BYTE "ESC"
-		.BYTE $A0
-aToExit:	.BYTE " to exit"
-		.BYTE $D
-		.BYTE $FF
+aEsc:		BLINK "ESC"
+aToExit:	.BYTE " to exit",$0D,$FF
 		.BYTE $A6,  0,	2
-		.BYTE $A5
-aWeAreOutOfEver:.BYTE "We are out of everything"
-		.BYTE $D
-		.BYTE $D
-		.BYTE $A5
-aAtTheMoment_:	.BYTE "at the moment."
-		.BYTE $D
-		.BYTE $FF
+aWeAreOutOfEver:.BYTE $A5,"We are out of everything",$0D,$0D
+aAtTheMoment_:	.BYTE $A5,"at the moment.",$0D,$FF
 byte_8839:	.BYTE $A6,  0,	2	; DATA XREF: RAM:827Do
 		.BYTE $A5
 aRightAway:	.BYTE "Right away!"

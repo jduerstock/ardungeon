@@ -1,6 +1,6 @@
-	.include	"equates.inc"
-	.include	"globals.inc"
-	.include	"macros.inc"
+		.include	"equates.inc"
+		.include	"globals.inc"
+		.include	"macros.inc"
 
 .macro Item Type,Unknown1,Unknown2,Weight,Name
 :		.BYTE	Type

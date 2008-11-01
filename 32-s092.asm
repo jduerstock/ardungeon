@@ -230,128 +230,47 @@ aPacCard:	.BYTE "PAC card",0
 		.BYTE $B3
 		.WORD $6321
 		.BYTE $18
-a_:		.BYTE ".",$22
-		.BYTE $D
-		.BYTE $FF
-		.BYTE $A6,  0,	0
-		.BYTE $A5
-aIAmAcrinimiril:.BYTE "I am Acrinimiril the wizard. I come"
-		.BYTE $D
-		.BYTE $D
-		.BYTE $A5
-aFromAWorldMany:.BYTE "from a world many dimensions distant."
-		.BYTE $D
-		.BYTE $D
-aWhileWalkingTh:.BYTE "While walking through shadow, I happened"
-		.BYTE $D
-		.BYTE $A5
-aUponThisPlaneM:.BYTE "upon this plane many generations ago."
-		.BYTE $D
-		.BYTE $FF
-		.BYTE $A6,  0,	0
-		.BYTE $A5
-aFearingMySorce:.BYTE "Fearing my Sorcery, the Masters of this"
-		.BYTE $D
-		.BYTE $D
-		.BYTE $A5
-aWorldSoughtToD:.BYTE "world sought to destroy me. They"
-		.BYTE $D
-		.BYTE $D
-		.BYTE $A5
-aSucceededInDes:.BYTE "succeeded in destroying my body but my"
-		.BYTE $D
-		.BYTE $D
-		.BYTE $A5
-aSpiritRemains_:.BYTE "spirit remains. My staff still holds"
-		.BYTE $D
-		.BYTE $FF
-		.BYTE $A6,  0,	0
-		.BYTE $A5
-aMyRemainingPow:.BYTE "my remaining power. Find and return"
-		.BYTE $D
-		.BYTE $D
-		.BYTE $A5
-aTheStaffWhichW:.BYTE "the staff which was broken and I"
-		.BYTE $D
-		.BYTE $D
-		.BYTE $A5
-aWillHelpYouInT:.BYTE "will help you in that which you seek."
-		.BYTE $D
-		.BYTE $FF
-		.BYTE $A6,  0,	1
-		.BYTE $A5
-aForReturningTh:.BYTE "For returning the first piece"
-		.BYTE $D
-		.BYTE $D
-		.BYTE $A5
-aOfMyStaffIGive:.BYTE "of my staff I give you"
-		.BYTE $D
-		.BYTE $D
-		.BYTE $A5
-aIntelligence_:	.BYTE "Intelligence."
-		.BYTE $D
-		.BYTE $FF
-		.BYTE $A6,  0,	1
-		.BYTE $A5
-aForReturning_0:.BYTE "For returning the second piece"
-		.BYTE $D
-		.BYTE $D
-		.BYTE $A5
-aOfMyStaffIGi_0:.BYTE "of my staff I give you"
-		.BYTE $D
-		.BYTE $D
-		.BYTE $A5
-aWisdom_:	.BYTE "Wisdom."
-		.BYTE $D
-		.BYTE $FF
-		.BYTE $A6,  0,	0
-		.BYTE $A5
-aWellDone:	.BYTE "Well done "
+a_:		.BYTE ".",$22,$0D,$FF
+		MOVEXY	0,0
+		.BYTE	$A5,"I am Acrinimiril the wizard. I come",$0D,$0D
+		.BYTE	$A5,"from a world many dimensions distant.",$0D,$0D
+		.BYTE	"While walking through shadow, I happened",$0D
+		.BYTE	$A5,"upon this plane many generations ago.",$0D,$FF
+		MOVEXY	0,0
+		.BYTE	$A5,"Fearing my Sorcery, the Masters of this",$0D,$0D
+		.BYTE	$A5,"world sought to destroy me. They",$0D,$0D
+		.BYTE	$A5,"succeeded in destroying my body but my",$0D,$0D
+		.BYTE	$A5,"spirit remains. My staff still holds",$0D,$FF
+		MOVEXY	0,0
+		.BYTE	$A5,"my remaining power. Find and return",$0D,$0D
+		.BYTE	$A5,"the staff which was broken and I",$0D,$0D
+		.BYTE	$A5,"will help you in that which you seek.",$0D,$FF
+		MOVEXY	0,1
+		.BYTE	$A5,"For returning the first piece",$0D,$0D
+		.BYTE	$A5,"of my staff I give you",$0D,$0D
+		.BYTE	$A5,"Intelligence.",$0D,$FF
+		MOVEXY	0,1
+		.BYTE	$A5,"For returning the second piece",$0D,$0D
+		.BYTE	$A5,"of my staff I give you",$0D,$0D
+		.BYTE	$A5,"Wisdom.",$0D,$FF
+		MOVEXY	0,0
+		.BYTE	$A5,"Well done "
 		.BYTE $B3
 		.WORD $6321
 		.BYTE $19
-a__0:		.BYTE "."
-		.BYTE $D
-		.BYTE $D
-		.BYTE $A5
-aINowHaveTheWho:.BYTE "I now have the whole staff and must"
-		.BYTE $D
-		.BYTE $D
-		.BYTE $A5
-aReturnToMyOwnW:.BYTE "return to my own world. But I will give"
-		.BYTE $D
-		.BYTE $D
-		.BYTE $A5
-aYouThisPortalA:.BYTE "you this Portal Access Card which shall"
-		.BYTE $D
-		.BYTE $FF
-		.BYTE $A6,  0,	0
-		.BYTE $A5
-aOpenTheMasters:.BYTE "open the Masters' door on the third"
-		.BYTE $D
-		.BYTE $D
-		.BYTE $A5
-aLevel_PrepareW:.BYTE "level. Prepare well before you use it."
-		.BYTE $D
-		.BYTE $D
-		.BYTE $A5
-aFarewellAndTha:.BYTE "Farewell and thank you."
-		.BYTE $D
-		.BYTE $FF
-		.BYTE $A6,  0,	3
-		.BYTE $A5
-aAcrinimirilFad:.BYTE "Acrinimiril fades away."
-		.BYTE $D
-		.BYTE $FF
-		.BYTE $A6,  0,	2
-		.BYTE $A5
-aSeekTheOracleT:.BYTE "Seek the Oracle to help thee"
-		.BYTE $D
-		.BYTE $D
-		.BYTE $A5
-aInThyQuest_:	.BYTE "in thy quest."
-		.BYTE $D
-		.BYTE $FF
+		.BYTE	".",$0D,$0D
+		.BYTE	$A5,"I now have the whole staff and must",$0D,$0D
+		.BYTE	$A5,"return to my own world. But I will give",$0D,$0D
+		.BYTE	$A5,"you this Portal Access Card which shall",$0D,$FF
+		MOVEXY	0,0
+		.BYTE	$A5,"open the Masters' door on the third",$0D,$0D
+		.BYTE	$A5,"level. Prepare well before you use it.",$0D,$0D
+		.BYTE	$A5,"Farewell and thank you.",$0D,$FF
+		MOVEXY	0,3
+		.BYTE	$A5,"Acrinimiril fades away.",$0D,$FF
+		MOVEXY	0,2
+		.BYTE	$A5,"Seek the Oracle to help thee",$0D,$0D
+		.BYTE	$A5,"in thy quest.",$0D,$FF
 
 ; --------------- S U B	R O U T	I N E ---------------------------------------
 

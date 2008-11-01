@@ -10,34 +10,21 @@
 		JSR	j_SEGLOAD
 		LDA	#1
 		JSR	$180F
-		LDA	$254
-		STA	$62
-		LDA	$255
-		STA	$63
+		dmv	$62, $254
 		LDY	#$E
 		LDA	#6
 		STA	($62),Y
 		JSR	$96F5
-		LDA	$96F3
-		STA	off_224
-		LDA	$96F4
-		STA	off_224+1
+		dmv	off_224, $96F3
 		LDA	#$FF
 		STA	$22F
 		dldi	off_7, $7758
 		dldi	off_9, $9FF0
-		LDA	#$20 ; ' '
-		STA	$B
-		LDA	#5
-		STA	$C
+		dldi	$B, $0520
 		JSR	$187E
-		LDX	#$9F ; 'Ÿ'
-		LDY	#$F0 ; 'ð'
+		ldxy	$9FF0
 		JSR	$96F0
-		LDA	#$A3 ; '£'
-		STA	off_16
-		LDA	#$76 ; 'v'
-		STA	off_16+1
+		dldi	off_16, $76A3
 		JSR	$1812
 		LDA	#3
 		JSR	$1899
@@ -46,10 +33,7 @@
 		STA	byte_76F6
 		LDA	unk_76FC,X
 		STA	byte_76F7
-		LDA	#$C5 ; 'Å'
-		STA	off_16
-		LDA	#$76 ; 'v'
-		STA	off_16+1
+		dldi	off_16, $76C5
 		JSR	$1815
 		JSR	$181E
 
@@ -69,12 +53,7 @@ loc_7689:				; CODE XREF: RAM:768Cj	RAM:7690j
 		MOVEXY	1,4
 		.BYTE $AB
 		MOVEXY	1,4
-		.BYTE $A5
-		.BYTE $7F
-aWhereAreYouq:	.BYTE "    Where are you?    "
-		.BYTE $7F
-		.BYTE $D
-		.BYTE $FF
+aWhereAreYouq:	.BYTE $A5,$7F,"    Where are you?    ",$7F,$0D,$FF
 		.BYTE $A8
 		MOVEXY	0,2
 		.BYTE $A5
@@ -83,14 +62,9 @@ aWhereAreYouq:	.BYTE "    Where are you?    "
 		.BYTE $28
 		.BYTE $D
 		MOVEXY	0,7
-		.BYTE $A5
-aPress:		.BYTE "(Press "
-		.BYTE $A1
-aSpaceBar:	.BYTE "SPACE BAR"
-		.BYTE $A0
-aToPlayAgain:	.BYTE " to play again)"
-		.BYTE $D
-		.BYTE $FF
+aPress:		.BYTE $A5,"(Press "
+aSpaceBar:	BLINK "SPACE BAR"
+aToPlayAgain:	.BYTE " to play again)",$0D,$FF
 byte_76F6:	.BYTE $FF		; DATA XREF: RAM:7672w	RAM:76CBo
 byte_76F7:	.BYTE $FF		; DATA XREF: RAM:7678w
 unk_76F8:	.BYTE	0		; DATA XREF: RAM:766Fr

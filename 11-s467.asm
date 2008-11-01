@@ -348,14 +348,9 @@ byte_7846:
 		.BYTE $AC
 		.WORD byte_7A66
 		MOVEXY	0,8
-		.BYTE $A5
-aPleaseInsertYo:.BYTE "Please insert your character disk"
-		.BYTE $D
+aPleaseInsertYo:.BYTE	$A5,"Please insert your character disk",$0D
 		MOVEXY	0,22
-		.BYTE $A5
-aPressAnyKeyT_0:.BYTE "Press any key to continue"
-		.BYTE $D
-		.BYTE $FF
+aPressAnyKeyT_0:.BYTE $A5,"Press any key to continue",$0D,$FF
 		.BYTE $AC
 		.WORD byte_7A66
 		MOVEXY	0,8
@@ -363,46 +358,23 @@ aPressAnyKeyT_0:.BYTE "Press any key to continue"
 		.BYTE $B3
 		.WORD $6321
 		.BYTE $18
-		.BYTE $20
-aHasBeenSaved_:	.BYTE "has been saved."
-		.BYTE $D
-		.BYTE $D
-		.BYTE $D
-		.BYTE $A5
-aThankYouForPla:.BYTE "Thank you for playing Alternate Reality"
-		.BYTE $D
-		.BYTE $D
-		.BYTE $A5
-aTheDungeon_:	.BYTE "The Dungeon."
-		.BYTE $D
+aHasBeenSaved_:	.BYTE	" has been saved.",$0D,$0D,$0D
+aThankYouForPla:.BYTE	$A5,"Thank you for playing Alternate Reality",$0D,$0D
+aTheDungeon_:	.BYTE	$A5,"The Dungeon.",$0D
 		MOVEXY	0,24
-		.BYTE $A5
-aPress:		.BYTE "(Press "
-		.BYTE $A1
-aSpaceBar:	.BYTE "SPACE BAR"
-		.BYTE $A0
-aToPlayAgain:	.BYTE " to play again)"
-		.BYTE $D
-		.BYTE $FF
+aPress:		.BYTE $A5,"(Press "
+aSpaceBar:	BLINK "SPACE BAR"
+aToPlayAgain:	.BYTE " to play again)",$0D,$FF
 		.BYTE $AC
 		.WORD byte_7A66
 		MOVEXY	0,8
-		.BYTE $A5
-aThatIsNotTheCo:.BYTE "That is not the correct character disk!"
-		.BYTE $D
+aThatIsNotTheCo:.BYTE	$A5,"That is not the correct character disk!",$0D
 		MOVEXY	0,22
-		.BYTE $A5
-aPressAnyKeyToC:.BYTE "Press any key to continue"
-		.BYTE $D
-		.BYTE $FF
+aPressAnyKeyToC:.BYTE	$A5,"Press any key to continue",$0D,$FF
 		.BYTE $AC
 		.WORD byte_7A66
 		MOVEXY	0,8
-		.BYTE $A5
-aErrorWritingTo:.BYTE "Error writing to character disk!"
-		.BYTE $D
-		.BYTE $D
-		.BYTE $D
+aErrorWritingTo:.BYTE $A5,"Error writing to character disk!",$0D,$0D,$0D
 		.BYTE $A5
 aMakeSureDriveD:.BYTE "Make sure drive door is closed and"
 		.BYTE $D
