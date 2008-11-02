@@ -3114,53 +3114,21 @@ aTheRetreat:	.BYTE $22,"THE RETREAT",$22
 		.BYTE $D
 		.BYTE $FF
 byte_860C:	.BYTE $A6,  0,	1	; DATA XREF: RAM:8573o
-		.BYTE $A5
-aASignReads:	.BYTE "A sign reads:"
-		.BYTE $D
-		.BYTE $D
-		.BYTE $A5
-aDerRathskeller:.BYTE $22,"Der Rathskeller Bar & Grille",$22
-		.BYTE $D
-		.BYTE $FF
+aASignReads:	.BYTE $A5,"A sign reads:",$0D,$0D
+aDerRathskeller:.BYTE $A5,$22,"Der Rathskeller Bar & Grille",$22,$0D,$FF
 byte_8640:	.BYTE $A6,  0,	1	; DATA XREF: RAM:8575o
-		.BYTE $A5
-aCarvedAboveThe:.BYTE "Carved above the doorway are the words:"
-		.BYTE $D
-		.BYTE $D
-		.BYTE $A5
-aFineWeaponsArm:.BYTE $22,"Fine Weapons & Armor",$22
-		.BYTE $D
-		.BYTE $FF
+aCarvedAboveThe:.BYTE $A5,"Carved above the doorway are the words:",$0D,$0D
+aFineWeaponsArm:.BYTE $A5,$22,"Fine Weapons & Armor",$22,$0D,$FF
 byte_8686:	.BYTE $A6,  0,	1	; DATA XREF: RAM:8577o
-		.BYTE $A5
-aAnArrowPainted:.BYTE "An arrow painted on the floor"
-		.BYTE $D
-		.BYTE $D
-		.BYTE $A5
-aPointsSouth_:	.BYTE "points South."
-		.BYTE $D
-		.BYTE $FF
+aAnArrowPainted:.BYTE $A5,"An arrow painted on the floor",$0D,$0D
+aPointsSouth_:	.BYTE $A5,"points South.",$0D,$FF
 byte_86B9:	.BYTE $A6,  0,	1	; DATA XREF: RAM:8579o
-		.BYTE $A5
-aWritingOnTheWa:.BYTE "Writing on the wall says:"
-		.BYTE $D
-		.BYTE $D
-		.BYTE $A5
-aBewareOfTheDra:.BYTE $22,"BEWARE OF THE DRAGON!",$22
-		.BYTE $D
-		.BYTE $FF
+aWritingOnTheWa:.BYTE $A5,"Writing on the wall says:",$0D,$0D
+aBewareOfTheDra:.BYTE $A5,$22,"BEWARE OF THE DRAGON!",$22,$0D,$FF
 byte_86F2:	.BYTE $A6,  0,	1	; DATA XREF: RAM:857Bo
-		.BYTE $A5
-aWritingCarvedI:.BYTE "Writing carved into the door reads:"
-		.BYTE $D
-		.BYTE $D
-		.BYTE $A5
-aTheGauntlet:	.BYTE $22,"THE GAUNTLET"
-		.BYTE $D
-		.BYTE $A5
-aDoNotEnter:	.BYTE " DO NOT ENTER",$22
-		.BYTE $D
-		.BYTE $FF
+aWritingCarvedI:.BYTE $A5,"Writing carved into the door reads:",$0D,$0D
+aTheGauntlet:	.BYTE $A5,$22,"THE GAUNTLET",$0D
+aDoNotEnter:	.BYTE $A5," DO NOT ENTER",$22,$0D,$FF
 byte_873B:	.BYTE $A6,  0,	1	; DATA XREF: RAM:857Do
 		.BYTE $A5
 aGlowingLetters:.BYTE "Glowing letters on the door proclaim:"

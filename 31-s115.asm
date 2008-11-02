@@ -720,64 +720,15 @@ i_PotionOfIntelligence:
 		.BYTE	0
 
 i_PotionOfCharisma:
-:		.BYTE	6		; DATA XREF: RAM:9450o
-		.BYTE	:++-:-
-		.BYTE	0
-		.BYTE	0
-		.BYTE	1
-		.BYTE	:+-:-
-aPotionOfCharis:.BYTE "Potion of Charisma",0
-:		.BYTE $84 ; Ñ
-		.BYTE $FF
-		.BYTE $C4 ; -
-		.BYTE	1
-		.BYTE $E0 ; ‡
-		.BYTE	1
-		.BYTE $ED ; Ì
-		.BYTE $FE ; ˛
-		.BYTE	0
-		.BYTE $91 ; ë
-		.BYTE $53 ; S
-		.BYTE	0
-		.BYTE	1
-		.BYTE	0
-		.BYTE $14
-		.BYTE	0
-		.BYTE $84 ; Ñ
-		.BYTE	0
-		.BYTE $44 ; D
-		.BYTE	1
-		.BYTE	1
-		.BYTE	0
-		.BYTE $ED ; Ì
-		.BYTE $FE ; ˛
-		.BYTE	0
-		.BYTE $81 ; Å
-		.BYTE $53 ; S
-		.BYTE	0
-		.BYTE	1
-		.BYTE	0
-		.BYTE $14
-		.BYTE	0
-		.BYTE $EC ; Ï
-		.BYTE	0
-		.BYTE $44 ; D
-aCharisma:	.BYTE "Charisma",0
-		.BYTE $74 ; t
-		.BYTE $6F ; o
-		.BYTE $20
-		.BYTE $61 ; a
-		.BYTE	0
+		Item	$06,$00,$00,$01,"Potion of Charisma"
+		.BYTE	$84,$FF,$C4,$01,$E0,$01,$ED,$FE,$00,$91,$53,$00,$01,$00,$14,$00
+		.BYTE	$84,$00,$44,$01,$01,$00,$ED,$FE,$00,$81,$53,$00,$01,$00,$14,$00
+		.BYTE	$EC,$00,$44,"Charisma",$00,$74,$6F,$20,$61
+		.BYTE	$00
 
 i_PotionOfEndurance:
-:		.BYTE	6		; DATA XREF: RAM:9452o
-		.BYTE	:++-:-
-		.BYTE	0
-		.BYTE	0
-		.BYTE	1
-		.BYTE	:+-:-
-aPotionOfEndura:.BYTE "Potion of Endurance",0
-:		.BYTE $84 ; Ñ
+		Item	$06,$00,$00,$01,"Potion of Endurance"
+		.BYTE $84 ; Ñ
 		.BYTE $FF
 		.BYTE $C4 ; -
 		.BYTE	1
@@ -796,14 +747,8 @@ aPotionOfEndura:.BYTE "Potion of Endurance",0
 		.BYTE	0
 
 i_PotionOfInvBlunt:
-:		.BYTE	6		; DATA XREF: RAM:9454o	RAM:9E6Eo
-		.BYTE	:++-:-
-		.BYTE	0
-		.BYTE	0
-		.BYTE	1
-		.BYTE	:+-:-
-aPotionOfInv_Bl:.BYTE "Potion of Inv. Blunt",0
-:		.BYTE $84 ; Ñ
+		Item	$06,$00,$00,$01,"Potion of Inv. Blunt"
+		.BYTE $84 ; Ñ
 		.BYTE $FF
 		.BYTE $C4 ; -
 		.BYTE	1
@@ -844,14 +789,8 @@ aInv_Blunt:	.BYTE "Inv. Blunt",0
 		.BYTE	0
 
 i_PotionOfInvSharp:
-:		.BYTE	6		; DATA XREF: RAM:9456o	RAM:9E70o
-		.BYTE	:++-:-
-		.BYTE	0
-		.BYTE	0
-		.BYTE	1
-		.BYTE	:+-:-
-aPotionOfInv_Sh:.BYTE "Potion of Inv. Sharp",0
-:		.BYTE $84 ; Ñ
+		Item	$06,$00,$00,$01,"Potion of Inv. Sharp"
+		.BYTE $84 ; Ñ
 		.BYTE $FF
 		.BYTE $C4 ; -
 		.BYTE	1
@@ -892,14 +831,8 @@ aInv_Sharp:	.BYTE "Inv. Sharp",0
 		.BYTE	0
 
 i_PotionOfInvEarth:
-:		.BYTE	6		; DATA XREF: RAM:9458o	RAM:9E72o
-		.BYTE	:++-:-
-		.BYTE	0
-		.BYTE	0
-		.BYTE	1
-		.BYTE	:+-:-
-aPotionOfInv_Ea:.BYTE "Potion of Inv. Earth",0
-:		.BYTE $84 ; Ñ
+		Item	$06,$00,$00,$01,"Potion of Inv. Earth"
+		.BYTE $84 ; Ñ
 		.BYTE $FF
 		.BYTE $C4 ; -
 		.BYTE	1
@@ -940,14 +873,8 @@ aInv_Earth:	.BYTE "Inv. Earth",0
 		.BYTE	0
 
 i_PotionOfInvAir:
-:		.BYTE	6		; DATA XREF: RAM:945Ao	RAM:9E74o
-		.BYTE	:++-:-
-		.BYTE	0
-		.BYTE	0
-		.BYTE	1
-		.BYTE	:+-:-
-aPotionOfInv_Ai:.BYTE "Potion of Inv. Air",0
-:		.BYTE $84 ; Ñ
+		Item	$06,$00,$00,$01,"Potion of Inv. Air"
+		.BYTE $84 ; Ñ
 		.BYTE $FF
 		.BYTE $C4 ; -
 		.BYTE	1
@@ -990,14 +917,8 @@ aInv_Air:	.BYTE "Inv. Air",0
 		.BYTE	0
 
 i_PotionOfInvFire:
-:		.BYTE	6		; DATA XREF: RAM:945Co	RAM:9E76o
-		.BYTE	:++-:-
-		.BYTE	0
-		.BYTE	0
-		.BYTE	1
-		.BYTE	:+-:-
-aPotionOfInv_Fi:.BYTE "Potion of Inv. Fire",0
-:		.BYTE $84 ; Ñ
+		Item	$06,$00,$00,$01,"Potion of Inv. Fire"
+		.BYTE $84 ; Ñ
 		.BYTE $FF
 		.BYTE $C4 ; -
 		.BYTE	1
@@ -1039,14 +960,8 @@ aInv_Fire:	.BYTE "Inv. Fire",0
 		.BYTE	0
 
 i_PotionOfInvWater:
-:		.BYTE	6		; DATA XREF: RAM:945Eo	RAM:9E78o
-		.BYTE	:++-:-
-		.BYTE	0
-		.BYTE	0
-		.BYTE	1
-		.BYTE	:+-:-
-aPotionOfInv_Wa:.BYTE "Potion of Inv. Water",0
-:		.BYTE $84 ; Ñ
+		Item	$06,$00,$00,$01,"Potion of Inv. Water"
+		.BYTE $84 ; Ñ
 		.BYTE $FF
 		.BYTE $C4 ; -
 		.BYTE	1
@@ -1087,14 +1002,8 @@ aInv_Water:	.BYTE "Inv. Water",0
 		.BYTE	0
 
 i_PotionOfRegeneration:
-:		.BYTE	6		; DATA XREF: RAM:9460o	RAM:9E7Ao
-		.BYTE	:++-:-
-		.BYTE	0
-		.BYTE	0
-		.BYTE	1
-		.BYTE	:+-:-
-aPotionOfRegene:.BYTE "Potion of Regeneration",0
-:		.BYTE $84 ; Ñ
+		Item	$06,$00,$00,$01,"Potion of Regeneration"
+		.BYTE $84 ; Ñ
 		.BYTE $FF
 		.BYTE $C4 ; -
 		.BYTE $3C ; <
@@ -1117,301 +1026,48 @@ aRegeneration:	.BYTE "Regeneration",0
 		.BYTE	0
 
 i_PotionOfInvMental:
-:		.BYTE	6		; DATA XREF: RAM:9462o	RAM:9E7Co
-		.BYTE	:++-:-
-		.BYTE	0
-		.BYTE	0
-		.BYTE	1
-		.BYTE	:+-:-
-aPotionOfInv_Me:.BYTE "Potion of Inv. Mental",0
-:		.BYTE $84 ; Ñ
-		.BYTE $FF
-		.BYTE $C4 ; -
-		.BYTE	1
-		.BYTE $E0 ; ‡
-		.BYTE	1
-		.BYTE $ED ; Ì
-		.BYTE $FE ; ˛
-		.BYTE	0
-		.BYTE $91 ; ë
-		.BYTE $AD ; ≠
-		.BYTE	0
-		.BYTE	1
-		.BYTE	0
-		.BYTE $80 ; Ä
-		.BYTE	0
-		.BYTE $84 ; Ñ
-		.BYTE	0
-		.BYTE $44 ; D
-		.BYTE	1
-		.BYTE	1
-		.BYTE	0
-		.BYTE $ED ; Ì
-		.BYTE $FE ; ˛
-		.BYTE	0
-		.BYTE $81 ; Å
-		.BYTE $AD ; ≠
-		.BYTE $C6 ; ∆
-		.BYTE	1
-		.BYTE	0
-		.BYTE $80 ; Ä
-		.BYTE	0
-		.BYTE $EC ; Ï
-		.BYTE	0
-		.BYTE $44 ; D
+		Item	$06,$00,$00,$01,"Potion of Inv. Mental"
+		.BYTE	$84,$FF,$C4,$01,$E0,$01,$ED,$FE,$00,$91,$AD,$00,$01,$00,$80,$00
+		.BYTE	$84,$00,$44,$01,$01,$00,$ED,$FE,$00,$81,$AD,$C6,$01,$00,$80,$00
+		.BYTE	$EC,$00,$44
 aInv_Mental:	.BYTE "Inv. Mental",0
 		.BYTE $67 ; g
 		.BYTE	0
 
 i_PotionOfInvCold:
-:		.BYTE	6		; DATA XREF: RAM:9464o	RAM:9E7Eo
-		.BYTE	:++-:-
-		.BYTE	0
-		.BYTE	0
-		.BYTE	1
-		.BYTE	:+-:-
-aPotionOfInv_Co:.BYTE "Potion of Inv. Cold",0
-:		.BYTE $84 ; Ñ
-		.BYTE $FF
-		.BYTE $C4 ; -
-		.BYTE	1
-		.BYTE $E0 ; ‡
-		.BYTE	1
-		.BYTE $ED ; Ì
-		.BYTE $FE ; ˛
-		.BYTE	0
-		.BYTE $91 ; ë
-		.BYTE $B0 ; ∞
-		.BYTE	0
-		.BYTE	1
-		.BYTE	0
-		.BYTE $80 ; Ä
-		.BYTE	0
-		.BYTE $84 ; Ñ
-		.BYTE	0
-		.BYTE $44 ; D
-		.BYTE	1
-		.BYTE	1
-		.BYTE	0
-		.BYTE $ED ; Ì
-		.BYTE $FE ; ˛
-		.BYTE	0
-		.BYTE $81 ; Å
-		.BYTE $B0 ; ∞
-		.BYTE $C6 ; ∆
-		.BYTE	1
-		.BYTE	0
-		.BYTE $80 ; Ä
-		.BYTE	0
-		.BYTE $EC ; Ï
-		.BYTE	0
-		.BYTE $44 ; D
-aInv_Cold:	.BYTE "Inv. Cold",0
-		.BYTE $72 ; r
-		.BYTE $73 ; s
-		.BYTE $61 ; a
-		.BYTE	0
+		Item	$06,$00,$00,$01,"Potion of Inv. Cold"
+		.BYTE	$84,$FF,$C4,$01,$E0,$01,$ED,$FE,$00,$91,$B0,$00,$01,$00,$80,$00
+		.BYTE	$84,$00,$44,$01,$01,$00,$ED,$FE,$00,$81,$B0,$C6,$01,$00,$80,$00
+		.BYTE	$EC,$00,$44,"Inv. Cold",$00,$72,$73,$61
+		.BYTE	$00
 
 i_PotionOfFruitJuice:
-:		.BYTE	6		; DATA XREF: RAM:9466o	RAM:9E80o
-		.BYTE	:++-:-
-		.BYTE	0
-		.BYTE	0
-		.BYTE	1
-		.BYTE	:+-:-
-aPotionOfFruitJ:.BYTE "Potion of Fruit Juice",0
-:		.BYTE $84 ; Ñ
-		.BYTE $FF
-		.BYTE $C4 ; -
-		.BYTE	1
-		.BYTE	1
-		.BYTE	0
-		.BYTE $ED ; Ì
-		.BYTE $FE ; ˛
-		.BYTE	0
-		.BYTE $81 ; Å
-		.BYTE $99 ; ô
-		.BYTE	0
-		.BYTE	3
-		.BYTE	1
-		.BYTE	8
-		.BYTE	0
-		.BYTE	0
+		Item	$06,$00,$00,$01,"Potion of Fruit Juice"
+		.BYTE	$84,$FF,$C4,$01,$01,$00,$ED,$FE,$00,$81,$99,$00,$03,$01,$08,$00
+		.BYTE	$00
 
 i_PotionOfWizardEye:
-:		.BYTE	6		; DATA XREF: RAM:9468o	RAM:9E82o
-		.BYTE	:++-:-
-		.BYTE	0
-		.BYTE	0
-		.BYTE	1
-		.BYTE	:+-:-
-aPotionOfWizard:.BYTE "Potion of Wizard Eye",0
-:		.BYTE $84 ; Ñ
-		.BYTE $FF
-		.BYTE $C4 ; -
-		.BYTE	1
-		.BYTE $75 ; u
-		.BYTE	1
-		.BYTE $5C ; \
-		.BYTE	0
-		.BYTE	0
-		.BYTE $91 ; ë
-		.BYTE $90 ; ê
-		.BYTE	0
-		.BYTE	1
-		.BYTE	0
-		.BYTE	1
-		.BYTE	0
-		.BYTE $84 ; Ñ
-		.BYTE	0
-		.BYTE $44 ; D
-		.BYTE	1
-		.BYTE $74 ; t
-		.BYTE	1
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE $91 ; ë
-		.BYTE $8B ; ã
-		.BYTE	0
-		.BYTE	1
-		.BYTE	0
-		.BYTE	1
-		.BYTE	0
-		.BYTE $84 ; Ñ
-		.BYTE	0
-		.BYTE $44 ; D
-		.BYTE	1
-		.BYTE	1
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE $81 ; Å
-		.BYTE $90 ; ê
-		.BYTE	0
-		.BYTE	1
-		.BYTE	0
-		.BYTE	1
-		.BYTE	0
-		.BYTE $84 ; Ñ
-		.BYTE	0
-		.BYTE $44 ; D
-		.BYTE	1
-		.BYTE	1
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE $81 ; Å
-		.BYTE $8B ; ã
-		.BYTE	0
-		.BYTE	1
-		.BYTE	0
-		.BYTE	1
-		.BYTE	0
-		.BYTE $EC ; Ï
-		.BYTE	0
-		.BYTE	4
-aWizardEye_1:	.BYTE "Wizard Eye",0
-		.BYTE	0
-		.BYTE	0
+		Item	$06,$00,$00,$01,"Potion of Wizard Eye"
+		.BYTE	$84,$FF,$C4,$01,$75,$01,$5C,$00,$00,$91,$90,$00,$01,$00,$01,$00
+		.BYTE	$84,$00,$44,$01,$74,$01,$00,$00,$00,$91,$8B,$00,$01,$00,$01,$00
+		.BYTE	$84,$00,$44,$01,$01,$00,$00,$00,$00,$81,$90,$00,$01,$00,$01,$00
+		.BYTE	$84,$00,$44,$01,$01,$00,$00,$00,$00,$81,$8B,$00,$01,$00,$01,$00
+		ItemMagic2 "Wizard Eye"
 		.BYTE	0
 
 i_PotionOfDexterity:
-:		.BYTE	6		; DATA XREF: RAM:946Ao	RAM:9E84o
-		.BYTE	:++-:-
-		.BYTE	0
-		.BYTE	0
-		.BYTE	1
-		.BYTE	:+-:-
-aPotionOfDexter:.BYTE "Potion of Dexterity",0
-:		.BYTE $84 ; Ñ
-		.BYTE $FF
-		.BYTE $C4 ; -
-		.BYTE	1
-		.BYTE $E0 ; ‡
-		.BYTE	1
-		.BYTE $ED ; Ì
-		.BYTE $FE ; ˛
-		.BYTE	0
-		.BYTE $91 ; ë
-		.BYTE $73 ; s
-		.BYTE	0
-		.BYTE	1
-		.BYTE	0
-		.BYTE $14
-		.BYTE	0
-		.BYTE $84 ; Ñ
-		.BYTE	0
-		.BYTE $44 ; D
-		.BYTE	1
-		.BYTE	1
-		.BYTE	0
-		.BYTE $ED ; Ì
-		.BYTE $FE ; ˛
-		.BYTE	0
-		.BYTE $81 ; Å
-		.BYTE $73 ; s
-		.BYTE	0
-		.BYTE	1
-		.BYTE	0
-		.BYTE $14
-		.BYTE	0
-		.BYTE $EC ; Ï
-		.BYTE	0
-		.BYTE $44 ; D
-aDexterity:	.BYTE "Dexterity",0
-		.BYTE $72 ; r
-		.BYTE $65 ; e
-		.BYTE $72 ; r
-		.BYTE	0
+		Item	$06,$00,$00,$01,"Potion of Dexterity"
+		.BYTE	$84,$FF,$C4,$01,$E0,$01,$ED,$FE,$00,$91,$73,$00,$01,$00,$14,$00
+		.BYTE	$84,$00,$44,$01,$01,$00,$ED,$FE,$00,$81,$73,$00,$01,$00,$14,$00
+		.BYTE	$EC,$00,$44,"Dexterity",$00,$72,$65,$72
+		.BYTE	$00
 
 unk_84C7:
-:		.BYTE	6		; DATA XREF: RAM:946Co	RAM:9E86o
-		.BYTE $4E ; N
-		.BYTE	0
-		.BYTE	0
-		.BYTE	1
-		.BYTE $1D
-aPotionOfInfraV:.BYTE "Potion of Infra-Vision",0
-		.BYTE $84 ; Ñ
-		.BYTE $FF
-		.BYTE $C4 ; -
-		.BYTE	1
-		.BYTE $E0 ; ‡
-		.BYTE	1
-		.BYTE $ED ; Ì
-		.BYTE $FE ; ˛
-		.BYTE	0
-		.BYTE $91 ; ë
-		.BYTE $90 ; ê
-		.BYTE	0
-		.BYTE	1
-		.BYTE	0
-		.BYTE	1
-		.BYTE	0
-		.BYTE $84 ; Ñ
-		.BYTE	0
-		.BYTE $44 ; D
-		.BYTE	1
-		.BYTE	1
-		.BYTE	0
-		.BYTE $ED ; Ì
-		.BYTE $FE ; ˛
-		.BYTE	0
-		.BYTE $81 ; Å
-		.BYTE $90 ; ê
-		.BYTE	0
-		.BYTE	1
-		.BYTE	0
-		.BYTE	1
-		.BYTE	0
-		.BYTE $EC ; Ï
-		.BYTE	0
-		.BYTE $44 ; D
-aInfraVision:	.BYTE "Infra-Vision",0
-		.BYTE	0
+		Item	$06,$00,$00,$01,"Potion of Infra-Vision"
+		.BYTE	$84,$FF,$C4,$01,$E0,$01,$ED,$FE,$00,$91,$90,$00,$01,$00,$01,$00
+		.BYTE	$84,$00,$44,$01,$01,$00,$ED,$FE,$00,$81,$90,$00,$01,$00,$01,$00
+		ItemMagic "Infra-Vision"
+		.BYTE	$00
 
 unk_8515:
 		Item	$0E,$00,$00,$01,"Potion of Cleansing"
