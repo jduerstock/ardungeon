@@ -123,7 +123,7 @@ loc_80E4:				; CODE XREF: sub_80D2+34j
 		TXA
 		AND	#$F
 		ORA	#$30 ; '0'
-		STA	$230
+		STA	SDLST
 		JSR	$24A3
 		BMI	loc_8104
 		LDX	6
@@ -137,7 +137,7 @@ loc_8104:				; CODE XREF: sub_80D2+25j
 		LDA	$24E,X
 		BMI	loc_80E0
 		LDA	#'1'
-		STA	byte_230
+		STA	SDLST
 		LDA	#4
 		STA	6
 		dldi	off_9, $0280
@@ -284,16 +284,9 @@ loc_F900:
 
 loc_F937:				; CODE XREF: RAM:8228j
 		STA	$F9CD
-		LDA	#<$96F0
-		STA	off_7	
-		LDA	#>$96F0
-		STA	off_7+1
-		LDA	#<$DC00
-		STA	off_9
-		LDA	#>$DC00
-		STA	off_9+1
-		LDX	#>$1510
-		LDY	#<$1510
+		dldi	off_7, $96F0
+		dldi	off_9, $DC00
+		ldxy	$1510
 
 loc_F94E:				; CODE XREF: RAM:8258j
 		JSR	BLOCKMOVE
@@ -354,7 +347,7 @@ loc_F9BF:				; CODE XREF: RAM:82DDj
 		TYA
 		PHA
 		STA	NMIRES
-		JMP	($222)
+		JMP	(VVBLKI)
 ; ---------------------------------------------------------------------------
 
 loc_F9C9:

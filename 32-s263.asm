@@ -1496,8 +1496,7 @@ loc_803A:				; DATA XREF: RAM:83CBo	RAM:847Co ...
 		MOVEXY	0,2
 aWhichItem531q:	.BYTE "Which item (5-31) ?",$FF
 byte_805A:	MOVEXY	0,0		; DATA XREF: RAM:8DFBo
-		.BYTE $A5
-aWelcome:	.BYTE "Welcome "
+aWelcome:	.BYTE $A5,"Welcome "
 		.BYTE $B3
 		.WORD $6321
 		.BYTE $1C
@@ -1580,10 +1579,8 @@ aWhatProvisions:.BYTE $A5,"What provisions are you interested in?",$D
 		MenuItem "0","Buy something else"
 		.BYTE $FF
 		MOVEXY	0,0
-		.BYTE $A3
-		.WORD loc_803A
-		.BYTE $A5
-aHowMany:	.BYTE "How many "
+		STRJSR	loc_803A
+aHowMany:	.BYTE $A5,"How many "
 		.BYTE $B4
 		.WORD $6A
 		.BYTE $13
@@ -1592,35 +1589,28 @@ aAt_0:		.BYTE $A5,"at "
 		.BYTE $B2
 		.WORD $6C
 		.BYTE 2
-aSilversEachq:	.BYTE " silvers each?"
-		.BYTE $D
+aSilversEachq:	.BYTE " silvers each?",$0D
 		.BYTE $A6,$10,	4
 		.BYTE	">"
-		.BYTE $A3
-		.WORD loc_8037
+		STRJSR	loc_8037
 		.BYTE $FF
-		.BYTE $A6,  0,	1
+		MOVEXY	0,1
 aIMSorryButISee:.BYTE $A5,"I'm sorry, but I seem to be out of",$0D,$0D
 aStockInThatPar:.BYTE $A5,"stock in that particular item.  I",$0D,$0D
 aExpectMyNextSh:.BYTE $A5,"expect my next shipment tommorow.",$0D,$FF
-		.BYTE $A6,  0,	2
-		.BYTE $A3
-		.WORD loc_803A
-		.BYTE $A5
-aIOnlyHave:	.BYTE "I only have "
+		MOVEXY	0,2
+		STRJSR	loc_803A
+aIOnlyHave:	.BYTE $A5,"I only have "
 		.BYTE $B2
 		.WORD $6D
 		.BYTE 3
 aOnHand_:	.BYTE " on hand."
 		.BYTE $D
-		.BYTE $A3
-		.WORD loc_8037
+		STRJSR	loc_8037
 		.BYTE $FF
-		.BYTE $A3
-		.WORD loc_803A
-		.BYTE $A6,  0,	1
-		.BYTE $A5
-aLetSSee___:	.BYTE "Let's see..."
+		STRJSR	loc_803A
+		MOVEXY	0,1
+aLetSSee___:	.BYTE $A5,"Let's see..."
 		.BYTE $B2
 		.WORD $6E
 		.BYTE 3
@@ -1634,15 +1624,12 @@ aAt:		.BYTE " at"
 		.BYTE $B2
 		.WORD $6C
 		.BYTE 3
-aSilversEachCom:.BYTE " silvers each comes to a total"
-		.BYTE $D
-		.BYTE $A5
-aOf:		.BYTE "of "
+aSilversEachCom:.BYTE " silvers each comes to a total",$0D
+aOf:		.BYTE $A5,"of "
 		.BYTE $B1
 		.WORD $6F
 		.BYTE 6
-aSilvers_:	.BYTE " silvers."
-		.BYTE $D
+aSilvers_:	.BYTE " silvers.",$0D
 byte_84F3:	.BYTE $A6, $B,	6	; DATA XREF: RAM:855Bo
 		MenuItem "1","Agree to sale"
 		.BYTE $A6, $B,	7
@@ -1658,10 +1645,8 @@ aThatWillBe:	.BYTE "That will be "
 		.BYTE $B2
 		.WORD $6C
 		.BYTE 3
-aSilversForOneO:.BYTE " silvers for one of"
-		.BYTE $D
-		.BYTE $A5
-aMyFine:	.BYTE "my fine "
+aSilversForOneO:.BYTE " silvers for one of",$0D
+aMyFine:	.BYTE $A5,"my fine "
 		.BYTE $B4
 		.WORD $6A
 		.BYTE $14
@@ -1738,8 +1723,7 @@ aInvalidEntryTr:.BYTE "Invalid entry, try again."
 		.BYTE $D
 		.BYTE $FF
 		.BYTE $A6,  0,	2
-		.BYTE $A3
-		.WORD loc_803A
+		STRJSR	loc_803A
 		.BYTE $A5
 aYouOnlyHave:	.BYTE "You only have "
 		.BYTE $B1
@@ -1747,27 +1731,22 @@ aYouOnlyHave:	.BYTE "You only have "
 		.BYTE 6
 		.BYTE "!"
 		.BYTE $D
-		.BYTE $A3
-		.WORD loc_8037
+		STRJSR	loc_8037
 		.BYTE $FF
-		.BYTE $A6,  0,	0
-		.BYTE $A5
-aWhatWouldYouLi:.BYTE "What would you like to exchange?"
-		.BYTE $D
-		.BYTE $A6,  8,	3
+		MOVEXY	0,0
+aWhatWouldYouLi:.BYTE $A5,"What would you like to exchange?",$0D
+		MOVEXY	8,3
 		MenuItem "1","Gems for coins"
-		.BYTE $A6,  8,	4
+		MOVEXY	8,4
 		MenuItem "2","Jewels for coins"
-		.BYTE $A6,  8,	5
+		MOVEXY	8,5
 		MenuItem "3","Silver & copper coins"
-		.BYTE $A6,  8,	7
+		MOVEXY	8,7
 		MenuItem "0","Done"
 		.BYTE $FF
-		.BYTE $A6,  0,	2
-		.BYTE $A3
-		.WORD loc_803A
-		.BYTE $A5
-aHereIs:	.BYTE "Here is "
+		MOVEXY	0,2
+		STRJSR	loc_803A
+aHereIs:	.BYTE $A5,"Here is "
 		.BYTE $B1
 		.WORD $72
 		.BYTE 6
@@ -1777,27 +1756,18 @@ aGoldAnd:	.BYTE " gold and "
 		.BYTE 6
 aSilverCoins_:	.BYTE " silver coins."
 		.BYTE $D
-		.BYTE $A3
-		.WORD loc_8037
+		STRJSR	loc_8037
 		.BYTE $FF
-		.BYTE $A6,  0,	0
+		MOVEXY	0,0
 		.BYTE $A3
 		.WORD $803A
-		.BYTE $A5
-aICanTTellOneJe:.BYTE "I can't tell one jewel from another"
-		.BYTE $D
-		.BYTE $D
-		.BYTE $A5
-aSoIPayAFlatRat:.BYTE "so I pay a flat rate of "
+aICanTTellOneJe:.BYTE $A5,"I can't tell one jewel from another",$0D,$0D
+aSoIPayAFlatRat:.BYTE $A5,"so I pay a flat rate of "
 		.BYTE $B2
 		.WORD $6C
 		.BYTE 3
-aPerJewel_:	.BYTE " per jewel."
-		.BYTE $D
-		.BYTE $D
-		.BYTE $A5
-aHowManyDoYouWi:.BYTE "How many do you wish to sell?"
-		.BYTE $D
+aPerJewel_:	.BYTE " per jewel.",$0D,$0D
+aHowManyDoYouWi:.BYTE $A5,"How many do you wish to sell?",$0D
 		.BYTE $A6,$10,	6
 		.BYTE '>'
 		.BYTE $A3

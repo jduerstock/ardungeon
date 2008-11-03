@@ -62,7 +62,7 @@ loc_2014:				; CODE XREF: RAM:2017j
 		dldi	$216, $22A3
 		dldi	$208, $261A	
 		dldi	$254, $199D
-		dldi	$222, $233E
+		dldi	VVBLKI, $233E
 		LDA	#$40 ; '@'
 		STA	NMIEN
 		LDA	AR_POKMSK

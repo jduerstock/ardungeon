@@ -5357,10 +5357,7 @@ loc_1E18:				; CODE XREF: RAM:1E1Cj
 		STA	$D200,X
 		DEX
 		BPL	loc_1E18
-		LDA	#$D
-		STA	$230
-		LDA	#$64
-		STA	$231
+		dldi	SDLST, $640D
 		LDA	$14
 
 loc_1E2A:				; CODE XREF: RAM:1E2Cj
@@ -6092,8 +6089,8 @@ loc_2276:				; DATA XREF: RAM:2430o
 		PLA
 
 loc_2278:				; CODE XREF: RAM:226Cj
-		dldi	$222, $E45F
-		dldi	$230, $22AD
+		dldi	VVBLKI, $E45F
+		dldi	SDLST, $22AD
 		LDA	#0
 		LDX	#7
 

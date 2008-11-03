@@ -1874,20 +1874,11 @@ sub_81FB:				; CODE XREF: RAM:8134p
 		.BYTE	2
 		.BYTE	4
 		.BYTE $A8,$FF
-		.BYTE $A6,  0,	1
-		.BYTE $A5
-aTheGuildMaster:.BYTE "The Guild Master performs a few"
-		.BYTE $D
-		.BYTE $A5
-aChantsAndGestu:.BYTE "chants and gestures and then"
-		.BYTE $D
-		.BYTE $A5
-aProclaims:	.BYTE "proclaims:"
-		.BYTE $D
-		.BYTE $D
-		.BYTE $A5
-aAllCursesHaveB:.BYTE $22,"All curses have been removed,"
-		.BYTE $D
+		MOVEXY	0,1
+aTheGuildMaster:.BYTE	$A5,"The Guild Master performs a few",$0D
+aChantsAndGestu:.BYTE $A5,"chants and gestures and then",$0D
+aProclaims:	.BYTE $A5,"proclaims:",$0D,$0D
+aAllCursesHaveB:.BYTE $A5,$22,"All curses have been removed,",$0D
 		.BYTE $A5
 		.BYTE $B4
 		.WORD $6A
@@ -2355,8 +2346,7 @@ a__6:		.BYTE '.'
 		.BYTE $D
 		.BYTE $A6, $A,	3
 		.BYTE "> "
-		.BYTE $A3
-		.WORD $90C0
+		STRJSR	$90C0
 		.BYTE $FF
 byte_8AD8:	.BYTE $FF		; DATA XREF: RAM:76E9w	RAM:88FDo
 byte_8AD9:	.BYTE $FF		; DATA XREF: RAM:76EFw

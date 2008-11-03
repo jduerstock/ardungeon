@@ -15,7 +15,7 @@ loc_B000:
 		LDA	#5
 		STA	$80
 		JSR	sub_B045
-		dldi	$0230, byte_B060
+		dldi	SDLST, byte_B060
 		LDA	$14
 
 loc_B026:				; CODE XREF: RAM:B028j

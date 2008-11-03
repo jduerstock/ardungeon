@@ -18,36 +18,24 @@ loc_760D:				; CODE XREF: RAM:7604j	RAM:7607j
 ; ---------------------------------------------------------------------------
 
 loc_7610:				; CODE XREF: RAM:7601j
-		LDA	#$FF
-		STA	$1937
-		LDA	#$48 ; 'H'
-		STA	$1977
-		LDA	#$76 ; 'v'
-		STA	$1978
-		LDA	#$5B ; '['
-		STA	$16
-		LDA	#$79 ; 'y'
-		STA	$17
+		ldi	$1937, $FF
+		dldi	$1977, $7648
+		dldi	$16, $795B
 		JSR	$184B
 		LDA	$1933
 		STA	$62
-		LDX	#$75 ; 'u'
-		LDY	#8
+		ldxy	$7508
 		LDA	#6
 		JSR	$1863
 		BCS	locret_7647
-		LDA	#$E7 ; 'ç'
-		STA	7
-		LDA	#$7F ; ''
-		STA	8
+		dldi	$07, $7FE7
 		LDA	#2
 		JSR	$180F
 
 locret_7647:				; CODE XREF: RAM:7638j
 		RTS
 ; ---------------------------------------------------------------------------
-		LDX	#$75 ; 'u'
-		LDY	#8
+		ldxy	$7508
 		LDA	#6
 		JSR	$1863
 		BCS	loc_7656
@@ -55,18 +43,12 @@ locret_7647:				; CODE XREF: RAM:7638j
 ; ---------------------------------------------------------------------------
 
 loc_7656:				; CODE XREF: RAM:7651j	RAM:775Cj
-		LDA	#1
-		STA	$16
-		LDA	#$7A ; 'z'
-		STA	$17
+		dldi	$16, $7A01
 		LDX	$62
 		JSR	$1851
 
 loc_7663:				; CODE XREF: RAM:767Cj
-		LDA	#$70 ; 'p'
-		STA	$1977
-		LDA	#$76 ; 'v'
-		STA	$1978
+		dldi	$1977, $7670
 		JMP	$1806
 ; ---------------------------------------------------------------------------
 		JSR	$1821
@@ -92,8 +74,7 @@ loc_7685:				; CODE XREF: RAM:7680j
 		STA	$758C
 		LDA	$6310
 		STA	$758D
-		LDX	#$75 ; 'u'
-		LDY	#8
+		ldxy	$7508
 		LDA	#$15
 		JSR	$1863
 		BCS	loc_76CC
@@ -102,12 +83,10 @@ loc_7685:				; CODE XREF: RAM:7680j
 		LDA	#$7A ; 'z'
 		STA	$17
 		JSR	sub_7930
-		LDX	#$7D ; '}'
-		LDY	#$7E ; '~'
+		ldxy	$7D7E
 		JSR	$1884
 		JSR	$18A5
-		LDX	#$75 ; 'u'
-		LDY	#8
+		ldxy	$7508
 		SEC
 		LDA	#$15
 		JSR	$1860
@@ -142,19 +121,13 @@ loc_76CC:				; CODE XREF: RAM:768Bj	RAM:76A5j
 ; ---------------------------------------------------------------------------
 
 loc_7702:				; CODE XREF: RAM:76E2j	RAM:76E8j
-		LDA	#$E7 ; 'ç'
-		STA	$16
-		LDA	#$7A ; 'z'
-		STA	$17
+		dldi	$16, $7AE7
 		JSR	sub_7930
 		JMP	loc_791F
 ; ---------------------------------------------------------------------------
 
 loc_7710:				; CODE XREF: RAM:76EFj
-		LDA	#$5A ; 'Z'
-		STA	$16
-		LDA	#$7B ; '{'
-		STA	$17
+		dldi	$16, $7B5A
 		JSR	sub_7930
 		JMP	loc_791F
 
@@ -216,36 +189,23 @@ loc_775F:				; CODE XREF: RAM:775Aj
 ; ---------------------------------------------------------------------------
 
 loc_7762:				; CODE XREF: RAM:7653j
-		LDA	#$5D ; ']'
-		STA	$16
-		LDA	#$79 ; 'y'
-		STA	$17
-		LDX	#$75 ; 'u'
-		LDY	#8
+		dldi	$16, $795D
+		ldxy	$7508
 		LDA	#5
 		JSR	$1863
 		BCC	loc_777D
-		LDA	#$AE ; '®'
-		STA	$16
-		LDA	#$79 ; 'y'
-		STA	$17
+		dldi	$16, $79AE
 
 loc_777D:				; CODE XREF: RAM:7773j
 		JSR	sub_7930
 
 loc_7780:				; CODE XREF: RAM:loc_77FBj
-		LDA	#$BC ; '¼'
-		STA	$16
-		LDA	#$7B ; '{'
-		STA	$17
+		dldi	$16, $7BBC
 		LDX	$62
 		JSR	$1851
 
 loc_778D:				; CODE XREF: RAM:77C2j
-		LDA	#$9A ; 'š'
-		STA	$1977
-		LDA	#$77 ; 'w'
-		STA	$1978
+		dldi	$1977, $779A
 		JMP	$1806
 ; ---------------------------------------------------------------------------
 		LDA	$31
@@ -257,8 +217,7 @@ loc_778D:				; CODE XREF: RAM:77C2j
 loc_77A3:				; CODE XREF: RAM:779Ej
 		CMP	#$32 ; '2'
 		BNE	loc_77B9
-		LDX	#$75 ; 'u'
-		LDY	#8
+		ldxy	$7508
 		LDA	#6
 		SEC
 		JSR	$1860
@@ -279,10 +238,7 @@ loc_77C4:				; CODE XREF: RAM:77BBj
 ; ---------------------------------------------------------------------------
 
 loc_77C7:				; CODE XREF: RAM:77A0j
-		LDA	#$5B ; '['
-		STA	$16
-		LDA	#$79 ; 'y'
-		STA	$17
+		dldi	$16, $795B
 		LDX	$62
 		JSR	$1851
 		JSR	$189F
@@ -333,24 +289,18 @@ loc_77FE:				; CODE XREF: RAM:77F6j
 		LDY	#2
 		STA	($41),Y
 		JSR	$18A5
-		LDX	#$75 ; 'u'
-		LDY	#8
+		ldxy	$7508
 		LDA	#5
 		SEC
 		JSR	$1860
-		LDX	#$7D ; '}'
-		LDY	#$7E ; '~'
+		ldxy	$7D7E
 		JSR	$1884
 		JSR	$18A5
-		LDX	#$75 ; 'u'
-		LDY	#8
+		ldxy	$7508
 		LDA	#$15
 		SEC
 		JSR	$1860
-		LDA	#$3C ; '<'
-		STA	$16
-		LDA	#$7C ; '|'
-		STA	$17
+		dldi	$16, $7C3C
 		JSR	sub_7930
 		JMP	loc_791F
 ; ---------------------------------------------------------------------------
@@ -360,8 +310,7 @@ loc_7857:				; CODE XREF: RAM:780Ej	RAM:7819j ...
 		LDY	#2
 		STA	($41),Y
 		JSR	$18A5
-		LDX	#$75 ; 'u'
-		LDY	#8
+		ldxy	$7508
 		LDA	#5
 		JSR	$1863
 		BCC	loc_786E
@@ -369,29 +318,20 @@ loc_7857:				; CODE XREF: RAM:780Ej	RAM:7819j ...
 ; ---------------------------------------------------------------------------
 
 loc_786E:				; CODE XREF: RAM:7869j
-		LDA	#$AE ; '®'
-		STA	$16
-		LDA	#$7C ; '|'
-		STA	$17
+		dldi	$16, $7CAE
 		JSR	sub_7930
 
 loc_7879:				; CODE XREF: RAM:loc_77C4j RAM:786Bj
 		LDA	$D20A
 		LSR	A
 		BCC	loc_788C
-		LDA	#$3C ; '<'
-		STA	$68
-		LDA	#$7D ; '}'
-		STA	$69
+		dldi	$68, $7D3C
 		LDY	#0
 		JMP	loc_7896
 ; ---------------------------------------------------------------------------
 
 loc_788C:				; CODE XREF: RAM:787Dj
-		LDA	#$5B ; '['
-		STA	$68
-		LDA	#$7D ; '}'
-		STA	$69
+		dldi	$68, $7D5B
 		LDY	#4
 
 loc_7896:				; CODE XREF: RAM:7889j
@@ -474,10 +414,7 @@ loc_790A:				; CODE XREF: RAM:78A7j	RAM:78B6j ...
 		LDX	#$45 ; 'E'
 		JSR	$1872
 		JSR	$18A5
-		LDA	#$ED ; 'í'
-		STA	$16
-		LDA	#$7C ; '|'
-		STA	$17
+		dldi	$16, $7CED
 		JSR	sub_7930
 
 loc_791F:				; CODE XREF: RAM:7677j	RAM:76C9j ...

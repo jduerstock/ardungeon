@@ -1397,8 +1397,7 @@ aMeal:		.BYTE "meal",0
 aDrink:		.BYTE "drink",0
 		MOVEXY	0,1
 		STRJSR	loc_893D
-		.BYTE $A5
-aThe:		.BYTE "The "
+aThe:		.BYTE $A5,"The "
 		.BYTE $B4
 		.WORD $6B
 		.BYTE 5
@@ -1406,22 +1405,13 @@ aWillCostYou:	.BYTE " will cost you "
 		.BYTE $B2
 		.WORD $71
 		.BYTE 3
-aSilvers_:	.BYTE " silvers."
-		.BYTE $D
-		.BYTE $D
+aSilvers_:	.BYTE " silvers.",$0D,$0D
 		STRJSR	loc_8940
-		.BYTE $A5
-aOk:		.BYTE "OK ("
-		.BYTE $A1
-aY:		.BYTE "Y"
-		.BYTE $A0
+aOk:		.BYTE $A5,"OK ("
+aY:		BLINK "Y"
 aOr:		.BYTE " or "
-		.BYTE $A1
-aN:		.BYTE "N"
-		.BYTE $A0
-		.BYTE $29 ; )
-		.BYTE $D
-		.BYTE $FF
+aN:		BLINK "N"
+		.BYTE	")",$0D,$FF
 off_7F8D:	.WORD unk_7FE1		; DATA XREF: RAM:7CC5r	RAM:7CCFr
 		.WORD unk_7FF2
 		.WORD unk_8001
@@ -1476,41 +1466,13 @@ unk_8060:	.BYTE	$06,$0E,$02,$00,"Roast Pig",0
 unk_806E:	.BYTE	$06,$10,$02,$00,"Sausages",0
 unk_807B:	.BYTE  	$0A,$14,$02,$00,"Fillet of Beef",0
 unk_808E:	.BYTE	$07,$10,$04,$00,"Ragout of Beef",0
-unk_80A1:	.BYTE  $A		; DATA XREF: RAM:7FA5o
-		.BYTE $18
-		.BYTE	4
-		.BYTE	0
-aRagoutOfDragon:.BYTE "Ragout of Dragon",0
-unk_80B6:	.BYTE	7		; DATA XREF: RAM:7FA7o
-		.BYTE $10
-		.BYTE	2
-		.BYTE	0
-aSmokedFish:	.BYTE "Smoked Fish",0
-unk_80C6:	.BYTE	7		; DATA XREF: RAM:7FA9o
-		.BYTE  $E
-		.BYTE	2
-		.BYTE	0
-aCrayfish:	.BYTE "Crayfish",0
-unk_80D3:	.BYTE	9		; DATA XREF: RAM:7FABo
-		.BYTE $12
-		.BYTE	2
-		.BYTE	0
-aLobster:	.BYTE "Lobster",0
-unk_80DF:	.BYTE	3		; DATA XREF: RAM:7FADo
-		.BYTE	8
-		.BYTE	4
-		.BYTE	0
-aABowlOfFruit:	.BYTE "a Bowl of Fruit",0
-unk_80F3:	.BYTE	3		; DATA XREF: RAM:7FAFo
-		.BYTE	5
-		.BYTE	3
-		.BYTE	0
-aAPlateOfGreens:.BYTE "a Plate of Greens",0
-unk_8109:	.BYTE	2		; DATA XREF: RAM:7FB1o
-		.BYTE	4
-		.BYTE	0
-		.BYTE	0
-aALoafOfBread:	.BYTE "a Loaf of Bread",0
+unk_80A1:	.BYTE	$0A,$18,$04,$00,"Ragout of Dragon",0
+unk_80B6:	.BYTE	$07,$10,$02,$00,"Smoked Fish",0
+unk_80C6:	.BYTE	$07,$0E,$02,$00,"Crayfish",0
+unk_80D3:	.BYTE	$09,$12,$02,$00,"Lobster",0
+unk_80DF:	.BYTE	$03,$08,$04,$00,"a Bowl of Fruit",0
+unk_80F3:	.BYTE	$03,$05,$03,$00,"a Plate of Greens",0
+unk_8109:	.BYTE	$02,$04,$00,$00,"a Loaf of Bread",0
 unk_811D:	.BYTE	3		; DATA XREF: RAM:7FB3o
 		.BYTE	8
 		.BYTE	0
@@ -1611,23 +1573,10 @@ unk_8212:	.BYTE	2		; DATA XREF: RAM:7FD9o
 		.BYTE  $C
 		.BYTE	0
 aGrapeJuice:	.BYTE "Grape Juice",0
-unk_8222:	.BYTE	1		; DATA XREF: RAM:7FDBo
-		.BYTE	2
-		.BYTE $10
-		.BYTE	0
-aMineralWater:	.BYTE "Mineral Water",0
-unk_8234:	.BYTE	2		; DATA XREF: RAM:7FDDo
-		.BYTE	6
-		.BYTE  $C
-		.BYTE	0
-aOrangeJuice:	.BYTE "Orange Juice",0
-unk_8245:	.BYTE	1		; DATA XREF: RAM:7FDFo
-		.BYTE	1
-		.BYTE	1
-		.BYTE	1
-aError:		.BYTE "ERROR!!!",0
-		.BYTE $A8 ; ¨
-		.BYTE $FF
+unk_8222:	.BYTE	$01,$02,$10,$00,"Mineral Water",0
+unk_8234:	.BYTE	$02,$06,$0C,$00,"Orange Juice",0
+unk_8245:	.BYTE	$01,$01,$01,$01,"ERROR!!!",0
+		.BYTE	$A8,$FF
 aFriend:	.BYTE "Friend",0
 aTheBar:	.BYTE "the bar",0
 aATable:	.BYTE "a table",0
@@ -1642,42 +1591,29 @@ aATable:	.BYTE "a table",0
 		.WORD byte_8372
 		.WORD byte_8839
 		.WORD byte_8868
-aSlimyThingMust:.BYTE "Slimy thing, must thee darken my door?" ; DATA XREF: RAM:826Bo
-		.BYTE $AE
-aThouFewmetWhyA:.BYTE "Thou fewmet, why art thou here?" ; DATA XREF: RAM:826Do
-		.BYTE $AE
-aWhatNowFilthyC:.BYTE "What now, filthy Cheapskate?" ; DATA XREF: RAM:826Fo
-		.BYTE $AE
-aWhatDostThouHe:.BYTE "What dost thou here, insolent one!" ; DATA XREF: RAM:8271o
-		.BYTE $AE
-aHastThouBrough:.BYTE "Hast thou brought enough cash?" ; DATA XREF: RAM:8273o
-		.BYTE $AE
-aThyWelcomeIsWe:.BYTE "Thy welcome is wearing thin." ; DATA XREF: RAM:8275o
-		.BYTE $AE
-aHelloStranger:	.BYTE "Hello, Stranger!"
-		.BYTE $AE
+aSlimyThingMust:.BYTE "Slimy thing, must thee darken my door?",$AE
+aThouFewmetWhyA:.BYTE "Thou fewmet, why art thou here?",$AE
+aWhatNowFilthyC:.BYTE "What now, filthy Cheapskate?",$AE
+aWhatDostThouHe:.BYTE "What dost thou here, insolent one!",$AE
+aHastThouBrough:.BYTE "Hast thou brought enough cash?",$AE
+aThyWelcomeIsWe:.BYTE "Thy welcome is wearing thin.",$AE
+aHelloStranger:	.BYTE "Hello, Stranger!",$AE
 aHello:		.BYTE "Hello, "         ; DATA XREF: RAM:8277o
 		.BYTE $B4
 		.WORD $65
 		.BYTE $20
-		.BYTE "!"
-		.BYTE $AE
+		.BYTE "!",$AE
 aWellMet:	.BYTE "Well met, "      ; DATA XREF: RAM:8279o
 		.BYTE $B4
 		.WORD $65
 		.BYTE $20
-		.BYTE "!"
-		.BYTE $AE
+		.BYTE "!",$AE
 byte_8372:	.BYTE $B3		; DATA XREF: RAM:827Bo
 		.WORD $6321
 		.BYTE $20
-aIsWelcomeHere:	.BYTE " is welcome here!"
-		.BYTE $AE
+aIsWelcomeHere:	.BYTE " is welcome here!",$AE
 		.BYTE $A6,  0,	2
-		.BYTE $A5
-aThereIsNobodyE:.BYTE "There is nobody else here."
-		.BYTE $D
-		.BYTE $FF
+aThereIsNobodyE:.BYTE $A5,"There is nobody else here.",$0D,$FF
 		.BYTE $A6,  0,	2
 		.BYTE $A5
 aGetThat:	.BYTE "Get that "
@@ -1785,11 +1721,8 @@ aSilvers__0:	.BYTE " silvers."
 		.BYTE $D
 		.BYTE $D
 		.BYTE $D
-		.BYTE $A5
-aDostThouStillW:.BYTE "Dost thou still wish to buy? ("
-		.BYTE $A1
-aY_0:		.BYTE 'Y'
-		.BYTE $A0
+aDostThouStillW:.BYTE $A5,"Dost thou still wish to buy? ("
+aY_0:		BLINK 'Y'
 aOr_0:		.BYTE " or "
 aN_0:		BLINK 'N'
 		.BYTE ')',$0D,$FF
@@ -1909,13 +1842,8 @@ aN_3:		.BYTE "N"
 		.BYTE $FF
 		.BYTE $A6,  0,	1
 		.BYTE $A5
-aYouHaveNotFini:.BYTE "You have not finished your meal."
-		.BYTE $D
-		.BYTE $D
-		.BYTE $A5
-aIWillWrapThatU:.BYTE "I will wrap that up for you."
-		.BYTE $D
-		.BYTE $FF
+aYouHaveNotFini:.BYTE "You have not finished your meal.",$0D,$0D
+aIWillWrapThatU:.BYTE $A5,"I will wrap that up for you.",$0D,$FF
 		.BYTE $A6, $A,	2
 		MenuItem "1","Say goodbye"
 		.BYTE $A6, $A,	4

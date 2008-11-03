@@ -1029,9 +1029,7 @@ i_PotionOfInvMental:
 		Item	$06,$00,$00,$01,"Potion of Inv. Mental"
 		.BYTE	$84,$FF,$C4,$01,$E0,$01,$ED,$FE,$00,$91,$AD,$00,$01,$00,$80,$00
 		.BYTE	$84,$00,$44,$01,$01,$00,$ED,$FE,$00,$81,$AD,$C6,$01,$00,$80,$00
-		.BYTE	$EC,$00,$44
-aInv_Mental:	.BYTE "Inv. Mental",0
-		.BYTE $67 ; g
+		.BYTE	$EC,$00,$44,"Inv. Mental",$00,$67
 		.BYTE	0
 
 i_PotionOfInvCold:

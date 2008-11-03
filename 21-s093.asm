@@ -1,30 +1,28 @@
 
+	.macro HBStr Arg
+		.scope
+			Len = .strlen(Arg)-1
+			.repeat Len, I
+				.BYTE .strat(Arg, I)
+			.endrep
+			.BYTE .strat(Arg, Len) | $80
+		.endscope
+	.endmacro
+
 ;		.ORG	$AC00
 		.BYTE 2
 		.WORD aToastLev1_3	; "toast! LEV 1.3"
-aAtA:		.BYTE "at a"
-		.BYTE $A0
-aInA:		.BYTE "in a"
-		.BYTE $A0
-aInThe:		.BYTE "in the"
-		.BYTE $A0
-aRoom:		.BYTE " room"
-		.BYTE $AE
-aStairwayLeadin:.BYTE "stairway leading down"
-		.BYTE $AE
-aInASecre:	.BYTE "in a secre"
-		.BYTE $F4
-aPassage:	.BYTE "passage"
-		.BYTE $AE
-		.BYTE $20
-aAnotherSmallRo:.BYTE "another small room"
-		.BYTE $AE
-aHallway:	.BYTE "hallway"
-		.BYTE $AE
-aInAQuie:	.BYTE "in a quie"
-		.BYTE $F4
-aArea:		.BYTE " area"
-		.BYTE $AE
+		HBStr "at a "
+		HBStr "in a "
+		HBStr "in the "
+		HBStr " room."
+		HBStr "stairway leading down."
+		HBStr "in a secret"
+		HBStr "passage."
+		HBStr " another small room."
+		HBStr "hallway."
+		HBStr "in a quiet"
+		HBStr " area."
 aToastLev1_3:	.BYTE "toast! LEV 1.3",0 ; DATA XREF: RAM:AC01o
 		.BYTE $82
 aTaureanMaze_:	.BYTE "Taurean Maze.",0

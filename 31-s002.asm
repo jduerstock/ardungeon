@@ -644,8 +644,7 @@ loc_7A05:				; CODE XREF: sub_88B0-E4Ej
 loc_7A1A:				; CODE XREF: sub_88B0-E9Ej
 		LDA	$C2,X
 		BEQ	loc_7A28
-		LDX	#$99 ; '™'
-		LDY	#$D
+		ldxy	$990D
 		JSR	sub_8ECE
 		JMP	loc_7A53
 ; ---------------------------------------------------------------------------
@@ -1655,8 +1654,7 @@ sub_8061:				; CODE XREF: RAM:7FB0p
 		PHA
 		LDA	byte_8081,X
 		PHA
-		LDX	#$98 ; '˜'
-		LDY	#$81 ; ''
+		ldxy	$9881
 		JSR	sub_8EEF
 		LDA	#0
 		STA	$63F0
@@ -2912,8 +2910,7 @@ loc_87A9:				; CODE XREF: RAM:878Dj
 		BNE	loc_87BB
 		INC	$638E
 		INC	$638E
-		LDX	#$A3 ; '£'
-		LDY	#6
+		ldxy	$A306
 		JMP	loc_87E2
 ; ---------------------------------------------------------------------------
 
@@ -3934,7 +3931,7 @@ sub_8D6E:				; CODE XREF: sub_8CCB:loc_8B80p
 ; START	OF FUNCTION CHUNK FOR sub_88B0
 
 loc_8D74:				; CODE XREF: RAM:7740j	sub_88B0-DF4j ...
-		ldxy	$A4EC
+		ldxy	a_monster_leaves
 		JSR	loc_8ED1
 		JMP	loc_776D
 ; END OF FUNCTION CHUNK	FOR sub_88B0
@@ -5915,17 +5912,12 @@ byte_9881:
 		.BYTE $A8,$FF
 
 a_SurprisedNoOptions:
-		.BYTE $A6,  0,	1
-		.BYTE $A5
-aSurprised:	.BYTE "SURPRISED"
-		.BYTE $D
+		MOVEXY	0,1
+aSurprised:	.BYTE $A5,"SURPRISED",$0D
 
 a_NoOptions:
 		.BYTE $D
-		.BYTE $A5
-aNoOptions_:	.BYTE "No options."
-		.BYTE $D
-		.BYTE $FF
+aNoOptions_:	.BYTE $A5,"No options.",$0D,$FF
 aFood:		.BYTE "food",0
 aWater:		.BYTE "water",0
 aTorches:	.BYTE "torches",0
@@ -6080,8 +6072,7 @@ a_GrabNothing:
 		.BYTE	$B3
 		.WORD	a_YouGrab
 		.BYTE	$A
-		.BYTE	"nothing of value."
-		.BYTE	$D,$FF
+		.BYTE	"nothing of value.",$0D,$FF
 
 a_GrabSome:
 		MOVEXY	0,2	
@@ -6116,22 +6107,17 @@ a_AttemptFailed:
 		STRJSR	sub_9C8A
 		.BYTE	$AC
 		.WORD	$7653
-		.BYTE	"sees you have no"
-		.BYTE	$D
+		.BYTE	"sees you have no",$0D
 		.BYTE	$A5
 		.BYTE	$B4
 		.WORD	$76D9
 		.BYTE	$B
-		.BYTE	" and tosses you one saying:"
-		.BYTE	$D
-		.BYTE	$D
-		.BYTE	$A5
-		.BYTE	$22,"For the cause "
+		.BYTE	" and tosses you one saying:",$0D,$0D
+		.BYTE	$A5,$22,"For the cause "
 		.BYTE	$B4
 		.WORD	off_76DB
 		.BYTE	$A
-		.BYTE	".",$22
-		.BYTE	$D,$FF
+		.BYTE	".",$22,$0D,$FF
 
 ; ---------------------------------------------------------------------------
 sub_9C8A:
@@ -6153,8 +6139,7 @@ a_BreaksTheSpell:
 		.BYTE	"breaks the spell.",$D,$FF
 
 		MOVEXY	0,2
-		.BYTE	$A5
-		.BYTE	"The "
+		.BYTE	$A5,"The "
 		.BYTE	$B4
 		.WORD	off_AA01
 		.BYTE	$10
@@ -6256,18 +6241,16 @@ a_You_The_WithYour:
 		.WORD	off_AA01
 		.BYTE	$14
 		.BYTE	$D
-		.BYTE	$A5
-		.BYTE	"with your "
+		.BYTE	$A5,"with your "
 		.BYTE	$B4
 		.WORD	$9E3C
 		.BYTE	$1E
 		.BYTE	$D
 		.BYTE	$A3
-		.WORD	$9EE5
+		.WORD	loc_9EE5
 		.BYTE	$A3
-		.WORD	$9EFC
-		.BYTE	$A5
-		.BYTE	" for "
+		.WORD	loc_9EFC
+		.BYTE	$A5," for "
 		.BYTE	$B1
 		.WORD	$A7
 		.BYTE	6
@@ -6275,8 +6258,7 @@ a_You_The_WithYour:
 		.BYTE	$A3
 		.WORD	$9F02
 		.BYTE	$FF
-		.BYTE	$A5
-		.BYTE	"which has no effect!",$D,$FF
+		.BYTE	$A5,"which has no effect!",$D,$FF
 
 loc_9EE5:					; DATA XREF: RAM:9EB9o
 		dldi	off_16, $9EBB
@@ -6378,8 +6360,7 @@ a_The_PointsOfDamage:
 		.BYTE $A3
 		.WORD loc_9FDD
 		.BYTE $A6,  0,	3
-		.BYTE $A5
-		.BYTE	"The "
+		.BYTE	$A5,"The "
 		.BYTE $AD
 		.WORD off_9FDB
 		.BYTE $D
@@ -6564,8 +6545,7 @@ off_A1A8:	.WORD	0
 
 a_IsBewildered:
 		MOVEXY	0,3
-		.BYTE	$A5
-		.BYTE	"..."
+		.BYTE	$A5,"..."
 		.BYTE	$B4
 		.WORD	off_AA01
 		.BYTE	$10
@@ -6573,8 +6553,8 @@ a_IsBewildered:
 
 		.BYTE	$AC
 		.WORD	$7665
-		.BYTE	"drinks a potion",$D,$A5
-		.BYTE	"and is healed.",$D,$FF
+		.BYTE	"drinks a potion",$D
+		.BYTE	$A5,"and is healed.",$D,$FF
 		.BYTE	"but it fails!",0
 		.BYTE	$AC
 		.WORD	$7653
@@ -6605,11 +6585,9 @@ a_GetsUp:
 		.BYTE	"waits",$D,$A5
 		.BYTE	"for an opening.",$D,$FF
 		MOVEXY	0,3
-		.BYTE	$A5
-		.BYTE	"You feel strengthened from the attack!",$D,$FF
+		.BYTE	$A5,"You feel strengthened from the attack!",$D,$FF
 		MOVEXY	0,2
-		.BYTE	$A5
-		.BYTE	"Your "
+		.BYTE	$A5,"Your "
 		.BYTE	$B4
 		.WORD	$70
 		.BYTE	$14
@@ -6765,6 +6743,8 @@ unk_A491:	.BYTE	>aHacks			; DATA XREF: RAM:8777r
 		.BYTE	$AC
 		.WORD	$7653
 		.BYTE	"flies away!",$D,$FF
+
+a_monster_leaves:
 		.BYTE	$AC
 		.WORD	$7653
 		.BYTE	"leaves.",$D,$FF
@@ -7056,30 +7036,18 @@ word_A8A1:	.WORD	$02DC
 		.WORD	$01EA
 		.WORD	$01EA
 		.WORD	$01EA
-		.BYTE $B2 ; ²
-		.BYTE	5
-		.BYTE $EE ; î
-		.BYTE	1
-		.BYTE $EA ; ê
-		.BYTE	1
-		.BYTE $F8 ; ø
-		.BYTE	0
-		.BYTE $DC ; Ü
-		.BYTE	2
-		.BYTE $EA ; ê
-		.BYTE	1
-		.BYTE $EA ; ê
-		.BYTE	1
-		.BYTE $EA ; ê
-		.BYTE	1
-		.BYTE $CE ; Î
-		.BYTE	3
-		.BYTE $EA ; ê
-		.BYTE	1
-		.BYTE $EE ; î
-		.BYTE	1
-		.BYTE $F8 ; ø
-		.BYTE	0
+		.WORD	$05B2
+		.WORD	$01EE
+		.WORD	$01EA
+		.WORD	$00F8
+		.WORD	$02DC
+		.WORD	$01EA
+		.WORD	$01EA
+		.WORD	$01EA
+		.WORD	$03CE
+		.WORD	$01EA
+		.WORD	$01EE
+		.WORD	$00F8
 		LDY	#$02
 		LDA	#$10
 		STA	($62),Y
