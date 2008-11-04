@@ -10,13 +10,22 @@ off_6E	= $6E
 off_D6	= $D6
 off_F4	= $F4
 
-byte_AA00 = $AA00
-off_AA01 = $AA01
-off_AA03 = $AA03
-off_AA05 = $AA05
+byte_AA00 = $AA00			; maximum number of monsters
+off_AA01 = $AA01			; singular monster name
+off_AA03 = $AA03			; plural monster name
+off_AA05 = $AA05			; monster weapon pointer array
+byte_AA0B = $AA0B
+byte_AA0C = $AA0C
+byte_AA0D = $AA0D
+byte_AA0E = $AA0E
+byte_AA0F = $AA0F
+byte_AA10 = $AA10
+byte_AA11 = $AA11
+byte_AA12 = $AA12
 byte_AA24 = $AA24
 byte_AA2B = $AA2B
-byte_AA37 = $AA37
+byte_AA37 = $AA37			; monster armor byte array
+byte_AA42 = $AA42
 
 ;		.ORG	$7600
 		.BYTE	1
@@ -6145,7 +6154,7 @@ a_BreaksTheSpell:
 		.BYTE	$10
 		.BYTE	" "
 		.BYTE	$AC
-		.WORD	$AA42
+		.WORD	byte_AA42
 		.BYTE	".",$D,$FF
 
 a_YouWaitForOpening:
@@ -6840,7 +6849,7 @@ a_YouEncounter:
 		MOVEXY	0,2
 		.BYTE	$A5,"You encounter "
 		.BYTE	$B2
-		.WORD	$AA00
+		.WORD	byte_AA00
 		.BYTE	1
 		.BYTE	" "
 		.BYTE	$B4
@@ -7173,15 +7182,15 @@ word_A8A1:	.WORD	$02DC
 		.BYTE $19
 		.BYTE $D0 ; Ð
 		.BYTE  $E
-byte_AA0B:	.BYTE $AE		; DATA XREF: sub_852B:loc_8538r
+		.BYTE $AE		; DATA XREF: sub_852B:loc_8538r
 					; sub_852B+1Ar	...
-byte_AA0C:	.BYTE $5A		; DATA XREF: sub_7B59+10r sub_7B59+61r ...
-byte_AA0D:	.BYTE $19		; DATA XREF: sub_7C9E+7Fr sub_7C9E+82w ...
-byte_AA0E:	.BYTE $BD		; DATA XREF: sub_7C9E+33r sub_7C9E+38w ...
-byte_AA0F:	.BYTE $53		; DATA XREF: RAM:8095w	RAM:813Dw ...
-byte_AA10:	.BYTE $AB		; DATA XREF: RAM:loc_7819r
-byte_AA11:	.BYTE $8D		; DATA XREF: sub_7C78r
-byte_AA12:	.BYTE $20		; DATA XREF: sub_7C78+3r
+		.BYTE $5A		; DATA XREF: sub_7B59+10r sub_7B59+61r ...
+		.BYTE $19		; DATA XREF: sub_7C9E+7Fr sub_7C9E+82w ...
+		.BYTE $BD		; DATA XREF: sub_7C9E+33r sub_7C9E+38w ...
+		.BYTE $53		; DATA XREF: RAM:8095w	RAM:813Dw ...
+		.BYTE $AB		; DATA XREF: RAM:loc_7819r
+		.BYTE $8D		; DATA XREF: sub_7C78r
+		.BYTE $20		; DATA XREF: sub_7C78+3r
 off_AA13:	.WORD	$8563		; DATA XREF: RAM:7845r
 byte_AA15:	.BYTE $8D		; DATA XREF: sub_7DC6r
 byte_AA16:	.BYTE $4C		; DATA XREF: RAM:loc_784Br sub_7DC6+3r
