@@ -28,6 +28,7 @@ ASM2_SOURCES= \
 	21-s092.asm 21-s093.asm \
 	21-s133.asm 21-s134.asm \
 	21-s174.asm 21-s175.asm \
+	21-s215.asm 21-s216.asm \
 	22-s001.asm 22-s002.asm \
 	22-s036.asm 22-s037.asm \
 	22-s093.asm 22-s094.asm \
@@ -109,44 +110,44 @@ all: $(BINARIES) $(OBJECTS) ar32.img
 	$(CA) $(AFLAGS) $< -o $@
 
 11-s001.o: 11-s001.asm
-	ca65 -o 11-s001.o 11-s001.asm
+	ca65 -o $@ $<
 
 11-s002.o: 11-s002.asm
-	ca65 -o 11-s002.o 11-s002.asm
+	ca65 -o $@ $<
 
 11-s006.o: 11-s006.asm
-	ca65 -o 11-s006.o 11-s006.asm
+	ca65 -o $@ $<
 
 11-s011.o: 11-s011.asm
-	ca65 -o 11-s011.o 11-s011.asm
+	ca65 -o $@ $<
 
 11-s016.bin: 11-s016.asm
-	ca65 -o 11-s016.o 11-s016.asm
+	ca65 -o $@ $<
 
 11-s017.bin: 11-s017.asm
-	cl65 --start-addr 0x0600 -t none 11-s017.asm -o 11-s017.bin
+	cl65 --start-addr 0x0600 -t none $< -o $@
 	sha1sum -c 11-s017.sha1
 
 11-s205.bin: 11-s205.asm
-	ca65 -o 11-s205.o 11-s205.asm
-	ld65 -o 11-s205.bin -C 11-s205.cfg 11-s205.o
+	ca65 -o 11-s205.o $<
+	ld65 -o $@ -C 11-s205.cfg 11-s205.o
 	sha1sum -c 11-s205.sha1
 
 11-s225.bin: 11-s225.asm
-	cl65 --start-addr 0x1e00 -t none 11-s225.asm -o 11-s225.bin
+	cl65 --start-addr 0x1e00 -t none $< -o $@
 	sha1sum -c 11-s225.sha1
 
 11-s258.bin: 11-s258.asm
-	cl65 --start-addr 0x0100 -t none 11-s258.asm -o 11-s258.bin
+	cl65 --start-addr 0x0100 -t none $< -o $@
 	sha1sum -c 11-s258.sha1
 
 11-s259.bin: 11-s259.asm
-	cl65 --start-addr 0x7600 -t none 11-s259.asm -o 11-s259.bin
+	cl65 --start-addr 0x7600 -t none $< -o $@
 	sha1sum -c 11-s259.sha1
 	./encrypt.php 11-s259.bin 4102001a983277ddd64843acbaf7d040
 
 11-s311.bin: 11-s311.asm
-	cl65 --start-addr 0x0100 -t none 11-s311.asm -o 11-s311.bin
+	cl65 --start-addr 0x0100 -t none $< -o $@
 	sha1sum -c 11-s311.sha1
 
 11-s312.bin: 11-s312.asm
@@ -270,6 +271,15 @@ all: $(BINARIES) $(OBJECTS) ar32.img
 	cl65 --start-addr 0xAC00 -t none 21-s175.asm -o 21-s175.bin
 	sha1sum -c 21-s175.sha1
 	./encrypt.php 21-s175.bin 48ae00140f440b8d1e26b98c5c7a8b98
+
+21-s215.bin: 21-s215.asm
+	cl65 --start-addr 0x0100 -t none $< -o $@
+	sha1sum -c 21-s215.sha1
+
+21-s216.bin: 21-s216.asm
+	cl65 --start-addr 0xAC00 -t none $< -o $@
+	sha1sum -c 21-s216.sha1
+	./encrypt.php 21-s216.bin 48d700145c3854ea62676f9652bb2e66
 
 22-s001.bin: 22-s001.asm
 	cl65 --start-addr 0x0100 -t none 22-s001.asm -o 22-s001.bin
