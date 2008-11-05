@@ -12,13 +12,11 @@
 ; ---------------------------------------------------------------------------
 		JMP	loc_760C
 ; ---------------------------------------------------------------------------
-		.BYTE $6F ; o
-		.BYTE $85 ; Ö
+		.WORD	off_856F
 ; ---------------------------------------------------------------------------
 
 loc_760C:				; CODE XREF: RAM:7604j	RAM:7607j
-		LDA	#0
-		STA	$192A
+		ldi	$192A, $00
 		RTS
 ; ---------------------------------------------------------------------------
 
@@ -34,7 +32,7 @@ loc_761E:				; CODE XREF: RAM:7617j
 		LDX	#$48 ; 'H'
 
 loc_762A:				; CODE XREF: RAM:7630j
-		LDA	$78A2,X
+		LDA	loc_78A2,X
 		STA	$90,X
 		DEX
 		BPL	loc_762A
@@ -65,8 +63,7 @@ loc_7649:				; CODE XREF: RAM:7644j
 		LDA	RANDOM
 		CMP	#$EC ; 'Ï'
 		BCC	loc_766E
-		LDX	#$77 ; 'w'
-		LDY	#$FD ; '˝'
+		ldxy	$77FD
 		JSR	$1884
 		JMP	loc_76A0
 ; ---------------------------------------------------------------------------
@@ -107,14 +104,14 @@ loc_76A0:				; CODE XREF: RAM:7654j	RAM:766Bj ...
 		JSR	$1887
 		BEQ	loc_76CF
 		LDY	#0
-		LDA	($41),Y
+		LDA	(off_41),Y
 		BPL	loc_76CF
 		AND	#7
 		CMP	#1
 		BEQ	loc_76CF
 		LDA	#2
 		LDY	#2
-		STA	($41),Y
+		STA	(off_41),Y
 		JSR	$18A5
 
 loc_76CF:				; CODE XREF: RAM:76A3j	RAM:76A8j ...
@@ -193,10 +190,7 @@ loc_774B:				; CODE XREF: RAM:7745j
 		JSR	loc_7856
 
 loc_774E:				; CODE XREF: RAM:7730j
-		LDA	#$E5 ; 'Â'
-		STA	$89
-		LDA	#$80 ; 'Ä'
-		STA	$8A
+		dldi	$89, $80E5
 		JSR	loc_7EF4
 		LDA	$63C0
 		BEQ	loc_776F
@@ -427,41 +421,41 @@ loc_788C:				; CODE XREF: sub_7888+17j
 ; ---------------------------------------------------------------------------
 
 loc_78A2:				; CODE XREF: RAM:78E5j
-		LDX	$64
-		LDA	unk_8AFD,X
-		STA	$B2
-		LDA	unk_8B45,X
-		STA	$B3
-		LDA	$FFFF
-		AND	#$FF
-		TAX
-		LDA	unk_8E00,X
-		AND	#$FF
-		STA	$B0
-		LDA	($B2),Y
-		BIT	$7E
-		BNE	loc_78C6
-		ORA	#$FF
-		STA	$FFFF,Y
+		LDX	$64		; $0090
+		LDA	unk_8AFD,X	; $0092
+		STA	$B2		; $0095
+		LDA	unk_8B45,X	; $0097
+		STA	$B3		; $009A
+		LDA	$FFFF		; $009C
+		AND	#$FF		; $009F
+		TAX			; $00A1
+		LDA	unk_8E00,X	; $00A2
+		AND	#$FF		; $00A5
+		STA	$B0		; $00A7
+		LDA	($B2),Y		; $00A9
+		BIT	$7E		; $00AB
+		BNE	loc_78C6	; $00AD
+		ORA	#$FF		; $00AF
+		STA	$FFFF,Y		; $00B1
 
 loc_78C6:				; CODE XREF: RAM:78BFj
-		LDA	$6E
-		ADC	$76
-		STA	$6E
-		LDA	$77
-		ADC	$6F
-		STA	$6F
-		TAX
-		LDA	$FFFF,X
-		ADC	$72
-		STA	$9D
-		LDA	$FFFF,X
-		ADC	$73
-		STA	$9E
-		INC	$64
-		DEC	$62
-		BNE	loc_78A2
-		JMP	loc_79F5
+		LDA	$6E		; $00B4
+		ADC	$76		; $00B6
+		STA	$6E		; $00B8
+		LDA	$77		; $00BA
+		ADC	$6F		; $00BC
+		STA	$6F		; $00BE
+		TAX			; $00C0
+		LDA	$FFFF,X		; $00C1
+		ADC	$72		; $00C4
+		STA	$9D		; $00C6
+		LDA	$FFFF,X		; $00C8
+		ADC	$73		; $00CB
+		STA	$9E		; $00CD
+		INC	$64		; $00CF
+		DEC	$62		; $00D1
+		BNE	loc_78A2	; $00D3
+		JMP	loc_79F5	; $00D5
 ; ---------------------------------------------------------------------------
 
 loc_78EA:				; CODE XREF: sub_7AD4+E0p
@@ -622,28 +616,28 @@ loc_79E7:				; CODE XREF: RAM:79E3j
 loc_79EF:				; DATA XREF: RAM:7971w
 		LDY	#$FF
 		CLC
-		JMP	$90
+		JMP	$90		; jump to the code relocated to page zero
 ; ---------------------------------------------------------------------------
 
 loc_79F5:				; CODE XREF: RAM:78E7j	RAM:7951j
 		CLC
-		LDA	$66
-		ADC	$6A
-		STA	$66
-		LDA	$67
-		ADC	$6B
-		STA	$67
+		LDA	$66		; off_66 += off_6A
+		ADC	$6A		; 
+		STA	$66		;
+		LDA	$67		;
+		ADC	$6B		;
+		STA	$67		;
 		CLC
-		LDA	$63
-		ADC	byte_8F7A
+		LDA	$63		;
+		ADC	byte_8F7A	; byte_63 += byte_8F7A
 		STA	$63
 		CLC
-		LDA	$6C
-		ADC	$68
-		STA	$6C
-		LDA	$6D
-		ADC	$69
-		STA	$6D
+		LDA	$6C		; off_6C += off_68
+		ADC	$68		;
+		STA	$6C		;
+		LDA	$6D		;
+		ADC	$69		;
+		STA	$6D		;
 		CMP	#$48 ; 'H'
 		BCS	locret_7A1E
 		JMP	loc_793E
@@ -1518,15 +1512,9 @@ loc_7F44:				; CODE XREF: RAM:7F40j
 ; START	OF FUNCTION CHUNK FOR sub_7EBC
 
 loc_7F4B:				; CODE XREF: sub_7EBC+8j
-		LDA	#$A9 ; '©'
-		STA	loc_7F31
-		LDA	#$FF
-		STA	loc_7F31+1
+		dldi	loc_7F31, $FFA9	; opcode for "LDA #$FF"
 		JSR	loc_7EF4
-		LDA	#$B1 ; '±'
-		STA	loc_7F31
-		LDA	#$89 ; 'â'
-		STA	loc_7F31+1
+		dldi	loc_7F31, $89B1	; opcode for "LDA ($89),Y"
 		RTS
 ; END OF FUNCTION CHUNK	FOR sub_7EBC
 ; ---------------------------------------------------------------------------
@@ -3070,6 +3058,8 @@ unk_854A:	.BYTE $20		; DATA XREF: RAM:83C4o
 		.BYTE $80 ; Ä
 		.BYTE $A0 ; †
 		.BYTE	0
+
+off_856F:
 		.WORD byte_85A1
 		.WORD byte_85DA
 		.WORD byte_860C
@@ -3095,168 +3085,102 @@ unk_854A:	.BYTE $20		; DATA XREF: RAM:83C4o
 		.WORD byte_8A62
 		.WORD byte_8A98
 		.WORD byte_8AC2
-byte_85A1:	.BYTE $A6,  0,	1	; DATA XREF: RAM:856Fo
-		.BYTE $A5
-aASignOnTheDoor:.BYTE "A sign on the door says:"
-		.BYTE $D
-		.BYTE $D
-		.BYTE $A5
-aDamonPythiasSh:.BYTE $22,"Damon & Pythias Shoppe",$22
-		.BYTE $D
-		.BYTE $FF
-byte_85DA:	.BYTE $A6,  0,	1	; DATA XREF: RAM:8571o
-aASignAboveTheD:.BYTE $A5,"A sign above the door reads:",$0D,$0D
-aTheRetreat:	.BYTE $A5,$22,"THE RETREAT",$22,$0D,$FF
-byte_860C:	.BYTE $A6,  0,	1	; DATA XREF: RAM:8573o
-aASignReads:	.BYTE $A5,"A sign reads:",$0D,$0D
-aDerRathskeller:.BYTE $A5,$22,"Der Rathskeller Bar & Grille",$22,$0D,$FF
-byte_8640:	.BYTE $A6,  0,	1	; DATA XREF: RAM:8575o
-aCarvedAboveThe:.BYTE $A5,"Carved above the doorway are the words:",$0D,$0D
-aFineWeaponsArm:.BYTE $A5,$22,"Fine Weapons & Armor",$22,$0D,$FF
-byte_8686:	.BYTE $A6,  0,	1	; DATA XREF: RAM:8577o
-aAnArrowPainted:.BYTE $A5,"An arrow painted on the floor",$0D,$0D
-aPointsSouth_:	.BYTE $A5,"points South.",$0D,$FF
-byte_86B9:	.BYTE $A6,  0,	1	; DATA XREF: RAM:8579o
-aWritingOnTheWa:.BYTE $A5,"Writing on the wall says:",$0D,$0D
-aBewareOfTheDra:.BYTE $A5,$22,"BEWARE OF THE DRAGON!",$22,$0D,$FF
-byte_86F2:	.BYTE $A6,  0,	1	; DATA XREF: RAM:857Bo
-aWritingCarvedI:.BYTE $A5,"Writing carved into the door reads:",$0D,$0D
-aTheGauntlet:	.BYTE $A5,$22,"THE GAUNTLET",$0D
-aDoNotEnter:	.BYTE $A5," DO NOT ENTER",$22,$0D,$FF
-byte_873B:	.BYTE $A6,  0,	1	; DATA XREF: RAM:857Do
-		.BYTE $A5
-aGlowingLetters:.BYTE "Glowing letters on the door proclaim:"
-		.BYTE $D
-		.BYTE $D
-		.BYTE $A5
-aEnchantress:	.BYTE $22,"Enchantress",$22,$D
-		.BYTE $FF
-byte_8776:	.BYTE $A6,  0,	1	; DATA XREF: RAM:857Fo
-		.BYTE $A5
-aWritingScrawle:.BYTE "Writing scrawled on the ground reads:"
-		.BYTE $D
-		.BYTE $D
-		.BYTE $A5
-aGoBack:	.BYTE $22,"GO BACK!",$22
-		.BYTE $D
-		.BYTE $FF
-byte_87AE:	.BYTE $A6,  0,	1	; DATA XREF: RAM:8581o
-		.BYTE $A5
-aScratchingsOnT:.BYTE "Scratchings on the wall read:"
-		.BYTE $D
-		.BYTE $D
-		.BYTE $A5
-aThereIsNoEscap:.BYTE $22,"THERE IS NO ESCAPE!",$22,$D
-		.BYTE $FF
-byte_87E9:	.BYTE $A6,  0,	2	; DATA XREF: RAM:8583o
-		.BYTE $A5
-aARedArrowOnThe:.BYTE "A red arrow on the ground points East."
-		.BYTE $D
-		.BYTE $FF
-byte_8815:	.BYTE $A6,  0,	1	; DATA XREF: RAM:8585o
-		.BYTE $A5
-aADirtySignRead:.BYTE "A dirty sign reads:"
-		.BYTE $D
-		.BYTE $D
-		.BYTE $A5
-aGoblinsOnly:	.BYTE $22,"Goblins only!",$22
-		.BYTE $D
-		.BYTE $FF
-byte_8840:	.BYTE $A6,  0,	1	; DATA XREF: RAM:8587o
-		.BYTE $A5
-aACrookedSignSa:.BYTE "A crooked sign says:"
-		.BYTE $D
-		.BYTE $D
-		.BYTE $A5
-aTrollsOnly:	.BYTE $22,"TROLLS ONLY",$22
-		.BYTE $D
-		.BYTE $FF
-byte_886A:	.BYTE $A6,  0,	1	; DATA XREF: RAM:8589o
-		.BYTE $A5
-aAPlaqueReads:	.BYTE "A plaque reads:"
-		.BYTE $D
-		.BYTE $D
-		.BYTE $A5
-aShrineOfMonste:.BYTE $22,"Shrine of Monsters",$22,$D
-		.BYTE $FF
-byte_8896:	.BYTE $A6,  0,	2	; DATA XREF: RAM:858Bo
-		.BYTE $A5
-aYouHearTheSoun:.BYTE "You hear the sound of running water."
-		.BYTE $D
-		.BYTE $FF
-byte_88C0:	.BYTE $A6,  0,	1	; DATA XREF: RAM:858Do
-		.BYTE $A5
-aGlowingLette_0:.BYTE "Glowing letters float in midair:"
-		.BYTE $D
-		.BYTE $D
-		.BYTE $A5
-aSeekTheLight:	.BYTE $22,"SEEK THE LIGHT",$22
-		.BYTE $D
-		.BYTE $FF
-byte_88F9:	.BYTE $A6,  0,	1	; DATA XREF: RAM:858Fo
-		.BYTE $A5
-aANotePostedOnT:.BYTE "A note posted on the door reads:"
-		.BYTE $D
-		.BYTE $D
-		.BYTE $A5
-aBewareTheCaver:.BYTE $22,"BEWARE!  THE CAVERNS!",$22,$D
-		.BYTE $FF
-byte_8939:	.BYTE $A6,  0,	2	; DATA XREF: RAM:8591o
-		.BYTE $A5
-aTheStenchIsBec:.BYTE "The stench is becoming unbearable."
-		.BYTE $D
-		.BYTE $FF
-byte_8961:	.BYTE $A6,  0,	1	; DATA XREF: RAM:8593o
-		.BYTE $A5
-aASignAboveTh_0:.BYTE "A sign above the door says:"
-		.BYTE $D
-		.BYTE $D
-		.BYTE $A5
-aWelcomeToTheCh:.BYTE $22,"Welcome to the Chapel. Please come in!",$22
-		.BYTE $D
-		.BYTE $FF
-byte_89AD:	.BYTE $A6,  0,	1	; DATA XREF: RAM:8595o
-		.BYTE $A5
-aBlackLettersHo:.BYTE "Black letters hovering slowly say:"
-		.BYTE $D
-		.BYTE $D
-		.BYTE $A5
-aTheShadowWillH:.BYTE $22,"THE SHADOW WILL HIDE THEE",$22,$D
-		.BYTE $FF
-byte_89F3:	.BYTE $A6,  0,	1	; DATA XREF: RAM:8597o
-		.BYTE $A5
-aTheRuneOfTheAl:.BYTE "The rune of the all-knowing eye is upon"
-		.BYTE $D
-		.BYTE $D
-		.BYTE $A5
-aTheDoor_:	.BYTE "the door."
-		.BYTE $D
-		.BYTE $FF
-byte_8A2C:	.BYTE $A6,  0,	1	; DATA XREF: RAM:8599o
-		.BYTE $A5
-aOnTheWallIsAPa:.BYTE "On the wall is a painting of"
-		.BYTE $D
-		.BYTE $D
-		.BYTE $A5
-aAPurplePyramid:.BYTE "a purple pyramid.",$D
-		.BYTE $FF
-byte_8A62:	.BYTE $A6,  0,	1	; DATA XREF: RAM:859Bo
-		.BYTE $A5
-aASkullHangsFro:.BYTE "A skull hangs from the ceiling"
-		.BYTE $D
-		.BYTE $D
-		.BYTE $A5
-aAboveTheDoor_:	.BYTE "above the door."
-		.BYTE $D
-		.BYTE $FF
-byte_8A98:	.BYTE $A6,  0,	2	; DATA XREF: RAM:859Do
-		.BYTE $A5
-aYouHearTheCrac:.BYTE "You hear the crackle of electricity.",$D
-		.BYTE $FF
-byte_8AC2:	.BYTE $A6,  0,	2	; DATA XREF: RAM:859Fo
-		.BYTE $A5
-aYouStandBefore:.BYTE "You stand before an elaborate door.",$D
-		.BYTE $FF
+byte_85A1:	MOVEXY	0,1
+		.BYTE	$A5,"A sign on the door says:",$0D,$0D
+		.BYTE	$A5,$22,"Damon & Pythias Shoppe",$22,$0D,$FF
+
+byte_85DA:	MOVEXY	0,1
+		.BYTE	$A5,"A sign above the door reads:",$0D,$0D
+		.BYTE	$A5,$22,"THE RETREAT",$22,$0D,$FF
+
+byte_860C:	MOVEXY	0,1
+		.BYTE	$A5,"A sign reads:",$0D,$0D
+		.BYTE	$A5,$22,"Der Rathskeller Bar & Grille",$22,$0D,$FF
+
+byte_8640:	MOVEXY	0,1
+		.BYTE	$A5,"Carved above the doorway are the words:",$0D,$0D
+		.BYTE	$A5,$22,"Fine Weapons & Armor",$22,$0D,$FF
+
+byte_8686:	MOVEXY	0,1
+		.BYTE	$A5,"An arrow painted on the floor",$0D,$0D
+		.BYTE	$A5,"points South.",$0D,$FF
+
+byte_86B9:	MOVEXY	0,1
+		.BYTE	$A5,"Writing on the wall says:",$0D,$0D
+		.BYTE	$A5,$22,"BEWARE OF THE DRAGON!",$22,$0D,$FF
+
+byte_86F2:	MOVEXY	0,1
+		.BYTE	$A5,"Writing carved into the door reads:",$0D,$0D
+		.BYTE	$A5,$22,"THE GAUNTLET",$0D
+		.BYTE	$A5," DO NOT ENTER",$22,$0D,$FF
+
+byte_873B:	MOVEXY	0,1
+		.BYTE	$A5,"Glowing letters on the door proclaim:",$0D,$0D
+		.BYTE	$A5,$22,"Enchantress",$22,$0D,$FF
+
+byte_8776:	MOVEXY	0,1
+		.BYTE	$A5,"Writing scrawled on the ground reads:",$0D,$0D
+		.BYTE	$A5,$22,"GO BACK!",$22,$0D,$FF
+
+byte_87AE:	MOVEXY	0,1
+		.BYTE	$A5,"Scratchings on the wall read:",$0D,$0D
+		.BYTE	$A5,$22,"THERE IS NO ESCAPE!",$22,$0D,$FF
+
+byte_87E9:	MOVEXY	0,2
+		.BYTE	$A5,"A red arrow on the ground points East.",$0D,$FF
+
+byte_8815:	MOVEXY	0,1
+		.BYTE	$A5,"A dirty sign reads:",$0D,$0D
+		.BYTE	$A5,$22,"Goblins only!",$22,$0D,$FF
+
+byte_8840:	MOVEXY	0,1
+		.BYTE	$A5,"A crooked sign says:",$0D,$0D
+		.BYTE	$A5,$22,"TROLLS ONLY",$22,$0D,$FF
+
+byte_886A:	MOVEXY	0,1
+		.BYTE	$A5,"A plaque reads:",$0D,$0D
+		.BYTE	$A5,$22,"Shrine of Monsters",$22,$0D,$FF
+
+byte_8896:	MOVEXY	0,2
+		.BYTE	$A5,"You hear the sound of running water.",$0D,$FF
+
+byte_88C0:	MOVEXY	0,1
+		.BYTE	$A5,"Glowing letters float in midair:",$0D,$0D
+		.BYTE	$A5,$22,"SEEK THE LIGHT",$22,$0D,$FF
+
+byte_88F9:	MOVEXY	0,1
+		.BYTE $A5,"A note posted on the door reads:",$0D,$0D
+		.BYTE $A5,$22,"BEWARE!  THE CAVERNS!",$22,$0D,$FF
+
+byte_8939:	MOVEXY	0,2
+		.BYTE	$A5,"The stench is becoming unbearable.",$0D,$FF
+
+byte_8961:	MOVEXY	0,1
+		.BYTE	$A5,"A sign above the door says:",$0D,$0D
+		.BYTE	$A5,$22,"Welcome to the Chapel. Please come in!",$22,$0D,$FF
+
+byte_89AD:	MOVEXY	0,1
+		.BYTE	$A5,"Black letters hovering slowly say:",$0D,$0D
+		.BYTE	$A5,$22,"THE SHADOW WILL HIDE THEE",$22,$0D,$FF
+
+byte_89F3:	MOVEXY	0,1
+		.BYTE	$A5,"The rune of the all-knowing eye is upon",$0D,$0D
+		.BYTE	$A5,"the door.",$0D,$FF
+
+byte_8A2C:	MOVEXY	0,1
+		.BYTE	$A5,"On the wall is a painting of",$0D,$0D
+		.BYTE	$A5,"a purple pyramid.",$0D,$FF
+
+byte_8A62:	MOVEXY	0,1
+		.BYTE	$A5,"A skull hangs from the ceiling",$0D,$0D
+		.BYTE	$A5,"above the door.",$0D,$FF
+
+byte_8A98:	MOVEXY	0,2
+		.BYTE	$A5,"You hear the crackle of electricity.",$0D,$FF
+
+byte_8AC2:	MOVEXY	0,2
+		.BYTE	$A5,"You stand before an elaborate door.",$0D,$FF
+
 unk_8AEB:	.BYTE	0		; DATA XREF: RAM:7878r
 		.BYTE	8
 		.BYTE $10
@@ -3275,28 +3199,30 @@ unk_8AEB:	.BYTE	0		; DATA XREF: RAM:7878r
 		.BYTE $78 ; x
 		.BYTE $80 ; Ä
 		.BYTE $88 ; à
-unk_8AFD:	.BYTE $7B ; {		; DATA XREF: RAM:785Br	RAM:78A4r
-		.BYTE $8D ; ç
-		.BYTE $9F ; ü
-		.BYTE $B1 ; ±
-		.BYTE $C3 ; √
-		.BYTE $D5 ; ’
-		.BYTE $E7 ; Á
-		.BYTE $F9 ; ˘
-		.BYTE  $B
-		.BYTE $1D
-		.BYTE $2F ; /
-		.BYTE $41 ; A
-		.BYTE $53 ; S
-		.BYTE $65 ; e
-		.BYTE $77 ; w
-		.BYTE $89 ; â
-		.BYTE $9B ; õ
-		.BYTE $AD ; ≠
-		.BYTE $BF ; ø
-		.BYTE $D1 ; —
-		.BYTE $E3 ; „
-		.BYTE $F5 ; ı
+
+unk_8AFD:				; DATA XREF: RAM:785B^Xr        RAM:78A4^Xr
+		.BYTE	<$8F7B
+		.BYTE	<$8F8D
+		.BYTE	<$8F9F
+		.BYTE	<$8FB1
+		.BYTE	<$8FC3
+		.BYTE	<$8FD5
+		.BYTE	<$8FE7
+		.BYTE	<$8FF9
+		.BYTE	<$900B
+		.BYTE	<$901D
+		.BYTE	<$902F
+		.BYTE	<$9041
+		.BYTE	<$9053
+		.BYTE	<$9065
+		.BYTE	<$9077
+		.BYTE	<$9089
+		.BYTE	<$909B
+		.BYTE	<$90AD
+		.BYTE	<$90BF
+		.BYTE	<$90D1
+		.BYTE	<$90E3
+		.BYTE	<$90F5
 		.BYTE	7
 		.BYTE $19
 		.BYTE $2B ; +
@@ -3347,28 +3273,30 @@ unk_8AFD:	.BYTE $7B ; {		; DATA XREF: RAM:785Br	RAM:78A4r
 		.BYTE $55 ; U
 		.BYTE $67 ; g
 		.BYTE $79 ; y
-unk_8B45:	.BYTE $8F ; è		; DATA XREF: RAM:7861r	RAM:78A9r
-		.BYTE $8F ; è
-		.BYTE $8F ; è
-		.BYTE $8F ; è
-		.BYTE $8F ; è
-		.BYTE $8F ; è
-		.BYTE $8F ; è
-		.BYTE $8F ; è
-		.BYTE $90 ; ê
-		.BYTE $90 ; ê
-		.BYTE $90 ; ê
-		.BYTE $90 ; ê
-		.BYTE $90 ; ê
-		.BYTE $90 ; ê
-		.BYTE $90 ; ê
-		.BYTE $90 ; ê
-		.BYTE $90 ; ê
-		.BYTE $90 ; ê
-		.BYTE $90 ; ê
-		.BYTE $90 ; ê
-		.BYTE $90 ; ê
-		.BYTE $90 ; ê
+unk_8B45:					; DATA XREF: RAM:7861r	RAM:78A9r
+		.BYTE	>$8F7B
+		.BYTE	>$8F8D
+		.BYTE	>$8F9F
+		.BYTE	>$8FB1
+		.BYTE	>$8FC3
+		.BYTE	>$8FD5
+		.BYTE	>$8FE7
+		.BYTE	>$8FF9
+		.BYTE	>$900B
+		.BYTE	>$901D
+		.BYTE	>$902F
+		.BYTE	>$9041
+		.BYTE	>$9053
+		.BYTE	>$9065
+		.BYTE	>$9077
+		.BYTE	>$9089
+		.BYTE	>$909B
+		.BYTE	>$90AD
+		.BYTE	>$90BF
+		.BYTE	>$90D1
+		.BYTE	>$90E3
+		.BYTE	>$90F5
+
 		.BYTE $91 ; ë
 		.BYTE $91 ; ë
 		.BYTE $91 ; ë
@@ -3433,18 +3361,18 @@ unk_8B95:	.BYTE	0		; DATA XREF: RAM:79D1r
 unk_8B98:	.BYTE	0		; DATA XREF: RAM:79D8r
 		.BYTE	5
 		.BYTE	6
-unk_8B9B:	.BYTE $A7 ; ß		; DATA XREF: RAM:799Dr
-		.BYTE $37 ; 7
-		.BYTE $7F ; 
-unk_8B9E:	.BYTE $8B ; ã		; DATA XREF: RAM:79A2r
-		.BYTE $8C ; å
-		.BYTE $8C ; å
-unk_8BA1:	.BYTE $EF ; Ô		; DATA XREF: RAM:79A7r
-		.BYTE $5B ; [
-		.BYTE $91 ; ë
-unk_8BA4:	.BYTE $8B ; ã		; DATA XREF: RAM:79ACr
-		.BYTE $8C ; å
-		.BYTE $8C ; å
+unk_8B9B:	.BYTE	<$8BA7		; DATA XREF: RAM:799Dr
+		.BYTE	<$8C37
+		.BYTE	<$8C7F
+unk_8B9E:	.BYTE	>$8BA7		; DATA XREF: RAM:79A2r
+		.BYTE	>$8C37
+		.BYTE	>$8C7F
+unk_8BA1:	.BYTE	<$8BEF		; DATA XREF: RAM:79A7r
+		.BYTE	<$8C5B
+		.BYTE	<$8C91
+unk_8BA4:	.BYTE	>$8BEF		; DATA XREF: RAM:79ACr
+		.BYTE	>$8C5B
+		.BYTE	>$8C91
 		.BYTE	0
 		.BYTE $12
 		.BYTE $24 ; $
