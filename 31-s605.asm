@@ -3105,14 +3105,8 @@ aDamonPythiasSh:.BYTE $22,"Damon & Pythias Shoppe",$22
 		.BYTE $D
 		.BYTE $FF
 byte_85DA:	.BYTE $A6,  0,	1	; DATA XREF: RAM:8571o
-		.BYTE $A5
-aASignAboveTheD:.BYTE "A sign above the door reads:"
-		.BYTE $D
-		.BYTE $D
-		.BYTE $A5
-aTheRetreat:	.BYTE $22,"THE RETREAT",$22
-		.BYTE $D
-		.BYTE $FF
+aASignAboveTheD:.BYTE $A5,"A sign above the door reads:",$0D,$0D
+aTheRetreat:	.BYTE $A5,$22,"THE RETREAT",$22,$0D,$FF
 byte_860C:	.BYTE $A6,  0,	1	; DATA XREF: RAM:8573o
 aASignReads:	.BYTE $A5,"A sign reads:",$0D,$0D
 aDerRathskeller:.BYTE $A5,$22,"Der Rathskeller Bar & Grille",$22,$0D,$FF
