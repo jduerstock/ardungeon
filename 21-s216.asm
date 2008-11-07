@@ -1,24 +1,26 @@
 
+	.macro HBStr Arg
+		.scope
+			Len = .strlen(Arg)-1
+			.repeat Len, I
+				.BYTE .strat(Arg, I)
+			.endrep
+			.BYTE .strat(Arg, Len) | $80
+		.endscope
+	.endmacro
+
 		;.segment RAM
 ;		* =  $AC00
 		.BYTE	5
 		.WORD aToastLev3	; "toast! LEV 3"
-aInA:		.BYTE "in a"
-		.BYTE $A0
-aInThe:		.BYTE "in the"
-		.BYTE $A0
-aOf:		.BYTE " of"
-		.BYTE $A0
-aCorridor:	.BYTE " corridor"
-		.BYTE $AE
-aRoom:		.BYTE " room"
-		.BYTE $AE
-aGauntlet:	.BYTE " Gauntlet"
-		.BYTE $AE
-aHallway:	.BYTE " hallway"
-		.BYTE $AE
-aStairwayLeadin:.BYTE " stairway leading up"
-		.BYTE $AE
+		HBStr	"in a "
+		HBStr	"in the "
+		HBStr	" of "
+		HBStr	" corridor."
+		HBStr	" room."
+		HBStr	" Gauntlet."
+		HBStr	" hallway."
+		HBStr	" stairway leading up."
 aToastLev3:	.BYTE "toast! LEV 3",0  ; DATA XREF: RAM:AC01o
 aByA:		.BYTE "by a"
 		.BYTE $87
