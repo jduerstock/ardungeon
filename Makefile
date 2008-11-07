@@ -153,7 +153,7 @@ all: $(BINARIES) $(OBJECTS) ar32.img
 	sha1sum -c 11-s311.sha1
 
 11-s312.bin: 11-s312.asm
-	cl65 --start-addr 0x7600 -t none 11-s312.asm -o 11-s312.bin
+	cl65 --start-addr 0x7600 -t none $< -o $@
 	sha1sum -c 11-s312.sha1
 	./encrypt.php 11-s312.bin 413700204ce23c41cde1a12857f6d83a
 

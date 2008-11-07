@@ -1406,10 +1406,7 @@ sub_7EBC:				; CODE XREF: RAM:7779p
 
 ; FUNCTION CHUNK AT 7F4B SIZE 00000018 BYTES
 
-		LDA	#$C6 ; 'Æ'
-		STA	$89
-		LDA	#$83 ; 'ƒ'
-		STA	$8A
+		dldi	$89, $83C6
 		JMP	loc_7F4B
 ; End of function sub_7EBC
 
@@ -1418,10 +1415,7 @@ sub_7EBC:				; CODE XREF: RAM:7779p
 
 
 sub_7EC7:				; CODE XREF: RAM:7769p
-		LDA	#$C6 ; 'Æ'
-		STA	$89
-		LDA	#$83 ; 'ƒ'
-		STA	$8A
+		dldi	$89, $83C6
 		JSR	loc_7EF4
 		LDA	$6312
 		ASL	A
@@ -3057,31 +3051,31 @@ unk_854A:	.BYTE $20		; DATA XREF: RAM:83C4o
 		.BYTE	0
 
 off_856F:
-		.WORD byte_85A1
-		.WORD byte_85DA
-		.WORD byte_860C
-		.WORD byte_8640
-		.WORD byte_8686
-		.WORD byte_86B9
-		.WORD byte_86F2
-		.WORD byte_873B
-		.WORD byte_8776
-		.WORD byte_87AE
-		.WORD byte_87E9
-		.WORD byte_8815
-		.WORD byte_8840
-		.WORD byte_886A
-		.WORD byte_8896
-		.WORD byte_88C0
-		.WORD byte_88F9
-		.WORD byte_8939
-		.WORD byte_8961
-		.WORD byte_89AD
-		.WORD byte_89F3
-		.WORD byte_8A2C
-		.WORD byte_8A62
-		.WORD byte_8A98
-		.WORD byte_8AC2
+		.WORD	byte_85A1
+		.WORD	byte_85DA
+		.WORD	byte_860C
+		.WORD	byte_8640
+		.WORD	byte_8686
+		.WORD	byte_86B9
+		.WORD	byte_86F2
+		.WORD	byte_873B
+		.WORD	byte_8776
+		.WORD	byte_87AE
+		.WORD	byte_87E9
+		.WORD	byte_8815
+		.WORD	byte_8840
+		.WORD	byte_886A
+		.WORD	byte_8896
+		.WORD	byte_88C0
+		.WORD	byte_88F9
+		.WORD	byte_8939
+		.WORD	byte_8961
+		.WORD	byte_89AD
+		.WORD	byte_89F3
+		.WORD	byte_8A2C
+		.WORD	byte_8A62
+		.WORD	byte_8A98
+		.WORD	byte_8AC2
 byte_85A1:	MOVEXY	0,1
 		.BYTE	$A5,"A sign on the door says:",$0D,$0D
 		.BYTE	$A5,$22,"Damon & Pythias Shoppe",$22,$0D,$FF
@@ -3198,15 +3192,15 @@ unk_8AEB:	.BYTE	0		; DATA XREF: RAM:7878r
 		.BYTE $88 ; ˆ
 
 unk_8AFD:				; DATA XREF: RAM:785B^Xr        RAM:78A4^Xr
-		.BYTE	<$8F7B
-		.BYTE	<$8F8D
-		.BYTE	<$8F9F
-		.BYTE	<$8FB1
-		.BYTE	<$8FC3
-		.BYTE	<$8FD5
-		.BYTE	<$8FE7
-		.BYTE	<$8FF9
-		.BYTE	<$900B
+		.BYTE	<byte_8F7B
+		.BYTE	<byte_8F8D
+		.BYTE	<byte_8F9F
+		.BYTE	<byte_8FB1
+		.BYTE	<byte_8FC3
+		.BYTE	<byte_8FD5
+		.BYTE	<byte_8FE7
+		.BYTE	<byte_8FF9
+		.BYTE	<byte_900B
 		.BYTE	<$901D
 		.BYTE	<$902F
 		.BYTE	<$9041
@@ -3271,15 +3265,15 @@ unk_8AFD:				; DATA XREF: RAM:785B^Xr        RAM:78A4^Xr
 		.BYTE $67 ; g
 		.BYTE $79 ; y
 unk_8B45:					; DATA XREF: RAM:7861r	RAM:78A9r
-		.BYTE	>$8F7B
-		.BYTE	>$8F8D
-		.BYTE	>$8F9F
-		.BYTE	>$8FB1
-		.BYTE	>$8FC3
-		.BYTE	>$8FD5
-		.BYTE	>$8FE7
-		.BYTE	>$8FF9
-		.BYTE	>$900B
+		.BYTE	>byte_8F7B
+		.BYTE	>byte_8F8D
+		.BYTE	>byte_8F9F
+		.BYTE	>byte_8FB1
+		.BYTE	>byte_8FC3
+		.BYTE	>byte_8FD5
+		.BYTE	>byte_8FE7
+		.BYTE	>byte_8FF9
+		.BYTE	>byte_900B
 		.BYTE	>$901D
 		.BYTE	>$902F
 		.BYTE	>$9041
@@ -4182,204 +4176,17 @@ byte_8F77:	.BYTE 0			; DATA XREF: RAM:loc_7858w RAM:7881r ...
 		.BYTE	0
 byte_8F7A:	.BYTE 0			; DATA XREF: sub_7888:loc_788Cw
 					; RAM:78FCr ...
-		.BYTE	0
-		.BYTE $FF
-		.BYTE	0
-		.BYTE $FF
-		.BYTE	0
-		.BYTE $FF
-		.BYTE	0
-		.BYTE $FF
-		.BYTE	0
-		.BYTE $FF
-		.BYTE	0
-		.BYTE $FF
-		.BYTE	0
-		.BYTE $FF
-		.BYTE	0
-		.BYTE $FF
-		.BYTE	0
-		.BYTE $FF
-		.BYTE	0
-		.BYTE $FF
-		.BYTE	0
-		.BYTE $FF
-		.BYTE	0
-		.BYTE $FF
-		.BYTE	0
-		.BYTE $FF
-		.BYTE	0
-		.BYTE $FF
-		.BYTE	0
-		.BYTE $FF
-		.BYTE	0
-		.BYTE $FF
-		.BYTE	0
-		.BYTE $FF
-		.BYTE	0
-		.BYTE $FF
-		.BYTE	0
-		.BYTE $FF
-		.BYTE	0
-		.BYTE $FF
-		.BYTE	0
-		.BYTE $FF
-		.BYTE	0
-		.BYTE $FF
-		.BYTE	0
-		.BYTE $FF
-		.BYTE	0
-		.BYTE $FF
-		.BYTE	0
-		.BYTE $FF
-		.BYTE	0
-		.BYTE $FF
-		.BYTE	0
-		.BYTE $FF
-		.BYTE	0
-		.BYTE $FF
-		.BYTE	0
-		.BYTE $FF
-		.BYTE	0
-		.BYTE $FF
-		.BYTE	0
-		.BYTE $FF
-		.BYTE	0
-		.BYTE $FF
-		.BYTE	0
-		.BYTE $FF
-		.BYTE	0
-		.BYTE $FF
-		.BYTE	0
-		.BYTE $FF
-		.BYTE	0
-		.BYTE $FF
-		.BYTE	0
-		.BYTE $FF
-		.BYTE	0
-		.BYTE $FF
-		.BYTE	0
-		.BYTE $FF
-		.BYTE	0
-		.BYTE $FF
-		.BYTE	0
-		.BYTE $FF
-		.BYTE	0
-		.BYTE $FF
-		.BYTE	0
-		.BYTE $FF
-		.BYTE	0
-		.BYTE $FF
-		.BYTE	0
-		.BYTE $FF
-		.BYTE	0
-		.BYTE $FF
-		.BYTE	0
-		.BYTE $FF
-		.BYTE	0
-		.BYTE $FF
-		.BYTE	0
-		.BYTE $FF
-		.BYTE	0
-		.BYTE $FF
-		.BYTE	0
-		.BYTE $FF
-		.BYTE	0
-		.BYTE $FF
-		.BYTE	0
-		.BYTE $FF
-		.BYTE	0
-		.BYTE $FF
-		.BYTE	0
-		.BYTE $FF
-		.BYTE	0
-		.BYTE $FF
-		.BYTE	0
-		.BYTE $FF
-		.BYTE	0
-		.BYTE $FF
-		.BYTE	0
-		.BYTE $FF
-		.BYTE	0
-		.BYTE $FF
-		.BYTE	0
-		.BYTE $FF
-		.BYTE	0
-		.BYTE $FF
-		.BYTE	0
-		.BYTE $FF
-		.BYTE	0
-		.BYTE $FF
-		.BYTE	0
-		.BYTE $FF
-		.BYTE	0
-		.BYTE $FF
-		.BYTE	0
-		.BYTE $FF
-		.BYTE	0
-		.BYTE $FF
-		.BYTE	0
-		.BYTE $FF
-		.BYTE	0
-		.BYTE $FF
-		.BYTE	0
-		.BYTE $FF
-		.BYTE	0
-		.BYTE $FF
-		.BYTE	0
-		.BYTE $FF
-		.BYTE	0
-		.BYTE $FF
-		.BYTE	0
-		.BYTE $FF
-		.BYTE	0
-		.BYTE $FF
-		.BYTE	0
-		.BYTE $FF
-		.BYTE	0
-		.BYTE $FF
-		.BYTE	0
-		.BYTE $FF
-		.BYTE	0
-		.BYTE $FF
-		.BYTE	0
-		.BYTE $FF
-		.BYTE	0
-		.BYTE $FF
-		.BYTE	0
-		.BYTE $FF
-		.BYTE	0
-		.BYTE $FF
-		.BYTE	0
-		.BYTE $FF
-		.BYTE	0
-		.BYTE $FF
-		.BYTE	0
-		.BYTE $FF
-		.BYTE	0
-		.BYTE $FF
-		.BYTE	0
-		.BYTE $FF
-		.BYTE	0
-		.BYTE $FF
-		.BYTE	0
-		.BYTE $FF
-		.BYTE	0
-		.BYTE $FF
-		.BYTE	0
-		.BYTE $FF
-		.BYTE	0
-		.BYTE $FF
-		.BYTE	0
-		.BYTE $FF
-		.BYTE	0
-		.BYTE $FF
-		.BYTE	0
-		.BYTE $FF
-		.BYTE	0
-		.BYTE $FF
-		.BYTE	0
-		.BYTE $FF
+byte_8F7B:	.BYTE	$00,$FF,$00,$FF,$00,$FF,$00,$FF,$00,$FF,$00,$FF,$00,$FF,$00,$FF,$00,$FF
+byte_8F8D:	.BYTE	$00,$FF,$00,$FF,$00,$FF,$00,$FF,$00,$FF,$00,$FF,$00,$FF,$00,$FF,$00,$FF
+byte_8F9F:	.BYTE	$00,$FF,$00,$FF,$00,$FF,$00,$FF,$00,$FF,$00,$FF,$00,$FF,$00,$FF,$00,$FF
+byte_8FB1:	.BYTE	$00,$FF,$00,$FF,$00,$FF,$00,$FF,$00,$FF,$00,$FF,$00,$FF,$00,$FF,$00,$FF
+byte_8FC3:	.BYTE	$00,$FF,$00,$FF,$00,$FF,$00,$FF,$00,$FF,$00,$FF,$00,$FF,$00,$FF,$00,$FF
+byte_8FD5:	.BYTE	$00,$FF,$00,$FF,$00,$FF,$00,$FF,$00,$FF,$00,$FF,$00,$FF,$00,$FF,$00,$FF
+byte_8FE7:	.BYTE	$00,$FF,$00,$FF,$00,$FF,$00,$FF,$00,$FF,$00,$FF,$00,$FF,$00,$FF,$00,$FF
+byte_8FF9:	.BYTE	$00,$FF,$00,$FF,$00,$FF,$00,$FF,$00,$FF,$00,$FF,$00,$FF,$00,$FF,$00,$FF
+byte_900B:	.BYTE	$00,$FF,$00,$FF,$00,$FF,$00,$FF,$00,$FF,$00,$FF,$00,$FF,$00,$FF,$00,$FF
+byte_901D:	.BYTE	$00,$FF,$00,$FF,$00,$FF,$00,$FF,$00,$FF,$00,$FF,$00,$FF,$00,$FF,$00,$FF
+byte_902F:	.BYTE	$00,$FF,$00,$FF,$00,$FF,$00,$FF,$00,$FF,$00,$FF,$00,$FF,$00,$FF,$00,$FF
 		.BYTE	0
 		.BYTE $FF
 		.BYTE	0

@@ -3690,7 +3690,7 @@ loc_8BF4:
 		STA	$9C
 		JSR	sub_8B3E
 		BNE	loc_8C0C
-		LDX	#$85 ; '…'
+		LDX	#$85
 		LDA	#1
 		JSR	$186F
 		JMP	loc_8CBB
@@ -4245,13 +4245,13 @@ sub_8F15:				; CODE XREF: sub_88B0-E7Fp
 		STX	$79
 		STA	$78
 		SEC
-		SBC	#$80 ; '€'
+		SBC	#$80
 		BCC	loc_8F2B
 		LSR	A
 		LSR	A
 		LSR	A
 		STA	$79
-		LDA	#$80 ; '€'
+		LDA	#$80
 		STA	$78
 
 loc_8F2B:				; CODE XREF: sub_8F15+Bj
@@ -4276,14 +4276,14 @@ loc_8F3D:				; CODE XREF: sub_8F15+1Bj
 		JSR	sub_9049
 		LDA	off_2+1
 		BEQ	loc_8F51
-		LDA	#$F4 ; 'ô'
+		LDA	#$F4
 		BMI	loc_8F59
 
 loc_8F51:				; CODE XREF: sub_8F15+36j
 		LDA	off_2
-		CMP	#$F5 ; 'õ'
+		CMP	#$F5
 		BCC	loc_8F59
-		LDA	#$F4 ; 'ô'
+		LDA	#$F4
 
 loc_8F59:				; CODE XREF: sub_8F15+3Aj sub_8F15+40j
 		STA	$79
@@ -4311,7 +4311,7 @@ loc_8F7A:				; CODE XREF: sub_8F15+57j sub_8F15+5Fj ...
 ; ---------------------------------------------------------------------------
 
 loc_8F7D:				; CODE XREF: sub_8F15+4Dj
-		LDA	#$80 ; '€'
+		LDA	#$80
 		STA	$78
 		LDA	RANDOM
 		CMP	#8
@@ -5052,9 +5052,9 @@ loc_939A:				; CODE XREF: RAM:9396j
 		DEY
 		BPL	loc_938F
 		LDX	byte_A89C
-		LDA	$A393,X
+		LDA	byte_A393,X
 		STA	off_76DB
-		LDA	$A397,X
+		LDA	byte_A397,X
 		STA	off_76DB+1
 		LDA	$639E,X
 		BPL	loc_93B7
@@ -6264,9 +6264,9 @@ a_You_The_WithYour:
 		.WORD	$A7
 		.BYTE	6
 		.BYTE	".",$D
-		.BYTE	$A3
-		.WORD	$9F02
+		STRJSR	sub_9F02
 		.BYTE	$FF
+
 		.BYTE	$A5,"which has no effect!",$D,$FF
 
 loc_9EE5:					; DATA XREF: RAM:9EB9o
@@ -6285,7 +6285,7 @@ loc_9EFC:				; DATA XREF: RAM:9FAEo
 		STA	$18FE
 		RTS
 ; ---------------------------------------------------------------------------
-unk_9F02:	LDA	#$00		; DATA XREF: RAM:9FD8o
+sub_9F02:	LDA	#$00		; DATA XREF: RAM:9FD8o
 		STA	$18FE
 		RTS
 aHack:		.BYTE "hack",0
@@ -6379,8 +6379,7 @@ a_The_PointsOfDamage:
 		.BYTE 5
 aPointsOfDamage:.BYTE " points of damage."
 		.BYTE $D
-		.BYTE $A3
-		.WORD unk_9F02
+		STRJSR	sub_9F02
 		.BYTE $FF
 off_9FDB:	.WORD	0		; DATA XREF: RAM:9FBCo	RAM:9FDFw ...
 ; ---------------------------------------------------------------------------
@@ -6602,6 +6601,7 @@ a_GetsUp:
 		.BYTE	$14
 		.BYTE	$D
 		.BYTE	$A5,"is weakening.",$D,$FF
+
 		MOVEXY	0,3
 		.BYTE	$A5
 		.BYTE	"Your "
@@ -6629,20 +6629,22 @@ a_GetsUp:
 		.WORD	$6C
 		.BYTE	$14
 		.BYTE	$D
-		.BYTE	$A3
-		.WORD	$9EE5
+		STRJSR	loc_9EE5
+
 aAtYourHead:	.BYTE	"at your head",0
 aYou_0:		.BYTE	"you",0
 aAtYourArm:	.BYTE	"at your arm",0
 aAtYourLegs:	.BYTE	"at your legs",0
-		.BYTE	<aAtYourHead
+
+byte_A393:	.BYTE	<aAtYourHead
 		.BYTE	<aYou_0
 		.BYTE	<aAtYourArm
 		.BYTE	<aAtYourLegs
-		.BYTE	>aAtYourHead
+byte_A397:	.BYTE	>aAtYourHead
 		.BYTE	>aYou_0
 		.BYTE	>aAtYourArm
 		.BYTE	>aAtYourLegs
+
 aHacks:		.BYTE	"hacks",0
 aPokes:		.BYTE	"pokes",0
 aBashes:	.BYTE	"bashes",0
@@ -6812,8 +6814,7 @@ byte_A57E:
 		.WORD	$A7
 		.BYTE	6
 		.BYTE	".",$D
-		.BYTE	$A3
-		.WORD	$9F02
+		STRJSR	sub_9F02
 		.BYTE	$FF
 aRepel:		.BYTE	"repel",0
 aResist:	.BYTE	"resist",0

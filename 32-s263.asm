@@ -1761,38 +1761,29 @@ aSilverCoins_:	.BYTE " silver coins."
 		MOVEXY	0,0
 		.BYTE $A3
 		.WORD $803A
-aICanTTellOneJe:.BYTE $A5,"I can't tell one jewel from another",$0D,$0D
-aSoIPayAFlatRat:.BYTE $A5,"so I pay a flat rate of "
-		.BYTE $B2
-		.WORD $6C
-		.BYTE 3
-aPerJewel_:	.BYTE " per jewel.",$0D,$0D
-aHowManyDoYouWi:.BYTE $A5,"How many do you wish to sell?",$0D
-		.BYTE $A6,$10,	6
-		.BYTE '>'
-		.BYTE $A3
-		.WORD loc_8037
-		.BYTE $FF
-		.BYTE $A6,  0,	0
-		.BYTE $A3
-		.WORD loc_803A
-		.BYTE $A5
-aIWillGiveYou:	.BYTE "I will give you "
-		.BYTE $B2
-		.WORD $6C
-		.BYTE 3
-aSilvers:	.BYTE " silvers"
-		.BYTE $D
-		.BYTE $D
-		.BYTE $A5
-aForEachGemBigO:.BYTE "for each gem, big or small."
-		.BYTE $D
-		.BYTE $D
-		.BYTE $A5
-aHowManyWouldYo:.BYTE "How many would you like to exchange?"
-		.BYTE $D
-		.BYTE $A6,$10,	6
-		.BYTE '>'
+aICanTTellOneJe:.BYTE	$A5,"I can't tell one jewel from another",$0D,$0D
+aSoIPayAFlatRat:.BYTE	$A5,"so I pay a flat rate of "
+		.BYTE	$B2
+		.WORD	$6C
+		.BYTE	3
+aPerJewel_:	.BYTE	" per jewel.",$0D,$0D
+aHowManyDoYouWi:.BYTE	$A5,"How many do you wish to sell?",$0D
+		MOVEXY	16,6
+		.BYTE	'>'
+		STRJSR	loc_8037
+		.BYTE	$FF
+
+		MOVEXY	0,0
+		STRJSR	loc_803A
+aIWillGiveYou:	.BYTE	$A5,"I will give you "
+		.BYTE	$B2
+		.WORD	$6C
+		.BYTE	3
+aSilvers:	.BYTE	" silvers",$0D,$0D
+aForEachGemBigO:.BYTE $A5,"for each gem, big or small.",$0D,$0D
+aHowManyWouldYo:.BYTE $A5,"How many would you like to exchange?",$0D
+		MOVEXY	16,6
+		.BYTE	'>'
 		.BYTE $A3
 		.WORD loc_8037
 		.BYTE $FF
