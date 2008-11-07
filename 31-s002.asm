@@ -6257,8 +6257,7 @@ a_You_The_WithYour:
 		.BYTE	$D
 		.BYTE	$A3
 		.WORD	loc_9EE5
-		.BYTE	$A3
-		.WORD	loc_9EFC
+		STRJSR	sub_9EFC
 		.BYTE	$A5," for "
 		.BYTE	$B1
 		.WORD	$A7
@@ -6280,7 +6279,7 @@ locret_9EFB:					; CODE XREF: RAM:9EF1j
 		RTS
 ; ---------------------------------------------------------------------------
 
-loc_9EFC:				; DATA XREF: RAM:9FAEo
+sub_9EFC:				; DATA XREF: RAM:9FAEo
 		LDA	#$FF
 		STA	$18FE
 		RTS
@@ -6288,6 +6287,7 @@ loc_9EFC:				; DATA XREF: RAM:9FAEo
 sub_9F02:	LDA	#$00		; DATA XREF: RAM:9FD8o
 		STA	$18FE
 		RTS
+; ---------------------------------------------------------------------------
 aHack:		.BYTE "hack",0
 aPoke:		.BYTE "poke",0
 aBash:		.BYTE "bash",0
@@ -6364,11 +6364,10 @@ locret_9FAC:				; CODE XREF: RAM:9F9Cj	RAM:9F9Ej
 ; ---------------------------------------------------------------------------
 
 a_The_PointsOfDamage:
-		.BYTE $A3
-		.WORD loc_9EFC
+		STRJSR	sub_9EFC
 		.BYTE $A3
 		.WORD loc_9FDD
-		.BYTE $A6,  0,	3
+		MOVEXY	0,3
 		.BYTE	$A5,"The "
 		.BYTE $AD
 		.WORD off_9FDB
@@ -6485,37 +6484,39 @@ a_SwitchingTo:
 
 a_YouMiss:
 		MOVEXY	0,3
-		.BYTE	$A5,"You miss.",$D,$FF
+		.BYTE	$A5,"You miss.",$0D,$FF
 
 a_SkillfullyDeflects:
 		.BYTE	$AC
 		.WORD	$7665
-		.BYTE	"skillfully ",$D
+		.BYTE	"skillfully ",$0D
 		.BYTE	$A5,"deflects your attack.",$D,$FF
 		MOVEXY	0,3
 		.BYTE	$A3
 		.WORD	$A115
 
 loc_A115:				; DATA XREF: RAM:A113o
-		dldi	off_16, $A12D
+		dldi	off_16, byte_A12D
 		LDA	byte_AA00
 		CMP	#1
 		BEQ	locret_A12C
-		dldi	off_16, $A14A
+		dldi	off_16, byte_A14A
 
 locret_A12C:				; CODE XREF: RAM:A122j
 		RTS
 
-		.BYTE	$A5,"The "
+byte_A12D:	.BYTE	$A5,"The "
 		.BYTE	$B4
 		.WORD	off_AA01
 		.BYTE	$10
 		.BYTE	" takes your offer.",$D,$FF
-		.BYTE	$A5,"The "
+
+byte_A14A:	.BYTE	$A5,"The "
 		.BYTE	$B4
 		.WORD	off_AA03
 		.BYTE	$10
 		.BYTE	" take your offer.",$D,$FF
+
 		.BYTE	$A3
 		.WORD	$A181
 		.BYTE	$A5,"The "
@@ -6772,8 +6773,7 @@ sSuffocation:	.BYTE	"Suffocation",0
 sRepulsion:	.BYTE	"Repulsion",0
 sBlink:		.BYTE	"Blink",0
 
-byte_A572:
-		.BYTE	<sProtection
+byte_A572:	.BYTE	<sProtection
 		.BYTE	<sStrength
 		.BYTE	<sAgility
 		.BYTE	<sFingerOfDeath
@@ -6786,8 +6786,7 @@ byte_A572:
 		.BYTE	<sRepulsion
 		.BYTE	<sBlink
 
-byte_A57E:
-		.BYTE	>sProtection
+byte_A57E:	.BYTE	>sProtection
 		.BYTE	>sStrength
 		.BYTE	>sAgility
 		.BYTE	>sFingerOfDeath
@@ -6801,10 +6800,8 @@ byte_A57E:
 		.BYTE	>sBlink
 
 		MOVEXY	0,2
-		.BYTE	$A3
-		.WORD	$9EFC
-		.BYTE $A5
-		.BYTE	"You "
+		STRJSR	sub_9EFC
+		.BYTE	$A5,"You "
 		.BYTE	$B4
 		.WORD	$76D9
 		.BYTE	$28
@@ -6835,8 +6832,9 @@ byte_A5DE:
 		.BYTE	$B4
 		.WORD	$9E3C
 		.BYTE	$19
-		.BYTE	" is hurled",$D,$A5
-		.BYTE	"from your grasp!",$D,$FF
+		.BYTE	" is hurled",$0D
+		.BYTE	$A5,"from your grasp!",$0D,$FF
+	
 		MOVEXY	0,3
 		.BYTE	$A5,"You "
 		.BYTE	$B4
@@ -6861,11 +6859,12 @@ a_YouEncounter:
 		.BYTE	$B4
 		.WORD	off_76DD
 		.BYTE	$19
-		.BYTE	".",$D,$D,$A5
+		.BYTE	".",$0D,$0D
+		.BYTE	$A5
 		.BYTE	$B4
 		.WORD	$76DB
 		.BYTE	$28
-		.BYTE	$D,$FF
+		.BYTE	$0D,$FF
 
 sub_A659:				; DATA XREF: RAM:A626o
 		dmv	off_76D9, off_AA01
@@ -6896,7 +6895,7 @@ byte_A6B7:
 		.BYTE	$B4
 		.WORD	off_76D9
 		.BYTE	$27
-		.BYTE	$D,$FF
+		.BYTE	$0D,$FF
 aCheckDiskIn:	.BYTE	"Check disk in drive "
 byte_A6D8:	.BYTE	" "
 		.BYTE	".",0
@@ -6918,34 +6917,33 @@ locret_A715:				; CODE XREF: RAM:A6FEj
 
 a_You_Escape:
 		MOVEXY	0,3
-		.BYTE	$A5
-		.BYTE	"You "
+		.BYTE	$A5,"You "
 		.BYTE	$B4
 		.WORD	off_76D9
 		.BYTE	8
-		.BYTE	" escape.",$D,$FF
+		.BYTE	" escape.",$0D,$FF
 		.BYTE	"didn't",0
 		.BYTE	"can't",0
 
 a_SeemsUninterested:
 		.BYTE	$AC
 		.WORD	$7665
-		.BYTE	"seems uninterested.",$D,$FF
+		.BYTE	"seems uninterested.",$0D,$FF
 
 a_MumblesSomething:
 		.BYTE	$AC
 		.WORD	$7665
-		.BYTE	"mumbles",$D,$A5
-		.BYTE	"something unintelligible.",$D,$FF
+		.BYTE	"mumbles",$0D
+		.BYTE	$A5,"something unintelligible.",$0D,$FF
 
 a_DontTell:
 		MOVEXY	0,3
-		.BYTE	$A5,$22,"Don't tell the peasants how good",$D,$A5
-		.BYTE	"the pears are with the cheese!",$22,$D,$FF
+		.BYTE	$A5,$22,"Don't tell the peasants how good",$0D
+		.BYTE	$A5,"the pears are with the cheese!",$22,$0D,$FF
 
 a_RunTheDevourer:
 		MOVEXY	0,3
-		.BYTE	$A5,$22,"Run! The Devourer comes!",$22,$D,$FF
+		.BYTE	$A5,$22,"Run! The Devourer comes!",$22,$0D,$FF
 
 a_NoGoodDeed:
 		MOVEXY	0,3
@@ -6955,7 +6953,7 @@ a_NoGoodDeed:
 		.BYTE	$B4
 		.WORD	$76D9
 		.BYTE	$A
-		.BYTE	".",$22,$D,$FF
+		.BYTE	".",$22,$0D,$FF
 
 loc_A809:					; DATA XREF: RAM:A7E4o
 		dldi	off_76D9, aRewarded

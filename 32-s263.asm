@@ -21,6 +21,8 @@
 .endmacro
 
 off_67 = $67
+off_6A = $6A
+off_85 = $85
 
 		.ORG	$7600
 		.BYTE $D
@@ -261,15 +263,14 @@ loc_77D6:
 		LDA	$751B
 		CMP	#$FF
 		BNE	loc_77ED
-		dldi	off_16, $80FB
+		dldi	off_16, byte_80FB
 		LDA	#1
 		STA	$751B
 		JMP	loc_77F4
 ; ---------------------------------------------------------------------------
 
 loc_77ED:				; CODE XREF: RAM:77DBj
-		LDX	#$8D ; ''
-		LDY	#$F5 ; 'õ'
+		ldxy	off_8DF5
 		JSR	$185D
 
 loc_77F4:				; CODE XREF: RAM:77EAj
@@ -281,8 +282,7 @@ loc_77F4:				; CODE XREF: RAM:77EAj
 
 loc_77FF:				; CODE XREF: RAM:7883j	RAM:7AFEj ...
 		LDA	$751B
-		LDX	#$8D ; ''
-		LDY	#$FD ; 'ý'
+		ldxy	$8DFD
 		JSR	$185D
 		JSR	sub_8022
 
@@ -767,8 +767,7 @@ loc_7B37:				; CODE XREF: RAM:7B24j
 		JSR	sub_7F6D
 		LDA	#2
 		JSR	$1899
-		LDX	#$85 ; '…'
-		LDY	#$F1 ; 'ñ'
+		ldxy	$85F1
 		JSR	$185D
 		JSR	sub_8022
 		JSR	sub_801D
@@ -1500,38 +1499,34 @@ aWelcome:	.BYTE $A5,"Welcome "
 		.BYTE $B3
 		.WORD $6321
 		.BYTE $1C
-		.BYTE '!',$D
-aWhatCan:	.BYTE $A5,"What can "
-		.BYTE $B4
-		.WORD off_8F1C
-		.BYTE 4
-aHelpYouWithTod:.BYTE " help you with today?",$D
+		.BYTE '!',$0D
+aWhatCan:	.BYTE	$A5,"What can "
+		PRINTSTRP off_8F1C, 4
+aHelpYouWithTod:.BYTE " help you with today?",$0D
 		.BYTE $AC
 		.WORD byte_81A6
 byte_8093:	MOVEXY	0,0		; DATA XREF: RAM:8DF9o
-aGreetingsAdven:.BYTE $A5,"Greetings adventurer, what may I",$D
-aHelpYouWithT_0:.BYTE $A5,"help you with today?",$D
+aGreetingsAdven:.BYTE	$A5,"Greetings adventurer, what may I",$0D
+aHelpYouWithT_0:.BYTE	$A5,"help you with today?",$0D
 		.BYTE $AC
 		.WORD byte_81A6
 byte_80D1:	MOVEXY	0,0		; DATA XREF: RAM:8DF7o
-aWelcomeWhatCan:.BYTE $A5,"Welcome, what can I help you with?",$D
+aWelcomeWhatCan:.BYTE	$A5,"Welcome, what can I help you with?",$0D
 		.BYTE $AC
 		.WORD byte_81A6
+
+byte_80FB:
 		MOVEXY	0,0
-aWelcomeToOurSh:.BYTE $A5,"Welcome to our shoppe. I am "
-		.BYTE $B4
-		.WORD off_8F1C
-		.BYTE 4
-		.BYTE ", "
-		.BYTE $B4
-		.WORD off_8F1E
-		.BYTE 4
-aS:		.BYTE "'s",$D
-aTwinBrother_Ho:.BYTE $A5,"twin brother.  How can I help you?",$D
+		.BYTE	$A5,"Welcome to our shoppe. I am "
+		PRINTSTRP off_8F1C, 4
+		.BYTE	", "
+		PRINTSTRP off_8F1E, 4
+aS:		.BYTE	"'s",$0D
+aTwinBrother_Ho:.BYTE	$A5,"twin brother.  How can I help you?",$0D
 		.BYTE $AC
 		.WORD byte_81A6
 byte_814F:	MOVEXY	0,0		; DATA XREF: RAM:8DF5o
-aWhatAreYouHere:.BYTE $A5,"What are you here for, churl?",$D
+aWhatAreYouHere:.BYTE	$A5,"What are you here for, churl?",$0D
 		.BYTE $AC
 		.WORD byte_81A6
 		MOVEXY	0,1
@@ -1581,45 +1576,39 @@ aWhatProvisions:.BYTE $A5,"What provisions are you interested in?",$D
 		MOVEXY	0,0
 		STRJSR	loc_803A
 aHowMany:	.BYTE $A5,"How many "
-		.BYTE $B4
-		.WORD $6A
-		.BYTE $13
+		PRINTSTRP off_6A, 19
 aDoYouWant:	.BYTE " do you want",$0D,$0D
 aAt_0:		.BYTE $A5,"at "
 		.BYTE $B2
 		.WORD $6C
 		.BYTE 2
 aSilversEachq:	.BYTE " silvers each?",$0D
-		.BYTE $A6,$10,	4
+		MOVEXY	16,4
 		.BYTE	">"
 		STRJSR	loc_8037
-		.BYTE $FF
+		.BYTE	$FF
 		MOVEXY	0,1
-aIMSorryButISee:.BYTE $A5,"I'm sorry, but I seem to be out of",$0D,$0D
-aStockInThatPar:.BYTE $A5,"stock in that particular item.  I",$0D,$0D
-aExpectMyNextSh:.BYTE $A5,"expect my next shipment tommorow.",$0D,$FF
+aIMSorryButISee:.BYTE	$A5,"I'm sorry, but I seem to be out of",$0D,$0D
+aStockInThatPar:.BYTE	$A5,"stock in that particular item.  I",$0D,$0D
+aExpectMyNextSh:.BYTE	$A5,"expect my next shipment tommorow.",$0D,$FF
 		MOVEXY	0,2
 		STRJSR	loc_803A
-aIOnlyHave:	.BYTE $A5,"I only have "
+aIOnlyHave:	.BYTE	$A5,"I only have "
 		.BYTE $B2
 		.WORD $6D
 		.BYTE 3
-aOnHand_:	.BYTE " on hand."
-		.BYTE $D
+aOnHand_:	.BYTE	" on hand.",$0D
 		STRJSR	loc_8037
-		.BYTE $FF
+		.BYTE	$FF
 		STRJSR	loc_803A
 		MOVEXY	0,1
-aLetSSee___:	.BYTE $A5,"Let's see..."
+aLetSSee___:	.BYTE	$A5,"Let's see..."
 		.BYTE $B2
 		.WORD $6E
 		.BYTE 3
 		.BYTE ' '
-		.BYTE $B4
-		.WORD $6A
-		.BYTE $13
-aAt:		.BYTE " at"
-		.BYTE $D
+		PRINTSTRP off_6A, 19
+aAt:		.BYTE	" at",$0D
 		.BYTE $A5
 		.BYTE $B2
 		.WORD $6C
@@ -1645,29 +1634,17 @@ aThatWillBe:	.BYTE "That will be "
 		.BYTE $B2
 		.WORD $6C
 		.BYTE 3
-aSilversForOneO:.BYTE " silvers for one of",$0D
-aMyFine:	.BYTE $A5,"my fine "
-		.BYTE $B4
-		.WORD $6A
-		.BYTE $14
-a_:		.BYTE '.'
-		.BYTE $D
+aSilversForOneO:.BYTE	" silvers for one of",$0D
+aMyFine:	.BYTE	$A5,"my fine "
+		PRINTSTRP off_6A, 20
+a_:		.BYTE	'.',$0D
 		.BYTE $AC
 		.WORD byte_84F3
-		.BYTE $A6,  0,	1
-		.BYTE $A5
-aLeaveMyShoppeA:.BYTE "Leave my shoppe and don't return"
-		.BYTE $D
-		.BYTE $D
-		.BYTE $A5
-aUntilYouAreRea:.BYTE "until you are ready to make a decent"
-		.BYTE $D
-		.BYTE $D
-		.BYTE $A5
-aOffer:		.BYTE "offer!"
-		.BYTE $D
-		.BYTE $FF
-		.BYTE $A6,  0,	1
+		MOVEXY	0,1
+		.BYTE	$A5,"Leave my shoppe and don't return",$0D,$0D
+		.BYTE	$A5,"until you are ready to make a decent",$0D,$0D
+		.BYTE	$A5,"offer!",$0D,$FF
+		MOVEXY	0,1
 		.BYTE $A5
 aITireOfBargain:.BYTE "I tire of bargaining, this item is"
 		.BYTE $D
@@ -1843,21 +1820,13 @@ aPairOf:	.BYTE "pair of ",0
 		.WORD byte_899B
 		.WORD byte_89CE
 		.WORD byte_89CE
-byte_899B:	.BYTE $A6,  0,	0	; DATA XREF: RAM:8995o
-		.BYTE $A3
-		.WORD loc_803A
-		.BYTE $A5
-aHowAboutA:	.BYTE "How about a "
-		.BYTE $B4
-		.WORD $85
-		.BYTE 8
-		.BYTE $B4
-		.WORD $6A
-		.BYTE $19
-		.BYTE $D
-		.BYTE $D
-		.BYTE $A5
-aFor_0:		.BYTE "for "
+byte_899B:	MOVEXY	0,0
+		STRJSR	loc_803A
+aHowAboutA:	.BYTE	$A5,"How about a "
+		PRINTSTRP off_85, 8
+		PRINTSTRP off_6A, 25
+		.BYTE	$0D,$0D
+aFor_0:		.BYTE	$A5,"for "
 		.BYTE $B2
 		.WORD $6C
 		.BYTE 3
@@ -1866,37 +1835,26 @@ aSilversq:	.BYTE " silvers?"
 		.BYTE $AC
 		.WORD byte_89FC
 byte_89CE:	.BYTE $A6,  0,	0	; DATA XREF: RAM:8997o	RAM:8999o
-		.BYTE $A3
-		.WORD loc_803A
-		.BYTE $A5
-aHereSA:	.BYTE "Here's a "
-		.BYTE $B4
-		.WORD $85
-		.BYTE 8
-		.BYTE $B4
-		.WORD $6A
-		.BYTE $19
-		.BYTE $D
-		.BYTE $D
-		.BYTE $A5
-aFor_1:		.BYTE "for "
+		STRJSR loc_803A
+aHereSA:	.BYTE	$A5,"Here's a "
+		PRINTSTRP off_85, 8
+		PRINTSTRP off_6A, 25
+		.BYTE	$0D,$0D
+aFor_1:		.BYTE	$A5,"for "
 		.BYTE $B2
 		.WORD $6C
 		.BYTE 3
-aSilversq_0:	.BYTE " silvers?"
-		.BYTE $D
-		.BYTE $D
-byte_89FC:	.BYTE $A6,  8,	4	; DATA XREF: RAM:89CCo	RAM:8A8Bo ...
+aSilversq_0:	.BYTE " silvers?",$0D,$0D
+byte_89FC:	MOVEXY	8,4
 		MenuItem "1","Agree to price"
-		.BYTE $A6,  8,	5
+		MOVEXY	8,5
 		MenuItem "2","Make an offer"
-		.BYTE $A6,  8,	6
+		MOVEXY	8,6
 		MenuItem "3","Look at the next item"
-		.BYTE $A6,  8,	7
+		MOVEXY	8,7
 		MenuItem "0","Buy something else"
-		.BYTE $A3
-		.WORD loc_8037
-		.BYTE $FF
+		STRJSR	loc_8037
+		.BYTE	$FF
 		.WORD byte_8A6A
 		.WORD byte_8A8D
 byte_8A6A:	.BYTE $A6,  0,	1	; DATA XREF: RAM:8A66o
@@ -2035,32 +1993,17 @@ aHowManySilvers:.BYTE "How many silvers do you offer?"
 byte_8CDD:	.BYTE $A6,  0,	2	; DATA XREF: RAM:8CD7o
 aAFinePurchaseI:.BYTE "A fine purchase if I must say so myself!"
 		.BYTE $FF
-byte_8D09:	.BYTE $A6,  0,	0	; DATA XREF: RAM:8CD9o
-		.BYTE $A5
-aAWiseChoice:	.BYTE "A wise choice!"
-		.BYTE $D
-		.BYTE $D
-		.BYTE $A5
-aThe:		.BYTE "The "
-		.BYTE $B4
-		.WORD $6A
-		.BYTE $19
-		.BYTE $D
-		.BYTE $D
-		.BYTE $A5
-aShallServeYouW:.BYTE "shall serve you well."
-		.BYTE $D
-		.BYTE $FF
-byte_8D40:	.BYTE $A6,  0,	2	; DATA XREF: RAM:8CDBo
-		.BYTE $A5
-aExcellentDecis:.BYTE "Excellent decision!"
-		.BYTE $D
-		.BYTE $FF
-		.BYTE $A6,  0,	0
-		.BYTE $A5
-aYouAreUnableTo:.BYTE "You are unable to carry this"
-		.BYTE $D
-		.BYTE $D
+
+byte_8D09:	MOVEXY	0,0
+aAWiseChoice:	.BYTE	$A5,"A wise choice!",$0D,$0D
+aThe:		.BYTE	$A5,"The "
+		PRINTSTRP off_6A, 25
+		.BYTE	$0D,$0D
+aShallServeYouW:.BYTE	$A5,"shall serve you well.",$0D,$FF
+byte_8D40:	MOVEXY	0,2
+aExcellentDecis:.BYTE	$A5,"Excellent decision!",$0D,$FF
+		MOVEXY	0,0
+aYouAreUnableTo:.BYTE	$A5,"You are unable to carry this",$0D,$0D
 		.BYTE $A5
 		.BYTE $B4
 		.WORD $6A
@@ -2072,22 +2015,19 @@ a_ComeBack:	.BYTE ".  Come back"
 aWhenYouHaveDis:.BYTE "when you have disposed of some items."
 		.BYTE $D
 		.BYTE $FF
-		.BYTE $A6,  0,	2
-		.BYTE $A5
-aIfThatsYourAtt:.BYTE "If thats your attitude that item is"
-		.BYTE $D
-		.BYTE $D
-		.BYTE $A5
-aNoLongerForS_0:.BYTE "no longer for sale!",$D
-		.BYTE $FF
-		.WORD byte_814F
-		.WORD byte_80D1
-		.WORD byte_8093
-		.WORD byte_805A
-		.WORD byte_8E05
-		.WORD byte_8E5A
-		.WORD byte_8E5A
-		.WORD byte_8E8E
+		MOVEXY	0,2
+aIfThatsYourAtt:.BYTE	$A5,"If thats your attitude that item is",$0D,$0D
+aNoLongerForS_0:.BYTE	$A5,"no longer for sale!",$0D,$FF
+
+off_8DF5:	.WORD	byte_814F
+		.WORD	byte_80D1
+		.WORD	byte_8093
+		.WORD	byte_805A
+		.WORD	byte_8E05
+		.WORD	byte_8E5A
+		.WORD	byte_8E5A
+		.WORD	byte_8E8E
+
 byte_8E05:	.BYTE $A6,  0,	0	; DATA XREF: RAM:8DFDo
 		.BYTE $A5
 aAreYouJustGoin:.BYTE "Are you just going to stand there or"
