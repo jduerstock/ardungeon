@@ -70,18 +70,12 @@ loc_7685:				; CODE XREF: RAM:7680j
 		ORA	$758D
 		BNE	loc_76CC
 		JSR	$1869
-		LDA	$630F
-		STA	$758C
-		LDA	$6310
-		STA	$758D
+		dmv	$758C, $630F
 		ldxy	$7508
 		LDA	#$15
 		JSR	$1863
 		BCS	loc_76CC
-		LDA	#$55 ; 'U'
-		STA	$16
-		LDA	#$7A ; 'z'
-		STA	$17
+		dldi	$16, $7A55
 		JSR	sub_7930
 		ldxy	$7D7E
 		JSR	$1884

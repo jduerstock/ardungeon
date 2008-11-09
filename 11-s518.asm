@@ -1032,14 +1032,14 @@ PRTOP_A1:				; blink on
 		STA	BLINKFLAG
 		BNE	loc_1CAB
 
-loc_1CF3:
-		JSR	sub_1F26
+PRTOP_A4:
+		JSR	LD_off18
 		LDA	(off_18),Y
 		JSR	sub_1E9D
 		JMP	loc_1CAB
 ; ---------------------------------------------------------------------------
 PRTOP_A3:
-		JSR	sub_1F26	; load function address from string
+		JSR	LD_off18	; load function address from string
 		JSR	sub_1D07	; JSR to it
 		JMP	loc_1CAB	; continue processing
 
@@ -1070,7 +1070,7 @@ PRTOP_A2:
 		LDA	#0
 		BEQ	loc_1D0F
 
-loc_1D2A:
+PRTOP_A6:
 		JSR	LDA_off16
 		STA	$1F
 		JSR	LDA_off16
@@ -1080,7 +1080,7 @@ loc_1D2A:
 		JMP	loc_1CAB
 ; ---------------------------------------------------------------------------
 
-loc_1D3B:
+PRTOP_A7:
 		dmv	$27, off_16
 		LDA	#$C0 ; 'À'
 		STA	$24
@@ -1090,7 +1090,7 @@ loc_1D3B:
 		JMP	loc_1CAB
 ; ---------------------------------------------------------------------------
 
-loc_1D50:
+PRTOP_A8:
 		LDA	#0
 		STA	$1F
 		LDA	unk_1FA8,X
@@ -1111,7 +1111,7 @@ loc_1D5D:				; CODE XREF: RAM:1D6Aj
 		JMP	loc_1CAB
 ; ---------------------------------------------------------------------------
 
-loc_1D74:
+PRTOP_A9:
 		JSR	loc_1D7A
 		JMP	loc_1CAB
 ; ---------------------------------------------------------------------------
@@ -1138,7 +1138,7 @@ loc_1D91:				; CODE XREF: RAM:1D95j
 		RTS
 ; ---------------------------------------------------------------------------
 
-loc_1D9A:
+PRTOP_AB:
 		BIT	$24
 		BMI	loc_1DBD
 		LDA	#$28 ; '('
@@ -1164,15 +1164,15 @@ loc_1DBD:				; CODE XREF: RAM:1D9Cj
 		JMP	loc_1CAB
 ; ---------------------------------------------------------------------------
 
-loc_1DC0:
+PRTOP_AA:
 		LDA	#0
 		STA	BLINKFLAG
 		STA	$24
 		JMP	loc_1CAB
 ; ---------------------------------------------------------------------------
 
-loc_1DC9:
-		JSR	sub_1F26
+PRTOP_B0:
+		JSR	LD_off18
 
 loc_1DCC:				; CODE XREF: RAM:1DD4j
 		LDA	(off_18),Y
@@ -1183,8 +1183,8 @@ loc_1DCC:				; CODE XREF: RAM:1DD4j
 		JMP	loc_1DF9
 ; ---------------------------------------------------------------------------
 
-loc_1DD9:
-		JSR	sub_1F26
+PRTOP_B1:
+		JSR	LD_off18
 		STY	$29
 		STY	$2A
 		LDA	(off_18),Y
@@ -1195,8 +1195,8 @@ loc_1DD9:
 		JMP	loc_1DF9
 ; ---------------------------------------------------------------------------
 
-loc_1DEC:
-		JSR	sub_1F26
+PRTOP_B2:
+		JSR	LD_off18
 		STY	$29
 		STY	$2A
 		STY	$2B
@@ -1355,15 +1355,15 @@ loc_1EB1:				; CODE XREF: sub_1EA8+5j
 
 ; ---------------------------------------------------------------------------
 
-loc_1EB4:
-		JSR	sub_1F26
+PRTOP_B3:
+		JSR	LD_off18
 		JSR	LDA_off16
 		STA	$2D
 		JMP	loc_1ED4
 ; ---------------------------------------------------------------------------
 
-loc_1EBF:
-		JSR	sub_1F26
+PRTOP_B4:
+		JSR	LD_off18
 		JSR	LDA_off16
 		STA	$2D
 		LDA	(off_18),Y
@@ -1387,15 +1387,15 @@ loc_1EE0:				; CODE XREF: RAM:1ED6j
 		JMP	loc_1CAB
 ; ---------------------------------------------------------------------------
 
-loc_1EE3:
-		JSR	sub_1F26
+PRTOP_AC:
+		JSR	LD_off18
 		dmv	off_1F24, off_16
 		dmv	off_16, off_18
 		JMP	loc_1CAB
 ; ---------------------------------------------------------------------------
 
-loc_1EFB:
-		JSR	sub_1F26
+PRTOP_AD:
+		JSR	LD_off18
 		dmv	off_1F24, off_16
 		LDY	#0
 		LDA	(off_18),Y
@@ -1406,7 +1406,7 @@ loc_1EFB:
 		JMP	loc_1CAB
 ; ---------------------------------------------------------------------------
 
-loc_1F16:
+PRTOP_AE:
 		dmv	off_16, off_1F24
 		JMP	loc_1CAB
 ; ---------------------------------------------------------------------------
@@ -1416,13 +1416,13 @@ off_1F24:	.WORD	0		; DATA XREF: RAM:1EE8w	RAM:1F00w ...
 ; --------------- S U B	R O U T	I N E ---------------------------------------
 
 
-sub_1F26:				; CODE XREF: RAM:1CF3p	RAM:1CFEp ...
+LD_off18:				; CODE XREF: RAM:1CF3p	RAM:1CFEp ...
 		JSR	LDA_off16
 		STA	off_18
 		JSR	LDA_off16
 		STA	off_18+1
 		RTS
-; End of function sub_1F26
+; End of function LD_off18
 
 
 ; --------------- S U B	R O U T	I N E ---------------------------------------
@@ -1549,44 +1549,44 @@ byte_1FBF:	.BYTE	<(PRTOP_A0-1)	; DATA XREF: sub_1C88+42r
 		.BYTE	<(PRTOP_A1-1)
 		.BYTE	<(PRTOP_A2-1)
 		.BYTE	<(PRTOP_A3-1)
-		.BYTE	<(loc_1CF3-1)
+		.BYTE	<(PRTOP_A4-1)
 		.BYTE	<(PRTOP_A5-1)
-		.BYTE	<(loc_1D2A-1)
-		.BYTE	<(loc_1D3B-1)
-		.BYTE	<(loc_1D50-1)
-		.BYTE	<(loc_1D74-1)
-		.BYTE	<(loc_1DC0-1)
-		.BYTE	<(loc_1D9A-1)
-		.BYTE	<(loc_1EE3-1)
-		.BYTE	<(loc_1EFB-1)
-		.BYTE	<(loc_1F16-1)
+		.BYTE	<(PRTOP_A6-1)
+		.BYTE	<(PRTOP_A7-1)
+		.BYTE	<(PRTOP_A8-1)
+		.BYTE	<(PRTOP_A9-1)
+		.BYTE	<(PRTOP_AA-1)
+		.BYTE	<(PRTOP_AB-1)
+		.BYTE	<(PRTOP_AC-1)
+		.BYTE	<(PRTOP_AD-1)
+		.BYTE	<(PRTOP_AE-1)
 		.BYTE	<(BAD_PRTOP-1)
-		.BYTE	<(loc_1DC9-1)
-		.BYTE	<(loc_1DD9-1)
-		.BYTE	<(loc_1DEC-1)
-		.BYTE	<(loc_1EB4-1)
-		.BYTE	<(loc_1EBF-1)
+		.BYTE	<(PRTOP_B0-1)
+		.BYTE	<(PRTOP_B1-1)
+		.BYTE	<(PRTOP_B2-1)
+		.BYTE	<(PRTOP_B3-1)
+		.BYTE	<(PRTOP_B4-1)
 byte_1FD4:	.BYTE	>(PRTOP_A0-1)	; DATA XREF: sub_1C88+3Er
 		.BYTE	>(PRTOP_A1-1)
 		.BYTE	>(PRTOP_A2-1)
 		.BYTE	>(PRTOP_A3-1)
-		.BYTE	>(loc_1CF3-1)
+		.BYTE	>(PRTOP_A4-1)
 		.BYTE	>(PRTOP_A5-1)
-		.BYTE	>(loc_1D2A-1)
-		.BYTE	>(loc_1D3B-1)
-		.BYTE	>(loc_1D50-1)
-		.BYTE	>(loc_1D74-1)
-		.BYTE	>(loc_1DC0-1)
-		.BYTE	>(loc_1D9A-1)
-		.BYTE	>(loc_1EE3-1)
-		.BYTE	>(loc_1EFB-1)
-		.BYTE	>(loc_1F16-1)
+		.BYTE	>(PRTOP_A6-1)
+		.BYTE	>(PRTOP_A7-1)
+		.BYTE	>(PRTOP_A8-1)
+		.BYTE	>(PRTOP_A9-1)
+		.BYTE	>(PRTOP_AA-1)
+		.BYTE	>(PRTOP_AB-1)
+		.BYTE	>(PRTOP_AC-1)
+		.BYTE	>(PRTOP_AD-1)
+		.BYTE	>(PRTOP_AE-1)
 		.BYTE	>(BAD_PRTOP-1)
-		.BYTE	>(loc_1DC9-1)
-		.BYTE	>(loc_1DD9-1)
-		.BYTE	>(loc_1DEC-1)
-		.BYTE	>(loc_1EB4-1)
-		.BYTE	>(loc_1EBF-1)
+		.BYTE	>(PRTOP_B0-1)
+		.BYTE	>(PRTOP_B1-1)
+		.BYTE	>(PRTOP_B2-1)
+		.BYTE	>(PRTOP_B3-1)
+		.BYTE	>(PRTOP_B4-1)
 
 ; --------------- S U B	R O U T	I N E ---------------------------------------
 
@@ -3270,37 +3270,26 @@ loc_299D:				; CODE XREF: sub_2979+1Aj sub_2979+1Fj
 ; ---------------------------------------------------------------------------
 
 a_PleaseInsert:
-		.BYTE $A8
+		.BYTE	$A8
 		MOVEXY	0,1
-		.BYTE $A5
-aPleaseInsertTh:.BYTE "Please insert The Dungeon Disk "
+		.BYTE	$A5,"Please insert The Dungeon Disk "
 		PRINTBYTE byte_1911,1
-		.BYTE $D
-		.BYTE $D
-		.BYTE $A5
-aSide:		.BYTE "Side "
+		.BYTE	$0D,$0D
+		.BYTE	$A5,"Side "
 		PRINTBYTE byte_1910,1
-		.BYTE $20
-aIntoAnyDrive_:	.BYTE "into any drive."
-		.BYTE $D
+		.BYTE	" into any drive.",$0D
 		MOVEXY	0,5
-		.BYTE $A5
-aPress:		.BYTE "Press "
+aPress:		.BYTE	$A5,"Press "
 		BLINK	"SPACE BAR"
-aToContinue:	.BYTE " to continue"
-		.BYTE $D
-		.BYTE $FF
+aToContinue:	.BYTE	" to continue",$0D,$FF
 
 a_OrPressESC:
 		MOVEXY	0,7
-		.BYTE $A5
-aOrPress:	.BYTE "or press "
+		.BYTE	$A5,"or press "
 		BLINK	"ESC"
-aToAbort:	.BYTE " to abort"
-		.BYTE $D
-		.BYTE $FF
-aLoading___:	.BYTE "Loading..."	; DATA XREF: sub_2CFB+1Ar
-aEncounter:	.BYTE "Encounter!"	; DATA XREF: sub_2CFB:loc_2D0Er
+aToAbort:	.BYTE	" to abort",$0D,$FF
+aLoading___:	.BYTE	"Loading..."	; DATA XREF: sub_2CFB+1Ar
+aEncounter:	.BYTE	"Encounter!"	; DATA XREF: sub_2CFB:loc_2D0Er
 
 byte_2A38:
 		.BYTE	0
@@ -4508,8 +4497,8 @@ loc_30DE:				; CODE XREF: sub_2BFA+4BDj
 ; END OF FUNCTION CHUNK	FOR sub_2BFA
 ; ---------------------------------------------------------------------------
 byte_30E1:
-		.BYTE $2C ; ,
-		.BYTE $2E ; .
+		.BYTE	","
+		.BYTE	"."
 ; ---------------------------------------------------------------------------
 
 loc_30E3:				; CODE XREF: RAM:1809j
@@ -5379,14 +5368,11 @@ aExamineSpells:	.BYTE "Examine Spells",0
 
 byte_3710:
 		MOVEXY 0,2
-		.BYTE $A5
-aExamine:	.BYTE "Examine "
+aExamine:	.BYTE $A5,"Examine "
 		BLINK	"I"
 aTemsOr:	.BYTE "tems or "
 		BLINK	"S"
-aPellsq:	.BYTE "pells?"
-		.BYTE $D
-		.BYTE $FF
+aPellsq:	.BYTE "pells?",$0D,$FF
 
 aForwardBackEsc:
 		BLINK	"F"
@@ -5394,8 +5380,7 @@ aOrward:	.BYTE "orward, "
 		BLINK	"B"
 aAckOr:		.BYTE "ack, or "
 		BLINK	"ESC"
-		.BYTE " to exit"
-		.BYTE $AE
+		.BYTE " to exit",$AE
 ; ---------------------------------------------------------------------------
 
 loc_3756:
@@ -5446,7 +5431,7 @@ loc_3797:				; CODE XREF: RAM:379Aj
 		CMP	#'Y'
 		BNE	loc_37BB
 		JSR	sub_3CC2
-		LDA	#$31 ; '1'
+		LDA	#$31
 		STA	SEGNO
 		dldi	SEGADDR, SEG_7600
 		JSR	SEGLOAD
@@ -5459,10 +5444,7 @@ loc_37BB:				; CODE XREF: RAM:37A1j
 
 a_SaveCharacter:
 		MOVEXY	0,2
-		.BYTE $A5
-aSaveCharacterq:.BYTE "Save character?"
-		.BYTE $D
-		.BYTE $D
+aSaveCharacterq:.BYTE $A5,"Save character?",$0D,$0D
 		STRSUB	byte_382E
 ; ---------------------------------------------------------------------------
 
