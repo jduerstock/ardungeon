@@ -27,7 +27,7 @@
 		dldi	off_16, $76A3
 		JSR	$1812
 		LDA	#3
-		JSR	$1899
+		JSR	j_RND_A
 		TAX
 		LDA	unk_76F8,X
 		STA	byte_76F6

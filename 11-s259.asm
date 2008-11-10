@@ -1057,7 +1057,7 @@ loc_7CC1:				; CODE XREF: RAM:7CBAj
 		ADC	#0
 		STA	byte_83BE
 		LDA	#6
-		JSR	$1899
+		JSR	j_RND_A
 		ASL	A
 		TAX
 		LDA	off_8305,X

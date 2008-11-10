@@ -71,7 +71,7 @@ loc_7670:				; CODE XREF: RAM:7666j
 		LDA	#0
 		STA	$7540
 		LDA	#$D
-		JSR	$1899
+		JSR	j_RND_A
 		STA	$7541
 		JSR	loc_7942
 ; START	OF FUNCTION CHUNK FOR sub_78D8
@@ -234,9 +234,8 @@ loc_7780:
 		TAX
 		JSR	$1884
 		LDA	#1
-		JSR	$1899
-		LDX	#$7B ; '{'
-		LDY	#$B3 ; '³'
+		JSR	j_RND_A
+		ldxy	$7BB3
 		JSR	$185D
 		JMP	loc_7855
 ; ---------------------------------------------------------------------------
@@ -489,7 +488,7 @@ loc_7942:				; CODE XREF: RAM:7689p
 
 loc_7946:				; CODE XREF: RAM:7955j
 		LDA	#$14
-		JSR	$1899
+		JSR	j_RND_A
 		ldxy	$7542
 		CLC
 		JSR	j_SETBIT
@@ -519,7 +518,7 @@ loc_7967:				; CODE XREF: RAM:7963j
 		CMP	#5
 		BCS	loc_7983
 		LDA	#$14
-		JSR	$1899
+		JSR	j_RND_A
 		ldxy	$7542
 		SEC
 		JSR	j_SETBIT
@@ -533,7 +532,7 @@ loc_7983:				; CODE XREF: RAM:7971j
 
 loc_7989:				; CODE XREF: RAM:799Cj
 		LDA	#$14
-		JSR	$1899
+		JSR	j_RND_A
 		STX	loc_7999+1
 		ldxy	$7542
 		SEC

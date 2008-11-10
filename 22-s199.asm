@@ -163,7 +163,7 @@ loc_7735:				; CODE XREF: RAM:76FFj	RAM:772Cj ...
 		LDA	byte_7D1E
 		BEQ	loc_774F
 		LDA	#1
-		JSR	$1899
+		JSR	j_RND_A
 		CLC
 		ADC	#1
 		TAX
@@ -645,8 +645,7 @@ loc_7A2C:				; CODE XREF: RAM:7A27j
 		LDA	$77,X
 		JSR	sub_7B00
 		BCC	loc_7A48
-		LDX	#$7E ; '~'
-		LDY	#$8D ; 'ç'
+		ldxy	$7E8D
 		JMP	loc_7868
 ; ---------------------------------------------------------------------------
 
@@ -678,7 +677,7 @@ loc_7A48:				; CODE XREF: RAM:7A3Fj
 
 loc_7A83:				; CODE XREF: RAM:7A66j
 		LDA	#1
-		JSR	$1899
+		JSR	j_RND_A
 		ldxy	$84D5
 		JSR	$185D
 		LDX	$66
@@ -770,7 +769,7 @@ loc_7B06:				; CODE XREF: RAM:7C36p
 
 loc_7B08:				; CODE XREF: sub_7B00+Fj
 		LDA	$63B7,Y
-		STA	$81D7,Y
+		STA	byte_81D7,Y
 		DEY
 		BPL	loc_7B08
 		LDA	byte_81D8
@@ -800,7 +799,7 @@ loc_7B43:				; CODE XREF: sub_7B00+22j sub_7B00+3Fj
 		LDY	#3
 
 loc_7B45:				; CODE XREF: sub_7B00+4Cj
-		LDA	$81D7,Y
+		LDA	byte_81D7,Y
 		STA	$63B7,Y
 		DEY
 		BPL	loc_7B45
@@ -1354,36 +1353,22 @@ aIMSureThatThe:	.BYTE "I'm sure that the "
 		.WORD $7F
 		.BYTE $16
 		.BYTE $D
-		.BYTE $A5
-aWillBeToYourLi:.BYTE "will be to your liking."
-		.BYTE $D
-		.BYTE $AC
-		.WORD byte_8191
-		.BYTE $A6,  0,	1
-		.BYTE $A5
-aHereSThe:	.BYTE "Here's the "
+		.BYTE	$A5,"will be to your liking.",$0D
+		.BYTE	$AC
+		.WORD	byte_8191
+		MOVEXY	0,1
+		.BYTE	$A5,"Here's the "
 		.BYTE $B4
 		.WORD $7F
 		.BYTE $1D
-a__0:		.BYTE "."
-		.BYTE $D
-byte_8191:	.BYTE $A6,  0,	5	; DATA XREF: RAM:817Ao
-		.BYTE $A5
-aWillThereBeAny:.BYTE "Will there be anything else?"
-		.BYTE $D
-		.BYTE $D
-		.BYTE $A5
-		.BYTE "("
-		.BYTE $A1
-aY_1:		.BYTE "Y"
-		.BYTE $A0
-aOr_1:		.BYTE " or "
-		.BYTE $A1
-aN_1:		.BYTE "N"
-		.BYTE $A0
-		.BYTE ")"
-		.BYTE $D
-		.BYTE $FF
+a__0:		.BYTE	".",$0D
+byte_8191:	MOVEXY	0,5
+		.BYTE	$A5,"Will there be anything else?",$0D,$0D
+		.BYTE	$A5,"("
+aY_1:		BLINK	"Y"
+aOr_1:		.BYTE	" or "
+aN_1:		BLINK	"N"
+		.BYTE	")",$0D,$FF
 ; ---------------------------------------------------------------------------
 
 loc_81C2:				; DATA XREF: RAM:8075o

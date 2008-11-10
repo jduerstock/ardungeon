@@ -1,4 +1,5 @@
 		.include	"equates.inc"
+		.include	"exp_kernel.inc"
 		.include	"globals.inc"
 		.include	"macros.inc"
 ;		* =  $7600
@@ -149,7 +150,7 @@ sub_771E:				; CODE XREF: RAM:76C6p	RAM:76FCp
 
 sub_7746:				; CODE XREF: sub_771E+10p sub_771E+20p
 		LDA	#$32 ; '2'
-		JSR	$1899
+		JSR	j_RND_A
 		CLC
 		ADC	#$32 ; '2'
 		RTS
@@ -161,7 +162,7 @@ sub_7746:				; CODE XREF: sub_771E+10p sub_771E+20p
 
 sub_774F:				; CODE XREF: sub_771Ep	sub_771E+8p ...
 		LDA	#$32 ; '2'
-		JSR	$1899
+		JSR	j_RND_A
 		CLC
 		ADC	#$C8 ; 'È'
 		RTS
@@ -366,7 +367,7 @@ loc_78A2:				; CODE XREF: RAM:789Ej
 
 loc_78D7:				; CODE XREF: RAM:78E2j
 		LDA	$65
-		JSR	$1899
+		JSR	j_RND_A
 		CLC
 		ADC	$67
 		STA	$67

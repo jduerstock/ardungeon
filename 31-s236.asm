@@ -202,8 +202,7 @@ loc_AC10:
 :	RTS
 
 byte_AC25:
-	.BYTE	$AC
-	.WORD	$7653
+	STRSUB	$7653
 	.BYTE	"sucks up your",$0D,$A5
 	.BYTE	$B4
 	.WORD	$76D9
@@ -505,13 +504,11 @@ loc_AC3E:
 :	STA	$AA2B,X
 	RTS
 
-	.BYTE	$AC
-	.WORD	$7653
+	STRSUB	$7653
 	.BYTE	"tries unsuccessfully",$0D
 	.BYTE	$A5,"to pilfer thy personage.",$0D,$FF
 
-	.BYTE	$AC
-	.WORD	$7653
+	STRSUB	$7653
 	.BYTE	"has stolen",$0D
 	.BYTE	$A5,"some of your "
 	.BYTE	$B4
@@ -526,22 +523,17 @@ loc_AC3E:
 	dldi	off_16, $AE56
 :	RTS
 
-	.BYTE	$AC
-	.WORD	$7653
-	.BYTE	"has taken your",$0D,$A5
-	.BYTE	$AC
-	.WORD	$AE37
-	.BYTE	$AC
-	.WORD	$7653
-	.BYTE	"tries",$0D
+		STRSUB	$7653
+		.BYTE	"has taken your",$0D,$A5
+		STRSUB	$AE37
+		STRSUB	$7653
+		.BYTE	"tries",$0D
 		.BYTE	$A5,"to bludgeon you.",$0D,$FF
-		.BYTE	$AC
-		.WORD	$7653
+		STRSUB	$7653
 		.BYTE	"demands:",$0D,$0D
 		.BYTE	$A5,$22,"Stand and deliver.",$0D
 		.BYTE	$A5,"Thy money or thy life!",$22,$0D
-		.BYTE	$AC
-		.WORD	$7674
+		STRSUB	$7674
 		.BYTE	$FF
 		MOVEXY	0,3
 		.BYTE	$A5,$22,"Thou pitiful fool!  Have a copper.",$22,$0D,$FF
@@ -681,8 +673,7 @@ loc_AC3E:
 :	ldxy	$AB6E
 	JMP	$770A
 :	JMP	$76F8
-	.BYTE	$AC
-	.WORD	$7665
+	STRSUB	$7665
 	.BYTE	"summons help...",$0D
 	.BYTE	$A5
 	.BYTE	$B4
@@ -990,13 +981,11 @@ loc_AC3E:
 	BPL	:-
 	RTS
 
-	.BYTE	$AC
-	.WORD	$7653
+	STRSUB	$7653
 	.BYTE	"demands:",$0D,$0D
 	.BYTE	$A5,$22,"Surrender in the name of his majesty",$0D
 	.BYTE	$A5,"the King. Thou art under arrest varlet!",$22,$0D
-	.BYTE	$AC
-	.WORD	$7674
+	STRSUB	$7674
 	.BYTE	$FF
 	MOVEXY	0,2
 	.BYTE	$A5,$22,"Enough of thy antics,",$0D
@@ -1044,8 +1033,7 @@ loc_AC3E:
 	JMP	$770A
 :	JMP	$76F8
 
-	.BYTE	$AC
-	.WORD	$7665
+	STRSUB	$7665
 	.BYTE	"summons help...",$0D
 	.BYTE	$A5
 	.BYTE	$B4
@@ -1290,12 +1278,10 @@ loc_AC3E:
 	.BYTE	"Cure how many hits at"
 	MOVEXY	8,4
 	.BYTE	"1 silver each?  >",$FF
-	.BYTE	$AC
-	.WORD	$7665
+	STRSUB	$7665
 	.BYTE	"lays his",$0D
 	.BYTE	$A5,"hands upon you.",$0D,$FF
-	.BYTE	$AC
-	.WORD	$7653
+	STRSUB	$7653
 	.BYTE	"grumbles:",$0D,$0D,$0D
 	.BYTE	$A5,"Thy purse is too small, however...",$0D,$FF
 	.BYTE	$00,$a5,$ab,$d0,$01
@@ -1373,15 +1359,12 @@ loc_AC3E:
 
 	.BYTE	"Have at you!",$00
 	.BYTE	"Learn respect then, wench!",$00
-	.BYTE	$AC
-	.WORD	$7665
+	STRSUB	$7665
 	.BYTE	"yields to you.",$0D,$FF
-	.BYTE	$AC
-	.WORD	$7653
+	STRSUB	$7653
 	.BYTE	"demands:",$0D,$0D
 	.BYTE	$A5,$22,"Yield the passage or face cold steel!",$22,$0D,$0D,$0D
-	.BYTE	$AC
-	.WORD	$7674
+	STRSUB	$7674
 	.BYTE	$FF
 
 	MOVEXY	0,3
@@ -1466,8 +1449,7 @@ loc_AC3E:
 	.BYTE	".",$22,$0D,$FF
 	.BYTE	"sir",0
 	.BYTE	"lady",0
-	.BYTE	$AC
-	.WORD	$7653
+	STRSUB	$7653
 	.BYTE	"pleads:",$0D,$0D
 	.BYTE	$A5,$22,"Please help a fellow human",$0D
 	.BYTE	$A5,"trapped in this foul world.",$22,$0D,$FF
@@ -1520,8 +1502,7 @@ loc_AC3E:
 	JMP	$7740
 	.BYTE	"knave",$00
 	.BYTE	"scullion",$00
-	.BYTE	$AC
-	.WORD	$7653
+	STRSUB	$7653
 	.BYTE	"tosses you a coin",$0D
 	.BYTE	$A5,"and says:",$0D,$0D
 	.BYTE	$A5,$22,"Away "	
@@ -1700,8 +1681,7 @@ loc_AC3E:
 	TXS
 	JMP	$7608
 
-	.BYTE	$AC
-	.WORD	$7665
+	STRSUB	$7665
 	.BYTE	"gates in",$0D
 	.BYTE	$A5
 	.BYTE	$B4
@@ -1779,8 +1759,7 @@ loc_AC3E:
 	BEQ	:--
 	JMP	$7755
 
-	.BYTE	$AC
-	.WORD	$7653
+	STRSUB	$7653
 	.BYTE	"signs a rune over your head.",$0D,$FF
 
 	LDA	RANDOM
@@ -2035,27 +2014,34 @@ loc_AC3E:
 	.BYTE	$00,$00,$05,$00
 
 ; ----------------------------------------------------------------------------
-	.SEGMENT	"MONST35"
+		.SEGMENT	"MONST35"
 
-	.BYTE	$08,$6b,$aa,$74,$aa,$7e,$aa,$7e,$aa,$7e,$aa,$34 ; |.....k.t.~.~.~.4|
-	.BYTE	$00,$01,$08,$4d,$1e,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00 ; |...M............|
-	.BYTE	$00,$1a,$01,$00,$10,$a8,$00,$06,$14,$00,$14,$00,$00,$14,$14,$00 ; |................|
-	.BYTE	$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$17,$00,$00,$11,$00,$11 ; |................|
-	.BYTE	$00,$00,$ff,$00,$00,$ff,$63,$72,$75,$6d,$62,$6c,$65,$73,$20,$69 ; |......crumbles i|
-	.BYTE	$6e,$74,$6f,$20,$61,$0d,$a5,$68,$65,$61,$70,$20,$6f,$66,$20,$73 ; |nto a..heap of s|
-	.BYTE	$68,$61,$74,$74,$65,$72,$65,$64,$20,$62,$6f,$6e,$65,$73,$ae,$73 ; |hattered bones.s|
-	.BYTE	$6b,$65,$6c,$65,$74,$6f,$6e,$00,$73,$6b,$65,$6c,$65,$74,$6f,$6e ; |keleton.skeleton|
-	.BYTE	$73,$00,$03,$40,$00,$00,$07,$0c,$53,$77,$6f,$72,$64,$00,$83,$ff ; |s..@....Sword...|
-	.BYTE	$c1,$63,$1e,$00,$1e,$00,$00,$91,$78,$00,$01,$00,$01,$00
-	ItemCurse "Clumsiness"
-	.BYTE	$00,$ff ; |AClumsiness.....|
-	.BYTE	$00,$00,$23,$00,$00,$00,$00,$00,$00,$00,$00,$00,$0a,$0a,$23,$23 ; |..#...........##|
-	.BYTE	$80,$10
+		.BYTE	$08
+		.WORD	a_Skeleton,a_Skeletons,i_SkeletonSword,i_SkeletonSword,i_SkeletonSword
+		.BYTE	$34 ; |.....k.t.~.~.~.4|
+		.BYTE	$00,$01,$08,$4d,$1e,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00 ; |...M............|
+		.BYTE	$00,$1a,$01,$00,$10,$a8,$00,$06,$14,$00,$14,$00,$00,$14,$14,$00 ; |................|
+		.BYTE	$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$17
+		.BYTE	$00,$00,$11,$00,$11,$00,$00,$ff,$00,$00,$ff
+		.BYTE	"crumbles into a",$0D
+		.BYTE	$A5,"heap of shattered bones",$AE
+a_Skeleton:	.BYTE	"skeleton",$00
+a_Skeletons:	.BYTE	"skeletons",$00
+i_SkeletonSword:
+		Item	$03,$00,$00,$07,"Sword"
+		.BYTE	$83,$ff,$c1,$63,$1e,$00,$1e,$00,$00,$91,$78,$00,$01,$00,$01,$00
+		ItemCurse "Clumsiness"
+		.BYTE	$00,$ff,$00
+		.BYTE	$00,$23,$00,$00,$00,$00,$00,$00,$00,$00,$00
+		.BYTE	$0a,$0a,$23,$23,$80,$10
+:
 
 ; ----------------------------------------------------------------------------
-	.SEGMENT	"MONST36"
+		.SEGMENT	"MONST36"
 
-	.BYTE	$05,$57,$aa,$5e,$aa,$66,$aa,$66,$aa,$66,$aa,$22,$00,$02 ; |...W.^.f.f.f."..|
+		.BYTE	$05
+		.WORD	$AA57,$AA5E,$AA66,$AA66,$AA66
+		.BYTE	$22,$00,$02 ; |...W.^.f.f.f."..|
 	.BYTE	$02,$14,$14,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$05 ; |................|
 	.BYTE	$01,$1e,$10,$a8,$00,$0a,$14,$00,$14,$00,$00,$14,$0a,$00,$00,$00 ; |................|
 	.BYTE	$00,$00,$00,$00,$00,$00,$00,$00,$16,$00,$00,$00,$00,$0f,$00,$00 ; |................|
@@ -2065,9 +2051,10 @@ loc_AC3E:
 	.BYTE	$74,$74,$69,$6e,$67,$20,$61,$72,$6d,$00,$88,$ff,$01,$01,$01,$00 ; |tting arm.......|
 	.BYTE	$01,$00,$00,$01,$02,$80,$01,$00,$10,$00,$c1,$ff,$c1,$ff,$1f,$00 ; |................|
 	.BYTE	$1f,$00,$05,$91,$62,$00,$02,$08,$01,$ff
-	ItemDisease "Living Death"
-	.BYTE	$00,$ff,$00,$16,$00,$00 ; |ing Death.......|
-	.BYTE	$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$02,$00
+		ItemDisease "Living Death"
+		.BYTE	$00,$ff,$00
+		.BYTE	$16,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00
+		.BYTE	$00,$00,$00,$00,$02,$00
 
 ; ----------------------------------------------------------------------------
 	.SEGMENT	"MONST37"

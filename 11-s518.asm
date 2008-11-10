@@ -1389,10 +1389,10 @@ loc_1EE0:				; CODE XREF: RAM:1ED6j
 ; ---------------------------------------------------------------------------
 
 PRTOP_AC:
-		JSR	LD_off18
-		dmv	off_1F24, off_16
-		dmv	off_16, off_18
-		JMP	loc_1CAB
+		JSR	LD_off18		; fetch pointer from string
+		dmv	off_1F24, off_16	; save old string pointer
+		dmv	off_16, off_18		; off_16 = off_18
+		JMP	loc_1CAB		; process next byte
 ; ---------------------------------------------------------------------------
 
 PRTOP_AD:

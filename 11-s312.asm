@@ -502,7 +502,7 @@ loc_793E:				; CODE XREF: sub_7AE7-1ADj
 
 loc_7946:				; CODE XREF: sub_7AE7-16Ej
 		LDA	#$17
-		JSR	$1899
+		JSR	j_RND_A
 		TAX
 		LDA	byte_8748,X
 		STA	$63
