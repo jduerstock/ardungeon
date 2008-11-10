@@ -1025,7 +1025,7 @@ byte_7C95:	.BYTE	>(sub_7C9E-1)	; DATA XREF: sub_7C78:loc_7C83r
 sub_7C9E:				; CODE XREF: RAM:7719j	RAM:7D5Bp ...
 		LDA	$6320
 		BPL	loc_7CCA
-		LDA	$633C
+		LDA	I_EXPLVL
 		LSR	A
 		LSR	A
 		LSR	A
@@ -1048,7 +1048,7 @@ loc_7CC0:				; CODE XREF: sub_7C9E+1Ej
 		STA	byte_AA00
 
 loc_7CCA:				; CODE XREF: sub_7C9E+3j sub_7C9E+27j
-		LDA	$633C
+		LDA	I_EXPLVL
 		LSR	A
 		JSR	j_RND_A
 		CMP	byte_AA0E
@@ -1815,7 +1815,7 @@ loc_811E:				; CODE XREF: sub_810E+14j
 
 loc_8125:
 		JSR	sub_948D
-		LDA	$633C
+		LDA	I_EXPLVL
 		CMP	#$F
 		BCC	loc_8131
 		LDA	#$E
@@ -1975,7 +1975,7 @@ loc_820F:				; CODE XREF: RAM:820Bj
 		BNE	loc_820A
 
 loc_8212:				; CODE XREF: RAM:8200j
-		LDA	$633C
+		LDA	I_EXPLVL
 		ASL	A
 		BCS	loc_8221
 		ADC	$6371
@@ -2517,7 +2517,7 @@ locret_852A:				; CODE XREF: sub_84CF+56j
 
 sub_852B:				; CODE XREF: sub_84CF-993p
 					; sub_88B0+9Fp
-		LDX	$633C
+		LDX	I_EXPLVL
 		BEQ	locret_855F
 		DEX
 		BNE	loc_8538
@@ -3224,7 +3224,7 @@ loc_8972:				; CODE XREF: RAM:896Ej
 		JSR	j_RND_A
 		STA	byte_A89F
 		JSR	sub_9337
-		LDA	$633C
+		LDA	I_EXPLVL
 		ASL	A
 		BCS	loc_8993
 		ASL	A
@@ -3657,7 +3657,7 @@ loc_8BCA:				; CODE XREF: RAM:8BC5j
 		STX	$9E
 		STA	$9F
 		CLC
-		ADC	$633C
+		ADC	I_EXPLVL
 		STA	$9F
 		BCC	loc_8BDA
 		INC	$9E
@@ -4697,7 +4697,7 @@ loc_918A:				; CODE XREF: sub_9124+6Fj
 loc_91A5:				; CODE XREF: sub_9124+7Cj
 		STA	$87
 		INC	$87
-		LDX	$633C
+		LDX	I_EXPLVL
 		CPX	#2
 		BCS	loc_91B2
 		LDY	#6
@@ -4705,7 +4705,7 @@ loc_91A5:				; CODE XREF: sub_9124+7Cj
 loc_91B2:				; CODE XREF: sub_9124+8Aj
 		STY	$88
 		JSR	sub_8FAA
-		LDA	$633C
+		LDA	I_EXPLVL
 		CLC
 		ADC	$7A
 		STA	$7A
@@ -4747,9 +4747,9 @@ loc_91EE:				; CODE XREF: sub_9124+E3j
 		BNE	loc_91EE
 		LDA	#2
 		JSR	j_RND_A
-		LDX	#$81 ; 'Å'
+		LDX	#$81
 		JSR	$1878
-		INC	$633C
+		INC	I_EXPLVL
 		JMP	loc_9161
 ; End of function sub_9124
 

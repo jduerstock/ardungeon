@@ -1116,17 +1116,18 @@ loc_AC3E:
 	.BYTE	$00,$1a,$00,$00,$00,$00,$00,$00,$00,$00,$00
 	.BYTE	$10,$10,$80,$80,$80,$15
 :
-	ldxy	$AAEC
-	JSR	$770A
-	JMP	$772E
+		ldxy	aIAmHere
+		JSR	$770A
+		JMP	$772E
 
-	MOVEXY	0,3
-	.BYTE	$A5,$22,"I am here for the honor",$0D
-	.BYTE	$A5,"of "
-	.BYTE	$B4
-	.WORD	$76DD
-	.BYTE	$16	
-	.BYTE	".",$22,$0D,$FF
+aIAmHere:
+		MOVEXY	0,3
+		.BYTE	$A5,$22,"I am here for the honor",$0D
+		.BYTE	$A5,"of "
+		.BYTE	$B4
+		.WORD	$76DD
+		.BYTE	$16	
+		.BYTE	".",$22,$0D,$FF
 
 ; ----------------------------------------------------------------------------
 		.SEGMENT	"MONST12"
@@ -1250,7 +1251,7 @@ loc_AC3E:
 		STA	$AC04,Y
 		DEY
 		BPL	:-
-:		LDA	$AC07
+		LDA	$AC07
 		CMP	$02
 		LDA	$AC06
 		SBC	$03

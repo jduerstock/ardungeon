@@ -600,7 +600,7 @@ byte_7AB5:	MOVEXY	0,2		; DATA XREF: RAM:7A61o
 		.BYTE	$A5,"knowledge.",$0D,$FF
 
 		MOVEXY	0,2
-aICanOnlyAccept:.BYTE	$A5,"I can only accept an offering of gold.",$0D,$FF
+		.BYTE	$A5,"I can only accept an offering of gold.",$0D,$FF
 
 		MOVEXY	0,2
 		.BYTE	$A5,"My patience with thee has ended.",$0D,$0D
@@ -608,23 +608,14 @@ aICanOnlyAccept:.BYTE	$A5,"I can only accept an offering of gold.",$0D,$FF
 		.BYTE	$A5,"offering.",$0D,$FF
 
 byte_7C14:	MOVEXY	0,1		; DATA XREF: RAM:7A49o
-aWelcomeToTheOr:.BYTE	$A5,"Welcome to the Oracle.",$0D,$0D
-aWhatDostThouOf:.BYTE	$A5,"What dost thou offer for my knowledge?",$0D
-		.BYTE $A6,  7,	6
-		.BYTE $AC
-		.WORD aDoYou		; "Do you ("
-byte_7C5E:	.BYTE $A6,  0,	0	; DATA XREF: RAM:7A4Bo
-		.BYTE $A5
-aYouStandBefore:.BYTE "You stand before the great and mighty"
-		.BYTE $D
-		.BYTE $D
-		.BYTE $A5
-aOracle_WhatWil:.BYTE "Oracle.  What will thee offer for"
-		.BYTE $D
-		.BYTE $D
-		.BYTE $A5
-aWordsOfWisdomq:.BYTE "words of wisdom?"
-		.BYTE $D
+		.BYTE	$A5,"Welcome to the Oracle.",$0D,$0D
+		.BYTE	$A5,"What dost thou offer for my knowledge?",$0D
+		MOVEXY	7,6
+		STRSUB	aDoYou
+byte_7C5E:	MOVEXY	0,0
+		.BYTE	$A5,"You stand before the great and mighty",$0D,$0D
+aOracle_WhatWil:.BYTE	$A5,"Oracle.  What will thee offer for",$0D,$0D
+aWordsOfWisdomq:.BYTE	$A5,"words of wisdom?",$0D
 		.BYTE $A6,  7,	6
 		.BYTE $AC
 		.WORD aDoYou		; "Do you ("

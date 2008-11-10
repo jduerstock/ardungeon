@@ -205,11 +205,10 @@ loc_77A6:				; CODE XREF: RAM:77A0j
 
 loc_77A8:				; CODE XREF: RAM:7776j
 		LDX	$67
-		LDA	$633C
+		LDA	I_EXPLVL
 		CMP	$9085,X
 		BCS	loc_77C2
-		LDX	#$8C ; 'å'
-		LDY	#$10
+		ldxy	$8C10
 
 loc_77B6:				; CODE XREF: RAM:7833j	RAM:7842j ...
 		JSR	sub_78FC
@@ -523,16 +522,14 @@ loc_7973:				; CODE XREF: RAM:770Fj	RAM:78EBj ...
 		LDA	$63C2,X
 		AND	#$40 ; '@'
 		BEQ	loc_7983
-		LDX	#$89 ; 'â'
-		LDY	#$36 ; '6'
+		ldxy	$8936
 		JMP	loc_7A12
 ; ---------------------------------------------------------------------------
 
 loc_7983:				; CODE XREF: RAM:797Aj
 		LDA	$6E
 		BMI	loc_798E
-		LDX	#$90 ; 'ê'
-		LDY	#$2A ; '*'
+		ldxy	$902A
 		JMP	loc_79A4
 ; ---------------------------------------------------------------------------
 
@@ -542,8 +539,7 @@ loc_798E:				; CODE XREF: RAM:7985j
 		LDY	#0
 		LDA	($62),Y
 		BPL	loc_79A0
-		LDX	#$8F ; 'è'
-		LDY	#$FB ; '˚'
+		ldxy	$8FFB
 		JMP	loc_79A4
 ; ---------------------------------------------------------------------------
 
@@ -564,8 +560,7 @@ loc_79A4:				; CODE XREF: RAM:798Bj	RAM:799Dj
 		STA	$6A
 		LDA	$81AD,X
 		STA	$6B
-		LDX	#$8E ; 'é'
-		LDY	#$1B
+		ldxy	$8E1B
 		JSR	sub_78FC
 		LDX	$67
 		LDA	$7561,X
@@ -580,15 +575,13 @@ loc_79A4:				; CODE XREF: RAM:798Bj	RAM:799Dj
 		BCC	loc_79EC
 		CMP	#5
 		BCS	loc_79F3
-		LDX	#$84 ; 'Ñ'
-		LDY	#$B5 ; 'µ'
+		ldxy	$84B5
 		JSR	sub_78FC
 		JMP	loc_7A1F
 ; ---------------------------------------------------------------------------
 
 loc_79EC:				; CODE XREF: RAM:79DCj
-		LDX	#$8D ; 'ç'
-		LDY	#$83 ; 'É'
+		ldxy	$8D83
 		JMP	loc_7A12
 ; ---------------------------------------------------------------------------
 
@@ -601,15 +594,13 @@ loc_79F3:				; CODE XREF: RAM:79D0j	RAM:79E0j
 		BCC	loc_7A0E
 		CMP	#5
 		BCS	loc_7A1F
-		LDX	#$84 ; 'Ñ'
-		LDY	#$6B ; 'k'
+		ldxy	$846B
 		JSR	sub_78FC
 		JMP	loc_7A1F
 ; ---------------------------------------------------------------------------
 
 loc_7A0E:				; CODE XREF: RAM:79FEj
-		LDX	#$8D ; 'ç'
-		LDY	#$BD ; 'Ω'
+		ldxy	$8DBD
 
 loc_7A12:				; CODE XREF: RAM:7980j	RAM:79F0j
 		JSR	sub_78FC
@@ -683,8 +674,7 @@ loc_7A8C:				; DATA XREF: RAM:7B7Bo
 		LDA	#$83 ; 'É'
 		STA	$51
 		JSR	$1893
-		LDX	#$82 ; 'Ç'
-		LDY	#$32 ; '2'
+		ldxy	$8232
 		JMP	sub_78FC
 ; ---------------------------------------------------------------------------
 
@@ -888,30 +878,16 @@ loc_7BAE:
 ; ---------------------------------------------------------------------------
 
 loc_7BBF:				; CODE XREF: RAM:7BB4j
-		LDX	#$8B ; 'ã'
-		LDY	#$93 ; 'ì'
-		LDA	#$B1 ; '±'
-		STA	$81
-		LDA	#$63 ; 'c'
-		STA	$82
-		LDA	#$71 ; 'q'
-		STA	$83
-		LDA	#$75 ; 'u'
-		STA	$84
+		ldxy	$8B93
+		dldi	$81, $63B1
+		dldi	$83, $7571
 		JMP	loc_7BEA
 ; ---------------------------------------------------------------------------
 
 loc_7BD6:				; CODE XREF: RAM:7BB8j
-		LDX	#$8B ; 'ã'
-		LDY	#$9B ; 'õ'
-		LDA	#$71 ; 'q'
-		STA	$81
-		LDA	#$75 ; 'u'
-		STA	$82
-		LDA	#$B1 ; '±'
-		STA	$83
-		LDA	#$63 ; 'c'
-		STA	$84
+		ldxy	$8B9B
+		dldi	$81, $7571
+		dldi	$83, $63B1
 
 loc_7BEA:				; CODE XREF: RAM:7BD3j
 		STX	$70
@@ -1102,8 +1078,7 @@ loc_7D09:				; CODE XREF: RAM:7CFFj
 		LDA	($83),Y
 		ADC	3
 		STA	($83),Y
-		LDX	#$8A ; 'ä'
-		LDY	#$72 ; 'r'
+		ldxy	$8A72
 		JSR	sub_78FC
 		JMP	loc_7B85
 ; ---------------------------------------------------------------------------
@@ -1136,8 +1111,7 @@ loc_7D58:
 		BCC	loc_7D75
 
 loc_7D6E:				; CODE XREF: RAM:7E53j	RAM:7F17j ...
-		LDX	#$8D ; 'ç'
-		LDY	#$FE ; '˛'
+		ldxy	$8DFE
 		JMP	sub_78FC
 ; ---------------------------------------------------------------------------
 
@@ -1149,8 +1123,7 @@ loc_7D75:				; CODE XREF: RAM:7D6Cj
 		STA	($62),Y
 
 loc_7D80:				; CODE XREF: RAM:7D78j
-		LDX	#$8F ; 'è'
-		LDY	#$FB ; '˚'
+		ldxy	$8FFB
 		STX	$6D
 		STY	$6C
 		JMP	sub_81B0
@@ -1319,7 +1292,7 @@ loc_7E9C:				; CODE XREF: RAM:loc_7EEDj
 		LDA	($62),Y
 		BMI	loc_7EF0
 		TAX
-		LDA	$633C
+		LDA	I_EXPLVL
 		CMP	$9496,X
 		BCC	loc_7EF3
 		TXA
@@ -1681,7 +1654,7 @@ loc_8112:				; CODE XREF: RAM:8104j	RAM:810Ej
 		LDX	$4B
 		DEX
 		BPL	loc_80FE
-		LDA	$633C
+		LDA	I_EXPLVL
 		LSR	A
 		CLC
 		ADC	#4
@@ -1899,116 +1872,60 @@ a_:		.BYTE ".",$22,$0D,$FF
 		.BYTE $B4
 		.WORD $8A
 		.BYTE $18
-		.BYTE '!',$0D,$FF
-		.BYTE $A6,  0,	1
-		.BYTE $A5
-aDoYouWantToRel:.BYTE "Do you want to relinquish your"
-		.BYTE $D
-		.BYTE $D
-		.BYTE $A5
-aSpellOf:	.BYTE "spell of "
+		.BYTE	'!',$0D,$FF
+		MOVEXY	0,1
+		.BYTE	$A5,"Do you want to relinquish your",$0D,$0D
+		.BYTE	$A5,"spell of "
 		.BYTE $B3
 		.WORD unk_9131
 		.BYTE $1E
-		.BYTE $20
-		.BYTE $28 ; (
+		.BYTE	" ("
 		.BYTE $B2
 		.WORD $88
 		.BYTE	2
-aq:		.BYTE "%)?"
-		.BYTE $D
-		.BYTE $D
-		.BYTE $A5 ; •
-		.BYTE $AC ; ¨
-		.WORD $83F3
-		.BYTE $D
-		.BYTE $FF
+aq:		.BYTE "%)?",$0D,$0D
+		.BYTE	$A5
+		STRSUB	asc_83F3
+		.BYTE $0D,$FF
 asc_83F3:	.BYTE '('               ; DATA XREF: RAM:85FBo RAM:8637o ...
-		.BYTE $A1
-aY:		.BYTE 'Y'
-		.BYTE $A0
+aY:		BLINK 'Y'
 aOr:		.BYTE " or "
-		.BYTE $A1
-aN:		.BYTE 'N'
-		.BYTE $A0
+aN:		BLINK 'N'
 		.BYTE ')'
 		.BYTE $AE
-		.BYTE $A6,  0,	2
-		.BYTE $A5
-aItIsDone:	.BYTE "It is done!"
-		.BYTE $D
-		.BYTE $FF
-		.BYTE $A6,  0,	1
-		.BYTE $A5
-aThisIsYourLast:.BYTE "This is your last warning!"
-		.BYTE $D
-		.BYTE $D
-		.BYTE $AC
-		.WORD byte_8437
-		.BYTE $A6,  0,	2
-byte_8437:	.BYTE $A5		; DATA XREF: RAM:8432o
-aThouShaltNotKi:.BYTE "Thou shalt not kill fellow members"
-		.BYTE $D
-		.BYTE $D
-		.BYTE $A5
-aOfThe:		.BYTE "of the "
+		MOVEXY	0,2
+aItIsDone:	.BYTE	$A5,"It is done!",$0D,$FF
+		MOVEXY	0,1
+aThisIsYourLast:.BYTE	$A5,"This is your last warning!",$0D,$0D
+		STRSUB	byte_8437
+		MOVEXY	0,2
+byte_8437:	.BYTE	$A5,"Thou shalt not kill fellow members",$0D,$0D
+		.BYTE	$A5,"of the "
 		.BYTE $B4
 		.WORD $8AD8
 		.BYTE $16
-		.BYTE "!"
-		.BYTE $D
-		.BYTE $FF
-		.BYTE $A6,  0,	2
-		.BYTE $A5
-aWatchIt:	.BYTE "Watch it!"
-		.BYTE $D
-		.BYTE $D
-		.BYTE $A5
-aWeReGettingTir:.BYTE "We're getting tired of your holier than"
-		.BYTE $D
-		.BYTE $D
-		.BYTE $A5
-aThouAttitude:	.BYTE "thou attitude!"
-		.BYTE $D
-		.BYTE $FF
-		.BYTE $A6,  0,	2
-		.BYTE $A5
-aBeCareful:	.BYTE "Be careful!"
-		.BYTE $D
-		.BYTE $D
-		.BYTE $A5
-aThouArtHeadedD:.BYTE "Thou art headed down the wrong path."
-		.BYTE $D
-		.BYTE $FF
-		.BYTE $A6,  0,	2
-		.BYTE $A5
-aYourRingIsFull:.BYTE "Your ring is fully charged!"
-		.BYTE $D
-		.BYTE $FF
-		.BYTE $A6,  0,	0
-		.BYTE $A3
-		.WORD loc_90BD
-		.BYTE $A5
-aAtYourPresentL:.BYTE "At your present level you can only"
-		.BYTE $D
-		.BYTE $D
-aMaintain:	.BYTE "maintain "
-		.BYTE $B2
-		.WORD $89
-		.BYTE 2
-aSpellsAtATime_:.BYTE " spells at a time.  In order"
-		.BYTE $D
-		.BYTE $D
-		.BYTE $A5
-aToLearnThisNew:.BYTE "to learn this new spell you must"
-		.BYTE $D
-		.BYTE $D
-		.BYTE $A5
-aRelinquishOneO:.BYTE "relinquish one of your old spells first."
-		.BYTE $D
-		.BYTE $A3
-		.WORD loc_90C0
-		.BYTE $FF
+		.BYTE	"!",$0D,$FF
+		MOVEXY	0,2
+		.BYTE	$A5,"Watch it!",$0D,$0D
+		.BYTE	$A5,"We're getting tired of your holier than",$0D,$0D
+		.BYTE	$A5,"thou attitude!",$0D,$FF
+		MOVEXY	0,2
+		.BYTE	$A5,"Be careful!",$0D,$0D
+		.BYTE	$A5,"Thou art headed down the wrong path.",$0D,$FF
+		MOVEXY	0,2
+		.BYTE	$A5,"Your ring is fully charged!",$0D,$FF
+		MOVEXY	0,0
+		STRJSR	loc_90BD
+		.BYTE	$A5,"At your present level you can only",$0D,$0D
+		.BYTE	"maintain "
+		.BYTE	$B2
+		.WORD	$89
+		.BYTE	2
+		.BYTE	" spells at a time.  In order",$0D,$0D
+		.BYTE	$A5,"to learn this new spell you must",$0D,$0D
+		.BYTE	$A5,"relinquish one of your old spells first.",$0D
+		STRJSR	loc_90C0
+		.BYTE	$FF
 		.BYTE $A6,  0,	1
 		.BYTE $A5
 aItWillCost120S:.BYTE "It will cost 120 silvers to"

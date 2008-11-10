@@ -540,7 +540,7 @@ loc_797B:				; CODE XREF: sub_7AE7-231j
 		STA	$630D
 		LDA	#$FF
 		STA	$6320
-		LDA	$633C
+		LDA	I_EXPLVL
 		CLC
 		ADC	#$A
 		STA	$6381

@@ -34,7 +34,7 @@
 	DirEnt	$4000,3,1,114,,42	; items			; $12
 	DirEnt	$4000,2,2,1,,17		; fountain		; $13
 	DirEnt	$4000,2,1,639,,6	; ???			; $14
-	DirEnt	$4000,2,1,652,,22	; ???			; $15
+	DirEnt	$4000,2,1,652,,22	; starway		; $15
 	DirEnt	$4000,3,2,1,,16		; vault			; $16
 	DirEnt	$4000,3,2,34,,28	; goblin/troll		; $17
 	DirEnt	$4000,3,2,91,,17	; acrinimiril's tomb	; $18
@@ -43,7 +43,7 @@
 	DirEnt	$4000,3,2,126,,28	; ozob			; $1B
 	DirEnt	$4000,3,2,183,,39	; guild			; $1C
 	DirEnt	$4000,3,2,262,,32	; shop			; $1D
-	DirEnt	$4000,2,2,93,,20	; ???			; $1E
+	DirEnt	$4000,2,2,93,,20	; gargoyle		; $1E
 	DirEnt	$4000,3,1,199,,18	; inn			; $1F
 	DirEnt	$4000,3,2,327,,27	; oracle		; $20
 	DirEnt	$4000,3,2,382,,24	; enchantress		; $21
