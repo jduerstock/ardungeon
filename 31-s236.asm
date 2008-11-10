@@ -1,4 +1,5 @@
 		.include	"equates.inc"
+		.include	"exp_kernel.inc"
 		.include	"globals.inc"
 		.include	"macros.inc"
 
@@ -137,7 +138,7 @@ sub_AAD1:
 	JMP	$AB7B
 :	INC	$93
 	LDA	#$0B
-	JSR	$1899
+	JSR	j_RND_A
 	STA	$94
 	TAX
 	dldi	off_7, $6300
@@ -456,7 +457,7 @@ loc_AC3E:
 	JMP	$ADE7
 	INC	$93
 	LDA	#$08
-	JSR	$1899
+	JSR	j_RND_A
 	CLC
 	ADC	#$03
 	STA	$94
@@ -752,7 +753,7 @@ loc_AC3E:
 	ASL	A
 	TAX	
 	LDA	#$02
-	JSR	$1899
+	JSR	j_RND_A
 	CLC
 	ADC	$B3
 	STA	$B3
@@ -2795,7 +2796,7 @@ i_SceptreOfEvil:
 :
 M69_AAA3:
 		LDA	#$02
-		JSR	$1899
+		JSR	j_RND_A
 		CLC
 		ADC	$B3
 		STA	$B3

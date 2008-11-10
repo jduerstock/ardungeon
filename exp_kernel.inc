@@ -5,6 +5,7 @@ j_SEGLOAD	= $1842
 j_SETBIT	= $1860
 j_TESTBIT	= $1863
 j_LOADINV	= $1887
+j_RND_A		= $1899
 
 byte_18C1	= $18C1
 byte_18C4	= $18C4

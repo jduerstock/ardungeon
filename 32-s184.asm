@@ -1392,10 +1392,10 @@ loc_7F1A:				; CODE XREF: RAM:7F15j
 		STA	$4B
 		JSR	$1896
 		LDA	#$19
-		JSR	$1899
+		JSR	j_RND_A
 		STA	$69
 		LDA	#$19
-		JSR	$1899
+		JSR	j_RND_A
 		ADC	$69
 		STA	$69
 		LDA	$6369
@@ -1582,10 +1582,10 @@ loc_807C:				; CODE XREF: RAM:8082j
 		LSR	A
 		LSR	A
 		LSR	A
-		JSR	$1899
+		JSR	j_RND_A
 		STA	$69
 		LDA	#4
-		JSR	$1899
+		JSR	j_RND_A
 		ADC	$69
 		CMP	#9
 		BCC	loc_809C
@@ -1875,10 +1875,10 @@ sub_81FB:				; CODE XREF: RAM:8134p
 		.BYTE	4
 		.BYTE $A8,$FF
 		MOVEXY	0,1
-aTheGuildMaster:.BYTE	$A5,"The Guild Master performs a few",$0D
-aChantsAndGestu:.BYTE $A5,"chants and gestures and then",$0D
-aProclaims:	.BYTE $A5,"proclaims:",$0D,$0D
-aAllCursesHaveB:.BYTE $A5,$22,"All curses have been removed,",$0D
+		.BYTE	$A5,"The Guild Master performs a few",$0D
+		.BYTE	$A5,"chants and gestures and then",$0D
+		.BYTE	$A5,"proclaims:",$0D,$0D
+		.BYTE	$A5,$22,"All curses have been removed,",$0D
 		.BYTE $A5
 		.BYTE $B4
 		.WORD $6A
@@ -1887,36 +1887,19 @@ aAllCursesHaveB:.BYTE $A5,$22,"All curses have been removed,",$0D
 		.BYTE $B3
 		.WORD $6321
 		.BYTE $19
-a_:		.BYTE ".",$22
-		.BYTE $D
-		.BYTE $FF
-		.BYTE $A6,  0,	0
-		.BYTE $A5
-aYouAreNowPartO:.BYTE "You are now part of our ancient order!"
-		.BYTE $D
-		.BYTE $A5
-aWeGiveYouYourO:.BYTE "We give you your own Guild Ring to"
-		.BYTE $D
-		.BYTE $A5
-aStoreSpellEner:.BYTE "store spell energy and identify yourself"
-		.BYTE $D
-		.BYTE $A5
-aToOtherMembers:.BYTE "to other members.  Wear it with pride!"
-		.BYTE $D
-		.BYTE $A5
-aYouMayAlsoKeep:.BYTE "You may also keep your valuables safe"
-		.BYTE $D
-		.BYTE $A5
-aInYourGuildLoc:.BYTE "in your guild locker. Beware of anyone"
-		.BYTE $D
-		.BYTE $A5
-aFromThe:	.BYTE "from The "
+a_:		.BYTE ".",$22,$0D,$FF
+		MOVEXY	0,0
+		.BYTE	$A5,"You are now part of our ancient order!",$0D
+		.BYTE	$A5,"We give you your own Guild Ring to",$0D
+		.BYTE	$A5,"store spell energy and identify yourself",$0D
+		.BYTE	$A5,"to other members.  Wear it with pride!",$0D
+		.BYTE	$A5,"You may also keep your valuables safe",$0D
+		.BYTE	$A5,"in your guild locker. Beware of anyone",$0D
+		.BYTE	$A5,"from The "
 		.BYTE $B4
 		.WORD $8A
 		.BYTE $18
-		.BYTE '!'
-		.BYTE $D
-		.BYTE $FF
+		.BYTE '!',$0D,$FF
 		.BYTE $A6,  0,	1
 		.BYTE $A5
 aDoYouWantToRel:.BYTE "Do you want to relinquish your"

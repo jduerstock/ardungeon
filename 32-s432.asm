@@ -118,7 +118,7 @@ loc_7730:				; CODE XREF: RAM:7727j
 
 loc_7734:				; CODE XREF: RAM:7722j	RAM:772Dj
 		LDA	#2
-		JSR	$1899
+		JSR	j_RND_A
 		JSR	$185D
 
 loc_773C:				; CODE XREF: RAM:76FFj
@@ -764,7 +764,7 @@ loc_7B9A:				; CODE XREF: RAM:7B8Ej
 		LDX	#$82 ; '‚'
 		LDY	#$7D ; '}'
 		LDA	#1
-		JSR	$1899
+		JSR	j_RND_A
 		JSR	$185D
 		dmv	$92, off_16
 
@@ -1041,7 +1041,7 @@ loc_7CFC:				; CODE XREF: RAM:7D25j	RAM:7D28j
 		LDA	unk_7F38,X
 		SEC
 		SBC	unk_7F34,X
-		JSR	$1899
+		JSR	j_RND_A
 		CLC
 		ADC	unk_7F34,X
 		STX	loc_7D23+1
@@ -1065,7 +1065,7 @@ loc_7D27:				; CODE XREF: RAM:7D08j
 
 loc_7D37:				; CODE XREF: RAM:7D4Aj
 		LDA	#$28 ; '('
-		JSR	$1899
+		JSR	j_RND_A
 		STX	loc_7D47+1
 		ldxy	$7536
 		SEC
@@ -1218,7 +1218,7 @@ loc_7E0E:				; CODE XREF: RAM:7E0Bj
 		LDA	$72,X
 		BNE	loc_7E19
 		LDA	#$A
-		JSR	$1899
+		JSR	j_RND_A
 		ADC	#2
 
 loc_7E19:				; CODE XREF: RAM:7E10j
@@ -1249,7 +1249,7 @@ loc_7E38:				; CODE XREF: RAM:7E31j	RAM:7E33j
 
 loc_7E44:				; CODE XREF: RAM:7F25j
 		LDA	($8E),Y
-		JSR	$1899
+		JSR	j_RND_A
 		DEY
 		CLC
 		ADC	($8E),Y
@@ -1344,7 +1344,7 @@ loc_7EE8:				; CODE XREF: RAM:7EEFj
 
 loc_7EF1:				; CODE XREF: RAM:7EEAj	RAM:7EECj
 		LDA	$7F24,Y
-		JSR	$1899
+		JSR	j_RND_A
 		CLC
 		ADC	$7F2A,Y
 		ldxy	$9EF0

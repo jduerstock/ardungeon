@@ -32,13 +32,12 @@
 		LDA	#5
 		STA	$C
 		JSR	$187E
-		LDX	#$9F ; 'Ÿ'
-		LDY	#$F0 ; 'ð'
+		ldxy	$9FF0
 		JSR	$96F0
 		dldi	off_16, $76A3
 		JSR	$1812
 		LDA	#3
-		JSR	$1899
+		JSR	j_RND_A
 		TAX
 		LDA	unk_76F8,X
 		STA	byte_76F6

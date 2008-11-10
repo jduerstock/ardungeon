@@ -100,7 +100,7 @@ loc_76A0:				; CODE XREF: RAM:7654j	RAM:766Bj ...
 		INX
 		BNE	loc_76CF
 		LDA	#$3F ; '?'
-		JSR	$1899
+		JSR	j_RND_A
 		JSR	$1887
 		BEQ	loc_76CF
 		LDY	#0

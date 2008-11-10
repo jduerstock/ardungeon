@@ -726,7 +726,7 @@ loc_7AA7:				; CODE XREF: sub_7758+285p RAM:79F7p ...
 
 loc_7AAF:				; CODE XREF: RAM:7ABDj
 		TXA
-		JSR	$1899
+		JSR	j_RND_A
 		CMP	loc_7AC2+1
 		BCC	loc_7ABB
 		STA	loc_7AC2+1

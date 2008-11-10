@@ -245,6 +245,7 @@ j_LOADINV:
 ; ---------------------------------------------------------------------------
 		JMP	sub_4EC4	; $1896
 ; ---------------------------------------------------------------------------
+j_RND_A:
 		JMP	sub_2B6B	; $1899
 ; ---------------------------------------------------------------------------
 		JMP	sub_5471	; $189C
@@ -3525,16 +3526,16 @@ loc_2B67:				; CODE XREF: sub_2B47+11j
 
 
 sub_2B6B:				; CODE XREF: RAM:1899j	RAM:535Dp
-		PHA
-		TXA
-		PHA
-		TYA
-		PHA
-		TSX
-		INC	$103,X
-		BNE	loc_2B7C
-		LDA	RANDOM
-		JMP	loc_2B92
+		PHA			;
+		TXA			;
+		PHA			; stash all the registers on the stack
+		TYA			;
+		PHA			;
+		TSX			;
+		INC	$103,X		; A++
+		BNE	loc_2B7C	; if A = 0, A = RANDOM
+		LDA	RANDOM		; and
+		JMP	loc_2B92	; return
 ; ---------------------------------------------------------------------------
 
 loc_2B7C:				; CODE XREF: sub_2B6B+9j
@@ -3565,14 +3566,8 @@ loc_2B92:				; CODE XREF: sub_2B6B+Ej
 ; End of function sub_2B6B
 
 ; ---------------------------------------------------------------------------
-unk_2B9D:	.BYTE	1		; DATA XREF: sub_2B6B+1Fr
-		.BYTE	3
-		.BYTE	7
-		.BYTE  $F
-		.BYTE $1F
-		.BYTE $3F ; ?
-		.BYTE $7F ; 
-		.BYTE $FF
+unk_2B9D:				; DATA XREF: sub_2B6B+1Fr
+		.BYTE	$01,$03,$07,$0F,$1F,$3F,$7F,$FF
 
 ; --------------- S U B	R O U T	I N E ---------------------------------------
 

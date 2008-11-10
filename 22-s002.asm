@@ -127,9 +127,8 @@ loc_76E6:				; CODE XREF: RAM:76EDj
 		DEX
 		BPL	loc_76E6
 		LDA	#2
-		JSR	$1899
-		LDX	#$78 ; 'x'
-		LDY	#$F
+		JSR	j_RND_A
+		ldxy	$780F
 		JSR	$185D
 		LDX	$62
 		JSR	$1851
@@ -144,9 +143,8 @@ loc_7706:
 		STA	$51
 		JSR	$1893
 		LDA	#2
-		JSR	$1899
-		LDX	#$78 ; 'x'
-		LDY	#$15
+		JSR	j_RND_A
+		ldxy	$7815
 		JSR	$185D
 		LDX	$62
 		JSR	$1851
@@ -157,9 +155,8 @@ loc_7721:
 		LDA	#$FF
 		STA	$639B
 		LDA	#2
-		JSR	$1899
-		LDX	#$78 ; 'x'
-		LDY	#$1B
+		JSR	j_RND_A
+		ldxy	$781B
 		JSR	$185D
 		LDX	$62
 		JSR	$1851
@@ -168,9 +165,8 @@ loc_7721:
 
 loc_773A:				; CODE XREF: RAM:76E1j
 		LDA	#2
-		JSR	$1899
-		LDX	#$78 ; 'x'
-		LDY	#$21 ; '!'
+		JSR	j_RND_A
+		ldxy	$7821
 		JSR	$185D
 		LDX	$62
 		JSR	$1851
@@ -197,16 +193,16 @@ aDoYou:		.BYTE "Do you "
 		MenuItem "1","Take a drink or"
 		MOVEXY	12,4
 		MenuItem "0","Leave?"
-		.BYTE $FF
+		.BYTE	$FF
 byte_778E:	.BYTE $FF		; DATA XREF: RAM:7654w	RAM:775Bo
 byte_778F:	.BYTE $FF		; DATA XREF: RAM:765Aw
 		.BYTE $A8,$FF
-		.BYTE $98 ; ˜
-		.BYTE $BE ; ¾
-		.BYTE $E6 ; æ
-		.BYTE $77 ; w
-		.BYTE $77 ; w
-		.BYTE $77 ; w
+		.BYTE	<aYouHaveComeToA
+		.BYTE	<aYouReFacingACr
+		.BYTE	<aYouInARoomWith
+		.BYTE	>aYouHaveComeToA
+		.BYTE	>aYouReFacingACr
+		.BYTE	>aYouInARoomWith
 aYouHaveComeToA:.BYTE "You have come to a bubbling fountain.",0
 aYouReFacingACr:.BYTE "You're facing a crystal clear fountain.",0
 aYouInARoomWith:.BYTE "You in a room with a sparkling fountain.",0

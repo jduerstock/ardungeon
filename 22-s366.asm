@@ -105,27 +105,24 @@ loc_76CC:				; CODE XREF: RAM:768Bj	RAM:76A5j
 		LDA	$6394
 		CMP	#$F0 ; 'р'
 		BCS	loc_7710
-		LDA	#$C2 ; 'В'
-		STA	$16
-		LDA	#$7A ; 'z'
-		STA	$17
+		dldi	off_16, $7AC2
 		JSR	sub_7930
 		JSR	sub_771E
 		JMP	loc_791F
 ; ---------------------------------------------------------------------------
 
 loc_7702:				; CODE XREF: RAM:76E2j	RAM:76E8j
-		dldi	$16, $7AE7
+		dldi	off_16, $7AE7
 		JSR	sub_7930
 		JMP	loc_791F
 ; ---------------------------------------------------------------------------
 
 loc_7710:				; CODE XREF: RAM:76EFj
-		dldi	$16, $7B5A
+		dldi	off_16, $7B5A
 		JSR	sub_7930
 		JMP	loc_791F
 
-; ЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫ S U B	R O U T	I N E ЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫ
+; --------------- S U B	R O U T	I N E ---------------------------------------
 
 
 sub_771E:				; CODE XREF: RAM:76C6p	RAM:76FCp
@@ -147,7 +144,7 @@ sub_771E:				; CODE XREF: RAM:76C6p	RAM:76FCp
 ; End of function sub_771E
 
 
-; ЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫ S U B	R O U T	I N E ЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫ
+; --------------- S U B	R O U T	I N E ---------------------------------------
 
 
 sub_7746:				; CODE XREF: sub_771E+10p sub_771E+20p
@@ -159,7 +156,7 @@ sub_7746:				; CODE XREF: sub_771E+10p sub_771E+20p
 ; End of function sub_7746
 
 
-; ЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫ S U B	R O U T	I N E ЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫ
+; --------------- S U B	R O U T	I N E ---------------------------------------
 
 
 sub_774F:				; CODE XREF: sub_771Ep	sub_771E+8p ...
@@ -267,21 +264,21 @@ loc_77FE:				; CODE XREF: RAM:77F6j
 		JSR	$1887
 		BEQ	loc_77FB
 		LDY	#0
-		LDA	($41),Y
+		LDA	(off_41),Y
 		CMP	#7
 		BNE	loc_7857
 		JSR	$1896
 		LDY	#0
-		LDA	($43),Y
+		LDA	(off_43),Y
 		CMP	#2
 		BNE	loc_7857
 		INY
-		LDA	($43),Y
+		LDA	(off_43),Y
 		CMP	#8
 		BNE	loc_7857
 		LDA	#$10
 		LDY	#2
-		STA	($41),Y
+		STA	(off_41),Y
 		JSR	$18A5
 		ldxy	$7508
 		LDA	#5
@@ -302,7 +299,7 @@ loc_77FE:				; CODE XREF: RAM:77F6j
 loc_7857:				; CODE XREF: RAM:780Ej	RAM:7819j ...
 		LDA	#$10
 		LDY	#2
-		STA	($41),Y
+		STA	(off_41),Y
 		JSR	$18A5
 		ldxy	$7508
 		LDA	#5
@@ -345,7 +342,7 @@ loc_78A2:				; CODE XREF: RAM:789Ej
 		JSR	$1896
 		LDY	$66
 		INY
-		LDA	($43),Y
+		LDA	(off_43),Y
 		BEQ	loc_790A
 		CMP	#$FF
 		BEQ	loc_7906
@@ -422,7 +419,7 @@ loc_7921:				; CODE XREF: RAM:7928j
 		STY	$AC00
 		JMP	$180C
 
-; ЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫ S U B	R O U T	I N E ЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫ
+; --------------- S U B	R O U T	I N E ---------------------------------------
 
 
 sub_7930:				; CODE XREF: RAM:76AFp	RAM:76F9p ...
@@ -435,16 +432,10 @@ sub_7930:				; CODE XREF: RAM:76AFp	RAM:76F9p ...
 ; ---------------------------------------------------------------------------
 
 loc_793A:				; DATA XREF: RAM:7D05o
-		LDA	#7
-		STA	$16
-		LDA	#$7D ; '}'
-		STA	$17
+		dldi	off_16, $7D07
 		LDA	$63
 		BNE	locret_794E
-		LDA	#$24 ; '$'
-		STA	$16
-		LDA	#$7D ; '}'
-		STA	$17
+		dldi	off_16, $7D24
 
 locret_794E:				; CODE XREF: RAM:7944j
 		RTS
@@ -461,99 +452,62 @@ loc_7955:				; DATA XREF: RAM:7D21o
 		STA	$18FE
 		RTS
 ; ---------------------------------------------------------------------------
-		.BYTE $A8,$FF
-		.BYTE $A6,  0,	1
-		.BYTE $A5
-aThiefHowDareYo:.BYTE $22,"Thief!  How dare you disturb my sleep!"
-		.BYTE $D
-		.BYTE $D
-		.BYTE $A5
-aWhatDostThouWa:.BYTE "What dost thou want crunchy one?",$22
-		.BYTE $D
-		.BYTE $FF
-		.BYTE $A6,  0,	1
-		.BYTE $A5
-aThiefYouDareTo:.BYTE $22,"Thief!  You dare to return?"
-		.BYTE $D
-		.BYTE $D
-		.BYTE $A5
-aIHaveNoFurther:.BYTE "I have no further need for you"
-		.BYTE $D
-		.BYTE $D
-		.BYTE $A5
-aFoulMorsel:	.BYTE "foul morsel!",$22
-		.BYTE $D
-		.BYTE $FF
-		.BYTE $A6,  0,	0
-		.BYTE $A5
-aTheLairIsEmpty:.BYTE "The lair is empty."
-		.BYTE $D
-		.BYTE $A5
-aWhatDoYouDoq:	.BYTE "What do you do?"
-		.BYTE $D
+		.BYTE	$A8,$FF
+		MOVEXY	0,1
+		.BYTE	$A5,$22,"Thief!  How dare you disturb my sleep!",$0D,$0D
+		.BYTE	$A5,"What dost thou want crunchy one?",$22,$0D,$FF
+		MOVEXY	0,1
+		.BYTE	$A5,$22,"Thief!  You dare to return?",$0D,$0D
+		.BYTE	$A5,"I have no further need for you",$0D,$0D
+		.BYTE	$A5,"foul morsel!",$22,$0D,$FF
+		MOVEXY	0,0
+		.BYTE	$A5,"The lair is empty.",$0D
+		.BYTE	$A5,"What do you do?",$0D
 		MOVEXY	8,3
 		MenuItem "1","Grab some treasure"
-		.BYTE $D
+		.BYTE	$0D
 		MOVEXY	8,4
 		MenuItem "0","Leave"
-		.BYTE $D,$FF
-		.BYTE $A6,  0,	1
-		.BYTE $A5
-aYouGrabLotsOfG:.BYTE "You grab lots of gold, silver, gems"
-		.BYTE $D
-		.BYTE $D
-		.BYTE $A5
-aJewelsAndCoppe:.BYTE "jewels and coppers.  You also find a"
-		.BYTE $D
-		.BYTE $D
-		.BYTE $A5
-aBrokenPieceFro:.BYTE "broken piece from a staff."
-		.BYTE $D
-		.BYTE $FF
-		.BYTE $A6,  0,	2
-		.BYTE $A5
-aYouGrabHandful:.BYTE "You grab handfuls of valuables."
-		.BYTE $D
-		.BYTE $FF
-		.BYTE $A6,  0,	2
-		.BYTE $A5
-aApparentlyWord:.BYTE "Apparently word travels fast in the"
-		.BYTE $D
-		.BYTE $D
-		.BYTE $A5
-aDungeonBecause:.BYTE "Dungeon, because the lair has already"
-		.BYTE $D
-		.BYTE $D
-aBeenPickedClea:.BYTE	$A5,"been picked clean of valuables!",$D,$FF
+		.BYTE $0D,$FF
+		MOVEXY	0,1
+		.BYTE	$A5,"You grab lots of gold, silver, gems",$0D,$0D
+		.BYTE	$A5,"jewels and coppers.  You also find a",$0D,$0D
+		.BYTE	$A5,"broken piece from a staff.",$0D,$FF
 		MOVEXY	0,2
-aAsYouGrabAtThe:.BYTE	$A5,"As you grab at the treasures your burden",$D,$d
-aIsSuchThatYouD:.BYTE	$A5,"is such that you drop just as much as",$D,$D
-aYouKeep:	.BYTE	$A5,"you keep!",$D,$FF
+		.BYTE	$A5,"You grab handfuls of valuables.",$0D,$FF
+		MOVEXY	0,2
+		.BYTE	$A5,"Apparently word travels fast in the",$0D,$0D
+		.BYTE	$A5,"Dungeon, because the lair has already",$0D,$0D
+		.BYTE	$A5,"been picked clean of valuables!",$D,$FF
+		MOVEXY	0,2
+		.BYTE	$A5,"As you grab at the treasures your burden",$0D,$0D
+		.BYTE	$A5,"is such that you drop just as much as",$0D,$0D
+		.BYTE	$A5,"you keep!",$D,$FF
 		MOVEXY	0,0
-aYouConfrontAHi:.BYTE $A5,"You confront a hideous dragon.",$D
+aYouConfrontAHi:.BYTE	$A5,"You confront a hideous dragon.",$D
 		MOVEXY	4,2
-aWhatDoYouDoq_0:.BYTE $A5,"What do you do?",$D
+aWhatDoYouDoq_0:.BYTE	$A5,"What do you do?",$D
 		MOVEXY	8,4
 		MenuItem "1","Offer the dragon a gift"
 		MOVEXY	8,5
 		MenuItem "2","Attack the dragon"
 		MOVEXY	8,6
 		MenuItem "0","Flee!"
-		.BYTE $FF
+		.BYTE	$FF
 		MOVEXY	0,2
-aInExchangeForT:.BYTE $A5,"In exchange for the Bloodstone I",$D,$D
-aSupposeYouWant:.BYTE $A5,"suppose you want a reward?  Here, you",$D,$D
-aMayHaveThisSti:.BYTE $A5,"may have this stick.  Now begone!",$D,$FF
+aInExchangeForT:.BYTE	$A5,"In exchange for the Bloodstone I",$0D,$0D
+aSupposeYouWant:.BYTE	$A5,"suppose you want a reward?  Here, you",$0D,$0D
+aMayHaveThisSti:.BYTE	$A5,"may have this stick.  Now begone!",$0D,$FF
 		MOVEXY	0,2
-aIHaveNeedOfOnl:.BYTE $A5,"I have need of only one thing.",$D,$D
-aBringMeTheBloo:.BYTE $A5,"Bring me the Bloodstone!",$D,$FF
+aIHaveNeedOfOnl:.BYTE	$A5,"I have need of only one thing.",$0D,$0D
+aBringMeTheBloo:.BYTE	$A5,"Bring me the Bloodstone!",$0D,$FF
 		MOVEXY	0,2
-		.BYTE $A5,"The Dragon",$D,$D
+		.BYTE	$A5,"The Dragon",$0D,$0D
 		.BYTE	$A5
 		.BYTE	$B4
 		.WORD	$68
 		.BYTE	$26
-		.BYTE	$D,$D
+		.BYTE	$0D,$0D
 		STRJSR	loc_793A
 		STRJSR	loc_794F
 aWhichHitsFor:	.BYTE	$A5,"which hits for "
@@ -782,16 +736,16 @@ loc_7ECB:				; CODE XREF: RAM:7ECFj
 
 loc_7EF9:				; CODE XREF: RAM:7F1Fj
 		LDY	6
-		LDA	(7),Y
+		LDA	(off_7),Y
 		STA	4
 		LDY	#7
 
 loc_7F01:				; CODE XREF: RAM:7F0Cj
 		LSR	4
 		BCC	loc_7F0B
-		LDA	(9),Y
+		LDA	(off_9),Y
 		ORA	#$80 ; 'Ђ'
-		STA	(9),Y
+		STA	(off_9),Y
 
 loc_7F0B:				; CODE XREF: RAM:7F03j
 		DEY

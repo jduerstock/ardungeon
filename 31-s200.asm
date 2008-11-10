@@ -131,7 +131,7 @@ loc_76FC:				; CODE XREF: RAM:76F6j
 		BNE	loc_770E
 
 loc_7700:				; CODE XREF: RAM:76FAj
-		JSR	$1899
+		JSR	j_RND_A
 		TAY
 		CLC
 		ADC	$68
@@ -260,7 +260,7 @@ loc_77E8:				; CODE XREF: RAM:77DCj	RAM:77E0j
 		LDX	#$45 ; 'E'
 		LDY	$6B
 		LDA	unk_7923,Y
-		JSR	$1899
+		JSR	j_RND_A
 		CLC
 		ADC	unk_7926,Y
 		JSR	$187B
