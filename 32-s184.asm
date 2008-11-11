@@ -2,7 +2,14 @@
 		.include	"globals.inc"
 		.include	"exp_kernel.inc"
 		.include	"macros.inc"
-		
+
+.macro DBGSYM Label, Addr
+	.BYTE	($80 | .STRLEN(Label))
+	.BYTE	Label
+	.BYTE	.LOBYTE(Addr), .HIBYTE(Addr)
+.endmacro
+
+	
 ;		.ORG	$7600
 		.BYTE	$C
 ; ---------------------------------------------------------------------------
@@ -1990,7 +1997,7 @@ a__1:		.BYTE	".",$0D
 		.BYTE $B2
 		.WORD $88
 		.BYTE 2
-aq_0:		.BYTE "%)?",$0D,$0D
+		.BYTE "%)?",$0D,$0D
 		.BYTE $A5
 		.BYTE $AC
 		.WORD asc_83F3		; "("
@@ -2002,47 +2009,34 @@ aq_0:		.BYTE "%)?",$0D,$0D
 		.BYTE	$A5,"Is this alright? "
 		.BYTE $AC
 		.WORD asc_83F3		; "("
-		.BYTE $D
-		.BYTE $FF
-		.BYTE $A6,  0,	2
-		.BYTE $A5
-aFarewell:	.BYTE "Farewell "
+		.BYTE $0D,$FF
+		MOVEXY	0,2
+		.BYTE $A5,"Farewell "
 		.BYTE $B4
 		.WORD $6A
 		.BYTE 7
-		.BYTE $20
+		.BYTE	" "
 		.BYTE $B3
 		.WORD $6321
 		.BYTE $16
-a__2:		.BYTE "."
-		.BYTE $D
-		.BYTE $FF
-		.BYTE $A6,  0,	2
-		.BYTE $A3
-		.WORD loc_90BD
-		.BYTE $A5
-aYourRingHasBee:.BYTE "Your ring has been charged"
-		.BYTE $D
-		.BYTE $D
-		.BYTE $A5
-aWith:		.BYTE "with "
+		.BYTE ".",$0D,$FF
+		MOVEXY	0,2
+		STRJSR	loc_90BD
+		.BYTE	$A5,"Your ring has been charged",$0D,$0D
+		.BYTE	$A5,"with "
 		.BYTE $B2
 		.WORD $71
 		.BYTE 2
-aUnit:		.BYTE " unit"
+		.BYTE " unit"
 		.BYTE $B3
 		.WORD byte_90DA
 		.BYTE 2
-a__3:		.BYTE "."
-		.BYTE $D
+a__3:		.BYTE ".",$0D
 		.BYTE $A3
 		.WORD loc_90C0
 		.BYTE $FF
-		.BYTE $A6,  0,	2
-		.BYTE $A5
-aComeAgainSoon:	.BYTE "Come again soon,"
-		.BYTE $D
-		.BYTE $D
+		MOVEXY	0,2
+aComeAgainSoon:	.BYTE $A5,"Come again soon,",$0D,$0D
 		.BYTE $A5
 		.BYTE $B4
 		.WORD $6A
@@ -2051,50 +2045,38 @@ aComeAgainSoon:	.BYTE "Come again soon,"
 		.BYTE $B3
 		.WORD $6321
 		.BYTE $19
-a__4:		.BYTE "."
-		.BYTE $D
-		.BYTE $FF
-		.BYTE $A6,  0,	1
-		.BYTE $A5
-aWelcomeToThe:	.BYTE "Welcome to the "
+		.BYTE ".",$0D,$FF
+		MOVEXY	0,1
+		.BYTE	$A5,"Welcome to the "
 		.BYTE $B4
 		.WORD byte_8AD8
 		.BYTE $28
-a__5:		.BYTE "."
-		.BYTE $D
-		.BYTE $A6,  5,	3
+		.BYTE ".",$0D
+		MOVEXY	5,3
 		MenuItem "1","Apply for Guild membership."
-		.BYTE $A6,  5,	5
+		MOVEXY	5,5
 		MenuItem "0","Leave."
-		.BYTE $FF
-		.BYTE $A6,  0,	2
-		.BYTE $A5
-aLeaveThouArtNo:.BYTE "Leave!  Thou art not wanted here scum!"
-		.BYTE $D
-		.BYTE $FF
-		.BYTE $A6,  0,	0
-		.BYTE $A5
-aYouAreAtYourLo:.BYTE "You are at your locker."
-		.BYTE $D
-		.BYTE $A5
-aWhatDoYouWantT:.BYTE "What do you want to do?"
-		.BYTE $D
-		.BYTE $A6,  7,	3
+		.BYTE	$FF
+		MOVEXY	0,2
+		.BYTE	$A5,"Leave!  Thou art not wanted here scum!",$0D,$FF
+		MOVEXY	0,0
+		.BYTE	$A5,"You are at your locker.",$0D
+		.BYTE	$A5,"What do you want to do?",$0D
+		MOVEXY	7,3
 		MenuItem "1","Make a deposit"
-		.BYTE $A6,  7,	4
+		MOVEXY	7,4
 		MenuItem "2","Make a withdrawal"
-		.BYTE $A6,  7,	6
+		MOVEXY	7,6
 		MenuItem "0","Go back to main room"
 		.BYTE $FF
-		.BYTE $A6,  0,	0
+		MOVEXY	0,0
 		.BYTE $A5
 		.BYTE $B4
 		.WORD $6F
 		.BYTE $14
 		.BYTE $D
-		.BYTE $A3
-		.WORD loc_90BD
-		.BYTE $A6,  5,	2
+		STRJSR	loc_90BD
+		MOVEXY	5,2
 		MenuItem "1",""
 		.BYTE $B4
 		.WORD $71
@@ -2185,34 +2167,34 @@ a__6:		.BYTE '.'
 		.BYTE $FF
 byte_8AD8:	.BYTE $FF		; DATA XREF: RAM:76E9w	RAM:88FDo
 byte_8AD9:	.BYTE $FF		; DATA XREF: RAM:76EFw
-unk_8ADA:	.BYTE $F6 ; ö		; DATA XREF: RAM:76D3r	RAM:76E6r
-		.BYTE  $B
-		.BYTE $1F
-		.BYTE $2E ; .
-		.BYTE $3D ; =
-		.BYTE $52 ; R
-		.BYTE $83 ; ƒ
-		.BYTE $83 ; ƒ
-		.BYTE $83 ; ƒ
-		.BYTE $83 ; ƒ
-		.BYTE $83 ; ƒ
-		.BYTE $83 ; ƒ
-		.BYTE $61 ; a
-		.BYTE $71 ; q
-unk_8AE8:	.BYTE $8A ; Š		; DATA XREF: RAM:76D8r	RAM:76ECr
-		.BYTE $8B ; ‹
-		.BYTE $8B ; ‹
-		.BYTE $8B ; ‹
-		.BYTE $8B ; ‹
-		.BYTE $8B ; ‹
-		.BYTE $8B ; ‹
-		.BYTE $8B ; ‹
-		.BYTE $8B ; ‹
-		.BYTE $8B ; ‹
-		.BYTE $8B ; ‹
-		.BYTE $8B ; ‹
-		.BYTE $8B ; ‹
-		.BYTE $8B ; ‹
+unk_8ADA:	.BYTE	<aLightWizardsGu	; DATA XREF: RAM:76D3r	RAM:76E6r
+		.BYTE	<aDarkWizardsGui
+		.BYTE	<aGuildOfOrder
+		.BYTE	<aGuildOfChaos
+		.BYTE	<aWizardsOfLawGu
+		.BYTE	<aThievesGuild
+		.BYTE	<byte_8D83
+		.BYTE	<byte_8D83
+		.BYTE	<byte_8D83
+		.BYTE	<byte_8D83
+		.BYTE	<byte_8D83
+		.BYTE	<byte_8D83
+		.BYTE	<aPaladinsGuild
+		.BYTE	<aMercenariesGui
+unk_8AE8:	.BYTE	>aLightWizardsGu	; DATA XREF: RAM:76D8r	RAM:76ECr
+		.BYTE	>aDarkWizardsGui
+		.BYTE	>aGuildOfOrder
+		.BYTE	>aGuildOfChaos
+		.BYTE	>aWizardsOfLawGu
+		.BYTE	>aThievesGuild
+		.BYTE	>byte_8D83
+		.BYTE	>byte_8D83
+		.BYTE	>byte_8D83
+		.BYTE	>byte_8D83
+		.BYTE	>byte_8D83
+		.BYTE	>byte_8D83
+		.BYTE	>aPaladinsGuild
+		.BYTE	>aMercenariesGui
 aLightWizardsGu:.BYTE "Light Wizards' Guild",0
 aDarkWizardsGui:.BYTE "Dark Wizards' Guild",0
 aGuildOfOrder:	.BYTE "Guild of Order",0
@@ -2220,7 +2202,8 @@ aGuildOfChaos:	.BYTE "Guild of Chaos",0
 aWizardsOfLawGu:.BYTE "Wizards of Law Guild",0
 aThievesGuild:	.BYTE "Thieves' Guild",0
 aPaladinsGuild:	.BYTE "Paladins' Guild",0
-aMercenariesGui:.BYTE "Mercenaries' Guild",0
+aMercenariesGui:.BYTE "Mercenaries' Guild"
+byte_8D83:	.BYTE	0
 aBrother:	.BYTE "Brother",0
 aSister:	.BYTE "Sister",0
 aDeposit:	.BYTE "Deposit",0
@@ -2237,69 +2220,35 @@ aJewels:	.BYTE "Jewels",0
 aGold:		.BYTE "Gold",0
 aSilver_0:	.BYTE "Silver",0
 aCopper:	.BYTE "Copper",0
-		.BYTE $A6,  0,	2
-		.BYTE $A5
-aIAmDeeplySorry:.BYTE "I am deeply sorry but you have not"
-		.BYTE $D
-		.BYTE $D
-		.BYTE $A5
-aTheExperienceT:.BYTE "the experience to join our guild yet."
-		.BYTE $D
-		.BYTE $FF
-		.BYTE $A6,  0,	1
-		.BYTE $A5
-aIAmSorryButYou:.BYTE "I am sorry but your soul is too dark"
-		.BYTE $D
-		.BYTE $D
-		.BYTE $A5
-aToBecomeAMembe:.BYTE "to become a member of our guild."
-		.BYTE $D
-		.BYTE $FF
-		.BYTE $A6,  0,	1
-		.BYTE $A5
-aIAmSorryButY_0:.BYTE "I am sorry but you're not quite evil"
-		.BYTE $D
-		.BYTE $D
-		.BYTE $A5
-aEnoughForOurGu:.BYTE "enough for our guild."
-		.BYTE $D
-		.BYTE $FF
-		.BYTE $A6,  0,	1
-		.BYTE $A5
-aIAmSorryButY_1:.BYTE "I am sorry, but you are too righteous"
-		.BYTE $D
-		.BYTE $D
-		.BYTE $A5
-aToBecomeAMem_0:.BYTE "to become a member of our guild."
-		.BYTE $D
-		.BYTE $FF
-		.BYTE $A6,  0,	1
-		.BYTE $A5
-aIAmSorryButY_2:.BYTE "I am sorry but you aren't quite good"
-		.BYTE $D
-		.BYTE $D
-		.BYTE $A5
-aEnoughToJoinOu:.BYTE "enough to join our guild."
-		.BYTE $D
-		.BYTE $FF
-		.BYTE $A6,  0,	1
-		.BYTE $A5
-aGetOutOfOurGui:.BYTE "Get out of our guild!"
-		.BYTE $D
-		.BYTE $D
-		.BYTE $A5
-aYouAreTooEvilF:.BYTE "You are too evil for us now!"
-		.BYTE $D
-		.BYTE $FF
-		.BYTE $A6,  0,	2
-		.BYTE $A5
-aGetOutOfOurG_0:.BYTE "Get out of our guild!"
-		.BYTE $D
-		.BYTE $D
-		.BYTE $A5
-aYouAreTooGoody:.BYTE "You are too goody-goody for us now!"
-		.BYTE $D
-		.BYTE $FF
+
+		MOVEXY	0,2
+		.BYTE	$A5,"I am deeply sorry but you have not",$0D,$0D
+		.BYTE	$A5,"the experience to join our guild yet.",$0D,$FF
+
+		MOVEXY	0,1
+		.BYTE	$A5,"I am sorry but your soul is too dark",$0D,$0D
+		.BYTE	$A5,"to become a member of our guild.",$0D,$FF
+
+		MOVEXY	0,1
+		.BYTE	$A5,"I am sorry but you're not quite evil",$0D,$0D
+		.BYTE	$A5,"enough for our guild.",$0D,$FF
+
+		MOVEXY	0,1
+		.BYTE	$A5,"I am sorry, but you are too righteous",$0D,$0D
+		.BYTE	$A5,"to become a member of our guild.",$0D,$FF
+
+		MOVEXY	0,1
+		.BYTE	$A5,"I am sorry but you aren't quite good",$0D,$0D
+		.BYTE	$A5,"enough to join our guild.",$0D,$FF
+
+		MOVEXY	0,1
+		.BYTE	$A5,"Get out of our guild!",$0D,$0D
+		.BYTE	$A5,"You are too evil for us now!",$0D,$FF
+
+		MOVEXY	0,2
+		.BYTE	$A5,"Get out of our guild!",$0D,$0D
+		.BYTE	$A5,"You are too goody-goody for us now!",$0D,$FF
+
 		.BYTE $A6,  0,	2
 		.BYTE $A5
 aYouHaveNotTheF:.BYTE "You have not the funds!",$D
@@ -2314,41 +2263,27 @@ aWelcome:	.BYTE "Welcome "
 		.BYTE $B3
 		.WORD $6321
 		.BYTE $16
-		.BYTE "!"
-		.BYTE $D
-		.BYTE $FF
-		.BYTE $A6,  0,	0
-		.BYTE $A5
-aYouCanOnlyHave:.BYTE "You can only have full membership"
-		.BYTE $D
-		.BYTE $A5
-aPrivilegesInBu:.BYTE "privileges in but one guild."
-		.BYTE $D
-		.BYTE $D
-		.BYTE $A5
-aDoYouWant:	.BYTE "Do you want:"
-		.BYTE $D
-		.BYTE $A6,  5,	5
+		.BYTE "!",$0D,$FF
+
+		MOVEXY	0,0
+		.BYTE	$A5,"You can only have full membership",$0D
+		.BYTE	$A5,"privileges in but one guild.",$0D,$0D
+		.BYTE	$A5,"Do you want:",$0D
+		MOVEXY	5,5
 		MenuItem "1","Full membership or"
-		.BYTE $A6,  5,	6
+		MOVEXY	5,6
 		MenuItem "2","Associate membership"
-		.BYTE $FF
-		.BYTE $A6,  0,	2
-		.BYTE $A3
-		.WORD loc_90BD
-		.BYTE $A5
-aWouldYouLike_0:.BYTE "Would you like to learn"
-		.BYTE $D
-		.BYTE $D
-		.BYTE $A5
-aASpellOf:	.BYTE "a spell of "
+		.BYTE	$FF
+
+		MOVEXY	0,2
+		STRJSR	loc_90BD
+		.BYTE	$A5,"Would you like to learn",$0D,$0D
+		.BYTE	$A5,"a spell of "
 		.BYTE $B4
 		.WORD $71
 		.BYTE $1E
-		.BYTE $D
-		.BYTE $D
-		.BYTE $A5
-aFor:		.BYTE "For "
+		.BYTE $0D,$0D
+aFor:		.BYTE $A5,"For "
 		.BYTE $B2
 		.WORD $79
 		.BYTE 3
@@ -2583,111 +2518,16 @@ unk_9131:	.BYTE $45 ; E		; DATA XREF: RAM:83DFo
 		.BYTE $53 ; S
 		.BYTE $FE ; þ
 		.BYTE $2B ; +
-		.BYTE $87 ; ‡
-		.BYTE $57 ; W
-		.BYTE $41 ; A
-		.BYTE $49 ; I
-		.BYTE $54 ; T
-		.BYTE $53 ; S
-		.BYTE $45 ; E
-		.BYTE $43 ; C
-		.BYTE	0
-		.BYTE $2C ; ,
-		.BYTE $88 ; ˆ
-		.BYTE $57 ; W
-		.BYTE $41 ; A
-		.BYTE $49 ; I
-		.BYTE $54 ; T
-		.BYTE $53 ; S
-		.BYTE $45 ; E
-		.BYTE $30 ; 0
-		.BYTE $35 ; 5
-		.BYTE $2A ; *
-		.BYTE $2C ; ,
-		.BYTE $88 ; ˆ
-		.BYTE $57 ; W
-		.BYTE $41 ; A
-		.BYTE $49 ; I
-		.BYTE $54 ; T
-		.BYTE $53 ; S
-		.BYTE $45 ; E
-		.BYTE $31 ; 1
-		.BYTE $30 ; 0
-		.BYTE $43 ; C
-		.BYTE $2C ; ,
-		.BYTE $88 ; ˆ
-		.BYTE $57 ; W
-		.BYTE $41 ; A
-		.BYTE $49 ; I
-		.BYTE $54 ; T
-		.BYTE $53 ; S
-		.BYTE $45 ; E
-		.BYTE $32 ; 2
-		.BYTE $30 ; 0
-		.BYTE $5F ; _
-		.BYTE $2C ; ,
-		.BYTE $88 ; ˆ
-		.BYTE $57 ; W
-		.BYTE $41 ; A
-		.BYTE $49 ; I
-		.BYTE $54 ; T
-		.BYTE $43 ; C
-		.BYTE $4E ; N
-		.BYTE $54 ; T
-		.BYTE $52 ; R
-		.BYTE $67 ; g
-		.BYTE $2C ; ,
-		.BYTE $87 ; ‡
-		.BYTE $4E ; N
-		.BYTE $55 ; U
-		.BYTE $4D ; M
-		.BYTE $53 ; S
-		.BYTE $45 ; E
-		.BYTE $43 ; C
-		.BYTE $53 ; S
-		.BYTE $68 ; h
-		.BYTE $2C ; ,
-		.BYTE $87 ; ‡
-		.BYTE $46 ; F
-		.BYTE $4F ; O
-		.BYTE $52 ; R
-		.BYTE $43 ; C
-		.BYTE $45 ; E
-		.BYTE $57 ; W
-		.BYTE $54 ; T
-		.BYTE $69 ; i
-		.BYTE $2C ; ,
-		.BYTE $88 ; ˆ
-		.BYTE $57 ; W
-		.BYTE $41 ; A
-		.BYTE $49 ; I
-		.BYTE $54 ; T
-		.BYTE $4A ; J
-		.BYTE $49 ; I
-		.BYTE $46 ; F
-		.BYTE $46 ; F
-		.BYTE $6A ; j
-		.BYTE $2C ; ,
-		.BYTE $87 ; ‡
-		.BYTE $57 ; W
-		.BYTE $41 ; A
-		.BYTE $49 ; I
-		.BYTE $54 ; T
-		.BYTE $4B ; K
-		.BYTE $45 ; E
-		.BYTE $59 ; Y
-		.BYTE $73 ; s
-		.BYTE $2C ; ,
-		.BYTE $87 ; ‡
-		.BYTE $57 ; W
-		.BYTE $41 ; A
-		.BYTE $49 ; I
-		.BYTE $54 ; T
-		.BYTE $4B ; K
-		.BYTE $31 ; 1
-		.BYTE $30 ; 0
-		.BYTE $8C ; Œ
-		.BYTE $2C ; ,
+		DBGSYM	"WAITSEC", $2C00
+		DBGSYM	"WAITSE05", $2C2A
+		DBGSYM	"WAITSE10", $2C43
+		DBGSYM	"WAITSE20", $2C5F
+		DBGSYM	"WAITCNTR", $2C67
+		DBGSYM	"NUMSECS", $2C68
+		DBGSYM	"FORCEWT", $2C69
+		DBGSYM	"WAITJIFF", $2C6A
+		DBGSYM	"WAITKEY", $2C73
+		DBGSYM	"WAITK10", $2C8C
 		.BYTE $87 ; ‡
 		.BYTE $53 ; S
 unk_91AC:	.BYTE $70 ; p		; DATA XREF: RAM:91DCo
