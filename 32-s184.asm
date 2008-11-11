@@ -1926,26 +1926,15 @@ byte_8437:	.BYTE	$A5,"Thou shalt not kill fellow members",$0D,$0D
 		.BYTE	$A5,"relinquish one of your old spells first.",$0D
 		STRJSR	loc_90C0
 		.BYTE	$FF
-		.BYTE $A6,  0,	1
-		.BYTE $A5
-aItWillCost120S:.BYTE "It will cost 120 silvers to"
-		.BYTE $D
-		.BYTE $D
-		.BYTE $A5
-aReplaceYourRin:.BYTE "replace your ring."
-		.BYTE $D
-		.BYTE $D
-		.BYTE $A5
-aAreYouSureq:	.BYTE "Are you sure? "
-		.BYTE $AC
-		.WORD asc_83F3		; "("
-		.BYTE $D
-		.BYTE $FF
-		.BYTE $A6,  0,	1
-		.BYTE $A3
-		.WORD loc_90BD
-		.BYTE $A5
-aThatWillCost:	.BYTE "That will cost "
+		MOVEXY	0,1
+		.BYTE	$A5,"It will cost 120 silvers to",$0D,$0D
+		.BYTE	$A5,"replace your ring.",$0D,$0D
+		.BYTE	$A5,"Are you sure? "
+		STRSUB	asc_83F3
+		.BYTE	$0D,$FF
+		MOVEXY	0,1
+		STRJSR	loc_90BD
+		.BYTE	$A5,"That will cost "
 		.BYTE $B1
 		.WORD $79
 		.BYTE 4
@@ -1953,93 +1942,47 @@ aSilver:	.BYTE " silver"
 		.BYTE $B3
 		.WORD byte_90DA
 		.BYTE 2
-a__0:		.BYTE "."
-		.BYTE $D
-		.BYTE $D
-		.BYTE $A5
-aAreYouSureq_0:	.BYTE "Are you sure? "
-		.BYTE $AC
-		.WORD asc_83F3		; "("
-		.BYTE $D
-		.BYTE $A3
-		.WORD loc_90C0
-		.BYTE $FF
-		.BYTE $A6,  0,	2
-		.BYTE $A5
-aAreYouSureYouW:.BYTE "Are you sure you want to"
-		.BYTE $D
-		.BYTE $D
-		.BYTE $A5
-aTerminateYourM:.BYTE "terminate your membership? "
-		.BYTE $AC
-		.WORD asc_83F3		; "("
-		.BYTE $D
-		.BYTE $FF
-		.BYTE $A6,  0,	1
-		.BYTE $A5
-aItWillCost12_0:.BYTE "It will cost 120 silvers to"
-		.BYTE $D
-		.BYTE $D
-		.BYTE $A5
-aGiveYouFullMem:.BYTE "give you full membership status."
-		.BYTE $D
-		.BYTE $D
-		.BYTE $A5
-aIsThisAlrightq:.BYTE "Is this alright? "
-		.BYTE $AC
-		.WORD asc_83F3		; "("
-		.BYTE $D
-		.BYTE $FF
-		.BYTE $A6,  0,	0
-		.BYTE $A5
-aItCostsASilver:.BYTE "It costs a silver per unit. How many?",$D
-		.BYTE $AC
-		.WORD byte_8A9A
-		.BYTE $A6,  0,	2
-		.BYTE $A5
-aPracticingTheS:.BYTE "Practicing the spell of"
-		.BYTE $D
-		.BYTE $D
-		.BYTE $A5
-		.BYTE $B4
-		.WORD $71
-		.BYTE $1E
-a__1:		.BYTE "."
-		.BYTE $D
-		.BYTE $A6,  0,	7
-		.BYTE $A5
-aPress:		.BYTE "(Press "
-		.BYTE $A1
-aSpaceBar:	.BYTE "SPACE BAR"
-		.BYTE $A0
-aToLeaveEarly_:	.BYTE " to leave early.)"
-		.BYTE $D
-		.BYTE $FF
-		.BYTE $A6,  0,	2
-		.BYTE $A5
-aYouQuitPractic:.BYTE "You quit practice early and gain no"
-		.BYTE $D
-		.BYTE $D
-		.BYTE $A5
-aProficiency_:	.BYTE "proficiency."
-		.BYTE $D
-		.BYTE $FF
-		.BYTE $A6,  0,	2
-		.BYTE $A5
-aYouAreAlreadyA:.BYTE "You are already at the highest level of"
-		.BYTE $D
-		.BYTE $D
-		.BYTE $A5
-aAbilityForThat:.BYTE "ability for that spell!"
-		.BYTE $D
-		.BYTE $FF
-		.BYTE $A6,  0,	1
-		.BYTE $A5
-aWouldYouLikeTo:.BYTE "Would you like to practice"
-		.BYTE $D
-		.BYTE $D
-		.BYTE $A5
-aYourSpellOf:	.BYTE "your spell of "
+a__0:		.BYTE	".",$0D,$0D
+		.BYTE	$A5,"Are you sure? "
+		STRSUB	asc_83F3
+		.BYTE	$0D
+		STRJSR	loc_90C0
+		.BYTE	$FF
+		MOVEXY	0,2
+		.BYTE	$A5,"Are you sure you want to",$0D,$0D
+		.BYTE	$A5,"terminate your membership? "
+		STRSUB	asc_83F3
+		.BYTE	$0D,$FF
+		MOVEXY	0,1
+		.BYTE	$A5,"It will cost 120 silvers to",$0D,$0D
+		.BYTE	$A5,"give you full membership status.",$0D,$0D
+		.BYTE	$A5,"Is this alright? "
+		STRSUB	asc_83F3
+		.BYTE	$0D,$FF
+		MOVEXY	0,0
+		.BYTE	$A5,"It costs a silver per unit. How many?",$0D
+		STRSUB	byte_8A9A
+		MOVEXY	0,2
+		.BYTE	$A5,"Practicing the spell of",$0D,$0D
+		.BYTE	$A5
+		.BYTE	$B4
+		.WORD	$71
+		.BYTE	$1E
+a__1:		.BYTE	".",$0D
+		MOVEXY	0,7
+		.BYTE	$A5,"(Press "
+		BLINK	"SPACE BAR"
+		.BYTE	" to leave early.)"
+		.BYTE $0D,$FF
+		MOVEXY	0,2
+		.BYTE	$A5,"You quit practice early and gain no",$0D,$0D
+		.BYTE	$A5,"proficiency.",$0D,$FF
+		MOVEXY	0,2
+		.BYTE	$A5,"You are already at the highest level of",$0D,$0D
+		.BYTE	$A5,"ability for that spell!",$0D,$FF
+		MOVEXY	0,1
+		.BYTE	$A5,"Would you like to practice",$0D,$0D
+		.BYTE	$A5,"your spell of "
 		.BYTE $B4
 		.WORD $71
 		.BYTE $1E
@@ -2047,24 +1990,16 @@ aYourSpellOf:	.BYTE "your spell of "
 		.BYTE $B2
 		.WORD $88
 		.BYTE 2
-aq_0:		.BYTE "%)?"
-		.BYTE $D
-		.BYTE $D
+aq_0:		.BYTE "%)?",$0D,$0D
 		.BYTE $A5
 		.BYTE $AC
 		.WORD asc_83F3		; "("
 		.BYTE $D
 		.BYTE $FF
-		.BYTE $A6,  0,	2
-		.BYTE $A5
-aSpellCastingPr:.BYTE "Spell casting practice takes four"
-		.BYTE $D
-		.BYTE $A5
-aHoursAndCosts1:.BYTE "hours and costs 100 silvers."
-		.BYTE $D
-		.BYTE $D
-		.BYTE $A5
-aIsThisAlrigh_0:.BYTE "Is this alright? "
+		MOVEXY	0,2
+		.BYTE	$A5,"Spell casting practice takes four",$0D
+		.BYTE	$A5,"hours and costs 100 silvers.",$0D,$0D
+		.BYTE	$A5,"Is this alright? "
 		.BYTE $AC
 		.WORD asc_83F3		; "("
 		.BYTE $D
