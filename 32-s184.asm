@@ -2697,25 +2697,22 @@ loc_92E4:				; CODE XREF: RAM:92E8j
 		LDA	#4
 		STA	$D01B
 		dldi	off_7, $BC00
-		LDA	#$F0 ; 'ð'
-		STA	9
-		LDA	#4
-		STA	$A
+		dldi	off_9, $04F0
 		LDA	#0
 		STA	6
 
 loc_9312:				; CODE XREF: RAM:9338j
 		LDY	6
-		LDA	(7),Y
+		LDA	(off_7),Y
 		STA	4
 		LDY	#7
 
 loc_931A:				; CODE XREF: RAM:9325j
 		LSR	4
 		BCC	loc_9324
-		LDA	(9),Y
+		LDA	(off_9),Y
 		ORA	#$80 ; '€'
-		STA	(9),Y
+		STA	(off_9),Y
 
 loc_9324:				; CODE XREF: RAM:931Cj
 		DEY
@@ -2736,10 +2733,7 @@ loc_9332:				; CODE XREF: RAM:932Ej
 		STA	off_7
 		LDX	#0
 		STX	6
-		LDA	#$A9 ; '©'
-		STA	$F0
-		LDA	#$BD ; '½'
-		STA	$F1
+		dldi	$F0, $BDA9
 
 loc_934A:				; CODE XREF: RAM:935Bj
 		CLC
@@ -2759,7 +2753,7 @@ loc_935D:				; CODE XREF: RAM:937Aj
 
 loc_935F:				; CODE XREF: RAM:9378j
 		LDY	6
-		LDA	(7),Y
+		LDA	(off_7),Y
 		LDY	#4
 
 loc_9365:				; CODE XREF: RAM:936Aj
@@ -2785,12 +2779,8 @@ loc_9381:				; CODE XREF: RAM:9385j
 		STA	$D012,X
 		DEX
 		BPL	loc_9381
-		LDA	#$DE ; 'Þ'
-		STA	$24A
-		LDA	#$91 ; '‘'
-		STA	$24B
-		LDA	#$C0 ; 'À'
-		STA	NMIEN
+		dldi	$24A, $91DE
+		ldi	NMIEN, $C0
 		LDA	#0
 		STA	$18B8
 		STA	$253
@@ -2799,10 +2789,10 @@ loc_9381:				; CODE XREF: RAM:9385j
 
 loc_939F:				; CODE XREF: RAM:92AFp	RAM:92BAp ...
 		LDY	#0
-		LDA	(7),Y
-		INC	7
+		LDA	(off_7),Y
+		INC	off_7
 		BNE	loc_93A9
-		INC	8
+		INC	off_7+1
 
 loc_93A9:				; CODE XREF: RAM:93A5j
 		CMP	#$1B
@@ -2887,36 +2877,36 @@ byte_9400:	.BYTE	<s_Location	; $00
 		.BYTE	<s_Charisma	; $11
 		.BYTE	<s_Dexterity	; $12
 		.BYTE	<s_Speed	; $13
-		.BYTE $CA ; Ê
-		.BYTE  $B
-		.BYTE $53 ; S
-		.BYTE $78 ; x
-		.BYTE $9B ; ›
-		.BYTE $E0 ; à
-		.BYTE $25 ; %
-		.BYTE $4A ; J
-		.BYTE $6F ; o
-		.BYTE $96 ; –
-		.BYTE $BD ; ½
-		.BYTE $E3 ; ã
-		.BYTE	9
-		.BYTE $30 ; 0
-		.BYTE $7B ; {
-		.BYTE $C6 ; Æ
-		.BYTE  $C
-		.BYTE $4C ; L
-		.BYTE $8C ; Œ
-		.BYTE $8C ; Œ
-		.BYTE $B0 ; °
-		.BYTE $F6 ; ö
-		.BYTE $17
-		.BYTE $42 ; B
-		.BYTE $62 ; b
-		.BYTE $89 ; ‰
-		.BYTE $AA ; ª
-		.BYTE $EC ; ì
-		.BYTE $14
-		.BYTE $5C ; \
+		.BYTE	<s_Light	; $14
+		.BYTE	<s_NightVision	; $15
+		.BYTE	<s_Paralysis	; $16
+		.BYTE	<s_Healing	; $17
+		.BYTE	<s_Fireblade	; $18
+		.BYTE	<s_Razoredge	; $19
+		.BYTE	<s_SlayEvil	; $1A
+		.BYTE	<s_SlayGood	; $1B
+		.BYTE	<s_DefeatEvil	; $1C
+		.BYTE	<s_DefeatGood	; $1D
+		.BYTE	<s_FireBalls	; $1E
+		.BYTE	<s_ColdBlast	; $1F
+		.BYTE	<s_MagicDarts	; $20
+		.BYTE	<s_ProtFromEvil	; $21
+		.BYTE	<s_ProtFromGood	; $22
+		.BYTE	<s_Protection	; $23
+		.BYTE	<s_Fury		; $24
+		.BYTE	<s_Luck		; $25
+		.BYTE	<s_Bewilder	; $26
+		.BYTE	<s_Bewilder	; $27
+		.BYTE	<s_Shadowmeld	; $28
+		.BYTE	<s_Prism	; $29
+		.BYTE	<s_LightningBolts	; $2A
+		.BYTE	<s_Fear		; $2B
+		.BYTE	<s_ConjureKey	; $2C
+		.BYTE	<s_Vigor	; $2D
+		.BYTE	<s_Shield	; $2E
+		.BYTE	<s_ConjureFood	; $2F
+		.BYTE	<s_SuperVision	; $30
+		.BYTE	<s_Blinding	; $31
 
 byte_9432:
 		.BYTE	>s_Location
@@ -2939,106 +2929,106 @@ byte_9432:
 		.BYTE	>s_Charisma
 		.BYTE	>s_Dexterity
 		.BYTE	>s_Speed
-		.BYTE $B0 ; °
-		.BYTE $B1 ; ±
-		.BYTE $B1 ; ±
-		.BYTE $B1 ; ±
-		.BYTE $B1 ; ±
-		.BYTE $B1 ; ±
-		.BYTE $B2 ; ²
-		.BYTE $B2 ; ²
-		.BYTE $B2 ; ²
-		.BYTE $B2 ; ²
-		.BYTE $B2 ; ²
-		.BYTE $B2 ; ²
-		.BYTE $B3 ; ³
-		.BYTE $B3 ; ³
-		.BYTE $B3 ; ³
-		.BYTE $B3 ; ³
-		.BYTE $B4 ; ´
-		.BYTE $B4 ; ´
-		.BYTE $B4 ; ´
-		.BYTE $B4 ; ´
-		.BYTE $B4 ; ´
-		.BYTE $B4 ; ´
-		.BYTE $B5 ; µ
-		.BYTE $B5 ; µ
-		.BYTE $B5 ; µ
-		.BYTE $B5 ; µ
-		.BYTE $B5 ; µ
-		.BYTE $B5 ; µ
-		.BYTE $B6 ; ¶
-		.BYTE $B6 ; ¶
+		.BYTE	>s_Light
+		.BYTE	>s_NightVision
+		.BYTE	>s_Paralysis
+		.BYTE	>s_Healing
+		.BYTE	>s_Fireblade
+		.BYTE	>s_Razoredge
+		.BYTE	>s_SlayEvil
+		.BYTE	>s_SlayGood
+		.BYTE	>s_DefeatEvil
+		.BYTE	>s_DefeatGood
+		.BYTE	>s_FireBalls
+		.BYTE	>s_ColdBlast
+		.BYTE	>s_MagicDarts
+		.BYTE	>s_ProtFromEvil
+		.BYTE	>s_ProtFromGood
+		.BYTE	>s_Protection
+		.BYTE	>s_Fury
+		.BYTE	>s_Luck
+		.BYTE	>s_Bewilder
+		.BYTE	>s_Bewilder
+		.BYTE	>s_Shadowmeld
+		.BYTE	>s_Prism
+		.BYTE	>s_LightningBolts
+		.BYTE	>s_Fear
+		.BYTE	>s_ConjureKey
+		.BYTE	>s_Vigor
+		.BYTE	>s_Shield
+		.BYTE	>s_ConjureFood
+		.BYTE	>s_SuperVision
+		.BYTE	>s_Blinding
 
 byte_9464:
-		.BYTE $2A ; *
-		.BYTE $28 ; (
-		.BYTE $28 ; (
-		.BYTE $28 ; (
-		.BYTE $28 ; (
-		.BYTE $28 ; (
-		.BYTE $28 ; (
-		.BYTE $28 ; (
-		.BYTE $28 ; (
-		.BYTE $28 ; (
-		.BYTE $28 ; (
-		.BYTE $28 ; (
-		.BYTE $28 ; (
-		.BYTE $28 ; (
-		.BYTE $28 ; (
-		.BYTE $28 ; (
-		.BYTE $1E
-		.BYTE $1E
-		.BYTE $1E
-		.BYTE $18
-		.BYTE $21 ; !
-		.BYTE $21 ; !
-		.BYTE $2C ; ,
-		.BYTE $32 ; 2
-		.BYTE $34 ; 4
-		.BYTE $31 ; 1
-		.BYTE $30 ; 0
-		.BYTE $30 ; 0
-		.BYTE $37 ; 7
-		.BYTE $37 ; 7
-		.BYTE $33 ; 3
-		.BYTE $33 ; 3
-		.BYTE $32 ; 2
-		.BYTE $2D ; -
-		.BYTE $2D ; -
-		.BYTE $27 ; '
-		.BYTE $34 ; 4
-		.BYTE $35 ; 5
-		.BYTE $35 ; 5
-		.BYTE $2B ; +
-		.BYTE $2C ; ,
-		.BYTE $25 ; %
-		.BYTE $2B ; +
-		.BYTE $25 ; %
-		.BYTE $2F ; /
-		.BYTE $26 ; &
-		.BYTE $23 ; #
-		.BYTE $33 ; 3
-		.BYTE $34 ; 4
-		.BYTE $27 ; '
+		.BYTE	$2A
+		.BYTE	$28
+		.BYTE	$28
+		.BYTE	$28
+		.BYTE	$28
+		.BYTE	$28
+		.BYTE	$28
+		.BYTE	$28
+		.BYTE	$28
+		.BYTE	$28
+		.BYTE	$28
+		.BYTE	$28
+		.BYTE	$28
+		.BYTE	$28
+		.BYTE	$28
+		.BYTE	$28
+		.BYTE	$1E
+		.BYTE	$1E
+		.BYTE	$1E
+		.BYTE	$18
+		.BYTE	$21
+		.BYTE	$21
+		.BYTE	$2C
+		.BYTE	$32
+		.BYTE	$34
+		.BYTE	$31
+		.BYTE	$30
+		.BYTE	$30
+		.BYTE	$37
+		.BYTE	$37
+		.BYTE	$33
+		.BYTE	$33
+		.BYTE	$32
+		.BYTE	$2D
+		.BYTE	$2D
+		.BYTE	$27
+		.BYTE	$34
+		.BYTE	$35
+		.BYTE	$35
+		.BYTE	$2B
+		.BYTE	$2C
+		.BYTE	$25
+		.BYTE	$2B
+		.BYTE	$25
+		.BYTE	$2F
+		.BYTE	$26
+		.BYTE	$23
+		.BYTE	$33
+		.BYTE	$34
+		.BYTE	$27
 
 byte_9496:
 		.BYTE	2
 		.BYTE	3
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $FF
+		.BYTE	$FF
+		.BYTE	$FF
+		.BYTE	$FF
+		.BYTE	$FF
+		.BYTE	$FF
+		.BYTE	$FF
+		.BYTE	$FF
+		.BYTE	$FF
+		.BYTE	$FF
+		.BYTE	$FF
+		.BYTE	$FF
+		.BYTE	$FF
+		.BYTE	$FF
+		.BYTE	$FF
 		.BYTE	3
 		.BYTE	3
 		.BYTE	3
@@ -3061,7 +3051,7 @@ byte_9496:
 		.BYTE	4
 		.BYTE	7
 		.BYTE	6
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	5
 		.BYTE	4
 		.BYTE	6
@@ -3073,6 +3063,7 @@ byte_9496:
 		.BYTE	4
 		.BYTE	3
 		.BYTE	5
+
 byte_94C8:	.BYTE	<byte_94E4	; DATA XREF: RAM:7E90r
 		.BYTE	<byte_94F2
 		.BYTE	<byte_9500
@@ -3150,127 +3141,23 @@ s_Speed:
 		.BYTE	$00,$06,$00,$01,$13
 s_Light:
 		Item	$81,$00,$00,$00,"Light"
-		.BYTE $84 ; „
-		.BYTE $FF
-		.BYTE $84 ; „
-		.BYTE	1
-		.BYTE $E0 ; à
-		.BYTE	1
-		.BYTE  $D
-		.BYTE $F0 ; ð
-		.BYTE	0
-		.BYTE $91 ; ‘
-		.BYTE $90 ; 
-		.BYTE	0
-		.BYTE	1
-		.BYTE	0
-		.BYTE	1
-		.BYTE	0
-		.BYTE $84 ; „
-		.BYTE	0
-		.BYTE	4
-		.BYTE	1
-		.BYTE	1
-		.BYTE	0
-		.BYTE  $D
-		.BYTE $F0 ; ð
-		.BYTE	0
-		.BYTE $81 ; 
-		.BYTE $90 ; 
-		.BYTE	0
-		.BYTE	1
-		.BYTE	0
-		.BYTE	1
-		.BYTE	0
-		.BYTE $EC ; ì
-		.BYTE	0
-		.BYTE	4
-aLight_1:	.BYTE "Light",0
-		.BYTE $50 ; P
-		.BYTE $33 ; 3
-		.BYTE $86 ; †
-		.BYTE $44 ; D
-		.BYTE $4F ; O
-		.BYTE $4F ; O
-		.BYTE $52 ; R
-		.BYTE	0
-		.BYTE	1
-		.BYTE	0
-		.BYTE	1
-		.BYTE $14
+		.BYTE	$84,$FF,$84,$01,$E0,$01,$0D,$F0,$00,$91,$90,$00,$01,$00,$01,$00
+		.BYTE	$84,$00,$04,$01,$01,$00,$0D,$F0,$00,$81,$90,$00,$01,$00,$01,$00
+		.BYTE	$EC,$00,$04,"Light",$00,"P3",$86,"DOOR"
+		.BYTE	$00,$01,$00,$01,$14
 s_NightVision:
 		Item	$81,$00,$00,$00,"Night Vision"
-		.BYTE $84 ; „
-		.BYTE $FF
-		.BYTE $84 ; „
-		.BYTE	1
-		.BYTE $68 ; h
-		.BYTE	1
-		.BYTE  $D
-		.BYTE $F0 ; ð
-		.BYTE	0
-		.BYTE $91 ; ‘
-		.BYTE $90 ; 
-		.BYTE	0
-		.BYTE	1
-		.BYTE	0
-		.BYTE	1
-		.BYTE	0
-		.BYTE $84 ; „
-		.BYTE	0
-		.BYTE	4
-		.BYTE	1
-		.BYTE	1
-		.BYTE	0
-		.BYTE  $D
-		.BYTE $F0
-		.BYTE	0
-		.BYTE $81
-		.BYTE $90
-		.BYTE	0
-		.BYTE	1
-		.BYTE	0
-		.BYTE	1
-		.BYTE	0
+		.BYTE	$84,$FF,$84,$01,$68,$01,$0D,$F0,$00,$91,$90,$00,$01,$00,$01,$00
+		.BYTE	$84,$00,$04,$01,$01,$00,$0D,$F0,$00,$81,$90,$00,$01,$00,$01,$00
 		.BYTE	$EC,$00,$04,"Night Vision",$00
 		.BYTE	$00,$01,$00,$00,$15
 s_Paralysis:
 		Item	$81,$00,$00,$00,"Paralysis"
-		.BYTE $84 ; „
-		.BYTE $FF
-		.BYTE $84 ; „
-		.BYTE	1
-		.BYTE	1
-		.BYTE	0
-		.BYTE  $D
-		.BYTE $F0 ; ð
-		.BYTE	0
-		.BYTE	1
-		.BYTE $F0 ; ð
-		.BYTE	0
-		.BYTE	1
-		.BYTE	0
-		.BYTE	4
-		.BYTE	0
+		.BYTE	$84,$FF,$84,$01,$01,$00,$0D,$F0,$00,$01,$F0,$00,$01,$00,$04,$00
 		.BYTE	$00,$02,$00,$02,$16
 s_Healing:
 		Item	$81,$00,$00,$00,"Healing"
-		.BYTE $84 ; „
-		.BYTE $FF
-		.BYTE $84 ; „
-		.BYTE	1
-		.BYTE	1
-		.BYTE	0
-		.BYTE  $D
-		.BYTE $F0 ; ð
-		.BYTE	0
-		.BYTE $82 ; ‚
-		.BYTE $45 ; E
-		.BYTE	0
-		.BYTE	1
-		.BYTE	0
-		.BYTE  $A
-		.BYTE	0
+		.BYTE	$84,$FF,$84,$01,$01,$00,$0D,$F0,$00,$82,$45,$00,$01,$00,$0A,$00
 		.BYTE	$00,$0A,$00,$05,$17
 s_Fireblade:
 		Item	$81,$00,$00,$00,"Fireblade"
