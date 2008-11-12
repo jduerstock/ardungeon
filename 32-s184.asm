@@ -2886,7 +2886,7 @@ byte_9400:	.BYTE	<s_Location	; $00
 		.BYTE	<s_Strength	; $10
 		.BYTE	<s_Charisma	; $11
 		.BYTE	<s_Dexterity	; $12
-		.BYTE $89 ; â
+		.BYTE	<s_Speed	; $13
 		.BYTE $CA ;  
 		.BYTE  $B
 		.BYTE $53 ; S
@@ -2938,7 +2938,7 @@ byte_9432:
 		.BYTE	>s_Strength
 		.BYTE	>s_Charisma
 		.BYTE	>s_Dexterity
-		.BYTE $B0 ; ∞
+		.BYTE	>s_Speed
 		.BYTE $B0 ; ∞
 		.BYTE $B1 ; ±
 		.BYTE $B1 ; ±
@@ -3144,54 +3144,10 @@ s_Dexterity:
 		.BYTE	$00,$03,$00,$01,$12
 s_Speed:
 		Item	$81,$00,$00,$00,"Speed"
-		.BYTE $84 ; Ñ
-		.BYTE $FF
-		.BYTE $84 ; Ñ
-		.BYTE	1
-		.BYTE $68 ; h
-		.BYTE	1
-		.BYTE  $D
-		.BYTE $F0 ; 
-		.BYTE	0
-		.BYTE $91 ; ë
-		.BYTE $7B ; {
-		.BYTE	0
-		.BYTE	1
-		.BYTE	0
-		.BYTE $40 ; @
-		.BYTE	0
-		.BYTE $84 ; Ñ
-		.BYTE	0
-		.BYTE	4
-		.BYTE	1
-		.BYTE	1
-		.BYTE	0
-		.BYTE  $D
-		.BYTE $F0 ; 
-		.BYTE	0
-		.BYTE $81 ; Å
-		.BYTE $7B ; {
-		.BYTE	0
-		.BYTE	1
-		.BYTE	0
-		.BYTE $40 ; @
-		.BYTE	0
-		.BYTE $EC ; Ï
-		.BYTE	0
-		.BYTE	4
-aSpeed:		.BYTE "Speed",0
-		.BYTE $52 ; R
-		.BYTE $55 ; U
-		.BYTE $13
-		.BYTE $33 ; 3
-		.BYTE $88 ; à
-		.BYTE $54 ; T
-		.BYTE $48 ; H
-		.BYTE	0
-		.BYTE	6
-		.BYTE	0
-		.BYTE	1
-		.BYTE $13
+		.BYTE	$84,$FF,$84,$01,$68,$01,$0D,$F0,$00,$91,$7B,$00,$01,$00,$40,$00
+		.BYTE	$84,$00,$04,$01,$01,$00,$0D,$F0,$00,$81,$7B,$00,$01,$00,$40,$00
+		.BYTE	$EC,$00,$04,"Speed",$00,$52,$55,$13,$33,$88,$54,$48
+		.BYTE	$00,$06,$00,$01,$13
 s_Light:
 		Item	$81,$00,$00,$00,"Light"
 		.BYTE $84 ; Ñ
@@ -3276,15 +3232,8 @@ s_NightVision:
 		.BYTE	0
 		.BYTE	1
 		.BYTE	0
-		.BYTE $EC ; Ï
-		.BYTE	0
-		.BYTE	4
-aNightVision_0:	.BYTE "Night Vision",0
-		.BYTE	0
-		.BYTE	1
-		.BYTE	0
-		.BYTE	0
-		.BYTE $15
+		.BYTE	$EC,$00,$04,"Night Vision",$00
+		.BYTE	$00,$01,$00,$00,$15
 s_Paralysis:
 		Item	$81,$00,$00,$00,"Paralysis"
 		.BYTE $84 ; Ñ
@@ -3303,11 +3252,7 @@ s_Paralysis:
 		.BYTE	0
 		.BYTE	4
 		.BYTE	0
-		.BYTE	0
-		.BYTE	2
-		.BYTE	0
-		.BYTE	2
-		.BYTE $16
+		.BYTE	$00,$02,$00,$02,$16
 s_Healing:
 		Item	$81,$00,$00,$00,"Healing"
 		.BYTE $84 ; Ñ
@@ -3326,404 +3271,65 @@ s_Healing:
 		.BYTE	0
 		.BYTE  $A
 		.BYTE	0
-		.BYTE	0
-		.BYTE  $A
-		.BYTE	0
-		.BYTE	5
-		.BYTE $17
+		.BYTE	$00,$0A,$00,$05,$17
 s_Fireblade:
 		Item	$81,$00,$00,$00,"Fireblade"
-		.BYTE $87 ; á
-		.BYTE $FF
-		.BYTE $84 ; Ñ
-		.BYTE	1
-		.BYTE $3D ; =
-		.BYTE	0
-		.BYTE  $D
-		.BYTE $F0 ; 
-		.BYTE	0
-		.BYTE	1
-		.BYTE $D5 ; ’
-		.BYTE	0
-		.BYTE	1
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE $84 ; Ñ
-		.BYTE	0
-		.BYTE	4
-		.BYTE	1
-		.BYTE	1
-		.BYTE	0
-		.BYTE  $D
-		.BYTE $F0 ; 
-		.BYTE	0
-		.BYTE	1
-		.BYTE $D5 ; ’
-		.BYTE	0
-		.BYTE	1
-		.BYTE	0
-		.BYTE $24 ; $
-		.BYTE	0
-		.BYTE $EC ; Ï
-		.BYTE	0
-		.BYTE	4
-aFireblade_0:	.BYTE "Fireblade",0
-		.BYTE $52 ; R
-		.BYTE $54 ; T
-		.BYTE $53 ; S
-		.BYTE	0
-		.BYTE	4
-		.BYTE	0
-		.BYTE	4
-		.BYTE $18
+		.BYTE	$87,$FF,$84,$01,$3D,$00,$0D,$F0,$00,$01,$D5,$00,$01,$00,$00,$00
+		.BYTE	$84,$00,$04,$01,$01,$00,$0D,$F0,$00,$01,$D5,$00,$01,$00,$24,$00
+		.BYTE	$EC,$00,$04,"Fireblade",$00,"RTS"
+		.BYTE	$00,$04,$00,$04,$18
 s_Razoredge:
 		Item	$81,$00,$00,$00,"Razoredge"
-		.BYTE $87 ; á
-		.BYTE $FF
-		.BYTE $84 ; Ñ
-		.BYTE	1
-		.BYTE $3E ; >
-		.BYTE	0
-		.BYTE  $D
-		.BYTE $F0 ; 
-		.BYTE	0
-		.BYTE	1
-		.BYTE $D3 ; ”
-		.BYTE	0
-		.BYTE	1
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE $84 ; Ñ
-		.BYTE	0
-		.BYTE	4
-		.BYTE	1
-		.BYTE	1
-		.BYTE	0
-		.BYTE  $D
-		.BYTE $F0 ; 
-		.BYTE	0
-		.BYTE	1
-		.BYTE $D3 ; ”
-		.BYTE	0
-		.BYTE	1
-		.BYTE	0
-		.BYTE $24 ; $
-		.BYTE	0
-		.BYTE $EC ; Ï
-		.BYTE	0
-		.BYTE	4
-aRazoredge_0:	.BYTE "Razoredge",0
-		.BYTE $44 ; D
-		.BYTE $8F ; è
-		.BYTE $35 ; 5
-		.BYTE	0
-		.BYTE	4
-		.BYTE	0
-		.BYTE	4
-		.BYTE $19
+		.BYTE	$87,$FF,$84,$01,$3E,$00,$0D,$F0,$00,$01,$D3,$00,$01,$00,$00,$00
+		.BYTE	$84,$00,$04,$01,$01,$00,$0D,$F0,$00,$01,$D3,$00,$01,$00,$24,$00
+		.BYTE	$EC,$00,$04,"Razoredge",$00,$44,$8F,$35
+		.BYTE	$00,$04,$00,$04,$19
 s_SlayEvil:
 		Item	$81,$00,$00,$00,"Slay Evil"
 		.BYTE	$84,$FF,$84,$01,$01,$00,$0D,$F0,$00,$01,$E5,$00,$01,$00,$5A,$00
 		.BYTE	$00,$05,$00,$05,$1A
-:
 s_SlayGood:
 		Item	$81,$00,$00,$00,"Slay Good"
 		.BYTE	$84,$FF,$84,$01,$01,$00,$0D,$F0,$00,$01,$E6,$00,$01,$00,$5A,$00
 		.BYTE	$00,$05,$00,$05,$1B
-:
 s_DefeatEvil:
-		.BYTE $81 ; Å
-		.BYTE $27 ; '
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE $12
-aDefeatEvil:	.BYTE "Defeat Evil",0
-		.BYTE $84 ; Ñ
-		.BYTE $FF
-		.BYTE $84 ; Ñ
-		.BYTE	1
-		.BYTE	1
-		.BYTE	0
-		.BYTE  $D
-		.BYTE $F0 ; 
-		.BYTE	0
-		.BYTE	1
-		.BYTE $E5 ; Â
-		.BYTE	0
-		.BYTE	2
-		.BYTE	3
-		.BYTE $55 ; U
-		.BYTE	0
-		.BYTE	0
-		.BYTE	6
-		.BYTE	0
-		.BYTE	4
-		.BYTE $1C
-		.BYTE $81 ; Å
-		.BYTE $27 ; '
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE $12
-aDefeatGood:	.BYTE "Defeat Good",0
-		.BYTE $84 ; Ñ
-		.BYTE $FF
-		.BYTE $84 ; Ñ
-		.BYTE	1
-		.BYTE	1
-		.BYTE	0
-		.BYTE  $D
-		.BYTE $F0 ; 
-		.BYTE	0
-		.BYTE	1
-		.BYTE $E6 ; Ê
-		.BYTE	0
-		.BYTE	2
-		.BYTE	2
-		.BYTE $55 ; U
-		.BYTE	0
-		.BYTE	0
-		.BYTE	6
-		.BYTE	0
-		.BYTE	4
-		.BYTE $1D
-		.BYTE $81 ; Å
-		.BYTE $26 ; &
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE $11
-aFireBalls:	.BYTE "Fire Balls",0
-		.BYTE $84 ; Ñ
-		.BYTE $FF
-		.BYTE $84 ; Ñ
-		.BYTE	1
-		.BYTE	1
-		.BYTE	0
-		.BYTE  $D
-		.BYTE $F0 ; 
-		.BYTE	0
-		.BYTE	1
-		.BYTE $E1 ; ·
-		.BYTE	0
-		.BYTE	2
-		.BYTE	7
-		.BYTE $66 ; f
-		.BYTE	0
-		.BYTE	0
-		.BYTE	4
-		.BYTE	0
-		.BYTE	4
-		.BYTE $1E
-		.BYTE $81 ; Å
-		.BYTE $26 ; &
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE $11
-aColdBlast:	.BYTE "Cold Blast",0
-		.BYTE $84 ; Ñ
-		.BYTE $FF
-		.BYTE $84 ; Ñ
-		.BYTE	1
-		.BYTE	1
-		.BYTE	0
-		.BYTE  $D
-		.BYTE $F0 ; 
-		.BYTE	0
-		.BYTE	1
-		.BYTE $E7 ; Á
-		.BYTE	0
-		.BYTE	2
-		.BYTE	1
-		.BYTE $66 ; f
-		.BYTE	0
-		.BYTE	0
-		.BYTE	4
-		.BYTE	0
-		.BYTE	4
-		.BYTE $1F
-		.BYTE $81 ; Å
-		.BYTE $27 ; '
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE $12
-aMagicDarts:	.BYTE "Magic Darts",0
-		.BYTE $84 ; Ñ
-		.BYTE $FF
-		.BYTE $84 ; Ñ
-		.BYTE	1
-		.BYTE	1
-		.BYTE	0
-		.BYTE  $D
-		.BYTE $F0 ; 
-		.BYTE	0
-		.BYTE	1
-		.BYTE $F0 ; 
-		.BYTE	0
-		.BYTE	1
-		.BYTE	0
-		.BYTE	7
-		.BYTE	0
-		.BYTE	0
-		.BYTE	4
-		.BYTE	0
-		.BYTE	2
-		.BYTE $20
-		.BYTE $81 ; Å
-		.BYTE $4B ; K
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE $16
-aProt_FromEvil:	.BYTE "Prot. From Evil",0
-		.BYTE $84 ; Ñ
-		.BYTE $FF
-		.BYTE $84 ; Ñ
-		.BYTE	1
-		.BYTE $68 ; h
-		.BYTE	1
-		.BYTE  $D
-		.BYTE $F0 ; 
-		.BYTE	0
-		.BYTE $91 ; ë
-		.BYTE $AF ; Ø
-		.BYTE	0
-		.BYTE	1
-		.BYTE	0
-		.BYTE  $A
-		.BYTE	0
-		.BYTE $84 ; Ñ
-		.BYTE	0
-		.BYTE	4
-		.BYTE	1
-		.BYTE	1
-		.BYTE	0
-		.BYTE  $D
-		.BYTE $F0 ; 
-		.BYTE	0
-		.BYTE $81 ; Å
-		.BYTE $AF ; Ø
-		.BYTE	0
-		.BYTE	1
-		.BYTE	0
-		.BYTE  $A
-		.BYTE	0
-		.BYTE $EC ; Ï
-		.BYTE	0
-		.BYTE	4
-aProt_Evil:	.BYTE "Prot. Evil",0
-		.BYTE $54 ; T
-		.BYTE $45 ; E
-		.BYTE	0
-		.BYTE	4
-		.BYTE	0
-		.BYTE	1
-		.BYTE $21 ; !
-		.BYTE $81 ; Å
-		.BYTE $4B ; K
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE $16
-aProt_FromGood:	.BYTE "Prot. From Good",0
-		.BYTE $84 ; Ñ
-		.BYTE $FF
-		.BYTE $84 ; Ñ
-		.BYTE	1
-		.BYTE $68 ; h
-		.BYTE	1
-		.BYTE  $D
-		.BYTE $F0 ; 
-		.BYTE	0
-		.BYTE $91 ; ë
-		.BYTE $AE ; Æ
-		.BYTE	0
-		.BYTE	1
-		.BYTE	0
-		.BYTE  $A
-		.BYTE	0
-		.BYTE $84 ; Ñ
-		.BYTE	0
-		.BYTE	4
-		.BYTE	1
-		.BYTE	1
-		.BYTE	0
-		.BYTE  $D
-		.BYTE $F0 ; 
-		.BYTE	0
-		.BYTE $81 ; Å
-		.BYTE $AE ; Æ
-		.BYTE	0
-		.BYTE	1
-		.BYTE	0
-		.BYTE  $A
-		.BYTE	0
-		.BYTE $EC ; Ï
-		.BYTE	0
-		.BYTE	4
-aProt_Good:	.BYTE "Prot. Good",0
-		.BYTE $D4 ; ‘
-		.BYTE $38 ; 8
-		.BYTE	0
-		.BYTE	4
-		.BYTE	0
-		.BYTE	1
-		.BYTE $22 ; "
-		.BYTE $81 ; Å
-		.BYTE $46 ; F
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE $11
-aProtection:	.BYTE "Protection",0
-		.BYTE $84 ; Ñ
-		.BYTE $FF
-		.BYTE $84 ; Ñ
-		.BYTE	1
-		.BYTE $68 ; h
-		.BYTE	1
-		.BYTE  $D
-		.BYTE $F0 ; 
-		.BYTE	0
-		.BYTE $91 ; ë
-		.BYTE $A6 ; ¶
-		.BYTE	0
-		.BYTE  $B
-		.BYTE	1
-		.BYTE	2
-		.BYTE	0
-		.BYTE $84 ; Ñ
-		.BYTE	0
-		.BYTE	4
-		.BYTE	1
-		.BYTE	1
-		.BYTE	0
-		.BYTE  $D
-		.BYTE $F0 ; 
-		.BYTE	0
-		.BYTE $81 ; Å
-		.BYTE $A6 ; ¶
-		.BYTE	0
-		.BYTE  $B
-		.BYTE	1
-		.BYTE	2
-		.BYTE	0
-		.BYTE $EC ; Ï
-		.BYTE	0
-		.BYTE	4
-aProtection_0:	.BYTE "Protection",0
-		.BYTE $50 ; P
-		.BYTE $50 ; P
-		.BYTE	0
-		.BYTE	4
-		.BYTE	0
-		.BYTE	2
-		.BYTE $23 ; #
+		Item	$81,$00,$00,$00,"Defeat Evil"
+		.BYTE	$84,$FF,$84,$01,$01,$00,$0D,$F0,$00,$01,$E5,$00,$02,$03,$55,$00
+		.BYTE	$00,$06,$00,$04,$1C
+s_DefeatGood:
+		Item	$81,$00,$00,$00,"Defeat Good"
+		.BYTE	$84,$FF,$84,$01,$01,$00,$0D,$F0,$00,$01,$E6,$00,$02,$02,$55,$00
+		.BYTE	$00,$06,$00,$04,$1D
+s_FireBalls:
+		Item	$81,$00,$00,$00,"Fire Balls"
+		.BYTE	$84,$FF,$84,$01,$01,$00,$0D,$F0,$00,$01,$E1,$00,$02,$07,$66,$00
+		.BYTE	$00,$04,$00,$04,$1E
+s_ColdBlast:
+		Item	$81,$00,$00,$00,"Cold Blast"
+		.BYTE	$84,$FF,$84,$01,$01,$00,$0D,$F0,$00,$01,$E7,$00,$02,$01,$66,$00
+		.BYTE	$00,$04,$00,$04,$1F
+s_MagicDarts:
+		Item	$81,$00,$00,$00,"Magic Darts"
+		.BYTE	$84,$FF,$84,$01,$01,$00,$0D,$F0,$00,$01,$F0,$00,$01,$00,$07,$00
+		.BYTE	$00,$04,$00,$02,$20
+s_ProtFromEvil:
+		Item	$81,$00,$00,$00,"Prot. From Evil"
+		.BYTE	$84,$FF,$84,$01,$68,$01,$0D,$F0,$00,$91,$AF,$00,$01,$00,$0A,$00
+		.BYTE	$84,$00,$04,$01,$01,$00,$0D,$F0,$00,$81,$AF,$00,$01,$00,$0A,$00
+		.BYTE	$EC,$00,$04,"Prot. Evil",$00,"TE"
+		.BYTE	$00,$04,$00,$01,$21
+s_ProtFromGood:
+		Item	$81,$00,$00,$00,"Prot. From Good"
+		.BYTE	$84,$FF,$84,$01,$68,$01,$0D,$F0,$00,$91,$AE,$00,$01,$00,$0A,$00
+		.BYTE	$84,$00,$04,$01,$01,$00,$0D,$F0,$00,$81,$AE,$00,$01,$00,$0A,$00
+		.BYTE	$EC,$00,$04,"Prot. Good",$00,$D4,$38
+		.BYTE	$00,$04,$00,$01,$22
+s_Protection:
+		Item	$81,$00,$00,$00,"Protection"
+		.BYTE	$84,$FF,$84,$01,$68,$01,$0D,$F0,$00,$91,$A6,$00,$0B,$01,$02,$00
+		.BYTE	$84,$00,$04,$01,$01,$00,$0D,$F0,$00,$81,$A6,$00,$0B,$01,$02,$00
+		.BYTE	$EC,$00,$04,"Protection",0,"PP"
+		.BYTE	$00,$04,$00,$02,$23
 s_Fury:
 		Item	$81,$00,$00,$00,"Fury"
 		.BYTE	$84,$FF,$84,$01,$21,$00,$0D,$F0,$00,$91,$84,$00,$01,$00,$01,$00
