@@ -491,7 +491,8 @@ all: $(BINARIES) $(OBJECTS) ar32.img
 	sha1sum -c 32-s183.sha1
 
 32-s184.bin: 32-s184.asm
-	cl65 --start-addr 0x7600 -t none 32-s184.asm -o 32-s184.bin
+	ca65 -o 32-s184.o 32-s184.asm
+	ld65 -o 32-s184.bin -C 32-s184.cfg 32-s184.o
 	sha1sum -c 32-s184.sha1
 	./encrypt.php 32-s184.bin 54b70027140ebef8a25661c5160a2805
 
