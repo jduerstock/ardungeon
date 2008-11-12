@@ -3724,470 +3724,64 @@ aProtection_0:	.BYTE "Protection",0
 		.BYTE	0
 		.BYTE	2
 		.BYTE $23 ; #
-		.BYTE $81 ; Å
-		.BYTE $40 ; @
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE  $B
-		.BYTE $46 ; F
-		.BYTE $75 ; u
-		.BYTE $72 ; r
-		.BYTE $79 ; y
-		.BYTE	0
-		.BYTE $84 ; Ñ
-		.BYTE $FF
-		.BYTE $84 ; Ñ
-		.BYTE	1
-		.BYTE $21 ; !
-		.BYTE	0
-		.BYTE  $D
-		.BYTE $F0 ; 
-		.BYTE	0
-		.BYTE $91 ; ë
-		.BYTE $84 ; Ñ
-		.BYTE	0
-		.BYTE	1
-		.BYTE	0
-		.BYTE	1
-		.BYTE	0
-		.BYTE $84 ; Ñ
-		.BYTE	0
-		.BYTE	4
-		.BYTE	1
-		.BYTE	1
-		.BYTE	0
-		.BYTE  $D
-		.BYTE $F0 ; 
-		.BYTE	0
-		.BYTE $81 ; Å
-		.BYTE $84 ; Ñ
-		.BYTE	0
-		.BYTE	1
-		.BYTE	0
-		.BYTE	2
-		.BYTE	0
-		.BYTE $EC ; Ï
-		.BYTE	0
-		.BYTE	4
-aFury:		.BYTE "Fury",0
-		.BYTE $48 ; H
-		.BYTE $46 ; F
-		.BYTE $41 ; A
-		.BYTE $49 ; I
-		.BYTE $4C ; L
-		.BYTE $B5 ; µ
-		.BYTE $3A ; :
-		.BYTE $88 ; à
-		.BYTE	0
-		.BYTE	2
-		.BYTE	0
-		.BYTE	1
-		.BYTE $24 ; $
-		.BYTE $81 ; Å
-		.BYTE $40 ; @
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE  $B
-aLuck:		.BYTE "Luck",0
-		.BYTE $84 ; Ñ
-		.BYTE $FF
-		.BYTE $84 ; Ñ
-		.BYTE	1
-		.BYTE $68 ; h
-		.BYTE	1
-		.BYTE  $D
-		.BYTE $F0 ; 
-		.BYTE	0
-		.BYTE $91 ; ë
-		.BYTE $84 ; Ñ
-		.BYTE	0
-		.BYTE	1
-		.BYTE	0
-		.BYTE	1
-		.BYTE	0
-		.BYTE $84 ; Ñ
-		.BYTE	0
-		.BYTE	4
-		.BYTE	1
-		.BYTE	1
-		.BYTE	0
-		.BYTE  $D
-		.BYTE $F0 ; 
-		.BYTE	0
-		.BYTE $81 ; Å
-		.BYTE $84 ; Ñ
-		.BYTE	0
-		.BYTE	1
-		.BYTE	0
-		.BYTE	1
-		.BYTE	0
-		.BYTE $EC ; Ï
-		.BYTE	0
-		.BYTE	4
-aLuck_0:	.BYTE "Luck",0
-		.BYTE $4D ; M
-		.BYTE $53 ; S
-		.BYTE $47 ; G
-		.BYTE	3
-		.BYTE $3B ; ;
-		.BYTE $87 ; á
-		.BYTE $42 ; B
-		.BYTE $4F ; O
-		.BYTE	0
-		.BYTE	4
-		.BYTE	0
-		.BYTE	1
-		.BYTE $25 ; %
-		.BYTE $81 ; Å
-		.BYTE $24 ; $
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE  $F
-aBewilder:	.BYTE "Bewilder",0
-		.BYTE $84 ; Ñ
-		.BYTE $FF
-		.BYTE $84 ; Ñ
-		.BYTE	1
-		.BYTE	1
-		.BYTE	0
-		.BYTE  $D
-		.BYTE $F0 ; 
-		.BYTE	0
-		.BYTE	1
-		.BYTE $F0 ; 
-		.BYTE	0
-		.BYTE	1
-		.BYTE	0
-		.BYTE	3
-		.BYTE	0
-		.BYTE	0
-		.BYTE	2
-		.BYTE	0
-		.BYTE	2
-		.BYTE $27 ; '
-		.BYTE $81 ; Å
-		.BYTE $46 ; F
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE $11
-aShadowmeld:	.BYTE "Shadowmeld",0
-		.BYTE $84 ; Ñ
-		.BYTE $FF
-		.BYTE $84 ; Ñ
-		.BYTE	1
-		.BYTE $FA ; ˙
-		.BYTE	0
-		.BYTE  $D
-		.BYTE $F0 ; 
-		.BYTE	0
-		.BYTE $91 ; ë
-		.BYTE $8D ; ç
-		.BYTE	0
-		.BYTE	1
-		.BYTE	0
-		.BYTE	1
-		.BYTE	0
-		.BYTE $84 ; Ñ
-		.BYTE $FF
-		.BYTE $84 ; Ñ
-		.BYTE	1
-		.BYTE	1
-		.BYTE	0
-		.BYTE  $D
-		.BYTE $F0 ; 
-		.BYTE	0
-		.BYTE $81 ; Å
-		.BYTE $8D ; ç
-		.BYTE	0
-		.BYTE	1
-		.BYTE	0
-		.BYTE	1
-		.BYTE	0
-		.BYTE $EC ; Ï
-		.BYTE	0
-		.BYTE	4
-aShadowmeld_0:	.BYTE "Shadowmeld",0
-		.BYTE $4F ; O
-		.BYTE $52 ; R
-		.BYTE	0
-		.BYTE	2
-		.BYTE	0
-		.BYTE	2
-		.BYTE $28 ; (
-		.BYTE $81 ; Å
-		.BYTE $21 ; !
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE  $C
-aPrism:		.BYTE "Prism",0
-		.BYTE $84 ; Ñ
-		.BYTE $FF
-		.BYTE $84 ; Ñ
-		.BYTE	1
-		.BYTE	1
-		.BYTE	0
-		.BYTE  $D
-		.BYTE $F0 ; 
-		.BYTE	0
-		.BYTE	1
-		.BYTE $F0 ; 
-		.BYTE	0
-		.BYTE	1
-		.BYTE	0
-		.BYTE	5
-		.BYTE	0
-		.BYTE	0
-		.BYTE	4
-		.BYTE	0
-		.BYTE	2
-		.BYTE $29 ; )
-		.BYTE $81 ; Å
-		.BYTE $2B ; +
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE $16
-aLightningBolts:.BYTE "Lightning Bolts",0
-		.BYTE $84 ; Ñ
-		.BYTE $FF
-		.BYTE $84 ; Ñ
-		.BYTE	1
-		.BYTE	1
-		.BYTE	0
-		.BYTE  $D
-		.BYTE $F0 ; 
-		.BYTE	0
-		.BYTE	1
-		.BYTE $E3 ; „
-		.BYTE	0
-		.BYTE	2
-		.BYTE	5
-		.BYTE $38 ; 8
-		.BYTE	0
-		.BYTE	0
-		.BYTE	4
-		.BYTE	0
-		.BYTE	6
-		.BYTE $2A ; *
-		.BYTE $81 ; Å
-		.BYTE $20
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE  $B
-aFear:		.BYTE "Fear",0
-		.BYTE $84 ; Ñ
-		.BYTE $FF
-		.BYTE $84 ; Ñ
-		.BYTE	1
-		.BYTE	1
-		.BYTE	0
-		.BYTE  $D
-		.BYTE $F0 ; 
-		.BYTE	0
-		.BYTE	1
-		.BYTE $F0 ; 
-		.BYTE	0
-		.BYTE	1
-		.BYTE	0
-		.BYTE	8
-		.BYTE	0
-		.BYTE	0
-		.BYTE	3
-		.BYTE	0
-		.BYTE	1
-		.BYTE $2B ; +
-		.BYTE $81 ; Å
-		.BYTE $27 ; '
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE $12
-aConjureKey:	.BYTE "Conjure Key",0
-		.BYTE $84 ; Ñ
-		.BYTE $FF
-		.BYTE $84 ; Ñ
-		.BYTE	1
-		.BYTE	1
-		.BYTE	0
-		.BYTE  $D
-		.BYTE $F0 ; 
-		.BYTE	0
-		.BYTE $81 ; Å
-		.BYTE $BF ; ø
-		.BYTE	0
-		.BYTE	1
-		.BYTE	0
-		.BYTE	1
-		.BYTE	0
-		.BYTE	0
-		.BYTE	4
-		.BYTE	0
-		.BYTE	0
-		.BYTE $2C ; ,
-		.BYTE $81 ; Å
-		.BYTE $21 ; !
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE  $C
-aVigor:		.BYTE "Vigor",0
-		.BYTE $84 ; Ñ
-		.BYTE $FF
-		.BYTE	4
-		.BYTE	1
-		.BYTE	1
-		.BYTE	0
-		.BYTE  $D
-		.BYTE $F0 ; 
-		.BYTE	0
-		.BYTE $81 ; Å
-		.BYTE $9B ; õ
-		.BYTE	0
-		.BYTE	1
-		.BYTE	0
-		.BYTE  $A
-		.BYTE	0
-		.BYTE	0
-		.BYTE  $A
-		.BYTE	0
-		.BYTE	0
-		.BYTE $2D ; -
-		.BYTE $81 ; Å
-		.BYTE $42 ; B
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE  $D
-aShield:	.BYTE "Shield",0
-		.BYTE $84 ; Ñ
-		.BYTE $FF
-		.BYTE $84 ; Ñ
-		.BYTE	1
-		.BYTE $68 ; h
-		.BYTE	1
-		.BYTE  $D
-		.BYTE $F0 ; 
-		.BYTE	0
-		.BYTE $91 ; ë
-		.BYTE $A6 ; ¶
-		.BYTE	0
-		.BYTE	2
-		.BYTE	1
-		.BYTE	3
-		.BYTE	0
-		.BYTE $84 ; Ñ
-		.BYTE	0
-		.BYTE	4
-		.BYTE	1
-		.BYTE	1
-		.BYTE	0
-		.BYTE  $D
-		.BYTE $F0 ; 
-		.BYTE	0
-		.BYTE $81 ; Å
-		.BYTE $A6 ; ¶
-		.BYTE	0
-		.BYTE	2
-		.BYTE	1
-		.BYTE	3
-		.BYTE	0
-		.BYTE $EC ; Ï
-		.BYTE	0
-		.BYTE	4
-aShield_0:	.BYTE "Shield",0
-		.BYTE $45 ; E
-		.BYTE $4C ; L
-		.BYTE $50 ; P
-		.BYTE $41 ; A
-		.BYTE $47 ; G
-		.BYTE $30 ; 0
-		.BYTE	0
-		.BYTE	3
-		.BYTE	0
-		.BYTE	1
-		.BYTE $2E ; .
-		.BYTE $81 ; Å
-		.BYTE $28 ; (
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE $13
-aConjureFood:	.BYTE "Conjure Food",0
-		.BYTE $84 ; Ñ
-		.BYTE $FF
-		.BYTE $84 ; Ñ
-		.BYTE	1
-		.BYTE	1
-		.BYTE	0
-		.BYTE  $D
-		.BYTE $F0 ; 
-		.BYTE	0
-		.BYTE $81 ; Å
-		.BYTE $BB ; ª
-		.BYTE	0
-		.BYTE	1
-		.BYTE	0
-		.BYTE	1
-		.BYTE	0
-		.BYTE	0
-		.BYTE	4
-		.BYTE	0
-		.BYTE	0
-		.BYTE $2F ; /
-		.BYTE $81 ; Å
-		.BYTE $48 ; H
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE $13
-aSuperVision:	.BYTE "Super Vision",0
-		.BYTE $84 ; Ñ
-		.BYTE $FF
-		.BYTE $84 ; Ñ
-		.BYTE	1
-		.BYTE $64 ; d
-		.BYTE	0
-		.BYTE  $D
-		.BYTE $F0 ; 
-		.BYTE	0
-		.BYTE $91 ; ë
-		.BYTE $8B ; ã
-		.BYTE	0
-		.BYTE	1
-		.BYTE	0
-		.BYTE	1
-		.BYTE	0
-		.BYTE $84 ; Ñ
-		.BYTE	0
-		.BYTE $84 ; Ñ
-		.BYTE	1
-		.BYTE	1
-		.BYTE	0
-		.BYTE  $D
-		.BYTE $F0 ; 
-		.BYTE	0
-		.BYTE $81 ; Å
-		.BYTE $8B ; ã
-		.BYTE	0
-		.BYTE	1
-		.BYTE	0
-		.BYTE	1
-		.BYTE	0
-		.BYTE $EC ; Ï
-		.BYTE	0
-		.BYTE	4
-aSuperVision_0:	.BYTE "Super Vision",0
-		.BYTE	0
-		.BYTE	4
-		.BYTE	0
-		.BYTE	1
-		.BYTE $30 ; 0
+s_Fury:
+		Item	$81,$00,$00,$00,"Fury"
+		.BYTE	$84,$FF,$84,$01,$21,$00,$0D,$F0,$00,$91,$84,$00,$01,$00,$01,$00
+		.BYTE	$84,$00,$04,$01,$01,$00,$0D,$F0,$00,$81,$84,$00,$01,$00,$02,$00
+		.BYTE	$EC,$00,$04,"Fury",$00,"HFAIL",$B5,$3A,$88
+		.BYTE	$00,$02,$00,$01,$24
+s_Luck:
+		Item	$81,$00,$00,$00,"Luck"
+		.BYTE	$84,$FF,$84,$01,$68,$01,$0D,$F0,$00,$91,$84,$00,$01,$00,$01,$00
+		.BYTE	$84,$00,$04,$01,$01,$00,$0D,$F0,$00,$81,$84,$00,$01,$00,$01,$00
+		.BYTE	$EC,$00,$04,"Luck",$00,"MSG",$03,$3B,$87,"BO"
+		.BYTE	$00,$04,$00,$01,$25
+s_Bewilder:
+		Item	$81,$00,$00,$00,"Bewilder"
+		.BYTE	$84,$FF,$84,$01,$01,$00,$0D,$F0,$00,$01,$F0,$00,$01,$00,$03,$00
+		.BYTE	$00,$02,$00,$02,$27
+s_Shadowmeld:
+		Item	$81,$00,$00,$00,"Shadowmeld"
+		.BYTE	$84,$FF,$84,$01,$FA,$00,$0D,$F0,$00,$91,$8D,$00,$01,$00,$01,$00
+		.BYTE	$84,$FF,$84,$01,$01,$00,$0D,$F0,$00,$81,$8D,$00,$01,$00,$01,$00
+		.BYTE	$EC,$00,$04,"Shadowmeld",$00,"OR"
+		.BYTE	$00,$02,$00,$02,$28
+s_Prism:
+		Item	$81,$00,$00,$00,"Prism"
+		.BYTE	$84,$FF,$84,$01,$01,$00,$0D,$F0,$00,$01,$F0,$00,$01,$00,$05,$00
+		.BYTE	$00,$04,$00,$02,$29
+s_LightningBolts:
+		Item	$81,$00,$00,$00,"Lightning Bolts"
+		.BYTE	$84,$FF,$84,$01,$01,$00,$0D,$F0,$00,$01,$E3,$00,$02,$05,$38,$00
+		.BYTE	$00,$04,$00,$06,$2A
+s_Fear:
+		Item	$81,$00,$00,$00,"Fear"
+		.BYTE	$84,$FF,$84,$01,$01,$00,$0D,$F0,$00,$01,$F0,$00,$01,$00,$08,$00
+		.BYTE	$00,$03,$00,$01,$2B
+s_ConjureKey:
+		Item	$81,$00,$00,$00,"Conjure Key"
+		.BYTE	$84,$FF,$84,$01,$01,$00,$0D,$F0,$00,$81,$BF,$00,$01,$00,$01,$00
+		.BYTE	$00,$04,$00,$00,$2C
+s_Vigor:
+		Item	$81,$00,$00,$00,"Vigor"
+		.BYTE	$84,$FF,$04,$01,$01,$00,$0D,$F0,$00,$81,$9B,$00,$01,$00,$0A,$00
+		.BYTE	$00,$0A,$00,$00,$2D
+s_Shield:
+		Item	$81,$00,$00,$00,"Shield"
+		.BYTE	$84,$FF,$84,$01,$68,$01,$0D,$F0,$00,$91,$A6,$00,$02,$01,$03,$00	
+		.BYTE	$84,$00,$04,$01,$01,$00,$0D,$F0,$00,$81,$A6,$00,$02,$01,$03,$00
+		.BYTE	$EC,$00,$04,"Shield",0,"ELPAG0"
+		.BYTE	$00,$03,$00,$01,$2E
+s_ConjureFood:
+		Item	$81,$00,$00,$00,"Conjure Food"
+		.BYTE	$84,$FF,$84,$01,$01,$00,$0D,$F0,$00,$81,$BB,$00,$01,$00,$01,$00
+		.BYTE	$00,$04,$00,$00,$2F
+s_SuperVision:
+		Item	$81,$00,$00,$00,"Super Vision"
+		.BYTE	$84,$FF,$84,$01,$64,$00,$0D,$F0,$00,$91,$8B,$00,$01,$00,$01,$00
+		.BYTE	$84,$00,$84,$01,$01,$00,$0D,$F0,$00,$81,$8B,$00,$01,$00,$01,$00
+		.BYTE	$EC,$00,$04,"Super Vision",0
+		.BYTE	$00,$04,$00,$01,$30
 s_Blinding:
 		Item	$81,$00,$00,$00,"Blinding"
 		.BYTE	$84,$FF,$84,$01,$01,$00,$0D,$F0,$00,$01,$F0,$00,$01,$00,$06,$00
