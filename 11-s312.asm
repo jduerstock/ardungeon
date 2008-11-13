@@ -11,10 +11,7 @@ off_67	= $67
 
 loc_7600:				; CODE XREF: sub_7AE7-477j
 					; sub_7AE7-3FDj ...
-		LDA	#<$829B
-		STA	off_16
-		LDA	#>$829B
-		STA	off_16+1
+		dldi	off_16, $829B
 		JSR	$1818
 
 loc_760B:				; CODE XREF: sub_7AE7-4D9j
@@ -30,10 +27,7 @@ loc_760B:				; CODE XREF: sub_7AE7-4D9j
 loc_7619:				; CODE XREF: sub_7AE7-4D5j
 		LDA	#3
 		STA	$7C
-		LDA	#$E8 ; 'è'
-		STA	SEGADDR
-		LDA	#$94 ; '”'
-		STA	SEGADDR+1
+		dldi	SEGADDR, $94E8
 		LDA	#$13
 		STA	word_1903
 		LDA	#0
@@ -400,19 +394,16 @@ loc_787D:				; CODE XREF: sub_7AE7-26Fj
 		LDA	byte_8E59
 		CMP	#3
 		BNE	loc_789F
-		STA	$6314
+		STA	I_LOC_Y
 		STA	$6312
 		LDA	#$11
-		STA	$6313
+		STA	I_LOC_X
 		LDA	#1
 		BNE	loc_78DC
 
 loc_789F:				; CODE XREF: sub_7AE7-259j
 					; sub_7AE7-225j ...
-		LDA	#$24 ; '$'
-		STA	off_16
-		LDA	#$84 ; '„'
-		STA	off_16+1
+		dldi	off_16, $8424
 		JSR	$1818
 
 loc_78AA:				; CODE XREF: sub_7AE7-23Aj
@@ -438,9 +429,9 @@ loc_78C0:				; CODE XREF: sub_7AE7-260j
 		CMP	#$3F ; '?'
 		BNE	loc_789F
 		LDA	#$1B
-		STA	$6313
+		STA	I_LOC_X
 		LDA	#$1D
-		STA	$6314
+		STA	I_LOC_Y
 		LDA	#0
 		STA	$6312
 		LDA	#3

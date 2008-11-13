@@ -78,14 +78,14 @@ loc_767D:				; CODE XREF: RAM:7673j
 		LDX	#2
 
 loc_7682:				; CODE XREF: RAM:769Bj
-		LDA	$6313
-		CMP	$8696,X
+		LDA	I_LOC_X
+		CMP	byte_8696,X
 		BNE	loc_769A
-		LDA	$6314
-		CMP	$8699,X
+		LDA	I_LOC_Y
+		CMP	byte_8699,X
 		BNE	loc_769A
-		LDA	$6315
-		CMP	$869C,X
+		LDA	I_LOC_Z
+		CMP	byte_869C,X
 		BEQ	loc_76A0
 
 loc_769A:				; CODE XREF: RAM:7688j	RAM:7690j
@@ -95,7 +95,7 @@ loc_769A:				; CODE XREF: RAM:7688j	RAM:7690j
 ; ---------------------------------------------------------------------------
 
 loc_76A0:				; CODE XREF: RAM:7698j
-		LDA	$869F,X
+		LDA	byte_869F,X
 		STA	$69
 		BNE	loc_76B4
 		dldi	off_1977, $7763
@@ -230,7 +230,7 @@ loc_77EB:				; CODE XREF: RAM:769Dj	RAM:779Aj ...
 
 loc_77ED:				; CODE XREF: RAM:77F4j
 		LDA	$6318,X
-		STA	$6313,X
+		STA	I_LOC_X,X
 		DEX
 		BPL	loc_77ED
 		JSR	$96F5
@@ -381,7 +381,7 @@ loc_78EF:				; CODE XREF: RAM:78EAj
 
 loc_78F4:				; CODE XREF: RAM:78FBj
 		LDA	unk_86A2,X
-		STA	$6313,X
+		STA	I_LOC_X,X
 		DEX
 		BPL	loc_78F4
 		LDA	#1
@@ -415,13 +415,13 @@ loc_793E:				; CODE XREF: RAM:795Ej
 		CMP	#2
 		BNE	loc_795D
 		LDA	$64A4,X
-		CMP	$6313
+		CMP	I_LOC_X
 		BNE	loc_795D
 		LDA	$64B4,X
-		CMP	$6314
+		CMP	I_LOC_Y
 		BNE	loc_795D
 		LDA	$64C4,X
-		CMP	$6315
+		CMP	I_LOC_Z
 		BEQ	loc_7963
 
 loc_795D:				; CODE XREF: RAM:7943j	RAM:794Bj ...
@@ -1079,15 +1079,23 @@ byte_8681:
 		.WORD byte_857C
 		.BYTE $FF
 		.WORD byte_8547
+
+byte_8696:
 		.BYTE $1B
 		.BYTE $1C
 		.BYTE $1F
+
+byte_8699:
 		.BYTE	8
 		.BYTE	8
 		.BYTE	8
+
+byte_869C:
 		.BYTE	0
 		.BYTE	0
 		.BYTE	0
+
+byte_869F:
 		.BYTE	0
 		.BYTE	0
 		.BYTE	1

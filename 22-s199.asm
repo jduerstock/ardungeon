@@ -194,7 +194,7 @@ loc_7776:				; CODE XREF: RAM:769Ej	RAM:778Cj ...
 
 loc_7778:				; CODE XREF: RAM:777Fj
 		LDA	$750D,X
-		STA	$6313,X
+		STA	I_LOC_X,X
 		DEX
 		BPL	loc_7778
 		STX	$AC00
@@ -237,7 +237,7 @@ loc_77A8:				; CODE XREF: RAM:7798j	RAM:7CECj
 
 loc_77CF:				; CODE XREF: RAM:77EFj
 		LDA	$64A4,X
-		CMP	$6313
+		CMP	I_LOC_X
 		BNE	loc_77EE
 		LDA	$64B4,X
 		CMP	$6314

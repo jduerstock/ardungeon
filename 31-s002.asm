@@ -2423,9 +2423,9 @@ loc_849D:				; CODE XREF: sub_7DD2:loc_7DEEj
 		LDA	byte_1959
 		BNE	loc_84B7
 		LDA	$6318
-		STA	$6313
+		STA	I_LOC_X
 		LDA	$6319
-		STA	$6314
+		STA	I_LOC_Y
 
 loc_84B7:				; CODE XREF: sub_7DD2+6D7j
 		JMP	loc_776D
@@ -3710,13 +3710,13 @@ loc_8C11:				; CODE XREF: sub_8C0F+22j
 		CMP	#2
 		BNE	loc_8C30
 		LDA	$64A4,X
-		CMP	$6313
+		CMP	I_LOC_X
 		BNE	loc_8C30
 		LDA	$64B4,X
-		CMP	$6314
+		CMP	I_LOC_Y
 		BNE	loc_8C30
 		LDA	$64C4,X
-		CMP	$6315
+		CMP	I_LOC_Z
 		BEQ	loc_8C35
 
 loc_8C30:				; CODE XREF: sub_8C0F+7j sub_8C0F+Fj ...
@@ -4523,11 +4523,11 @@ loc_9097:				; CODE XREF: sub_9081+8j
 		LDA	$4B
 		JSR	$1887
 		LDX	$6493
-		LDA	$6313
+		LDA	I_LOC_X
 		STA	$64A4,X
-		LDA	$6314
+		LDA	I_LOC_Y
 		STA	$64B4,X
-		LDA	$6315
+		LDA	I_LOC_Z
 		STA	$64C4,X
 		LDA	#2
 		STA	$6494,X
@@ -4564,13 +4564,13 @@ loc_90D4:				; CODE XREF: sub_90C3+3Aj
 		CMP	#2
 		BNE	loc_90FB
 		LDA	$64A4,X
-		CMP	$6313
+		CMP	I_LOC_X
 		BNE	loc_90FB
 		LDA	$64B4,X
-		CMP	$6314
+		CMP	I_LOC_Y
 		BNE	loc_90FB
 		LDA	$64C4,X
-		CMP	$6315
+		CMP	I_LOC_Z
 		BNE	loc_90FB
 		LDA	$64D4,X
 		JSR	$188A

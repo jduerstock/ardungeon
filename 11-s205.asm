@@ -1072,16 +1072,13 @@ loc_878B:				; CODE XREF: RAM:879Aj
 locret_87AD:				; CODE XREF: RAM:879Ej
 		RTS
 ; ---------------------------------------------------------------------------
-		LDA	#$C1 ; 'Á'
-		STA	off_16
-		LDA	#$61 ; 'a'
-		STA	off_16+1
+		dldi	off_16, $61C1
 		LDX	$194A
 		JSR	$3C5C
 		JMP	$2BFA
 ; ---------------------------------------------------------------------------
-		LDX	$6315
-		LDA	$6313
+		LDX	I_LOC_Z
+		LDA	I_LOC_X
 		CLC
 		ADC	$628B,X
 		STA	$6289
@@ -1094,20 +1091,14 @@ locret_87AD:				; CODE XREF: RAM:879Ej
 		STA	$6289
 
 loc_87DD:				; CODE XREF: RAM:87D6j
-		LDA	#$99 ; '™'
-		STA	off_16
-		LDA	#$62 ; 'b'
-		STA	off_16+1
+		dldi	off_16, $6299
 		LDX	$194A
 		DEC	$18FE
 		JSR	$3C5C
 		LDA	#0
 		STA	$18FE
 		JSR	$2BB0
-		LDA	#7
-		STA	off_16
-		LDA	#$20 ; ' '
-		STA	off_16+1
+		dldi	off_16, $2007
 		LDX	$194A
 		JSR	$3C5C
 		JMP	$5209
@@ -1146,7 +1137,7 @@ loc_8837:				; CODE XREF: RAM:887Aj
 		CMP	$6315
 		BNE	loc_8877
 		LDA	$64A4,X
-		CMP	$6313
+		CMP	I_LOC_X
 		BNE	loc_8877
 		LDA	$64B4,X
 		CMP	$6314

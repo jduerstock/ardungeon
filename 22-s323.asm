@@ -87,9 +87,9 @@ loc_7690:				; CODE XREF: RAM:768Cj
 
 loc_76AD:				; CODE XREF: RAM:765Cj
 		LDA	#$E
-		STA	$6313
+		STA	I_LOC_X
 		LDA	#$1C
-		STA	$6314
+		STA	I_LOC_Y
 		LDA	#2
 		STA	$6312
 		LDA	#$FF

@@ -414,7 +414,7 @@ loc_791F:				; CODE XREF: RAM:7677j	RAM:76C9j ...
 
 loc_7921:				; CODE XREF: RAM:7928j
 		LDA	$6318,Y
-		STA	$6313,Y
+		STA	I_LOC_X,Y
 		DEY
 		BPL	loc_7921
 		STY	$AC00
