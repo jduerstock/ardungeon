@@ -341,7 +341,7 @@ loc_7853:				; CODE XREF: RAM:781Bj	RAM:loc_7C31j
 
 loc_7855:				; CODE XREF: RAM:785Cj
 		LDA	$750D,X
-		STA	$6313,X
+		STA	I_LOC_X,X
 		DEX
 		BPL	loc_7855
 		STX	$AC00

@@ -3784,7 +3784,7 @@ loc_2CD8:				; CODE XREF: sub_2CC2+Fj sub_2CC2+1Ej
 
 loc_2CE4:				; CODE XREF: sub_2CC2+29j
 		LDA	$6318,X
-		STA	$6313,X
+		STA	I_LOC_X,X
 		DEX
 		BPL	loc_2CE4
 		LDA	$631F
@@ -4804,7 +4804,7 @@ sub_32CA:				; CODE XREF: RAM:312Ap
 		LDX	#4
 
 loc_32CE:				; CODE XREF: sub_32CA+Bj
-		LDA	$6313,X
+		LDA	I_LOC_X,X
 		STA	$6318,X
 		DEX
 		BPL	loc_32CE
@@ -4863,9 +4863,9 @@ loc_331E:				; CODE XREF: RAM:3319j
 loc_3321:
 		LDY	byte_3B44,X
 		CLC
-		LDA	$6313,Y
+		LDA	I_LOC_X,Y
 		ADC	byte_3B54,X
-		STA	$6313,Y
+		STA	I_LOC_X,Y
 		LDA	#$FF
 		STA	byte_1975
 		LDA	#0
@@ -5121,7 +5121,7 @@ sub_3531:				; CODE XREF: RAM:30EEp
 		LDA	#0
 		ROR	A
 		STA	off_10
-		LDA	$6313
+		LDA	I_LOC_X
 		ASL	A
 		ASL	A
 		ORA	off_10
@@ -5208,11 +5208,11 @@ loc_35C1:
 		ASL	A
 		TAX
 		LDA	byte_3BA7,X
-		STA	$6313
+		STA	I_LOC_X
 		LDA	byte_3BA7+1,X
-		STA	$6314
+		STA	I_LOC_Y
 		LDA	byte_3BA7+2,X
-		STA	$6315
+		STA	I_LOC_Z
 		LDA	byte_3BA7+3,X
 		BPL	loc_35E7
 		CMP	#$FF
@@ -5523,13 +5523,13 @@ loc_3884:				; CODE XREF: sub_386F+38j
 		CMP	#2
 		BNE	loc_38A6
 		LDA	$64A4,X
-		CMP	$6313
+		CMP	I_LOC_X
 		BNE	loc_38A6
 		LDA	$64B4,X
-		CMP	$6314
+		CMP	I_LOC_Y
 		BNE	loc_38A6
 		LDA	$64C4,X
-		CMP	$6315
+		CMP	I_LOC_Z
 		BNE	loc_38A6
 		INC	byte_38CF
 
@@ -8239,7 +8239,7 @@ loc_4C09:				; CODE XREF: RAM:4C04j
 
 loc_4C27:				; CODE XREF: RAM:4C14j
 		LDX	$6493
-		LDA	$6313
+		LDA	I_LOC_X
 		STA	$64A4,X
 		LDA	$6314
 		STA	$64B4,X
@@ -8801,7 +8801,7 @@ loc_4F22:				; CODE XREF: sub_4EFD+20j
 		BMI	loc_4F4C
 		LDA	$4B
 		STA	$64D4,X
-		LDA	$6313
+		LDA	I_LOC_X
 		STA	$64A4,X
 		LDA	$6314
 		STA	$64B4,X
@@ -10161,18 +10161,15 @@ locret_57DB:				; CODE XREF: RAM:57CCj
 
 
 sub_57DC:				; CODE XREF: RAM:loc_56E4p
-		LDA	#$C1 ; 'Á'
-		STA	off_16
-		LDA	#$61 ; 'a'
-		STA	off_16+1
+		dldi	off_16, $61C1
 		LDX	byte_194A
 		JSR	sub_3C5C
 		JMP	sub_2BFA
 ; End of function sub_57DC
 
 ; ---------------------------------------------------------------------------
-		LDX	$6315
-		LDA	$6313
+		LDX	I_LOC_Z
+		LDA	I_LOC_X
 		CLC
 		ADC	$628B,X
 		STA	byte_6289
@@ -10185,20 +10182,14 @@ sub_57DC:				; CODE XREF: RAM:loc_56E4p
 		STA	byte_6289
 
 loc_580B:				; CODE XREF: RAM:5804j
-		LDA	#$99 ; '™'
-		STA	off_16
-		LDA	#$62 ; 'b'
-		STA	off_16+1
+		dldi	off_16, $6299
 		LDX	byte_194A
 		DEC	byte_18FE
 		JSR	sub_3C5C
 		LDA	#0
 		STA	byte_18FE
 		JSR	sub_2BB0
-		LDA	#7
-		STA	off_16
-		LDA	#$20 ; ' '
-		STA	off_16+1
+		dldi	off_16, $2007
 		LDX	byte_194A
 		JSR	sub_3C5C
 		JMP	loc_5209
@@ -10247,7 +10238,7 @@ loc_5865:				; CODE XREF: sub_5857+51j
 		CMP	$6315
 		BNE	loc_58A5
 		LDA	$64A4,X
-		CMP	$6313
+		CMP	I_LOC_X
 		BNE	loc_58A5
 		LDA	$64B4,X
 		CMP	$6314
@@ -10682,7 +10673,7 @@ loc_5BEA:				; CODE XREF: sub_5AB4+193j
 		CMP	#2
 		BNE	loc_5C44
 		LDA	$64A4,X
-		CMP	$6313
+		CMP	I_LOC_X
 		BNE	loc_5C44
 		LDA	$64B4,X
 		CMP	$6314

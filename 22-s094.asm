@@ -4,7 +4,7 @@
 		.include	"macros.inc"
 		
 ;		.ORG	$7600
-		.BYTE $E
+		.BYTE	$E
 ; ---------------------------------------------------------------------------
 		JMP	loc_7610
 ; ---------------------------------------------------------------------------
@@ -104,14 +104,11 @@ loc_76C0:				; CODE XREF: RAM:768Aj
 ; ---------------------------------------------------------------------------
 
 loc_76D0:				; CODE XREF: RAM:76CBj
-		LDX	#$7E ; '~'
-		LDY	#7
+		ldxy	$7E07
 		JSR	$1884
-		LDX	#$7E ; '~'
-		LDY	#$32 ; '2'
+		ldxy	$7E32
 		JSR	$1884
-		LDX	#$7E ; '~'
-		LDY	#$32 ; '2'
+		ldxy	$7E32
 		JSR	$1884
 		LDA	#$D
 		STA	$6313
@@ -162,10 +159,7 @@ loc_773D:				; CODE XREF: sub_76F2+1Cj
 		LDA	$63
 		CMP	#3
 		BEQ	loc_774E
-		LDA	#$C9 ; 'É'
-		STA	$16
-		LDA	#$78 ; 'x'
-		STA	$17
+		dldi	off_16, $78C9
 		JSR	sub_779C
 
 loc_774E:				; CODE XREF: sub_76F2+4Fj
@@ -298,48 +292,25 @@ unk_77CB:	.BYTE	9		; DATA XREF: sub_776D+2r
 		.BYTE	6
 		.BYTE	10
 		.BYTE	7
-aShipwreck:	.BYTE "SHIPWRECK"
-aOracle:	.BYTE "ORACLE"
-aBloodstone:	.BYTE "BLOODSTONE"
-aShingor:	.BYTE "SHINGOR"
-		.BYTE $A8,$FF
-		.BYTE $A6,  0,	2
-		.BYTE $A5
-aITestAManButOn:.BYTE "I test a man but once per day;"
-		.BYTE $D
-		.BYTE $D
-		.BYTE $A5
-aIVeTiredOfThee:.BYTE "I've tired of thee, so go away!"
-		.BYTE $D
-		.BYTE $FF
-		.BYTE $A6,  0,	0
-		.BYTE $A5
-aACreatureOldAn:.BYTE "A creature old and dark I be;"
-		.BYTE $D
-		.BYTE $A5
-aThouMustBeQuic:.BYTE "Thou must be quick to get by me."
-		.BYTE $D
-		.BYTE $D
-		.BYTE $A5
-aIfThouRtWiseTi:.BYTE "If thou'rt wise, 'tis for me to see:"
-		.BYTE $D
-		.BYTE $A5
-aThouShaltAnswe:.BYTE "Thou shalt answer my riddles, three."
-		.BYTE $D
-		.BYTE $FF
-		.BYTE $A6,  0,	1
-		.BYTE $A5
-aTheHallsEchoWi:.BYTE "The halls echo with laughter."
-		.BYTE $D
-		.BYTE $D
-		.BYTE $A5
-aFoolishMortalT:.BYTE "Foolish mortal,thou'st failed my rhyme;"
-		.BYTE $D
-		.BYTE $D
-		.BYTE $A5
-aTryItAgainAnot:.BYTE "Try it again another time."
-		.BYTE $D
-		.BYTE $FF
+aShipwreck:	.BYTE	"SHIPWRECK"
+aOracle:	.BYTE	"ORACLE"
+aBloodstone:	.BYTE	"BLOODSTONE"
+aShingor:	.BYTE	"SHINGOR"
+		.BYTE	$A8,$FF
+		MOVEXY	0,2
+		.BYTE	$A5,"I test a man but once per day;",$0D,$0D
+		.BYTE	$A5,"I've tired of thee, so go away!",$0D,$FF
+		MOVEXY	0,0
+		.BYTE	$A5,"A creature old and dark I be;",$0D
+		.BYTE	$A5,"Thou must be quick to get by me.",$0D,$0D
+		.BYTE	$A5,"If thou'rt wise, 'tis for me to see:",$0D
+		.BYTE	$A5,"Thou shalt answer my riddles, three.",$0D,$FF
+
+		MOVEXY	0,1
+		.BYTE	$A5,"The halls echo with laughter.",$0D,$0D
+		.BYTE	$A5,"Foolish mortal,thou'st failed my rhyme;",$0D,$0D
+		.BYTE	$A5,"Try it again another time.",$0D,$FF
+
 		.BYTE $A6,  0,	2
 		.BYTE $A5
 aTheRiddlerIsSi:.BYTE "The Riddler is silent."

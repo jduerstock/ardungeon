@@ -233,7 +233,7 @@ loc_77F5:				; CODE XREF: RAM:7742j	RAM:loc_77A3j ...
 
 loc_77F7:				; CODE XREF: RAM:77FEj
 		LDA	$6318,Y
-		STA	$6313,Y
+		STA	I_LOC_X,Y
 		DEY
 		BPL	loc_77F7
 		INC	$22F

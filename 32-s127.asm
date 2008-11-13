@@ -45,7 +45,7 @@ loc_764C:
 
 loc_764E:				; CODE XREF: RAM:7655j
 		LDA	$6318,X
-		STA	$6313,X
+		STA	I_LOC_X,X
 		DEX
 		BPL	loc_764E
 		LDA	$7556
@@ -135,11 +135,11 @@ loc_76FD:				; CODE XREF: RAM:76DDj
 		dldi	off_16, $7B5A
 		JSR	sub_78AE
 		LDA	#$10
-		STA	$6313
+		STA	I_LOC_X
 		LDA	#$1E
-		STA	$6314
+		STA	I_LOC_Y
 		LDA	#0
-		STA	$6315
+		STA	I_LOC_Z
 		LDA	#1
 		STA	$6312
 

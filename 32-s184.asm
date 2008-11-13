@@ -64,13 +64,13 @@ loc_7637:				; CODE XREF: RAM:763Ej
 
 loc_7642:				; CODE XREF: RAM:765Ej
 		LDA	byte_905B,X
-		CMP	$6313
+		CMP	I_LOC_X
 		BNE	loc_765D
 		LDA	byte_9069,X
-		CMP	$6314
+		CMP	I_LOC_Y
 		BNE	loc_765D
 		LDA	byte_9077,X
-		CMP	$6315
+		CMP	I_LOC_Z
 		BNE	loc_765D
 		JMP	loc_7661
 ; ---------------------------------------------------------------------------
@@ -180,7 +180,7 @@ loc_774A:				; CODE XREF: RAM:7706j	RAM:7739j ...
 
 loc_7752:				; CODE XREF: sub_7AE2-389j
 		LDA	$750D,X
-		STA	$6313,X
+		STA	I_LOC_X,X
 		DEX
 		BPL	loc_7752
 		LDA	#$FF
@@ -2327,20 +2327,20 @@ loc_904B:				; DATA XREF: RAM:8FCAo
 locret_905A:				; CODE XREF: RAM:9050j
 		RTS
 ; ---------------------------------------------------------------------------
-byte_905B:	.BYTE	2
-		.BYTE	1
-		.BYTE $1A
-		.BYTE $12
-		.BYTE $1E
-		.BYTE  $C
+byte_905B:	.BYTE	2		; light wizards
+		.BYTE	1		; dark wizards
+		.BYTE $1A		; wizards of order
+		.BYTE $12		; wizards of chaos
+		.BYTE $1E		; wizards of law
+		.BYTE  $C		; thieves guild
 		.BYTE	0
 		.BYTE	0
 		.BYTE	0
 		.BYTE	0
 		.BYTE	0
 		.BYTE	0
-		.BYTE	2
-		.BYTE	8
+		.BYTE	2		; ?
+		.BYTE	8		; ?
 
 byte_9069:	.BYTE $1B
 		.BYTE  $A

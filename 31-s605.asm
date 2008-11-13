@@ -79,10 +79,10 @@ loc_766E:				; CODE XREF: RAM:765Bj	RAM:7662j
 		CMP	#4
 		BNE	loc_76A0
 		LDA	#0
-		STA	$6313
+		STA	I_LOC_X
 		LDA	#1
-		STA	$6314
-		STA	$6315
+		STA	I_LOC_Y
+		STA	I_LOC_Z
 		LDA	#0
 		STA	$192A
 		LDA	#$FF
@@ -686,7 +686,7 @@ loc_7A37:				; CODE XREF: RAM:loc_7649p
 		LSR	A
 		STA	$7C
 		ROR	$7B
-		LDA	$6313
+		LDA	I_LOC_X
 		ASL	A
 		ASL	A
 		ORA	$7B
@@ -1342,7 +1342,7 @@ sub_7E4D:				; CODE XREF: RAM:764Cp
 		TAX
 
 loc_7E57:				; CODE XREF: sub_7E4D+69j
-		LDA	$6313
+		LDA	I_LOC_X
 		CMP	$AF04,X
 		BCC	loc_7EB1
 		CMP	$AF02,X

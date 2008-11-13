@@ -949,14 +949,10 @@ loc_AC3E:
 	JMP	$1806
 :	LDA	#$00
 	STA	$1955
-	LDA	#$0B
-	STA	$6313
-	LDA	#$1E
-	STA	$6314
-	LDA	#$01
-	STA	$6315
-	LDA	#$03
-	STA	$6312
+		ldi	I_LOC_X, $0B
+		ldi	I_LOC_Y, $1E
+		ldi	I_LOC_Z, $01
+		ldi	$6312, $03
 	JMP	$7608
 	LDA	#$3F
 	STA	$4B

@@ -258,13 +258,13 @@ loc_77F4:				; CODE XREF: RAM:7820j
 		CMP	#2
 		BNE	loc_781F
 		LDA	$64A4,X
-		CMP	$6313
+		CMP	I_LOC_X
 		BNE	loc_781F
 		LDA	$64B4,X
-		CMP	$6314
+		CMP	I_LOC_Y
 		BNE	loc_781F
 		LDA	$64C4,X
-		CMP	$6315
+		CMP	I_LOC_Z
 		BNE	loc_781F
 		LDA	$64D4,X
 		STA	$4B
@@ -452,7 +452,7 @@ loc_798F:				; CODE XREF: RAM:76E0j	RAM:7712j ...
 
 loc_7991:				; CODE XREF: RAM:7998j
 		LDA	$750D,X
-		STA	$6313,X
+		STA	I_LOC_X,X
 		DEX
 		BPL	loc_7991
 		STX	$AC00
@@ -463,7 +463,7 @@ loc_79A0:				; CODE XREF: RAM:loc_7891j
 		JSR	sub_7A3C
 		LDA	#$10
 		LDY	#2
-		STA	($41),Y
+		STA	(off_41),Y
 		JSR	$18A5
 		JSR	$1869
 		LDX	#1

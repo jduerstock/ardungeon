@@ -115,7 +115,7 @@ loc_7717:				; CODE XREF: RAM:764Fj	RAM:7698j
 
 loc_7719:				; CODE XREF: RAM:7720j
 		LDA	$6318,X
-		STA	$6313,X
+		STA	I_LOC_X,X
 		DEX
 		BPL	loc_7719
 		STX	$AC00
