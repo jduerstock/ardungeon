@@ -22,21 +22,18 @@
 		STA	$194B
 		BIT	$265
 		BMI	loc_764B
-		LDA	#$3D
-		STA	SEGNO
+		ldi	SEGNO, $3D
 		dldi	SEGADDR, $9000
 		JSR	j_SEGLOAD
 		JSR	$9000
 
 loc_764B:				; CODE XREF: RAM:7634j
-		LDA	#$2A ; '*'
-		STA	SEGNO
+		ldi	SEGNO, $2A
 		dldi	SEGADDR, $9800
 		JSR	j_SEGLOAD
 
 loc_765D:				; CODE XREF: RAM:loc_7AC4j
-		LDA	#$3B ; ';'
-		STA	SEGNO
+		ldi	SEGNO, $3B
 		dldi	SEGADDR, SEG_6300
 		JSR	j_SEGLOAD
 		LDA	#0
@@ -413,20 +410,13 @@ loc_78D8:				; CODE XREF: RAM:769Dj
 		PHA
 		LDA	#$FF
 		PHA
-		LDA	#$22 ; '"'
-		STA	SEGNO
-		LDA	#0
-		STA	SEGADDR
-		LDA	#$76 ; 'v'
-		STA	SEGADDR+1
+		ldi	SEGNO, $22
+		dldi	SEGADDR, $7600
 		JMP	j_SEGLOAD
 ; ---------------------------------------------------------------------------
 
 loc_78F0:				; CODE XREF: RAM:76A4j	RAM:83E4j ...
-		LDA	#<a_CharacterUtil
-		STA	off_16
-		LDA	#>a_CharacterUtil
-		STA	off_16+1
+		dldi	off_16, a_CharacterUtil
 		JSR	$1818
 
 loc_78FB:				; CODE XREF: RAM:78FEj	RAM:790Cj
