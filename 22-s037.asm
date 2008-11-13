@@ -661,7 +661,7 @@ loc_7AD5:				; CODE XREF: RAM:7AB3j	RAM:7ACFj
 		STA	(off_62),Y
 		JMP	loc_77A1
 
-; ллллллллллллллл S U B	R O U T	I N E ллллллллллллллллллллллллллллллллллллллл
+; --------------- S U B	R O U T	I N E ---------------------------------------
 
 
 sub_7AF7:				; CODE XREF: RAM:7A99p

@@ -305,7 +305,7 @@ loc_7863:				; CODE XREF: RAM:786Aj
 		STX	$AC00
 		JMP	$180C
 
-; ллллллллллллллл S U B	R O U T	I N E ллллллллллллллллллллллллллллллллллллллл
+; --------------- S U B	R O U T	I N E ---------------------------------------
 
 
 sub_7872:				; CODE XREF: RAM:7669p	RAM:76CEp ...
@@ -316,7 +316,7 @@ sub_7872:				; CODE XREF: RAM:7669p	RAM:76CEp ...
 ; End of function sub_7872
 
 
-; ллллллллллллллл S U B	R O U T	I N E ллллллллллллллллллллллллллллллллллллллл
+; --------------- S U B	R O U T	I N E ---------------------------------------
 
 
 sub_787C:				; CODE XREF: RAM:loc_76D4p
@@ -1864,7 +1864,7 @@ byte_803E:	.BYTE 0			; DATA XREF: RAM:loc_8004w RAM:8014r ...
 		.BYTE $7A ; z
 		.BYTE $DA ; к
 		.BYTE $6A ; j
-		.BYTE $DB ; л
+		.BYTE $DB ; -
 		.BYTE $6F ; o
 		.BYTE $1B
 		.BYTE	4

@@ -353,7 +353,7 @@ loc_7879:
 loc_788B:				; CODE XREF: RAM:7882j
 		JMP	loc_768C
 
-; ллллллллллллллл S U B	R O U T	I N E ллллллллллллллллллллллллллллллллллллллл
+; --------------- S U B	R O U T	I N E ---------------------------------------
 
 
 sub_788E:				; CODE XREF: RAM:77BBp	RAM:77CBp
@@ -407,7 +407,7 @@ locret_78D7:				; CODE XREF: sub_788E+10j sub_788E+3Dj
 ; End of function sub_788E
 
 
-; ллллллллллллллл S U B	R O U T	I N E ллллллллллллллллллллллллллллллллллллллл
+; --------------- S U B	R O U T	I N E ---------------------------------------
 
 
 sub_78D8:				; CODE XREF: RAM:7729p	RAM:7743p ...

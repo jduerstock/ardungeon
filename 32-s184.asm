@@ -230,9 +230,9 @@ loc_77A6:				; CODE XREF: RAM:77A0j
 loc_77A8:				; CODE XREF: RAM:7776j
 		LDX	$67
 		LDA	I_EXPLVL
-		CMP	$9085,X
+		CMP	byte_9085,X
 		BCS	loc_77C2
-		ldxy	$8C10
+		ldxy	byte_8C10
 
 loc_77B6:				; CODE XREF: RAM:7833j	RAM:7842j ...
 		JSR	sub_78FC
@@ -245,11 +245,11 @@ loc_77BC:				; CODE XREF: RAM:77E5j	RAM:77ECj ...
 ; ---------------------------------------------------------------------------
 
 loc_77C2:				; CODE XREF: RAM:77B0j
-		LDA	$9093,X
+		LDA	byte_9093,X
 		BEQ	loc_7811
 		LDA	$6385
 		SEC
-		SBC	$9093,X
+		SBC	byte_9093,X
 		BCC	loc_77D7
 		CMP	#5
 		BCS	loc_7811
@@ -262,32 +262,32 @@ loc_77D7:				; CODE XREF: RAM:77CEj
 		BCS	loc_77EF
 		LDA	$6385
 		BPL	loc_77E8
-		ldxy	$8D3D
+		ldxy	byte_8D3D
 		JMP	loc_77BC
 ; ---------------------------------------------------------------------------
 
 loc_77E8:				; CODE XREF: RAM:77DFj
-		ldxy	$8C60
+		ldxy	byte_8C60
 		JMP	loc_77BC
 ; ---------------------------------------------------------------------------
 
 loc_77EF:				; CODE XREF: RAM:77DAj
 		LDA	$6385
 		BPL	loc_77FB
-		ldxy	$8CEF
+		ldxy	byte_8CEF
 		JMP	loc_77BC
 ; ---------------------------------------------------------------------------
 
 loc_77FB:				; CODE XREF: RAM:77F2j
 		LDA	$6385
-		CMP	$9093,X
+		CMP	byte_9093,X
 		BCC	loc_780A
-		ldxy	$8CAD
+		ldxy	byte_8CAD
 		JMP	loc_77BC
 ; ---------------------------------------------------------------------------
 
 loc_780A:				; CODE XREF: RAM:77D4j	RAM:7801j
-		ldxy	$8C60
+		ldxy	byte_8C60
 		JMP	loc_77BC
 ; ---------------------------------------------------------------------------
 
@@ -309,7 +309,7 @@ loc_7825:				; CODE XREF: RAM:781Cj
 		BCS	loc_784C
 		LDA	$6385
 		BPL	loc_7836
-		ldxy	$8D3D
+		ldxy	byte_8D3D
 		JMP	loc_77B6
 ; ---------------------------------------------------------------------------
 
@@ -317,24 +317,24 @@ loc_7836:				; CODE XREF: RAM:782Dj
 		LDA	$90A1,X
 		CMP	$6385
 		BCC	loc_7845
-		ldxy	$8C60
+		ldxy	byte_8C60
 		JMP	loc_77B6
 ; ---------------------------------------------------------------------------
 
 loc_7845:				; CODE XREF: RAM:7822j	RAM:783Cj
-		ldxy	$8CEF
+		ldxy	byte_8CEF
 		JMP	loc_77B6
 ; ---------------------------------------------------------------------------
 
 loc_784C:				; CODE XREF: RAM:7828j
 		LDA	$6385
 		BPL	loc_7858
-		ldxy	$8CEF
+		ldxy	byte_8CEF
 		JMP	loc_77B6
 ; ---------------------------------------------------------------------------
 
 loc_7858:				; CODE XREF: RAM:784Fj
-		ldxy	$8CAD
+		ldxy	byte_8CAD
 		JMP	loc_77B6
 ; ---------------------------------------------------------------------------
 
@@ -377,7 +377,7 @@ loc_789D:				; CODE XREF: RAM:7898j
 		LDA	$69
 		JSR	sub_7B11
 		BCC	loc_78B2
-		ldxy	$8DFE
+		ldxy	byte_8DFE
 		JSR	sub_78FC
 		JMP	loc_7968
 ; ---------------------------------------------------------------------------
@@ -578,12 +578,12 @@ loc_79A4:				; CODE XREF: RAM:798Bj	RAM:799Dj
 		LDA	$7561,X
 		CMP	$6385
 		BEQ	loc_7A1F
-		LDA	$9093,X
+		LDA	byte_9093,X
 		BEQ	loc_79F3
 		LDA	$6385
 		STA	$7561,X
 		SEC
-		SBC	$9093,X
+		SBC	byte_9093,X
 		BCC	loc_79EC
 		CMP	#5
 		BCS	loc_79F3
@@ -1120,7 +1120,7 @@ loc_7D58:
 		BCC	loc_7D75
 
 loc_7D6E:				; CODE XREF: RAM:7E53j	RAM:7F17j ...
-		ldxy	$8DFE
+		ldxy	byte_8DFE
 		JMP	sub_78FC
 ; ---------------------------------------------------------------------------
 
@@ -1902,13 +1902,13 @@ byte_8224:
 aq:		.BYTE "%)?",$0D,$0D
 		.BYTE	$A5
 		STRSUB	asc_83F3
-		.BYTE $0D,$FF
-asc_83F3:	.BYTE '('               ; DATA XREF: RAM:85FBo RAM:8637o ...
-aY:		BLINK 'Y'
-aOr:		.BYTE " or "
-aN:		BLINK 'N'
-		.BYTE ')'
-		.BYTE $AE
+		.BYTE	$0D,$FF
+asc_83F3:	.BYTE	'('               ; DATA XREF: RAM:85FBo RAM:8637o ...
+aY:		BLINK	'Y'
+aOr:		.BYTE	" or "
+aN:		BLINK	'N'
+		.BYTE	')'
+		.BYTE	$AE
 		MOVEXY	0,2
 aItIsDone:	.BYTE	$A5,"It is done!",$0D,$FF
 		MOVEXY	0,1
@@ -2207,22 +2207,27 @@ aGold:		.BYTE "Gold",0
 aSilver:	.BYTE "Silver",0
 aCopper:	.BYTE "Copper",0
 
+byte_8C10:
 		MOVEXY	0,2
 		.BYTE	$A5,"I am deeply sorry but you have not",$0D,$0D
 		.BYTE	$A5,"the experience to join our guild yet.",$0D,$FF
 
+byte_8C60:
 		MOVEXY	0,1
 		.BYTE	$A5,"I am sorry but your soul is too dark",$0D,$0D
 		.BYTE	$A5,"to become a member of our guild.",$0D,$FF
 
+byte_8CAD:
 		MOVEXY	0,1
 		.BYTE	$A5,"I am sorry but you're not quite evil",$0D,$0D
 		.BYTE	$A5,"enough for our guild.",$0D,$FF
 
+byte_8CEF:
 		MOVEXY	0,1
 		.BYTE	$A5,"I am sorry, but you are too righteous",$0D,$0D
 		.BYTE	$A5,"to become a member of our guild.",$0D,$FF
 
+byte_8D3D:
 		MOVEXY	0,1
 		.BYTE	$A5,"I am sorry but you aren't quite good",$0D,$0D
 		.BYTE	$A5,"enough to join our guild.",$0D,$FF
@@ -2235,13 +2240,12 @@ aCopper:	.BYTE "Copper",0
 		.BYTE	$A5,"Get out of our guild!",$0D,$0D
 		.BYTE	$A5,"You are too goody-goody for us now!",$0D,$FF
 
-		.BYTE $A6,  0,	2
-		.BYTE $A5
-aYouHaveNotTheF:.BYTE "You have not the funds!",$D
-		.BYTE $FF
-		.BYTE $A6,  0,	2
-		.BYTE $A5
-aWelcome:	.BYTE "Welcome "
+byte_8DFE:
+		MOVEXY	0,2
+		.BYTE	$A5,"You have not the funds!",$0D,$FF
+
+		MOVEXY	0,2
+		.BYTE	$A5,"Welcome "
 		PRINTSTRP $6A, 7
 		.BYTE " "
 		.BYTE $B3
@@ -2367,6 +2371,8 @@ byte_9077:	.BYTE	2
 		.BYTE	0
 		.BYTE	4
 		.BYTE	4
+
+byte_9085:
 		.BYTE	4
 		.BYTE	4
 		.BYTE	3
@@ -2381,6 +2387,8 @@ byte_9077:	.BYTE	2
 		.BYTE	0
 		.BYTE	5
 		.BYTE	5
+
+byte_9093:
 		.BYTE $9A ; š
 		.BYTE	0
 		.BYTE $7F ; 
@@ -2553,6 +2561,8 @@ unk_91AC:	.BYTE $70 ; p		; DATA XREF: RAM:91DCo
 		.BYTE $41 ; A
 		.WORD unk_91AC
 ; ---------------------------------------------------------------------------
+
+loc_91DE:
 		PHA
 		TXA
 		PHA
@@ -2628,10 +2638,7 @@ loc_9242:				; CODE XREF: RAM:9267j
 loc_9284:				; CODE XREF: RAM:760Aj
 		LDA	#$7F ; ''
 		STA	$253
-		LDA	#$AC ; '¬'
-		STA	$254
-		LDA	#$91 ; '‘'
-		STA	$255
+		dldi	$254, $91AC
 		LDA	#8
 		LDX	#$23 ; '#'
 
@@ -2649,23 +2656,14 @@ loc_9299:				; CODE XREF: RAM:92A0j
 		BNE	loc_9297
 
 loc_92A7:				; CODE XREF: RAM:929Dj
-		LDA	#0
-		STA	9
-		LDA	#8
-		STA	$A
+		dldi	off_9, $0800
 		JSR	loc_939F
-		LDA	#$70 ; 'p'
-		STA	9
-		LDA	#$BB ; '»'
-		STA	$A
+		dldi	off_9, $BB70
 		JSR	loc_939F
-		LDA	#0
-		STA	loc_92CD+1
-		LDA	#$BD ; '½'
-		STA	loc_92CD+2
+		dldi	loc_92CD+1, $BD00
 		LDY	#3
 		LDA	#0
-		LDX	#$80 ; '€'
+		LDX	#$80
 
 loc_92CD:				; CODE XREF: RAM:92D1j	RAM:92D7j
 					; DATA XREF: ...
@@ -2717,12 +2715,12 @@ loc_931A:				; CODE XREF: RAM:9325j
 loc_9324:				; CODE XREF: RAM:931Cj
 		DEY
 		BPL	loc_931A
-		LDA	9
+		LDA	off_9
 		CLC
 		ADC	#8
-		STA	9
+		STA	off_9
 		BCC	loc_9332
-		INC	$A
+		INC	off_9+1
 
 loc_9332:				; CODE XREF: RAM:932Ej
 		INC	6
@@ -2779,7 +2777,7 @@ loc_9381:				; CODE XREF: RAM:9385j
 		STA	$D012,X
 		DEX
 		BPL	loc_9381
-		dldi	$24A, $91DE
+		dldi	$24A, loc_91DE
 		ldi	NMIEN, $C0
 		LDA	#0
 		STA	$18B8

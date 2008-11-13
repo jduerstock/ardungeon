@@ -124,10 +124,7 @@ loc_7734:				; CODE XREF: RAM:7722j	RAM:772Dj
 loc_773C:				; CODE XREF: RAM:76FFj
 		dmv	$67, off_16
 		JSR	$1869
-		LDA	$630F
-		STA	$7534
-		LDA	$6310
-		STA	$7535
+		dmv	$7534, $630F
 		LDA	#$3F ; '?'
 		STA	$7B
 
@@ -383,7 +380,7 @@ loc_791E:				; CODE XREF: RAM:791Aj
 		dldi	off_16, $86AD
 		JMP	loc_78FF
 
-; ллллллллллллллл S U B	R O U T	I N E ллллллллллллллллллллллллллллллллллллллл
+; --------------- S U B	R O U T	I N E ---------------------------------------
 
 
 sub_792C:				; CODE XREF: RAM:78AFp	RAM:loc_7DE1p
@@ -813,7 +810,7 @@ locret_7BEF:				; CODE XREF: sub_7BF0-6j
 		RTS
 ; END OF FUNCTION CHUNK	FOR sub_7BF0
 
-; ллллллллллллллл S U B	R O U T	I N E ллллллллллллллллллллллллллллллллллллллл
+; --------------- S U B	R O U T	I N E ---------------------------------------
 
 
 sub_7BF0:				; CODE XREF: RAM:78EDp	RAM:7A1Cp ...
@@ -887,7 +884,7 @@ loc_7C45:				; CODE XREF: sub_7BF0+5Cj
 ; End of function sub_7BF0
 
 
-; ллллллллллллллл S U B	R O U T	I N E ллллллллллллллллллллллллллллллллллллллл
+; --------------- S U B	R O U T	I N E ---------------------------------------
 
 
 sub_7C50:				; CODE XREF: RAM:78B7p	RAM:7CE3p ...
@@ -962,7 +959,7 @@ unk_7C81:	.BYTE	4		; DATA XREF: sub_7C50+14r
 		.BYTE	8
 		.BYTE	6
 
-; ллллллллллллллл S U B	R O U T	I N E ллллллллллллллллллллллллллллллллллллллл
+; --------------- S U B	R O U T	I N E ---------------------------------------
 
 
 sub_7CA1:				; CODE XREF: RAM:780Dp	RAM:7904p ...

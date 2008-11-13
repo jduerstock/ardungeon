@@ -5017,13 +5017,13 @@ loc_935D:				; CODE XREF: sub_9337+2Aj
 
 loc_9367:				; CODE XREF: RAM:8854j	RAM:8990j
 		LDX	byte_A89F
-		LDA	unk_9381,X
+		LDA	byte_9381,X
 		JSR	sub_9319
 		dldi	off_76DB, $A227
 		ldxy	$A235
 		JMP	sub_8ECE
 ; ---------------------------------------------------------------------------
-unk_9381:	.BYTE	0		; DATA XREF: RAM:936Ar
+byte_9381:	.BYTE	0		; DATA XREF: RAM:936Ar
 		.BYTE	1
 		.BYTE	1
 		.BYTE	1
@@ -6585,35 +6585,38 @@ a_YouRiseFromThe:
 a_GetsUp:
 		.BYTE	$AC
 		.WORD	$7665
-		.BYTE	"gets up.",$D,$FF
+		.BYTE	"gets up.",$0D,$FF
 		.BYTE	$AC
 		.WORD	$7665
-		.BYTE	"misses.",$D,$FF
+		.BYTE	"misses.",$0D,$FF
 		.BYTE	$AC
 		.WORD	$7665
-		.BYTE	"waits",$D,$A5
-		.BYTE	"for an opening.",$D,$FF
+		.BYTE	"waits",$0D
+		.BYTE	$A5,"for an opening.",$0D,$FF
+
 		MOVEXY	0,3
-		.BYTE	$A5,"You feel strengthened from the attack!",$D,$FF
+		.BYTE	$A5,"You feel strengthened from the attack!",$0D,$FF
 		MOVEXY	0,2
 		.BYTE	$A5,"Your "
 		.BYTE	$B4
 		.WORD	$70
 		.BYTE	$14
 		.BYTE	$D
-		.BYTE	$A5,"is weakening.",$D,$FF
+		.BYTE	$A5,"is weakening.",$0D,$FF
 
 		MOVEXY	0,3
-		.BYTE	$A5
-		.BYTE	"Your "
+		.BYTE	$A5,"Your "
 		.BYTE	$B4
 		.WORD	$70
 		.BYTE	$14
-		.BYTE	" has broken.",$D,$FF
+		.BYTE	" has broken.",$0D,$FF
+
 		MOVEXY	0,3
-		.BYTE	$A5,"You are stunned from the blow.",$D,$FF
+		.BYTE	$A5,"You are stunned from the blow.",$0D,$FF
+
 		MOVEXY	0,3
-		.BYTE	$A5,"You have been knocked down.",$D,$FF
+		.BYTE	$A5,"You have been knocked down.",$0D,$FF
+
 		MOVEXY	0,2
 		.BYTE	$AC
 		.WORD	$7653
@@ -6624,12 +6627,12 @@ a_GetsUp:
 		.BYTE	$A5
 		.BYTE	$B4
 		.WORD	$76DB
-		.BYTE	$D
+		.BYTE	$0D
 		.BYTE	" with "
 		.BYTE	$B4
 		.WORD	$6C
 		.BYTE	$14
-		.BYTE	$D
+		.BYTE	$0D
 		STRJSR	loc_9EE5
 
 aAtYourHead:	.BYTE	"at your head",0
@@ -6742,6 +6745,7 @@ unk_A491:	.BYTE	>aHacks			; DATA XREF: RAM:8777r
 		.BYTE	>aWallops
 		.BYTE	>aFries
 		.BYTE	>aStings_0
+
 		MOVEXY	0,2
 		.BYTE	$A5,"You block with your",$D
 		.BYTE	$A5

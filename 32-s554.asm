@@ -241,31 +241,31 @@ unk_8ADB:	.BYTE	2		; DATA XREF: RAM:8A06o
 		.BYTE  $D
 		.BYTE $1D
 		.BYTE	5
-		.BYTE $DB ; €
-		.BYTE $8A ; ä
+		.BYTE $DB
+		.BYTE $8A
 unk_8AF8:	.BYTE	2		; DATA XREF: RAM:8A04o
 		.BYTE $4F ; O
-		.BYTE $8A ; ä
+		.BYTE $8A
 		.BYTE  $A
 		.BYTE	1
-		.BYTE $8C ; å
+		.BYTE $8C
 		.BYTE  $A
-		.BYTE $9D ; ù
-		.BYTE $8C ; å
+		.BYTE $9D
+		.BYTE $8C
 		.BYTE  $A
-		.BYTE $FE ; ˛
-		.BYTE $8C ; å
+		.BYTE $FE
+		.BYTE $8C
 		.BYTE  $A
 		.BYTE  $B
-		.BYTE $8D ; ç
+		.BYTE $8D
 		.BYTE  $A
-		.BYTE $9D ; ù
-		.BYTE $8C ; å
+		.BYTE $9D
+		.BYTE $8C
 		.BYTE  $A
-		.BYTE $FE ; ˛
-		.BYTE $8C ; å
+		.BYTE $FE
+		.BYTE $8C
 		.BYTE	1
-		.BYTE $6C ; l
+		.BYTE $6C
 		.BYTE  $E
 		.BYTE $12
 		.BYTE $5A ; Z

@@ -299,7 +299,7 @@ loc_984C:				; CODE XREF: RAM:9850j
 		STA	byte_96F8
 		RTS
 
-; ллллллллллллллл S U B	R O U T	I N E ллллллллллллллллллллллллллллллллллллллл
+; --------------- S U B	R O U T	I N E ---------------------------------------
 
 
 sub_9856:				; CODE XREF: RAM:loc_9840p RAM:9891j ...
@@ -344,7 +344,7 @@ loc_988E:				; CODE XREF: RAM:9917j	RAM:991Cj ...
 		JSR	sub_9894
 		JMP	sub_9856
 
-; ллллллллллллллл S U B	R O U T	I N E ллллллллллллллллллллллллллллллллллллллл
+; --------------- S U B	R O U T	I N E ---------------------------------------
 
 
 sub_9894:				; CODE XREF: RAM:loc_988Ep RAM:98D5p ...
@@ -359,7 +359,7 @@ sub_9894:				; CODE XREF: RAM:loc_988Ep RAM:98D5p ...
 ; End of function sub_9894
 
 
-; ллллллллллллллл S U B	R O U T	I N E ллллллллллллллллллллллллллллллллллллллл
+; --------------- S U B	R O U T	I N E ---------------------------------------
 
 
 sub_98A4:				; CODE XREF: RAM:9962p	RAM:9AACp
@@ -744,7 +744,7 @@ locret_9B16:				; CODE XREF: sub_9B17+2j
 		RTS
 ; END OF FUNCTION CHUNK	FOR sub_9B17
 
-; ллллллллллллллл S U B	R O U T	I N E ллллллллллллллллллллллллллллллллллллллл
+; --------------- S U B	R O U T	I N E ---------------------------------------
 
 
 sub_9B17:				; CODE XREF: RAM:983Ap	RAM:98E6j ...

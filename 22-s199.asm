@@ -338,7 +338,7 @@ loc_7868:				; CODE XREF: RAM:79D3j	RAM:7A45j
 		JSR	$185A
 		JMP	loc_7735
 
-; ллллллллллллллл S U B	R O U T	I N E ллллллллллллллллллллллллллллллллллллллл
+; --------------- S U B	R O U T	I N E ---------------------------------------
 
 
 sub_7879:				; CODE XREF: RAM:76BBp	RAM:loc_7C3Fp ...
@@ -526,7 +526,7 @@ loc_7990:				; CODE XREF: RAM:7984j
 		STA	($41),Y
 		JMP	loc_7735
 
-; ллллллллллллллл S U B	R O U T	I N E ллллллллллллллллллллллллллллллллллллллл
+; --------------- S U B	R O U T	I N E ---------------------------------------
 
 
 sub_7997:				; CODE XREF: RAM:loc_78E9p
@@ -702,7 +702,7 @@ loc_7AA1:
 loc_7AB3:				; CODE XREF: RAM:7AAAj
 		JMP	loc_7735
 
-; ллллллллллллллл S U B	R O U T	I N E ллллллллллллллллллллллллллллллллллллллл
+; --------------- S U B	R O U T	I N E ---------------------------------------
 
 
 sub_7AB6:				; CODE XREF: RAM:79C4p	RAM:79DDp
@@ -756,7 +756,7 @@ locret_7AFF:				; CODE XREF: sub_7AB6+10j sub_7AB6+3Dj
 ; End of function sub_7AB6
 
 
-; ллллллллллллллл S U B	R O U T	I N E ллллллллллллллллллллллллллллллллллллллл
+; --------------- S U B	R O U T	I N E ---------------------------------------
 
 
 sub_7B00:				; CODE XREF: RAM:7A3Cp	sub_7B63+2p
@@ -808,7 +808,7 @@ loc_7B45:				; CODE XREF: sub_7B00+4Cj
 ; End of function sub_7B00
 
 
-; ллллллллллллллл S U B	R O U T	I N E ллллллллллллллллллллллллллллллллллллллл
+; --------------- S U B	R O U T	I N E ---------------------------------------
 
 
 sub_7B50:				; CODE XREF: RAM:7667p
@@ -826,7 +826,7 @@ loc_7B54:				; CODE XREF: sub_7B50+10j
 ; End of function sub_7B50
 
 
-; ллллллллллллллл S U B	R O U T	I N E ллллллллллллллллллллллллллллллллллллллл
+; --------------- S U B	R O U T	I N E ---------------------------------------
 
 
 sub_7B63:				; CODE XREF: RAM:7732p
