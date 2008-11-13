@@ -1084,7 +1084,7 @@ locret_87AD:				; CODE XREF: RAM:879Ej
 		STA	$6289
 		SEC
 		LDA	$6292,X
-		SBC	$6314
+		SBC	I_LOC_Y
 		STA	$628A
 		BPL	loc_87DD
 		LDA	#$FF
@@ -1134,20 +1134,17 @@ loc_8837:				; CODE XREF: RAM:887Aj
 		CMP	#2
 		BNE	loc_8877
 		LDA	$64C4,X
-		CMP	$6315
+		CMP	I_LOC_Z
 		BNE	loc_8877
 		LDA	$64A4,X
 		CMP	I_LOC_X
 		BNE	loc_8877
 		LDA	$64B4,X
-		CMP	$6314
+		CMP	I_LOC_Y
 		BNE	loc_8877
 		BIT	$4B
 		BPL	loc_8867
-		LDA	#$53 ; 'S'
-		STA	$59C1
-		LDA	#$5E ; '^'
-		STA	$59C2
+		dldi	$59C1, $5E53
 
 loc_8867:				; CODE XREF: RAM:885Bj
 		LDX	$6284
@@ -1162,10 +1159,7 @@ loc_8877:				; CODE XREF: RAM:883Fj	RAM:8847j ...
 		BPL	loc_8837
 		LDA	$58C1
 		BPL	locret_8892
-		LDA	#$EE ; 'î'
-		STA	off_16
-		LDA	#$59 ; 'Y'
-		STA	off_16+1
+		dldi	off_16, $59EE
 		LDX	$194A
 		JSR	$3C5C
 		JSR	$2BB0

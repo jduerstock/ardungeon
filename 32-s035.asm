@@ -26,7 +26,7 @@ loc_7610:				; CODE XREF: RAM:7601j
 		JSR	$184B
 		LDA	$1933
 		STA	$62
-		LDA	$6315
+		LDA	I_LOC_Z
 		BNE	loc_7649
 		STA	$63
 		dldi	SEGADDR, byte_890B

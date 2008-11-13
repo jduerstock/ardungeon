@@ -437,29 +437,17 @@ loc_78C0:				; CODE XREF: sub_7AE7-260j
 		LDA	#3
 
 loc_78DC:				; CODE XREF: sub_7AE7-24Aj
-		STA	$6315
-		LDA	#$1D
-		STA	$63
-		LDA	#$92 ; '’'
-		STA	$64
+		STA	I_LOC_Z
+		dldi	off_63, $921D
 		JSR	sub_79AA
 		STA	$63A2
-		LDA	#$3D ; '='
-		STA	$63
-		LDA	#$92 ; '’'
-		STA	$64
+		dldi	off_63, $923D
 		JSR	sub_79AA
 		STA	$63A3
-		LDA	#<$925D
-		STA	off_63
-		LDA	#>$925D
-		STA	off_63+1
+		dldi	off_63, $925D
 		JSR	sub_79AA
 		STA	$63A4
-		LDA	#<$927D
-		STA	off_63
-		LDA	#>$927D
-		STA	off_63+1
+		dldi	off_63, $927D
 		JSR	sub_79AA
 		STA	$63A5
 		LDX	#0

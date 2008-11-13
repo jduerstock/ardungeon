@@ -240,10 +240,10 @@ loc_77CF:				; CODE XREF: RAM:77EFj
 		CMP	I_LOC_X
 		BNE	loc_77EE
 		LDA	$64B4,X
-		CMP	$6314
+		CMP	I_LOC_Y
 		BNE	loc_77EE
 		LDA	$64C4,X
-		CMP	$6315
+		CMP	I_LOC_Z
 		BNE	loc_77EE
 		LDA	$6494,X
 		CMP	#2

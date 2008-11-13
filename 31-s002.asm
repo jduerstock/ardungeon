@@ -1032,9 +1032,9 @@ sub_7C9E:				; CODE XREF: RAM:7719j	RAM:7D5Bp ...
 		LSR	A
 		STA	$96
 		INC	$96
-		LDX	$6315
+		LDX	I_LOC_Z
 		CLC
-		LDA	unk_7D31,X
+		LDA	byte_7D31,X
 		ADC	$96
 		JSR	j_RND_A
 		STA	$96
@@ -1108,7 +1108,7 @@ locret_7D30:				; CODE XREF: sub_7C9E+42j sub_7C9E+89j ...
 ; End of function sub_7C9E
 
 ; ---------------------------------------------------------------------------
-unk_7D31:	.BYTE	1		; DATA XREF: sub_7C9E+14r
+byte_7D31:	.BYTE	1		; DATA XREF: sub_7C9E+14r
 		.BYTE	0
 		.BYTE	2
 		.BYTE	2
