@@ -1,18 +1,15 @@
 		.include	"equates.inc"
 		.include	"exp_kernel.inc"
 		.include	"globals.inc"
+		.include	"macros.inc"
 
 ;		.ORG	$7600
 
 loc_7600:				; CODE XREF: RAM:7814j
 		LDA	#0
 		JSR	$180F
-		LDA	#$3E
-		STA	SEGNO
-		LDA	#<SEG_9000
-		STA	SEGADDR
-		LDA	#>SEG_9000
-		STA	SEGADDR+1
+		ldi	SEGNO, $3E
+		dldi	SEGADDR, SEG_9000
 		JSR	j_SEGLOAD
 		LDA	RANDOM
 		AND	#7
@@ -20,10 +17,7 @@ loc_7600:				; CODE XREF: RAM:7814j
 		JSR	SEG_9000
 
 loc_7621:				; CODE XREF: RAM:761Cj	RAM:7677j ...
-		LDA	#<byte_7846
-		STA	off_16
-		LDA	#>byte_7846
-		STA	off_16+1
+		dldi	off_16, byte_7846
 		JSR	$1818
 
 loc_762C:				; CODE XREF: RAM:762Fj

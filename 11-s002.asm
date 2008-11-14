@@ -66,7 +66,7 @@
 	DirEnt	$4000,2,2,518,$8000,8	; unknown 3		; $32
 	DirEnt	$4000,3,2,494,$8000,7	; unknown 3		; $33
 	DirEnt	$4000,3,2,510,$8000,7	; picture 7		; $34
-	DirEnt	$4000,3,1,589,,7	; picture 8		; $35
+	DirEnt	$4000,3,1,589,,7	; picture 8		; $35 (same as $2F?)
 	DirEnt	$4000,1,1,479,,0	; ???			; $36
 	DirEnt	$4000,3,2,526,,13	; tavern monster song	; $37
 	DirEnt	$4000,3,2,553,,6	; devourer song		; $38

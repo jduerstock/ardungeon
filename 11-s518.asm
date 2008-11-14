@@ -10087,10 +10087,7 @@ loc_5768:				; CODE XREF: RAM:577Cj
 ; ---------------------------------------------------------------------------
 
 loc_5774:				; CODE XREF: RAM:566Cj	RAM:56ACj ...
-		LDA	#$4D ; 'M'
-		STA	off_16
-		LDA	#$61 ; 'a'
-		STA	off_16+1
+		dldi	off_16, $614D
 		BNE	loc_5768
 
 ; --------------- S U B	R O U T	I N E ---------------------------------------
@@ -11149,22 +11146,18 @@ aYouHaveNone_:	.BYTE "You have none."
 
 a_ItIs:
 		MOVEXY	0,2
-		.BYTE $A5
-aItIs:		.BYTE "It is "
+aItIs:		.BYTE	$A5,"It is "
 		.BYTE $B2
 		.WORD I_MINUTES
 byte_616E:	.BYTE 2			; DATA XREF: RAM:loc_5749w
 		.BYTE $20
-aMinutes:	.BYTE "minutes "        ; DATA XREF: RAM:loc_573Ew
-		.BYTE $D
-		.BYTE $A5
-aPastThe:	.BYTE "past the "
+aMinutes:	.BYTE	"minutes ",$0D	; DATA XREF: RAM:loc_573Ew
+		.BYTE	$A5,"past the "
 		.BYTE $B2
 		.WORD I_HOURS
 byte_6186:	.BYTE 2			; DATA XREF: RAM:loc_5757w
 aThHour_:	.BYTE "th hour."        ; DATA XREF: RAM:575Fw RAM:5765w
-		.BYTE $D
-		.BYTE $FF
+		.BYTE $0D,$FF
 aTh_16:		.BYTE "th"              ; DATA XREF: RAM:575Cr RAM:5762r
 aSt_0:		.BYTE "st"
 aNd_0:		.BYTE "nd"
@@ -11189,55 +11182,40 @@ aTh:		.BYTE "th"
 aSt:		.BYTE "st"
 a_Nd:		.BYTE "nd"
 aRd:		.BYTE "rd"
+
 		MOVEXY	0,4
-		.BYTE $A5
-aYouAreCarrying:.BYTE "You are carrying too much!"
-		.BYTE $D
-		.BYTE $FF
+		.BYTE	$A5,"You are carrying too much!",$0D,$FF
+
 a_YouCastTheSpell:
-		.BYTE $A8
+		.BYTE	$A8
 		MOVEXY	0,2
-		.BYTE $A5
-aYouCastTheSpel:.BYTE "You cast the spell of"
-		.BYTE $D
-		.BYTE $D
-		.BYTE $A5
+		.BYTE	$A5,"You cast the spell of",$0D,$0D
+		.BYTE	$A5
 		BLINK	$7F
-		.BYTE ' '
+		.BYTE	' '
 		PRINTSTRP off_193C,30
-a__3:		.BYTE ". "
+		.BYTE	". "
 		BLINK	$7F
-		.BYTE $D
-		.BYTE $FF
+		.BYTE	$D,$FF
+
 a_TheSpellFailed:
 		MOVEXY	0,3
-		.BYTE $A5
-aTheSpellFailed:.BYTE "The spell failed!"
-		.BYTE $D
-		.BYTE $FF
+		.BYTE	$A5,"The spell failed!",$0D,$FF
+
 a_TheSpellBackfired:
 		MOVEXY	0,2
-		.BYTE $A3
-		.WORD loc_59E8
-		.BYTE $A5
-aTheSpellFail_0:.BYTE "The spell failed"
-		.BYTE $D
-		.BYTE $D
-		.BYTE $A5
-aAndBackfiredFo:.BYTE "and backfired for "
+		STRJSR	loc_59E8
+		.BYTE	$A5,"The spell failed",$0D,$0D
+		.BYTE	$A5,"and backfired for "
 		PRINTBYTE byte_6282,2
-		.BYTE '!'
-		.BYTE $D
-		.BYTE $A3 ; £
-		.WORD loc_59E5
-		.BYTE $FF
+		.BYTE	'!',$0D
+		STRJSR	loc_59E5
+		.BYTE	$FF
 
 a_SomethingIsOdd:
 		MOVEXY	0,3
-		.BYTE $A5 ; ¥
-aSomethingIsOdd:.BYTE "Something is odd here."
-		.BYTE $D
-		.BYTE $FF
+		.BYTE	$A5,"Something is odd here.",$0D,$FF
+
 byte_6276:	.BYTE 0			; DATA XREF: RAM:36DEw	sub_5049+3r ...
 byte_6277:	.BYTE 0			; DATA XREF: sub_5049r	sub_50B2+2w ...
 byte_6278:	.BYTE 0			; DATA XREF: sub_50B2+Aw sub_50B2+2Cr	...

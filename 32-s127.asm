@@ -134,14 +134,10 @@ loc_76FD:				; CODE XREF: RAM:76DDj
 		JSR	$180F
 		dldi	off_16, $7B5A
 		JSR	sub_78AE
-		LDA	#$10
-		STA	I_LOC_X
-		LDA	#$1E
-		STA	I_LOC_Y
-		LDA	#0
-		STA	I_LOC_Z
-		LDA	#1
-		STA	$6312
+		ldi	I_LOC_X, $10
+		ldi	I_LOC_Y, $1E
+		ldi	I_LOC_Z, $00
+		ldi	$6312, $01
 
 loc_772C:				; CODE XREF: RAM:77C9j
 		DEC	$32
@@ -287,8 +283,7 @@ loc_783B:				; CODE XREF: RAM:loc_7683j
 
 
 sub_7843:				; CODE XREF: RAM:76DAp
-		LDA	#$3F ; '?'
-		STA	$65
+		ldi	$65, $3F
 
 loc_7847:				; CODE XREF: sub_7843+2Bj
 		LDA	$65
@@ -324,10 +319,8 @@ loc_786C:				; CODE XREF: sub_7843+Bj sub_7843+13j	...
 
 
 sub_7872:				; CODE XREF: RAM:loc_775Bp
-		LDA	#$3F ; '?'
-		STA	$65
-		LDA	#0
-		STA	$66
+		ldi	$65, $3F
+		ldi	$66, $00
 
 loc_787A:				; CODE XREF: sub_7872+39j
 		LDA	$65
@@ -435,37 +428,28 @@ aStaffPiece:	.BYTE "Staff Piece",0
 		.BYTE	0
 		.BYTE	2
 		.BYTE	6
-aTheAlienCaptor:.BYTE "The alien captors"
-		.BYTE $D
-		.BYTE $D
-		.BYTE $A5
-aDoNotTakeYourI:.BYTE "do not take your intrusi"
-		.BYTE $A8
-		.BYTE $FF
-		.BYTE $A6,  9,	1
-aThisIsAnEmptyC:.BYTE "This is an empty cell."
-		.BYTE $A6,$10,	3
+		.BYTE	"The alien captors",$0D,$0D
+		.BYTE	$A5,"do not take your intrusi"
+		.BYTE	$A8,$FF
+		MOVEXY	9,1
+		.BYTE	"This is an empty cell."
+		MOVEXY	16,3
 		MenuItem "0","Leave"
-		.BYTE $FF
-		.BYTE $A6,  1,	0
-aHailFriend_IAm:.BYTE "Hail, Friend. I am Ozob, Acrinimiril's"
-		.BYTE $A6,  0,	2
-aFormerApprenti:.BYTE "former Apprentice. I was imprisoned here"
-		.BYTE $A6,  0,	4
-aByMyMasterSKil:.BYTE "by my Master's killers. Unlock my chains"
-		.BYTE $A6,  0,	6
-		.BYTE $A5
-aAndIShallGreat:.BYTE "and I shall greatly reward thee."
-		.BYTE $D
-		.BYTE $FF
-		.BYTE $A6,  0,	0
-		.BYTE $A5
-aThereIsAPrison:.BYTE "There is a prisoner chained here."
-		.BYTE $D
-		.BYTE $A5
-aWhatDoYouDoq:	.BYTE "What do you do?"
-		.BYTE $D
-		.BYTE $A6,  4,	3
+		.BYTE	$FF
+
+		MOVEXY	1,0
+		.BYTE	"Hail, Friend. I am Ozob, Acrinimiril's"
+		MOVEXY	0,2
+		.BYTE "former Apprentice. I was imprisoned here"
+		MOVEXY	0,4
+		.BYTE "by my Master's killers. Unlock my chains"
+		MOVEXY	0,6
+		.BYTE	$A5,"and I shall greatly reward thee.",$0D,$FF
+
+		MOVEXY	0,0
+		.BYTE	$A5,"There is a prisoner chained here.",$0D
+		.BYTE	$A5,"What do you do?",$0D
+		MOVEXY	4,3
 		MenuItem "1","Unlock his chains with a key"
 		.BYTE $A6, $E,	5
 		MenuItem "0","Leave"

@@ -84,8 +84,7 @@ loc_765D:				; CODE XREF: RAM:7648j	RAM:7650j ...
 loc_7661:				; CODE XREF: RAM:765Aj
 		STX	$67
 		dldi	off_1977, loc_76CE
-		LDA	#$F
-		STA	SEGNO
+		ldi	SEGNO, $0F
 		dldi	SEGADDR, byte_96F0
 		JSR	j_SEGLOAD
 		LDA	$67

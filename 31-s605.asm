@@ -298,76 +298,13 @@ byte_77FC:	.BYTE $FF		; DATA XREF: RAM:779Ar	RAM:779Fw
 		.BYTE	0
 		.BYTE	7
 		.BYTE	0
-		.BYTE $88 ; à
-		.BYTE $FF
-		.BYTE	1
-		.BYTE	1
-		.BYTE	1
+		.BYTE	$88,$FF,$01,$01,$01,$00,$00,$00,$00,$01,$02,$80,$01,$00,$10,$00
+		.BYTE	$C1,$FF,$C1,$FF,$40,$00,$40,$00,$0F,$92,$47,$00,$01,$00,$01,$00
+		.BYTE	$81,$00,$41,$00,$40,$00,$40,$00,$00,$91,$72,$00,$02,$08,$01,$00
+		.BYTE	$81,$00,$41,$00,$40,$00,$40,$00,$00,$81,$4A,$00,$02,$10,$01,$00
+		.BYTE	$E1,$00,$41,"Crystal Doom",$00
 		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	1
-		.BYTE	2
-		.BYTE $80 ; Ä
-		.BYTE	1
-		.BYTE	0
-		.BYTE $10
-		.BYTE	0
-		.BYTE $C1 ; ¡
-		.BYTE $FF
-		.BYTE $C1 ; ¡
-		.BYTE $FF
-		.BYTE $40 ; @
-		.BYTE	0
-		.BYTE $40 ; @
-		.BYTE	0
-		.BYTE  $F
-		.BYTE $92 ; í
-		.BYTE $47 ; G
-		.BYTE	0
-		.BYTE	1
-		.BYTE	0
-		.BYTE	1
-		.BYTE	0
-		.BYTE $81 ; Å
-		.BYTE	0
-		.BYTE $41 ; A
-		.BYTE	0
-		.BYTE $40 ; @
-		.BYTE	0
-		.BYTE $40 ; @
-		.BYTE	0
-		.BYTE	0
-		.BYTE $91 ; ë
-		.BYTE $72 ; r
-		.BYTE	0
-		.BYTE	2
-		.BYTE	8
-		.BYTE	1
-		.BYTE	0
-		.BYTE $81 ; Å
-		.BYTE	0
-		.BYTE $41 ; A
-		.BYTE	0
-		.BYTE $40 ; @
-		.BYTE	0
-		.BYTE $40 ; @
-		.BYTE	0
-		.BYTE	0
-		.BYTE $81 ; Å
-		.BYTE $4A ; J
-		.BYTE	0
-		.BYTE	2
-		.BYTE $10
-		.BYTE	1
-		.BYTE	0
-		.BYTE $E1 ; ·
-		.BYTE	0
-		.BYTE	"A"
-aAcrystalDoom:	.BYTE	"Crystal Doom",0
-		.BYTE	0
-byte_7855:	.BYTE 0			; DATA XREF: RAM:763Dw	RAM:loc_76A0r ...
+byte_7855:	.BYTE	0		; DATA XREF: RAM:763Dw	RAM:loc_76A0r ...
 ; ---------------------------------------------------------------------------
 
 loc_7856:				; CODE XREF: RAM:loc_774Bp

@@ -4,8 +4,7 @@
 
 ;		.ORG	$7600
 		NOP
-		LDA	#$F
-		STA	SEGNO
+		ldi	SEGNO, $0F
 		dldi	SEGADDR, $96F0
 		JSR	j_SEGLOAD
 		LDA	#1

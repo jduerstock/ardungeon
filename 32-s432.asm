@@ -46,8 +46,7 @@ loc_7620:				; CODE XREF: RAM:7627j
 		LDA	#2
 		JSR	$180F
 		dldi	SEGADDR, $9EF0
-		LDA	#$3A		; tavern talk
-		STA	SEGNO
+		ldi	SEGNO, $3A	; tavern talk
 		JSR	j_SEGLOAD
 
 loc_767D:				; CODE XREF: RAM:7684j
@@ -60,8 +59,7 @@ loc_767D:				; CODE XREF: RAM:7684j
 		dldi	SEGADDR, $8A00
 		JSR	j_SEGLOAD
 		dldi	SEGADDR, $96F0
-		LDA	#$F
-		STA	SEGNO
+		ldi	SEGNO, $0F
 		JSR	j_SEGLOAD
 		JSR	$96F5
 		dldi	off_224, $7D71

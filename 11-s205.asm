@@ -272,7 +272,7 @@ loc_F900:
 		LDA	SEGNO
 		CMP	#8
 		BCS	loc_F937
-		STA	$F9CE
+		STA	byte_F9CE
 		dldi	off_7, SEG_AC00
 		dldi	off_9, $C000
 		ldxy	$1000
@@ -283,7 +283,7 @@ loc_F900:
 		BEQ	loc_F94E
 
 loc_F937:				; CODE XREF: RAM:8228j
-		STA	$F9CD
+		STA	byte_F9CD
 		dldi	off_7, $96F0
 		dldi	off_9, $DC00
 		ldxy	$1510
@@ -490,10 +490,7 @@ loc_FA9B:				; CODE XREF: RAM:83C7j
 		DEC	$25B
 
 loc_FAA9:				; CODE XREF: RAM:839Ej
-		LDA	$260
-		STA	word_232
-		LDA	$261
-		STA	word_232+1
+		dmv	word_232, $260
 		LDA	#2
 		STA	6
 
@@ -506,7 +503,7 @@ loc_FAB9:				; CODE XREF: RAM:83E3j
 
 loc_FAC4:				; CODE XREF: RAM:83DFj
 		LDX	$FDA4
-		JSR	$FB88
+		JSR	sub_FB88
 		STY	loc_FAD7+2
 		EOR	#$80 ; '€'
 		STA	loc_FAD7+1
@@ -1322,26 +1319,20 @@ loc_899D:				; CODE XREF: RAM:8993j	RAM:8998j
 ; ---------------------------------------------------------------------------
 		.BYTE $A8
 		MOVEXY	0,1
-		.BYTE $A5
-aPleaseInsertTh:.BYTE "Please insert The Dungeon Disk "
+aPleaseInsertTh:.BYTE	$A5,"Please insert The Dungeon Disk "
 		.BYTE $B2
 		.WORD $1911
 		.BYTE 1
-		.BYTE $D
-		.BYTE $D
-		.BYTE $A5
-		.BYTE "Side "
+		.BYTE	$0D,$0D
+		.BYTE	$A5,"Side "
 		.BYTE $B2
 		.WORD $1910
 		.BYTE 1
-aIntoAnyDrive_:	.BYTE " into any drive.",$D
+aIntoAnyDrive_:	.BYTE	" into any drive.",$D
 		MOVEXY	0,5
-		.BYTE $A5
-aPress:		.BYTE "Press "
-		.BYTE $A1
-aSpaceBar:	.BYTE "SPACE BAR"
-		.BYTE $A0
-aToCon:		.BYTE " to con"
+aPress:		.BYTE	$A5,"Press "
+		BLINK	"SPACE BAR"
+aToCon:		.BYTE	" to con"
 ; end of 'RAM'
 
 
