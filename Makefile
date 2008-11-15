@@ -44,6 +44,9 @@ ASM2_SOURCES= \
 	22-s431.asm 22-s432.asm \
 	22-s494.asm 22-s495.asm \
 	22-s509.asm 22-s510.asm \
+	22-s518.asm 22-s519.asm \
+	22-s536.asm 22-s537.asm \
+	22-s547.asm \
 	31-s001.asm 31-s002.asm \
 	31-s114.asm 31-s115.asm \
 	31-s199.asm 31-s200.asm \
@@ -101,6 +104,23 @@ all: $(BINARIES) $(OBJECTS) ar32.img
 	cat 11-s679.bin 11-s680.bin.crypt >> ar11.img
 	cat 11-s682.bin >> ar11.img
 	sha1sum -c ar11.sha1
+	cat 22-s001.bin 22-s002.bin.crypt > ar22.img
+	cat 22-s036.bin 22-s037.bin.crypt >> ar22.img
+	cat 22-s093.bin 22-s094.bin.crypt >> ar22.img
+	cat 22-s134.bin 22-s135.bin.crypt >> ar22.img
+	cat 22-s167.bin 22-s168.bin.crypt >> ar22.img
+	cat 22-s198.bin 22-s199.bin.crypt >> ar22.img
+	cat 22-s263.bin 22-s264.bin.crypt >> ar22.img
+	cat 22-s322.bin 22-s323.bin.crypt >> ar22.img
+	cat 22-s365.bin 22-s366.bin.crypt >> ar22.img
+	cat 22-s408.bin 22-s409.bin.crypt >> ar22.img
+	cat 22-s431.bin 22-s432.bin.crypt >> ar22.img
+	cat 22-s494.bin 22-s495.bin.crypt >> ar22.img
+	cat 22-s509.bin 22-s510.bin.crypt >> ar22.img
+	cat 22-s518.bin	22-s519.bin.crypt >> ar22.img
+	cat 22-s536.bin 22-s537.bin.crypt >> ar22.img
+	cat 22-s547.bin >> ar22.img
+	sha1sum -c ar22.sha1
 	cat 31-s001.bin 31-s002.bin.crypt > ar31.img
 	cat 31-s114.bin 31-s115.bin.crypt >> ar31.img
 	cat 31-s199.bin 31-s200.bin.crypt >> ar31.img 
@@ -421,6 +441,28 @@ all: $(BINARIES) $(OBJECTS) ar32.img
 	cl65 --start-addr 0x7600 -t none 22-s510.asm -o 22-s510.bin
 	sha1sum -c 22-s510.sha1
 	./encrypt.php 22-s510.bin 4dfd0004d5da77b37f30b253f51eed35
+
+22-s518.bin: 22-s518.asm
+	cl65 --start-addr 0x0100 -t none 22-s518.asm -o 22-s518.bin
+	sha1sum -c 22-s518.sha1
+
+22-s519.bin: 22-s519.asm
+	cl65 --start-addr 0x7600 -t none 22-s519.asm -o 22-s519.bin
+	sha1sum -c 22-s519.sha1
+	./encrypt.php 22-s519.bin 4e0680081fb8e48ed09e5149acbe74e2
+
+22-s536.bin: 22-s536.asm
+	cl65 --start-addr 0x0100 -t none 22-s536.asm -o 22-s536.bin
+	sha1sum -c 22-s536.sha1
+
+22-s537.bin: 22-s537.asm
+	cl65 --start-addr 0x96F0 -t none 22-s537.asm -o 22-s537.bin
+	sha1sum -c 22-s537.sha1
+	./encrypt.php 22-s537.bin 4e1800056a9e8dd3251cec89d66e91d4
+
+22-s547.bin: 22-s547.asm
+	cl65 --start-addr 0x1000 -t none 22-s547.asm -o 22-s547.bin
+	sha1sum -c 22-s547.sha1
 
 31-s001.bin: 31-s001.asm
 	cl65 --start-addr 0x0100 -t none 31-s001.asm -o 31-s001.bin
