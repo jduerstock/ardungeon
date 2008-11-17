@@ -33,7 +33,7 @@
 	DirEnt	$4000,3,1,1,,56		; combat		; $11
 	DirEnt	$4000,3,1,114,,42	; items			; $12
 	DirEnt	$4000,2,2,1,,17		; fountain		; $13
-	DirEnt	$4000,2,1,639,,6	; ???			; $14
+	DirEnt	$4000,2,1,639,,6	; dungeon exit		; $14
 	DirEnt	$4000,2,1,652,,22	; stairway		; $15
 	DirEnt	$4000,3,2,1,,16		; vault			; $16
 	DirEnt	$4000,3,2,34,,28	; goblin/troll		; $17

@@ -38,6 +38,7 @@ ASM2_SOURCES= \
 	21-s517.asm 21-s518.asm \
 	21-s561.asm 21-s562.asm \
 	21-s572.asm 21-s573.asm \
+	21-s639.asm 21-s640.asm \
 	22-s001.asm 22-s002.asm \
 	22-s036.asm 22-s037.asm \
 	22-s093.asm 22-s094.asm \
@@ -396,6 +397,15 @@ all: $(BINARIES) $(OBJECTS) ar32.img
 	ld65 -S 0x7600 -t none -o 21-s573.bin 21-s573.o 
 	sha1sum -c 21-s573.sha1
 	./encrypt.php 21-s573.bin 4a3cf020b96d440d7354693bd1c29c78
+
+21-s639.bin: 21-s639.asm
+	cl65 --start-addr 0x0100 -t none $< -o $@
+	sha1sum -c 21-s639.sha1
+
+21-s640.bin: 21-s640.asm
+	cl65 --start-addr 0x7600 -t none $< -o $@
+	sha1sum -c 21-s640.sha1
+	./encrypt.php 21-s640.bin 4a7f0006ef443ea2a15a6d2ccbeaa719
 
 22-s001.bin: 22-s001.asm
 	cl65 --start-addr 0x0100 -t none 22-s001.asm -o 22-s001.bin
