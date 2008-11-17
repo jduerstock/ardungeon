@@ -274,252 +274,252 @@ loc_AC3E:
 	.WORD	$AA64,$AA89,$AA6A
 	.WORD	$AA91,$AA74,$AA9B,$AA7C,$AAA4,$AAA5,$AAE9
 	.WORD	$AB09,$AB4F,$AB74,$AB9B
-	LDA	$8D
-	SEC
-	SBC	#$01
-	ASL	A
-	STA	$96
-	ASL	A
-	TAX
-	LDY	#$00
-:	LDA	$ABC5,X
-	STA	$AA01,Y
-	INX
-	INY
-	CPY	#$04
-	BCC	:-
-	LDX	$96
-	LDY	#$00
-:	LDA	$ABD5,X
-	STA	$AA05,Y
-	INX
-	INY
-	CPY	#$06
-	BCC	:-
-	LDA	$8D
-	ASL	A
-	ASL	A
-	ASL	A
-	ASL	A
-	STA	$96
-	LDA	RANDOM
-	AND	#$07
-	ORA	$96
-	LDX	#$06
-:	STA	$AA24,X
-	DEX
-	BPL	:-
-	SEC
-	SBC	#$0C
-	STA	$AA23
-	dldi	$76DB, $76DF
-	ASL	$AA0C
-	LDA	RANDOM
-	BPL	:+
-	LDA	#$05
-	STA	$A6
-	LDA	#$80
-	STA	$AA0C
-:	LDA	$8D
-	CMP	#$04
-	BNE	:+
-	LDA	#$01
-	STA	$AA00
-	STA	$AA0C
-	LDA	#$FF
-	STA	$A6
-:	JMP	$7719
-	LDA	$A6
-	CMP	#$05
-	BNE	:+
-	LDA	$63C7
-	AND	#$8F
-	BEQ	:+
-	JMP	$771C
-:	JSR	$7707
-	LDA	$AA00
-	CMP	#$02
-	BCS	:+
-	LDA	RANDOM
-	CMP	#$40
-	BCC	:+
-	JSR	$AD37
-	JSR	$ACCB
-	LDA	#$00
-	STA	$AA0F
-	JMP	$ACC8
-:	ldxy	$AE6C
-	JSR	$770A
-	LDA	RANDOM
-	LDA	$AA00
-	ASL	A
-	ASL	A
-	ASL	A
-	ASL	A
-	ADC	#$40
-	STA	$96
-	LDA	RANDOM
-	CMP	$96
-	BCS	:++
-	LDA	RANDOM
-	AND	#$03
-	STA	$96
-	LDA	RANDOM
-	AND	#$03
-	CLC
-	ADC	$638E
-	STA	$638E
-:	LDA	$638E
-	BEQ	:+
-	JSR	$AD37
-	JSR	$ACCB
-	LDA	#$00
-	STA	$AA0F
-	DEC	$96
-	BPL	:-
-:	JMP	$771F
-	JSR	$7710
-	ldxy	$ADE8
-	LDA	$93
-	BEQ	:+
-	ldxy	$AE3E
-:	JSR	$770A
-	JSR	$7713
-	JMP	$7722
-	LDX	$A6
-	CPX	#$05
-	BNE	:+
-	LDA	$63C7
-	BPL	:+
-	JMP	$7725
-:	JSR	$7707
-	ldxy	$AE88
-	JSR	$7728
-	JSR	$772B
-	BCS	:++++
-	LDX	#$09
-	LDA	#$00
-:	ORA	$63B1,X
-	DEX
-	BPL	:-
-	ORA	$63C0
-	ORA	$63C1
-	BNE	:+
-	INC	$63B6
-	ldxy	$AEC7
-	JMP	$AD30
-:	LDX	#$09
-	LDA	#$00
-:	STA	$63B1,X
-	DEX
-	BPL	:-
-	STA	$63C0
-	STA	$63C1
-	ldxy	$AEF1
-	JSR	$770A
-	JMP	$7608
-:	RTS
-	LDA	#$00
-	STA	$93
-	LDA	RANDOM
-	CMP	#$40
-	BCC	:+
-	JMP	$AD80
-:	LDA	#$04
-	STA	$96
-:	LDA	RANDOM
-	AND	#$3F
-	STA	$4B
-	JSR	$1887
-	BEQ	:+
-	LDY	#$00
-	LDA	(off_41),Y
-	BPL	:+
-	AND	#$87
-	CMP	#$87
-	BEQ	:+
-	CMP	#$81
-	BEQ	:+
-	JMP	$AD6F
-:	DEC	$96
-	BPL	:--
-	JMP	$AD80
-	LDY	#$02
-	LDA	#$02
-	STA	(off_41),Y
-	LDA	$4B
-	ORA	#$80
-	STA	$94
-	INC	$93
-	JMP	$ADE7
-	INC	$93
-	LDA	#$08
-	JSR	j_RND_A
-	CLC
-	ADC	#$03
-	STA	$94
-	TAX
-	dldi	off_7, $6300
-	LDA	$76EC,X
-	CLC
-	ADC	off_7
-	STA	off_7
-	BCC	:+
-	INC	off_7+1
-:	LDA	RANDOM
-	AND	#$1F
-	CLC
-	ADC	#$01
-	STA	word_B+1
-	LDY	$76E0,X
-	STY	word_B
-	SEC
-	LDA	(off_7),Y
-	STA	$02,Y
-	SBC	word_B+1
-	STA	(off_7),Y
-	DEY
-	BMI	:+
-	LDA	(off_7),Y
-	STA	$02,Y
-	SBC	#$00
-	STA	(off_7),Y
-:	BCS	:+
-	LDY	word_B
-	LDA	$02,Y
-	STA	word_B+1
-	STA	$93
-	LDA	#$00
-	STA	(off_7),Y
-	DEY
-	BMI	:+
-	STA	(off_7),Y
-:	CLC
-	LDA	word_B+1
-	ADC	$AA2B,X
-	BCC	:+
-	LDA	#$FF
-:	STA	$AA2B,X
-	RTS
+		LDA	$8D
+		SEC
+		SBC	#$01
+		ASL	A
+		STA	$96
+		ASL	A
+		TAX
+		LDY	#$00
+:		LDA	$ABC5,X
+		STA	$AA01,Y
+		INX
+		INY
+		CPY	#$04
+		BCC	:-
+		LDX	$96
+		LDY	#$00
+:		LDA	$ABD5,X
+		STA	$AA05,Y
+		INX
+		INY
+		CPY	#$06
+		BCC	:-
+		LDA	$8D
+		ASL	A
+		ASL	A
+		ASL	A
+		ASL	A
+		STA	$96
+		LDA	RANDOM
+		AND	#$07
+		ORA	$96
+		LDX	#$06
+:		STA	$AA24,X
+		DEX
+		BPL	:-
+		SEC
+		SBC	#$0C
+		STA	$AA23
+		dldi	$76DB, $76DF
+		ASL	$AA0C
+		LDA	RANDOM
+		BPL	:+
+		LDA	#$05
+		STA	$A6
+		LDA	#$80
+		STA	$AA0C
+:		LDA	$8D
+		CMP	#$04
+		BNE	:+
+		LDA	#$01
+		STA	$AA00
+		STA	$AA0C
+		LDA	#$FF
+		STA	$A6
+:		JMP	$7719
+		LDA	$A6
+		CMP	#$05
+		BNE	:+
+		LDA	$63C7
+		AND	#$8F
+		BEQ	:+
+		JMP	$771C
+:		JSR	$7707
+		LDA	$AA00
+		CMP	#$02
+		BCS	:+
+		LDA	RANDOM
+		CMP	#$40
+		BCC	:+
+		JSR	$AD37
+		JSR	$ACCB
+		LDA	#$00
+		STA	$AA0F
+		JMP	$ACC8
+:		ldxy	$AE6C
+		JSR	$770A
+		LDA	RANDOM
+		LDA	$AA00
+		ASL	A
+		ASL	A
+		ASL	A
+		ASL	A
+		ADC	#$40
+		STA	$96
+		LDA	RANDOM
+		CMP	$96
+		BCS	:++
+		LDA	RANDOM
+		AND	#$03
+		STA	$96
+		LDA	RANDOM
+		AND	#$03
+		CLC
+		ADC	$638E
+		STA	$638E
+:		LDA	$638E
+		BEQ	:+
+		JSR	$AD37
+		JSR	$ACCB
+		LDA	#$00
+		STA	$AA0F
+		DEC	$96
+		BPL	:-
+:		JMP	$771F
+		JSR	$7710
+		ldxy	$ADE8
+		LDA	$93
+		BEQ	:+
+		ldxy	$AE3E
+:		JSR	$770A
+		JSR	$7713
+		JMP	$7722
+		LDX	$A6
+		CPX	#$05
+		BNE	:+
+		LDA	$63C7
+		BPL	:+
+		JMP	$7725
+:		JSR	$7707
+		ldxy	$AE88
+		JSR	$7728
+		JSR	$772B
+		BCS	:++++
+		LDX	#$09
+		LDA	#$00
+:		ORA	$63B1,X
+		DEX
+		BPL	:-
+		ORA	$63C0
+		ORA	$63C1
+		BNE	:+
+		INC	$63B6
+		ldxy	$AEC7
+		JMP	$AD30
+:		LDX	#$09
+		LDA	#$00
+:		STA	$63B1,X
+		DEX
+		BPL	:-
+		STA	$63C0
+		STA	$63C1
+		ldxy	$AEF1
+		JSR	$770A
+		JMP	$7608
+:		RTS
+		LDA	#$00
+		STA	$93
+		LDA	RANDOM
+		CMP	#$40
+		BCC	:+
+		JMP	$AD80
+:		LDA	#$04
+		STA	$96
+:		LDA	RANDOM
+		AND	#$3F
+		STA	$4B
+		JSR	$1887
+		BEQ	:+
+		LDY	#$00
+		LDA	(off_41),Y
+		BPL	:+
+		AND	#$87
+		CMP	#$87
+		BEQ	:+
+		CMP	#$81
+		BEQ	:+
+		JMP	$AD6F
+:		DEC	$96
+		BPL	:--
+		JMP	$AD80
+		LDY	#$02
+		LDA	#$02
+		STA	(off_41),Y
+		LDA	$4B
+		ORA	#$80
+		STA	$94
+		INC	$93
+		JMP	$ADE7
+		INC	$93
+		LDA	#$08
+		JSR	j_RND_A
+		CLC
+		ADC	#$03
+		STA	$94
+		TAX
+		dldi	off_7, $6300
+		LDA	$76EC,X
+		CLC
+		ADC	off_7
+		STA	off_7
+		BCC	:+
+		INC	off_7+1
+:		LDA	RANDOM
+		AND	#$1F
+		CLC
+		ADC	#$01
+		STA	word_B+1
+		LDY	$76E0,X
+		STY	word_B
+		SEC
+		LDA	(off_7),Y
+		STA	$02,Y
+		SBC	word_B+1
+		STA	(off_7),Y
+		DEY
+		BMI	:+
+		LDA	(off_7),Y
+		STA	$02,Y
+		SBC	#$00
+		STA	(off_7),Y
+:		BCS	:+
+		LDY	word_B
+		LDA	$02,Y
+		STA	word_B+1
+		STA	$93
+		LDA	#$00
+		STA	(off_7),Y
+		DEY
+		BMI	:+
+		STA	(off_7),Y
+:		CLC
+		LDA	word_B+1
+		ADC	$AA2B,X
+		BCC	:+
+		LDA	#$FF
+:		STA	$AA2B,X
+		RTS
 
-	STRSUB	$7653
-	.BYTE	"tries unsuccessfully",$0D
-	.BYTE	$A5,"to pilfer thy personage.",$0D,$FF
+		STRSUB	$7653
+		.BYTE	"tries unsuccessfully",$0D
+		.BYTE	$A5,"to pilfer thy personage.",$0D,$FF
 
-	STRSUB	$7653
-	.BYTE	"has stolen",$0D
-	.BYTE	$A5,"some of your "
-	.BYTE	$B4
-	.WORD	$76D9
-	.BYTE	$20
-	.BYTE	".",$0D,$FF
-	.BYTE	$A3
-	.WORD	$AE41	
-	dldi	off_16, $AE1B
-	BIT	$94
-	BPL	:+
-	dldi	off_16, $AE56
-:	RTS
+		STRSUB	$7653
+		.BYTE	"has stolen",$0D
+		.BYTE	$A5,"some of your "
+		.BYTE	$B4
+		.WORD	$76D9
+		.BYTE	$20
+		.BYTE	".",$0D,$FF
+		.BYTE	$A3
+		.WORD	$AE41	
+		dldi	off_16, $AE1B
+		BIT	$94
+		BPL	:+
+		dldi	off_16, $AE56
+:		RTS
 
 		STRSUB	$7653
 		.BYTE	"has taken your",$0D,$A5

@@ -2,6 +2,7 @@
 		.include	"globals.inc"
 		.include	"macros.inc"
 
+off_BE	= $BE
 
 ;		.ORG	$600
 unk_600:	.BYTE	$00,$00,$00,$00,$00,$00,$00,$00	; DATA XREF: sub_31A2+3Er
@@ -43,86 +44,16 @@ unk_700:	.BYTE	$00,$00,$00,$00,$00,$00,$00,$00	; DATA XREF: sub_31A2+50r
 		.BYTE	$FC,$0F,$0F,$0F,$0F,$0F,$0F,$FC
 		.BYTE	$FC,$3C,$00,$C0,$00,$0F,$3C,$F0
 		.BYTE	$FC,$3C,$00,$C0,$00,$00,$00,$00
-		.BYTE $F0 ; ð
-		.BYTE $3C ; <
-		.BYTE $3C ; <
-		.BYTE	0
-		.BYTE $FC ; ü
-		.BYTE $3C ; <
-		.BYTE $3C ; <
-		.BYTE $F0 ; ð
-		.BYTE $3C ; <
-		.BYTE $3C ; <
-		.BYTE $3C ; <
-		.BYTE $FC ; ü
-		.BYTE $FC ; ü
-		.BYTE $3C ; <
-		.BYTE $3C ; <
-		.BYTE $3C ; <
-		.BYTE	0
-		.BYTE $C0 ; À
-		.BYTE $C0 ; À
-		.BYTE $C0 ; À
-		.BYTE $C0 ; À
-		.BYTE $C0 ; À
-		.BYTE $C0 ; À
-		.BYTE $F0 ; ð
-		.BYTE $FC ; ü
-		.BYTE $F0 ; ð
-		.BYTE $F0 ; ð
-		.BYTE $F0 ; ð
-		.BYTE $F0 ; ð
-		.BYTE $F0 ; ð
-		.BYTE $C0 ; À
-		.BYTE	0
-		.BYTE $3C ; <
-		.BYTE $F0 ; ð
-		.BYTE $F0 ; ð
-		.BYTE $C0 ; À
-		.BYTE $C0 ; À
-		.BYTE $F0 ; ð
-		.BYTE $F0 ; ð
-		.BYTE $3C ; <
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE $3C ; <
-		.BYTE $FC ; ü
-		.BYTE $C0 ; À
-		.BYTE $3C ; <
-		.BYTE $FC ; ü
-		.BYTE $FC ; ü
-		.BYTE $3C ; <
-		.BYTE $3C ; <
-		.BYTE $3C ; <
-		.BYTE $3C ; <
-		.BYTE $3C ; <
-		.BYTE $3C ; <
-		.BYTE $3C ; <
-		.BYTE $3C ; <
-		.BYTE $3C ; <
-		.BYTE $FC ; ü
-		.BYTE $FC ; ü
-		.BYTE $3C ; <
-		.BYTE $3C ; <
-		.BYTE $F0 ; ð
-		.BYTE $FC ; ü
-		.BYTE $3C ; <
-		.BYTE $3C ; <
-		.BYTE $3C ; <
-		.BYTE $3C ; <
-		.BYTE $3C ; <
-		.BYTE $F0 ; ð
-		.BYTE $F0 ; ð
-		.BYTE $3C ; <
-		.BYTE $3C ; <
-		.BYTE $3C ; <
-		.BYTE $F0 ; ð
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
+		.BYTE	$F0,$3C,$3C,$00,$FC,$3C,$3C,$F0
+		.BYTE	$3C,$3C,$3C,$FC,$FC,$3C,$3C,$3C
+		.BYTE	$00,$C0,$C0,$C0,$C0,$C0,$C0,$F0
+		.BYTE	$FC,$F0,$F0,$F0,$F0,$F0,$C0,$00
+		.BYTE	$3C,$F0,$F0,$C0,$C0,$F0,$F0,$3C
+		.BYTE	$00,$00,$00,$00,$00,$3C,$FC,$C0
+		.BYTE	$3C,$FC,$FC,$3C,$3C,$3C,$3C,$3C
+		.BYTE	$3C,$3C,$3C,$3C,$FC,$FC,$3C,$3C
+		.BYTE	$F0,$FC,$3C,$3C,$3C,$3C,$3C,$F0
+		.BYTE	$F0,$3C,$3C,$3C,$F0,$00,$00,$00
 		.BYTE $F0 ; ð
 		.BYTE $3C ; <
 		.BYTE $3C ; <
@@ -8289,25 +8220,25 @@ locret_2EBA:				; CODE XREF: RAM:2EADj
 		JMP	loc_3112
 ; ---------------------------------------------------------------------------
 		STA	unk_2CF2,X
-		STA	$BE
+		STA	off_BE
 		INY
 		LDA	($B9),Y
 		STA	unk_2CF6,X
-		STA	$BF
+		STA	off_BE+1
 		LDY	#$40 ; '@'
-		LDA	($BE),Y
+		LDA	(off_BE),Y
 		STA	unk_2D06,X
 		INY
-		LDA	($BE),Y
+		LDA	(off_BE),Y
 		STA	unk_2D0A,X
 		INY
-		LDA	($BE),Y
+		LDA	(off_BE),Y
 		STA	unk_2CFE,X
 		INY
-		LDA	($BE),Y
+		LDA	(off_BE),Y
 		STA	unk_2D0E,X
 		INY
-		LDA	($BE),Y
+		LDA	(off_BE),Y
 		STA	unk_2D12,X
 		LDA	#2
 		JMP	loc_2E7F
@@ -8371,10 +8302,10 @@ loc_2F4E:				; CODE XREF: RAM:2F41j
 		CLC
 		LDA	$B9
 		ADC	#2
-		STA	$BE
+		STA	off_BE
 		LDA	$BA
 		ADC	#0
-		STA	$BF
+		STA	off_BE+1
 		LDA	$C0
 		STA	unk_2CDA,X
 		LDA	$C1
@@ -8384,13 +8315,13 @@ loc_2F4E:				; CODE XREF: RAM:2F41j
 		LDA	unk_2D70,X
 		STA	$C1
 		LDY	byte_2D66,X
-		LDA	$BF
+		LDA	off_BE+1
 		STA	($C0),Y
 		DEY
 		TYA
 		AND	#$F
 		TAY
-		LDA	$BE
+		LDA	off_BE
 		STA	($C0),Y
 		DEY
 		TYA
@@ -8399,21 +8330,21 @@ loc_2F4E:				; CODE XREF: RAM:2F41j
 		JMP	sub_2E47
 ; ---------------------------------------------------------------------------
 		LDA	unk_2D6B,X
-		STA	$BE
+		STA	off_BE
 		LDA	unk_2D70,X
-		STA	$BF
+		STA	off_BE+1
 		LDY	byte_2D66,X
 		INY
 		TYA
 		AND	#$F
 		TAY
-		LDA	($BE),Y
+		LDA	(off_BE),Y
 		STA	unk_2CDA,X
 		INY
 		TYA
 		AND	#$F
 		TAY
-		LDA	($BE),Y
+		LDA	(off_BE),Y
 		STA	unk_2CDF,X
 		TYA
 		STA	byte_2D66,X
@@ -8640,12 +8571,12 @@ loc_3112:				; CODE XREF: sub_2DDB+43p RAM:2ED7j ...
 		CPX	#4
 		BEQ	locret_3111
 		LDA	unk_2CF2,X
-		STA	$BE
+		STA	off_BE
 		CLC
 		ADC	#$20 ; ' '
 		STA	$C0
 		LDA	unk_2CF6,X
-		STA	$BF
+		STA	off_BE+1
 		ADC	#0
 		STA	$C1
 		LDA	unk_2CE4,X
@@ -8680,7 +8611,7 @@ loc_3158:				; CODE XREF: RAM:3147j
 		LDY	unk_2CFA,X
 		LDA	unk_2CEE,X
 		CLC
-		ADC	($BE),Y
+		ADC	(off_BE),Y
 		STA	$BC
 		TXA
 		ASL	A
