@@ -37,6 +37,7 @@ ASM2_SOURCES= \
 	21-s473.asm 21-s474.asm \
 	21-s517.asm 21-s518.asm \
 	21-s561.asm 21-s562.asm \
+	21-s572.asm 21-s573.asm \
 	22-s001.asm 22-s002.asm \
 	22-s036.asm 22-s037.asm \
 	22-s093.asm 22-s094.asm \
@@ -385,6 +386,17 @@ all: $(BINARIES) $(OBJECTS) ar32.img
 	sha1sum -c 21-s562.sha1
 	./encrypt.php 21-s562.bin 4a3100059e9f856b4097a277650c3855
 
+21-s572.bin: 21-s572.asm
+	cl65 --start-addr 0x0100 -t none $< -o $@
+	sha1sum -c 21-s572.sha1
+
+21-s573.bin: 31-s605.asm
+#	cl65 -v -v -v -v --start-addr 0x7600 -t none -D D2S1 31-s605.asm -o $@
+	ca65 -D D2S1 -t none 31-s605.asm  -o 21-s573.o
+	ld65 -S 0x7600 -t none -o 21-s573.bin 21-s573.o 
+	sha1sum -c 21-s573.sha1
+	./encrypt.php 21-s573.bin 4a3cf020b96d440d7354693bd1c29c78
+
 22-s001.bin: 22-s001.asm
 	cl65 --start-addr 0x0100 -t none 22-s001.asm -o 22-s001.bin
 	sha1sum -c 22-s001.sha1
@@ -575,7 +587,9 @@ all: $(BINARIES) $(OBJECTS) ar32.img
 	sha1sum -c 31-s604.sha1
 
 31-s605.bin: 31-s605.asm
-	cl65 --start-addr 0x7600 -t none 31-s605.asm -o 31-s605.bin
+#	cl65 -v --start-addr 0x7600 -t none -D D3S1 31-s605.asm -o 31-s605.bin
+	ca65 -D D3S1 -t none 31-s605.asm -o 31-s605.o
+	ld65 -S 0x7600 -t none -o 31-s605.bin 31-s605.o 
 	sha1sum -c 31-s605.sha1
 	./encrypt.php 31-s605.bin 525cf020b96d3e0fea81bd265e2a247b
 

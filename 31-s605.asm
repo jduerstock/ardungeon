@@ -5235,8 +5235,14 @@ unk_948B:	.BYTE	0		; DATA XREF: RAM:loc_794Cr RAM:7956r ...
 			.BYTE	$FF,$00
 		.ENDREPEAT
 		.RES	100,$00
-		.BYTE	$52,$5C,$F0,$20,$B9,$6D,$3E,$0F,$EA,$81,$BD,$26,$5E,$2A,$24,$7B
-; end of 'RAM'
 
+		.IFDEF	D3S1
+		.BYTE	$52,$5C,$F0,$20,$B9,$6D,$3E,$0F,$EA,$81,$BD,$26,$5E,$2A,$24,$7B
+		.ENDIF
+
+		.IFDEF	D2S1
+		.BYTE   $4A,$3C,$F0,$20,$B9,$6D,$44,$0D,$73,$54,$69,$3B,$D1,$C2,$9C,$78 ; |J<. .mD.sTi;...x|
+		.ENDIF
+; end of 'RAM'
 
 		.END
