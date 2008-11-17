@@ -881,40 +881,14 @@ unk_9BBB:	.BYTE	>(sub_98B5-1)	; DATA XREF: sub_9856+1Cr
 		.BYTE $9A ; ö
 		.BYTE $9A ; ö
 		.BYTE $9A ; ö
-		.BYTE $C2 ; ¬
-		.BYTE $C1 ; ¡
-		.BYTE $C1 ; ¡
-		.BYTE $8D ; ç
-		.BYTE $A0 ; †
-		.BYTE $C8 ; »
-		.BYTE $C5 ; ≈
-		.BYTE $D8 ; ÿ
-		.BYTE $A0 ; †
-		.BYTE $C1 ; ¡
-		.BYTE $C2 ; ¬
-		.BYTE $B1 ; ±
-		.BYTE $C2 ; ¬
-		.BYTE $B0 ; ∞
-		.BYTE $B4 ; ¥
-		.BYTE $C6 ; ∆
-		.BYTE $C6 ; ∆
-		.BYTE $C6 ; ∆
-		.BYTE $C1 ; ¡
-		.BYTE $C1 ; ¡
-		.BYTE $C6 ; ∆
-		.BYTE $C6 ; ∆
-		.BYTE $C6 ; ∆
-		.BYTE $B5 ; µ
-		.BYTE $B4 ; ¥
-		.BYTE $B1 ; ±
-		.BYTE $C2 ; ¬
-		.BYTE $B0 ; ∞
-		.BYTE $B6 ; ∂
-		.BYTE $B5 ; µ
-		.BYTE $B5 ; µ
-		.BYTE $B0 ; ∞
-		.BYTE $B0 ; ∞
-; end of 'RAM'
 
+;		.BYTE	$C2
+;		.BYTE	$C1,$C1,$8D,$A0,$C8,$C5,$D8,$A0,$C1,$C2,$B1,$C2,$B0,$B4,$C6,$C6
+;		.BYTE	$C6,$C1,$C1,$C6,$C6,$C6,$B5,$B4,$B1,$C2,$B0,$B6,$B5,$B5,$B0,$B0
+
+		.BYTE	$A0
+		.BYTE	$BE,$BE,$BE,$A0,$C3,$C5,$CE,$D4,$C5,$D2,$8D,$A0,$C1,$D3,$C3,$A0
+		.BYTE	$A7,$D3,$F4,$E5,$F0,$20,$EC,$E9,$E7,$E8,$F4,$EC,$F9,$20,$E9,$EE
+; end of 'RAM'
 
 		.END

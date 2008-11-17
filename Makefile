@@ -39,6 +39,8 @@ ASM2_SOURCES= \
 	21-s561.asm 21-s562.asm \
 	21-s572.asm 21-s573.asm \
 	21-s639.asm 21-s640.asm \
+	21-s652.asm 21-s653.asm \
+	21-s697.asm \
 	22-s001.asm 22-s002.asm \
 	22-s036.asm 22-s037.asm \
 	22-s093.asm 22-s094.asm \
@@ -112,6 +114,26 @@ all: $(BINARIES) $(OBJECTS) ar32.img
 	cat 11-s679.bin 11-s680.bin.crypt >> ar11.img
 	cat 11-s682.bin >> ar11.img
 	sha1sum -c ar11.sha1
+	cat 21-s001.bin > ar21.img
+	cat 21-s010.bin 21-s011.bin.crypt >> ar21.img
+	cat 21-s051.bin 21-s052.bin.crypt >> ar21.img
+	cat 21-s092.bin 21-s093.bin.crypt >> ar21.img
+	cat 21-s133.bin 21-s134.bin.crypt >> ar21.img
+	cat 21-s174.bin 21-s175.bin.crypt >> ar21.img
+	cat 21-s215.bin 21-s216.bin.crypt >> ar21.img
+	cat 21-s256.bin 21-s257.bin.crypt >> ar21.img
+	cat 21-s297.bin 21-s298.bin.crypt >> ar21.img
+	cat 21-s341.bin 21-s342.bin.crypt >> ar21.img
+	cat 21-s385.bin 21-s386.bin.crypt >> ar21.img
+	cat 21-s429.bin 21-s430.bin.crypt >> ar21.img
+	cat 21-s473.bin 21-s474.bin.crypt >> ar21.img
+	cat 21-s517.bin 21-s518.bin.crypt >> ar21.img
+	cat 21-s561.bin 21-s562.bin.crypt >> ar21.img
+	cat 21-s572.bin 21-s573.bin.crypt >> ar21.img
+	cat 21-s639.bin 21-s640.bin.crypt >> ar21.img
+	cat 21-s652.bin 21-s653.bin.crypt >> ar21.img
+	cat 21-s697.bin >> ar21.img
+	sha1sum -c ar21.sha1
 	cat 22-s001.bin 22-s002.bin.crypt > ar22.img
 	cat 22-s036.bin 22-s037.bin.crypt >> ar22.img
 	cat 22-s093.bin 22-s094.bin.crypt >> ar22.img
@@ -406,6 +428,19 @@ all: $(BINARIES) $(OBJECTS) ar32.img
 	cl65 --start-addr 0x7600 -t none $< -o $@
 	sha1sum -c 21-s640.sha1
 	./encrypt.php 21-s640.bin 4a7f0006ef443ea2a15a6d2ccbeaa719
+
+21-s652.bin: 21-s652.asm
+	cl65 --start-addr 0x0100 -t none $< -o $@
+	sha1sum -c 21-s652.sha1
+
+21-s653.bin: 21-s653.asm
+	cl65 --start-addr 0x7600 -t none $< -o $@
+	sha1sum -c 21-s653.sha1
+	./encrypt.php 21-s653.bin 4a8c00169cec8be6c28a80d7714853eb
+
+21-s697.bin: 21-s697.asm
+	cl65 --start-addr 0x1000 -t none $< -o $@
+	sha1sum -c 21-s697.sha1
 
 22-s001.bin: 22-s001.asm
 	cl65 --start-addr 0x0100 -t none 22-s001.asm -o 22-s001.bin
