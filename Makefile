@@ -33,6 +33,8 @@ ASM2_SOURCES= \
 	21-s297.asm 21-s298.asm \
 	21-s341.asm 21-s342.asm \
 	21-s385.asm 21-s386.asm \
+	21-s429.asm 21-s430.asm \
+	21-s473.asm 21-s474.asm \
 	22-s001.asm 22-s002.asm \
 	22-s036.asm 22-s037.asm \
 	22-s093.asm 22-s094.asm \
@@ -323,7 +325,7 @@ all: $(BINARIES) $(OBJECTS) ar32.img
 	sha1sum -c 21-s297.sha1
 
 21-s298.bin: 21-s298.asm
-	cl65 --start-addr 0xAC00 -t none $< -o $@
+	cl65 --start-addr 0x96F0 -t none $< -o $@
 	sha1sum -c 21-s298.sha1
 	./encrypt.php 21-s298.bin 49291015cfb36435a36778265e8742c4
 
@@ -332,7 +334,7 @@ all: $(BINARIES) $(OBJECTS) ar32.img
 	sha1sum -c 21-s341.sha1
 
 21-s342.bin: 21-s342.asm
-	cl65 --start-addr 0xAC00 -t none $< -o $@
+	cl65 --start-addr 0x96F0 -t none $< -o $@
 	sha1sum -c 21-s342.sha1
 	./encrypt.php 21-s342.bin 495510150c73dbbdf8c1e78f1b638880
 
@@ -341,9 +343,27 @@ all: $(BINARIES) $(OBJECTS) ar32.img
 	sha1sum -c 21-s385.sha1
 
 21-s386.bin: 21-s386.asm
-	cl65 --start-addr 0xAC00 -t none $< -o $@
+	cl65 --start-addr 0x96F0 -t none $< -o $@
 	sha1sum -c 21-s386.sha1
 	./encrypt.php 21-s386.bin 498110156789a346853f939ebe74c029
+
+21-s429.bin: 21-s429.asm
+	cl65 --start-addr 0x0100 -t none $< -o $@
+	sha1sum -c 21-s429.sha1
+
+21-s430.bin: 21-s430.asm
+	cl65 --start-addr 0x96F0 -t none $< -o $@
+	sha1sum -c 21-s430.sha1
+	./encrypt.php 21-s430.bin 49ad10153ce930547e87e90ce699d934
+
+21-s473.bin: 21-s473.asm
+	cl65 --start-addr 0x0100 -t none $< -o $@
+	sha1sum -c 21-s473.sha1
+
+21-s474.bin: 21-s474.asm
+	cl65 --start-addr 0x96F0 -t none $< -o $@
+	sha1sum -c 21-s474.sha1
+	./encrypt.php 21-s474.bin 49d9101558e47ef07dc15a4902399323
 
 22-s001.bin: 22-s001.asm
 	cl65 --start-addr 0x0100 -t none 22-s001.asm -o 22-s001.bin
