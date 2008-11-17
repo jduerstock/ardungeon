@@ -37,54 +37,12 @@ unk_600:	.BYTE	$00,$00,$00,$00,$00,$00,$00,$00	; DATA XREF: sub_31A2+3Er
 		.BYTE	$03,$0F,$0F,$0F,$03,$03,$00,$03
 		.BYTE	$0F,$3C,$3C,$00,$03,$00,$03,$00
 unk_700:	.BYTE	$00,$00,$00,$00,$00,$00,$00,$00	; DATA XREF: sub_31A2+50r
-		.BYTE $C0 ; À
-		.BYTE $F0 ; ð
-		.BYTE $F0 ; ð
-		.BYTE $3C ; <
-		.BYTE $FC ; ü
-		.BYTE $3C ; <
-		.BYTE $3C ; <
-		.BYTE  $F
-		.BYTE $FC ; ü
-		.BYTE  $F
-		.BYTE  $F
-		.BYTE $FC ; ü
-		.BYTE  $F
-		.BYTE  $F
-		.BYTE  $F
-		.BYTE $FC ; ü
-		.BYTE $F0 ; ð
-		.BYTE $3C ; <
-		.BYTE $F0 ; ð
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE $3C ; <
-		.BYTE $F0 ; ð
-		.BYTE $FC ; ü
-		.BYTE  $F
-		.BYTE  $F
-		.BYTE  $F
-		.BYTE  $F
-		.BYTE  $F
-		.BYTE  $F
-		.BYTE $FC ; ü
-		.BYTE $FC ; ü
-		.BYTE $3C ; <
-		.BYTE	0
-		.BYTE $C0 ; À
-		.BYTE	0
-		.BYTE  $F
-		.BYTE $3C ; <
-		.BYTE $F0 ; ð
-		.BYTE $FC ; ü
-		.BYTE $3C ; <
-		.BYTE	0
-		.BYTE $C0 ; À
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
+		.BYTE	$C0,$F0,$F0,$3C,$FC,$3C,$3C,$0F
+		.BYTE	$FC,$0F,$0F,$FC,$0F,$0F,$0F,$FC
+		.BYTE	$F0,$3C,$F0,$00,$00,$00,$3C,$F0
+		.BYTE	$FC,$0F,$0F,$0F,$0F,$0F,$0F,$FC
+		.BYTE	$FC,$3C,$00,$C0,$00,$0F,$3C,$F0
+		.BYTE	$FC,$3C,$00,$C0,$00,$00,$00,$00
 		.BYTE $F0 ; ð
 		.BYTE $3C ; <
 		.BYTE $3C ; <
@@ -2626,18 +2584,7 @@ unk_700:	.BYTE	$00,$00,$00,$00,$00,$00,$00,$00	; DATA XREF: sub_31A2+50r
 		.BYTE $2D ; -
 		.BYTE  $E
 		.BYTE	0
-		.BYTE $46 ; F
-		.BYTE $49 ; I
-		.BYTE $4C ; L
-		.BYTE $4C ; L
-		.BYTE $45 ; E
-		.BYTE $44 ; D
-		.BYTE $20
-		.BYTE $4F ; O
-		.BYTE $4E ; N
-		.BYTE $4C ; L
-		.BYTE $59 ; Y
-		.BYTE	0
+		.BYTE	"FILLED ONLY",$00
 		.BYTE  $F
 		.BYTE	0
 		.BYTE	5
@@ -2667,18 +2614,7 @@ unk_700:	.BYTE	$00,$00,$00,$00,$00,$00,$00,$00	; DATA XREF: sub_31A2+50r
 		.BYTE	5
 		.BYTE  $E
 		.BYTE	0
-		.BYTE $57 ; W
-		.BYTE $49 ; I
-		.BYTE $54 ; T
-		.BYTE $48 ; H
-		.BYTE $20
-		.BYTE $44 ; D
-		.BYTE $52 ; R
-		.BYTE $45 ; E
-		.BYTE $41 ; A
-		.BYTE $4D ; M
-		.BYTE $53 ; S
-		.BYTE	0
+		.BYTE	"WITH DREAMS",$00
 		.BYTE  $F
 		.BYTE	0
 		.BYTE	3
@@ -2702,22 +2638,7 @@ unk_700:	.BYTE	$00,$00,$00,$00,$00,$00,$00,$00	; DATA XREF: sub_31A2+50r
 		.BYTE $28 ; (
 		.BYTE  $E
 		.BYTE	0
-		.BYTE $53 ; S
-		.BYTE $4F ; O
-		.BYTE $4D ; M
-		.BYTE $45 ; E
-		.BYTE $20
-		.BYTE $54 ; T
-		.BYTE $48 ; H
-		.BYTE $4F ; O
-		.BYTE $55 ; U
-		.BYTE $47 ; G
-		.BYTE $48 ; H
-		.BYTE $54 ; T
-		.BYTE $20
-		.BYTE $49 ; I
-		.BYTE $54 ; T
-		.BYTE	0
+		.BYTE	"SOME THOUGHT IT",$00
 		.BYTE  $F
 		.BYTE	0
 		.BYTE	3
@@ -2785,18 +2706,7 @@ unk_700:	.BYTE	$00,$00,$00,$00,$00,$00,$00,$00	; DATA XREF: sub_31A2+50r
 		.BYTE	5
 		.BYTE  $E
 		.BYTE	0
-		.BYTE $54 ; T
-		.BYTE $48 ; H
-		.BYTE $45 ; E
-		.BYTE $20
-		.BYTE $53 ; S
-		.BYTE $43 ; C
-		.BYTE $52 ; R
-		.BYTE $45 ; E
-		.BYTE $41 ; A
-		.BYTE $4D ; M
-		.BYTE $53 ; S
-		.BYTE	0
+		.BYTE	"THE SCREAMS",$00
 		.BYTE  $F
 		.BYTE	0
 		.BYTE	2
@@ -3078,27 +2988,7 @@ unk_700:	.BYTE	$00,$00,$00,$00,$00,$00,$00,$00	; DATA XREF: sub_31A2+50r
 		.BYTE $14
 		.BYTE  $E
 		.BYTE	0
-		.BYTE $54 ; T
-		.BYTE $48 ; H
-		.BYTE $45 ; E
-		.BYTE $20
-		.BYTE $4A ; J
-		.BYTE $4F ; O
-		.BYTE $55 ; U
-		.BYTE $52 ; R
-		.BYTE $4E ; N
-		.BYTE $45 ; E
-		.BYTE $59 ; Y
-		.BYTE $20
-		.BYTE $44 ; D
-		.BYTE $4F ; O
-		.BYTE $57 ; W
-		.BYTE $4E ; N
-		.BYTE $57 ; W
-		.BYTE $41 ; A
-		.BYTE $52 ; R
-		.BYTE $44 ; D
-		.BYTE	0
+		.BYTE	"THE JOURNEY DOWNWARD",$00
 		.BYTE  $F
 		.BYTE	0
 		.BYTE	2
@@ -3131,23 +3021,7 @@ unk_700:	.BYTE	$00,$00,$00,$00,$00,$00,$00,$00	; DATA XREF: sub_31A2+50r
 		.BYTE $14
 		.BYTE  $E
 		.BYTE	0
-		.BYTE $4C ; L
-		.BYTE $41 ; A
-		.BYTE $53 ; S
-		.BYTE $54 ; T
-		.BYTE $45 ; E
-		.BYTE $44 ; D
-		.BYTE $20
-		.BYTE $46 ; F
-		.BYTE $4F ; O
-		.BYTE $52 ; R
-		.BYTE $20
-		.BYTE $48 ; H
-		.BYTE $4F ; O
-		.BYTE $55 ; U
-		.BYTE $52 ; R
-		.BYTE $53 ; S
-		.BYTE	0
+		.BYTE	"LASTED FOR HOURS",$00
 		.BYTE  $F
 		.BYTE	0
 		.BYTE	3
@@ -3180,19 +3054,7 @@ unk_700:	.BYTE	$00,$00,$00,$00,$00,$00,$00,$00	; DATA XREF: sub_31A2+50r
 		.BYTE $14
 		.BYTE  $E
 		.BYTE	0
-		.BYTE $4D ; M
-		.BYTE $41 ; A
-		.BYTE $59 ; Y
-		.BYTE $42 ; B
-		.BYTE $45 ; E
-		.BYTE $20
-		.BYTE $4C ; L
-		.BYTE $4F ; O
-		.BYTE $4E ; N
-		.BYTE $47 ; G
-		.BYTE $45 ; E
-		.BYTE $52 ; R
-		.BYTE	0
+		.BYTE	"MAYBE LONGER",$00
 		.BYTE  $F
 		.BYTE	0
 		.BYTE	2
@@ -3219,20 +3081,7 @@ unk_700:	.BYTE	$00,$00,$00,$00,$00,$00,$00,$00	; DATA XREF: sub_31A2+50r
 		.BYTE $14
 		.BYTE  $E
 		.BYTE	0
-		.BYTE $59 ; Y
-		.BYTE $4F ; O
-		.BYTE $55 ; U
-		.BYTE $20
-		.BYTE $4B ; K
-		.BYTE $4E ; N
-		.BYTE $4F ; O
-		.BYTE $57 ; W
-		.BYTE $20
-		.BYTE $49 ; I
-		.BYTE $54 ; T
-		.BYTE $27 ; '
-		.BYTE $53 ; S
-		.BYTE	0
+		.BYTE	"YOU KNOW IT'S",$00
 		.BYTE  $F
 		.BYTE	0
 		.BYTE	2
@@ -3253,18 +3102,7 @@ unk_700:	.BYTE	$00,$00,$00,$00,$00,$00,$00,$00	; DATA XREF: sub_31A2+50r
 		.BYTE $14
 		.BYTE  $E
 		.BYTE	0
-		.BYTE $48 ; H
-		.BYTE $41 ; A
-		.BYTE $52 ; R
-		.BYTE $44 ; D
-		.BYTE $20
-		.BYTE $54 ; T
-		.BYTE $4F ; O
-		.BYTE $20
-		.BYTE $53 ; S
-		.BYTE $41 ; A
-		.BYTE $59 ; Y
-		.BYTE	0
+		.BYTE	"HARD TO SAY",$00
 		.BYTE  $F
 		.BYTE	0
 		.BYTE	3
@@ -3291,18 +3129,7 @@ unk_700:	.BYTE	$00,$00,$00,$00,$00,$00,$00,$00	; DATA XREF: sub_31A2+50r
 		.BYTE $14
 		.BYTE  $E
 		.BYTE	0
-		.BYTE $49 ; I
-		.BYTE $4E ; N
-		.BYTE $20
-		.BYTE $41 ; A
-		.BYTE $20
-		.BYTE $54 ; T
-		.BYTE $52 ; R
-		.BYTE $41 ; A
-		.BYTE $4E ; N
-		.BYTE $43 ; C
-		.BYTE $45 ; E
-		.BYTE	0
+		.BYTE	"IN A TRANCE",$00
 		.BYTE  $F
 		.BYTE	0
 		.BYTE	1
@@ -3323,20 +3150,7 @@ unk_700:	.BYTE	$00,$00,$00,$00,$00,$00,$00,$00	; DATA XREF: sub_31A2+50r
 		.BYTE $14
 		.BYTE  $E
 		.BYTE	0
-		.BYTE $41 ; A
-		.BYTE $4C ; L
-		.BYTE $4F ; O
-		.BYTE $4E ; N
-		.BYTE $47 ; G
-		.BYTE $20
-		.BYTE $54 ; T
-		.BYTE $48 ; H
-		.BYTE $45 ; E
-		.BYTE $20
-		.BYTE $57 ; W
-		.BYTE $41 ; A
-		.BYTE $59 ; Y
-		.BYTE	0
+		.BYTE	"ALONG THE WAY",$00
 		.BYTE  $F
 		.BYTE	0
 		.BYTE	0
@@ -3814,25 +3628,7 @@ unk_700:	.BYTE	$00,$00,$00,$00,$00,$00,$00,$00	; DATA XREF: sub_31A2+50r
 		.BYTE $14
 		.BYTE  $E
 		.BYTE	0
-		.BYTE $57 ; W
-		.BYTE $41 ; A
-		.BYTE $49 ; I
-		.BYTE $54 ; T
-		.BYTE $49 ; I
-		.BYTE $4E ; N
-		.BYTE $47 ; G
-		.BYTE $20
-		.BYTE $46 ; F
-		.BYTE $4F ; O
-		.BYTE $52 ; R
-		.BYTE $20
-		.BYTE $4F ; O
-		.BYTE $54 ; T
-		.BYTE $48 ; H
-		.BYTE $45 ; E
-		.BYTE $52 ; R
-		.BYTE $53 ; S
-		.BYTE	0
+		.BYTE	"WAITING FOR OTHERS",$00
 		.BYTE  $F
 		.BYTE	0
 		.BYTE	3
@@ -3865,25 +3661,7 @@ unk_700:	.BYTE	$00,$00,$00,$00,$00,$00,$00,$00	; DATA XREF: sub_31A2+50r
 		.BYTE $14
 		.BYTE  $E
 		.BYTE	0
-		.BYTE $4F ; O
-		.BYTE $4E ; N
-		.BYTE $20
-		.BYTE $41 ; A
-		.BYTE $20
-		.BYTE $4C ; L
-		.BYTE $45 ; E
-		.BYTE $44 ; D
-		.BYTE $47 ; G
-		.BYTE $45 ; E
-		.BYTE $20
-		.BYTE $43 ; C
-		.BYTE $4F ; O
-		.BYTE $56 ; V
-		.BYTE $45 ; E
-		.BYTE $52 ; R
-		.BYTE $45 ; E
-		.BYTE $44 ; D
-		.BYTE	0
+		.BYTE	"ON A LEDGE COVERED",$00
 		.BYTE  $F
 		.BYTE	0
 		.BYTE	1
@@ -3916,24 +3694,7 @@ unk_700:	.BYTE	$00,$00,$00,$00,$00,$00,$00,$00	; DATA XREF: sub_31A2+50r
 		.BYTE $14
 		.BYTE  $E
 		.BYTE	0
-		.BYTE $57 ; W
-		.BYTE $49 ; I
-		.BYTE $54 ; T
-		.BYTE $48 ; H
-		.BYTE $20
-		.BYTE $54 ; T
-		.BYTE $48 ; H
-		.BYTE $45 ; E
-		.BYTE $20
-		.BYTE $53 ; S
-		.BYTE $55 ; U
-		.BYTE $46 ; F
-		.BYTE $46 ; F
-		.BYTE $45 ; E
-		.BYTE $52 ; R
-		.BYTE $45 ; E
-		.BYTE $44 ; D
-		.BYTE	0
+		.BYTE	"WITH THE SUFFERED",$00
 		.BYTE  $F
 		.BYTE	0
 		.BYTE	3
@@ -3960,18 +3721,7 @@ unk_700:	.BYTE	$00,$00,$00,$00,$00,$00,$00,$00	; DATA XREF: sub_31A2+50r
 		.BYTE $14
 		.BYTE  $E
 		.BYTE	0
-		.BYTE $52 ; R
-		.BYTE $45 ; E
-		.BYTE $4D ; M
-		.BYTE $4E ; N
-		.BYTE $41 ; A
-		.BYTE $4E ; N
-		.BYTE $54 ; T
-		.BYTE $53 ; S
-		.BYTE $20
-		.BYTE $4F ; O
-		.BYTE $46 ; F
-		.BYTE	0
+		.BYTE	"REMNANTS OF",$00
 		.BYTE  $F
 		.BYTE	0
 		.BYTE	2
@@ -3992,20 +3742,7 @@ unk_700:	.BYTE	$00,$00,$00,$00,$00,$00,$00,$00	; DATA XREF: sub_31A2+50r
 		.BYTE $14
 		.BYTE  $E
 		.BYTE	0
-		.BYTE $50 ; P
-		.BYTE $52 ; R
-		.BYTE $45 ; E
-		.BYTE $56 ; V
-		.BYTE $49 ; I
-		.BYTE $4F ; O
-		.BYTE $55 ; U
-		.BYTE $53 ; S
-		.BYTE $20
-		.BYTE $4C ; L
-		.BYTE $49 ; I
-		.BYTE $46 ; F
-		.BYTE $45 ; E
-		.BYTE	0
+		.BYTE	"PREVIOUS LIFE",$00
 		.BYTE  $F
 		.BYTE	0
 		.BYTE	2
@@ -4032,20 +3769,7 @@ unk_700:	.BYTE	$00,$00,$00,$00,$00,$00,$00,$00	; DATA XREF: sub_31A2+50r
 		.BYTE $14
 		.BYTE  $E
 		.BYTE	0
-		.BYTE $46 ; F
-		.BYTE $45 ; E
-		.BYTE $4C ; L
-		.BYTE $54 ; T
-		.BYTE $20
-		.BYTE $54 ; T
-		.BYTE $48 ; H
-		.BYTE $45 ; E
-		.BYTE $20
-		.BYTE $50 ; P
-		.BYTE $41 ; A
-		.BYTE $49 ; I
-		.BYTE $4E ; N
-		.BYTE	0
+		.BYTE	"FELT THE PAIN",$00
 		.BYTE  $F
 		.BYTE	0
 		.BYTE	3
@@ -4066,27 +3790,7 @@ unk_700:	.BYTE	$00,$00,$00,$00,$00,$00,$00,$00	; DATA XREF: sub_31A2+50r
 		.BYTE $14
 		.BYTE  $E
 		.BYTE	0
-		.BYTE $54 ; T
-		.BYTE $48 ; H
-		.BYTE $4F ; O
-		.BYTE $55 ; U
-		.BYTE $47 ; G
-		.BYTE $48 ; H
-		.BYTE $20
-		.BYTE $4E ; N
-		.BYTE $4F ; O
-		.BYTE $4E ; N
-		.BYTE $45 ; E
-		.BYTE $20
-		.BYTE $49 ; I
-		.BYTE $4E ; N
-		.BYTE $20
-		.BYTE $53 ; S
-		.BYTE $49 ; I
-		.BYTE $47 ; G
-		.BYTE $48 ; H
-		.BYTE $54 ; T
-		.BYTE	0
+		.BYTE	"THOUGH NONE IN SIGHT",$00
 		.BYTE  $F
 		.BYTE	0
 		.BYTE	5
@@ -4166,18 +3870,7 @@ unk_700:	.BYTE	$00,$00,$00,$00,$00,$00,$00,$00	; DATA XREF: sub_31A2+50r
 		.BYTE  $B
 		.BYTE  $E
 		.BYTE	0
-		.BYTE $57 ; W
-		.BYTE $49 ; I
-		.BYTE $54 ; T
-		.BYTE $48 ; H
-		.BYTE $20
-		.BYTE $44 ; D
-		.BYTE $52 ; R
-		.BYTE $45 ; E
-		.BYTE $41 ; A
-		.BYTE $4D ; M
-		.BYTE $53 ; S
-		.BYTE	0
+		.BYTE	"WITH DREAMS",$00
 		.BYTE	1
 		.BYTE $B6 ; ¶
 		.BYTE $E6 ; æ
