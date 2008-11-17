@@ -46,173 +46,171 @@
 .endmacro
 
 ; ----------------------------------------------------------------------------
-	.SEGMENT	"MONST01"
+		.SEGMENT	"MONST01"
 
-	.BYTE	$01
-	.WORD	aDevourer,byte_AA78,i_SlimyTentacle,i_SlimyTentacle,i_SlimyTentacle
-	.BYTE	$00,$80,$0b,$04,$ff,$C8 ; |.....|
-	.WORD	$0
-	.WORD	loc_AC3E
-	.BYTE	$00,$00,$00,$00
-	.WORD	loc_AAA2
-	.BYTE	$00,$00,$00,$04,$00 ; |...>............|
-	.BYTE	$49,$a8,$00,$48,$14,$08,$1e,$00,$16,$3c,$32,$00,$00,$00,$00,$00 ; |I..H.....<2.....|
-	.BYTE	$00,$00,$00,$00,$00,$00,$00
-	.BYTE	$55,$55,$33,$33,$33,$33,$33,$33,$33,$33,$33
-	.BYTE	"dissolves in a puddle",$0D,$A5
-	.BYTE	"of thick smelly ooze.",$AE
+		.BYTE	$01
+		.WORD	aDevourer,byte_AA78,i_SlimyTentacle,i_SlimyTentacle,i_SlimyTentacle
+		.BYTE	$00,$80,$0b,$04,$ff,$C8 ; |.....|
+		.WORD	$0
+		.WORD	loc_AC3E
+		.BYTE	$00,$00,$00,$00
+		.WORD	loc_AAA2
+		.BYTE	$00,$00,$00,$04,$00 ; |...>............|
+		.BYTE	$49,$a8,$00,$48,$14,$08,$1e,$00,$16,$3c,$32,$00,$00,$00,$00,$00 ; |I..H.....<2.....|
+		.BYTE	$00,$00,$00,$00,$00,$00,$00
+		.BYTE	$55,$55,$33,$33,$33,$33,$33,$33,$33,$33,$33
+		.BYTE	"dissolves in a puddle",$0D,$A5
+		.BYTE	"of thick smelly ooze.",$AE
 
-aDevourer:
-	.BYTE	"devourer",0
+aDevourer:	.BYTE	"devourer",0
 
-byte_AA78:
-	.BYTE	$00
+byte_AA78:	.BYTE	$00
 
 i_SlimyTentacle:
-	Item	$FF,$00,$00,$02,"slimy tentacle"
-	.BYTE	$00,$ff,$00
-	.BYTE	$28,$12,$00,$00,$00,$00,$00,$00,$00,$00,$00
-	.BYTE	$00,$00,$00,$00,$85,$00
+		Item	$FF,$00,$00,$02,"slimy tentacle"
+		.BYTE	$00,$ff,$00
+		.BYTE	$28,$12,$00,$00,$00,$00,$00,$00,$00,$00,$00
+		.BYTE	$00,$00,$00,$00,$85,$00
 :
 loc_AAA2:
-	JSR	$7707
-	LDA	RANDOM
-	CMP	#$30
-	BCS	:+
-	JMP	$7716
-:	JSR	$7767
-	LDA	RANDOM
-	CMP	#$30
-	BCC	:+
-	JMP	$76FE
+		JSR	$7707
+		LDA	RANDOM
+		CMP	#$30
+		BCS	:+
+		JMP	$7716
+:		JSR	$7767
+		LDA	RANDOM
+		CMP	#$30
+		BCC	:+
+		JMP	$76FE
 
 sub_AABC:
-:	JSR	sub_AAD1
-	JSR	$7710
-	ldxy	a_YouStruggle
-	LDA	$93
-	BEQ	:+
-	ldxy	byte_AC0D
-:	JMP	$776A
+:		JSR	sub_AAD1
+		JSR	$7710
+		ldxy	a_YouStruggle
+		LDA	$93
+		BEQ	:+
+		ldxy	byte_AC0D
+:		JMP	$776A
 
 sub_AAD1:
-	LDA	#$00
-	STA	$93
-	STA	$95
-	LDA	RANDOM
-	BMI	:+++
-	LDA	#$FF
-	STA	$94
-	LDA	#$3F
-	STA	$4B
-:	LDA	$4B
-	JSR	$1887
-	BEQ	:+
-	LDY	#$00
-	LDA	(off_41),y
-	BPL	:+
-	AND	#$87
-	CMP	#$81
-	BEQ	:+
-	LDY	#$04
-	LDA	(off_41),y
-	CMP	$95
-	BCC	:+
-	STA	$95
-	LDA	$4B
-	STA	$94
-:	DEC	$4B
-	BPL	:--
-	LDA	$94
-	BMI	:+
-	STA	$4B
-	JSR	$1887
-	BEQ	:+
-	LDY	#$02
-	LDA	#$10
-	STA	(off_41),Y
-	LDA	$94
-	ORA	#$80
-	STA	$94
-	INC	$93
-	JMP	$AB7B
-:	INC	$93
-	LDA	#$0B
-	JSR	j_RND_A
-	STA	$94
-	TAX
-	dldi	off_7, $6300
-	LDA	$76EC, X
-	CLC
-	ADC	off_7
-	STA	off_7
-	BCC	:+
-	INC	off_7+1
-:	LDA	RANDOM
-	AND	#$1F
-	ADC	#$01
-	STA	word_B+1
-	LDY	$76E0, X
-	STY	word_B
-	SEC
-	LDA	(off_7),Y
-	STA	$02,Y
-	SBC	word_B+1
-	STA	(off_7),Y
-	DEY
-	BMI	:+
-	LDA	(off_7),Y
-	STA	$02,Y
-	SBC	#$00
-	STA	(off_7),Y
-:	BCS	:+
-	LDY	word_B
-	LDA	$02,Y
-	STA	word_B+1
-	STA	$93
-	LDA	#$00
-	STA	(off_7),Y
-	DEY
-	BMI	:+
-	STA	(off_7),Y
-:	RTS
+		LDA	#$00
+		STA	$93
+		STA	$95
+		LDA	RANDOM
+		BMI	:+++
+		LDA	#$FF
+		STA	$94
+		LDA	#$3F
+		STA	$4B
+:		LDA	$4B
+		JSR	$1887
+		BEQ	:+
+		LDY	#$00
+		LDA	(off_41),y
+		BPL	:+
+		AND	#$87
+		CMP	#$81
+		BEQ	:+
+		LDY	#$04
+		LDA	(off_41),y
+		CMP	$95
+		BCC	:+
+		STA	$95
+		LDA	$4B
+		STA	$94
+:		DEC	$4B
+		BPL	:--
+		LDA	$94
+		BMI	:+
+		STA	$4B
+		JSR	$1887
+		BEQ	:+
+		LDY	#$02
+		LDA	#$10
+		STA	(off_41),Y
+		LDA	$94
+		ORA	#$80
+		STA	$94
+		INC	$93
+		JMP	$AB7B
+:		INC	$93
+		LDA	#$0B
+		JSR	j_RND_A
+		STA	$94
+		TAX
+		dldi	off_7, $6300
+		LDA	$76EC, X
+		CLC
+		ADC	off_7
+		STA	off_7
+		BCC	:+
+		INC	off_7+1
+:		LDA	RANDOM
+		AND	#$1F
+		ADC	#$01
+		STA	word_B+1
+		LDY	$76E0, X
+		STY	word_B
+		SEC
+		LDA	(off_7),Y
+		STA	$02,Y
+		SBC	word_B+1
+		STA	(off_7),Y
+		DEY
+		BMI	:+
+		LDA	(off_7),Y
+		STA	$02,Y
+		SBC	#$00
+		STA	(off_7),Y
+:		BCS	:+
+		LDY	word_B
+		LDA	$02,Y
+		STA	word_B+1
+		STA	$93
+		LDA	#$00
+		STA	(off_7),Y
+		DEY
+		BMI	:+
+		STA	(off_7),Y
+:		RTS
 
 a_YouStruggle:
-	MOVEXY	0,2
-	.BYTE	$A5,"You struggle desperately against the",$0D
-	.BYTE	$A5,"sucking force of it's gaping maw.",$0D,$FF
+		MOVEXY	0,2
+		.BYTE	$A5,"You struggle desperately against the",$0D
+		.BYTE	$A5,"sucking force of it's gaping maw.",$0D,$FF
 
 a_SomeOfYour:
-	MOVEXY	0,2
-	.BYTE	$A5,"Some of your "
-	.BYTE	$B4
-	.WORD	$76D9
-	.BYTE	20
-	.BYTE	" goes",$0D,$A5
-	.BYTE	"flying into the mouth of the Devourer.",$0D,$FF
+		MOVEXY	0,2
+		.BYTE	$A5,"Some of your "
+		.BYTE	$B4
+		.WORD	$76D9
+		.BYTE	20
+		.BYTE	" goes",$0D,$A5
+		.BYTE	"flying into the mouth of the Devourer.",$0D,$FF
 
 byte_AC0D:
-	STRJSR	loc_AC10
+		STRJSR	loc_AC10
 
 loc_AC10:
-	dldi	off_16, a_SomeOfYour
-	BIT	$94
-	BPL	:+
-	dldi	off_16, byte_AC25
-:	RTS
+		dldi	off_16, a_SomeOfYour
+		BIT	$94
+		BPL	:+
+		dldi	off_16, byte_AC25
+:		RTS
 
 byte_AC25:
-	STRSUB	$7653
-	.BYTE	"sucks up your",$0D,$A5
-	.BYTE	$B4
-	.WORD	$76D9
-	.BYTE	$20
-	.BYTE	".",$0D,$FF
+		STRSUB	$7653
+		.BYTE	"sucks up your",$0D,$A5
+		.BYTE	$B4
+		.WORD	$76D9
+		.BYTE	$20
+		.BYTE	".",$0D,$FF
 
 loc_AC3E:
-	JSR	sub_AABC
-	JMP	$771F
-	.BYTE	$00,$00
+		JSR	sub_AABC
+		JMP	$771F
+		.BYTE	$00,$00
 
 ; ----------------------------------------------------------------------------
 	.SEGMENT	"MONST02"
@@ -2390,34 +2388,77 @@ M41_AAFB:
 	.BYTE	$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$07,$00
 
 ; ----------------------------------------------------------------------------
-	.SEGMENT	"MONST47"
+		.SEGMENT	"MONST47"
 
-	.BYTE	$04,$60,$aa ; |..............`.|
-	.BYTE	$6c,$aa,$b3,$aa,$79,$aa,$79,$aa,$31,$00,$03,$08,$1e,$1e,$00,$00 ; |l...y.y.1.......|
-	.BYTE	$00,$00,$00,$00,$00,$00,$df,$aa,$00,$00,$20,$02,$00,$80,$a0,$00 ; |.......... .....|
-	.BYTE	$2e,$17,$17,$1e,$14,$14,$14,$23,$00,$00,$00,$00,$00,$00,$00,$00 ; |.......#........|
-	.BYTE	$00,$ff,$ff,$00,$33,$33,$33,$33,$f0,$0f,$33,$33,$33,$33,$0f,$69 ; |....3333..3333.i|
-	.BYTE	$73,$20,$63,$6f,$6e,$73,$75,$6d,$65,$64,$0d,$a5,$69,$6e,$20,$69 ; |s consumed..in i|
-	.BYTE	$74,$73,$20,$6f,$77,$6e,$20,$62,$6c,$61,$7a,$65,$ae,$66,$6c,$61 ; |ts own blaze.fla|
-	.BYTE	$6d,$65,$20,$64,$65,$6d,$6f,$6e,$00,$66,$6c,$61,$6d,$65,$20,$64 ; |me demon.flame d|
-	.BYTE	$65,$6d,$6f,$6e,$73,$00,$03,$3a,$00,$00,$10,$16,$53,$77,$6f,$72 ; |emons..:....Swor|
-	.BYTE	$64,$20,$6f,$66,$20,$44,$65,$6d,$6f,$6e,$73,$00,$88,$ff,$81,$00 ; |d of Demons.....|
-	.BYTE	$3c,$00,$3c,$00,$00,$01,$20,$00,$01,$00,$34,$00,$00,$ff,$00,$12 ; |<.<... ...4.....|
-	.BYTE	$18,$00,$00,$00,$00,$00,$00,$00,$24,$00,$18,$18,$24,$24,$80,$15 ; |........$...$$..|
-	.BYTE	$03,$2c,$00,$00,$12,$18,$46,$6c,$61,$6d,$69,$6e,$67,$20,$50,$69 ; |.,....Flaming Pi|
-	.BYTE	$74,$63,$68,$66,$6f,$72,$6b,$00,$00,$ff,$00,$00,$19,$00,$00,$13 ; |tchfork.........|
-	.BYTE	$00,$00,$00,$00,$00,$00,$20,$20,$20,$20,$c3,$20,$ad,$00,$aa,$c9 ; |......    . ....|
-	.BYTE	$08,$b0,$5c,$ad,$0a,$d2,$c9,$40,$b0,$55,$a9,$df,$8d,$d9,$76,$a9 ; |..\....@.U....v.|
-	.BYTE	$76,$8d,$da,$76,$a2,$ab,$a0,$45,$20,$28,$77,$a9,$5f,$8d,$d9,$76 ; |v..v...E (w._..v|
-	.BYTE	$a9,$ab,$8d,$da,$76,$a2,$28,$20,$37,$77,$ca,$d0,$fa,$ad,$0a,$d2 ; |....v.( 7w......|
-	.BYTE	$c9,$40,$b0,$24,$a9,$6f,$8d,$d9,$76,$a9,$ab,$8d,$da,$76,$ad,$00 ; |.@.$.o..v....v..|
-	.BYTE	$aa,$0a,$aa,$ad,$22,$aa,$95,$b2,$ad,$23,$aa,$95,$b3,$a9,$00,$95 ; |...."....#......|
-	.BYTE	$c2,$95,$c3,$ee,$00,$aa,$e6,$8a,$a2,$ab,$a0,$45,$4c,$0a,$77,$4c ; |...........EL.wL|
-	.BYTE	$f8,$76,$ac,$65,$76,$73,$75,$6d,$6d,$6f,$6e,$73,$20,$68,$65,$6c ; |.v.evsummons hel|
-	.BYTE	$70,$2e,$2e,$2e,$0d,$a5,$b4,$d9,$76,$1e,$0d,$ff,$62,$75,$74,$20 ; |p.......v...but |
-	.BYTE	$6e,$6f,$6e,$65,$20,$63,$6f,$6d,$65,$73,$2e,$00,$61,$6e,$64,$20 ; |none comes..and |
-	.BYTE	$61,$6e,$6f,$74,$68,$65,$72,$20,$61,$72,$72,$69,$76,$65,$73,$21 ; |another arrives!|
-	.BYTE	$00
+		.BYTE	$04
+		.WORD	$AA60,$AA6C,$AAB3,$AA79,$AA79
+		.BYTE	$31,$00,$03,$08,$1e,$1e,$00,$00 ; |l...y.y.1.......|
+		.BYTE	$00,$00,$00,$00,$00,$00,$df,$aa,$00,$00,$20,$02,$00,$80,$a0,$00 ; |.......... .....|
+		.BYTE	$2e,$17,$17,$1e,$14,$14,$14,$23,$00,$00,$00,$00,$00,$00,$00,$00 ; |.......#........|
+		.BYTE	$00,$ff,$ff,$00
+		.BYTE	$33,$33,$33,$33,$f0,$0f,$33,$33,$33,$33,$0f
+
+		.BYTE	"is consumed",$0D
+		.BYTE	$A5,"in its own blaze",$AE
+		.BYTE	"flame demon",$00
+		.BYTE	"flame demons",$00
+
+		Item	$03,$00,$00,$10,"Sword of Demons"
+		.BYTE	$88,$ff,$81,$00,$3c,$00,$3c,$00,$00,$01,$20,$00,$01,$00,$34,$00
+		.BYTE	$00,$ff,$00
+		.BYTE	$12,$18,$00,$00,$00,$00,$00,$00,$00,$24,$00
+		.BYTE	$18,$18,$24,$24,$80,$15
+
+		Item	$03,$00,$00,$12,"Flaming Pitchfork"
+		.BYTE	$00,$ff,$00
+		.BYTE	$00,$19,$00,$00,$13,$00,$00,$00,$00,$00,$00
+		.BYTE	$20,$20,$20,$20,$c3,$20
+:
+		LDA	$AA00
+		CMP	#$08
+		BCS	:+++
+		LDA	RANDOM
+		CMP	#$40
+		BCS	:+++
+		dldi	$76D9, $76DF
+		ldxy	$AB45
+		JSR	$7728
+		dldi	$76D9, $AB5F
+		LDX	#$28
+:		JSR	$7737
+		DEX
+		BNE	:-
+		LDA	RANDOM
+		CMP	#$40
+		BCS	:+
+		dldi	$76D9, $AB6F
+		LDA	$AA00
+		ASL	A
+		TAX
+		LDA	$AA22
+		STA	$B2,X
+		LDA	$AA23
+		STA	$B3,X
+		LDA	#$00
+		STA	$C2,X
+		STA	$C3,X
+		INC	$AA00
+		INC	$8A
+:		ldxy	$AB45
+		JMP	$770A
+:		JMP	$76F8
+
+		.BYTE	$AC
+		.WORD	$7665
+		.BYTE	"summons help...",$0D
+		.BYTE	$A5
+		.BYTE	$B4
+		.WORD	$76D9
+		.BYTE	$1E
+		.BYTE	$0D,$FF
+	
+		.BYTE	"but none comes.",$00
+		.BYTE	"and another arrives!",$00
 
 ; ----------------------------------------------------------------------------
 	.SEGMENT	"MONST48"
