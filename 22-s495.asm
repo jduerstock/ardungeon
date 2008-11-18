@@ -1,3 +1,6 @@
+		.include	"globals.inc"
+		.include	"exp_kernel.inc"
+		.include	"macros.inc"
 
 ;		* =  $7600
 		.BYTE $1C
@@ -16,30 +19,17 @@ loc_760D:				; CODE XREF: RAM:7604j	RAM:7607j
 ; ---------------------------------------------------------------------------
 
 loc_7610:				; CODE XREF: RAM:7601j
-		LDA	#$FF
-		STA	$1937
-		LDA	#$3C ; '<'
-		STA	$1977
-		LDA	#$76 ; 'v'
-		STA	$1978
-		LDA	#$A7 ; '§'
-		STA	$16
-		LDA	#$76 ; 'v'
-		STA	$17
+		ldi	$1937, $FF
+		dldi	off_1977, $763C
+		dldi	off_16, $76A7
 		JSR	$184B
 		LDA	$1933
 		STA	$62
-		LDA	#$A7 ; '§'
-		STA	7
-		LDA	#$79 ; 'y'
-		STA	8
+		dldi	off_7, $79A7
 		LDA	#2
 		JMP	$180F
 ; ---------------------------------------------------------------------------
-		LDA	#$A9 ; '©'
-		STA	$16
-		LDA	#$76 ; 'v'
-		STA	$17
+		dldi	off_16, $76A9
 		LDX	$62
 		JSR	$1851
 
@@ -49,10 +39,7 @@ loc_7649:				; CODE XREF: RAM:767Cj
 		JSR	$1848
 
 loc_7651:				; CODE XREF: RAM:7660j
-		LDA	#$5E ; '^'
-		STA	$1977
-		LDA	#$76 ; 'v'
-		STA	$1978
+		dldi	off_1977,$765E
 		JMP	$1806
 ; ---------------------------------------------------------------------------
 		LDA	$31
@@ -83,10 +70,7 @@ loc_7684:				; CODE XREF: RAM:766Cj	RAM:7678j
 		STX	$6313
 		STY	$6314
 		STA	$6315
-		LDA	#$34 ; '4'
-		STA	$16
-		LDA	#$77 ; 'w'
-		STA	$17
+		dldi	off_16, $7734
 		LDX	$62
 		JSR	$1851
 		LDA	#2
@@ -95,39 +79,22 @@ loc_7684:				; CODE XREF: RAM:766Cj	RAM:7678j
 		STA	$AC00
 		JMP	$180C
 ; ---------------------------------------------------------------------------
-		.BYTE $A8,$FF
-		.BYTE $A6,  0,	0
-		.BYTE $A5
-aInTheElevatorY:.BYTE "In the elevator you find three buttons."
-		.BYTE $D
-		.BYTE $D
-		.BYTE $A5
-aWhichDoYouPres:.BYTE "Which do you press?"
-		.BYTE $D
-		.BYTE $A6, $A,	4
-		.BYTE '('
-		.BYTE $A1
-a1:		.BYTE '1'
-		.BYTE $A0
-aTheRedButton:	.BYTE ") The red button"
-		.BYTE $A6, $A,	5
-		.BYTE '('
-		.BYTE $A1
-a2:		.BYTE '2'
-		.BYTE $A0
-aTheGreenButton:.BYTE ") The green button"
-		.BYTE $A6, $A,	6
-		.BYTE '('
-		.BYTE $A1
-a3:		.BYTE '3'
-		.BYTE $A0
-aTheBlueButton:	.BYTE ") The blue button"
-		.BYTE $FF
-		.BYTE $A6,  0,	3
-		.BYTE $A5
-aYouFeelTheRoom:.BYTE "You feel the room moving."
-		.BYTE $D
-		.BYTE $FF
+		.BYTE	$A8,$FF
+
+		MOVEXY	0,0
+		.BYTE	$A5,"In the elevator you find three buttons.",$0D,$0D
+		.BYTE	$A5,"Which do you press?",$0D
+		MOVEXY	10,4
+		MenuItem "1","The red button"
+		MOVEXY	10,5
+		MenuItem "2","The green button"
+		MOVEXY	10,6
+		MenuItem "3","The blue button"
+		.BYTE	$FF
+
+		MOVEXY	0,3
+		.BYTE $A5,"You feel the room moving.",$0D,$FF
+
 unk_7753:	.BYTE $70 ; p		; DATA XREF: RAM:7783o
 		.BYTE $70 ; p
 		.BYTE $30 ; 0
@@ -1183,172 +1150,7 @@ byte_79A6:	.BYTE 0			; DATA XREF: RAM:loc_796Cw RAM:797Cr ...
 		.BYTE $9A ; š
 		.BYTE $1B
 		.BYTE $FF
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
+		.RES	166,$00
 ; end of 'RAM'
 
 

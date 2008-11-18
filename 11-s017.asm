@@ -4,6 +4,10 @@
 
 off_BE	= $BE
 
+loc_6368 = $6368
+byte_6390 = $6390
+loc_6391 = $6391
+
 ;		.ORG	$600
 unk_600:	.BYTE	$00,$00,$00,$00,$00,$00,$00,$00	; DATA XREF: sub_31A2+3Er
 		.BYTE	$3F,$C3,$0F,$0F,$0F,$3C,$3C,$F0
@@ -4976,13 +4980,13 @@ loc_1E42:				; CODE XREF: RAM:1E45j
 		dldi	DBUF, $1400
 		LDA	#158
 		STA	$88
-		JSR	unk_6368
+		JSR	loc_6368
 		dldi	DAUX, 205
 		dldi	DBUF, $8000
 		LDA	#$14
 		STA	$88
-		JSR	unk_6368
-		JSR	unk_6391
+		JSR	loc_6368
+		JSR	loc_6391
 		JMP	$807E
 ; ---------------------------------------------------------------------------
 
@@ -21329,7 +21333,7 @@ unk_6306:	.BYTE  $C		; DATA XREF: sub_2A3B+20r
 		.BYTE $53 ; S
 		.BYTE $54 ; T
 		.BYTE $59 ; Y
-unk_6368:	.BYTE $31 ; 1		; CODE XREF: RAM:1E58p	RAM:1E73p
+		.BYTE $31 ; 1		; CODE XREF: RAM:1E58p	RAM:1E73p
 		.BYTE $30 ; 0
 		.BYTE $EB ; Î
 		.BYTE $90 ; ê
@@ -21369,8 +21373,8 @@ unk_6368:	.BYTE $31 ; 1		; CODE XREF: RAM:1E58p	RAM:1E73p
 		.BYTE $45 ; E
 		.BYTE $58 ; X
 		.BYTE $50 ; P
-byte_6390:	.BYTE $30		; DATA XREF: RAM:1EC7r	RAM:1EF2r
-unk_6391:	.BYTE $35 ; 5		; CODE XREF: RAM:1E76p
+		.BYTE $30		; DATA XREF: RAM:1EC7r	RAM:1EF2r
+		.BYTE $35 ; 5		; CODE XREF: RAM:1E76p
 		.BYTE $32 ; 2
 		.BYTE $91 ; ë
 		.BYTE $88 ; à
