@@ -1,4 +1,4 @@
-		.include	"equates.inc"
+	
 		.include	"exp_kernel.inc"
 		.include	"globals.inc"
 		.include	"macros.inc"
@@ -47,7 +47,7 @@ loc_8014:				; CODE XREF: sub_8000+17vj
 ; ---------------------------------------------------------------------------
 		JSR	sub_8000
 		LDA	#$14
-		STA	$D409
+		STA	CHBASE
 		JSR	sub_80BC
 		JSR	sub_809F
 		LDA	#0

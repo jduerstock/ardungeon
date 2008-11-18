@@ -5743,12 +5743,8 @@ loc_22C0:				; DATA XREF: RAM:241Eo
 		STA	$D402
 		LDA	#$28 ; '('
 		STA	$D403
-		LDA	#$EE ; 'î'
-		STA	off_200
-		LDA	#$28 ; '('
-		STA	off_200+1
-		LDA	#$98 ; '˜'
-		STA	$D409
+		dldi	off_200, $28EE
+		ldi	CHBASE, $98
 		LDX	#3
 
 loc_22E5:				; CODE XREF: RAM:22ECj

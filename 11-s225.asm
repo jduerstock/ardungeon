@@ -71,7 +71,7 @@ loc_2014:				; CODE XREF: RAM:2017j
 ; ---------------------------------------------------------------------------
 		JSR	$7600
 		LDA	#$14
-		STA	$D409
+		STA	CHBASE
 		JSR	$76AE
 		JSR	$7691
 		LDA	#1
@@ -461,7 +461,7 @@ loc_233B:				; CODE XREF: RAM:2318j	RAM:2320j ...
 		LDA	unk_22FE,X
 		STA	$D400
 		LDA	#$14
-		STA	$D409
+		STA	CHBASE
 		LDA	$253
 		BEQ	loc_2366
 		BMI	loc_2301

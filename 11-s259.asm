@@ -2066,7 +2066,7 @@ loc_8613:				; CODE XREF: RAM:8638j
 		STA	$D017
 		STY	$D019
 		LDA	$B960,X
-		STA	$D409
+		STA	CHBASE
 		LDA	$BA40,X
 		STA	WSYNC
 		STA	$D016
@@ -2085,7 +2085,7 @@ loc_8613:				; CODE XREF: RAM:8638j
 
 loc_8640:
 		LDA	#$98 ; '˜'
-		STA	$D409
+		STA	CHBASE
 		LDX	#3
 
 loc_8647:				; CODE XREF: RAM:864Ej

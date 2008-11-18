@@ -778,7 +778,7 @@ loc_1B56:
 		STA	WSYNC
 		STA	COLBK
 		LDA	#8
-		STA	$D409
+		STA	CHBASE
 		LDA	$7600
 		CMP	#1
 		BEQ	loc_1BA0
@@ -800,7 +800,7 @@ loc_1BA2:
 		dldi	off_200, loc_1BB7
 		LDA	#$C
 		STA	WSYNC
-		STA	$D409
+		STA	CHBASE
 		PLA
 		RTI
 ; ---------------------------------------------------------------------------
@@ -823,7 +823,7 @@ sub_1BD6:
 		dldi	off_200, sub_1BEB
 		LDA	#$10
 		STA	WSYNC
-		STA	$D409
+		STA	CHBASE
 		PLA
 		RTI
 ; ---------------------------------------------------------------------------
@@ -839,7 +839,7 @@ sub_1BEB:
 		LDA	#$E
 		STA	$D017
 		LDA	#$14
-		STA	$D409
+		STA	CHBASE
 		PLA
 		RTI
 
@@ -2163,7 +2163,7 @@ loc_2347:
 		LDA	unk_2307,X
 		STA	$D400
 		LDA	#$14
-		STA	$D409
+		STA	CHBASE
 		LDA	$253
 		BEQ	loc_236F
 		BMI	loc_230A
