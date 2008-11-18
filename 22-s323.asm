@@ -350,36 +350,36 @@ unk_7C2F:	.BYTE $70 ; p		; DATA XREF: RAM:7C5Fo
 		PHA
 		TYA
 		PHA
-		STA	$D40A
+		STA	WSYNC
 		LDA	#$36 ; '6'
 		STA	$D019
-		STA	$D40A
+		STA	WSYNC
 		LDA	#$50 ; 'P'
 		LDX	#$70 ; 'p'
 		LDY	#$90 ; 'ê'
-		STA	$D40A
+		STA	WSYNC
 		STA	$D000
 		STX	$D001
 		STY	$D002
-		STA	$D40A
+		STA	WSYNC
 		LDA	#$B0 ; '∞'
 		LDX	#$48 ; 'H'
 		LDY	#$40 ; '@'
-		STA	$D40A
+		STA	WSYNC
 		STA	$D003
 		STX	$D004
 		STY	$D005
-		STA	$D40A
+		STA	WSYNC
 		LDA	#$38 ; '8'
 		LDX	#$30 ; '0'
-		STA	$D40A
+		STA	WSYNC
 		STA	$D006
 		STX	$D007
-		STA	$D40A
+		STA	WSYNC
 		LDX	$BC5B
 		LDY	$BC5D
 		LDA	$BC5A
-		STA	$D40A
+		STA	WSYNC
 		STA	COLBK
 		STX	$D016
 		STY	$D018
@@ -388,13 +388,13 @@ unk_7C2F:	.BYTE $70 ; p		; DATA XREF: RAM:7C5Fo
 
 loc_7CC5:				; CODE XREF: RAM:7CEAj
 		LDA	$BB94,X
-		STA	$D40A
+		STA	WSYNC
 		STA	$D017
 		STY	$D019
 		LDA	$BB4C,X
 		STA	$D409
 		LDA	$BB70,X
-		STA	$D40A
+		STA	WSYNC
 		STA	$D016
 		LDA	$BBB8,X
 		STA	$D018
@@ -402,7 +402,7 @@ loc_7CC5:				; CODE XREF: RAM:7CEAj
 		DEX
 		BPL	loc_7CC5
 		LDA	#0
-		STA	$D40A
+		STA	WSYNC
 		STA	$D018
 		STA	COLBK
 		LDA	#$E

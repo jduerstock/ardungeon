@@ -1,3 +1,4 @@
+		.include	"equates.inc"
 		.include	"globals.inc"
 		.include	"exp_kernel.inc"
 		.include	"macros.inc"
@@ -147,36 +148,36 @@ unk_7753:	.BYTE $70 ; p		; DATA XREF: RAM:7783o
 		PHA
 		TYA
 		PHA
-		STA	$D40A
+		STA	WSYNC
 		LDA	#$36 ; '6'
 		STA	$D019
-		STA	$D40A
+		STA	WSYNC
 		LDA	#$50 ; 'P'
 		LDX	#$70 ; 'p'
 		LDY	#$90 ; 'ê'
-		STA	$D40A
+		STA	WSYNC
 		STA	$D000
 		STX	$D001
 		STY	$D002
-		STA	$D40A
+		STA	WSYNC
 		LDA	#$B0 ; '∞'
 		LDX	#$48 ; 'H'
 		LDY	#$40 ; '@'
-		STA	$D40A
+		STA	WSYNC
 		STA	$D003
 		STX	$D004
 		STY	$D005
-		STA	$D40A
+		STA	WSYNC
 		LDA	#$38 ; '8'
 		LDX	#$30 ; '0'
-		STA	$D40A
+		STA	WSYNC
 		STA	$D006
 		STX	$D007
-		STA	$D40A
+		STA	WSYNC
 		LDX	$BC5B
 		LDY	$BC5D
 		LDA	$BC5A
-		STA	$D40A
+		STA	WSYNC
 		STA	$D01A
 		STX	$D016
 		STY	$D018
@@ -185,13 +186,13 @@ unk_7753:	.BYTE $70 ; p		; DATA XREF: RAM:7783o
 
 loc_77E9:				; CODE XREF: RAM:780Ej
 		LDA	$BB94,X
-		STA	$D40A
+		STA	WSYNC
 		STA	$D017
 		STY	$D019
 		LDA	$BB4C,X
 		STA	$D409
 		LDA	$BB70,X
-		STA	$D40A
+		STA	WSYNC
 		STA	$D016
 		LDA	$BBB8,X
 		STA	$D018
@@ -199,7 +200,7 @@ loc_77E9:				; CODE XREF: RAM:780Ej
 		DEX
 		BPL	loc_77E9
 		LDA	#0
-		STA	$D40A
+		STA	WSYNC
 		STA	$D018
 		STA	$D01A
 		LDA	#$E
