@@ -2128,14 +2128,10 @@ unk_2307:	.BYTE $22 ; "		; DATA XREF: RAM:234Er
 ; ---------------------------------------------------------------------------
 
 loc_230A:				; CODE XREF: RAM:235Ej
-		LDA	#$F5 ; 'õ'
-		STA	$D402
-		LDA	#$19
-		STA	$D403
+		dldi	DLIST, $19F5
 		LDA	#$40
 		STA	NMIEN
-		LDA	#$21 ; '!'
-		STA	$D400
+		ldi	DMACTL, $21
 		LDA	$239
 		BEQ	loc_2344
 		LDA	$24C
@@ -2161,24 +2157,18 @@ loc_2347:
 		INC	$252
 		LDX	byte_18B9
 		LDA	unk_2307,X
-		STA	$D400
+		STA	DMACTL
 		LDA	#$14
 		STA	CHBASE
 		LDA	$253
 		BEQ	loc_236F
 		BMI	loc_230A
 		DEC	$253
-		LDA	#$A
-		STA	$D402
-		LDA	#$1A
-		STA	$D403
+		dldi	DLIST, $1A0A
 		BNE	loc_2344
 
 loc_236F:				; CODE XREF: RAM:235Cj
-		LDA	$254
-		STA	$D402
-		LDA	$255
-		STA	$D403
+		dmv	DLIST, $254
 		dmv	off_200, off_248
 		LDA	#$C0
 		STA	NMIEN
@@ -2284,7 +2274,7 @@ loc_242E:				; CODE XREF: RAM:23BFj	RAM:23CFj ...
 		INX
 
 loc_243A:				; CODE XREF: RAM:2437j
-		STX	$D401
+		STX	CHACTL
 		LDA	$22F
 		BPL	loc_2445
 		JSR	sub_2451

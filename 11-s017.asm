@@ -5706,7 +5706,7 @@ loc_2290:				; CODE XREF: RAM:2294j
 		DEX
 		BPL	loc_2290
 		STA	$22F
-		STA	$D400
+		STA	DMACTL
 		TSX
 		LDA	#$27 ; '''
 		STA	$105,X
@@ -5725,24 +5725,15 @@ loc_22AA:				; CODE XREF: RAM:2256p
 ; ---------------------------------------------------------------------------
 
 loc_22B0:				; DATA XREF: RAM:off_241Co
-		LDA	#$AD ; '­'
-		STA	$D402
-		LDA	#$22 ; '"'
-		STA	$D403
-		LDA	#$40 ; '@'
-		STA	NMIEN
+		dldi	DLIST, $22AD
+		ldi	NMIEN, $40
 		RTS
 ; ---------------------------------------------------------------------------
 
 loc_22C0:				; DATA XREF: RAM:241Eo
-		LDA	#$3E ; '>'
-		STA	$D400
-		LDA	#$C0 ; 'À'
-		STA	NMIEN
-		LDA	#0
-		STA	$D402
-		LDA	#$28 ; '('
-		STA	$D403
+		ldi	DMACTL, $3E
+		ldi	NMIEN, $C0
+		dldi	DLIST, $2800
 		dldi	off_200, $28EE
 		ldi	CHBASE, $98
 		LDX	#3
@@ -5758,8 +5749,7 @@ loc_22E5:				; CODE XREF: RAM:22ECj
 ; ---------------------------------------------------------------------------
 
 loc_22F5:				; DATA XREF: RAM:2420o
-		LDA	#$40 ; '@'
-		STA	NMIEN
+		ldi	NMIEN, $40
 		LDX	#2
 
 loc_22FC:				; CODE XREF: RAM:2303j
@@ -5771,14 +5761,9 @@ loc_22FC:				; CODE XREF: RAM:2303j
 ; ---------------------------------------------------------------------------
 
 loc_2306:				; DATA XREF: RAM:242Eo
-		LDA	#$C0 ; 'À'
-		STA	NMIEN
-		LDA	#$E4 ; 'ä'
-		STA	off_200
-		LDA	#$23 ; '#'
-		STA	off_200+1
-		LDA	#$8E ; 'Ž'
-		STA	byte_2861
+		ldi	NMIEN, $C0
+		dldi	off_200, $23E4
+		ldi	byte_2861, $8E
 		LDX	#2
 
 loc_231C:				; CODE XREF: RAM:2323j
@@ -6165,7 +6150,7 @@ loc_250F:				; CODE XREF: sub_2505+2Dj
 		LDY	unk_2763,X
 
 loc_2512:				; CODE XREF: sub_2505+10j sub_2505+21j
-		CMP	$D40B
+		CMP	VCOUNT
 		BNE	loc_2512
 		LDA	unk_2749,X
 		STA	WSYNC
@@ -6279,8 +6264,7 @@ loc_25A5:				; CODE XREF: sub_25A3+6j
 		BPL	loc_25A5
 		LDA	#3
 		STA	$D01D
-		LDA	#$B8 ; '¸'
-		STA	$D407
+		ldi	PMBASE, $B8
 		LDA	#$98 ; '˜'
 		LDX	#$5F ; '_'
 

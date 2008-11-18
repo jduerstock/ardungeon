@@ -1,4 +1,5 @@
 		.include	"equates.inc"
+		.include	"macros.inc"
 
 ;		* =  $7600
 		.BYTE $1B
@@ -546,8 +547,7 @@ loc_7B59:				; CODE XREF: RAM:7B5Dj
 		STA	$D00C
 		LDA	#3
 		STA	$D01D
-		LDA	#$BC ; '¼'
-		STA	$D407
+		ldi	PMBASE, $BC
 		LDA	#4
 		STA	$D01B
 		LDA	#0

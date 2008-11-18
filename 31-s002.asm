@@ -5398,8 +5398,7 @@ loc_9594:				; CODE XREF: sub_9550+48j
 		STA	$D008,X
 		DEX
 		BPL	loc_9594
-		LDA	#$B8 ; '¸'
-		STA	$D407
+		ldi	PMBASE, $B8
 		LDA	#2
 		STA	$D01D
 		LDA	#$31 ; '1'
@@ -5700,8 +5699,7 @@ loc_974E:				; CODE XREF: sub_9731+24j
 ; End of function sub_9731
 
 ; ---------------------------------------------------------------------------
-		LDA	#$3A ; ':'
-		STA	$D400
+		ldi	DMACTL, $3A
 		LDA	byte_987F
 		STA	$D012
 		STA	$D014

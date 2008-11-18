@@ -2689,8 +2689,7 @@ loc_92E4:				; CODE XREF: RAM:92E8j
 		STA	$D00C
 		LDA	#3
 		STA	$D01D
-		LDA	#$BC ; '¼'
-		STA	$D407
+		ldi	PMBASE, $BC
 		LDA	#4
 		STA	$D01B
 		dldi	off_7, $BC00
