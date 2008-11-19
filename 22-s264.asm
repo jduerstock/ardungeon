@@ -2437,9 +2437,8 @@ loc_877F:				; CODE XREF: RAM:8783j
 		STA	$D00C
 		LDA	#3
 		STA	$D01D
-		dldi	PMBASE, $BC
-		LDA	#4
-		STA	$D01B
+		ldi	PMBASE, $BC
+		ldi	PRIOR, $04
 		LDA	#0
 		STA	7
 		LDA	#$BC ; '¼'

@@ -650,8 +650,7 @@ loc_1A65:
 		STA	NMIEN
 		LDA	#0
 		STA	byte_18B8
-		LDA	#$34 ; '4'
-		STA	$D01B
+		ldi	PRIOR, $34
 		LDX	#3
 		STX	$D008
 		STX	$D009

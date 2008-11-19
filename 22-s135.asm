@@ -472,8 +472,7 @@ loc_7B18:				; CODE XREF: RAM:7B1Cj
 		LDA	#3
 		STA	$D01D
 		ldi	PMBASE, $BC
-		LDA	#4
-		STA	$D01B
+		ldi	PRIOR, $04
 		LDA	#0
 		STA	7
 		LDA	#$BC ; '¼'

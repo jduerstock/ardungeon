@@ -5401,8 +5401,7 @@ loc_9594:				; CODE XREF: sub_9550+48j
 		ldi	PMBASE, $B8
 		LDA	#2
 		STA	$D01D
-		LDA	#$31 ; '1'
-		STA	$D01B
+		ldi	PRIOR, $31
 		LDY	#0
 		STY	$D2
 		LDA	(off_62),Y

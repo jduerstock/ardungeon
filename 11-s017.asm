@@ -5451,8 +5451,7 @@ loc_20C7:				; CODE XREF: RAM:20CEj
 		STA	$D000,X
 		DEX
 		BPL	loc_20C7
-		LDA	#1
-		STA	$D01B
+		ldi	PRIOR, $01
 		LDA	#0
 		STA	$86
 		LDA	#$44 ; 'D'

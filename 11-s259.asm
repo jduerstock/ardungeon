@@ -1904,8 +1904,7 @@ loc_851B:				; CODE XREF: RAM:851Fj
 		LDA	#3
 		STA	$D01D
 		ldi	PMBASE, $BC
-		LDA	#4
-		STA	$D01B
+		ldi	PRIOR, $04
 		dldi	off_7, $BBC0
 		dldi	off_9, $0400
 		LDA	#0

@@ -458,8 +458,7 @@ loc_7B55:				; CODE XREF: RAM:7B59j
 		LDA	#3
 		STA	$D01D
 		ldi	PMBASE, $BC
-		LDA	#4
-		STA	$D01B
+		ldi	PRIOR, $04
 		dldi	off_7, $BC00
 		dldi	off_9, $04F0
 		LDA	#0

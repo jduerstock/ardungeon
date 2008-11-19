@@ -1,4 +1,6 @@
 		.include	"equates.inc"
+		.include	"exp_kernel.inc"
+		.include	"globals.inc"
 		.include	"macros.inc"
 
 ;		* =  $7600
@@ -27,14 +29,8 @@ loc_7618:				; CODE XREF: RAM:761Fj
 		STA	$750D,X
 		DEX
 		BPL	loc_7618
-		LDA	#$70 ; 'p'
-		STA	$1977
-		LDA	#$76 ; 'v'
-		STA	$1978
-		LDA	#$4F ; 'O'
-		STA	$16
-		LDA	#$77 ; 'w'
-		STA	$17
+		dldi	off_1977, $7670
+		dldi	off_16, $774F
 		JSR	$184B
 		LDA	$1933
 		STA	$62
@@ -73,10 +69,7 @@ loc_766D:				; CODE XREF: RAM:7647j	RAM:764Fj ...
 		STA	byte_770F
 		LDA	unk_770D,X
 		STA	byte_7710
-		LDA	#$11
-		STA	$16
-		LDA	#$77 ; 'w'
-		STA	$17
+		dldi	off_16, $7711
 		LDX	$62
 		JSR	$1851
 
@@ -85,10 +78,7 @@ loc_768E:				; CODE XREF: RAM:76F7j	RAM:7708j
 		STA	byte_77AD
 
 loc_7693:				; CODE XREF: RAM:76A9j	RAM:76FFj
-		LDA	#$A0 ; ' '
-		STA	$1977
-		LDA	#$76 ; 'v'
-		STA	$1978
+		dldi	off_1977, $76A0
 		JMP	$1806
 ; ---------------------------------------------------------------------------
 		LDA	$31
@@ -162,21 +152,12 @@ aAStairwayLeads:.BYTE "A stairway leads "
 		.BYTE $B4
 		.WORD $770F
 		.BYTE 5
-aDoYouTakeItq:	.BYTE ", do you take it?"
-		.BYTE $D
-		.BYTE $D
-		.BYTE $A5
-		.BYTE '('
-		.BYTE $A1
-aY:		.BYTE 'Y'
-		.BYTE $A0
+aDoYouTakeItq:	.BYTE ", do you take it?",$0D,$0D
+		.BYTE $A5,'('
+		BLINK 'Y'
 aEsOr:		.BYTE "es or "
-		.BYTE $A1
-aN:		.BYTE 'N'
-		.BYTE $A0
-aO:		.BYTE "o)"
-		.BYTE $D
-		.BYTE $FF
+aN:		BLINK 'N'
+aO:		.BYTE "o)",$0D,$FF
 		.BYTE $A8,$FF
 unk_7751:	.BYTE $10		; DATA XREF: RAM:7644r
 unk_7752:	.BYTE $11		; DATA XREF: RAM:764Cr
@@ -3016,16 +2997,9 @@ loc_829B:				; CODE XREF: RAM:829Fj
 		LDA	#3
 		STA	$D01D
 		ldi	PMBASE, $BC
-		LDA	#4
-		STA	$D01B
-		LDA	#0
-		STA	7
-		LDA	#$BC ; '¼'
-		STA	8
-		LDA	#$F0 ; 'ð'
-		STA	9
-		LDA	#4
-		STA	$A
+		ldi	PRIOR, $04
+		dldi	off_7, $BC00
+		dldi	off_9, $04F0
 		LDA	#0
 		STA	6
 
