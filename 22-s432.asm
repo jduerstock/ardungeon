@@ -1,4 +1,5 @@
 		.include	"equates.inc"
+		.include	"globals.inc"
 		.include	"macros.inc"
 
 ;		* =  $7600
@@ -638,15 +639,11 @@ loc_7BF1:				; CODE XREF: RAM:7BE9j
 		LDA	$BC5F
 
 loc_7BF6:				; CODE XREF: RAM:7BFAj
-		STA	$D012,X
+		STA	COLPM0,X
 		DEX
 		BPL	loc_7BF6
-		LDA	#$53 ; 'S'
-		STA	$24A
-		LDA	#$7A ; 'z'
-		STA	$24B
-		LDA	#$C0 ; 'À'
-		STA	$D40E
+		dldi	off_24A, $7A53
+		ldi	NMIEN, $C0
 		LDA	#0
 		STA	$18B8
 		STA	$253

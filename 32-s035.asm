@@ -834,7 +834,7 @@ loc_803E:				; CODE XREF: RAM:8036j
 		LDA	$BC5F
 
 loc_8043:				; CODE XREF: RAM:8047j
-		STA	$D012,X
+		STA	COLPM0,X
 		DEX
 		BPL	loc_8043
 		dldi	off_24A, $7EA0

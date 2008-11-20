@@ -769,15 +769,11 @@ loc_8034:				; CODE XREF: RAM:802Cj
 		LDA	$BC5F
 
 loc_8039:				; CODE XREF: RAM:803Dj
-		STA	$D012,X
+		STA	COLPM0,X
 		DEX
 		BPL	loc_8039
-		LDA	#$96 ; '–'
-		STA	$24A
-		LDA	#$7E ; '~'
-		STA	$24B
-		LDA	#$C0
-		STA	NMIEN
+		dldi	off_24A, $7E96
+		ldi	NMIEN, $C0
 		LDA	#0
 		STA	$18B8
 		STA	$253

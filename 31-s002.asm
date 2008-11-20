@@ -5700,7 +5700,7 @@ loc_974E:				; CODE XREF: sub_9731+24j
 ; ---------------------------------------------------------------------------
 		ldi	DMACTL, $3A
 		LDA	byte_987F
-		STA	$D012
+		STA	COLPM0
 		STA	$D014
 		LDA	byte_9880
 		STA	$D013

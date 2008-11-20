@@ -5386,7 +5386,7 @@ loc_205C:				; CODE XREF: RAM:2073j
 		LDA	unk_2599,X
 
 loc_206D:				; CODE XREF: RAM:2071j
-		STA	$D012,Y
+		STA	COLPM0,Y
 		DEY
 		BPL	loc_206D
 		JMP	loc_205C
@@ -5402,7 +5402,7 @@ loc_2076:				; CODE XREF: RAM:205Ej
 		LDX	#3
 
 loc_2085:				; CODE XREF: RAM:2089j
-		STA	$D012,X
+		STA	COLPM0,X
 		DEX
 		BPL	loc_2085
 		LDA	#6
@@ -6178,7 +6178,7 @@ sub_2538:				; CODE XREF: RAM:2059p
 		LDA	#$34 ; '4'
 
 loc_253C:				; CODE XREF: sub_2538+8j
-		STA	$D012,X
+		STA	COLPM0,X
 		DEX
 		BPL	loc_253C
 		LDA	$86

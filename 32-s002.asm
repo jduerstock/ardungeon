@@ -678,7 +678,7 @@ loc_7BC9:				; CODE XREF: RAM:7BC1j
 		LDA	$BC5F
 
 loc_7BCE:				; CODE XREF: RAM:7BD2j
-		STA	$D012,X
+		STA	COLPM0,X
 		DEX
 		BPL	loc_7BCE
 		dldi	off_24A, $7A2B

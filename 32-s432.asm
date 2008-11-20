@@ -2263,15 +2263,11 @@ loc_8BB2:				; CODE XREF: RAM:8BAAj
 		LDA	$BC5F
 
 loc_8BB7:				; CODE XREF: RAM:8BBBj
-		STA	$D012,X
+		STA	COLPM0,X
 		DEX
 		BPL	loc_8BB7
-		LDA	#$32 ; '2'
-		STA	$24A
-		LDA	#$9C ; 'œ'
-		STA	$24B
-		LDA	#$C0 ; 'À'
-		STA	NMIEN
+		dldi	off_24A, $9C32
+		ldi	NMIEN, $C0
 		LDA	#0
 		STA	$18B8
 		STA	$253

@@ -542,15 +542,11 @@ loc_7BED:				; CODE XREF: RAM:7BE5j
 		LDA	$BC5F
 
 loc_7BF2:				; CODE XREF: RAM:7BF6j
-		STA	$D012,X
+		STA	COLPM0,X
 		DEX
 		BPL	loc_7BF2
-		LDA	#$4F ; 'O'
-		STA	$24A
-		LDA	#$7A ; 'z'
-		STA	$24B
-		LDA	#$C0
-		STA	NMIEN
+		dldi	off_24A, $7A4F
+		ldi	NMIEN, $C0
 		LDA	#0
 		STA	$18B8
 		STA	$253

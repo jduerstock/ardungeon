@@ -2771,10 +2771,10 @@ loc_937C:				; CODE XREF: RAM:9374j
 		LDA	$BC5F
 
 loc_9381:				; CODE XREF: RAM:9385j
-		STA	$D012,X
+		STA	COLPM0,X
 		DEX
 		BPL	loc_9381
-		dldi	$24A, loc_91DE
+		dldi	off_24A, loc_91DE
 		ldi	NMIEN, $C0
 		LDA	#0
 		STA	$18B8

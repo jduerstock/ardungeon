@@ -662,7 +662,7 @@ loc_1A96:				; CODE XREF: RAM:1AABj
 		STA	$D000,X
 		LDA	#0
 		STA	$D00D,X
-		STA	$D012,X
+		STA	COLPM0,X
 		DEX
 		BPL	loc_1A96
 		STA	$D01D
@@ -781,8 +781,7 @@ loc_1B56:
 		LDA	$7600
 		CMP	#1
 		BEQ	loc_1BA0
-		LDA	#$90 ; 'ê'
-		STA	$D012
+		ldi	COLPM0, $90
 		LDA	#$34 ; '4'
 		STA	$D013
 		LDA	#$FF
@@ -833,7 +832,7 @@ sub_1BEB:
 		STA	WSYNC
 		STA	COLPF2
 		STA	COLBK
-		STA	$D012
+		STA	COLPM0
 		STA	$D013
 		LDA	#$E
 		STA	$D017
