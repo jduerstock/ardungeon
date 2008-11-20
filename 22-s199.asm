@@ -2275,39 +2275,32 @@ loc_88E6:				; CODE XREF: RAM:88EAj
 		STA	$D01D
 		ldi	PMBASE, $BC
 		ldi	PRIOR, $04
-		LDA	#0
-		STA	7
-		LDA	#$BC ; '¼'
-		STA	8
-		LDA	#$F0 ; 'ð'
-		STA	9
-		LDA	#4
-		STA	$A
-		LDA	#0
-		STA	6
+		dldi	off_7, $BC00
+		dldi	off_9, $04F0
+		ldi	6, $00
 
 loc_8914:				; CODE XREF: RAM:893Aj
 		LDY	6
-		LDA	(7),Y
+		LDA	(off_7),Y
 		STA	4
 		LDY	#7
 
 loc_891C:				; CODE XREF: RAM:8927j
 		LSR	4
 		BCC	loc_8926
-		LDA	(9),Y
+		LDA	(off_9),Y
 		ORA	#$80 ; '€'
-		STA	(9),Y
+		STA	(off_9),Y
 
 loc_8926:				; CODE XREF: RAM:891Ej
 		DEY
 		BPL	loc_891C
-		LDA	9
+		LDA	off_9
 		CLC
 		ADC	#8
-		STA	9
+		STA	off_9
 		BCC	loc_8934
-		INC	$A
+		INC	off_9+1
 
 loc_8934:				; CODE XREF: RAM:8930j
 		INC	6
@@ -2315,13 +2308,10 @@ loc_8934:				; CODE XREF: RAM:8930j
 		CMP	#$2D ; '-'
 		BCC	loc_8914
 		LDA	#$2D ; '-'
-		STA	7
+		STA	off_7
 		LDX	#0
 		STX	6
-		LDA	#$A9 ; '©'
-		STA	$F0
-		LDA	#$BD ; '½'
-		STA	$F1
+		dldi	$F0, $BDA9
 
 loc_894C:				; CODE XREF: RAM:895Dj
 		CLC
@@ -2341,7 +2331,7 @@ loc_895F:				; CODE XREF: RAM:897Cj
 
 loc_8961:				; CODE XREF: RAM:897Aj
 		LDY	6
-		LDA	(7),Y
+		LDA	(off_7),Y
 		LDY	#4
 
 loc_8967:				; CODE XREF: RAM:896Cj
@@ -2367,12 +2357,8 @@ loc_8983:				; CODE XREF: RAM:8987j
 		STA	$D012,X
 		DEX
 		BPL	loc_8983
-		LDA	#$E0 ; 'à'
-		STA	$24A
-		LDA	#$87 ; '‡'
-		STA	$24B
-		LDA	#$C0
-		STA	NMIEN
+		dldi	$24A, $87E0
+		ldi	NMIEN, $C0
 		LDA	#0
 		STA	$18B8
 		STA	$253
@@ -2381,28 +2367,28 @@ loc_8983:				; CODE XREF: RAM:8987j
 
 loc_89A1:				; CODE XREF: RAM:88B1p	RAM:88BCp ...
 		LDY	#0
-		LDA	(7),Y
-		INC	7
+		LDA	(off_7),Y
+		INC	off_7
 		BNE	loc_89AB
-		INC	8
+		INC	off_7+1
 
 loc_89AB:				; CODE XREF: RAM:89A7j
 		CMP	#$1B
 		BEQ	loc_89BA
-		STA	(9),Y
-		INC	9
+		STA	(off_9),Y
+		INC	off_9
 		BNE	loc_89B7
-		INC	$A
+		INC	off_9+1
 
 loc_89B7:				; CODE XREF: RAM:89B3j
 		JMP	loc_89A1
 ; ---------------------------------------------------------------------------
 
 loc_89BA:				; CODE XREF: RAM:89ADj
-		LDA	(7),Y
-		INC	7
+		LDA	(off_7),Y
+		INC	off_7
 		BNE	loc_89C2
-		INC	8
+		INC	off_7+1
 
 loc_89C2:				; CODE XREF: RAM:89BEj
 		CMP	#$FF
@@ -2412,9 +2398,9 @@ loc_89C2:				; CODE XREF: RAM:89BEj
 
 loc_89C7:				; CODE XREF: RAM:89C4j
 		STA	byte_8A01
-		ADC	9
+		ADC	off_9
 		STA	loc_89DA+1
-		LDA	$A
+		LDA	off_9+1
 		ADC	#0
 		CMP	#$14
 		BNE	loc_89DF
@@ -2425,25 +2411,25 @@ loc_89DA:				; DATA XREF: RAM:89CCw
 		STA	byte_8A01
 
 loc_89DF:				; CODE XREF: RAM:89D5j
-		LDA	(7),Y
-		INC	7
+		LDA	(off_7),Y
+		INC	off_7
 		BNE	loc_89E7
-		INC	8
+		INC	off_7+1
 
 loc_89E7:				; CODE XREF: RAM:89E3j
 		LDY	byte_8A01
 
 loc_89EA:				; CODE XREF: RAM:89EDj
-		STA	(9),Y
+		STA	(off_9),Y
 		DEY
 		BPL	loc_89EA
 		INC	byte_8A01
 		LDA	byte_8A01
 		CLC
-		ADC	9
-		STA	9
+		ADC	off_9
+		STA	off_9
 		BCC	loc_89FE
-		INC	$A
+		INC	off_9+1
 
 loc_89FE:				; CODE XREF: RAM:89FAj
 		JMP	loc_89A1
@@ -4655,870 +4641,7 @@ byte_8A01:	.BYTE 0			; DATA XREF: RAM:loc_89C7w RAM:89D7r ...
 		.BYTE	8
 		.BYTE $1B
 		.BYTE $FF
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
+		.RES	864,$00
 ; end of 'RAM'
 
 
