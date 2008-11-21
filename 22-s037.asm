@@ -1413,8 +1413,7 @@ loc_888E:				; CODE XREF: RAM:8892j
 		BPL	loc_888E
 		LDA	#$FF
 		STA	$D00C
-		LDA	#3
-		STA	$D01D
+		ldi	GRACTL, $03
 		ldi	PMBASE, $BC
 		ldi	PRIOR, $04
 		LDA	#0

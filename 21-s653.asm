@@ -2994,8 +2994,7 @@ loc_829B:				; CODE XREF: RAM:829Fj
 		BPL	loc_829B
 		LDA	#$FF
 		STA	$D00C
-		LDA	#3
-		STA	$D01D
+		ldi	GRACTL, $03
 		ldi	PMBASE, $BC
 		ldi	PRIOR, $04
 		dldi	off_7, $BC00

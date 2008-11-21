@@ -396,8 +396,7 @@ loc_78BD:				; CODE XREF: sub_7758+161j
 loc_78C3:				; CODE XREF: sub_7758+1B6j
 		LDY	#$B
 		JSR	loc_793C
-		LDX	#$83 ; 'ƒ'
-		LDY	#$B
+		ldxy	$830B
 
 loc_78CC:				; CODE XREF: sub_7758+1E1j
 		STX	$17
@@ -1352,23 +1351,17 @@ a_ThatWillCostAt:
 		.BYTE $A5,"I'm sorry, but that's not enough.",$D,$FF
 
 a_Thy_IsCursed:
-		.BYTE $A6,  0,	1
-		.BYTE $A5
-aThy:		.BYTE "Thy "
+		MOVEXY	0,1
+aThy:		.BYTE	$A5,"Thy "
 		.BYTE $B3
 		.WORD off_7BD8
 		.BYTE $1E
-		.BYTE $D
-		.BYTE $D
-		.BYTE $A5
-aIsCursed:	.BYTE "is cursed!"
-		.BYTE $D
-		.BYTE $FF
+		.BYTE $0D,$0D
+		.BYTE $A5,"is cursed!",$0D,$FF
 
 a_Thy_IsEnchanted:
 		MOVEXY	0,1
-		.BYTE $A5
-aThy_0:		.BYTE "Thy "
+		.BYTE	$A5,"Thy "
 		.BYTE $B3
 		.WORD off_7BD8
 		.BYTE $1E
@@ -1380,64 +1373,46 @@ aIsEnchanted:	.BYTE "is enchanted!"
 		.BYTE $FF
 
 a_ThereIsASpecial:
-		.BYTE $A6,  0,	1
-		.BYTE $A5
-aThereIsASpecia:.BYTE "There is a special aura",$D,$D,$A5
-aAroundThy:	.BYTE "around thy "
+		MOVEXY	0,1
+		.BYTE	$A5,"There is a special aura",$0D,$0D
+		.BYTE	$A5,"around thy "
 		.BYTE $B3
 		.WORD off_7BD8
 		.BYTE $1E
-a_:		.BYTE '.',$D,$FF
+		.BYTE '.',$0D,$FF
 
 a_ItTakesTwoHands:
 		MOVEXY	0,1
-		.BYTE $A5
-aItTakesTwoHand:.BYTE "It takes two hands to"
-		.BYTE  $D, $D,$A5
-aEffectivelyUse:.BYTE "effectively use this weapon."
-		.BYTE $D
-		.BYTE $FF
-		.BYTE $A6,  0,	1
-		.BYTE $A5
-aThy_1:		.BYTE "Thy "
+		.BYTE	$A5,"It takes two hands to",$0D,$0D
+		.BYTE	$A5,"effectively use this weapon.",$0D,$FF
+
+		MOVEXY	0,1
+		.BYTE	$A5,"Thy "
 		.BYTE $B3
 		.WORD off_7BD8
 		.BYTE $1E
-		.BYTE $D
-		.BYTE $D
-		.BYTE $A5
-aIsInMintCondit:.BYTE "is in mint condition!"
-		.BYTE $D
-		.BYTE $FF
-		.BYTE $A6,  0,	2
-		.BYTE $A5
-aThy_2:		.BYTE "Thy "
+		.BYTE	$0D,$0D
+		.BYTE	$A5,"is in mint condition!",$0D,$FF
+
+		MOVEXY	0,2
+		.BYTE	$A5,"Thy "
 		.BYTE $B3
 		.WORD off_7BD8
 		.BYTE $1E
-aIsWorn:	.BYTE " is worn!"
-		.BYTE $D
-		.BYTE $FF
+		.BYTE	" is worn!",$0D,$FF
 
 a_ImSorryThouHast:
-		.BYTE $A6,  0,	2
-		.BYTE $A5
-aIMSorryThouHas:.BYTE "I'm sorry, thou hast not the funds."
-		.BYTE $D
-		.BYTE $FF
-		.BYTE $A6,  0,	1
-		.BYTE $A5
-aThouArtNotStro:.BYTE "Thou art not strong enough"
-		.BYTE $D
-		.BYTE $D
-		.BYTE $A5
-aToUseThy:	.BYTE "to use thy "
+		MOVEXY	0,2
+		.BYTE	$A5,"I'm sorry, thou hast not the funds.",$0D,$FF
+
+		MOVEXY	0,1
+		.BYTE	$A5,"Thou art not strong enough",$0D,$0D
+		.BYTE	$A5,"to use thy "
 		.BYTE $B3
 		.WORD off_7BD8
 		.BYTE $1E
-aWell_:		.BYTE " well."
-		.BYTE $D
-		.BYTE $FF
+aWell_:		.BYTE	" well.",$0D,$FF
+
 		.BYTE $A6,  0,	1
 		.BYTE $A5
 aIMSorryButThou:.BYTE "I'm sorry but thou hast"
@@ -1752,8 +1727,7 @@ loc_84D9:				; CODE XREF: RAM:84DDj
 		BPL	loc_84D9
 		LDA	#$FF
 		STA	$D00C
-		LDA	#3
-		STA	$D01D
+		ldi	GRACTL, $03
 		ldi	PMBASE, $BC
 		ldi	PRIOR, $04
 		dldi	off_7, $BC00	

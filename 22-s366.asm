@@ -718,8 +718,7 @@ loc_7ECB:				; CODE XREF: RAM:7ECFj
 		BPL	loc_7ECB
 		LDA	#$FF
 		STA	$D00C
-		LDA	#3
-		STA	$D01D
+		ldi	GRACTL, $03
 		ldi	PMBASE, $BC
 		ldi	PRIOR, $04
 		LDA	#0

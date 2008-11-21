@@ -2435,8 +2435,7 @@ loc_877F:				; CODE XREF: RAM:8783j
 		BPL	loc_877F
 		LDA	#$FF
 		STA	$D00C
-		LDA	#3
-		STA	$D01D
+		ldi	GRACTL, $03
 		ldi	PMBASE, $BC
 		ldi	PRIOR, $04
 		LDA	#0

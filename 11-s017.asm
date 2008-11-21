@@ -6261,8 +6261,7 @@ loc_25A5:				; CODE XREF: sub_25A3+6j
 		STA	$D000,X
 		DEX
 		BPL	loc_25A5
-		LDA	#3
-		STA	$D01D
+		ldi	GRACTL,	$03
 		ldi	PMBASE, $B8
 		LDA	#$98 ; '˜'
 		LDX	#$5F ; '_'

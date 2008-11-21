@@ -511,8 +511,7 @@ loc_7AD5:				; CODE XREF: RAM:7AD9j
 		BPL	loc_7AD5
 		LDA	#$FF
 		STA	$D00C
-		LDA	#3
-		STA	$D01D
+		ldi	GRACTL, $03
 		ldi	PMBASE, $BC
 		ldi	PRIOR,$04
 		LDA	#0
