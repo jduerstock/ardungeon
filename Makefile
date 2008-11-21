@@ -92,75 +92,7 @@ BINARIES=$(ASM2_SOURCES:.asm=.bin)
 
 SUMS=$(ASM_SOURCES:.asm=.sha1)
 
-all: $(BINARIES) $(OBJECTS) ar32.img
-	ld65 -C 11-s001.cfg $(OBJECTS)
-	sha1sum -c 11-s001.sha1 11-s002.sha1 11-s006.sha1 11-s011.sha1 11-s016.sha1
-	cat 11-s001.bin > ar11.img
-	cat 11-s002.bin >> ar11.img
-	cat 11-s006.bin >> ar11.img
-	cat 11-s011.bin >> ar11.img
-	cat 11-s016.bin >> ar11.img
-	cat 11-s017.bin >> ar11.img
-	cat 11-s205.bin >> ar11.img
-	cat 11-s225.bin >> ar11.img
-	cat 11-s258.bin 11-s259.bin.crypt >> ar11.img
-	cat 11-s311.bin 11-s312.bin.crypt >> ar11.img
-	cat 11-s376.bin 11-s377.bin.crypt >> ar11.img
-	cat 11-s451.bin 11-s452.bin.crypt >> ar11.img
-	cat 11-s466.bin 11-s467.bin.crypt >> ar11.img
-	cat 11-s480.bin 11-s481.bin.crypt >> ar11.img
-	cat 11-s517.bin 11-s518.bin.crypt >> ar11.img
-	cat 11-s676.bin 11-s677.bin.crypt >> ar11.img
-	cat 11-s679.bin 11-s680.bin.crypt >> ar11.img
-	cat 11-s682.bin >> ar11.img
-	sha1sum -c ar11.sha1
-	cat 21-s001.bin > ar21.img
-	cat 21-s010.bin 21-s011.bin.crypt >> ar21.img
-	cat 21-s051.bin 21-s052.bin.crypt >> ar21.img
-	cat 21-s092.bin 21-s093.bin.crypt >> ar21.img
-	cat 21-s133.bin 21-s134.bin.crypt >> ar21.img
-	cat 21-s174.bin 21-s175.bin.crypt >> ar21.img
-	cat 21-s215.bin 21-s216.bin.crypt >> ar21.img
-	cat 21-s256.bin 21-s257.bin.crypt >> ar21.img
-	cat 21-s297.bin 21-s298.bin.crypt >> ar21.img
-	cat 21-s341.bin 21-s342.bin.crypt >> ar21.img
-	cat 21-s385.bin 21-s386.bin.crypt >> ar21.img
-	cat 21-s429.bin 21-s430.bin.crypt >> ar21.img
-	cat 21-s473.bin 21-s474.bin.crypt >> ar21.img
-	cat 21-s517.bin 21-s518.bin.crypt >> ar21.img
-	cat 21-s561.bin 21-s562.bin.crypt >> ar21.img
-	cat 21-s572.bin 21-s573.bin.crypt >> ar21.img
-	cat 21-s639.bin 21-s640.bin.crypt >> ar21.img
-	cat 21-s652.bin 21-s653.bin.crypt >> ar21.img
-	cat 21-s697.bin >> ar21.img
-	sha1sum -c ar21.sha1
-	cat 22-s001.bin 22-s002.bin.crypt > ar22.img
-	cat 22-s036.bin 22-s037.bin.crypt >> ar22.img
-	cat 22-s093.bin 22-s094.bin.crypt >> ar22.img
-	cat 22-s134.bin 22-s135.bin.crypt >> ar22.img
-	cat 22-s167.bin 22-s168.bin.crypt >> ar22.img
-	cat 22-s198.bin 22-s199.bin.crypt >> ar22.img
-	cat 22-s263.bin 22-s264.bin.crypt >> ar22.img
-	cat 22-s322.bin 22-s323.bin.crypt >> ar22.img
-	cat 22-s365.bin 22-s366.bin.crypt >> ar22.img
-	cat 22-s408.bin 22-s409.bin.crypt >> ar22.img
-	cat 22-s431.bin 22-s432.bin.crypt >> ar22.img
-	cat 22-s494.bin 22-s495.bin.crypt >> ar22.img
-	cat 22-s509.bin 22-s510.bin.crypt >> ar22.img
-	cat 22-s518.bin	22-s519.bin.crypt >> ar22.img
-	cat 22-s536.bin 22-s537.bin.crypt >> ar22.img
-	cat 22-s547.bin >> ar22.img
-	sha1sum -c ar22.sha1
-	cat 31-s001.bin 31-s002.bin.crypt > ar31.img
-	cat 31-s114.bin 31-s115.bin.crypt >> ar31.img
-	cat 31-s199.bin 31-s200.bin.crypt >> ar31.img 
-	cat 31-s236.bin.crypt >> ar31.img
-	cat 31-s588.bin >> ar31.img
-	cat 31-s589.bin 31-s590.bin.crypt >> ar31.img
-	cat 31-s604.bin 31-s605.bin.crypt >> ar31.img
-	cat 31-s671.bin 31-s672.bin.crypt >> ar31.img
-	cat 31-s682.bin >> ar31.img
-	sha1sum -c ar31.sha1
+all: ar11.img ar21.img ar22.img ar31.img ar32.img
 
 %.o: %.asm
 	$(CA) $(AFLAGS) $< -o $@
@@ -817,6 +749,107 @@ all: $(BINARIES) $(OBJECTS) ar32.img
 32-s695.bin: 32-s695.asm
 	cl65 --start-addr 0x1000 -t none 32-s695.asm -o 32-s695.bin
 	sha1sum -c 32-s695.sha1
+
+ar11.img: $(BINARIES) $(OBJECTS) \
+	11-s017.bin 11-s205.bin 11-s225.bin \
+	11-s258.bin 11-s259.bin.crypt 11-s311.bin 11-s312.bin.crypt \
+	11-s376.bin 11-s377.bin.crypt 11-s451.bin 11-s452.bin.crypt \
+	11-s466.bin 11-s467.bin.crypt 11-s480.bin 11-s481.bin.crypt \
+	11-s517.bin 11-s518.bin.crypt 11-s676.bin 11-s677.bin.crypt \
+	11-s679.bin 11-s680.bin.crypt 11-s682.bin
+	ld65 -C 11-s001.cfg $(OBJECTS)
+	sha1sum -c 11-s001.sha1 11-s002.sha1 11-s006.sha1 11-s011.sha1 11-s016.sha1
+	cat 11-s001.bin > ar11.img
+	cat 11-s002.bin >> ar11.img
+	cat 11-s006.bin >> ar11.img
+	cat 11-s011.bin >> ar11.img
+	cat 11-s016.bin >> ar11.img
+	cat 11-s017.bin >> ar11.img
+	cat 11-s205.bin >> ar11.img
+	cat 11-s225.bin >> ar11.img
+	cat 11-s258.bin 11-s259.bin.crypt >> ar11.img
+	cat 11-s311.bin 11-s312.bin.crypt >> ar11.img
+	cat 11-s376.bin 11-s377.bin.crypt >> ar11.img
+	cat 11-s451.bin 11-s452.bin.crypt >> ar11.img
+	cat 11-s466.bin 11-s467.bin.crypt >> ar11.img
+	cat 11-s480.bin 11-s481.bin.crypt >> ar11.img
+	cat 11-s517.bin 11-s518.bin.crypt >> ar11.img
+	cat 11-s676.bin 11-s677.bin.crypt >> ar11.img
+	cat 11-s679.bin 11-s680.bin.crypt >> ar11.img
+	cat 11-s682.bin >> ar11.img
+	sha1sum -c ar11.sha1
+
+ar21.img: 21-s001.bin 21-s010.bin 21-s011.bin.crypt \
+	21-s051.bin 21-s052.bin.crypt 21-s092.bin 21-s093.bin.crypt \
+	21-s133.bin 21-s134.bin.crypt 21-s174.bin 21-s175.bin.crypt \
+	21-s215.bin 21-s216.bin.crypt 21-s256.bin 21-s257.bin.crypt \
+	21-s297.bin 21-s298.bin.crypt 21-s341.bin 21-s342.bin.crypt \
+	21-s385.bin 21-s386.bin.crypt 21-s429.bin 21-s430.bin.crypt \
+	21-s473.bin 21-s474.bin.crypt 21-s517.bin 21-s518.bin.crypt \
+	21-s561.bin 21-s562.bin.crypt 21-s572.bin 21-s573.bin.crypt \
+	21-s639.bin 21-s640.bin.crypt 21-s652.bin 21-s653.bin.crypt \
+	21-s697.bin
+	cat 21-s001.bin > ar21.img
+	cat 21-s010.bin 21-s011.bin.crypt >> ar21.img
+	cat 21-s051.bin 21-s052.bin.crypt >> ar21.img
+	cat 21-s092.bin 21-s093.bin.crypt >> ar21.img
+	cat 21-s133.bin 21-s134.bin.crypt >> ar21.img
+	cat 21-s174.bin 21-s175.bin.crypt >> ar21.img
+	cat 21-s215.bin 21-s216.bin.crypt >> ar21.img
+	cat 21-s256.bin 21-s257.bin.crypt >> ar21.img
+	cat 21-s297.bin 21-s298.bin.crypt >> ar21.img
+	cat 21-s341.bin 21-s342.bin.crypt >> ar21.img
+	cat 21-s385.bin 21-s386.bin.crypt >> ar21.img
+	cat 21-s429.bin 21-s430.bin.crypt >> ar21.img
+	cat 21-s473.bin 21-s474.bin.crypt >> ar21.img
+	cat 21-s517.bin 21-s518.bin.crypt >> ar21.img
+	cat 21-s561.bin 21-s562.bin.crypt >> ar21.img
+	cat 21-s572.bin 21-s573.bin.crypt >> ar21.img
+	cat 21-s639.bin 21-s640.bin.crypt >> ar21.img
+	cat 21-s652.bin 21-s653.bin.crypt >> ar21.img
+	cat 21-s697.bin >> ar21.img
+	sha1sum -c ar21.sha1
+
+ar22.img: 22-s001.bin 22-s002.bin.crypt 22-s036.bin 22-s037.bin.crypt \
+	22-s093.bin 22-s094.bin.crypt 22-s134.bin 22-s135.bin.crypt \
+	22-s167.bin 22-s168.bin.crypt 22-s198.bin 22-s199.bin.crypt \
+	22-s263.bin 22-s264.bin.crypt 22-s322.bin 22-s323.bin.crypt \
+	22-s365.bin 22-s366.bin.crypt 22-s408.bin 22-s409.bin.crypt \
+	22-s431.bin 22-s432.bin.crypt 22-s494.bin 22-s495.bin.crypt \
+	22-s509.bin 22-s510.bin.crypt 22-s518.bin 22-s519.bin.crypt \
+	22-s536.bin 22-s537.bin.crypt 22-s547.bin
+	cat 22-s001.bin 22-s002.bin.crypt > ar22.img
+	cat 22-s036.bin 22-s037.bin.crypt >> ar22.img
+	cat 22-s093.bin 22-s094.bin.crypt >> ar22.img
+	cat 22-s134.bin 22-s135.bin.crypt >> ar22.img
+	cat 22-s167.bin 22-s168.bin.crypt >> ar22.img
+	cat 22-s198.bin 22-s199.bin.crypt >> ar22.img
+	cat 22-s263.bin 22-s264.bin.crypt >> ar22.img
+	cat 22-s322.bin 22-s323.bin.crypt >> ar22.img
+	cat 22-s365.bin 22-s366.bin.crypt >> ar22.img
+	cat 22-s408.bin 22-s409.bin.crypt >> ar22.img
+	cat 22-s431.bin 22-s432.bin.crypt >> ar22.img
+	cat 22-s494.bin 22-s495.bin.crypt >> ar22.img
+	cat 22-s509.bin 22-s510.bin.crypt >> ar22.img
+	cat 22-s518.bin	22-s519.bin.crypt >> ar22.img
+	cat 22-s536.bin 22-s537.bin.crypt >> ar22.img
+	cat 22-s547.bin >> ar22.img
+	sha1sum -c ar22.sha1
+
+ar31.img: 31-s001.bin 31-s002.bin.crypt 31-s114.bin 31-s115.bin.crypt \
+	31-s199.bin 31-s200.bin.crypt 31-s236.bin.crypt 31-s588.bin \
+	31-s589.bin 31-s590.bin.crypt 31-s604.bin 31-s605.bin.crypt \
+	31-s671.bin 31-s672.bin.crypt 31-s682.bin
+	cat 31-s001.bin 31-s002.bin.crypt > ar31.img
+	cat 31-s114.bin 31-s115.bin.crypt >> ar31.img
+	cat 31-s199.bin 31-s200.bin.crypt >> ar31.img 
+	cat 31-s236.bin.crypt >> ar31.img
+	cat 31-s588.bin >> ar31.img
+	cat 31-s589.bin 31-s590.bin.crypt >> ar31.img
+	cat 31-s604.bin 31-s605.bin.crypt >> ar31.img
+	cat 31-s671.bin 31-s672.bin.crypt >> ar31.img
+	cat 31-s682.bin >> ar31.img
+	sha1sum -c ar31.sha1
 
 ar32.img: 32-s001.bin 32-s002.bin.crypt 32-s034.bin 32-s035.bin.crypt \
 	32-s091.bin 32-s092.bin.crypt 32-s126.bin 32-s127.bin.crypt \
