@@ -632,7 +632,7 @@ unk_7E6E:	.BYTE $70 ; p		; DATA XREF: RAM:7E9Eo
 		PHA
 		STA	WSYNC
 		LDA	#$36 ; '6'
-		STA	$D019
+		STA	COLPF3
 		STA	WSYNC
 		LDA	#$50 ; 'P'
 		LDX	#$70 ; 'p'
@@ -670,7 +670,7 @@ loc_7F04:				; CODE XREF: RAM:7F29j
 		LDA	$BB94,X
 		STA	WSYNC
 		STA	$D017
-		STY	$D019
+		STY	COLPF3
 		LDA	$BB4C,X
 		STA	CHBASE
 		LDA	$BB70,X

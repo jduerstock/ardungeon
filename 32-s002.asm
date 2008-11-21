@@ -473,7 +473,7 @@ loc_7A2B:
 		PHA
 		STA	WSYNC
 		LDA	#$36 ; '6'
-		STA	$D019
+		STA	COLPF3
 		STA	WSYNC
 		LDA	#$50 ; 'P'
 		LDX	#$70 ; 'p'
@@ -511,7 +511,7 @@ loc_7A8F:				; CODE XREF: RAM:7AB4j
 		LDA	$BB94,X
 		STA	WSYNC
 		STA	$D017
-		STY	$D019
+		STY	COLPF3
 		LDA	$BB4C,X
 		STA	CHBASE
 		LDA	$BB70,X

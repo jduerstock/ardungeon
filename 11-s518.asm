@@ -666,7 +666,7 @@ loc_1A96:				; CODE XREF: RAM:1AABj
 		DEX
 		BPL	loc_1A96
 		STA	GRACTL
-		STA	$D019
+		STA	COLPF3
 		STX	$D011
 		STX	$D00C
 		LDX	#5
@@ -772,18 +772,16 @@ loc_1B56:
 		LDA	byte_18BC
 		STA	COLPF2
 		LDA	byte_18BF
-		STA	$D019
+		STA	COLPF3
 		LDA	byte_18BD
 		STA	WSYNC
 		STA	COLBK
-		LDA	#8
-		STA	CHBASE
+		ldi	CHBASE, $08
 		LDA	$7600
 		CMP	#1
 		BEQ	loc_1BA0
 		ldi	COLPM0, $90
-		LDA	#$34 ; '4'
-		STA	$D013
+		ldi	$D013, $34
 		LDA	#$FF
 		STA	$D00D
 		STA	$D00E
