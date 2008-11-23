@@ -2059,7 +2059,7 @@ unk_85E8:	.BYTE $70 ; p		; DATA XREF: RAM:8607o
 loc_8613:				; CODE XREF: RAM:8638j
 		LDA	$BAA0,X
 		STA	WSYNC
-		STA	$D017
+		STA	COLPF1
 		STY	COLPF3
 		LDA	$B960,X
 		STA	CHBASE
@@ -2080,8 +2080,7 @@ loc_8613:				; CODE XREF: RAM:8638j
 ; ---------------------------------------------------------------------------
 
 loc_8640:
-		LDA	#$98 ; '˜'
-		STA	CHBASE
+		ldi	CHBASE, $98
 		LDX	#3
 
 loc_8647:				; CODE XREF: RAM:864Ej

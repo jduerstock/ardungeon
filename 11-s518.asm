@@ -768,7 +768,7 @@ loc_1B56:
 		LDA	byte_18BA
 		STA	$D016
 		LDA	byte_18BB
-		STA	$D017
+		STA	COLPF1
 		LDA	byte_18BC
 		STA	COLPF2
 		LDA	byte_18BF
@@ -832,10 +832,8 @@ sub_1BEB:
 		STA	COLBK
 		STA	COLPM0
 		STA	$D013
-		LDA	#$E
-		STA	$D017
-		LDA	#$14
-		STA	CHBASE
+		ldi	COLPF1, $0E
+		ldi	CHBASE, $14
 		PLA
 		RTI
 
@@ -2332,7 +2330,7 @@ loc_247E:				; CODE XREF: sub_245D+2Bj
 		STA	$D204,X
 		DEX
 		BPL	loc_247E
-		STX	$D017
+		STX	COLPF1
 		RTS
 ; End of function sub_245D
 

@@ -2086,7 +2086,7 @@ aPressTToTran:	.BYTE "Press T to tran",0
 loc_8A78:				; CODE XREF: RAM:8A9Dj
 		LDA	$BB94,X
 		STA	WSYNC
-		STA	$D017
+		STA	COLPF1
 		STY	COLPF3
 		LDA	$BB4C,X
 		STA	CHBASE
@@ -2102,10 +2102,8 @@ loc_8A78:				; CODE XREF: RAM:8A9Dj
 		STA	WSYNC
 		STA	$D018
 		STA	COLBK
-		LDA	#$E
-		STA	$D017
-		LDA	#$14
-		STA	CHBASE
+		ldi	COLPF1, $0E
+		ldi	CHBASE, $14
 		PLA
 		TAY
 		PLA

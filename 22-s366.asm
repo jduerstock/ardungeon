@@ -29,7 +29,7 @@ loc_7610:				; CODE XREF: RAM:7601j
 		LDA	#6
 		JSR	$1863
 		BCS	locret_7647
-		dldi	$07, $7FE7
+		dldi	off_7, $7FE7
 		LDA	#2
 		JSR	$180F
 
@@ -625,7 +625,7 @@ unk_7D93:	.BYTE $70 ; p		; DATA XREF: RAM:7DC3o
 loc_7E29:				; CODE XREF: RAM:7E4Ej
 		LDA	$BB94,X
 		STA	WSYNC
-		STA	$D017
+		STA	COLPF1
 		STY	COLPF3
 		LDA	$BB4C,X
 		STA	CHBASE
@@ -641,10 +641,8 @@ loc_7E29:				; CODE XREF: RAM:7E4Ej
 		STA	WSYNC
 		STA	$D018
 		STA	COLBK
-		LDA	#$E
-		STA	$D017
-		LDA	#$14
-		STA	CHBASE
+		ldi	COLPF1, $0E
+		ldi	CHBASE, $14
 		PLA
 		TAY
 		PLA
