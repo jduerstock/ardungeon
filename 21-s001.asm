@@ -4,6 +4,9 @@
 		.SEGMENT	"SEG_279D"
 
 off_80	= $80
+off_82	= $82
+off_84	= $84
+
 ;		* =  $279D
 byte_279D:	.BYTE $21		; DATA XREF: RAM:279Fo
 		.BYTE 9
@@ -17,15 +20,14 @@ loc_27A3:				; DATA XREF: RAM:27A1o
 		INY
 		STY	$244
 		STY	$3FA
-		LDA	#$FF
-		STA	$D301
-		LDA	#$9D ; 'ù'
+		ldi	PORTB, $FF
+		LDA	#$9D
 		STA	off_80
-		STA	$82
-		LDA	#$27 ; '''
+		STA	off_82
+		LDA	#$27
 		STA	off_80+1
-		LDA	#$B7 ; '∑'
-		STA	$83
+		LDA	#$B7
+		STA	off_82+1
 		LDX	#5
 
 loc_27C4:				; CODE XREF: RAM:27C9j	RAM:27D0j
@@ -45,12 +47,8 @@ loc_27C4:				; CODE XREF: RAM:27C9j	RAM:27D0j
 
 		.SEGMENT	"SEG_B7D7"
 ;		* =  $B7D7
-		LDA	#$41 ; 'A'
-		STA	2
-		LDA	#$B8 ; '∏'
-		STA	3
-		LDA	#2
-		STA	9
+		dldi	$0002, $B841
+		ldi	$0009, $02
 		LDX	$E424
 		LDY	$E425
 		INX
@@ -58,8 +56,8 @@ loc_27C4:				; CODE XREF: RAM:27C9j	RAM:27D0j
 		INY
 
 loc_B7ED:				; CODE XREF: RAM:B7EAj
-		STX	$84
-		STY	$85
+		STX	off_84
+		STY	off_84+1
 		LDA	#0
 		STA	off_80
 		STA	off_80+1
@@ -89,7 +87,7 @@ loc_B803:				; CODE XREF: sub_B800+9j
 
 sub_B80C:				; CODE XREF: RAM:loc_B8C2p
 					; RAM:loc_B941p ...
-		JMP	($84)
+		JMP	(off_84)
 ; End of function sub_B80C
 
 
@@ -135,6 +133,8 @@ loc_B83C:				; CODE XREF: sub_B82F+Fj
 ; End of function sub_B82F
 
 ; ---------------------------------------------------------------------------
+
+loc_B841:
 		LDA	#'1'
 		STA	$300
 

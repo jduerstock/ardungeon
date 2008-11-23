@@ -411,8 +411,8 @@ loc_22EB:				; DATA XREF: RAM:22E1w	RAM:22E6w
 loc_22EE:				; CODE XREF: RAM:22D1j
 		PLA
 		TAX
-		LDA	$D300
-		LDA	$D301
+		LDA	PORTA
+		LDA	PORTB
 		PLA
 		RTI
 ; ---------------------------------------------------------------------------

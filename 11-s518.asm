@@ -765,14 +765,10 @@ loc_1B55:
 loc_1B56:
 		PHA
 		dldi	off_200, loc_1BA2
-		LDA	byte_18BA
-		STA	$D016
-		LDA	byte_18BB
-		STA	COLPF1
-		LDA	byte_18BC
-		STA	COLPF2
-		LDA	byte_18BF
-		STA	COLPF3
+		mv	COLPF0, byte_18BA
+		mv	COLPF1, byte_18BB
+		mv	COLPF2, byte_18BC
+		mv	COLPF3, byte_18BF
 		LDA	byte_18BD
 		STA	WSYNC
 		STA	COLBK
@@ -781,7 +777,7 @@ loc_1B56:
 		CMP	#1
 		BEQ	loc_1BA0
 		ldi	COLPM0, $90
-		ldi	$D013, $34
+		ldi	COLPM1, $34
 		LDA	#$FF
 		STA	$D00D
 		STA	$D00E
@@ -907,7 +903,7 @@ sub_1C2C:				; CODE XREF: RAM:181Bj	RAM:loc_1F4Bj ...
 		ORA	BLINKFLAG
 		STA	(off_1D),Y
 		INY
-		CPY	#$28 ; '('
+		CPY	#$28
 		BCC	loc_1C6C
 
 loc_1C63:				; CODE XREF: sub_1C2C+Cj
@@ -2105,7 +2101,7 @@ loc_22F4:				; DATA XREF: RAM:22EAw	RAM:22EFw
 loc_22F7:				; CODE XREF: RAM:22DAj
 		PLA
 		TAX
-		LDA	$D300
+		LDA	PORTA
 		LDA	PORTB
 		PLA
 		RTI
@@ -2683,9 +2679,9 @@ unk_2629:	.BYTE	>byte_25C5	; DATA XREF: sub_2503+1Dr
 
 sub_262F:				; CODE XREF: RAM:1821j
 					; sub_28D7:loc_2908p
-		LDA	$D010
+		LDA	TRIG0
 		LSR	A
-		LDA	$D300
+		LDA	PORTA
 		AND	#$F
 		BCC	loc_263C
 		ORA	#$80

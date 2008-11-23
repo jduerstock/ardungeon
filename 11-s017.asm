@@ -5808,7 +5808,7 @@ sub_2466:				; CODE XREF: RAM:202Bp	RAM:208Dp ...
 
 
 sub_246B:				; CODE XREF: sub_246B+3j RAM:2471p
-		LDA	$D010
+		LDA	TRIG0
 		BNE	sub_246B
 		RTS
 ; End of function sub_246B
@@ -5817,7 +5817,7 @@ sub_246B:				; CODE XREF: sub_246B+3j RAM:2471p
 		JSR	sub_246B
 
 loc_2474:				; CODE XREF: RAM:2477j
-		LDA	$D010
+		LDA	TRIG0
 		BEQ	loc_2474
 		JSR	sub_2458
 		RTS

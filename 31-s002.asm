@@ -5702,7 +5702,7 @@ loc_974E:				; CODE XREF: sub_9731+24j
 		STA	COLPM0
 		STA	$D014
 		LDA	byte_9880
-		STA	$D013
+		STA	COLPM1
 		STA	$D015
 		CLC
 		LDA	byte_987D

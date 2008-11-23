@@ -38,6 +38,11 @@
 		STA     arg1+1
         .ENDMACRO
 
+	.MACRO   mv	dest,source
+		LDA	source
+		STA	dest
+	.ENDMACRO
+
 	.MACRO   dmv	dest,source
 		LDA	source
 		STA	dest

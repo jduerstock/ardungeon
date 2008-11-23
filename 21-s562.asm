@@ -1,5 +1,6 @@
 		.include	"equates.inc"
 
+off_F4	= $F4
 
 ;		.ORG	$96F0
 		JMP	loc_97B5
@@ -198,8 +199,8 @@ loc_97AC:				; CODE XREF: RAM:97B0j
 loc_97B5:				; CODE XREF: RAM:96F0j
 		LDA	#$80 ; '€'
 		STA	byte_96F8
-		STY	$F4
-		STX	$F5
+		STY	off_F4
+		STX	off_F4+1
 		LDA	#0
 		LDX	#$4C ; 'L'
 
@@ -217,10 +218,10 @@ loc_97C2:				; CODE XREF: RAM:97C6j
 		LDX	#4
 
 loc_97DD:				; CODE XREF: RAM:97EAj
-		LDA	($F4),Y
+		LDA	(off_F4),Y
 		STA	unk_970D,X
 		DEY
-		LDA	($F4),Y
+		LDA	(off_F4),Y
 		STA	unk_9708,X
 		DEY
 		DEX
@@ -309,11 +310,11 @@ sub_9856:				; CODE XREF: RAM:loc_9840p RAM:9891j ...
 		BNE	locret_9884
 		LDY	#0
 		LDA	unk_9708,X
-		STA	$F4
+		STA	off_F4
 		LDA	unk_970D,X
-		STA	$F5
+		STA	off_F4+1
 		LDY	#0
-		LDA	($F4),Y
+		LDA	(off_F4),Y
 		CMP	#$19
 		BCS	loc_9885
 		TAY
@@ -321,13 +322,13 @@ sub_9856:				; CODE XREF: RAM:loc_9840p RAM:9891j ...
 		PHA
 		LDA	unk_9BA7,Y
 		PHA
-		INC	$F4
+		INC	off_F4
 		BNE	loc_9880
-		INC	$F5
+		INC	off_F4+1
 
 loc_9880:				; CODE XREF: sub_9856+26j
 		LDY	#0
-		LDA	($F4),Y
+		LDA	(off_F4),Y
 
 locret_9884:				; CODE XREF: sub_9856+5j
 		RTS
@@ -351,9 +352,9 @@ loc_988E:				; CODE XREF: RAM:9917j	RAM:991Cj ...
 sub_9894:				; CODE XREF: RAM:loc_988Ep RAM:98D5p ...
 		LDX	$F6
 		CLC
-		ADC	$F4
+		ADC	off_F4
 		STA	unk_9708,X
-		LDA	$F5
+		LDA	off_F4+1
 		ADC	#0
 		STA	unk_970D,X
 		RTS
@@ -364,13 +365,13 @@ sub_9894:				; CODE XREF: RAM:loc_988Ep RAM:98D5p ...
 
 
 sub_98A4:				; CODE XREF: RAM:9962p	RAM:9AACp
-		LDA	($F4),Y
+		LDA	(off_F4),Y
 		STA	$FB
 		INY
-		LDA	($F4),Y
+		LDA	(off_F4),Y
 		STA	$FC
 		INY
-		LDA	($F4),Y
+		LDA	(off_F4),Y
 		STA	$F7
 		LDY	#0
 		RTS
@@ -395,7 +396,7 @@ locret_98C9:				; CODE XREF: RAM:98BCj
 sub_98CA:
 		STA	unk_971C,X
 		INY
-		LDA	($F4),Y
+		LDA	(off_F4),Y
 		STA	unk_9712,X
 		LDA	#2
 		JSR	sub_9894
@@ -411,7 +412,7 @@ sub_98E9:
 		STA	unk_9720,X
 		STA	$F9
 		INY
-		LDA	($F4),Y
+		LDA	(off_F4),Y
 		STA	unk_9724,X
 		STA	$FA
 		LDY	#$40 ; '@'
@@ -440,17 +441,17 @@ sub_991A:
 sub_991F:
 		STA	loc_9928+1
 		INY
-		LDA	($F4),Y
+		LDA	(off_F4),Y
 		STA	loc_9928+2
 
 loc_9928:				; DATA XREF: RAM:991Fw	RAM:9925w
 		DEC	$FFFF
 		BEQ	loc_993C
 		INY
-		LDA	($F4),Y
+		LDA	(off_F4),Y
 		STA	unk_9708,X
 		INY
-		LDA	($F4),Y
+		LDA	(off_F4),Y
 		STA	unk_970D,X
 		JMP	sub_9856
 ; ---------------------------------------------------------------------------
@@ -463,7 +464,7 @@ loc_993C:				; CODE XREF: RAM:992Bj
 loc_9941:				; CODE XREF: RAM:995Aj
 		STA	$9708,X
 		INY
-		LDA	($F4),Y
+		LDA	(off_F4),Y
 		STA	$970D,X
 		JMP	sub_9856
 ; ---------------------------------------------------------------------------
@@ -471,12 +472,12 @@ loc_9941:				; CODE XREF: RAM:995Aj
 sub_994D:
 		CMP	RANDOM
 		BCC	loc_995D
-		INC	$F4
+		INC	off_F4
 		BNE	loc_9958
-		INC	$F5
+		INC	off_F4+1
 
 loc_9958:				; CODE XREF: RAM:9954j
-		LDA	($F4),Y
+		LDA	(off_F4),Y
 		JMP	loc_9941
 ; ---------------------------------------------------------------------------
 
@@ -493,13 +494,13 @@ sub_9962:
 ; ---------------------------------------------------------------------------
 		STA	$FB
 		INY
-		LDA	($F4),Y
+		LDA	(off_F4),Y
 		STA	$FC
 		CLC
-		LDA	$F4
+		LDA	off_F4
 		ADC	#2
 		STA	$F9
-		LDA	$F5
+		LDA	off_F4+1
 		ADC	#0
 		STA	$FA
 		LDA	$FB
@@ -571,7 +572,7 @@ loc_99F4:				; CODE XREF: RAM:99F8j
 		LDY	#1
 
 loc_99FC:				; CODE XREF: RAM:9A01j
-		LDA	($F4),Y
+		LDA	(off_F4),Y
 		BEQ	loc_9A03
 		INY
 		BNE	loc_99FC
@@ -588,7 +589,7 @@ loc_9A03:				; CODE XREF: RAM:99FEj
 		LDY	#1
 
 loc_9A14:				; CODE XREF: RAM:9A40j
-		LDA	($F4),Y
+		LDA	(off_F4),Y
 		CMP	#$41 ; 'A'
 		BCC	loc_9A1E
 		CMP	#$5B ; '['
@@ -641,19 +642,19 @@ loc_9A4F:				; CODE XREF: RAM:9A5Ej
 		INX
 		CPX	byte_96FC
 		BCC	loc_9A4F
-		LDA	($F4),Y
+		LDA	(off_F4),Y
 		CLC
 		ADC	byte_96FA
 		STA	byte_96FB
 		TAX
 		INY
-		LDA	($F4),Y
+		LDA	(off_F4),Y
 		CLC
 		ADC	byte_96FA
 		ADC	#1
 		STA	byte_96FC
 		INY
-		LDA	($F4),Y
+		LDA	(off_F4),Y
 		LSR	A
 		ROR	A
 		ROR	A
@@ -686,7 +687,7 @@ loc_9A96:				; CODE XREF: RAM:9AA5j
 		JSR	sub_98A4
 		STA	($FB),Y
 		LDY	#3
-		LDA	($F4),Y
+		LDA	(off_F4),Y
 		LDX	#0
 
 loc_9AB7:				; CODE XREF: RAM:9ABDj
@@ -703,7 +704,7 @@ loc_9ABF:				; CODE XREF: RAM:9AB8j
 loc_9AC4:				; CODE XREF: RAM:9ACDj
 		LDA	RANDOM
 		AND	$F7
-		CMP	($F4),Y
+		CMP	(off_F4),Y
 		BEQ	loc_9ACF
 		BCS	loc_9AC4
 
