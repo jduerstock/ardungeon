@@ -2174,8 +2174,7 @@ loc_8B1A:				; CODE XREF: RAM:8B1Ej
 		STA	$D008,X
 		DEX
 		BPL	loc_8B1A
-		LDA	#$FF
-		STA	$D00C
+		ldi	SIZEM, $FF
 		ldi	GRACTL, $03
 		ldi	PMBASE, $BC
 		ldi	PRIOR, $04

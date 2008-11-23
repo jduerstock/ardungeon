@@ -2992,8 +2992,7 @@ loc_829B:				; CODE XREF: RAM:829Fj
 		STA	$D008,X
 		DEX
 		BPL	loc_829B
-		LDA	#$FF
-		STA	$D00C
+		ldi	SIZEM, $FF
 		ldi	GRACTL, $03
 		ldi	PMBASE, $BC
 		ldi	PRIOR, $04
@@ -5106,22 +5105,7 @@ byte_83B6:	.BYTE 0			; DATA XREF: RAM:loc_837Cw RAM:838Cr ...
 		.BYTE $55 ; U
 		.BYTE $55 ; U
 		.BYTE	0
-		.BYTE $20
-		.BYTE	0
-		.BYTE $54 ; T
-		.BYTE $55 ; U
-		.BYTE	0
-		.BYTE $55 ; U
-		.BYTE $55 ; U
-		.BYTE	0
-		.BYTE	0
-		.BYTE $20
-		.BYTE	0
-		.BYTE $50 ; P
-		.BYTE $55 ; U
-		.BYTE	1
-		.BYTE $55 ; U
-		.BYTE	0
+		.BYTE	$20,$00,$54,$55,$00,$55,$55,$00,$00,$20,$00,$50,$55,$01,$55,$00
 		.BYTE	$02,$80,$00,$15,$40,$55,$1B,$02,$00,$08,$00,$40,$54,$1B,$02,$00
 		.BYTE	$1B,$06,$FF,$00,$1B,$06,$FF,$00,$8A,$2A,$2A,$8A,$A2,$A0,$A8,$00
 		.BYTE	$1B,$03,$A8,$A2,$0A,$AA,$00,$02,$A2,$A8,$1B,$03,$AA,$00,$AA,$A8

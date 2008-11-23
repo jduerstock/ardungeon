@@ -5399,8 +5399,7 @@ loc_9594:				; CODE XREF: sub_9550+48j
 		DEX
 		BPL	loc_9594
 		ldi	PMBASE, $B8
-		LDA	#2
-		STA	$D01D
+		ldi	GRACTL, $02
 		ldi	PRIOR, $31
 		LDY	#0
 		STY	$D2
@@ -5686,7 +5685,7 @@ loc_9737:				; CODE XREF: sub_9731+13j
 		DEX
 		BPL	loc_9737
 		STA	$22F
-		STA	$D01D
+		STA	GRACTL
 		LDX	#3
 
 loc_974E:				; CODE XREF: sub_9731+24j

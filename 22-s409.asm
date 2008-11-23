@@ -295,16 +295,11 @@ loc_7951:				; CODE XREF: RAM:7955vj
 		STA	$D008,X
 		DEX
 		BPL	loc_7951
-		LDA	#$FF
-		STA	$D00C
-		LDA	#3
-		STA	$D01D
+		ldi	SIZEM, $FF
+		ldi	GRACTL, $03
 		ldi	PMBASE, $BC
 		ldi	PRIOR, $04
-		LDA	#0
-		STA	7
-		LDA	#$BC ; '¼'
-		STA	8
+		dldi	off_7, $BC00
 		LDA	#$F0 ; 'ð'
 		STA	9
 		LDA	#4

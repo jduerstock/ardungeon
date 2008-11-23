@@ -5218,7 +5218,7 @@ loc_20AF:				; CODE XREF: RAM:20B2j
 		DEC	$83
 		DEX
 		BNE	loc_20AD
-		STA	$D00C
+		STA	SIZEM
 		LDA	#3
 		TAX
 

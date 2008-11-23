@@ -2269,8 +2269,7 @@ loc_88E6:				; CODE XREF: RAM:88EAj
 		STA	$D008,X
 		DEX
 		BPL	loc_88E6
-		LDA	#$FF
-		STA	$D00C
+		ldi	SIZEM, $FF
 		ldi	GRACTL, $03
 		ldi	PMBASE, $BC
 		ldi	PRIOR, $04

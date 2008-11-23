@@ -544,20 +544,12 @@ loc_7B59:				; CODE XREF: RAM:7B5Dj
 		STA	$D008,X
 		DEX
 		BPL	loc_7B59
-		LDA	#$FF
-		STA	$D00C
-		LDA	#3
-		STA	$D01D
+		ldi	SIZEM, $FF
+		ldi	GRACTL, $03
 		ldi	PMBASE, $BC
 		ldi	PRIOR, $04
-		LDA	#0
-		STA	7
-		LDA	#$BC ; '¼'
-		STA	8
-		LDA	#$F0 ; 'ð'
-		STA	9
-		LDA	#4
-		STA	$A
+		dldi	off_7, $BC00
+		dldi	off_9, $04F0
 		LDA	#0
 		STA	6
 

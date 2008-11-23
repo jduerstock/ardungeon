@@ -592,10 +592,8 @@ loc_7B31:				; CODE XREF: RAM:7B35j
 		STA	$D008,X
 		DEX
 		BPL	loc_7B31
-		LDA	#$FF
-		STA	$D00C
-		LDA	#3
-		STA	$D01D
+		ldi	SIZEM, $FF
+		ldi	GRACTL, $03
 		ldi	PMBASE, $BC
 		ldi	PRIOR, $04
 		dldi	off_7, $BC00

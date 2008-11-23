@@ -467,8 +467,7 @@ loc_7B18:				; CODE XREF: RAM:7B1Cj
 		STA	$D008,X
 		DEX
 		BPL	loc_7B18
-		LDA	#$FF
-		STA	$D00C
+		ldi	SIZEM, $FF
 		ldi	GRACTL, $03
 		ldi	PMBASE, $BC
 		ldi	PRIOR, $04

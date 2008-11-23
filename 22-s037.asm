@@ -1411,8 +1411,7 @@ loc_888E:				; CODE XREF: RAM:8892j
 		STA	$D008,X
 		DEX
 		BPL	loc_888E
-		LDA	#$FF
-		STA	$D00C
+		ldi	SIZEM, $FF
 		ldi	GRACTL, $03
 		ldi	PMBASE, $BC
 		ldi	PRIOR, $04

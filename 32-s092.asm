@@ -2590,10 +2590,8 @@ loc_855E:				; CODE XREF: RAM:8562j
 		STA	$D008,X
 		DEX
 		BPL	loc_855E
-		LDA	#$FF
-		STA	$D00C
-		LDA	#3
-		STA	$D01D
+		ldi	SIZEM, $FF
+		ldi	GRACTL, $03
 		ldi	PMBASE, $BC
 		ldi	PRIOR, $04
 		dldi	off_7, $BC00

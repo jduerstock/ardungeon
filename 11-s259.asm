@@ -1899,8 +1899,7 @@ loc_851B:				; CODE XREF: RAM:851Fj
 		STA	$D008,X
 		DEX
 		BPL	loc_851B
-		LDA	#$FF
-		STA	$D00C
+		ldi	SIZEM, $FF
 		ldi	GRACTL, $03
 		ldi	PMBASE, $BC
 		ldi	PRIOR, $04
