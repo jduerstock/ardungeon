@@ -79,7 +79,7 @@ unk_764B:	.BYTE	>aThe		; DATA XREF: RAM:761Cr
 		.BYTE	>a6th
 		.BYTE	>a7th
 		.BYTE	>a8th
-unk_7653:	MOVEXY	0,2		; DATA XREF: RAM:AD54o	RAM:AD5Fo ...
+byte_7653:	MOVEXY	0,2		; DATA XREF: RAM:AD54o	RAM:AD5Fo ...
 byte_7656:
 		STRJSR	loc_760D
 		.BYTE	$A5
@@ -3946,10 +3946,7 @@ loc_8D74:				; CODE XREF: RAM:7740j	sub_88B0-DF4j ...
 sub_8D7E:				; CODE XREF: RAM:7954p	sub_7ECE+9p ...
 		JSR	sub_8E1D
 		dldi	off_64, $6400
-		LDA	#$1F
-		STA	byte_9E3C
-		LDA	#$A0 ; ' '
-		STA	byte_9E3D
+		dldi	off_9E3C, $A01F
 		LDA	#0
 		STA	$66
 		STA	$67
@@ -3960,11 +3957,11 @@ sub_8D7E:				; CODE XREF: RAM:7954p	sub_7ECE+9p ...
 		CLC
 		LDA	#6
 		ADC	off_41
-		STA	byte_9E3C
+		STA	off_9E3C
 		STA	off_9E3E
 		LDA	off_41+1
 		ADC	#0
-		STA	byte_9E3D
+		STA	off_9E3C+1
 		STA	off_9E3E+1
 		JSR	$1896
 		dmv	off_64, off_43
@@ -5954,8 +5951,7 @@ unk_9901:	.BYTE	>aFood		; DATA XREF: sub_7EA5+Br RAM:8D4Br
 		.BYTE	>aGold
 		.BYTE	>aSilver
 		.BYTE	>aCopper
-		.BYTE	$AC
-		.WORD	byte_7665
+		STRSUB	byte_7665
 
 aIsStunned_:	.BYTE	"is stunned.",$D,$FF
 
@@ -6088,16 +6084,14 @@ a_YourTrickFailed:
 		.BYTE	$A5,"Your trick failed.",$0D,$FF
 
 a_IsntGoingForIt:
-		.BYTE	$AC
-		.WORD	$7665
+		STRSUB	byte_7665
 		.BYTE	"isn't going for it.",$0D,$FF
 
 a_AttemptFailed:
 		MOVEXY	0,3
 		.BYTE	$A5,"Attempt failed.",$0D,$FF
 		STRJSR	sub_9C8A
-		.BYTE	$AC
-		.WORD	$7653
+		STRSUB	byte_7653
 		.BYTE	"sees you have no",$0D
 		.BYTE	$A5
 		PRINTSTRP off_76D9, 11
@@ -6121,9 +6115,8 @@ aBrother:	.BYTE	"brother",0
 aSister:	.BYTE	"sister",0
 
 a_BreaksTheSpell:
-		.BYTE	$AC
-		.WORD	$7653
-		.BYTE	"breaks the spell.",$D,$FF
+		STRSUB	byte_7653
+		.BYTE	"breaks the spell.",$0D,$FF
 
 		MOVEXY	0,2
 		.BYTE	$A5,"The "
@@ -6140,27 +6133,23 @@ a_YouWaitForOpening:
 		.WORD	$9D0E
 		.BYTE	"happily accept.",$D,$FF
 		MOVEXY	0,2
-		.BYTE	$A5,"In your inebriated state, you",$D
+		.BYTE	$A5,"In your inebriated state, you",$0D
 		.BYTE	$A5,$AE
 
 a_FeelThatReasoning:
 		.BYTE	$AC
 		.WORD	$9D0E
-		.BYTE	"feel that reasoning with the",$D,$A5
-		.BYTE	$B4
-		.WORD	off_AA01
-		.BYTE	$10
-		.BYTE	" is the best course.",$D,$FF
-		.BYTE	$AC
-		.WORD	$7653
-		.BYTE	"appears",$D,$A5
-		.BYTE	"strengthened by your attack!",$D,$FF
+		.BYTE	"feel that reasoning with the",$0D,$A5
+		PRINTSTRP off_AA01, 16
+		.BYTE	" is the best course.",$0D,$FF
+		STRSUB	byte_7653
+		.BYTE	"appears",$0D
+		.BYTE	$A5,"strengthened by your attack!",$0D,$FF
 
 a_YouAreStunned:
 		MOVEXY	0,2
 		.BYTE	$A5,"You are stunned.",$D
-		.BYTE	$A3
-		.WORD	$9DAF
+		STRJSR	loc_9DAF
 
 loc_9DAF:	
 		dldi	off_16, a_NoOptions
@@ -6169,14 +6158,11 @@ loc_9DAF:
 a_NotLoaded:
 		MOVEXY	0,3
 		.BYTE	$A5
-		.BYTE	$B4
-		.WORD	$9E3C
-		.BYTE	$19
+		PRINTSTRP off_9E3C, 25
 		.BYTE	" not loaded.",$D,$FF
 
 a_DodgesOutOfThe:
-		.BYTE	$AC
-		.WORD	$7665
+		STRSUB	byte_7665
 		.BYTE	$D
 		.BYTE	$A5,"dodges out of the way.",$D,$FF
 		MOVEXY	0,3
@@ -6189,47 +6175,32 @@ a_DodgesOutOfThe:
 		.BYTE	$A5,"has broken.",$D,$FF
 		MOVEXY	0,2	
 		.BYTE	$A5,"Your "
-		.BYTE	$B4
-		.WORD	$76D9
-		.BYTE	$1F
-		.BYTE	$D
-		.BYTE	$AE
-byte_9E3C:	.BYTE 0			; DATA XREF: sub_8D7E+Dw sub_8D7E+2Aw
-byte_9E3D:	.BYTE 0			; DATA XREF: sub_8D7E+12w sub_8D7E+34w
+		PRINTSTRP off_76D9, 31
+		.BYTE	$0D,$AE
+off_9E3C:	.WORD	0		; DATA XREF: sub_8D7E+Dw sub_8D7E+2Aw
 off_9E3E:	.WORD	0		; DATA XREF: sub_8D7E+2Dw sub_8D7E+89w ...
 		.BYTE	"bare hand",0
 
 a_IsKnockedDown:
-		.BYTE	$AC
-		.WORD	$7653
-		.BYTE	"is knocked down",$D,$A5
-		.BYTE	"by the force of your attack.",$D,$FF
+		STRSUB	byte_7653
+		.BYTE	"is knocked down",$0D
+		.BYTE	$A5,"by the force of your attack.",$D,$FF
 
 a_IsStaggered:
-		.BYTE	$AC
-		.WORD	$7653
-		.BYTE	"is staggered",$D
-		.BYTE	$AC
-		.WORD	$9E5D
+		STRSUB	byte_7653
+		.BYTE	"is staggered",$0D
+		STRSUB	$9E5D
 
 a_You_The_WithYour:
 		MOVEXY	0,2
-		.BYTE	$A3
-		.WORD	$9F80
-		.BYTE	$A5
-		.BYTE	"You "
-		.BYTE	$B4
-		.WORD	off_9F7E
-		.BYTE	15
+		STRJSR	$9F80
+		.BYTE	$A5,"You "
+		PRINTSTRP off_9F7E, 15
 		.BYTE	" the "
-		.BYTE	$B4
-		.WORD	off_AA01
-		.BYTE	$14
-		.BYTE	$D
+		PRINTSTRP off_AA01, 20
+		.BYTE	$0D
 		.BYTE	$A5,"with your "
-		.BYTE	$B4
-		.WORD	$9E3C
-		.BYTE	$1E
+		PRINTSTRP off_9E3C, 30
 		.BYTE	$D
 		.BYTE	$A3
 		.WORD	loc_9EE5
@@ -6375,19 +6346,14 @@ loc_9FDD:				; DATA XREF: RAM:9FB1o
 locret_9FFD:				; CODE XREF: RAM:9FECj	RAM:9FF1j
 		RTS
 ; ---------------------------------------------------------------------------
-		.BYTE	$B4
-		.WORD	off_AA01
-		.BYTE	$10
+		PRINTSTRP off_AA01, 16
 aIsHitFor:	.BYTE	" is hit for",$AE
-		.BYTE	$B4
-		.WORD	off_AA03
-		.BYTE	$10
+		PRINTSTRP off_AA03, 16
 		.BYTE	" are hit for",$AE
 		.BYTE	"bare hand",0
 
-a_YouEncounterA:
-		.BYTE	$A3
-		.WORD	$A04F
+a_YouEncounterA:	
+		STRJSR	loc_A04F
 		MOVEXY	0,5
 		.BYTE	$A9
 		.BYTE	$A2
@@ -6397,13 +6363,9 @@ aA:		.BYTE	"a"
 		.WORD	$A0A3
 		.BYTE	1
 		.BYTE	" "
-		.BYTE	$B4
-		.WORD	$A04D
-		.BYTE	$10
+		PRINTSTRP $A04D, 16
 		.BYTE	"."
-		.BYTE	$AB
-		.BYTE	$D
-		.BYTE	$FF
+		.BYTE	$AB,$0D,$FF
 off_A04D:	.WORD	0
 loc_A04F:				; DATA XREF: RAM:A02Ao
 		dmv	off_A04D, off_AA01
@@ -6456,9 +6418,7 @@ byte_A0A5:	.BYTE	"AEIOU"
 a_SwitchingTo:
 		MOVEXY	0,3
 		.BYTE	$A5,"Switching to "
-		.BYTE	$B4
-		.WORD	$9E3C
-		.BYTE	$19
+		PRINTSTRP off_9E3C, 25
 		.BYTE	".",$D,$FF
 
 a_YouMiss:
@@ -6466,13 +6426,11 @@ a_YouMiss:
 		.BYTE	$A5,"You miss.",$0D,$FF
 
 a_SkillfullyDeflects:
-		.BYTE	$AC
-		.WORD	$7665
+		STRSUB	byte_7665
 		.BYTE	"skillfully ",$0D
 		.BYTE	$A5,"deflects your attack.",$D,$FF
 		MOVEXY	0,3
-		.BYTE	$A3
-		.WORD	$A115
+		STRJSR	$A115
 
 loc_A115:				; DATA XREF: RAM:A113o
 		dldi	off_16, byte_A12D
@@ -6485,23 +6443,17 @@ locret_A12C:				; CODE XREF: RAM:A122j
 		RTS
 
 byte_A12D:	.BYTE	$A5,"The "
-		.BYTE	$B4
-		.WORD	off_AA01
-		.BYTE	$10
+		PRINTSTRP off_AA01, 16
 		.BYTE	" takes your offer.",$D,$FF
 
 byte_A14A:	.BYTE	$A5,"The "
-		.BYTE	$B4
-		.WORD	off_AA03
-		.BYTE	$10
+		PRINTSTRP off_AA03, 16
 		.BYTE	" take your offer.",$D,$FF
 
 		.BYTE	$A3
 		.WORD	$A181
 		.BYTE	$A5,"The "
-		.BYTE	$B4
-		.WORD	off_AA01
-		.BYTE	$10
+		PRINTSTRP off_AA01, 16
 		.BYTE	" "
 		.BYTE	$AD
 		.WORD	$A1A8
@@ -6534,32 +6486,24 @@ off_A1A8:	.WORD	0
 a_IsBewildered:
 		MOVEXY	0,3
 		.BYTE	$A5,"..."
-		.BYTE	$B4
-		.WORD	off_AA01
-		.BYTE	$10
+		PRINTSTRP off_AA01, 16
 		.BYTE	" is bewildered,",$0D,$FF
 
-		.BYTE	$AC
-		.WORD	$7665
+		STRSUB	byte_7665
 		.BYTE	"drinks a potion",$0D
 		.BYTE	$A5,"and is healed.",$0D,$FF
 		.BYTE	"but it fails!",0
 		.BYTE	$AC
 		.WORD	$7653
-		.BYTE	"casts",$D,$A5
-		.BYTE	$B4
-		.WORD	$76D9
-		.BYTE	$14
-		.BYTE	"...",$D,$A5
-		.BYTE	$B4
-		.WORD	$76DB
-		.BYTE	$1E
+		.BYTE	"casts",$0D,$A5
+		PRINTSTRP off_76D9, 20
+		.BYTE	"...",$0D,$A5
+		PRINTSTRP off_76DB, 30
 		.BYTE	$0D,$FF
 
 a_YouRiseFromThe:
 		MOVEXY	0,3
-		.BYTE	$A5
-		.BYTE	"You rise from the ground.",$D,$FF
+		.BYTE	$A5,"You rise from the ground.",$D,$FF
 
 a_GetsUp:
 		.BYTE	$AC
@@ -6577,17 +6521,13 @@ a_GetsUp:
 		.BYTE	$A5,"You feel strengthened from the attack!",$0D,$FF
 		MOVEXY	0,2
 		.BYTE	$A5,"Your "
-		.BYTE	$B4
-		.WORD	$70
-		.BYTE	$14
-		.BYTE	$D
+		PRINTSTRP $70, 20
+		.BYTE	$0D
 		.BYTE	$A5,"is weakening.",$0D,$FF
 
 		MOVEXY	0,3
 		.BYTE	$A5,"Your "
-		.BYTE	$B4
-		.WORD	$70
-		.BYTE	$14
+		PRINTSTRP $70, 20
 		.BYTE	" has broken.",$0D,$FF
 
 		MOVEXY	0,3
@@ -6599,18 +6539,12 @@ a_GetsUp:
 		MOVEXY	0,2
 		.BYTE	$AC
 		.WORD	$7653
-		.BYTE	$B4
-		.WORD	$9F7E
-		.BYTE	$C
+		PRINTSTRP off_9F7E, 12
 		.BYTE	$D
 		.BYTE	$A5
-		.BYTE	$B4
-		.WORD	$76DB
-		.BYTE	$0D
+		PRINTSTRP off_76DB, 13
 		.BYTE	" with "
-		.BYTE	$B4
-		.WORD	$6C
-		.BYTE	$14
+		PRINTSTRP $6C, 20
 		.BYTE	$0D
 		STRJSR	loc_9EE5
 
@@ -6728,10 +6662,8 @@ unk_A491:	.BYTE	>aHacks			; DATA XREF: RAM:8777r
 		MOVEXY	0,2
 		.BYTE	$A5,"You block with your",$D
 		.BYTE	$A5
-		.BYTE	$B4
-		.WORD	$9E3E
-		.BYTE	$1E
-		.BYTE	".",$D,$FF
+		PRINTSTRP $9E3E, 30
+		.BYTE	".",$0D,$FF
 		.BYTE	$AC
 		.WORD	$7653
 		.BYTE	"flees!",$D,$FF
@@ -6785,10 +6717,8 @@ byte_A57E:	.BYTE	>sProtection
 		MOVEXY	0,2
 		STRJSR	sub_9EFC
 		.BYTE	$A5,"You "
-		.BYTE	$B4
-		.WORD	$76D9
-		.BYTE	$28
-		.BYTE	" the spell",$D
+		PRINTSTRP off_76D9, 40
+		.BYTE	" the spell",$0D
 		.BYTE	$A5,"and are hit for "
 		.BYTE	$B1
 		.WORD	$A7
@@ -6812,17 +6742,13 @@ byte_A5DE:
 
 		MOVEXY	0,3
 		.BYTE	$A5,"Your "
-		.BYTE	$B4
-		.WORD	$9E3C
-		.BYTE	$19
+		PRINTSTRP off_9E3C, 25
 		.BYTE	" is hurled",$0D
 		.BYTE	$A5,"from your grasp!",$0D,$FF
 	
 		MOVEXY	0,3
 		.BYTE	$A5,"You "
-		.BYTE	$B4
-		.WORD	$76D9
-		.BYTE	$28
+		PRINTSTRP off_76D9, 40
 		.BYTE	" its power.",$D,$FF
 
 a_YouEncounter:
@@ -6834,19 +6760,13 @@ a_YouEncounter:
 		.WORD	byte_AA00
 		.BYTE	1
 		.BYTE	" "
-		.BYTE	$B4
-		.WORD	$76D9
-		.BYTE	$14
+		PRINTSTRP off_76D9, 20
 		.BYTE	$D
 		.BYTE	$A5,"of "
-		.BYTE	$B4
-		.WORD	off_76DD
-		.BYTE	$19
+		PRINTSTRP off_76DD, 25
 		.BYTE	".",$0D,$0D
 		.BYTE	$A5
-		.BYTE	$B4
-		.WORD	$76DB
-		.BYTE	$28
+		PRINTSTRP off_76DB, 40
 		.BYTE	$0D,$FF
 
 sub_A659:				; DATA XREF: RAM:A626o
@@ -6875,9 +6795,7 @@ byte_A6B7:
 		STRJSR	sub_A6F1
 		MOVEXY	0,3
 		.BYTE	$A5
-		.BYTE	$B4
-		.WORD	off_76D9
-		.BYTE	$27
+		PRINTSTRP off_76D9, 39
 		.BYTE	$0D,$FF
 aCheckDiskIn:	.BYTE	"Check disk in drive "
 byte_A6D8:	.BYTE	" "
@@ -6901,9 +6819,7 @@ locret_A715:				; CODE XREF: RAM:A6FEj
 a_You_Escape:
 		MOVEXY	0,3
 		.BYTE	$A5,"You "
-		.BYTE	$B4
-		.WORD	off_76D9
-		.BYTE	8
+		PRINTSTRP off_76D9, 8
 		.BYTE	" escape.",$0D,$FF
 		.BYTE	"didn't",0
 		.BYTE	"can't",0
@@ -6933,9 +6849,7 @@ a_NoGoodDeed:
 		.BYTE	$A3
 		.WORD	loc_A809
 		.BYTE	$A5,$22,"No good deed ever goes un"
-		.BYTE	$B4
-		.WORD	$76D9
-		.BYTE	$A
+		PRINTSTRP off_76D9, 10
 		.BYTE	".",$22,$0D,$FF
 
 loc_A809:					; DATA XREF: RAM:A7E4o
@@ -7904,30 +7818,16 @@ byte_AC97:
 		.BYTE $A4 ; ¤
 		.BYTE $A6,  0,	2
 		.BYTE $A5
-aYouBlockWithYo:.BYTE "You block with your"
-		.BYTE $D
+aYouBlockWithYo:.BYTE "You block with your",$0D
 		.BYTE $A5
-		.BYTE $B4
-		.WORD off_9E3E
-		.BYTE $1E
-a_:		.BYTE "."
-		.BYTE $D
-		.BYTE $FF
-		.BYTE $AC
-		.WORD unk_7653
-aFlees:		.BYTE "flees!"
-		.BYTE $D
-		.BYTE $FF
-		.BYTE $AC
-		.WORD unk_7653
-aFliesAway:	.BYTE "flies away!"
-		.BYTE $D
-		.BYTE $FF
-		.BYTE $AC
-		.WORD unk_7653
-aLeaves_:	.BYTE "leaves."
-		.BYTE $D
-		.BYTE $FF
+		PRINTSTRP off_9E3E, 30
+		.BYTE ".",$0D,$FF
+		STRSUB	byte_7653
+aFlees:		.BYTE "flees!",$0D,$FF
+		STRSUB	byte_7653
+aFliesAway:	.BYTE "flies away!",$0D,$FF
+		STRSUB	byte_7653
+aLeaves_:	.BYTE "leaves.",$0D,$FF
 aProtection:	.BYTE "Protection",0
 aStrength:	.BYTE "Strength",0
 aAgility:	.BYTE "Agility",0
