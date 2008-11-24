@@ -1,3 +1,5 @@
+		.include	"globals.inc"
+		.include	"macros.inc"
 
 ;		* =  $7600
 		.BYTE 4
@@ -250,24 +252,21 @@ loc_7779:				; CODE XREF: RAM:7771j
 		SEC
 		SBC	#$63 ; 'c'
 		STA	$64E5
-		LDA	#0
-		STA	$64
-		LDA	#$63 ; 'c'
-		STA	$65
+		dldi	off_64, $6300
 		LDY	#0
-		STY	$638E
+		STY	byte_638E
 		CLC
 		LDX	#$11
 		LDA	$6309
 
 loc_7798:				; CODE XREF: RAM:779Bj	RAM:77A0j
-		ADC	($64),Y
+		ADC	(off_64),Y
 		INY
 		BNE	loc_7798
 		INC	$65
 		DEX
 		BPL	loc_7798
-		STA	$638E
+		STA	byte_638E
 
 loc_77A5:				; CODE XREF: RAM:787Aj
 		LDX	$62

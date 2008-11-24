@@ -166,7 +166,7 @@ loc_7700:				; CODE XREF: RAM:76F8j
 		LDA	#>SEG_6300
 		STA	off_64+1
 		LDY	#0
-		STY	$638E
+		STY	byte_638E
 		CLC
 		LDX	#$11
 		LDA	$6309
@@ -178,7 +178,7 @@ loc_771F:				; CODE XREF: RAM:7722j	RAM:7727j
 		INC	off_64+1
 		DEX
 		BPL	loc_771F
-		STA	$638E
+		STA	byte_638E
 
 loc_772C:				; CODE XREF: RAM:7801j
 		LDX	$62

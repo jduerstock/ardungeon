@@ -367,9 +367,9 @@ loc_AC3E:
 		LDA	RANDOM
 		AND	#$03
 		CLC
-		ADC	$638E
-		STA	$638E
-:		LDA	$638E
+		ADC	byte_638E
+		STA	byte_638E
+:		LDA	byte_638E
 		BEQ	:+
 		JSR	$AD37
 		JSR	$ACCB
@@ -2287,7 +2287,7 @@ M41_AACE:
 		LSR	$96
 :		LSR	$96
 :		CLC
-		LDA	$638E
+		LDA	byte_638E
 		ADC	$96
 		STA	$96
 		ldxy	M41_AAFB

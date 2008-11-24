@@ -1001,10 +1001,10 @@ loc_7C75:				; CODE XREF: RAM:7C70j
 		STA	$69
 		LDA	#>SEG_6300
 		STA	$6A
-		LDA	$638E
+		LDA	byte_638E
 		STA	loc_7CA2+1
 		LDY	#0
-		STY	$638E
+		STY	byte_638E
 		CLC
 		LDX	#$11
 		LDA	$6309
@@ -1080,7 +1080,7 @@ loc_7CFB:				; CODE XREF: RAM:7CEEj	RAM:7CF6j
 		LDA	#3
 		STA	$6312
 		LDA	#0
-		STA	$638E
+		STA	byte_638E
 		dldi	$69, SEG_6300
 		LDY	#0
 		CLC
@@ -1094,7 +1094,7 @@ loc_7D31:				; CODE XREF: RAM:7D34j	RAM:7D39j
 		INC	$6A
 		DEX
 		BPL	loc_7D31
-		STA	$638E
+		STA	byte_638E
 		LDA	byte_83CD
 		ASL	A
 		TAY
