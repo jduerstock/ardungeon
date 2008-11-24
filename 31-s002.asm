@@ -82,16 +82,12 @@ unk_764B:	.BYTE	>aThe		; DATA XREF: RAM:761Cr
 unk_7653:	MOVEXY	0,2		; DATA XREF: RAM:AD54o	RAM:AD5Fo ...
 byte_7656:
 		STRJSR	loc_760D
-		.BYTE $A5
-		.BYTE $B4
-		.WORD off_760B
-		.BYTE 3
-		.BYTE ' '
-		.BYTE $B4
-		.WORD off_AA01
-		.BYTE $14
-		.BYTE $20
-		.BYTE $AE ; ®
+		.BYTE	$A5
+		PRINTSTRP off_760B, 3
+		.BYTE	" "
+		PRINTSTRP off_AA01, 20
+		.BYTE	" ",$AE
+
 byte_7665:	MOVEXY	0,3		; DATA XREF: RAM:990Eo
 		STRJSR	loc_766B
 ; ---------------------------------------------------------------------------
@@ -5917,20 +5913,22 @@ a_SurprisedNoOptions:
 aSurprised:	.BYTE $A5,"SURPRISED",$0D
 
 a_NoOptions:
-		.BYTE $D
-aNoOptions_:	.BYTE $A5,"No options.",$0D,$FF
-aFood:		.BYTE "food",0
-aWater:		.BYTE "water",0
-aTorches:	.BYTE "torches",0
-aTimepieces:	.BYTE "timepieces",0
-aCompasses:	.BYTE "compasses",0
-aKeys:		.BYTE "keys",0
-aCrystals:	.BYTE "crystals",0
-aGems:		.BYTE "gems",0
-aJewels:	.BYTE "jewels",0
-aGold:		.BYTE "gold",0
-aSilver:	.BYTE "silver",0
-aCopper:	.BYTE "copper",0
+		.BYTE	$0D
+aNoOptions_:	.BYTE	$A5,"No options.",$0D,$FF
+
+aFood:		.BYTE	"food",0
+aWater:		.BYTE	"water",0
+aTorches:	.BYTE	"torches",0
+aTimepieces:	.BYTE	"timepieces",0
+aCompasses:	.BYTE	"compasses",0
+aKeys:		.BYTE	"keys",0
+aCrystals:	.BYTE	"crystals",0
+aGems:		.BYTE	"gems",0
+aJewels:	.BYTE	"jewels",0
+aGold:		.BYTE	"gold",0
+aSilver:	.BYTE	"silver",0
+aCopper:	.BYTE	"copper",0
+
 unk_98F5:	.BYTE	<aFood		; DATA XREF: sub_7EA5+5r RAM:8D45r
 		.BYTE	<aWater
 		.BYTE	<aTorches
@@ -5943,6 +5941,7 @@ unk_98F5:	.BYTE	<aFood		; DATA XREF: sub_7EA5+5r RAM:8D45r
 		.BYTE	<aGold
 		.BYTE	<aSilver
 		.BYTE	<aCopper
+
 unk_9901:	.BYTE	>aFood		; DATA XREF: sub_7EA5+Br RAM:8D4Br
 		.BYTE	>aWater
 		.BYTE	>aTorches
@@ -5957,6 +5956,7 @@ unk_9901:	.BYTE	>aFood		; DATA XREF: sub_7EA5+Br RAM:8D4Br
 		.BYTE	>aCopper
 		.BYTE	$AC
 		.WORD	byte_7665
+
 aIsStunned_:	.BYTE	"is stunned.",$D,$FF
 
 aTheLightWizard:.BYTE	"The Light Wizards",0
@@ -5976,8 +5976,7 @@ aTheMercenaryGu:.BYTE	"The Mercenary Guild",0
 aAFriend:	.BYTE	"a friend",0
 aThePalace:	.BYTE	"The Palace",0
 
-byte_9A2B:
-		.BYTE	<aTheLightWizard
+byte_9A2B:	.BYTE	<aTheLightWizard
 		.BYTE	<aTheDarkWizards
 		.BYTE	<aTheGuildOfOrde
 		.BYTE	<aTheGuildOfChao
@@ -5994,8 +5993,7 @@ byte_9A2B:
 		.BYTE	<aAFriend
 		.BYTE	<aThePalace
 
-byte_9A3B:
-		.BYTE	>aTheLightWizard
+byte_9A3B:	.BYTE	>aTheLightWizard
 		.BYTE	>aTheDarkWizards
 		.BYTE	>aTheGuildOfOrde
 		.BYTE	>aTheGuildOfChao
@@ -6014,7 +6012,7 @@ byte_9A3B:
 
 a_BattleOptions:	
 		MOVEXY	0,0
-aBattleOptions:	.BYTE $A5,"Battle Options",$D
+aBattleOptions:	.BYTE	$A5,"Battle Options",$D
 		MOVEXY	10,2
 		MenuItem "1","Attack"
 		MOVEXY	10,3
@@ -6027,7 +6025,8 @@ aBattleOptions:	.BYTE $A5,"Battle Options",$D
 		MenuItem "5","Switch weapon"
 		MOVEXY	10,7
 		MenuItem "0","Turn and run!"
-		.BYTE $FF
+		.BYTE	$FF
+
 		MOVEXY	0,0
 		.BYTE	$A5,"Transact Options",$D
 		MOVEXY	15,2
@@ -6040,21 +6039,17 @@ aBattleOptions:	.BYTE $A5,"Battle Options",$D
 		MenuItem "4","Hail"
 		MOVEXY	15,6
 		MenuItem "0","Leave"
-		.BYTE $FF
+		.BYTE	$FF
 
 a_YouSurpriseThe:
 		MOVEXY	0,0
 		.BYTE	$A5,"You surprise the "
-		.BYTE	$B4
-		.WORD	off_AA01
-		.BYTE	$14
-		.BYTE	".",$D
-		.BYTE	$A5,"Attempt to:",$D
+		PRINTSTRP off_AA01, 20
+		.BYTE	".",$0D
+		.BYTE	$A5,"Attempt to:",$0D
 		MOVEXY	10,3
 		MenuItem "1","waylay the "
-		.BYTE	$B4
-		.WORD	off_AA01
-		.BYTE	$14
+		PRINTSTRP off_AA01, 20
 		.BYTE	"."
 		MOVEXY	10,4
 		MenuItem "2","snatch something."
@@ -6081,43 +6076,34 @@ a_GrabSome:
 		.BYTE	$B3
 		.WORD	a_YouGrab
 		.BYTE	$A
-		.BYTE	"some of the"
-		.BYTE	$D
+		.BYTE	"some of the",$0D
 		.BYTE	$A5
-		.BYTE	$B4
-		.WORD	off_AA01
-		.BYTE	$14
+		PRINTSTRP off_AA01, 20
 		.BYTE	"'s "
-		.BYTE	$B4
-		.WORD	$76D9
-		.BYTE	$14
-		.BYTE	".",$D,$FF
+		PRINTSTRP off_76D9, 20
+		.BYTE	".",$0D,$FF
 
 a_YourTrickFailed:
 		MOVEXY	0,3
-		.BYTE	$A5,"Your trick failed.",$D,$FF
+		.BYTE	$A5,"Your trick failed.",$0D,$FF
 
 a_IsntGoingForIt:
 		.BYTE	$AC
 		.WORD	$7665
-		.BYTE	"isn't going for it.",$D,$FF
+		.BYTE	"isn't going for it.",$0D,$FF
 
 a_AttemptFailed:
 		MOVEXY	0,3
-		.BYTE	$A5,"Attempt failed.",$D,$FF
+		.BYTE	$A5,"Attempt failed.",$0D,$FF
 		STRJSR	sub_9C8A
 		.BYTE	$AC
 		.WORD	$7653
 		.BYTE	"sees you have no",$0D
 		.BYTE	$A5
-		.BYTE	$B4
-		.WORD	$76D9
-		.BYTE	$B
+		PRINTSTRP off_76D9, 11
 		.BYTE	" and tosses you one saying:",$0D,$0D
 		.BYTE	$A5,$22,"For the cause "
-		.BYTE	$B4
-		.WORD	off_76DB
-		.BYTE	$A
+		PRINTSTRP off_76DB, 10
 		.BYTE	".",$22,$0D,$FF
 
 ; ---------------------------------------------------------------------------
@@ -6141,9 +6127,7 @@ a_BreaksTheSpell:
 
 		MOVEXY	0,2
 		.BYTE	$A5,"The "
-		.BYTE	$B4
-		.WORD	off_AA01
-		.BYTE	$10
+		PRINTSTRP off_AA01, 16
 		.BYTE	" "
 		.BYTE	$AC
 		.WORD	byte_AA42
@@ -6280,22 +6264,23 @@ sub_9F02:	LDA	#$00		; DATA XREF: RAM:9FD8o
 		STA	$18FE
 		RTS
 ; ---------------------------------------------------------------------------
-aHack:		.BYTE "hack",0
-aPoke:		.BYTE "poke",0
-aBash:		.BYTE "bash",0
-aSpear:		.BYTE "spear",0
-aWhip:		.BYTE "whip",0
-aZap:		.BYTE "zap",0
-aPunch:		.BYTE "punch",0
-aHit:		.BYTE "hit",0
-aSlash:		.BYTE "slash",0
-aStab:		.BYTE "stab",0
-aWallop:	.BYTE "wallop",0
-aImpale:	.BYTE "impale",0
-aLash:		.BYTE "lash",0
-aBlast:		.BYTE "blast",0
-aWhomp:		.BYTE "whomp",0
-aHit_0:		.BYTE "hit",0
+aHack:		.BYTE	"hack",0
+aPoke:		.BYTE	"poke",0
+aBash:		.BYTE	"bash",0
+aSpear:		.BYTE	"spear",0
+aWhip:		.BYTE	"whip",0
+aZap:		.BYTE	"zap",0
+aPunch:		.BYTE	"punch",0
+aHit:		.BYTE	"hit",0
+aSlash:		.BYTE	"slash",0
+aStab:		.BYTE	"stab",0
+aWallop:	.BYTE	"wallop",0
+aImpale:	.BYTE	"impale",0
+aLash:		.BYTE	"lash",0
+aBlast:		.BYTE	"blast",0
+aWhomp:		.BYTE	"whomp",0
+aHit_0:		.BYTE	"hit",0
+
 unk_9F5E:	.BYTE	<aHack		; DATA XREF: RAM:loc_9F8Er
 		.BYTE	<aPoke
 		.BYTE	<aBash
@@ -6304,6 +6289,7 @@ unk_9F5E:	.BYTE	<aHack		; DATA XREF: RAM:loc_9F8Er
 		.BYTE	<aZap
 		.BYTE	<aPunch
 		.BYTE	<aHit
+
 unk_9F66:	.BYTE	>aHack		; DATA XREF: RAM:9F94r
 		.BYTE	>aPoke
 		.BYTE	>aBash
@@ -6312,6 +6298,7 @@ unk_9F66:	.BYTE	>aHack		; DATA XREF: RAM:9F94r
 		.BYTE	>aZap
 		.BYTE	>aPunch
 		.BYTE	>aHit
+
 unk_9F6E:	.BYTE	<aSlash		; DATA XREF: RAM:9FA0r
 		.BYTE	<aStab
 		.BYTE	<aWallop
@@ -6320,6 +6307,7 @@ unk_9F6E:	.BYTE	<aSlash		; DATA XREF: RAM:9FA0r
 		.BYTE	<aBlast
 		.BYTE	<aWhomp
 		.BYTE	<aHit_0
+
 unk_9F76:	.BYTE	>aSlash		; DATA XREF: RAM:9FA6r
 		.BYTE	>aStab
 		.BYTE	>aWallop
@@ -6328,6 +6316,7 @@ unk_9F76:	.BYTE	>aSlash		; DATA XREF: RAM:9FA6r
 		.BYTE	>aBlast
 		.BYTE	>aWhomp
 		.BYTE	>aHit_0
+
 off_9F7E:	.WORD	0		; DATA XREF: RAM:8774w	RAM:9F91w ...
 ; ---------------------------------------------------------------------------
 		LDX	#6
@@ -6368,8 +6357,7 @@ a_The_PointsOfDamage:
 		.BYTE $B1
 		.WORD $A7
 		.BYTE 5
-aPointsOfDamage:.BYTE " points of damage."
-		.BYTE $D
+aPointsOfDamage:.BYTE " points of damage.",$0D
 		STRJSR	sub_9F02
 		.BYTE $FF
 off_9FDB:	.WORD	0		; DATA XREF: RAM:9FBCo	RAM:9FDFw ...
@@ -6463,8 +6451,7 @@ byte_A0A5:	.BYTE	"AEIOU"
 		.BYTE	$AC
 		.WORD	$A03E
 		MOVEXY	0,5
-		.BYTE	$A9
-		.BYTE	$FF
+		.BYTE	$A9,$FF
 
 a_SwitchingTo:
 		MOVEXY	0,3
@@ -6550,12 +6537,12 @@ a_IsBewildered:
 		.BYTE	$B4
 		.WORD	off_AA01
 		.BYTE	$10
-		.BYTE	" is bewildered,",$D,$FF
+		.BYTE	" is bewildered,",$0D,$FF
 
 		.BYTE	$AC
 		.WORD	$7665
-		.BYTE	"drinks a potion",$D
-		.BYTE	$A5,"and is healed.",$D,$FF
+		.BYTE	"drinks a potion",$0D
+		.BYTE	$A5,"and is healed.",$0D,$FF
 		.BYTE	"but it fails!",0
 		.BYTE	$AC
 		.WORD	$7653
@@ -6567,7 +6554,7 @@ a_IsBewildered:
 		.BYTE	$B4
 		.WORD	$76DB
 		.BYTE	$1E
-		.BYTE	$D,$FF
+		.BYTE	$0D,$FF
 
 a_YouRiseFromThe:
 		MOVEXY	0,3

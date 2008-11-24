@@ -1713,34 +1713,32 @@ aARoundForTheHo:.BYTE $A5,"A round for the house will cost",$D,$D
 		.BYTE 3
 aSilvers__0:	.BYTE " silvers."
 		STRJSR	loc_8940
-		.BYTE $D
-		.BYTE $D
-		.BYTE $D
-aDostThouStillW:.BYTE $A5,"Dost thou still wish to buy? ("
-aY_0:		BLINK 'Y'
-aOr_0:		.BYTE " or "
-aN_0:		BLINK 'N'
+		.BYTE	$0D,$0D,$0D
+		.BYTE	$A5,"Dost thou still wish to buy? ("
+		BLINK 'Y'
+		.BYTE " or "
+		BLINK 'N'
 		.BYTE ')',$0D,$FF
 		MOVEXY	0,2
-aIMSorryYouHave:.BYTE $A5,"I'm sorry, you have not the funds.",$D
+		.BYTE	$A5,"I'm sorry, you have not the funds.",$D
 		MOVEXY	0,7
-aNoteWeDoNotAcc:.BYTE $A5,"Note: We do not accept coppers here.",$D,$FF
+		.BYTE	$A5,"Note: We do not accept coppers here.",$D,$FF
 		MOVEXY	0,1
-aDostThouWish_1:.BYTE $A5,"Dost thou wish to sell that fine",$D,$D
+		.BYTE	$A5,"Dost thou wish to sell that fine",$D,$D
 		STRJSR	loc_893D
-aDragonMeatFor:	.BYTE $A5,"dragon meat for "
+		.BYTE	$A5,"dragon meat for "
 		.BYTE $B2
 		.WORD $71
 		.BYTE 2
-aGoldsq:	.BYTE " golds? ("
-aY_1:		BLINK	"Y"
-aOr_1:		.BYTE " or "
-aN_1:		BLINK	"N"
-		.BYTE ')',$D
+		.BYTE " golds? ("
+		BLINK	"Y"
+		.BYTE " or "
+		BLINK	"N"
+		.BYTE	')',$D
 		STRJSR	loc_8940
 		.BYTE $FF
 		MOVEXY	0,0
-aWhatWouldThouL:.BYTE $A5,"What would thou like?",$D
+		.BYTE	$A5,"What would thou like?",$D
 		MOVEXY	0,2
 		MenuItem "1",""
 		.BYTE $B4
@@ -2134,20 +2132,11 @@ loc_8ACF:				; CODE XREF: RAM:8AD6j
 		BNE	loc_8ACD
 
 loc_8ADD:				; CODE XREF: RAM:8AD3j
-		LDA	#0
-		STA	9
-		LDA	#8
-		STA	$A
+		dldi	off_9, $0800
 		JSR	$9DF3
-		LDA	#$70 ; 'p'
-		STA	9
-		LDA	#$BB ; '»'
-		STA	$A
+		dldi	off_9, $BB70
 		JSR	$9DF3
-		LDA	#0
-		STA	$9D22
-		LDA	#$BD ; '½'
-		STA	$9D23
+		dldi	$9D22, $BD00
 		LDY	#3
 		LDA	#0
 		LDX	#$80 ; '€'
