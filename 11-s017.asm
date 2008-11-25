@@ -8,6 +8,12 @@ loc_6368 = $6368
 byte_6390 = $6390
 loc_6391 = $6391
 
+.macro DBGSYM Label, Addr
+	.BYTE	($80 | .STRLEN(Label))
+	.BYTE	Label
+	.BYTE	.LOBYTE(Addr), .HIBYTE(Addr)
+.endmacro
+
 ;		.ORG	$600
 unk_600:	.BYTE	$00,$00,$00,$00,$00,$00,$00,$00	; DATA XREF: sub_31A2+3Er
 		.BYTE	$3F,$C3,$0F,$0F,$0F,$3C,$3C,$F0
@@ -7958,6 +7964,7 @@ sub_2E95:				; CODE XREF: RAM:2F53p	RAM:30A7p
 ; End of function sub_2E95
 
 ; ---------------------------------------------------------------------------
+loc_2EA6:
 		LDA	#$80 ; '€'
 		STA	byte_2CD0,X
 		CPX	#4
@@ -8531,7 +8538,7 @@ unk_3236:	.BYTE	7		; DATA XREF: sub_31A2+1Ar
 		.BYTE $EF ; ï
 		.BYTE $F7 ; ÷
 		.BYTE $FF
-unk_3256:	.BYTE $A5 ; ¥		; DATA XREF: sub_2E47+20r
+unk_3256:	.BYTE	<(loc_2EA6-1)	; DATA XREF: sub_2E47+20r
 		.BYTE $BA ; º
 		.BYTE $D9 ; Ù
 		.BYTE  $A
@@ -8551,7 +8558,7 @@ unk_3256:	.BYTE $A5 ; ¥		; DATA XREF: sub_2E47+20r
 		.BYTE $A6 ; ¦
 		.BYTE $DE ; Þ
 		.BYTE $FA ; ú
-unk_326A:	.BYTE $2E ; .		; DATA XREF: sub_2E47+1Cr
+unk_326A:	.BYTE	>(loc_2EA6-1)	; DATA XREF: sub_2E47+1Cr
 		.BYTE $2E ; .
 		.BYTE $2E ; .
 		.BYTE $2F ; /
@@ -21137,114 +21144,19 @@ unk_6306:	.BYTE  $C		; DATA XREF: sub_2A3B+20r
 		.BYTE $35 ; 5		; CODE XREF: RAM:1E76p
 		.BYTE $32 ; 2
 		.BYTE $91 ; ‘
-		.BYTE $88 ; ˆ
-		.BYTE $41 ; A
-		.BYTE $44 ; D
-		.BYTE $44 ; D
-		.BYTE $45 ; E
-		.BYTE $58 ; X
-		.BYTE $50 ; P
-		.BYTE $31 ; 1
-		.BYTE $30 ; 0
-		.BYTE $51 ; Q
-		.BYTE $91 ; ‘
-		.BYTE $87 ; ‡
-		.BYTE $58 ; X
-		.BYTE $41 ; A
-		.BYTE $44 ; D
-		.BYTE $44 ; D
-		.BYTE $45 ; E
-		.BYTE $58 ; X
-		.BYTE $50 ; P
-		.BYTE $5D ; ]
-		.BYTE $91 ; ‘
-		.BYTE $88 ; ˆ
-		.BYTE $41 ; A
-		.BYTE $44 ; D
-		.BYTE $44 ; D
-		.BYTE $45 ; E
-		.BYTE $58 ; X
-		.BYTE $50 ; P
-		.BYTE $32 ; 2
-		.BYTE $30 ; 0
-		.BYTE $5E ; ^
-		.BYTE $91 ; ‘
-		.BYTE $88 ; ˆ
-		.BYTE $41 ; A
-		.BYTE $44 ; D
-		.BYTE $44 ; D
-		.BYTE $45 ; E
-		.BYTE $58 ; X
-		.BYTE $50 ; P
-		.BYTE $35 ; 5
-		.BYTE $30 ; 0
-		.BYTE $65 ; e
-		.BYTE $91 ; ‘
-		.BYTE $88 ; ˆ
-		.BYTE $41 ; A
-		.BYTE $44 ; D
-		.BYTE $44 ; D
-		.BYTE $45 ; E
-		.BYTE $58 ; X
-		.BYTE $50 ; P
-		.BYTE $35 ; 5
-		.BYTE $31 ; 1
-		.BYTE $95 ; •
-		.BYTE $91 ; ‘
-		.BYTE $88 ; ˆ
-		.BYTE $41 ; A
-		.BYTE $44 ; D
-		.BYTE $44 ; D
-		.BYTE $45 ; E
-		.BYTE $58 ; X
-		.BYTE $50 ; P
-		.BYTE $35 ; 5
-		.BYTE $32 ; 2
-		.BYTE $A2 ; ¢
-		.BYTE $91 ; ‘
-		.BYTE	8
-		.BYTE $41 ; A
-		.BYTE $44 ; D
-		.BYTE $44 ; D
-		.BYTE $45 ; E
-		.BYTE $58 ; X
-		.BYTE $50 ; P
-		.BYTE $36 ; 6
-		.BYTE $30 ; 0
-		.BYTE $B3 ; ³
-		.BYTE $91 ; ‘
-		.BYTE $88 ; ˆ
-		.BYTE $43 ; C
-		.BYTE $4F ; O
-		.BYTE $50 ; P
-		.BYTE $59 ; Y
-		.BYTE $44 ; D
-		.BYTE $4F ; O
-		.BYTE $57 ; W
-		.BYTE $4E ; N
-		.BYTE	9
-		.BYTE $92 ; ’
-		.BYTE $84 ; „
-		.BYTE $43 ; C
-		.BYTE $44 ; D
-		.BYTE $31 ; 1
-		.BYTE $30 ; 0
-		.BYTE $18
-		.BYTE $92 ; ’
-		.BYTE $83 ; ƒ
-		.BYTE $5D ; ]
-		.BYTE $4C ; L
-		.BYTE $33 ; 3
-		.BYTE $33 ; 3
-		.BYTE $92 ; ’
-		.BYTE $84 ; „
-		.BYTE $43 ; C
-		.BYTE $44 ; D
-		.BYTE $33 ; 3
-		.BYTE $30 ; 0
-		.BYTE $3F ; ?
-		.BYTE $92 ; ’
-		.BYTE $84 ; „
+		DBGSYM	"ADDEXP10", $9151
+		DBGSYM	"XADDEXP", $915D
+		DBGSYM	"ADDEXP20", $915E
+		DBGSYM	"ADDEXP50", $9165
+		DBGSYM	"ADDEXP51", $9195
+		DBGSYM	"ADDEXP52", $91A2
+		.BYTE	8,"ADDEXP60"
+		.WORD	$91B3
+		DBGSYM	"COPYDOWN", $9209
+		DBGSYM	"CD10", $9218
+		DBGSYM	"]L3", $9233
+		DBGSYM	"CD30", $923F
+		.BYTE	$84
 ; end of 'RAM'
 
 

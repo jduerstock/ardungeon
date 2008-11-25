@@ -189,84 +189,42 @@ loc_7748:				; CODE XREF: sub_7714+30j
 ; End of function sub_7714
 
 ; ---------------------------------------------------------------------------
-		.BYTE $A8,$FF
-		.BYTE $A6,  0,	1
-		.BYTE $A5
-aYouEnterARoomF:.BYTE "You enter a room filled with mirrors."
-		.BYTE $D
-		.BYTE $D
-		.BYTE $A5
-aAMagnificently:.BYTE "A magnificently clad warhorse is"
-		.BYTE $D
-		.BYTE $A5
-aAdmiringHimsel:.BYTE "admiring himself in an oval mirror.",$D
-		.BYTE $FF
-		.BYTE $A6,  0,	1
-		.BYTE $A5
-aTheRoomIsCompl:.BYTE "The room is completely dark and"
-		.BYTE $D
-		.BYTE $D
-		.BYTE $A5
-aThereIsNobodyH:.BYTE "there is nobody here.",$D
-		.BYTE $FF
-		.BYTE $A6,  0,	0
-		.BYTE $A5
-aTheClothesHors:.BYTE "The Clothes Horse remarks:"
-		.BYTE $D
-		.BYTE $D
-		.BYTE $A5
-aYourAttireIsNo:.BYTE $22,"Your attire is not fit for a pauper."
-		.BYTE $D
-		.BYTE $D
-		.BYTE $A5
-aYouMustLeave:	.BYTE "You must leave!",$22
-		.BYTE $D
-		.BYTE $FF
-		.BYTE $A6,  0,	0
-		.BYTE $A5
-aTheClothesHo_0:.BYTE "The Clothes Horse says:"
-		.BYTE $D
-		.BYTE $D
-		.BYTE $A5
-aThat:		.BYTE $22,"That "
-		.BYTE $B4
-		.WORD $65
-		.BYTE $19
-aWould:		.BYTE " would"
-		.BYTE $D
-		.BYTE $A5
-aLookMuchBetter:.BYTE "look much better on me.  I must have it!"
-		.BYTE $D
-		.BYTE $A5
-aIShallTradeMyM:.BYTE "I shall trade my mirror for it.",$22
-		.BYTE $D
-		.BYTE $D
-		.BYTE $A5
-aDoYouTradeq:	.BYTE "Do you trade? ("
-		.BYTE $A1
-aY:		.BYTE "Y"
-		.BYTE $A0
-aOr:		.BYTE " or "
-		.BYTE $A1
-aN:		.BYTE "N"
-		.BYTE $A0
-		.BYTE ")",$D
-		.BYTE $FF
-		.BYTE $A6,  0,	2
-		.BYTE $A5
-aYouHandTheClot:.BYTE "You hand the Clothes Horse your"
-		.BYTE $D
-		.BYTE $D
-		.BYTE $A5
-		.BYTE $B4
-		.WORD $65
-		.BYTE $1E
-aAndHe:		.BYTE " and he"
-		.BYTE $D
-		.BYTE $D
-		.BYTE $A5
-aHandsYouAShini:.BYTE "hands you a shining shield.",$D
-		.BYTE $FF
+		.BYTE	$A8,$FF
+
+		MOVEXY	0,1
+		.BYTE	$A5,"You enter a room filled with mirrors.",$0D,$0D
+		.BYTE	$A5,"A magnificently clad warhorse is",$0D
+		.BYTE	$A5,"admiring himself in an oval mirror.",$0D,$FF
+
+		MOVEXY	0,1
+		.BYTE	$A5,"The room is completely dark and",$0D,$0D
+		.BYTE	$A5,"there is nobody here.",$0D,$FF
+
+		MOVEXY	0,0
+		.BYTE	$A5,"The Clothes Horse remarks:",$0D,$0D
+		.BYTE	$A5,$22,"Your attire is not fit for a pauper.",$0D,$0D
+		.BYTE	$A5,"You must leave!",$22,$0D,$FF
+
+		MOVEXY	0,0
+		.BYTE	$A5,"The Clothes Horse says:",$0D,$0D
+		.BYTE	$A5,$22,"That "
+		PRINTSTRP $65, 25
+		.BYTE	" would",$0D
+		.BYTE	$A5,"look much better on me.  I must have it!",$0D
+		.BYTE	$A5,"I shall trade my mirror for it.",$22,$0D,$0D
+		.BYTE	$A5,"Do you trade? ("
+		BLINK "Y"
+		.BYTE " or "
+		BLINK "N"
+		.BYTE ")",$0D,$FF
+
+		MOVEXY	0,2
+		.BYTE	$A5,"You hand the Clothes Horse your",$0D,$0D
+		.BYTE	$A5
+		PRINTSTRP $65, 30
+		.BYTE	" and he",$0D,$0D
+		.BYTE	$A5,"hands you a shining shield.",$D,$FF
+
 		.BYTE	3
 		.BYTE $4A ; J
 		.BYTE	1
@@ -326,7 +284,7 @@ aMirroredShield:.BYTE "Mirrored Shield",0
 		.BYTE $FF
 		.BYTE $82 ; Ç
 		.BYTE $60 ; `
-unk_799D:	.BYTE $70 ; p		; DATA XREF: RAM:79CDo
+byte_799D:	.BYTE $70 ; p		; DATA XREF: RAM:79CDo
 		.BYTE $70 ; p
 		.BYTE $30 ; 0
 		.BYTE $42
@@ -372,7 +330,7 @@ unk_799D:	.BYTE $70 ; p		; DATA XREF: RAM:79CDo
 		.BYTE	0
 		.BYTE	2
 		.BYTE $41
-		.WORD unk_799D
+		.WORD byte_799D
 ; ---------------------------------------------------------------------------
 		PHA
 		TXA
@@ -445,14 +403,11 @@ loc_7A33:				; CODE XREF: RAM:7A58j
 ; ---------------------------------------------------------------------------
 
 loc_7A75:				; CODE XREF: RAM:760Aj
-		LDA	#$7F ; ''
+		LDA	#$7F
 		STA	$253
-		LDA	#$9D ; 'ù'
-		STA	$254
-		LDA	#$79 ; 'y'
-		STA	$255
+		dldi	off_254, $799D
 		LDA	#8
-		LDX	#$23 ; '#'
+		LDX	#$23
 
 loc_7A88:				; CODE XREF: RAM:7A96j
 		LDY	#$C
@@ -468,23 +423,15 @@ loc_7A8A:				; CODE XREF: RAM:7A91j
 		BNE	loc_7A88
 
 loc_7A98:				; CODE XREF: RAM:7A8Ej
-		LDA	#0
-		STA	9
-		LDA	#8
-		STA	$A
+
+		dldi	off_9, $0800
 		JSR	loc_7B90
-		LDA	#$70 ; 'p'
-		STA	9
-		LDA	#$BB ; 'ª'
-		STA	$A
+		dldi	off_9, $BB70
 		JSR	loc_7B90
-		LDA	#0
-		STA	loc_7ABE+1
-		LDA	#$BD ; 'Ω'
-		STA	loc_7ABE+2
+		dldi	loc_7ABE+1, $BD00
 		LDY	#3
 		LDA	#0
-		LDX	#$80 ; 'Ä'
+		LDX	#$80
 
 loc_7ABE:				; CODE XREF: RAM:7AC2j	RAM:7AC8j
 					; DATA XREF: ...
@@ -510,40 +457,34 @@ loc_7AD5:				; CODE XREF: RAM:7AD9j
 		ldi	SIZEM, $FF
 		ldi	GRACTL, $03
 		ldi	PMBASE, $BC
-		ldi	PRIOR,$04
-		LDA	#0
-		STA	7
-		LDA	#$BC ; 'º'
-		STA	8
-		LDA	#$F0 ; ''
-		STA	9
-		LDA	#4
-		STA	$A
+		ldi	PRIOR, $04
+		dldi	off_7, $BC00
+		dldi	off_9, $04F0
 		LDA	#0
 		STA	6
 
 loc_7B03:				; CODE XREF: RAM:7B29j
 		LDY	6
-		LDA	(7),Y
+		LDA	(off_7),Y
 		STA	4
 		LDY	#7
 
 loc_7B0B:				; CODE XREF: RAM:7B16j
 		LSR	4
 		BCC	loc_7B15
-		LDA	(9),Y
+		LDA	(off_9),Y
 		ORA	#$80 ; 'Ä'
-		STA	(9),Y
+		STA	(off_9),Y
 
 loc_7B15:				; CODE XREF: RAM:7B0Dj
 		DEY
 		BPL	loc_7B0B
-		LDA	9
+		LDA	off_9
 		CLC
 		ADC	#8
-		STA	9
+		STA	off_9
 		BCC	loc_7B23
-		INC	$A
+		INC	off_9+1
 
 loc_7B23:				; CODE XREF: RAM:7B1Fj
 		INC	6
@@ -554,15 +495,12 @@ loc_7B23:				; CODE XREF: RAM:7B1Fj
 		STA	7
 		LDX	#0
 		STX	6
-		LDA	#$A9 ; '©'
-		STA	$F0
-		LDA	#$BD ; 'Ω'
-		STA	$F1
+		dldi	$F0, $BDA9
 
 loc_7B3B:				; CODE XREF: RAM:7B4Cj
 		CLC
 		LDA	$F0,X
-		ADC	#$80 ; 'Ä'
+		ADC	#$80
 		STA	$F2,X
 		LDA	$F1,X
 		ADC	#0
@@ -613,28 +551,28 @@ loc_7B72:				; CODE XREF: RAM:7B76j
 
 loc_7B90:				; CODE XREF: RAM:7AA0p	RAM:7AABp ...
 		LDY	#0
-		LDA	(7),Y
-		INC	7
+		LDA	(off_7),Y
+		INC	off_7
 		BNE	loc_7B9A
-		INC	8
+		INC	off_7+1
 
 loc_7B9A:				; CODE XREF: RAM:7B96j
 		CMP	#$1B
 		BEQ	loc_7BA9
-		STA	(9),Y
-		INC	9
+		STA	(off_9),Y
+		INC	off_9
 		BNE	loc_7BA6
-		INC	$A
+		INC	off_9+1
 
 loc_7BA6:				; CODE XREF: RAM:7BA2j
 		JMP	loc_7B90
 ; ---------------------------------------------------------------------------
 
 loc_7BA9:				; CODE XREF: RAM:7B9Cj
-		LDA	(7),Y
-		INC	7
+		LDA	(off_7),Y
+		INC	off_7
 		BNE	loc_7BB1
-		INC	8
+		INC	off_7+1
 
 loc_7BB1:				; CODE XREF: RAM:7BADj
 		CMP	#$FF
@@ -644,9 +582,9 @@ loc_7BB1:				; CODE XREF: RAM:7BADj
 
 loc_7BB6:				; CODE XREF: RAM:7BB3j
 		STA	byte_7BF0
-		ADC	9
+		ADC	off_9
 		STA	loc_7BC9+1
-		LDA	$A
+		LDA	off_9+1
 		ADC	#0
 		CMP	#$14
 		BNE	loc_7BCE
@@ -657,25 +595,25 @@ loc_7BC9:				; DATA XREF: RAM:7BBBw
 		STA	byte_7BF0
 
 loc_7BCE:				; CODE XREF: RAM:7BC4j
-		LDA	(7),Y
-		INC	7
+		LDA	(off_7),Y
+		INC	off_7
 		BNE	loc_7BD6
-		INC	8
+		INC	off_7+1
 
 loc_7BD6:				; CODE XREF: RAM:7BD2j
 		LDY	byte_7BF0
 
 loc_7BD9:				; CODE XREF: RAM:7BDCj
-		STA	(9),Y
+		STA	(off_9),Y
 		DEY
 		BPL	loc_7BD9
 		INC	byte_7BF0
 		LDA	byte_7BF0
 		CLC
-		ADC	9
-		STA	9
+		ADC	off_9
+		STA	off_9
 		BCC	loc_7BED
-		INC	$A
+		INC	off_9+1
 
 loc_7BED:				; CODE XREF: RAM:7BE9j
 		JMP	loc_7B90
