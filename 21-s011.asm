@@ -1,254 +1,57 @@
+		.include	"macros.inc"
 
 ;		.ORG	$AC00
 		.BYTE	0
 		.WORD asc_AC47		; "toast! LEV 1.1"
-aInThe:		.BYTE "in the"
-		.BYTE $A0
-aInA:		.BYTE "in a"
-		.BYTE $A0
-aAtThe:		.BYTE "at the"
-		.BYTE $A0
-aRoom:		.BYTE " room"
-		.BYTE $AE
-aUngeon:	.BYTE "ungeon"
-		.BYTE $A0
-aCorridor:	.BYTE "corridor"
-		.BYTE $AE
-		.BYTE $20
-aAcrinimiri:	.BYTE "Acrinimiri"
-		.BYTE $EC
-aGobli:		.BYTE "Gobli"
-		.BYTE $EE
-aChape:		.BYTE "Chape"
-		.BYTE $EC
-aIn:		.BYTE "in"
-		.BYTE $A0
-asc_AC47:	.BYTE "toast! LEV 1.1",0 ; DATA XREF: RAM:AC01o
-aInTheCitySSewe:.BYTE "in The City's sewer system.",0
-		.BYTE $89
-aGramSGoldExcha:.BYTE "Gram's Gold Exchange vault.",0
-		.BYTE $81
-		.BYTE $85
-		.BYTE	0
-		.BYTE $81
-aHallway_:	.BYTE "hallway.",0
-		.BYTE $81
-aPassage_:	.BYTE "passage.",0
-		.BYTE $81
-aLong:		.BYTE "long "
-		.BYTE $85
-		.BYTE	0
-		.BYTE $81
-aTypicalD:	.BYTE "typical d"
-		.BYTE $84
-		.BYTE $85
-		.BYTE	0
-		.BYTE $80
-		.BYTE $87
-aSDemesne_:	.BYTE "s' demesne.",0
-		.BYTE $82
-		.BYTE $87
-aKingSPalace_:	.BYTE " king's palace.",0
-aByAStairwayLea:.BYTE "by a stairway leading down.",0
-aInsideTheLoop_:.BYTE "inside The Loop.",0
-		.BYTE $81
-aMausoleum_:	.BYTE "mausoleum.",0
-aBy:		.BYTE "by"
-		.BYTE $86
-aSTomb_:	.BYTE "'s tomb.",0
-		.BYTE $80
-aTombOf:	.BYTE "tomb of"
-		.BYTE $86
-a_:		.BYTE ".",0
-		.BYTE $81
-aNondescript:	.BYTE "nondescript"
-		.BYTE $83
-		.BYTE	0
-		.BYTE $81
-aSmall:		.BYTE "small"
-		.BYTE $83
-		.BYTE	0
-		.BYTE $80
-aExit:		.BYTE "Exit"
-		.BYTE $83
-		.BYTE	0
-		.BYTE $81
-aSmallArea_:	.BYTE "small area.",0
-		.BYTE $80
-aD:		.BYTE "D"
-		.BYTE $84
-		.BYTE $88
-a__0:		.BYTE ".",0
-		.BYTE $80
-		.BYTE $88
-aSanctuary_:	.BYTE " Sanctuary.",0
-aInYetAnotherSm:.BYTE "in yet another small"
-		.BYTE $83
-		.BYTE	0
-		.BYTE $81
-aLarge:		.BYTE "large"
-		.BYTE $83
-		.BYTE	0
-		.BYTE $81
-aRoomWithThreeD:.BYTE "room with three doors.",0
-		.BYTE $81
-aDimPassage_:	.BYTE "dim passage.",0
-aInTheChapelGar:.BYTE "in the Chapel garden.",0
-aInAnOpenArea_:	.BYTE "in an open area.",0
-		.BYTE $81
-aCharredBarrack:.BYTE "charred barracks"
-		.BYTE $83
-		.BYTE	0
-aInAnEmptyOffic:.BYTE "in an empty officers' quarters.",0
-aInAnOldStorage:.BYTE "in an old storage"
-		.BYTE $83
-		.BYTE	0
-		.BYTE $81
-aDeadEndPassage:.BYTE "dead-end passage.",0
-		.BYTE $81
-aDebrisFilled:	.BYTE "debris-filled"
-		.BYTE $83
-		.BYTE	0
-		.BYTE $81
-		.BYTE $87
-		.BYTE	"'s"
-		.BYTE $83
-		.BYTE	0
-		.BYTE $80
-aReject:	.BYTE "reject"
-		.BYTE $83
-		.BYTE	0
-aAtAStairwayLea:.BYTE "at a stairway leading down.",0
-		.BYTE $81
-aRoomWithFourDo:.BYTE "room with four doors.",0
-		.BYTE $FF
-		.BYTE	0
-		.BYTE $FF
-		.BYTE	0
-		.BYTE $FF
-		.BYTE	0
-		.BYTE $FF
-		.BYTE	0
-		.BYTE $FF
-		.BYTE	0
-		.BYTE $FF
-		.BYTE	0
-		.BYTE $FF
-		.BYTE	0
-		.BYTE $FF
-		.BYTE	0
-		.BYTE $FF
-		.BYTE	0
-		.BYTE $FF
-		.BYTE	0
-		.BYTE $FF
-		.BYTE	0
-		.BYTE $FF
-		.BYTE	0
-		.BYTE $FF
-		.BYTE	0
-		.BYTE $FF
-		.BYTE	0
-		.BYTE $FF
-		.BYTE	0
-		.BYTE $FF
-		.BYTE	0
-		.BYTE $FF
-		.BYTE	0
-		.BYTE $FF
-		.BYTE	0
-		.BYTE $FF
-		.BYTE	0
-		.BYTE $FF
-		.BYTE	0
-		.BYTE $FF
-		.BYTE	0
-		.BYTE $FF
-		.BYTE	0
-		.BYTE $FF
-		.BYTE	0
-		.BYTE $FF
-		.BYTE	0
-		.BYTE $FF
-		.BYTE	0
-		.BYTE $FF
-		.BYTE	0
-		.BYTE $FF
-		.BYTE	0
-		.BYTE $FF
-		.BYTE	0
-		.BYTE $FF
-		.BYTE	0
-		.BYTE $FF
-		.BYTE	0
-		.BYTE $FF
-		.BYTE	0
-		.BYTE $FF
-		.BYTE	0
-		.BYTE $FF
-		.BYTE	0
-		.BYTE $FF
-		.BYTE	0
-		.BYTE $FF
-		.BYTE	0
-		.BYTE $FF
-		.BYTE	0
-		.BYTE $FF
-		.BYTE	0
-		.BYTE $FF
-		.BYTE	0
-		.BYTE $FF
-		.BYTE	0
-		.BYTE $FF
-		.BYTE	0
-		.BYTE $FF
-		.BYTE	0
-		.BYTE $FF
-		.BYTE	0
-		.BYTE $FF
-		.BYTE	0
-		.BYTE $FF
-		.BYTE	0
-		.BYTE $FF
-		.BYTE	0
-		.BYTE $FF
-		.BYTE	0
-		.BYTE $FF
-		.BYTE	0
-		.BYTE $FF
-		.BYTE	0
-		.BYTE $FF
-		.BYTE	0
-		.BYTE $FF
-		.BYTE	0
-		.BYTE $FF
-		.BYTE	0
-		.BYTE $FF
-		.BYTE	0
-		.BYTE $FF
-		.BYTE	0
-		.BYTE $FF
-		.BYTE	0
-		.BYTE $FF
-		.BYTE	0
-		.BYTE $FF
-		.BYTE	0
-		.BYTE $FF
-		.BYTE	0
-		.BYTE $FF
-		.BYTE	0
-		.BYTE $FF
-		.BYTE	0
-		.BYTE $FF
-		.BYTE	0
-		.BYTE $FF
-		.BYTE	0
-		.BYTE $FF
-		.BYTE	0
-		.BYTE $FF
-		.BYTE	0
-		.BYTE $FF
-		.BYTE	0
+		HBStr	"in the "	; $80
+		HBStr	"in a "		; $81
+		HBStr	"at the "	; $82
+		HBStr	" room."	; $83
+		HBStr	"ungeon "	; $84
+		HBStr	"corridor."	; $85
+		HBStr	" Acrinimiril"	; $86
+		HBStr	"Goblin"	; $87
+		HBStr	"Chapel"	; $88
+		HBStr	"in "		; $89
+asc_AC47:	.BYTE	"toast! LEV 1.1",0 ; DATA XREF: RAM:AC01o
+		.BYTE	"in The City's sewer system.",$00
+		.BYTE	$89,"Gram's Gold Exchange vault.",$00
+		.BYTE	$81,$85,$00
+		.BYTE	$81,"hallway.",$00
+		.BYTE	$81,"passage.",$00
+		.BYTE	$81,"long ",$85,$00
+		.BYTE	$81,"typical d",$84,$85,$00
+		.BYTE	$80,$87,"s' demesne.",$00
+		.BYTE	$82,$87," king's palace.",$00
+		.BYTE	"by a stairway leading down.",$00
+		.BYTE	"inside The Loop.",$00
+		.BYTE	$81,"mausoleum.",$00
+		.BYTE	"by",$86,"'s tomb.",$00
+		.BYTE	$80,"tomb of",$86,".",$00
+		.BYTE	$81,"nondescript",$83,$00
+		.BYTE	$81,"small",$83,$00
+		.BYTE	$80,"Exit",$83,$00
+		.BYTE	$81,"small area.",$00
+		.BYTE	$80,"D",$84,$88,".",$00
+		.BYTE	$80,$88," Sanctuary.",$00
+		.BYTE	"in yet another small",$83,$00
+		.BYTE	$81,"large",$83,$00
+		.BYTE	$81,"room with three doors.",$00
+		.BYTE	$81,"dim passage.",0
+		.BYTE	"in the Chapel garden.",0
+		.BYTE	"in an open area.",0
+		.BYTE	$81,"charred barracks",$83,$00
+		.BYTE	"in an empty officers' quarters.",$00
+		.BYTE	"in an old storage",$83,$00
+		.BYTE	$81,"dead-end passage.",$00
+		.BYTE	$81,"debris-filled",$83,$00
+		.BYTE	$81,$87,"'s",$83,$00
+		.BYTE	$80,"reject",$83,$00
+		.BYTE	"at a stairway leading down.",$00
+		.BYTE	$81,"room with four doors.",$00
+		.REPEAT 64
+			.BYTE $FF,$00
+		.ENDREPEAT
 		.BYTE $FF
 		.BYTE	8
 		.BYTE	0

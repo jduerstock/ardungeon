@@ -1,13 +1,4 @@
-
-	.macro HBStr Arg
-		.scope
-			Len = .strlen(Arg)-1
-			.repeat Len, I
-				.BYTE .strat(Arg, I)
-			.endrep
-			.BYTE .strat(Arg, Len) | $80
-		.endscope
-	.endmacro
+		.include	"macros.inc"
 
 		;.segment RAM
 ;		* =  $AC00

@@ -1,104 +1,45 @@
+		.include	"macros.inc"
+
 ;		.ORG	$AC00
 		.BYTE	1
 		.WORD aToastLev1_2	; "toast! LEV 1.2"
-aInA:		.BYTE "in a"
-		.BYTE $A0
-aAtThe:		.BYTE "at the"
-		.BYTE $A0
-aIn:		.BYTE "in"
-		.BYTE $A0
-aRoom:		.BYTE " room"
-		.BYTE $AE
-		.BYTE $20
-aOf:		.BYTE "of"
-		.BYTE $A0
-aPassage:	.BYTE " passage"
-		.BYTE $AE
-aSecre:		.BYTE "secre"
-		.BYTE $F4
-aDungeonEntranc:.BYTE "Dungeon Entrance"
-		.BYTE $AE
-aWizard:	.BYTE "Wizard"
-		.BYTE $F3
-aQuie:		.BYTE "quie"
-		.BYTE $F4
-aCorridor:	.BYTE "corridor"
-		.BYTE $AE
-aHallway:	.BYTE "hallway"
-		.BYTE $AE
-aLong:		.BYTE "long"
-		.BYTE $A0
-aGuil:		.BYTE " Guil"
-		.BYTE $E4
-aArea:		.BYTE " area"
-		.BYTE $AE
-		.BYTE $20
-aDungeon:	.BYTE "Dungeon"
-		.BYTE $A0
-aByA:		.BYTE "by a"
-		.BYTE $A0
-aAtA:		.BYTE "at a"
-		.BYTE $A0
-aStairwayLeadin:.BYTE "stairway leading down"
-		.BYTE $AE
-aInThe:		.BYTE "in the"
-		.BYTE $A0
-aToastLev1_2:	.BYTE "toast! LEV 1.2",0 ; DATA XREF: RAM:AC01o
-		.BYTE $80
-		.BYTE $8A
-		.BYTE 0
-		.BYTE $80
-		.BYTE $8B
-		.BYTE 0
-		.BYTE $80
-		.BYTE $8C
-		.BYTE $8A
-		.BYTE 0
-		.BYTE $80
-		.BYTE $8C
-		.BYTE $8B
-		.BYTE 0
-		.BYTE $80
-aDim:		.BYTE "dim"
-		.BYTE $85
-		.BYTE 0
-		.BYTE $80
-		.BYTE $86
-		.BYTE $85
-		.BYTE 0
-		.BYTE $80
-		.BYTE $86
-		.BYTE " "
-		.BYTE $8B
-		.BYTE 0
-		.BYTE $90
-		.BYTE $87
-		.BYTE 0
-		.BYTE $80
-aDeadEnd:	.BYTE "dead-end"
-		.BYTE $85
-		.BYTE 0
-		.BYTE $81
-aDamonPythiasSh:.BYTE "Damon & Pythias Shoppe.",0
-aNotHere:	.BYTE "not here!!!",0
-		.BYTE $81
-aRetreat_:	.BYTE "Retreat.",0
-		.BYTE $81
-		.BYTE $88
-		.BYTE $84
-aChaos:		.BYTE "Chaos"
-		.BYTE $8D
-a_:		.BYTE ".",0
-aAtTheGuild:	.BYTE "at the Guild"
-		.BYTE $84
-aOrder_:	.BYTE "Order.",0
-		.BYTE $81
-		.BYTE $88
-		.BYTE $84
-aLaw:		.BYTE "Law"
-		.BYTE $8D
-a__0:		.BYTE ".",0
-aAtAStrangeMach:.BYTE "at a strange machine.",0
+		HBStr	"in a "
+		HBStr	"at the "
+		HBStr	"in "
+		HBStr	" room."
+		HBStr	" of "
+		HBStr	" passage."
+		HBStr	"secret"
+		HBStr	"Dungeon Entrance."
+		HBStr	"Wizards"
+		HBStr	"quiet"
+		HBStr	"corridor."
+		HBStr	"hallway."
+		HBStr	"long "
+		HBStr	" Guild"
+		HBStr	" area."
+		HBStr	" Dungeon "
+		HBStr	"by a "
+		HBStr	"at a "
+		HBStr	"stairway leading down."
+		HBStr	"in the "
+aToastLev1_2:	.BYTE	"toast! LEV 1.2",0 ; DATA XREF: RAM:AC01o
+		.BYTE	$80,$8A,$00
+		.BYTE	$80,$8B,$00
+		.BYTE	$80,$8C,$8A,$00
+		.BYTE	$80,$8C,$8B,$00
+		.BYTE	$80,"dim",$85,$00
+		.BYTE	$80,$86,$85,$00
+		.BYTE	$80,$86," ",$8B,$00
+		.BYTE	$90,$87,$00
+		.BYTE	$80,"dead-end",$85,$00
+		.BYTE	$81,"Damon & Pythias Shoppe.",$00
+		.BYTE	"not here!!!",$00
+		.BYTE	$81,"Retreat.",0
+		.BYTE	$81,$88,$84,"Chaos",$8D,".",$00
+		.BYTE	"at the Guild",$84,"Order.",0
+		.BYTE	$81,$88,$84,"Law",$8D,".",$00
+		.BYTE	"at a strange machine.",0
 		.BYTE $91
 		.BYTE $92
 		.BYTE 0
