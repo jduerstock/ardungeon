@@ -14,6 +14,8 @@ byte_AA00 = $AA00			; maximum number of monsters
 off_AA01 = $AA01			; singular monster name
 off_AA03 = $AA03			; plural monster name
 off_AA05 = $AA05			; monster weapon pointer array
+;	$AA07
+;	$AA09
 byte_AA0B = $AA0B
 byte_AA0C = $AA0C
 byte_AA0D = $AA0D
@@ -2550,7 +2552,7 @@ loc_854F:				; CODE XREF: sub_852B+18j
 		BCS	locret_855F
 		LDA	byte_AA0B
 		AND	#$F
-		STA	$758B
+		STA	$758B		; $758B = AA0B & 0x0f
 
 locret_855F:				; CODE XREF: sub_852B+3j sub_852B+Bj ...
 		RTS
