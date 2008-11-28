@@ -14,6 +14,7 @@ loc_6391 = $6391
 	.BYTE	.LOBYTE(Addr), .HIBYTE(Addr)
 .endmacro
 
+		.SEGMENT	"SEG_0600"
 ;		.ORG	$600
 unk_600:	.BYTE	$00,$00,$00,$00,$00,$00,$00,$00	; DATA XREF: sub_31A2+3Er
 		.BYTE	$3F,$C3,$0F,$0F,$0F,$3C,$3C,$F0
@@ -4955,14 +4956,16 @@ loc_1E00:				; CODE XREF: RAM:222Aj
 loc_1E02:				; CODE XREF: RAM:1E0Fj
 		LDA	loc_1E14,X
 		STA	$6300,X
-		LDA	loc_1F13+1,X
-		STA	$6400,X
+		LDA	loc_1E14+$0100,X
+		STA	$6300+$0100,X
 		INX
 		BNE	loc_1E02
 		JMP	unk_6300
+loc_1E14:
 ; ---------------------------------------------------------------------------
+		.SEGMENT	"SEG_6300"
 
-loc_1E14:				; DATA XREF: RAM:loc_1E02r
+loc_6300:				; DATA XREF: RAM:loc_1E02r
 		LDX	#8
 		LDA	#0
 
@@ -5115,6 +5118,8 @@ loc_1F19:				; CODE XREF: RAM:1F0Fj	RAM:1F16j
 		.WORD $640D
 		.RES	219,$00
 ; ---------------------------------------------------------------------------
+		.SEGMENT	"SEG_2000"
+
 		LDX	#$FF
 		TXS
 		JSR	sub_2D75

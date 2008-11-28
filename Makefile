@@ -113,7 +113,8 @@ all: ar11.img ar21.img ar22.img ar31.img ar32.img
 	ca65 -o $@ $<
 
 11-s017.bin: 11-s017.asm
-	cl65 --start-addr 0x0600 -t none $< -o $@
+	ca65 -o 11-s017.o $<
+	ld65 -o $@ -C 11-s017.cfg 11-s017.o
 	sha1sum -c 11-s017.sha1
 
 11-s205.bin: 11-s205.asm
