@@ -1468,106 +1468,26 @@ unk_80D3:	.BYTE	$09,$12,$02,$00,"Lobster",0
 unk_80DF:	.BYTE	$03,$08,$04,$00,"a Bowl of Fruit",0
 unk_80F3:	.BYTE	$03,$05,$03,$00,"a Plate of Greens",0
 unk_8109:	.BYTE	$02,$04,$00,$00,"a Loaf of Bread",0
-unk_811D:	.BYTE	3		; DATA XREF: RAM:7FB3o
-		.BYTE	8
-		.BYTE	0
-		.BYTE	0
-aABlockOfCheese:.BYTE "a Block of Cheese",0
-unk_8133:	.BYTE	4		; DATA XREF: RAM:7FB5o
-		.BYTE  $A
-		.BYTE	4
-		.BYTE	0
-aABowlOfChili:	.BYTE "a Bowl of Chili",0
-unk_8147:	.BYTE	3		; DATA XREF: RAM:7FB7o
-		.BYTE	7
-		.BYTE	4
-		.BYTE	0
-aPasta:		.BYTE "Pasta",0
-unk_8151:	.BYTE	4		; DATA XREF: RAM:7FB9o
-		.BYTE	9
-		.BYTE	4
-		.BYTE	0
-aLasagna:	.BYTE "Lasagna",0
-unk_815D:	.BYTE	3		; DATA XREF: RAM:7FBBo
-		.BYTE	8
-		.BYTE	0
-		.BYTE	0
-aASandwich:	.BYTE "a Sandwich",0
-unk_816C:	.BYTE	3		; DATA XREF: RAM:7FBDo
-		.BYTE	7
-		.BYTE  $A
-		.BYTE	0
-aLentilSoup:	.BYTE "Lentil Soup",0
-unk_817C:	.BYTE	4		; DATA XREF: RAM:7FBFo
-		.BYTE  $C
-		.BYTE	0
-		.BYTE	0
-aPemmican:	.BYTE "Pemmican",0
-unk_8189:	.BYTE	3		; DATA XREF: RAM:7FC1o
-		.BYTE  $A
-		.BYTE	8
-		.BYTE	0
-aGruel:		.BYTE "Gruel",0
-unk_8193:	.BYTE	2		; DATA XREF: RAM:7FC3o
-		.BYTE	6
-		.BYTE	0
-		.BYTE	0
-aSweetMeats:	.BYTE "Sweet Meats",0
-unk_81A3:	.BYTE	2		; DATA XREF: RAM:7FC5o
-		.BYTE	6
-		.BYTE	2
-		.BYTE	0
-aBloodPudding:	.BYTE "Blood Pudding",0
-unk_81B5:	.BYTE	2		; DATA XREF: RAM:7FC7o
-		.BYTE	8
-		.BYTE	0
-		.BYTE	0
-aHaggis:	.BYTE "Haggis",0
-unk_81C0:	.BYTE	2		; DATA XREF: RAM:7FC9o
-		.BYTE	2
-		.BYTE  $A
-		.BYTE	5
-aSpirits:	.BYTE "Spirits",0
-unk_81CC:	.BYTE	3		; DATA XREF: RAM:7FCBo
-		.BYTE	3
-		.BYTE  $C
-		.BYTE	4
-aMead:		.BYTE "Mead",0
-unk_81D5:	.BYTE	2		; DATA XREF: RAM:7FCDo
-		.BYTE	2
-		.BYTE  $A
-		.BYTE	3
-aBeer:		.BYTE "Beer",0
-unk_81DE:	.BYTE	2		; DATA XREF: RAM:7FCFo
-		.BYTE	3
-		.BYTE  $A
-		.BYTE	4
-aAle:		.BYTE "Ale",0
-unk_81E6:	.BYTE	3		; DATA XREF: RAM:7FD1o
-		.BYTE	3
-		.BYTE  $A
-		.BYTE	3
-aWine:		.BYTE "Wine",0
-unk_81EF:	.BYTE	2		; DATA XREF: RAM:7FD3o
-		.BYTE	2
-		.BYTE  $A
-		.BYTE	4
-aGrog:		.BYTE "Grog",0
-unk_81F8:	.BYTE	2		; DATA XREF: RAM:7FD5o
-		.BYTE	4
-		.BYTE $10
-		.BYTE	0
-aSarsaparilla:	.BYTE "Sarsaparilla",0
-unk_8209:	.BYTE	2		; DATA XREF: RAM:7FD7o
-		.BYTE	4
-		.BYTE $10
-		.BYTE	0
-aMilk:		.BYTE "Milk",0
-unk_8212:	.BYTE	2		; DATA XREF: RAM:7FD9o
-		.BYTE	6
-		.BYTE  $C
-		.BYTE	0
-aGrapeJuice:	.BYTE "Grape Juice",0
+unk_811D:	.BYTE	$03,$08,$00,$00,"a Block of Cheese",0
+unk_8133:	.BYTE	$04,$0A,$04,$00,"a Bowl of Chili",0
+unk_8147:	.BYTE	$03,$07,$04,$00,"Pasta",0
+unk_8151:	.BYTE	$04,$09,$04,$00,"Lasagna",0
+unk_815D:	.BYTE	$03,$08,$00,$00,"a Sandwich",0
+unk_816C:	.BYTE	$03,$07,$0A,$00,"Lentil Soup",0
+unk_817C:	.BYTE	$04,$0C,$00,$00,"Pemmican",0
+unk_8189:	.BYTE	$03,$0A,$08,$00,"Gruel",0
+unk_8193:	.BYTE	$02,$06,$00,$00,"Sweet Meats",0
+unk_81A3:	.BYTE	$02,$06,$02,$00,"Blood Pudding",0
+unk_81B5:	.BYTE	$02,$08,$00,$00,"Haggis",0
+unk_81C0:	.BYTE	$02,$02,$0A,$05,"Spirits",0
+unk_81CC:	.BYTE	$03,$03,$0C,$04,"Mead",0
+unk_81D5:	.BYTE	$02,$02,$0A,$03,"Beer",0
+unk_81DE:	.BYTE	$02,$03,$0A,$04,"Ale",0
+unk_81E6:	.BYTE	$03,$03,$0A,$03,"Wine",0
+unk_81EF:	.BYTE	$02,$02,$0A,$04,"Grog",0
+unk_81F8:	.BYTE	$02,$04,$10,$00,"Sarsaparilla",0
+unk_8209:	.BYTE	$02,$04,$10,$00,"Milk",0
+unk_8212:	.BYTE	$02,$06,$0C,$00,"Grape Juice",0
 unk_8222:	.BYTE	$01,$02,$10,$00,"Mineral Water",0
 unk_8234:	.BYTE	$02,$06,$0C,$00,"Orange Juice",0
 unk_8245:	.BYTE	$01,$01,$01,$01,"ERROR!!!",0
@@ -1594,14 +1514,10 @@ aHastThouBrough:.BYTE "Hast thou brought enough cash?",$AE
 aThyWelcomeIsWe:.BYTE "Thy welcome is wearing thin.",$AE
 aHelloStranger:	.BYTE "Hello, Stranger!",$AE
 aHello:		.BYTE "Hello, "         ; DATA XREF: RAM:8277o
-		.BYTE $B4
-		.WORD $65
-		.BYTE $20
+		PRINTSTRP $65, 32
 		.BYTE "!",$AE
 aWellMet:	.BYTE "Well met, "      ; DATA XREF: RAM:8279o
-		.BYTE $B4
-		.WORD $65
-		.BYTE $20
+		PRINTSTRP $65, 32
 		.BYTE "!",$AE
 byte_8372:	.BYTE $B3		; DATA XREF: RAM:827Bo
 		.WORD $6321
@@ -1617,36 +1533,27 @@ aGetThat:	.BYTE "Get that "
 		.BYTE $1E
 		.BYTE $D
 		.BYTE $D
-		.BYTE $A5
-aOutOfHere:	.BYTE "out of here!"
-		.BYTE $D
-		.BYTE $FF
+aOutOfHere:	.BYTE $A5,"out of here!",$0D,$FF
 		.BYTE $A6,  0,	0
 		.BYTE $A5
 		.BYTE $AD
 		.WORD $67
 		.BYTE $D
-		.BYTE $A6,  0,	2
-		.BYTE $A5
-aWhereDostThouW:.BYTE "Where dost thou wish to sit?"
-		.BYTE $D
-		.BYTE $A6, $C,	5
+		MOVEXY	0,2
+aWhereDostThouW:.BYTE $A5,"Where dost thou wish to sit?",$0D
+		MOVEXY	12,5
 		MenuItem "1","At the bar"
-		.BYTE $A6, $C,	6
+		MOVEXY	12,6
 		MenuItem "2","At a table"
-		.BYTE $A6, $C,	7
+		MOVEXY	12,7
 		MenuItem "0","Leave"
 		.BYTE $FF
 byte_8428:	STRJSR	loc_8459	; DATA XREF: RAM:8551o
 aThouArtSitting:.BYTE "Thou art sitting at "
-		.BYTE $B4
-		.WORD $67
-		.BYTE $27
+		PRINTSTRP $67, 39
 		.BYTE $AE
 aThouArtEating:	.BYTE "Thou art eating "
-		.BYTE $B4
-		.WORD $79
-		.BYTE $27
+		PRINTSTRP $79, 39
 		.BYTE $AE
 ; ---------------------------------------------------------------------------
 

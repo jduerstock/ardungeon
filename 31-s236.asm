@@ -757,72 +757,72 @@ loc_AC3E:
 		JMP	$76F8
 
 ; ----------------------------------------------------------------------------
-	.SEGMENT	"MONST06"
+		.SEGMENT	"MONST06"
 
-	.BYTE	$01
-	.WORD	$AA5E,$AA63,$AA64,$AA64,$AA64
-	.BYTE	$22
-	.BYTE	$00,$12,$08,$14,$32,$00,$00,$00,$00,$00,$00,$00 ; |.d."....2.......|
-	.BYTE	$00,$04,$00,$00,$00,$05,$02,$00,$00,$a0,$00,$2d,$14,$14,$10,$46 ; |...........-...F|
-	.BYTE	$46,$26,$1e,$00,$00,$00,$00,$00,$00,$09,$03,$00,$00,$00,$00,$22 ; |F&............."|
-	.BYTE	$22,$00,$00,$00,$00,$00,$00,$00,$00,$00
-	.BYTE	"dies for",$0D
-	.BYTE	$A5,"for the last time",$AE
-	.BYTE	"lich",0
-	.BYTE	0
+		.BYTE	$01
+		.WORD	$AA5E,$AA63,$AA64,$AA64,$AA64
+		.BYTE	$22
+		.BYTE	$00,$12,$08,$14,$32,$00,$00,$00,$00,$00,$00,$00 ; |.d."....2.......|
+		.BYTE	$00,$04,$00,$00,$00,$05,$02,$00,$00,$a0,$00,$2d,$14,$14,$10,$46 ; |...........-...F|
+		.BYTE	$46,$26,$1e,$00,$00,$00,$00,$00,$00,$09,$03,$00,$00,$00,$00,$22 ; |F&............."|
+		.BYTE	$22,$00,$00,$00,$00,$00,$00,$00,$00,$00
+		.BYTE	"dies for",$0D
+		.BYTE	$A5,"for the last time",$AE
+		.BYTE	"lich",0
+		.BYTE	0
 
-	Item	$03,$00,$20,$00,"Sceptre of Chaos"
-	.BYTE	$88,$ff,$a5,$ff,$01,$00,$13,$00,$00,$92,$45,$00,$01 ; |os...........E..|
-	.BYTE	$00,$03,$00,$00,$ff,$00,$24,$00,$00,$00,$00,$00,$00,$16,$00,$16 ; |......$.........|
-	.BYTE	$00,$00,$00,$40,$40,$02,$08
+		Item	$03,$00,$20,$00,"Sceptre of Chaos"
+		.BYTE	$88,$ff,$a5,$ff,$01,$00,$13,$00,$00,$92,$45,$00,$01 ; |os...........E..|
+		.BYTE	$00,$03,$00,$00,$ff,$00,$24,$00,$00,$00,$00,$00,$00,$16,$00,$16 ; |......$.........|
+		.BYTE	$00,$00,$00,$40,$40,$02,$08
 :
 
 ; ----------------------------------------------------------------------------
-	.SEGMENT	"MONST07"
+		.SEGMENT	"MONST07"
 
-	.BYTE	$01
-	.WORD	$AA79,$AA87,$AA88,$AA88,$AA88
-	.BYTE	$12
-	.BYTE	$80,$0c,$04,$ff,$46,$00,$00,$00,$00,$00,$00,$00,$00 ; |.......F........|
-	.BYTE	$00,$00,$ad,$aa,$06,$02,$00,$00,$a8,$00,$41,$32,$32,$32,$32,$32 ; |..........A22222|
-	.BYTE	$4b,$32,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$33,$33 ; |K2............33|
-	.BYTE	$11,$11,$11,$11,$33,$11,$11,$11,$22
-	.BYTE	"fades away exclaiming,",$0D
-	.BYTE	$A5,$22,"I'm free!  Art thou The One?",$22,$AE
-	.BYTE	"Undead Knight",0
-	.BYTE	0
-	Item	$03,$00,$00,$10,"Ebon Blade"
-	.BYTE	$00,$ff,$00
-	.BYTE	$00,$26,$00,$00,$00,$00,$00,$24,$00,$00,$00
-	.BYTE	$18,$18,$50,$50,$80,$15
+		.BYTE	$01
+		.WORD	$AA79,$AA87,$AA88,$AA88,$AA88
+		.BYTE	$12
+		.BYTE	$80,$0c,$04,$ff,$46,$00,$00,$00,$00,$00,$00,$00,$00 ; |.......F........|
+		.BYTE	$00,$00,$ad,$aa,$06,$02,$00,$00,$a8,$00,$41,$32,$32,$32,$32,$32 ; |..........A22222|
+		.BYTE	$4b,$32,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$33,$33 ; |K2............33|
+		.BYTE	$11,$11,$11,$11,$33,$11,$11,$11,$22
+		.BYTE	"fades away exclaiming,",$0D
+		.BYTE	$A5,$22,"I'm free!  Art thou The One?",$22,$AE
+		.BYTE	"Undead Knight",0
+		.BYTE	0
+		Item	$03,$00,$00,$10,"Ebon Blade"
+		.BYTE	$00,$ff,$00
+		.BYTE	$00,$26,$00,$00,$00,$00,$00,$24,$00,$00,$00
+		.BYTE	$18,$18,$50,$50,$80,$15
 :
-	LDA	$195A
-	AND	#$07
-	TAX	
-	CLC
-	LDA	#$00
-:	DEX
-	BMI	:+
-	ADC	#$08
-	BNE	:-
-:	CLC
-	ADC	#$4A
-	TAX
-	LDA	#$02
-	JSR	$1878	
-	LDA	#$01
-	LDX	#$45
-	JSR	$187B
-	LDA	#$01
-	LDX	#$47
-	JSR	$187B
-	JSR	$7713
-	LDX	#$AA
-	LDY	#$DE
-	JMP	$770A
+		LDA	$195A
+		AND	#$07
+		TAX	
+		CLC
+		LDA	#$00
+:		DEX
+		BMI	:+
+		ADC	#$08
+		BNE	:-
+:		CLC
+		ADC	#$4A
+		TAX
+		LDA	#$02
+		JSR	$1878	
+		LDA	#$01
+		LDX	#$45
+		JSR	$187B
+		LDA	#$01
+		LDX	#$47
+		JSR	$187B
+		JSR	$7713
+		LDX	#$AA
+		LDY	#$DE
+		JMP	$770A
 
-	MOVEXY	0,3
-	.BYTE	$A5,"You feel new power!",$0D,$FF
+		MOVEXY	0,3
+		.BYTE	$A5,"You feel new power!",$0D,$FF
 
 ; ----------------------------------------------------------------------------
 		.SEGMENT 	"MONST08"
@@ -1411,90 +1411,90 @@ aIAmHere:
 		.BYTE	$0D,$FF
 
 ; ----------------------------------------------------------------------------
-	.SEGMENT	"MONST14"
+		.SEGMENT	"MONST14"
 
-	.BYTE	$01
-	.WORD	$AA6B,$AA6B,$AA72,$AA9A,$AA9A
-	.BYTE	$00
-	.BYTE	$80,$01,$08,$14,$14 ; |k.k.r...........|
-	.BYTE	$00,$00,$00,$00,$be,$aa,$c5,$aa,$ca,$ab,$21,$ab,$0b,$00,$28,$00 ; |..........!...(.|
-	.BYTE	$42,$00,$0a,$14,$14,$28,$14,$14,$28,$1c,$00,$00,$00,$00,$00,$00 ; |B....(..(.......|
-	.BYTE	$00,$00,$00,$00,$00,$01,$11,$11,$11,$11,$11,$11,$11,$11,$11,$11 ; |................|
-	.BYTE	$11
-	.BYTE	"gasps:",$0D,$0D
-	.BYTE	$A5,$22,"What you sow, you shall reap!",$22,$AE
-	.BYTE	"pauper",$00
+		.BYTE	$01
+		.WORD	$AA6B,$AA6B,$AA72,$AA9A,$AA9A
+		.BYTE	$00
+		.BYTE	$80,$01,$08,$14,$14 ; |k.k.r...........|
+		.BYTE	$00,$00,$00,$00,$be,$aa,$c5,$aa,$ca,$ab,$21,$ab,$0b,$00,$28,$00 ; |..........!...(.|
+		.BYTE	$42,$00,$0a,$14,$14,$28,$14,$14,$28,$1c,$00,$00,$00,$00,$00,$00 ; |B....(..(.......|
+		.BYTE	$00,$00,$00,$00,$00,$01,$11,$11,$11,$11,$11,$11,$11,$11,$11,$11 ; |................|
+		.BYTE	$11
+		.BYTE	"gasps:",$0D,$0D
+		.BYTE	$A5,$22,"What you sow, you shall reap!",$22,$AE
+		.BYTE	"pauper",$00
 
-	Item	$00,$00,$00,$00,"Hardened Fist"
-	.BYTE	$00,$ff,$00
-	.BYTE	$33,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00
-	.BYTE	$00,$00,$00,$00,$06,$00
+		Item	$00,$00,$00,$00,"Hardened Fist"
+		.BYTE	$00,$ff,$00
+		.BYTE	$33,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00
+		.BYTE	$00,$00,$00,$00,$06,$00
 
-	Item	$FF,$00,$00,$00,"Bare Foot"
-	.BYTE	$00,$ff,$00
-	.BYTE	$35,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00
-	.BYTE	$00,$00,$00,$00,$01,$00
+		Item	$FF,$00,$00,$00,"Bare Foot"
+		.BYTE	$00,$ff,$00
+		.BYTE	$35,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00
+		.BYTE	$00,$00,$00,$00,$01,$00
 :
-	ldxy	$AB58
-	JMP	$770A
-	BCS	:+
-	JSR	$773D
-	JMP	$7740
+		ldxy	$AB58
+		JMP	$770A
+		BCS	:+
+		JSR	$773D
+		JMP	$7740
 
-:	LDA	$7F
-	JSR	$1887
-	BEQ	:+++
-	LDY	#$00
-	LDA	(off_41),Y
-	BNE	:++++
-	LDX	#$86
-	LDA	#$01
-	JSR	$1878
-	LDA	#$01
-	LDX	#$85
-	JSR	$1878
-	dldi	$76D9, $AB4F
-	BIT	$633B
-	BPL	:+
-	dldi	$76D9, $AB53	
-:	ldxy	$AB32
-	JSR	$770A
-:	LDA	$7F
-	JSR	$188A
-:	JMP	$7740
-:	LDA	RANDOM
-	CMP	#$40
-	BCS	:---
-	ldxy	$ABA0
-	JSR	$770A
-	JMP	$AB08
-	LDX	#$86
-	LDA	#$03
-	JSR	$186F
-	LDX	#$85
-	LDA	#$02
-	JSR	$186F
-	JMP	$773A
+:		LDA	$7F
+		JSR	$1887
+		BEQ	:+++
+		LDY	#$00
+		LDA	(off_41),Y
+		BNE	:++++
+		LDX	#$86
+		LDA	#$01
+		JSR	$1878
+		LDA	#$01
+		LDX	#$85
+		JSR	$1878
+		dldi	$76D9, $AB4F
+		BIT	$633B
+		BPL	:+
+		dldi	$76D9, $AB53	
+:		ldxy	$AB32
+		JSR	$770A
+:		LDA	$7F
+		JSR	$188A
+:		JMP	$7740
+:		LDA	RANDOM
+		CMP	#$40
+		BCS	:---
+		ldxy	$ABA0
+		JSR	$770A
+		JMP	$AB08
+		LDX	#$86
+		LDA	#$03
+		JSR	$186F
+		LDX	#$85
+		LDA	#$02
+		JSR	$186F
+		JMP	$773A
 
-	MOVEXY	0,3
-	.BYTE	$A5,$22,"Bless you, kind "
-	.BYTE	$B4
-	.WORD	$76D9
-	.BYTE	10
-	.BYTE	".",$22,$0D,$FF
-	.BYTE	"sir",0
-	.BYTE	"lady",0
-	STRSUB	$7653
-	.BYTE	"pleads:",$0D,$0D
-	.BYTE	$A5,$22,"Please help a fellow human",$0D
-	.BYTE	$A5,"trapped in this foul world.",$22,$0D,$FF
-	MOVEXY	0,3
-	.BYTE	$A5,$22,"I was hoping for pears and cheese.",$22,$0D,$FF
+		MOVEXY	0,3
+		.BYTE	$A5,$22,"Bless you, kind "
+		.BYTE	$B4
+		.WORD	$76D9
+		.BYTE	10
+		.BYTE	".",$22,$0D,$FF
+		.BYTE	"sir",0
+		.BYTE	"lady",0
+		STRSUB	$7653
+		.BYTE	"pleads:",$0D,$0D
+		.BYTE	$A5,$22,"Please help a fellow human",$0D
+		.BYTE	$A5,"trapped in this foul world.",$22,$0D,$FF
+		MOVEXY	0,3
+		.BYTE	$A5,$22,"I was hoping for pears and cheese.",$22,$0D,$FF
 
-	LDA	$AB
-	BNE	:+
-	RTS
-:	JMP	$76F8
+		LDA	$AB
+		BNE	:+
+		RTS
+:		JMP	$76F8
 
 ; ----------------------------------------------------------------------------
 	.SEGMENT	"MONST15"
