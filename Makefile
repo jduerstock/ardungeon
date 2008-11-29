@@ -1,3 +1,28 @@
+#
+# Makefile - makefile for ardungeon
+#
+# Copyright (c) 2008 Jason Duerstock
+#
+# This file is part of the ardungeon project which is an attempt to
+# reverse engineer "Alternate Reality: The Dungeon" for the Atari 8-bit
+# computer. 
+#
+# ardungeon is free software; you can redistribute it and/or modify
+# it under the terms of the GNU General Public License version 2
+# as published by the Free Software Foundation.
+#
+# ardungeon is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with ardungeon; if not, write to the 
+# Free Software Foundation, Inc.
+# 51 Franklin Street, Fifth Floor
+# Boston, MA  02110-1301  USA
+#
+
 CA=ca65
 RM=rm -f
 AFLAGS=-g
@@ -884,4 +909,4 @@ ar32.img: 32-s001.bin 32-s002.bin.crypt 32-s034.bin 32-s035.bin.crypt \
 	sha1sum -c ar32.sha1
 
 clean:
-	$(RM) -f $(OBJECTS) *.*~ *.bin *.bin.crypt *.o ar11.img ar31.img ar32.img
+	$(RM) -f $(OBJECTS) *.*~ *.bin *.bin.crypt *.o ar11.img ar21.img ar22.img ar31.img ar32.img
