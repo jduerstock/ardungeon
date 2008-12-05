@@ -1,3 +1,30 @@
+;
+; 11-s259.asm - saved character loader for ardungeon
+;
+; This source code is copyright (c) 2008 Jason Duerstock
+; jason.duerstock@gmail.com
+;
+; The original program is copyright (c) 1987 Intellicreations Inc.
+;
+; This file is part of the ardungeon project which is an attempt to
+; reverse engineer "Alternate Reality: The Dungeon" for the Atari 8-bit
+; computer. 
+;
+; ardungeon is free software; you can redistribute it and/or modify
+; it under the terms of the GNU General Public License version 2
+; as published by the Free Software Foundation.
+;
+; ardungeon is distributed in the hope that it will be useful,
+; but WITHOUT ANY WARRANTY; without even the implied warranty of
+; MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+; GNU General Public License for more details.
+;
+; You should have received a copy of the GNU General Public License
+; along with ardungeon; if not, write to the 
+; Free Software Foundation, Inc.
+; 51 Franklin Street, Fifth Floor
+; Boston, MA  02110-1301  USA
+;
 		.include	"equates.inc"
 		.include	"exp_kernel.inc"
 		.include	"globals.inc"
@@ -373,10 +400,7 @@ loc_78A0:				; CODE XREF: RAM:7899j
 
 loc_78A7:				; CODE XREF: RAM:7795j	RAM:77E3j
 		JSR	sub_7941
-		LDA	#$30 ; '0'
-		STA	off_16
-		LDA	#$8B ; '‹'
-		STA	off_16+1
+		dldi	off_16, $8B30
 		JSR	$1818
 		JSR	sub_792B
 		JMP	loc_7678
@@ -1699,10 +1723,7 @@ byte_83D1:	.BYTE 0			; DATA XREF: RAM:7B89w	RAM:7BECw ...
 
 loc_83D2:				; CODE XREF: RAM:7924j
 					; DATA XREF: RAM:off_7927o
-		LDA	#$62 ; 'b'
-		STA	off_16
-		LDA	#$86 ; '†'
-		STA	off_16+1
+		dldi	off_16, $8662
 		JSR	$1818
 
 loc_83DD:				; CODE XREF: RAM:83E9j
@@ -1715,10 +1736,7 @@ loc_83DD:				; CODE XREF: RAM:83E9j
 loc_83E7:				; CODE XREF: RAM:83E2j
 		CMP	#$20 ; ' '
 		BNE	loc_83DD
-		LDA	#4
-		STA	off_16
-		LDA	#$89 ; '‰'
-		STA	off_16+1
+		dldi	off_16, $8904
 		JSR	$1818
 		LDY	#$1F
 
@@ -1838,10 +1856,7 @@ loc_84B1:				; CODE XREF: sub_793Dp
 		STA	$22F
 		LDA	#2
 		STA	$18B9
-		LDA	#<loc_8640
-		STA	off_224
-		LDA	#>loc_8640
-		STA	off_224+1
+		dldi	off_224, loc_8640
 		LDA	#$E8 ; 'è'
 		STA	$254
 		LDA	#$85 ; '…'
@@ -1857,15 +1872,15 @@ loc_84DE:				; CODE XREF: RAM:84F2j
 
 loc_84E0:				; CODE XREF: RAM:84E4j
 		TYA
-		STA	(9),Y
+		STA	(off_9),Y
 		DEY
 		BPL	loc_84E0
-		LDA	9
+		LDA	off_9
 		CLC
 		ADC	#$78 ; 'x'
-		STA	9
+		STA	off_9
 		BCC	loc_84F1
-		INC	$A
+		INC	off_9+1
 
 loc_84F1:				; CODE XREF: RAM:84EDj
 		DEX

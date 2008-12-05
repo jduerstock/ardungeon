@@ -1,3 +1,30 @@
+;
+; 11-s466.asm - save character routine
+;
+; This source code is copyright (c) 2008 Jason Duerstock
+; jason.duerstock@gmail.com
+;
+; The original program is copyright (c) 1987 Intellicreations Inc.
+;
+; This file is part of the ardungeon project which is an attempt to
+; reverse engineer "Alternate Reality: The Dungeon" for the Atari 8-bit
+; computer. 
+;
+; ardungeon is free software; you can redistribute it and/or modify
+; it under the terms of the GNU General Public License version 2
+; as published by the Free Software Foundation.
+;
+; ardungeon is distributed in the hope that it will be useful,
+; but WITHOUT ANY WARRANTY; without even the implied warranty of
+; MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+; GNU General Public License for more details.
+;
+; You should have received a copy of the GNU General Public License
+; along with ardungeon; if not, write to the 
+; Free Software Foundation, Inc.
+; 51 Franklin Street, Fifth Floor
+; Boston, MA  02110-1301  USA
+;
 		.include	"equates.inc"
 		.include	"exp_kernel.inc"
 		.include	"globals.inc"
@@ -402,73 +429,11 @@ aPressAnyKeyT_1:.BYTE "press any key to continue"
 		.BYTE $FF
 byte_7A66:	.BYTE $A8		; DATA XREF: RAM:7847o	RAM:788Fo ...
 		.BYTE $A5
-aSaveCharacter:	.BYTE "Save Character"
-		.BYTE $D
-		.BYTE $AE
-unk_7A78:	.BYTE $20		; DATA XREF: RAM:loc_7689r
-		.BYTE $20
-		.BYTE $43 ; C
-		.BYTE $61 ; a
-		.BYTE $72 ; r
-		.BYTE $65 ; e
-		.BYTE $66 ; f
-		.BYTE $75 ; u
-		.BYTE $6C ; l
-		.BYTE $6C ; l
-		.BYTE $79 ; y
-		.BYTE $20
-		.BYTE $53 ; S
-		.BYTE $61 ; a
-		.BYTE $76 ; v
-		.BYTE $69 ; i
-		.BYTE $6E ; n
-		.BYTE $67 ; g
-		.BYTE $20
-		.BYTE $43 ; C
-		.BYTE $68 ; h
-		.BYTE $61 ; a
-		.BYTE $72 ; r
-		.BYTE $61 ; a
-		.BYTE $63 ; c
-		.BYTE $74 ; t
-		.BYTE $65 ; e
-		.BYTE $72 ; r
-		.BYTE $2E ; .
-		.BYTE $2E ; .
-		.BYTE $2E ; .
-		.BYTE $20
-unk_7A98:	.BYTE $20		; DATA XREF: RAM:loc_7633r
-		.BYTE $20
-		.BYTE $20
-		.BYTE $43 ; C
-		.BYTE $68 ; h
-		.BYTE $65 ; e
-		.BYTE $63 ; c
-		.BYTE $6B ; k
-		.BYTE $69 ; i
-		.BYTE $6E ; n
-		.BYTE $67 ; g
-		.BYTE $20
-		.BYTE $43 ; C
-		.BYTE $68 ; h
-		.BYTE $61 ; a
-		.BYTE $72 ; r
-		.BYTE $61 ; a
-		.BYTE $63 ; c
-		.BYTE $74 ; t
-		.BYTE $65 ; e
-		.BYTE $72 ; r
-		.BYTE $20
-		.BYTE $44 ; D
-		.BYTE $69 ; i
-		.BYTE $73 ; s
-		.BYTE $6B ; k
-		.BYTE $2E ; .
-		.BYTE $2E ; .
-		.BYTE $2E ; .
-		.BYTE $20
-		.BYTE $20
-		.BYTE $20
+aSaveCharacter:	.BYTE "Save Character",$0D,$AE
+unk_7A78:				; DATA XREF: RAM:loc_7689r
+		.BYTE	"  Carefully Saving Character... "
+unk_7A98:				; DATA XREF: RAM:loc_7633r
+		.BYTE	"   Checking Character Disk...   "
 unk_7AB8:	.BYTE	0		; DATA XREF: RAM:7697w	RAM:loc_7758r
 		.BYTE	0
 		.BYTE	0

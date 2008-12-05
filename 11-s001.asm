@@ -1,7 +1,10 @@
 ;
 ; 11-s001.asm - boot sector for ardungeon
 ;
-; Copyright (c) 2008 Jason Duerstock
+; This source code is copyright (c) 2008 Jason Duerstock
+; jason.duerstock@gmail.com
+;
+; The original program is copyright (c) 1987 Intellicreations Inc.
 ;
 ; This file is part of the ardungeon project which is an attempt to
 ; reverse engineer "Alternate Reality: The Dungeon" for the Atari 8-bit

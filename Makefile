@@ -120,7 +120,7 @@ SUMS=$(ASM_SOURCES:.asm=.sha1)
 all: ar11.img ar21.img ar22.img ar31.img ar32.img
 
 %.o: %.asm
-	$(CA) $(AFLAGS) $< -o $@
+	$(CA) $(AFLAGS) -o $@ $<
 
 11-s001.o: 11-s001.asm
 	ca65 -o $@ $<
@@ -134,7 +134,7 @@ all: ar11.img ar21.img ar22.img ar31.img ar32.img
 11-s011.o: 11-s011.asm
 	ca65 -o $@ $<
 
-11-s016.bin: 11-s016.asm
+11-s016.o: 11-s016.asm
 	ca65 -o $@ $<
 
 11-s017.bin: 11-s017.asm

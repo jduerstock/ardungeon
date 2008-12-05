@@ -1,3 +1,31 @@
+;
+; 11-s677.asm - copy protection check
+;
+; This source code is copyright (c) 2008 Jason Duerstock
+; jason.duerstock@gmail.com
+;
+; The original program is copyright (c) 1987 Intellicreations Inc.
+;
+; This file is part of the ardungeon project which is an attempt to
+; reverse engineer "Alternate Reality: The Dungeon" for the Atari 8-bit
+; computer. 
+;
+; ardungeon is free software; you can redistribute it and/or modify
+; it under the terms of the GNU General Public License version 2
+; as published by the Free Software Foundation.
+;
+; ardungeon is distributed in the hope that it will be useful,
+; but WITHOUT ANY WARRANTY; without even the implied warranty of
+; MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+; GNU General Public License for more details.
+;
+; You should have received a copy of the GNU General Public License
+; along with ardungeon; if not, write to the 
+; Free Software Foundation, Inc.
+; 51 Franklin Street, Fifth Floor
+; Boston, MA  02110-1301  USA
+;
+
 		.include	"globals.inc"
 		.include	"exp_kernel.inc"
 		.include	"macros.inc"
@@ -70,20 +98,20 @@ loc_9044:
 
 loc_9046:
 		LDA	$100,Y
-		STA	(9),Y
+		STA	(off_9),Y
 		INY
 		BPL	loc_9046
-		LDA	9
+		LDA	off_9
 		CLC
-		ADC	#$80 ; '€'
-		STA	9
+		ADC	#$80
+		STA	off_9
 		BCC	loc_9059
-		INC	$A
+		INC	off_9+1
 
 loc_9059:
 		DEC	6
 		BNE	loc_902A
-		LDX	#$7F ; ''
+		LDX	#$7F
 
 loc_905F:
 		LDA	loc_9074,X
@@ -92,7 +120,7 @@ loc_905F:
 		BPL	loc_905F
 		JMP	$100
 ; ---------------------------------------------------------------------------
-unk_906B:	.BYTE $28 ; (		; DATA XREF: RAM:loc_9039r
+unk_906B:	.BYTE $28 ; (		; DATA XREF: RAM:loc_9039^r
 		.BYTE $29 ; )
 		.BYTE	0
 		.BYTE $34 ; 4
@@ -103,23 +131,23 @@ unk_906B:	.BYTE $28 ; (		; DATA XREF: RAM:loc_9039r
 		.BYTE	1
 ; ---------------------------------------------------------------------------
 
-loc_9074:				; DATA XREF: RAM:loc_905Fr
-		LDX	#$7F ; ''
+loc_9074:				; DATA XREF: RAM:loc_905F^r
+		LDX	#$7F
 
-loc_9076:				; CODE XREF: RAM:loc_907Fj
+loc_9076:				; CODE XREF: RAM:loc_907Fvj
 		LDA	unk_90BE,X
 		CMP	$913E,X
 		BNE	loc_9083
 		DEX
 
-loc_907F:				; DATA XREF: RAM:90B2w
+loc_907F:				; DATA XREF: RAM:90B2vw
 		BPL	loc_9076
 		BMI	loc_90AC
 
-loc_9083:				; CODE XREF: RAM:907Cj
-		LDX	#$7F ; ''
+loc_9083:				; CODE XREF: RAM:907C^j
+		LDX	#$7F
 
-loc_9085:				; CODE XREF: RAM:908Ej
+loc_9085:				; CODE XREF: RAM:908Evj
 		LDA	$913E,X
 		CMP	$91BE,X
 		BNE	loc_9092
@@ -127,10 +155,10 @@ loc_9085:				; CODE XREF: RAM:908Ej
 		BPL	loc_9085
 		BMI	loc_90AC
 
-loc_9092:				; CODE XREF: RAM:908Bj
-		LDX	#$7F ; ''
+loc_9092:				; CODE XREF: RAM:908B^j
+		LDX	#$7F
 
-loc_9094:				; CODE XREF: RAM:909Dj
+loc_9094:				; CODE XREF: RAM:909Dvj
 		LDA	unk_90BE,X
 		CMP	$91BE,X
 		BNE	loc_90A1
@@ -138,17 +166,17 @@ loc_9094:				; CODE XREF: RAM:909Dj
 		BPL	loc_9094
 		BMI	loc_90AC
 
-loc_90A1:				; CODE XREF: RAM:909Aj
+loc_90A1:				; CODE XREF: RAM:909A^j
 		LDX	#$FF
 		STX	$265
 		STX	$6320
 		STX	$195B
 
-loc_90AC:				; CODE XREF: RAM:9081j	RAM:9090j ...
+loc_90AC:				; CODE XREF: RAM:9081^j	RAM:9090^j ...
 		LDA	#0
 		TAX
 
-loc_90AF:				; CODE XREF: RAM:90B9j
+loc_90AF:				; CODE XREF: RAM:90B9vj
 		STA	loc_9000,X
 		STA	loc_907F+1,X
 		STA	$9100,X

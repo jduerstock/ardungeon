@@ -1,3 +1,30 @@
+;
+; 11-s205.asm - unused cruft for ardungeon
+;
+; This source code is copyright (c) 2008 Jason Duerstock
+; jason.duerstock@gmail.com
+;
+; The original program is copyright (c) 1987 Intellicreations Inc.
+;
+; This file is part of the ardungeon project which is an attempt to
+; reverse engineer "Alternate Reality: The Dungeon" for the Atari 8-bit
+; computer. 
+;
+; ardungeon is free software; you can redistribute it and/or modify
+; it under the terms of the GNU General Public License version 2
+; as published by the Free Software Foundation.
+;
+; ardungeon is distributed in the hope that it will be useful,
+; but WITHOUT ANY WARRANTY; without even the implied warranty of
+; MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+; GNU General Public License for more details.
+;
+; You should have received a copy of the GNU General Public License
+; along with ardungeon; if not, write to the 
+; Free Software Foundation, Inc.
+; 51 Franklin Street, Fifth Floor
+; Boston, MA  02110-1301  USA
+;
 		.include	"equates.inc"
 		.include	"exp_kernel.inc"
 		.include	"globals.inc"
@@ -171,7 +198,7 @@ loc_212C:				; CODE XREF: RAM:2132j
 		BPL	loc_212C
 		LDA	off_9
 		CLC
-		ADC	#$80 ; '€'
+		ADC	#$80
 		STA	off_9
 		BCC	loc_213F
 		INC	off_9+1
@@ -199,7 +226,7 @@ locret_2164:				; CODE XREF: RAM:215Cj	RAM:2161j
 		LDA	#0
 		STA	$105
 		STA	$106
-		LDX	#$80 ; '€'
+		LDX	#$80
 		STX	$107
 		LDA	#$4F ; 'O'
 		LDY	#2
