@@ -41,7 +41,7 @@
 		HBStr	"Goblin"	; $87
 		HBStr	"Chapel"	; $88
 		HBStr	"in "		; $89
-asc_AC47:	.BYTE	"toast! LEV 1.1",0 ; DATA XREF: RAM:AC01o
+asc_AC47:	.BYTE	"toast! LEV 1.1",0 ; DATA XREF: RAM:AC01^o
 		.BYTE	"in The City's sewer system.",$00
 		.BYTE	$89,"Gram's Gold Exchange vault.",$00
 		.BYTE	$81,$85,$00

@@ -12,7 +12,7 @@
 		HBStr	" Gauntlet."
 		HBStr	" hallway."
 		HBStr	" stairway leading up."
-aToastLev3:	.BYTE "toast! LEV 3",0  ; DATA XREF: RAM:AC01o
+aToastLev3:	.BYTE "toast! LEV 3",0  ; DATA XREF: RAM:AC01^o
 aByA:		.BYTE "by a"
 		.BYTE $87
 		.BYTE	0

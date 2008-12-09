@@ -40,7 +40,7 @@ aDungeon:	.BYTE " Dungeon"
 		.BYTE $A0
 aSmallRoom:	.BYTE "small room"
 		.BYTE $AE
-aToastLev1_4:	.BYTE "toast! LEV 1.4",0 ; DATA XREF: RAM:AC01o
+aToastLev1_4:	.BYTE "toast! LEV 1.4",0 ; DATA XREF: RAM:AC01^o
 		.BYTE $88
 		.BYTE $86
 		.BYTE	0

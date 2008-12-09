@@ -47,7 +47,7 @@
 		JSR	$1815
 		JSR	$181E
 
-loc_7689:				; CODE XREF: RAM:768Cj	RAM:7690j
+loc_7689:				; CODE XREF: RAM:768Cvj	RAM:7690vj
 		JSR	$181E
 		BMI	loc_7689
 		CMP	#$20 ; ' '
@@ -105,13 +105,13 @@ aSpaceBar:	.BYTE "SPACE BAR"
 		.BYTE $29 ; )
 		.BYTE $D
 		.BYTE $FF
-byte_76F6:	.BYTE $FF		; DATA XREF: RAM:7672w	RAM:76CBo
-byte_76F7:	.BYTE $FF		; DATA XREF: RAM:7678w
-unk_76F8:	.BYTE	0		; DATA XREF: RAM:766Fr
+byte_76F6:	.BYTE $FF		; DATA XREF: RAM:7672^w	RAM:76CB^o
+byte_76F7:	.BYTE $FF		; DATA XREF: RAM:7678^w
+unk_76F8:	.BYTE	0		; DATA XREF: RAM:766F^r
 		.BYTE $1B
 		.BYTE $39 ; 9
 		.BYTE $49 ; I
-unk_76FC:	.BYTE $77 ; w		; DATA XREF: RAM:7675r
+unk_76FC:	.BYTE $77 ; w		; DATA XREF: RAM:7675^r
 		.BYTE $77 ; w
 		.BYTE $77 ; w
 		.BYTE $77 ; w

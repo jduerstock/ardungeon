@@ -20,7 +20,7 @@ aAtA:		.BYTE "at a"
 		.BYTE $A0
 aHal:		.BYTE " hal"
 		.BYTE $EC
-aToastLev2:	.BYTE "toast! LEV 2",0  ; DATA XREF: RAM:AC01o
+aToastLev2:	.BYTE "toast! LEV 2",0  ; DATA XREF: RAM:AC01^o
 		.BYTE $80
 		.BYTE $81
 aDown_:		.BYTE "down.",0

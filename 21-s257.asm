@@ -6,7 +6,7 @@ aInA:		.BYTE "in a"
 		.BYTE $A0
 aRoom:		.BYTE " room"
 		.BYTE $AE
-aToastLev4:	.BYTE "toast! LEV 4",0  ; DATA XREF: RAM:AC01o
+aToastLev4:	.BYTE "toast! LEV 4",0  ; DATA XREF: RAM:AC01^o
 		.BYTE $80
 aMetallicCorrid:.BYTE "metallic corridor.",0
 aAtAStairwayLea:.BYTE "at a stairway leading up.",0

@@ -42,7 +42,7 @@
 		HBStr	"hallway."
 		HBStr	"in a quiet"
 		HBStr	" area."
-aToastLev1_3:	.BYTE	"toast! LEV 1.3",0 ; DATA XREF: RAM:AC01o
+aToastLev1_3:	.BYTE	"toast! LEV 1.3",0 ; DATA XREF: RAM:AC01^o
 aTaureanMaze_:	.BYTE	$82,"Taurean Maze.",0
 		.BYTE	$81,$88,$00
 aLongCorridor_:	.BYTE	$81,"long corridor.",0

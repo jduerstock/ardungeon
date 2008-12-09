@@ -51,7 +51,7 @@
 		HBStr	"at a "
 		HBStr	"stairway leading down."
 		HBStr	"in the "
-aToastLev1_2:	.BYTE	"toast! LEV 1.2",0 ; DATA XREF: RAM:AC01o
+aToastLev1_2:	.BYTE	"toast! LEV 1.2",0 ; DATA XREF: RAM:AC01^o
 		.BYTE	$80,$8A,$00
 		.BYTE	$80,$8B,$00
 		.BYTE	$80,$8C,$8A,$00
