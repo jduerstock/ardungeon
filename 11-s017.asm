@@ -43,7 +43,7 @@ loc_6391 = $6391
 
 		.SEGMENT	"SEG_0600"
 ;		.ORG	$600
-unk_600:	.BYTE	$00,$00,$00,$00,$00,$00,$00,$00	; DATA XREF: sub_31A2+3Er
+unk_600:	.BYTE	$00,$00,$00,$00,$00,$00,$00,$00	; DATA XREF: sub_31A2+3Evr
 		.BYTE	$3F,$C3,$0F,$0F,$0F,$3C,$3C,$F0
 		.BYTE	$FC,$3F,$3C,$3C,$3C,$3C,$3C,$F3
 		.BYTE	$0F,$3C,$F0,$F0,$F0,$F0,$FC,$3F
@@ -75,7 +75,7 @@ unk_600:	.BYTE	$00,$00,$00,$00,$00,$00,$00,$00	; DATA XREF: sub_31A2+3Er
 		.BYTE	$00,$03,$03,$03,$00,$00,$00,$00
 		.BYTE	$03,$0F,$0F,$0F,$03,$03,$00,$03
 		.BYTE	$0F,$3C,$3C,$00,$03,$00,$03,$00
-unk_700:	.BYTE	$00,$00,$00,$00,$00,$00,$00,$00	; DATA XREF: sub_31A2+50r
+unk_700:	.BYTE	$00,$00,$00,$00,$00,$00,$00,$00	; DATA XREF: sub_31A2+50vr
 		.BYTE	$C0,$F0,$F0,$3C,$FC,$3C,$3C,$0F
 		.BYTE	$FC,$0F,$0F,$FC,$0F,$0F,$0F,$FC
 		.BYTE	$F0,$3C,$F0,$00,$00,$00,$3C,$F0
@@ -4821,10 +4821,10 @@ unk_700:	.BYTE	$00,$00,$00,$00,$00,$00,$00,$00	; DATA XREF: sub_31A2+50r
 		.BYTE $C3 ; √
 ; ---------------------------------------------------------------------------
 
-loc_1E00:				; CODE XREF: RAM:222Aj
+loc_1E00:				; CODE XREF: RAM:222Avj
 		LDX	#0
 
-loc_1E02:				; CODE XREF: RAM:1E0Fj
+loc_1E02:				; CODE XREF: RAM:1E0Fvj
 		LDA	loc_1E14,X
 		STA	$6300,X
 		LDA	loc_1E14+$0100,X
@@ -4836,24 +4836,24 @@ loc_1E14:
 ; ---------------------------------------------------------------------------
 		.SEGMENT	"SEG_6300"
 
-loc_6300:				; DATA XREF: RAM:loc_1E02r
+loc_6300:				; DATA XREF: RAM:loc_1E02^r
 		LDX	#8
 		LDA	#0
 
-loc_1E18:				; CODE XREF: RAM:1E1Cj
+loc_1E18:				; CODE XREF: RAM:1E1Cvj
 		STA	$D200,X
 		DEX
 		BPL	loc_1E18
 		dldi	SDLST, $640D
 		LDA	$14
 
-loc_1E2A:				; CODE XREF: RAM:1E2Cj
+loc_1E2A:				; CODE XREF: RAM:1E2Cvj
 		CMP	$14
 		BEQ	loc_1E2A
 		dldi	DAUX, $0205
 		dldi	DBUF, $100
 
-loc_1E42:				; CODE XREF: RAM:1E45j
+loc_1E42:				; CODE XREF: RAM:1E45vj
 		JSR	DSKINV
 		BMI	loc_1E42
 		INC	DAUX
@@ -4870,14 +4870,14 @@ loc_1E42:				; CODE XREF: RAM:1E45j
 		JMP	$807E
 ; ---------------------------------------------------------------------------
 
-loc_1E7C:				; CODE XREF: RAM:1E86j	RAM:1EA0j
+loc_1E7C:				; CODE XREF: RAM:1E86vj	RAM:1EA0vj
 		JSR	DSKINV
 		BPL	loc_1E88
 		LDA	#$34 ; '4'
 		STA	COLBK
 		BNE	loc_1E7C
 
-loc_1E88:				; CODE XREF: RAM:1E7Fj
+loc_1E88:				; CODE XREF: RAM:1E7F^j
 		CLC
 		LDA	DBUF
 		ADC	#$80 ; 'Ä'
@@ -4885,12 +4885,12 @@ loc_1E88:				; CODE XREF: RAM:1E7Fj
 		BCC	loc_1E96
 		INC	DBUF+1
 
-loc_1E96:				; CODE XREF: RAM:1E91j
+loc_1E96:				; CODE XREF: RAM:1E91^j
 		INC	DAUX
 		BNE	loc_1E9E
 		INC	DAUX+1
 
-loc_1E9E:				; CODE XREF: RAM:1E99j
+loc_1E9E:				; CODE XREF: RAM:1E99^j
 		DEC	$88
 		BNE	loc_1E7C
 		RTS
@@ -4900,10 +4900,10 @@ loc_1E9E:				; CODE XREF: RAM:1E99j
 ; ---------------------------------------------------------------------------
 		LDY	#0
 
-loc_1EA7:				; CODE XREF: RAM:1EB7j
+loc_1EA7:				; CODE XREF: RAM:1EB7vj
 		LDX	#0
 
-loc_1EA9:				; CODE XREF: RAM:1EB5j
+loc_1EA9:				; CODE XREF: RAM:1EB5vj
 		LDA	$100,X
 		STA	$100,Y
 		INY
@@ -4913,7 +4913,7 @@ loc_1EA9:				; CODE XREF: RAM:1EB5j
 		BCC	loc_1EA9
 		BCS	loc_1EA7
 
-loc_1EB9:				; CODE XREF: RAM:1EB0j
+loc_1EB9:				; CODE XREF: RAM:1EB0^j
 		LDY	#0
 		STY	$86
 		STY	$87
@@ -4925,20 +4925,20 @@ loc_1EB9:				; CODE XREF: RAM:1EB0j
 		STX	$85
 		LDX	#0
 
-loc_1ECE:				; CODE XREF: RAM:1EE0j	RAM:1EE6j
+loc_1ECE:				; CODE XREF: RAM:1EE0vj	RAM:1EE6vj
 		LDA	($82),Y
 		LSR	A
 		BCC	loc_1ED5
 		ORA	#$80 ; 'Ä'
 
-loc_1ED5:				; CODE XREF: RAM:1ED1j
+loc_1ED5:				; CODE XREF: RAM:1ED1^j
 		EOR	$100,X
 		STA	($82),Y
 		INX
 		BPL	loc_1EDF
 		LDX	#0
 
-loc_1EDF:				; CODE XREF: RAM:1EDBj
+loc_1EDF:				; CODE XREF: RAM:1EDB^j
 		INY
 		BNE	loc_1ECE
 		INC	$83
@@ -4952,7 +4952,7 @@ loc_1EDF:				; CODE XREF: RAM:1EDBj
 		LDX	byte_6390
 		BEQ	loc_1F0A
 
-loc_1EF7:				; CODE XREF: RAM:1F03j	RAM:1F08j
+loc_1EF7:				; CODE XREF: RAM:1F03vj	RAM:1F08vj
 		LDA	($82),Y
 		CLC
 		ADC	$86
@@ -4960,26 +4960,26 @@ loc_1EF7:				; CODE XREF: RAM:1F03j	RAM:1F08j
 		BCC	loc_1F02
 		INC	$87
 
-loc_1F02:				; CODE XREF: RAM:1EFEj
+loc_1F02:				; CODE XREF: RAM:1EFE^j
 		INY
 		BNE	loc_1EF7
 		INC	$83
 		DEX
 		BNE	loc_1EF7
 
-loc_1F0A:				; CODE XREF: RAM:1EF5j
+loc_1F0A:				; CODE XREF: RAM:1EF5^j
 		LDA	$86
 		CMP	$104
 		BNE	loc_1F19
 		LDA	$87
 
-loc_1F13:				; DATA XREF: RAM:1E08r
+loc_1F13:				; DATA XREF: RAM:1E08^r
 		CMP	$105
 		BNE	loc_1F19
 		RTS
 ; ---------------------------------------------------------------------------
 
-loc_1F19:				; CODE XREF: RAM:1F0Fj	RAM:1F16j
+loc_1F19:				; CODE XREF: RAM:1F0F^j	RAM:1F16^j
 		LDA	#$1E
 		STA	COLBK
 		JMP	$E477
@@ -5013,7 +5013,7 @@ loc_1F19:				; CODE XREF: RAM:1F0Fj	RAM:1F16j
 		JSR	sub_2466
 		LDY	#$2B ; '+'
 
-loc_2030:				; CODE XREF: RAM:2047j
+loc_2030:				; CODE XREF: RAM:2047vj
 		LDX	#3
 		JSR	sub_245F
 		SEC
@@ -5028,18 +5028,18 @@ loc_2030:				; CODE XREF: RAM:2047j
 		LDA	#0
 		STA	$86
 
-loc_204D:				; CODE XREF: RAM:207Fj
+loc_204D:				; CODE XREF: RAM:207Fvj
 		LDA	#0
 		STA	$BD
 
-loc_2051:				; CODE XREF: RAM:2053j
+loc_2051:				; CODE XREF: RAM:2053vj
 		LDA	$BD
 		BEQ	loc_2051
 		LDA	#0
 		STA	$BD
 		JSR	sub_2538
 
-loc_205C:				; CODE XREF: RAM:2073j
+loc_205C:				; CODE XREF: RAM:2073vj
 		LDA	$BD
 		BNE	loc_2076
 		JSR	sub_2458
@@ -5049,14 +5049,14 @@ loc_205C:				; CODE XREF: RAM:2073j
 		LDY	#3
 		LDA	unk_2599,X
 
-loc_206D:				; CODE XREF: RAM:2071j
+loc_206D:				; CODE XREF: RAM:2071vj
 		STA	COLPM0,Y
 		DEY
 		BPL	loc_206D
 		JMP	loc_205C
 ; ---------------------------------------------------------------------------
 
-loc_2076:				; CODE XREF: RAM:205Ej
+loc_2076:				; CODE XREF: RAM:205E^j
 		JSR	sub_222D
 		INC	$86
 		LDA	$86
@@ -5065,7 +5065,7 @@ loc_2076:				; CODE XREF: RAM:205Ej
 		LDA	#0
 		LDX	#3
 
-loc_2085:				; CODE XREF: RAM:2089j
+loc_2085:				; CODE XREF: RAM:2089vj
 		STA	COLPM0,X
 		DEX
 		BPL	loc_2085
@@ -5079,7 +5079,7 @@ loc_2085:				; CODE XREF: RAM:2089j
 		LDA	#0
 		TAY
 
-loc_209D:				; CODE XREF: RAM:20A0j	RAM:20A5j
+loc_209D:				; CODE XREF: RAM:20A0vj	RAM:20A5vj
 		STA	($82),Y
 		INY
 		BNE	loc_209D
@@ -5090,10 +5090,10 @@ loc_209D:				; CODE XREF: RAM:20A0j	RAM:20A5j
 		LDA	#$FF
 		LDX	#5
 
-loc_20AD:				; CODE XREF: RAM:20B7j
+loc_20AD:				; CODE XREF: RAM:20B7vj
 		LDY	#$E0 ; '‡'
 
-loc_20AF:				; CODE XREF: RAM:20B2j
+loc_20AF:				; CODE XREF: RAM:20B2vj
 		STA	($82),Y
 		INY
 		BNE	loc_20AF
@@ -5104,13 +5104,13 @@ loc_20AF:				; CODE XREF: RAM:20B2j
 		LDA	#3
 		TAX
 
-loc_20BF:				; CODE XREF: RAM:20C3j
+loc_20BF:				; CODE XREF: RAM:20C3vj
 		STA	$D008,X
 		DEX
 		BPL	loc_20BF
 		LDX	#7
 
-loc_20C7:				; CODE XREF: RAM:20CEj
+loc_20C7:				; CODE XREF: RAM:20CEvj
 		LDA	unk_279D,X
 		STA	$D000,X
 		DEX
@@ -5133,7 +5133,7 @@ loc_20C7:				; CODE XREF: RAM:20CEj
 		LDA	#$12
 		STA	$8D
 
-loc_20F5:				; CODE XREF: RAM:20FAj
+loc_20F5:				; CODE XREF: RAM:20FAvj
 		JSR	sub_247D
 		DEC	$8D
 		BNE	loc_20F5
@@ -5141,7 +5141,7 @@ loc_20F5:				; CODE XREF: RAM:20FAj
 		LDA	#$29 ; ')'
 		STA	$8D
 
-loc_2103:				; CODE XREF: RAM:210Ej
+loc_2103:				; CODE XREF: RAM:210Evj
 		JSR	sub_247D
 		JSR	sub_247D
 		JSR	sub_24EB
@@ -5156,7 +5156,7 @@ loc_2103:				; CODE XREF: RAM:210Ej
 		INY
 		LDX	#0
 
-loc_2120:				; CODE XREF: RAM:2129j
+loc_2120:				; CODE XREF: RAM:2129vj
 		LDA	unk_2799,X
 		STA	($82),Y
 		INY
@@ -5172,7 +5172,7 @@ loc_2120:				; CODE XREF: RAM:2129j
 		DEY
 		LDX	#0
 
-loc_213B:				; CODE XREF: RAM:2144j
+loc_213B:				; CODE XREF: RAM:2144vj
 		LDA	unk_279A,X
 		STA	($82),Y
 		INY
@@ -5192,7 +5192,7 @@ loc_213B:				; CODE XREF: RAM:2144j
 		LDA	#7
 		STA	$8D
 
-loc_215B:				; CODE XREF: RAM:2162j
+loc_215B:				; CODE XREF: RAM:2162vj
 		LDX	#4
 		JSR	sub_2505
 		DEC	$8D
@@ -5210,7 +5210,7 @@ loc_215B:				; CODE XREF: RAM:2162j
 		LDA	#$A
 		STA	$8D
 
-loc_2182:				; CODE XREF: RAM:2194j
+loc_2182:				; CODE XREF: RAM:2194vj
 		LDA	#$60 ; '`'
 		STA	byte_2800
 		JSR	sub_2458
@@ -5222,7 +5222,7 @@ loc_2182:				; CODE XREF: RAM:2194j
 		LDA	#2
 		STA	$8D
 
-loc_219A:				; CODE XREF: RAM:2210j
+loc_219A:				; CODE XREF: RAM:2210vj
 		LDX	$8D
 		LDA	unk_5422,X
 		STA	$93
@@ -5239,7 +5239,7 @@ loc_219A:				; CODE XREF: RAM:2210j
 		LDX	#2
 		JSR	sub_245F
 
-loc_21C1:				; CODE XREF: RAM:21E6j
+loc_21C1:				; CODE XREF: RAM:21E6vj
 		LDX	$96
 		LDA	$6800,X
 		STA	$82
@@ -5248,15 +5248,15 @@ loc_21C1:				; CODE XREF: RAM:21E6j
 		LDX	$93
 		LDY	$95
 
-loc_21D1:				; CODE XREF: RAM:21E0j
-					; DATA XREF: RAM:21B3w	...
+loc_21D1:				; CODE XREF: RAM:21E0vj
+					; DATA XREF: RAM:21B3^w	...
 		LDA	$FFFF
 		STA	($82),Y
 		INC	loc_21D1+1
 		BNE	loc_21DE
 		INC	loc_21D1+2
 
-loc_21DE:				; CODE XREF: RAM:21D9j
+loc_21DE:				; CODE XREF: RAM:21D9^j
 		INY
 		DEX
 		BNE	loc_21D1
@@ -5268,7 +5268,7 @@ loc_21DE:				; CODE XREF: RAM:21D9j
 		STA	$96
 		LDX	unk_5426,Y
 
-loc_21F2:				; CODE XREF: RAM:220Aj
+loc_21F2:				; CODE XREF: RAM:220Avj
 		LDY	$96
 		LDA	$6800,Y
 		STA	$82
@@ -5277,7 +5277,7 @@ loc_21F2:				; CODE XREF: RAM:220Aj
 		LDY	#$27 ; '''
 		LDA	#0
 
-loc_2202:				; CODE XREF: RAM:2205j
+loc_2202:				; CODE XREF: RAM:2205vj
 		STA	($82),Y
 		DEY
 		BPL	loc_2202
@@ -5289,7 +5289,7 @@ loc_2202:				; CODE XREF: RAM:2205j
 		JMP	loc_219A
 ; ---------------------------------------------------------------------------
 
-loc_2213:				; CODE XREF: RAM:220Ej
+loc_2213:				; CODE XREF: RAM:220E^j
 		LDA	#0
 		JSR	sub_243A
 		INC	$89
@@ -5298,7 +5298,7 @@ loc_2213:				; CODE XREF: RAM:220Ej
 		JSR	sub_292A
 		INC	$89
 
-loc_2224:				; CODE XREF: RAM:loc_2224j
+loc_2224:				; CODE XREF: RAM:loc_2224vj
 		JMP	loc_2224
 ; ---------------------------------------------------------------------------
 		LDX	#$FF
@@ -5308,11 +5308,11 @@ loc_2224:				; CODE XREF: RAM:loc_2224j
 ; --------------- S U B	R O U T	I N E ---------------------------------------
 
 
-sub_222D:				; CODE XREF: RAM:loc_2076p
+sub_222D:				; CODE XREF: RAM:loc_2076^p
 		LDA	#0
 		TAX
 
-loc_2230:				; CODE XREF: sub_222D+13j
+loc_2230:				; CODE XREF: sub_222D+13vj
 		STA	$BB00,X
 		STA	$BC00,X
 		STA	$BD00,X
@@ -5345,7 +5345,7 @@ loc_2230:				; CODE XREF: sub_222D+13j
 		BEQ	loc_2278
 		INC	$97
 
-loc_2270:				; CODE XREF: RAM:225Bj	RAM:22A7j
+loc_2270:				; CODE XREF: RAM:225B^j	RAM:22A7vj
 		PLA
 		TAY
 		PLA
@@ -5354,17 +5354,17 @@ loc_2270:				; CODE XREF: RAM:225Bj	RAM:22A7j
 		RTI
 ; ---------------------------------------------------------------------------
 
-loc_2276:				; DATA XREF: RAM:2430o
+loc_2276:				; DATA XREF: RAM:2430vo
 		PLA
 		PLA
 
-loc_2278:				; CODE XREF: RAM:226Cj
+loc_2278:				; CODE XREF: RAM:226C^j
 		dldi	VVBLKI, $E45F
 		dldi	SDLST, $22AD
 		LDA	#0
 		LDX	#7
 
-loc_2290:				; CODE XREF: RAM:2294j
+loc_2290:				; CODE XREF: RAM:2294vj
 		STA	$D000,X
 		DEX
 		BPL	loc_2290
@@ -5378,8 +5378,8 @@ loc_2290:				; CODE XREF: RAM:2294j
 		JMP	loc_2270
 ; ---------------------------------------------------------------------------
 
-loc_22AA:				; CODE XREF: RAM:2256p
-					; DATA XREF: RAM:224Dw	...
+loc_22AA:				; CODE XREF: RAM:2256^p
+					; DATA XREF: RAM:224D^w	...
 		JMP	$FFFF
 ; ---------------------------------------------------------------------------
 		.BYTE $41 ; A
@@ -5387,13 +5387,13 @@ loc_22AA:				; CODE XREF: RAM:2256p
 		.BYTE $22 ; "
 ; ---------------------------------------------------------------------------
 
-loc_22B0:				; DATA XREF: RAM:off_241Co
+loc_22B0:				; DATA XREF: RAM:off_241Cvo
 		dldi	DLIST, $22AD
 		ldi	NMIEN, $40
 		RTS
 ; ---------------------------------------------------------------------------
 
-loc_22C0:				; DATA XREF: RAM:241Eo
+loc_22C0:				; DATA XREF: RAM:241Evo
 		ldi	DMACTL, $3E
 		ldi	NMIEN, $C0
 		dldi	DLIST, $2800
@@ -5401,7 +5401,7 @@ loc_22C0:				; DATA XREF: RAM:241Eo
 		ldi	CHBASE, $98
 		LDX	#3
 
-loc_22E5:				; CODE XREF: RAM:22ECj
+loc_22E5:				; CODE XREF: RAM:22ECvj
 		LDA	byte_27AB,X
 		STA	$D016,X
 		DEX
@@ -5411,11 +5411,11 @@ loc_22E5:				; CODE XREF: RAM:22ECj
 		RTS
 ; ---------------------------------------------------------------------------
 
-loc_22F5:				; DATA XREF: RAM:2420o
+loc_22F5:				; DATA XREF: RAM:2420vo
 		ldi	NMIEN, $40
 		LDX	#2
 
-loc_22FC:				; CODE XREF: RAM:2303j
+loc_22FC:				; CODE XREF: RAM:2303vj
 		LDA	byte_27AB,X
 		STA	$D016,X
 		DEX
@@ -5423,13 +5423,13 @@ loc_22FC:				; CODE XREF: RAM:2303j
 		RTS
 ; ---------------------------------------------------------------------------
 
-loc_2306:				; DATA XREF: RAM:242Eo
+loc_2306:				; DATA XREF: RAM:242Evo
 		ldi	NMIEN, $C0
 		dldi	off_200, $23E4
 		ldi	byte_2861, $8E
 		LDX	#2
 
-loc_231C:				; CODE XREF: RAM:2323j
+loc_231C:				; CODE XREF: RAM:2323vj
 		LDA	unk_2413,X
 		STA	$D016,X
 		DEX
@@ -5437,10 +5437,10 @@ loc_231C:				; CODE XREF: RAM:2323j
 		RTS
 ; ---------------------------------------------------------------------------
 
-loc_2326:				; DATA XREF: RAM:2422o
+loc_2326:				; DATA XREF: RAM:2422vo
 		LDX	#2
 
-loc_2328:				; CODE XREF: RAM:232Fj
+loc_2328:				; CODE XREF: RAM:232Fvj
 		LDA	unk_240D,X
 		STA	$D016,X
 		DEX
@@ -5448,13 +5448,13 @@ loc_2328:				; CODE XREF: RAM:232Fj
 		RTS
 ; ---------------------------------------------------------------------------
 
-loc_2332:				; DATA XREF: RAM:2424o
+loc_2332:				; DATA XREF: RAM:2424vo
 		LDA	#$C0
 		STA	NMIEN
 		dldi	off_200, $239E
 		LDX	#2
 
-loc_2343:				; CODE XREF: RAM:234Aj
+loc_2343:				; CODE XREF: RAM:234Avj
 		LDA	unk_2410,X
 		STA	$D016,X
 		DEX
@@ -5464,12 +5464,12 @@ loc_2343:				; CODE XREF: RAM:234Aj
 		RTS
 ; ---------------------------------------------------------------------------
 
-loc_2352:				; DATA XREF: RAM:2426o
+loc_2352:				; DATA XREF: RAM:2426vo
 		LDA	#$40
 		STA	NMIEN
 		LDX	#2
 
-loc_2359:				; CODE XREF: RAM:2360j
+loc_2359:				; CODE XREF: RAM:2360vj
 		LDA	unk_2410,X
 		STA	$D016,X
 		DEX
@@ -5479,7 +5479,7 @@ loc_2359:				; CODE XREF: RAM:2360j
 		RTS
 ; ---------------------------------------------------------------------------
 
-loc_2368:				; DATA XREF: RAM:2428o
+loc_2368:				; DATA XREF: RAM:2428vo
 		LDA	#$C0
 		STA	NMIEN
 		LDA	#$B9 ; 'π'
@@ -5488,7 +5488,7 @@ loc_2368:				; DATA XREF: RAM:2428o
 		STA	off_200+1
 		LDX	#2
 
-loc_2379:				; CODE XREF: RAM:2380j
+loc_2379:				; CODE XREF: RAM:2380vj
 		LDA	unk_2410,X
 		STA	$D016,X
 		DEX
@@ -5498,12 +5498,12 @@ loc_2379:				; CODE XREF: RAM:2380j
 		RTS
 ; ---------------------------------------------------------------------------
 
-loc_2388:				; DATA XREF: RAM:242Ao	RAM:242Co
+loc_2388:				; DATA XREF: RAM:242Avo	RAM:242Cvo
 		LDA	#$40
 		STA	NMIEN
 		LDX	#2
 
-loc_238F:				; CODE XREF: RAM:2396j
+loc_238F:				; CODE XREF: RAM:2396vj
 		LDA	unk_2410,X
 		STA	$D016,X
 		DEX
@@ -5519,7 +5519,7 @@ loc_238F:				; CODE XREF: RAM:2396j
 		CLC
 		LDX	#$C
 
-loc_23A7:				; CODE XREF: RAM:23B3j
+loc_23A7:				; CODE XREF: RAM:23B3vj
 		STA	WSYNC
 		STA	WSYNC
 		ADC	#1
@@ -5536,7 +5536,7 @@ loc_23A7:				; CODE XREF: RAM:23B3j
 		PHA
 		LDX	#7
 
-loc_23BE:				; CODE XREF: RAM:23C8j
+loc_23BE:				; CODE XREF: RAM:23C8vj
 		LDA	unk_2432,X
 		STA	WSYNC
 		STA	COLPF1
@@ -5545,7 +5545,7 @@ loc_23BE:				; CODE XREF: RAM:23C8j
 		LDX	#7
 		SEC
 
-loc_23CD:				; CODE XREF: RAM:23D6j
+loc_23CD:				; CODE XREF: RAM:23D6vj
 		STA	WSYNC
 		STA	COLPF1
 		SBC	#2
@@ -5573,7 +5573,7 @@ loc_23CD:				; CODE XREF: RAM:23D6j
 		LDA	#6
 		SEC
 
-loc_23F6:				; CODE XREF: RAM:2405j
+loc_23F6:				; CODE XREF: RAM:2405vj
 		STA	WSYNC
 		STX	COLPF1
 		STY	COLPF2
@@ -5590,23 +5590,23 @@ loc_23F6:				; CODE XREF: RAM:2405j
 		PLA
 		RTI
 ; ---------------------------------------------------------------------------
-unk_240D:	.BYTE  $E		; DATA XREF: RAM:loc_2328r
+unk_240D:	.BYTE  $E		; DATA XREF: RAM:loc_2328^r
 		.BYTE $4A ; J
 		.BYTE $46 ; F
-unk_2410:	.BYTE  $E		; DATA XREF: RAM:loc_2343r
-					; RAM:loc_2359r ...
+unk_2410:	.BYTE  $E		; DATA XREF: RAM:loc_2343^r
+					; RAM:loc_2359^r ...
 		.BYTE $5A ; Z
-byte_2412:	.BYTE $52		; DATA XREF: RAM:23A1r
-unk_2413:	.BYTE  $E		; DATA XREF: RAM:loc_231Cr
-byte_2414:	.BYTE $4F		; DATA XREF: RAM:23E9r
-byte_2415:	.BYTE $82		; DATA XREF: RAM:23ECr
+byte_2412:	.BYTE $52		; DATA XREF: RAM:23A1^r
+unk_2413:	.BYTE  $E		; DATA XREF: RAM:loc_231C^r
+byte_2414:	.BYTE $4F		; DATA XREF: RAM:23E9^r
+byte_2415:	.BYTE $82		; DATA XREF: RAM:23EC^r
 		.BYTE	1
 		.BYTE	1
 		.BYTE $46 ; F
 		.BYTE $82 ; Ç
 		.BYTE $4E ; N
 		.BYTE $8A ; ä
-off_241C:	.WORD loc_22B0		; DATA XREF: RAM:224Ar	RAM:2250r
+off_241C:	.WORD loc_22B0		; DATA XREF: RAM:224A^r	RAM:2250^r
 		.WORD loc_22C0
 		.WORD loc_22F5
 		.WORD loc_2326
@@ -5617,7 +5617,7 @@ off_241C:	.WORD loc_22B0		; DATA XREF: RAM:224Ar	RAM:2250r
 		.WORD loc_2388
 		.WORD loc_2306
 		.WORD loc_2276
-unk_2432:	.BYTE $5E ; ^		; DATA XREF: RAM:loc_23BEr
+unk_2432:	.BYTE $5E ; ^		; DATA XREF: RAM:loc_23BE^r
 		.BYTE $64 ; d
 		.BYTE $86 ; Ü
 		.BYTE $C6 ; ∆
@@ -5629,11 +5629,11 @@ unk_2432:	.BYTE $5E ; ^		; DATA XREF: RAM:loc_23BEr
 ; --------------- S U B	R O U T	I N E ---------------------------------------
 
 
-sub_243A:				; CODE XREF: RAM:2215p	sub_25A3+11Bp
+sub_243A:				; CODE XREF: RAM:2215^p	sub_25A3+11Bvp
 		STA	$87
 		LDX	#$C0 ; '¿'
 
-loc_243E:				; CODE XREF: sub_243A+1Bj
+loc_243E:				; CODE XREF: sub_243A+1Bvj
 		LDA	$67FF,X
 		STA	loc_244E+1
 		LDA	$64FF,X
@@ -5641,8 +5641,8 @@ loc_243E:				; CODE XREF: sub_243A+1Bj
 		LDY	#$27 ; '''
 		LDA	$87
 
-loc_244E:				; CODE XREF: sub_243A+18j
-					; DATA XREF: sub_243A+7w ...
+loc_244E:				; CODE XREF: sub_243A+18vj
+					; DATA XREF: sub_243A+7^w ...
 		STA	$FFFF,Y
 		DEY
 		BPL	loc_244E
@@ -5655,10 +5655,10 @@ loc_244E:				; CODE XREF: sub_243A+18j
 ; --------------- S U B	R O U T	I N E ---------------------------------------
 
 
-sub_2458:				; CODE XREF: RAM:2015p	RAM:2060p ...
+sub_2458:				; CODE XREF: RAM:2015^p	RAM:2060^p ...
 		LDA	$14
 
-loc_245A:				; CODE XREF: sub_2458+4j
+loc_245A:				; CODE XREF: sub_2458+4vj
 		CMP	$14
 		BEQ	loc_245A
 		RTS
@@ -5668,7 +5668,7 @@ loc_245A:				; CODE XREF: sub_2458+4j
 ; --------------- S U B	R O U T	I N E ---------------------------------------
 
 
-sub_245F:				; CODE XREF: RAM:201Fp	RAM:2032p ...
+sub_245F:				; CODE XREF: RAM:201F^p	RAM:2032^p ...
 		JSR	sub_2458
 		DEX
 		BNE	sub_245F
@@ -5679,7 +5679,7 @@ sub_245F:				; CODE XREF: RAM:201Fp	RAM:2032p ...
 ; --------------- S U B	R O U T	I N E ---------------------------------------
 
 
-sub_2466:				; CODE XREF: RAM:202Bp	RAM:208Dp ...
+sub_2466:				; CODE XREF: RAM:202B^p	RAM:208D^p ...
 		CMP	$BD
 		BNE	sub_2466
 		RTS
@@ -5689,7 +5689,7 @@ sub_2466:				; CODE XREF: RAM:202Bp	RAM:208Dp ...
 ; --------------- S U B	R O U T	I N E ---------------------------------------
 
 
-sub_246B:				; CODE XREF: sub_246B+3j RAM:2471p
+sub_246B:				; CODE XREF: sub_246B+3vj RAM:2471vp
 		LDA	TRIG0
 		BNE	sub_246B
 		RTS
@@ -5698,7 +5698,7 @@ sub_246B:				; CODE XREF: sub_246B+3j RAM:2471p
 ; ---------------------------------------------------------------------------
 		JSR	sub_246B
 
-loc_2474:				; CODE XREF: RAM:2477j
+loc_2474:				; CODE XREF: RAM:2477vj
 		LDA	TRIG0
 		BEQ	loc_2474
 		JSR	sub_2458
@@ -5707,7 +5707,7 @@ loc_2474:				; CODE XREF: RAM:2477j
 ; --------------- S U B	R O U T	I N E ---------------------------------------
 
 
-sub_247D:				; CODE XREF: RAM:loc_20F5p RAM:20FCp ...
+sub_247D:				; CODE XREF: RAM:loc_20F5^p RAM:20FC^p ...
 		LDX	$8F
 		LDY	$8E
 		STY	$80
@@ -5720,17 +5720,17 @@ sub_247D:				; CODE XREF: RAM:loc_20F5p RAM:20FCp ...
 		BNE	loc_2492
 		INC	$8F
 
-loc_2492:				; CODE XREF: sub_247D+11j
+loc_2492:				; CODE XREF: sub_247D+11^j
 		INC	$90
 		BNE	loc_2498
 		INC	$91
 
-loc_2498:				; CODE XREF: sub_247D+17j
-					; sub_24EB:loc_2502j
+loc_2498:				; CODE XREF: sub_247D+17^j
+					; sub_24EB:loc_2502vj
 		LDX	#4
 		JSR	sub_245F
 
-loc_249D:				; CODE XREF: sub_247D+25j
+loc_249D:				; CODE XREF: sub_247D+25vj
 		LDA	($80),Y
 		STA	($82),Y
 		DEY
@@ -5751,14 +5751,14 @@ loc_249D:				; CODE XREF: sub_247D+25j
 		INC	byte_291C
 		INC	byte_2922
 
-loc_24C8:				; CODE XREF: sub_247D+35j
+loc_24C8:				; CODE XREF: sub_247D+35^j
 		LDA	$86
 		AND	#7
 		BNE	loc_24D2
 		DEC	$8A
 		DEC	$8B
 
-loc_24D2:				; CODE XREF: sub_247D+4Fj
+loc_24D2:				; CODE XREF: sub_247D+4F^j
 		LDA	$90
 		STA	$82
 		LDA	$91
@@ -5767,7 +5767,7 @@ loc_24D2:				; CODE XREF: sub_247D+4Fj
 		INY
 		LDX	#0
 
-loc_24DF:				; CODE XREF: sub_247D+6Bj
+loc_24DF:				; CODE XREF: sub_247D+6Bvj
 		LDA	unk_279A,X
 		STA	($82),Y
 		INY
@@ -5781,7 +5781,7 @@ loc_24DF:				; CODE XREF: sub_247D+6Bj
 ; --------------- S U B	R O U T	I N E ---------------------------------------
 
 
-sub_24EB:				; CODE XREF: RAM:2109p	RAM:2110p ...
+sub_24EB:				; CODE XREF: RAM:2109^p	RAM:2110^p ...
 		LDX	$91
 		LDY	$90
 		STY	$80
@@ -5795,7 +5795,7 @@ sub_24EB:				; CODE XREF: RAM:2109p	RAM:2110p ...
 		BNE	loc_2502
 		INC	$91
 
-loc_2502:				; CODE XREF: sub_24EB+13j
+loc_2502:				; CODE XREF: sub_24EB+13^j
 		JMP	loc_2498
 ; End of function sub_24EB
 
@@ -5803,16 +5803,16 @@ loc_2502:				; CODE XREF: sub_24EB+13j
 ; --------------- S U B	R O U T	I N E ---------------------------------------
 
 
-sub_2505:				; CODE XREF: RAM:2154p	RAM:215Dp ...
+sub_2505:				; CODE XREF: RAM:2154^p	RAM:215D^p ...
 		LDA	byte_2748,X
 		STA	byte_27AB
 		LDA	#$10
 		STA	$92
 
-loc_250F:				; CODE XREF: sub_2505+2Dj
+loc_250F:				; CODE XREF: sub_2505+2Dvj
 		LDY	unk_2763,X
 
-loc_2512:				; CODE XREF: sub_2505+10j sub_2505+21j
+loc_2512:				; CODE XREF: sub_2505+10vj sub_2505+21vj
 		CMP	VCOUNT
 		BNE	loc_2512
 		LDA	unk_2749,X
@@ -5837,11 +5837,11 @@ loc_2512:				; CODE XREF: sub_2505+10j sub_2505+21j
 ; --------------- S U B	R O U T	I N E ---------------------------------------
 
 
-sub_2538:				; CODE XREF: RAM:2059p
+sub_2538:				; CODE XREF: RAM:2059^p
 		LDX	#3
 		LDA	#$34 ; '4'
 
-loc_253C:				; CODE XREF: sub_2538+8j
+loc_253C:				; CODE XREF: sub_2538+8vj
 		STA	COLPM0,X
 		DEX
 		BPL	loc_253C
@@ -5852,7 +5852,7 @@ loc_253C:				; CODE XREF: sub_2538+8j
 		TAY
 		LDX	#0
 
-loc_254B:				; CODE XREF: sub_2538+1Dj
+loc_254B:				; CODE XREF: sub_2538+1Dvj
 		LDA	unk_259B,Y
 		STA	$D000,X
 		INY
@@ -5864,7 +5864,7 @@ loc_254B:				; CODE XREF: sub_2538+1Dj
 		LDA	#$10
 		STA	$98
 
-loc_255F:				; CODE XREF: sub_2538+5Ej
+loc_255F:				; CODE XREF: sub_2538+5Evj
 		DEC	$98
 		LDA	#$BC ; 'º'
 		STA	$83
@@ -5875,20 +5875,20 @@ loc_255F:				; CODE XREF: sub_2538+5Ej
 		LDA	#4
 		STA	$8D
 
-loc_256E:				; CODE XREF: sub_2538+57j
+loc_256E:				; CODE XREF: sub_2538+57vj
 		LDA	unk_5198,X
 		STA	$80
 		LDA	unk_51A8,X
 		STA	$81
 		LDY	#3
 
-loc_257A:				; CODE XREF: sub_2538+50j
+loc_257A:				; CODE XREF: sub_2538+50vj
 		LDA	($80),Y
 		BIT	$98
 		BMI	loc_2583
 		AND	RANDOM
 
-loc_2583:				; CODE XREF: sub_2538+46j
+loc_2583:				; CODE XREF: sub_2538+46^j
 		STA	($82),Y
 		INY
 		CPY	#$88 ; 'à'
@@ -5904,9 +5904,9 @@ loc_2583:				; CODE XREF: sub_2538+46j
 ; End of function sub_2538
 
 ; ---------------------------------------------------------------------------
-unk_2599:	.BYTE $1E		; DATA XREF: RAM:206Ar
+unk_2599:	.BYTE $1E		; DATA XREF: RAM:206A^r
 		.BYTE $44 ; D
-unk_259B:	.BYTE $60 ; `		; DATA XREF: sub_2538:loc_254Br
+unk_259B:	.BYTE $60 ; `		; DATA XREF: sub_2538:loc_254B^r
 		.BYTE $68 ; h
 		.BYTE $70 ; p
 		.BYTE $78 ; x
@@ -5918,10 +5918,10 @@ unk_259B:	.BYTE $60 ; `		; DATA XREF: sub_2538:loc_254Br
 ; --------------- S U B	R O U T	I N E ---------------------------------------
 
 
-sub_25A3:				; CODE XREF: RAM:2018p
+sub_25A3:				; CODE XREF: RAM:2018^p
 		LDX	#7
 
-loc_25A5:				; CODE XREF: sub_25A3+6j
+loc_25A5:				; CODE XREF: sub_25A3+6vj
 		STA	$D000,X
 		DEX
 		BPL	loc_25A5
@@ -5930,10 +5930,10 @@ loc_25A5:				; CODE XREF: sub_25A3+6j
 		LDA	#$98 ; 'ò'
 		LDX	#$5F ; '_'
 
-loc_25B9:				; CODE XREF: sub_25A3+24j
+loc_25B9:				; CODE XREF: sub_25A3+24vj
 		LDY	#$C
 
-loc_25BB:				; CODE XREF: sub_25A3+1Fj
+loc_25BB:				; CODE XREF: sub_25A3+1Fvj
 		STA	$B8A0,X
 		DEX
 		BMI	loc_25C9
@@ -5943,7 +5943,7 @@ loc_25BB:				; CODE XREF: sub_25A3+1Fj
 		ADC	#4
 		BNE	loc_25B9
 
-loc_25C9:				; CODE XREF: sub_25A3+1Cj
+loc_25C9:				; CODE XREF: sub_25A3+1C^j
 		LDA	#$7E ; '~'
 		STA	$80
 		LDA	#$32 ; '2'
@@ -5960,7 +5960,7 @@ loc_25C9:				; CODE XREF: sub_25A3+1Cj
 		JSR	sub_26F8
 		LDX	#5
 
-loc_25E9:				; CODE XREF: sub_25A3+4Dj
+loc_25E9:				; CODE XREF: sub_25A3+4Dvj
 		LDA	$BBBC,X
 		STA	byte_27A5,X
 		DEX
@@ -5971,10 +5971,10 @@ loc_25E9:				; CODE XREF: sub_25A3+4Dj
 		STA	$83
 		LDX	#8
 
-loc_25FC:				; CODE XREF: sub_25A3+6Dj
+loc_25FC:				; CODE XREF: sub_25A3+6Dvj
 		LDY	#$77 ; 'w'
 
-loc_25FE:				; CODE XREF: sub_25A3+5Fj
+loc_25FE:				; CODE XREF: sub_25A3+5Fvj
 		TYA
 		STA	($82),Y
 		DEY
@@ -5986,7 +5986,7 @@ loc_25FE:				; CODE XREF: sub_25A3+5Fj
 		BCC	loc_260F
 		INC	$83
 
-loc_260F:				; CODE XREF: sub_25A3+68j
+loc_260F:				; CODE XREF: sub_25A3+68^j
 		DEX
 		BNE	loc_25FC
 		LDA	#$EA ; 'Í'
@@ -6000,20 +6000,20 @@ loc_260F:				; CODE XREF: sub_25A3+68j
 		LDA	#0
 		STA	$86
 
-loc_2626:				; CODE XREF: sub_25A3+A9j
+loc_2626:				; CODE XREF: sub_25A3+A9vj
 		LDY	$86
 		LDA	($80),Y
 		STA	$87
 		LDY	#7
 
-loc_262E:				; CODE XREF: sub_25A3+96j
+loc_262E:				; CODE XREF: sub_25A3+96vj
 		LSR	$87
 		BCC	loc_2638
 		LDA	($82),Y
 		ORA	#$80 ; 'Ä'
 		STA	($82),Y
 
-loc_2638:				; CODE XREF: sub_25A3+8Dj
+loc_2638:				; CODE XREF: sub_25A3+8D^j
 		DEY
 		BPL	loc_262E
 		LDA	$82
@@ -6023,7 +6023,7 @@ loc_2638:				; CODE XREF: sub_25A3+8Dj
 		BCC	loc_2646
 		INC	$83
 
-loc_2646:				; CODE XREF: sub_25A3+9Fj
+loc_2646:				; CODE XREF: sub_25A3+9F^j
 		INC	$86
 		LDA	$86
 		CMP	#$78 ; 'x'
@@ -6036,7 +6036,7 @@ loc_2646:				; CODE XREF: sub_25A3+9Fj
 		LDA	#0
 		TAX
 
-loc_265D:				; CODE XREF: sub_25A3+BEj sub_25A3+C4j
+loc_265D:				; CODE XREF: sub_25A3+BEvj sub_25A3+C4vj
 					; DATA XREF: ...
 		STA	$FFFF,X
 		INX
@@ -6054,7 +6054,7 @@ loc_265D:				; CODE XREF: sub_25A3+BEj sub_25A3+C4j
 		STA	$6500
 		LDX	#1
 
-loc_267F:				; CODE XREF: sub_25A3+F0j
+loc_267F:				; CODE XREF: sub_25A3+F0vj
 		CLC
 		LDA	$67FF,X
 		ADC	#$28 ; '('
@@ -6067,18 +6067,18 @@ loc_267F:				; CODE XREF: sub_25A3+F0j
 		BCC	loc_267F
 		LDA	#0
 
-loc_2697:				; CODE XREF: sub_25A3+F8j
+loc_2697:				; CODE XREF: sub_25A3+F8vj
 		STA	$6500,X
 		INX
 		BNE	loc_2697
 		LDA	#$FF
 
-loc_269F:				; CODE XREF: sub_25A3+100j
+loc_269F:				; CODE XREF: sub_25A3+100vj
 		STA	$6400,X
 		INX
 		BNE	loc_269F
 
-loc_26A5:				; CODE XREF: sub_25A3+115j
+loc_26A5:				; CODE XREF: sub_25A3+115vj
 		TXA
 		LSR	A
 		LSR	A
@@ -6104,10 +6104,10 @@ loc_26A5:				; CODE XREF: sub_25A3+115j
 		STA	$83
 		LDX	#0
 
-loc_26D3:				; CODE XREF: sub_25A3+152j
+loc_26D3:				; CODE XREF: sub_25A3+152vj
 		LDY	#$C
 
-loc_26D5:				; CODE XREF: sub_25A3+137j
+loc_26D5:				; CODE XREF: sub_25A3+137vj
 		LDA	($80),Y
 		STA	($82),Y
 		DEY
@@ -6119,7 +6119,7 @@ loc_26D5:				; CODE XREF: sub_25A3+137j
 		BCC	loc_26E7
 		INC	$81
 
-loc_26E7:				; CODE XREF: sub_25A3+140j
+loc_26E7:				; CODE XREF: sub_25A3+140^j
 		LDA	$82
 		CLC
 		ADC	#$28 ; '('
@@ -6127,7 +6127,7 @@ loc_26E7:				; CODE XREF: sub_25A3+140j
 		BCC	loc_26F2
 		INC	$83
 
-loc_26F2:				; CODE XREF: sub_25A3+14Bj
+loc_26F2:				; CODE XREF: sub_25A3+14B^j
 		INX
 		CPX	#$20 ; ' '
 		BCC	loc_26D3
@@ -6138,14 +6138,14 @@ loc_26F2:				; CODE XREF: sub_25A3+14Bj
 ; --------------- S U B	R O U T	I N E ---------------------------------------
 
 
-sub_26F8:				; CODE XREF: sub_25A3+36p sub_25A3+41p ...
+sub_26F8:				; CODE XREF: sub_25A3+36^p sub_25A3+41^p ...
 		LDY	#0
 		LDA	($80),Y
 		INC	$80
 		BNE	loc_2702
 		INC	$81
 
-loc_2702:				; CODE XREF: sub_26F8+6j
+loc_2702:				; CODE XREF: sub_26F8+6^j
 		CMP	#$1B
 		BEQ	loc_2711
 		STA	($82),Y
@@ -6153,33 +6153,33 @@ loc_2702:				; CODE XREF: sub_26F8+6j
 		BNE	loc_270E
 		INC	$83
 
-loc_270E:				; CODE XREF: sub_26F8+12j
+loc_270E:				; CODE XREF: sub_26F8+12^j
 		JMP	sub_26F8
 ; ---------------------------------------------------------------------------
 
-loc_2711:				; CODE XREF: sub_26F8+Cj
+loc_2711:				; CODE XREF: sub_26F8+C^j
 		LDA	($80),Y
 		INC	$80
 		BNE	loc_2719
 		INC	$81
 
-loc_2719:				; CODE XREF: sub_26F8+1Dj
+loc_2719:				; CODE XREF: sub_26F8+1D^j
 		CMP	#$FF
 		BNE	loc_271E
 		RTS
 ; ---------------------------------------------------------------------------
 
-loc_271E:				; CODE XREF: sub_26F8+23j
+loc_271E:				; CODE XREF: sub_26F8+23^j
 		STA	byte_2743
 		LDA	($80),Y
 		INC	$80
 		BNE	loc_2729
 		INC	$81
 
-loc_2729:				; CODE XREF: sub_26F8+2Dj
+loc_2729:				; CODE XREF: sub_26F8+2D^j
 		LDY	byte_2743
 
-loc_272C:				; CODE XREF: sub_26F8+37j
+loc_272C:				; CODE XREF: sub_26F8+37vj
 		STA	($82),Y
 		DEY
 		BPL	loc_272C
@@ -6191,22 +6191,22 @@ loc_272C:				; CODE XREF: sub_26F8+37j
 		BCC	loc_2740
 		INC	$83
 
-loc_2740:				; CODE XREF: sub_26F8+44j
+loc_2740:				; CODE XREF: sub_26F8+44^j
 		JMP	sub_26F8
 ; End of function sub_26F8
 
 ; ---------------------------------------------------------------------------
-byte_2743:	.BYTE 0			; DATA XREF: sub_26F8:loc_271Ew
-					; sub_26F8:loc_2729r ...
-unk_2744:	.BYTE $40 ; @		; DATA XREF: sub_25A3+10Cr
+byte_2743:	.BYTE 0			; DATA XREF: sub_26F8:loc_271E^w
+					; sub_26F8:loc_2729^r ...
+unk_2744:	.BYTE $40 ; @		; DATA XREF: sub_25A3+10C^r
 		.BYTE $10
 		.BYTE	4
 		.BYTE	1
-byte_2748:	.BYTE $90		; DATA XREF: RAM:2164r	RAM:216Cw ...
-unk_2749:	.BYTE $70 ; p		; DATA XREF: sub_2505+12r
+byte_2748:	.BYTE $90		; DATA XREF: RAM:2164^r	RAM:216C^w ...
+unk_2749:	.BYTE $70 ; p		; DATA XREF: sub_2505+12^r
 		.BYTE $80 ; Ä
 		.BYTE $60 ; `
-byte_274C:	.BYTE $70		; DATA XREF: RAM:2167w
+byte_274C:	.BYTE $70		; DATA XREF: RAM:2167^w
 		.BYTE $90 ; ê
 		.BYTE $70 ; p
 		.BYTE $90 ; ê
@@ -6229,7 +6229,7 @@ byte_274C:	.BYTE $70		; DATA XREF: RAM:2167w
 		.BYTE $72 ; r
 		.BYTE $94 ; î
 		.BYTE $96 ; ñ
-unk_2763:	.BYTE	1		; DATA XREF: sub_2505:loc_250Fr
+unk_2763:	.BYTE	1		; DATA XREF: sub_2505:loc_250F^r
 		.BYTE	1
 		.BYTE	1
 		.BYTE	1
@@ -6256,7 +6256,7 @@ unk_2763:	.BYTE	1		; DATA XREF: sub_2505:loc_250Fr
 		.BYTE	1
 		.BYTE	2
 		.BYTE	3
-unk_277E:	.BYTE  $A		; DATA XREF: sub_2505+26r
+unk_277E:	.BYTE  $A		; DATA XREF: sub_2505+26^r
 		.BYTE  $A
 		.BYTE  $A
 		.BYTE  $A
@@ -6283,12 +6283,12 @@ unk_277E:	.BYTE  $A		; DATA XREF: sub_2505+26r
 		.BYTE	1
 		.BYTE	1
 		.BYTE	1
-unk_2799:	.BYTE $94 ; î		; DATA XREF: RAM:loc_2120r
-unk_279A:	.BYTE $41 ; A		; DATA XREF: RAM:loc_213Br
-					; sub_247D:loc_24DFr
+unk_2799:	.BYTE $94 ; î		; DATA XREF: RAM:loc_2120^r
+unk_279A:	.BYTE $41 ; A		; DATA XREF: RAM:loc_213B^r
+					; sub_247D:loc_24DF^r
 		.BYTE	0
 		.BYTE $28 ; (
-unk_279D:	.BYTE $50 ; P		; DATA XREF: RAM:loc_20C7r
+unk_279D:	.BYTE $50 ; P		; DATA XREF: RAM:loc_20C7^r
 		.BYTE $70 ; p
 		.BYTE $90 ; ê
 		.BYTE $B0 ; ∞
@@ -6296,14 +6296,14 @@ unk_279D:	.BYTE $50 ; P		; DATA XREF: RAM:loc_20C7r
 		.BYTE $40 ; @
 		.BYTE $38 ; 8
 		.BYTE $30 ; 0
-byte_27A5:	.BYTE 0			; DATA XREF: sub_25A3+49w sub_25A3+CAr
+byte_27A5:	.BYTE 0			; DATA XREF: sub_25A3+49^w sub_25A3+CA^r
 		.BYTE	0
 		.BYTE	0
 		.BYTE	0
-unk_27A9:	.BYTE	0		; DATA XREF: RAM:22EEr
+unk_27A9:	.BYTE	0		; DATA XREF: RAM:22EE^r
 		.BYTE	0
-byte_27AB:	.BYTE $96		; DATA XREF: RAM:loc_22E5r
-					; RAM:loc_22FCr ...
+byte_27AB:	.BYTE $96		; DATA XREF: RAM:loc_22E5^r
+					; RAM:loc_22FC^r ...
 		.BYTE	8
 		.BYTE  $C
 		.BYTE $9E ; û
@@ -6388,15 +6388,15 @@ byte_27AB:	.BYTE $96		; DATA XREF: RAM:loc_22E5r
 		.BYTE $6F ; o
 		.BYTE $75 ; u
 		.BYTE $74 ; t
-byte_2800:	.BYTE $70		; DATA XREF: RAM:2184w	RAM:218Cw
+byte_2800:	.BYTE $70		; DATA XREF: RAM:2184^w	RAM:218C^w
 		.BYTE $70 ; p
 		.BYTE $70 ; p
 		.BYTE $4E ; N
 		.BYTE $10
 		.BYTE $70 ; p
 		.BYTE $4E ; N
-byte_2807:	.BYTE $B8		; DATA XREF: RAM:2036r	RAM:203Bw
-byte_2808:	.BYTE $86		; DATA XREF: RAM:203Er	RAM:2043w
+byte_2807:	.BYTE $B8		; DATA XREF: RAM:2036^r	RAM:203B^w
+byte_2808:	.BYTE $86		; DATA XREF: RAM:203E^r	RAM:2043^w
 		.BYTE  $E
 		.BYTE  $E
 		.BYTE  $E
@@ -6465,7 +6465,7 @@ byte_2808:	.BYTE $86		; DATA XREF: RAM:203Er	RAM:2043w
 		.BYTE	4
 		.BYTE $41 ; A
 		.BYTE	0
-byte_284D:	.BYTE $28		; DATA XREF: RAM:234Ew	RAM:2364w
+byte_284D:	.BYTE $28		; DATA XREF: RAM:234E^w	RAM:2364^w
 		.BYTE $62 ; b
 		.BYTE $79 ; y
 		.BYTE $20
@@ -6474,7 +6474,7 @@ byte_284D:	.BYTE $28		; DATA XREF: RAM:234Ew	RAM:2364w
 		.BYTE $65 ; e
 		.BYTE $20
 		.BYTE $66 ; f
-byte_2856:	.BYTE $6F		; DATA XREF: RAM:2384w	RAM:239Aw
+byte_2856:	.BYTE $6F		; DATA XREF: RAM:2384^w	RAM:239A^w
 		.BYTE $72 ; r
 		.BYTE $63 ; c
 		.BYTE $65 ; e
@@ -6485,7 +6485,7 @@ byte_2856:	.BYTE $6F		; DATA XREF: RAM:2384w	RAM:239Aw
 		.BYTE $79 ; y
 		.BYTE $6F ; o
 		.BYTE $75 ; u
-byte_2861:	.BYTE $72		; DATA XREF: RAM:2317w
+byte_2861:	.BYTE $72		; DATA XREF: RAM:2317^w
 		.BYTE $20
 		.BYTE $61 ; a
 		.BYTE $74 ; t
@@ -6642,10 +6642,10 @@ byte_2861:	.BYTE $72		; DATA XREF: RAM:2317w
 		.BYTE $A6 ; ¶
 		.BYTE $88 ; à
 		.BYTE $BC ; º
-byte_28FE:	.BYTE $6C		; DATA XREF: sub_247D+3Cw
+byte_28FE:	.BYTE $6C		; DATA XREF: sub_247D+3C^w
 		.BYTE $BA ; ∫
 		.BYTE $BD ; Ω
-byte_2901:	.BYTE $AC		; DATA XREF: sub_247D+39w
+byte_2901:	.BYTE $AC		; DATA XREF: sub_247D+39^w
 		.BYTE $B9 ; π
 		.BYTE $8D ; ç
 		.BYTE  $A
@@ -6657,13 +6657,13 @@ byte_2901:	.BYTE $AC		; DATA XREF: sub_247D+39w
 		.BYTE $19
 		.BYTE $D0 ; –
 		.BYTE $BD ; Ω
-byte_290D:	.BYTE $A0		; DATA XREF: sub_247D+3Fw
+byte_290D:	.BYTE $A0		; DATA XREF: sub_247D+3F^w
 		.BYTE $B8 ; ∏
 		.BYTE $8D ; ç
 		.BYTE	9
 		.BYTE $D4 ; ‘
 		.BYTE $BD ; Ω
-byte_2913:	.BYTE $4C		; DATA XREF: sub_247D+42w
+byte_2913:	.BYTE $4C		; DATA XREF: sub_247D+42^w
 		.BYTE $B9 ; π
 		.BYTE $8D ; ç
 		.BYTE  $A
@@ -6672,13 +6672,13 @@ byte_2913:	.BYTE $4C		; DATA XREF: sub_247D+42w
 		.BYTE $16
 		.BYTE $D0 ; –
 		.BYTE $BD ; Ω
-byte_291C:	.BYTE $C		; DATA XREF: sub_247D+45w
+byte_291C:	.BYTE $C		; DATA XREF: sub_247D+45^w
 		.BYTE $BA ; ∫
 		.BYTE $8D ; ç
 		.BYTE $18
 		.BYTE $D0 ; –
 		.BYTE $BC ; º
-byte_2922:	.BYTE $6B		; DATA XREF: sub_247D+48w
+byte_2922:	.BYTE $6B		; DATA XREF: sub_247D+48^w
 		.BYTE $BA ; ∫
 		.BYTE $CA ;  
 		.BYTE $10
@@ -6690,10 +6690,10 @@ byte_2922:	.BYTE $6B		; DATA XREF: sub_247D+48w
 ; --------------- S U B	R O U T	I N E ---------------------------------------
 
 
-sub_292A:				; CODE XREF: RAM:221Fp
+sub_292A:				; CODE XREF: RAM:221F^p
 		LDX	#$3F ; '?'
 
-loc_292C:				; CODE XREF: sub_292A+6j
+loc_292C:				; CODE XREF: sub_292A+6vj
 		JSR	sub_2A88
 		DEX
 		BPL	loc_292C
@@ -6708,14 +6708,14 @@ loc_292C:				; CODE XREF: sub_292A+6j
 		LDA	$BD
 		STA	$B2
 
-loc_2944:				; CODE XREF: sub_292A+20j
+loc_2944:				; CODE XREF: sub_292A+20vj
 		JSR	sub_2958
 		BIT	byte_2CB6
 		BPL	loc_2944
 		LDA	#0
 		STA	$14
 
-loc_2950:				; CODE XREF: sub_292A+2Bj
+loc_2950:				; CODE XREF: sub_292A+2Bvj
 		JSR	sub_2958
 		LDA	$14
 		BPL	loc_2950
@@ -6726,12 +6726,12 @@ loc_2950:				; CODE XREF: sub_292A+2Bj
 ; --------------- S U B	R O U T	I N E ---------------------------------------
 
 
-sub_2958:				; CODE XREF: sub_292A:loc_2944p
-					; sub_292A:loc_2950p
+sub_2958:				; CODE XREF: sub_292A:loc_2944^p
+					; sub_292A:loc_2950^p
 		LDA	#$3F ; '?'
 		STA	$9D
 
-loc_295C:				; CODE XREF: sub_2958+A2j
+loc_295C:				; CODE XREF: sub_2958+A2vj
 		LDX	$9D
 		LDA	$6780,X
 		STA	$B3
@@ -6751,7 +6751,7 @@ loc_295C:				; CODE XREF: sub_2958+A2j
 		STA	$BD
 		BEQ	loc_2998
 
-loc_297F:				; CODE XREF: sub_2958+16j
+loc_297F:				; CODE XREF: sub_2958+16^j
 		LDA	#0
 		STA	$9F
 		STA	$BD
@@ -6761,13 +6761,13 @@ loc_297F:				; CODE XREF: sub_2958+16j
 		STA	$AE
 		BNE	loc_2998
 
-loc_298F:				; CODE XREF: sub_2958+12j
+loc_298F:				; CODE XREF: sub_2958+12^j
 		CPX	$B2
 		BEQ	loc_2998
 		STX	$B2
 		JSR	sub_2A3B
 
-loc_2998:				; CODE XREF: sub_2958+25j sub_2958+35j ...
+loc_2998:				; CODE XREF: sub_2958+25^j sub_2958+35^j ...
 		JSR	sub_29FE
 		LDX	$9D
 		LDA	$66C0,X
@@ -6780,14 +6780,14 @@ loc_2998:				; CODE XREF: sub_2958+25j sub_2958+35j ...
 		BPL	loc_29C1
 		JSR	sub_2A8F
 
-loc_29B5:				; CODE XREF: sub_2958+64j
+loc_29B5:				; CODE XREF: sub_2958+64vj
 		LDA	RANDOM
 		AND	#$3F ; '?'
 		CMP	#5
 		BCC	loc_29B5
 		STA	$6640,X
 
-loc_29C1:				; CODE XREF: sub_2958+58j
+loc_29C1:				; CODE XREF: sub_2958+58^j
 		STA	$A5
 		LDA	$6740,X
 		CLC
@@ -6796,7 +6796,7 @@ loc_29C1:				; CODE XREF: sub_2958+58j
 		BCC	loc_29D2
 		INC	$6700,X
 
-loc_29D2:				; CODE XREF: sub_2958+75j
+loc_29D2:				; CODE XREF: sub_2958+75^j
 		LDA	$9E
 		CLC
 		ADC	$A6
@@ -6818,7 +6818,7 @@ loc_29D2:				; CODE XREF: sub_2958+75j
 		JMP	loc_295C
 ; ---------------------------------------------------------------------------
 
-locret_29FD:				; CODE XREF: sub_2958+A0j
+locret_29FD:				; CODE XREF: sub_2958+A0^j
 		RTS
 ; End of function sub_2958
 
@@ -6826,8 +6826,8 @@ locret_29FD:				; CODE XREF: sub_2958+A0j
 ; --------------- S U B	R O U T	I N E ---------------------------------------
 
 
-sub_29FE:				; CODE XREF: sub_2958:loc_2998p
-					; sub_2958+9Ap
+sub_29FE:				; CODE XREF: sub_2958:loc_2998^p
+					; sub_2958+9A^p
 		LDX	$9D
 		LDA	$6700,X
 		CMP	#4
@@ -6846,7 +6846,7 @@ sub_29FE:				; CODE XREF: sub_2958:loc_2998p
 ; --------------- S U B	R O U T	I N E ---------------------------------------
 
 
-sub_2A19:				; CODE XREF: sub_29FE+12j sub_29FE+14p
+sub_2A19:				; CODE XREF: sub_29FE+12^j sub_29FE+14^p
 		JSR	sub_2A1E
 		INC	$B4
 ; End of function sub_2A19
@@ -6855,7 +6855,7 @@ sub_2A19:				; CODE XREF: sub_29FE+12j sub_29FE+14p
 ; --------------- S U B	R O U T	I N E ---------------------------------------
 
 
-sub_2A1E:				; CODE XREF: sub_29FE+7j sub_29FE+Ej ...
+sub_2A1E:				; CODE XREF: sub_29FE+7^j sub_29FE+E^j ...
 		LDX	$B3
 		LDY	$B4
 		LDA	$6500,Y
@@ -6869,7 +6869,7 @@ sub_2A1E:				; CODE XREF: sub_29FE+7j sub_29FE+Ej ...
 		EOR	($82),Y
 		STA	($82),Y
 
-locret_2A3A:				; CODE XREF: sub_2A1E+7j sub_2A1E+13j
+locret_2A3A:				; CODE XREF: sub_2A1E+7^j sub_2A1E+13^j
 		RTS
 ; End of function sub_2A1E
 
@@ -6877,12 +6877,12 @@ locret_2A3A:				; CODE XREF: sub_2A1E+7j sub_2A1E+13j
 ; --------------- S U B	R O U T	I N E ---------------------------------------
 
 
-sub_2A3B:				; CODE XREF: sub_2958+3Dp
+sub_2A3B:				; CODE XREF: sub_2958+3D^p
 		LDA	unk_540E,X
 		BEQ	loc_2A42
 		INC	$89
 
-loc_2A42:				; CODE XREF: sub_2A3B+3j
+loc_2A42:				; CODE XREF: sub_2A3B+3^j
 		LDA	unk_62DC,X
 		STA	$80
 		LDA	unk_62EA,X
@@ -6896,11 +6896,11 @@ loc_2A42:				; CODE XREF: sub_2A3B+3j
 		LDA	unk_6306,X
 		STA	$93
 
-loc_2A60:				; CODE XREF: sub_2A3B+49j
+loc_2A60:				; CODE XREF: sub_2A3B+49vj
 		LDY	$93
 		DEY
 
-loc_2A63:				; CODE XREF: sub_2A3B+2Fj
+loc_2A63:				; CODE XREF: sub_2A3B+2Fvj
 		LDA	($80),Y
 		EOR	($82),Y
 		STA	($82),Y
@@ -6913,7 +6913,7 @@ loc_2A63:				; CODE XREF: sub_2A3B+2Fj
 		BCC	loc_2A77
 		INC	$83
 
-loc_2A77:				; CODE XREF: sub_2A3B+38j
+loc_2A77:				; CODE XREF: sub_2A3B+38^j
 		LDA	$80
 		CLC
 		ADC	$93
@@ -6921,7 +6921,7 @@ loc_2A77:				; CODE XREF: sub_2A3B+38j
 		BCC	loc_2A82
 		INC	$81
 
-loc_2A82:				; CODE XREF: sub_2A3B+43j
+loc_2A82:				; CODE XREF: sub_2A3B+43^j
 		DEC	$94
 		BNE	loc_2A60
 		RTS
@@ -6933,7 +6933,7 @@ loc_2A82:				; CODE XREF: sub_2A3B+43j
 ; --------------- S U B	R O U T	I N E ---------------------------------------
 
 
-sub_2A88:				; CODE XREF: sub_292A:loc_292Cp
+sub_2A88:				; CODE XREF: sub_292A:loc_292C^p
 		LDA	#0
 		STA	$6640,X
 		BEQ	loc_2A92
@@ -6943,10 +6943,10 @@ sub_2A88:				; CODE XREF: sub_292A:loc_292Cp
 ; --------------- S U B	R O U T	I N E ---------------------------------------
 
 
-sub_2A8F:				; CODE XREF: sub_2958+5Ap
+sub_2A8F:				; CODE XREF: sub_2958+5A^p
 		LDA	RANDOM
 
-loc_2A92:				; CODE XREF: sub_2A88+5j
+loc_2A92:				; CODE XREF: sub_2A88+5^j
 		STA	$6600,X
 		LDA	RANDOM
 		STA	$6680,X
@@ -6968,7 +6968,7 @@ loc_2A92:				; CODE XREF: sub_2A88+5j
 ; --------------- S U B	R O U T	I N E ---------------------------------------
 
 
-sub_2ABA:				; CODE XREF: sub_2958+8Bp
+sub_2ABA:				; CODE XREF: sub_2958+8B^p
 		LDX	$A4
 		LDA	unk_2B76,X
 		STA	$A0
@@ -6982,7 +6982,7 @@ sub_2ABA:				; CODE XREF: sub_2958+8Bp
 		CLC
 		ADC	#1
 
-loc_2AD3:				; CODE XREF: sub_2ABA+12j
+loc_2AD3:				; CODE XREF: sub_2ABA+12^j
 		CLC
 		ADC	#$4F ; 'O'
 		STA	$B3
@@ -7003,10 +7003,10 @@ loc_2AD3:				; CODE XREF: sub_2ABA+12j
 		JMP	loc_2AF9
 ; ---------------------------------------------------------------------------
 
-loc_2AF7:				; CODE XREF: sub_2ABA+31j
+loc_2AF7:				; CODE XREF: sub_2ABA+31^j
 		LDA	$A3
 
-loc_2AF9:				; CODE XREF: sub_2ABA+3Aj
+loc_2AF9:				; CODE XREF: sub_2ABA+3A^j
 		CLC
 		ADC	#$63 ; 'c'
 		STA	$B4
@@ -7017,7 +7017,7 @@ loc_2AF9:				; CODE XREF: sub_2ABA+3Aj
 ; --------------- S U B	R O U T	I N E ---------------------------------------
 
 
-sub_2AFF:				; CODE XREF: sub_2ABA+Bp sub_2ABA+29p
+sub_2AFF:				; CODE XREF: sub_2ABA+B^p sub_2ABA+29^p
 		LDA	#0
 		STA	$A3
 		ASL	A
@@ -7029,7 +7029,7 @@ sub_2AFF:				; CODE XREF: sub_2ABA+Bp sub_2ABA+29p
 		BCC	loc_2B11
 		INC	$A3
 
-loc_2B11:				; CODE XREF: sub_2AFF+9j sub_2AFF+Ej
+loc_2B11:				; CODE XREF: sub_2AFF+9^j sub_2AFF+E^j
 		ASL	A
 		ROL	$A3
 		ASL	$A1
@@ -7039,7 +7039,7 @@ loc_2B11:				; CODE XREF: sub_2AFF+9j sub_2AFF+Ej
 		BCC	loc_2B1F
 		INC	$A3
 
-loc_2B1F:				; CODE XREF: sub_2AFF+17j sub_2AFF+1Cj
+loc_2B1F:				; CODE XREF: sub_2AFF+17^j sub_2AFF+1C^j
 		ASL	A
 		ROL	$A3
 		ASL	$A1
@@ -7049,7 +7049,7 @@ loc_2B1F:				; CODE XREF: sub_2AFF+17j sub_2AFF+1Cj
 		BCC	loc_2B2D
 		INC	$A3
 
-loc_2B2D:				; CODE XREF: sub_2AFF+25j sub_2AFF+2Aj
+loc_2B2D:				; CODE XREF: sub_2AFF+25^j sub_2AFF+2A^j
 		ASL	A
 		ROL	$A3
 		ASL	$A1
@@ -7059,7 +7059,7 @@ loc_2B2D:				; CODE XREF: sub_2AFF+25j sub_2AFF+2Aj
 		BCC	loc_2B3B
 		INC	$A3
 
-loc_2B3B:				; CODE XREF: sub_2AFF+33j sub_2AFF+38j
+loc_2B3B:				; CODE XREF: sub_2AFF+33^j sub_2AFF+38^j
 		ASL	A
 		ROL	$A3
 		ASL	$A1
@@ -7069,7 +7069,7 @@ loc_2B3B:				; CODE XREF: sub_2AFF+33j sub_2AFF+38j
 		BCC	loc_2B49
 		INC	$A3
 
-loc_2B49:				; CODE XREF: sub_2AFF+41j sub_2AFF+46j
+loc_2B49:				; CODE XREF: sub_2AFF+41^j sub_2AFF+46^j
 		ASL	A
 		ROL	$A3
 		ASL	$A1
@@ -7079,7 +7079,7 @@ loc_2B49:				; CODE XREF: sub_2AFF+41j sub_2AFF+46j
 		BCC	loc_2B57
 		INC	$A3
 
-loc_2B57:				; CODE XREF: sub_2AFF+4Fj sub_2AFF+54j
+loc_2B57:				; CODE XREF: sub_2AFF+4F^j sub_2AFF+54^j
 		ASL	A
 		ROL	$A3
 		ASL	$A1
@@ -7089,7 +7089,7 @@ loc_2B57:				; CODE XREF: sub_2AFF+4Fj sub_2AFF+54j
 		BCC	loc_2B65
 		INC	$A3
 
-loc_2B65:				; CODE XREF: sub_2AFF+5Dj sub_2AFF+62j
+loc_2B65:				; CODE XREF: sub_2AFF+5D^j sub_2AFF+62^j
 		ASL	A
 		ROL	$A3
 		ASL	$A1
@@ -7099,13 +7099,13 @@ loc_2B65:				; CODE XREF: sub_2AFF+5Dj sub_2AFF+62j
 		BCC	loc_2B73
 		INC	$A3
 
-loc_2B73:				; CODE XREF: sub_2AFF+6Bj sub_2AFF+70j
+loc_2B73:				; CODE XREF: sub_2AFF+6B^j sub_2AFF+70^j
 		STA	$A2
 		RTS
 ; End of function sub_2AFF
 
 ; ---------------------------------------------------------------------------
-unk_2B76:	.BYTE	0		; DATA XREF: sub_2ABA+2r
+unk_2B76:	.BYTE	0		; DATA XREF: sub_2ABA+2^r
 		.BYTE	6
 		.BYTE  $D
 		.BYTE $13
@@ -7169,135 +7169,7 @@ unk_2B76:	.BYTE	0		; DATA XREF: sub_2ABA+2r
 		.BYTE $FE ; ˛
 		.BYTE $FF
 		.BYTE $FF
-unk_2BB6:	.BYTE $FF		; DATA XREF: sub_2ABA+20r
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $FE ; ˛
-		.BYTE $FE ; ˛
-		.BYTE $FD ; ˝
-		.BYTE $FC ; ¸
-		.BYTE $FB ; ˚
-		.BYTE $FA ; ˙
-		.BYTE $F9 ; ˘
-		.BYTE $F7 ; ˜
-		.BYTE $F6 ; ˆ
-		.BYTE $F4 ; Ù
-		.BYTE $F2 ; Ú
-		.BYTE $F0 ; 
-		.BYTE $EE ; Ó
-		.BYTE $EC ; Ï
-		.BYTE $E9 ; È
-		.BYTE $E7 ; Á
-		.BYTE $E4 ; ‰
-		.BYTE $E1 ; ·
-		.BYTE $DE ; ﬁ
-		.BYTE $DB ; -
-		.BYTE $D7 ; ◊
-		.BYTE $D4 ; ‘
-		.BYTE $D0 ; –
-		.BYTE $CD ; Õ
-		.BYTE $C9 ; …
-		.BYTE $C5 ; ≈
-		.BYTE $C1 ; ¡
-		.BYTE $BD ; Ω
-		.BYTE $B9 ; π
-		.BYTE $B4 ; ¥
-		.BYTE $B0 ; ∞
-		.BYTE $AB ; ´
-		.BYTE $A7 ; ß
-		.BYTE $A2 ; ¢
-		.BYTE $9D ; ù
-		.BYTE $98 ; ò
-		.BYTE $93 ; ì
-		.BYTE $8E ; é
-		.BYTE $88 ; à
-		.BYTE $83 ; É
-		.BYTE $7E ; ~
-		.BYTE $78 ; x
-		.BYTE $73 ; s
-		.BYTE $6D ; m
-		.BYTE $67 ; g
-		.BYTE $62 ; b
-		.BYTE $5C ; \
-		.BYTE $56 ; V
-		.BYTE $50 ; P
-		.BYTE $4A ; J
-		.BYTE $44 ; D
-		.BYTE $3E ; >
-		.BYTE $38 ; 8
-		.BYTE $32 ; 2
-		.BYTE $2C ; ,
-		.BYTE $25 ; %
-		.BYTE $1F
-		.BYTE $19
-		.BYTE $13
-		.BYTE  $D
-		.BYTE	6
-		.BYTE	0
-		.BYTE	6
-		.BYTE  $D
-		.BYTE $13
-		.BYTE $19
-		.BYTE $1F
-		.BYTE $25 ; %
-		.BYTE $2C ; ,
-		.BYTE $32 ; 2
-		.BYTE $38 ; 8
-		.BYTE $3E ; >
-		.BYTE $44 ; D
-		.BYTE $4A ; J
-		.BYTE $50 ; P
-		.BYTE $56 ; V
-		.BYTE $5C ; \
-		.BYTE $62 ; b
-		.BYTE $67 ; g
-		.BYTE $6D ; m
-		.BYTE $73 ; s
-		.BYTE $78 ; x
-		.BYTE $7E ; ~
-		.BYTE $83 ; É
-		.BYTE $88 ; à
-		.BYTE $8E ; é
-		.BYTE $93 ; ì
-		.BYTE $98 ; ò
-		.BYTE $9D ; ù
-		.BYTE $A2 ; ¢
-		.BYTE $A7 ; ß
-		.BYTE $AB ; ´
-		.BYTE $B0 ; ∞
-		.BYTE $B4 ; ¥
-		.BYTE $B9 ; π
-		.BYTE $BD ; Ω
-		.BYTE $C1 ; ¡
-		.BYTE $C5 ; ≈
-		.BYTE $C9 ; …
-		.BYTE $CD ; Õ
-		.BYTE $D0 ; –
-		.BYTE $D4 ; ‘
-		.BYTE $D7 ; ◊
-		.BYTE $DB ; -
-		.BYTE $DE ; ﬁ
-		.BYTE $E1 ; ·
-		.BYTE $E4 ; ‰
-		.BYTE $E7 ; Á
-		.BYTE $E9 ; È
-		.BYTE $EC ; Ï
-		.BYTE $EE ; Ó
-		.BYTE $F0 ; 
-		.BYTE $F2 ; Ú
-		.BYTE $F4 ; Ù
-		.BYTE $F6 ; ˆ
-		.BYTE $F7 ; ˜
-		.BYTE $F9 ; ˘
-		.BYTE $FA ; ˙
-		.BYTE $FB ; ˚
-		.BYTE $FC ; ¸
-		.BYTE $FD ; ˝
-		.BYTE $FE ; ˛
-		.BYTE $FE ; ˛
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $FF
+unk_2BB6:	.BYTE $FF		; DATA XREF: sub_2ABA+20^r
 		.BYTE $FF
 		.BYTE $FF
 		.BYTE $FE ; ˛
@@ -7425,13 +7297,141 @@ unk_2BB6:	.BYTE $FF		; DATA XREF: sub_2ABA+20r
 		.BYTE $FE ; ˛
 		.BYTE $FF
 		.BYTE $FF
-byte_2CB6:	.BYTE 0			; DATA XREF: sub_292A+1Dr sub_2D75+2w	...
-byte_2CB7:	.BYTE 0			; DATA XREF: RAM:loc_300Fw RAM:301Fr
-byte_2CB8:	.BYTE 0			; DATA XREF: RAM:2FFEw	RAM:3059r ...
-byte_2CB9:	.BYTE 0			; DATA XREF: RAM:2FDFw	RAM:3042r ...
-byte_2CBA:	.BYTE 0			; DATA XREF: RAM:2FE2w	RAM:3051r ...
-byte_2CBB:	.BYTE 0			; DATA XREF: RAM:2FD8w	RAM:3027r ...
-unk_2CBC:	.BYTE $FF		; DATA XREF: RAM:loc_2FE5w RAM:302Aw ...
+		.BYTE $FF
+		.BYTE $FF
+		.BYTE $FF
+		.BYTE $FE ; ˛
+		.BYTE $FE ; ˛
+		.BYTE $FD ; ˝
+		.BYTE $FC ; ¸
+		.BYTE $FB ; ˚
+		.BYTE $FA ; ˙
+		.BYTE $F9 ; ˘
+		.BYTE $F7 ; ˜
+		.BYTE $F6 ; ˆ
+		.BYTE $F4 ; Ù
+		.BYTE $F2 ; Ú
+		.BYTE $F0 ; 
+		.BYTE $EE ; Ó
+		.BYTE $EC ; Ï
+		.BYTE $E9 ; È
+		.BYTE $E7 ; Á
+		.BYTE $E4 ; ‰
+		.BYTE $E1 ; ·
+		.BYTE $DE ; ﬁ
+		.BYTE $DB ; -
+		.BYTE $D7 ; ◊
+		.BYTE $D4 ; ‘
+		.BYTE $D0 ; –
+		.BYTE $CD ; Õ
+		.BYTE $C9 ; …
+		.BYTE $C5 ; ≈
+		.BYTE $C1 ; ¡
+		.BYTE $BD ; Ω
+		.BYTE $B9 ; π
+		.BYTE $B4 ; ¥
+		.BYTE $B0 ; ∞
+		.BYTE $AB ; ´
+		.BYTE $A7 ; ß
+		.BYTE $A2 ; ¢
+		.BYTE $9D ; ù
+		.BYTE $98 ; ò
+		.BYTE $93 ; ì
+		.BYTE $8E ; é
+		.BYTE $88 ; à
+		.BYTE $83 ; É
+		.BYTE $7E ; ~
+		.BYTE $78 ; x
+		.BYTE $73 ; s
+		.BYTE $6D ; m
+		.BYTE $67 ; g
+		.BYTE $62 ; b
+		.BYTE $5C ; \
+		.BYTE $56 ; V
+		.BYTE $50 ; P
+		.BYTE $4A ; J
+		.BYTE $44 ; D
+		.BYTE $3E ; >
+		.BYTE $38 ; 8
+		.BYTE $32 ; 2
+		.BYTE $2C ; ,
+		.BYTE $25 ; %
+		.BYTE $1F
+		.BYTE $19
+		.BYTE $13
+		.BYTE  $D
+		.BYTE	6
+		.BYTE	0
+		.BYTE	6
+		.BYTE  $D
+		.BYTE $13
+		.BYTE $19
+		.BYTE $1F
+		.BYTE $25 ; %
+		.BYTE $2C ; ,
+		.BYTE $32 ; 2
+		.BYTE $38 ; 8
+		.BYTE $3E ; >
+		.BYTE $44 ; D
+		.BYTE $4A ; J
+		.BYTE $50 ; P
+		.BYTE $56 ; V
+		.BYTE $5C ; \
+		.BYTE $62 ; b
+		.BYTE $67 ; g
+		.BYTE $6D ; m
+		.BYTE $73 ; s
+		.BYTE $78 ; x
+		.BYTE $7E ; ~
+		.BYTE $83 ; É
+		.BYTE $88 ; à
+		.BYTE $8E ; é
+		.BYTE $93 ; ì
+		.BYTE $98 ; ò
+		.BYTE $9D ; ù
+		.BYTE $A2 ; ¢
+		.BYTE $A7 ; ß
+		.BYTE $AB ; ´
+		.BYTE $B0 ; ∞
+		.BYTE $B4 ; ¥
+		.BYTE $B9 ; π
+		.BYTE $BD ; Ω
+		.BYTE $C1 ; ¡
+		.BYTE $C5 ; ≈
+		.BYTE $C9 ; …
+		.BYTE $CD ; Õ
+		.BYTE $D0 ; –
+		.BYTE $D4 ; ‘
+		.BYTE $D7 ; ◊
+		.BYTE $DB ; -
+		.BYTE $DE ; ﬁ
+		.BYTE $E1 ; ·
+		.BYTE $E4 ; ‰
+		.BYTE $E7 ; Á
+		.BYTE $E9 ; È
+		.BYTE $EC ; Ï
+		.BYTE $EE ; Ó
+		.BYTE $F0 ; 
+		.BYTE $F2 ; Ú
+		.BYTE $F4 ; Ù
+		.BYTE $F6 ; ˆ
+		.BYTE $F7 ; ˜
+		.BYTE $F9 ; ˘
+		.BYTE $FA ; ˙
+		.BYTE $FB ; ˚
+		.BYTE $FC ; ¸
+		.BYTE $FD ; ˝
+		.BYTE $FE ; ˛
+		.BYTE $FE ; ˛
+		.BYTE $FF
+		.BYTE $FF
+byte_2CB6:	.BYTE 0			; DATA XREF: sub_292A+1D^r sub_2D75+2vw	...
+byte_2CB7:	.BYTE 0			; DATA XREF: RAM:loc_300Fvw RAM:301Fvr
+byte_2CB8:	.BYTE 0			; DATA XREF: RAM:2FFEvw	RAM:3059vr ...
+byte_2CB9:	.BYTE 0			; DATA XREF: RAM:2FDFvw	RAM:3042vr ...
+byte_2CBA:	.BYTE 0			; DATA XREF: RAM:2FE2vw	RAM:3051vr ...
+byte_2CBB:	.BYTE 0			; DATA XREF: RAM:2FD8vw	RAM:3027vr ...
+unk_2CBC:	.BYTE $FF		; DATA XREF: RAM:loc_2FE5vw RAM:302Avw ...
 		MOVEXY	0,2
 		.BYTE	$A5,"Your "
 		.BYTE $B4 ; ¥
@@ -7444,74 +7444,74 @@ unk_2CBC:	.BYTE $FF		; DATA XREF: RAM:loc_2FE5w RAM:302Aw ...
 		.BYTE $73 ; s
 		.BYTE $20
 		.BYTE $77 ; w
-byte_2CD0:	.BYTE $65		; DATA XREF: sub_2DDB+34r sub_2DDB+50r ...
+byte_2CD0:	.BYTE $65		; DATA XREF: sub_2DDB+34vr sub_2DDB+50vr ...
 		.BYTE $61 ; a
 		.BYTE $6B ; k
 		.BYTE $65 ; e
 		.BYTE $6E ; n
-unk_2CD5:	.BYTE $69 ; i		; DATA XREF: sub_2DDB:loc_2DE2r
-					; sub_2DDB+14r	...
+unk_2CD5:	.BYTE $69 ; i		; DATA XREF: sub_2DDB:loc_2DE2vr
+					; sub_2DDB+14vr	...
 		.BYTE $6E ; n
 		.BYTE $67 ; g
 		.BYTE $2E ; .
 		.BYTE  $D
-unk_2CDA:	.BYTE $FF		; DATA XREF: sub_2D99+30w sub_2E47+9r	...
+unk_2CDA:	.BYTE $FF		; DATA XREF: sub_2D99+30vw sub_2E47+9vr	...
 		.BYTE $A6 ; ¶
 		.BYTE	0
 		.BYTE	3
 		.BYTE $A5 ; •
-unk_2CDF:	.BYTE $59 ; Y		; DATA XREF: sub_2D99+2Aw sub_2E47+Er	...
+unk_2CDF:	.BYTE $59 ; Y		; DATA XREF: sub_2D99+2Avw sub_2E47+Evr	...
 		.BYTE $6F ; o
 		.BYTE $75 ; u
 		.BYTE $72 ; r
 		.BYTE $20
-unk_2CE4:	.BYTE $B4 ; ¥		; DATA XREF: sub_2DDB+39r sub_2DDB+3Ew ...
+unk_2CE4:	.BYTE $B4 ; ¥		; DATA XREF: sub_2DDB+39vr sub_2DDB+3Evw ...
 		.BYTE $70 ; p
 		.BYTE	0
 		.BYTE $14
 		.BYTE $20
-unk_2CE9:	.BYTE $68 ; h		; DATA XREF: RAM:2ECEw	RAM:30E4w ...
+unk_2CE9:	.BYTE $68 ; h		; DATA XREF: RAM:2ECEvw	RAM:30E4vw ...
 		.BYTE $61 ; a
 		.BYTE $73 ; s
 		.BYTE $20
 		.BYTE $62 ; b
-unk_2CEE:	.BYTE $72 ; r		; DATA XREF: RAM:2EBBw	RAM:3160r
+unk_2CEE:	.BYTE $72 ; r		; DATA XREF: RAM:2EBBvw	RAM:3160vr
 		.BYTE $6F ; o
 		.BYTE $6B ; k
 		.BYTE $65 ; e
-unk_2CF2:	.BYTE $6E ; n		; DATA XREF: RAM:2EDAw	RAM:3116r
+unk_2CF2:	.BYTE $6E ; n		; DATA XREF: RAM:2EDAvw	RAM:3116vr
 		.BYTE $2E ; .
 		.BYTE  $D
 		.BYTE $FF
-unk_2CF6:	.BYTE $A6 ; ¶		; DATA XREF: RAM:2EE2w	RAM:3120r
+unk_2CF6:	.BYTE $A6 ; ¶		; DATA XREF: RAM:2EE2vw	RAM:3120vr
 		.BYTE	0
 		.BYTE	3
 		.BYTE $A5 ; •
-unk_2CFA:	.BYTE $59 ; Y		; DATA XREF: RAM:2ECBw	RAM:314Fw ...
+unk_2CFA:	.BYTE $59 ; Y		; DATA XREF: RAM:2ECBvw	RAM:314Fvw ...
 		.BYTE $6F ; o
 		.BYTE $75 ; u
 		.BYTE $20
-unk_2CFE:	.BYTE $61 ; a		; DATA XREF: RAM:2ED1r	RAM:2EF7w ...
+unk_2CFE:	.BYTE $61 ; a		; DATA XREF: RAM:2ED1vr	RAM:2EF7vw ...
 		.BYTE $72 ; r
 		.BYTE $65 ; e
 		.BYTE $20
-unk_2D02:	.BYTE $73 ; s		; DATA XREF: RAM:2ED4w	RAM:3155w ...
+unk_2D02:	.BYTE $73 ; s		; DATA XREF: RAM:2ED4vw	RAM:3155vw ...
 		.BYTE $74 ; t
 		.BYTE $75 ; u
 		.BYTE $6E ; n
-unk_2D06:	.BYTE $6E ; n		; DATA XREF: RAM:2EEBw	RAM:loc_3144r
+unk_2D06:	.BYTE $6E ; n		; DATA XREF: RAM:2EEBvw	RAM:loc_3144vr
 		.BYTE $65 ; e
 		.BYTE $64 ; d
 		.BYTE $20
-unk_2D0A:	.BYTE $66 ; f		; DATA XREF: RAM:2EF1w	RAM:312Cr
+unk_2D0A:	.BYTE $66 ; f		; DATA XREF: RAM:2EF1vw	RAM:312Cvr
 		.BYTE $72 ; r
 		.BYTE $6F ; o
 		.BYTE $6D ; m
-unk_2D0E:	.BYTE $20		; DATA XREF: RAM:2EFDw	RAM:318Br
+unk_2D0E:	.BYTE $20		; DATA XREF: RAM:2EFDvw	RAM:318Bvr
 		.BYTE $74 ; t
 		.BYTE $68 ; h
 		.BYTE $65 ; e
-unk_2D12:	.BYTE $20		; DATA XREF: RAM:2F03w	RAM:3149r ...
+unk_2D12:	.BYTE $20		; DATA XREF: RAM:2F03vw	RAM:3149vr ...
 		.BYTE $62 ; b
 		.BYTE $6C ; l
 		.BYTE $6F ; o
@@ -7595,17 +7595,17 @@ unk_2D12:	.BYTE $20		; DATA XREF: RAM:2F03w	RAM:3149r ...
 		.BYTE $61 ; a
 		.BYTE $64 ; d
 		.BYTE	0
-byte_2D66:	.BYTE 7			; DATA XREF: sub_2D99+15w RAM:2F85r ...
-byte_2D67:	.BYTE 7			; DATA XREF: sub_2D99+18w
-byte_2D68:	.BYTE 7			; DATA XREF: sub_2D99+1Bw
-byte_2D69:	.BYTE 7			; DATA XREF: sub_2D99+1Ew
-byte_2D6A:	.BYTE 7			; DATA XREF: sub_2D99+21w
-unk_2D6B:	.BYTE $16		; DATA XREF: RAM:2F7Br	RAM:2F9Fr
+byte_2D66:	.BYTE 7			; DATA XREF: sub_2D99+15vw RAM:2F85vr ...
+byte_2D67:	.BYTE 7			; DATA XREF: sub_2D99+18vw
+byte_2D68:	.BYTE 7			; DATA XREF: sub_2D99+1Bvw
+byte_2D69:	.BYTE 7			; DATA XREF: sub_2D99+1Evw
+byte_2D6A:	.BYTE 7			; DATA XREF: sub_2D99+21vw
+unk_2D6B:	.BYTE $16		; DATA XREF: RAM:2F7Bvr	RAM:2F9Fvr
 		.BYTE $26 ; &
 		.BYTE $36 ; 6
 		.BYTE $46 ; F
 		.BYTE $56 ; V
-unk_2D70:	.BYTE $2D ; -		; DATA XREF: RAM:2F80r	RAM:2FA4r
+unk_2D70:	.BYTE $2D ; -		; DATA XREF: RAM:2F80vr	RAM:2FA4vr
 		.BYTE $2D ; -
 		.BYTE $2D ; -
 		.BYTE $2D ; -
@@ -7614,26 +7614,26 @@ unk_2D70:	.BYTE $2D ; -		; DATA XREF: RAM:2F80r	RAM:2FA4r
 ; --------------- S U B	R O U T	I N E ---------------------------------------
 
 
-sub_2D75:				; CODE XREF: RAM:2003p
+sub_2D75:				; CODE XREF: RAM:2003^p
 		LDA	#$80 ; 'Ä'
 		STA	byte_2CB6
 		LDX	#8
 		LDA	#0
 
-loc_2D7E:				; CODE XREF: sub_2D75+Dj
+loc_2D7E:				; CODE XREF: sub_2D75+Dvj
 		STA	$D200,X
 		DEX
 		BPL	loc_2D7E
 		INX
 		STA	byte_3235
 
-loc_2D88:				; CODE XREF: sub_2D75+17j
+loc_2D88:				; CODE XREF: sub_2D75+17vj
 		STA	$6960,X
 		INX
 		BNE	loc_2D88
 		LDX	#$3F ; '?'
 
-loc_2D90:				; CODE XREF: sub_2D75+1Fj
+loc_2D90:				; CODE XREF: sub_2D75+1Fvj
 		STA	$6A60,X
 		DEX
 		BPL	loc_2D90
@@ -7644,7 +7644,7 @@ loc_2D90:				; CODE XREF: sub_2D75+1Fj
 ; --------------- S U B	R O U T	I N E ---------------------------------------
 
 
-sub_2D99:				; CODE XREF: RAM:2026p
+sub_2D99:				; CODE XREF: RAM:2026^p
 		LDA	#$80 ; 'Ä'
 		STA	byte_2CB6
 		STY	$B9
@@ -7652,7 +7652,7 @@ sub_2D99:				; CODE XREF: RAM:2026p
 		LDA	#0
 		LDX	#$60 ; '`'
 
-loc_2DA6:				; CODE XREF: sub_2D99+11j
+loc_2DA6:				; CODE XREF: sub_2D99+11vj
 		STA	$2CB6,X
 		DEX
 		BNE	loc_2DA6
@@ -7665,7 +7665,7 @@ loc_2DA6:				; CODE XREF: sub_2D99+11j
 		LDY	#9
 		LDX	#4
 
-loc_2DC1:				; CODE XREF: sub_2D99+35j
+loc_2DC1:				; CODE XREF: sub_2D99+35vj
 		LDA	($B9),Y
 		STA	unk_2CDF,X
 		DEY
@@ -7679,7 +7679,7 @@ loc_2DC1:				; CODE XREF: sub_2D99+35j
 		LDA	#0
 		STA	byte_2CB6
 
-locret_2DDA:				; CODE XREF: sub_2DDB+3j
+locret_2DDA:				; CODE XREF: sub_2DDB+3vj
 		RTS
 ; End of function sub_2D99
 
@@ -7687,45 +7687,45 @@ locret_2DDA:				; CODE XREF: sub_2DDB+3j
 ; --------------- S U B	R O U T	I N E ---------------------------------------
 
 
-sub_2DDB:				; CODE XREF: RAM:225Fp
+sub_2DDB:				; CODE XREF: RAM:225F^p
 		BIT	byte_2CB6
 		BMI	locret_2DDA
 		LDX	#4
 
-loc_2DE2:				; CODE XREF: sub_2DDB+2Cj
+loc_2DE2:				; CODE XREF: sub_2DDB+2Cvj
 		LDA	unk_2CD5,X
 		BEQ	loc_2E06
 		LDY	#4
 		STA	$BC
 
-loc_2DEB:				; CODE XREF: sub_2DDB+1Aj
+loc_2DEB:				; CODE XREF: sub_2DDB+1Avj
 		LSR	$BC
 		BCC	loc_2DF4
 		LDA	unk_2CD5,Y
 		BEQ	loc_2E06
 
-loc_2DF4:				; CODE XREF: sub_2DDB+12j
+loc_2DF4:				; CODE XREF: sub_2DDB+12^j
 		DEY
 		BPL	loc_2DEB
 		LDY	#4
 
-loc_2DF9:				; CODE XREF: sub_2DDB+29j
+loc_2DF9:				; CODE XREF: sub_2DDB+29vj
 		LSR	unk_2CD5,X
 		BCC	loc_2E03
 		LDA	#0
 		STA	unk_2CD5,Y
 
-loc_2E03:				; CODE XREF: sub_2DDB+21j
+loc_2E03:				; CODE XREF: sub_2DDB+21^j
 		DEY
 		BPL	loc_2DF9
 
-loc_2E06:				; CODE XREF: sub_2DDB+Aj sub_2DDB+17j
+loc_2E06:				; CODE XREF: sub_2DDB+A^j sub_2DDB+17^j
 		DEX
 		BPL	loc_2DE2
 		LDA	#4
 		STA	$BB
 
-loc_2E0D:				; CODE XREF: sub_2DDB+4Ej
+loc_2E0D:				; CODE XREF: sub_2DDB+4Evj
 		LDX	$BB
 		LDA	byte_2CD0,X
 		BNE	loc_2E27
@@ -7737,16 +7737,16 @@ loc_2E0D:				; CODE XREF: sub_2DDB+4Ej
 		JMP	loc_2E27
 ; ---------------------------------------------------------------------------
 
-loc_2E24:				; CODE XREF: sub_2DDB+3Cj sub_2DDB+41j
+loc_2E24:				; CODE XREF: sub_2DDB+3C^j sub_2DDB+41^j
 		JSR	sub_2E47
 
-loc_2E27:				; CODE XREF: sub_2DDB+37j sub_2DDB+46j
+loc_2E27:				; CODE XREF: sub_2DDB+37^j sub_2DDB+46^j
 		DEC	$BB
 		BPL	loc_2E0D
 		LDA	byte_2CD0
 		LDX	#4
 
-loc_2E30:				; CODE XREF: sub_2DDB+59j
+loc_2E30:				; CODE XREF: sub_2DDB+59vj
 		AND	byte_2CD0,X
 		DEX
 		BNE	loc_2E30
@@ -7757,7 +7757,7 @@ loc_2E30:				; CODE XREF: sub_2DDB+59j
 		LDA	#0
 		STA	byte_3235
 
-locret_2E46:				; CODE XREF: sub_2DDB+61j
+locret_2E46:				; CODE XREF: sub_2DDB+61^j
 		RTS
 ; End of function sub_2DDB
 
@@ -7765,8 +7765,8 @@ locret_2E46:				; CODE XREF: sub_2DDB+61j
 ; --------------- S U B	R O U T	I N E ---------------------------------------
 
 
-sub_2E47:				; CODE XREF: sub_2DDB:loc_2E24p
-					; RAM:2E82j ...
+sub_2E47:				; CODE XREF: sub_2DDB:loc_2E24^p
+					; RAM:2E82vj ...
 		LDX	$BB
 		LDA	unk_2CD5,X
 		BNE	locret_2E75
@@ -7788,15 +7788,15 @@ sub_2E47:				; CODE XREF: sub_2DDB:loc_2E24p
 		BNE	loc_2E71
 		INC	$BA
 
-loc_2E71:				; CODE XREF: sub_2E47+26j
+loc_2E71:				; CODE XREF: sub_2E47+26^j
 		LDY	#0
 		LDA	($B9),Y
 
-locret_2E75:				; CODE XREF: sub_2E47+5j
+locret_2E75:				; CODE XREF: sub_2E47+5^j
 		RTS
 ; ---------------------------------------------------------------------------
 
-loc_2E76:				; CODE XREF: sub_2E47+19j sub_2E47+35j
+loc_2E76:				; CODE XREF: sub_2E47+19^j sub_2E47+35vj
 		LDA	RANDOM
 		STA	COLBK
 		JMP	loc_2E76
@@ -7804,14 +7804,14 @@ loc_2E76:				; CODE XREF: sub_2E47+19j sub_2E47+35j
 
 ; ---------------------------------------------------------------------------
 
-loc_2E7F:				; CODE XREF: RAM:2F08j	RAM:2F0Dj ...
+loc_2E7F:				; CODE XREF: RAM:2F08vj	RAM:2F0Dvj ...
 		JSR	sub_2E85
 		JMP	sub_2E47
 
 ; --------------- S U B	R O U T	I N E ---------------------------------------
 
 
-sub_2E85:				; CODE XREF: RAM:loc_2E7Fp RAM:2EC6p ...
+sub_2E85:				; CODE XREF: RAM:loc_2E7F^p RAM:2EC6vp ...
 		LDX	$BB
 		CLC
 		ADC	$B9
@@ -7826,7 +7826,7 @@ sub_2E85:				; CODE XREF: RAM:loc_2E7Fp RAM:2EC6p ...
 ; --------------- S U B	R O U T	I N E ---------------------------------------
 
 
-sub_2E95:				; CODE XREF: RAM:2F53p	RAM:30A7p
+sub_2E95:				; CODE XREF: RAM:2F53vp	RAM:30A7vp
 		LDA	($B9),Y
 		STA	$C0
 		INY
@@ -7850,7 +7850,7 @@ loc_2EA6:
 		STA	$D200,Y
 		STA	$D201,Y
 
-locret_2EBA:				; CODE XREF: RAM:2EADj
+locret_2EBA:				; CODE XREF: RAM:2EAD^j
 		RTS
 ; ---------------------------------------------------------------------------
 		STA	unk_2CEE,X
@@ -7898,7 +7898,7 @@ locret_2EBA:				; CODE XREF: RAM:2EADj
 		LDA	($B9),Y
 		STA	loc_2F19+2
 
-loc_2F19:				; DATA XREF: RAM:2F10w	RAM:2F16w
+loc_2F19:				; DATA XREF: RAM:2F10^w	RAM:2F16^w
 		DEC	$FFFF
 		BEQ	loc_2F2D
 		INY
@@ -7910,12 +7910,12 @@ loc_2F19:				; DATA XREF: RAM:2F10w	RAM:2F16w
 		JMP	sub_2E47
 ; ---------------------------------------------------------------------------
 
-loc_2F2D:				; CODE XREF: RAM:2F1Cj
+loc_2F2D:				; CODE XREF: RAM:2F1C^j
 		LDA	#4
 		JMP	loc_2E7F
 ; ---------------------------------------------------------------------------
 
-loc_2F32:				; CODE XREF: RAM:2F4Bj
+loc_2F32:				; CODE XREF: RAM:2F4Bvj
 		STA	unk_2CDA,X
 		INY
 		LDA	($B9),Y
@@ -7928,12 +7928,12 @@ loc_2F32:				; CODE XREF: RAM:2F4Bj
 		BNE	loc_2F49
 		INC	$BA
 
-loc_2F49:				; CODE XREF: RAM:2F45j
+loc_2F49:				; CODE XREF: RAM:2F45^j
 		LDA	($B9),Y
 		JMP	loc_2F32
 ; ---------------------------------------------------------------------------
 
-loc_2F4E:				; CODE XREF: RAM:2F41j
+loc_2F4E:				; CODE XREF: RAM:2F41^j
 		LDA	#3
 		JMP	loc_2E7F
 ; ---------------------------------------------------------------------------
@@ -8000,7 +8000,7 @@ loc_2F4E:				; CODE XREF: RAM:2F41j
 		STA	$BD
 		LDA	#1
 
-loc_2FCB:				; CODE XREF: RAM:2FD3j
+loc_2FCB:				; CODE XREF: RAM:2FD3vj
 		JMP	loc_2E7F
 ; ---------------------------------------------------------------------------
 		STA	unk_2CD5,X
@@ -8015,19 +8015,19 @@ loc_2FCB:				; CODE XREF: RAM:2FD3j
 		STA	byte_2CB9
 		STA	byte_2CBA
 
-loc_2FE5:				; CODE XREF: RAM:2FE9j
+loc_2FE5:				; CODE XREF: RAM:2FE9vj
 		STA	unk_2CBC,Y
 		DEY
 		BPL	loc_2FE5
 		LDY	#1
 
-loc_2FED:				; CODE XREF: RAM:2FF2j
+loc_2FED:				; CODE XREF: RAM:2FF2vj
 		LDA	($B9),Y
 		BEQ	loc_2FF4
 		INY
 		BNE	loc_2FED
 
-loc_2FF4:				; CODE XREF: RAM:2FEFj
+loc_2FF4:				; CODE XREF: RAM:2FEF^j
 		STY	$BC
 		LSR	$BC
 		SEC
@@ -8038,31 +8038,31 @@ loc_2FF4:				; CODE XREF: RAM:2FEFj
 		STY	$BC
 		LDY	#1
 
-loc_3005:				; CODE XREF: RAM:3031j
+loc_3005:				; CODE XREF: RAM:3031vj
 		LDA	($B9),Y
 		CMP	#$41 ; 'A'
 		BCC	loc_300F
 		CMP	#$5B ; '['
 		BCC	loc_3025
 
-loc_300F:				; CODE XREF: RAM:3009j
+loc_300F:				; CODE XREF: RAM:3009^j
 		STX	byte_2CB7
 		LDX	#0
 
-loc_3014:				; CODE XREF: RAM:301Cj
+loc_3014:				; CODE XREF: RAM:301Cvj
 		CMP	unk_303D,X
 		BEQ	loc_301E
 		INX
 		CPX	#5
 		BCC	loc_3014
 
-loc_301E:				; CODE XREF: RAM:3017j
+loc_301E:				; CODE XREF: RAM:3017^j
 		TXA
 		LDX	byte_2CB7
 		CLC
 		ADC	#$1B
 
-loc_3025:				; CODE XREF: RAM:300Dj
+loc_3025:				; CODE XREF: RAM:300D^j
 		AND	#$1F
 		ORA	byte_2CBB
 		STA	unk_2CBC,X
@@ -8076,7 +8076,7 @@ loc_3025:				; CODE XREF: RAM:300Dj
 		STX	byte_3235
 		JMP	loc_2E7F
 ; ---------------------------------------------------------------------------
-unk_303D:	.BYTE $2E ; .		; DATA XREF: RAM:loc_3014r
+unk_303D:	.BYTE $2E ; .		; DATA XREF: RAM:loc_3014^r
 		.BYTE $2D ; -
 		.BYTE $27 ; '
 		.BYTE $21 ; !
@@ -8084,7 +8084,7 @@ unk_303D:	.BYTE $2E ; .		; DATA XREF: RAM:loc_3014r
 ; ---------------------------------------------------------------------------
 		LDX	byte_2CB9
 
-loc_3045:				; CODE XREF: RAM:3054j
+loc_3045:				; CODE XREF: RAM:3054vj
 		LDA	unk_2CBC,X
 		AND	#$3F ; '?'
 		ORA	byte_2CBB
@@ -8110,7 +8110,7 @@ loc_3045:				; CODE XREF: RAM:3054j
 		ROR	A
 		STA	$BC
 
-loc_3074:				; CODE XREF: RAM:3082j
+loc_3074:				; CODE XREF: RAM:3082vj
 		LDA	unk_2CBC,X
 		AND	#$3F ; '?'
 		ORA	$BC
@@ -8125,7 +8125,7 @@ loc_3074:				; CODE XREF: RAM:3082j
 ; ---------------------------------------------------------------------------
 		LDX	byte_2CB9
 
-loc_3091:				; CODE XREF: RAM:30A0j
+loc_3091:				; CODE XREF: RAM:30A0vj
 		LDA	unk_2CBC,X
 		AND	#$3F ; '?'
 		ORA	byte_2CBB
@@ -8142,25 +8142,25 @@ loc_3091:				; CODE XREF: RAM:30A0j
 		LDA	($B9),Y
 		LDX	#0
 
-loc_30B2:				; CODE XREF: RAM:30B8j
+loc_30B2:				; CODE XREF: RAM:30B8vj
 		LSR	A
 		BCS	loc_30BA
 		INX
 		CPX	#8
 		BCC	loc_30B2
 
-loc_30BA:				; CODE XREF: RAM:30B3j
+loc_30BA:				; CODE XREF: RAM:30B3^j
 		LDA	unk_30D6,X
 		STA	$BC
 
-loc_30BF:				; CODE XREF: RAM:30C8j
+loc_30BF:				; CODE XREF: RAM:30C8vj
 		LDA	RANDOM
 		AND	$BC
 		CMP	($B9),Y
 		BEQ	loc_30CA
 		BCS	loc_30BF
 
-loc_30CA:				; CODE XREF: RAM:30C6j
+loc_30CA:				; CODE XREF: RAM:30C6^j
 		LDY	#0
 		CLC
 		ADC	($C0),Y
@@ -8168,7 +8168,7 @@ loc_30CA:				; CODE XREF: RAM:30C6j
 		LDA	#4
 		JMP	loc_2E7F
 ; ---------------------------------------------------------------------------
-unk_30D6:	.BYTE $FF		; DATA XREF: RAM:loc_30BAr
+unk_30D6:	.BYTE $FF		; DATA XREF: RAM:loc_30BA^r
 		.BYTE $7F ; 
 		.BYTE $3F ; ?
 		.BYTE $1F
@@ -8187,17 +8187,17 @@ unk_30D6:	.BYTE $FF		; DATA XREF: RAM:loc_30BAr
 		LDA	#0
 		STA	$D201,Y
 
-loc_30F3:				; CODE XREF: RAM:30E9j
+loc_30F3:				; CODE XREF: RAM:30E9^j
 		LDA	#1
 		JSR	sub_2E85
 		JMP	loc_3112
 ; ---------------------------------------------------------------------------
 
-loc_30FB:				; CODE XREF: sub_2D75+21j
+loc_30FB:				; CODE XREF: sub_2D75+21^j
 		LDA	#$80 ; 'Ä'
 		LDX	#4
 
-loc_30FF:				; CODE XREF: RAM:3103j
+loc_30FF:				; CODE XREF: RAM:3103vj
 		STA	byte_2CD0,X
 		DEX
 		BPL	loc_30FF
@@ -8205,16 +8205,16 @@ loc_30FF:				; CODE XREF: RAM:3103j
 		ASL	A
 		LDX	#7
 
-loc_310B:				; CODE XREF: RAM:310Fj
+loc_310B:				; CODE XREF: RAM:310Fvj
 		STA	$D200,X
 		DEX
 		BPL	loc_310B
 
-locret_3111:				; CODE XREF: RAM:3114j
+locret_3111:				; CODE XREF: RAM:3114vj
 		RTS
 ; ---------------------------------------------------------------------------
 
-loc_3112:				; CODE XREF: sub_2DDB+43p RAM:2ED7j ...
+loc_3112:				; CODE XREF: sub_2DDB+43^p RAM:2ED7^j ...
 		CPX	#4
 		BEQ	locret_3111
 		LDA	unk_2CF2,X
@@ -8240,7 +8240,7 @@ loc_3112:				; CODE XREF: sub_2DDB+43p RAM:2ED7j ...
 		JMP	locret_319D
 ; ---------------------------------------------------------------------------
 
-loc_3144:				; CODE XREF: RAM:312Fj
+loc_3144:				; CODE XREF: RAM:312F^j
 		CMP	unk_2D06,X
 		BNE	loc_3158
 		LDA	unk_2D12,X
@@ -8252,7 +8252,7 @@ loc_314D:
 		LDA	unk_2CFE,X
 		STA	unk_2D02,X
 
-loc_3158:				; CODE XREF: RAM:3147j
+loc_3158:				; CODE XREF: RAM:3147^j
 		LDA	unk_2CE9,X
 		BMI	locret_319D
 		LDY	unk_2CFA,X
@@ -8281,16 +8281,16 @@ loc_3158:				; CODE XREF: RAM:3147j
 		JMP	locret_319D
 ; ---------------------------------------------------------------------------
 
-loc_3194:				; CODE XREF: RAM:3189j
+loc_3194:				; CODE XREF: RAM:3189^j
 		CPY	#$1F
 		BCC	locret_319D
 		LDA	#$1F
 		STA	unk_2CFA,X
 
-locret_319D:				; CODE XREF: RAM:3141j	RAM:315Bj ...
+locret_319D:				; CODE XREF: RAM:3141^j	RAM:315B^j ...
 		RTS
 ; ---------------------------------------------------------------------------
-unk_319E:	.BYTE	0		; DATA XREF: RAM:2EB1r	RAM:30EBr
+unk_319E:	.BYTE	0		; DATA XREF: RAM:2EB1^r	RAM:30EB^r
 		.BYTE	2
 		.BYTE	4
 		.BYTE	8
@@ -8298,11 +8298,11 @@ unk_319E:	.BYTE	0		; DATA XREF: RAM:2EB1r	RAM:30EBr
 ; --------------- S U B	R O U T	I N E ---------------------------------------
 
 
-sub_31A2:				; CODE XREF: sub_2DDB+63p
+sub_31A2:				; CODE XREF: sub_2DDB+63^p
 		LDA	#$13
 		STA	$C7
 
-loc_31A6:				; CODE XREF: sub_31A2+68j
+loc_31A6:				; CODE XREF: sub_31A2+68vj
 		LDX	$C7
 		LDA	unk_2CBC,X
 		ASL	A
@@ -8322,7 +8322,7 @@ loc_31A6:				; CODE XREF: sub_31A2+68j
 		LDA	#7
 		STA	$C9
 
-loc_31C8:				; CODE XREF: sub_31A2+64j
+loc_31C8:				; CODE XREF: sub_31A2+64vj
 		LDY	$C9
 		LDA	$685C,Y
 		STA	$C5
@@ -8374,15 +8374,15 @@ loc_31C8:				; CODE XREF: sub_31A2+64j
 		LDA	#$2A ; '*'
 		STA	$6E,X
 
-locret_3232:				; CODE XREF: sub_31A2+70j sub_31A2+77j
+locret_3232:				; CODE XREF: sub_31A2+70^j sub_31A2+77^j
 		RTS
 ; End of function sub_31A2
 
 ; ---------------------------------------------------------------------------
-unk_3233:	.BYTE $FF		; DATA XREF: sub_31A2+Fr
+unk_3233:	.BYTE $FF		; DATA XREF: sub_31A2+F^r
 		.BYTE $AA ; ™
-byte_3235:	.BYTE 0			; DATA XREF: sub_2D75+10w sub_2DDB+5Er ...
-unk_3236:	.BYTE	7		; DATA XREF: sub_31A2+1Ar
+byte_3235:	.BYTE 0			; DATA XREF: sub_2D75+10^w sub_2DDB+5E^r ...
+unk_3236:	.BYTE	7		; DATA XREF: sub_31A2+1A^r
 		.BYTE  $F
 		.BYTE $17
 		.BYTE $1F
@@ -8414,7 +8414,7 @@ unk_3236:	.BYTE	7		; DATA XREF: sub_31A2+1Ar
 		.BYTE $EF ; Ô
 		.BYTE $F7 ; ˜
 		.BYTE $FF
-unk_3256:	.BYTE	<(loc_2EA6-1)	; DATA XREF: sub_2E47+20r
+unk_3256:	.BYTE	<(loc_2EA6-1)	; DATA XREF: sub_2E47+20^r
 		.BYTE $BA ; ∫
 		.BYTE $D9 ; Ÿ
 		.BYTE  $A
@@ -8434,7 +8434,7 @@ unk_3256:	.BYTE	<(loc_2EA6-1)	; DATA XREF: sub_2E47+20r
 		.BYTE $A6 ; ¶
 		.BYTE $DE ; ﬁ
 		.BYTE $FA ; ˙
-unk_326A:	.BYTE	>(loc_2EA6-1)	; DATA XREF: sub_2E47+1Cr
+unk_326A:	.BYTE	>(loc_2EA6-1)	; DATA XREF: sub_2E47+1C^r
 		.BYTE $2E ; .
 		.BYTE $2E ; .
 		.BYTE $2F ; /
@@ -16416,7 +16416,7 @@ unk_326A:	.BYTE	>(loc_2EA6-1)	; DATA XREF: sub_2E47+1Cr
 		.BYTE	0
 		.BYTE	0
 		.BYTE	0
-unk_5198:	.BYTE	<$4918		; DATA XREF: sub_2538:loc_256Er
+unk_5198:	.BYTE	<$4918		; DATA XREF: sub_2538:loc_256E^r
 		.BYTE	<$49A0
 		.BYTE	<$4A28
 		.BYTE	<$4AB0
@@ -16432,7 +16432,7 @@ unk_5198:	.BYTE	<$4918		; DATA XREF: sub_2538:loc_256Er
 		.BYTE	<$5000
 		.BYTE	<$5088
 		.BYTE	<$5110
-unk_51A8:	.BYTE	>$4918		; DATA XREF: sub_2538+3Br
+unk_51A8:	.BYTE	>$4918		; DATA XREF: sub_2538+3B^r
 		.BYTE	>$49A0
 		.BYTE	>$4A28
 		.BYTE	>$4AB0
@@ -17018,7 +17018,7 @@ unk_51A8:	.BYTE	>$4918		; DATA XREF: sub_2538+3Br
 		.BYTE	5
 		.BYTE $59 ; Y
 		.BYTE $95 ; ï
-unk_53F2:	.BYTE	<$78DA		; DATA XREF: sub_2A3B+11r
+unk_53F2:	.BYTE	<$78DA		; DATA XREF: sub_2A3B+11^r
 		.BYTE	<$7B5A
 		.BYTE	<$805C
 		.BYTE	<$7A1A
@@ -17032,7 +17032,7 @@ unk_53F2:	.BYTE	<$78DA		; DATA XREF: sub_2A3B+11r
 		.BYTE	<$78DC
 		.BYTE	<$7CA4
 		.BYTE	<$7DE0
-unk_5400:	.BYTE	>$78DA		; DATA XREF: sub_2A3B+16r
+unk_5400:	.BYTE	>$78DA		; DATA XREF: sub_2A3B+16^r
 		.BYTE	>$7B5A
 		.BYTE	>$805C
 		.BYTE	>$7A1A
@@ -17046,7 +17046,7 @@ unk_5400:	.BYTE	>$78DA		; DATA XREF: sub_2A3B+16r
 		.BYTE	>$78DC
 		.BYTE	>$7CA4
 		.BYTE	>$7DE0
-unk_540E:	.BYTE	0		; DATA XREF: sub_2A3Br
+unk_540E:	.BYTE	0		; DATA XREF: sub_2A3B^r
 		.BYTE	1
 		.BYTE	0
 		.BYTE	0
@@ -17060,27 +17060,27 @@ unk_540E:	.BYTE	0		; DATA XREF: sub_2A3Br
 		.BYTE	0
 		.BYTE	0
 		.BYTE	0
-unk_541C:	.BYTE $E8 ; Ë		; DATA XREF: RAM:21B0r
+unk_541C:	.BYTE $E8 ; Ë		; DATA XREF: RAM:21B0^r
 		.BYTE $C8 ; »
 		.BYTE $58 ; X
-unk_541F:	.BYTE $53 ; S		; DATA XREF: RAM:21B6r
+unk_541F:	.BYTE $53 ; S		; DATA XREF: RAM:21B6^r
 		.BYTE $53 ; S
 		.BYTE $53 ; S
-unk_5422:	.BYTE	2		; DATA XREF: RAM:219Cr
+unk_5422:	.BYTE	2		; DATA XREF: RAM:219C^r
 		.BYTE	4
 		.BYTE	7
-unk_5425:	.BYTE	4		; DATA XREF: RAM:21A1r
-unk_5426:	.BYTE	8		; DATA XREF: RAM:21EFr
+unk_5425:	.BYTE	4		; DATA XREF: RAM:21A1^r
+unk_5426:	.BYTE	8		; DATA XREF: RAM:21EF^r
 		.BYTE $10
 		.BYTE $20
-unk_5429:	.BYTE $13		; DATA XREF: RAM:21A6r
+unk_5429:	.BYTE $13		; DATA XREF: RAM:21A6^r
 		.BYTE $12
 		.BYTE $10
-unk_542C:	.BYTE $52 ; R		; DATA XREF: RAM:21ABr
-unk_542D:	.BYTE $56 ; V		; DATA XREF: RAM:21EAr
+unk_542C:	.BYTE $52 ; R		; DATA XREF: RAM:21AB^r
+unk_542D:	.BYTE $56 ; V		; DATA XREF: RAM:21EA^r
 		.BYTE $5E ; ^
 		.BYTE $6E ; n
-unk_5430:	.BYTE $60 ; `		; DATA XREF: sub_31A2+32r
+unk_5430:	.BYTE $60 ; `		; DATA XREF: sub_31A2+32^r
 		.BYTE $88 ; à
 		.BYTE $B0 ; ∞
 		.BYTE $D8 ; ÿ
@@ -17088,7 +17088,7 @@ unk_5430:	.BYTE $60 ; `		; DATA XREF: sub_31A2+32r
 		.BYTE $28 ; (
 		.BYTE $50 ; P
 		.BYTE $78 ; x
-unk_5438:	.BYTE $69 ; i		; DATA XREF: sub_31A2+37r
+unk_5438:	.BYTE $69 ; i		; DATA XREF: sub_31A2+37^r
 		.BYTE $69 ; i
 		.BYTE $69 ; i
 		.BYTE $69 ; i
@@ -20836,7 +20836,7 @@ unk_5438:	.BYTE $69 ; i		; DATA XREF: sub_31A2+37r
 		.BYTE $20
 		.BYTE $82 ; Ç
 		.BYTE $A0 ; †
-unk_62DC:	.BYTE	<$5440		; DATA XREF: sub_2A3B:loc_2A42r
+unk_62DC:	.BYTE	<$5440		; DATA XREF: sub_2A3B:loc_2A42^r
 		.BYTE	<$54D0
 		.BYTE	<$56BE
 		.BYTE	<$57AE
@@ -20850,7 +20850,7 @@ unk_62DC:	.BYTE	<$5440		; DATA XREF: sub_2A3B:loc_2A42r
 		.BYTE	<$60B9
 		.BYTE	<$6251
 		.BYTE	<$6279
-unk_62EA:	.BYTE	>$5440		; DATA XREF: sub_2A3B+Cr
+unk_62EA:	.BYTE	>$5440		; DATA XREF: sub_2A3B+C^r
 		.BYTE	>$54D0
 		.BYTE	>$56BE
 		.BYTE	>$57AE
@@ -20864,9 +20864,9 @@ unk_62EA:	.BYTE	>$5440		; DATA XREF: sub_2A3B+Cr
 		.BYTE	>$60B9
 		.BYTE	>$6251
 		.BYTE	>$6279
-unk_62F8:				; DATA XREF: sub_2A3B+1Br
+unk_62F8:				; DATA XREF: sub_2A3B+1B^r
 		.BYTE  $0C,$1A,$0F,$05,$25,$05,$08,$05,$08,$05,$12,$18,$0A,$0B
-unk_6306:				 ; DATA XREF: sub_2A3B+20r
+unk_6306:				 ; DATA XREF: sub_2A3B+20^r
 		.BYTE  $0C,$13,$10,$14,$18,$0D,$18,$08,$1E,$0E,$28,$11,$04,$09
 		.BYTE $39 ; 9
 		.BYTE $90 ; ê
@@ -20952,7 +20952,7 @@ unk_6306:				 ; DATA XREF: sub_2A3B+20r
 		.BYTE $53 ; S
 		.BYTE $54 ; T
 		.BYTE $59 ; Y
-		.BYTE $31 ; 1		; CODE XREF: RAM:1E58p	RAM:1E73p
+		.BYTE $31 ; 1		; CODE XREF: RAM:1E58^p	RAM:1E73^p
 		.BYTE $30 ; 0
 		.BYTE $EB ; Î
 		.BYTE $90 ; ê
@@ -20992,8 +20992,8 @@ unk_6306:				 ; DATA XREF: sub_2A3B+20r
 		.BYTE $45 ; E
 		.BYTE $58 ; X
 		.BYTE $50 ; P
-		.BYTE $30		; DATA XREF: RAM:1EC7r	RAM:1EF2r
-		.BYTE $35 ; 5		; CODE XREF: RAM:1E76p
+		.BYTE $30		; DATA XREF: RAM:1EC7^r	RAM:1EF2^r
+		.BYTE $35 ; 5		; CODE XREF: RAM:1E76^p
 		.BYTE $32 ; 2
 		.BYTE $91 ; ë
 		DBGSYM	"ADDEXP10", $9151

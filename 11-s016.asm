@@ -45,7 +45,7 @@ loc_B000:
 		dldi	SDLST, byte_B060
 		LDA	$14
 
-loc_B026:				; CODE XREF: RAM:B028j
+loc_B026:				; CODE XREF: RAM:B028vj
 		CMP	$14
 		BEQ	loc_B026
 		LDA	#17
@@ -56,13 +56,13 @@ loc_B026:				; CODE XREF: RAM:B028j
 		JSR	sub_B045
 		JMP	$2000
 ; ---------------------------------------------------------------------------
-byte_B043:	.BYTE 11		; DATA XREF: RAM:B003r
+byte_B043:	.BYTE 11		; DATA XREF: RAM:B003^r
 		.BYTE 6
 
 ; --------------- S U B	R O U T	I N E ---------------------------------------
 
 
-sub_B045:				; CODE XREF: RAM:B017p	RAM:B03Dp ...
+sub_B045:				; CODE XREF: RAM:B017^p	RAM:B03D^p ...
 		JSR	DSKINV
 		BMI	sub_B045
 		CLC
@@ -72,7 +72,7 @@ sub_B045:				; CODE XREF: RAM:B017p	RAM:B03Dp ...
 		BCC	loc_B058
 		INC	DBUF+1
 
-loc_B058:				; CODE XREF: sub_B045+Ej
+loc_B058:				; CODE XREF: sub_B045+E^j
 		INC	DAUX
 		DEC	$80
 		BNE	sub_B045
@@ -80,7 +80,7 @@ loc_B058:				; CODE XREF: sub_B045+Ej
 ; End of function sub_B045
 
 ; ---------------------------------------------------------------------------
-byte_B060:	.BYTE $70		; DATA XREF: RAM:B07Do
+byte_B060:	.BYTE $70		; DATA XREF: RAM:B07Dvo
 		.BYTE $70 ; p
 		.BYTE $70 ; p
 		.BYTE $70 ; p

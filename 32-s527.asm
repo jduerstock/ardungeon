@@ -508,7 +508,7 @@
 		.BYTE	0
 		.BYTE	0
 		.BYTE	0
-unk_8C01:	.BYTE  $D		; DATA XREF: RAM:8A06o
+unk_8C01:	.BYTE  $D		; DATA XREF: RAM:8A06^o
 		.BYTE $1C
 		.BYTE  $A
 		.BYTE $24 ; $
@@ -592,7 +592,7 @@ unk_8C01:	.BYTE  $D		; DATA XREF: RAM:8A06o
 		.BYTE	5
 		.BYTE	1
 		.BYTE $8C ; Œ
-unk_8C55:	.BYTE	2		; DATA XREF: RAM:8A04o
+unk_8C55:	.BYTE	2		; DATA XREF: RAM:8A04^o
 		.BYTE $1E
 		.BYTE $8B ; ‹
 		.BYTE  $D
@@ -604,7 +604,7 @@ unk_8C55:	.BYTE	2		; DATA XREF: RAM:8A04o
 		.BYTE $58 ; X
 		.BYTE $8C ; Œ
 		.BYTE $13
-unk_8C61:	.BYTE	2		; DATA XREF: RAM:8A02o
+unk_8C61:	.BYTE	2		; DATA XREF: RAM:8A02^o
 		.BYTE $1E
 		.BYTE $8B ; ‹
 		.BYTE  $D
@@ -615,7 +615,7 @@ unk_8C61:	.BYTE	2		; DATA XREF: RAM:8A02o
 		.BYTE	5
 		.BYTE $64 ; d
 		.BYTE $8C ; Œ
-unk_8C6C:	.BYTE  $D		; DATA XREF: RAM:8A00o
+unk_8C6C:	.BYTE  $D		; DATA XREF: RAM:8A00^o
 		.BYTE  $E
 		.BYTE  $A
 		.BYTE $C8 ; È
@@ -623,7 +623,7 @@ unk_8C6C:	.BYTE  $D		; DATA XREF: RAM:8A00o
 		.BYTE	5
 		.BYTE $6C ; l
 		.BYTE $8C ; Œ
-unk_8C74:	.BYTE	6		; DATA XREF: RAM:8A08o
+unk_8C74:	.BYTE	6		; DATA XREF: RAM:8A08^o
 		.BYTE $55 ; U
 		.BYTE $88 ; ˆ
 		.BYTE $8C ; Œ

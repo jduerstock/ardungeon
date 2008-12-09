@@ -214,7 +214,7 @@
 		.BYTE	1
 		.BYTE	8
 		.BYTE  $B
-unk_8ADB:	.BYTE	2		; DATA XREF: RAM:8A06o
+unk_8ADB:	.BYTE	2		; DATA XREF: RAM:8A06^o
 		.BYTE $4F ; O
 		.BYTE $8A ; Š
 		.BYTE  $A
@@ -243,7 +243,7 @@ unk_8ADB:	.BYTE	2		; DATA XREF: RAM:8A06o
 		.BYTE	5
 		.BYTE $DB
 		.BYTE $8A
-unk_8AF8:	.BYTE	2		; DATA XREF: RAM:8A04o
+unk_8AF8:	.BYTE	2		; DATA XREF: RAM:8A04^o
 		.BYTE $4F ; O
 		.BYTE $8A
 		.BYTE  $A
@@ -274,7 +274,7 @@ unk_8AF8:	.BYTE	2		; DATA XREF: RAM:8A04o
 		.BYTE	5
 		.BYTE $F8 ; ø
 		.BYTE $8A ; Š
-unk_8B17:	.BYTE	2		; DATA XREF: RAM:8A02o
+unk_8B17:	.BYTE	2		; DATA XREF: RAM:8A02^o
 		.BYTE  $A
 		.BYTE $8A ; Š
 		.BYTE  $A
@@ -336,7 +336,7 @@ unk_8B17:	.BYTE	2		; DATA XREF: RAM:8A02o
 		.BYTE	5
 		.BYTE $17
 		.BYTE $8B ; ‹
-unk_8B55:	.BYTE  $D		; DATA XREF: RAM:8A08o
+unk_8B55:	.BYTE  $D		; DATA XREF: RAM:8A08^o
 		.BYTE	2
 		.BYTE  $A
 		.BYTE $30 ; 0
@@ -1156,7 +1156,7 @@ aTheDevourerq:	.BYTE "THE DEVOURER?",0
 		.BYTE $12
 		.BYTE	5
 		.BYTE  $B
-unk_8F30:	.BYTE	2		; DATA XREF: RAM:8A00o
+unk_8F30:	.BYTE	2		; DATA XREF: RAM:8A00^o
 		.BYTE $96 ; –
 		.BYTE $8A ; Š
 		.BYTE $12

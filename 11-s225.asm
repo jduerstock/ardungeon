@@ -77,7 +77,7 @@ aClrzp:		.BYTE	"CLRZP"
 		STA	$256
 		TAX
 
-loc_2014:				; CODE XREF: RAM:2017j
+loc_2014:				; CODE XREF: RAM:2017vj
 		STA	0,X
 		INX
 		BNE	loc_2014
@@ -112,7 +112,7 @@ loc_2014:				; CODE XREF: RAM:2017j
 		LDX	#2
 		LDA	#0
 
-loc_2095:				; CODE XREF: RAM:209Fj
+loc_2095:				; CODE XREF: RAM:209Fvj
 		STA	byte_18C1,X
 		STA	byte_18C4,X
 		STA	byte_18C7,X
@@ -139,7 +139,7 @@ loc_2095:				; CODE XREF: RAM:209Fj
 		LDX	#$1F
 		LDA	#0
 
-loc_20C5:				; CODE XREF: RAM:20CCj
+loc_20C5:				; CODE XREF: RAM:20CCvj
 		LDA	$77AF,X
 		STA	$197C,X
 		DEX
@@ -148,7 +148,7 @@ loc_20C5:				; CODE XREF: RAM:20CCj
 		LDX	#3
 		STX	6
 
-loc_20D5:				; CODE XREF: RAM:20FEj
+loc_20D5:				; CODE XREF: RAM:20FEvj
 		LDX	6
 		LDA	#$FF
 		STA	$24E,X
@@ -166,7 +166,7 @@ loc_20D5:				; CODE XREF: RAM:20FEj
 		LDX	6
 		INC	$24E,X
 
-loc_20F9:				; CODE XREF: RAM:20E8j	RAM:20F2j
+loc_20F9:				; CODE XREF: RAM:20E8^j	RAM:20F2^j
 		JSR	sub_28F8
 		DEC	6
 		BPL	loc_20D5
@@ -183,7 +183,7 @@ loc_20F9:				; CODE XREF: RAM:20E8j	RAM:20F2j
 		LDA	#0
 		STA	byte_24C9
 
-loc_211B:				; CODE XREF: RAM:2144j
+loc_211B:				; CODE XREF: RAM:2144vj
 		LDA	byte_24C8
 		STA	word_232
 		LDA	byte_24C9
@@ -191,7 +191,7 @@ loc_211B:				; CODE XREF: RAM:2144j
 		JSR	sub_2470
 		LDY	#0
 
-loc_212C:				; CODE XREF: RAM:2132j
+loc_212C:				; CODE XREF: RAM:2132vj
 		LDA	$100,Y
 		STA	(off_9),Y
 		INY
@@ -203,7 +203,7 @@ loc_212C:				; CODE XREF: RAM:2132j
 		BCC	loc_213F
 		INC	off_9+1
 
-loc_213F:				; CODE XREF: RAM:213Bj
+loc_213F:				; CODE XREF: RAM:213B^j
 		INC	byte_24C8
 		DEC	6
 		BNE	loc_211B
@@ -219,7 +219,7 @@ loc_213F:				; CODE XREF: RAM:213Bj
 		BPL	locret_2164
 		DEY
 
-locret_2164:				; CODE XREF: RAM:215Cj	RAM:2161j
+locret_2164:				; CODE XREF: RAM:215C^j	RAM:2161^j
 		RTS
 ; ---------------------------------------------------------------------------
 		JSR	$7749
@@ -253,7 +253,7 @@ locret_2164:				; CODE XREF: RAM:215Cj	RAM:2161j
 		INY
 		STY	word_234+1
 
-locret_21AD:				; CODE XREF: RAM:21A3j
+locret_21AD:				; CODE XREF: RAM:21A3^j
 		RTS
 ; ---------------------------------------------------------------------------
 		RTS
@@ -276,13 +276,13 @@ aSystemInitiali:.BYTE "      System Initialization     "
 		LDY	#$8C ; 'å'
 		STY	$23D
 
-loc_21ED:				; CODE XREF: RAM:21E6j
+loc_21ED:				; CODE XREF: RAM:21E6^j
 		AND	#$20 ; ' '
 		BNE	loc_21F6
 		LDY	#$8E ; 'é'
 		STY	$23D
 
-loc_21F6:				; CODE XREF: RAM:21EFj
+loc_21F6:				; CODE XREF: RAM:21EF^j
 		LDA	$242
 		BEQ	loc_2211
 		LDA	$D20D
@@ -291,18 +291,18 @@ loc_21F6:				; CODE XREF: RAM:21EFj
 		LDY	#$8F ; 'è'
 		STY	$23D
 
-loc_2208:				; CODE XREF: RAM:2201j	RAM:223Dj
+loc_2208:				; CODE XREF: RAM:2201^j	RAM:223Dvj
 		LDA	#$FF
 		STA	$240
 
-loc_220D:				; CODE XREF: RAM:2231j	RAM:2244j
+loc_220D:				; CODE XREF: RAM:2231vj	RAM:2244vj
 		PLA
 		TAY
 		PLA
 		RTI
 ; ---------------------------------------------------------------------------
 
-loc_2211:				; CODE XREF: RAM:21F9j
+loc_2211:				; CODE XREF: RAM:21F9^j
 		LDA	$D20D
 		LDY	#0
 		STA	(0),Y
@@ -314,7 +314,7 @@ loc_2211:				; CODE XREF: RAM:21F9j
 		BNE	loc_2227
 		INC	1
 
-loc_2227:				; CODE XREF: RAM:2223j
+loc_2227:				; CODE XREF: RAM:2223^j
 		LDA	0
 		CMP	$23A
 		LDA	1
@@ -326,7 +326,7 @@ loc_2227:				; CODE XREF: RAM:2223j
 		STA	$245
 		BEQ	loc_2208
 
-loc_223F:				; CODE XREF: RAM:2236j
+loc_223F:				; CODE XREF: RAM:2236^j
 		LDA	#$FF
 		STA	$242
 		BNE	loc_220D
@@ -336,7 +336,7 @@ loc_223F:				; CODE XREF: RAM:2236j
 		BNE	loc_224E
 		INC	1
 
-loc_224E:				; CODE XREF: RAM:224Aj
+loc_224E:				; CODE XREF: RAM:224A^j
 		LDA	0
 		CMP	$23A
 		LDA	1
@@ -350,20 +350,20 @@ loc_224E:				; CODE XREF: RAM:224Aj
 		STA	$243
 		BNE	loc_2277
 
-loc_226C:				; CODE XREF: RAM:225Dj
+loc_226C:				; CODE XREF: RAM:225D^j
 		LDA	AR_POKMSK
 		ORA	#8
 		STA	AR_POKMSK
 		STA	IRQEN
 
-loc_2277:				; CODE XREF: RAM:226Aj	RAM:228Bj
+loc_2277:				; CODE XREF: RAM:226A^j	RAM:228Bvj
 		PLA
 		TAY
 		PLA
 		RTI
 ; ---------------------------------------------------------------------------
 
-loc_227B:				; CODE XREF: RAM:2258j
+loc_227B:				; CODE XREF: RAM:2258^j
 		LDY	#0
 		LDA	(0),Y
 		STA	$D20D
@@ -381,7 +381,7 @@ loc_227B:				; CODE XREF: RAM:2258j
 		STA	AR_POKMSK
 		STA	IRQEN
 
-loc_22A1:				; CODE XREF: RAM:2291j
+loc_22A1:				; CODE XREF: RAM:2291^j
 		PLA
 		RTI
 ; ---------------------------------------------------------------------------
@@ -396,28 +396,28 @@ loc_22A1:				; CODE XREF: RAM:2291j
 		JMP	($20A)
 ; ---------------------------------------------------------------------------
 
-loc_22B9:				; CODE XREF: RAM:22A9j
+loc_22B9:				; CODE XREF: RAM:22A9^j
 		TXA
 		PHA
 		LDX	#2
 
-loc_22BD:				; CODE XREF: RAM:22CFj
+loc_22BD:				; CODE XREF: RAM:22CFvj
 		LDA	unk_22F8,X
 		CPX	#1
 		BNE	loc_22C9
 		AND	AR_POKMSK
 		BEQ	loc_22CE
 
-loc_22C9:				; CODE XREF: RAM:22C2j
+loc_22C9:				; CODE XREF: RAM:22C2^j
 		BIT	IRQST
 		BEQ	loc_22D3
 
-loc_22CE:				; CODE XREF: RAM:22C7j
+loc_22CE:				; CODE XREF: RAM:22C7^j
 		DEX
 		BPL	loc_22BD
 		BMI	loc_22EE
 
-loc_22D3:				; CODE XREF: RAM:22CCj
+loc_22D3:				; CODE XREF: RAM:22CC^j
 		EOR	#$FF
 		STA	IRQEN
 		LDA	AR_POKMSK
@@ -429,13 +429,13 @@ loc_22D3:				; CODE XREF: RAM:22CCj
 		PLA
 		TAX
 
-loc_22EB:				; DATA XREF: RAM:22E1w	RAM:22E6w
+loc_22EB:				; DATA XREF: RAM:22E1^w	RAM:22E6^w
 					; hand coded to silence warnings
 		.BYTE	$6C		; JMP ($FFFF)
 		.WORD	$FFFF
 ; ---------------------------------------------------------------------------
 
-loc_22EE:				; CODE XREF: RAM:22D1j
+loc_22EE:				; CODE XREF: RAM:22D1^j
 		PLA
 		TAX
 		LDA	PORTA
@@ -443,18 +443,18 @@ loc_22EE:				; CODE XREF: RAM:22D1j
 		PLA
 		RTI
 ; ---------------------------------------------------------------------------
-unk_22F8:	.BYTE $40 ; @		; DATA XREF: RAM:loc_22BDr
+unk_22F8:	.BYTE $40 ; @		; DATA XREF: RAM:loc_22BD^r
 		.BYTE	8
 		.BYTE $10
-unk_22FB:	.BYTE	8		; DATA XREF: RAM:22DEr
+unk_22FB:	.BYTE	8		; DATA XREF: RAM:22DE^r
 		.BYTE  $E
 		.BYTE  $C
-unk_22FE:	.BYTE $22 ; "		; DATA XREF: RAM:2345r
+unk_22FE:	.BYTE $22 ; "		; DATA XREF: RAM:2345vr
 		.BYTE $22 ; "
 		.BYTE $2E ; .
 ; ---------------------------------------------------------------------------
 
-loc_2301:				; CODE XREF: RAM:2355j
+loc_2301:				; CODE XREF: RAM:2355vj
 		dldi	DLIST, $19F5
 		LDA	#$40 ; '@'
 		STA	NMIEN
@@ -475,7 +475,7 @@ loc_2301:				; CODE XREF: RAM:2355j
 		BNE	loc_233B
 		STA	$239
 
-loc_233B:				; CODE XREF: RAM:2318j	RAM:2320j ...
+loc_233B:				; CODE XREF: RAM:2318^j	RAM:2320^j ...
 		JMP	byte_242D
 ; ---------------------------------------------------------------------------
 		CLD
@@ -492,19 +492,19 @@ loc_233B:				; CODE XREF: RAM:2318j	RAM:2320j ...
 		dldi	DLIST, $1A0A
 		BNE	loc_233B
 
-loc_2366:				; CODE XREF: RAM:2353j
+loc_2366:				; CODE XREF: RAM:2353^j
 		dmv	DLIST, $254
 		dmv	off_200, off_248
 		LDA	#$C0 ; '¿'
 		BRK
 ; ---------------------------------------------------------------------------
 		.RES	172,$00
-byte_242D:	.RES	18,$00		;	CODE XREF: RAM:loc_233Bj
+byte_242D:	.RES	18,$00		;	CODE XREF: RAM:loc_233B^j
 
 ; --------------- S U B	R O U T	I N E ---------------------------------------
 
 
-sub_243F:				; CODE XREF: RAM:20CEp
+sub_243F:				; CODE XREF: RAM:20CE^p
 		BRK
 ; End of function sub_243F
 
@@ -514,7 +514,7 @@ sub_243F:				; CODE XREF: RAM:20CEp
 ; --------------- S U B	R O U T	I N E ---------------------------------------
 
 
-sub_2470:				; CODE XREF: RAM:2127p
+sub_2470:				; CODE XREF: RAM:2127^p
 		BRK
 ; End of function sub_2470
 
@@ -524,7 +524,7 @@ sub_2470:				; CODE XREF: RAM:2127p
 ; --------------- S U B	R O U T	I N E ---------------------------------------
 
 
-sub_2476:				; CODE XREF: RAM:2159p	RAM:2179p ...
+sub_2476:				; CODE XREF: RAM:2159^p	RAM:2179^p ...
 		BRK
 ; End of function sub_2476
 
@@ -534,18 +534,18 @@ sub_2476:				; CODE XREF: RAM:2159p	RAM:2179p ...
 ; --------------- S U B	R O U T	I N E ---------------------------------------
 
 
-sub_2485:				; CODE XREF: RAM:20E5p
+sub_2485:				; CODE XREF: RAM:20E5^p
 		BRK
 ; End of function sub_2485
 
 ; ---------------------------------------------------------------------------
 		.RES	66,$00
-byte_24C8:	.BYTE 0			; DATA XREF: RAM:2113w	RAM:loc_211Br ...
-byte_24C9:	.BYTE 0			; DATA XREF: RAM:2118w	RAM:2121r
+byte_24C8:	.BYTE 0			; DATA XREF: RAM:2113^w	RAM:loc_211B^r ...
+byte_24C9:	.BYTE 0			; DATA XREF: RAM:2118^w	RAM:2121^r
 		.RES	825,$00
 ; ---------------------------------------------------------------------------
 
-loc_2803:				; CODE XREF: RAM:2146j
+loc_2803:				; CODE XREF: RAM:2146^j
 		BRK
 ; ---------------------------------------------------------------------------
 		.RES	244,$00
@@ -553,7 +553,7 @@ loc_2803:				; CODE XREF: RAM:2146j
 ; --------------- S U B	R O U T	I N E ---------------------------------------
 
 
-sub_28F8:				; CODE XREF: RAM:loc_20F9p
+sub_28F8:				; CODE XREF: RAM:loc_20F9^p
 		BRK
 ; End of function sub_28F8
 
@@ -576,7 +576,7 @@ a429_:		.BYTE "429).",$27,0
 		.RES	37,$00
 ; ---------------------------------------------------------------------------
 
-loc_2E3B:				; CODE XREF: RAM:208Ej
+loc_2E3B:				; CODE XREF: RAM:208E^j
 		BRK
 ; ---------------------------------------------------------------------------
 		.RES	68,$00
