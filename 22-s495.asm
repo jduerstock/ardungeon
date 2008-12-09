@@ -37,7 +37,7 @@ loc_7610:				; CODE XREF: RAM:7601j
 loc_7649:				; CODE XREF: RAM:767Cj
 		LDA	$62
 		STA	$1933
-		JSR	$1848
+		JSR	j_sub_3C2D
 
 loc_7651:				; CODE XREF: RAM:7660j
 		dldi	off_1977,$765E

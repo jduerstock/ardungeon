@@ -275,7 +275,7 @@ loc_77DC:				; CODE XREF: sub_7758+7Ej
 loc_77E5:				; CODE XREF: sub_7758+AEj
 		LDX	$65
 		STX	$1933
-		JSR	$1848
+		JSR	j_sub_3C2D
 
 loc_77ED:				; CODE XREF: sub_7758+A5j
 		dldi	off_1977, loc_77FB

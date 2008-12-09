@@ -4400,7 +4400,7 @@ loc_8FE1:
 		BEQ	loc_8FFE
 		LDA	byte_A892
 		STA	$1933
-		JSR	$1848
+		JSR	j_sub_3C2D
 		JMP	loc_8FD2
 ; ---------------------------------------------------------------------------
 
@@ -4452,7 +4452,7 @@ loc_9020:				; CODE XREF: RAM:902Fj	RAM:9041j
 		BCC	loc_9044
 		LDX	byte_A892
 		STX	$1933
-		JSR	$1848
+		JSR	j_sub_3C2D
 		JMP	loc_9020
 ; ---------------------------------------------------------------------------
 
@@ -6970,7 +6970,7 @@ word_A8A1:	.WORD	$02DC
 		JSR	$1851
 		LDX	$66
 		STX	$1933
-		JSR	$1848
+		JSR	j_sub_3C2D
 		PLA
 		PLA
 		LDA	#$78
@@ -7027,7 +7027,7 @@ word_A8A1:	.WORD	$02DC
 		JSR	$1851
 :		LDX	$66
 		STX	$1933
-		JSR	$1848
+		JSR	j_sub_3C2D
 :		dldi	off_1977, $7E37
 		JMP	$1806
 :		RTS

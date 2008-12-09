@@ -1,134 +1,90 @@
+;
+; 21-s093.asm - section of the dungeon map (level 1, northeast corner)
+;
+; This source code is copyright (c) 2008 Jason Duerstock
+; jason.duerstock@gmail.com
+;
+; The original program is copyright (c) 1987 Intellicreations Inc.
+;
+; This file is part of the ardungeon project which is an attempt to
+; reverse engineer "Alternate Reality: The Dungeon" for the Atari 8-bit
+; computer. 
+;
+; ardungeon is free software; you can redistribute it and/or modify
+; it under the terms of the GNU General Public License version 2
+; as published by the Free Software Foundation.
+;
+; ardungeon is distributed in the hope that it will be useful,
+; but WITHOUT ANY WARRANTY; without even the implied warranty of
+; MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+; GNU General Public License for more details.
+;
+; You should have received a copy of the GNU General Public License
+; along with ardungeon; if not, write to the 
+; Free Software Foundation, Inc.
+; 51 Franklin Street, Fifth Floor
+; Boston, MA  02110-1301  USA
+;
+
 		.include	"macros.inc"
 
 ;		.ORG	$AC00
-		.BYTE 2
-		.WORD aToastLev1_3	; "toast! LEV 1.3"
-		HBStr "at a "
-		HBStr "in a "
-		HBStr "in the "
-		HBStr " room."
-		HBStr "stairway leading down."
-		HBStr "in a secret"
-		HBStr "passage."
-		HBStr " another small room."
-		HBStr "hallway."
-		HBStr "in a quiet"
-		HBStr " area."
-aToastLev1_3:	.BYTE "toast! LEV 1.3",0 ; DATA XREF: RAM:AC01o
-		.BYTE $82
-aTaureanMaze_:	.BYTE "Taurean Maze.",0
-		.BYTE $81
-		.BYTE $88
-		.BYTE	0
-		.BYTE $81
-aLongCorridor_:	.BYTE "long corridor.",0
-		.BYTE $81
-aPelinorSPuzzle:.BYTE "Pelinor's Puzzle.",0
-		.BYTE $81
-aBlinkMineField:.BYTE "blink-mine field.",0
-aLost_:		.BYTE "lost.",0
-		.BYTE $85
-		.BYTE " "
-		.BYTE $88
-		.BYTE	0
-aAratnaMaze_:	.BYTE "Aratna maze.",0
-		.BYTE $81
-aDeadEnd:	.BYTE "dead-end "
-		.BYTE $86
-		.BYTE 0
-		.BYTE $81
-aDamp:		.BYTE "damp"
-		.BYTE $8A
-		.BYTE 0
-		.BYTE $81
-aDim:		.BYTE "dim "
-		.BYTE $88
-		.BYTE	0
-		.BYTE $80
-aBubblingFounta:.BYTE "bubbling fountain.",0
-		.BYTE $82
-aFirstCityBankS:.BYTE "First City Bank's vault.",0
-aAtTheLightWiza:.BYTE "at the Light Wizards Guild.",0
-		.BYTE $81
-		.BYTE $86
-		.BYTE 0
-aByA:		.BYTE "by a "
-		.BYTE $84
-		.BYTE	0
-		.BYTE $80
-		.BYTE $84
+		.BYTE	2
+		.WORD	aToastLev1_3	; "toast! LEV 1.3"
+		HBStr	"at a "
+		HBStr	"in a "
+		HBStr	"in the "
+		HBStr	" room."
+		HBStr	"stairway leading down."
+		HBStr	"in a secret"
+		HBStr	"passage."
+		HBStr	" another small room."
+		HBStr	"hallway."
+		HBStr	"in a quiet"
+		HBStr	" area."
+aToastLev1_3:	.BYTE	"toast! LEV 1.3",0 ; DATA XREF: RAM:AC01o
+aTaureanMaze_:	.BYTE	$82,"Taurean Maze.",0
+		.BYTE	$81,$88,$00
+aLongCorridor_:	.BYTE	$81,"long corridor.",0
+aPelinorSPuzzle:.BYTE	$81,"Pelinor's Puzzle.",0
+aBlinkMineField:.BYTE	$81,"blink-mine field.",0
+aLost_:		.BYTE	"lost.",0
+		.BYTE	$85," ",$88,$00
+aAratnaMaze_:	.BYTE	"Aratna maze.",0
+aDeadEnd:	.BYTE	$81,"dead-end ",$86,$00
+aDamp:		.BYTE	$81,"damp",$8A,$00
+aDim:		.BYTE	$81,"dim ",$88,$00
+aBubblingFounta:.BYTE	$80,"bubbling fountain.",0
+aFirstCityBankS:.BYTE	$82,"First City Bank's vault.",0
+aAtTheLightWiza:.BYTE	"at the Light Wizards Guild.",0
+		.BYTE	$81,$86,$00
+aByA:		.BYTE	"by a ",$84,$00
+		.BYTE	$80,$84,$00
 		.BYTE	0
 		.BYTE	0
-		.BYTE	0
-		.BYTE $81
-aWellLighted:	.BYTE "well-lighted"
-		.BYTE $8A
-		.BYTE	0
-aInAnOpen:	.BYTE "in an open"
-		.BYTE $8A
-		.BYTE	0
-		.BYTE $81
-aTreasure:	.BYTE "treasure"
-		.BYTE $83
-		.BYTE	0
-		.BYTE $81
-aMusty:		.BYTE "musty"
-		.BYTE $83
-		.BYTE	0
-		.BYTE $81
-aSmall:		.BYTE "small"
-		.BYTE $83
-		.BYTE	0
-		.BYTE $81
-aCreepy:	.BYTE "creepy"
-		.BYTE $83
-		.BYTE	0
-		.BYTE $81
-aLarge:		.BYTE "large"
-		.BYTE $83
+aWellLighted:	.BYTE	$81,"well-lighted",$8A,$00
+aInAnOpen:	.BYTE	"in an open",$8A,$00
+aTreasure:	.BYTE	$81,"treasure",$83,$00
+aMusty:		.BYTE	$81,"musty",$83,$00
+aSmall:		.BYTE	$81,"small",$83,$00
+aCreepy:	.BYTE	$81,"creepy",$83,$00
+aLarge:		.BYTE	$81,"large",$83,$00
 		.BYTE	0
 		.BYTE	0
+		.BYTE	$85,$83,$00
+aInYet:		.BYTE	"in yet",$87,$00
+aIn:		.BYTE	"in",$87,$00
+		.BYTE	$89,$8A,$00
+aNondescript:	.BYTE	$81,"nondescript",$83,$00
+aDangerous:	.BYTE	$81,"dangerous",$8A,$00
+aRoomFilledWith:.BYTE	$81,"room filled with debris.",0
+		.BYTE	$89,$83,$00
+aInTheCitySSewe:.BYTE	"in The City's sewer system.",0
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $85
-		.BYTE $83
-		.BYTE	0
-aInYet:		.BYTE "in yet"
-		.BYTE $87
-		.BYTE	0
-aIn:		.BYTE "in"
-		.BYTE $87
-		.BYTE	0
-		.BYTE $89
-		.BYTE $8A
-		.BYTE	0
-		.BYTE $81
-aNondescript:	.BYTE "nondescript"
-		.BYTE $83
-		.BYTE	0
-		.BYTE $81
-aDangerous:	.BYTE "dangerous"
-		.BYTE $8A
-		.BYTE	0
-		.BYTE $81
-aRoomFilledWith:.BYTE "room filled with debris.",0
-		.BYTE $89
-		.BYTE $83
-		.BYTE	0
-aInTheCitySSewe:.BYTE "in The City's sewer system.",0
-		.BYTE $FF
-		.BYTE	0
-		.BYTE $80
-		.BYTE	"dangerous"
-		.BYTE $8E
-		.BYTE	0
-		.BYTE $80
-aDebrisLittered:.BYTE "debris-littered"
-		.BYTE $83
-		.BYTE	0
-		.BYTE $80
-		.BYTE $89
-		.BYTE $83
-		.BYTE	0
+		.BYTE	$80,"dangerous",$8E,$00
+aDebrisLittered:.BYTE	$80,"debris-littered",$83,$00
+		.BYTE	$80,$89,$83,$00
 aInTheCitySSe_0:.BYTE "in The City's sewer system.",0
 		.BYTE $80
 		.BYTE $86

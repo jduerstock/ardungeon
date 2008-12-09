@@ -142,7 +142,7 @@ loc_76F7:				; CODE XREF: RAM:76CDj	RAM:76D5j ...
 loc_770E:				; CODE XREF: RAM:7730j
 		LDX	$66
 		STX	$1933
-		JSR	$1848
+		JSR	j_sub_3C2D
 
 loc_7716:				; CODE XREF: RAM:7725j
 		dldi	off_1977, loc_7723
@@ -182,7 +182,7 @@ loc_774F:				; CODE XREF: RAM:7738j
 loc_7761:				; CODE XREF: RAM:77A3j
 		LDX	$66
 		STX	$1933
-		JSR	$1848
+		JSR	j_sub_3C2D
 
 loc_7769:				; CODE XREF: RAM:7790j
 		dldi	off_1977, loc_7787
@@ -480,7 +480,7 @@ loc_7931:				; CODE XREF: RAM:7927j	RAM:792Dj
 loc_793E:				; CODE XREF: RAM:7960j
 		LDX	$66
 		STX	$1933
-		JSR	$1848
+		JSR	j_sub_3C2D
 
 loc_7946:				; CODE XREF: RAM:7955j
 		dldi	off_1977, loc_7953
@@ -888,7 +888,7 @@ loc_7BBB:				; CODE XREF: RAM:779Ej
 loc_7BC8:				; CODE XREF: RAM:7BE6j
 		LDX	$66
 		STX	$1933
-		JSR	$1848
+		JSR	j_sub_3C2D
 
 loc_7BD0:				; CODE XREF: RAM:7BDFj
 		dldi	off_1977, loc_7BDD

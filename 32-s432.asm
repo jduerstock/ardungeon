@@ -173,7 +173,7 @@ loc_7791:				; CODE XREF: RAM:7787j
 loc_77A5:				; CODE XREF: RAM:77C7j
 		LDX	$64
 		STX	$1933
-		JSR	$1848
+		JSR	j_sub_3C2D
 
 loc_77AD:				; CODE XREF: RAM:77BCj
 		dldi	off_1977, loc_77BA

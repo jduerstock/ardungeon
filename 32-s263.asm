@@ -288,7 +288,7 @@ loc_77FF:				; CODE XREF: RAM:7883j	RAM:7AFEj ...
 loc_780C:				; CODE XREF: RAM:77F7j	RAM:7851j
 		LDA	$62
 		STA	$1933
-		JSR	$1848
+		JSR	j_sub_3C2D
 
 loc_7814:				; CODE XREF: RAM:7821j
 		JSR	$1821
@@ -355,7 +355,7 @@ loc_7867:				; CODE XREF: RAM:7827j	RAM:78CBj ...
 loc_7872:				; CODE XREF: RAM:788Bj
 		LDA	$62
 		STA	$1933
-		JSR	$1848
+		JSR	j_sub_3C2D
 
 loc_787A:				; CODE XREF: RAM:787Dj
 		JSR	sub_8027
@@ -639,7 +639,7 @@ loc_7A6F:				; CODE XREF: RAM:7A4Dj	RAM:7A60j
 loc_7A72:				; CODE XREF: RAM:7B10j
 		LDA	$62
 		STA	$1933
-		JSR	$1848
+		JSR	j_sub_3C2D
 
 loc_7A7A:				; CODE XREF: RAM:7A7Dj
 		JSR	sub_8027
@@ -704,7 +704,7 @@ loc_7AE0:				; CODE XREF: RAM:7AC6j
 loc_7AE3:				; CODE XREF: RAM:7AFCj
 		LDA	$62
 		STA	$1933
-		JSR	$1848
+		JSR	j_sub_3C2D
 
 loc_7AEB:				; CODE XREF: RAM:7AEEj
 		JSR	sub_8027
@@ -1003,7 +1003,7 @@ loc_7CF1:				; CODE XREF: RAM:784Cj	RAM:loc_7D6Ej ...
 loc_7CFC:				; CODE XREF: RAM:7D67j
 		LDA	$62
 		STA	$1933
-		JSR	$1848
+		JSR	j_sub_3C2D
 
 loc_7D04:				; CODE XREF: RAM:7D07j
 		JSR	sub_8027
@@ -1221,7 +1221,7 @@ loc_7EB5:				; CODE XREF: RAM:7D62j
 loc_7EC0:				; CODE XREF: RAM:7ED9j
 		LDA	$62
 		STA	$1933
-		JSR	$1848
+		JSR	j_sub_3C2D
 
 loc_7EC8:				; CODE XREF: RAM:7ECBj
 		JSR	sub_8027
