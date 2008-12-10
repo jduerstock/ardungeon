@@ -51,7 +51,7 @@ loc_7648:
 loc_765E:				; CODE XREF: RAM:7651^j
 		dldi	off_16, $775E
 		LDX	$62
-		JSR	$1851
+		JSR	j_sub_3C5C
 		JSR	sub_770F
 		LDA	$1976
 		BMI	loc_76EE
@@ -63,7 +63,7 @@ loc_7677:				; CODE XREF: RAM:76A6vj
 		BCS	loc_76EE
 		dldi	off_16, $7869
 		LDX	$62
-		JSR	$1851
+		JSR	j_sub_3C5C
 
 loc_7689:				; CODE XREF: RAM:7698vj
 		dldi	off_1977, loc_7696
@@ -88,12 +88,12 @@ loc_76A4:				; CODE XREF: RAM:769F^j
 loc_76AB:				; CODE XREF: RAM:76A1^j
 		dldi	off_16, $7902
 		LDX	$62
-		JSR	$1851
+		JSR	j_sub_3C5C
 		LDA	#$F
 		JSR	$185A
 		dldi	off_16, $775C
 		LDX	$62
-		JSR	$1851
+		JSR	j_sub_3C5C
 		LDA	$64
 		STA	$4B
 		JSR	$1887
@@ -115,7 +115,7 @@ loc_76EE:				; CODE XREF: RAM:7671^j	RAM:7675^j ...
 
 loc_76F6:				; CODE XREF: RAM:765B^j
 		LDX	$62
-		JSR	$1851
+		JSR	j_sub_3C5C
 		JSR	sub_770F
 
 loc_76FE:				; CODE XREF: RAM:76A8^j	RAM:76EB^j

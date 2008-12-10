@@ -49,7 +49,7 @@ loc_764F:				; CODE XREF: RAM:7703vj
 		STA	byte_778F
 		dldi	off_16, $7756
 		LDX	$62
-		JSR	$1851
+		JSR	j_sub_3C5C
 
 loc_766A:				; CODE XREF: RAM:76BEvj
 		LDX	$62
@@ -73,7 +73,7 @@ loc_767F:
 		BPL	loc_76A3
 		dldi	off_16, $79FA
 		LDX	$62
-		JSR	$1851
+		JSR	j_sub_3C5C
 		JMP	loc_7700
 ; ---------------------------------------------------------------------------
 
@@ -131,7 +131,7 @@ loc_76E6:				; CODE XREF: RAM:76EDvj
 		ldxy	$780F
 		JSR	$185D
 		LDX	$62
-		JSR	$1851
+		JSR	j_sub_3C5C
 
 loc_7700:				; CODE XREF: RAM:76A0^j	RAM:771Evj ...
 		JSR	sub_774E
@@ -147,7 +147,7 @@ loc_7706:
 		ldxy	$7815
 		JSR	$185D
 		LDX	$62
-		JSR	$1851
+		JSR	j_sub_3C5C
 		JMP	loc_7700
 ; ---------------------------------------------------------------------------
 
@@ -159,7 +159,7 @@ loc_7721:
 		ldxy	$781B
 		JSR	$185D
 		LDX	$62
-		JSR	$1851
+		JSR	j_sub_3C5C
 		JMP	loc_7700
 ; ---------------------------------------------------------------------------
 
@@ -169,7 +169,7 @@ loc_773A:				; CODE XREF: RAM:76E1^j
 		ldxy	$7821
 		JSR	$185D
 		LDX	$62
-		JSR	$1851
+		JSR	j_sub_3C5C
 		JMP	loc_7700
 
 ; --------------- S U B	R O U T	I N E ---------------------------------------

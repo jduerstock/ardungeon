@@ -85,18 +85,12 @@ loc_7659:				; CODE XREF: RAM:764E^j
 		JSR	$96F0
 
 loc_7698:				; CODE XREF: RAM:76BFvj
-		LDA	#$B6 ; '¶'
-		STA	$16
-		LDA	#$79 ; 'y'
-		STA	$17
+		dldi	off_16, $79B6
 		LDX	$62
-		JSR	$1851
+		JSR	j_sub_3C5C
 
 loc_76A5:				; CODE XREF: RAM:76BBvj
-		LDA	#$B2 ; '²'
-		STA	$1977
-		LDA	#$76 ; 'v'
-		STA	$1978
+		dldi	off_1977, $76B2
 		JMP	$1806
 ; ---------------------------------------------------------------------------
 		JSR	$1821
@@ -112,10 +106,7 @@ loc_76C1:				; CODE XREF: RAM:76B7^j
 ; ---------------------------------------------------------------------------
 
 loc_76C4:				; CODE XREF: RAM:768F^j
-		LDA	#$E4 ; 'ä'
-		STA	$16
-		LDA	#$77 ; 'w'
-		STA	$17
+		dldi	off_16, $77E4
 		JSR	sub_77D8
 		LDA	$639C
 		BMI	loc_76D9
@@ -188,7 +179,7 @@ loc_7705:				; CODE XREF: RAM:76D7^j	RAM:76E1^j
 		LDA	#$77 ; 'w'
 		STA	$17
 		LDX	$62
-		JSR	$1851
+		JSR	j_sub_3C5C
 		JSR	$183C
 		JMP	loc_77AC
 
@@ -276,26 +267,17 @@ loc_77C6:				; CODE XREF: RAM:77B7^j
 
 sub_77D8:				; CODE XREF: RAM:76CC^p	RAM:76EB^p ...
 		LDX	$62
-		JSR	$1851
+		JSR	j_sub_3C5C
 		LDA	#$14
 		JMP	$185A
 ; End of function sub_77D8
 
 ; ---------------------------------------------------------------------------
 		.BYTE $A8,$FF
-		.BYTE $A6,  0,	0
-		.BYTE $A5
-aYouAreInARoomF:.BYTE "You are in a room filled with strange"
-		.BYTE $D
-		.BYTE $D
-		.BYTE $A5
-aMachinery_Sudd:.BYTE "machinery. Suddenly, a guard notices"
-		.BYTE $D
-		.BYTE $D
-		.BYTE $A5
-aYouDrawsHisLas:.BYTE "you, draws his laser and fires!"
-		.BYTE $D
-		.BYTE $FF
+		MOVEXY	0,0
+		.BYTE	$A5,"You are in a room filled with strange",$0D,$0D
+		.BYTE	$A5,"machinery. Suddenly, a guard notices",$0D,$0D
+		.BYTE	$A5,"you, draws his laser and fires!",$0D,$FF
 		.BYTE $A6,  0,	0
 		.BYTE $A5
 aTheBlastIsRefl:.BYTE "The blast is reflected by your"
@@ -686,25 +668,25 @@ loc_7C4D:				; DATA XREF: RAM:7C3F^w
 		STA	byte_7C74
 
 loc_7C52:				; CODE XREF: RAM:7C48^j
-		LDA	(7),Y
-		INC	7
+		LDA	(off_7),Y
+		INC	off_7
 		BNE	loc_7C5A
-		INC	8
+		INC	off_7+1
 
 loc_7C5A:				; CODE XREF: RAM:7C56^j
 		LDY	byte_7C74
 
 loc_7C5D:				; CODE XREF: RAM:7C60vj
-		STA	(9),Y
+		STA	(off_9),Y
 		DEY
 		BPL	loc_7C5D
 		INC	byte_7C74
 		LDA	byte_7C74
 		CLC
-		ADC	9
-		STA	9
+		ADC	off_9
+		STA	off_9
 		BCC	loc_7C71
-		INC	$A
+		INC	off_9+1
 
 loc_7C71:				; CODE XREF: RAM:7C6D^j
 		JMP	loc_7C14

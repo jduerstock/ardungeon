@@ -77,12 +77,9 @@ loc_7670:				; CODE XREF: RAM:7666^j
 ; START	OF FUNCTION CHUNK FOR sub_78D8
 
 loc_768C:				; CODE XREF: RAM:766E^j	RAM:76A8vj ...
-		LDA	#$9F ; 'Ÿ'
-		STA	$16
-		LDA	#$79 ; 'y'
-		STA	$17
+		dldi	off_16, $799F
 		LDX	$66
-		JSR	$1851
+		JSR	j_sub_3C5C
 
 loc_7699:				; CODE XREF: RAM:76B6vj
 		dldi	off_1977, loc_76AD
@@ -111,7 +108,7 @@ loc_76AD:
 		LDA	#$7A ; 'z'
 		STA	$17
 		LDX	$66
-		JSR	$1851
+		JSR	j_sub_3C5C
 
 loc_76CD:				; CODE XREF: RAM:76E5vj
 		dldi	off_1977, loc_76DA
@@ -174,7 +171,7 @@ loc_7730:				; CODE XREF: RAM:7724^j	RAM:775Avj ...
 		STX	$17
 		STY	$16
 		LDX	$66
-		JSR	$1851
+		JSR	j_sub_3C5C
 		LDA	#6
 		JSR	$185A
 		JMP	loc_768C
@@ -204,12 +201,9 @@ loc_775D:				; CODE XREF: RAM:76AA^j
 		STA	$67
 		LDA	$7540
 		BNE	loc_77B4
-		LDA	#$59 ; 'Y'
-		STA	$16
-		LDA	#$7B ; '{'
-		STA	$17
+		dldi	off_16, $7B59
 		LDX	$66
-		JSR	$1851
+		JSR	j_sub_3C5C
 
 loc_7773:				; CODE XREF: RAM:7782vj	RAM:778Dvj
 		dldi	off_1977, loc_7780
@@ -258,7 +252,7 @@ loc_77B4:				; CODE XREF: RAM:7764^j	RAM:7789^j ...
 loc_77D1:				; CODE XREF: RAM:77C0^j
 		dldi	off_16, $7C70
 		LDX	$66
-		JSR	$1851
+		JSR	j_sub_3C5C
 
 loc_77DE:				; CODE XREF: RAM:77CE^j	RAM:77EDvj ...
 		dldi	off_1977, loc_77EB
@@ -325,14 +319,14 @@ loc_781A:				; CODE XREF: RAM:7815^j
 
 loc_7855:				; CODE XREF: RAM:77B1^j
 		LDX	$66
-		JSR	$1851
+		JSR	j_sub_3C5C
 		LDA	#6
 		JSR	$185A
 
 loc_785F:				; CODE XREF: RAM:7842^j
 		dldi	off_16, $7A78
 		LDX	$66
-		JSR	$1851
+		JSR	j_sub_3C5C
 
 loc_786C:				; CODE XREF: RAM:787Bvj	RAM:7886vj
 		dldi	off_1977, loc_7879

@@ -63,7 +63,7 @@ loc_7675:				; CODE XREF: RAM:769Avj
 		LDA	(off_63),Y
 		STA	$17
 		LDX	$62
-		JSR	$1851
+		JSR	j_sub_3C5C
 		LDA	off_63
 		CLC
 		ADC	#2
@@ -101,7 +101,7 @@ loc_76AD:				; CODE XREF: RAM:765C^j
 
 sub_76C4:				; CODE XREF: RAM:7643^p	RAM:7659^p
 		LDX	$62
-		JSR	$1851
+		JSR	j_sub_3C5C
 		LDA	#$12
 		JMP	$185A
 ; End of function sub_76C4
@@ -622,25 +622,25 @@ loc_7E5B:				; DATA XREF: RAM:7E4D^w
 		STA	byte_7E82
 
 loc_7E60:				; CODE XREF: RAM:7E56^j
-		LDA	(7),Y
-		INC	7
+		LDA	(off_7),Y
+		INC	off_7
 		BNE	loc_7E68
-		INC	8
+		INC	off_7+1
 
 loc_7E68:				; CODE XREF: RAM:7E64^j
 		LDY	byte_7E82
 
 loc_7E6B:				; CODE XREF: RAM:7E6Evj
-		STA	(9),Y
+		STA	(off_9),Y
 		DEY
 		BPL	loc_7E6B
 		INC	byte_7E82
 		LDA	byte_7E82
 		CLC
-		ADC	9
-		STA	9
+		ADC	off_9
+		STA	off_9
 		BCC	loc_7E7F
-		INC	$A
+		INC	off_9+1
 
 loc_7E7F:				; CODE XREF: RAM:7E7B^j
 		JMP	loc_7E22

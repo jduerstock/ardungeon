@@ -71,7 +71,7 @@ loc_766D:				; CODE XREF: RAM:7647^j	RAM:764F^j ...
 		STA	byte_7710
 		dldi	off_16, $7711
 		LDX	$62
-		JSR	$1851
+		JSR	j_sub_3C5C
 
 loc_768E:				; CODE XREF: RAM:76F7vj	RAM:7708vj
 		LDA	#0

@@ -44,14 +44,14 @@ loc_7619:				; CODE XREF: RAM:7620vj
 loc_764A:
 		dldi	off_16, $77B3
 		LDX	$68
-		JSR	$1851
+		JSR	j_sub_3C5C
 		LDA	#$A
 		JSR	$185A
 
 loc_765C:				; CODE XREF: RAM:768Avj	RAM:76CBvj ...
 		dldi	off_16, $7808
 		LDX	$68
-		JSR	$1851
+		JSR	j_sub_3C5C
 
 loc_7669:				; CODE XREF: RAM:7682vj
 		dldi	off_1977, loc_7676
@@ -76,7 +76,7 @@ loc_7680:				; CODE XREF: RAM:767B^j
 		BNE	loc_765C
 		dldi	off_16, $77B1
 		LDX	$68
-		JSR	$1851
+		JSR	j_sub_3C5C
 		JSR	$189F
 		JSR	$18A5
 		LDX	#$F
@@ -158,7 +158,7 @@ loc_771D:				; CODE XREF: RAM:76F0^j
 		BNE	loc_775E
 		dldi	off_16, $798E
 		LDX	$68
-		JSR	$1851
+		JSR	j_sub_3C5C
 		LDA	#$F
 		JSR	$185A
 		LDA	$69
@@ -189,7 +189,7 @@ loc_7766:				; CODE XREF: RAM:771B^j
 		LDA	unk_77AD,X
 		STA	$6312
 		LDX	$68
-		JSR	$1851
+		JSR	j_sub_3C5C
 		LDA	#$A
 		JSR	$185A
 		LDA	$69
@@ -615,25 +615,25 @@ loc_7C0C:				; DATA XREF: RAM:7BFE^w
 		STA	byte_7C33
 
 loc_7C11:				; CODE XREF: RAM:7C07^j
-		LDA	(7),Y
-		INC	7
+		LDA	(off_7),Y
+		INC	off_7
 		BNE	loc_7C19
-		INC	8
+		INC	off_7+1
 
 loc_7C19:				; CODE XREF: RAM:7C15^j
 		LDY	byte_7C33
 
 loc_7C1C:				; CODE XREF: RAM:7C1Fvj
-		STA	(9),Y
+		STA	(off_9),Y
 		DEY
 		BPL	loc_7C1C
 		INC	byte_7C33
 		LDA	byte_7C33
 		CLC
-		ADC	9
-		STA	9
+		ADC	off_9
+		STA	off_9
 		BCC	loc_7C30
-		INC	$A
+		INC	off_9+1
 
 loc_7C30:				; CODE XREF: RAM:7C2C^j
 		JMP	loc_7BD3
