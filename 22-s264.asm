@@ -151,21 +151,18 @@ loc_76EB:				; CODE XREF: RAM:771Avj
 
 loc_7717:				; CODE XREF: RAM:76EE^j	RAM:76FB^j ...
 		INX
-		CPX	#$40 ; '@'
+		CPX	#$40
 		BNE	loc_76EB
 		LDA	$78
 		BNE	loc_7727
-		LDX	#$7C ; '|'
-		LDY	#$30 ; '0'
+		ldxy	$7C30
 		JMP	loc_7730
 ; ---------------------------------------------------------------------------
 
 loc_7727:				; CODE XREF: RAM:771E^j
 		LDA	#2
 		JSR	sub_78D8
-		LDX	#$7B ; '{'
-		LDY	#$2E ; '.'
-; START	OF FUNCTION CHUNK FOR sub_78D8
+		ldxy	$7B2E
 
 loc_7730:				; CODE XREF: RAM:7724^j	RAM:775Avj ...
 		STX	$17
@@ -173,9 +170,8 @@ loc_7730:				; CODE XREF: RAM:7724^j	RAM:775Avj ...
 		LDX	$66
 		JSR	j_sub_3C5C
 		LDA	#6
-		JSR	$185A
+		JSR	j_sub_2BFC
 		JMP	loc_768C
-; END OF FUNCTION CHUNK	FOR sub_78D8
 ; ---------------------------------------------------------------------------
 
 loc_7741:				; CODE XREF: RAM:7713^j
@@ -321,7 +317,7 @@ loc_7855:				; CODE XREF: RAM:77B1^j
 		LDX	$66
 		JSR	j_sub_3C5C
 		LDA	#6
-		JSR	$185A
+		JSR	j_sub_2BFC
 
 loc_785F:				; CODE XREF: RAM:7842^j
 		dldi	off_16, $7A78

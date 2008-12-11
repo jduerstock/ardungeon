@@ -243,7 +243,7 @@ sub_779C:				; CODE XREF: RAM:766D^p	sub_76F2+59^p
 		LDX	$62
 		JSR	j_sub_3C5C
 		LDA	#$A
-		JMP	$185A
+		JMP	j_sub_2BFC
 ; End of function sub_779C
 
 

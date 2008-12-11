@@ -170,6 +170,7 @@
 ; ---------------------------------------------------------------------------
 		JMP	loc_3183	; $180C
 ; ---------------------------------------------------------------------------
+j_sub_1A0D:
 		JMP	sub_1A0D	; $180F
 ; ---------------------------------------------------------------------------
 		JMP	sub_1C84	; $1812
@@ -225,7 +226,8 @@ j_sub_3C5C:
 ; ---------------------------------------------------------------------------
 		JMP	loc_2C6F	; $1857
 ; ---------------------------------------------------------------------------
-		JMP	loc_2BFC	; $185A
+j_sub_2BFC:
+		JMP	sub_2BFC	; $185A
 ; ---------------------------------------------------------------------------
 		JMP	loc_2C9B	; $185D
 ; ---------------------------------------------------------------------------
@@ -3622,28 +3624,18 @@ loc_2BC8:				; CODE XREF: sub_2BB0+1Bvj
 
 a_PressAnyKey:
 		MOVEXY	0,7
-		.BYTE $A9
-		.BYTE $A5
-		.BYTE "<<< "
-aPressAnyKeyToC:BLINK	"Press any key to continue"
-		.BYTE $20
-		.BYTE ">>>"
-		.BYTE $D
-		.BYTE $FF
+		.BYTE	$A9
+		.BYTE	$A5,"<<< "
+		BLINK	"Press any key to continue"
+		.BYTE	" >>>",$0D,$FF
 
 ; --------------- S U B	R O U T	I N E ---------------------------------------
 
 
 sub_2BFA:				; CODE XREF: RAM:527Cvp	RAM:53EDvp ...
-
-; FUNCTION CHUNK AT 2F80 SIZE 00000151 BYTES
-; FUNCTION CHUNK AT 30DB SIZE 00000006 BYTES
-; FUNCTION CHUNK AT 3183 SIZE 00000072 BYTES
-; FUNCTION CHUNK AT 31F8 SIZE 0000002D BYTES
-
 		LDA	#6
 
-loc_2BFC:				; CODE XREF: RAM:185A^j	RAM:3443vp ...
+sub_2BFC:				; CODE XREF: RAM:185A^j	RAM:3443vp ...
 		STA	byte_2C64
 		DEC	byte_32
 		DEC	byte_F
@@ -3694,7 +3686,7 @@ loc_2C5B:				; CODE XREF: RAM:2C4F^j
 		RTS
 ; ---------------------------------------------------------------------------
 byte_2C63:	.BYTE 0			; DATA XREF: sub_2BFA+16^w RAM:2C51^w
-byte_2C64:	.BYTE 0			; DATA XREF: sub_2BFA:loc_2BFC^w
+byte_2C64:	.BYTE 0			; DATA XREF: sub_2BFA:sub_2BFC^w
 					; RAM:2C56^w
 byte_2C65:	.BYTE 0			; DATA XREF: sub_2BFA+E^w sub_2BFA+21^r	...
 
@@ -5007,7 +4999,7 @@ loc_343B:				; CODE XREF: RAM:3451vj	RAM:34B8vj ...
 		LDX	byte_352E
 		JSR	sub_3C5C
 		LDA	#4
-		JSR	loc_2BFC
+		JSR	sub_2BFC
 		JMP	loc_339F
 ; ---------------------------------------------------------------------------
 
@@ -5023,7 +5015,7 @@ loc_3454:				; CODE XREF: RAM:33F3^j
 		LDX	byte_352E
 		JSR	sub_3C5C
 		LDA	#1
-		JSR	loc_2BFC
+		JSR	sub_2BFC
 		DEC	byte_195F
 		LDA	RANDOM
 		LSR	A
@@ -9472,19 +9464,19 @@ loc_5390:				; CODE XREF: RAM:5373^j	RAM:5380^j
 		dldi	off_16, a_YouCastTheSpell
 		LDX	byte_194A
 		JSR	sub_3C5C
-		LDA	#$82 ; '‚'
+		LDA	#$82
 		STA	byte_199C
 		LDA	#1
-		JSR	loc_2BFC
+		JSR	sub_2BFC
 		LDY	#0
 		LDA	(off_41),Y
-		AND	#$78 ; 'x'
+		AND	#$78
 		BNE	loc_53F3
 		JMP	loc_5209
 ; ---------------------------------------------------------------------------
 
 loc_53CA:				; CODE XREF: RAM:5363^j
-		LDX	#$45 ; 'E'
+		LDX	#$45
 		LDA	byte_6282
 		JSR	SUBSTAT2
 		dldi	off_16, a_TheSpellFailed
@@ -9881,14 +9873,11 @@ sub_5602:				; CODE XREF: RAM:loc_558F^p RAM:55B1^p
 		STA	(off_7),Y
 
 loc_561F:				; CODE XREF: sub_5602+17^j
-		LDA	#$E8 ; 'è'
-		STA	off_16
-		LDA	#$60 ; '`'
-		STA	off_16+1
+		dldi	off_16, $60E8
 		LDX	byte_194A
 		JSR	sub_3C5C
 		LDA	#2
-		JMP	loc_2BFC
+		JMP	sub_2BFC
 ; End of function sub_5602
 
 ; ---------------------------------------------------------------------------
@@ -9972,7 +9961,7 @@ loc_5691:				; CODE XREF: RAM:5675^j
 		LDX	byte_194A
 		JSR	sub_3C5C
 		LDA	#$10
-		JSR	loc_2BFC
+		JSR	sub_2BFC
 		JMP	loc_5225
 ; ---------------------------------------------------------------------------
 
@@ -9997,7 +9986,7 @@ loc_56C1:				; CODE XREF: RAM:5573^j	RAM:56B5^j
 		LDX	byte_194A
 		JSR	sub_3C5C
 		LDA	#$10
-		JSR	loc_2BFC
+		JSR	sub_2BFC
 		JMP	loc_5225
 
 ; --------------- S U B	R O U T	I N E ---------------------------------------

@@ -178,7 +178,7 @@ loc_773A:				; CODE XREF: RAM:76E1^j
 sub_774E:				; CODE XREF: RAM:loc_7700^p
 		DEC	$195F
 		LDA	#4
-		JMP	$185A
+		JMP	j_sub_2BFC
 ; End of function sub_774E
 
 ; ---------------------------------------------------------------------------

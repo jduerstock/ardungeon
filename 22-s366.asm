@@ -427,7 +427,7 @@ sub_7930:				; CODE XREF: RAM:76AF^p	RAM:76F9^p ...
 		LDX	$62
 		JSR	j_sub_3C5C
 		LDA	#$10
-		JMP	$185A
+		JMP	j_sub_2BFC
 ; End of function sub_7930
 
 ; ---------------------------------------------------------------------------

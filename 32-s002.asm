@@ -190,7 +190,7 @@ loc_7764:				; CODE XREF: RAM:7759^j
 		LDX	$67
 		JSR	j_sub_3C5C
 		LDA	#4
-		JSR	$185A
+		JSR	j_sub_2BFC
 		LDA	#$A
 		STA	$6320
 		JMP	loc_77E8
@@ -254,7 +254,7 @@ loc_77C8:				; CODE XREF: RAM:77BF^j
 		LDX	$67
 		JSR	j_sub_3C5C
 		LDA	#4
-		JSR	$185A
+		JSR	j_sub_2BFC
 		LDX	#$87
 		LDA	#$10
 		JSR	$1878

@@ -75,7 +75,7 @@ loc_7684:				; CODE XREF: RAM:766C^j	RAM:7678^j
 		LDX	$62
 		JSR	j_sub_3C5C
 		LDA	#2
-		JSR	$185A
+		JSR	j_sub_2BFC
 		LDA	#$FF
 		STA	$AC00
 		JMP	$180C

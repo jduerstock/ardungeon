@@ -46,7 +46,7 @@ loc_764A:
 		LDX	$68
 		JSR	j_sub_3C5C
 		LDA	#$A
-		JSR	$185A
+		JSR	j_sub_2BFC
 
 loc_765C:				; CODE XREF: RAM:768Avj	RAM:76CBvj ...
 		dldi	off_16, $7808
@@ -160,7 +160,7 @@ loc_771D:				; CODE XREF: RAM:76F0^j
 		LDX	$68
 		JSR	j_sub_3C5C
 		LDA	#$F
-		JSR	$185A
+		JSR	j_sub_2BFC
 		LDA	$69
 		JSR	$1887
 		LDY	#2
@@ -191,7 +191,7 @@ loc_7766:				; CODE XREF: RAM:771B^j
 		LDX	$68
 		JSR	j_sub_3C5C
 		LDA	#$A
-		JSR	$185A
+		JSR	j_sub_2BFC
 		LDA	$69
 		JSR	$1887
 		LDY	#2
@@ -211,7 +211,7 @@ loc_7797:				; CODE XREF: RAM:779Evj
 		JMP	$180C
 ; ---------------------------------------------------------------------------
 		LDA	#4
-		JMP	$185A
+		JMP	j_sub_2BFC
 ; ---------------------------------------------------------------------------
 unk_77AB:	.BYTE $1C		; DATA XREF: RAM:loc_7766^r
 unk_77AC:	.BYTE $14		; DATA XREF: RAM:776C^r

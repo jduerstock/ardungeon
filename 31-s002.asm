@@ -545,7 +545,7 @@ loc_7941:				; CODE XREF: RAM:7920^j	RAM:7925^j ...
 		ldxy	a_SwitchingTo
 		JSR	sub_8EEF
 		LDA	#1
-		JSR	$185A
+		JSR	j_sub_2BFC
 		JMP	loc_78DD
 ; ---------------------------------------------------------------------------
 ; START	OF FUNCTION CHUNK FOR sub_88B0
@@ -1654,7 +1654,7 @@ loc_8050:				; CODE XREF: RAM:8031^j	RAM:8048^j
 
 loc_805B:				; CODE XREF: RAM:8056^j
 		LDA	#2
-		JSR	$185A
+		JSR	j_sub_2BFC
 
 locret_8060:				; CODE XREF: RAM:loc_7FD7^j
 		RTS
@@ -2382,7 +2382,7 @@ loc_8451:				; CODE XREF: RAM:8249^j
 		ldxy	a_YouMiss
 		JSR	sub_8EEF
 		LDA	#1
-		JSR	$185A
+		JSR	j_sub_2BFC
 		RTS
 
 ; --------------- S U B	R O U T	I N E ---------------------------------------
@@ -4188,7 +4188,7 @@ loc_8ED1:				; CODE XREF: RAM:770A^j	RAM:783A^p ...
 		JSR	sub_8EEF
 		PLA
 		DEC	$32
-		JSR	$185A
+		JSR	j_sub_2BFC
 		INC	$32
 		ldxy	byte_9881
 		JSR	sub_8EEF

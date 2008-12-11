@@ -103,96 +103,53 @@ sub_76C4:				; CODE XREF: RAM:7643^p	RAM:7659^p
 		LDX	$62
 		JSR	j_sub_3C5C
 		LDA	#$12
-		JMP	$185A
+		JMP	j_sub_2BFC
 ; End of function sub_76C4
 
 ; ---------------------------------------------------------------------------
-		.WORD byte_778C
-		.WORD byte_77F3
-		.WORD byte_7865
-		.WORD byte_78D8
-		.WORD byte_794D
-		.WORD byte_79C3
-		.WORD byte_7A2F
-		.WORD byte_7A9D
-		.WORD byte_7B0C
-		.WORD byte_7B50
-		.WORD byte_7BC3
-		.BYTE $A8,$FF
-		.BYTE $A6,  0,	1
-		.BYTE $A5
-aAsYouGazeAtThe:.BYTE "As you gaze at the wall of the crypt"
-		.BYTE $D
-		.BYTE $D
-		.BYTE $A5
-aTheGhostlyFigu:.BYTE "the ghostly figure of King Danjor"
-		.BYTE $D
-		.BYTE $D
-		.BYTE $A5
-aAppears_TheApp:.BYTE "appears.  The apparition speaks:"
-		.BYTE $D
-		.BYTE $FF
-		.BYTE $A6,  0,	1
-		.BYTE $A5
-aICanTellYouNoM:.BYTE "I can tell you no more"
-		.BYTE $D
-		.BYTE $D
-		.BYTE $A5
-aThanYouAlready:.BYTE "than you already know."
-		.BYTE $D
-		.BYTE $FF
-byte_778C:	.BYTE $A6,  0,	0	; DATA XREF: RAM:76CE^o
-		.BYTE $A5
-aLongAgoOnADist:.BYTE "Long ago, on a distant soil,"
-		.BYTE $D
-		.BYTE $D
-		.BYTE $A5
-aTheKeepersCame:.BYTE "The Keepers came. What became of"
-		.BYTE $D
-		.BYTE $D
-		.BYTE $A5
-aMyHomeIKnowNot:.BYTE "my home, I know not. I awoke in"
-		.BYTE $D
-		.BYTE $FF
-byte_77F3:	.BYTE $A6,  0,	0	; DATA XREF: RAM:76D0^o
-		.BYTE $A5
-aAStrangeWorld_:.BYTE "a strange world. In it were some"
-		.BYTE $D
-		.BYTE $D
-		.BYTE $A5
-aLikeMyselfButM:.BYTE "like myself, but most were strange"
-		.BYTE $D
-		.BYTE $D
-		.BYTE $A5
-aCreatures_Many:.BYTE "creatures. Many among us forsook the"
-		.BYTE $D
-		.BYTE $FF
-byte_7865:	.BYTE $A6,  0,	0	; DATA XREF: RAM:76D2^o
-		.BYTE $A5
-aWayOfKnowledge:.BYTE "Way of Knowledge and became sloth,"
-		.BYTE $D
-		.BYTE $D
-		.BYTE $A5
-aTurningToThiev:.BYTE "turning to thievery and murder for"
-		.BYTE $D
-		.BYTE $D
-		.BYTE $A5
-aTheirDailyBrea:.BYTE "their daily bread. Only I and seven"
-		.BYTE $D
-		.BYTE $FF
-byte_78D8:	.BYTE $A6,  0,	0	; DATA XREF: RAM:76D4^o
-		.BYTE $A5
-aOthersRemained:.BYTE "others remained True. We learned to"
-		.BYTE $D
-		.BYTE $D
-		.BYTE $A5
-aLookBehindTheM:.BYTE "look behind the mask of this world,"
-		.BYTE $D
-		.BYTE $D
-		.BYTE $A5
-aAndToSeeTheKee:.BYTE "and to see The Keepers, who brought"
-		.BYTE $D
-		.BYTE $FF
+		.WORD	byte_778C
+		.WORD	byte_77F3
+		.WORD	byte_7865
+		.WORD	byte_78D8
+		.WORD	byte_794D
+		.WORD	byte_79C3
+		.WORD	byte_7A2F
+		.WORD	byte_7A9D
+		.WORD	byte_7B0C
+		.WORD	byte_7B50
+		.WORD	byte_7BC3
+
+		.BYTE	$A8,$FF
+
+		MOVEXY	0,1
+		.BYTE	$A5,"As you gaze at the wall of the crypt",$0D,$0D
+		.BYTE	$A5,"the ghostly figure of King Danjor",$0D,$0D
+		.BYTE	$A5,"appears.  The apparition speaks:",$0D,$FF
+
+		MOVEXY	0,1
+		.BYTE	$A5,"I can tell you no more",$0D,$0D
+		.BYTE	$A5,"than you already know.",$0D,$FF
+
+byte_778C:	MOVEXY	0,0		; DATA XREF: RAM:76CE^o
+		.BYTE	$A5,"Long ago, on a distant soil,",$0D,$0D
+		.BYTE	$A5,"The Keepers came. What became of",$0D,$0D
+		.BYTE	$A5,"my home, I know not. I awoke in",$0D,$FF
+
+byte_77F3:	MOVEXY	0,0		; DATA XREF: RAM:76D0^o
+		.BYTE	$A5,"a strange world. In it were some",$0D,$0D
+		.BYTE	$A5,"like myself, but most were strange",$0D,$0D
+		.BYTE	$A5,"creatures. Many among us forsook the",$0D,$FF
+
+byte_7865:	MOVEXY	0,0		; DATA XREF: RAM:76D2^o
+		.BYTE $A5,"Way of Knowledge and became sloth,",$0D,$0D
+		.BYTE $A5,"turning to thievery and murder for",$0D,$0D
+		.BYTE $A5,"their daily bread. Only I and seven",$0D,$FF
+
+byte_78D8:	MOVEXY	0,0		; DATA XREF: RAM:76D4^o
+		.BYTE	$A5,"others remained True. We learned to",$0D,$0D
+		.BYTE	$A5,"look behind the mask of this world,",$0D,$0D
+		.BYTE	$A5,"and to see The Keepers, who brought",$0D,$FF
+
 byte_794D:	.BYTE $A6,  0,	0	; DATA XREF: RAM:76D6^o
 		.BYTE $A5
 aUsHereToQuarre:.BYTE "us here to quarrel and fight amongst"

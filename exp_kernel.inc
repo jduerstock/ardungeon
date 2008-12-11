@@ -4,6 +4,7 @@ j_UPPER		= $183F
 j_SEGLOAD	= $1842
 j_sub_3C2D	= $1848
 j_sub_3C5C	= $1851
+j_sub_2BFC	= $185A
 j_SETBIT	= $1860
 j_TESTBIT	= $1863
 j_LOADINV	= $1887

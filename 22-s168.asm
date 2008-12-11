@@ -90,7 +90,7 @@ loc_76AB:				; CODE XREF: RAM:76A1^j
 		LDX	$62
 		JSR	j_sub_3C5C
 		LDA	#$F
-		JSR	$185A
+		JSR	j_sub_2BFC
 		dldi	off_16, $775C
 		LDX	$62
 		JSR	j_sub_3C5C
@@ -134,7 +134,7 @@ loc_7700:				; CODE XREF: RAM:7707vj
 
 sub_770F:				; CODE XREF: RAM:766B^p	RAM:76FB^p
 		LDA	#$A
-		JMP	$185A
+		JMP	j_sub_2BFC
 ; End of function sub_770F
 
 

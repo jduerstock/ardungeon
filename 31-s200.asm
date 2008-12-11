@@ -312,7 +312,7 @@ sub_7872:				; CODE XREF: RAM:7669^p	RAM:76CE^p ...
 		LDX	$62
 		JSR	j_sub_3C5C
 		LDA	#$A
-		JMP	$185A
+		JMP	j_sub_2BFC
 ; End of function sub_7872
 
 

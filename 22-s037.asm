@@ -177,7 +177,7 @@ loc_7767:				; CODE XREF: RAM:779Fvj
 		LDX	$6A
 		JSR	j_sub_3C5C
 		LDA	#$10
-		JSR	$185A
+		JSR	j_sub_2BFC
 		JMP	loc_77EB
 ; ---------------------------------------------------------------------------
 
@@ -396,11 +396,10 @@ loc_78F4:				; CODE XREF: RAM:78FBvj
 loc_7915:				; CODE XREF: RAM:7755^j	RAM:799Cvj ...
 		LDX	$6A
 		JSR	j_sub_3C5C
-		LDX	#$86 ; '†'
-		LDY	#$AB ; '«'
+		ldxy	$86AB
 		JSR	$1884
 		LDA	#$A
-		JSR	$185A
+		JSR	j_sub_2BFC
 		JMP	loc_77A1
 ; ---------------------------------------------------------------------------
 		dldi	off_16, $7E14
@@ -477,7 +476,7 @@ loc_79AC:				; CODE XREF: RAM:79A6^j
 		LDX	$6A
 		JSR	j_sub_3C5C
 		LDA	#$A
-		JSR	$185A
+		JSR	j_sub_2BFC
 		dldi	off_62, byte_8681
 		LDY	#0
 		LDA	$6385
@@ -501,7 +500,7 @@ loc_79E4:				; CODE XREF: RAM:79DB^j	RAM:79DD^j
 		LDX	$6A
 		JSR	j_sub_3C5C
 		LDA	#$A
-		JSR	$185A
+		JSR	j_sub_2BFC
 		LDA	$6385
 		CMP	#$65 ; 'e'
 		BCS	loc_7A02
@@ -645,7 +644,7 @@ loc_7AD5:				; CODE XREF: RAM:7AB3^j	RAM:7ACF^j
 		LDA	#0
 		STA	$1955
 		LDA	#$C
-		JSR	$185A
+		JSR	j_sub_2BFC
 		LDA	$752A
 		ASL	A
 		TAX
@@ -894,32 +893,26 @@ a0_1:		.BYTE "0"
 		.BYTE $A0
 aLeave_1:	.BYTE ") Leave"
 		.BYTE $FF
-		.BYTE $A6,  0,	2
-		.BYTE $A5
-aServicesAreFro:.BYTE "Services are from"
-		.BYTE $D
-		.BYTE $D
-		.BYTE $A5
-a800To1100InThe:.BYTE "8:00 to 11:00 in the morning, and"
-		.BYTE $D
-		.BYTE $D
-		.BYTE $A5
-a2100To2300InTh:.BYTE "21:00 to 23:00 in the evening.",$D
-		.BYTE $FF
-byte_7F56:	.BYTE $A6,  7,	0	; DATA XREF: RAM:off_7B1C^o
-		.BYTE $FF
-aHearMyWordsAnd:.BYTE "Hear my words and acquire "
-		.BYTE $A6,  6,	1
-aTheSkillToUnde:.BYTE "the skill to understand the "
-		.BYTE $A6,  5,	2
-aRiddlesOfTheWi:.BYTE "riddles of the wise.  Only a "
-		.BYTE $A6,  2,	3
-aFoolDespisesWi:.BYTE "fool despises wisdom and learning. "
-		.BYTE $A6,  3,	4
-aCallWisdomYour:.BYTE "Call wisdom your sister and under-"
-		.BYTE $A6,  5,	5
-aStandingYourCl:.BYTE "standing your closest friend. "
-		.BYTE $FF
+		MOVEXY	0,2
+		.BYTE	$A5,"Services are from",$0D,$0D
+		.BYTE	$A5,"8:00 to 11:00 in the morning, and",$0D,$0D
+		.BYTE	$A5,"21:00 to 23:00 in the evening.",$0D,$FF
+
+byte_7F56:	MOVEXY	7,0	; DATA XREF: RAM:off_7B1C^o
+		.BYTE	$FF
+
+		.BYTE	"Hear my words and acquire "
+		MOVEXY	6,1
+		.BYTE	"the skill to understand the "
+		MOVEXY	5,2
+		.BYTE	"riddles of the wise.  Only a "
+		MOVEXY	2,3
+		.BYTE "fool despises wisdom and learning. "
+		MOVEXY	3,4
+		.BYTE "Call wisdom your sister and under-"
+		MOVEXY	5,5
+		.BYTE "standing your closest friend. ",$FF
+
 byte_8020:	.BYTE $A6,  3,	0	; DATA XREF: RAM:7B1E^o
 		.BYTE $FF
 aTheWiseWillHee:.BYTE "The wise will heed instructions, "

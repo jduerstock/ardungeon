@@ -179,7 +179,7 @@ sub_776E:				; CODE XREF: RAM:764C^p	RAM:765A^p ...
 		LDX	$62
 		JSR	j_sub_3C5C
 		LDA	#$10
-		JMP	$185A
+		JMP	j_sub_2BFC
 ; End of function sub_776E
 
 

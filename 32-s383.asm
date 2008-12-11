@@ -749,7 +749,7 @@ sub_7AC5:				; CODE XREF: RAM:7739^p	RAM:7752^p ...
 		LDX	$65
 		JSR	j_sub_3C5C
 		LDA	#$A
-		JMP	$185A
+		JMP	j_sub_2BFC
 ; End of function sub_7AC5
 
 ; ---------------------------------------------------------------------------

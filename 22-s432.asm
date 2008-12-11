@@ -270,7 +270,7 @@ sub_77D8:				; CODE XREF: RAM:76CC^p	RAM:76EB^p ...
 		LDX	$62
 		JSR	j_sub_3C5C
 		LDA	#$14
-		JMP	$185A
+		JMP	j_sub_2BFC
 ; End of function sub_77D8
 
 ; ---------------------------------------------------------------------------

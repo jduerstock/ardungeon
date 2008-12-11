@@ -441,7 +441,7 @@ sub_7900:				; CODE XREF: RAM:7703^p
 		LDX	$66
 		JSR	j_sub_3C5C
 		LDA	#$F
-		JMP	$185A
+		JMP	j_sub_2BFC
 ; End of function sub_7900
 
 
@@ -1544,7 +1544,7 @@ loc_8054:				; CODE XREF: RAM:804C^j	RAM:8050^j
 		LDX	$66
 		JSR	j_sub_3C5C
 		LDA	#$A
-		JSR	$185A
+		JSR	j_sub_2BFC
 		JMP	loc_80C5
 ; ---------------------------------------------------------------------------
 
@@ -1587,7 +1587,7 @@ loc_80A2:				; CODE XREF: RAM:809E^j
 		LDX	$66
 		JSR	j_sub_3C5C
 		LDA	#$A
-		JSR	$185A
+		JSR	j_sub_2BFC
 		JMP	loc_80C5
 ; ---------------------------------------------------------------------------
 
@@ -1801,7 +1801,7 @@ loc_81E8:				; CODE XREF: sub_81B0+42vj
 
 sub_81FB:				; CODE XREF: RAM:8134^p
 		LDA	#$F
-		JMP	$185A
+		JMP	j_sub_2BFC
 ; End of function sub_81FB
 
 ; ---------------------------------------------------------------------------

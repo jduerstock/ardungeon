@@ -962,7 +962,7 @@ unk_7C81:	.BYTE	4		; DATA XREF: sub_7C50+14^r
 
 sub_7CA1:				; CODE XREF: RAM:780D^p	RAM:7904^p ...
 		LDA	#$A
-		JMP	$185A
+		JMP	j_sub_2BFC
 ; End of function sub_7CA1
 
 ; ---------------------------------------------------------------------------
