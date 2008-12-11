@@ -1458,7 +1458,7 @@ sub_801D:				; CODE XREF: RAM:78C8^p	RAM:78ED^p ...
 
 sub_8022:				; CODE XREF: RAM:loc_77F4^p RAM:7809^p ...
 		LDX	$62
-		JMP	$1851
+		JMP	j_sub_3C5C
 ; End of function sub_8022
 
 

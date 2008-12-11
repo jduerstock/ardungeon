@@ -4207,7 +4207,7 @@ sub_8EEF:				; CODE XREF: RAM:7728^j	sub_88B0-FCF^p ...
 		STY	off_16
 		STX	off_16+1
 		LDX	byte_A892
-		JMP	$1851
+		JMP	j_sub_3C5C
 ; End of function sub_8EEF
 
 
@@ -6967,7 +6967,7 @@ word_A8A1:	.WORD	$02DC
 
 :		dldi	off_16, $867D
 		LDX	$66
-		JSR	$1851
+		JSR	j_sub_3C5C
 		LDX	$66
 		STX	$1933
 		JSR	j_sub_3C2D
@@ -6999,7 +6999,7 @@ word_A8A1:	.WORD	$02DC
 		LDA	#$00
 		STA	$86
 		LDX	$66
-		JSR	$1851
+		JSR	j_sub_3C5C
 		JSR	$18AE
 		LDA	$02
 		ORA	$03
@@ -7024,7 +7024,7 @@ word_A8A1:	.WORD	$02DC
 :		STX	$90DA
 		dldi	off_16, $85FF
 		LDX	$66
-		JSR	$1851
+		JSR	j_sub_3C5C
 :		LDX	$66
 		STX	$1933
 		JSR	j_sub_3C2D

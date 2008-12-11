@@ -320,7 +320,7 @@ loc_785B:				; CODE XREF: sub_782A+B^j sub_782A+13^j	...
 
 sub_7861:				; CODE XREF: RAM:773F^p	RAM:7752^p ...
 		LDX	$62
-		JSR	$1851
+		JSR	j_sub_3C5C
 		LDA	#$F
 		JMP	$185A
 ; End of function sub_7861
@@ -331,7 +331,7 @@ sub_7861:				; CODE XREF: RAM:773F^p	RAM:7752^p ...
 
 sub_786B:				; CODE XREF: RAM:76E0^p	RAM:7780^p
 		LDX	$62
-		JMP	$1851
+		JMP	j_sub_3C5C
 ; End of function sub_786B
 
 
@@ -340,7 +340,7 @@ sub_786B:				; CODE XREF: RAM:76E0^p	RAM:7780^p
 
 sub_7870:				; CODE XREF: RAM:7774^p
 		LDX	$62
-		JSR	$1851
+		JSR	j_sub_3C5C
 		LDA	#$F
 		JMP	$185A
 ; End of function sub_7870

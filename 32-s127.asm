@@ -52,7 +52,7 @@ loc_764E:				; CODE XREF: RAM:7655vj
 		BEQ	loc_7686
 		dldi	off_16, $7932
 		LDX	$62
-		JSR	$1851
+		JSR	j_sub_3C5C
 
 loc_7669:				; CODE XREF: RAM:7681vj
 		dldi	off_1977, loc_7676
@@ -77,7 +77,7 @@ loc_7686:				; CODE XREF: RAM:765A^j
 		INC	$7555
 		dldi	off_16, $795A
 		LDX	$62
-		JSR	$1851
+		JSR	j_sub_3C5C
 		LDA	#$F
 		JSR	$183C
 		JMP	loc_76AE
@@ -362,7 +362,7 @@ loc_78A9:				; CODE XREF: sub_7872+F^j sub_7872+17^j
 
 sub_78AE:				; CODE XREF: RAM:76AB^p	RAM:loc_76EC^p ...
 		LDX	$62
-		JSR	$1851
+		JSR	j_sub_3C5C
 		LDA	#$14
 		JMP	$185A
 ; End of function sub_78AE
@@ -373,7 +373,7 @@ sub_78AE:				; CODE XREF: RAM:76AB^p	RAM:loc_76EC^p ...
 
 sub_78B8:				; CODE XREF: RAM:76B6^p	RAM:773B^p ...
 		LDX	$62
-		JMP	$1851
+		JMP	j_sub_3C5C
 ; End of function sub_78B8
 
 

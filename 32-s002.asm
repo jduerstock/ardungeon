@@ -104,7 +104,7 @@ loc_768E:				; CODE XREF: RAM:768A^j
 loc_76BA:				; CODE XREF: RAM:77A1vj
 		dldi	off_16, a_Searching
 		LDX	$67
-		JSR	$1851
+		JSR	j_sub_3C5C
 		LDA	RANDOM
 		AND	#3
 		ADC	#2
@@ -160,7 +160,7 @@ loc_76FD:				; CODE XREF: RAM:76F4^j	RAM:76F6^j
 		STA	off_78D0+1
 		dldi	off_16, a_YouAreIn
 		LDX	$67
-		JSR	$1851
+		JSR	j_sub_3C5C
 
 loc_772E:				; CODE XREF: RAM:77ACvj
 		LDX	$67
@@ -188,7 +188,7 @@ loc_775C:				; CODE XREF: RAM:7748^j	RAM:774F^j
 
 loc_7764:				; CODE XREF: RAM:7759^j
 		LDX	$67
-		JSR	$1851
+		JSR	j_sub_3C5C
 		LDA	#4
 		JSR	$185A
 		LDA	#$A
@@ -252,13 +252,13 @@ loc_77AF:				; CODE XREF: RAM:77AA^j
 loc_77C8:				; CODE XREF: RAM:77BF^j
 		dldi	off_16, $793A
 		LDX	$67
-		JSR	$1851
+		JSR	j_sub_3C5C
 		LDA	#4
 		JSR	$185A
-		LDX	#$87 ; '‡'
+		LDX	#$87
 		LDA	#$10
 		JSR	$1878
-		LDX	#$85 ; '…'
+		LDX	#$85
 		LDA	#2
 		JSR	$186F
 

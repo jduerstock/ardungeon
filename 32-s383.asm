@@ -44,7 +44,7 @@ loc_7618:				; CODE XREF: RAM:761Fvj
 loc_7649:				; CODE XREF: RAM:767Fvj	RAM:771Avj ...
 		dldi	off_16, a_Welcome
 		LDX	$65
-		JSR	$1851
+		JSR	j_sub_3C5C
 
 loc_7656:				; CODE XREF: RAM:766Fvj
 		dldi	off_1977, loc_7666
@@ -132,7 +132,7 @@ loc_76EE:				; CODE XREF: RAM:76E8^j	RAM:76F4vj
 loc_76F8:				; CODE XREF: RAM:7726vj
 		dldi	off_16, $828B
 		LDX	$65
-		JSR	$1851
+		JSR	j_sub_3C5C
 
 loc_7705:				; CODE XREF: RAM:7714vj
 		dldi	off_1977, $7712
@@ -270,7 +270,7 @@ loc_77DC:				; CODE XREF: sub_7758+7E^j
 		STX	off_16+1
 		STY	off_16
 		LDX	$65
-		JSR	$1851
+		JSR	j_sub_3C5C
 
 loc_77E5:				; CODE XREF: sub_7758+AEvj
 		LDX	$65
@@ -302,7 +302,7 @@ loc_77FB:
 loc_7810:				; CODE XREF: sub_7758+CAvj
 		dldi	off_16, a_ThatWillCostAt
 		LDX	$65
-		JSR	$1851
+		JSR	j_sub_3C5C
 		JSR	$18AE
 		LDA	3
 		BNE	loc_7810
@@ -402,7 +402,7 @@ loc_78CC:				; CODE XREF: sub_7758+1E1vj
 		STX	$17
 		STY	$16
 		LDX	$65
-		JSR	$1851
+		JSR	j_sub_3C5C
 		JMP	$183C
 ; ---------------------------------------------------------------------------
 
@@ -747,7 +747,7 @@ sub_7AC5:				; CODE XREF: RAM:7739^p	RAM:7752^p ...
 		STX	$17
 		STY	$16
 		LDX	$65
-		JSR	$1851
+		JSR	j_sub_3C5C
 		LDA	#$A
 		JMP	$185A
 ; End of function sub_7AC5

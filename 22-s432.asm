@@ -1,4 +1,5 @@
 		.include	"equates.inc"
+		.include	"exp_kernel.inc"
 		.include	"globals.inc"
 		.include	"macros.inc"
 

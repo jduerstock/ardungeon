@@ -69,7 +69,7 @@ loc_7673:				; CODE XREF: RAM:76AEvj	RAM:76C0vj ...
 		STA	$67
 		dldi	off_16, $792E
 		LDX	$62
-		JSR	$1851
+		JSR	j_sub_3C5C
 
 loc_768D:				; CODE XREF: RAM:76A3vj
 		dldi	off_1977, loc_769A
@@ -96,7 +96,7 @@ loc_76AC:				; CODE XREF: RAM:76A7^j
 loc_76B0:				; CODE XREF: RAM:76D1vj
 		dldi	off_16, $7A4E
 		LDX	$62
-		JSR	$1851
+		JSR	j_sub_3C5C
 		JSR	$18AE
 		BCS	loc_7673
 		BEQ	loc_7673
@@ -204,7 +204,7 @@ loc_7784:				; CODE XREF: RAM:7779^j	RAM:777E^j
 		LDA	$6386
 		dldi	off_16, $7BEC
 		LDX	$62
-		JSR	$1851
+		JSR	j_sub_3C5C
 		LDA	RANDOM
 		AND	#3
 		LDY	$7525
@@ -310,7 +310,7 @@ loc_7863:				; CODE XREF: RAM:786Avj
 
 sub_7872:				; CODE XREF: RAM:7669^p	RAM:76CE^p ...
 		LDX	$62
-		JSR	$1851
+		JSR	j_sub_3C5C
 		LDA	#$A
 		JMP	$185A
 ; End of function sub_7872
@@ -1010,25 +1010,25 @@ loc_8017:				; DATA XREF: RAM:8009^w
 		STA	byte_803E
 
 loc_801C:				; CODE XREF: RAM:8012^j
-		LDA	(7),Y
-		INC	7
+		LDA	(off_7),Y
+		INC	off_7
 		BNE	loc_8024
-		INC	8
+		INC	off_7+1
 
 loc_8024:				; CODE XREF: RAM:8020^j
 		LDY	byte_803E
 
 loc_8027:				; CODE XREF: RAM:802Avj
-		STA	(9),Y
+		STA	(off_9),Y
 		DEY
 		BPL	loc_8027
 		INC	byte_803E
 		LDA	byte_803E
 		CLC
-		ADC	9
-		STA	9
+		ADC	off_9
+		STA	off_9
 		BCC	loc_803B
-		INC	$A
+		INC	off_9+1
 
 loc_803B:				; CODE XREF: RAM:8037^j
 		JMP	loc_7FDE

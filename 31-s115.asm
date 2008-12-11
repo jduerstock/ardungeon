@@ -80,7 +80,7 @@ loc_763B:
 		JSR	sub_76D3
 		BMI	loc_7627
 		LDX	byte_78DF
-		JSR	$1851
+		JSR	j_sub_3C5C
 		JSR	$183C
 		JMP	loc_7627
 ; ---------------------------------------------------------------------------
@@ -1910,73 +1910,73 @@ byte_9561:
 
 a_TrumpCard:
 		MOVEXY	0,2
-		.BYTE	$A5,"Sealed in an envelope is a trump card.",$D,$FF
+		.BYTE	$A5,"Sealed in an envelope is a trump card.",$0D,$FF
 
 a_Sandals:
 		MOVEXY	0,1
-		.BYTE	$A5,"A powerful but feminine voice says:",$D,$D
-		.BYTE	$A5,$22,"For thy victory I give thee these",$D
-		.BYTE	$A5,"sandals to make thee quick and agile.",$22,$D,$FF
+		.BYTE	$A5,"A powerful but feminine voice says:",$0D,$0D
+		.BYTE	$A5,$22,"For thy victory I give thee these",$0D
+		.BYTE	$A5,"sandals to make thee quick and agile.",$22,$0D,$FF
 
 a_Potion:
 		MOVEXY	0,2
-		.BYTE	$A5,"After some prying, a small chest",$D
-		.BYTE	$A5,"opens to reveal a potion vial.",$D,$FF
+		.BYTE	$A5,"After some prying, a small chest",$0D
+		.BYTE	$A5,"opens to reveal a potion vial.",$0D,$FF
 
 a_Crown:
 		MOVEXY	0,2
-		.BYTE	$A5,"You find a dainty little crown.",$D,$FF
+		.BYTE	$A5,"You find a dainty little crown.",$0D,$FF
 
 a_Helm:
 		MOVEXY	0,2
-		.BYTE	$A5,"A helm glowing with runes floats",$D
-		.BYTE	$A5,"in midair before you.",$D,$FF
+		.BYTE	$A5,"A helm glowing with runes floats",$0D
+		.BYTE	$A5,"in midair before you.",$0D,$FF
 
 a_Chainmail:
 		MOVEXY	0,2
-		.BYTE	$A5,"A chain-mail coat gleems with an",$D
-		.BYTE	$A5,"almost magical lustre.",$D,$FF
+		.BYTE	$A5,"A chain-mail coat gleems with an",$0D
+		.BYTE	$A5,"almost magical lustre.",$0D,$FF
 
 a_Cloak:
 		MOVEXY	0,3
-		.BYTE	$A5,"A cloak dances to and fro before you.",$D,$FF
+		.BYTE	$A5,"A cloak dances to and fro before you.",$0D,$FF
 
 a_Breastplate:
 		MOVEXY	0,2
-		.BYTE	$A5,"There is a glistening breastplate that",$D
-		.BYTE	$A5,"looks as if it was made just for you.",$D,$FF
+		.BYTE	$A5,"There is a glistening breastplate that",$0D
+		.BYTE	$A5,"looks as if it was made just for you.",$0D,$FF
 
 a_Sword:
 		MOVEXY	0,2
-		.BYTE	$A5,"A straight, single-edged, evil-looking",$D
-		.BYTE	$A5,"sword of oriental design lies here.",$D,$FF
+		.BYTE	$A5,"A straight, single-edged, evil-looking",$0D
+		.BYTE	$A5,"sword of oriental design lies here.",$0D,$FF
 
 a_Stone:
 		MOVEXY	0,2
-		.BYTE $A5,"A curious-looking stone fastens",$D
-		.BYTE $A5,"itself around your neck.",$D,$FF
+		.BYTE $A5,"A curious-looking stone fastens",$0D
+		.BYTE $A5,"itself around your neck.",$0D,$FF
 
 a_Vial:
 		MOVEXY	0,1
-		.BYTE	$A5,"Directions on a small vial here read:",$D,$D
-		.BYTE	$A5,"1. Pour over hands. ",$D
-		.BYTE	"2. Rub hands firmly.",$D,$FF
+		.BYTE	$A5,"Directions on a small vial here read:",$0D,$0D
+		.BYTE	$A5,"1. Pour over hands. ",$0D
+		.BYTE	"2. Rub hands firmly.",$0D,$FF
 
 a_TrumpCard2:
 		MOVEXY	0,2
-		.BYTE	$A5,"Sealed in an envelope is a trump card.",$D,$FF
+		.BYTE	$A5,"Sealed in an envelope is a trump card.",$0D,$FF
 
 a_Sword2:
 		MOVEXY	0,2
-		.BYTE	$A5,"A sword protrudes from a slab",$D
-		.BYTE	$A5,"of black marble.",$D,$FF
+		.BYTE	$A5,"A sword protrudes from a slab",$0D
+		.BYTE	$A5,"of black marble.",$0D,$FF
 
 a_Katana:
 		MOVEXY	0,1
-		.BYTE	$A5,"A katana in a ribbed black lacquered",$D
-		.BYTE	$A5,"scabbard rests against a wall.",$D,$D
-		.BYTE	$A5,"A pattern of snowflakes has been",$D
-		.BYTE	$A5,"honed along its single edge.",$D,$FF
+		.BYTE	$A5,"A katana in a ribbed black lacquered",$0D
+		.BYTE	$A5,"scabbard rests against a wall.",$0D,$0D
+		.BYTE	$A5,"A pattern of snowflakes has been",$0D
+		.BYTE	$A5,"honed along its single edge.",$0D,$FF
 
 a_Whetstone:
 		MOVEXY	0,2

@@ -547,7 +547,7 @@ loc_7A20:				; CODE XREF: RAM:77E6^j
 
 sub_7A37:				; CODE XREF: RAM:769D^p	RAM:76B0^p ...
 		LDX	$67
-		JMP	$1851
+		JMP	j_sub_3C5C
 ; End of function sub_7A37
 
 
@@ -557,7 +557,7 @@ sub_7A37:				; CODE XREF: RAM:769D^p	RAM:76B0^p ...
 sub_7A3C:				; CODE XREF: RAM:loc_77E9^p RAM:784B^p ...
 		dldi	off_16, $7A6D
 		LDX	$67
-		JMP	$1851
+		JMP	j_sub_3C5C
 ; End of function sub_7A3C
 
 ; ---------------------------------------------------------------------------
