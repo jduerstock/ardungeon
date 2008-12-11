@@ -812,11 +812,11 @@ locret_85D3:				; CODE XREF: RAM:85BB^j
 ; ---------------------------------------------------------------------------
 		CLC
 		LDA	#6
-		ADC	$41
+		ADC	off_41
 		STA	$193C
 		STA	off_7
 		LDA	#0
-		ADC	$42
+		ADC	off_41+1
 		STA	$193C+1
 		STA	off_7+1
 		LDY	#6
@@ -833,7 +833,7 @@ loc_85F1:				; CODE XREF: RAM:85EB^j
 		JMP	$2BFC
 ; ---------------------------------------------------------------------------
 		LDY	#0
-		LDA	($41),Y
+		LDA	(off_41),Y
 		AND	#$78 ; 'x'
 		BEQ	loc_8616
 		LDX	#0
@@ -1162,14 +1162,14 @@ locret_8892:				; CODE XREF: RAM:8875^j	RAM:887F^j
 		JSR	$4B74
 		LDA	#6
 		CLC
-		ADC	$41
+		ADC	off_41
 		STA	$59C1
-		LDA	$42
+		LDA	off_41+1
 		ADC	#0
 		STA	$59C2
 		dldi	$5955, $599B
 		LDY	#0
-		LDA	($41),Y
+		LDA	(off_41),Y
 		AND	#$7F
 		BNE	loc_88D6
 		LDA	$4B

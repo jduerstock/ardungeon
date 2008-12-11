@@ -162,8 +162,8 @@ loc_7767:				; CODE XREF: RAM:779Fvj
 		JSR	$1887
 		BEQ	loc_779D
 		LDY	#0
-		LDA	($41),Y
-		CMP	#$87 ; '‡'
+		LDA	(off_41),Y
+		CMP	#$87
 		BNE	loc_779D
 		JSR	$1896
 		LDY	#0
@@ -288,8 +288,8 @@ loc_7848:
 		LDX	#$45 ; 'E'
 		JSR	$187B
 		LDA	#$A
-		LDX	#$9B ; '›'
-		JSR	$1878
+		LDX	#$9B
+		JSR	j_ADDSTAT1
 		JSR	$1869
 		LDA	$630A
 		CMP	$68
@@ -1247,8 +1247,8 @@ unk_8756:	.BYTE $70 ; p		; DATA XREF: RAM:8786vo
 		.BYTE	4
 		.BYTE	0
 		.BYTE	0
-		.BYTE $42
-		.WORD $658
+		.BYTE	$42
+		.WORD	$658
 		.BYTE	0
 		.BYTE	2
 		.BYTE	0
@@ -1263,8 +1263,8 @@ unk_8756:	.BYTE $70 ; p		; DATA XREF: RAM:8786vo
 		.BYTE	2
 		.BYTE	0
 		.BYTE	2
-		.BYTE $41 ; A
-		.WORD unk_8756
+		.BYTE	$41
+		.WORD	unk_8756
 ; ---------------------------------------------------------------------------
 		PHA
 		TXA

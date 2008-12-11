@@ -196,7 +196,7 @@ loc_7766:				; CODE XREF: RAM:771B^j
 		JSR	$1887
 		LDY	#2
 		LDA	#$10
-		STA	($41),Y
+		STA	(off_41),Y
 		JSR	$18A5
 
 loc_7795:				; CODE XREF: RAM:loc_767D^j
@@ -312,9 +312,8 @@ unk_79E0:	.BYTE $70 ; p		; DATA XREF: RAM:7A10vo
 		.BYTE	4
 		.BYTE	0
 		.BYTE	0
-		.BYTE $42 ; B
-		.BYTE $58 ; X
-		.BYTE	6
+		.BYTE	$42
+		.WORD	$0658
 		.BYTE	0
 		.BYTE	2
 		.BYTE	0
@@ -329,8 +328,8 @@ unk_79E0:	.BYTE $70 ; p		; DATA XREF: RAM:7A10vo
 		.BYTE	2
 		.BYTE	0
 		.BYTE	2
-		.BYTE $41
-		.WORD unk_79E0
+		.BYTE	$41
+		.WORD	unk_79E0
 ; ---------------------------------------------------------------------------
 		PHA
 		TXA

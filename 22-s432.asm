@@ -191,22 +191,22 @@ sub_776E:				; CODE XREF: RAM:76D4^p	RAM:76DE^p
 		STA	$4B
 		JSR	$1887
 		BEQ	loc_77A1
-		LDA	$41
+		LDA	off_41
 		CLC
 		ADC	#6
-		STA	$41
+		STA	off_41
 		BCC	loc_7780
-		INC	$42
+		INC	off_41+1
 
 loc_7780:				; CODE XREF: sub_776E+E^j
 		LDY	#0
-		LDA	($41),Y
+		LDA	(off_41),Y
 		CMP	#$7F ; ''
 		BNE	loc_7793
 		LDA	#2
 		CLC
-		ADC	$41
-		STA	$41
+		ADC	off_41
+		STA	off_41
 		BCC	loc_7793
 		INC	$42
 
@@ -214,7 +214,7 @@ loc_7793:				; CODE XREF: sub_776E+18^j sub_776E+21^j
 		LDY	#$E
 
 loc_7795:				; CODE XREF: sub_776E+2Fvj
-		LDA	($41),Y
+		LDA	(off_41),Y
 		CMP	$7A12,Y
 		BNE	loc_77A1
 		DEY
@@ -373,8 +373,8 @@ unk_7A21:	.BYTE $70 ; p		; DATA XREF: RAM:7A51vo
 		.BYTE	4
 		.BYTE	0
 		.BYTE	0
-		.BYTE $42 ; B
-		.WORD $658
+		.BYTE	$42
+		.WORD	$658
 		.BYTE	0
 		.BYTE	2
 		.BYTE	0
@@ -389,8 +389,8 @@ unk_7A21:	.BYTE $70 ; p		; DATA XREF: RAM:7A51vo
 		.BYTE	2
 		.BYTE	0
 		.BYTE	2
-		.BYTE $41 ; A
-		.WORD unk_7A21
+		.BYTE	$41
+		.WORD	unk_7A21
 ; ---------------------------------------------------------------------------
 		PHA
 		TXA

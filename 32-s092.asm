@@ -73,8 +73,8 @@ loc_769B:				; CODE XREF: RAM:768B^j
 		dldi	off_16, $79F8
 		JSR	sub_7778
 		LDA	#2
-		LDX	#$62 ; 'b'
-		JSR	$1878
+		LDX	#$62
+		JSR	j_ADDSTAT1
 		JSR	sub_7BD5
 		LDA	#1
 		STA	$7589
@@ -88,8 +88,8 @@ loc_76C0:				; CODE XREF: RAM:76A0^j
 		dldi	off_16, $7A44
 		JSR	sub_7778
 		LDA	#2
-		LDX	#$6A ; 'j'
-		JSR	$1878
+		LDX	#$6A
+		JSR	j_ADDSTAT1
 		JSR	sub_7BD5
 		LDA	#2
 		STA	$7589

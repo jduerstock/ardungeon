@@ -156,7 +156,7 @@ loc_20D5:				; CODE XREF: RAM:20FEvj
 		TXA
 		AND	#$F
 		ORA	#$30 ; '0'
-		STA	$230
+		STA	byte_230
 		JSR	sub_2485
 		BMI	loc_20F9
 		LDX	6
@@ -171,7 +171,7 @@ loc_20F9:				; CODE XREF: RAM:20E8^j	RAM:20F2^j
 		DEC	6
 		BPL	loc_20D5
 		LDA	#$31 ; '1'
-		STA	$230
+		STA	byte_230
 		LDA	#4
 		STA	6
 		LDA	#$80 ; '€'

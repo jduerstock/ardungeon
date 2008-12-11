@@ -1554,7 +1554,7 @@ loc_8075:				; CODE XREF: RAM:804A^j	RAM:8056^j
 		LDY	#0
 
 loc_807C:				; CODE XREF: RAM:8082vj
-		LDA	($41),Y
+		LDA	(off_41),Y
 		STA	$912B,Y
 		INY
 		BPL	loc_807C
@@ -1620,9 +1620,9 @@ loc_80D7:				; CODE XREF: sub_80D1+24vj
 		JSR	$1887
 		BEQ	loc_80F3
 		LDY	#0
-		LDA	($41),Y
-		AND	#$87 ; 'á'
-		CMP	#$81 ; 'Å'
+		LDA	(off_41),Y
+		AND	#$87
+		CMP	#$81
 		BNE	loc_80F3
 		JSR	$1896
 		LDY	#3
@@ -1651,7 +1651,7 @@ loc_80FE:				; CODE XREF: RAM:8115vj
 		JSR	$1887
 		BEQ	loc_8112
 		LDY	#0
-		LDA	($41),Y
+		LDA	(off_41),Y
 		AND	#$87 ; 'á'
 		CMP	#$81 ; 'Å'
 		BNE	loc_8112
@@ -1685,13 +1685,13 @@ loc_8139:				; CODE XREF: RAM:81A7vj
 		JSR	$1887
 		BEQ	loc_81A4
 		LDY	#0
-		LDA	($41),Y
+		LDA	(off_41),Y
 		AND	#$87 ; 'á'
 		CMP	#$81 ; 'Å'
 		BNE	loc_81A4
 
 loc_814C:				; CODE XREF: RAM:8152vj
-		LDA	($41),Y
+		LDA	(off_41),Y
 		STA	$912B,Y
 		INY
 		BPL	loc_814C
@@ -1728,7 +1728,7 @@ loc_8184:
 		JSR	$1887
 		LDY	#2
 		LDA	#$10
-		STA	($41),Y
+		STA	(off_41),Y
 		JMP	locret_81AB
 ; ---------------------------------------------------------------------------
 
@@ -2540,8 +2540,8 @@ unk_91AC:	.BYTE $70 ; p		; DATA XREF: RAM:91DCvo
 		.BYTE	4
 		.BYTE	0
 		.BYTE	0
-		.BYTE $42 ; B
-		.BYTE $58 ; X
+		.BYTE	$42 ; B
+		.BYTE	$58 ; X
 		.BYTE	6
 		.BYTE	0
 		.BYTE	2
@@ -2557,8 +2557,8 @@ unk_91AC:	.BYTE $70 ; p		; DATA XREF: RAM:91DCvo
 		.BYTE	2
 		.BYTE	0
 		.BYTE	2
-		.BYTE $41 ; A
-		.WORD unk_91AC
+		.BYTE	$41 ; A
+		.WORD	unk_91AC
 ; ---------------------------------------------------------------------------
 
 loc_91DE:

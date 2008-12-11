@@ -66,7 +66,7 @@ loc_7643:				; CODE XREF: RAM:7672vj
 		STA	word_232
 		LDA	#0
 		STA	word_232+1
-		LDA	$230
+		LDA	byte_230
 		AND	#$F
 		TAX
 		LDA	$24D,X
@@ -75,7 +75,7 @@ loc_7643:				; CODE XREF: RAM:7672vj
 		BPL	loc_767A
 
 loc_765D:				; CODE XREF: RAM:7656^j	RAM:7682vj
-		LDA	$230
+		LDA	byte_230
 		AND	#$F
 		CLC
 		ADC	#1
@@ -85,7 +85,7 @@ loc_765D:				; CODE XREF: RAM:7656^j	RAM:7682vj
 
 loc_766B:				; CODE XREF: RAM:7667^j
 		ORA	#$30 ; '0'
-		STA	$230
+		STA	byte_230
 		DEC	$68
 		BPL	loc_7643
 		JSR	$1830

@@ -281,11 +281,11 @@ loc_781F:				; CODE XREF: RAM:77F9^j	RAM:7801^j ...
 
 loc_7825:				; CODE XREF: RAM:781C^j
 		JSR	$1887
-		LDA	$41
+		LDA	off_41
 		CLC
 		ADC	#6
 		STA	byte_818C
-		LDA	$42
+		LDA	off_41+1
 		ADC	#0
 		STA	byte_818D
 		LDY	#6
@@ -301,7 +301,7 @@ loc_7825:				; CODE XREF: RAM:781C^j
 		STA	$4B
 		JSR	$1887
 		LDY	#0
-		LDA	($41),Y
+		LDA	(off_41),Y
 		CMP	#0
 		BNE	loc_78C1
 		JSR	$1896
@@ -347,7 +347,7 @@ loc_78A2:				; CODE XREF: RAM:789D^j
 		JSR	sub_7A3C
 		LDA	#$10
 		LDY	#2
-		STA	($41),Y
+		STA	(off_41),Y
 		JSR	$18A5
 		dldi	off_16, $7B8F
 		JSR	sub_7A37
@@ -370,7 +370,7 @@ loc_78C1:				; CODE XREF: RAM:785B^j
 		BNE	loc_793B
 		LDA	#$10
 		LDY	#2
-		STA	($41),Y
+		STA	(off_41),Y
 		JSR	$18A5
 		LDA	$754C
 		CLC
@@ -392,20 +392,20 @@ loc_78EA:				; CODE XREF: RAM:78E6^j
 		LDA	#1
 		STA	$754E
 		LDA	#5
-		LDX	#$4A ; 'J'
-		JSR	$1878
+		LDX	#$4A
+		JSR	j_ADDSTAT1
 		LDA	#5
-		LDX	#$52 ; 'R'
-		JSR	$1878
+		LDX	#$52
+		JSR	j_ADDSTAT1
 		LDA	#5
-		LDX	#$6A ; 'j'
-		JSR	$1878
+		LDX	#$6A
+		JSR	j_ADDSTAT1
 		LDA	#$A
-		LDX	#$7A ; 'z'
-		JSR	$1878
-		LDX	#$85 ; '…'
+		LDX	#$7A
+		JSR	j_ADDSTAT1
+		LDX	#$85
 		LDA	#5
-		JSR	$1878
+		JSR	j_ADDSTAT1
 		DEC	$195F
 		JSR	$18A5
 		JMP	loc_76E3
@@ -417,7 +417,7 @@ loc_793B:				; CODE XREF: RAM:7898^j	RAM:789F^j ...
 		DEC	$754C
 		dldi	off_16, $809D
 		LDY	#3
-		LDA	($41),Y
+		LDA	(off_41),Y
 		BEQ	loc_7962
 		BMI	loc_7962
 		dldi	off_16, $80D9
@@ -431,7 +431,7 @@ loc_7962:				; CODE XREF: RAM:794E^j	RAM:7950^j
 		JSR	sub_7A3C
 		LDA	#$10
 		LDY	#2
-		STA	($41),Y
+		STA	(off_41),Y
 		JSR	$18A5
 		BIT	$6D
 		BMI	loc_798C
@@ -1014,8 +1014,8 @@ unk_86FF:	.BYTE $70 ; p		; DATA XREF: RAM:872Fvo
 		.BYTE	4
 		.BYTE	0
 		.BYTE	0
-		.BYTE $42
-		.WORD $658
+		.BYTE	$42
+		.WORD	$658
 		.BYTE	0
 		.BYTE	2
 		.BYTE	0
@@ -1030,8 +1030,8 @@ unk_86FF:	.BYTE $70 ; p		; DATA XREF: RAM:872Fvo
 		.BYTE	2
 		.BYTE	0
 		.BYTE	2
-		.BYTE $41
-		.WORD unk_86FF
+		.BYTE	$41
+		.WORD	unk_86FF
 ; ---------------------------------------------------------------------------
 		PHA
 		TXA

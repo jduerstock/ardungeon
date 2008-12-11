@@ -41,8 +41,8 @@ loc_7640:				; CODE XREF: RAM:7671vj
 		JSR	$1887
 		BEQ	loc_766F
 		LDY	#0
-		LDA	($41),Y
-		CMP	#$87 ; '‡'
+		LDA	(off_41),Y
+		CMP	#$87
 		BNE	loc_766F
 		JSR	$1896
 		LDY	#0
@@ -173,8 +173,8 @@ loc_774B:				; CODE XREF: RAM:76F1^j	RAM:7710^j
 		LDA	#$D8 ; 'Ø'
 		STA	$6A
 		LDA	#1
-		LDX	#$86 ; '†'
-		JSR	$1878
+		LDX	#$86
+		JSR	j_ADDSTAT1
 		dldi	off_16, $7BA5
 		LDY	$7525
 		LDA	$7911,Y
@@ -253,10 +253,10 @@ loc_77E8:				; CODE XREF: RAM:77DC^j	RAM:77E0^j
 		BEQ	loc_77B7
 		STA	$64
 		INC	$63
-		LDX	#$9B ; '›'
+		LDX	#$9B
 		LDY	$6B
 		LDA	unk_7929,Y
-		JSR	$1878
+		JSR	j_ADDSTAT1
 		LDX	#$45 ; 'E'
 		LDY	$6B
 		LDA	unk_7923,Y
@@ -714,8 +714,8 @@ unk_7DEB:	.BYTE $70 ; p		; DATA XREF: RAM:7E1Bvo
 		.BYTE	4
 		.BYTE	0
 		.BYTE	0
-		.BYTE $42
-		.WORD $658
+		.BYTE	$42
+		.WORD	$658
 		.BYTE	0
 		.BYTE	2
 		.BYTE	0
@@ -730,8 +730,8 @@ unk_7DEB:	.BYTE $70 ; p		; DATA XREF: RAM:7E1Bvo
 		.BYTE	2
 		.BYTE	0
 		.BYTE	2
-		.BYTE $41
-		.WORD unk_7DEB
+		.BYTE	$41
+		.WORD	unk_7DEB
 ; ---------------------------------------------------------------------------
 		PHA
 		TXA

@@ -6370,11 +6370,11 @@ loc_4057:				; CODE XREF: RAM:4053^j
 locret_405F:				; CODE XREF: RAM:404A^j
 		RTS
 ; ---------------------------------------------------------------------------
-aBirthdaySuit:	.BYTE "Birthday suit",0
-aBareHand:	.BYTE "Bare hand",0
-aNone:		.BYTE "None",0
-byte_407D:	.BYTE 0			; DATA XREF: RAM:3F63^w	RAM:loc_3F66^r ...
-byte_407E:	.BYTE 0			; DATA XREF: RAM:3FFE^w	RAM:402A^r
+aBirthdaySuit:	.BYTE	"Birthday suit",0
+aBareHand:	.BYTE	"Bare hand",0
+aNone:		.BYTE	"None",0
+byte_407D:	.BYTE	0		; DATA XREF: RAM:3F63^w	RAM:loc_3F66^r ...
+byte_407E:	.BYTE	0		; DATA XREF: RAM:3FFE^w	RAM:402A^r
 off_407F:	.WORD	0		; DATA XREF: RAM:3E4D^o	RAM:3EB6^o ...
 off_4081:	.WORD	0		; DATA XREF: RAM:3E60^o	RAM:3EBD^o ...
 off_4083:	.WORD	0		; DATA XREF: RAM:3E73^o	RAM:3EC4^o ...

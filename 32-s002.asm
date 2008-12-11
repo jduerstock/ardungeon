@@ -257,7 +257,7 @@ loc_77C8:				; CODE XREF: RAM:77BF^j
 		JSR	j_sub_2BFC
 		LDX	#$87
 		LDA	#$10
-		JSR	$1878
+		JSR	j_ADDSTAT1
 		LDX	#$85
 		LDA	#2
 		JSR	$186F

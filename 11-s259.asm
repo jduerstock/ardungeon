@@ -1386,7 +1386,7 @@ loc_7EDD:				; CODE XREF: sub_7ECB+41vj
 		STA	word_232
 		LDA	#0
 		STA	word_232+1
-		LDA	$230
+		LDA	byte_230
 		AND	#$F
 		TAX
 		LDA	$24D,X
@@ -1395,7 +1395,7 @@ loc_7EDD:				; CODE XREF: sub_7ECB+41vj
 		BPL	loc_7F0E
 
 loc_7EF7:				; CODE XREF: sub_7ECB+25^j sub_7ECB+4Bvj
-		LDA	$230
+		LDA	byte_230
 		AND	#$F
 		CLC
 		ADC	#1
@@ -1405,7 +1405,7 @@ loc_7EF7:				; CODE XREF: sub_7ECB+25^j sub_7ECB+4Bvj
 
 loc_7F05:				; CODE XREF: sub_7ECB+36^j
 		ORA	#$30 ; '0'
-		STA	$230
+		STA	byte_230
 		DEC	$75
 		BPL	loc_7EDD
 
@@ -1747,7 +1747,7 @@ loc_83F8:				; CODE XREF: RAM:83FFvj
 		BPL	loc_83F8
 		JSR	$1827
 		LDA	#$31 ; '1'
-		STA	$230
+		STA	byte_230
 		LDA	#$80 ; '€'
 		STA	$234
 		LDA	#0

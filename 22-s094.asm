@@ -138,17 +138,17 @@ sub_76F2:				; CODE XREF: RAM:loc_769E^p RAM:76C8^p
 		LDA	$66
 		JSR	sub_7765
 		LDA	$64
-		LDX	#$6A ; 'j'
-		JSR	$1878
+		LDX	#$6A
+		JSR	j_ADDSTAT1
 		DEC	$195F
 		JSR	$18A5
 
 loc_7729:				; CODE XREF: sub_76F2+23^j
 		LDY	$63
 		LDA	unk_77BB,Y
-		STA	$16
+		STA	off_16
 		LDA	unk_77BF,Y
-		STA	$17
+		STA	off_16+1
 		JSR	sub_77A6
 		JSR	$183C
 		CLC

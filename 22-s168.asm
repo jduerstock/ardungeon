@@ -99,7 +99,7 @@ loc_76AB:				; CODE XREF: RAM:76A1^j
 		JSR	$1887
 		LDY	#2
 		LDA	#$10
-		STA	($41),Y
+		STA	(off_41),Y
 		JSR	$18A5
 		ldxy	$7508
 		LDA	#1
@@ -179,9 +179,9 @@ loc_7748:				; CODE XREF: sub_7714+30^j
 		JSR	$1887
 		CLC
 		LDA	#6
-		ADC	$41
+		ADC	off_41
 		STA	$65
-		LDA	$42
+		LDA	off_41+1
 		ADC	#0
 		STA	$66
 		CLC
@@ -312,9 +312,8 @@ byte_799D:	.BYTE $70 ; p		; DATA XREF: RAM:79CDvo
 		.BYTE	4
 		.BYTE	0
 		.BYTE	0
-		.BYTE $42 ; B
-		.BYTE $58 ; X
-		.BYTE	6
+		.BYTE	$42
+		.WORD	$0658
 		.BYTE	0
 		.BYTE	2
 		.BYTE	0
@@ -329,8 +328,8 @@ byte_799D:	.BYTE $70 ; p		; DATA XREF: RAM:79CDvo
 		.BYTE	2
 		.BYTE	0
 		.BYTE	2
-		.BYTE $41
-		.WORD byte_799D
+		.BYTE	$41
+		.WORD	byte_799D
 ; ---------------------------------------------------------------------------
 		PHA
 		TXA

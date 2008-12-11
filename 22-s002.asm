@@ -78,12 +78,12 @@ loc_767F:
 ; ---------------------------------------------------------------------------
 
 loc_76A3:				; CODE XREF: RAM:7691^j
-		LDX	#$9A ; 'š'
+		LDX	#$9A
 		LDA	#$10
-		JSR	$1878
-		LDX	#$98 ; '˜'
+		JSR	j_ADDSTAT1
+		LDX	#$98
 		LDA	#$10
-		JSR	$1878
+		JSR	j_ADDSTAT1
 		LDX	$63
 		LDA	byte_79F7,X
 		PHA

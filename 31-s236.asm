@@ -809,7 +809,7 @@ loc_AC3E:
 		ADC	#$4A
 		TAX
 		LDA	#$02
-		JSR	$1878	
+		JSR	j_ADDSTAT1
 		LDA	#$01
 		LDX	#$45
 		JSR	$187B
@@ -1382,7 +1382,7 @@ aIAmHere:
 		BPL	:+
 		LDX	#$85
 		LDA	#$01
-		JSR	$1878
+		JSR	j_ADDSTAT1
 :		JMP	$7608
 :		dldi	$76D9, $AB24
 		BIT	$633B
@@ -1449,10 +1449,10 @@ aIAmHere:
 		BNE	:++++
 		LDX	#$86
 		LDA	#$01
-		JSR	$1878
+		JSR	j_ADDSTAT1
 		LDA	#$01
 		LDX	#$85
-		JSR	$1878
+		JSR	j_ADDSTAT1
 		dldi	$76D9, $AB4F
 		BIT	$633B
 		BPL	:+
@@ -3069,22 +3069,22 @@ M41_AAFB:
 		LDA	$639C,X
 		BMI	:++++
 		JSR	$1887
-		LDA	$41
+		LDA	off_41
 		CLC
 		ADC	#$06
-		STA	$41
+		STA	off_41
 		BCC	:+
-		INC	$42
+		INC	off_41+1
 :		LDY	#$00
 		LDA	(off_41),Y
 		CMP	#$7F
 		BNE	:+
-		LDA	$41
+		LDA	off_41
 		CLC
 		ADC	#$02
-		STA	$41
+		STA	off_41
 		BCC	:+
-		INC	$42
+		INC	off_41+1
 :		LDY	#$0E
 :		LDA	$ABED,Y
 		CMP	(off_41),Y

@@ -86,7 +86,7 @@ loc_76A1:				; CODE XREF: RAM:768A^j
 		JSR	$1887
 		LDY	#2
 		LDA	#1
-		STA	($41),Y
+		STA	(off_41),Y
 		JSR	$18A5
 		LDA	#0
 		STA	$755E
@@ -105,8 +105,8 @@ loc_76C6:				; CODE XREF: RAM:76F9vj
 		JSR	$1887
 		BEQ	loc_76F7
 		LDY	#0
-		LDA	($41),Y
-		CMP	#$87 ; '‡'
+		LDA	(off_41),Y
+		CMP	#$87
 		BNE	loc_76F7
 		JSR	$1896
 		LDY	#0
@@ -262,28 +262,28 @@ loc_77F4:				; CODE XREF: RAM:77EC^j
 		TAX
 		JSR	$1887
 		LDY	#6
-		LDX	#$28 ; '('
+		LDX	#$28
 
 loc_7803:				; CODE XREF: RAM:780Avj
-		LDA	($41),Y
+		LDA	(off_41),Y
 		STA	unk_8009,Y
 		INY
 		DEX
 		BNE	loc_7803
 		LDY	#0
-		LDA	($41),Y
+		LDA	(off_41),Y
 		AND	#7
 		CMP	#3
 		BEQ	loc_7887
 		CMP	#4
 		BEQ	loc_7887
 		LDY	#0
-		LDA	($41),Y
+		LDA	(off_41),Y
 		BNE	loc_785E
 		LDY	#$15
 
 loc_7822:				; CODE XREF: RAM:782Bvj
-		LDA	($41),Y
+		LDA	(off_41),Y
 		BEQ	loc_782D
 		TYA
 		CLC
@@ -293,13 +293,13 @@ loc_7822:				; CODE XREF: RAM:782Bvj
 
 loc_782D:				; CODE XREF: RAM:7824^j
 		INY
-		LDA	($41),Y
+		LDA	(off_41),Y
 		TAX
 		INY
-		LDA	($41),Y
+		LDA	(off_41),Y
 		STA	2
 		INY
-		LDA	($41),Y
+		LDA	(off_41),Y
 		CPX	#7
 		BCS	loc_7841
 		STA	2
@@ -325,9 +325,8 @@ loc_785E:				; CODE XREF: RAM:781E^j	RAM:78A0vj
 		LDA	#1
 
 loc_7862:				; CODE XREF: RAM:785B^j
-		STA	($41),Y
-		LDX	#$7E ; '~'
-		LDY	#$AD ; '­'
+		STA	(off_41),Y
+		ldxy	$7EAD
 
 loc_7868:				; CODE XREF: RAM:79D3vj	RAM:7A45vj
 		STX	$17
@@ -353,7 +352,7 @@ sub_7879:				; CODE XREF: RAM:76BB^p	RAM:loc_7C3Fvp ...
 ; ---------------------------------------------------------------------------
 
 loc_7887:				; CODE XREF: RAM:7814^j	RAM:7818^j
-		LDA	$41
+		LDA	off_41
 		CLC
 		ADC	#6
 		STA	$62
@@ -372,11 +371,11 @@ loc_7896:				; CODE XREF: RAM:789Evj
 
 loc_78A2:				; CODE XREF: RAM:789B^j
 		LDY	#5
-		LDA	($41),Y
+		LDA	(off_41),Y
 		CLC
-		ADC	$41
+		ADC	off_41
 		STA	$62
-		LDA	$42
+		LDA	off_41+1
 		ADC	#0
 		STA	$63
 		LDY	#0
@@ -403,7 +402,7 @@ loc_78CB:				; CODE XREF: RAM:78B5^j
 		LDA	($62),Y
 		STA	$67
 		LDY	#0
-		LDA	($41),Y
+		LDA	(off_41),Y
 		LSR	A
 		PHP
 		LDA	#2
@@ -523,7 +522,7 @@ loc_7986:				; CODE XREF: RAM:795C^j
 
 loc_7990:				; CODE XREF: RAM:7984^j
 		LDY	#2
-		STA	($41),Y
+		STA	(off_41),Y
 		JMP	loc_7735
 
 ; --------------- S U B	R O U T	I N E ---------------------------------------
@@ -842,8 +841,8 @@ loc_7B70:				; CODE XREF: sub_7B63+3Avj
 		JSR	$1887
 		BEQ	loc_7B9B
 		LDY	#0
-		LDA	($41),Y
-		CMP	#$87 ; '‡'
+		LDA	(off_41),Y
+		CMP	#$87
 		BNE	loc_7B9B
 		JSR	$1896
 		LDY	#0
@@ -860,7 +859,7 @@ loc_7B70:				; CODE XREF: sub_7B63+3Avj
 loc_7B95:				; CODE XREF: sub_7B63+2C^j
 		LDY	#2
 		LDA	#$10
-		STA	($41),Y
+		STA	(off_41),Y
 
 loc_7B9B:				; CODE XREF: sub_7B63+12^j sub_7B63+1A^j ...
 		DEC	$4B
@@ -2115,8 +2114,8 @@ unk_87AE:	.BYTE $70 ; p		; DATA XREF: RAM:87DEvo
 		.BYTE	4
 		.BYTE	0
 		.BYTE	0
-		.BYTE $42 ; B
-		.WORD $658
+		.BYTE	$42
+		.WORD	$658
 		.BYTE	0
 		.BYTE	2
 		.BYTE	0
@@ -2131,8 +2130,8 @@ unk_87AE:	.BYTE $70 ; p		; DATA XREF: RAM:87DEvo
 		.BYTE	2
 		.BYTE	0
 		.BYTE	2
-		.BYTE $41 ; A
-		.WORD unk_87AE
+		.BYTE	$41
+		.WORD	unk_87AE
 ; ---------------------------------------------------------------------------
 		PHA
 		TXA

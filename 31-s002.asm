@@ -1299,7 +1299,7 @@ loc_7E23:				; CODE XREF: sub_7DD2+32^j
 		STA	byte_AA21
 		LDX	#$87
 		LDA	#1
-		JSR	$1878
+		JSR	j_ADDSTAT1
 		BIT	$6385
 		BPL	loc_7E40
 		DEC	$6385
@@ -1386,10 +1386,10 @@ loc_7EB7:				; CODE XREF: sub_7EA5+2^j
 		STA	$4B
 		JSR	$1887
 		CLC
-		LDA	$41
+		LDA	off_41
 		ADC	#6
 		STA	off_76D9
-		LDA	$42
+		LDA	off_41+1
 		ADC	#0
 		STA	off_76D9+1
 		RTS
@@ -2069,8 +2069,8 @@ loc_8291:				; CODE XREF: RAM:828C^j
 		LDA	RANDOM
 		BMI	loc_82A8
 		LDA	#1
-		LDX	#$5A ; 'Z'
-		JSR	$1878
+		LDX	#$5A
+		JSR	j_ADDSTAT1
 		JMP	loc_82AC
 ; ---------------------------------------------------------------------------
 
@@ -2420,9 +2420,9 @@ loc_8468:				; CODE XREF: RAM:loc_7F2E^j
 		BNE	loc_849D
 		BIT	byte_AA0C
 		BPL	loc_849D
-		LDX	#$85 ; '…'
+		LDX	#$85
 		LDA	#1
-		JSR	$1878
+		JSR	j_ADDSTAT1
 ; START	OF FUNCTION CHUNK FOR sub_7DD2
 
 loc_849D:				; CODE XREF: sub_7DD2:loc_7DEE^j
@@ -3864,9 +3864,9 @@ loc_8CD8:				; CODE XREF: sub_8CCB+A^j
 		LDA	RANDOM
 		CMP	#4
 		BCS	loc_8CFB
-		LDX	#$52 ; 'R'
+		LDX	#$52
 		LDA	#1
-		JSR	$1878
+		JSR	j_ADDSTAT1
 
 loc_8CFB:				; CODE XREF: sub_8CCB+27^j
 		JMP	loc_849D
@@ -3890,7 +3890,7 @@ loc_8D04:				; CODE XREF: sub_8CCB+4^j
 		BCS	loc_8D2E
 		LDX	$62
 		LDA	#1
-		JSR	$1878
+		JSR	j_ADDSTAT1
 		JMP	loc_8D2E
 ; ---------------------------------------------------------------------------
 
@@ -4741,7 +4741,7 @@ loc_91EE:				; CODE XREF: sub_9124+E3vj
 		CLC
 		ADC	#1
 		LDX	byte_A895
-		JSR	$1878
+		JSR	j_ADDSTAT1
 		LDA	#8
 		CLC
 		ADC	byte_A895
@@ -4751,7 +4751,7 @@ loc_91EE:				; CODE XREF: sub_9124+E3vj
 		LDA	#2
 		JSR	j_RND_A
 		LDX	#$81
-		JSR	$1878
+		JSR	j_ADDSTAT1
 		INC	I_EXPLVL
 		JMP	loc_9161
 ; End of function sub_9124
@@ -5493,7 +5493,7 @@ sub_962B:				; CODE XREF: sub_950E+29^p sub_9550+22^p
 
 ; FUNCTION CHUNK AT 9629 SIZE 00000002 BYTES
 
-		LDX	$230
+		LDX	byte_230
 		DEX
 		TXA
 		AND	#3
@@ -5501,7 +5501,7 @@ sub_962B:				; CODE XREF: sub_950E+29^p sub_9550+22^p
 		LDA	$24E,X
 		BPL	loc_963D
 		LDA	#$31 ; '1'
-		STA	$230
+		STA	byte_230
 
 loc_963D:				; CODE XREF: sub_962B+B^j
 		LDA	#0
@@ -5534,12 +5534,12 @@ loc_9667:				; CODE XREF: sub_962B+5Cvj
 		BEQ	loc_9629
 		LDA	#0
 		STA	$25B
-		INC	$230
-		LDA	$230
+		INC	byte_230
+		LDA	byte_230
 		CMP	#'5'
 		BCC	loc_967F
 		LDA	#'1'
-		STA	$230
+		STA	byte_230
 
 loc_967F:				; CODE XREF: sub_962B+4D^j
 		AND	#$F
@@ -6814,7 +6814,7 @@ sub_A6F1:				; DATA XREF: RAM:A6B8o
 		BVS	locret_A715
 		dldi	off_76D9, aCheckDiskIn
 		SEC
-		LDA	$230
+		LDA	byte_230
 		SBC     #'0'
 		ORA     #'0'
 		STA     byte_A6D8

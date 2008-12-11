@@ -130,8 +130,8 @@ loc_7757:				; CODE XREF: RAM:77FDvj
 		STA	$4B
 		JSR	$1887
 		LDY	#0
-		LDA	($41),Y
-		CMP	#$87 ; '‡'
+		LDA	(off_41),Y
+		CMP	#$87
 		BEQ	loc_7767
 		JMP	loc_77F7
 ; ---------------------------------------------------------------------------
@@ -140,7 +140,7 @@ loc_7767:				; CODE XREF: RAM:7762^j
 		LDY	#6
 
 loc_7769:				; CODE XREF: RAM:7771vj
-		LDA	($41),Y
+		LDA	(off_41),Y
 		STA	$89BD,Y
 		INY
 		CPY	#$24 ; '$'
@@ -199,7 +199,7 @@ loc_77D2:				; CODE XREF: RAM:77CB^j
 		JSR	$1887
 		LDY	#2
 		LDA	#$10
-		STA	($41),Y
+		STA	(off_41),Y
 		LDA	$63B2
 		CLC
 		ADC	$71
@@ -598,7 +598,7 @@ loc_7A7C:				; CODE XREF: RAM:7A64^j	RAM:7A68^j ...
 		JSR	sub_7CA1
 		LDX	#$86
 		LDA	#1
-		JSR	$1878
+		JSR	j_ADDSTAT1
 
 loc_7A9A:				; CODE XREF: RAM:7810^j	RAM:7834^j ...
 		LDX	#4
@@ -1928,8 +1928,8 @@ aPressTToTran:	.BYTE "Press T to tran",0
 		.BYTE	4
 		.BYTE	0
 		.BYTE	0
-		.BYTE $42
-		.WORD $658
+		.BYTE	$42
+		.WORD	$658
 		.BYTE	0
 		.BYTE	2
 		.BYTE	0
@@ -1944,8 +1944,8 @@ aPressTToTran:	.BYTE "Press T to tran",0
 		.BYTE	2
 		.BYTE	0
 		.BYTE	2
-		.BYTE $41
-		.WORD $9C00
+		.BYTE	$41
+		.WORD	$9C00
 ; ---------------------------------------------------------------------------
 		PHA
 		TXA
