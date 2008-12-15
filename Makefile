@@ -31,7 +31,8 @@ ASM_SOURCES= \
 	11-s002.asm \
 	11-s006.asm \
 	11-s011.asm \
-	11-s016.asm 
+	11-s016.asm \
+	11-s679.asm
 
 ASM2_SOURCES= \
 	11-s017.asm \
@@ -45,7 +46,6 @@ ASM2_SOURCES= \
 	11-s480.asm 11-s481.asm \
 	11-s517.asm 11-s518.asm \
 	11-s676.asm 11-s677.asm \
-	11-s679.asm 11-s680.asm \
 	11-s682.asm \
 	21-s001.asm \
 	21-s010.asm 21-s011.asm \
@@ -113,7 +113,9 @@ ASM2_SOURCES= \
 
 OBJECTS=$(ASM_SOURCES:.asm=.o)
 
-BINARIES=$(ASM2_SOURCES:.asm=.bin)
+BINARIES=$(ASM_SOURCES:.asm=.bin)
+
+OLD_BINARIES=$(ASM2_SOURCES:.asm=.bin)
 
 SUMS=$(ASM_SOURCES:.asm=.sha1)
 
@@ -122,20 +124,9 @@ all: ar11.img ar21.img ar22.img ar31.img ar32.img
 %.o: %.asm
 	$(CA) $(AFLAGS) -o $@ $<
 
-#11-s001.o: 11-s001.asm
-#	ca65 -o $@ $<
-
-#11-s002.o: 11-s002.asm
-#	ca65 -o $@ $<
-
-#11-s006.o: 11-s006.asm
-#	ca65 -o $@ $<
-
-#11-s011.o: 11-s011.asm
-#	ca65 -o $@ $<
-
-#11-s016.o: 11-s016.asm
-#	ca65 -o $@ $<
+$(BINARIES) 11-s680.bin: $(OBJECTS)
+	ld65 -C 11-s001.cfg $(OBJECTS)
+	sha1sum -c 11-s001.sha1 11-s002.sha1 11-s006.sha1 11-s011.sha1 11-s016.sha1 11-s679.sha1 11-s680.sha1
 
 11-s017.bin: 11-s017.asm
 	ca65 -o 11-s017.o $<
@@ -223,13 +214,16 @@ all: ar11.img ar21.img ar22.img ar31.img ar32.img
 	sha1sum -c 11-s677.sha1
 	./encrypt.php 11-s677.bin 42a4000198528330ebd15088a888464a
 
-11-s679.bin: 11-s679.asm
-	cl65 --start-addr 0x0100 -t none 11-s679.asm -o 11-s679.bin
-	sha1sum -c 11-s679.sha1
+#11-s679.bin: 11-s679.asm
+#	cl65 --start-addr 0x0100 -t none 11-s679.asm -o 11-s679.bin
+#	sha1sum -c 11-s679.sha1
 
-11-s680.bin: 11-s680.asm
-	cl65 --start-addr 0x9000 -t none 11-s680.asm -o 11-s680.bin
-	sha1sum -c 11-s680.sha1
+#11-s680.bin: 11-s680.asm
+#	cl65 --start-addr 0x9000 -t none 11-s680.asm -o 11-s680.bin
+#	sha1sum -c 11-s680.sha1
+#	./encrypt.php 11-s680.bin 42a70001985273ef37bb9374faa9db68
+
+11-s680.bin.crypt: 11-s680.bin
 	./encrypt.php 11-s680.bin 42a70001985273ef37bb9374faa9db68
 
 11-s682.bin: 11-s682.asm
@@ -776,15 +770,13 @@ all: ar11.img ar21.img ar22.img ar31.img ar32.img
 	cl65 --start-addr 0x1000 -t none 32-s695.asm -o 32-s695.bin
 	sha1sum -c 32-s695.sha1
 
-ar11.img: $(BINARIES) $(OBJECTS) \
+ar11.img: $(OLD_BINARIES) $(OBJECTS) \
 	11-s017.bin 11-s205.bin 11-s225.bin \
 	11-s258.bin 11-s259.bin.crypt 11-s311.bin 11-s312.bin.crypt \
 	11-s376.bin 11-s377.bin.crypt 11-s451.bin 11-s452.bin.crypt \
 	11-s466.bin 11-s467.bin.crypt 11-s480.bin 11-s481.bin.crypt \
 	11-s517.bin 11-s518.bin.crypt 11-s676.bin 11-s677.bin.crypt \
-	11-s679.bin 11-s680.bin.crypt 11-s682.bin
-	ld65 -C 11-s001.cfg $(OBJECTS)
-	sha1sum -c 11-s001.sha1 11-s002.sha1 11-s006.sha1 11-s011.sha1 11-s016.sha1
+	11-s680.bin.crypt 11-s682.bin
 	cat 11-s001.bin > ar11.img
 	cat 11-s002.bin >> ar11.img
 	cat 11-s006.bin >> ar11.img

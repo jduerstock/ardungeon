@@ -7,6 +7,7 @@ j_sub_3C5C	= $1851
 j_sub_2BFC	= $185A
 j_SETBIT	= $1860
 j_TESTBIT	= $1863
+j_ADDSTAT1	= $1878
 j_LOADINV	= $1887
 j_RND_A		= $1899
 
