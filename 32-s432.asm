@@ -117,7 +117,7 @@ loc_7730:				; CODE XREF: RAM:7727^j
 loc_7734:				; CODE XREF: RAM:7722^j	RAM:772D^j
 		LDA	#2
 		JSR	j_RND_A
-		JSR	$185D
+		JSR	j_sub_2C9B
 
 loc_773C:				; CODE XREF: RAM:76FF^j
 		dmv	$67, off_16
@@ -756,11 +756,10 @@ loc_7B86:				; CODE XREF: RAM:7B82^j
 		JSR	j_SETBIT
 
 loc_7B9A:				; CODE XREF: RAM:7B8E^j
-		LDX	#$82 ; '‚'
-		LDY	#$7D ; '}'
+		ldxy	$827D
 		LDA	#1
 		JSR	j_RND_A
-		JSR	$185D
+		JSR	j_sub_2C9B
 		dmv	$92, off_16
 
 loc_7BAE:				; CODE XREF: RAM:7BD5vj
@@ -1248,9 +1247,8 @@ loc_7E44:				; CODE XREF: RAM:7F25vj
 		DEY
 		CLC
 		ADC	($8E),Y
-		LDX	#$9E ; 'ž'
-		LDY	#$F0 ; 'ð'
-		JSR	$185D
+		ldxy	$9EF0
+		JSR	j_sub_2C9B
 		LDX	$64
 		JSR	j_sub_3C5C
 		JSR	sub_7CA1
@@ -1343,7 +1341,7 @@ loc_7EF1:				; CODE XREF: RAM:7EEA^j	RAM:7EEC^j
 		CLC
 		ADC	$7F2A,Y
 		ldxy	$9EF0
-		JSR	$185D
+		JSR	j_sub_2C9B
 		LDX	$64
 		JSR	j_sub_3C5C
 		JSR	sub_7CA1

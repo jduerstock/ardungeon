@@ -5,11 +5,13 @@ j_SEGLOAD	= $1842
 j_sub_3C2D	= $1848
 j_sub_3C5C	= $1851
 j_sub_2BFC	= $185A
+j_sub_2C9B	= $185D
 j_SETBIT	= $1860
 j_TESTBIT	= $1863
 j_ADDSTAT1	= $1878
 j_LOADINV	= $1887
 j_RND_A		= $1899
+j_sub_408B	= $18A5
 
 byte_18C1	= $18C1
 byte_18C4	= $18C4

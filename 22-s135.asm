@@ -78,7 +78,7 @@ loc_7680:				; CODE XREF: RAM:767B^j
 		LDX	$68
 		JSR	j_sub_3C5C
 		JSR	$189F
-		JSR	$18A5
+		JSR	j_sub_408B
 		LDX	#$F
 
 loc_76A1:				; CODE XREF: RAM:76C9vj
@@ -166,7 +166,7 @@ loc_771D:				; CODE XREF: RAM:76F0^j
 		LDY	#2
 		LDA	#$10
 		STA	(off_41),Y
-		JSR	$18A5
+		JSR	j_sub_408B
 		LDA	$6385
 		CMP	#$B8 ; '¸'
 		BCS	loc_775B
@@ -197,7 +197,7 @@ loc_7766:				; CODE XREF: RAM:771B^j
 		LDY	#2
 		LDA	#$10
 		STA	(off_41),Y
-		JSR	$18A5
+		JSR	j_sub_408B
 
 loc_7795:				; CODE XREF: RAM:loc_767D^j
 		LDX	#4

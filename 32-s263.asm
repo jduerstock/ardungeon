@@ -270,7 +270,7 @@ loc_77D6:
 
 loc_77ED:				; CODE XREF: RAM:77DB^j
 		ldxy	off_8DF5
-		JSR	$185D
+		JSR	j_sub_2C9B
 
 loc_77F4:				; CODE XREF: RAM:77EA^j
 		JSR	sub_8022
@@ -282,7 +282,7 @@ loc_77F4:				; CODE XREF: RAM:77EA^j
 loc_77FF:				; CODE XREF: RAM:7883vj	RAM:7AFEvj ...
 		LDA	$751B
 		ldxy	$8DFD
-		JSR	$185D
+		JSR	j_sub_2C9B
 		JSR	sub_8022
 
 loc_780C:				; CODE XREF: RAM:77F7^j	RAM:7851vj
@@ -497,7 +497,7 @@ loc_7962:				; CODE XREF: RAM:7965vj
 		LDA	#2
 		JSR	j_RND_A
 		ldxy	$85F1
-		JSR	$185D
+		JSR	j_sub_2C9B
 		JSR	sub_8022
 		JSR	sub_801D
 		JMP	loc_7867
@@ -520,7 +520,7 @@ loc_7993:				; CODE XREF: RAM:7976^j
 
 loc_79B2:				; CODE XREF: RAM:79AE^j
 		ldxy	$8662
-		JSR	$185D
+		JSR	j_sub_2C9B
 		JSR	sub_8022
 		JSR	sub_801D
 		JSR	sub_7F82
@@ -620,18 +620,16 @@ loc_7A50:				; CODE XREF: RAM:7A43^j
 		BEQ	loc_7A63
 		LDA	#1
 		JSR	j_RND_A
-		LDX	#$8A ; 'Š'
-		LDY	#$66 ; 'f'
-		JSR	$185D
+		ldxy	$8A66
+		JSR	j_sub_2C9B
 		JMP	loc_7A6F
 ; ---------------------------------------------------------------------------
 
 loc_7A63:				; CODE XREF: RAM:7A52^j
 		LDA	#2
 		JSR	j_RND_A
-		LDX	#$89 ; '‰'
-		LDY	#$95 ; '•'
-		JSR	$185D
+		ldxy	$8995
+		JSR	j_sub_2C9B
 
 loc_7A6F:				; CODE XREF: RAM:7A4D^j	RAM:7A60^j
 		JSR	sub_8022
@@ -761,13 +759,13 @@ loc_7B37:				; CODE XREF: RAM:7B24^j
 		LDY	#2
 		LDA	#$10
 		STA	(off_41),Y
-		JSR	$18A5
+		JSR	j_sub_408B
 		JSR	sub_7F6D
 		JSR	sub_7F6D
 		LDA	#2
 		JSR	j_RND_A
 		ldxy	$85F1
-		JSR	$185D
+		JSR	j_sub_2C9B
 		JSR	sub_8022
 		JSR	sub_801D
 		JMP	loc_77FF
@@ -782,7 +780,7 @@ loc_7B64:				; CODE XREF: RAM:7B3E^j
 		LDA	#2
 		JSR	j_RND_A
 		ldxy	$8CD7
-		JSR	$185D
+		JSR	j_sub_2C9B
 		JSR	sub_8022
 		JSR	sub_801D
 		JMP	loc_7A98
@@ -990,7 +988,7 @@ loc_7CDC:				; CODE XREF: RAM:7BF2^j	RAM:loc_7C6B^j ...
 		LDA	#2
 		JSR	j_RND_A
 		ldxy	$8AAF
-		JSR	$185D
+		JSR	j_sub_2C9B
 		JSR	sub_8022
 		JSR	sub_801D
 		JMP	loc_7B16

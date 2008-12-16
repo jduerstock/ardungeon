@@ -91,7 +91,7 @@ loc_76CF:				; CODE XREF: RAM:76C6^j
 loc_76D7:				; CODE XREF: RAM:76D2^j	RAM:7747vj
 		ldxy	$7886
 		LDA	$63
-		JSR	$185D
+		JSR	j_sub_2C9B
 		JSR	sub_786B
 
 loc_76E3:				; CODE XREF: RAM:76F2vj
@@ -108,7 +108,7 @@ loc_76E3:				; CODE XREF: RAM:76F2vj
 		LDY	#2
 		LDA	#$10
 		STA	(off_41),Y
-		JSR	$18A5
+		JSR	j_sub_408B
 		LDY	$63
 		LDA	unk_787C,Y
 		ldxy	$7508
@@ -129,7 +129,7 @@ loc_76E3:				; CODE XREF: RAM:76F2vj
 		JSR	$186F
 		ldxy	$788A
 		LDA	$63
-		JSR	$185D
+		JSR	j_sub_2C9B
 		JSR	sub_7861
 		JMP	loc_77F5
 ; ---------------------------------------------------------------------------
@@ -139,7 +139,7 @@ loc_7745:				; CODE XREF: RAM:76F6^j
 		BNE	loc_76D7
 		ldxy	$7896
 		LDA	$63
-		JSR	$185D
+		JSR	j_sub_2C9B
 		JSR	sub_7861
 		JMP	loc_77B2
 ; ---------------------------------------------------------------------------
@@ -150,8 +150,7 @@ loc_7758:				; CODE XREF: RAM:76D4^j
 		BNE	loc_776B
 		LDA	#1
 		STA	$7528,Y
-		LDX	#$78 ; 'x'
-		LDY	#$8E ; 'Ž'
+		ldxy	$788E
 		JMP	loc_776F
 ; ---------------------------------------------------------------------------
 
@@ -160,13 +159,13 @@ loc_776B:				; CODE XREF: RAM:775D^j
 
 loc_776F:				; CODE XREF: RAM:76CC^j	RAM:7768^j
 		LDA	$63
-		JSR	$185D
+		JSR	j_sub_2C9B
 		JSR	sub_7870
 
 loc_7777:				; CODE XREF: RAM:77A1vj
 		ldxy	$789A
 		LDA	$63
-		JSR	$185D
+		JSR	j_sub_2C9B
 		JSR	sub_786B
 
 loc_7783:				; CODE XREF: RAM:7792vj
@@ -190,7 +189,7 @@ loc_77A3:				; CODE XREF: RAM:779A^j
 loc_77A6:				; CODE XREF: RAM:7796^j	RAM:77F2vj
 		ldxy	$789E
 		LDA	$63
-		JSR	$185D
+		JSR	j_sub_2C9B
 		JSR	sub_7861
 
 loc_77B2:				; CODE XREF: RAM:7755^j
@@ -210,7 +209,7 @@ loc_77CA:				; CODE XREF: RAM:76B7^j
 		BCS	loc_77E6
 		ldxy	$78A2
 		LDA	$63
-		JSR	$185D
+		JSR	j_sub_2C9B
 		JSR	sub_7861
 		LDY	$63
 		LDA	unk_7884,Y
@@ -221,7 +220,7 @@ loc_77CA:				; CODE XREF: RAM:76B7^j
 loc_77E6:				; CODE XREF: RAM:77CD^j
 		ldxy	$78A6
 		LDA	$63
-		JSR	$185D
+		JSR	j_sub_2C9B
 		JSR	sub_7861
 		JMP	loc_77A6
 ; ---------------------------------------------------------------------------

@@ -112,7 +112,7 @@ loc_76A0:				; CODE XREF: RAM:7654^j	RAM:766B^j ...
 		LDA	#2
 		LDY	#2
 		STA	(off_41),Y
-		JSR	$18A5
+		JSR	j_sub_408B
 
 loc_76CF:				; CODE XREF: RAM:76A3^j	RAM:76A8^j ...
 		LDA	$194B

@@ -87,7 +87,7 @@ loc_76A1:				; CODE XREF: RAM:768A^j
 		LDY	#2
 		LDA	#1
 		STA	(off_41),Y
-		JSR	$18A5
+		JSR	j_sub_408B
 		LDA	#0
 		STA	$755E
 		ldxy	$83E8
@@ -678,7 +678,7 @@ loc_7A83:				; CODE XREF: RAM:7A66^j
 		LDA	#1
 		JSR	j_RND_A
 		ldxy	$84D5
-		JSR	$185D
+		JSR	j_sub_2C9B
 		LDX	$66
 		JSR	j_sub_3C5C
 

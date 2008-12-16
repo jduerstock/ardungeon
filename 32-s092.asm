@@ -277,7 +277,7 @@ a_:		.BYTE ".",$22,$0D,$FF
 
 sub_7BD5:				; CODE XREF: RAM:76B4^p	RAM:76D9^p
 		DEC	$195F
-		JMP	$18A5
+		JMP	j_sub_408B
 ; End of function sub_7BD5
 
 ; ---------------------------------------------------------------------------

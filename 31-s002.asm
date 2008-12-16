@@ -4221,7 +4221,7 @@ sub_8EF9:				; CODE XREF: RAM:7713^j	sub_84CF-D5F^p ...
 		STA	$32
 		DEC	byte_1960
 		DEC	$195F
-		JSR	$18A5
+		JSR	j_sub_408B
 		PLA
 		STA	$32
 		RTS

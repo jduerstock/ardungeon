@@ -141,7 +141,7 @@ sub_76F2:				; CODE XREF: RAM:loc_769E^p RAM:76C8^p
 		LDX	#$6A
 		JSR	j_ADDSTAT1
 		DEC	$195F
-		JSR	$18A5
+		JSR	j_sub_408B
 
 loc_7729:				; CODE XREF: sub_76F2+23^j
 		LDY	$63

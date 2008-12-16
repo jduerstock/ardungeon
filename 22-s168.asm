@@ -100,7 +100,7 @@ loc_76AB:				; CODE XREF: RAM:76A1^j
 		LDY	#2
 		LDA	#$10
 		STA	(off_41),Y
-		JSR	$18A5
+		JSR	j_sub_408B
 		ldxy	$7508
 		LDA	#1
 		SEC

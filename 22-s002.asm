@@ -129,7 +129,7 @@ loc_76E6:				; CODE XREF: RAM:76EDvj
 		LDA	#2
 		JSR	j_RND_A
 		ldxy	$780F
-		JSR	$185D
+		JSR	j_sub_2C9B
 		LDX	$62
 		JSR	j_sub_3C5C
 
@@ -145,7 +145,7 @@ loc_7706:
 		LDA	#2
 		JSR	j_RND_A
 		ldxy	$7815
-		JSR	$185D
+		JSR	j_sub_2C9B
 		LDX	$62
 		JSR	j_sub_3C5C
 		JMP	loc_7700
@@ -157,7 +157,7 @@ loc_7721:
 		LDA	#2
 		JSR	j_RND_A
 		ldxy	$781B
-		JSR	$185D
+		JSR	j_sub_2C9B
 		LDX	$62
 		JSR	j_sub_3C5C
 		JMP	loc_7700
@@ -167,7 +167,7 @@ loc_773A:				; CODE XREF: RAM:76E1^j
 		LDA	#2
 		JSR	j_RND_A
 		ldxy	$7821
-		JSR	$185D
+		JSR	j_sub_2C9B
 		LDX	$62
 		JSR	j_sub_3C5C
 		JMP	loc_7700
