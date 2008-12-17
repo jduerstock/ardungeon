@@ -178,7 +178,7 @@ loc_7783:				; CODE XREF: RAM:7792vj
 		BEQ	loc_77A6
 		CMP	#'0'
 		BEQ	loc_77A3
-		JSR	$1821
+		JSR	j_sub_262F
 		AND	#2
 		BEQ	loc_7777
 

@@ -58,10 +58,10 @@ loc_765F:				; CODE XREF: RAM:764F^j
 loc_7675:				; CODE XREF: RAM:769Avj
 		LDY	#0
 		LDA	(off_63),Y
-		STA	$16
+		STA	off_16
 		INY
 		LDA	(off_63),Y
-		STA	$17
+		STA	off_16+1
 		LDX	$62
 		JSR	j_sub_3C5C
 		LDA	off_63

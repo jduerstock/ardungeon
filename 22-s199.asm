@@ -202,7 +202,7 @@ loc_7778:				; CODE XREF: RAM:777Fvj
 ; ---------------------------------------------------------------------------
 
 loc_7787:
-		JSR	$1821
+		JSR	j_sub_262F
 		AND	#2
 		BNE	loc_7776
 		LDA	$31
@@ -329,8 +329,8 @@ loc_7862:				; CODE XREF: RAM:785B^j
 		ldxy	$7EAD
 
 loc_7868:				; CODE XREF: RAM:79D3vj	RAM:7A45vj
-		STX	$17
-		STY	$16
+		STX	off_16+1
+		STY	off_16
 		LDX	$66
 		JSR	j_sub_3C5C
 		LDA	#$A
@@ -341,8 +341,8 @@ loc_7868:				; CODE XREF: RAM:79D3vj	RAM:7A45vj
 
 
 sub_7879:				; CODE XREF: RAM:76BB^p	RAM:loc_7C3Fvp ...
-		STX	$17
-		STY	$16
+		STX	off_16+1
+		STY	off_16
 		LDX	$66
 		JSR	j_sub_3C5C
 		LDA	#$A
@@ -1349,7 +1349,7 @@ aIMSureThatThe:	.BYTE "I'm sure that the "
 		.BYTE $B4
 		.WORD $7F
 		.BYTE $16
-		.BYTE $D
+		.BYTE	$D
 		.BYTE	$A5,"will be to your liking.",$0D
 		.BYTE	$AC
 		.WORD	byte_8191

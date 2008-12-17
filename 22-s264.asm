@@ -94,7 +94,7 @@ loc_76A6:				; CODE XREF: RAM:76BEvj
 ; ---------------------------------------------------------------------------
 
 loc_76AD:
-		JSR	$1821
+		JSR	j_sub_262F
 		AND	#2
 		BNE	loc_7649
 		LDA	$31
@@ -103,10 +103,7 @@ loc_76AD:
 		BEQ	loc_7649
 		CMP	#$32 ; '2'
 		BNE	loc_76A6
-		LDA	#$B2 ; '²'
-		STA	$16
-		LDA	#$7A ; 'z'
-		STA	$17
+		dldi	off_16, $7AB2
 		LDX	$66
 		JSR	j_sub_3C5C
 
@@ -165,8 +162,8 @@ loc_7727:				; CODE XREF: RAM:771E^j
 		ldxy	$7B2E
 
 loc_7730:				; CODE XREF: RAM:7724^j	RAM:775Avj ...
-		STX	$17
-		STY	$16
+		STX	off_16+1
+		STY	off_16
 		LDX	$66
 		JSR	j_sub_3C5C
 		LDA	#6
@@ -751,10 +748,7 @@ loc_7D2B:				; DATA XREF: RAM:7CDE^o
 		LDX	#3
 		LDA	$70,X
 		BPL	locret_7D39
-		LDA	#$F9 ; 'ù'
-		STA	$16
-		LDA	#$7C ; '|'
-		STA	$17
+		dldi	off_16, $7CF9
 
 locret_7D39:				; CODE XREF: RAM:7D2F^j
 		RTS

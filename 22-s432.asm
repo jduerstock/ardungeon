@@ -26,10 +26,7 @@ loc_7610:				; CODE XREF: RAM:7601^j
 		STA	$1977
 		LDA	#$76 ; 'v'
 		STA	$1978
-		LDA	#$E2 ; 'в'
-		STA	$16
-		LDA	#$77 ; 'w'
-		STA	$17
+		dldi	off_16, $77E2
 		JSR	$184B
 		LDA	$1933
 		STA	$62
@@ -94,7 +91,7 @@ loc_76A5:				; CODE XREF: RAM:76BBvj
 		dldi	off_1977, $76B2
 		JMP	$1806
 ; ---------------------------------------------------------------------------
-		JSR	$1821
+		JSR	j_sub_262F
 		AND	#2
 		BNE	loc_76C1
 		LDA	$31
@@ -121,10 +118,7 @@ loc_76D9:				; CODE XREF: RAM:76D2^j
 		BCC	loc_7705
 
 loc_76E3:				; CODE XREF: RAM:76DC^j
-		LDA	#$8E ; 'Ћ'
-		STA	$16
-		LDA	#$79 ; 'y'
-		STA	$17
+		dldi	off_16, $798E
 		JSR	sub_77D8
 		LDA	#0
 		STA	$6347
@@ -160,31 +154,19 @@ loc_7705:				; CODE XREF: RAM:76D7^j	RAM:76E1^j
 		LDX	#$9F ; 'џ'
 		LDY	#$F0 ; 'р'
 		JSR	$96F0
-		LDA	#$58 ; 'X'
-		STA	$16
-		LDA	#$78 ; 'x'
-		STA	$17
+		dldi	off_16, $7858
 		JSR	sub_77D8
-		LDA	#$A9 ; '©'
-		STA	$16
-		LDA	#$78 ; 'x'
-		STA	$17
+		dldi	off_16, $78A9
 		JSR	sub_77D8
-		LDA	#$FE ; 'ю'
-		STA	$16
-		LDA	#$78 ; 'x'
-		STA	$17
+		dldi	off_16, $78FE
 		JSR	sub_77D8
-		LDA	#$E2 ; 'в'
-		STA	$16
-		LDA	#$77 ; 'w'
-		STA	$17
+		dldi	off_16, $77E2
 		LDX	$62
 		JSR	j_sub_3C5C
 		JSR	$183C
 		JMP	loc_77AC
 
-; ЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫ S U B	R O U T	I N E ЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫ
+; --------------- S U B	R O U T	I N E ---------------------------------------
 
 
 sub_776E:				; CODE XREF: RAM:76D4^p	RAM:76DE^p
@@ -229,7 +211,7 @@ loc_77A1:				; CODE XREF: sub_776E+5^j sub_776E+2C^j
 ; End of function sub_776E
 
 
-; ЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫ S U B	R O U T	I N E ЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫ
+; --------------- S U B	R O U T	I N E ---------------------------------------
 
 
 sub_77A3:				; CODE XREF: RAM:7641^p	RAM:768C^p
@@ -263,7 +245,7 @@ loc_77C6:				; CODE XREF: RAM:77B7^j
 		STA	$AC00
 		JMP	$180C
 
-; ЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫ S U B	R O U T	I N E ЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫЫ
+; --------------- S U B	R O U T	I N E ---------------------------------------
 
 
 sub_77D8:				; CODE XREF: RAM:76CC^p	RAM:76EB^p ...
@@ -4463,7 +4445,7 @@ byte_7C74:	.BYTE 0			; DATA XREF: RAM:loc_7C3A^w RAM:7C4A^r ...
 		.BYTE $C6 ; Ж
 		.BYTE $A4 ; ¤
 		.BYTE  $A
-		.BYTE $DB ; Ы
+		.BYTE $DB ; -
 		.BYTE $A1 ; Ў
 		.BYTE  $A
 		.BYTE $91 ; ‘
@@ -5395,7 +5377,7 @@ byte_7C74:	.BYTE 0			; DATA XREF: RAM:loc_7C3A^w RAM:7C4A^r ...
 		.BYTE $91 ; ‘
 		.BYTE $A1 ; Ў
 		.BYTE  $A
-		.BYTE $DB ; Ы
+		.BYTE $DB ; -
 		.BYTE $A1 ; Ў
 		.BYTE  $A
 		.BYTE $91 ; ‘

@@ -83,7 +83,7 @@ loc_7693:				; CODE XREF: RAM:76A9vj	RAM:76FFvj
 ; ---------------------------------------------------------------------------
 		LDA	$31
 		BPL	loc_76AE
-		JSR	$1821
+		JSR	j_sub_262F
 		AND	#2
 		BEQ	loc_7693
 		JMP	loc_76DE

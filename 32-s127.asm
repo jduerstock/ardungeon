@@ -60,7 +60,7 @@ loc_7669:				; CODE XREF: RAM:7681vj
 ; ---------------------------------------------------------------------------
 
 loc_7676:
-		JSR	$1821
+		JSR	j_sub_262F
 		AND	#2
 		BNE	loc_7683
 		LDA	$31
@@ -97,7 +97,7 @@ loc_76B9:				; CODE XREF: RAM:76D8vj
 ; ---------------------------------------------------------------------------
 
 loc_76C6:
-		JSR	$1821
+		JSR	j_sub_262F
 		AND	#2
 		BNE	loc_76D3
 		LDA	$31
@@ -292,7 +292,7 @@ loc_7847:				; CODE XREF: sub_7843+2Bvj
 		BEQ	loc_786C
 		LDY	#0
 		LDA	(off_41),Y
-		CMP	#$87 ; 'á'
+		CMP	#$87
 		BNE	loc_786C
 		JSR	$1896
 		LDY	#0
@@ -329,7 +329,7 @@ loc_787A:				; CODE XREF: sub_7872+39vj
 		BEQ	loc_78A9
 		LDY	#0
 		LDA	(off_41),Y
-		CMP	#$81 ; 'Å'
+		CMP	#$81
 		BNE	loc_78A9
 		LDX	$66
 		LDA	$65

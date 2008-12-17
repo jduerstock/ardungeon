@@ -198,7 +198,7 @@ loc_77B2:				; CODE XREF: RAM:77C8vj	RAM:77D6vj ...
 		dldi	off_1977, $77BF
 		JMP	$1806
 ; ---------------------------------------------------------------------------
-		JSR	$1821
+		JSR	j_sub_262F
 		AND	#2
 		BNE	loc_77EB
 		LDA	$31
@@ -518,10 +518,7 @@ loc_7A0D:				; CODE XREF: RAM:7A13vj
 		BEQ	loc_7A20
 		DEX
 		BPL	loc_7A0D
-		LDA	#$FA ; 'ú'
-		STA	$16
-		LDA	#$7E ; '~'
-		STA	$17
+		dldi	off_16, $7EFA
 		JMP	loc_7915
 ; ---------------------------------------------------------------------------
 

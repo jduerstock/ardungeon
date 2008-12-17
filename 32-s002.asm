@@ -215,7 +215,7 @@ loc_778D:				; CODE XREF: RAM:7789^j
 ; ---------------------------------------------------------------------------
 
 loc_7792:				; CODE XREF: RAM:777E^j
-		JSR	$1821
+		JSR	j_sub_262F
 		AND	#2
 		BNE	loc_77E8
 		LDA	$31
@@ -305,7 +305,7 @@ loc_780E:				; CODE XREF: sub_77F9+18vj
 ; ---------------------------------------------------------------------------
 		LDA	$31
 		BPL	loc_7836
-		JSR	$1821
+		JSR	j_sub_262F
 		BMI	loc_7836
 		DEC	$6A
 		BNE	loc_7809
@@ -321,19 +321,15 @@ loc_7836:				; CODE XREF: RAM:7825^j	RAM:782A^j
 
 a_YouAreIn:
 		MOVEXY	0,0
-		.BYTE $A5
-aYouAreIn:	.BYTE "You are in"
-		.BYTE $B4
-		.WORD $78D2
-		.BYTE $28
-aVault_:	.BYTE " vault."
-		.BYTE $D
-		.BYTE $D
-		.BYTE $A5
-aYouSeeABagOf:	.BYTE "You see a bag of "
-		.BYTE $B4
-		.WORD off_78D0
-		.BYTE $D
+		.BYTE	$A5,"You are in"
+		.BYTE	$B4
+		.WORD	$78D2
+		.BYTE	$28
+aVault_:	.BYTE	" vault.",$0D,$0D
+aYouSeeABagOf:	.BYTE	$A5,"You see a bag of "
+		.BYTE	$B4
+		.WORD	off_78D0
+		.BYTE	$D
 		.BYTE $D
 		.BYTE $D
 aDoYou:		.BYTE "Do you "

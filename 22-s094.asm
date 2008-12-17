@@ -122,9 +122,9 @@ loc_76D0:				; CODE XREF: RAM:76CB^j
 sub_76F2:				; CODE XREF: RAM:loc_769E^p RAM:76C8^p
 		LDY	$63
 		LDA	unk_77AB,Y
-		STA	$16
+		STA	off_16
 		LDA	unk_77AF,Y
-		STA	$17
+		STA	off_16+1
 		LDA	unk_77C3,Y
 		STA	$66
 		LDA	unk_77C7,Y

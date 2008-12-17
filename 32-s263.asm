@@ -291,7 +291,7 @@ loc_780C:				; CODE XREF: RAM:77F7^j	RAM:7851vj
 		JSR	j_sub_3C2D
 
 loc_7814:				; CODE XREF: RAM:7821vj
-		JSR	$1821
+		JSR	j_sub_262F
 		AND	#2
 		BEQ	loc_781E
 		JMP	loc_7853

@@ -159,7 +159,7 @@ loc_7727:				; CODE XREF: RAM:773Dvj
 		dldi	off_1977, $7734
 		JMP	$1806
 ; ---------------------------------------------------------------------------
-		JSR	$1821
+		JSR	j_sub_262F
 		AND	#2
 		BNE	loc_774A
 		LDA	$31
@@ -429,8 +429,8 @@ loc_78EE:				; CODE XREF: RAM:78B5^j
 
 sub_78FC:				; CODE XREF: RAM:loc_77B6^p
 					; RAM:loc_77BC^p ...
-		STX	$17
-		STY	$16
+		STX	off_16+1
+		STY	off_16
 ; End of function sub_78FC
 
 
@@ -449,8 +449,8 @@ sub_7900:				; CODE XREF: RAM:7703^p
 
 
 sub_790A:				; CODE XREF: RAM:78E0^p
-		STX	$17
-		STY	$16
+		STX	off_16+1
+		STY	off_16
 		LDX	$66
 		JSR	j_sub_3C5C
 		JMP	$183C
@@ -656,7 +656,7 @@ loc_7A57:				; CODE XREF: RAM:7A6Dvj
 ; ---------------------------------------------------------------------------
 
 loc_7A64:
-		JSR	$1821
+		JSR	j_sub_262F
 		AND	#2
 		BNE	loc_7A8A
 		LDA	$31
@@ -2018,12 +2018,12 @@ a__1:		.BYTE	".",$0D
 		.WORD asc_83F3		; "("
 		.BYTE $0D,$FF
 		MOVEXY	0,2
-		.BYTE $A5,"Farewell "
+		.BYTE	$A5,"Farewell "
 		PRINTSTRP $6A, 7
 		.BYTE	" "
-		.BYTE $B3
-		.WORD $6321
-		.BYTE $16
+		.BYTE	$B3
+		.WORD	$6321
+		.BYTE	$16
 		.BYTE ".",$0D,$FF
 		MOVEXY	0,2
 		STRJSR	loc_90BD
