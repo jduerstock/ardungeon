@@ -806,7 +806,7 @@ loc_7B0E:				; CODE XREF: sub_84CF-9C5^j
 loc_7B10:				; CODE XREF: sub_84CF-9CC^j
 		LDX	off_68+1
 		LDY	off_68
-		JSR	$1884
+		JSR	j_sub_4B4D
 		BMI	loc_7B1E
 		STA	$4B
 		JSR	sub_9081
@@ -2608,7 +2608,7 @@ loc_8598:				; CODE XREF: RAM:775B^j	sub_84CF+2C^j
 		CLC
 		ldxy	$7697
 		DEC	$197B
-		JMP	$1884
+		JMP	j_sub_4B4D
 ; END OF FUNCTION CHUNK	FOR sub_84CF
 ; ---------------------------------------------------------------------------
 
@@ -2969,7 +2969,7 @@ loc_87E5:				; CODE XREF: RAM:8789^j	RAM:8793^j ...
 		BNE	locret_880C
 		LDY	off_68
 		LDX	off_68+1
-		JSR	$1884
+		JSR	j_sub_4B4D
 		BMI	locret_880C
 		LDA	#7
 		LDY	#0

@@ -83,7 +83,7 @@ loc_7690:				; CODE XREF: RAM:768C^j
 		LDA	#$14
 		JSR	j_SETBIT
 		ldxy	$7C1A
-		JSR	$1884
+		JSR	j_sub_4B4D
 
 loc_76AD:				; CODE XREF: RAM:765C^j
 		LDA	#$E

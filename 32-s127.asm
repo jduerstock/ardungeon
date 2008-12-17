@@ -255,7 +255,7 @@ loc_77F1:				; CODE XREF: RAM:77ED^j
 		ADC	#$A
 		STA	byte_78EC
 		ldxy	$78C5
-		JSR	$1884
+		JSR	j_sub_4B4D
 		dldi	off_16, $7D07
 		JSR	sub_78AE
 
@@ -265,7 +265,7 @@ loc_7809:				; CODE XREF: RAM:7758^j
 		LDA	#$13
 		JSR	j_SETBIT
 		ldxy	byte_78EF
-		JSR	$1884
+		JSR	j_sub_4B4D
 		dldi	off_16, $7D6A
 		JSR	sub_78AE
 		dldi	off_16, $7E12

@@ -661,7 +661,7 @@ loc_7A48:				; CODE XREF: RAM:7A3F^j
 		TAX
 		ADC	#0
 		STA	$80
-		JSR	$1884
+		JSR	j_sub_4B4D
 		LDA	RANDOM
 		CMP	#$33 ; '3'
 		BCS	loc_7A83
@@ -866,7 +866,7 @@ loc_7B9B:				; CODE XREF: sub_7B63+12^j sub_7B63+1A^j ...
 		BPL	loc_7B70
 		JSR	$18A5
 		ldxy	$8555
-		JSR	$1884
+		JSR	j_sub_4B4D
 		JSR	$18A5
 		SEC
 		LDA	#$17
@@ -1039,13 +1039,11 @@ loc_7CD4:				; CODE XREF: RAM:7CC9^j
 		STA	byte_878B
 
 loc_7CDA:				; CODE XREF: RAM:7CD1^j
-		LDX	#$87 ; '‡'
-		LDY	#$60 ; '`'
-		JSR	$1884
+		ldxy	$8760
+		JSR	j_sub_4B4D
 		CMP	#$FF
 		BNE	loc_7CEF
-		LDX	#$84 ; '„'
-		LDY	#$43 ; 'C'
+		ldxy	$8443
 		JSR	sub_7879
 		JMP	loc_77A8
 ; ---------------------------------------------------------------------------

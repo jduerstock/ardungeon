@@ -519,7 +519,7 @@ loc_7946:				; CODE XREF: sub_7AE7-16Evj
 		CLC
 		ADC	byte_8E74
 		BCS	loc_7969
-		CMP	#$80 ; '€'
+		CMP	#$80
 		BCS	loc_7969
 		LDA	#0
 		LDY	#$C
@@ -529,7 +529,7 @@ loc_7969:				; CODE XREF: sub_7AE7-18A^j
 					; sub_7AE7-186^j
 		LDX	$64
 		LDY	$63
-		JSR	$1884
+		JSR	j_sub_4B4D
 		LDA	#$20 ; ' '
 		LDY	#$C
 		STA	($63),Y
@@ -622,9 +622,8 @@ loc_79D1:				; CODE XREF: sub_79AA+2Cvj
 		INY
 		LDA	#4
 		STA	($67),Y
-		LDX	#$7C ; '|'
-		LDY	#$82 ; '‚'
-		JMP	$1884
+		ldxy	$7C82
+		JMP	j_sub_4B4D
 ; ---------------------------------------------------------------------------
 
 loc_7A02:				; CODE XREF: sub_79AA+18^j sub_79AA+25^j
@@ -784,19 +783,15 @@ loc_7ABB:				; CODE XREF: sub_7A36+69^j
 		STA	byte_7C88
 
 loc_7ACB:				; CODE XREF: sub_7A36+4C^j
-		LDX	#$7C ; '|'
-		LDY	#$87 ; '‡'
-		JMP	$1884
+		ldxy	$7C87
+		JMP	j_sub_4B4D
 ; End of function sub_7A36
 
 ; ---------------------------------------------------------------------------
 ; START	OF FUNCTION CHUNK FOR sub_7AE7
 
 loc_7AD2:				; CODE XREF: sub_7AE7+32vj
-		LDA	#$3C ; '<'
-		STA	off_16
-		LDA	#$86 ; '†'
-		STA	off_16+1
+		dldi	off_16, $863C
 		JSR	$1818
 
 loc_7ADD:				; CODE XREF: sub_7AE7-7vj

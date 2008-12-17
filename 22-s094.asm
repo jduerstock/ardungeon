@@ -105,11 +105,11 @@ loc_76C0:				; CODE XREF: RAM:768A^j
 
 loc_76D0:				; CODE XREF: RAM:76CB^j
 		ldxy	$7E07
-		JSR	$1884
+		JSR	j_sub_4B4D
 		ldxy	$7E32
-		JSR	$1884
+		JSR	j_sub_4B4D
 		ldxy	$7E32
-		JSR	$1884
+		JSR	j_sub_4B4D
 		LDA	#$D
 		STA	I_LOC_X
 		LDA	#$F

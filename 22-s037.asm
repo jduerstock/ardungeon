@@ -142,9 +142,9 @@ loc_772A:				; CODE XREF: RAM:77A3vj	RAM:7877vj
 		SEC
 		JSR	j_SETBIT
 		ldxy	$8711
-		JSR	$1884
+		JSR	j_sub_4B4D
 		ldxy	$86D3
-		JSR	$1884
+		JSR	j_sub_4B4D
 		dldi	off_16, $7C67
 		JMP	loc_7915
 ; ---------------------------------------------------------------------------
@@ -355,7 +355,7 @@ loc_78BA:				; CODE XREF: RAM:78D9vj
 		LDY	#0
 		LDA	($62),Y
 		BPL	loc_78D8
-		CMP	#$81 ; 'Å'
+		CMP	#$81
 		BEQ	loc_78D8
 		LDA	#$10
 		LDY	#2
@@ -365,11 +365,11 @@ loc_78BA:				; CODE XREF: RAM:78D9vj
 loc_78D8:				; CODE XREF: RAM:78BD^j	RAM:78CA^j ...
 		DEX
 		BPL	loc_78BA
-		LDA	#$80 ; 'Ä'
+		LDA	#$80
 		STA	$6385
 		JSR	j_sub_408B
 		ldxy	$8739
-		JSR	$1884
+		JSR	j_sub_4B4D
 		BMI	loc_78EF
 		STA	$63A2
 
@@ -396,7 +396,7 @@ loc_7915:				; CODE XREF: RAM:7755^j	RAM:799Cvj ...
 		LDX	$6A
 		JSR	j_sub_3C5C
 		ldxy	$86AB
-		JSR	$1884
+		JSR	j_sub_4B4D
 		LDA	#$A
 		JSR	j_sub_2BFC
 		JMP	loc_77A1

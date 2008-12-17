@@ -106,7 +106,7 @@ loc_76E5:				; CODE XREF: RAM:76C5^j
 		LDA	#$18
 		JSR	sub_7766
 		ldxy	byte_7780
-		JSR	$1884
+		JSR	j_sub_4B4D
 		dldi	off_16, $7B86
 		JSR	sub_776E
 

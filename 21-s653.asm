@@ -135,9 +135,9 @@ loc_76F1:				; CODE XREF: RAM:76DC^j
 		STX	byte_77AD
 		CPX	#8
 		BCC	loc_7693
-		LDY	#$B6 ; '¶'
-		LDX	#$77 ; 'w'
-		JSR	$1884
+		LDY	#$B6
+		LDX	#$77
+		JSR	j_sub_4B4D
 		JMP	loc_768E
 ; ---------------------------------------------------------------------------
 unk_770B:	.BYTE $DF ; ß		; DATA XREF: RAM:7675^r

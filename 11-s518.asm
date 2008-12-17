@@ -263,6 +263,7 @@ j_ADDSTAT2:
 ; ---------------------------------------------------------------------------
 		JMP	sub_2CC2	; $1881
 ; ---------------------------------------------------------------------------
+j_sub_4B4D:
 		JMP	sub_4B4D	; $1884
 ; ---------------------------------------------------------------------------
 j_LOADINV:
@@ -7942,7 +7943,7 @@ locret_4A82:				; CODE XREF: sub_4A5F+2^j
 
 sub_4A83:				; CODE XREF: sub_4B4D+8vp
 		STA	$4F
-		LDX	#$3F ; '?'
+		LDX	#$3F
 
 loc_4A87:				; CODE XREF: sub_4A83+Avj
 		LDA	INVARRH,X
@@ -7964,7 +7965,7 @@ loc_4A91:				; CODE XREF: sub_4A83+7^j
 		STA	$42
 		ADC	#0
 		TAX
-		CMP	#$75 ; 'u'
+		CMP	#$75
 		BCC	loc_4AB6
 		BEQ	loc_4AB2
 		BCS	loc_4ABF

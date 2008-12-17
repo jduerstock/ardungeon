@@ -743,7 +743,7 @@ loc_7B16:				; CODE XREF: RAM:7A8A^j	RAM:7CEEvj
 		LDY	off_8F65,X
 		LDA	off_8F65+1,X
 		TAX
-		JSR	$1884
+		JSR	j_sub_4B4D
 		BPL	loc_7B37
 		dldi	off_16, $8D59
 		JSR	sub_8022

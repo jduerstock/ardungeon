@@ -160,7 +160,7 @@ loc_76BE:				; CODE XREF: sub_769B+1E^j
 
 
 sub_76D3:				; CODE XREF: RAM:7656^p	RAM:7684^p
-		JSR	$1884
+		JSR	j_sub_4B4D
 		BMI	locret_7739
 		LDY	#0
 		LDA	(off_41),Y

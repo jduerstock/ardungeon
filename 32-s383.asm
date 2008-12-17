@@ -374,7 +374,7 @@ loc_7885:				; CODE XREF: sub_7758+136vj
 		INC	byte_7BD1
 		INC	byte_7BD5
 		ldxy	byte_7BD0
-		JMP	$1884
+		JMP	j_sub_4B4D
 ; ---------------------------------------------------------------------------
 
 loc_78AD:

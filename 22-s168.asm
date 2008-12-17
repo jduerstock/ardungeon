@@ -106,7 +106,7 @@ loc_76AB:				; CODE XREF: RAM:76A1^j
 		SEC
 		JSR	j_SETBIT
 		ldxy	$7953
-		JSR	$1884
+		JSR	j_sub_4B4D
 		JMP	loc_76FE
 ; ---------------------------------------------------------------------------
 

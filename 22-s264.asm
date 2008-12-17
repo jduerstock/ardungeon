@@ -222,7 +222,7 @@ loc_7780:
 		TAY
 		LDA	unk_7E0F,X
 		TAX
-		JSR	$1884
+		JSR	j_sub_4B4D
 		LDA	#1
 		JSR	j_RND_A
 		ldxy	$7BB3
@@ -304,7 +304,7 @@ loc_781A:				; CODE XREF: RAM:7815^j
 		LDA	unk_7DFA,X
 		STX	$70
 		TAX
-		JSR	$1884
+		JSR	j_sub_4B4D
 		LDA	RANDOM
 		CMP	#$33 ; '3'
 		BCS	loc_785F

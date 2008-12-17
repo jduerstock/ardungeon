@@ -79,7 +79,7 @@ loc_7685:				; CODE XREF: RAM:7680^j
 		dldi	$16, $7A55
 		JSR	sub_7930
 		ldxy	$7D7E
-		JSR	$1884
+		JSR	j_sub_4B4D
 		JSR	j_sub_408B
 		ldxy	$7508
 		SEC
@@ -286,7 +286,7 @@ loc_77FE:				; CODE XREF: RAM:77F6^j
 		SEC
 		JSR	$1860
 		ldxy	$7D7E
-		JSR	$1884
+		JSR	j_sub_4B4D
 		JSR	j_sub_408B
 		ldxy	$7508
 		LDA	#$15

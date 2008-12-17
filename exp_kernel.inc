@@ -9,6 +9,7 @@ j_sub_2C9B	= $185D
 j_SETBIT	= $1860
 j_TESTBIT	= $1863
 j_ADDSTAT1	= $1878
+j_sub_4B4D	= $1884
 j_LOADINV	= $1887
 j_RND_A		= $1899
 j_sub_408B	= $18A5

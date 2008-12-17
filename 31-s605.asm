@@ -61,10 +61,10 @@ loc_7649:				; CODE XREF: RAM:7644^j
 		CMP	#1
 		BNE	loc_766E
 		LDA	RANDOM
-		CMP	#$EC ; 'ì'
+		CMP	#$EC
 		BCC	loc_766E
 		ldxy	$77FD
-		JSR	$1884
+		JSR	j_sub_4B4D
 		JMP	loc_76A0
 ; ---------------------------------------------------------------------------
 

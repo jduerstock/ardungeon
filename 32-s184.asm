@@ -1368,7 +1368,7 @@ loc_7F1A:				; CODE XREF: RAM:7F15^j
 		JSR	sub_78FC
 		LDX	$76
 		LDY	$75
-		JSR	$1884
+		JSR	j_sub_4B4D
 		STA	$4B
 		JSR	$1896
 		LDA	#$19
@@ -1790,9 +1790,8 @@ loc_81E8:				; CODE XREF: sub_81B0+42vj
 		INY
 		CPY	#$E
 		BNE	loc_81E8
-		LDX	#$91 ; '‘'
-		LDY	#$2B ; '+'
-		JMP	$1884
+		ldxy	$912B
+		JMP	j_sub_4B4D
 ; End of function sub_81B0
 
 
