@@ -28,7 +28,7 @@ loc_7616:				; CODE XREF: RAM:7601^j
 		LDA	#0
 		STA	byte_86BD
 		STA	byte_86CD
-		LDA	#$85 ; '…'
+		LDA	#$85
 		STA	byte_86BC
 		STA	byte_86CC
 		LDA	RANDOM
@@ -36,7 +36,7 @@ loc_7616:				; CODE XREF: RAM:7601^j
 		STA	byte_86C0
 
 loc_7635:				; CODE XREF: RAM:761B^j	RAM:765Fvj ...
-		JSR	$1869
+		JSR	j_sub_2E31
 		LDA	$630F
 		SEC
 		SBC	$752C
@@ -290,7 +290,7 @@ loc_7848:
 		LDA	#$A
 		LDX	#$9B
 		JSR	j_ADDSTAT1
-		JSR	$1869
+		JSR	j_sub_2E31
 		LDA	$630A
 		CMP	$68
 		BEQ	loc_7866
@@ -439,7 +439,7 @@ loc_7963:				; CODE XREF: RAM:795B^j
 		LDA	#$10
 		STA	($62),Y
 		JSR	j_sub_408B
-		JSR	$1869
+		JSR	j_sub_2E31
 		LDA	$630F
 		CMP	$752B
 		BEQ	loc_7990
@@ -509,7 +509,7 @@ loc_79E4:				; CODE XREF: RAM:79DB^j	RAM:79DD^j
 loc_7A02:				; CODE XREF: RAM:79FD^j
 		JMP	loc_77A1
 ; ---------------------------------------------------------------------------
-		JSR	$1869
+		JSR	j_sub_2E31
 		LDA	$630A
 		LDX	#3
 
@@ -608,7 +608,7 @@ loc_7A91:				; CODE XREF: RAM:7A8E^j
 ; ---------------------------------------------------------------------------
 
 loc_7A9F:				; CODE XREF: RAM:7A66^j
-		JSR	$1869
+		JSR	j_sub_2E31
 		LDA	$630A
 		SEC
 		SBC	#8
@@ -629,7 +629,7 @@ loc_7ABA:				; CODE XREF: RAM:7AD3vj
 ; ---------------------------------------------------------------------------
 
 loc_7AC7:
-		JSR	$1869
+		JSR	j_sub_2E31
 		LDA	$630A
 		CMP	#$A
 		BEQ	loc_7AD5
