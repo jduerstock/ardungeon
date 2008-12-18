@@ -41,7 +41,7 @@ loc_762A:				; CODE XREF: RAM:7631vj
 		STA	$750D,X
 		DEX
 		BPL	loc_762A
-		JSR	$1869
+		JSR	j_sub_2E31
 		LDA	$6309
 		STA	$6E
 		LDX	I_LOC_X
@@ -197,7 +197,7 @@ loc_7764:				; CODE XREF: RAM:7759^j
 ; ---------------------------------------------------------------------------
 
 loc_7776:				; CODE XREF: RAM:778Fvj
-		JSR	$1869
+		JSR	j_sub_2E31
 		LDA	$6E
 		CMP	$6309
 		BEQ	loc_7792

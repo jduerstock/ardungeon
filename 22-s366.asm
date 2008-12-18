@@ -70,7 +70,7 @@ loc_7685:				; CODE XREF: RAM:7680^j
 		LDA	$758C
 		ORA	$758D
 		BNE	loc_76CC
-		JSR	$1869
+		JSR	j_sub_2E31
 		dmv	$758C, $630F
 		ldxy	$7508
 		LDA	#$15
@@ -90,7 +90,7 @@ loc_7685:				; CODE XREF: RAM:7680^j
 ; ---------------------------------------------------------------------------
 
 loc_76CC:				; CODE XREF: RAM:768B^j	RAM:76A5^j
-		JSR	$1869
+		JSR	j_sub_2E31
 		LDA	$630F
 		SEC
 		SBC	$758C

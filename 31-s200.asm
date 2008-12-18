@@ -213,7 +213,7 @@ loc_7784:				; CODE XREF: RAM:7779^j	RAM:777E^j
 		STA	$65
 		LDA	#0
 		STA	$63
-		JSR	$1869
+		JSR	j_sub_2E31
 		LDA	$630A
 		STA	$64
 		DEC	$1972
@@ -247,7 +247,7 @@ loc_77D7:				; CODE XREF: RAM:77CE^j
 		BEQ	loc_7817
 
 loc_77E8:				; CODE XREF: RAM:77DC^j	RAM:77E0^j
-		JSR	$1869
+		JSR	j_sub_2E31
 		LDA	$630A
 		CMP	$64
 		BEQ	loc_77B7
@@ -278,7 +278,7 @@ loc_7817:				; CODE XREF: RAM:77C8^j	RAM:77D5^j ...
 		STA	$67
 		dldi	off_16, $7C2A
 		JSR	sub_7872
-		JSR	$1869
+		JSR	j_sub_2E31
 		LDA	$630C
 		TAX
 		LDA	unk_7D66,X

@@ -32,7 +32,7 @@ loc_7618:				; CODE XREF: RAM:761Fvj
 		BPL	loc_7618
 		LDA	$754C
 		BNE	loc_7640
-		LDA	#$80 ; '€'
+		LDA	#$80
 		STA	$754C
 		LDA	#0
 		STA	$754A
@@ -60,7 +60,7 @@ loc_7640:				; CODE XREF: RAM:7624^j
 loc_766C:
 		LDA	$754A
 		BPL	loc_76E3
-		JSR	$1869
+		JSR	j_sub_2E31
 		LDA	$630F
 		CLC
 		ADC	#$1E
@@ -122,7 +122,7 @@ loc_76D4:				; CODE XREF: RAM:76D7vj
 loc_76E3:				; CODE XREF: RAM:766F^j	RAM:76A5^j ...
 		LDA	#0
 		STA	$754A
-		JSR	$1869
+		JSR	j_sub_2E31
 		LDA	$630F
 		CMP	$7548
 		BNE	loc_7715
@@ -171,7 +171,7 @@ loc_7746:				; CODE XREF: RAM:771A^j
 		JSR	sub_7A37
 		LDA	#8
 		JSR	j_sub_2BFC
-		JSR	$1869
+		JSR	j_sub_2E31
 		LDX	#1
 
 loc_7761:				; CODE XREF: RAM:7768vj
@@ -463,7 +463,7 @@ loc_79A0:				; CODE XREF: RAM:loc_7891^j
 		LDY	#2
 		STA	(off_41),Y
 		JSR	j_sub_408B
-		JSR	$1869
+		JSR	j_sub_2E31
 		LDX	#1
 
 loc_79B1:				; CODE XREF: RAM:79B8vj

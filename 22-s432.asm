@@ -120,39 +120,28 @@ loc_76D9:				; CODE XREF: RAM:76D2^j
 loc_76E3:				; CODE XREF: RAM:76DC^j
 		dldi	off_16, $798E
 		JSR	sub_77D8
-		LDA	#0
-		STA	$6347
-		LDA	#0
-		STA	$6348
-		LDA	#$EE ; 'î'
-		STA	$1977
-		LDA	#$76 ; 'v'
-		STA	$1978
+		dldi	$6347, 0
+		dldi	off_1977, $76EE
 		JMP	$1806
 ; ---------------------------------------------------------------------------
 
 loc_7705:				; CODE XREF: RAM:76D7^j	RAM:76E1^j
 		LDA	$6303
-		ORA	#$80 ; '€'
+		ORA	#$80
 		STA	$6303
-		JSR	$1869
+		JSR	j_sub_2E31
 		LDA	$630F
 		STA	$7521
 		LDA	$6310
 		STA	$7522
-		LDX	#$75 ; 'u'
-		LDY	#8
+		ldxy	$7508
 		LDA	#3
 		SEC
 		JSR	$1860
-		LDA	#$F8 ; 'ø'
-		STA	7
-		LDA	#$82 ; '‚'
-		STA	8
+		dldi	off_7, $82F8
 		LDA	#2
 		JSR	$180F
-		LDX	#$9F ; 'Ÿ'
-		LDY	#$F0 ; 'ð'
+		ldxy	$9FF0
 		JSR	$96F0
 		dldi	off_16, $7858
 		JSR	sub_77D8

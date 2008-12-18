@@ -115,7 +115,7 @@ loc_76CE:				; CODE XREF: RAM:76C5^j
 		LDA	#0
 		ADC	off_41+1
 		STA	$67
-		JSR	$1869
+		JSR	j_sub_2E31
 		LDX	#3
 		LDA	$630A
 		BNE	loc_775E

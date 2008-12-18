@@ -68,7 +68,7 @@ loc_767D:				; CODE XREF: RAM:7684vj
 		ldxy	$8A00
 		JMP	$96F0
 ; ---------------------------------------------------------------------------
-		JSR	$1869
+		JSR	j_sub_2E31
 		LDX	$630A
 		DEX
 		STX	$82
@@ -121,7 +121,7 @@ loc_7734:				; CODE XREF: RAM:7722^j	RAM:772D^j
 
 loc_773C:				; CODE XREF: RAM:76FF^j
 		dmv	$67, off_16
-		JSR	$1869
+		JSR	j_sub_2E31
 		dmv	$7534, $630F
 		LDA	#$3F ; '?'
 		STA	$7B
@@ -382,7 +382,7 @@ loc_791E:				; CODE XREF: RAM:791A^j
 
 
 sub_792C:				; CODE XREF: RAM:78AF^p	RAM:loc_7DE1vp
-		JSR	$1869
+		JSR	j_sub_2E31
 		LDX	$630A
 		CPX	$82
 		BEQ	locret_794C

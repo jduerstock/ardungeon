@@ -37,7 +37,7 @@ loc_7618:				; CODE XREF: RAM:761Fvj
 		dldi	off_7, $8A02
 		LDA	#2
 		JSR	$180F
-		JSR	$1869
+		JSR	j_sub_2E31
 		LDA	$630F
 		CMP	$7557
 		BNE	loc_765B
@@ -1052,7 +1052,7 @@ loc_7CEF:				; CODE XREF: RAM:7CE3^j
 		STA	$755D
 		LDA	#$FF
 		STA	$755E
-		JSR	$1869
+		JSR	j_sub_2E31
 		LDA	$630F
 		STA	$755F
 		LDA	$6310
@@ -1065,8 +1065,7 @@ loc_7CEF:				; CODE XREF: RAM:7CE3^j
 		INC	$7560
 
 loc_7D14:				; CODE XREF: RAM:7D0F^j
-		LDX	#$83 ; 'ƒ'
-		LDY	#$A3 ; '£'
+		ldxy	$83A3
 		JSR	sub_7879
 		JMP	loc_7776
 ; ---------------------------------------------------------------------------
@@ -1339,16 +1338,13 @@ aToExit:	.BYTE " to exit",$D
 aThatsMyLastOne:.BYTE "Thats my last one.  I'll have to forge"
 		.BYTE $D
 		.BYTE $D
-		.BYTE $A5
-aSomeMore_:	.BYTE "some more."
-		.BYTE $D
-		.BYTE $FF
-		.BYTE $A6,  0,	1
-		.BYTE $A5
-aIMSureThatThe:	.BYTE "I'm sure that the "
-		.BYTE $B4
-		.WORD $7F
-		.BYTE $16
+		.BYTE	$A5,"some more.",$0D,$FF
+
+		MOVEXY	0,1
+		.BYTE	$A5,"I'm sure that the "
+		.BYTE	$B4
+		.WORD	$7F
+		.BYTE	$16
 		.BYTE	$D
 		.BYTE	$A5,"will be to your liking.",$0D
 		.BYTE	$AC
