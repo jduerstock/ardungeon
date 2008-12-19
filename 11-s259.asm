@@ -30,6 +30,8 @@
 		.include	"globals.inc"
 		.include	"macros.inc"
 
+off_65	= $65
+
 ;		.ORG	$7600
 		LDA	#0
 		JSR	$180F
@@ -617,11 +619,11 @@ loc_79E1:				; CODE XREF: sub_79DD+3Evj
 		LDX	$62
 		LDY	unk_8D00,X
 		LDA	unk_8E0C,Y
-		ADC	#$20 ; ' '
-		STA	$65
-		LDA	#$8C ; 'Œ'
+		ADC	#$20
+		STA	off_65
+		LDA	#$8C
 		ADC	#0
-		STA	$66
+		STA	off_65+1
 		LDY	unk_8D10,X
 		LDA	unk_8E0C,Y
 		ADC	#$20 ; ' '
@@ -650,14 +652,14 @@ loc_7A1E:				; CODE XREF: sub_79DD+39^p
 
 loc_7A22:				; CODE XREF: RAM:7A5Avj
 		LDY	$63
-		LDA	($65),Y
+		LDA	(off_65),Y
 		ORA	#$AA ; 'ª'
 		LDY	$64
 		STA	($69),Y
 		LDA	$63
 		ORA	#$50 ; 'P'
 		TAY
-		LDA	($65),Y
+		LDA	(off_65),Y
 		ORA	#$AA ; 'ª'
 		STA	loc_7A3D+1
 		LDA	$64
@@ -672,9 +674,9 @@ loc_7A3D:				; DATA XREF: RAM:7A35^w
 		CPX	#8
 		BCC	loc_7A52
 		LDA	$67
-		STA	$65
+		STA	off_65
 		LDA	$68
-		STA	$66
+		STA	off_65+1
 		LDX	#0
 
 loc_7A52:				; CODE XREF: RAM:7A46^j
@@ -2808,38 +2810,7 @@ unk_8E16:	.BYTE	0		; DATA XREF: RAM:7831^r
 		.BYTE $46 ; F
 		.BYTE $50 ; P
 		.BYTE $5A ; Z
-unk_8E20:	.BYTE $20		; DATA XREF: RAM:loc_7C08^r
-		.BYTE $20
-		.BYTE $20
-		.BYTE $20
-		.BYTE $20
-		.BYTE $20
-		.BYTE $4C ; L
-		.BYTE $6F ; o
-		.BYTE $61 ; a
-		.BYTE $64 ; d
-		.BYTE $69 ; i
-		.BYTE $6E ; n
-		.BYTE $67 ; g
-		.BYTE $20
-		.BYTE $43 ; C
-		.BYTE $68 ; h
-		.BYTE $61 ; a
-		.BYTE $72 ; r
-		.BYTE $61 ; a
-		.BYTE $63 ; c
-		.BYTE $74 ; t
-		.BYTE $65 ; e
-		.BYTE $72 ; r
-		.BYTE $2E ; .
-		.BYTE $2E ; .
-		.BYTE $2E ; .
-		.BYTE $20
-		.BYTE $20
-		.BYTE $20
-		.BYTE $20
-		.BYTE $20
-		.BYTE $20
+unk_8E20:	.BYTE "      Loading Character...      " ; DATA XREF: RAM:loc_7C08^r
 unk_8E40:	.BYTE $20		; DATA XREF: RAM:loc_83F8^r
 		.BYTE $20
 		.BYTE $46 ; F

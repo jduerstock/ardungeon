@@ -379,7 +379,7 @@ loc_F9BF:				; CODE XREF: RAM:82DD^j
 
 loc_F9C9:
 		CLD
-		JMP	($216)
+		JMP	(off_216)
 ; ---------------------------------------------------------------------------
 
 byte_F9CD:	.BYTE	$FF
@@ -754,7 +754,7 @@ loc_8567:				; CODE XREF: RAM:855C^j
 		PHP
 		EOR	$A0,X
 		LDY	#0
-		LDA	($43),Y
+		LDA	(off_43),Y
 		TAX
 		ORA	#$80
 		STA	$51
@@ -764,24 +764,24 @@ loc_8567:				; CODE XREF: RAM:855C^j
 		JSR	$5602
 		JMP	$5209
 ; ---------------------------------------------------------------------------
-		dldi	$3D, $6500
+		dldi	off_3D, $6500
 		ldi	$49, $0
 
 loc_8595:				; CODE XREF: RAM:85B3vj
 		LDY	#0
-		LDA	($3D),Y
+		LDA	(off_3D),Y
 		AND	#$83
 		CMP	$51
 		BNE	loc_85A2
 		JSR	$4A01
 
 loc_85A2:				; CODE XREF: RAM:859D^j
-		LDA	$3D
+		LDA	off_3D
 		CLC
 		ADC	#$10
-		STA	$3D
+		STA	off_3D
 		BCC	loc_85AD
-		INC	$3E
+		INC	off_3D+1
 
 loc_85AD:				; CODE XREF: RAM:85A9^j
 		INC	$49
@@ -961,12 +961,12 @@ loc_86C7:				; CODE XREF: RAM:86BF^j
 
 loc_86DE:				; CODE XREF: RAM:86E6vj
 		LDA	$611A,Y
-		STA	($3D),Y
+		STA	(off_3D),Y
 		INY
 		CPY	#$F
 		BNE	loc_86DE
 		LDA	$4B
-		STA	($3D),Y
+		STA	(off_3D),Y
 		DEC	$63BD
 		INC	$6390
 		JMP	$54AF
@@ -1175,7 +1175,7 @@ locret_8892:				; CODE XREF: RAM:8875^j	RAM:887F^j
 		LDA	$4B
 		JSR	$4EC4
 		LDY	#1
-		LDA	($43),Y
+		LDA	(off_43),Y
 		STA	$59E3
 		INY
 		LDA	(0),Y
