@@ -1199,7 +1199,7 @@ aIAmHere:
 		BNE	:+
 		ldxy	$ACAF
 		JSR	$7728
-		JSR	$18AE
+		JSR	j_sub_2AA0
 		BCS	:--
 		BMI	:--
 		BEQ	:--

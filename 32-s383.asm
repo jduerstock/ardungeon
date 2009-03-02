@@ -303,7 +303,7 @@ loc_7810:				; CODE XREF: sub_7758+CAvj
 		dldi	off_16, a_ThatWillCostAt
 		LDX	$65
 		JSR	j_sub_3C5C
-		JSR	$18AE
+		JSR	j_sub_2AA0
 		LDA	3
 		BNE	loc_7810
 		LDA	2

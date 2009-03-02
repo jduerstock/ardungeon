@@ -919,7 +919,7 @@ loc_7BEF:				; CODE XREF: RAM:7BEA^j
 		dldi	off_16, $82EA
 		LDX	$66
 		JSR	j_sub_3C5C
-		JSR	$18AE
+		JSR	j_sub_2AA0
 		BCS	loc_7C42
 		BMI	loc_7C42
 		BEQ	loc_7C42

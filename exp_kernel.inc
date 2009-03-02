@@ -15,6 +15,7 @@ j_sub_4B4D	= $1884
 j_LOADINV	= $1887
 j_RND_A		= $1899
 j_sub_408B	= $18A5
+j_sub_2AA0	= $18AE
 
 byte_18C1	= $18C1
 byte_18C4	= $18C4

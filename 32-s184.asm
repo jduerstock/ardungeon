@@ -1047,7 +1047,7 @@ loc_7CDE:				; CODE XREF: RAM:7CD4^j
 		dldi	off_16, $8A82
 		LDX	$66
 		JSR	j_sub_3C5C
-		JSR	$18AE
+		JSR	j_sub_2AA0
 		LDA	2
 		ORA	3
 		BNE	loc_7CF7
@@ -1187,7 +1187,7 @@ loc_7DD3:				; CODE XREF: RAM:7DCA^j
 		STA	$86
 		LDX	$66
 		JSR	j_sub_3C5C
-		JSR	$18AE
+		JSR	j_sub_2AA0
 		LDA	2
 		ORA	3
 		BEQ	locret_7D8B
@@ -2136,19 +2136,14 @@ aUpTo:		.BYTE "(up to "
 		.BYTE $B1
 		.WORD $86
 		.BYTE 6
-		.BYTE ')'
-		.BYTE $D
-		.BYTE $A6,  0,	7
-		.BYTE $A5
-aEnterAmountOrP:.BYTE "Enter amount or press "
-		.BYTE $A1
-aEsc_0:		.BYTE "ESC"
-		.BYTE $A0
-a__6:		.BYTE '.'
-		.BYTE $D
-		.BYTE $A6, $A,	3
+		.BYTE ')',$0D
+		MOVEXY	0,7
+		.BYTE	$A5,"Enter amount or press "
+		BLINK "ESC"
+		.BYTE '.',$0D
+		MOVEXY	10,3
 		.BYTE "> "
-		STRJSR	$90C0
+		STRJSR	loc_90C0
 		.BYTE $FF
 off_8AD8:	.WORD $FFFF		; DATA XREF: RAM:76E9^w	RAM:88FD^o
 unk_8ADA:	.BYTE	<aLightWizardsGu	; DATA XREF: RAM:76D3^r	RAM:76E6^r

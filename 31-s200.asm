@@ -97,7 +97,7 @@ loc_76B0:				; CODE XREF: RAM:76D1vj
 		dldi	off_16, $7A4E
 		LDX	$62
 		JSR	j_sub_3C5C
-		JSR	$18AE
+		JSR	j_sub_2AA0
 		BCS	loc_7673
 		BEQ	loc_7673
 		BPL	loc_76D4

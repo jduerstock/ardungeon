@@ -1338,12 +1338,9 @@ locret_7FA0:				; CODE XREF: sub_7F82+8^j sub_7F82+17^j
 
 
 sub_7FA1:				; CODE XREF: RAM:78D9^p	RAM:7BAB^p ...
-		JSR	$18AE
+		JSR	j_sub_2AA0
 		PHP
-		LDA	2
-		STA	$89
-		LDA	3
-		STA	$8A
+		dmv	$89, $02
 		PLP
 		RTS
 ; End of function sub_7FA1
@@ -1353,15 +1350,9 @@ sub_7FA1:				; CODE XREF: RAM:78D9^p	RAM:7BAB^p ...
 
 
 sub_7FAF:				; CODE XREF: RAM:7929^p	RAM:7E09^p ...
-		LDA	$89
-		STA	2
-		LDA	$8A
-		STA	3
+		dmv	$02, $89
 		JSR	$18A2
-		LDA	2
-		STA	$89
-		LDA	3
-		STA	$8A
+		dmv	$89, $02
 		RTS
 ; End of function sub_7FAF
 

@@ -3,6 +3,8 @@
 		.include	"exp_kernel.inc"
 		.include	"macros.inc"
 
+off_79		= $79
+
 ;		.ORG	$7600
 		.BYTE	$1D
 ; ---------------------------------------------------------------------------
@@ -526,7 +528,7 @@ loc_7A08:				; CODE XREF: RAM:7A31vj
 		dldi	off_16, $84BA
 		LDX	$64
 		JSR	j_sub_3C5C
-		JSR	$18AE
+		JSR	j_sub_2AA0
 		BCS	loc_79D0
 		BMI	loc_79D0
 		JSR	sub_7BF0
@@ -705,21 +707,21 @@ loc_7B3E:				; CODE XREF: RAM:7B39^j
 		PLA
 		CMP	#$1E
 		BCS	loc_7B51
-		LDA	$69,X
-		STA	$79
-		LDA	$6A,X
-		STA	$7A
+		LDA	off_69,X
+		STA	off_79
+		LDA	off_69+1,X
+		STA	off_79+1
 
 loc_7B51:				; CODE XREF: RAM:7B47^j
-		LDA	$69,X
+		LDA	off_69,X
 		SEC
 		SBC	#4
-		STA	$69
-		LDA	$6A,X
+		STA	off_69
+		LDA	off_69+1,X
 		SBC	#0
-		STA	$6A
+		STA	off_69+1
 		LDY	#1
-		LDA	($69),Y
+		LDA	(off_69),Y
 		CLC
 		INC	$89
 		ADC	$85
@@ -729,7 +731,7 @@ loc_7B51:				; CODE XREF: RAM:7B47^j
 loc_7B6B:				; CODE XREF: RAM:7B67^j
 		STA	$85
 		INY
-		LDA	($69),Y
+		LDA	(off_69),Y
 		CLC
 		ADC	$87
 		BCC	loc_7B77
@@ -739,7 +741,7 @@ loc_7B77:				; CODE XREF: RAM:7B73^j
 		STA	$87
 		DEC	$89
 		INY
-		LDA	($69),Y
+		LDA	(off_69),Y
 		CLC
 		ADC	$6396
 		BCC	loc_7B86
@@ -748,7 +750,7 @@ loc_7B77:				; CODE XREF: RAM:7B73^j
 loc_7B86:				; CODE XREF: RAM:7B82^j
 		STA	$6396
 		LDA	RANDOM
-		CMP	#$20 ; ' '
+		CMP	#$20
 		BCS	loc_7B9A
 		LDA	$75,X
 		CLC
@@ -1490,80 +1492,80 @@ unk_8222:	.BYTE	$01,$02,$10,$00,"Mineral Water",0
 unk_8234:	.BYTE	$02,$06,$0C,$00,"Orange Juice",0
 unk_8245:	.BYTE	$01,$01,$01,$01,"ERROR!!!",0
 		.BYTE	$A8,$FF
-aFriend:	.BYTE "Friend",0
-aTheBar:	.BYTE "the bar",0
-aATable:	.BYTE "a table",0
-		.WORD aSlimyThingMust	; "Slimy thing,	must thee darken my door?"
-		.WORD aThouFewmetWhyA	; "Thou	fewmet,	why art	thou here?"
-		.WORD aWhatNowFilthyC	; "What	now, filthy Cheapskate?"
-		.WORD aWhatDostThouHe	; "What	dost thou here,	insolent one!"
-		.WORD aHastThouBrough	; "Hast	thou brought enough cash?"
-		.WORD aThyWelcomeIsWe	; "Thy welcome is wearing thin."
-		.WORD aHello		; "Hello, "
-		.WORD aWellMet		; "Well	met, "
-		.WORD byte_8372
-		.WORD byte_8839
-		.WORD byte_8868
-aSlimyThingMust:.BYTE "Slimy thing, must thee darken my door?",$AE
-aThouFewmetWhyA:.BYTE "Thou fewmet, why art thou here?",$AE
-aWhatNowFilthyC:.BYTE "What now, filthy Cheapskate?",$AE
-aWhatDostThouHe:.BYTE "What dost thou here, insolent one!",$AE
-aHastThouBrough:.BYTE "Hast thou brought enough cash?",$AE
-aThyWelcomeIsWe:.BYTE "Thy welcome is wearing thin.",$AE
-aHelloStranger:	.BYTE "Hello, Stranger!",$AE
-aHello:		.BYTE "Hello, "         ; DATA XREF: RAM:8277^o
+aFriend:	.BYTE	"Friend",0
+aTheBar:	.BYTE	"the bar",0
+aATable:	.BYTE	"a table",0
+		.WORD	aSlimyThingMust	; "Slimy thing,	must thee darken my door?"
+		.WORD	aThouFewmetWhyA	; "Thou	fewmet,	why art	thou here?"
+		.WORD	aWhatNowFilthyC	; "What	now, filthy Cheapskate?"
+		.WORD	aWhatDostThouHe	; "What	dost thou here,	insolent one!"
+		.WORD	aHastThouBrough	; "Hast	thou brought enough cash?"
+		.WORD	aThyWelcomeIsWe	; "Thy welcome is wearing thin."
+		.WORD	aHello		; "Hello, "
+		.WORD	aWellMet	; "Well	met, "
+		.WORD	byte_8372
+		.WORD	byte_8839
+		.WORD	byte_8868
+aSlimyThingMust:.BYTE	"Slimy thing, must thee darken my door?",$AE
+aThouFewmetWhyA:.BYTE	"Thou fewmet, why art thou here?",$AE
+aWhatNowFilthyC:.BYTE	"What now, filthy Cheapskate?",$AE
+aWhatDostThouHe:.BYTE	"What dost thou here, insolent one!",$AE
+aHastThouBrough:.BYTE	"Hast thou brought enough cash?",$AE
+aThyWelcomeIsWe:.BYTE	"Thy welcome is wearing thin.",$AE
+aHelloStranger:	.BYTE	"Hello, Stranger!",$AE
+aHello:		.BYTE	"Hello, "         ; DATA XREF: RAM:8277^o
 		PRINTSTRP $65, 32
-		.BYTE "!",$AE
-aWellMet:	.BYTE "Well met, "      ; DATA XREF: RAM:8279^o
+		.BYTE	"!",$AE
+aWellMet:	.BYTE	"Well met, "      ; DATA XREF: RAM:8279^o
 		PRINTSTRP $65, 32
-		.BYTE "!",$AE
-byte_8372:	.BYTE $B3		; DATA XREF: RAM:827B^o
-		.WORD $6321
-		.BYTE $20
-aIsWelcomeHere:	.BYTE " is welcome here!",$AE
-		.BYTE $A6,  0,	2
-aThereIsNobodyE:.BYTE $A5,"There is nobody else here.",$0D,$FF
-		.BYTE $A6,  0,	2
-		.BYTE $A5
-aGetThat:	.BYTE "Get that "
-		.BYTE $B3
-		.WORD byte_89C3
-		.BYTE $1E
-		.BYTE $D
-		.BYTE $D
-aOutOfHere:	.BYTE $A5,"out of here!",$0D,$FF
-		.BYTE $A6,  0,	0
-		.BYTE $A5
-		.BYTE $AD
-		.WORD $67
-		.BYTE $D
+		.BYTE	"!",$AE
+byte_8372:	.BYTE	$B3		; DATA XREF: RAM:827B^o
+		.WORD	$6321
+		.BYTE	$20
+aIsWelcomeHere:	.BYTE	" is welcome here!",$AE
 		MOVEXY	0,2
-aWhereDostThouW:.BYTE $A5,"Where dost thou wish to sit?",$0D
+aThereIsNobodyE:.BYTE	$A5,"There is nobody else here.",$0D,$FF
+		MOVEXY	0,2
+aGetThat:	.BYTE	$A5,"Get that "
+		.BYTE	$B3
+		.WORD	byte_89C3
+		.BYTE	$1E
+		.BYTE	$D
+		.BYTE	$D
+aOutOfHere:	.BYTE	$A5,"out of here!",$0D,$FF
+		MOVEXY	0,0
+		.BYTE	$A5
+		.BYTE	$AD
+		.WORD	$67
+		.BYTE	$D
+		MOVEXY	0,2
+aWhereDostThouW:.BYTE	$A5,"Where dost thou wish to sit?",$0D
 		MOVEXY	12,5
 		MenuItem "1","At the bar"
 		MOVEXY	12,6
 		MenuItem "2","At a table"
 		MOVEXY	12,7
 		MenuItem "0","Leave"
-		.BYTE $FF
+		.BYTE	$FF
 byte_8428:	STRJSR	loc_8459	; DATA XREF: RAM:8551vo
-aThouArtSitting:.BYTE "Thou art sitting at "
+aThouArtSitting:.BYTE	"Thou art sitting at "
 		PRINTSTRP $67, 39
-		.BYTE $AE
-aThouArtEating:	.BYTE "Thou art eating "
+		.BYTE	$AE
+
+aThouArtEating:	.BYTE	"Thou art eating "
 		PRINTSTRP $79, 39
-		.BYTE $AE
+		.BYTE	$AE
 ; ---------------------------------------------------------------------------
 
 loc_8459:				; DATA XREF: RAM:8429^o
 		LDA	$7A
 		BEQ	loc_8466
-		dldi	off_16, $8444
+		dldi	off_16, aThouArtEating
 		RTS
 ; ---------------------------------------------------------------------------
 
 loc_8466:				; CODE XREF: RAM:845B^j
-		dldi	off_16, $842B
+		dldi	off_16, aThouArtSitting
 		RTS
 ; ---------------------------------------------------------------------------
 		MOVEXY	0,1
@@ -2206,25 +2208,25 @@ loc_8BFB:				; CODE XREF: RAM:8BF8^j
 		STA	$9E53
 
 loc_8C13:				; CODE XREF: RAM:8C09^j
-		LDA	(7),Y
-		INC	7
+		LDA	(off_7),Y
+		INC	off_7
 		BNE	loc_8C1B
-		INC	8
+		INC	off_7+1
 
 loc_8C1B:				; CODE XREF: RAM:8C17^j
 		LDY	$9E53
 
 loc_8C1E:				; CODE XREF: RAM:8C21vj
-		STA	(9),Y
+		STA	(off_9),Y
 		DEY
 		BPL	loc_8C1E
 		INC	$9E53
 		LDA	$9E53
 		CLC
-		ADC	9
-		STA	9
+		ADC	off_9
+		STA	off_9
 		BCC	loc_8C32
-		INC	$A
+		INC	off_9+1
 
 loc_8C32:				; CODE XREF: RAM:8C2E^j
 		JMP	$9DF3
@@ -4210,277 +4212,8 @@ loc_8C32:				; CODE XREF: RAM:8C2E^j
 		.BYTE  $A
 		.BYTE $1B
 		.BYTE $FF
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-; end of 'RAM'
+		.RES	270,$00
 
+; end of 'RAM'
 
 		.END

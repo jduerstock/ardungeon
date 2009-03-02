@@ -7000,7 +7000,7 @@ word_A8A1:	.WORD	$02DC
 		STA	$86
 		LDX	$66
 		JSR	j_sub_3C5C
-		JSR	$18AE
+		JSR	j_sub_2AA0
 		LDA	$02
 		ORA	$03
 		BEQ	:----
