@@ -3,7 +3,7 @@
 		.include	"macros.inc"
 
 ;		.ORG	$7600
-		.BYTE $EA ; ê
+		.BYTE	$EA
 ; ---------------------------------------------------------------------------
 		LDA	#$F
 		STA	SEGNO
@@ -27,10 +27,7 @@
 		STA	$22F
 		dldi	off_7, $7758
 		dldi	off_9, $9FF0
-		LDA	#$20 ; ' '
-		STA	$B
-		LDA	#5
-		STA	$C
+		dldi	word_B, $0520
 		JSR	$187E
 		ldxy	$9FF0
 		JSR	$96F0

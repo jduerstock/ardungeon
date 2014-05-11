@@ -10,7 +10,9 @@
 		.BYTE	Unknown2
 		.BYTE	Weight
 		.BYTE	:+-:-
-		.BYTE	Name
+		.IF .strlen(Name) > 0
+			.BYTE	Name
+		.ENDIF
 		.BYTE	0
 :
 .endmacro
