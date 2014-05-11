@@ -81,65 +81,31 @@ unk_600:	.BYTE	$00,$00,$00,$00,$00,$00,$00,$00	; DATA XREF: sub_31A2+3Evr
 		.BYTE	$00,$03,$03,$03,$00,$00,$00,$00
 		.BYTE	$03,$0F,$0F,$0F,$03,$03,$00,$03
 		.BYTE	$0F,$3C,$3C,$00,$03,$00,$03,$00
-unk_700:	.BYTE	$00,$00,$00,$00,$00,$00,$00,$00	; DATA XREF: sub_31A2+50vr
-		.BYTE	$C0,$F0,$F0,$3C,$FC,$3C,$3C,$0F
-		.BYTE	$FC,$0F,$0F,$FC,$0F,$0F,$0F,$FC
-		.BYTE	$F0,$3C,$F0,$00,$00,$00,$3C,$F0
-		.BYTE	$FC,$0F,$0F,$0F,$0F,$0F,$0F,$FC
-		.BYTE	$FC,$3C,$00,$C0,$00,$0F,$3C,$F0
-		.BYTE	$FC,$3C,$00,$C0,$00,$00,$00,$00
-		.BYTE	$F0,$3C,$3C,$00,$FC,$3C,$3C,$F0
-		.BYTE	$3C,$3C,$3C,$FC,$FC,$3C,$3C,$3C
-		.BYTE	$00,$C0,$C0,$C0,$C0,$C0,$C0,$F0
-		.BYTE	$FC,$F0,$F0,$F0,$F0,$F0,$C0,$00
-		.BYTE	$3C,$F0,$F0,$C0,$C0,$F0,$F0,$3C
-		.BYTE	$00,$00,$00,$00,$00,$3C,$FC,$C0
-		.BYTE	$3C,$FC,$FC,$3C,$3C,$3C,$3C,$3C
-		.BYTE	$3C,$3C,$3C,$3C,$FC,$FC,$3C,$3C
-		.BYTE	$F0,$FC,$3C,$3C,$3C,$3C,$3C,$F0
-		.BYTE	$F0,$3C,$3C,$3C,$F0,$00,$00,$00
-		.BYTE	$F0,$3C,$3C,$3C,$3C,$3C,$FC,$FF
-		.BYTE	$FC,$0F,$3C,$F0,$3C,$3C,$0F,$0F
-		.BYTE $CC ; Ì
-		.BYTE $3C ; <
-		.BYTE	0
-		.BYTE $F0 ; ð
-		.BYTE $3C ; <
-		.BYTE $3C ; <
-		.BYTE $3C ; <
-		.BYTE $F0 ; ð
-		.BYTE $FC ; ü
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE  $C
-		.BYTE $3C ; <
-		.BYTE $F0 ; ð
-		.BYTE $3C ; <
-		.BYTE $3C ; <
-		.BYTE $3C ; <
-		.BYTE $3C ; <
-		.BYTE $3C ; <
-		.BYTE $3C ; <
-		.BYTE $FC ; ü
-		.BYTE $FF
-		.BYTE  $F
-		.BYTE $3C ; <
-		.BYTE $3C ; <
-		.BYTE $3C ; <
-		.BYTE $3C ; <
-		.BYTE $3C ; <
-		.BYTE $F0 ; ð
-		.BYTE $C0 ; À
-		.BYTE  $F
-		.BYTE  $F
-		.BYTE  $F
-		.BYTE  $F
-		.BYTE $CF ; Ï
-		.BYTE $FF
-		.BYTE $3F ; ?
-		.BYTE  $C
+unk_700:
+	.BYTE	$00,$00,$00,$00,$00,$00,$00,$00	; DATA XREF: sub_31A2+50vr
+	.BYTE	$C0,$F0,$F0,$3C,$FC,$3C,$3C,$0F
+	.BYTE	$FC,$0F,$0F,$FC,$0F,$0F,$0F,$FC
+	.BYTE	$F0,$3C,$F0,$00,$00,$00,$3C,$F0
+	.BYTE	$FC,$0F,$0F,$0F,$0F,$0F,$0F,$FC
+	.BYTE	$FC,$3C,$00,$C0,$00,$0F,$3C,$F0
+	.BYTE	$FC,$3C,$00,$C0,$00,$00,$00,$00
+	.BYTE	$F0,$3C,$3C,$00,$FC,$3C,$3C,$F0
+	.BYTE	$3C,$3C,$3C,$FC,$FC,$3C,$3C,$3C
+	.BYTE	$00,$C0,$C0,$C0,$C0,$C0,$C0,$F0
+	.BYTE	$FC,$F0,$F0,$F0,$F0,$F0,$C0,$00
+	.BYTE	$3C,$F0,$F0,$C0,$C0,$F0,$F0,$3C
+	.BYTE	$00,$00,$00,$00,$00,$3C,$FC,$C0
+	.BYTE	$3C,$FC,$FC,$3C,$3C,$3C,$3C,$3C
+	.BYTE	$3C,$3C,$3C,$3C,$FC,$FC,$3C,$3C
+	.BYTE	$F0,$FC,$3C,$3C,$3C,$3C,$3C,$F0
+	.BYTE	$F0,$3C,$3C,$3C,$F0,$00,$00,$00
+	.BYTE	$F0,$3C,$3C,$3C,$3C,$3C,$FC,$FF
+	.BYTE	$FC,$0F,$3C,$F0,$3C,$3C,$0F,$0F
+	.BYTE	$CC,$3C,$00,$F0,$3C,$3C,$3C,$F0
+	.BYTE	$FC,$00,$00,$00,$00,$0C,$3C,$F0
+	.byte	$3c,$3c,$3c,$3c,$3c,$3c,$fc,$ff
+	.byte	$0f,$3c,$3c,$3c,$3c,$3c,$f0,$c0
+	.byte	$0f,$0f,$0f,$0f,$cf,$ff,$3f,$0c
 		.BYTE  $F
 		.BYTE  $F
 		.BYTE $3C ; <
