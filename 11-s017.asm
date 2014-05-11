@@ -6281,25 +6281,7 @@ byte_27AB:	.BYTE $96		; DATA XREF: RAM:loc_22E5^r
 		.BYTE	0
 		.BYTE	3
 		.BYTE $A5 ; ¥
-		.BYTE $59 ; Y
-		.BYTE $6F ; o
-		.BYTE $75 ; u
-		.BYTE $20
-		.BYTE $64 ; d
-		.BYTE $6F ; o
-		.BYTE $64 ; d
-		.BYTE $67 ; g
-		.BYTE $65 ; e
-		.BYTE $20
-		.BYTE $74 ; t
-		.BYTE $68 ; h
-		.BYTE $65 ; e
-		.BYTE $20
-		.BYTE $62 ; b
-		.BYTE $6C ; l
-		.BYTE $6F ; o
-		.BYTE $77 ; w
-		.BYTE $2E ; .
+	.byte	"You dodge the blow."
 		.BYTE  $D
 		.BYTE $FF
 		.BYTE $AC ; ¬
