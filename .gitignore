@@ -1,0 +1,4 @@
+*.crypt
+*.img
+*.o
+*.bin
