@@ -149,6 +149,8 @@ $(BINARIES) 11-s680.bin: $(OBJECTS)
 11-s259.bin: 11-s259.asm
 	cl65 --start-addr 0x7600 -t none $< -o $@
 	sha1sum -c 11-s259.sha1
+
+11-s259.bin.crypt: 11-s259.bin
 	./encrypt.php 11-s259.bin 4102001a983277ddd64843acbaf7d040
 
 11-s311.bin: 11-s311.asm

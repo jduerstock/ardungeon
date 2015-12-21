@@ -353,7 +353,7 @@ loc_7817:				; CODE XREF: sub_773A+A2^j sub_773A+AC^j ...
 
 loc_7824:				; CODE XREF: sub_773A+94^j sub_773A+DA^j
 		LDA	RANDOM
-		CMP	$6385
+		CMP	I_ALIGN
 		BCS	loc_7849
 		LDA	#$15
 		JSR	sub_78A1

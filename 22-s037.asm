@@ -22,8 +22,8 @@ loc_760D:				; CODE XREF: RAM:7604^j	RAM:7607^j
 ; ---------------------------------------------------------------------------
 
 loc_7616:				; CODE XREF: RAM:7601^j
-		LDA	$6385
-		CMP	#$60 ; '`'
+		LDA	I_ALIGN
+		CMP	#$60
 		BCS	loc_7635
 		LDA	#0
 		STA	byte_86BD
@@ -61,17 +61,11 @@ loc_7653:				; CODE XREF: RAM:764F^j
 		BCS	loc_7635
 
 loc_7666:				; CODE XREF: RAM:7645^j
-		LDA	#$16
-		STA	$66
-		LDA	#$7E ; '~'
-		STA	$67
-		LDA	$6385
-		CMP	#$E0 ; 'à'
+		dldi	off_66, $7E16
+		LDA	I_ALIGN
+		CMP	#$E0
 		BCC	loc_767D
-		LDA	#$22 ; '"'
-		STA	$66
-		LDA	#$7E ; '~'
-		STA	$67
+		dldi	off_66, $7E22
 
 loc_767D:				; CODE XREF: RAM:7673^j
 		DEC	$1937
@@ -366,7 +360,7 @@ loc_78D8:				; CODE XREF: RAM:78BD^j	RAM:78CA^j ...
 		DEX
 		BPL	loc_78BA
 		LDA	#$80
-		STA	$6385
+		STA	I_ALIGN
 		JSR	j_sub_408B
 		ldxy	$8739
 		JSR	j_sub_4B4D
@@ -444,9 +438,9 @@ loc_7963:				; CODE XREF: RAM:795B^j
 		CMP	$752B
 		BEQ	loc_7990
 		STA	$752B
-		INC	$6385
+		INC	I_ALIGN
 		BNE	loc_7990
-		DEC	$6385
+		DEC	I_ALIGN
 
 loc_7990:				; CODE XREF: RAM:7983^j	RAM:798B^j
 		ldxy	$7B30
@@ -478,7 +472,7 @@ loc_79AC:				; CODE XREF: RAM:79A6^j
 		JSR	j_sub_2BFC
 		dldi	off_62, byte_8681
 		LDY	#0
-		LDA	$6385
+		LDA	I_ALIGN
 
 loc_79D9:				; CODE XREF: RAM:79E2vj
 		CMP	(off_62),Y
@@ -500,7 +494,7 @@ loc_79E4:				; CODE XREF: RAM:79DB^j	RAM:79DD^j
 		JSR	j_sub_3C5C
 		LDA	#$A
 		JSR	j_sub_2BFC
-		LDA	$6385
+		LDA	I_ALIGN
 		CMP	#$65 ; 'e'
 		BCS	loc_7A02
 		JMP	loc_787A

@@ -167,10 +167,10 @@ loc_771D:				; CODE XREF: RAM:76F0^j
 		LDA	#$10
 		STA	(off_41),Y
 		JSR	j_sub_408B
-		LDA	$6385
-		CMP	#$B8 ; '¸'
+		LDA	I_ALIGN
+		CMP	#$B8
 		BCS	loc_775B
-		INC	$6385
+		INC	I_ALIGN
 
 loc_775B:				; CODE XREF: RAM:7756^j
 		JMP	loc_765C

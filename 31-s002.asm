@@ -901,14 +901,14 @@ loc_7BB0:				; CODE XREF: sub_7B59+4F^j
 		STA	byte_AA2B,X
 		DEX
 		BPL	loc_7B9E
-		LDA	$6385
+		LDA	I_ALIGN
 		ASL	A
 		LDA	byte_AA0C
 		ROR	A
-		AND	#$C0 ; 'À'
+		AND	#$C0
 		STA	$AD
 		LDA	byte_AA0C
-		EOR	$6385
+		EOR	I_ALIGN
 		BPL	loc_7BD2
 		LDA	byte_AA21
 		ORA	#$80
@@ -1180,10 +1180,10 @@ loc_7D82:				; CODE XREF: RAM:7D3D^j
 		JSR	sub_7C9E
 		LDA	#0
 		STA	$96
-		LDX	#$7F ; ''
+		LDX	#$7F
 		LDA	byte_AA0C
 		BPL	loc_7D9B
-		CMP	#$80 ; '€'
+		CMP	#$80
 		BNE	loc_7D98
 		LDX	#$FF
 		BNE	loc_7D9B
@@ -1200,12 +1200,12 @@ loc_7D9B:				; CODE XREF: RAM:7D8E^j	RAM:7D96^j
 		STA	byte_AA0C
 		LDA	byte_AA0C
 		BPL	loc_7DB3
-		LDA	$6385
+		LDA	I_ALIGN
 		BMI	locret_7DC5
 		BPL	loc_7DBD
 
 loc_7DB3:				; CODE XREF: RAM:7DAA^j
-		LDA	$6385
+		LDA	I_ALIGN
 		BMI	loc_7DBD
 		LDA	RANDOM
 		BMI	locret_7DC5
@@ -1265,9 +1265,9 @@ loc_7DEE:				; CODE XREF: sub_7DD2+19^j
 loc_7DF1:				; CODE XREF: sub_7DD2+14^j
 		LDA	byte_AA27
 		BEQ	loc_7DFE
-		LDA	$6385
+		LDA	I_ALIGN
 		BEQ	loc_7DFE
-		DEC	$6385
+		DEC	I_ALIGN
 
 loc_7DFE:				; CODE XREF: sub_7DD2+22^j sub_7DD2+27^j
 		LDA	#1
@@ -1300,9 +1300,9 @@ loc_7E23:				; CODE XREF: sub_7DD2+32^j
 		LDX	#$87
 		LDA	#1
 		JSR	j_ADDSTAT1
-		BIT	$6385
+		BIT	I_ALIGN
 		BPL	loc_7E40
-		DEC	$6385
+		DEC	I_ALIGN
 
 loc_7E40:				; CODE XREF: sub_7DD2+69^j sub_7DD2+C3vj
 		LDA	$96

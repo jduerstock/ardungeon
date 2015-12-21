@@ -1358,10 +1358,10 @@ aIAmHere:
 :		JMP	$7719
 		JSR	$7707
 		LDA	$AA0C
-		AND	$6385
+		AND	I_ALIGN
 		BPL	:+
 		LDA	$AA0C
-		CMP	$6385
+		CMP	I_ALIGN
 		BCS	:+
 		ldxy	$AB4C
 		JSR	$770A

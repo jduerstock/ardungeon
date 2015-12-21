@@ -402,7 +402,7 @@ loc_7855:				; CODE XREF: sub_7AE7-28Evj
 		STA	$6399
 		LDX	byte_8EA1
 		LDA	unk_7C7E,X
-		STA	$6385
+		STA	I_ALIGN
 		JSR	sub_7B91
 		INC	$6346
 		BNE	loc_7875

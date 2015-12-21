@@ -246,7 +246,7 @@ loc_77BC:				; CODE XREF: RAM:77E5vj	RAM:77ECvj ...
 loc_77C2:				; CODE XREF: RAM:77B0^j
 		LDA	byte_9093,X
 		BEQ	loc_7811
-		LDA	$6385
+		LDA	I_ALIGN
 		SEC
 		SBC	byte_9093,X
 		BCC	loc_77D7
@@ -259,7 +259,7 @@ loc_77D7:				; CODE XREF: RAM:77CE^j
 		LDA	$67
 		LSR	A
 		BCS	loc_77EF
-		LDA	$6385
+		LDA	I_ALIGN
 		BPL	loc_77E8
 		ldxy	byte_8D3D
 		JMP	loc_77BC
@@ -271,14 +271,14 @@ loc_77E8:				; CODE XREF: RAM:77DF^j
 ; ---------------------------------------------------------------------------
 
 loc_77EF:				; CODE XREF: RAM:77DA^j
-		LDA	$6385
+		LDA	I_ALIGN
 		BPL	loc_77FB
 		ldxy	byte_8CEF
 		JMP	loc_77BC
 ; ---------------------------------------------------------------------------
 
 loc_77FB:				; CODE XREF: RAM:77F2^j
-		LDA	$6385
+		LDA	I_ALIGN
 		CMP	byte_9093,X
 		BCC	loc_780A
 		ldxy	byte_8CAD
@@ -295,7 +295,7 @@ loc_7811:				; CODE XREF: RAM:77C5^j	RAM:77D2^j
 		CMP	#$FF
 		BEQ	loc_785F
 		SEC
-		SBC	$6385
+		SBC	I_ALIGN
 		BCC	loc_7825
 		CMP	#5
 		BCS	loc_785F
@@ -306,7 +306,7 @@ loc_7825:				; CODE XREF: RAM:781C^j
 		LDA	$67
 		LSR	A
 		BCS	loc_784C
-		LDA	$6385
+		LDA	I_ALIGN
 		BPL	loc_7836
 		ldxy	byte_8D3D
 		JMP	loc_77B6
@@ -314,7 +314,7 @@ loc_7825:				; CODE XREF: RAM:781C^j
 
 loc_7836:				; CODE XREF: RAM:782D^j
 		LDA	$90A1,X
-		CMP	$6385
+		CMP	I_ALIGN
 		BCC	loc_7845
 		ldxy	byte_8C60
 		JMP	loc_77B6
@@ -326,7 +326,7 @@ loc_7845:				; CODE XREF: RAM:7822^j	RAM:783C^j
 ; ---------------------------------------------------------------------------
 
 loc_784C:				; CODE XREF: RAM:7828^j
-		LDA	$6385
+		LDA	I_ALIGN
 		BPL	loc_7858
 		ldxy	byte_8CEF
 		JMP	loc_77B6
@@ -575,11 +575,11 @@ loc_79A4:				; CODE XREF: RAM:798B^j	RAM:799D^j
 		JSR	sub_78FC
 		LDX	$67
 		LDA	$7561,X
-		CMP	$6385
+		CMP	I_ALIGN
 		BEQ	loc_7A1F
 		LDA	byte_9093,X
 		BEQ	loc_79F3
-		LDA	$6385
+		LDA	I_ALIGN
 		STA	$7561,X
 		SEC
 		SBC	byte_9093,X
@@ -601,7 +601,7 @@ loc_79F3:				; CODE XREF: RAM:79D0^j	RAM:79E0^j
 		CMP	#$FF
 		BEQ	loc_7A1F
 		SEC
-		SBC	$6385
+		SBC	I_ALIGN
 		BCC	loc_7A0E
 		CMP	#5
 		BCS	loc_7A1F
