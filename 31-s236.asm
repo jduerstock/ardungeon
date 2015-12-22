@@ -1467,7 +1467,7 @@ aIAmHere:
 :		LDA	RANDOM
 		CMP	#$40
 		BCS	:---
-		ldxy	$ABA0
+		ldxy	str_ABA0
 		JSR	$770A
 		JMP	$AB08
 
@@ -1497,6 +1497,8 @@ str_AB58:
 		.BYTE	"pleads:",$0D,$0D
 		.BYTE	$A5,$22,"Please help a fellow human",$0D
 		.BYTE	$A5,"trapped in this foul world.",$22,$0D,$FF
+
+str_ABA0:
 		MOVEXY	0,3
 		.BYTE	$A5,$22,"I was hoping for pears and cheese.",$22,$0D,$FF
 
