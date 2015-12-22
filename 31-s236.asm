@@ -1459,7 +1459,7 @@ aIAmHere:
 		BIT	$633B
 		BPL	:+
 		dldi	$76D9, str_AB53	
-:		ldxy	$AB32
+:		ldxy	str_AB32
 		JSR	$770A
 :		LDA	$7F
 		JSR	$188A
@@ -1479,6 +1479,7 @@ aIAmHere:
 		JSR	$186F
 		JMP	$773A
 
+str_AB32:
 		MOVEXY	0,3
 		.BYTE	$A5,$22,"Bless you, kind "
 		.BYTE	$B4
