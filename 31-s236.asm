@@ -1437,7 +1437,7 @@ aIAmHere:
 		.BYTE	$35,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00
 		.BYTE	$00,$00,$00,$00,$01,$00
 :
-		ldxy	$AB58
+		ldxy	str_AB58
 		JMP	$770A
 		BCS	:+
 		JSR	$773D
@@ -1455,10 +1455,10 @@ aIAmHere:
 		LDA	#$01
 		LDX	#$85
 		JSR	j_ADDSTAT1
-		dldi	$76D9, $AB4F
+		dldi	$76D9, str_AB4F
 		BIT	$633B
 		BPL	:+
-		dldi	$76D9, $AB53	
+		dldi	$76D9, str_AB53	
 :		ldxy	$AB32
 		JSR	$770A
 :		LDA	$7F
@@ -1470,6 +1470,7 @@ aIAmHere:
 		ldxy	$ABA0
 		JSR	$770A
 		JMP	$AB08
+
 		LDX	#$86
 		LDA	#$03
 		JSR	$186F
@@ -1484,8 +1485,14 @@ aIAmHere:
 		.WORD	$76D9
 		.BYTE	10
 		.BYTE	".",$22,$0D,$FF
+
+str_AB4F:
 		.BYTE	"sir",0
+
+str_AB53:
 		.BYTE	"lady",0
+
+str_AB58:
 		STRSUB	$7653
 		.BYTE	"pleads:",$0D,$0D
 		.BYTE	$A5,$22,"Please help a fellow human",$0D
