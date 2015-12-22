@@ -389,7 +389,7 @@ loc_78B2:				; CODE XREF: RAM:78A6^j
 
 loc_78B9:				; CODE XREF: RAM:78C2vj
 		LDA	$63C2,X
-		AND	#$7F ; ''
+		AND	#$7F
 		STA	$63C2,X
 		DEX
 		BPL	loc_78B9
@@ -402,7 +402,7 @@ loc_78C8:				; CODE XREF: RAM:78CCvj
 		BPL	loc_78C8
 		LDX	$67
 		LDA	$6E
-		ORA	#$81 ; 'Å'
+		ORA	#$81
 		STA	$63C2,X
 		STA	$6E
 		JSR	sub_7ACF
@@ -461,7 +461,7 @@ sub_790A:				; CODE XREF: RAM:78E0^p
 
 
 sub_7916:				; CODE XREF: RAM:78E3^p	RAM:loc_798Evp ...
-		LDX	#$40 ; '@'
+		LDX	#$40
 
 loc_7918:				; CODE XREF: sub_7916+4Evj
 		LDA	$640B,X
@@ -470,7 +470,7 @@ loc_7918:				; CODE XREF: sub_7916+4Evj
 		STA	off_62+1
 		LDY	#0
 		LDA	(off_62),Y
-		AND	#$7F ; ''
+		AND	#$7F
 		CMP	#2
 		BNE	loc_7963
 		LDY	#5
@@ -486,7 +486,7 @@ loc_7918:				; CODE XREF: sub_7916+4Evj
 loc_793D:				; CODE XREF: sub_7916+40vj sub_7916+44vj
 		LDA	($64),Y
 		BEQ	loc_795C
-		CMP	#$F0 ; ''
+		CMP	#$F0
 		BCC	loc_7950
 		LDA	$64
 		ADC	#$F
@@ -681,7 +681,7 @@ loc_7A8A:				; CODE XREF: RAM:7A69^j
 		BNE	loc_7B02
 
 loc_7A8C:				; DATA XREF: RAM:7B7Bvo
-		LDA	#$83 ; 'É'
+		LDA	#$83
 		STA	$51
 		JSR	$1893
 		ldxy	$8232
@@ -745,7 +745,7 @@ sub_7AE2:				; CODE XREF: RAM:7A1C^p	RAM:7ACC^j
 		JSR	sub_7ACF
 		LDX	$67
 		LDA	$63C2,X
-		AND	#$7E ; '~'
+		AND	#$7E
 		STA	$63C2,X
 		LDA	#0
 		LDX	#$11
@@ -1175,8 +1175,8 @@ loc_7DB1:				; DATA XREF: RAM:7B79^o
 		SEC
 		SBC	($64),Y
 		BNE	loc_7DD3
-		LDX	#$84 ; 'Ñ'
-		LDY	#$ED ; 'Ì'
+		LDX	#$84
+		LDY	#$ED
 		JMP	sub_78FC
 ; ---------------------------------------------------------------------------
 
@@ -1363,7 +1363,7 @@ loc_7EF6:
 ; ---------------------------------------------------------------------------
 
 loc_7F1A:				; CODE XREF: RAM:7F15^j
-		LDX	#$84 ; 'Ñ'
+		LDX	#$84
 		LDY	#0
 		JSR	sub_78FC
 		LDX	$76
@@ -1652,8 +1652,8 @@ loc_80FE:				; CODE XREF: RAM:8115vj
 		BEQ	loc_8112
 		LDY	#0
 		LDA	(off_41),Y
-		AND	#$87 ; 'á'
-		CMP	#$81 ; 'Å'
+		AND	#$87
+		CMP	#$81
 		BNE	loc_8112
 		INC	$69
 
@@ -1686,8 +1686,8 @@ loc_8139:				; CODE XREF: RAM:81A7vj
 		BEQ	loc_81A4
 		LDY	#0
 		LDA	(off_41),Y
-		AND	#$87 ; 'á'
-		CMP	#$81 ; 'Å'
+		AND	#$87
+		CMP	#$81
 		BNE	loc_81A4
 
 loc_814C:				; CODE XREF: RAM:8152vj
@@ -1742,10 +1742,10 @@ loc_81A4:				; CODE XREF: RAM:8140^j	RAM:814A^j ...
 locret_81AB:				; CODE XREF: RAM:81A1^j
 		RTS
 ; ---------------------------------------------------------------------------
-		.BYTE $84 ; Ñ
-		.BYTE $8B ; ã
-		.BYTE $8C ; å
-		.BYTE $8B ; ã
+		.BYTE $84
+		.BYTE $8B
+		.BYTE $8C
+		.BYTE $8B
 
 ; --------------- S U B	R O U T	I N E ---------------------------------------
 
