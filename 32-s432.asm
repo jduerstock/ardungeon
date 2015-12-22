@@ -598,6 +598,7 @@ loc_7A7C:				; CODE XREF: RAM:7A64^j	RAM:7A68^j ...
 		LDX	$64
 		JSR	j_sub_3C5C
 		JSR	sub_7CA1
+		;modstat I_MOOD 1
 		LDX	#$86
 		LDA	#1
 		JSR	j_ADDSTAT1

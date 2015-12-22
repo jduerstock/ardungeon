@@ -10834,28 +10834,28 @@ asc_5D7D:	.BYTE	" ("              ; DATA XREF: RAM:5523^w
 		.BYTE	") "
 		PRINTSTRP off_1940,29
 		.BYTE	$20
-		.BYTE	$AD ; ­
+		.BYTE	$AD
 		.WORD	off_5DAC
-		.BYTE	$AB ; «
+		.BYTE	$AB
 		MOVEXY	3,5
-		.BYTE	$A3 ; £
-		.BYTE	$BB ; »
-		.BYTE	$5D ; ]
+		.BYTE	$A3
+		.BYTE	$BB
+		.BYTE	$5D
 asc_5D93:	.BYTE	" ("              ; DATA XREF: RAM:5527^w
 		BLINK	'4'
 		.BYTE	$29 ; )
 		.BYTE	$20
 		PRINTSTRP off_1942,29
 		.BYTE	$20
-		.BYTE	$AD ; ­
+		.BYTE	$AD
 		.WORD	off_5DAC
-		.BYTE	$AB ; «
+		.BYTE	$AB
 		.BYTE	 $D
 		.BYTE	 $D
-		.BYTE	$A2 ; ¢
-		.BYTE	$AD ; ­
+		.BYTE	$A2
+		.BYTE	$AD
 		.WORD	off_1944
-		.BYTE	$AB ; «
+		.BYTE	$AB
 		.BYTE	 $D
 		.BYTE	$FF
 off_5DAC:	.WORD	0		; DATA XREF: RAM:5DD8vw	RAM:5DFDvw
@@ -10913,43 +10913,43 @@ byte_5E09:
 		.BYTE	" ("
 		BLINK	"1"
 		.BYTE	") "
-		.BYTE	$AD ; ­
+		.BYTE	$AD
 		.WORD	off_193C
-		.BYTE	$AB ; «
+		.BYTE	$AB
 		MOVEXY	3,3
 		.BYTE	" ("
 		BLINK	"2"
 		.BYTE	") "
-		.BYTE	$AD ; ­
+		.BYTE	$AD
 		.WORD	off_193E
-		.BYTE	$AB ; «
+		.BYTE	$AB
 		MOVEXY	3,4
 		.BYTE	" ("
 		BLINK	"3"
 		.BYTE	") "
 		.BYTE	$AD
 		.WORD	off_1940
-		.BYTE	$AB ; «
+		.BYTE	$AB
 		MOVEXY	3,5
 		.BYTE	$20
 		.BYTE	$28 ; (
 		BLINK	"4"
 		.BYTE	$29 ; )
 		.BYTE	$20
-		.BYTE	$AD ; ­
+		.BYTE	$AD
 		.WORD	off_1942
-		.BYTE	$AB ; «
+		.BYTE	$AB
 		.BYTE	 $D
 		.BYTE	 $D
-		.BYTE	$A2 ; ¢
-		.BYTE	$AD ; ­
+		.BYTE	$A2
+		.BYTE	$AD
 		.WORD	off_1944
-		.BYTE	$AB ; «
+		.BYTE	$AB
 		.BYTE	 $D
 		.BYTE	$FF
 unk_5E53:	.BYTE	0		; DATA XREF: RAM:off_59C1^o
 byte_5E54:	
-		.BYTE	$AE ; ®
+		.BYTE	$AE
 unk_5E55:	.BYTE	0		; DATA XREF: RAM:5DBE^r	RAM:5DCE^r
 		.BYTE	$16
 		.BYTE	$2C ; ,

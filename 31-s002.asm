@@ -7187,7 +7187,7 @@ word_A8A1:	.WORD	$02DC
 		STA	$AB33,Y
 :		DEX
 		BPL	:--
-		LDA	$6386
+		LDA	I_MOOD
 		CMP	#$48
 		BCS	:+
 		INY

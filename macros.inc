@@ -65,3 +65,31 @@
 		.endscope
 	.endmacro
 
+	; nonfunctional
+
+	.macro modstat stat,val
+		.scope
+		PSize = .ident(.concat(stat,"SIZE"))
+		.if (PSize=1)
+			.if (val < 0)
+				LDX	#(stat & 0xff)
+				LDA	#-val
+				JSR	j_SUBSTAT1
+			.else
+				LDX	#(stat & 0xff)
+				LDA	#val
+				JSR	j_ADDSTAT1
+			.endif
+		.else
+			.if (val < 0)
+				LDX	#(stat & 0xff)
+				LDA	#-val
+				JSR	j_SUBSTAT2
+			.else
+				LDX	#(stat & 0xff)
+				LDA	#val
+				JSR	j_ADDSTAT2
+			.endif
+		.endif
+		.endscope
+	.endmacro

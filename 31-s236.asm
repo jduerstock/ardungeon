@@ -1234,7 +1234,7 @@ aIAmHere:
 :		JSR	$7713
 		ldxy	$ACDC
 		JSR	$770A
-		BIT	$6386
+		BIT	I_MOOD
 		BMI	:+
 		JMP	$7740
 :		JMP	$AB09

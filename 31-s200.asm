@@ -146,11 +146,11 @@ loc_770E:				; CODE XREF: RAM:76FE^j
 		LDA	$68
 		CMP	2
 		BCS	loc_772F
-		LDA	#$78 ; 'x'
+		LDA	#$78
 		STA	$6A
-		LDA	$6386
+		LDA	I_MOOD
 		BMI	loc_7724
-		INC	$6386
+		INC	I_MOOD
 
 loc_7724:				; CODE XREF: RAM:771F^j
 		dldi	off_16, $7B69
@@ -158,10 +158,10 @@ loc_7724:				; CODE XREF: RAM:771F^j
 ; ---------------------------------------------------------------------------
 
 loc_772F:				; CODE XREF: RAM:7716^j
-		LDA	#$38 ; '8'
+		LDA	#$38
 		STA	$6A
 		LDA	#1
-		LDX	#$86 ; '†'
+		LDX	#$86
 		JSR	$186F
 		dldi	off_16, $7B0A
 		LDY	$7525
@@ -170,7 +170,7 @@ loc_772F:				; CODE XREF: RAM:7716^j
 ; ---------------------------------------------------------------------------
 
 loc_774B:				; CODE XREF: RAM:76F1^j	RAM:7710^j
-		LDA	#$D8 ; 'Ø'
+		LDA	#$D8
 		STA	$6A
 		LDA	#1
 		LDX	#$86
@@ -186,8 +186,8 @@ loc_7767:				; CODE XREF: RAM:772C^j
 		JSR	sub_7872
 		LDA	#1
 		STA	$6B
-		LDA	$6386
-		CMP	#$60 ; '`'
+		LDA	I_MOOD
+		CMP	#$60
 		BCS	loc_777C
 		LDA	#0
 		STA	$6B
@@ -201,7 +201,7 @@ loc_777C:				; CODE XREF: RAM:7773^j
 		STA	$6B
 
 loc_7784:				; CODE XREF: RAM:7779^j	RAM:777E^j
-		LDA	$6386
+		LDA	I_MOOD
 		dldi	off_16, $7BEC
 		LDX	$62
 		JSR	j_sub_3C5C
