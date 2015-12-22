@@ -8007,8 +8007,7 @@ sub_4AC9:				; CODE XREF: RAM:188A^j	RAM:4C1Evp ...
 		STA	off_41+1
 		LDA	$4C
 		PHA
-		LDA	#$FF
-		STA	$4C
+		ldi	$4C, $FF
 		JSR	sub_4D93
 		PLA
 		STA	$4C
@@ -8224,7 +8223,7 @@ loc_4BF5:				; DATA XREF: RAM:4CC1vo
 ; ---------------------------------------------------------------------------
 
 loc_4BFE:				; CODE XREF: RAM:4BF9^j
-		AND	#$7F ; ''
+		AND	#$7F
 		STA	(off_41),Y
 		CMP	#$B
 		BNE	loc_4C09
@@ -8234,7 +8233,7 @@ loc_4C09:				; CODE XREF: RAM:4C04^j
 		JSR	sub_4EA2
 		LDX	$6493
 		LDA	$6494,X
-		AND	#$7F ; ''
+		AND	#$7F
 		BEQ	loc_4C27
 		LDA	$4B
 		PHA
@@ -8282,7 +8281,7 @@ loc_4C5A:				; DATA XREF: RAM:4CC3vo
 loc_4C6B:				; DATA XREF: RAM:4CC5vo
 		LDY	#0
 		LDA	(off_41),Y
-		AND	#$7F ; ''
+		AND	#$7F
 		CMP	#$B
 		BNE	loc_4C78
 		JSR	sub_4EFD
@@ -8317,7 +8316,7 @@ locret_4C9C:				; CODE XREF: RAM:4BFB^j	RAM:4C83^j
 loc_4C9D:				; DATA XREF: RAM:4CC7vo
 		LDY	#0
 		LDA	(off_41),Y
-		CMP	#$8B ; 'ã'
+		CMP	#$8B
 		BNE	loc_4CAD
 		LDA	$6390
 		BEQ	loc_4CAD
@@ -8427,7 +8426,7 @@ loc_4D37:				; CODE XREF: sub_4CCF+62^j
 		STA	(off_3D),Y
 		DEY
 		LDA	(off_3D),Y
-		CMP	#$E0 ; '‡'
+		CMP	#$E0
 		BCS	loc_4D53
 		LDY	#$F
 		LDA	$4B
@@ -8443,7 +8442,7 @@ loc_4D53:				; CODE XREF: sub_4CCF+71^j sub_4CCF+7E^j
 		LDY	#0
 		LDA	(off_43),Y
 		LDY	#$F
-		CMP	#$F0 ; ''
+		CMP	#$F0
 		BCC	loc_4D5F
 		LDY	#$1F
 
@@ -8468,9 +8467,9 @@ loc_4D79:				; CODE XREF: sub_4CCF:loc_4D05^j
 		LDX	#$10
 		LDY	#0
 		LDA	(off_43),Y
-		CMP	#$F0 ; ''
+		CMP	#$F0
 		BCC	loc_4D85
-		LDX	#$20 ; ' '
+		LDX	#$20
 
 loc_4D85:				; CODE XREF: sub_4CCF+B2^j
 		TXA
@@ -8527,7 +8526,7 @@ loc_4DC0:				; CODE XREF: sub_4D93+14^j sub_4D93+18^j ...
 loc_4DCB:				; CODE XREF: sub_4D93+34^j
 		INC	$49
 		LDX	$49
-		CPX	#$40 ; '@'
+		CPX	#$40
 		BCC	loc_4DA1
 		RTS
 ; End of function sub_4D93
@@ -8538,12 +8537,12 @@ loc_4DCB:				; CODE XREF: sub_4D93+34^j
 
 sub_4DD4:				; CODE XREF: sub_4CCF+3D^p
 		dldi	off_3F, $6500
-		LDX	#$40 ; '@'
+		LDX	#$40
 
 loc_4DDE:				; CODE XREF: sub_4DD4+2Fvj
 		LDY	#0
 		LDA	(off_3F),Y
-		CMP	#$81 ; 'Å'
+		CMP	#$81
 		BCC	loc_4DF7
 		LDY	#6
 
@@ -8639,7 +8638,7 @@ loc_4E64:				; CODE XREF: sub_4E0F+2C^j sub_4E0F+38^j ...
 		JSR	sub_3CC2
 		LDA	$4C
 		PHA
-		ORA	#$20 ; ' '
+		ORA	#$20
 		JSR	sub_4CCF
 		PLA
 		STA	$4C
@@ -8721,9 +8720,9 @@ loc_4EC7:				; CODE XREF: sub_4EC4:loc_4EDFvj
 		LDA	(off_43),Y
 		BEQ	loc_4EE1
 		LDX	#$10
-		CMP	#$F0 ; ''
+		CMP	#$F0
 		BCC	loc_4ED5
-		LDX	#$20 ; ' '
+		LDX	#$20
 
 loc_4ED5:				; CODE XREF: sub_4EC4+D^j
 		TXA
@@ -8859,25 +8858,17 @@ aStick:		.BYTE	"stick",0
 		.BYTE	1
 		.BYTE	9
 		.BYTE	9
-		.BYTE	$82 ; Ç
+		.BYTE	$82
 		.BYTE	1
 
 a_TheScreams:
 		MOVEXY	0,0
-		.BYTE	$A5
-aThe:		.BYTE	"The"
-		.BYTE	$D
-		.BYTE	$A5
+		.BYTE	$A5,"The",$0D,$A5
 		PRINTSTRP off_502A,39
-		.BYTE	$D
-		.BYTE	$A5
-aScreams:	.BYTE	"screams:"
-		.BYTE	$D
-		.BYTE	$D
-		.BYTE	$A5
+		.BYTE	$0D,$A5,"screams:",$0D,$0D,$A5
 		PRINTSTRP off_502C,40
-		.BYTE	$D
-		.BYTE	$FF
+		.BYTE	$0D,$FF
+
 aIWasMeantForBe:.BYTE	$22,"I was meant for better than you!",$22,0
 aYourEvilCannot:.BYTE	$22,"Your evil cannot compare to mine!",$22,0
 aReleaseMeFoulM:.BYTE	$22,"Release me foul mortal or pay!",$22,0
@@ -8994,10 +8985,8 @@ sub_50B2:				; CODE XREF: RAM:36E1^p	sub_50B2+E3vj ...
 
 loc_50B7:				; CODE XREF: RAM:36E6^p	sub_50B2+70vj ...
 		JSR	sub_502E
-		LDA	#0
-		STA	byte_6278
-		LDA	byte_6277
-		STA	byte_627D
+		ldi	byte_6278, 0
+		mv	byte_627D, byte_6277
 		CMP	byte_6276
 		BCS	loc_50EF
 
@@ -9020,7 +9009,7 @@ loc_50CA:				; CODE XREF: sub_50B2+39vj
 		BCS	loc_515C
 
 loc_50EF:				; CODE XREF: sub_50B2+16^j
-		LDX	#$3F ; '?'
+		LDX	#$3F
 		STX	byte_627A
 		SBC	byte_6276
 		BEQ	loc_5125
