@@ -4604,10 +4604,7 @@ sub_9124:				; CODE XREF: sub_88B0:loc_797B^p
 		LDA	$A7
 		SBC	byte_AA22
 		BCC	loc_9142
-		LDA	byte_AA22
-		STA	$D4
-		LDA	byte_AA23
-		STA	$D5
+		dmv	$D4, byte_AA22
 
 loc_9142:				; CODE XREF: sub_9100+1D^j sub_9100+22^j ...
 		LSR	$D4
@@ -5176,10 +5173,10 @@ sub_9475:				; CODE XREF: RAM:7761^j	RAM:8A0C^p ...
 
 
 sub_9482:				; CODE XREF: RAM:7707^j	RAM:loc_8674^p ...
-		LDA	#$40 ; '@'
+		LDA	#$40
 		BIT	$AB
 		BMI	loc_948A
-		LDA	#$C0 ; 'À'
+		LDA	#$C0
 
 loc_948A:				; CODE XREF: sub_9482+4^j
 		STA	$AC
@@ -5196,7 +5193,7 @@ sub_948D:				; CODE XREF: sub_88B0-F38^p RAM:7F62^p ...
 		STA	byte_AA21
 		LDA	$AB
 		BNE	locret_94C4
-		LDX	#$40 ; '@'
+		LDX	#$40
 		LDA	byte_AA21
 		AND	#$7F
 		ORA	$AC
@@ -5246,7 +5243,7 @@ loc_94D2:				; CODE XREF: RAM:94CC^j
 
 sub_94D5:				; CODE XREF: RAM:7812^p	RAM:781C^p
 		STA	$96
-		LDA	#$28 ; '('
+		LDA	#$28
 		JSR	j_RND_A
 		CLC
 		ADC	$96
@@ -5763,7 +5760,7 @@ loc_97E3:				; CODE XREF: RAM:97DA^j
 		LDX	#4
 
 loc_9801:				; CODE XREF: RAM:9818vj
-		LDY	#$3B ; ';'
+		LDY	#$3B
 
 loc_9803:				; CODE XREF: RAM:9808vj
 		LDA	(off_D6),Y
@@ -5772,7 +5769,7 @@ loc_9803:				; CODE XREF: RAM:9808vj
 		BPL	loc_9803
 		LDA	off_D6
 		CLC
-		ADC	#$3C ; '<'
+		ADC	#$3C
 		STA	off_D6
 		BCC	:+
 		INC	off_D6+1
@@ -6155,11 +6152,13 @@ str_9DEB:
 		.BYTE	$A5,"You dodge the blow.",$D,$FF
 
 str_9E04:
-		STRSUB	$9E2D
+		STRSUB	str_9E2D
 		.BYTE	$A5,"is about to break.",$D,$FF
 
-		STRSUB	$9E2D
+		STRSUB	str_9E2D
 		.BYTE	$A5,"has broken.",$D,$FF
+
+str_9E2D:
 		MOVEXY	0,2	
 		.BYTE	$A5,"Your "
 		PRINTSTRP off_76D9, 31
@@ -6200,6 +6199,7 @@ a_You_The_WithYour:
 		STRJSR	sub_9F02
 		.BYTE	$FF
 
+str_9ECE:
 		.BYTE	$A5,"which has no effect!",$D,$FF
 
 loc_9EE5:					; DATA XREF: RAM:9EB9o
@@ -6207,7 +6207,7 @@ loc_9EE5:					; DATA XREF: RAM:9EB9o
 		LDA	$A7
 		ORA	$A8
 		BNE	locret_9EFB
-		dldi	off_16, $9ECE
+		dldi	off_16, str_9ECE
 
 locret_9EFB:					; CODE XREF: RAM:9EF1j
 		RTS
