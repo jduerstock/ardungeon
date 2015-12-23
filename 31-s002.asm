@@ -5501,8 +5501,8 @@ sub_962B:				; CODE XREF: sub_950E+29^p sub_9550+22^p
 
 :
 		ldi	$25B, $00
-		LDA	$D7
-		ASL	$D6
+		LDA	off_D6+1
+		ASL	off_D6
 		ROL	A
 		ADC	word_232
 		STA	word_232
@@ -5510,7 +5510,7 @@ sub_962B:				; CODE XREF: sub_950E+29^p sub_9550+22^p
 		INC	word_232+1
 
 loc_9652:				; CODE XREF: sub_962B+22^j
-		LSR	$D6
+		LSR	off_D6
 
 loc_9654:				; CODE XREF: sub_962B+A3vj
 		LDA	#4
@@ -5552,14 +5552,14 @@ loc_968B:				; CODE XREF: sub_962B+68vj
 		ROR	$100,X
 		INX
 		BPL	loc_968B
-		LDX	$D6
+		LDX	off_D6
 		LDY	#0
 		LDA	$C
 		BNE	loc_96A6
 		LDA	$B
 		BMI	loc_96A6
 		CLC
-		ADC	$D6
+		ADC	off_D6
 		BPL	loc_96D2
 
 loc_96A6:				; CODE XREF: sub_962B+70^j sub_962B+74^j ...
@@ -5569,7 +5569,7 @@ loc_96A6:				; CODE XREF: sub_962B+70^j sub_962B+74^j ...
 		INX
 		BPL	loc_96A6
 		LDA	#0
-		STA	$D6
+		STA	off_D6
 		TYA
 		STA	$96
 		CLC
@@ -5793,7 +5793,7 @@ loc_9803:				; CODE XREF: RAM:9808vj
 		STA	(off_F4),Y
 		DEY
 		BPL	loc_9803
-		LDA	$D6
+		LDA	off_D6
 		CLC
 		ADC	#$3C ; '<'
 		STA	off_D6
