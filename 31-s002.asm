@@ -5796,11 +5796,11 @@ loc_9803:				; CODE XREF: RAM:9808vj
 		LDA	$D6
 		CLC
 		ADC	#$3C ; '<'
-		STA	$D6
-		BCC	loc_9815
-		INC	$D7
+		STA	off_D6
+		BCC	:+
+		INC	off_D6+1
 
-loc_9815:				; CODE XREF: RAM:9811^j
+:
 		INC	$F5
 		DEX
 		BNE	loc_9801
