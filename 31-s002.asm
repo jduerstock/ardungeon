@@ -2001,7 +2001,7 @@ loc_822C:				; CODE XREF: RAM:8228^j
 		LDA	$639C
 		BMI	loc_8245
 		LDA	byte_AA20
-		AND	#$20 ; ' '
+		AND	#$20
 		BEQ	loc_8245
 		LDA	#0
 		STA	$A7
@@ -2398,7 +2398,7 @@ loc_8468:				; CODE XREF: RAM:loc_7F2E^j
 		LDA	#$23
 		JSR	j_RND_A
 		STA	$195B
-		LDA	#$23 ; '#'
+		LDA	#$23
 		JSR	j_RND_A
 		STA	$195C
 		LDA	RANDOM
@@ -2431,7 +2431,6 @@ loc_849D:				; CODE XREF: sub_7DD2:loc_7DEE^j
 
 loc_84B7:				; CODE XREF: sub_7DD2+6D7^j
 		JMP	loc_776D
-; END OF FUNCTION CHUNK	FOR sub_7DD2
 
 ; --------------- S U B	R O U T	I N E ---------------------------------------
 
@@ -2454,10 +2453,6 @@ loc_84C5:				; CODE XREF: sub_84BA+6^j
 
 
 sub_84CF:				; CODE XREF: RAM:94CEvp
-
-; FUNCTION CHUNK AT 776D SIZE 00000051 BYTES
-; FUNCTION CHUNK AT 7AC2 SIZE 00000080 BYTES
-; FUNCTION CHUNK AT 8598 SIZE 0000001A BYTES
 
 		LDA	byte_AA21
 		AND	#$F
@@ -2567,7 +2562,7 @@ loc_8571:				; CODE XREF: sub_8560+19vj
 		BNE	loc_8571
 
 loc_857B:				; CODE XREF: sub_8560+16^j
-		LDA	#$20 ; ' '
+		LDA	#$20
 		STA	byte_769D,Y
 		INY
 		LDX	#0
@@ -4501,7 +4496,7 @@ sub_9072:				; CODE XREF: sub_88B0-E29^p
 sub_9081:				; CODE XREF: RAM:7764^j	sub_84CF-9B4^p ...
 		LDX	$6493
 		LDA	$6494,X
-		AND	#$7F ; ''
+		AND	#$7F
 		BEQ	loc_9097
 		LDA	$4B
 		PHA
@@ -4603,10 +4598,7 @@ loc_911F:				; CODE XREF: sub_9100+E^j sub_9100+15^j
 
 
 sub_9124:				; CODE XREF: sub_88B0:loc_797B^p
-		LDA	$A7
-		STA	$D4
-		LDA	$A8
-		STA	$D5
+		dmv	$D4, $A7
 		LDA	$A8
 		CMP	byte_AA23
 		LDA	$A7
