@@ -5479,19 +5479,15 @@ sub_961C:				; CODE XREF: sub_950E+2E^p sub_9550+27^p
 ; End of function sub_961C
 
 ; ---------------------------------------------------------------------------
-; START	OF FUNCTION CHUNK FOR sub_962B
 
 loc_9629:				; CODE XREF: sub_962B+35vj sub_962B+3Avj ...
 		SEC
 		RTS
-; END OF FUNCTION CHUNK	FOR sub_962B
 
 ; --------------- S U B	R O U T	I N E ---------------------------------------
 
 
 sub_962B:				; CODE XREF: sub_950E+29^p sub_9550+22^p
-
-; FUNCTION CHUNK AT 9629 SIZE 00000002 BYTES
 
 		LDX	byte_230
 		DEX
@@ -5499,13 +5495,12 @@ sub_962B:				; CODE XREF: sub_950E+29^p sub_9550+22^p
 		AND	#3
 		TAX
 		LDA	$24E,X
-		BPL	loc_963D
+		BPL	:+
 		LDA	#$31 ; '1'
 		STA	byte_230
 
-loc_963D:				; CODE XREF: sub_962B+B^j
-		LDA	#0
-		STA	$25B
+:
+		ldi	$25B, $00
 		LDA	$D7
 		ASL	$D6
 		ROL	A
