@@ -2517,48 +2517,21 @@ aSmallShield:	.BYTE	"Small Shield",0
 		.BYTE	$2D ; -
 		.BYTE	2
 		.BYTE	$40 ; @
-unk_9199:	.BYTE	3		; DATA XREF: RAM:8F81^o
-		.BYTE	$27 ; '
-		.BYTE	1
-		.BYTE	0
-		.BYTE	$A
-		.BYTE	$13
-aLargeShield:	.BYTE	"Large Shield",0
-		.BYTE	0
-		.BYTE	$FF
-		.BYTE	0
-		.BYTE	$16
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	$18
-		.BYTE	1
-		.BYTE	$2D ; -
-		.BYTE	$32 ; 2
-		.BYTE	2
-		.BYTE	$60 ; `
+unk_9199:
+		Item	$03,$01,$00,$0A,"Large Shield"
+		.BYTE	$00,$FF,$00,$16,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$18,$01,$2D,$32,$02,$60
 unk_91C0:
 		Item	$05,$01,$00,$01,"Green Cap with Feather"
 		.BYTE	$00,$02,$01
 unk_91E0:
 		Item	$05,$01,$00,$01,"Floppy Leather Hat"
 		.BYTE	$00,$03,$02
-
 unk_91FC:
 		Item	$05,$01,$00,$01,"Leather Sandals"
 		.BYTE	$00,$02,$01
-
 unk_9215:
 		Item	$05,$01,$00,$02,"High Leather Boots"
 		.BYTE	$00,$04,$04
-
 unk_9231:
 		Item	$05,$01,$00,$02,"Snowshoes"
 		.BYTE	$88,$FF,$04,$01,$01,$00,$00,$00,$00,$81,$7C,$00,$01,$01,$0A,$00
