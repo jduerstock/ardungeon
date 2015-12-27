@@ -129,7 +129,7 @@ loc_76E3:				; CODE XREF: RAM:766F^j	RAM:76A5^j ...
 		LDA	$6310
 		CMP	$7549
 		BNE	loc_7715
-		ldxy	$7A5F
+		ldxy	off_7A5F
 		LDA	#1
 		JSR	j_RND_A
 		JSR	j_sub_2C9B
@@ -570,6 +570,8 @@ sub_7A3C:				; CODE XREF: RAM:loc_77E9^p RAM:784B^p ...
 		.WORD byte_8023
 		.WORD byte_803F
 		.WORD byte_804E
+
+off_7A5F:
 		.WORD byte_7A6F
 		.WORD byte_7AB5
 		.WORD byte_7FB0
