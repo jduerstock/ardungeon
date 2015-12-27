@@ -56,10 +56,7 @@ loc_7623:				; CODE XREF: RAM:762Avj
 		ORA	$7520
 		BNE	loc_76B0
 		JSR	j_sub_2E31
-		LDA	$630F
-		STA	$751F
-		LDA	$6310
-		STA	$7520
+		dmv	$751F, $630F
 		dldi	off_8F1C, aJeff
 		dldi	off_8F1E, aOmar
 		LDA	$630A
@@ -69,10 +66,8 @@ loc_7623:				; CODE XREF: RAM:762Avj
 		dldi	off_8F1E, aJeff
 
 :
-		LDA	#$FF
-		STA	$751B
-		LDA	#$1F
-		STA	$69
+		ldi	$751B, $FF
+		ldi	$69, $1F
 
 loc_767B:				; CODE XREF: RAM:768Dvj
 		LDA	RANDOM
