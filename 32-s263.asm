@@ -64,11 +64,11 @@ loc_7623:				; CODE XREF: RAM:762Avj
 		dldi	off_8F1E, aOmar
 		LDA	$630A
 		CMP	#$C
-		BCC	loc_7672
+		BCC	:+
 		dldi	off_8F1C, aOmar
 		dldi	off_8F1E, aJeff
 
-loc_7672:				; CODE XREF: RAM:765C^j
+:
 		LDA	#$FF
 		STA	$751B
 		LDA	#$1F
