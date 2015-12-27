@@ -162,6 +162,9 @@ $(BINARIES) 11-s680.bin: $(OBJECTS)
 	sha1sum -c 11-s312.sha1
 	./encrypt.php 11-s312.bin 413700204ce23c41cde1a12857f6d83a
 
+11-s312.bin.crypt: 11-s312.bin
+	./encrypt.php 11-s312.bin 413700204ce23c41cde1a12857f6d83a
+
 11-s376.bin: 11-s376.asm
 	cl65 --start-addr 0x0100 -t none 11-s376.asm -o 11-s376.bin
 	sha1sum -c 11-s376.sha1

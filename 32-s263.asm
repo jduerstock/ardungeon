@@ -25,7 +25,7 @@ off_6A = $6A
 off_85 = $85
 
 		.ORG	$7600
-		.BYTE $D
+		.BYTE	$0D
 ; ---------------------------------------------------------------------------
 		JMP	loc_7617
 ; ---------------------------------------------------------------------------
@@ -1213,7 +1213,7 @@ loc_7E9C:				; CODE XREF: RAM:7E92^j
 ; ---------------------------------------------------------------------------
 
 loc_7EB5:				; CODE XREF: RAM:7D62^j
-		dldi	off_16, $88A6
+		dldi	off_16, str_88A6
 		JSR	sub_8022
 
 loc_7EC0:				; CODE XREF: RAM:7ED9vj
@@ -1752,6 +1752,8 @@ aHowManyWouldYo:.BYTE $A5,"How many would you like to exchange?",$0D
 		.BYTE $A3
 		.WORD loc_8037
 		.BYTE $FF
+
+str_88A6:
 		.BYTE $A6,  0,	0
 		.BYTE $A3
 		.WORD loc_803A
@@ -1789,6 +1791,7 @@ aN:		.BYTE "N"
 		.BYTE $A5
 aItSDone_:	.BYTE "It's done."
 		.BYTE $D
+
 		.BYTE $FF
 		.BYTE $A6,  0,	2
 		.BYTE $A5
@@ -1799,10 +1802,10 @@ aHaYouHavenTEve:.BYTE "HA!  You haven't even the silver"
 aToPayMe:	.BYTE "to pay me!"
 		.BYTE $D
 		.BYTE $FF
-		.BYTE $8B ; ‹
-		.BYTE $8C ; Œ
-		.BYTE $89 ; ‰
-		.BYTE $89 ; ‰
+		.BYTE $8B
+		.BYTE $8C
+		.BYTE $89
+		.BYTE $89
 		.BYTE	0
 aPairOf:	.BYTE "pair of ",0
 		.WORD byte_899B
