@@ -114,8 +114,7 @@ loc_76B0:				; CODE XREF: RAM:7632^j
 		dldi	off_7, $96F0
 		LDA	#2
 		JSR	$180F
-		LDA	#3
-		STA	$751C
+		ldi	$751C, $03
 		JSR	j_sub_2E31
 		LDA	$630F
 		SEC
@@ -124,8 +123,7 @@ loc_76B0:				; CODE XREF: RAM:7632^j
 		LDA	$6310
 		SBC	$7520
 		BEQ	loc_7702
-		LDA	#$FF
-		STA	$83
+		ldi	$83, $FF
 
 loc_7702:				; CODE XREF: RAM:76FC^j
 		LDA	$83
@@ -138,8 +136,7 @@ loc_7702:				; CODE XREF: RAM:76FC^j
 		STA	$83
 
 loc_7711:				; CODE XREF: RAM:770B^j	RAM:7798vj
-		LDA	#$1F
-		STA	$69
+		ldi	$69, $1F
 
 loc_7715:				; CODE XREF: RAM:7743vj
 		ldxy	$7512
