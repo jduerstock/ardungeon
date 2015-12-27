@@ -211,7 +211,7 @@ loc_7796:				; CODE XREF: RAM:7785^j
 ; ---------------------------------------------------------------------------
 
 loc_77A5:				; CODE XREF: RAM:776F^j
-		dldi	off_16, $7F74
+		dldi	off_16, str_7F74
 
 loc_77AD:				; CODE XREF: RAM:7780^j	RAM:7793^j ...
 		dmv	$6E, off_16
@@ -708,7 +708,9 @@ aIHaveExpectedT:.BYTE $A5,"I have expected thee.  As usual I shall",$0D,$0D
 aImpartInsightF:.BYTE $A5,"impart insight for a small offering.",$0D
 		.BYTE $A6,  7,	6
 		.BYTE $AC
-		.WORD aDoYou		; "Do you ("
+		.WORD aDoYou
+
+str_7F74:
 		.BYTE $A6,  7,	2
 aDoYou:		.BYTE "Do you "        ; DATA XREF: RAM:7C5C^o RAM:7CC3^o ...
 		MenuItem "1","make an offering"
