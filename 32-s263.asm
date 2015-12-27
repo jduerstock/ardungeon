@@ -129,11 +129,9 @@ loc_76B0:				; CODE XREF: RAM:7632^j
 
 loc_7702:				; CODE XREF: RAM:76FC^j
 		LDA	$83
-		BNE	loc_7709
+		BNE	:+
 		JMP	loc_779B
-; ---------------------------------------------------------------------------
-
-loc_7709:				; CODE XREF: RAM:7704^j
+:
 		CMP	#$30 ; '0'
 		BCC	loc_7711
 		LDA	#$30 ; '0'
@@ -462,10 +460,8 @@ loc_791D:				; CODE XREF: RAM:7914^j
 		INC	$8A
 
 loc_793E:				; CODE XREF: RAM:791A^j	RAM:793A^j
-		LDA	$89
-		STA	$70
-		LDA	$8A
-		STA	$6F
+		mv	$70, $89
+		mv	$6F, $8A
 
 loc_7946:				; CODE XREF: RAM:79CCvj
 		LDA	$6E
