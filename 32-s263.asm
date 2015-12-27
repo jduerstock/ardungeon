@@ -983,12 +983,11 @@ loc_7CDC:				; CODE XREF: RAM:7BF2^j	RAM:loc_7C6B^j ...
 ; ---------------------------------------------------------------------------
 
 loc_7CF1:				; CODE XREF: RAM:784C^j	RAM:loc_7D6Evj ...
-		dldi	off_16, $8703
+		dldi	off_16, str_8703
 		JSR	sub_8022
 
 loc_7CFC:				; CODE XREF: RAM:7D67vj
-		LDA	$62
-		STA	$1933
+		mv	$1933, $62
 		JSR	j_sub_3C2D
 
 loc_7D04:				; CODE XREF: RAM:7D07vj
@@ -1000,13 +999,9 @@ loc_7D04:				; CODE XREF: RAM:7D07vj
 		CLC
 		ADC	$66
 		STA	$6C
-		LDA	$63B7
-		STA	$76
-		LDA	$63B8
-		STA	$77
+		dmv	$76, $63B7
 		dldi	off_7D6C, $8835
-		LDA	#0
-		STA	$81
+		ldi	$81, $00
 		JMP	loc_7D71
 ; ---------------------------------------------------------------------------
 
@@ -1677,6 +1672,7 @@ aBlessYou:	.BYTE "Bless you!"
 aInvalidEntryTr:.BYTE "Invalid entry, try again."
 		.BYTE $D
 		.BYTE $FF
+
 		.BYTE $A6,  0,	2
 		STRJSR	loc_803A
 		.BYTE $A5
@@ -1688,6 +1684,8 @@ aYouOnlyHave:	.BYTE "You only have "
 		.BYTE $D
 		STRJSR	loc_8037
 		.BYTE $FF
+
+str_8703:
 		MOVEXY	0,0
 aWhatWouldYouLi:.BYTE $A5,"What would you like to exchange?",$0D
 		MOVEXY	8,3
