@@ -489,7 +489,7 @@ loc_7962:				; CODE XREF: RAM:7965vj
 		JSR	sub_7F6D
 		LDA	#2
 		JSR	j_RND_A
-		ldxy	$85F1
+		ldxy	off_85F1
 		JSR	j_sub_2C9B
 		JSR	sub_8022
 		JSR	sub_801D
@@ -1634,6 +1634,8 @@ aITireOfBargain:.BYTE "I tire of bargaining, this item is"
 aNoLongerForSal:.BYTE "no longer for sale."
 		.BYTE $D
 		.BYTE $FF
+
+off_85F1:
 		.WORD byte_85F7
 		.WORD byte_8622
 		.WORD byte_8622
