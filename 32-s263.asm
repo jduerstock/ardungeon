@@ -846,10 +846,10 @@ loc_7C02:				; CODE XREF: RAM:7BFD^j
 		PHA
 		RTS
 ; ---------------------------------------------------------------------------
-off_7C10:	.WORD loc_7C34-1	; DATA XREF: RAM:7C0B^r	RAM:7C07^r
-		.WORD loc_7C51-1
-		.WORD loc_7C71-1
-		.WORD loc_7C84-1
+off_7C10:	.WORD	loc_7C34-1	; DATA XREF: RAM:7C0B^r	RAM:7C07^r
+		.WORD	loc_7C51-1
+		.WORD	loc_7C71-1
+		.WORD	loc_7C84-1
 ; ---------------------------------------------------------------------------
 
 loc_7C18:				; CODE XREF: RAM:7BF7^j
@@ -1453,7 +1453,7 @@ loc_8034:
 loc_8037:				; DATA XREF: RAM:8405vo	RAM:849Avo ...
 		LDA	#0
 ; ---------------------------------------------------------------------------
-		.BYTE $2C
+		.BYTE	$2C
 ; ---------------------------------------------------------------------------
 
 loc_803A:				; DATA XREF: RAM:83CBvo	RAM:847Cvo ...
@@ -1461,30 +1461,30 @@ loc_803A:				; DATA XREF: RAM:83CBvo	RAM:847Cvo ...
 		STA	$18FE
 		RTS
 ; ---------------------------------------------------------------------------
-		.BYTE $A8,$FF
-		.BYTE $A8
+		.BYTE	$A8,$FF
+		.BYTE	$A8
 		MOVEXY	0,2
-aWhichItem531q:	.BYTE "Which item (5-31) ?",$FF
+aWhichItem531q:	.BYTE	"Which item (5-31) ?",$FF
 byte_805A:	MOVEXY	0,0		; DATA XREF: RAM:8DFBvo
-aWelcome:	.BYTE $A5,"Welcome "
-		.BYTE $B3
-		.WORD $6321
-		.BYTE $1C
-		.BYTE '!',$0D
+aWelcome:	.BYTE	$A5,"Welcome "
+		.BYTE	$B3
+		.WORD	$6321
+		.BYTE	$1C
+		.BYTE	'!',$0D
 aWhatCan:	.BYTE	$A5,"What can "
 		PRINTSTRP off_8F1C, 4
-aHelpYouWithTod:.BYTE " help you with today?",$0D
-		.BYTE $AC
-		.WORD byte_81A6
+aHelpYouWithTod:.BYTE	" help you with today?",$0D
+		.BYTE	$AC
+		.WORD	byte_81A6
 byte_8093:	MOVEXY	0,0		; DATA XREF: RAM:8DF9vo
 aGreetingsAdven:.BYTE	$A5,"Greetings adventurer, what may I",$0D
 aHelpYouWithT_0:.BYTE	$A5,"help you with today?",$0D
-		.BYTE $AC
-		.WORD byte_81A6
+		.BYTE	$AC
+		.WORD	byte_81A6
 byte_80D1:	MOVEXY	0,0		; DATA XREF: RAM:8DF7vo
 aWelcomeWhatCan:.BYTE	$A5,"Welcome, what can I help you with?",$0D
-		.BYTE $AC
-		.WORD byte_81A6
+		.BYTE	$AC
+		.WORD	byte_81A6
 
 byte_80FB:
 		MOVEXY	0,0
@@ -1494,15 +1494,15 @@ byte_80FB:
 		PRINTSTRP off_8F1E, 4
 aS:		.BYTE	"'s",$0D
 aTwinBrother_Ho:.BYTE	$A5,"twin brother.  How can I help you?",$0D
-		.BYTE $AC
-		.WORD byte_81A6
+		.BYTE	$AC
+		.WORD	byte_81A6
 byte_814F:	MOVEXY	0,0		; DATA XREF: RAM:8DF5vo
 aWhatAreYouHere:.BYTE	$A5,"What are you here for, churl?",$0D
-		.BYTE $AC
-		.WORD byte_81A6
+		.BYTE	$AC
+		.WORD	byte_81A6
 		MOVEXY	0,1
-aQuitThyJesting:.BYTE $A5,"Quit thy jesting and make a",$D,$D
-aSeriousOffer:	.BYTE $A5,"serious offer!",$D,$FF
+aQuitThyJesting:.BYTE	$A5,"Quit thy jesting and make a",$D,$D
+aSeriousOffer:	.BYTE	$A5,"serious offer!",$D,$FF
 byte_81A6:	MOVEXY	5,3		; DATA XREF: RAM:8091^o	RAM:80CF^o ...
 		MenuItem "1","Stocking up on provisions"
 		MOVEXY	5,4
@@ -1513,11 +1513,12 @@ byte_81A6:	MOVEXY	5,3		; DATA XREF: RAM:8091^o	RAM:80CF^o ...
 		MenuItem "4","Exchanging currency"
 		MOVEXY	5,7
 		MenuItem "0","Leave"
-		.BYTE $FF
+		.BYTE	$FF
 		MOVEXY	0,1
-aWhatDoYouThink:.BYTE $A5,"What do you think this is?  Gram's Gold",$D,$D
-aExchangeqICanT:.BYTE $A5,"exchange?!  I can't spend all day",$D,$D
-aCountingCoins:	.BYTE $A5,"counting coins!",$D,$FF
+aWhatDoYouThink:.BYTE	$A5,"What do you think this is?  Gram's Gold",$D,$D
+aExchangeqICanT:.BYTE	$A5,"exchange?!  I can't spend all day",$D,$D
+aCountingCoins:	.BYTE	$A5,"counting coins!",$D,$FF
+
 byte_8292:	MOVEXY	9,3		; DATA XREF: RAM:8E58vo	RAM:8E8Cvo
 		MenuItem "1","Provisions"
 		MOVEXY	9,4
@@ -1528,9 +1529,10 @@ byte_8292:	MOVEXY	9,3		; DATA XREF: RAM:8E58vo	RAM:8E8Cvo
 		MenuItem "4","Currency exchange"
 		MOVEXY	9,7
 		MenuItem "0","Leave"
-		.BYTE $FF
+		.BYTE	$FF
+
 		MOVEXY	0,0
-aWhatProvisions:.BYTE $A5,"What provisions are you interested in?",$D
+aWhatProvisions:.BYTE	$A5,"What provisions are you interested in?",$D
 		MOVEXY	6,2
 		MenuItem "1","Nourishing food packets"
 		MOVEXY	6,3
@@ -1543,17 +1545,18 @@ aWhatProvisions:.BYTE $A5,"What provisions are you interested in?",$D
 		MenuItem "5","Accurate timepieces"
 		MOVEXY	6,7
 		MenuItem "0","Buy something else"
-		.BYTE $FF
+		.BYTE	$FF
+
 		MOVEXY	0,0
 		STRJSR	loc_803A
-aHowMany:	.BYTE $A5,"How many "
+aHowMany:	.BYTE	$A5,"How many "
 		PRINTSTRP off_6A, 19
-aDoYouWant:	.BYTE " do you want",$0D,$0D
-aAt_0:		.BYTE $A5,"at "
-		.BYTE $B2
-		.WORD $6C
-		.BYTE 2
-aSilversEachq:	.BYTE " silvers each?",$0D
+aDoYouWant:	.BYTE	" do you want",$0D,$0D
+aAt_0:		.BYTE	$A5,"at "
+		.BYTE	$B2
+		.WORD	$6C
+		.BYTE	2
+aSilversEachq:	.BYTE	" silvers each?",$0D
 		MOVEXY	16,4
 		.BYTE	">"
 		STRJSR	loc_8037
@@ -1565,129 +1568,129 @@ aExpectMyNextSh:.BYTE	$A5,"expect my next shipment tommorow.",$0D,$FF
 		MOVEXY	0,2
 		STRJSR	loc_803A
 aIOnlyHave:	.BYTE	$A5,"I only have "
-		.BYTE $B2
-		.WORD $6D
-		.BYTE 3
+		.BYTE	$B2
+		.WORD	$6D
+		.BYTE	3
 aOnHand_:	.BYTE	" on hand.",$0D
 		STRJSR	loc_8037
 		.BYTE	$FF
 		STRJSR	loc_803A
 		MOVEXY	0,1
 aLetSSee___:	.BYTE	$A5,"Let's see..."
-		.BYTE $B2
-		.WORD $6E
-		.BYTE 3
-		.BYTE ' '
+		.BYTE	$B2
+		.WORD	$6E
+		.BYTE	3
+		.BYTE	' '
 		PRINTSTRP off_6A, 19
 aAt:		.BYTE	" at",$0D
-		.BYTE $A5
-		.BYTE $B2
-		.WORD $6C
-		.BYTE 3
-aSilversEachCom:.BYTE " silvers each comes to a total",$0D
-aOf:		.BYTE $A5,"of "
-		.BYTE $B1
-		.WORD $6F
-		.BYTE 6
-aSilvers_:	.BYTE " silvers.",$0D
-byte_84F3:	.BYTE $A6, $B,	6	; DATA XREF: RAM:855Bvo
+		.BYTE	$A5
+		.BYTE	$B2
+		.WORD	$6C
+		.BYTE	3
+aSilversEachCom:.BYTE	" silvers each comes to a total",$0D
+aOf:		.BYTE	$A5,"of "
+		.BYTE	$B1
+		.WORD	$6F
+		.BYTE	6
+aSilvers_:	.BYTE	" silvers.",$0D
+byte_84F3:	.BYTE	$A6, $B,	6	; DATA XREF: RAM:855Bvo
 		MenuItem "1","Agree to sale"
-		.BYTE $A6, $B,	7
+		.BYTE	$A6, $B,	7
 		MenuItem "2","Forget it"
-		.BYTE $A3
-		.WORD loc_8037
-		.BYTE $FF
-		.BYTE $A3
-		.WORD loc_803A
-		.BYTE $A6,  0,	1
-		.BYTE $A5
-aThatWillBe:	.BYTE "That will be "
-		.BYTE $B2
-		.WORD $6C
-		.BYTE 3
+		.BYTE	$A3
+		.WORD	loc_8037
+		.BYTE	$FF
+		.BYTE	$A3
+		.WORD	loc_803A
+		.BYTE	$A6,  0,	1
+		.BYTE	$A5
+aThatWillBe:	.BYTE	"That will be "
+		.BYTE	$B2
+		.WORD	$6C
+		.BYTE	3
 aSilversForOneO:.BYTE	" silvers for one of",$0D
 aMyFine:	.BYTE	$A5,"my fine "
 		PRINTSTRP off_6A, 20
 a_:		.BYTE	'.',$0D
-		.BYTE $AC
-		.WORD byte_84F3
+		.BYTE	$AC
+		.WORD	byte_84F3
 		MOVEXY	0,1
 		.BYTE	$A5,"Leave my shoppe and don't return",$0D,$0D
 		.BYTE	$A5,"until you are ready to make a decent",$0D,$0D
 		.BYTE	$A5,"offer!",$0D,$FF
 		MOVEXY	0,1
-		.BYTE $A5
-aITireOfBargain:.BYTE "I tire of bargaining, this item is"
-		.BYTE $D
-		.BYTE $D
-		.BYTE $A5
-aNoLongerForSal:.BYTE "no longer for sale."
-		.BYTE $D
-		.BYTE $FF
+		.BYTE	$A5
+aITireOfBargain:.BYTE	"I tire of bargaining, this item is"
+		.BYTE	$D
+		.BYTE	$D
+		.BYTE	$A5
+aNoLongerForSal:.BYTE	"no longer for sale."
+		.BYTE	$D
+		.BYTE	$FF
 
 off_85F1:
-		.WORD byte_85F7
-		.WORD byte_8622
-		.WORD byte_8622
-byte_85F7:	.BYTE $A6,  0,	2	; DATA XREF: RAM:85F1^o
-		.BYTE $A5
-aThineEyesAreBi:.BYTE "Thine eyes are bigger than thy purse!"
-		.BYTE $D
-		.BYTE $FF
-byte_8622:	.BYTE $A6,  0,	2	; DATA XREF: RAM:85F3^o	RAM:85F5^o
-		.BYTE $A5
-aThouWouldBeWis:.BYTE "Thou would be wise to check thy funds"
-		.BYTE $D
-		.BYTE $D
-		.BYTE $A5
-aBeforePurchasi:.BYTE "BEFORE purchasing!"
-		.BYTE $D
-		.BYTE $FF
-		.WORD byte_866A
-		.WORD byte_8683
-		.WORD byte_869E
-		.WORD byte_86B5
-byte_866A:	.BYTE $A6,  0,	2	; DATA XREF: RAM:8662^o
-		.BYTE $A5
-aThankYouKindSi:.BYTE "Thank you kind sir!"
-		.BYTE $D
-		.BYTE $FF
-byte_8683:	.BYTE $A6,  0,	2	; DATA XREF: RAM:8664^o
-		.BYTE $A5
-aAThousandBless:.BYTE "A thousand blessings."
-		.BYTE $D
-		.BYTE $FF
-byte_869E:	.BYTE $A6,  0,	2	; DATA XREF: RAM:8666^o
-		.BYTE $A5
-aThankYouMadam_:.BYTE "Thank you, madam."
-		.BYTE $D
-		.BYTE $FF
-byte_86B5:	.BYTE $A6,  0,	2	; DATA XREF: RAM:8668^o
-		.BYTE $A5
-aBlessYou:	.BYTE "Bless you!"
-		.BYTE $D
-		.BYTE $FF
-		.BYTE $A6,  0,	2
-		.BYTE $A5
-aInvalidEntryTr:.BYTE "Invalid entry, try again."
-		.BYTE $D
-		.BYTE $FF
+		.WORD	byte_85F7
+		.WORD	byte_8622
+		.WORD	byte_8622
+byte_85F7:	.BYTE	$A6,  0,	2	; DATA XREF: RAM:85F1^o
+		.BYTE	$A5
+aThineEyesAreBi:.BYTE	"Thine eyes are bigger than thy purse!"
+		.BYTE	$D
+		.BYTE	$FF
+byte_8622:	.BYTE	$A6,  0,	2	; DATA XREF: RAM:85F3^o	RAM:85F5^o
+		.BYTE	$A5
+aThouWouldBeWis:.BYTE	"Thou would be wise to check thy funds"
+		.BYTE	$D
+		.BYTE	$D
+		.BYTE	$A5
+aBeforePurchasi:.BYTE	"BEFORE purchasing!"
+		.BYTE	$D
+		.BYTE	$FF
+		.WORD	byte_866A
+		.WORD	byte_8683
+		.WORD	byte_869E
+		.WORD	byte_86B5
+byte_866A:	.BYTE	$A6,  0,	2	; DATA XREF: RAM:8662^o
+		.BYTE	$A5
+aThankYouKindSi:.BYTE	"Thank you kind sir!"
+		.BYTE	$D
+		.BYTE	$FF
+byte_8683:	.BYTE	$A6,  0,	2	; DATA XREF: RAM:8664^o
+		.BYTE	$A5
+aAThousandBless:.BYTE	"A thousand blessings."
+		.BYTE	$D
+		.BYTE	$FF
+byte_869E:	.BYTE	$A6,  0,	2	; DATA XREF: RAM:8666^o
+		.BYTE	$A5
+aThankYouMadam_:.BYTE	"Thank you, madam."
+		.BYTE	$D
+		.BYTE	$FF
+byte_86B5:	.BYTE	$A6,  0,	2	; DATA XREF: RAM:8668^o
+		.BYTE	$A5
+aBlessYou:	.BYTE	"Bless you!"
+		.BYTE	$D
+		.BYTE	$FF
+		.BYTE	$A6,  0,	2
+		.BYTE	$A5
+aInvalidEntryTr:.BYTE	"Invalid entry, try again."
+		.BYTE	$D
+		.BYTE	$FF
 
-		.BYTE $A6,  0,	2
+		.BYTE	$A6,  0,	2
 		STRJSR	loc_803A
-		.BYTE $A5
-aYouOnlyHave:	.BYTE "You only have "
-		.BYTE $B1
-		.WORD $76
-		.BYTE 6
-		.BYTE "!"
-		.BYTE $D
+		.BYTE	$A5
+aYouOnlyHave:	.BYTE	"You only have "
+		.BYTE	$B1
+		.WORD	$76
+		.BYTE	6
+		.BYTE	"!"
+		.BYTE	$D
 		STRJSR	loc_8037
-		.BYTE $FF
+		.BYTE	$FF
 
 str_8703:
 		MOVEXY	0,0
-aWhatWouldYouLi:.BYTE $A5,"What would you like to exchange?",$0D
+aWhatWouldYouLi:.BYTE	$A5,"What would you like to exchange?",$0D
 		MOVEXY	8,3
 		MenuItem "1","Gems for coins"
 		MOVEXY	8,4
@@ -1696,24 +1699,24 @@ aWhatWouldYouLi:.BYTE $A5,"What would you like to exchange?",$0D
 		MenuItem "3","Silver & copper coins"
 		MOVEXY	8,7
 		MenuItem "0","Done"
-		.BYTE $FF
+		.BYTE	$FF
 		MOVEXY	0,2
 		STRJSR	loc_803A
-aHereIs:	.BYTE $A5,"Here is "
-		.BYTE $B1
-		.WORD $72
-		.BYTE 6
-aGoldAnd:	.BYTE " gold and "
-		.BYTE $B1
-		.WORD $74
-		.BYTE 6
-aSilverCoins_:	.BYTE " silver coins."
-		.BYTE $D
+aHereIs:	.BYTE	$A5,"Here is "
+		.BYTE	$B1
+		.WORD	$72
+		.BYTE	6
+aGoldAnd:	.BYTE	" gold and "
+		.BYTE	$B1
+		.WORD	$74
+		.BYTE	6
+aSilverCoins_:	.BYTE	" silver coins."
+		.BYTE	$D
 		STRJSR	loc_8037
-		.BYTE $FF
+		.BYTE	$FF
 		MOVEXY	0,0
-		.BYTE $A3
-		.WORD $803A
+		.BYTE	$A3
+		.WORD	$803A
 aICanTTellOneJe:.BYTE	$A5,"I can't tell one jewel from another",$0D,$0D
 aSoIPayAFlatRat:.BYTE	$A5,"so I pay a flat rate of "
 		.BYTE	$B2
@@ -1733,72 +1736,72 @@ aIWillGiveYou:	.BYTE	$A5,"I will give you "
 		.WORD	$6C
 		.BYTE	3
 aSilvers:	.BYTE	" silvers",$0D,$0D
-aForEachGemBigO:.BYTE $A5,"for each gem, big or small.",$0D,$0D
-aHowManyWouldYo:.BYTE $A5,"How many would you like to exchange?",$0D
+aForEachGemBigO:.BYTE	$A5,"for each gem, big or small.",$0D,$0D
+aHowManyWouldYo:.BYTE	$A5,"How many would you like to exchange?",$0D
 		MOVEXY	16,6
 		.BYTE	'>'
-		.BYTE $A3
-		.WORD loc_8037
-		.BYTE $FF
+		.BYTE	$A3
+		.WORD	loc_8037
+		.BYTE	$FF
 
 str_88A6:
-		.BYTE $A6,  0,	0
-		.BYTE $A3
-		.WORD loc_803A
-		.BYTE $A5
-aFor:		.BYTE "For "
-		.BYTE $B2
-		.WORD $6C
-		.BYTE 3
-aSilversIWillEx:.BYTE " silvers I will exchange all"
-		.BYTE $D
-		.BYTE $D
-		.BYTE $A5
-aOfYourSilverCo:.BYTE "of your silver & copper coins for gold."
-		.BYTE $D
-		.BYTE $D
-		.BYTE $A5
-aThisWillLessen:.BYTE "This will lessen your load."
-		.BYTE $D
-		.BYTE $A6,  0,	6
-		.BYTE $A5
-aWouldYouLikeTh:.BYTE "Would you like this? ("
-		.BYTE $A1
-aY:		.BYTE "Y"
-		.BYTE $A0
-aOr:		.BYTE " or "
-		.BYTE $A1
-aN:		.BYTE "N"
-		.BYTE $A0
-		.BYTE ")"
-		.BYTE $D
-		.BYTE $A3
-		.WORD loc_8037
-		.BYTE $FF
-		.BYTE $A6,  0,	2
-		.BYTE $A5
-aItSDone_:	.BYTE "It's done."
-		.BYTE $D
+		.BYTE	$A6,  0,	0
+		.BYTE	$A3
+		.WORD	loc_803A
+		.BYTE	$A5
+aFor:		.BYTE	"For "
+		.BYTE	$B2
+		.WORD	$6C
+		.BYTE	3
+aSilversIWillEx:.BYTE	" silvers I will exchange all"
+		.BYTE	$D
+		.BYTE	$D
+		.BYTE	$A5
+aOfYourSilverCo:.BYTE	"of your silver & copper coins for gold."
+		.BYTE	$D
+		.BYTE	$D
+		.BYTE	$A5
+aThisWillLessen:.BYTE	"This will lessen your load."
+		.BYTE	$D
+		.BYTE	$A6,  0,	6
+		.BYTE	$A5
+aWouldYouLikeTh:.BYTE	"Would you like this? ("
+		.BYTE	$A1
+aY:		.BYTE	"Y"
+		.BYTE	$A0
+aOr:		.BYTE	" or "
+		.BYTE	$A1
+aN:		.BYTE	"N"
+		.BYTE	$A0
+		.BYTE	")"
+		.BYTE	$D
+		.BYTE	$A3
+		.WORD	loc_8037
+		.BYTE	$FF
+		.BYTE	$A6,  0,	2
+		.BYTE	$A5
+aItSDone_:	.BYTE	"It's done."
+		.BYTE	$D
 
-		.BYTE $FF
-		.BYTE $A6,  0,	2
-		.BYTE $A5
-aHaYouHavenTEve:.BYTE "HA!  You haven't even the silver"
-		.BYTE $D
-		.BYTE $D
-		.BYTE $A5
-aToPayMe:	.BYTE "to pay me!"
-		.BYTE $D
-		.BYTE $FF
-		.BYTE $8B
-		.BYTE $8C
-		.BYTE $89
-		.BYTE $89
+		.BYTE	$FF
+		.BYTE	$A6,  0,	2
+		.BYTE	$A5
+aHaYouHavenTEve:.BYTE	"HA!  You haven't even the silver"
+		.BYTE	$D
+		.BYTE	$D
+		.BYTE	$A5
+aToPayMe:	.BYTE	"to pay me!"
+		.BYTE	$D
+		.BYTE	$FF
+		.BYTE	$8B
+		.BYTE	$8C
+		.BYTE	$89
+		.BYTE	$89
 		.BYTE	0
-aPairOf:	.BYTE "pair of ",0
-		.WORD byte_899B
-		.WORD byte_89CE
-		.WORD byte_89CE
+aPairOf:	.BYTE	"pair of ",0
+		.WORD	byte_899B
+		.WORD	byte_89CE
+		.WORD	byte_89CE
 byte_899B:	MOVEXY	0,0
 		STRJSR	loc_803A
 aHowAboutA:	.BYTE	$A5,"How about a "
@@ -1806,24 +1809,24 @@ aHowAboutA:	.BYTE	$A5,"How about a "
 		PRINTSTRP off_6A, 25
 		.BYTE	$0D,$0D
 aFor_0:		.BYTE	$A5,"for "
-		.BYTE $B2
-		.WORD $6C
-		.BYTE 3
-aSilversq:	.BYTE " silvers?"
-		.BYTE $D
-		.BYTE $AC
-		.WORD byte_89FC
-byte_89CE:	.BYTE $A6,  0,	0	; DATA XREF: RAM:8997^o	RAM:8999^o
+		.BYTE	$B2
+		.WORD	$6C
+		.BYTE	3
+aSilversq:	.BYTE	" silvers?"
+		.BYTE	$D
+		.BYTE	$AC
+		.WORD	byte_89FC
+byte_89CE:	.BYTE	$A6,  0,	0	; DATA XREF: RAM:8997^o	RAM:8999^o
 		STRJSR loc_803A
 aHereSA:	.BYTE	$A5,"Here's a "
 		PRINTSTRP off_85, 8
 		PRINTSTRP off_6A, 25
 		.BYTE	$0D,$0D
 aFor_1:		.BYTE	$A5,"for "
-		.BYTE $B2
-		.WORD $6C
-		.BYTE 3
-aSilversq_0:	.BYTE " silvers?",$0D,$0D
+		.BYTE	$B2
+		.WORD	$6C
+		.BYTE	3
+aSilversq_0:	.BYTE	" silvers?",$0D,$0D
 byte_89FC:	MOVEXY	8,4
 		MenuItem "1","Agree to price"
 		MOVEXY	8,5
@@ -1834,144 +1837,144 @@ byte_89FC:	MOVEXY	8,4
 		MenuItem "0","Buy something else"
 		STRJSR	loc_8037
 		.BYTE	$FF
-		.WORD byte_8A6A
-		.WORD byte_8A8D
-byte_8A6A:	.BYTE $A6,  0,	1	; DATA XREF: RAM:8A66^o
-		.BYTE $A3
-		.WORD loc_803A
-		.BYTE $A5
-aWouldYouConsid:.BYTE "Would you consider "
-		.BYTE $B2
-		.WORD $6C
-		.BYTE 3
-aq:		.BYTE '?'
-		.BYTE $D
-		.BYTE $AC
-		.WORD byte_89FC
-byte_8A8D:	.BYTE $A6,  0,	1	; DATA XREF: RAM:8A68^o
-		.BYTE $A3
-		.WORD loc_803A
-		.BYTE $A5
-aHowAbout:	.BYTE "How about "
-		.BYTE $B2
-		.WORD $6C
-		.BYTE 3
-aSilversq_1:	.BYTE " silvers?",$D
-		.BYTE $AC
-		.WORD byte_89FC
-		.WORD byte_8AB5
-		.WORD byte_8AC2
-		.WORD byte_8AD5
-byte_8AB5:	.BYTE $A6,  0,	2	; DATA XREF: RAM:8AAF^o
-		.BYTE $A5
-aAgreed:	.BYTE "Agreed!"
-		.BYTE $D
-		.BYTE $FF
-byte_8AC2:	.BYTE $A6,  0,	2	; DATA XREF: RAM:8AB1^o
-		.BYTE $A5
-aILlTakeIt:	.BYTE "I'll take it!"
-		.BYTE $D
-		.BYTE $FF
-byte_8AD5:	.BYTE $A6,  0,	2	; DATA XREF: RAM:8AB3^o
-		.BYTE $A3
-		.WORD loc_803A
-		.BYTE $A5
-aSoldFor:	.BYTE "Sold for "
-		.BYTE $B2
-		.WORD $6C
-		.BYTE 3
-aSilvers_0:	.BYTE " silvers!"
-		.BYTE $D
-		.BYTE $A3
-		.WORD $8037
-		.BYTE $FF
-		.BYTE $A6,  0,	1
-		.BYTE $A5
-aSurelyYouJestY:.BYTE "Surely you jest! You take the food"
-		.BYTE $D
-		.BYTE $D
-		.BYTE $A5
-aFromMyChildren:.BYTE "from my childrens mouths!"
-		.BYTE $D
-		.BYTE $FF
-		.BYTE $A6,  0,	2
-		.BYTE $A5
-aIPaidMoreForIt:.BYTE "I paid more for it myself!"
-		.BYTE $D
-		.BYTE $FF
-		.BYTE $A6,  0,	1
-		.BYTE $A3
-		.WORD loc_803A
-		.BYTE $A5
-aIDemandAtLeast:.BYTE "I demand at least "
-		.BYTE $B2
-		.WORD $6C
-		.BYTE 3
-aSilvers_1:	.BYTE " silvers!",$D
-		.BYTE $AC
-		.WORD $89FC
-		.BYTE $A6,  0,	1
-		.BYTE $A5
-aIHaveNoApparel:.BYTE "I have no apparel at the moment, try"
-		.BYTE $D
-		.BYTE $D
-		.BYTE $A5
-aAgainTommorow_:.BYTE "again tommorow."
-		.BYTE $D
-		.BYTE $FF
-		.BYTE $A6,  0,	1
-		.BYTE $A5
-aSorryButIMAllS:.BYTE "Sorry but I'm all sold out of battle"
-		.BYTE $D
-		.BYTE $D
-		.BYTE $A5
-aGear_IShouldGe:.BYTE "gear.  I should get some tommorow."
-		.BYTE $D
-		.BYTE $FF
-		.BYTE $A6,  0,	0
-		.BYTE $A5
-aYouVeSeenAllTh:.BYTE "You've seen all the apparel I have on"
-		.BYTE $D
-		.BYTE $AC
-		.WORD byte_8C63
-		.BYTE $A6,  0,	0
-		.BYTE $A5
-aThatSAllTheBat:.BYTE "That's all the battle gear I have"
-		.BYTE $D
-byte_8C63:	.BYTE $D		; DATA XREF: RAM:8C3B^o
-		.BYTE $A5
-aOnHandToday_Wo:.BYTE "on hand today.  Would you care to look"
-		.BYTE $D
-		.BYTE $D
-		.BYTE $A5
-aItOverAgainq:	.BYTE "it over again?"
-		.BYTE $D
-		.BYTE $A6,  0,	7
-		.BYTE $A5
-		.BYTE '('
-		.BYTE $A1
-aY_0:		.BYTE 'Y'
-		.BYTE $A0
-aOr_0:		.BYTE " or "
-		.BYTE $A1
-aN_0:		.BYTE 'N'
-		.BYTE $A0
-		.BYTE ')'
-		.BYTE $D
-		.BYTE $FF
-		.BYTE $A6,  0,	2
-		.BYTE $A5
-aHowManySilvers:.BYTE "How many silvers do you offer?"
-		.BYTE $D
-		.BYTE $A6,$10,	4
-		.BYTE '>'
-		.BYTE $FF
-		.WORD byte_8CDD
-		.WORD byte_8D09
-		.WORD byte_8D40
-byte_8CDD:	.BYTE $A6,  0,	2	; DATA XREF: RAM:8CD7^o
-aAFinePurchaseI:.BYTE "A fine purchase if I must say so myself!"
-		.BYTE $FF
+		.WORD	byte_8A6A
+		.WORD	byte_8A8D
+byte_8A6A:	.BYTE	$A6,  0,	1	; DATA XREF: RAM:8A66^o
+		.BYTE	$A3
+		.WORD	loc_803A
+		.BYTE	$A5
+aWouldYouConsid:.BYTE	"Would you consider "
+		.BYTE	$B2
+		.WORD	$6C
+		.BYTE	3
+aq:		.BYTE	'?'
+		.BYTE	$D
+		.BYTE	$AC
+		.WORD	byte_89FC
+byte_8A8D:	.BYTE	$A6,  0,	1	; DATA XREF: RAM:8A68^o
+		.BYTE	$A3
+		.WORD	loc_803A
+		.BYTE	$A5
+aHowAbout:	.BYTE	"How about "
+		.BYTE	$B2
+		.WORD	$6C
+		.BYTE	3
+aSilversq_1:	.BYTE	" silvers?",$D
+		.BYTE	$AC
+		.WORD	byte_89FC
+		.WORD	byte_8AB5
+		.WORD	byte_8AC2
+		.WORD	byte_8AD5
+byte_8AB5:	.BYTE	$A6,  0,	2	; DATA XREF: RAM:8AAF^o
+		.BYTE	$A5
+aAgreed:	.BYTE	"Agreed!"
+		.BYTE	$D
+		.BYTE	$FF
+byte_8AC2:	.BYTE	$A6,  0,	2	; DATA XREF: RAM:8AB1^o
+		.BYTE	$A5
+aILlTakeIt:	.BYTE	"I'll take it!"
+		.BYTE	$D
+		.BYTE	$FF
+byte_8AD5:	.BYTE	$A6,  0,	2	; DATA XREF: RAM:8AB3^o
+		.BYTE	$A3
+		.WORD	loc_803A
+		.BYTE	$A5
+aSoldFor:	.BYTE	"Sold for "
+		.BYTE	$B2
+		.WORD	$6C
+		.BYTE	3
+aSilvers_0:	.BYTE	" silvers!"
+		.BYTE	$D
+		.BYTE	$A3
+		.WORD	$8037
+		.BYTE	$FF
+		.BYTE	$A6,  0,	1
+		.BYTE	$A5
+aSurelyYouJestY:.BYTE	"Surely you jest! You take the food"
+		.BYTE	$D
+		.BYTE	$D
+		.BYTE	$A5
+aFromMyChildren:.BYTE	"from my childrens mouths!"
+		.BYTE	$D
+		.BYTE	$FF
+		.BYTE	$A6,  0,	2
+		.BYTE	$A5
+aIPaidMoreForIt:.BYTE	"I paid more for it myself!"
+		.BYTE	$D
+		.BYTE	$FF
+		.BYTE	$A6,  0,	1
+		.BYTE	$A3
+		.WORD	loc_803A
+		.BYTE	$A5
+aIDemandAtLeast:.BYTE	"I demand at least "
+		.BYTE	$B2
+		.WORD	$6C
+		.BYTE	3
+aSilvers_1:	.BYTE	" silvers!",$D
+		.BYTE	$AC
+		.WORD	$89FC
+		.BYTE	$A6,  0,	1
+		.BYTE	$A5
+aIHaveNoApparel:.BYTE	"I have no apparel at the moment, try"
+		.BYTE	$D
+		.BYTE	$D
+		.BYTE	$A5
+aAgainTommorow_:.BYTE	"again tommorow."
+		.BYTE	$D
+		.BYTE	$FF
+		.BYTE	$A6,  0,	1
+		.BYTE	$A5
+aSorryButIMAllS:.BYTE	"Sorry but I'm all sold out of battle"
+		.BYTE	$D
+		.BYTE	$D
+		.BYTE	$A5
+aGear_IShouldGe:.BYTE	"gear.  I should get some tommorow."
+		.BYTE	$D
+		.BYTE	$FF
+		.BYTE	$A6,  0,	0
+		.BYTE	$A5
+aYouVeSeenAllTh:.BYTE	"You've seen all the apparel I have on"
+		.BYTE	$D
+		.BYTE	$AC
+		.WORD	byte_8C63
+		.BYTE	$A6,  0,	0
+		.BYTE	$A5
+aThatSAllTheBat:.BYTE	"That's all the battle gear I have"
+		.BYTE	$D
+byte_8C63:	.BYTE	$D		; DATA XREF: RAM:8C3B^o
+		.BYTE	$A5
+aOnHandToday_Wo:.BYTE	"on hand today.  Would you care to look"
+		.BYTE	$D
+		.BYTE	$D
+		.BYTE	$A5
+aItOverAgainq:	.BYTE	"it over again?"
+		.BYTE	$D
+		.BYTE	$A6,  0,	7
+		.BYTE	$A5
+		.BYTE	'('
+		.BYTE	$A1
+aY_0:		.BYTE	'Y'
+		.BYTE	$A0
+aOr_0:		.BYTE	" or "
+		.BYTE	$A1
+aN_0:		.BYTE	'N'
+		.BYTE	$A0
+		.BYTE	')'
+		.BYTE	$D
+		.BYTE	$FF
+		.BYTE	$A6,  0,	2
+		.BYTE	$A5
+aHowManySilvers:.BYTE	"How many silvers do you offer?"
+		.BYTE	$D
+		.BYTE	$A6,$10,	4
+		.BYTE	'>'
+		.BYTE	$FF
+		.WORD	byte_8CDD
+		.WORD	byte_8D09
+		.WORD	byte_8D40
+byte_8CDD:	.BYTE	$A6,  0,	2	; DATA XREF: RAM:8CD7^o
+aAFinePurchaseI:.BYTE	"A fine purchase if I must say so myself!"
+		.BYTE	$FF
 
 byte_8D09:	MOVEXY	0,0
 aAWiseChoice:	.BYTE	$A5,"A wise choice!",$0D,$0D
@@ -1983,17 +1986,17 @@ byte_8D40:	MOVEXY	0,2
 aExcellentDecis:.BYTE	$A5,"Excellent decision!",$0D,$FF
 		MOVEXY	0,0
 aYouAreUnableTo:.BYTE	$A5,"You are unable to carry this",$0D,$0D
-		.BYTE $A5
-		.BYTE $B4
-		.WORD $6A
-		.BYTE $19
-a_ComeBack:	.BYTE ".  Come back"
-		.BYTE $D
-		.BYTE $D
-		.BYTE $A5
-aWhenYouHaveDis:.BYTE "when you have disposed of some items."
-		.BYTE $D
-		.BYTE $FF
+		.BYTE	$A5
+		.BYTE	$B4
+		.WORD	$6A
+		.BYTE	$19
+a_ComeBack:	.BYTE	".  Come back"
+		.BYTE	$D
+		.BYTE	$D
+		.BYTE	$A5
+aWhenYouHaveDis:.BYTE	"when you have disposed of some items."
+		.BYTE	$D
+		.BYTE	$FF
 		MOVEXY	0,2
 aIfThatsYourAtt:.BYTE	$A5,"If thats your attitude that item is",$0D,$0D
 aNoLongerForS_0:.BYTE	$A5,"no longer for sale!",$0D,$FF
@@ -2007,101 +2010,101 @@ off_8DF5:	.WORD	byte_814F
 		.WORD	byte_8E5A
 		.WORD	byte_8E8E
 
-byte_8E05:	.BYTE $A6,  0,	0	; DATA XREF: RAM:8DFD^o
-		.BYTE $A5
-aAreYouJustGoin:.BYTE "Are you just going to stand there or"
-		.BYTE $D
-		.BYTE $A5
-aAreYouGoingToT:.BYTE "are you going to tell me what you want?"
-		.BYTE $D
-		.BYTE $AC
-		.WORD byte_8292
-byte_8E5A:	.BYTE $A6,  0,	0	; DATA XREF: RAM:8DFF^o	RAM:8E01^o
-		.BYTE $A5
-aIsThereAnythin:.BYTE "Is there anything else I can help"
-		.BYTE $D
-		.BYTE $A5
-aYouWithq:	.BYTE "you with?"
-		.BYTE $D
-		.BYTE $AC
-		.WORD byte_8292
-byte_8E8E:	.BYTE $A6,  0,	0	; DATA XREF: RAM:8E03^o
-		.BYTE $A5
-aIsThereAnyth_0:.BYTE "Is there anything more I can do for"
-		.BYTE $D
-		.BYTE $A5
-aYouMyFriendq:	.BYTE "you, my friend?"
-		.BYTE $D
-		.BYTE $AC
-		.WORD byte_81A6
+byte_8E05:	.BYTE	$A6,  0,	0	; DATA XREF: RAM:8DFD^o
+		.BYTE	$A5
+aAreYouJustGoin:.BYTE	"Are you just going to stand there or"
+		.BYTE	$D
+		.BYTE	$A5
+aAreYouGoingToT:.BYTE	"are you going to tell me what you want?"
+		.BYTE	$D
+		.BYTE	$AC
+		.WORD	byte_8292
+byte_8E5A:	.BYTE	$A6,  0,	0	; DATA XREF: RAM:8DFF^o	RAM:8E01^o
+		.BYTE	$A5
+aIsThereAnythin:.BYTE	"Is there anything else I can help"
+		.BYTE	$D
+		.BYTE	$A5
+aYouWithq:	.BYTE	"you with?"
+		.BYTE	$D
+		.BYTE	$AC
+		.WORD	byte_8292
+byte_8E8E:	.BYTE	$A6,  0,	0	; DATA XREF: RAM:8E03^o
+		.BYTE	$A5
+aIsThereAnyth_0:.BYTE	"Is there anything more I can do for"
+		.BYTE	$D
+		.BYTE	$A5
+aYouMyFriendq:	.BYTE	"you, my friend?"
+		.BYTE	$D
+		.BYTE	$AC
+		.WORD	byte_81A6
 unk_8ECA:	.BYTE	3		; DATA XREF: RAM:77C8^r
 		.BYTE	1
 		.BYTE	0
-		.BYTE $FE ; ˛
+		.BYTE	$FE ; ˛
 unk_8ECE:	.BYTE	0		; DATA XREF: RAM:77BE^r
 		.BYTE	0
-		.BYTE $FF
-		.BYTE $FE ; ˛
-		.BYTE $FE ; ˛
-		.BYTE $FD ; ˝
-		.BYTE $FC ; ¸
-		.BYTE $FB ; ˚
-unk_8ED6:	.BYTE $E0 ; ‡		; DATA XREF: RAM:7890^r
-		.BYTE $ED ; Ì
-		.BYTE $FA ; ˙
+		.BYTE	$FF
+		.BYTE	$FE ; ˛
+		.BYTE	$FE ; ˛
+		.BYTE	$FD ; ˝
+		.BYTE	$FC ; ¸
+		.BYTE	$FB ; ˚
+unk_8ED6:	.BYTE	$E0 ; ‡		; DATA XREF: RAM:7890^r
+		.BYTE	$ED ; Ì
+		.BYTE	$FA ; ˙
 		.BYTE	2
-		.BYTE  $C
-unk_8EDB:	.BYTE $8E ; é		; DATA XREF: RAM:7895^r
-		.BYTE $8E ; é
-		.BYTE $8E ; é
-		.BYTE $8F ; è
-		.BYTE $8F ; è
-aFoodPackets:	.BYTE "food packets",0
-aWaterFlasks:	.BYTE "water flasks",0
-aTorches:	.BYTE "torches",0
-aCompasses:	.BYTE "compasses",0
-aTimepieces:	.BYTE "timepieces",0
-		.BYTE $BB ; ª
-		.BYTE $BC ; º
-		.BYTE $BD ; Ω
-		.BYTE $C0 ; ¿
-		.BYTE $C1 ; ¡
+		.BYTE	 $C
+unk_8EDB:	.BYTE	$8E ; é		; DATA XREF: RAM:7895^r
+		.BYTE	$8E ; é
+		.BYTE	$8E ; é
+		.BYTE	$8F ; è
+		.BYTE	$8F ; è
+aFoodPackets:	.BYTE	"food packets",0
+aWaterFlasks:	.BYTE	"water flasks",0
+aTorches:	.BYTE	"torches",0
+aCompasses:	.BYTE	"compasses",0
+aTimepieces:	.BYTE	"timepieces",0
+		.BYTE	$BB ; ª
+		.BYTE	$BC ; º
+		.BYTE	$BD ; Ω
+		.BYTE	$C0 ; ¿
+		.BYTE	$C1 ; ¡
 off_8F1C:	.WORD	aOmar		; DATA XREF: RAM:7645^w	RAM:7660^w ...
 off_8F1E:	.WORD	aJeff		; DATA XREF: RAM:764F^w	RAM:766A^w ...
-aOmar:		.BYTE "Omar",0
-aJeff:		.BYTE "Jeff",0
+aOmar:		.BYTE	"Omar",0
+aJeff:		.BYTE	"Jeff",0
 unk_8F2A:	.BYTE	4		; DATA XREF: RAM:789A^r
 		.BYTE	2
 		.BYTE	2
-		.BYTE  $A
-		.BYTE $14
-unk_8F2F:	.BYTE $7D ; }		; DATA XREF: RAM:79F8^r
-		.BYTE $32 ; 2
-		.BYTE $32 ; 2
-		.BYTE $19
-		.BYTE $14
-		.BYTE $19
-		.BYTE $28 ; (
-		.BYTE $2D ; -
-		.BYTE $2D ; -
-		.BYTE $32 ; 2
-		.BYTE $4B ; K
-		.BYTE $64 ; d
-		.BYTE $7D ; }
-		.BYTE $50 ; P
-		.BYTE $64 ; d
-		.BYTE  $A
-		.BYTE  $F
-		.BYTE  $A
-		.BYTE $32 ; 2
-		.BYTE $3C ; <
-		.BYTE  $A
-		.BYTE  $F
-		.BYTE $14
-		.BYTE $14
-		.BYTE $3C ; <
-		.BYTE $3C ; <
-		.BYTE $50 ; P
+		.BYTE	 $A
+		.BYTE	$14
+unk_8F2F:	.BYTE	$7D ; }		; DATA XREF: RAM:79F8^r
+		.BYTE	$32 ; 2
+		.BYTE	$32 ; 2
+		.BYTE	$19
+		.BYTE	$14
+		.BYTE	$19
+		.BYTE	$28 ; (
+		.BYTE	$2D ; -
+		.BYTE	$2D ; -
+		.BYTE	$32 ; 2
+		.BYTE	$4B ; K
+		.BYTE	$64 ; d
+		.BYTE	$7D ; }
+		.BYTE	$50 ; P
+		.BYTE	$64 ; d
+		.BYTE	 $A
+		.BYTE	 $F
+		.BYTE	 $A
+		.BYTE	$32 ; 2
+		.BYTE	$3C ; <
+		.BYTE	 $A
+		.BYTE	 $F
+		.BYTE	$14
+		.BYTE	$14
+		.BYTE	$3C ; <
+		.BYTE	$3C ; <
+		.BYTE	$50 ; P
 		.BYTE	0
 		.BYTE	1
 		.BYTE	1
@@ -2129,133 +2132,133 @@ unk_8F2F:	.BYTE $7D ; }		; DATA XREF: RAM:79F8^r
 		.BYTE	0
 		.BYTE	0
 		.BYTE	0
-off_8F65:	.WORD unk_8F9B		; DATA XREF: RAM:7A1B^r	RAM:7B1A^r ...
-		.WORD unk_8FC4
-		.WORD unk_8FEB
-		.WORD unk_9011
-		.WORD unk_9033
-		.WORD unk_9056
-		.WORD unk_9077
-		.WORD unk_909D
-		.WORD unk_90BC
-		.WORD unk_90DC
-		.WORD unk_9102
-		.WORD unk_9127
-		.WORD unk_914D
-		.WORD unk_9172
-		.WORD unk_9199
-		.WORD unk_91C0
-		.WORD unk_91E0
-		.WORD unk_91FC
-		.WORD unk_9215
-		.WORD unk_9231
-		.WORD unk_9264
-		.WORD unk_927F
-		.WORD unk_929B
-		.WORD unk_92BA
-		.WORD unk_92D6
-		.WORD unk_92F3
-		.WORD unk_9310
+off_8F65:	.WORD	unk_8F9B		; DATA XREF: RAM:7A1B^r	RAM:7B1A^r ...
+		.WORD	unk_8FC4
+		.WORD	unk_8FEB
+		.WORD	unk_9011
+		.WORD	unk_9033
+		.WORD	unk_9056
+		.WORD	unk_9077
+		.WORD	unk_909D
+		.WORD	unk_90BC
+		.WORD	unk_90DC
+		.WORD	unk_9102
+		.WORD	unk_9127
+		.WORD	unk_914D
+		.WORD	unk_9172
+		.WORD	unk_9199
+		.WORD	unk_91C0
+		.WORD	unk_91E0
+		.WORD	unk_91FC
+		.WORD	unk_9215
+		.WORD	unk_9231
+		.WORD	unk_9264
+		.WORD	unk_927F
+		.WORD	unk_929B
+		.WORD	unk_92BA
+		.WORD	unk_92D6
+		.WORD	unk_92F3
+		.WORD	unk_9310
 unk_8F9B:	.BYTE	4		; DATA XREF: RAM:off_8F65^o
-		.BYTE $29 ; )
+		.BYTE	$29
 		.BYTE	1
 		.BYTE	0
 		.BYTE	8
-		.BYTE $1A
-aLeatherBreastp:.BYTE "Leather Breastplate",0
+		.BYTE	$1A
+aLeatherBreastp:.BYTE	"Leather Breastplate",0
 		.BYTE	0
 		.BYTE	1
-		.BYTE $23 ; #
-		.BYTE $22 ; "
+		.BYTE	$23 ; #
+		.BYTE	$22 ; "
 		.BYTE	0
 		.BYTE	0
-		.BYTE $11
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
+		.BYTE	$11
 		.BYTE	0
 		.BYTE	0
 		.BYTE	0
-		.BYTE $23 ; #
-		.BYTE $28 ; (
+		.BYTE	0
+		.BYTE	0
+		.BYTE	0
+		.BYTE	$23 ; #
+		.BYTE	$28 ; (
 unk_8FC4:	.BYTE	4		; DATA XREF: RAM:8F67^o
-		.BYTE $27 ; '
+		.BYTE	$27 ; '
 		.BYTE	1
 		.BYTE	0
 		.BYTE	1
-		.BYTE $18
-aLeatherGauntle:.BYTE "Leather Gauntlets",0
+		.BYTE	$18
+aLeatherGauntle:.BYTE	"Leather Gauntlets",0
 		.BYTE	0
 		.BYTE	2
-		.BYTE $23 ; #
-		.BYTE $22 ; "
+		.BYTE	$23 ; #
+		.BYTE	$22 ; "
 		.BYTE	0
 		.BYTE	0
-		.BYTE $11
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
+		.BYTE	$11
 		.BYTE	0
 		.BYTE	0
 		.BYTE	0
-		.BYTE $23 ; #
-		.BYTE $28 ; (
+		.BYTE	0
+		.BYTE	0
+		.BYTE	0
+		.BYTE	$23 ; #
+		.BYTE	$28 ; (
 unk_8FEB:	.BYTE	4		; DATA XREF: RAM:8F69^o
-		.BYTE $26 ; &
+		.BYTE	$26 ; &
 		.BYTE	1
 		.BYTE	0
 		.BYTE	4
-		.BYTE $17
-aLeatherLegging:.BYTE "Leather Leggings",0
+		.BYTE	$17
+aLeatherLegging:.BYTE	"Leather Leggings",0
 		.BYTE	0
 		.BYTE	3
-		.BYTE $23 ; #
-		.BYTE $22 ; "
+		.BYTE	$23 ; #
+		.BYTE	$22 ; "
 		.BYTE	0
 		.BYTE	0
-		.BYTE $11
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
+		.BYTE	$11
 		.BYTE	0
 		.BYTE	0
 		.BYTE	0
-		.BYTE $23 ; #
-		.BYTE $28 ; (
+		.BYTE	0
+		.BYTE	0
+		.BYTE	0
+		.BYTE	$23 ; #
+		.BYTE	$28 ; (
 unk_9011:	.BYTE	4		; DATA XREF: RAM:8F6B^o
-		.BYTE $22 ; "
+		.BYTE	$22 ; "
 		.BYTE	1
 		.BYTE	0
 		.BYTE	2
-		.BYTE $13
-aLeatherHelm:	.BYTE "Leather Helm",0
+		.BYTE	$13
+aLeatherHelm:	.BYTE	"Leather Helm",0
 		.BYTE	0
 		.BYTE	0
-		.BYTE $23 ; #
-		.BYTE $22 ; "
+		.BYTE	$23 ; #
+		.BYTE	$22 ; "
 		.BYTE	0
 		.BYTE	0
-		.BYTE $11
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
+		.BYTE	$11
 		.BYTE	0
 		.BYTE	0
 		.BYTE	0
-		.BYTE $23 ; #
-		.BYTE $28 ; (
+		.BYTE	0
+		.BYTE	0
+		.BYTE	0
+		.BYTE	$23 ; #
+		.BYTE	$28 ; (
 unk_9033:	.BYTE	3		; DATA XREF: RAM:8F6D^o
-		.BYTE $23 ; #
+		.BYTE	$23 ; #
 		.BYTE	1
 		.BYTE	0
 		.BYTE	1
-		.BYTE  $F
-aStiletto:	.BYTE "Stiletto",0
+		.BYTE	 $F
+aStiletto:	.BYTE	"Stiletto",0
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
 		.BYTE	0
-		.BYTE $15
+		.BYTE	$15
 		.BYTE	0
 		.BYTE	0
 		.BYTE	0
@@ -2267,22 +2270,22 @@ aStiletto:	.BYTE "Stiletto",0
 		.BYTE	0
 		.BYTE	4
 		.BYTE	8
-		.BYTE $10
-		.BYTE $15
-		.BYTE $49 ; I
+		.BYTE	$10
+		.BYTE	$15
+		.BYTE	$49 ; I
 		.BYTE	1
 unk_9056:	.BYTE	3		; DATA XREF: RAM:8F6F^o
-		.BYTE $21 ; !
+		.BYTE	$21 ; !
 		.BYTE	1
 		.BYTE	0
 		.BYTE	1
-		.BYTE  $D
-aDagger:	.BYTE "Dagger",0
+		.BYTE	 $D
+aDagger:	.BYTE	"Dagger",0
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
 		.BYTE	0
-		.BYTE $15
+		.BYTE	$15
 		.BYTE	0
 		.BYTE	0
 		.BYTE	0
@@ -2294,22 +2297,22 @@ aDagger:	.BYTE "Dagger",0
 		.BYTE	0
 		.BYTE	4
 		.BYTE	6
-		.BYTE $10
-		.BYTE $14
+		.BYTE	$10
+		.BYTE	$14
 		.BYTE	1
 		.BYTE	2
 unk_9077:	.BYTE	3		; DATA XREF: RAM:8F71^o
-		.BYTE $26 ; &
+		.BYTE	$26 ; &
 		.BYTE	1
 		.BYTE	0
 		.BYTE	1
-		.BYTE $12
-aNastyKnife:	.BYTE "Nasty Knife",0
+		.BYTE	$12
+aNastyKnife:	.BYTE	"Nasty Knife",0
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
 		.BYTE	0
-		.BYTE $16
+		.BYTE	$16
 		.BYTE	0
 		.BYTE	0
 		.BYTE	0
@@ -2321,22 +2324,22 @@ aNastyKnife:	.BYTE "Nasty Knife",0
 		.BYTE	0
 		.BYTE	4
 		.BYTE	7
-		.BYTE $12
-		.BYTE $16
+		.BYTE	$12
+		.BYTE	$16
 		.BYTE	1
 		.BYTE	5
 unk_909D:	.BYTE	3		; DATA XREF: RAM:8F73^o
-		.BYTE $1F
+		.BYTE	$1F
 		.BYTE	1
 		.BYTE	0
 		.BYTE	4
-		.BYTE  $B
-aWhip:		.BYTE "Whip",0
+		.BYTE	 $B
+aWhip:		.BYTE	"Whip",0
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $12
-		.BYTE $12
+		.BYTE	$12
+		.BYTE	$12
 		.BYTE	0
 		.BYTE	0
 		.BYTE	0
@@ -2348,21 +2351,21 @@ aWhip:		.BYTE "Whip",0
 		.BYTE	0
 		.BYTE	4
 		.BYTE	8
-		.BYTE $12
-		.BYTE $16
-		.BYTE $4C ; L
+		.BYTE	$12
+		.BYTE	$16
+		.BYTE	$4C ; L
 		.BYTE	1
 unk_90BC:	.BYTE	3		; DATA XREF: RAM:8F75^o
-		.BYTE $20
+		.BYTE	$20
 		.BYTE	1
 		.BYTE	0
 		.BYTE	3
-		.BYTE  $C
-aStaff:		.BYTE "Staff",0
+		.BYTE	 $C
+aStaff:		.BYTE	"Staff",0
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $16
+		.BYTE	$16
 		.BYTE	0
 		.BYTE	0
 		.BYTE	0
@@ -2374,22 +2377,22 @@ aStaff:		.BYTE "Staff",0
 		.BYTE	0
 		.BYTE	0
 		.BYTE	6
-		.BYTE $12
-		.BYTE $32 ; 2
-		.BYTE $37 ; 7
-		.BYTE $8F ; è
-		.BYTE $40 ; @
+		.BYTE	$12
+		.BYTE	$32 ; 2
+		.BYTE	$37 ; 7
+		.BYTE	$8F ; è
+		.BYTE	$40 ; @
 unk_90DC:	.BYTE	3		; DATA XREF: RAM:8F77^o
-		.BYTE $26 ; &
+		.BYTE	$26 ; &
 		.BYTE	1
 		.BYTE	0
-		.BYTE  $A
-		.BYTE $12
-aWoodenClub:	.BYTE "Wooden Club",0
+		.BYTE	 $A
+		.BYTE	$12
+aWoodenClub:	.BYTE	"Wooden Club",0
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $17
+		.BYTE	$17
 		.BYTE	0
 		.BYTE	0
 		.BYTE	0
@@ -2402,24 +2405,22 @@ aWoodenClub:	.BYTE "Wooden Club",0
 		.BYTE	0
 		.BYTE	8
 		.BYTE	2
-		.BYTE $32 ; 2
-		.BYTE $37 ; 7
-		.BYTE $4A ; J
+		.BYTE	$32 ; 2
+		.BYTE	$37 ; 7
+		.BYTE	$4A ; J
 		.BYTE	4
 unk_9102:	.BYTE	3		; DATA XREF: RAM:8F79^o
-		.BYTE $25 ; %
+		.BYTE	$25 ; %
 		.BYTE	1
 		.BYTE	0
-		.BYTE  $A
-		.BYTE $11
-aBattleAxe:	.BYTE "Battle Axe",0
+		.BYTE	 $A
+		.BYTE	$11
+aBattleAxe:	.BYTE	"Battle Axe",0
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $12
-		.BYTE $27 ; '
-		.BYTE	0
-		.BYTE	0
+		.BYTE	$12
+		.BYTE	$27 ; '
 		.BYTE	0
 		.BYTE	0
 		.BYTE	0
@@ -2427,26 +2428,26 @@ aBattleAxe:	.BYTE "Battle Axe",0
 		.BYTE	0
 		.BYTE	0
 		.BYTE	0
-		.BYTE $16
-		.BYTE $10
-		.BYTE $32 ; 2
-		.BYTE $37 ; 7
 		.BYTE	0
-		.BYTE $10
+		.BYTE	0
+		.BYTE	$16
+		.BYTE	$10
+		.BYTE	$32 ; 2
+		.BYTE	$37 ; 7
+		.BYTE	0
+		.BYTE	$10
 unk_9127:	.BYTE	3		; DATA XREF: RAM:8F7B^o
-		.BYTE $26 ; &
+		.BYTE	$26 ; &
 		.BYTE	1
 		.BYTE	0
 		.BYTE	5
-		.BYTE $12
-aShortSword:	.BYTE "Short Sword",0
+		.BYTE	$12
+aShortSword:	.BYTE	"Short Sword",0
 		.BYTE	0
-		.BYTE $FF
-		.BYTE	0
-		.BYTE	0
-		.BYTE $23 ; #
+		.BYTE	$FF
 		.BYTE	0
 		.BYTE	0
+		.BYTE	$23 ; #
 		.BYTE	0
 		.BYTE	0
 		.BYTE	0
@@ -2454,26 +2455,26 @@ aShortSword:	.BYTE "Short Sword",0
 		.BYTE	0
 		.BYTE	0
 		.BYTE	0
-		.BYTE  $A
-		.BYTE  $A
-		.BYTE $1E
-		.BYTE $23 ; #
 		.BYTE	0
-		.BYTE $10
+		.BYTE	0
+		.BYTE	 $A
+		.BYTE	 $A
+		.BYTE	$1E
+		.BYTE	$23 ; #
+		.BYTE	0
+		.BYTE	$10
 unk_914D:	.BYTE	3		; DATA XREF: RAM:8F7D^o
-		.BYTE $25 ; %
+		.BYTE	$25 ; %
 		.BYTE	1
 		.BYTE	0
-		.BYTE  $D
-		.BYTE $11
-aLongSword:	.BYTE "Long Sword",0
+		.BYTE	 $D
+		.BYTE	$11
+aLongSword:	.BYTE	"Long Sword",0
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $11
-		.BYTE $24 ; $
-		.BYTE	0
-		.BYTE	0
+		.BYTE	$11
+		.BYTE	$24 ; $
 		.BYTE	0
 		.BYTE	0
 		.BYTE	0
@@ -2481,25 +2482,25 @@ aLongSword:	.BYTE "Long Sword",0
 		.BYTE	0
 		.BYTE	0
 		.BYTE	0
-		.BYTE  $E
-		.BYTE $10
-		.BYTE $23 ; #
-		.BYTE $28 ; (
 		.BYTE	0
-		.BYTE $10
+		.BYTE	0
+		.BYTE	 $E
+		.BYTE	$10
+		.BYTE	$23 ; #
+		.BYTE	$28 ; (
+		.BYTE	0
+		.BYTE	$10
 unk_9172:	.BYTE	3		; DATA XREF: RAM:8F7F^o
-		.BYTE $27 ; '
+		.BYTE	$27 ; '
 		.BYTE	1
 		.BYTE	0
 		.BYTE	8
-		.BYTE $13
-aSmallShield:	.BYTE "Small Shield",0
+		.BYTE	$13
+aSmallShield:	.BYTE	"Small Shield",0
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $14
-		.BYTE	0
-		.BYTE	0
+		.BYTE	$14
 		.BYTE	0
 		.BYTE	0
 		.BYTE	0
@@ -2508,25 +2509,25 @@ aSmallShield:	.BYTE "Small Shield",0
 		.BYTE	0
 		.BYTE	0
 		.BYTE	0
-		.BYTE  $A
+		.BYTE	0
+		.BYTE	0
+		.BYTE	$A
 		.BYTE	1
-		.BYTE $28 ; (
-		.BYTE $2D ; -
+		.BYTE	$28 ; (
+		.BYTE	$2D ; -
 		.BYTE	2
-		.BYTE $40 ; @
+		.BYTE	$40 ; @
 unk_9199:	.BYTE	3		; DATA XREF: RAM:8F81^o
-		.BYTE $27 ; '
+		.BYTE	$27 ; '
 		.BYTE	1
 		.BYTE	0
-		.BYTE  $A
-		.BYTE $13
-aLargeShield:	.BYTE "Large Shield",0
+		.BYTE	$A
+		.BYTE	$13
+aLargeShield:	.BYTE	"Large Shield",0
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $16
-		.BYTE	0
-		.BYTE	0
+		.BYTE	$16
 		.BYTE	0
 		.BYTE	0
 		.BYTE	0
@@ -2535,22 +2536,17 @@ aLargeShield:	.BYTE "Large Shield",0
 		.BYTE	0
 		.BYTE	0
 		.BYTE	0
-		.BYTE $18
+		.BYTE	0
+		.BYTE	0
+		.BYTE	$18
 		.BYTE	1
-		.BYTE $2D ; -
-		.BYTE $32 ; 2
+		.BYTE	$2D ; -
+		.BYTE	$32 ; 2
 		.BYTE	2
-		.BYTE $60 ; `
-unk_91C0:	.BYTE	5		; DATA XREF: RAM:8F83^o
-		.BYTE $20
-		.BYTE	1
-		.BYTE	0
-		.BYTE	1
-		.BYTE $1D
-aGreenCapWithFe:.BYTE "Green Cap with Feather",0
-		.BYTE	0
-		.BYTE	2
-		.BYTE	1
+		.BYTE	$60 ; `
+unk_91C0:
+		Item	$05,$01,$00,$01,"Green Cap with Feather"
+		.BYTE	$00,$02,$01
 unk_91E0:
 		Item	$05,$01,$00,$01,"Floppy Leather Hat"
 		.BYTE	$00,$03,$02
@@ -2597,24 +2593,24 @@ unk_9310:
 		Item	$05,$01,$00,$01,"Heavy Leather Jacket"
 		.BYTE	$00,$0F,$0F
 :
-unk_932E:	.BYTE $70 ; p		; DATA XREF: RAM:935Evo
-		.BYTE $70 ; p
-		.BYTE $30 ; 0
-		.BYTE $42
-		.WORD $400
-		.BYTE $80 ; Ä
+unk_932E:	.BYTE	$70 ; p		; DATA XREF: RAM:935Evo
+		.BYTE	$70 ; p
+		.BYTE	$30 ; 0
+		.BYTE	$42
+		.WORD	$400
+		.BYTE	$80 ; Ä
 		.BYTE	2
-		.BYTE $80 ; Ä
+		.BYTE	$80 ; Ä
 		.BYTE	2
-		.BYTE $80 ; Ä
+		.BYTE	$80 ; Ä
 		.BYTE	2
-		.BYTE $80 ; Ä
+		.BYTE	$80 ; Ä
 		.BYTE	2
-		.BYTE $80 ; Ä
+		.BYTE	$80 ; Ä
 		.BYTE	6
 		.BYTE	0
-		.BYTE $44
-		.WORD $4F0
+		.BYTE	$44
+		.WORD	$4F0
 		.BYTE	4
 		.BYTE	4
 		.BYTE	4
