@@ -703,16 +703,9 @@ aWelcome:	.BYTE "Welcome "
 		.BYTE $B3
 		.WORD $6321
 		.BYTE $19
-		.BYTE ","
-		.BYTE $D
-		.BYTE $D
-		.BYTE $A5
-aIHaveExpectedT:.BYTE "I have expected thee.  As usual I shall"
-		.BYTE $D
-		.BYTE $D
-		.BYTE $A5
-aImpartInsightF:.BYTE "impart insight for a small offering."
-		.BYTE $D
+		.BYTE ",",$0D,$0D
+aIHaveExpectedT:.BYTE $A5,"I have expected thee.  As usual I shall",$0D,$0D
+aImpartInsightF:.BYTE $A5,"impart insight for a small offering.",$0D
 		.BYTE $A6,  7,	6
 		.BYTE $AC
 		.WORD aDoYou		; "Do you ("
