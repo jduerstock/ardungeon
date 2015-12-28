@@ -4721,12 +4721,10 @@ loc_3264:				; CODE XREF: sub_322C+34^j
 loc_326B:				; CODE XREF: sub_322C+2E^j sub_322C+7Avj ...
 		LDA	(off_12),Y
 		inc16	off_12
-
-loc_3273:				; CODE XREF: sub_322C+43^j
 		ORA	#0
 		BEQ	loc_32B1
 		BPL	loc_32AB
-		AND	#$7F ; ''
+		AND	#$7F
 		TAX
 		dldi	off_14, $AC03
 
@@ -4736,11 +4734,7 @@ loc_3284:				; CODE XREF: sub_322C+65vj
 
 loc_3287:				; CODE XREF: sub_322C+67vj
 		LDA	(off_14),Y
-		INC	off_14
-		BNE	loc_328F
-		INC	off_14+1
-
-loc_328F:				; CODE XREF: sub_322C+5F^j
+		inc16	off_14
 		ORA	#0
 		BMI	loc_3284
 		JMP	loc_3287
@@ -4753,11 +4747,7 @@ locret_3296:				; CODE XREF: sub_322C+6^j sub_322C+E^j ...
 loc_3297:				; CODE XREF: sub_322C+59^j sub_322C+7Cvj
 		LDA	(off_14),Y
 		PHP
-		INC	off_14
-		BNE	loc_32A0
-		INC	off_14+1
-
-loc_32A0:				; CODE XREF: sub_322C+70^j
+		inc16	off_14
 		AND	#$7F ; ''
 		JSR	sub_1C2C
 		PLP
@@ -5364,7 +5354,7 @@ aPellsq:	.BYTE	"pells?",$0D,$FF
 
 aForwardBackEsc:
 		BLINK	"F"
-aOrward:	.BYTE	"orward, "
+		.BYTE	"orward, "
 		BLINK	"B"
 aAckOr:		.BYTE	"ack, or "
 		BLINK	"ESC"
@@ -5461,14 +5451,10 @@ loc_37FC:				; CODE XREF: RAM:37ED^j
 ; ---------------------------------------------------------------------------
 		.BYTE	$A8
 		MOVEXY	0,2
-		.BYTE	$A5
-aQuitGameWithou:.BYTE	"Quit game without saving character?"
-		.BYTE	$D
-		.BYTE	$D
-byte_382E:	.BYTE	$A5		; DATA XREF: RAM:37D4^o
-aAreYouSure:	.BYTE	"Are you sure ("
+		.BYTE	$A5,"Quit game without saving character?",$0D,$0D
+byte_382E:	.BYTE	$A5,"Are you sure ("
 		BLINK	'Y'
-aOr:		.BYTE	" or "
+		.BYTE	" or "
 		BLINK	'N'
 		.BYTE	')'
 		.BYTE	$D
@@ -10986,7 +10972,7 @@ aOffer:		.BYTE	"OFFER",0
 a_ItemOrESC:
 aItem:		.BYTE	"Item "
 		BLINK	'#'
-aOr_0:		.BYTE	" or "
+		.BYTE	" or "
 		BLINK	"ESC"
 aToExit_0:	.BYTE	" to exit"
 		.BYTE	$AE
@@ -10996,7 +10982,7 @@ aItem_0:	.BYTE	"Item "
 		BLINK	'#'
 		.BYTE	", "
 		BLINK	'F'
-aOrward_0:	.BYTE	"orward, "
+		.BYTE	"orward, "
 		BLINK	'B'
 aAckOr_0:	.BYTE	"ack, or "
 aEsc_4:		BLINK	"ESC"
