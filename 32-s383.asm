@@ -339,7 +339,7 @@ loc_784B:				; CODE XREF: sub_7758+E7^j
 		LDA	off_7
 		CMP	#$10
 		BCS	loc_786A
-		ldxy	$7F06
+		ldxy	str_7F06
 		JMP	sub_7AC5
 ; ---------------------------------------------------------------------------
 
@@ -559,7 +559,8 @@ loc_79B6:				; CODE XREF: sub_7758+250^j
 
 loc_79C4:				; CODE XREF: sub_7758+264^j
 		LDA	#3
-		BNE	loc_79AC
+		BNE	loc_79AC	; always jumps
+; ---------------------------------------------------------------------------
 
 loc_79C8:
 		LDY	#$C
@@ -574,7 +575,7 @@ loc_79D5:				; CODE XREF: sub_7758+279^j
 		CMP	#3
 		BCC	locret_79B5
 		LDX	#$14
-		JSR	loc_7AA7
+		JSR	sub_7AA7
 		ADC	#5
 		ADC	(off_62),Y
 		BCC	loc_79E8
@@ -595,7 +596,7 @@ loc_79EE:
 		SBC	#$A
 		BCS	loc_7A1E
 		LDX	#9
-		JSR	loc_7AA7
+		JSR	sub_7AA7
 		ADC	#3
 		STA	$6F
 		LDX	#8
@@ -629,7 +630,7 @@ locret_7A1D:				; CODE XREF: RAM:7A15^j
 loc_7A1E:				; CODE XREF: RAM:79F3^j
 		STA	$6D
 		LDX	#3
-		JSR	loc_7AA7
+		JSR	sub_7AA7
 		ADC	#1
 		STA	$6F
 		LDX	#8
@@ -662,7 +663,7 @@ loc_7A43:
 		LSR	A
 		BEQ	locret_7A42
 		TAX
-		JSR	loc_7AA7
+		JSR	sub_7AA7
 		STA	$6F
 		LDA	byte_7BD6
 		SEC
@@ -696,7 +697,7 @@ loc_7A80:				; DATA XREF: RAM:7A74^w	RAM:7A7A^w
 
 loc_7A83:
 		LDX	#2
-		JSR	loc_7AA7
+		JSR	sub_7AA7
 		ADC	#1
 		ASL	A
 		ASL	A
@@ -704,7 +705,7 @@ loc_7A83:
 		ASL	A
 		STA	$6F
 		LDX	#7
-		JSR	loc_7AA7
+		JSR	sub_7AA7
 		ORA	$6F
 		STA	$6F
 		LDA	RANDOM
@@ -717,9 +718,8 @@ loc_7A83:
 		RTS
 ; ---------------------------------------------------------------------------
 
-loc_7AA7:				; CODE XREF: sub_7758+285^p RAM:79F7^p ...
-		LDA	#0
-		STA	loc_7AC2+1
+sub_7AA7:				; CODE XREF: sub_7758+285^p RAM:79F7^p ...
+		ldi	loc_7AC2+1, $00
 		LDA	$6D
 		PHA
 
@@ -727,10 +727,10 @@ loc_7AAF:				; CODE XREF: RAM:7ABDvj
 		TXA
 		JSR	j_RND_A
 		CMP	loc_7AC2+1
-		BCC	loc_7ABB
+		BCC	:+
 		STA	loc_7AC2+1
 
-loc_7ABB:				; CODE XREF: RAM:7AB6^j
+:
 		DEC	$6D
 		BPL	loc_7AAF
 		PLA
@@ -759,7 +759,7 @@ loc_7AD3:				; DATA XREF: RAM:8393vo	RAM:839Evo
 		BPL	loc_7AE6
 		LDY	#$A
 		STY	byte_83A0
-		dldi	off_16, $8395
+		dldi	off_16, str_8395
 		RTS
 ; ---------------------------------------------------------------------------
 
@@ -1315,6 +1315,7 @@ a_WhatShallIDo:
 		MenuItem "0","Nothing."
 		.BYTE	$FF
 
+str_7F06:
 		MOVEXY	0,2
 		.BYTE	$A5,"I can't enchant it!",$D,$FF
 
@@ -1534,6 +1535,8 @@ aEvil:		.BYTE	"Evil:"
 aCold:		.BYTE	"Cold:"
 		.BYTE	$A3
 		.WORD	loc_7AD3
+
+str_8395:
 		.BYTE	$FF
 
 byte_8396:
