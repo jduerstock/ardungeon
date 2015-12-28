@@ -4720,9 +4720,7 @@ loc_3264:				; CODE XREF: sub_322C+34^j
 
 loc_326B:				; CODE XREF: sub_322C+2E^j sub_322C+7Avj ...
 		LDA	(off_12),Y
-		INC	off_12
-		BNE	loc_3273
-		INC	off_12+1
+		inc16	off_12
 
 loc_3273:				; CODE XREF: sub_322C+43^j
 		ORA	#0

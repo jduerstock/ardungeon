@@ -65,6 +65,15 @@
 		.endscope
 	.endmacro
 
+	.macro inc16 Arg
+	.scope
+		INC	Arg
+		BNE	Skip
+		INC	Arg+1
+	Skip:
+	.endscope
+	.endmacro
+
 	; nonfunctional
 
 	.macro modstat stat,val
