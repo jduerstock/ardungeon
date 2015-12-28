@@ -1438,11 +1438,8 @@ aThy_3:		.BYTE	"Thy "
 		.BYTE	$A5,"is unbreakable!",$0D,$FF
 
 a_ThouHastNoWeap:
-		.BYTE	$A6,  0,	2
-		.BYTE	$A5
-aThouHastNoWeap:.BYTE	"Thou hast no weapons and armor"
-		.BYTE	$D
-		.BYTE	$D
+		MOVEXY	0,2
+		.BYTE	$A5,"Thou hast no weapons and armor",$0D,$0D
 		.BYTE	$A5
 aForMeTo:	.BYTE	"for me to "
 		.BYTE	$B4
