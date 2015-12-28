@@ -1415,43 +1415,27 @@ a_ImSorryThouHast:
 		.BYTE	$1E
 aWell_:		.BYTE	" well.",$0D,$FF
 
-		.BYTE	$A6,  0,	1
-		.BYTE	$A5
-aIMSorryButThou:.BYTE	"I'm sorry but thou hast"
-		.BYTE	$D
-		.BYTE	$D
-		.BYTE	$A5
-aTooFewCrystals:.BYTE	"too few crystals."
-		.BYTE	$D
-		.BYTE	$FF
-		.BYTE	$A6,  0,	1
-		.BYTE	$A5
-aThouDostNotPos:.BYTE	"Thou dost not possess the skill"
-		.BYTE	$D
-		.BYTE	$D
-		.BYTE	$A5
-aNecessaryToEff:.BYTE	"necessary to effectively use"
-		.BYTE	$D
-		.BYTE	$D
-		.BYTE	$A5
-aThy_4:		.BYTE	"thy "
+		MOVEXY	0,1
+		.BYTE	$A5,"I'm sorry but thou hast",$0D,$0D
+		.BYTE	$A5,"too few crystals.",$0D,$FF
+
+		MOVEXY	0,1
+		.BYTE	$A5,"Thou dost not possess the skill",$0D,$0D
+		.BYTE	$A5,"necessary to effectively use",$0D,$0D
+		.BYTE	$A5,"thy "
 		.BYTE	$B3
 		.WORD	off_7BD8
 		.BYTE	$1E
-a__0:		.BYTE	'.'
-		.BYTE	$D
-		.BYTE	$FF
-		.BYTE	$A6,  0,	2
+		.BYTE	'.',$0D,$FF
+
+		MOVEXY	0,2
 		.BYTE	$A5
 aThy_3:		.BYTE	"Thy "
 		.BYTE	$B3
 		.WORD	off_7BD8
 		.BYTE	$1E
 		.BYTE	$D
-		.BYTE	$A5
-aIsUnbreakable:	.BYTE	"is unbreakable!"
-		.BYTE	$D
-		.BYTE	$FF
+		.BYTE	$A5,"is unbreakable!",$0D,$FF
 
 a_ThouHastNoWeap:
 		.BYTE	$A6,  0,	2
