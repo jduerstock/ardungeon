@@ -5,6 +5,7 @@
 		.include	"macros.inc"
 
 ;		.ORG	$7600
+
 		.BYTE	$11
 ; ---------------------------------------------------------------------------
 		JMP	loc_7611
@@ -1890,1890 +1891,248 @@ loc_85F1:				; CODE XREF: RAM:85ED^j
 		JMP	loc_8594
 ; ---------------------------------------------------------------------------
 byte_85F4:					; DATA XREF: RAM:loc_85BA^w RAM:85CA^r ...
-		.BYTE	$00,$1B,$27,$00,$1B,$07,$03,$1B
-		.BYTE	$07,$00,$1B,$07,$30,$1B,$06,$00
-		.BYTE	$03,$1B,$0A,$FF,$BF,$1B,$04,$FF
-		.BYTE	$DF,$1B,$07,$FF,$EF,$1B,$0B,$FF
-		.BYTE	$FE,$FF,$CF,$1B,$09,$FF,$FB,$FB
-		.BYTE	$EA,$FB,$FF,$FF,$CF,$1B,$08,$FF
-		.BYTE	$EF,$1B,$04,$FF,$F3,$1B,$03,$FF
-		.BYTE	$FB
-		.BYTE	$1B
-		.BYTE	4
-		.BYTE	$FF
-		.BYTE	$FD
-		.BYTE	$FD
-		.BYTE	$F6
-		.BYTE	$FF
-		.BYTE	$FF
-		.BYTE	$EF
-		.BYTE	$1B
-		.BYTE	3
-		.BYTE	$FF
-		.BYTE	$7F
-		.BYTE	$1B
-		.BYTE	2
-		.BYTE	$FF
-		.BYTE	$CF
-		.BYTE	$FF
-		.BYTE	$7F
-		.BYTE	$1B
-		.BYTE	5
-		.BYTE	$FF
-		.BYTE	$7F
-		.BYTE	$1B
-		.BYTE	2
-		.BYTE	$FF
-		.BYTE	$FC
-		.BYTE	$1B
-		.BYTE	2
-		.BYTE	$FF
-		.BYTE	$3F
-		.BYTE	$1B
-		.BYTE	7
-		.BYTE	$FF
-		.BYTE	$CF
-		.BYTE	$1B
-		.BYTE	4
-		.BYTE	$FF
-		.BYTE	$FE
-		.BYTE	$1B
-		.BYTE	2
-		.BYTE	$FF
-		.BYTE	$FC
-		.BYTE	$FF
-		.BYTE	$FF
-		.BYTE	$CF
-		.BYTE	$1B
-		.BYTE	3
-		.BYTE	$FF
-		.BYTE	0
-		.BYTE	$1B
-		.BYTE	4
-		.BYTE	$FF
-		.BYTE	$FC
-		.BYTE	$FF
-		.BYTE	$3F
-		.BYTE	$FF
-		.BYTE	$FB
-		.BYTE	$1B
-		.BYTE	6
-		.BYTE	$FF
-		.BYTE	$FD
-		.BYTE	$FE
-		.BYTE	$F6
-		.BYTE	$DA
-		.BYTE	$F6
-		.BYTE	$FE
-		.BYTE	$FD
-		.BYTE	$1B
-		.BYTE	2
-		.BYTE	$FF
-		.BYTE	$7F
-		.BYTE	$9F
-		.BYTE	$7F
-		.BYTE	$FF
-		.BYTE	$FF
-		.BYTE	$1B
-		.BYTE	6
-		.BYTE	0
-		.BYTE	$C0
-		.BYTE	$1B
-		.BYTE	7
-		.BYTE	 $C
-		.BYTE	$1B
-		.BYTE	7
-		.BYTE	0
-		.BYTE	$1B
-		.BYTE	7
-		.BYTE	$C0
-		.BYTE	$1B
-		.BYTE	 $E
-		.BYTE	0
-		.BYTE	2
-		.BYTE	$1B
-		.BYTE	3
-		.BYTE	0
-		.BYTE	$20
-		.BYTE	$50
-		.BYTE	$A0
-		.BYTE	$98
-		.BYTE	$1B
-		.BYTE	$37
-		.BYTE	0
-		.BYTE	3
-		.BYTE	$1B
-		.BYTE	6
-		.BYTE	 $C
-		.BYTE	$1B
-		.BYTE	7
-		.BYTE	0
-		.BYTE	$1B
-		.BYTE	7
-		.BYTE	$C0
-		.BYTE	$1B
-		.BYTE	5
-		.BYTE	3
-		.BYTE	 $F
-		.BYTE	 $F
-		.BYTE	$1B
-		.BYTE	3
-		.BYTE	$FF
-		.BYTE	$FD ; ˝
-		.BYTE	$FD ; ˝
-		.BYTE	$F6 ; ˆ
-		.BYTE	$DA ; ⁄
-		.BYTE	$FD ; ˝
-		.BYTE	$1B
-		.BYTE	4
-		.BYTE	$FF
-		.BYTE	$7F ; 
-		.BYTE	$9F ; ü
-		.BYTE	$1B
-		.BYTE	3
-		.BYTE	$FF
-		.BYTE	$EF ; Ô
-		.BYTE	$1B
-		.BYTE	4
-		.BYTE	$FF
-		.BYTE	$EF ; Ô
-		.BYTE	$1B
-		.BYTE	9
-		.BYTE	$FF
-		.BYTE	$EF ; Ô
-		.BYTE	$1B
-		.BYTE	7
-		.BYTE	$FF
-		.BYTE	$FB ; ˚
-		.BYTE	$FF
-		.BYTE	$FB ; ˚
-		.BYTE	$1B
-		.BYTE	6
-		.BYTE	$FF
-		.BYTE	$FB ; ˚
-		.BYTE	$1B
-		.BYTE	8
-		.BYTE	$FF
-		.BYTE	$FE ; ˛
-		.BYTE	$FF
-		.BYTE	$FF
-		.BYTE	$3F ; ?
-		.BYTE	$1B
-		.BYTE	6
-		.BYTE	$FF
-		.BYTE	$FB ; ˚
-		.BYTE	$FF
-		.BYTE	$FF
-		.BYTE	$F6 ; ˆ
-		.BYTE	$DA ; ⁄
-		.BYTE	$6A ; j
-		.BYTE	$DA ; ⁄
-		.BYTE	$F6 ; ˆ
-		.BYTE	$F6 ; ˆ
-		.BYTE	$FD ; ˝
-		.BYTE	$FD ; ˝
-		.BYTE	$7F ; 
-		.BYTE	$9F ; ü
-		.BYTE	$A7 ; ß
-		.BYTE	$9F ; ü
-		.BYTE	$7F ; 
-		.BYTE	$7F ; 
-		.BYTE	$FF
-		.BYTE	$FE ; ˛
-		.BYTE	$EF ; Ô
-		.BYTE	$1B
-		.BYTE	3
-		.BYTE	$FF
-		.BYTE	$FE ; ˛
-		.BYTE	$1B
-		.BYTE	4
-		.BYTE	$FF
-		.BYTE	$FE ; ˛
-		.BYTE	$1B
-		.BYTE	2
-		.BYTE	$FF
-		.BYTE	$EF ; Ô
-		.BYTE	$FF
-		.BYTE	$FC ; ¸
-		.BYTE	$1B
-		.BYTE	3
-		.BYTE	$FF
-		.BYTE	$F7 ; ˜
-		.BYTE	$FB ; ˚
-		.BYTE	$FF
-		.BYTE	$F3 ; Û
-		.BYTE	$1B
-		.BYTE	3
-		.BYTE	$FF
-		.BYTE	$FE ; ˛
-		.BYTE	$FF
-		.BYTE	$F2 ; Ú
-		.BYTE	$CA ;  
-		.BYTE	$1B
-		.BYTE	2
-		.BYTE	$2A ; *
-		.BYTE	$1A
-		.BYTE	$15
-		.BYTE	$15
-		.BYTE	0
-		.BYTE	$80 ; Ä
-		.BYTE	$28 ; (
-		.BYTE	$A2 ; ¢
-		.BYTE	$6A ; j
-		.BYTE	$1B
-		.BYTE	2
-		.BYTE	$9A ; ö
-		.BYTE	$1B
-		.BYTE	2
-		.BYTE	0
-		.BYTE	$80 ; Ä
-		.BYTE	$28 ; (
-		.BYTE	$A2 ; ¢
-		.BYTE	$AA ; ™
-		.BYTE	$AA ; ™
-		.BYTE	$FF
-		.BYTE	$FF
-		.BYTE	$3F ; ?
-		.BYTE	$3F ; ?
-		.BYTE	 $F
-		.BYTE	$8F ; è
-		.BYTE	$2F ; /
-		.BYTE	$AF ; Ø
-		.BYTE	$FF
-		.BYTE	$BF ; ø
-		.BYTE	$1B
-		.BYTE	6
-		.BYTE	$FF
-		.BYTE	$EF ; Ô
-		.BYTE	$1B
-		.BYTE	5
-		.BYTE	$FF
-		.BYTE	$1B
-		.BYTE	5
-		.BYTE	$C0 ; ¿
-		.BYTE	$F0 ; 
-		.BYTE	$F0 ; 
-		.BYTE	$1B
-		.BYTE	7
-		.BYTE	3
-		.BYTE	$1B
-		.BYTE	7
-		.BYTE	0
-		.BYTE	$C0 ; ¿
-		.BYTE	$1B
-		.BYTE	6
-		.BYTE	$30 ; 0
-		.BYTE	$1B
-		.BYTE	7
-		.BYTE	0
-		.BYTE	2
-		.BYTE	2
-		.BYTE	1
-		.BYTE	$1B
-		.BYTE	4
-		.BYTE	0
-		.BYTE	$64 ; d
-		.BYTE	$99 ; ô
-		.BYTE	$9A ; ö
-		.BYTE	$6A ; j
-		.BYTE	$54 ; T
-		.BYTE	$28 ; (
-		.BYTE	$28 ; (
-		.BYTE	$20
-		.BYTE	$1B
-		.BYTE	$37 ; 7
-		.BYTE	0
-		.BYTE	 $C
-		.BYTE	 $C
-		.BYTE	$1B
-		.BYTE	5
-		.BYTE	$30 ; 0
-		.BYTE	$1B
-		.BYTE	4
-		.BYTE	3
-		.BYTE	$1B
-		.BYTE	2
-		.BYTE	 $C
-		.BYTE	$1B
-		.BYTE	7
-		.BYTE	0
-		.BYTE	$1B
-		.BYTE	2
-		.BYTE	 $F
-		.BYTE	$1B
-		.BYTE	3
-		.BYTE	$3F ; ?
-		.BYTE	$FF
-		.BYTE	$F6 ; ˆ
-		.BYTE	$FD ; ˝
-		.BYTE	$FD ; ˝
-		.BYTE	$1B
-		.BYTE	4
-		.BYTE	$FF
-		.BYTE	$7F ; 
-		.BYTE	$1B
-		.BYTE	2
-		.BYTE	$FF
-		.BYTE	$FE ; ˛
-		.BYTE	$1B
-		.BYTE	5
-		.BYTE	$FF
-		.BYTE	$F7 ; ˜
-		.BYTE	$1B
-		.BYTE	3
-		.BYTE	$FF
-		.BYTE	$FE ; ˛
-		.BYTE	$1B
-		.BYTE	4
-		.BYTE	$FF
-		.BYTE	$EF ; Ô
-		.BYTE	$1B
-		.BYTE	2
-		.BYTE	$FF
-		.BYTE	$DF ; ﬂ
-		.BYTE	$EF ; Ô
-		.BYTE	$67 ; g
-		.BYTE	$EF ; Ô
-		.BYTE	$DF ; ﬂ
-		.BYTE	$1B
-		.BYTE	2
-		.BYTE	$FF
-		.BYTE	$BF ; ø
-		.BYTE	$1B
-		.BYTE	7
-		.BYTE	$FF
-		.BYTE	$CF ; œ
-		.BYTE	$1B
-		.BYTE	3
-		.BYTE	$FF
-		.BYTE	$BF ; ø
-		.BYTE	$1B
-		.BYTE	5
-		.BYTE	$FF
-		.BYTE	$F7 ; ˜
-		.BYTE	$FF
-		.BYTE	$FE ; ˛
-		.BYTE	$FF
-		.BYTE	$FF
-		.BYTE	$3F ; ?
-		.BYTE	$1B
-		.BYTE	7
-		.BYTE	$FF
-		.BYTE	$EF ; Ô
-		.BYTE	$1B
-		.BYTE	4
-		.BYTE	$FF
-		.BYTE	$3F ; ?
-		.BYTE	$FF
-		.BYTE	$FF
-		.BYTE	$FE ; ˛
-		.BYTE	$FF
-		.BYTE	$FF
-		.BYTE	$BF ; ø
-		.BYTE	$FF
-		.BYTE	$FF
-		.BYTE	$F3 ; Û
-		.BYTE	$1B
-		.BYTE	4
-		.BYTE	$FF
-		.BYTE	$FE ; ˛
-		.BYTE	$1B
-		.BYTE	8
-		.BYTE	$FF
-		.BYTE	$FE ; ˛
-		.BYTE	$1B
-		.BYTE	2
-		.BYTE	$FF
-		.BYTE	$EA ; Í
-		.BYTE	$FB ; ˚
-		.BYTE	$F7 ; ˜
-		.BYTE	$1B
-		.BYTE	6
-		.BYTE	$FF
-		.BYTE	$FC ; ¸
-		.BYTE	$BC ; º
-		.BYTE	$1B
-		.BYTE	3
-		.BYTE	$FF
-		.BYTE	$1F
-		.BYTE	$1D
-		.BYTE	$55 ; U
-		.BYTE	$55 ; U
-		.BYTE	$1B
-		.BYTE	2
-		.BYTE	$15
-		.BYTE	$3D ; =
-		.BYTE	$56 ; V
-		.BYTE	$56 ; V
-		.BYTE	$5A ; Z
-		.BYTE	$99 ; ô
-		.BYTE	$69 ; i
-		.BYTE	$1B
-		.BYTE	2
-		.BYTE	$57 ; W
-		.BYTE	$AA ; ™
-		.BYTE	$1B
-		.BYTE	3
-		.BYTE	$6A ; j
-		.BYTE	$1B
-		.BYTE	2
-		.BYTE	$AA ; ™
-		.BYTE	$1B
-		.BYTE	7
-		.BYTE	$AB ; ´
-		.BYTE	$FF
-		.BYTE	$3F ; ?
-		.BYTE	$FF
-		.BYTE	$FF
-		.BYTE	$FE ; ˛
-		.BYTE	$1B
-		.BYTE	3
-		.BYTE	$FF
-		.BYTE	$FB ; ˚
-		.BYTE	$FF
-		.BYTE	$FF
-		.BYTE	$FE ; ˛
-		.BYTE	$FE ; ˛
-		.BYTE	$FA ; ˙
-		.BYTE	$FE ; ˛
-		.BYTE	$1B
-		.BYTE	2
-		.BYTE	$F0 ; 
-		.BYTE	$1B
-		.BYTE	2
-		.BYTE	$FC ; ¸
-		.BYTE	$BC ; º
-		.BYTE	$FF
-		.BYTE	$1B
-		.BYTE	7
-		.BYTE	0
-		.BYTE	$1B
-		.BYTE	4
-		.BYTE	$C0 ; ¿
-		.BYTE	$1B
-		.BYTE	4
-		.BYTE	$30 ; 0
-		.BYTE	$1B
-		.BYTE	5
-		.BYTE	 $C
-		.BYTE	$1B
-		.BYTE	$10
-		.BYTE	0
-		.BYTE	$1B
-		.BYTE	6
-		.BYTE	$FF
-		.BYTE	$1B
-		.BYTE	$74 ; t
-		.BYTE	0
-		.BYTE	$1B
-		.BYTE	2
-		.BYTE	3
-		.BYTE	$1B
-		.BYTE	4
-		.BYTE	$C0 ; ¿
-		.BYTE	$1B
-		.BYTE	2
-		.BYTE	0
-		.BYTE	 $C
-		.BYTE	$1B
-		.BYTE	3
-		.BYTE	$30 ; 0
-		.BYTE	$1B
-		.BYTE	2
-		.BYTE	$C0 ; ¿
-		.BYTE	0
-		.BYTE	0
-		.BYTE	$1B
-		.BYTE	2
-		.BYTE	3
-		.BYTE	 $F
-		.BYTE	 $F
-		.BYTE	$3F ; ?
-		.BYTE	$1B
-		.BYTE	6
-		.BYTE	$FF
-		.BYTE	$FE ; ˛
-		.BYTE	$FF
-		.BYTE	$FE ; ˛
-		.BYTE	$1B
-		.BYTE	9
-		.BYTE	$FF
-		.BYTE	$FE ; ˛
-		.BYTE	$1B
-		.BYTE	$11
-		.BYTE	$FF
-		.BYTE	$FB ; ˚
-		.BYTE	$FF
-		.BYTE	$BF ; ø
-		.BYTE	$1B
-		.BYTE	2
-		.BYTE	$FF
-		.BYTE	$FE ; ˛
-		.BYTE	$1B
-		.BYTE	2
-		.BYTE	$FF
-		.BYTE	$F7 ; ˜
-		.BYTE	$1B
-		.BYTE	5
-		.BYTE	$FF
-		.BYTE	$FB ; ˚
-		.BYTE	$1B
-		.BYTE	5
-		.BYTE	$FF
-		.BYTE	$FE ; ˛
-		.BYTE	$F7 ; ˜
-		.BYTE	$D9 ; Ÿ
-		.BYTE	$F7 ; ˜
-		.BYTE	$F7 ; ˜
-		.BYTE	$FF
-		.BYTE	$FD ; ˝
-		.BYTE	$1B
-		.BYTE	4
-		.BYTE	$FF
-		.BYTE	$FB ; ˚
-		.BYTE	$1B
-		.BYTE	8
-		.BYTE	$FF
-		.BYTE	$FD ; ˝
-		.BYTE	$1B
-		.BYTE	 $B
-		.BYTE	$FF
-		.BYTE	$FD ; ˝
-		.BYTE	$1B
-		.BYTE	3
-		.BYTE	$FF
-		.BYTE	$BF ; ø
-		.BYTE	$1B
-		.BYTE	8
-		.BYTE	$FF
-		.BYTE	$BF ; ø
-		.BYTE	$1B
-		.BYTE	2
-		.BYTE	$FF
-		.BYTE	$EF ; Ô
-		.BYTE	$FF
-		.BYTE	$FF
-		.BYTE	$FB ; ˚
-		.BYTE	$1B
-		.BYTE	5
-		.BYTE	$FF
-		.BYTE	$FB ; ˚
-		.BYTE	$1B
-		.BYTE	3
-		.BYTE	$FF
-		.BYTE	$FD ; ˝
-		.BYTE	$1B
-		.BYTE	2
-		.BYTE	$FF
-		.BYTE	$C5 ; ≈
-		.BYTE	$F1 ; Ò
-		.BYTE	$F1 ; Ò
-		.BYTE	$1B
-		.BYTE	4
-		.BYTE	$FF
-		.BYTE	$5F ; _
-		.BYTE	$5E ; ^
-		.BYTE	$7A ; z
-		.BYTE	$3A ; :
-		.BYTE	$1B
-		.BYTE	3
-		.BYTE	$2A ; *
-		.BYTE	$1B
-		.BYTE	 $F
-		.BYTE	$AA ; ™
-		.BYTE	$FB ; ˚
-		.BYTE	$1B
-		.BYTE	3
-		.BYTE	$FF
-		.BYTE	$1B
-		.BYTE	2
-		.BYTE	$BF ; ø
-		.BYTE	$FE ; ˛
-		.BYTE	$1B
-		.BYTE	3
-		.BYTE	$FF
-		.BYTE	$EF ; Ô
-		.BYTE	$1B
-		.BYTE	3
-		.BYTE	$FF
-		.BYTE	$EF ; Ô
-		.BYTE	$1B
-		.BYTE	4
-		.BYTE	$FF
-		.BYTE	0
-		.BYTE	0
-		.BYTE	$1B
-		.BYTE	2
-		.BYTE	$C0 ; ¿
-		.BYTE	$F0 ; 
-		.BYTE	$F0 ; 
-		.BYTE	$FC ; ¸
-		.BYTE	$30 ; 0
-		.BYTE	$1B
-		.BYTE	3
-		.BYTE	 $C
-		.BYTE	$1B
-		.BYTE	7
-		.BYTE	3
-		.BYTE	$1B
-		.BYTE	7
-		.BYTE	0
-		.BYTE	$1B
-		.BYTE	2
-		.BYTE	$C0 ; ¿
-		.BYTE	$1B
-		.BYTE	6
-		.BYTE	0
-		.BYTE	 $A
-		.BYTE	$1B
-		.BYTE	6
-		.BYTE	$FF
-		.BYTE	$AA ; ™
-		.BYTE	$1B
-		.BYTE	6
-		.BYTE	0
-		.BYTE	$A0 ; †
-		.BYTE	$1B
-		.BYTE	8
-		.BYTE	0
-		.BYTE	$54 ; T
-		.BYTE	$55 ; U
-		.BYTE	5
-		.BYTE	$1B
-		.BYTE	5
-		.BYTE	0
-		.BYTE	$50 ; P
-		.BYTE	$55 ; U
-		.BYTE	$15
-		.BYTE	$1B
-		.BYTE	5
-		.BYTE	0
-		.BYTE	$40 ; @
-		.BYTE	$55 ; U
-		.BYTE	$55 ; U
-		.BYTE	1
-		.BYTE	$1B
-		.BYTE	5
-		.BYTE	0
-		.BYTE	$54 ; T
-		.BYTE	$55 ; U
-		.BYTE	5
-		.BYTE	3
-		.BYTE	$1B
-		.BYTE	3
-		.BYTE	 $C
-		.BYTE	$30 ; 0
-		.BYTE	$70 ; p
-		.BYTE	$55 ; U
-		.BYTE	$1B
-		.BYTE	2
-		.BYTE	3
-		.BYTE	 $C
-		.BYTE	 $C
-		.BYTE	$30 ; 0
-		.BYTE	$1B
-		.BYTE	4
-		.BYTE	0
-		.BYTE	3
-		.BYTE	3
-		.BYTE	 $F
-		.BYTE	 $F
-		.BYTE	$3F ; ?
-		.BYTE	$3F ; ?
-		.BYTE	$1B
-		.BYTE	 $C
-		.BYTE	$FF
-		.BYTE	0
-		.BYTE	0
-		.BYTE	$1B
-		.BYTE	5
-		.BYTE	$FF
-		.BYTE	0
-		.BYTE	0
-		.BYTE	$1B
-		.BYTE	5
-		.BYTE	$FF
-		.BYTE	0
-		.BYTE	0
-		.BYTE	$1B
-		.BYTE	5
-		.BYTE	$FF
-		.BYTE	0
-		.BYTE	0
-		.BYTE	$1B
-		.BYTE	5
-		.BYTE	$FF
-		.BYTE	0
-		.BYTE	0
-		.BYTE	$1B
-		.BYTE	5
-		.BYTE	$FF
-		.BYTE	0
-		.BYTE	0
-		.BYTE	$1B
-		.BYTE	5
-		.BYTE	$FF
-		.BYTE	0
-		.BYTE	0
-		.BYTE	$1B
-		.BYTE	5
-		.BYTE	$FF
-		.BYTE	0
-		.BYTE	0
-		.BYTE	$1B
-		.BYTE	5
-		.BYTE	$FF
-		.BYTE	0
-		.BYTE	0
-		.BYTE	$FF
-		.BYTE	$BF ; ø
-		.BYTE	$1B
-		.BYTE	3
-		.BYTE	$FF
-		.BYTE	0
-		.BYTE	0
-		.BYTE	$1B
-		.BYTE	5
-		.BYTE	$FF
-		.BYTE	0
-		.BYTE	0
-		.BYTE	$1B
-		.BYTE	5
-		.BYTE	$FF
-		.BYTE	8
-		.BYTE	$80 ; Ä
-		.BYTE	$1B
-		.BYTE	4
-		.BYTE	$FF
-		.BYTE	$EE ; Ó
-		.BYTE	0
-		.BYTE	$8F ; è
-		.BYTE	$FB ; ˚
-		.BYTE	$1B
-		.BYTE	4
-		.BYTE	$FF
-		.BYTE	$3F ; ?
-		.BYTE	$1B
-		.BYTE	5
-		.BYTE	$FF
-		.BYTE	$7F ; 
-		.BYTE	$54 ; T
-		.BYTE	$5D ; ]
-		.BYTE	$1B
-		.BYTE	5
-		.BYTE	$FF
-		.BYTE	0
-		.BYTE	$40 ; @
-		.BYTE	$1B
-		.BYTE	5
-		.BYTE	$FF
-		.BYTE	0
-		.BYTE	2
-		.BYTE	$1B
-		.BYTE	3
-		.BYTE	$FF
-		.BYTE	$FE ; ˛
-		.BYTE	$FA ; ˙
-		.BYTE	$1B
-		.BYTE	7
-		.BYTE	$AA ; ™
-		.BYTE	$6A ; j
-		.BYTE	$69 ; i
-		.BYTE	$AA ; ™
-		.BYTE	$5A ; Z
-		.BYTE	$4A ; J
-		.BYTE	$1B
-		.BYTE	3
-		.BYTE	$2A ; *
-		.BYTE	 $A
-		.BYTE	$AA ; ™
-		.BYTE	$BA ; ∫
-		.BYTE	$BA ; ∫
-		.BYTE	$BE ; æ
-		.BYTE	$BE ; æ
-		.BYTE	$AE ; Æ
-		.BYTE	$A0 ; †
-		.BYTE	$A8 ; ®
-		.BYTE	$BF ; ø
-		.BYTE	$BF ; ø
-		.BYTE	$AF ; Ø
-		.BYTE	$AF ; Ø
-		.BYTE	$AB ; ´
-		.BYTE	$AB ; ´
-		.BYTE	$AA ; ™
-		.BYTE	$2A ; *
-		.BYTE	$1B
-		.BYTE	5
-		.BYTE	$FF
-		.BYTE	0
-		.BYTE	0
-		.BYTE	$EF ; Ô
-		.BYTE	$1B
-		.BYTE	5
-		.BYTE	$FF
-		.BYTE	0
-		.BYTE	$1B
-		.BYTE	7
-		.BYTE	$FF
-		.BYTE	0
-		.BYTE	0
-		.BYTE	$C0 ; ¿
-		.BYTE	$C0 ; ¿
-		.BYTE	$F0 ; 
-		.BYTE	$FC ; ¸
-		.BYTE	$FF
-		.BYTE	$FF
-		.BYTE	$1B
-		.BYTE	2
-		.BYTE	$C0 ; ¿
-		.BYTE	$30 ; 0
-		.BYTE	$30 ; 0
-		.BYTE	 $C
-		.BYTE	$C0 ; ¿
-		.BYTE	$F1 ; Ò
-		.BYTE	$C0 ; ¿
-		.BYTE	$1B
-		.BYTE	3
-		.BYTE	$30 ; 0
-		.BYTE	 $D
-		.BYTE	$15
-		.BYTE	$54 ; T
-		.BYTE	 $A
-		.BYTE	0
-		.BYTE	2
-		.BYTE	2
-		.BYTE	$15
-		.BYTE	$55 ; U
-		.BYTE	$42 ; B
-		.BYTE	 $A
-		.BYTE	$AA ; ™
-		.BYTE	0
-		.BYTE	$AA ; ™
-		.BYTE	$AA ; ™
-		.BYTE	0
-		.BYTE	0
-		.BYTE	$AA ; ™
-		.BYTE	$AA ; ™
-		.BYTE	$A0 ; †
-		.BYTE	5
-		.BYTE	$95 ; ï
-		.BYTE	$94 ; î
-		.BYTE	0
-		.BYTE	0
-		.BYTE	$80 ; Ä
-		.BYTE	$A0 ; †
-		.BYTE	$15
-		.BYTE	$55 ; U
-		.BYTE	$50 ; P
-		.BYTE	$1B
-		.BYTE	$24 ; $
-		.BYTE	0
-		.BYTE	$15
-		.BYTE	1
-		.BYTE	$1B
-		.BYTE	2
-		.BYTE	0
-		.BYTE	$1B
-		.BYTE	2
-		.BYTE	1
-		.BYTE	$50 ; P
-		.BYTE	$54 ; T
-		.BYTE	$54 ; T
-		.BYTE	$1B
-		.BYTE	3
-		.BYTE	$40 ; @
-		.BYTE	$1B
-		.BYTE	$11
-		.BYTE	0
-		.BYTE	8
-		.BYTE	8
-		.BYTE	 $A
-		.BYTE	$2A ; *
-		.BYTE	$28 ; (
-		.BYTE	8
-		.BYTE	$1B
-		.BYTE	$26 ; &
-		.BYTE	0
-		.BYTE	2
-		.BYTE	$1B
-		.BYTE	5
-		.BYTE	0
-		.BYTE	2
-		.BYTE	$1B
-		.BYTE	5
-		.BYTE	0
-		.BYTE	2
-		.BYTE	0
-		.BYTE	0
-		.BYTE	$20
-		.BYTE	0
-		.BYTE	8
-		.BYTE	0
-		.BYTE	0
-		.BYTE	 $C
-		.BYTE	0
-		.BYTE	$20
-		.BYTE	0
-		.BYTE	2
-		.BYTE	0
-		.BYTE	$30 ; 0
-		.BYTE	0
-		.BYTE	$80 ; Ä
-		.BYTE	2
-		.BYTE	0
-		.BYTE	$80 ; Ä
-		.BYTE	$30 ; 0
-		.BYTE	2
-		.BYTE	$80 ; Ä
-		.BYTE	2
-		.BYTE	 $A
-		.BYTE	 $A
-		.BYTE	2
-		.BYTE	$22 ; "
-		.BYTE	$30 ; 0
-		.BYTE	2
-		.BYTE	$20
-		.BYTE	 $C
-		.BYTE	0
-		.BYTE	$82 ; Ç
-		.BYTE	$80 ; Ä
-		.BYTE	8
-		.BYTE	$FF
-		.BYTE	$FF
-		.BYTE	$30 ; 0
-		.BYTE	 $C
-		.BYTE	$C0 ; ¿
-		.BYTE	3
-		.BYTE	$30 ; 0
-		.BYTE	$80 ; Ä
-		.BYTE	$FF
-		.BYTE	$FF
-		.BYTE	 $F
-		.BYTE	$3F ; ?
-		.BYTE	$FC ; ¸
-		.BYTE	$F0 ; 
-		.BYTE	0
-		.BYTE	$C0 ; ¿
-		.BYTE	$55 ; U
-		.BYTE	$55 ; U
-		.BYTE	$50 ; P
-		.BYTE	$50 ; P
-		.BYTE	$54 ; T
-		.BYTE	$55 ; U
-		.BYTE	$51 ; Q
-		.BYTE	$55 ; U
-		.BYTE	$40 ; @
-		.BYTE	$1B
-		.BYTE	4
-		.BYTE	0
-		.BYTE	$40 ; @
-		.BYTE	$1B
-		.BYTE	9
-		.BYTE	0
-		.BYTE	1
-		.BYTE	1
-		.BYTE	5
-		.BYTE	5
-		.BYTE	$1B
-		.BYTE	2
-		.BYTE	$15
-		.BYTE	$6A ; j
-		.BYTE	$5A ; Z
-		.BYTE	$1B
-		.BYTE	3
-		.BYTE	$56 ; V
-		.BYTE	$5A ; Z
-		.BYTE	$59 ; Y
-		.BYTE	$4A ; J
-		.BYTE	$82 ; Ç
-		.BYTE	$82 ; Ç
-		.BYTE	$1B
-		.BYTE	2
-		.BYTE	$90 ; ê
-		.BYTE	$56 ; V
-		.BYTE	$56 ; V
-		.BYTE	$80 ; Ä
-		.BYTE	$80 ; Ä
-		.BYTE	$A0 ; †
-		.BYTE	$A8 ; ®
-		.BYTE	$28 ; (
-		.BYTE	$28 ; (
-		.BYTE	$A0 ; †
-		.BYTE	0
-		.BYTE	$2A ; *
-		.BYTE	$2A ; *
-		.BYTE	$1B
-		.BYTE	4
-		.BYTE	 $A
-		.BYTE	2
-		.BYTE	$1B
-		.BYTE	5
-		.BYTE	0
-		.BYTE	$80 ; Ä
-		.BYTE	$A0 ; †
-		.BYTE	$1B
-		.BYTE	$17
-		.BYTE	0
-		.BYTE	5
-		.BYTE	$15
-		.BYTE	$15
-		.BYTE	$1B
-		.BYTE	4
-		.BYTE	1
-		.BYTE	$40 ; @
-		.BYTE	$1B
-		.BYTE	2
-		.BYTE	0
-		.BYTE	$1B
-		.BYTE	3
-		.BYTE	$40 ; @
-		.BYTE	2
-		.BYTE	0
-		.BYTE	0
-		.BYTE	$1B
-		.BYTE	2
-		.BYTE	2
-		.BYTE	0
-		.BYTE	0
-		.BYTE	$AA ; ™
-		.BYTE	0
-		.BYTE	0
-		.BYTE	$1B
-		.BYTE	2
-		.BYTE	$AA ; ™
-		.BYTE	0
-		.BYTE	0
-		.BYTE	$80 ; Ä
-		.BYTE	0
-		.BYTE	0
-		.BYTE	$1B
-		.BYTE	2
-		.BYTE	$80 ; Ä
-		.BYTE	$1B
-		.BYTE	$63 ; c
-		.BYTE	0
-		.BYTE	8
-		.BYTE	 $C
-		.BYTE	 $C
-		.BYTE	$3C ; <
-		.BYTE	$FF
-		.BYTE	$3F ; ?
-		.BYTE	1
-		.BYTE	$1B
-		.BYTE	$1E
-		.BYTE	0
-		.BYTE	$1B
-		.BYTE	7
-		.BYTE	$3F ; ?
-		.BYTE	$1B
-		.BYTE	5
-		.BYTE	0
-		.BYTE	3
-		.BYTE	$1B
-		.BYTE	4
-		.BYTE	0
-		.BYTE	 $C
-		.BYTE	0
-		.BYTE	0
-		.BYTE	2
-		.BYTE	$1B
-		.BYTE	2
-		.BYTE	0
-		.BYTE	8
-		.BYTE	0
-		.BYTE	$80 ; Ä
-		.BYTE	0
-		.BYTE	 $C
-		.BYTE	0
-		.BYTE	$20
-		.BYTE	0
-		.BYTE	3
-		.BYTE	$C0 ; ¿
-		.BYTE	0
-		.BYTE	0
-		.BYTE	$20
-		.BYTE	$30 ; 0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	 $C
-		.BYTE	$1B
-		.BYTE	2
-		.BYTE	0
-		.BYTE	$80 ; Ä
-		.BYTE	$20
-		.BYTE	0
-		.BYTE	0
-		.BYTE	8
-		.BYTE	0
-		.BYTE	$80 ; Ä
-		.BYTE	0
-		.BYTE	2
-		.BYTE	0
-		.BYTE	0
-		.BYTE	$20
-		.BYTE	0
-		.BYTE	0
-		.BYTE	$80 ; Ä
-		.BYTE	0
-		.BYTE	0
-		.BYTE	8
-		.BYTE	0
-		.BYTE	$C0 ; ¿
-		.BYTE	3
-		.BYTE	0
-		.BYTE	$C0 ; ¿
-		.BYTE	0
-		.BYTE	8
-		.BYTE	0
-		.BYTE	8
-		.BYTE	$1B
-		.BYTE	2
-		.BYTE	0
-		.BYTE	 $C
-		.BYTE	$C0 ; ¿
-		.BYTE	0
-		.BYTE	 $F
-		.BYTE	 $F
-		.BYTE	$8F ; è
-		.BYTE	$1B
-		.BYTE	4
-		.BYTE	 $F
-		.BYTE	$C0 ; ¿
-		.BYTE	$CC ; Ã
-		.BYTE	$C2 ; ¬
-		.BYTE	$1B
-		.BYTE	2
-		.BYTE	$C0 ; ¿
-		.BYTE	$CC ; Ã
-		.BYTE	$C0 ; ¿
-		.BYTE	8
-		.BYTE	2
-		.BYTE	$20
-		.BYTE	0
-		.BYTE	$CC ; Ã
-		.BYTE	0
-		.BYTE	0
-		.BYTE	$30 ; 0
-		.BYTE	$1B
-		.BYTE	7
-		.BYTE	0
-		.BYTE	$7E ; ~
-		.BYTE	$7A ; z
-		.BYTE	$DA ; ⁄
-		.BYTE	$56 ; V
-		.BYTE	$55 ; U
-		.BYTE	$59 ; Y
-		.BYTE	$54 ; T
-		.BYTE	$50 ; P
-		.BYTE	$1B
-		.BYTE	2
-		.BYTE	$AA ; ™
-		.BYTE	$A8 ; ®
-		.BYTE	$A0 ; †
-		.BYTE	 $C
-		.BYTE	$3C ; <
-		.BYTE	$3F ; ?
-		.BYTE	$AA ; ™
-		.BYTE	$A8 ; ®
-		.BYTE	$80 ; Ä
-		.BYTE	$1B
-		.BYTE	4
-		.BYTE	0
-		.BYTE	5
-		.BYTE	$1B
-		.BYTE	2
-		.BYTE	1
-		.BYTE	$1B
-		.BYTE	3
-		.BYTE	0
-		.BYTE	$1B
-		.BYTE	 $F
-		.BYTE	$55 ; U
-		.BYTE	$1B
-		.BYTE	2
-		.BYTE	$AA ; ™
-		.BYTE	$6A ; j
-		.BYTE	$6A ; j
-		.BYTE	$5A ; Z
-		.BYTE	$52 ; R
-		.BYTE	$50 ; P
-		.BYTE	$82 ; Ç
-		.BYTE	$80 ; Ä
-		.BYTE	$1B
-		.BYTE	3
-		.BYTE	$A8 ; ®
-		.BYTE	$A0 ; †
-		.BYTE	$AA ; ™
-		.BYTE	$A5 ; •
-		.BYTE	$29 ; )
-		.BYTE	$29 ; )
-		.BYTE	5
-		.BYTE	$55 ; U
-		.BYTE	$65 ; e
-		.BYTE	$55 ; U
-		.BYTE	$56 ; V
-		.BYTE	0
-		.BYTE	$50 ; P
-		.BYTE	$95 ; ï
-		.BYTE	$55 ; U
-		.BYTE	$7D ; }
-		.BYTE	$1B
-		.BYTE	2
-		.BYTE	$FF
-		.BYTE	$1B
-		.BYTE	5
-		.BYTE	0
-		.BYTE	$C0 ; ¿
-		.BYTE	$F0 ; 
-		.BYTE	$1B
-		.BYTE	 $F
-		.BYTE	0
-		.BYTE	$40 ; @
-		.BYTE	$1B
-		.BYTE	6
-		.BYTE	0
-		.BYTE	3
-		.BYTE	 $F
-		.BYTE	3
-		.BYTE	0
-		.BYTE	0
-		.BYTE	$1B
-		.BYTE	2
-		.BYTE	3
-		.BYTE	$1B
-		.BYTE	2
-		.BYTE	$FF
-		.BYTE	0
-		.BYTE	0
-		.BYTE	$1B
-		.BYTE	2
-		.BYTE	$FF
-		.BYTE	$C0 ; ¿
-		.BYTE	$F0 ; 
-		.BYTE	$C0 ; ¿
-		.BYTE	0
-		.BYTE	0
-		.BYTE	$1B
-		.BYTE	2
-		.BYTE	$C0 ; ¿
-		.BYTE	$1B
-		.BYTE	$17
-		.BYTE	0
-		.BYTE	2
-		.BYTE	$1B
-		.BYTE	6
-		.BYTE	0
-		.BYTE	$AF ; Ø
-		.BYTE	$BE ; æ
-		.BYTE	$30 ; 0
-		.BYTE	$30 ; 0
-		.BYTE	0
-		.BYTE	$1B
-		.BYTE	2
-		.BYTE	$55 ; U
-		.BYTE	$1B
-		.BYTE	$15
-		.BYTE	0
-		.BYTE	2
-		.BYTE	$2A ; *
-		.BYTE	$1B
-		.BYTE	3
-		.BYTE	0
-		.BYTE	2
-		.BYTE	$2A ; *
-		.BYTE	$AA ; ™
-		.BYTE	$A5 ; •
-		.BYTE	$3F ; ?
-		.BYTE	$3F ; ?
-		.BYTE	$FF
-		.BYTE	$3F ; ?
-		.BYTE	$AA ; ™
-		.BYTE	$AA ; ™
-		.BYTE	$55 ; U
-		.BYTE	$55 ; U
-		.BYTE	0
-		.BYTE	0
-		.BYTE	$C0 ; ¿
-		.BYTE	0
-		.BYTE	$AA ; ™
-		.BYTE	$AA ; ™
-		.BYTE	$55 ; U
-		.BYTE	$55 ; U
-		.BYTE	0
-		.BYTE	$C0 ; ¿
-		.BYTE	0
-		.BYTE	0
-		.BYTE	$AA ; ™
-		.BYTE	$AA ; ™
-		.BYTE	$55 ; U
-		.BYTE	$55 ; U
-		.BYTE	0
-		.BYTE	0
-		.BYTE	3
-		.BYTE	0
-		.BYTE	$AA ; ™
-		.BYTE	$AA ; ™
-		.BYTE	$55 ; U
-		.BYTE	$55 ; U
-		.BYTE	$1B
-		.BYTE	3
-		.BYTE	0
-		.BYTE	$AA ; ™
-		.BYTE	$AA ; ™
-		.BYTE	$55 ; U
-		.BYTE	$55 ; U
-		.BYTE	0
-		.BYTE	3
-		.BYTE	0
-		.BYTE	$30 ; 0
-		.BYTE	$AA ; ™
-		.BYTE	$AA ; ™
-		.BYTE	$55 ; U
-		.BYTE	$55 ; U
-		.BYTE	$1B
-		.BYTE	3
-		.BYTE	0
-		.BYTE	$AA ; ™
-		.BYTE	$AA ; ™
-		.BYTE	$55 ; U
-		.BYTE	$55 ; U
-		.BYTE	$1B
-		.BYTE	3
-		.BYTE	0
-		.BYTE	$AA ; ™
-		.BYTE	$AA ; ™
-		.BYTE	$55 ; U
-		.BYTE	$55 ; U
-		.BYTE	0
-		.BYTE	0
-		.BYTE	2
-		.BYTE	0
-		.BYTE	$AA ; ™
-		.BYTE	$AA ; ™
-		.BYTE	$55 ; U
-		.BYTE	$55 ; U
-		.BYTE	 $C
-		.BYTE	$1B
-		.BYTE	2
-		.BYTE	0
-		.BYTE	$AA ; ™
-		.BYTE	$AA ; ™
-		.BYTE	$55 ; U
-		.BYTE	$56 ; V
-		.BYTE	 $F
-		.BYTE	 $F
-		.BYTE	$3F ; ?
-		.BYTE	 $F
-		.BYTE	$AA ; ™
-		.BYTE	$AA ; ™
-		.BYTE	$55 ; U
-		.BYTE	$A5 ; •
-		.BYTE	$C0 ; ¿
-		.BYTE	$C3 ; √
-		.BYTE	$F0 ; 
-		.BYTE	$C0 ; ¿
-		.BYTE	$A8 ; ®
-		.BYTE	$AA ; ™
-		.BYTE	$56 ; V
-		.BYTE	$55 ; U
-		.BYTE	$1B
-		.BYTE	4
-		.BYTE	0
-		.BYTE	$80 ; Ä
-		.BYTE	$A8 ; ®
-		.BYTE	$6A ; j
-		.BYTE	$1B
-		.BYTE	6
-		.BYTE	0
-		.BYTE	$80 ; Ä
-		.BYTE	$1B
-		.BYTE	7
-		.BYTE	0
-		.BYTE	$FF
-		.BYTE	$FC ; ¸
-		.BYTE	$3C ; <
-		.BYTE	$30 ; 0
-		.BYTE	0
-		.BYTE	$1B
-		.BYTE	2
-		.BYTE	$55 ; U
-		.BYTE	$1B
-		.BYTE	 $F
-		.BYTE	0
-		.BYTE	$1B
-		.BYTE	3
-		.BYTE	$55 ; U
-		.BYTE	$7F ; 
-		.BYTE	$FF
-		.BYTE	$FF
-		.BYTE	$75 ; u
-		.BYTE	$1B
-		.BYTE	4
-		.BYTE	$55 ; U
-		.BYTE	$F5 ; ı
-		.BYTE	$55 ; U
-		.BYTE	$57 ; W
-		.BYTE	$1B
-		.BYTE	6
-		.BYTE	$50 ; P
-		.BYTE	$F0 ; 
-		.BYTE	$2A ; *
-		.BYTE	5
-		.BYTE	1
-		.BYTE	1
-		.BYTE	$1B
-		.BYTE	3
-		.BYTE	0
-		.BYTE	$56 ; V
-		.BYTE	$5A ; Z
-		.BYTE	$9A ; ö
-		.BYTE	$5A ; Z
-		.BYTE	$55 ; U
-		.BYTE	$FF
-		.BYTE	$FC ; ¸
-		.BYTE	$F0 ; 
-		.BYTE	$BC ; º
-		.BYTE	$BC ; º
-		.BYTE	$9F ; ü
-		.BYTE	$53 ; S
-		.BYTE	$40 ; @
-		.BYTE	$1B
-		.BYTE	2
-		.BYTE	0
-		.BYTE	$FC ; ¸
-		.BYTE	$3F ; ?
-		.BYTE	 $F
-		.BYTE	$1B
-		.BYTE	$1E
-		.BYTE	0
-		.BYTE	3
-		.BYTE	3
-		.BYTE	$1B
-		.BYTE	2
-		.BYTE	0
-		.BYTE	1
-		.BYTE	0
-		.BYTE	0
-		.BYTE	$FF
-		.BYTE	$FF
-		.BYTE	$1B
-		.BYTE	2
-		.BYTE	0
-		.BYTE	$55 ; U
-		.BYTE	0
-		.BYTE	0
-		.BYTE	$C0 ; ¿
-		.BYTE	$C0 ; ¿
-		.BYTE	$1B
-		.BYTE	2
-		.BYTE	0
-		.BYTE	$40 ; @
-		.BYTE	$1B
-		.BYTE	$1D
-		.BYTE	0
-		.BYTE	2
-		.BYTE	$2A ; *
-		.BYTE	$1B
-		.BYTE	7
-		.BYTE	$55 ; U
-		.BYTE	0
-		.BYTE	0
-		.BYTE	2
-		.BYTE	$2A ; *
-		.BYTE	$1B
-		.BYTE	3
-		.BYTE	$AA ; ™
-		.BYTE	2
-		.BYTE	$2A ; *
-		.BYTE	$A9 ; ©
-		.BYTE	$95 ; ï
-		.BYTE	$55 ; U
-		.BYTE	$95 ; ï
-		.BYTE	$A5 ; •
-		.BYTE	$AA ; ™
-		.BYTE	$AA ; ™
-		.BYTE	$95 ; ï
-		.BYTE	$1B
-		.BYTE	4
-		.BYTE	$55 ; U
-		.BYTE	$AA ; ™
-		.BYTE	$55 ; U
-		.BYTE	$5F ; _
-		.BYTE	$50 ; P
-		.BYTE	$54 ; T
-		.BYTE	$1B
-		.BYTE	2
-		.BYTE	$55 ; U
-		.BYTE	$AA ; ™
-		.BYTE	$1B
-		.BYTE	2
-		.BYTE	$FF
-		.BYTE	0
-		.BYTE	$1B
-		.BYTE	2
-		.BYTE	$55 ; U
-		.BYTE	$AA ; ™
-		.BYTE	$1B
-		.BYTE	2
-		.BYTE	$FF
-		.BYTE	0
-		.BYTE	$1B
-		.BYTE	2
-		.BYTE	$55 ; U
-		.BYTE	$AA ; ™
-		.BYTE	$1B
-		.BYTE	2
-		.BYTE	$FF
-		.BYTE	0
-		.BYTE	$1B
-		.BYTE	2
-		.BYTE	$55 ; U
-		.BYTE	$AA ; ™
-		.BYTE	$1B
-		.BYTE	2
-		.BYTE	$FF
-		.BYTE	0
-		.BYTE	$1B
-		.BYTE	2
-		.BYTE	$55 ; U
-		.BYTE	$AA ; ™
-		.BYTE	$1B
-		.BYTE	2
-		.BYTE	$FF
-		.BYTE	0
-		.BYTE	$1B
-		.BYTE	2
-		.BYTE	$55 ; U
-		.BYTE	$AA ; ™
-		.BYTE	$1B
-		.BYTE	2
-		.BYTE	$FF
-		.BYTE	0
-		.BYTE	$1B
-		.BYTE	2
-		.BYTE	$55 ; U
-		.BYTE	$AA ; ™
-		.BYTE	$1B
-		.BYTE	2
-		.BYTE	$FF
-		.BYTE	0
-		.BYTE	$1B
-		.BYTE	2
-		.BYTE	$55 ; U
-		.BYTE	$AA ; ™
-		.BYTE	$1B
-		.BYTE	2
-		.BYTE	$FF
-		.BYTE	0
-		.BYTE	$1B
-		.BYTE	2
-		.BYTE	$55 ; U
-		.BYTE	$AA ; ™
-		.BYTE	$1B
-		.BYTE	2
-		.BYTE	$FF
-		.BYTE	0
-		.BYTE	$1B
-		.BYTE	2
-		.BYTE	$55 ; U
-		.BYTE	$AA ; ™
-		.BYTE	$1B
-		.BYTE	2
-		.BYTE	$FF
-		.BYTE	0
-		.BYTE	$1B
-		.BYTE	2
-		.BYTE	$55 ; U
-		.BYTE	$AA ; ™
-		.BYTE	$AA ; ™
-		.BYTE	$EA ; Í
-		.BYTE	$FA ; ˙
-		.BYTE	 $A
-		.BYTE	$56 ; V
-		.BYTE	$54 ; T
-		.BYTE	$55 ; U
-		.BYTE	$1B
-		.BYTE	2
-		.BYTE	$AA ; ™
-		.BYTE	0
-		.BYTE	$95 ; ï
-		.BYTE	$95 ; ï
-		.BYTE	$15
-		.BYTE	$55 ; U
-		.BYTE	$AA ; ™
-		.BYTE	$96 ; ñ
-		.BYTE	$A5 ; •
-		.BYTE	5
-		.BYTE	$1B
-		.BYTE	3
-		.BYTE	$55 ; U
-		.BYTE	$AA ; ™
-		.BYTE	$A8 ; ®
-		.BYTE	$6A ; j
-		.BYTE	$56 ; V
-		.BYTE	$1B
-		.BYTE	3
-		.BYTE	$55 ; U
-		.BYTE	$AA ; ™
-		.BYTE	0
-		.BYTE	$80 ; Ä
-		.BYTE	$A8 ; ®
-		.BYTE	$6A ; j
-		.BYTE	$56 ; V
-		.BYTE	$5A ; Z
-		.BYTE	$AA ; ™
-		.BYTE	$AA ; ™
-		.BYTE	$1B
-		.BYTE	7
-		.BYTE	$55 ; U
-		.BYTE	$1B
-		.BYTE	4
-		.BYTE	0
-		.BYTE	$80 ; Ä
-		.BYTE	$A8 ; ®
-		.BYTE	$AA ; ™
-		.BYTE	0
-		.BYTE	0
-		.BYTE	$1B
-		.BYTE	5
-		.BYTE	1
-		.BYTE	$55 ; U
-		.BYTE	$57 ; W
-		.BYTE	$5F ; _
-		.BYTE	$1B
-		.BYTE	5
-		.BYTE	$7F ; 
-		.BYTE	$1B
-		.BYTE	6
-		.BYTE	$FF
-		.BYTE	$FC ; ¸
-		.BYTE	$FC ; ¸
-		.BYTE	$1B
-		.BYTE	5
-		.BYTE	$FF
-		.BYTE	$1B
-		.BYTE	4
-		.BYTE	0
-		.BYTE	$1B
-		.BYTE	2
-		.BYTE	$C0 ; ¿
-		.BYTE	$1B
-		.BYTE	$2F ; /
-		.BYTE	0
-		.BYTE	1
-		.BYTE	1
-		.BYTE	0
-		.BYTE	0
-		.BYTE	1
-		.BYTE	5
-		.BYTE	1
-		.BYTE	0
-		.BYTE	$55 ; U
-		.BYTE	$55 ; U
-		.BYTE	0
-		.BYTE	0
-		.BYTE	$1B
-		.BYTE	2
-		.BYTE	$55 ; U
-		.BYTE	0
-		.BYTE	$40 ; @
-		.BYTE	$40 ; @
-		.BYTE	0
-		.BYTE	0
-		.BYTE	$40 ; @
-		.BYTE	$50 ; P
-		.BYTE	$40 ; @
-		.BYTE	$1B
-		.BYTE	$48 ; H
-		.BYTE	0
-		.BYTE	$1B
-		.BYTE	$FF
-		.BYTE	$1B
-		.BYTE	2
-		.BYTE	$F6 ; ˆ
-		.BYTE	$F8 ; ¯
-		.BYTE	$FA ; ˙
-		.BYTE	$FC ; ¸
-		.BYTE	$1B
-		.BYTE	 $E
-		.BYTE	$C2 ; ¬
-		.BYTE	$1B
-		.BYTE	 $E
-		.BYTE	$3C ; <
-		.BYTE	$1B
-		.BYTE	5
-		.BYTE	$24 ; $
-		.BYTE	$1B
-		.BYTE	5
-		.BYTE	$C8 ; »
-		.BYTE	$1B
-		.BYTE	$17
-		.BYTE	$FE ; ˛
-		.BYTE	$1B
-		.BYTE	2
-		.BYTE	$C2 ; ¬
-		.BYTE	$AE ; Æ
-		.BYTE	 $E
-		.BYTE	$C8 ; »
-		.BYTE	$1B
-		.BYTE	4
-		.BYTE	$3C ; <
-		.BYTE	$C2 ; ¬
-		.BYTE	$C2 ; ¬
-		.BYTE	$1B
-		.BYTE	2
-		.BYTE	$3C ; <
-		.BYTE	$F0 ; 
-		.BYTE	$84 ; Ñ
-		.BYTE	$84 ; Ñ
-		.BYTE	$82 ; Ç
-		.BYTE	$82 ; Ç
-		.BYTE	$32 ; 2
-		.BYTE	$34 ; 4
-		.BYTE	$34 ; 4
-		.BYTE	$36 ; 6
-		.BYTE	$36 ; 6
-		.BYTE	$38 ; 8
-		.BYTE	$38 ; 8
-		.BYTE	$36 ; 6
-		.BYTE	$1B
-		.BYTE	6
-		.BYTE	$26 ; &
-		.BYTE	$1B
-		.BYTE	5
-		.BYTE	$C2 ; ¬
-		.BYTE	$F2 ; Ú
-		.BYTE	$F4 ; Ù
-		.BYTE	$F6 ; ˆ
-		.BYTE	$F8 ; ¯
-		.BYTE	$FA ; ˙
-		.BYTE	$FC ; ¸
-		.BYTE	$C8 ; »
-		.BYTE	$1B
-		.BYTE	3
-		.BYTE	$3C ; <
-		.BYTE	$84 ; Ñ
-		.BYTE	$1B
-		.BYTE	2
-		.BYTE	$82 ; Ç
-		.BYTE	$1B
-		.BYTE	2
-		.BYTE	$80 ; Ä
-		.BYTE	$1B
-		.BYTE	3
-		.BYTE	$90 ; ê
-		.BYTE	$1B
-		.BYTE	2
-		.BYTE	$80 ; Ä
-		.BYTE	$1B
-		.BYTE	4
-		.BYTE	$82 ; Ç
-		.BYTE	5
-		.BYTE	$1B
-		.BYTE	2
-		.BYTE	$FF
-		.BYTE	$A0 ; †
-		.BYTE	5
-		.BYTE	$FF
-		.BYTE	$FF
-		.BYTE	$CF ; œ
-		.BYTE	$A0 ; †
-		.BYTE	6
-		.BYTE	$FF
-		.BYTE	$FF
-		.BYTE	$8F ; è
-		.BYTE	$60 ; `
-		.BYTE	 $F
-		.BYTE	$FF
-		.BYTE	$FF
-		.BYTE	$C7 ; «
-		.BYTE	$F0 ; 
-		.BYTE	4
-		.BYTE	$7F ; 
-		.BYTE	$FF
-		.BYTE	$CE ; Œ
-		.BYTE	$10
-		.BYTE	7
-		.BYTE	 $E
-		.BYTE	 $E
-		.BYTE	4
-		.BYTE	$E0 ; ‡
-		.BYTE	4
-		.BYTE	$87 ; á
-		.BYTE	$B0 ; ∞
-		.BYTE	$80 ; Ä
-		.BYTE	$2E ; .
-		.BYTE	1
-		.BYTE	$CB ; À
-		.BYTE	$F8 ; ¯
-		.BYTE	$BE ; æ
-		.BYTE	 $E
-		.BYTE	$3E ; >
-		.BYTE	0
-		.BYTE	$1F
-		.BYTE	$FF
-		.BYTE	$8E ; é
-		.BYTE	$FF
-		.BYTE	$92 ; í
-		.BYTE	$BF ; ø
-		.BYTE	$B1 ; ±
-		.BYTE	$FF
-		.BYTE	$FF
-		.BYTE	$E0 ; ‡
-		.BYTE	$5D ; ]
-		.BYTE	$B9 ; π
-		.BYTE	$FF
-		.BYTE	$FF
-		.BYTE	$D5 ; ’
-		.BYTE	$DB ; -
-		.BYTE	7
-		.BYTE	$FF
-		.BYTE	$FF
-		.BYTE	$1B
-		.BYTE	2
-		.BYTE	0
-		.BYTE	$FB ; ˚
-		.BYTE	$FF
-		.BYTE	0
-		.BYTE	0
-		.BYTE	$1C
-		.BYTE	$7B ; {
-		.BYTE	$F8 ; ¯
-		.BYTE	0
-		.BYTE	3
-		.BYTE	$FC ; ¸
-		.BYTE	$1B
-		.BYTE	0
-		.BYTE	$1B
-		.BYTE	$F8 ; ¯
-		.BYTE	0
-		.BYTE	0
-		.BYTE	$16
-		.BYTE	$1B
-		.BYTE	0
-		.BYTE	$1B
-		.BYTE	$F8
-		.BYTE	0
-		.BYTE	0
-		.BYTE	$30
-		.BYTE	$1B
-		.BYTE	0
-		.BYTE	$1B
-		.BYTE	$E8
-		.BYTE	0
-		.BYTE	0
-		.BYTE	$30
-		.BYTE	$1B
-		.BYTE	0
-		.BYTE	$1B
-		.BYTE	$F0
-		.BYTE	$3C
-		.BYTE	$DD
-		.BYTE	$26
-		.BYTE	$9C
-		.BYTE	$C8
-		.BYTE	$1B
-		.BYTE	$FF
-		.RES	127,0
+L85F4:  .byte   $00,$1B,$27,$00,$1B,$07,$03,$1B
+        .byte   $07,$00,$1B,$07,$30,$1B,$06,$00
+        .byte   $03,$1B,$0A,$FF,$BF,$1B,$04,$FF
+        .byte   $DF,$1B,$07,$FF,$EF,$1B,$0B,$FF
+        .byte   $FE,$FF,$CF,$1B,$09,$FF,$FB,$FB
+        .byte   $EA,$FB,$FF,$FF,$CF,$1B,$08,$FF
+        .byte   $EF,$1B,$04,$FF,$F3,$1B,$03,$FF
+        .byte   $FB,$1B,$04,$FF,$FD,$FD,$F6,$FF
+        .byte   $FF,$EF,$1B,$03,$FF,$7F,$1B,$02
+        .byte   $FF,$CF,$FF,$7F,$1B,$05,$FF,$7F
+        .byte   $1B,$02,$FF,$FC,$1B,$02,$FF,$3F
+        .byte   $1B,$07,$FF,$CF,$1B,$04,$FF,$FE
+        .byte   $1B,$02,$FF,$FC,$FF,$FF,$CF,$1B
+        .byte   $03,$FF,$00,$1B,$04,$FF,$FC,$FF
+        .byte   $3F,$FF,$FB,$1B,$06,$FF,$FD,$FE
+        .byte   $F6,$DA,$F6,$FE,$FD,$1B,$02,$FF
+        .byte   $7F,$9F,$7F,$FF,$FF,$1B,$06,$00
+        .byte   $C0,$1B,$07,$0C,$1B,$07,$00,$1B
+        .byte   $07,$C0,$1B,$0E,$00,$02,$1B,$03
+        .byte   $00,$20,$50,$A0,$98,$1B,$37,$00
+        .byte   $03,$1B,$06,$0C,$1B,$07,$00,$1B
+        .byte   $07,$C0,$1B,$05,$03,$0F,$0F,$1B
+        .byte   $03,$FF,$FD,$FD,$F6,$DA,$FD,$1B
+        .byte   $04,$FF,$7F,$9F,$1B,$03,$FF,$EF
+        .byte   $1B,$04,$FF,$EF,$1B,$09,$FF,$EF
+        .byte   $1B,$07,$FF,$FB,$FF,$FB,$1B,$06
+        .byte   $FF,$FB,$1B,$08,$FF,$FE,$FF,$FF
+        .byte   $3F,$1B,$06,$FF,$FB,$FF,$FF,$F6
+        .byte   $DA,$6A,$DA,$F6,$F6,$FD,$FD,$7F
+        .byte   $9F,$A7,$9F,$7F,$7F,$FF,$FE,$EF
+        .byte   $1B,$03,$FF,$FE,$1B,$04,$FF,$FE
+        .byte   $1B,$02,$FF,$EF,$FF,$FC,$1B,$03
+        .byte   $FF,$F7,$FB,$FF,$F3,$1B,$03,$FF
+        .byte   $FE,$FF,$F2,$CA,$1B,$02,$2A,$1A
+        .byte   $15,$15,$00,$80,$28,$A2,$6A,$1B
+        .byte   $02,$9A,$1B,$02,$00,$80,$28,$A2
+        .byte   $AA,$AA,$FF,$FF,$3F,$3F,$0F,$8F
+        .byte   $2F,$AF,$FF,$BF,$1B,$06,$FF,$EF
+        .byte   $1B,$05,$FF,$1B,$05,$C0,$F0,$F0
+        .byte   $1B,$07,$03,$1B,$07,$00,$C0,$1B
+        .byte   $06,$30,$1B,$07,$00,$02,$02,$01
+        .byte   $1B,$04,$00,$64,$99,$9A,$6A,$54
+        .byte   $28,$28,$20,$1B,$37,$00,$0C,$0C
+        .byte   $1B,$05,$30,$1B,$04,$03,$1B,$02
+        .byte   $0C,$1B,$07,$00,$1B,$02,$0F,$1B
+        .byte   $03,$3F,$FF,$F6,$FD,$FD,$1B,$04
+        .byte   $FF,$7F,$1B,$02,$FF,$FE,$1B,$05
+        .byte   $FF,$F7,$1B,$03,$FF,$FE,$1B,$04
+        .byte   $FF,$EF,$1B,$02,$FF,$DF,$EF,$67
+        .byte   $EF,$DF,$1B,$02,$FF,$BF,$1B,$07
+        .byte   $FF,$CF,$1B,$03,$FF,$BF,$1B,$05
+        .byte   $FF,$F7,$FF,$FE,$FF,$FF,$3F,$1B
+        .byte   $07,$FF,$EF,$1B,$04,$FF,$3F,$FF
+        .byte   $FF,$FE,$FF,$FF,$BF,$FF,$FF,$F3
+        .byte   $1B,$04,$FF,$FE,$1B,$08,$FF,$FE
+        .byte   $1B,$02,$FF,$EA,$FB,$F7,$1B,$06
+        .byte   $FF,$FC,$BC,$1B,$03,$FF,$1F,$1D
+        .byte   $55,$55,$1B,$02,$15,$3D,$56,$56
+        .byte   $5A,$99,$69,$1B,$02,$57,$AA,$1B
+        .byte   $03,$6A,$1B,$02,$AA,$1B,$07,$AB
+        .byte   $FF,$3F,$FF,$FF,$FE,$1B,$03,$FF
+        .byte   $FB,$FF,$FF,$FE,$FE,$FA,$FE,$1B
+        .byte   $02,$F0,$1B,$02,$FC,$BC,$FF,$1B
+        .byte   $07,$00,$1B,$04,$C0,$1B,$04,$30
+        .byte   $1B,$05,$0C,$1B,$10,$00,$1B,$06
+        .byte   $FF,$1B,$74,$00,$1B,$02,$03,$1B
+        .byte   $04,$C0,$1B,$02,$00,$0C,$1B,$03
+        .byte   $30,$1B,$02,$C0,$00,$00,$1B,$02
+        .byte   $03,$0F,$0F,$3F,$1B,$06,$FF,$FE
+        .byte   $FF,$FE,$1B,$09,$FF,$FE,$1B,$11
+        .byte   $FF,$FB,$FF,$BF,$1B,$02,$FF,$FE
+        .byte   $1B,$02,$FF,$F7,$1B,$05,$FF,$FB
+        .byte   $1B,$05,$FF,$FE,$F7,$D9,$F7,$F7
+        .byte   $FF,$FD,$1B,$04,$FF,$FB,$1B,$08
+        .byte   $FF,$FD,$1B,$0B,$FF,$FD,$1B,$03
+        .byte   $FF,$BF,$1B,$08,$FF,$BF,$1B,$02
+        .byte   $FF,$EF,$FF,$FF,$FB,$1B,$05,$FF
+        .byte   $FB,$1B,$03,$FF,$FD,$1B,$02,$FF
+        .byte   $C5,$F1,$F1,$1B,$04,$FF,$5F,$5E
+        .byte   $7A,$3A,$1B,$03,$2A,$1B,$0F,$AA
+        .byte   $FB,$1B,$03,$FF,$1B,$02,$BF,$FE
+        .byte   $1B,$03,$FF,$EF,$1B,$03,$FF,$EF
+        .byte   $1B,$04,$FF,$00,$00,$1B,$02,$C0
+        .byte   $F0,$F0,$FC,$30,$1B,$03,$0C,$1B
+        .byte   $07,$03,$1B,$07,$00,$1B,$02,$C0
+        .byte   $1B,$06,$00,$0A,$1B,$06,$FF,$AA
+        .byte   $1B,$06,$00,$A0,$1B,$08,$00,$54
+        .byte   $55,$05,$1B,$05,$00,$50,$55,$15
+        .byte   $1B,$05,$00,$40,$55,$55,$01,$1B
+        .byte   $05,$00,$54,$55,$05,$03,$1B,$03
+        .byte   $0C,$30,$70,$55,$1B,$02,$03,$0C
+        .byte   $0C,$30,$1B,$04,$00,$03,$03,$0F
+        .byte   $0F,$3F,$3F,$1B,$0C,$FF,$00,$00
+        .byte   $1B,$05,$FF,$00,$00,$1B,$05,$FF
+        .byte   $00,$00,$1B,$05,$FF,$00,$00,$1B
+        .byte   $05,$FF,$00,$00,$1B,$05,$FF,$00
+        .byte   $00,$1B,$05,$FF,$00,$00,$1B,$05
+        .byte   $FF,$00,$00,$1B,$05,$FF,$00,$00
+        .byte   $FF,$BF,$1B,$03,$FF,$00,$00,$1B
+        .byte   $05,$FF,$00,$00,$1B,$05,$FF,$08
+        .byte   $80,$1B,$04,$FF,$EE,$00,$8F,$FB
+        .byte   $1B,$04,$FF,$3F,$1B,$05,$FF,$7F
+        .byte   $54,$5D,$1B,$05,$FF,$00,$40,$1B
+        .byte   $05,$FF,$00,$02,$1B,$03,$FF,$FE
+        .byte   $FA,$1B,$07,$AA,$6A,$69,$AA,$5A
+        .byte   $4A,$1B,$03,$2A,$0A,$AA,$BA,$BA
+        .byte   $BE,$BE,$AE,$A0,$A8,$BF,$BF,$AF
+        .byte   $AF,$AB,$AB,$AA,$2A,$1B,$05,$FF
+        .byte   $00,$00,$EF,$1B,$05,$FF,$00,$1B
+        .byte   $07,$FF,$00,$00,$C0,$C0,$F0,$FC
+        .byte   $FF,$FF,$1B,$02,$C0,$30,$30,$0C
+        .byte   $C0,$F1,$C0,$1B,$03,$30,$0D,$15
+        .byte   $54,$0A,$00,$02,$02,$15,$55,$42
+        .byte   $0A,$AA,$00,$AA,$AA,$00,$00,$AA
+        .byte   $AA,$A0,$05,$95,$94,$00,$00,$80
+        .byte   $A0,$15,$55,$50,$1B,$24,$00,$15
+        .byte   $01,$1B,$02,$00,$1B,$02,$01,$50
+        .byte   $54,$54,$1B,$03,$40,$1B,$11,$00
+        .byte   $08,$08,$0A,$2A,$28,$08,$1B,$26
+        .byte   $00,$02,$1B,$05,$00,$02,$1B,$05
+        .byte   $00,$02,$00,$00,$20,$00,$08,$00
+        .byte   $00,$0C,$00,$20,$00,$02,$00,$30
+        .byte   $00,$80,$02,$00,$80,$30,$02,$80
+        .byte   $02,$0A,$0A,$02,$22,$30,$02,$20
+        .byte   $0C,$00,$82,$80,$08,$FF,$FF,$30
+        .byte   $0C,$C0,$03,$30,$80,$FF,$FF,$0F
+        .byte   $3F,$FC,$F0,$00,$C0,$55,$55,$50
+        .byte   $50,$54,$55,$51,$55,$40,$1B,$04
+        .byte   $00,$40,$1B,$09,$00,$01,$01,$05
+        .byte   $05,$1B,$02,$15,$6A,$5A,$1B,$03
+        .byte   $56,$5A,$59,$4A,$82,$82,$1B,$02
+        .byte   $90,$56,$56,$80,$80,$A0,$A8,$28
+        .byte   $28,$A0,$00,$2A,$2A,$1B,$04,$0A
+        .byte   $02,$1B,$05,$00,$80,$A0,$1B,$17
+        .byte   $00,$05,$15,$15,$1B,$04,$01,$40
+        .byte   $1B,$02,$00,$1B,$03,$40,$02,$00
+        .byte   $00,$1B,$02,$02,$00,$00,$AA,$00
+        .byte   $00,$1B,$02,$AA,$00,$00,$80,$00
+        .byte   $00,$1B,$02,$80,$1B,$63,$00,$08
+        .byte   $0C,$0C,$3C,$FF,$3F,$01,$1B,$1E
+        .byte   $00,$1B,$07,$3F,$1B,$05,$00,$03
+        .byte   $1B,$04,$00,$0C,$00,$00,$02,$1B
+        .byte   $02,$00,$08,$00,$80,$00,$0C,$00
+        .byte   $20,$00,$03,$C0,$00,$00,$20,$30
+        .byte   $00,$00,$0C,$1B,$02,$00,$80,$20
+        .byte   $00,$00,$08,$00,$80,$00,$02,$00
+        .byte   $00,$20,$00,$00,$80,$00,$00,$08
+        .byte   $00,$C0,$03,$00,$C0,$00,$08,$00
+        .byte   $08,$1B,$02,$00,$0C,$C0,$00,$0F
+        .byte   $0F,$8F,$1B,$04,$0F,$C0,$CC,$C2
+        .byte   $1B,$02,$C0,$CC,$C0,$08,$02,$20
+        .byte   $00,$CC,$00,$00,$30,$1B,$07,$00
+        .byte   $7E,$7A,$DA,$56,$55,$59,$54,$50
+        .byte   $1B,$02,$AA,$A8,$A0,$0C,$3C,$3F
+        .byte   $AA,$A8,$80,$1B,$04,$00,$05,$1B
+        .byte   $02,$01,$1B,$03,$00,$1B,$0F,$55
+        .byte   $1B,$02,$AA,$6A,$6A,$5A,$52,$50
+        .byte   $82,$80,$1B,$03,$A8,$A0,$AA,$A5
+        .byte   $29,$29,$05,$55,$65,$55,$56,$00
+        .byte   $50,$95,$55,$7D,$1B,$02,$FF,$1B
+        .byte   $05,$00,$C0,$F0,$1B,$0F,$00,$40
+        .byte   $1B,$06,$00,$03,$0F,$03,$00,$00
+        .byte   $1B,$02,$03,$1B,$02,$FF,$00,$00
+        .byte   $1B,$02,$FF,$C0,$F0,$C0,$00,$00
+        .byte   $1B,$02,$C0,$1B,$17,$00,$02,$1B
+        .byte   $06,$00,$AF,$BE,$30,$30,$00,$1B
+        .byte   $02,$55,$1B,$15,$00,$02,$2A,$1B
+        .byte   $03,$00,$02,$2A,$AA,$A5,$3F,$3F
+        .byte   $FF,$3F,$AA,$AA,$55,$55,$00,$00
+        .byte   $C0,$00,$AA,$AA,$55,$55,$00,$C0
+        .byte   $00,$00,$AA,$AA,$55,$55,$00,$00
+        .byte   $03,$00,$AA,$AA,$55,$55,$1B,$03
+        .byte   $00,$AA,$AA,$55,$55,$00,$03,$00
+        .byte   $30,$AA,$AA,$55,$55,$1B,$03,$00
+        .byte   $AA,$AA,$55,$55,$1B,$03,$00,$AA
+        .byte   $AA,$55,$55,$00,$00,$02,$00,$AA
+        .byte   $AA,$55,$55,$0C,$1B,$02,$00,$AA
+        .byte   $AA,$55,$56,$0F,$0F,$3F,$0F,$AA
+        .byte   $AA,$55,$A5,$C0,$C3,$F0,$C0,$A8
+        .byte   $AA,$56,$55,$1B,$04,$00,$80,$A8
+        .byte   $6A,$1B,$06,$00,$80,$1B,$07,$00
+        .byte   $FF,$FC,$3C,$30,$00,$1B,$02,$55
+        .byte   $1B,$0F,$00,$1B,$03,$55,$7F,$FF
+        .byte   $FF,$75,$1B,$04,$55,$F5,$55,$57
+        .byte   $1B,$06,$50,$F0,$2A,$05,$01,$01
+        .byte   $1B,$03,$00,$56,$5A,$9A,$5A,$55
+        .byte   $FF,$FC,$F0,$BC,$BC,$9F,$53,$40
+        .byte   $1B,$02,$00,$FC,$3F,$0F,$1B,$1E
+        .byte   $00,$03,$03,$1B,$02,$00,$01,$00
+        .byte   $00,$FF,$FF,$1B,$02,$00,$55,$00
+        .byte   $00,$C0,$C0,$1B,$02,$00,$40,$1B
+        .byte   $1D,$00,$02,$2A,$1B,$07,$55,$00
+        .byte   $00,$02,$2A,$1B,$03,$AA,$02,$2A
+        .byte   $A9,$95,$55,$95,$A5,$AA,$AA,$95
+        .byte   $1B,$04,$55,$AA,$55,$5F,$50,$54
+        .byte   $1B,$02,$55,$AA,$1B,$02,$FF,$00
+        .byte   $1B,$02,$55,$AA,$1B,$02,$FF,$00
+        .byte   $1B,$02,$55,$AA,$1B,$02,$FF,$00
+        .byte   $1B,$02,$55,$AA,$1B,$02,$FF,$00
+        .byte   $1B,$02,$55,$AA,$1B,$02,$FF,$00
+        .byte   $1B,$02,$55,$AA,$1B,$02,$FF,$00
+        .byte   $1B,$02,$55,$AA,$1B,$02,$FF,$00
+        .byte   $1B,$02,$55,$AA,$1B,$02,$FF,$00
+        .byte   $1B,$02,$55,$AA,$1B,$02,$FF,$00
+        .byte   $1B,$02,$55,$AA,$1B,$02,$FF,$00
+        .byte   $1B,$02,$55,$AA,$AA,$EA,$FA,$0A
+        .byte   $56,$54,$55,$1B,$02,$AA,$00,$95
+        .byte   $95,$15,$55,$AA,$96,$A5,$05,$1B
+        .byte   $03,$55,$AA,$A8,$6A,$56,$1B,$03
+        .byte   $55,$AA,$00,$80,$A8,$6A,$56,$5A
+        .byte   $AA,$AA,$1B,$07,$55,$1B,$04,$00
+        .byte   $80,$A8,$AA,$00,$00,$1B,$05,$01
+        .byte   $55,$57,$5F,$1B,$05,$7F,$1B,$06
+        .byte   $FF,$FC,$FC,$1B,$05,$FF,$1B,$04
+        .byte   $00,$1B,$02,$C0,$1B,$2F,$00,$01
+        .byte   $01,$00,$00,$01,$05,$01,$00,$55
+        .byte   $55,$00,$00,$1B,$02,$55,$00,$40
+        .byte   $40,$00,$00,$40,$50,$40,$1B,$48
+        .byte   $00,$1B,$FF,$1B,$02,$F6,$F8,$FA
+        .byte   $FC,$1B,$0E,$C2,$1B,$0E,$3C,$1B
+        .byte   $05,$24,$1B,$05,$C8,$1B,$17,$FE
+        .byte   $1B,$02,$C2,$AE,$0E,$C8,$1B,$04
+        .byte   $3C,$C2,$C2,$1B,$02,$3C,$F0,$84
+        .byte   $84,$82,$82,$32,$34,$34,$36,$36
+        .byte   $38,$38,$36,$1B,$06,$26,$1B,$05
+        .byte   $C2,$F2,$F4,$F6,$F8,$FA,$FC,$C8
+        .byte   $1B,$03,$3C,$84,$1B,$02,$82,$1B
+        .byte   $02,$80,$1B,$03,$90,$1B,$02,$80
+        .byte   $1B,$04,$82,$05,$1B,$02,$FF,$A0
+        .byte   $05,$FF,$FF,$CF,$A0,$06,$FF,$FF
+        .byte   $8F,$60,$0F,$FF,$FF,$C7,$F0,$04
+        .byte   $7F,$FF,$CE,$10,$07,$0E,$0E,$04
+        .byte   $E0,$04,$87,$B0,$80,$2E,$01,$CB
+        .byte   $F8,$BE,$0E,$3E,$00,$1F,$FF,$8E
+        .byte   $FF,$92,$BF,$B1,$FF,$FF,$E0,$5D
+        .byte   $B9,$FF,$FF,$D5,$DB,$07,$FF,$FF
+        .byte   $1B,$02,$00,$FB,$FF,$00,$00,$1C
+        .byte   $7B,$F8,$00,$03,$FC,$1B,$00,$1B
+        .byte   $F8,$00,$00,$16,$1B,$00,$1B,$F8
+        .byte   $00,$00,$30,$1B,$00,$1B,$E8,$00
+        .byte   $00,$30,$1B,$00,$1B,$F0,$3C,$DD
+        .byte   $26,$9C,$C8,$1B,$FF
+	.res	127,0
 
-		.END
+	.END
