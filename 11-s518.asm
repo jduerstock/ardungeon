@@ -5428,7 +5428,7 @@ aSaveCharacterq:.BYTE	$A5,"Save character?",$0D,$0D
 
 loc_37D6:
 		DEC	byte_32
-		dldi	off_16, $3804
+		dldi	off_16, str_3804
 		JSR	sub_1C88
 
 loc_37E3:				; CODE XREF: RAM:37E6vj
@@ -5437,8 +5437,7 @@ loc_37E3:				; CODE XREF: RAM:37E6vj
 		JSR	UPPER
 		CMP	#$59 ; 'Y'
 		BNE	loc_37FC
-		LDA	#0
-		STA	$22F
+		ldi	$22F, $00
 		LDA	#1
 		JSR	sub_1A0D
 		JMP	loc_2EC6
@@ -5449,6 +5448,8 @@ loc_37FC:				; CODE XREF: RAM:37ED^j
 		DEC	byte_1935
 		JMP	sub_3C2D
 ; ---------------------------------------------------------------------------
+
+str_3804:
 		.BYTE	$A8
 		MOVEXY	0,2
 		.BYTE	$A5,"Quit game without saving character?",$0D,$0D
@@ -5541,14 +5542,11 @@ byte_38CF:	.BYTE	0			; DATA XREF: sub_386F+2^w sub_386F+34^w	...
 
 a_ThereAreSeveral:
 		MOVEXY	0,5
-aThereAreSevera:.BYTE	" There are several things here."
-		.BYTE	$AB
-		.BYTE	$FF
+		.BYTE	" There are several things here.",$AB,$FF
+
 a_ThereIsSomething:
 		MOVEXY	0,5
-aThereIsSomethi:.BYTE	" There is something here."
-		.BYTE	$AB
-		.BYTE	$FF
+		.BYTE	" There is something here.",$AB,$FF
 
 a_LevelStats:
 		.BYTE	$A8
@@ -5557,7 +5555,7 @@ aLevel:		.BYTE	"Level:"
 		MOVEXY	1,1
 aStatsStaChrStr:.BYTE	"Stats:  STA  CHR  STR  INT  WIS  SKL"
 		MOVEXY	3,2
-		.BYTE	$7B ; {
+		.BYTE	$7B
 		MOVEXY	1,3
 aExperience:	.BYTE	"Experience:"
 		MOVEXY	23,3
