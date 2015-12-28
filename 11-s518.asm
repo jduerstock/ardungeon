@@ -4599,12 +4599,10 @@ byte_317F:	.BYTE	0			; DATA XREF: RAM:loc_3127^w
 loc_3180:				; CODE XREF: RAM:3118^j	RAM:3156^j ...
 		JMP	loc_318C
 ; ---------------------------------------------------------------------------
-; START	OF FUNCTION CHUNK FOR sub_2BFA
 
 loc_3183:				; CODE XREF: RAM:180C^j	sub_2BFA+3DD^j
 		JSR	sub_32CA
-		LDA	$631E
-		STA	$631F
+		mv	$631F, $631E
 
 loc_318C:				; CODE XREF: RAM:2F6D^j	RAM:loc_3180^j ...
 		LDA	I_LOC_Z
@@ -4621,8 +4619,7 @@ loc_318C:				; CODE XREF: RAM:2F6D^j	RAM:loc_3180^j ...
 		JSR	sub_1A0D
 		dldi	SEGADDR, SEG_AC00
 		JSR	SEGLOAD
-		LDA	#$FF
-		STA	byte_1912
+		ldi	byte_1912, $FF
 
 loc_31B9:				; CODE XREF: sub_2BFA+598^j
 		JSR	sub_3531
@@ -4650,15 +4647,11 @@ loc_31B9:				; CODE XREF: sub_2BFA+598^j
 		STA	loc_31F5+1
 		LDA	unk_3BA3,X
 		STA	loc_31F5+2
-		LDA	#$FF
-		STA	byte_1958
-; END OF FUNCTION CHUNK	FOR sub_2BFA
+		ldi	byte_1958, $FF
 
-loc_31F5:				; DATA XREF: sub_2BFA+5ED^w
-					; sub_2BFA+5F3^w
+loc_31F5:
 		JMP	$FFFF
 ; ---------------------------------------------------------------------------
-; START	OF FUNCTION CHUNK FOR sub_2BFA
 
 loc_31F8:				; CODE XREF: sub_2BFA+5CD^j
 		AND	#$1F
@@ -4688,15 +4681,9 @@ loc_321F:				; CODE XREF: sub_2BFA+620^j
 
 loc_3222:				; CODE XREF: sub_2BFA+618^j
 		JMP	loc_2F80
-; END OF FUNCTION CHUNK	FOR sub_2BFA
+
 ; ---------------------------------------------------------------------------
-unk_3225:	.BYTE	1		; DATA XREF: sub_2BFA+59B^r
-		.BYTE	1
-		.BYTE	1
-		.BYTE	1
-		.BYTE	2
-		.BYTE	3
-		.BYTE	4
+unk_3225:	.BYTE	1,1,1,1,2,3,4
 
 ; --------------- S U B	R O U T	I N E ---------------------------------------
 
