@@ -188,14 +188,14 @@ loc_776D:				; CODE XREF: RAM:774A^j
 		LDA	$754C
 		CMP	#$7C ; '|'
 		BCS	loc_7783
-		dldi	off_16, $7D37
+		dldi	off_16, str_7D37
 		JMP	loc_77AD
 ; ---------------------------------------------------------------------------
 
 loc_7783:				; CODE XREF: RAM:7776^j
-		CMP	#$88 ; 'ˆ'
+		CMP	#$88
 		BCC	loc_7796
-		ldxy	$7A69
+		ldxy	off_7A69
 		LDA	#1
 		JSR	j_RND_A
 		JSR	j_sub_2C9B
@@ -203,7 +203,7 @@ loc_7783:				; CODE XREF: RAM:7776^j
 ; ---------------------------------------------------------------------------
 
 loc_7796:				; CODE XREF: RAM:7785^j
-		ldxy	$7A49
+		ldxy	off_7A49
 		LDA	#2
 		JSR	j_RND_A
 		JSR	j_sub_2C9B
@@ -295,8 +295,7 @@ loc_7825:				; CODE XREF: RAM:781C^j
 		JSR	sub_7A37
 		JSR	$183C
 		JSR	sub_7A3C
-		LDA	$66
-		STA	$4B
+		mv	$4b, $66
 		JSR	$1887
 		LDY	#0
 		LDA	(off_41),Y
@@ -304,14 +303,14 @@ loc_7825:				; CODE XREF: RAM:781C^j
 		BNE	loc_78C1
 		JSR	$1896
 		LDY	#0
-		LDA	($43),Y
+		LDA	(off_43),Y
 		CMP	#9
 		BNE	loc_7894
 		LDY	#1
-		LDA	($43),Y
+		LDA	(off_43),Y
 		STA	$6B
 		INY
-		LDA	($43),Y
+		LDA	(off_43),Y
 		STA	$6A
 		LDA	$6B
 		BNE	loc_7891
@@ -359,11 +358,11 @@ loc_78C1:				; CODE XREF: RAM:785B^j
 		BNE	loc_793B
 		JSR	$1896
 		LDY	#0
-		LDA	($43),Y
+		LDA	(off_43),Y
 		CMP	#2
 		BNE	loc_793B
 		INY
-		LDA	($43),Y
+		LDA	(off_43),Y
 		CMP	#2
 		BNE	loc_793B
 		LDA	#$10
@@ -433,7 +432,7 @@ loc_7962:				; CODE XREF: RAM:794E^j	RAM:7950^j
 		JSR	j_sub_408B
 		BIT	$6D
 		BMI	loc_798C
-		ldxy	$7A4F
+		ldxy	off_7A4F
 		LDA	#2
 		JSR	j_RND_A
 		JSR	j_sub_2C9B
@@ -559,9 +558,13 @@ sub_7A3C:				; CODE XREF: RAM:loc_77E9^p RAM:784B^p ...
 ; End of function sub_7A3C
 
 ; ---------------------------------------------------------------------------
+
+off_7A49:
 		.WORD byte_7C14
 		.WORD byte_7C5E
 		.WORD byte_7CC5
+
+off_7A4F:
 		.WORD byte_8115
 		.WORD byte_8115
 		.WORD byte_814B
@@ -577,6 +580,8 @@ off_7A5F:
 		.WORD byte_7FB0
 		.WORD byte_7FE6
 		.WORD byte_7FE6
+
+off_7A69:
 		.WORD byte_7EB9
 		.WORD byte_7F0B
 byte_7A6D:	.BYTE	$A8,$FF
@@ -634,6 +639,8 @@ aRewardTheeWith:.BYTE "reward thee with knowledge."
 		.BYTE $A6,  7,	6
 		.BYTE $AC
 		.WORD aDoYou		; "Do you ("
+
+str_7D37:
 		MOVEXY	0,0
 		.BYTE	$A5,"Foolish human, thou must make an",$0D,$0D
 		.BYTE	$A5,"offering of sufficient value before I",$0D,$0D
