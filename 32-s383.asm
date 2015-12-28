@@ -311,7 +311,7 @@ loc_7810:				; CODE XREF: sub_7758+CAvj
 		SEC
 		SBC	$6D
 		BCS	loc_7837
-		ldxy	$804D
+		ldxy	str_804D
 		JSR	sub_7AC5
 		JMP	loc_77BD
 ; ---------------------------------------------------------------------------
@@ -924,10 +924,10 @@ byte_7BC9:	.BYTE	0			; DATA XREF: sub_7B60+10^r sub_7B60+3A^w ...
 byte_7BCA:	.BYTE	$FF		; DATA XREF: sub_7B60:loc_7B6B^r
 					; sub_7B60+32^r	...
 		.BYTE	7
-		.BYTE	$14
-		.BYTE	 $F
+		.BYTE	20
+		.BYTE	15
 		.BYTE	5
-		.BYTE	$23 ; #
+		.BYTE	35
 byte_7BD0:	.BYTE	$FF
 byte_7BD1:	.BYTE	0			; DATA XREF: sub_7758+142^w
 					; sub_7758+148^w
@@ -1347,6 +1347,7 @@ a_ThatWillCostAt:
 		MOVEXY	16,5
 		.BYTE	">",$FF
 
+str_804D:
 		MOVEXY	0,2
 		.BYTE	$A5,"I'm sorry, but that's not enough.",$D,$FF
 
