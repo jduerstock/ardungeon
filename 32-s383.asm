@@ -1894,30 +1894,9 @@ byte_85F4:					; DATA XREF: RAM:loc_85BA^w RAM:85CA^r ...
 		.BYTE	$07,$00,$1B,$07,$30,$1B,$06,$00
 		.BYTE	$03,$1B,$0A,$FF,$BF,$1B,$04,$FF
 		.BYTE	$DF,$1B,$07,$FF,$EF,$1B,$0B,$FF
-		.BYTE	$FE
-		.BYTE	$FF
-		.BYTE	$CF
-		.BYTE	$1B
-		.BYTE	9
-		.BYTE	$FF
-		.BYTE	$FB
-		.BYTE	$FB
-		.BYTE	$EA
-		.BYTE	$FB
-		.BYTE	$FF
-		.BYTE	$FF
-		.BYTE	$CF
-		.BYTE	$1B
-		.BYTE	8
-		.BYTE	$FF
-		.BYTE	$EF
-		.BYTE	$1B
-		.BYTE	4
-		.BYTE	$FF
-		.BYTE	$F3
-		.BYTE	$1B
-		.BYTE	3
-		.BYTE	$FF
+		.BYTE	$FE,$FF,$CF,$1B,$09,$FF,$FB,$FB
+		.BYTE	$EA,$FB,$FF,$FF,$CF,$1B,$08,$FF
+		.BYTE	$EF,$1B,$04,$FF,$F3,$1B,$03,$FF
 		.BYTE	$FB
 		.BYTE	$1B
 		.BYTE	4
