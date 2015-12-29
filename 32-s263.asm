@@ -2143,75 +2143,19 @@ off_8F65:	.WORD	unk_8F9B		; DATA XREF: RAM:7A1B^r	RAM:7B1A^r ...
 
 unk_8F9B:
 		Item	$04,$01,$00,$08,"Leather Breastplate"
-		.BYTE	0
-		.BYTE	1
-		.BYTE	$23 ; #
-		.BYTE	$22 ; "
-		.BYTE	0
-		.BYTE	0
-		.BYTE	$11
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	$23 ; #
-		.BYTE	$28 ; (
+		.BYTE	$00,$01,$23,$22,$00,$00,$11,$00,$00,$00,$00,$00,$00,$23,$28
 
 unk_8FC4:
 		Item	$04,$01,$00,$01,"Leather Gauntlets"
-		.BYTE	0
-		.BYTE	2
-		.BYTE	$23 ; #
-		.BYTE	$22 ; "
-		.BYTE	0
-		.BYTE	0
-		.BYTE	$11
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	$23 ; #
-		.BYTE	$28 ; (
+		.BYTE	$00,$02,$23,$22,$00,$00,$11,$00,$00,$00,$00,$00,$00,$23,$28
 
 unk_8FEB:
 		Item	$04,$01,$00,$04,"Leather Leggings"
-		.BYTE	0
-		.BYTE	3
-		.BYTE	$23 ; #
-		.BYTE	$22 ; "
-		.BYTE	0
-		.BYTE	0
-		.BYTE	$11
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	$23 ; #
-		.BYTE	$28 ; (
+		.BYTE	$00,$03,$23,$22,$00,$00,$11,$00,$00,$00,$00,$00,$00,$23,$28
 
 unk_9011:
 		Item	$04,$01,$00,$02,"Leather Helm"
-		.BYTE	0
-		.BYTE	0
-		.BYTE	$23 ; #
-		.BYTE	$22 ; "
-		.BYTE	0
-		.BYTE	0
-		.BYTE	$11
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	$23 ; #
-		.BYTE	$28 ; (
+		.BYTE	$00,$00,$23,$22,$00,$00,$11,$00,$00,$00,$00,$00,$00,$23,$28
 
 unk_9033:
 		Item	$03,$01,$00,$01,"Stiletto"
