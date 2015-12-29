@@ -2443,16 +2443,16 @@ loc_9466:				; CODE XREF: RAM:946Avj
 
 loc_9494:				; CODE XREF: RAM:94BAvj
 		LDY	6
-		LDA	(7),Y
+		LDA	(off_7),Y
 		STA	4
 		LDY	#7
 
 loc_949C:				; CODE XREF: RAM:94A7vj
 		LSR	4
 		BCC	loc_94A6
-		LDA	(9),Y
-		ORA	#$80 ; '€'
-		STA	(9),Y
+		LDA	(off_9),Y
+		ORA	#$80
+		STA	(off_9),Y
 
 loc_94A6:				; CODE XREF: RAM:949E^j
 		DEY
@@ -2467,21 +2467,18 @@ loc_94A6:				; CODE XREF: RAM:949E^j
 loc_94B4:				; CODE XREF: RAM:94B0^j
 		INC	6
 		LDA	6
-		CMP	#$2D ; '-'
+		CMP	#$2D
 		BCC	loc_9494
-		LDA	#$2D ; '-'
+		LDA	#$2D
 		STA	off_7
 		LDX	#0
 		STX	6
-		LDA	#$A9 ; '©'
-		STA	$F0
-		LDA	#$BD ; '½'
-		STA	$F1
+		dldi	$F0, $BDA9
 
 loc_94CC:				; CODE XREF: RAM:94DDvj
 		CLC
 		LDA	$F0,X
-		ADC	#$80 ; '€'
+		ADC	#$80
 		STA	$F2,X
 		LDA	$F1,X
 		ADC	#0
@@ -2496,7 +2493,7 @@ loc_94DF:				; CODE XREF: RAM:94FCvj
 
 loc_94E1:				; CODE XREF: RAM:94FAvj
 		LDY	6
-		LDA	(7),Y
+		LDA	(off_7),Y
 		LDY	#4
 
 loc_94E7:				; CODE XREF: RAM:94ECvj
