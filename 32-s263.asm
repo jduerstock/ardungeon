@@ -1921,26 +1921,18 @@ aSilvers_1:	.BYTE	" silvers!",$D
 		.BYTE	$A5,"gear.  I should get some tommorow.",$0D,$FF
 
 		MOVEXY	0,0
-		.BYTE	$A5
-aYouVeSeenAllTh:.BYTE	"You've seen all the apparel I have on"
-		.BYTE	$D
+		.BYTE	$A5,"You've seen all the apparel I have on",$0D
 		.BYTE	$AC
-		.WORD	byte_8C63
-		.BYTE	$A6,  0,	0
-		.BYTE	$A5
-aThatSAllTheBat:.BYTE	"That's all the battle gear I have"
-		.BYTE	$D
-byte_8C63:	.BYTE	$D		; DATA XREF: RAM:8C3B^o
-		.BYTE	$A5
-aOnHandToday_Wo:.BYTE	"on hand today.  Would you care to look"
-		.BYTE	$D
-		.BYTE	$D
-		.BYTE	$A5
-aItOverAgainq:	.BYTE	"it over again?"
-		.BYTE	$D
-		.BYTE	$A6,  0,	7
-		.BYTE	$A5
-		.BYTE	'('
+		.WORD	str_8C63
+
+		MOVEXY	0,0
+aThatSAllTheBat:.BYTE	$A5,"That's all the battle gear I have",$0D
+str_8C63:	.BYTE	$D		; DATA XREF: RAM:8C3B^o
+		.BYTE	$A5,"on hand today.  Would you care to look",$0D,$0D
+		.BYTE	$A5,"it over again?",$0D
+
+		MOVEXY	0,7
+		.BYTE	$A5,'('
 		.BYTE	$A1
 aY_0:		.BYTE	'Y'
 		.BYTE	$A0
@@ -2479,33 +2471,10 @@ aLongSword:	.BYTE	"Long Sword",0
 		.BYTE	$28 ; (
 		.BYTE	0
 		.BYTE	$10
-unk_9172:	.BYTE	3		; DATA XREF: RAM:8F7F^o
-		.BYTE	$27 ; '
-		.BYTE	1
-		.BYTE	0
-		.BYTE	8
-		.BYTE	$13
-aSmallShield:	.BYTE	"Small Shield",0
-		.BYTE	0
-		.BYTE	$FF
-		.BYTE	0
-		.BYTE	$14
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	$A
-		.BYTE	1
-		.BYTE	$28 ; (
-		.BYTE	$2D ; -
-		.BYTE	2
-		.BYTE	$40 ; @
+
+unk_9172:	Item	$03,$01,$00,$08,"Small Shield"
+		.BYTE	$00,$FF,$00,$14,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$0A,$01,$28,$2D,$02,$40
+
 unk_9199:
 		Item	$03,$01,$00,$0A,"Large Shield"
 		.BYTE	$00,$FF,$00,$16,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$18,$01,$2D,$32,$02,$60
