@@ -29,7 +29,7 @@ loc_7612:				; CODE XREF: RAM:7601^j
 
 loc_761E:				; CODE XREF: RAM:7617^j
 		dldi	off_1977, loc_7641
-		LDX	#$48 ; 'H'
+		LDX	#$48
 
 loc_762A:				; CODE XREF: RAM:7630vj
 		LDA	loc_78A2,X
@@ -288,11 +288,11 @@ loc_77F0:				; CODE XREF: sub_77EE+9vj
 ; End of function sub_77EE
 
 ; ---------------------------------------------------------------------------
-byte_77FA:	.BYTE 0			; DATA XREF: RAM:76FE^w	RAM:772B^w
-byte_77FB:	.BYTE $FF		; DATA XREF: RAM:77AD^r	RAM:77B2^w
-byte_77FC:	.BYTE $FF		; DATA XREF: RAM:779A^r	RAM:779F^w
+byte_77FA:	.BYTE	0			; DATA XREF: RAM:76FE^w	RAM:772B^w
+byte_77FB:	.BYTE	$FF		; DATA XREF: RAM:77AD^r	RAM:77B2^w
+byte_77FC:	.BYTE	$FF		; DATA XREF: RAM:779A^r	RAM:779F^w
 		.BYTE	7
-		.BYTE $58 ; X
+		.BYTE	$58
 		.BYTE	1
 		.BYTE	0
 		.BYTE	0
@@ -633,7 +633,7 @@ loc_7A37:				; CODE XREF: RAM:loc_7649^p
 		LDA	$7C
 		ADC	unk_7AD0,X
 		CLC
-		ADC	#$B0 ; '∞'
+		ADC	#$B0
 		STA	$7C
 		LDY	#0
 		LDX	#9
@@ -689,27 +689,27 @@ loc_7AB0:				; DATA XREF: RAM:7A4F^w
 		RTS
 ; ---------------------------------------------------------------------------
 unk_7ABC:	.BYTE	4		; DATA XREF: RAM:7A3A^r
-		.BYTE $80 ; Ä
-		.BYTE $FC ; ¸
-		.BYTE $80 ; Ä
+		.BYTE	$80
+		.BYTE	$FC
+		.BYTE	$80
 unk_7AC0:	.BYTE	0		; DATA XREF: RAM:7A40^r
 		.BYTE	0
-		.BYTE $FF
-		.BYTE $FF
-unk_7AC4:	.BYTE $54 ; T		; DATA XREF: RAM:7A46^r
-		.BYTE $7C ; |
-		.BYTE $AC ; ¨
-		.BYTE $84 ; Ñ
+		.BYTE	$FF
+		.BYTE	$FF
+unk_7AC4:	.BYTE	$54		; DATA XREF: RAM:7A46^r
+		.BYTE	$7C
+		.BYTE	$AC
+		.BYTE	$84
 unk_7AC8:	.BYTE	0		; DATA XREF: RAM:7A4C^r
-		.BYTE $FA ; ˙
-		.BYTE $FF
+		.BYTE	$FA
+		.BYTE	$FF
 		.BYTE	5
-unk_7ACC:	.BYTE $6C ; l		; DATA XREF: RAM:7A66^r
-		.BYTE $A4 ; §
-		.BYTE $94 ; î
-		.BYTE $5C ; \
-unk_7AD0:	.BYTE $FB ; ˚		; DATA XREF: RAM:7A6D^r
-		.BYTE $FD ; ˝
+unk_7ACC:	.BYTE	$6C		; DATA XREF: RAM:7A66^r
+		.BYTE	$A4
+		.BYTE	$94
+		.BYTE	$5C
+unk_7AD0:	.BYTE	$FB		; DATA XREF: RAM:7A6D^r
+		.BYTE	$FD
 		.BYTE	4
 		.BYTE	2
 
@@ -1159,24 +1159,24 @@ locret_7DDD:				; CODE XREF: sub_7AD4+53^j
 ; End of function sub_7AD4
 
 ; ---------------------------------------------------------------------------
-byte_7DDE:	.BYTE 0			; DATA XREF: sub_7AD4+21^w sub_7AD4+79^r ...
-byte_7DDF:	.BYTE 0			; DATA XREF: sub_7AD4+2D^w
+byte_7DDE:	.BYTE	0			; DATA XREF: sub_7AD4+21^w sub_7AD4+79^r ...
+byte_7DDF:	.BYTE	0			; DATA XREF: sub_7AD4+2D^w
 					; sub_7AD4+108^r ...
-byte_7DE0:	.BYTE 0			; DATA XREF: sub_7AD4+15^w
+byte_7DE0:	.BYTE	0			; DATA XREF: sub_7AD4+15^w
 					; sub_7AD4+180^r ...
-byte_7DE1:	.BYTE 0			; DATA XREF: sub_7AD4+1B^w
+byte_7DE1:	.BYTE	0			; DATA XREF: sub_7AD4+1B^w
 					; sub_7AD4+17A^r ...
-byte_7DE2:	.BYTE 0			; DATA XREF: sub_7AD4+33^w
+byte_7DE2:	.BYTE	0			; DATA XREF: sub_7AD4+33^w
 					; sub_7AD4+102^r
-byte_7DE3:	.BYTE 0			; DATA XREF: sub_7AD4+27^w sub_7AD4+73^r
+byte_7DE3:	.BYTE	0			; DATA XREF: sub_7AD4+27^w sub_7AD4+73^r
 unk_7DE4:	.BYTE	1		; DATA XREF: sub_7AD4+36^r
 		.BYTE	0
 		.BYTE	1
 		.BYTE	0
-unk_7DE8:	.BYTE $DD ; ›		; DATA XREF: sub_7AD4+3D^r
+unk_7DE8:	.BYTE	$DD ; ›		; DATA XREF: sub_7AD4+3D^r
 		.BYTE	0
 		.BYTE	0
-		.BYTE $DD ; ›
+		.BYTE	$DD ; ›
 
 ; --------------- S U B	R O U T	I N E ---------------------------------------
 
@@ -1448,44 +1448,44 @@ loc_7F4B:				; CODE XREF: sub_7EBC+8^j
 ; ---------------------------------------------------------------------------
 		.BYTE	0
 		.BYTE	8
-		.BYTE $10
-		.BYTE $18
-		.BYTE $20
-		.BYTE $28 ; (
-		.BYTE $30 ; 0
-		.BYTE $38 ; 8
-		.BYTE $40 ; @
-		.BYTE $48 ; H
-		.BYTE $50 ; P
-		.BYTE $58 ; X
-		.BYTE $60 ; `
-		.BYTE $68 ; h
-		.BYTE $70 ; p
-		.BYTE $78 ; x
-		.BYTE $80 ; Ä
-		.BYTE $88 ; à
-		.BYTE $90 ; ê
-		.BYTE $98 ; ò
-		.BYTE $A0 ; †
-		.BYTE $A8 ; ®
-		.BYTE $B0 ; ∞
-		.BYTE $B8 ; ∏
-		.BYTE $C0 ; ¿
-		.BYTE $C8 ; »
-		.BYTE $D0 ; –
-		.BYTE $D8 ; ÿ
-		.BYTE $E0 ; ‡
-		.BYTE $E8 ; Ë
-		.BYTE $F0 ; 
-		.BYTE $F8 ; ¯
+		.BYTE	$10
+		.BYTE	$18
+		.BYTE	$20
+		.BYTE	$28 ; (
+		.BYTE	$30 ; 0
+		.BYTE	$38 ; 8
+		.BYTE	$40 ; @
+		.BYTE	$48 ; H
+		.BYTE	$50 ; P
+		.BYTE	$58 ; X
+		.BYTE	$60 ; `
+		.BYTE	$68 ; h
+		.BYTE	$70 ; p
+		.BYTE	$78 ; x
+		.BYTE	$80 ; Ä
+		.BYTE	$88 ; à
+		.BYTE	$90 ; ê
+		.BYTE	$98 ; ò
+		.BYTE	$A0 ; †
+		.BYTE	$A8 ; ®
+		.BYTE	$B0 ; ∞
+		.BYTE	$B8 ; ∏
+		.BYTE	$C0 ; ¿
+		.BYTE	$C8 ; »
+		.BYTE	$D0 ; –
+		.BYTE	$D8 ; ÿ
+		.BYTE	$E0 ; ‡
+		.BYTE	$E8 ; Ë
+		.BYTE	$F0 ; 
+		.BYTE	$F8 ; ¯
 		.BYTE	0
 		.BYTE	8
-		.BYTE $10
-		.BYTE $18
-		.BYTE $20
-		.BYTE $28 ; (
-		.BYTE $30 ; 0
-		.BYTE $38 ; 8
+		.BYTE	$10
+		.BYTE	$18
+		.BYTE	$20
+		.BYTE	$28 ; (
+		.BYTE	$30 ; 0
+		.BYTE	$38 ; 8
 		.BYTE	0
 		.BYTE	0
 		.BYTE	0
@@ -1527,95 +1527,95 @@ loc_7F4B:				; CODE XREF: sub_7EBC+8^j
 		.BYTE	1
 		.BYTE	1
 unk_7FB3:	.BYTE	0		; DATA XREF: RAM:7F1D^r
-		.BYTE $40 ; @
-		.BYTE $80 ; Ä
+		.BYTE	$40
+		.BYTE	$80
 		.BYTE	0
-		.BYTE $40 ; @
-		.BYTE $80 ; Ä
+		.BYTE	$40
+		.BYTE	$80
 		.BYTE	0
-		.BYTE $40 ; @
-		.BYTE $80 ; Ä
+		.BYTE	$40
+		.BYTE	$80
 unk_7FBC:	.BYTE	8		; DATA XREF: RAM:7F26^r
 		.BYTE	9
-		.BYTE  $A
-		.BYTE  $C
-		.BYTE  $D
-		.BYTE  $E
-		.BYTE $10
-		.BYTE $11
-		.BYTE $12
-unk_7FC5:	.BYTE $58 ; X		; DATA XREF: RAM:7867^r
-		.BYTE $59 ; Y
-		.BYTE $5A ; Z
-		.BYTE $5B ; [
-		.BYTE $5C ; \
-		.BYTE $5D ; ]
-		.BYTE $5E ; ^
-		.BYTE $5F ; _
-		.BYTE $98 ; ò
-		.BYTE $99 ; ô
-		.BYTE $9A ; ö
-		.BYTE $9B ; õ
-		.BYTE $9C ; ú
-		.BYTE $9D ; ù
-		.BYTE $9E ; û
-		.BYTE $9F ; ü
-		.BYTE $D8 ; ÿ
-		.BYTE $D9 ; Ÿ
-		.BYTE $DA ; ⁄
-		.BYTE $DB ; -
-		.BYTE $DC ; ‹
-		.BYTE $DD ; ›
-		.BYTE $DE ; ﬁ
-		.BYTE $DF ; ﬂ
-		.BYTE $58 ; X
-		.BYTE $59 ; Y
-		.BYTE $5A ; Z
-		.BYTE $5B ; [
-		.BYTE $5C ; \
-		.BYTE $5D ; ]
-		.BYTE $5E ; ^
-		.BYTE $5F ; _
-		.BYTE $98 ; ò
-		.BYTE $99 ; ô
-		.BYTE $9A ; ö
-		.BYTE $9B ; õ
-		.BYTE $9C ; ú
-		.BYTE $9D ; ù
-		.BYTE $9E ; û
-		.BYTE $9F ; ü
-		.BYTE $D8 ; ÿ
-		.BYTE $D9 ; Ÿ
-		.BYTE $DA ; ⁄
-		.BYTE $DB ; -
-		.BYTE $DC ; ‹
-		.BYTE $DD ; ›
-		.BYTE $DE ; ﬁ
-		.BYTE $DF ; ﬂ
-		.BYTE $58 ; X
-		.BYTE $59 ; Y
-		.BYTE $5A ; Z
-		.BYTE $5B ; [
-		.BYTE $5C ; \
-		.BYTE $5D ; ]
-		.BYTE $5E ; ^
-		.BYTE $5F ; _
-		.BYTE $98 ; ò
-		.BYTE $99 ; ô
-		.BYTE $9A ; ö
-		.BYTE $9B ; õ
-		.BYTE $9C ; ú
-		.BYTE $9D ; ù
-		.BYTE $9E ; û
-		.BYTE $9F ; ü
-		.BYTE $D8 ; ÿ
-		.BYTE $D9 ; Ÿ
-		.BYTE $DA ; ⁄
-		.BYTE $DB ; -
-		.BYTE $DC ; ‹
-		.BYTE $DD ; ›
-		.BYTE $DE ; ﬁ
-		.BYTE $DF ; ﬂ
+		.BYTE	$A
+		.BYTE	$C
+		.BYTE	$D
+		.BYTE	$E
+		.BYTE	$10
+		.BYTE	$11
+		.BYTE	$12
+unk_7FC5:	.BYTE	$58		; DATA XREF: RAM:7867^r
+		.BYTE	$59
+		.BYTE	$5A
+		.BYTE	$5B
+		.BYTE	$5C
+		.BYTE	$5D
+		.BYTE	$5E
+		.BYTE	$5F
+		.BYTE	$98
+		.BYTE	$99
+		.BYTE	$9A
+		.BYTE	$9B
+		.BYTE	$9C
+		.BYTE	$9D
+		.BYTE	$9E
+		.BYTE	$9F
+		.BYTE	$D8
+		.BYTE	$D9
+		.BYTE	$DA
+		.BYTE	$DB
+		.BYTE	$DC
+		.BYTE	$DD
+		.BYTE	$DE
+		.BYTE	$DF
+		.BYTE	$58
+		.BYTE	$59
+		.BYTE	$5A
+		.BYTE	$5B
+		.BYTE	$5C
+		.BYTE	$5D
+		.BYTE	$5E
+		.BYTE	$5F
+		.BYTE	$98
+		.BYTE	$99
+		.BYTE	$9A
+		.BYTE	$9B
+		.BYTE	$9C
+		.BYTE	$9D
+		.BYTE	$9E
+		.BYTE	$9F
+		.BYTE	$D8
+		.BYTE	$D9
+		.BYTE	$DA
+		.BYTE	$DB
+		.BYTE	$DC
+		.BYTE	$DD
+		.BYTE	$DE
+		.BYTE	$DF
+		.BYTE	$58
+		.BYTE	$59
+		.BYTE	$5A
+		.BYTE	$5B
+		.BYTE	$5C
+		.BYTE	$5D
+		.BYTE	$5E
+		.BYTE	$5F
+		.BYTE	$98
+		.BYTE	$99
+		.BYTE	$9A
+		.BYTE	$9B
+		.BYTE	$9C
+		.BYTE	$9D
+		.BYTE	$9E
+		.BYTE	$9F
+		.BYTE	$D8
+		.BYTE	$D9
+		.BYTE	$DA
+		.BYTE	$DB
+		.BYTE	$DC
+		.BYTE	$DD
+		.BYTE	$DE
+		.BYTE	$DF
 unk_800D:	.BYTE	8		; DATA XREF: RAM:786D^r
 		.BYTE	8
 		.BYTE	8
@@ -1632,62 +1632,62 @@ unk_800D:	.BYTE	8		; DATA XREF: RAM:786D^r
 		.BYTE	9
 		.BYTE	9
 		.BYTE	9
-		.BYTE  $A
-		.BYTE  $A
-		.BYTE  $A
-		.BYTE  $A
-		.BYTE  $A
-		.BYTE  $A
-		.BYTE  $A
-		.BYTE  $A
-		.BYTE  $C
-		.BYTE  $C
-		.BYTE  $C
-		.BYTE  $C
-		.BYTE  $C
-		.BYTE  $C
-		.BYTE  $C
-		.BYTE  $C
-		.BYTE  $D
-		.BYTE  $D
-		.BYTE  $D
-		.BYTE  $D
-		.BYTE  $D
-		.BYTE  $D
-		.BYTE  $D
-		.BYTE  $D
-		.BYTE  $E
-		.BYTE  $E
-		.BYTE  $E
-		.BYTE  $E
-		.BYTE  $E
-		.BYTE  $E
-		.BYTE  $E
-		.BYTE  $E
-		.BYTE $10
-		.BYTE $10
-		.BYTE $10
-		.BYTE $10
-		.BYTE $10
-		.BYTE $10
-		.BYTE $10
-		.BYTE $10
-		.BYTE $11
-		.BYTE $11
-		.BYTE $11
-		.BYTE $11
-		.BYTE $11
-		.BYTE $11
-		.BYTE $11
-		.BYTE $11
-		.BYTE $12
-		.BYTE $12
-		.BYTE $12
-		.BYTE $12
-		.BYTE $12
-		.BYTE $12
-		.BYTE $12
-		.BYTE $12
+		.BYTE	$A
+		.BYTE	$A
+		.BYTE	$A
+		.BYTE	$A
+		.BYTE	$A
+		.BYTE	$A
+		.BYTE	$A
+		.BYTE	$A
+		.BYTE	$C
+		.BYTE	$C
+		.BYTE	$C
+		.BYTE	$C
+		.BYTE	$C
+		.BYTE	$C
+		.BYTE	$C
+		.BYTE	$C
+		.BYTE	$D
+		.BYTE	$D
+		.BYTE	$D
+		.BYTE	$D
+		.BYTE	$D
+		.BYTE	$D
+		.BYTE	$D
+		.BYTE	$D
+		.BYTE	$E
+		.BYTE	$E
+		.BYTE	$E
+		.BYTE	$E
+		.BYTE	$E
+		.BYTE	$E
+		.BYTE	$E
+		.BYTE	$E
+		.BYTE	$10
+		.BYTE	$10
+		.BYTE	$10
+		.BYTE	$10
+		.BYTE	$10
+		.BYTE	$10
+		.BYTE	$10
+		.BYTE	$10
+		.BYTE	$11
+		.BYTE	$11
+		.BYTE	$11
+		.BYTE	$11
+		.BYTE	$11
+		.BYTE	$11
+		.BYTE	$11
+		.BYTE	$11
+		.BYTE	$12
+		.BYTE	$12
+		.BYTE	$12
+		.BYTE	$12
+		.BYTE	$12
+		.BYTE	$12
+		.BYTE	$12
+		.BYTE	$12
 		.BYTE	0
 		.BYTE	1
 		.BYTE	2
@@ -1696,22 +1696,22 @@ unk_800D:	.BYTE	8		; DATA XREF: RAM:786D^r
 		.BYTE	5
 		.BYTE	6
 		.BYTE	7
-		.BYTE $40 ; @
-		.BYTE $41 ; A
-		.BYTE $42 ; B
-		.BYTE $43 ; C
-		.BYTE $44 ; D
-		.BYTE $45 ; E
-		.BYTE $46 ; F
-		.BYTE $47 ; G
-		.BYTE $80 ; Ä
-		.BYTE $81 ; Å
-		.BYTE $82 ; Ç
-		.BYTE $83 ; É
-		.BYTE $84 ; Ñ
-		.BYTE $85 ; Ö
-		.BYTE $86 ; Ü
-		.BYTE $87 ; á
+		.BYTE	$40
+		.BYTE	$41
+		.BYTE	$42
+		.BYTE	$43
+		.BYTE	$44
+		.BYTE	$45
+		.BYTE	$46
+		.BYTE	$47
+		.BYTE	$80
+		.BYTE	$81
+		.BYTE	$82
+		.BYTE	$83
+		.BYTE	$84
+		.BYTE	$85
+		.BYTE	$86
+		.BYTE	$87
 		.BYTE	0
 		.BYTE	1
 		.BYTE	2
@@ -1720,22 +1720,22 @@ unk_800D:	.BYTE	8		; DATA XREF: RAM:786D^r
 		.BYTE	5
 		.BYTE	6
 		.BYTE	7
-		.BYTE $40 ; @
-		.BYTE $41 ; A
-		.BYTE $42 ; B
-		.BYTE $43 ; C
-		.BYTE $44 ; D
-		.BYTE $45 ; E
-		.BYTE $46 ; F
-		.BYTE $47 ; G
-		.BYTE $80 ; Ä
-		.BYTE $81 ; Å
-		.BYTE $82 ; Ç
-		.BYTE $83 ; É
-		.BYTE $84 ; Ñ
-		.BYTE $85 ; Ö
-		.BYTE $86 ; Ü
-		.BYTE $87 ; á
+		.BYTE	$40
+		.BYTE	$41
+		.BYTE	$42
+		.BYTE	$43
+		.BYTE	$44
+		.BYTE	$45
+		.BYTE	$46
+		.BYTE	$47
+		.BYTE	$80
+		.BYTE	$81
+		.BYTE	$82
+		.BYTE	$83
+		.BYTE	$84
+		.BYTE	$85
+		.BYTE	$86
+		.BYTE	$87
 		.BYTE	0
 		.BYTE	1
 		.BYTE	2
@@ -1744,22 +1744,22 @@ unk_800D:	.BYTE	8		; DATA XREF: RAM:786D^r
 		.BYTE	5
 		.BYTE	6
 		.BYTE	7
-		.BYTE $40 ; @
-		.BYTE $41 ; A
-		.BYTE $42 ; B
-		.BYTE $43 ; C
-		.BYTE $44 ; D
-		.BYTE $45 ; E
-		.BYTE $46 ; F
-		.BYTE $47 ; G
-		.BYTE $80 ; Ä
-		.BYTE $81 ; Å
-		.BYTE $82 ; Ç
-		.BYTE $83 ; É
-		.BYTE $84 ; Ñ
-		.BYTE $85 ; Ö
-		.BYTE $86 ; Ü
-		.BYTE $87 ; á
+		.BYTE	$40
+		.BYTE	$41
+		.BYTE	$42
+		.BYTE	$43
+		.BYTE	$44
+		.BYTE	$45
+		.BYTE	$46
+		.BYTE	$47
+		.BYTE	$80
+		.BYTE	$81
+		.BYTE	$82
+		.BYTE	$83
+		.BYTE	$84
+		.BYTE	$85
+		.BYTE	$86
+		.BYTE	$87
 		.BYTE	8
 		.BYTE	8
 		.BYTE	8
@@ -1776,275 +1776,275 @@ unk_800D:	.BYTE	8		; DATA XREF: RAM:786D^r
 		.BYTE	9
 		.BYTE	9
 		.BYTE	9
-		.BYTE  $A
-		.BYTE  $A
-		.BYTE  $A
-		.BYTE  $A
-		.BYTE  $A
-		.BYTE  $A
-		.BYTE  $A
-		.BYTE  $A
-		.BYTE  $C
-		.BYTE  $C
-		.BYTE  $C
-		.BYTE  $C
-		.BYTE  $C
-		.BYTE  $C
-		.BYTE  $C
-		.BYTE  $C
-		.BYTE  $D
-		.BYTE  $D
-		.BYTE  $D
-		.BYTE  $D
-		.BYTE  $D
-		.BYTE  $D
-		.BYTE  $D
-		.BYTE  $D
-		.BYTE  $E
-		.BYTE  $E
-		.BYTE  $E
-		.BYTE  $E
-		.BYTE  $E
-		.BYTE  $E
-		.BYTE  $E
-		.BYTE  $E
-		.BYTE $10
-		.BYTE $10
-		.BYTE $10
-		.BYTE $10
-		.BYTE $10
-		.BYTE $10
-		.BYTE $10
-		.BYTE $10
-		.BYTE $11
-		.BYTE $11
-		.BYTE $11
-		.BYTE $11
-		.BYTE $11
-		.BYTE $11
-		.BYTE $11
-		.BYTE $11
-		.BYTE $12
-		.BYTE $12
-		.BYTE $12
-		.BYTE $12
-		.BYTE $12
-		.BYTE $12
-		.BYTE $12
-		.BYTE $12
-		.BYTE $38 ; 8
+		.BYTE	$A
+		.BYTE	$A
+		.BYTE	$A
+		.BYTE	$A
+		.BYTE	$A
+		.BYTE	$A
+		.BYTE	$A
+		.BYTE	$A
+		.BYTE	$C
+		.BYTE	$C
+		.BYTE	$C
+		.BYTE	$C
+		.BYTE	$C
+		.BYTE	$C
+		.BYTE	$C
+		.BYTE	$C
+		.BYTE	$D
+		.BYTE	$D
+		.BYTE	$D
+		.BYTE	$D
+		.BYTE	$D
+		.BYTE	$D
+		.BYTE	$D
+		.BYTE	$D
+		.BYTE	$E
+		.BYTE	$E
+		.BYTE	$E
+		.BYTE	$E
+		.BYTE	$E
+		.BYTE	$E
+		.BYTE	$E
+		.BYTE	$E
+		.BYTE	$10
+		.BYTE	$10
+		.BYTE	$10
+		.BYTE	$10
+		.BYTE	$10
+		.BYTE	$10
+		.BYTE	$10
+		.BYTE	$10
+		.BYTE	$11
+		.BYTE	$11
+		.BYTE	$11
+		.BYTE	$11
+		.BYTE	$11
+		.BYTE	$11
+		.BYTE	$11
+		.BYTE	$11
+		.BYTE	$12
+		.BYTE	$12
+		.BYTE	$12
+		.BYTE	$12
+		.BYTE	$12
+		.BYTE	$12
+		.BYTE	$12
+		.BYTE	$12
+		.BYTE	$38
 		.BYTE	7
-		.BYTE $F8 ; ¯
+		.BYTE	$F8
 		.BYTE	0
 		.BYTE	1
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $FB ; ˚
-		.BYTE $FB ; ˚
-		.BYTE $E2 ; ‚
-		.BYTE $E2 ; ‚
-		.BYTE $80 ; Ä
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $BF ; ø
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $FE ; ˛
-		.BYTE $FE ; ˛
-		.BYTE $F8 ; ¯
-		.BYTE $F8 ; ¯
-		.BYTE $E0 ; ‡
-		.BYTE $EA ; Í
-		.BYTE $FF
-		.BYTE $80 ; Ä
+		.BYTE	$FF
+		.BYTE	$FF
+		.BYTE	$FF
+		.BYTE	$FF
+		.BYTE	$FF
+		.BYTE	$FF
+		.BYTE	$FF
+		.BYTE	$FF
+		.BYTE	$FF
+		.BYTE	$FF
+		.BYTE	$FF
+		.BYTE	$FF
+		.BYTE	$FF
+		.BYTE	$FF
+		.BYTE	$FF
+		.BYTE	$FF
+		.BYTE	$FF
+		.BYTE	$FF
+		.BYTE	$FF
+		.BYTE	$FF
+		.BYTE	$FF
+		.BYTE	$FF
+		.BYTE	$FF
+		.BYTE	$FF
+		.BYTE	$FF
+		.BYTE	$FF
+		.BYTE	$FF
+		.BYTE	$FB
+		.BYTE	$FB
+		.BYTE	$E2
+		.BYTE	$E2
+		.BYTE	$80
+		.BYTE	$FF
+		.BYTE	$FF
+		.BYTE	$FF
+		.BYTE	$FF
+		.BYTE	$FF
+		.BYTE	$FF
+		.BYTE	$FF
+		.BYTE	$BF
+		.BYTE	$FF
+		.BYTE	$FF
+		.BYTE	$FF
+		.BYTE	$FF
+		.BYTE	$FF
+		.BYTE	$FF
+		.BYTE	$FF
+		.BYTE	$FF
+		.BYTE	$FF
+		.BYTE	$FF
+		.BYTE	$FF
+		.BYTE	$FF
+		.BYTE	$FF
+		.BYTE	$FF
+		.BYTE	$FF
+		.BYTE	$FF
+		.BYTE	$FF
+		.BYTE	$FF
+		.BYTE	$FF
+		.BYTE	$FF
+		.BYTE	$FF
+		.BYTE	$FF
+		.BYTE	$FF
+		.BYTE	$FF
+		.BYTE	$FF
+		.BYTE	$FF
+		.BYTE	$FF
+		.BYTE	$FF
+		.BYTE	$FF
+		.BYTE	$FF
+		.BYTE	$FF
+		.BYTE	$FF
+		.BYTE	$FF
+		.BYTE	$FE
+		.BYTE	$FE
+		.BYTE	$F8
+		.BYTE	$F8
+		.BYTE	$E0
+		.BYTE	$EA
+		.BYTE	$FF
+		.BYTE	$80
 		.BYTE	0
 		.BYTE	0
 		.BYTE	0
 		.BYTE	0
 		.BYTE	0
-		.BYTE $80 ; Ä
-		.BYTE $80 ; Ä
-		.BYTE $BF ; ø
-		.BYTE $2F ; /
-		.BYTE $2F ; /
-		.BYTE  $B
-		.BYTE  $B
+		.BYTE	$80
+		.BYTE	$80
+		.BYTE	$BF
+		.BYTE	$2F
+		.BYTE	$2F
+		.BYTE	$B
+		.BYTE	$B
 		.BYTE	2
-		.BYTE $AA ; ™
-		.BYTE $BF ; ø
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $FE ; ˛
-		.BYTE $FE ; ˛
-		.BYTE $FA ; ˙
-		.BYTE $FA ; ˙
-		.BYTE $E2 ; ‚
-		.BYTE $E2 ; ‚
-		.BYTE $82 ; Ç
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $AB ; ´
-		.BYTE $80 ; Ä
-		.BYTE $80 ; Ä
-		.BYTE $AA ; ™
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $BF ; ø
-		.BYTE $BF ; ø
-		.BYTE $BF ; ø
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $FA ; ˙
-		.BYTE $FF
-		.BYTE $EF ; Ô
-		.BYTE $EF ; Ô
-		.BYTE $EB ; Î
-		.BYTE $EB ; Î
-		.BYTE $E2 ; ‚
-		.BYTE $E2 ; ‚
-		.BYTE $A0 ; †
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $BF ; ø
-		.BYTE $FF
-		.BYTE $FE ; ˛
-		.BYTE $FE ; ˛
-		.BYTE $F8 ; ¯
-		.BYTE $F8 ; ¯
-		.BYTE $FE ; ˛
-		.BYTE $FE ; ˛
-		.BYTE $FF
-		.BYTE $80 ; Ä
+		.BYTE	$AA
+		.BYTE	$BF
+		.BYTE	$FF
+		.BYTE	$FF
+		.BYTE	$FF
+		.BYTE	$FF
+		.BYTE	$FF
+		.BYTE	$FF
+		.BYTE	$FF
+		.BYTE	$FF
+		.BYTE	$FF
+		.BYTE	$FF
+		.BYTE	$FF
+		.BYTE	$FF
+		.BYTE	$FF
+		.BYTE	$FF
+		.BYTE	$FF
+		.BYTE	$FF
+		.BYTE	$FF
+		.BYTE	$FF
+		.BYTE	$FF
+		.BYTE	$FF
+		.BYTE	$FF
+		.BYTE	$FF
+		.BYTE	$FF
+		.BYTE	$FF
+		.BYTE	$FF
+		.BYTE	$FE
+		.BYTE	$FE
+		.BYTE	$FA
+		.BYTE	$FA
+		.BYTE	$E2
+		.BYTE	$E2
+		.BYTE	$82
+		.BYTE	$FF
+		.BYTE	$FF
+		.BYTE	$FF
+		.BYTE	$FF
+		.BYTE	$FF
+		.BYTE	$FF
+		.BYTE	$FF
+		.BYTE	$AB
+		.BYTE	$80
+		.BYTE	$80
+		.BYTE	$AA
+		.BYTE	$FF
+		.BYTE	$FF
+		.BYTE	$FF
+		.BYTE	$FF
+		.BYTE	$FF
+		.BYTE	$BF
+		.BYTE	$BF
+		.BYTE	$BF
+		.BYTE	$FF
+		.BYTE	$FF
+		.BYTE	$FF
+		.BYTE	$FF
+		.BYTE	$FA
+		.BYTE	$FF
+		.BYTE	$EF
+		.BYTE	$EF
+		.BYTE	$EB
+		.BYTE	$EB
+		.BYTE	$E2
+		.BYTE	$E2
+		.BYTE	$A0
+		.BYTE	$FF
+		.BYTE	$FF
+		.BYTE	$FF
+		.BYTE	$FF
+		.BYTE	$FF
+		.BYTE	$FF
+		.BYTE	$FF
+		.BYTE	$BF
+		.BYTE	$FF
+		.BYTE	$FE
+		.BYTE	$FE
+		.BYTE	$F8
+		.BYTE	$F8
+		.BYTE	$FE
+		.BYTE	$FE
+		.BYTE	$FF
+		.BYTE	$80
 		.BYTE	0
 		.BYTE	0
 		.BYTE	0
 		.BYTE	0
 		.BYTE	0
 		.BYTE	0
-		.BYTE $80 ; Ä
-		.BYTE  $B
-		.BYTE  $B
-		.BYTE  $B
-		.BYTE  $B
-		.BYTE  $B
-		.BYTE  $B
-		.BYTE  $B
-		.BYTE  $B
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $F8 ; ¯
-		.BYTE $F8 ; ¯
-		.BYTE $F8 ; ¯
-		.BYTE $F8 ; ¯
-		.BYTE $F8 ; ¯
-		.BYTE $F8 ; ¯
-		.BYTE $F8 ; ¯
-		.BYTE $F8 ; ¯
+		.BYTE	$80
+		.BYTE	$B
+		.BYTE	$B
+		.BYTE	$B
+		.BYTE	$B
+		.BYTE	$B
+		.BYTE	$B
+		.BYTE	$B
+		.BYTE	$B
+		.BYTE	$FF
+		.BYTE	$FF
+		.BYTE	$FF
+		.BYTE	$FF
+		.BYTE	$FF
+		.BYTE	$FF
+		.BYTE	$FF
+		.BYTE	$FF
+		.BYTE	$F8
+		.BYTE	$F8
+		.BYTE	$F8
+		.BYTE	$F8
+		.BYTE	$F8
+		.BYTE	$F8
+		.BYTE	$F8
+		.BYTE	$F8
 		.BYTE	0
 		.BYTE	0
 		.BYTE	0
@@ -2053,490 +2053,490 @@ unk_800D:	.BYTE	8		; DATA XREF: RAM:786D^r
 		.BYTE	0
 		.BYTE	0
 		.BYTE	0
-		.BYTE $BF ; ø
-		.BYTE $2F ; /
-		.BYTE $2F ; /
-		.BYTE  $B
-		.BYTE  $B
-		.BYTE $2F ; /
-		.BYTE $2F ; /
-		.BYTE $BF ; ø
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $82 ; Ç
-		.BYTE $E2 ; ‚
-		.BYTE $E2 ; ‚
-		.BYTE $FA ; ˙
-		.BYTE $FA ; ˙
-		.BYTE $FE ; ˛
-		.BYTE $FE ; ˛
-		.BYTE $FF
-		.BYTE $AB ; ´
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $AA ; ™
-		.BYTE $80 ; Ä
-		.BYTE $80 ; Ä
-		.BYTE $80 ; Ä
-		.BYTE $FA ; ˙
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $BF ; ø
-		.BYTE $BF ; ø
-		.BYTE $BF ; ø
-		.BYTE $BF ; ø
-		.BYTE $A0 ; †
-		.BYTE $E2 ; ‚
-		.BYTE $E2 ; ‚
-		.BYTE $EB ; Î
-		.BYTE $EB ; Î
-		.BYTE $EF ; Ô
-		.BYTE $EF ; Ô
-		.BYTE $FF
-		.BYTE $BF ; ø
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $EA ; Í
-		.BYTE $E0 ; ‡
-		.BYTE $F8 ; ¯
-		.BYTE $F8 ; ¯
-		.BYTE $FE ; ˛
-		.BYTE $FE ; ˛
-		.BYTE $FF
-		.BYTE $80 ; Ä
-		.BYTE $80 ; Ä
+		.BYTE	$BF
+		.BYTE	$2F
+		.BYTE	$2F
+		.BYTE	$B
+		.BYTE	$B
+		.BYTE	$2F
+		.BYTE	$2F
+		.BYTE	$BF
+		.BYTE	$FF
+		.BYTE	$FF
+		.BYTE	$FF
+		.BYTE	$FF
+		.BYTE	$FF
+		.BYTE	$FF
+		.BYTE	$FF
+		.BYTE	$FF
+		.BYTE	$82
+		.BYTE	$E2
+		.BYTE	$E2
+		.BYTE	$FA
+		.BYTE	$FA
+		.BYTE	$FE
+		.BYTE	$FE
+		.BYTE	$FF
+		.BYTE	$AB
+		.BYTE	$FF
+		.BYTE	$FF
+		.BYTE	$FF
+		.BYTE	$FF
+		.BYTE	$FF
+		.BYTE	$FF
+		.BYTE	$FF
+		.BYTE	$FF
+		.BYTE	$FF
+		.BYTE	$FF
+		.BYTE	$FF
+		.BYTE	$AA
+		.BYTE	$80
+		.BYTE	$80
+		.BYTE	$80
+		.BYTE	$FA
+		.BYTE	$FF
+		.BYTE	$FF
+		.BYTE	$FF
+		.BYTE	$BF
+		.BYTE	$BF
+		.BYTE	$BF
+		.BYTE	$BF
+		.BYTE	$A0
+		.BYTE	$E2
+		.BYTE	$E2
+		.BYTE	$EB
+		.BYTE	$EB
+		.BYTE	$EF
+		.BYTE	$EF
+		.BYTE	$FF
+		.BYTE	$BF
+		.BYTE	$FF
+		.BYTE	$FF
+		.BYTE	$FF
+		.BYTE	$FF
+		.BYTE	$FF
+		.BYTE	$FF
+		.BYTE	$FF
+		.BYTE	$FF
+		.BYTE	$FF
+		.BYTE	$FF
+		.BYTE	$FF
+		.BYTE	$FF
+		.BYTE	$FF
+		.BYTE	$FF
+		.BYTE	$FF
+		.BYTE	$FF
+		.BYTE	$FF
+		.BYTE	$FF
+		.BYTE	$FF
+		.BYTE	$FF
+		.BYTE	$FF
+		.BYTE	$FF
+		.BYTE	$FF
+		.BYTE	$FF
+		.BYTE	$EA
+		.BYTE	$E0
+		.BYTE	$F8
+		.BYTE	$F8
+		.BYTE	$FE
+		.BYTE	$FE
+		.BYTE	$FF
+		.BYTE	$80
+		.BYTE	$80
 		.BYTE	0
 		.BYTE	0
 		.BYTE	0
 		.BYTE	0
 		.BYTE	0
-		.BYTE $80 ; Ä
-		.BYTE $BF ; ø
-		.BYTE $AA ; ™
+		.BYTE	$80
+		.BYTE	$BF
+		.BYTE	$AA
 		.BYTE	2
-		.BYTE  $B
-		.BYTE  $B
-		.BYTE $2F ; /
-		.BYTE $2F ; /
-		.BYTE $BF ; ø
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $80 ; Ä
-		.BYTE $E2 ; ‚
-		.BYTE $E2 ; ‚
-		.BYTE $FB ; ˚
-		.BYTE $FB ; ˚
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $BF ; ø
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $FF
-unk_8272:	.BYTE $18		; DATA XREF: RAM:off_83A6vo
+		.BYTE	$B
+		.BYTE	$B
+		.BYTE	$2F
+		.BYTE	$2F
+		.BYTE	$BF
+		.BYTE	$FF
+		.BYTE	$FF
+		.BYTE	$FF
+		.BYTE	$FF
+		.BYTE	$FF
+		.BYTE	$FF
+		.BYTE	$FF
+		.BYTE	$FF
+		.BYTE	$FF
+		.BYTE	$FF
+		.BYTE	$FF
+		.BYTE	$FF
+		.BYTE	$FF
+		.BYTE	$FF
+		.BYTE	$FF
+		.BYTE	$FF
+		.BYTE	$FF
+		.BYTE	$FF
+		.BYTE	$FF
+		.BYTE	$FF
+		.BYTE	$FF
+		.BYTE	$FF
+		.BYTE	$FF
+		.BYTE	$FF
+		.BYTE	$FF
+		.BYTE	$FF
+		.BYTE	$FF
+		.BYTE	$FF
+		.BYTE	$FF
+		.BYTE	$FF
+		.BYTE	$FF
+		.BYTE	$FF
+		.BYTE	$FF
+		.BYTE	$FF
+		.BYTE	$FF
+		.BYTE	$FF
+		.BYTE	$FF
+		.BYTE	$FF
+		.BYTE	$FF
+		.BYTE	$FF
+		.BYTE	$80
+		.BYTE	$E2
+		.BYTE	$E2
+		.BYTE	$FB
+		.BYTE	$FB
+		.BYTE	$FF
+		.BYTE	$FF
+		.BYTE	$FF
+		.BYTE	$BF
+		.BYTE	$FF
+		.BYTE	$FF
+		.BYTE	$FF
+		.BYTE	$FF
+		.BYTE	$FF
+		.BYTE	$FF
+		.BYTE	$FF
+		.BYTE	$FF
+		.BYTE	$FF
+		.BYTE	$FF
+		.BYTE	$FF
+		.BYTE	$FF
+		.BYTE	$FF
+		.BYTE	$FF
+		.BYTE	$FF
+		.BYTE	$FF
+		.BYTE	$FF
+		.BYTE	$FF
+		.BYTE	$FF
+		.BYTE	$FF
+		.BYTE	$FF
+		.BYTE	$FF
+		.BYTE	$FF
+unk_8272:	.BYTE	$18		; DATA XREF: RAM:off_83A6vo
 		.BYTE	3
 		.BYTE	8
 		.BYTE	1
 		.BYTE	1
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $FB ; ˚
-		.BYTE $FB ; ˚
-		.BYTE $EA ; Í
-		.BYTE $EA ; Í
-		.BYTE $AA ; ™
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $BF ; ø
-		.BYTE $FF
-		.BYTE $FE ; ˛
-		.BYTE $FE ; ˛
-		.BYTE $FA ; ˙
-		.BYTE $FA ; ˙
-		.BYTE $EA ; Í
-		.BYTE $EA ; Í
-		.BYTE $FF
-		.BYTE $AA ; ™
-		.BYTE $AA ; ™
-		.BYTE $AA ; ™
-		.BYTE $AA ; ™
-		.BYTE $AA ; ™
-		.BYTE $AA ; ™
-		.BYTE $AA ; ™
-		.BYTE $AA ; ™
-		.BYTE $BF ; ø
-		.BYTE $AF ; Ø
-		.BYTE $AF ; Ø
-		.BYTE $AB ; ´
-		.BYTE $AB ; ´
-		.BYTE $AA ; ™
-		.BYTE $AA ; ™
-		.BYTE $BF ; ø
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $AB ; ´
-		.BYTE $AA ; ™
-		.BYTE $AA ; ™
-		.BYTE $AA ; ™
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $BF ; ø
-		.BYTE $BF ; ø
-		.BYTE $BF ; ø
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $FA ; ˙
-unk_82BF:	.BYTE $18		; DATA XREF: RAM:83ACvo
+		.BYTE	$FF
+		.BYTE	$FF
+		.BYTE	$FF
+		.BYTE	$FF
+		.BYTE	$FF
+		.BYTE	$FF
+		.BYTE	$FF
+		.BYTE	$FF
+		.BYTE	$FF
+		.BYTE	$FF
+		.BYTE	$FF
+		.BYTE	$FB
+		.BYTE	$FB
+		.BYTE	$EA
+		.BYTE	$EA
+		.BYTE	$AA
+		.BYTE	$FF
+		.BYTE	$FF
+		.BYTE	$FF
+		.BYTE	$FF
+		.BYTE	$FF
+		.BYTE	$FF
+		.BYTE	$FF
+		.BYTE	$BF
+		.BYTE	$FF
+		.BYTE	$FE
+		.BYTE	$FE
+		.BYTE	$FA
+		.BYTE	$FA
+		.BYTE	$EA
+		.BYTE	$EA
+		.BYTE	$FF
+		.BYTE	$AA
+		.BYTE	$AA
+		.BYTE	$AA
+		.BYTE	$AA
+		.BYTE	$AA
+		.BYTE	$AA
+		.BYTE	$AA
+		.BYTE	$AA
+		.BYTE	$BF
+		.BYTE	$AF
+		.BYTE	$AF
+		.BYTE	$AB
+		.BYTE	$AB
+		.BYTE	$AA
+		.BYTE	$AA
+		.BYTE	$BF
+		.BYTE	$FF
+		.BYTE	$FF
+		.BYTE	$FF
+		.BYTE	$FF
+		.BYTE	$FF
+		.BYTE	$FF
+		.BYTE	$FF
+		.BYTE	$AB
+		.BYTE	$AA
+		.BYTE	$AA
+		.BYTE	$AA
+		.BYTE	$FF
+		.BYTE	$FF
+		.BYTE	$FF
+		.BYTE	$FF
+		.BYTE	$FF
+		.BYTE	$BF
+		.BYTE	$BF
+		.BYTE	$BF
+		.BYTE	$FF
+		.BYTE	$FF
+		.BYTE	$FF
+		.BYTE	$FF
+		.BYTE	$FA
+unk_82BF:	.BYTE	$18		; DATA XREF: RAM:83ACvo
 		.BYTE	3
-		.BYTE $18
+		.BYTE	$18
 		.BYTE	1
 		.BYTE	3
-		.BYTE $BF ; ø
-		.BYTE $BF ; ø
-		.BYTE $BF ; ø
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $FA ; ˙
-		.BYTE $FF
-		.BYTE $EF ; Ô
-		.BYTE $EF ; Ô
-		.BYTE $EB ; Î
-		.BYTE $EB ; Î
-		.BYTE $EA ; Í
-		.BYTE $EA ; Í
-		.BYTE $AA ; ™
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $BF ; ø
-		.BYTE $FA ; ˙
-		.BYTE $FA ; ˙
-		.BYTE $FA ; ˙
-		.BYTE $FA ; ˙
-		.BYTE $FA ; ˙
-		.BYTE $FA ; ˙
-		.BYTE $FA ; ˙
-		.BYTE $FA ; ˙
-		.BYTE $AA ; ™
-		.BYTE $AA ; ™
-		.BYTE $AA ; ™
-		.BYTE $AA ; ™
-		.BYTE $AA ; ™
-		.BYTE $AA ; ™
-		.BYTE $AA ; ™
-		.BYTE $AA ; ™
-		.BYTE $BF ; ø
-		.BYTE $AF ; Ø
-		.BYTE $AF ; Ø
-		.BYTE $AB ; ´
-		.BYTE $AB ; ´
-		.BYTE $AF ; Ø
-		.BYTE $AF ; Ø
-		.BYTE $BF ; ø
-		.BYTE $FA ; ˙
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $BF ; ø
-		.BYTE $BF ; ø
-		.BYTE $BF ; ø
-		.BYTE $BF ; ø
-		.BYTE $AA ; ™
-		.BYTE $EA ; Í
-		.BYTE $EA ; Í
-		.BYTE $EB ; Î
-		.BYTE $EB ; Î
-		.BYTE $EF ; Ô
-		.BYTE $EF ; Ô
-		.BYTE $FF
-		.BYTE $BF ; ø
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $FF
-unk_830C:	.BYTE $18		; DATA XREF: RAM:83A8vo
+		.BYTE	$BF
+		.BYTE	$BF
+		.BYTE	$BF
+		.BYTE	$FF
+		.BYTE	$FF
+		.BYTE	$FF
+		.BYTE	$FF
+		.BYTE	$FA
+		.BYTE	$FF
+		.BYTE	$EF
+		.BYTE	$EF
+		.BYTE	$EB
+		.BYTE	$EB
+		.BYTE	$EA
+		.BYTE	$EA
+		.BYTE	$AA
+		.BYTE	$FF
+		.BYTE	$FF
+		.BYTE	$FF
+		.BYTE	$FF
+		.BYTE	$FF
+		.BYTE	$FF
+		.BYTE	$FF
+		.BYTE	$BF
+		.BYTE	$FA
+		.BYTE	$FA
+		.BYTE	$FA
+		.BYTE	$FA
+		.BYTE	$FA
+		.BYTE	$FA
+		.BYTE	$FA
+		.BYTE	$FA
+		.BYTE	$AA
+		.BYTE	$AA
+		.BYTE	$AA
+		.BYTE	$AA
+		.BYTE	$AA
+		.BYTE	$AA
+		.BYTE	$AA
+		.BYTE	$AA
+		.BYTE	$BF
+		.BYTE	$AF
+		.BYTE	$AF
+		.BYTE	$AB
+		.BYTE	$AB
+		.BYTE	$AF
+		.BYTE	$AF
+		.BYTE	$BF
+		.BYTE	$FA
+		.BYTE	$FF
+		.BYTE	$FF
+		.BYTE	$FF
+		.BYTE	$BF ; ø
+		.BYTE	$BF ; ø
+		.BYTE	$BF ; ø
+		.BYTE	$BF ; ø
+		.BYTE	$AA ; ™
+		.BYTE	$EA ; Í
+		.BYTE	$EA ; Í
+		.BYTE	$EB ; Î
+		.BYTE	$EB ; Î
+		.BYTE	$EF ; Ô
+		.BYTE	$EF ; Ô
+		.BYTE	$FF
+		.BYTE	$BF ; ø
+		.BYTE	$FF
+		.BYTE	$FF
+		.BYTE	$FF
+		.BYTE	$FF
+		.BYTE	$FF
+		.BYTE	$FF
+		.BYTE	$FF
+unk_830C:	.BYTE	$18		; DATA XREF: RAM:83A8vo
 		.BYTE	3
 		.BYTE	8
 		.BYTE	1
 		.BYTE	5
-		.BYTE $AB ; ´
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $AA ; ™
-		.BYTE $AA ; ™
-		.BYTE $AA ; ™
-		.BYTE $AA ; ™
-		.BYTE $FA ; ˙
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $BF ; ø
-		.BYTE $BF ; ø
-		.BYTE $BF ; ø
-		.BYTE $BF ; ø
-		.BYTE $FF
-		.BYTE $EA ; Í
-		.BYTE $EA ; Í
-		.BYTE $FA ; ˙
-		.BYTE $FA ; ˙
-		.BYTE $FE ; ˛
-		.BYTE $FE ; ˛
-		.BYTE $FF
-		.BYTE $AA ; ™
-		.BYTE $AA ; ™
-		.BYTE $AA ; ™
-		.BYTE $AA ; ™
-		.BYTE $AA ; ™
-		.BYTE $AA ; ™
-		.BYTE $AA ; ™
-		.BYTE $AA ; ™
-		.BYTE $BF ; ø
-		.BYTE $AA ; ™
-		.BYTE $AA ; ™
-		.BYTE $AB ; ´
-		.BYTE $AB ; ´
-		.BYTE $AF ; Ø
-		.BYTE $AF ; Ø
-		.BYTE $BF ; ø
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $AA ; ™
-		.BYTE $EA ; Í
-		.BYTE $EA ; Í
-		.BYTE $FB ; ˚
-		.BYTE $FB ; ˚
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $BF ; ø
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $FF
-unk_8359:	.BYTE $18		; DATA XREF: RAM:83AAvo
+		.BYTE	$AB ; ´
+		.BYTE	$FF
+		.BYTE	$FF
+		.BYTE	$FF
+		.BYTE	$FF
+		.BYTE	$FF
+		.BYTE	$FF
+		.BYTE	$FF
+		.BYTE	$FF
+		.BYTE	$FF
+		.BYTE	$FF
+		.BYTE	$FF
+		.BYTE	$AA ; ™
+		.BYTE	$AA ; ™
+		.BYTE	$AA ; ™
+		.BYTE	$AA ; ™
+		.BYTE	$FA ; ˙
+		.BYTE	$FF
+		.BYTE	$FF
+		.BYTE	$FF
+		.BYTE	$BF ; ø
+		.BYTE	$BF ; ø
+		.BYTE	$BF ; ø
+		.BYTE	$BF ; ø
+		.BYTE	$FF
+		.BYTE	$EA ; Í
+		.BYTE	$EA ; Í
+		.BYTE	$FA ; ˙
+		.BYTE	$FA ; ˙
+		.BYTE	$FE ; ˛
+		.BYTE	$FE ; ˛
+		.BYTE	$FF
+		.BYTE	$AA ; ™
+		.BYTE	$AA ; ™
+		.BYTE	$AA ; ™
+		.BYTE	$AA ; ™
+		.BYTE	$AA ; ™
+		.BYTE	$AA ; ™
+		.BYTE	$AA ; ™
+		.BYTE	$AA ; ™
+		.BYTE	$BF ; ø
+		.BYTE	$AA ; ™
+		.BYTE	$AA ; ™
+		.BYTE	$AB ; ´
+		.BYTE	$AB ; ´
+		.BYTE	$AF ; Ø
+		.BYTE	$AF ; Ø
+		.BYTE	$BF ; ø
+		.BYTE	$FF
+		.BYTE	$FF
+		.BYTE	$FF
+		.BYTE	$FF
+		.BYTE	$FF
+		.BYTE	$FF
+		.BYTE	$FF
+		.BYTE	$FF
+		.BYTE	$AA ; ™
+		.BYTE	$EA ; Í
+		.BYTE	$EA ; Í
+		.BYTE	$FB ; ˚
+		.BYTE	$FB ; ˚
+		.BYTE	$FF
+		.BYTE	$FF
+		.BYTE	$FF
+		.BYTE	$BF ; ø
+		.BYTE	$FF
+		.BYTE	$FF
+		.BYTE	$FF
+		.BYTE	$FF
+		.BYTE	$FF
+		.BYTE	$FF
+		.BYTE	$FF
+unk_8359:	.BYTE	$18		; DATA XREF: RAM:83AAvo
 		.BYTE	3
-		.BYTE $F8 ; ¯
+		.BYTE	$F8 ; ¯
 		.BYTE	0
 		.BYTE	3
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $FE ; ˛
-		.BYTE $FE ; ˛
-		.BYTE $FA ; ˙
-		.BYTE $FA ; ˙
-		.BYTE $EA ; Í
-		.BYTE $EA ; Í
-		.BYTE $AA ; ™
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $AB ; ´
-		.BYTE $FF
-		.BYTE $FE ; ˛
-		.BYTE $FE ; ˛
-		.BYTE $FA ; ˙
-		.BYTE $FA ; ˙
-		.BYTE $FE ; ˛
-		.BYTE $FE ; ˛
-		.BYTE $FF
-		.BYTE $AA ; ™
-		.BYTE $AA ; ™
-		.BYTE $AA ; ™
-		.BYTE $AA ; ™
-		.BYTE $AA ; ™
-		.BYTE $AA ; ™
-		.BYTE $AA ; ™
-		.BYTE $AA ; ™
-		.BYTE $AB ; ´
-		.BYTE $AB ; ´
-		.BYTE $AB ; ´
-		.BYTE $AB ; ´
-		.BYTE $AB ; ´
-		.BYTE $AB ; ´
-		.BYTE $AB ; ´
-		.BYTE $AB ; ´
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $AA ; ™
-		.BYTE $EA ; Í
-		.BYTE $EA ; Í
-		.BYTE $FA ; ˙
-		.BYTE $FA ; ˙
-		.BYTE $FE ; ˛
-		.BYTE $FE ; ˛
-		.BYTE $FF
-		.BYTE $AB ; ´
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $FF
+		.BYTE	$FF
+		.BYTE	$FF
+		.BYTE	$FF
+		.BYTE	$FF
+		.BYTE	$FF
+		.BYTE	$FF
+		.BYTE	$FF
+		.BYTE	$FF
+		.BYTE	$FF
+		.BYTE	$FE ; ˛
+		.BYTE	$FE ; ˛
+		.BYTE	$FA ; ˙
+		.BYTE	$FA ; ˙
+		.BYTE	$EA ; Í
+		.BYTE	$EA ; Í
+		.BYTE	$AA ; ™
+		.BYTE	$FF
+		.BYTE	$FF
+		.BYTE	$FF
+		.BYTE	$FF
+		.BYTE	$FF
+		.BYTE	$FF
+		.BYTE	$FF
+		.BYTE	$AB ; ´
+		.BYTE	$FF
+		.BYTE	$FE ; ˛
+		.BYTE	$FE ; ˛
+		.BYTE	$FA ; ˙
+		.BYTE	$FA ; ˙
+		.BYTE	$FE ; ˛
+		.BYTE	$FE ; ˛
+		.BYTE	$FF
+		.BYTE	$AA ; ™
+		.BYTE	$AA ; ™
+		.BYTE	$AA ; ™
+		.BYTE	$AA ; ™
+		.BYTE	$AA ; ™
+		.BYTE	$AA ; ™
+		.BYTE	$AA ; ™
+		.BYTE	$AA ; ™
+		.BYTE	$AB ; ´
+		.BYTE	$AB ; ´
+		.BYTE	$AB ; ´
+		.BYTE	$AB ; ´
+		.BYTE	$AB ; ´
+		.BYTE	$AB ; ´
+		.BYTE	$AB ; ´
+		.BYTE	$AB ; ´
+		.BYTE	$FF
+		.BYTE	$FF
+		.BYTE	$FF
+		.BYTE	$FF
+		.BYTE	$FF
+		.BYTE	$FF
+		.BYTE	$FF
+		.BYTE	$FF
+		.BYTE	$AA ; ™
+		.BYTE	$EA ; Í
+		.BYTE	$EA ; Í
+		.BYTE	$FA ; ˙
+		.BYTE	$FA ; ˙
+		.BYTE	$FE ; ˛
+		.BYTE	$FE ; ˛
+		.BYTE	$FF
+		.BYTE	$AB ; ´
+		.BYTE	$FF
+		.BYTE	$FF
+		.BYTE	$FF
+		.BYTE	$FF
+		.BYTE	$FF
+		.BYTE	$FF
+		.BYTE	$FF
 off_83A6:	.WORD unk_8272		; DATA XREF: RAM:loc_7EEA^r RAM:7EEF^r
 		.WORD unk_830C
 		.WORD unk_8359
@@ -2561,115 +2561,69 @@ off_83BE:	.WORD unk_84BB		; DATA XREF: sub_7EC7+10^r sub_7EC7+15^r
 		.WORD unk_84F0
 		.WORD unk_8515
 		.WORD unk_854A
-		.BYTE $30 ; 0
+		.BYTE	$30 ; 0
 		.BYTE	5
-		.BYTE $18
+		.BYTE	$18
 		.BYTE	0
 		.BYTE	2
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $FE ; ˛
-		.BYTE $FE ; ˛
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $FE ; ˛
-		.BYTE $FA ; ˙
-		.BYTE $EA ; Í
-		.BYTE $A8 ; ®
-		.BYTE $A0 ; †
-		.BYTE $80 ; Ä
-		.BYTE $FF
-		.BYTE $EA ; Í
-		.BYTE $AA ; ™
-		.BYTE $AA ; ™
-		.BYTE  $A
-		.BYTE	2
-		.BYTE	2
-		.BYTE	0
-		.BYTE $FF
-		.BYTE $AF ; Ø
-		.BYTE $AA ; ™
-		.BYTE $AA ; ™
-		.BYTE $82 ; Ç
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $BF ; ø
-		.BYTE $AF ; Ø
-		.BYTE $AB ; ´
-		.BYTE $2A ; *
-		.BYTE  $A
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $FA ; ˙
-		.BYTE $FA ; ˙
-		.BYTE $EA ; Í
-		.BYTE $E8 ; Ë
-		.BYTE $E8 ; Ë
-		.BYTE $A8 ; ®
-		.BYTE $A0 ; †
-		.BYTE $A0 ; †
-		.BYTE $80 ; Ä
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE  $A
+		.BYTE	$FF
+		.BYTE	$FF
+		.BYTE	$FF
+		.BYTE	$FF
+		.BYTE	$FF
+		.BYTE	$FF
+		.BYTE	$FE ; ˛
+		.BYTE	$FE ; ˛
+		.BYTE	$FF
+		.BYTE	$FF
+		.BYTE	$FE ; ˛
+		.BYTE	$FA ; ˙
+		.BYTE	$EA ; Í
+		.BYTE	$A8 ; ®
+		.BYTE	$A0 ; †
+		.BYTE	$80 ; Ä
+		.BYTE	$FF
+		.BYTE	$EA ; Í
+		.BYTE	$AA ; ™
+		.BYTE	$AA ; ™
+		.BYTE	 $A
 		.BYTE	2
 		.BYTE	2
 		.BYTE	0
+		.BYTE	$FF
+		.BYTE	$AF ; Ø
+		.BYTE	$AA ; ™
+		.BYTE	$AA ; ™
+		.BYTE	$82 ; Ç
 		.BYTE	0
 		.BYTE	0
 		.BYTE	0
+		.BYTE	$FF
+		.BYTE	$FF
+		.BYTE	$FF
+		.BYTE	$BF ; ø
+		.BYTE	$AF ; Ø
+		.BYTE	$AB ; ´
+		.BYTE	$2A ; *
+		.BYTE	 $A
+		.BYTE	$FF
+		.BYTE	$FF
+		.BYTE	$FF
+		.BYTE	$FF
+		.BYTE	$FF
+		.BYTE	$FF
+		.BYTE	$FF
+		.BYTE	$FF
+		.BYTE	$FA ; ˙
+		.BYTE	$FA ; ˙
+		.BYTE	$EA ; Í
+		.BYTE	$E8 ; Ë
+		.BYTE	$E8 ; Ë
+		.BYTE	$A8 ; ®
+		.BYTE	$A0 ; †
+		.BYTE	$A0 ; †
+		.BYTE	$80 ; Ä
 		.BYTE	0
-		.BYTE $BF ; ø
-		.BYTE $BF ; ø
-		.BYTE $AF ; Ø
-		.BYTE $AF ; Ø
-		.BYTE $AF ; Ø
-		.BYTE $AB ; ´
-		.BYTE $2B ; +
-		.BYTE $2B ; +
-		.BYTE $A0 ; †
-		.BYTE $A0 ; †
-		.BYTE $80 ; Ä
-		.BYTE $A0 ; †
-		.BYTE $A8 ; ®
-		.BYTE $A0 ; †
-		.BYTE $80 ; Ä
-		.BYTE $A0 ; †
 		.BYTE	0
 		.BYTE	0
 		.BYTE	0
@@ -2692,299 +2646,345 @@ off_83BE:	.WORD unk_84BB		; DATA XREF: sub_7EC7+10^r sub_7EC7+15^r
 		.BYTE	0
 		.BYTE	0
 		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE $2B ; +
-		.BYTE  $B
-		.BYTE  $B
-		.BYTE $2B ; +
-		.BYTE $AB ; ´
-		.BYTE $2B ; +
-		.BYTE  $B
-		.BYTE  $B
-		.BYTE $A0 ; †
-		.BYTE $A0 ; †
-		.BYTE $A0 ; †
-		.BYTE $A8 ; ®
-		.BYTE $E8 ; Ë
-		.BYTE $E8 ; Ë
-		.BYTE $EA ; Í
-		.BYTE $FA ; ˙
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
+		.BYTE	 $A
 		.BYTE	2
 		.BYTE	2
-		.BYTE $2B ; +
-		.BYTE $2B ; +
-		.BYTE $2B ; +
-		.BYTE $AB ; ´
-		.BYTE $AF ; Ø
-		.BYTE $AF ; Ø
-		.BYTE $AF ; Ø
-		.BYTE $BF ; ø
-		.BYTE $FA ; ˙
-		.BYTE $FE ; ˛
-		.BYTE $FE ; ˛
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $80 ; Ä
-		.BYTE $80 ; Ä
-		.BYTE $A0 ; †
-		.BYTE $A8 ; ®
-		.BYTE $EA ; Í
-		.BYTE $FA ; ˙
-		.BYTE $FE ; ˛
-		.BYTE $FF
+		.BYTE	0
+		.BYTE	0
+		.BYTE	0
+		.BYTE	0
+		.BYTE	0
+		.BYTE	$BF ; ø
+		.BYTE	$BF ; ø
+		.BYTE	$AF ; Ø
+		.BYTE	$AF ; Ø
+		.BYTE	$AF ; Ø
+		.BYTE	$AB ; ´
+		.BYTE	$2B ; +
+		.BYTE	$2B ; +
+		.BYTE	$A0 ; †
+		.BYTE	$A0 ; †
+		.BYTE	$80 ; Ä
+		.BYTE	$A0 ; †
+		.BYTE	$A8 ; ®
+		.BYTE	$A0 ; †
+		.BYTE	$80 ; Ä
+		.BYTE	$A0 ; †
+		.BYTE	0
+		.BYTE	0
+		.BYTE	0
+		.BYTE	0
+		.BYTE	0
+		.BYTE	0
+		.BYTE	0
+		.BYTE	0
+		.BYTE	0
+		.BYTE	0
+		.BYTE	0
+		.BYTE	0
+		.BYTE	0
+		.BYTE	0
+		.BYTE	0
+		.BYTE	0
+		.BYTE	0
+		.BYTE	0
+		.BYTE	0
+		.BYTE	0
+		.BYTE	0
+		.BYTE	0
+		.BYTE	0
+		.BYTE	0
+		.BYTE	0
+		.BYTE	0
+		.BYTE	0
+		.BYTE	0
+		.BYTE	0
+		.BYTE	0
+		.BYTE	0
+		.BYTE	0
+		.BYTE	$2B ; +
+		.BYTE	 $B
+		.BYTE	 $B
+		.BYTE	$2B ; +
+		.BYTE	$AB ; ´
+		.BYTE	$2B ; +
+		.BYTE	 $B
+		.BYTE	 $B
+		.BYTE	$A0 ; †
+		.BYTE	$A0 ; †
+		.BYTE	$A0 ; †
+		.BYTE	$A8 ; ®
+		.BYTE	$E8 ; Ë
+		.BYTE	$E8 ; Ë
+		.BYTE	$EA ; Í
+		.BYTE	$FA ; ˙
+		.BYTE	0
+		.BYTE	0
+		.BYTE	0
+		.BYTE	0
+		.BYTE	0
+		.BYTE	0
+		.BYTE	0
+		.BYTE	0
+		.BYTE	0
+		.BYTE	0
+		.BYTE	0
+		.BYTE	0
+		.BYTE	0
+		.BYTE	0
+		.BYTE	0
+		.BYTE	0
+		.BYTE	0
+		.BYTE	0
+		.BYTE	0
+		.BYTE	0
+		.BYTE	0
+		.BYTE	0
+		.BYTE	0
+		.BYTE	0
+		.BYTE	0
+		.BYTE	0
+		.BYTE	0
+		.BYTE	0
 		.BYTE	0
 		.BYTE	0
 		.BYTE	2
 		.BYTE	2
-		.BYTE  $A
-		.BYTE $AA ; ™
-		.BYTE $AA ; ™
-		.BYTE $EA ; Í
+		.BYTE	$2B ; +
+		.BYTE	$2B ; +
+		.BYTE	$2B ; +
+		.BYTE	$AB ; ´
+		.BYTE	$AF ; Ø
+		.BYTE	$AF ; Ø
+		.BYTE	$AF ; Ø
+		.BYTE	$BF ; ø
+		.BYTE	$FA ; ˙
+		.BYTE	$FE ; ˛
+		.BYTE	$FE ; ˛
+		.BYTE	$FF
+		.BYTE	$FF
+		.BYTE	$FF
+		.BYTE	$FF
+		.BYTE	$FF
+		.BYTE	$80 ; Ä
+		.BYTE	$80 ; Ä
+		.BYTE	$A0 ; †
+		.BYTE	$A8 ; ®
+		.BYTE	$EA ; Í
+		.BYTE	$FA ; ˙
+		.BYTE	$FE ; ˛
+		.BYTE	$FF
+		.BYTE	0
+		.BYTE	0
+		.BYTE	2
+		.BYTE	2
+		.BYTE	 $A
+		.BYTE	$AA ; ™
+		.BYTE	$AA ; ™
+		.BYTE	$EA ; Í
 		.BYTE	0
 		.BYTE	0
 		.BYTE	0
 		.BYTE	0
-		.BYTE $82 ; Ç
-		.BYTE $AA ; ™
-		.BYTE $AA ; ™
-		.BYTE $AF ; Ø
-		.BYTE  $A
-		.BYTE  $A
-		.BYTE $2A ; *
-		.BYTE $AB ; ´
-		.BYTE $AF ; Ø
-		.BYTE $BF ; ø
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $BF ; ø
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $FF
-unk_84BB:	.BYTE $10		; DATA XREF: RAM:off_83BE^o
+		.BYTE	$82 ; Ç
+		.BYTE	$AA ; ™
+		.BYTE	$AA ; ™
+		.BYTE	$AF ; Ø
+		.BYTE	 $A
+		.BYTE	 $A
+		.BYTE	$2A ; *
+		.BYTE	$AB ; ´
+		.BYTE	$AF ; Ø
+		.BYTE	$BF ; ø
+		.BYTE	$FF
+		.BYTE	$FF
+		.BYTE	$BF ; ø
+		.BYTE	$FF
+		.BYTE	$FF
+		.BYTE	$FF
+		.BYTE	$FF
+		.BYTE	$FF
+		.BYTE	$FF
+		.BYTE	$FF
+unk_84BB:	.BYTE	$10		; DATA XREF: RAM:off_83BE^o
 		.BYTE	3
-		.BYTE $28 ; (
+		.BYTE	$28 ; (
 		.BYTE	0
 		.BYTE	3
 		.BYTE	2
-		.BYTE  $A
-		.BYTE $2A ; *
-		.BYTE $AA ; ™
-		.BYTE  $A
-		.BYTE  $A
-		.BYTE  $A
-		.BYTE  $A
+		.BYTE	 $A
+		.BYTE	$2A ; *
+		.BYTE	$AA ; ™
+		.BYTE	 $A
+		.BYTE	 $A
+		.BYTE	 $A
+		.BYTE	 $A
 		.BYTE	0
-		.BYTE $80 ; Ä
-		.BYTE $A0 ; †
-		.BYTE $A8 ; ®
-		.BYTE $80 ; Ä
-		.BYTE $80 ; Ä
-		.BYTE $80 ; Ä
-		.BYTE $80 ; Ä
-		.BYTE  $A
-		.BYTE  $A
-		.BYTE  $A
-		.BYTE  $A
+		.BYTE	$80 ; Ä
+		.BYTE	$A0 ; †
+		.BYTE	$A8 ; ®
+		.BYTE	$80 ; Ä
+		.BYTE	$80 ; Ä
+		.BYTE	$80 ; Ä
+		.BYTE	$80 ; Ä
+		.BYTE	 $A
+		.BYTE	 $A
+		.BYTE	 $A
+		.BYTE	 $A
 		.BYTE	8
-		.BYTE  $A
-		.BYTE  $A
-		.BYTE  $A
-		.BYTE $80 ; Ä
-		.BYTE $80 ; Ä
-		.BYTE $80 ; Ä
-		.BYTE $80 ; Ä
-		.BYTE $80 ; Ä
-		.BYTE $80 ; Ä
-		.BYTE $80 ; Ä
-		.BYTE $80 ; Ä
-		.BYTE  $A
-		.BYTE  $A
-		.BYTE $2A ; *
-		.BYTE $28 ; (
-		.BYTE $28 ; (
-		.BYTE $28 ; (
-		.BYTE $20
-		.BYTE $20
-		.BYTE $80 ; Ä
-		.BYTE $80 ; Ä
-		.BYTE $A0 ; †
-		.BYTE $A0 ; †
-		.BYTE $A0 ; †
-		.BYTE $A0 ; †
-		.BYTE $20
-		.BYTE $20
-unk_84F0:	.BYTE $20		; DATA XREF: RAM:83C0^o
+		.BYTE	 $A
+		.BYTE	 $A
+		.BYTE	 $A
+		.BYTE	$80 ; Ä
+		.BYTE	$80 ; Ä
+		.BYTE	$80 ; Ä
+		.BYTE	$80 ; Ä
+		.BYTE	$80 ; Ä
+		.BYTE	$80 ; Ä
+		.BYTE	$80 ; Ä
+		.BYTE	$80 ; Ä
+		.BYTE	 $A
+		.BYTE	 $A
+		.BYTE	$2A ; *
+		.BYTE	$28 ; (
+		.BYTE	$28 ; (
+		.BYTE	$28 ; (
+		.BYTE	$20
+		.BYTE	$20
+		.BYTE	$80 ; Ä
+		.BYTE	$80 ; Ä
+		.BYTE	$A0 ; †
+		.BYTE	$A0 ; †
+		.BYTE	$A0 ; †
+		.BYTE	$A0 ; †
+		.BYTE	$20
+		.BYTE	$20
+unk_84F0:	.BYTE	$20		; DATA XREF: RAM:83C0^o
 		.BYTE	1
-		.BYTE $20
+		.BYTE	$20
 		.BYTE	0
 		.BYTE	4
 		.BYTE	0
 		.BYTE	0
-		.BYTE $2A ; *
-		.BYTE  $A
+		.BYTE	$2A ; *
+		.BYTE	 $A
 		.BYTE	0
-		.BYTE  $A
-		.BYTE $2A ; *
+		.BYTE	 $A
+		.BYTE	$2A ; *
 		.BYTE	0
 		.BYTE	0
 		.BYTE	0
-		.BYTE $80 ; Ä
-		.BYTE $AA ; ™
-		.BYTE $A8 ; ®
-		.BYTE $AA ; ™
-		.BYTE $80 ; Ä
+		.BYTE	$80 ; Ä
+		.BYTE	$AA ; ™
+		.BYTE	$A8 ; ®
+		.BYTE	$AA ; ™
+		.BYTE	$80 ; Ä
 		.BYTE	0
 		.BYTE	0
 		.BYTE	2
 		.BYTE	2
-		.BYTE $AA ; ™
-		.BYTE $AA ; ™
-		.BYTE $AA ; ™
+		.BYTE	$AA ; ™
+		.BYTE	$AA ; ™
+		.BYTE	$AA ; ™
 		.BYTE	2
 		.BYTE	2
 		.BYTE	0
 		.BYTE	0
-		.BYTE $80 ; Ä
-		.BYTE $A0 ; †
-		.BYTE $A8 ; ®
-		.BYTE $A0 ; †
-		.BYTE $80 ; Ä
+		.BYTE	$80 ; Ä
+		.BYTE	$A0 ; †
+		.BYTE	$A8 ; ®
+		.BYTE	$A0 ; †
+		.BYTE	$80 ; Ä
 		.BYTE	0
-unk_8515:	.BYTE $10		; DATA XREF: RAM:83C2^o
+unk_8515:	.BYTE	$10		; DATA XREF: RAM:83C2^o
 		.BYTE	3
-		.BYTE $28 ; (
+		.BYTE	$28 ; (
 		.BYTE	0
 		.BYTE	3
-		.BYTE $20
-		.BYTE $20
-		.BYTE $28 ; (
-		.BYTE $28 ; (
-		.BYTE $28 ; (
-		.BYTE $2A ; *
-		.BYTE  $A
-		.BYTE  $A
-		.BYTE $20
-		.BYTE $20
-		.BYTE $A0 ; †
-		.BYTE $A0 ; †
-		.BYTE $A0 ; †
-		.BYTE $A0 ; †
-		.BYTE $80 ; Ä
-		.BYTE $80 ; Ä
-		.BYTE  $A
-		.BYTE  $A
-		.BYTE  $A
-		.BYTE  $A
+		.BYTE	$20
+		.BYTE	$20
+		.BYTE	$28 ; (
+		.BYTE	$28 ; (
+		.BYTE	$28 ; (
+		.BYTE	$2A ; *
+		.BYTE	 $A
+		.BYTE	 $A
+		.BYTE	$20
+		.BYTE	$20
+		.BYTE	$A0 ; †
+		.BYTE	$A0 ; †
+		.BYTE	$A0 ; †
+		.BYTE	$A0 ; †
+		.BYTE	$80 ; Ä
+		.BYTE	$80 ; Ä
+		.BYTE	 $A
+		.BYTE	 $A
+		.BYTE	 $A
+		.BYTE	 $A
 		.BYTE	8
-		.BYTE  $A
-		.BYTE  $A
-		.BYTE  $A
-		.BYTE $80 ; Ä
-		.BYTE $80 ; Ä
-		.BYTE $80 ; Ä
-		.BYTE $80 ; Ä
-		.BYTE $80 ; Ä
-		.BYTE $80 ; Ä
-		.BYTE $80 ; Ä
-		.BYTE $80 ; Ä
-		.BYTE  $A
-		.BYTE  $A
-		.BYTE  $A
-		.BYTE  $A
-		.BYTE $AA ; ™
-		.BYTE $2A ; *
-		.BYTE  $A
+		.BYTE	 $A
+		.BYTE	 $A
+		.BYTE	 $A
+		.BYTE	$80 ; Ä
+		.BYTE	$80 ; Ä
+		.BYTE	$80 ; Ä
+		.BYTE	$80 ; Ä
+		.BYTE	$80 ; Ä
+		.BYTE	$80 ; Ä
+		.BYTE	$80 ; Ä
+		.BYTE	$80 ; Ä
+		.BYTE	 $A
+		.BYTE	 $A
+		.BYTE	 $A
+		.BYTE	 $A
+		.BYTE	$AA ; ™
+		.BYTE	$2A ; *
+		.BYTE	 $A
 		.BYTE	2
-		.BYTE $80 ; Ä
-		.BYTE $80 ; Ä
-		.BYTE $80 ; Ä
-		.BYTE $80 ; Ä
-		.BYTE $A8 ; ®
-		.BYTE $A0 ; †
-		.BYTE $80 ; Ä
+		.BYTE	$80 ; Ä
+		.BYTE	$80 ; Ä
+		.BYTE	$80 ; Ä
+		.BYTE	$80 ; Ä
+		.BYTE	$A8 ; ®
+		.BYTE	$A0 ; †
+		.BYTE	$80 ; Ä
 		.BYTE	0
-unk_854A:	.BYTE $20		; DATA XREF: RAM:83C4^o
+unk_854A:	.BYTE	$20		; DATA XREF: RAM:83C4^o
 		.BYTE	1
-		.BYTE $20
+		.BYTE	$20
 		.BYTE	0
 		.BYTE	4
 		.BYTE	0
 		.BYTE	2
-		.BYTE  $A
-		.BYTE $2A ; *
-		.BYTE $AA ; ™
-		.BYTE $2A ; *
-		.BYTE  $A
+		.BYTE	 $A
+		.BYTE	$2A ; *
+		.BYTE	$AA ; ™
+		.BYTE	$2A ; *
+		.BYTE	 $A
 		.BYTE	2
 		.BYTE	0
 		.BYTE	0
 		.BYTE	0
-		.BYTE $AA ; ™
-		.BYTE $A8 ; ®
-		.BYTE $AA ; ™
+		.BYTE	$AA ; ™
+		.BYTE	$A8 ; ®
+		.BYTE	$AA ; ™
 		.BYTE	0
 		.BYTE	0
 		.BYTE	0
 		.BYTE	0
-		.BYTE  $A
-		.BYTE $AA ; ™
-		.BYTE $A8 ; ®
-		.BYTE $AA ; ™
-		.BYTE  $A
+		.BYTE	 $A
+		.BYTE	$AA ; ™
+		.BYTE	$A8 ; ®
+		.BYTE	$AA ; ™
+		.BYTE	 $A
 		.BYTE	0
 		.BYTE	0
 		.BYTE	0
-		.BYTE $A0 ; †
-		.BYTE $80 ; Ä
+		.BYTE	$A0 ; †
+		.BYTE	$80 ; Ä
 		.BYTE	0
-		.BYTE $80 ; Ä
-		.BYTE $A0 ; †
+		.BYTE	$80 ; Ä
+		.BYTE	$A0 ; †
 		.BYTE	0
 
 off_856F:
@@ -3077,8 +3077,8 @@ byte_88C0:	MOVEXY	0,1
 		.BYTE	$A5,$22,"SEEK THE LIGHT",$22,$0D,$FF
 
 byte_88F9:	MOVEXY	0,1
-		.BYTE $A5,"A note posted on the door reads:",$0D,$0D
-		.BYTE $A5,$22,"BEWARE!  THE CAVERNS!",$22,$0D,$FF
+		.BYTE	$A5,"A note posted on the door reads:",$0D,$0D
+		.BYTE	$A5,$22,"BEWARE!  THE CAVERNS!",$22,$0D,$FF
 
 byte_8939:	MOVEXY	0,2
 		.BYTE	$A5,"The stench is becoming unbearable.",$0D,$FF
@@ -3111,22 +3111,22 @@ byte_8AC2:	MOVEXY	0,2
 
 unk_8AEB:	.BYTE	0		; DATA XREF: RAM:7878^r
 		.BYTE	8
-		.BYTE $10
-		.BYTE $18
-		.BYTE $20
-		.BYTE $28 ; (
-		.BYTE $30 ; 0
-		.BYTE $38 ; 8
-		.BYTE $40 ; @
-		.BYTE $48 ; H
-		.BYTE $50 ; P
-		.BYTE $58 ; X
-		.BYTE $60 ; `
-		.BYTE $68 ; h
-		.BYTE $70 ; p
-		.BYTE $78 ; x
-		.BYTE $80 ; Ä
-		.BYTE $88 ; à
+		.BYTE	$10
+		.BYTE	$18
+		.BYTE	$20
+		.BYTE	$28 ; (
+		.BYTE	$30 ; 0
+		.BYTE	$38 ; 8
+		.BYTE	$40 ; @
+		.BYTE	$48 ; H
+		.BYTE	$50 ; P
+		.BYTE	$58 ; X
+		.BYTE	$60 ; `
+		.BYTE	$68 ; h
+		.BYTE	$70 ; p
+		.BYTE	$78 ; x
+		.BYTE	$80 ; Ä
+		.BYTE	$88 ; à
 
 unk_8AFD:				; DATA XREF: RAM:785B^Xr        RAM:78A4^Xr
 		.BYTE	<byte_8F7B
@@ -3152,55 +3152,55 @@ unk_8AFD:				; DATA XREF: RAM:785B^Xr        RAM:78A4^Xr
 		.BYTE	<$90E3
 		.BYTE	<$90F5
 		.BYTE	7
-		.BYTE $19
-		.BYTE $2B ; +
-		.BYTE $3D ; =
-		.BYTE $4F ; O
-		.BYTE $61 ; a
-		.BYTE $73 ; s
-		.BYTE $85 ; Ö
-		.BYTE $97 ; ó
-		.BYTE $A9 ; ©
-		.BYTE $BB ; ª
-		.BYTE $CD ; Õ
-		.BYTE $DF ; ﬂ
-		.BYTE $F1 ; Ò
+		.BYTE	$19
+		.BYTE	$2B ; +
+		.BYTE	$3D ; =
+		.BYTE	$4F ; O
+		.BYTE	$61 ; a
+		.BYTE	$73 ; s
+		.BYTE	$85 ; Ö
+		.BYTE	$97 ; ó
+		.BYTE	$A9 ; ©
+		.BYTE	$BB ; ª
+		.BYTE	$CD ; Õ
+		.BYTE	$DF ; ﬂ
+		.BYTE	$F1 ; Ò
 		.BYTE	3
-		.BYTE $15
-		.BYTE $27 ; '
-		.BYTE $39 ; 9
-		.BYTE $4B ; K
-		.BYTE $5D ; ]
-		.BYTE $6F ; o
-		.BYTE $81 ; Å
-		.BYTE $93 ; ì
-		.BYTE $A5 ; •
-		.BYTE $B7 ; ∑
-		.BYTE $C9 ; …
-		.BYTE $DB ; -
-		.BYTE $ED ; Ì
-		.BYTE $FF
-		.BYTE $11
-		.BYTE $23 ; #
-		.BYTE $35 ; 5
-		.BYTE $47 ; G
-		.BYTE $59 ; Y
-		.BYTE $6B ; k
-		.BYTE $7D ; }
-		.BYTE $8F ; è
-		.BYTE $A1 ; °
-		.BYTE $B3 ; ≥
-		.BYTE $C5 ; ≈
-		.BYTE $D7 ; ◊
-		.BYTE $E9 ; È
-		.BYTE $FB ; ˚
-		.BYTE  $D
-		.BYTE $1F
-		.BYTE $31 ; 1
-		.BYTE $43 ; C
-		.BYTE $55 ; U
-		.BYTE $67 ; g
-		.BYTE $79 ; y
+		.BYTE	$15
+		.BYTE	$27 ; '
+		.BYTE	$39 ; 9
+		.BYTE	$4B ; K
+		.BYTE	$5D ; ]
+		.BYTE	$6F ; o
+		.BYTE	$81 ; Å
+		.BYTE	$93 ; ì
+		.BYTE	$A5 ; •
+		.BYTE	$B7 ; ∑
+		.BYTE	$C9 ; …
+		.BYTE	$DB ; -
+		.BYTE	$ED ; Ì
+		.BYTE	$FF
+		.BYTE	$11
+		.BYTE	$23 ; #
+		.BYTE	$35 ; 5
+		.BYTE	$47 ; G
+		.BYTE	$59 ; Y
+		.BYTE	$6B ; k
+		.BYTE	$7D ; }
+		.BYTE	$8F ; è
+		.BYTE	$A1 ; °
+		.BYTE	$B3 ; ≥
+		.BYTE	$C5 ; ≈
+		.BYTE	$D7 ; ◊
+		.BYTE	$E9 ; È
+		.BYTE	$FB ; ˚
+		.BYTE	 $D
+		.BYTE	$1F
+		.BYTE	$31 ; 1
+		.BYTE	$43 ; C
+		.BYTE	$55 ; U
+		.BYTE	$67 ; g
+		.BYTE	$79 ; y
 unk_8B45:					; DATA XREF: RAM:7861^r	RAM:78A9^r
 		.BYTE	>byte_8F7B
 		.BYTE	>byte_8F8D
@@ -3225,67 +3225,67 @@ unk_8B45:					; DATA XREF: RAM:7861^r	RAM:78A9^r
 		.BYTE	>$90E3
 		.BYTE	>$90F5
 
-		.BYTE $91 ; ë
-		.BYTE $91 ; ë
-		.BYTE $91 ; ë
-		.BYTE $91 ; ë
-		.BYTE $91 ; ë
-		.BYTE $91 ; ë
-		.BYTE $91 ; ë
-		.BYTE $91 ; ë
-		.BYTE $91 ; ë
-		.BYTE $91 ; ë
-		.BYTE $91 ; ë
-		.BYTE $91 ; ë
-		.BYTE $91 ; ë
-		.BYTE $91 ; ë
-		.BYTE $92 ; í
-		.BYTE $92 ; í
-		.BYTE $92 ; í
-		.BYTE $92 ; í
-		.BYTE $92 ; í
-		.BYTE $92 ; í
-		.BYTE $92 ; í
-		.BYTE $92 ; í
-		.BYTE $92 ; í
-		.BYTE $92 ; í
-		.BYTE $92 ; í
-		.BYTE $92 ; í
-		.BYTE $92 ; í
-		.BYTE $92 ; í
-		.BYTE $92 ; í
-		.BYTE $93 ; ì
-		.BYTE $93 ; ì
-		.BYTE $93 ; ì
-		.BYTE $93 ; ì
-		.BYTE $93 ; ì
-		.BYTE $93 ; ì
-		.BYTE $93 ; ì
-		.BYTE $93 ; ì
-		.BYTE $93 ; ì
-		.BYTE $93 ; ì
-		.BYTE $93 ; ì
-		.BYTE $93 ; ì
-		.BYTE $93 ; ì
-		.BYTE $93 ; ì
-		.BYTE $94 ; î
-		.BYTE $94 ; î
-		.BYTE $94 ; î
-		.BYTE $94 ; î
-		.BYTE $94 ; î
-		.BYTE $94 ; î
-		.BYTE $94 ; î
-unk_8B8D:	.BYTE $C0 ; ¿		; DATA XREF: RAM:7967^r	RAM:79BF^r
-		.BYTE $30 ; 0
-		.BYTE  $C
+		.BYTE	$91 ; ë
+		.BYTE	$91 ; ë
+		.BYTE	$91 ; ë
+		.BYTE	$91 ; ë
+		.BYTE	$91 ; ë
+		.BYTE	$91 ; ë
+		.BYTE	$91 ; ë
+		.BYTE	$91 ; ë
+		.BYTE	$91 ; ë
+		.BYTE	$91 ; ë
+		.BYTE	$91 ; ë
+		.BYTE	$91 ; ë
+		.BYTE	$91 ; ë
+		.BYTE	$91 ; ë
+		.BYTE	$92 ; í
+		.BYTE	$92 ; í
+		.BYTE	$92 ; í
+		.BYTE	$92 ; í
+		.BYTE	$92 ; í
+		.BYTE	$92 ; í
+		.BYTE	$92 ; í
+		.BYTE	$92 ; í
+		.BYTE	$92 ; í
+		.BYTE	$92 ; í
+		.BYTE	$92 ; í
+		.BYTE	$92 ; í
+		.BYTE	$92 ; í
+		.BYTE	$92 ; í
+		.BYTE	$92 ; í
+		.BYTE	$93 ; ì
+		.BYTE	$93 ; ì
+		.BYTE	$93 ; ì
+		.BYTE	$93 ; ì
+		.BYTE	$93 ; ì
+		.BYTE	$93 ; ì
+		.BYTE	$93 ; ì
+		.BYTE	$93 ; ì
+		.BYTE	$93 ; ì
+		.BYTE	$93 ; ì
+		.BYTE	$93 ; ì
+		.BYTE	$93 ; ì
+		.BYTE	$93 ; ì
+		.BYTE	$93 ; ì
+		.BYTE	$94 ; î
+		.BYTE	$94 ; î
+		.BYTE	$94 ; î
+		.BYTE	$94 ; î
+		.BYTE	$94 ; î
+		.BYTE	$94 ; î
+		.BYTE	$94 ; î
+unk_8B8D:	.BYTE	$C0 ; ¿		; DATA XREF: RAM:7967^r	RAM:79BF^r
+		.BYTE	$30 ; 0
+		.BYTE	 $C
 		.BYTE	3
 		.BYTE	0
-		.BYTE $55 ; U
-		.BYTE $AA ; ™
-		.BYTE $FF
+		.BYTE	$55 ; U
+		.BYTE	$AA ; ™
+		.BYTE	$FF
 unk_8B95:	.BYTE	0		; DATA XREF: RAM:79D1^r
-		.BYTE $10
-		.BYTE $54 ; T
+		.BYTE	$10
+		.BYTE	$54 ; T
 unk_8B98:	.BYTE	0		; DATA XREF: RAM:79D8^r
 		.BYTE	5
 		.BYTE	6
@@ -3302,77 +3302,77 @@ unk_8BA4:	.BYTE	>$8BEF		; DATA XREF: RAM:79AC^r
 		.BYTE	>$8C5B
 		.BYTE	>$8C91
 		.BYTE	0
-		.BYTE $12
-		.BYTE $24 ; $
-		.BYTE $36 ; 6
-		.BYTE $48 ; H
-		.BYTE $5A ; Z
-		.BYTE $6C ; l
-		.BYTE $7E ; ~
-		.BYTE $90 ; ê
-		.BYTE $A2 ; ¢
-		.BYTE $B4 ; ¥
-		.BYTE $C6 ; ∆
-		.BYTE $D8 ; ÿ
-		.BYTE $EA ; Í
-		.BYTE $FC ; ¸
-		.BYTE  $E
-		.BYTE $20
-		.BYTE $32 ; 2
-		.BYTE $44 ; D
-		.BYTE $56 ; V
-		.BYTE $68 ; h
-		.BYTE $7A ; z
-		.BYTE $8C ; å
-		.BYTE $9E ; û
-		.BYTE $B0 ; ∞
-		.BYTE $C2 ; ¬
-		.BYTE $D4 ; ‘
-		.BYTE $E6 ; Ê
-		.BYTE $F8 ; ¯
-		.BYTE  $A
-		.BYTE $1C
-		.BYTE $2E ; .
-		.BYTE $40 ; @
-		.BYTE $52 ; R
-		.BYTE $64 ; d
-		.BYTE $76 ; v
-		.BYTE $88 ; à
-		.BYTE $9A ; ö
-		.BYTE $AC ; ¨
-		.BYTE $BE ; æ
-		.BYTE $D0 ; –
-		.BYTE $E2 ; ‚
-		.BYTE $F4 ; Ù
+		.BYTE	$12
+		.BYTE	$24 ; $
+		.BYTE	$36 ; 6
+		.BYTE	$48 ; H
+		.BYTE	$5A ; Z
+		.BYTE	$6C ; l
+		.BYTE	$7E ; ~
+		.BYTE	$90 ; ê
+		.BYTE	$A2 ; ¢
+		.BYTE	$B4 ; ¥
+		.BYTE	$C6 ; ∆
+		.BYTE	$D8 ; ÿ
+		.BYTE	$EA ; Í
+		.BYTE	$FC ; ¸
+		.BYTE	 $E
+		.BYTE	$20
+		.BYTE	$32 ; 2
+		.BYTE	$44 ; D
+		.BYTE	$56 ; V
+		.BYTE	$68 ; h
+		.BYTE	$7A ; z
+		.BYTE	$8C ; å
+		.BYTE	$9E ; û
+		.BYTE	$B0 ; ∞
+		.BYTE	$C2 ; ¬
+		.BYTE	$D4 ; ‘
+		.BYTE	$E6 ; Ê
+		.BYTE	$F8 ; ¯
+		.BYTE	 $A
+		.BYTE	$1C
+		.BYTE	$2E ; .
+		.BYTE	$40 ; @
+		.BYTE	$52 ; R
+		.BYTE	$64 ; d
+		.BYTE	$76 ; v
+		.BYTE	$88 ; à
+		.BYTE	$9A ; ö
+		.BYTE	$AC ; ¨
+		.BYTE	$BE ; æ
+		.BYTE	$D0 ; –
+		.BYTE	$E2 ; ‚
+		.BYTE	$F4 ; Ù
 		.BYTE	6
-		.BYTE $18
-		.BYTE $2A ; *
-		.BYTE $3C ; <
-		.BYTE $4E ; N
-		.BYTE $60 ; `
-		.BYTE $72 ; r
-		.BYTE $84 ; Ñ
-		.BYTE $96 ; ñ
-		.BYTE $A8 ; ®
-		.BYTE $BA ; ∫
-		.BYTE $CC ; Ã
-		.BYTE $DE ; ﬁ
-		.BYTE $F0 ; 
+		.BYTE	$18
+		.BYTE	$2A ; *
+		.BYTE	$3C ; <
+		.BYTE	$4E ; N
+		.BYTE	$60 ; `
+		.BYTE	$72 ; r
+		.BYTE	$84 ; Ñ
+		.BYTE	$96 ; ñ
+		.BYTE	$A8 ; ®
+		.BYTE	$BA ; ∫
+		.BYTE	$CC ; Ã
+		.BYTE	$DE ; ﬁ
+		.BYTE	$F0 ; 
 		.BYTE	2
-		.BYTE $14
-		.BYTE $26 ; &
-		.BYTE $38 ; 8
-		.BYTE $4A ; J
-		.BYTE $5C ; \
-		.BYTE $6E ; n
-		.BYTE $80 ; Ä
-		.BYTE $92 ; í
-		.BYTE $A4 ; §
-		.BYTE $B6 ; ∂
-		.BYTE $C8 ; »
-		.BYTE $DA ; ⁄
-		.BYTE $EC ; Ï
-		.BYTE $FE ; ˛
+		.BYTE	$14
+		.BYTE	$26 ; &
+		.BYTE	$38 ; 8
+		.BYTE	$4A ; J
+		.BYTE	$5C ; \
+		.BYTE	$6E ; n
+		.BYTE	$80 ; Ä
+		.BYTE	$92 ; í
+		.BYTE	$A4 ; §
+		.BYTE	$B6 ; ∂
+		.BYTE	$C8 ; »
+		.BYTE	$DA ; ⁄
+		.BYTE	$EC ; Ï
+		.BYTE	$FE ; ˛
 		.BYTE	0
 		.BYTE	0
 		.BYTE	0
@@ -3447,40 +3447,40 @@ unk_8BA4:	.BYTE	>$8BEF		; DATA XREF: RAM:79AC^r
 		.BYTE	4
 		.BYTE	0
 		.BYTE	9
-		.BYTE $12
-		.BYTE $1B
-		.BYTE $24 ; $
-		.BYTE $2D ; -
-		.BYTE $36 ; 6
-		.BYTE $3F ; ?
-		.BYTE $48 ; H
-		.BYTE $51 ; Q
-		.BYTE $5A ; Z
-		.BYTE $63 ; c
-		.BYTE $6C ; l
-		.BYTE $75 ; u
-		.BYTE $7E ; ~
-		.BYTE $87 ; á
-		.BYTE $90 ; ê
-		.BYTE $99 ; ô
-		.BYTE $A2 ; ¢
-		.BYTE $AB ; ´
-		.BYTE $B4 ; ¥
-		.BYTE $BD ; Ω
-		.BYTE $C6 ; ∆
-		.BYTE $CF ; œ
-		.BYTE $D8 ; ÿ
-		.BYTE $E1 ; ·
-		.BYTE $EA ; Í
-		.BYTE $F3 ; Û
-		.BYTE $FC ; ¸
+		.BYTE	$12
+		.BYTE	$1B
+		.BYTE	$24 ; $
+		.BYTE	$2D ; -
+		.BYTE	$36 ; 6
+		.BYTE	$3F ; ?
+		.BYTE	$48 ; H
+		.BYTE	$51 ; Q
+		.BYTE	$5A ; Z
+		.BYTE	$63 ; c
+		.BYTE	$6C ; l
+		.BYTE	$75 ; u
+		.BYTE	$7E ; ~
+		.BYTE	$87 ; á
+		.BYTE	$90 ; ê
+		.BYTE	$99 ; ô
+		.BYTE	$A2 ; ¢
+		.BYTE	$AB ; ´
+		.BYTE	$B4 ; ¥
+		.BYTE	$BD ; Ω
+		.BYTE	$C6 ; ∆
+		.BYTE	$CF ; œ
+		.BYTE	$D8 ; ÿ
+		.BYTE	$E1 ; ·
+		.BYTE	$EA ; Í
+		.BYTE	$F3 ; Û
+		.BYTE	$FC ; ¸
 		.BYTE	5
-		.BYTE  $E
-		.BYTE $17
-		.BYTE $20
-		.BYTE $29 ; )
-		.BYTE $32 ; 2
-		.BYTE $3B ; ;
+		.BYTE	 $E
+		.BYTE	$17
+		.BYTE	$20
+		.BYTE	$29 ; )
+		.BYTE	$32 ; 2
+		.BYTE	$3B ; ;
 		.BYTE	0
 		.BYTE	0
 		.BYTE	0
@@ -3519,22 +3519,22 @@ unk_8BA4:	.BYTE	>$8BEF		; DATA XREF: RAM:79AC^r
 		.BYTE	1
 		.BYTE	0
 		.BYTE	5
-		.BYTE  $A
-		.BYTE  $F
-		.BYTE $14
-		.BYTE $19
-		.BYTE $1E
-		.BYTE $23 ; #
-		.BYTE $28 ; (
-		.BYTE $2D ; -
-		.BYTE $32 ; 2
-		.BYTE $37 ; 7
-		.BYTE $3C ; <
-		.BYTE $41 ; A
-		.BYTE $46 ; F
-		.BYTE $4B ; K
-		.BYTE $50 ; P
-		.BYTE $55 ; U
+		.BYTE	 $A
+		.BYTE	 $F
+		.BYTE	$14
+		.BYTE	$19
+		.BYTE	$1E
+		.BYTE	$23 ; #
+		.BYTE	$28 ; (
+		.BYTE	$2D ; -
+		.BYTE	$32 ; 2
+		.BYTE	$37 ; 7
+		.BYTE	$3C ; <
+		.BYTE	$41 ; A
+		.BYTE	$46 ; F
+		.BYTE	$4B ; K
+		.BYTE	$50 ; P
+		.BYTE	$55 ; U
 		.BYTE	0
 		.BYTE	0
 		.BYTE	0
@@ -3553,27 +3553,27 @@ unk_8BA4:	.BYTE	>$8BEF		; DATA XREF: RAM:79AC^r
 		.BYTE	0
 		.BYTE	0
 		.BYTE	0
-unk_8CA3:	.BYTE $5F ; _		; DATA XREF: RAM:loc_7A7B^r
+unk_8CA3:	.BYTE	$5F ; _		; DATA XREF: RAM:loc_7A7B^r
 					; sub_7AD4:loc_7B2A^r
-		.BYTE $33 ; 3
+		.BYTE	$33 ; 3
 		.BYTE	7
-		.BYTE $DB ; -
-		.BYTE $AF ; Ø
-		.BYTE $83 ; É
-		.BYTE $57 ; W
-		.BYTE $2B ; +
-		.BYTE $FF
-		.BYTE $D3 ; ”
-unk_8CAD:	.BYTE $96 ; ñ		; DATA XREF: RAM:7A81^r	sub_7AD4+5B^r
-		.BYTE $96 ; ñ
-		.BYTE $96 ; ñ
-		.BYTE $95 ; ï
-		.BYTE $95 ; ï
-		.BYTE $95 ; ï
-		.BYTE $95 ; ï
-		.BYTE $95 ; ï
-		.BYTE $94 ; î
-		.BYTE $94 ; î
+		.BYTE	$DB ; -
+		.BYTE	$AF ; Ø
+		.BYTE	$83 ; É
+		.BYTE	$57 ; W
+		.BYTE	$2B ; +
+		.BYTE	$FF
+		.BYTE	$D3 ; ”
+unk_8CAD:	.BYTE	$96 ; ñ		; DATA XREF: RAM:7A81^r	sub_7AD4+5B^r
+		.BYTE	$96 ; ñ
+		.BYTE	$96 ; ñ
+		.BYTE	$95 ; ï
+		.BYTE	$95 ; ï
+		.BYTE	$95 ; ï
+		.BYTE	$95 ; ï
+		.BYTE	$95 ; ï
+		.BYTE	$94 ; î
+		.BYTE	$94 ; î
 unk_8CB7:	.BYTE	1		; DATA XREF: sub_7AD4+60^r sub_7AD4+EF^r ...
 		.BYTE	2
 		.BYTE	3
@@ -3596,18 +3596,18 @@ unk_8CC1:	.BYTE	0		; DATA XREF: sub_7AD4+C2^r
 		.BYTE	0
 		.BYTE	0
 		.BYTE	0
-unk_8CCC:	.BYTE  $F		; DATA XREF: sub_7AD4+CC^r
+unk_8CCC:	.BYTE	 $F		; DATA XREF: sub_7AD4+CC^r
 					; sub_7AD4+157^r
-		.BYTE $1C
-		.BYTE $24 ; $
-		.BYTE $33 ; 3
-		.BYTE $55 ; U
+		.BYTE	$1C
+		.BYTE	$24 ; $
+		.BYTE	$33 ; 3
+		.BYTE	$55 ; U
 		.BYTE	0
-		.BYTE $55 ; U
-		.BYTE $33 ; 3
-		.BYTE $24 ; $
-		.BYTE $1C
-		.BYTE  $F
+		.BYTE	$55 ; U
+		.BYTE	$33 ; 3
+		.BYTE	$24 ; $
+		.BYTE	$1C
+		.BYTE	 $F
 byte_8CD7:	.BYTE	<byte_8CED	; DATA XREF: sub_7AD4+8F^r
 					; sub_7AD4+11E^r ...
 		.BYTE	<byte_8CF8
@@ -3639,7 +3639,7 @@ byte_8D03:	.BYTE	$00,$00,$00,$00,$00,$00,$07,$07,$07,$07,$00
 byte_8D0E:	.BYTE	$00,$00,$00,$00,$0A,$05,$05,$05,$05,$05,$00
 byte_8D19:	.BYTE	$00,$24,$12,$09,$06,$03,$03,$03,$03,$03,$00
 byte_8D24:	.BYTE	$24,$12,$06,$03,$02,$01,$01,$01,$01,$01,$00
-unk_8D2F:	.BYTE 	<byte_8D3B	; DATA XREF: sub_7AD4+99^r
+unk_8D2F:	.BYTE		<byte_8D3B	; DATA XREF: sub_7AD4+99^r
 					; sub_7AD4+21A^r ...
 		.BYTE	<byte_8D46
 		.BYTE	<byte_8D51
@@ -3679,124 +3679,124 @@ byte_8D9F:	.BYTE	$49,$49,$49,$51,$47,$42,$3D,$38,$33,$2E,$29
 byte_8DAA:	.BYTE	$49,$49,$49,$49,$49,$4E,$47,$40,$39,$32,$2B
 byte_8DB5:	.BYTE	$49,$49,$49,$49,$49,$49,$51,$48,$3F,$36,$2D
 byte_8DC0:	.bYTe	$49,$49,$49,$49,$49,$49,$49,$50,$45,$3A,$2F
-unk_8DCB:	.BYTE  $F		; DATA XREF: sub_7AD4+12^r
-unk_8DCC:	.BYTE $F0 ; 		; DATA XREF: sub_7AD4+1E^r sub_7AD4+2A^r
-		.BYTE  $F
-		.BYTE $F0 ; 
-		.BYTE  $F
+unk_8DCB:	.BYTE	 $F		; DATA XREF: sub_7AD4+12^r
+unk_8DCC:	.BYTE	$F0 ; 		; DATA XREF: sub_7AD4+1E^r sub_7AD4+2A^r
+		.BYTE	 $F
+		.BYTE	$F0 ; 
+		.BYTE	 $F
 unk_8DD0:	.BYTE	1		; DATA XREF: sub_7AD4+24^r
 unk_8DD1:	.BYTE	0		; DATA XREF: sub_7AD4+18^r
 unk_8DD2:	.BYTE	0		; DATA XREF: sub_7AD4+30^r
 		.BYTE	1
 		.BYTE	1
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
 unk_8E00:	.BYTE	0		; DATA XREF: RAM:78B4^r
-		.BYTE $55 ; U
-		.BYTE $AA ; ™
-		.BYTE $FF
-		.BYTE $55 ; U
+		.BYTE	$55 ; U
+		.BYTE	$AA ; ™
+		.BYTE	$FF
+		.BYTE	$55 ; U
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $AA ; ™
+		.BYTE	$AA ; ™
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $55 ; U
+		.BYTE	$55 ; U
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $AA ; ™
+		.BYTE	$AA ; ™
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $55 ; U
+		.BYTE	$55 ; U
 unk_8E41:	.BYTE	9		; DATA XREF: RAM:7992^r
 		.BYTE	4
 		.BYTE	3
@@ -3834,97 +3834,97 @@ unk_8E41:	.BYTE	9		; DATA XREF: RAM:7992^r
 		.BYTE	1
 		.BYTE	1
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $AA ; ™
+		.BYTE	$AA ; ™
 unk_8E81:	.BYTE	0		; DATA XREF: RAM:798D^r
-		.BYTE $80 ; Ä
+		.BYTE	$80 ; Ä
 		.BYTE	0
-		.BYTE $40 ; @
-		.BYTE $CD ; Õ
-		.BYTE $80 ; Ä
-		.BYTE $49 ; I
-		.BYTE $20
+		.BYTE	$40 ; @
+		.BYTE	$CD ; Õ
+		.BYTE	$80 ; Ä
+		.BYTE	$49 ; I
+		.BYTE	$20
 		.BYTE	0
-		.BYTE $CD ; Õ
-		.BYTE $A3 ; £
-		.BYTE $80 ; Ä
-		.BYTE $62 ; b
-		.BYTE $49 ; I
-		.BYTE $33 ; 3
-		.BYTE $20
-		.BYTE  $F
+		.BYTE	$CD ; Õ
+		.BYTE	$A3 ; £
+		.BYTE	$80 ; Ä
+		.BYTE	$62 ; b
+		.BYTE	$49 ; I
+		.BYTE	$33 ; 3
+		.BYTE	$20
+		.BYTE	 $F
 		.BYTE	0
-		.BYTE $E5 ; Â
-		.BYTE $CD ; Õ
-		.BYTE $B7 ; ∑
-		.BYTE $A3 ; £
-		.BYTE $91 ; ë
-		.BYTE $80 ; Ä
-		.BYTE $71 ; q
-		.BYTE $62 ; b
-		.BYTE $55 ; U
-		.BYTE $49 ; I
-		.BYTE $3E ; >
-		.BYTE $33 ; 3
-		.BYTE $29 ; )
-		.BYTE $20
-		.BYTE $17
-		.BYTE  $F
+		.BYTE	$E5 ; Â
+		.BYTE	$CD ; Õ
+		.BYTE	$B7 ; ∑
+		.BYTE	$A3 ; £
+		.BYTE	$91 ; ë
+		.BYTE	$80 ; Ä
+		.BYTE	$71 ; q
+		.BYTE	$62 ; b
+		.BYTE	$55 ; U
+		.BYTE	$49 ; I
+		.BYTE	$3E ; >
+		.BYTE	$33 ; 3
+		.BYTE	$29 ; )
+		.BYTE	$20
+		.BYTE	$17
+		.BYTE	 $F
 		.BYTE	7
 		.BYTE	0
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 unk_8EC1:	.BYTE	2		; DATA XREF: RAM:7997^r
 		.BYTE	2
 		.BYTE	2
@@ -3961,13 +3961,13 @@ unk_8EC1:	.BYTE	2		; DATA XREF: RAM:7997^r
 		.BYTE	0
 		.BYTE	0
 		.BYTE	0
-unk_8EE5:	.BYTE $48 ; H		; DATA XREF: RAM:78EC^r
-		.BYTE $24 ; $
-		.BYTE $18
-		.BYTE $12
-		.BYTE  $E
-		.BYTE  $C
-		.BYTE  $A
+unk_8EE5:	.BYTE	$48 ; H		; DATA XREF: RAM:78EC^r
+		.BYTE	$24 ; $
+		.BYTE	$18
+		.BYTE	$12
+		.BYTE	 $E
+		.BYTE	 $C
+		.BYTE	 $A
 		.BYTE	9
 		.BYTE	8
 		.BYTE	7
@@ -4037,81 +4037,81 @@ unk_8F2D:	.BYTE	0		; DATA XREF: RAM:78F1^r
 		.BYTE	0
 		.BYTE	0
 		.BYTE	0
-		.BYTE $66 ; f
+		.BYTE	$66 ; f
 		.BYTE	0
-		.BYTE $49 ; I
+		.BYTE	$49 ; I
 		.BYTE	0
 		.BYTE	0
-		.BYTE $33 ; 3
-		.BYTE $8C ; å
+		.BYTE	$33 ; 3
+		.BYTE	$8C ; å
 		.BYTE	0
-		.BYTE $8A ; ä
-		.BYTE $25 ; %
-		.BYTE $CD ; Õ
-		.BYTE $80 ; Ä
-		.BYTE $3C ; <
+		.BYTE	$8A ; ä
+		.BYTE	$25 ; %
+		.BYTE	$CD ; Õ
+		.BYTE	$80 ; Ä
+		.BYTE	$3C ; <
 		.BYTE	0
-		.BYTE $CA ;  
-		.BYTE $9A ; ö
-		.BYTE $6E ; n
-		.BYTE $46 ; F
-		.BYTE $21 ; !
+		.BYTE	$CA ;  
+		.BYTE	$9A ; ö
+		.BYTE	$6E ; n
+		.BYTE	$46 ; F
+		.BYTE	$21 ; !
 		.BYTE	0
-		.BYTE $E1 ; ·
-		.BYTE $C5 ; ≈
-		.BYTE $AB ; ´
-		.BYTE $92 ; í
-		.BYTE $7C ; |
-		.BYTE $66 ; f
-		.BYTE $53 ; S
-		.BYTE $40 ; @
-		.BYTE $2F ; /
-		.BYTE $1E
-		.BYTE  $F
+		.BYTE	$E1 ; ·
+		.BYTE	$C5 ; ≈
+		.BYTE	$AB ; ´
+		.BYTE	$92 ; í
+		.BYTE	$7C ; |
+		.BYTE	$66 ; f
+		.BYTE	$53 ; S
+		.BYTE	$40 ; @
+		.BYTE	$2F ; /
+		.BYTE	$1E
+		.BYTE	 $F
 		.BYTE	0
-		.BYTE $F2 ; Ú
-		.BYTE $E5 ; Â
-		.BYTE $D9 ; Ÿ
-		.BYTE $CD ; Õ
-		.BYTE $C2 ; ¬
-		.BYTE $B7 ; ∑
-		.BYTE $AD ; ≠
-		.BYTE $A3 ; £
-		.BYTE $9A ; ö
-		.BYTE $91 ; ë
-		.BYTE $88 ; à
-		.BYTE $80 ; Ä
-		.BYTE $78 ; x
-		.BYTE $71 ; q
-		.BYTE $69 ; i
-		.BYTE $62 ; b
-		.BYTE $5C ; \
-		.BYTE $55 ; U
-		.BYTE $4F ; O
-		.BYTE $49 ; I
-		.BYTE $43 ; C
-		.BYTE $3E ; >
-		.BYTE $38 ; 8
-		.BYTE $33 ; 3
-		.BYTE $2E ; .
-		.BYTE $29 ; )
-		.BYTE $25 ; %
-		.BYTE $20
-		.BYTE $1C
-		.BYTE $17
-		.BYTE $13
-		.BYTE  $F
-		.BYTE  $B
+		.BYTE	$F2 ; Ú
+		.BYTE	$E5 ; Â
+		.BYTE	$D9 ; Ÿ
+		.BYTE	$CD ; Õ
+		.BYTE	$C2 ; ¬
+		.BYTE	$B7 ; ∑
+		.BYTE	$AD ; ≠
+		.BYTE	$A3 ; £
+		.BYTE	$9A ; ö
+		.BYTE	$91 ; ë
+		.BYTE	$88 ; à
+		.BYTE	$80 ; Ä
+		.BYTE	$78 ; x
+		.BYTE	$71 ; q
+		.BYTE	$69 ; i
+		.BYTE	$62 ; b
+		.BYTE	$5C ; \
+		.BYTE	$55 ; U
+		.BYTE	$4F ; O
+		.BYTE	$49 ; I
+		.BYTE	$43 ; C
+		.BYTE	$3E ; >
+		.BYTE	$38 ; 8
+		.BYTE	$33 ; 3
+		.BYTE	$2E ; .
+		.BYTE	$29 ; )
+		.BYTE	$25 ; %
+		.BYTE	$20
+		.BYTE	$1C
+		.BYTE	$17
+		.BYTE	$13
+		.BYTE	 $F
+		.BYTE	 $B
 		.BYTE	7
 		.BYTE	4
 		.BYTE	0
-byte_8F75:	.BYTE 0			; DATA XREF: RAM:loc_7917^r
+byte_8F75:	.BYTE	0			; DATA XREF: RAM:loc_7917^r
 					; sub_7AD4:loc_7B5E^w ...
-byte_8F76:	.BYTE 0			; DATA XREF: RAM:799A^w	RAM:79CB^r
-byte_8F77:	.BYTE 0			; DATA XREF: RAM:loc_7858^w RAM:7881^r ...
+byte_8F76:	.BYTE	0			; DATA XREF: RAM:799A^w	RAM:79CB^r
+byte_8F77:	.BYTE	0			; DATA XREF: RAM:loc_7858^w RAM:7881^r ...
 		.BYTE	0
 		.BYTE	0
-byte_8F7A:	.BYTE 0			; DATA XREF: sub_7888:loc_788C^w
+byte_8F7A:	.BYTE	0			; DATA XREF: sub_7888:loc_788C^w
 					; RAM:78FC^r ...
 byte_8F7B:	.BYTE	$00,$FF,$00,$FF,$00,$FF,$00,$FF,$00,$FF,$00,$FF,$00,$FF,$00,$FF,$00,$FF
 byte_8F8D:	.BYTE	$00,$FF,$00,$FF,$00,$FF,$00,$FF,$00,$FF,$00,$FF,$00,$FF,$00,$FF,$00,$FF
@@ -4125,1103 +4125,1103 @@ byte_900B:	.BYTE	$00,$FF,$00,$FF,$00,$FF,$00,$FF,$00,$FF,$00,$FF,$00,$FF,$00,$FF
 byte_901D:	.BYTE	$00,$FF,$00,$FF,$00,$FF,$00,$FF,$00,$FF,$00,$FF,$00,$FF,$00,$FF,$00,$FF
 byte_902F:	.BYTE	$00,$FF,$00,$FF,$00,$FF,$00,$FF,$00,$FF,$00,$FF,$00,$FF,$00,$FF,$00,$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-unk_9052:	.BYTE $FF		; DATA XREF: sub_7888+7^w
+unk_9052:	.BYTE	$FF		; DATA XREF: sub_7888+7^w
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
-		.BYTE $6F ; o
-		.BYTE $FF
+		.BYTE	$FF
+		.BYTE	$6F ; o
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-unk_912A:	.BYTE $FF		; DATA XREF: sub_7888+A^w
+unk_912A:	.BYTE	$FF		; DATA XREF: sub_7888+A^w
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
-		.BYTE $6F ; o
-		.BYTE $FF
+		.BYTE	$FF
+		.BYTE	$6F ; o
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-unk_9202:	.BYTE $FF		; DATA XREF: sub_7888+D^w
+unk_9202:	.BYTE	$FF		; DATA XREF: sub_7888+D^w
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-unk_92DA:	.BYTE $FF		; DATA XREF: sub_7888+10^w
+unk_92DA:	.BYTE	$FF		; DATA XREF: sub_7888+10^w
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
-		.BYTE $6F ; o
-		.BYTE $FF
+		.BYTE	$FF
+		.BYTE	$6F ; o
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
-		.BYTE $6F ; o
-		.BYTE $FF
+		.BYTE	$FF
+		.BYTE	$6F ; o
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-unk_93B2:	.BYTE $FF		; DATA XREF: sub_7888+13^w
+unk_93B2:	.BYTE	$FF		; DATA XREF: sub_7888+13^w
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $FF
+		.BYTE	$FF
 unk_948B:	.BYTE	0		; DATA XREF: RAM:loc_794C^r RAM:7956^r ...
 		.REPEAT	57
 			.BYTE	$FF,$00
@@ -5241,7 +5241,7 @@ unk_948B:	.BYTE	0		; DATA XREF: RAM:loc_794C^r RAM:7956^r ...
 		.ENDIF
 
 		.IFDEF	D2S1
-		.BYTE   $4A,$3C,$F0,$20,$B9,$6D,$44,$0D,$73,$54,$69,$3B,$D1,$C2,$9C,$78 ; |J<. .mD.sTi;...x|
+		.BYTE	$4A,$3C,$F0,$20,$B9,$6D,$44,$0D,$73,$54,$69,$3B,$D1,$C2,$9C,$78 ; |J<. .mD.sTi;...x|
 		.ENDIF
 ; end of 'RAM'
 
