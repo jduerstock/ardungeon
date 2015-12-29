@@ -414,8 +414,7 @@ loc_78EA:				; CODE XREF: sub_7AD4+E0vp
 		EOR	#$FF
 		STA	$68
 		inc16	$68
-		LDA	#$47 ; 'G'
-		STA	$6D
+		ldi	$6D, $47
 
 loc_7917:				; CODE XREF: RAM:78FF^j
 		LDX	byte_8F75
@@ -941,23 +940,14 @@ loc_7C5C:				; CODE XREF: sub_7AD4+183^j
 
 loc_7C65:				; CODE XREF: sub_7AD4+18B^j
 		STA	byte_8F75
-		LDA	#$72 ; 'r'
-		STA	$83
-		LDA	#$8D ; 'ç'
-		STA	$84
-		LDA	#$24 ; '$'
-		STA	$81
-		LDA	#$8D ; 'ç'
-		STA	$82
+		dldi	$83, $8D72
+		dldi	$81, $8D24
 		LDY	$80
 		INY
 		JSR	sub_7E0D
 		STA	$63
 		STA	$85
-		LDA	#$89 ; 'â'
-		STA	$83
-		LDA	#$8D ; 'ç'
-		STA	$84
+		dldi	$83, $8D89
 		LDY	$80
 		INY
 		JSR	sub_7E2D
