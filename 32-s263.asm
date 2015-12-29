@@ -2132,7 +2132,7 @@ off_8F65:	.WORD	unk_8F9B		; DATA XREF: RAM:7A1B^r	RAM:7B1A^r ...
 		.WORD	unk_91E0
 		.WORD	unk_91FC
 		.WORD	unk_9215
-		.WORD	unk_9231
+		.WORD	iSnowshoes
 		.WORD	unk_9264
 		.WORD	unk_927F
 		.WORD	unk_929B
@@ -2417,39 +2417,15 @@ aBattleAxe:	.BYTE	"Battle Axe",0
 		.BYTE	$37 ; 7
 		.BYTE	0
 		.BYTE	$10
-unk_9127:	.BYTE	3		; DATA XREF: RAM:8F7B^o
-		.BYTE	$26 ; &
-		.BYTE	1
-		.BYTE	0
-		.BYTE	5
-		.BYTE	$12
-aShortSword:	.BYTE	"Short Sword",0
-		.BYTE	0
-		.BYTE	$FF
-		.BYTE	0
-		.BYTE	0
-		.BYTE	$23 ; #
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	 $A
-		.BYTE	 $A
-		.BYTE	$1E
-		.BYTE	$23 ; #
-		.BYTE	0
-		.BYTE	$10
+unk_9127:
+		Item	$03,$01,$00,$05,"Short Sword"
+		.BYTE	$00,$FF,$00,$00,$23,$00,$00,$00,$00,$00,$00,$00,$00,$00,$0A,$0A,$1E,$23,$00,$10
 
 unk_914D:
 		Item	$03,$01,$00,$0D,"Long Sword"
 		.BYTE	$00,$FF,$00,$11,$24,$00,$00,$00,$00,$00,$00,$00,$00,$00,$0E,$10,$23,$28,$00,$10
 
-unk_9172:	
+unk_9172:
 		Item	$03,$01,$00,$08,"Small Shield"
 		.BYTE	$00,$FF,$00,$14,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$0A,$01,$28,$2D,$02,$40
 
@@ -2468,12 +2444,13 @@ unk_91FC:
 unk_9215:
 		Item	$05,$01,$00,$02,"High Leather Boots"
 		.BYTE	$00,$04,$04
-unk_9231:
+
+iSnowshoes:
 		Item	$05,$01,$00,$02,"Snowshoes"
 		.BYTE	$88,$FF,$04,$01,$01,$00,$00,$00,$00,$81,$7C,$00,$01,$01,$0A,$00
 		.BYTE	$88,$FF,$04,$01,$01,$00,$00,$00,$00,$91,$7C,$00,$01,$01,$0A,$00
 		.BYTE	$00,$00,$00
-	
+
 unk_9264:
 		Item	$05,$01,$00,$01,"White Cotton Robe"
 		.BYTE	$00,$01,$02
@@ -2502,20 +2479,21 @@ unk_9310:
 		Item	$05,$01,$00,$01,"Heavy Leather Jacket"
 		.BYTE	$00,$0F,$0F
 :
-unk_932E:	.BYTE	$70 ; p		; DATA XREF: RAM:935Evo
-		.BYTE	$70 ; p
-		.BYTE	$30 ; 0
+
+unk_932E:	.BYTE	$70		; DATA XREF: RAM:935Evo
+		.BYTE	$70
+		.BYTE	$30
 		.BYTE	$42
 		.WORD	$400
-		.BYTE	$80 ; Ä
+		.BYTE	$80
 		.BYTE	2
-		.BYTE	$80 ; Ä
+		.BYTE	$80
 		.BYTE	2
-		.BYTE	$80 ; Ä
+		.BYTE	$80
 		.BYTE	2
-		.BYTE	$80 ; Ä
+		.BYTE	$80
 		.BYTE	2
-		.BYTE	$80 ; Ä
+		.BYTE	$80
 		.BYTE	6
 		.BYTE	0
 		.BYTE	$44
@@ -2555,27 +2533,27 @@ unk_932E:	.BYTE	$70 ; p		; DATA XREF: RAM:935Evo
 		TYA
 		PHA
 		STA	WSYNC
-		LDA	#$36 ; '6'
+		LDA	#$36
 		STA	COLPF3
 		STA	WSYNC
-		LDA	#$50 ; 'P'
-		LDX	#$70 ; 'p'
-		LDY	#$90 ; 'ê'
+		LDA	#$50
+		LDX	#$70
+		LDY	#$90
 		STA	WSYNC
 		STA	$D000
 		STX	$D001
 		STY	$D002
 		STA	WSYNC
-		LDA	#$B0 ; '∞'
-		LDX	#$48 ; 'H'
-		LDY	#$40 ; '@'
+		LDA	#$B0
+		LDX	#$48
+		LDY	#$40
 		STA	WSYNC
 		STA	$D003
 		STX	$D004
 		STY	$D005
 		STA	WSYNC
-		LDA	#$38 ; '8'
-		LDX	#$30 ; '0'
+		LDA	#$38
+		LDX	#$30
 		STA	WSYNC
 		STA	$D006
 		STX	$D007
@@ -2587,7 +2565,7 @@ unk_932E:	.BYTE	$70 ; p		; DATA XREF: RAM:935Evo
 		STA	COLBK
 		STX	$D016
 		STY	COLPF2
-		LDX	#$23 ; '#'
+		LDX	#$23
 		LDY	$BBDC,X
 
 loc_93C4:				; CODE XREF: RAM:93E9vj
@@ -2620,14 +2598,14 @@ loc_93C4:				; CODE XREF: RAM:93E9vj
 ; ---------------------------------------------------------------------------
 
 loc_9406:				; CODE XREF: RAM:760A^j
-		LDA	#$7F ; ''
+		LDA	#$7F
 		STA	$253
-		LDA	#$2E ; '.'
+		LDA	#$2E
 		STA	$254
-		LDA	#$93 ; 'ì'
+		LDA	#$93
 		STA	$255
 		LDA	#8
-		LDX	#$23 ; '#'
+		LDX	#$23
 
 loc_9419:				; CODE XREF: RAM:9427vj
 		LDY	#$C
@@ -2647,19 +2625,19 @@ loc_9429:				; CODE XREF: RAM:941F^j
 		STA	9
 		LDA	#8
 		STA	$A
-		JSR	loc_9521
-		LDA	#$70 ; 'p'
+		JSR	sub_9521
+		LDA	#$70
 		STA	9
-		LDA	#$BB ; 'ª'
+		LDA	#$BB
 		STA	$A
-		JSR	loc_9521
+		JSR	sub_9521
 		LDA	#0
 		STA	loc_944F+1
-		LDA	#$BD ; 'Ω'
+		LDA	#$BD
 		STA	loc_944F+2
 		LDY	#3
 		LDA	#0
-		LDX	#$80 ; 'Ä'
+		LDX	#$80
 
 loc_944F:				; CODE XREF: RAM:9453vj	RAM:9459vj
 					; DATA XREF: ...
@@ -2758,7 +2736,7 @@ loc_94E7:				; CODE XREF: RAM:94ECvj
 		INX
 		INC	6
 		LDA	6
-		CMP	#$2D ; '-'
+		CMP	#$2D
 		BCS	loc_94FE
 		CPX	#$A
 		BCC	loc_94E1
@@ -2780,14 +2758,10 @@ loc_9503:				; CODE XREF: RAM:9507vj
 		RTS
 ; ---------------------------------------------------------------------------
 
-loc_9521:				; CODE XREF: RAM:9431^p	RAM:943C^p ...
+sub_9521:				; CODE XREF: RAM:9431^p	RAM:943C^p ...
 		LDY	#0
-		LDA	(7),Y
-		INC	7
-		BNE	loc_952B
-		INC	8
-
-loc_952B:				; CODE XREF: RAM:9527^j
+		LDA	(off_7),Y
+		inc16	off_7
 		CMP	#$1B
 		BEQ	loc_953A
 		STA	(9),Y
@@ -2796,7 +2770,7 @@ loc_952B:				; CODE XREF: RAM:9527^j
 		INC	$A
 
 loc_9537:				; CODE XREF: RAM:9533^j
-		JMP	loc_9521
+		JMP	sub_9521
 ; ---------------------------------------------------------------------------
 
 loc_953A:				; CODE XREF: RAM:952D^j
@@ -2847,7 +2821,7 @@ loc_956A:				; CODE XREF: RAM:956Dvj
 		INC	off_9+1
 
 loc_957E:				; CODE XREF: RAM:957A^j
-		JMP	loc_9521
+		JMP	sub_9521
 ; ---------------------------------------------------------------------------
 byte_9581:	.RES	127,$00		; DATA XREF: RAM:loc_9547^w RAM:9557^r ...
 
