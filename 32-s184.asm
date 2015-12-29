@@ -1692,7 +1692,7 @@ loc_8139:				; CODE XREF: RAM:81A7vj
 
 loc_814C:				; CODE XREF: RAM:8152vj
 		LDA	(off_41),Y
-		STA	$912B,Y
+		STA	byte_912B,Y
 		INY
 		BPL	loc_814C
 		LDA	loc_81A4+1
@@ -1790,7 +1790,7 @@ loc_81E8:				; CODE XREF: sub_81B0+42vj
 		INY
 		CPY	#$E
 		BNE	loc_81E8
-		ldxy	$912B
+		ldxy	byte_912B
 		JMP	j_sub_4B4D
 ; End of function sub_81B0
 
@@ -2464,20 +2464,13 @@ off_90DC:	.WORD byte_90F8		; DATA XREF: sub_81B0+F^r sub_81B0+14^r
 		.WORD byte_9119
 		.WORD byte_9121
 byte_90F8:	.BYTE 6,"Light"		; DATA XREF: RAM:off_90DC^o RAM:90E8^o ...
-byte_90FE:	.BYTE 5			; DATA XREF: RAM:90DE^o
-aDark:		.BYTE "Dark"
-byte_9103:	.BYTE 6			; DATA XREF: RAM:90E0^o
-aOrder:		.BYTE "Order"
-byte_9109:	.BYTE 6			; DATA XREF: RAM:90E2^o
-aChaos:		.BYTE "Chaos"
-byte_910F:	.BYTE 4			; DATA XREF: RAM:90E4^o
-aLaw:		.BYTE "Law"
-byte_9113:	.BYTE 6			; DATA XREF: RAM:90E6^o
-aThief:		.BYTE "Thief"
-byte_9119:	.BYTE 8			; DATA XREF: RAM:90F4^o
-aPaladin:	.BYTE "Paladin"
-byte_9121:	.BYTE $A		; DATA XREF: RAM:90F6^o
-aMercenary:	.BYTE "Mercenary"
+byte_90FE:	.BYTE 5,"Dark"		; DATA XREF: RAM:90DE^o
+byte_9103:	.BYTE 6,"Order"		; DATA XREF: RAM:90E0^o
+byte_9109:	.BYTE 6,"Chaos"		; DATA XREF: RAM:90E2^o
+byte_910F:	.BYTE 4,"Law"		; DATA XREF: RAM:90E4^o
+byte_9113:	.BYTE 6,"Thief"		; DATA XREF: RAM:90E6^o
+byte_9119:	.BYTE 8,"Paladin"	; DATA XREF: RAM:90F4^o
+byte_9121:	.BYTE $A,"Mercenary"	; DATA XREF: RAM:90F6^o
 byte_912B:	.BYTE $30		; DATA XREF: sub_81B0+5^w
 byte_912C:	.BYTE $CC		; DATA XREF: sub_81B0+1D^r sub_81B0+20^w
 		.BYTE $2B ; +
@@ -2502,26 +2495,26 @@ unk_9131:	.BYTE $45 ; E		; DATA XREF: RAM:83DF^o
 		DBGSYM	"WAITJIFF", $2C6A
 		DBGSYM	"WAITKEY", $2C73
 		DBGSYM	"WAITK10", $2C8C
-		.BYTE $87 ; ‡
-		.BYTE $53 ; S
-unk_91AC:	.BYTE $70 ; p		; DATA XREF: RAM:91DCvo
-		.BYTE $70 ; p
-		.BYTE $30 ; 0
+		.BYTE $87
+		.BYTE $53
+unk_91AC:	.BYTE $70		; DATA XREF: RAM:91DCvo
+		.BYTE $70
+		.BYTE $30
 		.BYTE $42
 		.WORD $400
-		.BYTE $80 ; €
+		.BYTE $80
 		.BYTE	2
-		.BYTE $80 ; €
+		.BYTE $80
 		.BYTE	2
-		.BYTE $80 ; €
+		.BYTE $80
 		.BYTE	2
-		.BYTE $80 ; €
+		.BYTE $80
 		.BYTE	2
-		.BYTE $80 ; €
+		.BYTE $80
 		.BYTE	6
 		.BYTE	0
-		.BYTE $44 ; D
-		.BYTE $F0 ; ð
+		.BYTE $44
+		.BYTE $F0
 		.BYTE	4
 		.BYTE	4
 		.BYTE	4
@@ -2533,8 +2526,8 @@ unk_91AC:	.BYTE $70 ; p		; DATA XREF: RAM:91DCvo
 		.BYTE	4
 		.BYTE	0
 		.BYTE	0
-		.BYTE	$42 ; B
-		.BYTE	$58 ; X
+		.BYTE	$42
+		.BYTE	$58
 		.BYTE	6
 		.BYTE	0
 		.BYTE	2
@@ -2550,7 +2543,7 @@ unk_91AC:	.BYTE $70 ; p		; DATA XREF: RAM:91DCvo
 		.BYTE	2
 		.BYTE	0
 		.BYTE	2
-		.BYTE	$41 ; A
+		.BYTE	$41
 		.WORD	unk_91AC
 ; ---------------------------------------------------------------------------
 
@@ -2561,7 +2554,7 @@ loc_91DE:
 		TYA
 		PHA
 		STA	WSYNC
-		LDA	#$36 ; '6'
+		LDA	#$36
 		STA	COLPF3
 		STA	WSYNC
 		LDA	#$50
