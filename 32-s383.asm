@@ -1440,22 +1440,18 @@ aThy_3:		.BYTE	"Thy "
 a_ThouHastNoWeap:
 		MOVEXY	0,2
 		.BYTE	$A5,"Thou hast no weapons and armor",$0D,$0D
-		.BYTE	$A5
-aForMeTo:	.BYTE	"for me to "
+		.BYTE	$A5,"for me to "
 		.BYTE	$B4
 		.WORD	off_69
 		.BYTE	$1E
-a__1:		.BYTE	"."
-		.BYTE	$D
-		.BYTE	$FF
-		.BYTE	$A6,  0,	1
-		.BYTE	$A5
-aShallI:	.BYTE	"Shall I "
+		.BYTE	".",$0D,$FF
+
+		MOVEXY	0,1
+		.BYTE	$A5,"Shall I "
 		.BYTE	$B4
 		.WORD	off_69
 		.BYTE	$27
-aThy_5:		.BYTE	" thy"
-		.BYTE	$D
+		.BYTE	" thy",$0D
 		.BYTE	$A5
 		.BYTE	$B3
 		.WORD	off_7BD8
@@ -1499,14 +1495,14 @@ aTheFollowingPr:.BYTE	$A5,"the following protection:",$D,$D
 aBlunt:		.BYTE	"Blunt:",$D	; DATA XREF: RAM:8309^o
 aSharp:		.BYTE	"Sharp:",$D
 aEarth:		.BYTE	"Earth:",$D
-aAir:		.BYTE	"Air:"
-		.BYTE	$A6, $D,	3
-aFire:		.BYTE	"Fire:"
-		.BYTE	$A6, $D,	4
-aWater:		.BYTE	"Water:"
-		.BYTE	$A6, $D,	5
-aPower:		.BYTE	"Power:"
-		.BYTE	$A6, $D,	6
+		.BYTE	"Air:"
+		MOVEXY	13,3
+		.BYTE	"Fire:"
+		MOVEXY	13,4
+		.BYTE	"Water:"
+		MOVEXY	13,5
+		.BYTE	"Power:"
+		MOVEXY	13,6
 aMagic:		.BYTE	"Magic:"
 		.BYTE	$A6,$1A,	3
 aGood_0:	.BYTE	"Good:"
