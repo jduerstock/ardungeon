@@ -74,6 +74,18 @@
 	.endscope
 	.endmacro
 
+	.macro add16 Arg1,Arg2
+	.scope
+		LDA	Arg1
+		CLC
+		ADC	#Arg2
+		STA	Arg1
+		BCC	Skip
+		INC	Arg1+1
+	Skip:
+	.endscope
+	.endmacro
+
 	; nonfunctional
 
 	.macro modstat stat,val

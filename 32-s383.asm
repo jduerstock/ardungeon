@@ -1503,13 +1503,13 @@ aEarth:		.BYTE	"Earth:",$D
 		MOVEXY	13,5
 		.BYTE	"Power:"
 		MOVEXY	13,6
-aMagic:		.BYTE	"Magic:"
-		.BYTE	$A6,$1A,	3
-aGood_0:	.BYTE	"Good:"
-		.BYTE	$A6,$1A,	4
-aEvil:		.BYTE	"Evil:"
-		.BYTE	$A6,$1A,	5
-aCold:		.BYTE	"Cold:"
+		.BYTE	"Magic:"
+		MOVEXY	26,3
+		.BYTE	"Good:"
+		MOVEXY	26,4
+		.BYTE	"Evil:"
+		MOVEXY	26,5
+		.BYTE	"Cold:"
 		.BYTE	$A3
 		.WORD	loc_7AD3
 
@@ -1710,12 +1710,11 @@ loc_84D9:				; CODE XREF: RAM:84DDvj
 		ldi	PRIOR, $04
 		dldi	off_7, $BC00	
 		dldi	off_9, $04F0
-		LDA	#0
-		STA	6
+		ldi	6, $00
 
 loc_8507:				; CODE XREF: RAM:852Dvj
 		LDY	6
-		LDA	(7),Y
+		LDA	(off_7),Y
 		STA	4
 		LDY	#7
 
@@ -1729,14 +1728,7 @@ loc_850F:				; CODE XREF: RAM:851Avj
 loc_8519:				; CODE XREF: RAM:8511^j
 		DEY
 		BPL	loc_850F
-		LDA	off_9
-		CLC
-		ADC	#8
-		STA	off_9
-		BCC	loc_8527
-		INC	off_9+1
-
-loc_8527:				; CODE XREF: RAM:8523^j
+		add16	off_9, 8
 		INC	6
 		LDA	6
 		CMP	#$2D
@@ -1745,10 +1737,7 @@ loc_8527:				; CODE XREF: RAM:8523^j
 		STA	off_7
 		LDX	#0
 		STX	6
-		LDA	#$A9
-		STA	$F0
-		LDA	#$BD
-		STA	$F1
+		dldi	$F0, $BDA9
 
 loc_853F:				; CODE XREF: RAM:8550vj
 		CLC
