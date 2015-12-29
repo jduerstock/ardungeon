@@ -2444,35 +2444,13 @@ aShortSword:	.BYTE	"Short Sword",0
 		.BYTE	$23 ; #
 		.BYTE	0
 		.BYTE	$10
-unk_914D:	.BYTE	3		; DATA XREF: RAM:8F7D^o
-		.BYTE	$25 ; %
-		.BYTE	1
-		.BYTE	0
-		.BYTE	 $D
-		.BYTE	$11
-aLongSword:	.BYTE	"Long Sword",0
-		.BYTE	0
-		.BYTE	$FF
-		.BYTE	0
-		.BYTE	$11
-		.BYTE	$24 ; $
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	 $E
-		.BYTE	$10
-		.BYTE	$23 ; #
-		.BYTE	$28 ; (
-		.BYTE	0
-		.BYTE	$10
 
-unk_9172:	Item	$03,$01,$00,$08,"Small Shield"
+unk_914D:
+		Item	$03,$01,$00,$0D,"Long Sword"
+		.BYTE	$00,$FF,$00,$11,$24,$00,$00,$00,$00,$00,$00,$00,$00,$00,$0E,$10,$23,$28,$00,$10
+
+unk_9172:	
+		Item	$03,$01,$00,$08,"Small Shield"
 		.BYTE	$00,$FF,$00,$14,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$0A,$01,$28,$2D,$02,$40
 
 unk_9199:
