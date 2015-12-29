@@ -474,10 +474,8 @@ loc_7962:				; CODE XREF: RAM:7965vj
 		BMI	loc_7962
 		CMP	#$31 ; '1'
 		BNE	loc_79C8
-		LDA	$6F
-		STA	$8A
-		LDA	$70
-		STA	$89
+		mv	$8A, $6F
+		mv	$89, $70
 		JSR	sub_7FCF
 		BCC	loc_7993
 		JSR	sub_7F6D
@@ -590,9 +588,9 @@ loc_7A16:				; CODE XREF: RAM:7A12^j
 
 loc_7A34:				; CODE XREF: RAM:7A30^j
 		LDY	$8F4A,X
-		LDA	$8987,Y
+		LDA	byte_8987,Y
 		STA	$85
-		LDA	$8989,Y
+		LDA	byte_8989,Y
 		STA	$86
 
 loc_7A41:				; CODE XREF: RAM:loc_7B87vj
@@ -608,7 +606,7 @@ loc_7A50:				; CODE XREF: RAM:7A43^j
 		BEQ	loc_7A63
 		LDA	#1
 		JSR	j_RND_A
-		ldxy	$8A66
+		ldxy	off_8A66
 		JSR	j_sub_2C9B
 		JMP	loc_7A6F
 ; ---------------------------------------------------------------------------
@@ -623,8 +621,7 @@ loc_7A6F:				; CODE XREF: RAM:7A4D^j	RAM:7A60^j
 		JSR	sub_8022
 
 loc_7A72:				; CODE XREF: RAM:7B10vj
-		LDA	$62
-		STA	$1933
+		mv	$1933, $62
 		JSR	j_sub_3C2D
 
 loc_7A7A:				; CODE XREF: RAM:7A7Dvj
@@ -740,8 +737,7 @@ loc_7B16:				; CODE XREF: RAM:7A8A^j	RAM:7CEEvj
 ; ---------------------------------------------------------------------------
 
 loc_7B37:				; CODE XREF: RAM:7B24^j
-		LDA	$6C
-		STA	$89
+		mv	$89, $6C
 		JSR	sub_7FCF
 		BCC	loc_7B64
 		LDY	#2
@@ -881,8 +877,7 @@ loc_7C3C:				; CODE XREF: RAM:7B9D^j
 ; ---------------------------------------------------------------------------
 
 loc_7C51:				; DATA XREF: RAM:7C12^o
-		LDA	#1
-		STA	$7B
+		ldi	$7B, $01
 		LDA	$6C
 		LSR	A
 		STA	loc_7C5D+1
@@ -895,8 +890,7 @@ loc_7C5D:				; DATA XREF: RAM:7C58^w
 		CMP	$82
 		BEQ	loc_7C6B
 		BCS	loc_7C6E
-		LDA	$82
-		STA	$6C
+		mv	$6C, $82
 
 loc_7C6B:				; CODE XREF: RAM:7C63^j
 		JMP	loc_7CDC
@@ -1789,12 +1783,13 @@ aItSDone_:	.BYTE	"It's done."
 aHaYouHavenTEve:.BYTE	"HA!  You haven't even the silver"
 		.BYTE	$D
 		.BYTE	$D
-		.BYTE	$A5
-aToPayMe:	.BYTE	"to pay me!"
-		.BYTE	$D
-		.BYTE	$FF
+		.BYTE	$A5,"to pay me!",$0D,$FF
+
+byte_8987:
 		.BYTE	$8B
 		.BYTE	$8C
+
+byte_8989:
 		.BYTE	$89
 		.BYTE	$89
 		.BYTE	0
@@ -1802,6 +1797,7 @@ aPairOf:	.BYTE	"pair of ",0
 		.WORD	byte_899B
 		.WORD	byte_89CE
 		.WORD	byte_89CE
+
 byte_899B:	MOVEXY	0,0
 		STRJSR	loc_803A
 aHowAboutA:	.BYTE	$A5,"How about a "
@@ -1837,6 +1833,8 @@ byte_89FC:	MOVEXY	8,4
 		MenuItem "0","Buy something else"
 		STRJSR	loc_8037
 		.BYTE	$FF
+
+off_8A66:
 		.WORD	byte_8A6A
 		.WORD	byte_8A8D
 byte_8A6A:	.BYTE	$A6,  0,	1	; DATA XREF: RAM:8A66^o
@@ -1913,25 +1911,16 @@ aIDemandAtLeast:.BYTE	"I demand at least "
 aSilvers_1:	.BYTE	" silvers!",$D
 		.BYTE	$AC
 		.WORD	$89FC
-		.BYTE	$A6,  0,	1
-		.BYTE	$A5
-aIHaveNoApparel:.BYTE	"I have no apparel at the moment, try"
-		.BYTE	$D
-		.BYTE	$D
-		.BYTE	$A5
-aAgainTommorow_:.BYTE	"again tommorow."
-		.BYTE	$D
-		.BYTE	$FF
-		.BYTE	$A6,  0,	1
-		.BYTE	$A5
-aSorryButIMAllS:.BYTE	"Sorry but I'm all sold out of battle"
-		.BYTE	$D
-		.BYTE	$D
-		.BYTE	$A5
-aGear_IShouldGe:.BYTE	"gear.  I should get some tommorow."
-		.BYTE	$D
-		.BYTE	$FF
-		.BYTE	$A6,  0,	0
+
+		MOVEXY	0,1
+		.BYTE	$A5,"I have no apparel at the moment, try",$0D,$0D
+		.BYTE	$A5,"again tommorow.",$0D,$FF
+
+		MOVEXY	0,1
+		.BYTE	$A5,"Sorry but I'm all sold out of battle",$0D,$0D
+		.BYTE	$A5,"gear.  I should get some tommorow.",$0D,$FF
+
+		MOVEXY	0,0
 		.BYTE	$A5
 aYouVeSeenAllTh:.BYTE	"You've seen all the apparel I have on"
 		.BYTE	$D
