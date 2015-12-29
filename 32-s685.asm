@@ -8,178 +8,178 @@
 ; ---------------------------------------------------------------------------
 		JMP	loc_97A3
 ; ---------------------------------------------------------------------------
-byte_96F8:	.BYTE 0			; DATA XREF: RAM:97A5vw	RAM:97B7vw ...
-byte_96F9:	.BYTE 0			; DATA XREF: RAM:loc_9A1Evw RAM:9A2Evr
-byte_96FA:	.BYTE 0			; DATA XREF: RAM:9A0Dvw	RAM:9A63vr ...
-byte_96FB:	.BYTE 0			; DATA XREF: RAM:99EEvw	RAM:9A66vw ...
-byte_96FC:	.BYTE 0			; DATA XREF: RAM:99F1vw	RAM:9A5Bvr ...
-byte_96FD:	.BYTE 0			; DATA XREF: RAM:99E7vw	RAM:9A36vr ...
-unk_96FE:	.BYTE $A9 ; ©		; DATA XREF: RAM:982Bvr	RAM:9847vr ...
-		.BYTE $6A ; j
-		.BYTE $8D ; ç
-		.BYTE $44 ; D
-		.BYTE $19
-unk_9703:	.BYTE $A9 ; ©		; DATA XREF: RAM:loc_97FEvr RAM:980Bvr ...
-		.BYTE $5D ; ]
-		.BYTE $8D ; ç
-		.BYTE $45 ; E
-		.BYTE $19
-unk_9708:	.BYTE $20		; DATA XREF: RAM:97E5vw	sub_9856+9vr ...
-		.BYTE $E8 ; Ë
-		.BYTE $4E ; N
-		.BYTE $B0 ; ∞
-		.BYTE $3E ; >
-unk_970D:	.BYTE $C9 ; …		; DATA XREF: RAM:97DFvw	sub_9856+Evr ...
-		.BYTE $80 ; Ä
-		.BYTE $90 ; ê
-		.BYTE	3
-		.BYTE $4C ; L
-unk_9712:	.BYTE $66 ; f		; DATA XREF: RAM:9830vr	RAM:9835vw ...
-		.BYTE $54 ; T
-		.BYTE $85 ; Ö
-		.BYTE $4B ; K
-		.BYTE $20
-unk_9717:	.BYTE $AA ; ™		; DATA XREF: RAM:98DDvw	RAM:9AE9vw ...
-		.BYTE $49 ; I
-		.BYTE $20
-		.BYTE $FA ; ˙
-		.BYTE $4C ; L
-unk_971C:	.BYTE $A0 ; †		; DATA XREF: RAM:98CAvw	sub_9B17+4Evr
+byte_96F8:	.BYTE	0			; DATA XREF: RAM:97A5vw	RAM:97B7vw ...
+byte_96F9:	.BYTE	0			; DATA XREF: RAM:loc_9A1Evw RAM:9A2Evr
+byte_96FA:	.BYTE	0			; DATA XREF: RAM:9A0Dvw	RAM:9A63vr ...
+byte_96FB:	.BYTE	0			; DATA XREF: RAM:99EEvw	RAM:9A66vw ...
+byte_96FC:	.BYTE	0			; DATA XREF: RAM:99F1vw	RAM:9A5Bvr ...
+byte_96FD:	.BYTE	0			; DATA XREF: RAM:99E7vw	RAM:9A36vr ...
+unk_96FE:	.BYTE	$A9		; DATA XREF: RAM:982Bvr	RAM:9847vr ...
+		.BYTE	$6A
+		.BYTE	$8D
+		.BYTE	$44
+		.BYTE	$19
+unk_9703:	.BYTE	$A9		; DATA XREF: RAM:loc_97FEvr RAM:980Bvr ...
+		.BYTE	$5D
+		.BYTE	$8D
+		.BYTE	$45
+		.BYTE	$19
+unk_9708:	.BYTE	$20		; DATA XREF: RAM:97E5vw	sub_9856+9vr ...
+		.BYTE	$E8
+		.BYTE	$4E
+		.BYTE	$B0
+		.BYTE	$3E
+unk_970D:	.BYTE	$C9		; DATA XREF: RAM:97DFvw	sub_9856+Evr ...
+		.BYTE	$80
+		.BYTE	$90
+		.BYTE	$03
+		.BYTE	$4C ; L
+unk_9712:	.BYTE	$66 ; f		; DATA XREF: RAM:9830vr	RAM:9835vw ...
+		.BYTE	$54 ; T
+		.BYTE	$85 ; Ö
+		.BYTE	$4B ; K
+		.BYTE	$20
+unk_9717:	.BYTE	$AA ; ™		; DATA XREF: RAM:98DDvw	RAM:9AE9vw ...
+		.BYTE	$49 ; I
+		.BYTE	$20
+		.BYTE	$FA ; ˙
+		.BYTE	$4C ; L
+unk_971C:	.BYTE	$A0 ; †		; DATA XREF: RAM:98CAvw	sub_9B17+4Evr
 		.BYTE	0
-		.BYTE $B1 ; ±
-		.BYTE $41 ; A
-unk_9720:	.BYTE $29 ; )		; DATA XREF: RAM:98E9vw	sub_9B17+4vr
+		.BYTE	$B1 ; ±
+		.BYTE	$41 ; A
+unk_9720:	.BYTE	$29 ; )		; DATA XREF: RAM:98E9vw	sub_9B17+4vr
 		.BYTE	7
-		.BYTE $8D ; ç
-		.BYTE $A1 ; °
-unk_9724:	.BYTE $60 ; `		; DATA XREF: RAM:98F1vw	sub_9B17+Evr
-		.BYTE $AA ; ™
-		.BYTE $BD ; Ω
-		.BYTE $5F ; _
-unk_9728:	.BYTE $50 ; P		; DATA XREF: RAM:98DAvw	sub_9B17+3Dvw ...
-		.BYTE $48 ; H
-		.BYTE $BD ; Ω
-		.BYTE $67 ; g
-unk_972C:	.BYTE $50 ; P		; DATA XREF: RAM:98E0vr	RAM:9906vw ...
-		.BYTE $48 ; H
-		.BYTE $60 ; `
-		.BYTE $A5 ; •
-unk_9730:	.BYTE $4B ; K		; DATA XREF: RAM:98E3vw	sub_9B17+43vw ...
-		.BYTE $20
-		.BYTE $AA ; ™
-		.BYTE $49 ; I
-unk_9734:	.BYTE $F0 ; 		; DATA XREF: RAM:98FAvw
+		.BYTE	$8D ; ç
+		.BYTE	$A1 ; °
+unk_9724:	.BYTE	$60 ; `		; DATA XREF: RAM:98F1vw	sub_9B17+Evr
+		.BYTE	$AA ; ™
+		.BYTE	$BD ; Ω
+		.BYTE	$5F ; _
+unk_9728:	.BYTE	$50 ; P		; DATA XREF: RAM:98DAvw	sub_9B17+3Dvw ...
+		.BYTE	$48 ; H
+		.BYTE	$BD ; Ω
+		.BYTE	$67 ; g
+unk_972C:	.BYTE	$50 ; P		; DATA XREF: RAM:98E0vr	RAM:9906vw ...
+		.BYTE	$48 ; H
+		.BYTE	$60 ; `
+		.BYTE	$A5 ; •
+unk_9730:	.BYTE	$4B ; K		; DATA XREF: RAM:98E3vw	sub_9B17+43vw ...
+		.BYTE	$20
+		.BYTE	$AA ; ™
+		.BYTE	$49 ; I
+unk_9734:	.BYTE	$F0 ; 		; DATA XREF: RAM:98FAvw
 					; sub_9B17:loc_9B49vr
-		.BYTE $15
-		.BYTE $A5 ; •
-		.BYTE $4B ; K
-unk_9738:	.BYTE $20		; DATA XREF: RAM:9900vw	sub_9B17+1Avr
-		.BYTE $BC ; º
-		.BYTE $49 ; I
-		.BYTE $AD ; ≠
-unk_973C:	.BYTE $A1 ; °		; DATA XREF: RAM:990Cvw	sub_9B17+79vr
-		.BYTE $60 ; `
-		.BYTE $8D ; ç
-		.BYTE $61 ; a
-unk_9740:	.BYTE $19		; DATA XREF: RAM:9912vw	sub_9B17+37vr ...
-		.BYTE $2C ; ,
-		.BYTE $A2 ; ¢
-		.BYTE $60 ; `
-		.BYTE $10
+		.BYTE	$15
+		.BYTE	$A5 ; •
+		.BYTE	$4B ; K
+unk_9738:	.BYTE	$20		; DATA XREF: RAM:9900vw	sub_9B17+1Avr
+		.BYTE	$BC ; º
+		.BYTE	$49 ; I
+		.BYTE	$AD ; ≠
+unk_973C:	.BYTE	$A1 ; °		; DATA XREF: RAM:990Cvw	sub_9B17+79vr
+		.BYTE	$60 ; `
+		.BYTE	$8D ; ç
+		.BYTE	$61 ; a
+unk_9740:	.BYTE	$19		; DATA XREF: RAM:9912vw	sub_9B17+37vr ...
+		.BYTE	$2C ; ,
+		.BYTE	$A2 ; ¢
+		.BYTE	$60 ; `
+		.BYTE	$10
 		.BYTE	5
-		.BYTE $A5 ; •
-		.BYTE $4B ; K
-		.BYTE $20
-		.BYTE $FF
-		.BYTE $48 ; H
-		.BYTE $CE ; Œ
-		.BYTE $5F ; _
-		.BYTE $19
-		.BYTE $60 ; `
-		.BYTE $50 ; P
-		.BYTE $50 ; P
-		.BYTE $52 ; R
-		.BYTE $52 ; R
-		.BYTE $53 ; S
-		.BYTE $53 ; S
-		.BYTE $53 ; S
-		.BYTE $54 ; T
-		.BYTE $6E ; n
-		.BYTE $F8 ; ¯
-		.BYTE $44 ; D
-		.BYTE $BC ; º
+		.BYTE	$A5 ; •
+		.BYTE	$4B ; K
+		.BYTE	$20
+		.BYTE	$FF
+		.BYTE	$48 ; H
+		.BYTE	$CE ; Œ
+		.BYTE	$5F ; _
+		.BYTE	$19
+		.BYTE	$60 ; `
+		.BYTE	$50 ; P
+		.BYTE	$50 ; P
+		.BYTE	$52 ; R
+		.BYTE	$52 ; R
+		.BYTE	$53 ; S
+		.BYTE	$53 ; S
+		.BYTE	$53 ; S
+		.BYTE	$54 ; T
+		.BYTE	$6E ; n
+		.BYTE	$F8 ; ¯
+		.BYTE	$44 ; D
+		.BYTE	$BC ; º
 		.BYTE	0
-		.BYTE $17
-		.BYTE $7D ; }
-		.BYTE $44 ; D
-		.BYTE $A0 ; †
+		.BYTE	$17
+		.BYTE	$7D ; }
+		.BYTE	$44 ; D
+		.BYTE	$A0 ; †
 		.BYTE	0
-		.BYTE $B1 ; ±
-		.BYTE $41 ; A
-		.BYTE $29 ; )
-		.BYTE $78 ; x
-		.BYTE $D0 ; –
+		.BYTE	$B1 ; ±
+		.BYTE	$41 ; A
+		.BYTE	$29 ; )
+		.BYTE	$78 ; x
+		.BYTE	$D0 ; –
 		.BYTE	3
-		.BYTE $4C ; L
-		.BYTE $5B ; [
-		.BYTE $50 ; P
-		.BYTE $A2 ; ¢
+		.BYTE	$4C ; L
+		.BYTE	$5B ; [
+		.BYTE	$50 ; P
+		.BYTE	$A2 ; ¢
 		.BYTE	2
-		.BYTE $DD ; ›
-		.BYTE $96 ; ñ
-		.BYTE $50 ; P
-		.BYTE $F0 ; 
+		.BYTE	$DD ; ›
+		.BYTE	$96 ; ñ
+		.BYTE	$50 ; P
+		.BYTE	$F0 ; 
 		.BYTE	6
-		.BYTE $CA ;  
-		.BYTE $10
-		.BYTE $F8 ; ¯
-		.BYTE $4C ; L
-		.BYTE $3F ; ?
-		.BYTE $50 ; P
-		.BYTE $BD ; Ω
-		.BYTE $93 ; ì
-		.BYTE $50 ; P
-		.BYTE $48 ; H
-		.BYTE $BD ; Ω
-		.BYTE $90 ; ê
-		.BYTE $50 ; P
-		.BYTE $48 ; H
-		.BYTE $60 ; `
-		.BYTE $98 ; ò
-		.BYTE $B7 ; ∑
-		.BYTE $C8 ; »
-		.BYTE $50 ; P
-		.BYTE $50 ; P
-		.BYTE $50 ; P
+		.BYTE	$CA ;  
+		.BYTE	$10
+		.BYTE	$F8 ; ¯
+		.BYTE	$4C ; L
+		.BYTE	$3F ; ?
+		.BYTE	$50 ; P
+		.BYTE	$BD ; Ω
+		.BYTE	$93 ; ì
+		.BYTE	$50 ; P
+		.BYTE	$48 ; H
+		.BYTE	$BD ; Ω
+		.BYTE	$90 ; ê
+		.BYTE	$50 ; P
+		.BYTE	$48 ; H
+		.BYTE	$60 ; `
+		.BYTE	$98 ; ò
+		.BYTE	$B7 ; ∑
+		.BYTE	$C8 ; »
+		.BYTE	$50 ; P
+		.BYTE	$50 ; P
+		.BYTE	$50 ; P
 		.BYTE	8
-		.BYTE $10
-		.BYTE $18
-		.BYTE $AD ; ≠
-		.BYTE $BE ; æ
-		.BYTE $63 ; c
-		.BYTE $F0 ; 
+		.BYTE	$10
+		.BYTE	$18
+		.BYTE	$AD ; ≠
+		.BYTE	$BE ; æ
+		.BYTE	$63 ; c
+		.BYTE	$F0 ; 
 		.BYTE	6
-		.BYTE $CE ; Œ
-		.BYTE $BE ; æ
-		.BYTE $63 ; c
-		.BYTE $4C ; L
-		.BYTE $3F ; ?
-		.BYTE $50 ; P
-byte_9794:	.BYTE 7			; DATA XREF: RAM:97CAvw	RAM:9994vr ...
-byte_9795:	.BYTE 7			; DATA XREF: RAM:97CDvw
-byte_9796:	.BYTE 7			; DATA XREF: RAM:97D0vw
-byte_9797:	.BYTE 7			; DATA XREF: RAM:97D3vw
-byte_9798:	.BYTE 7			; DATA XREF: RAM:97D6vw
-unk_9799:	.BYTE $44 ; D		; DATA XREF: RAM:998Avr	RAM:99AEvr
-		.BYTE $54 ; T
-		.BYTE $64 ; d
-		.BYTE $74 ; t
-		.BYTE $84 ; Ñ
-unk_979E:	.BYTE $97 ; ó		; DATA XREF: RAM:998Fvr	RAM:99B3vr
-		.BYTE $97 ; ó
-		.BYTE $97 ; ó
-		.BYTE $97 ; ó
-		.BYTE $97 ; ó
+		.BYTE	$CE ; Œ
+		.BYTE	$BE ; æ
+		.BYTE	$63 ; c
+		.BYTE	$4C ; L
+		.BYTE	$3F ; ?
+		.BYTE	$50 ; P
+byte_9794:	.BYTE	7			; DATA XREF: RAM:97CAvw	RAM:9994vr ...
+byte_9795:	.BYTE	7			; DATA XREF: RAM:97CDvw
+byte_9796:	.BYTE	7			; DATA XREF: RAM:97D0vw
+byte_9797:	.BYTE	7			; DATA XREF: RAM:97D3vw
+byte_9798:	.BYTE	7			; DATA XREF: RAM:97D6vw
+unk_9799:	.BYTE	$44 ; D		; DATA XREF: RAM:998Avr	RAM:99AEvr
+		.BYTE	$54 ; T
+		.BYTE	$64 ; d
+		.BYTE	$74 ; t
+		.BYTE	$84 ; Ñ
+unk_979E:	.BYTE	$97 ; ó		; DATA XREF: RAM:998Fvr	RAM:99B3vr
+		.BYTE	$97 ; ó
+		.BYTE	$97 ; ó
+		.BYTE	$97 ; ó
+		.BYTE	$97 ; ó
 ; ---------------------------------------------------------------------------
 
 loc_97A3:				; CODE XREF: RAM:96F5^j
@@ -623,14 +623,14 @@ loc_9A34:				; CODE XREF: RAM:9A1C^j
 		TYA
 		JMP	loc_988E
 ; ---------------------------------------------------------------------------
-unk_9A47:	.BYTE $2E ; .		; DATA XREF: RAM:loc_9A23^r
-		.BYTE $2D ; -
-		.BYTE $27 ; '
-		.BYTE $21 ; !
-		.BYTE $3F ; ?
-		.BYTE $AE ; Æ
-		.BYTE $FB ; ˚
-		.BYTE $96 ; ñ
+unk_9A47:	.BYTE	$2E ; .		; DATA XREF: RAM:loc_9A23^r
+		.BYTE	$2D ; -
+		.BYTE	$27 ; '
+		.BYTE	$21 ; !
+		.BYTE	$3F ; ?
+		.BYTE	$AE ; Æ
+		.BYTE	$FB ; ˚
+		.BYTE	$96 ; ñ
 ; ---------------------------------------------------------------------------
 
 loc_9A4F:				; CODE XREF: RAM:9A5Evj
@@ -715,7 +715,7 @@ loc_9ACF:				; CODE XREF: RAM:9ACB^j
 		LDA	#4
 		JMP	loc_988E
 ; ---------------------------------------------------------------------------
-byte_9ADB:	.BYTE $FF,$7F,$3F,$1F, $F,  7,	3,  1 ;	DATA XREF: RAM:loc_9ABF^r
+byte_9ADB:	.BYTE	$FF,$7F,$3F,$1F, $F,  7,	3,  1 ;	DATA XREF: RAM:loc_9ABF^r
 		.BYTE	0
 ; ---------------------------------------------------------------------------
 		STA	unk_9712,X
@@ -851,16 +851,16 @@ unk_9BA7:	.BYTE	<(sub_98B5-1)	; DATA XREF: sub_9856+20^r
 		.BYTE	<(sub_9962-1)
 		.BYTE	0
 		.BYTE	0
-		.BYTE $6B ; k
-		.BYTE $AD ; ≠
-		.BYTE $D5 ; ’
-		.BYTE $DC ; ‹
-		.BYTE $E3 ; „
-		.BYTE $4B ; K
-		.BYTE $92 ; í
-		.BYTE $AB ; ´
-		.BYTE $E3 ; „
-		.BYTE $FF
+		.BYTE	$6B ; k
+		.BYTE	$AD ; ≠
+		.BYTE	$D5 ; ’
+		.BYTE	$DC ; ‹
+		.BYTE	$E3 ; „
+		.BYTE	$4B ; K
+		.BYTE	$92 ; í
+		.BYTE	$AB ; ´
+		.BYTE	$E3 ; „
+		.BYTE	$FF
 unk_9BBB:	.BYTE	>(sub_98B5-1)	; DATA XREF: sub_9856+1C^r
 		.BYTE	>(sub_98CA-1)
 		.BYTE	>(sub_98E9-1)
@@ -871,50 +871,48 @@ unk_9BBB:	.BYTE	>(sub_98B5-1)	; DATA XREF: sub_9856+1C^r
 		.BYTE	>(sub_9962-1)
 		.BYTE	0
 		.BYTE	0
-		.BYTE $99 ; ô
-		.BYTE $99 ; ô
-		.BYTE $99 ; ô
-		.BYTE $99 ; ô
-		.BYTE $99 ; ô
-		.BYTE $9A ; ö
-		.BYTE $9A ; ö
-		.BYTE $9A ; ö
-		.BYTE $9A ; ö
-		.BYTE $9A ; ö
-		.BYTE $C2 ; ¬
-		.BYTE $C1 ; ¡
-		.BYTE $C1 ; ¡
-		.BYTE $8D ; ç
-		.BYTE $A0 ; †
-		.BYTE $C8 ; »
-		.BYTE $C5 ; ≈
-		.BYTE $D8 ; ÿ
-		.BYTE $A0 ; †
-		.BYTE $C1 ; ¡
-		.BYTE $C2 ; ¬
-		.BYTE $B1 ; ±
-		.BYTE $C2 ; ¬
-		.BYTE $B0 ; ∞
-		.BYTE $B4 ; ¥
-		.BYTE $C6 ; ∆
-		.BYTE $C6 ; ∆
-		.BYTE $C6 ; ∆
-		.BYTE $C1 ; ¡
-		.BYTE $C1 ; ¡
-		.BYTE $C6 ; ∆
-		.BYTE $C6 ; ∆
-		.BYTE $C6 ; ∆
-		.BYTE $B5 ; µ
-		.BYTE $B4 ; ¥
-		.BYTE $B1 ; ±
-		.BYTE $C2 ; ¬
-		.BYTE $B0 ; ∞
-		.BYTE $B6 ; ∂
-		.BYTE $B5 ; µ
-		.BYTE $B5 ; µ
-		.BYTE $B0 ; ∞
-		.BYTE $B0 ; ∞
-; end of 'RAM'
-
+		.BYTE	$99
+		.BYTE	$99
+		.BYTE	$99
+		.BYTE	$99
+		.BYTE	$99
+		.BYTE	$9A
+		.BYTE	$9A
+		.BYTE	$9A
+		.BYTE	$9A
+		.BYTE	$9A
+		.BYTE	$C2
+		.BYTE	$C1
+		.BYTE	$C1
+		.BYTE	$8D
+		.BYTE	$A0
+		.BYTE	$C8
+		.BYTE	$C5
+		.BYTE	$D8
+		.BYTE	$A0
+		.BYTE	$C1
+		.BYTE	$C2
+		.BYTE	$B1
+		.BYTE	$C2
+		.BYTE	$B0
+		.BYTE	$B4
+		.BYTE	$C6
+		.BYTE	$C6
+		.BYTE	$C6
+		.BYTE	$C1
+		.BYTE	$C1
+		.BYTE	$C6
+		.BYTE	$C6
+		.BYTE	$C6
+		.BYTE	$B5
+		.BYTE	$B4
+		.BYTE	$B1
+		.BYTE	$C2
+		.BYTE	$B0
+		.BYTE	$B6
+		.BYTE	$B5
+		.BYTE	$B5
+		.BYTE	$B0
+		.BYTE	$B0
 
 		.END

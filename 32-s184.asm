@@ -89,7 +89,7 @@ loc_7661:				; CODE XREF: RAM:765A^j
 		JSR	j_SEGLOAD
 		LDA	$67
 		LSR	A
-		LDA	#$40 ; '@'
+		LDA	#$40
 		ADC	#0
 		STA	SEGNO
 		dldi	SEGADDR, $9FF0
@@ -129,7 +129,7 @@ loc_76CE:
 		STA	off_8AD8+1
 		LDA	$63C2,X
 		STA	$6E
-		AND	#$40 ; '@'
+		AND	#$40
 		BEQ	loc_7709
 
 loc_76FB:				; CODE XREF: RAM:76E2^j
@@ -191,8 +191,7 @@ loc_7752:				; CODE XREF: sub_7AE2-389vj
 
 loc_7766:				; CODE XREF: RAM:7747^j
 		LDX	#$E
-		LDA	#$31 ; '1'
-		STA	$68
+		ldi	$68, $31
 		LDA	$63D1
 
 loc_776F:				; CODE XREF: RAM:7773vj
@@ -340,10 +339,10 @@ loc_7858:				; CODE XREF: RAM:784F^j
 loc_785F:				; CODE XREF: RAM:7816^j	RAM:7820^j
 		LDA	$90AF,X
 		LDY	$68
-		CPY	#$31 ; '1'
+		CPY	#$31
 		BNE	loc_786B
 		CLC
-		ADC	#$78 ; 'x'
+		ADC	#$78
 
 loc_786B:				; CODE XREF: RAM:7866^j
 		STA	$69
@@ -532,7 +531,7 @@ loc_7968:				; CODE XREF: RAM:789A^j	RAM:78AF^j
 loc_7973:				; CODE XREF: RAM:770F^j	RAM:78EB^j ...
 		LDX	$67
 		LDA	$63C2,X
-		AND	#$40 ; '@'
+		AND	#$40
 		BEQ	loc_7983
 		ldxy	$8936
 		JMP	loc_7A12
@@ -662,7 +661,7 @@ loc_7A64:
 		LDA	$31
 		BMI	loc_7A57
 		SEC
-		SBC	#$30 ; '0'
+		SBC	#$30
 		CMP	#7
 		BCS	loc_7A4F
 		ASL	A
@@ -723,14 +722,14 @@ loc_7ABD:
 sub_7ACF:				; CODE XREF: RAM:78D9^p	sub_7AE2vp
 		LDX	$67
 		LDA	$63C2,X
-		BPL	locret_7AE1
+		BPL	:+
 		JSR	sub_7916
-		BNE	locret_7AE1
+		BNE	:+
 		LDY	#2
 		LDA	#$10
 		STA	(off_62),Y
 
-locret_7AE1:				; CODE XREF: sub_7ACF+5^j sub_7ACF+A^j
+:
 		RTS
 ; End of function sub_7ACF
 
@@ -840,11 +839,11 @@ loc_7B68:				; CODE XREF: sub_7B11+5Evj RAM:7B8Avj
 ; End of function sub_7B11
 
 ; ---------------------------------------------------------------------------
-byte_7B73:	.BYTE 0			; DATA XREF: sub_7B11+21^r sub_7B11+31^w
-byte_7B74:	.BYTE $63		; DATA XREF: sub_7B11+1E^r
+byte_7B73:	.BYTE	0			; DATA XREF: sub_7B11+21^r sub_7B11+31^w
+byte_7B74:	.BYTE	$63		; DATA XREF: sub_7B11+1E^r
 					; sub_7B11:loc_7B38^r ...
-byte_7B75:	.BYTE $A5		; DATA XREF: sub_7B11+16^r sub_7B11+3F^w ...
-byte_7B76:	.BYTE $4B		; DATA XREF: sub_7B11:loc_7B22^r
+byte_7B75:	.BYTE	$A5		; DATA XREF: sub_7B11+16^r sub_7B11+3F^w ...
+byte_7B76:	.BYTE	$4B		; DATA XREF: sub_7B11:loc_7B22^r
 					; sub_7B11+37^r	...
 off_7B77:	.WORD loc_7B05		; DATA XREF: RAM:7A78^r	RAM:7A7E^r
 		.WORD loc_7DB1
@@ -1742,10 +1741,10 @@ loc_81A4:				; CODE XREF: RAM:8140^j	RAM:814A^j ...
 locret_81AB:				; CODE XREF: RAM:81A1^j
 		RTS
 ; ---------------------------------------------------------------------------
-		.BYTE $84
-		.BYTE $8B
-		.BYTE $8C
-		.BYTE $8B
+		.BYTE	$84
+		.BYTE	$8B
+		.BYTE	$8C
+		.BYTE	$8B
 
 ; --------------- S U B	R O U T	I N E ---------------------------------------
 
@@ -1849,12 +1848,12 @@ byte_8218:
 
 byte_8224:
 		.BYTE	9
-		.BYTE  $A
-		.BYTE  $B
-		.BYTE  $F
-		.BYTE  $E
-		.BYTE  $D
-		.BYTE  $C
+		.BYTE	 $A
+		.BYTE	 $B
+		.BYTE	 $F
+		.BYTE	 $E
+		.BYTE	 $D
+		.BYTE	 $C
 		.BYTE	6
 		.BYTE	8
 		.BYTE	0
@@ -1870,11 +1869,11 @@ byte_8224:
 		.BYTE	$A5,$22,"All curses have been removed,",$0D
 		.BYTE	$A5
 		PRINTSTRP $6A, 7
-		.BYTE ' '
-		.BYTE $B3
+		.BYTE	' '
+		.BYTE	$B3
 		.WORD $6321
-		.BYTE $19
-		.BYTE ".",$22,$0D,$FF
+		.BYTE	$19
+		.BYTE	".",$22,$0D,$FF
 
 		MOVEXY	0,0
 		.BYTE	$A5,"You are now part of our ancient order!",$0D
@@ -1890,14 +1889,14 @@ byte_8224:
 		MOVEXY	0,1
 		.BYTE	$A5,"Do you want to relinquish your",$0D,$0D
 		.BYTE	$A5,"spell of "
-		.BYTE $B3
+		.BYTE	$B3
 		.WORD unk_9131
-		.BYTE $1E
+		.BYTE	$1E
 		.BYTE	" ("
-		.BYTE $B2
+		.BYTE	$B2
 		.WORD $88
 		.BYTE	2
-aq:		.BYTE "%)?",$0D,$0D
+aq:		.BYTE	"%)?",$0D,$0D
 		.BYTE	$A5
 		STRSUB	asc_83F3
 		.BYTE	$0D,$FF
@@ -1953,13 +1952,13 @@ byte_8437:	.BYTE	$A5,"Thou shalt not kill fellow members",$0D,$0D
 		MOVEXY	0,1
 		STRJSR	loc_90BD
 		.BYTE	$A5,"That will cost "
-		.BYTE $B1
+		.BYTE	$B1
 		.WORD $79
-		.BYTE 4
+		.BYTE	4
 		.BYTE	" silver"
-		.BYTE $B3
+		.BYTE	$B3
 		.WORD byte_90DA
-		.BYTE 2
+		.BYTE	2
 a__0:		.BYTE	".",$0D,$0D
 		.BYTE	$A5,"Are you sure? "
 		STRSUB	asc_83F3
@@ -1989,7 +1988,7 @@ a__1:		.BYTE	".",$0D
 		.BYTE	$A5,"(Press "
 		BLINK	"SPACE BAR"
 		.BYTE	" to leave early.)"
-		.BYTE $0D,$FF
+		.BYTE	$0D,$FF
 		MOVEXY	0,2
 		.BYTE	$A5,"You quit practice early and gain no",$0D,$0D
 		.BYTE	$A5,"proficiency.",$0D,$FF
@@ -2000,23 +1999,23 @@ a__1:		.BYTE	".",$0D
 		.BYTE	$A5,"Would you like to practice",$0D,$0D
 		.BYTE	$A5,"your spell of "
 		PRINTSTRP $71, 30
-		.BYTE " ("
-		.BYTE $B2
+		.BYTE	" ("
+		.BYTE	$B2
 		.WORD $88
-		.BYTE 2
-		.BYTE "%)?",$0D,$0D
-		.BYTE $A5
-		.BYTE $AC
+		.BYTE	2
+		.BYTE	"%)?",$0D,$0D
+		.BYTE	$A5
+		.BYTE	$AC
 		.WORD asc_83F3		; "("
-		.BYTE $D
-		.BYTE $FF
+		.BYTE	$D
+		.BYTE	$FF
 		MOVEXY	0,2
 		.BYTE	$A5,"Spell casting practice takes four",$0D
 		.BYTE	$A5,"hours and costs 100 silvers.",$0D,$0D
 		.BYTE	$A5,"Is this alright? "
-		.BYTE $AC
+		.BYTE	$AC
 		.WORD asc_83F3		; "("
-		.BYTE $0D,$FF
+		.BYTE	$0D,$FF
 		MOVEXY	0,2
 		.BYTE	$A5,"Farewell "
 		PRINTSTRP $6A, 7
@@ -2024,35 +2023,35 @@ a__1:		.BYTE	".",$0D
 		.BYTE	$B3
 		.WORD	$6321
 		.BYTE	$16
-		.BYTE ".",$0D,$FF
+		.BYTE	".",$0D,$FF
 		MOVEXY	0,2
 		STRJSR	loc_90BD
 		.BYTE	$A5,"Your ring has been charged",$0D,$0D
 		.BYTE	$A5,"with "
-		.BYTE $B2
+		.BYTE	$B2
 		.WORD $71
-		.BYTE 2
-		.BYTE " unit"
-		.BYTE $B3
+		.BYTE	2
+		.BYTE	" unit"
+		.BYTE	$B3
 		.WORD byte_90DA
-		.BYTE 2
-a__3:		.BYTE ".",$0D
-		.BYTE $A3
+		.BYTE	2
+a__3:		.BYTE	".",$0D
+		.BYTE	$A3
 		.WORD loc_90C0
-		.BYTE $FF
+		.BYTE	$FF
 		MOVEXY	0,2
-aComeAgainSoon:	.BYTE $A5,"Come again soon,",$0D,$0D
-		.BYTE $A5
+aComeAgainSoon:	.BYTE	$A5,"Come again soon,",$0D,$0D
+		.BYTE	$A5
 		PRINTSTRP $6A, 7
-		.BYTE " "
-		.BYTE $B3
+		.BYTE	" "
+		.BYTE	$B3
 		.WORD $6321
-		.BYTE $19
-		.BYTE ".",$0D,$FF
+		.BYTE	$19
+		.BYTE	".",$0D,$FF
 		MOVEXY	0,1
 		.BYTE	$A5,"Welcome to the "
 		PRINTSTRP off_8AD8, 40
-		.BYTE ".",$0D
+		.BYTE	".",$0D
 		MOVEXY	5,3
 		MenuItem "1","Apply for Guild membership."
 		MOVEXY	5,5
@@ -2069,82 +2068,82 @@ aComeAgainSoon:	.BYTE $A5,"Come again soon,",$0D,$0D
 		MenuItem "2","Make a withdrawal"
 		MOVEXY	7,6
 		MenuItem "0","Go back to main room"
-		.BYTE $FF
+		.BYTE	$FF
 		MOVEXY	0,0
-		.BYTE $A5
+		.BYTE	$A5
 		PRINTSTRP $6F, 20
-		.BYTE $D
+		.BYTE	$D
 		STRJSR	loc_90BD
 		MOVEXY	5,2
 		MenuItem "1",""
 		PRINTSTRP $71, 20
-		.BYTE ": "
-		.BYTE $B1
+		.BYTE	": "
+		.BYTE	$B1
 		.WORD $79
-		.BYTE 6
-		.BYTE $A6,  5,	3
+		.BYTE	6
+		.BYTE	$A6,  5,	3
 		MenuItem "2",""
 		PRINTSTRP $73, 20
-		.BYTE ": "
-		.BYTE $B1
+		.BYTE	": "
+		.BYTE	$B1
 		.WORD $7B
-		.BYTE 6
-		.BYTE $A6,  5,	4
+		.BYTE	6
+		.BYTE	$A6,  5,	4
 		MenuItem "3",""
 		PRINTSTRP $75, 20
-		.BYTE ": "
-		.BYTE $B1
+		.BYTE	": "
+		.BYTE	$B1
 		.WORD $7D
-		.BYTE 6
-		.BYTE $A6,  5,	5
+		.BYTE	6
+		.BYTE	$A6,  5,	5
 		MenuItem "4",""
 		PRINTSTRP $77, 20
-		.BYTE ": "
-		.BYTE $B1
+		.BYTE	": "
+		.BYTE	$B1
 		.WORD $7F
-		.BYTE 6
-		.BYTE $A6,  0,	7
-aItem:		.BYTE "Item "
+		.BYTE	6
+		.BYTE	$A6,  0,	7
+aItem:		.BYTE	"Item "
 		BLINK '#'
-		.BYTE ", "
+		.BYTE	", "
 aF:		BLINK 'F'
-aOrward:	.BYTE "orward, "
+aOrward:	.BYTE	"orward, "
 aB:		BLINK 'B'
-aAckOr:		.BYTE "ack, or "
+aAckOr:		.BYTE	"ack, or "
 aEsc:		BLINK "ESC"
-aToExit:	.BYTE " to exit"
-		.BYTE $A3
+aToExit:	.BYTE	" to exit"
+		.BYTE	$A3
 		.WORD $90C0
-		.BYTE $FF
-		.BYTE $A6,  0,	2
-		.BYTE $A5
+		.BYTE	$FF
+		.BYTE	$A6,  0,	2
+		.BYTE	$A5
 		PRINTSTRP $6F, 20
-aMade_:		.BYTE " made.",$D
-		.BYTE $FF
-		.BYTE $A6,  0,	0
-		.BYTE $A5
+aMade_:		.BYTE	" made.",$D
+		.BYTE	$FF
+		.BYTE	$A6,  0,	0
+		.BYTE	$A5
 		PRINTSTRP $6F, 20
-aHowMany:	.BYTE " how many "
+aHowMany:	.BYTE	" how many "
 		PRINTSTRP $71, 28
-aq_1:		.BYTE "?"
-		.BYTE $D
-byte_8A9A:	.BYTE $A6,  0,	1	; DATA XREF: RAM:8703^o
-		.BYTE $A3
+aq_1:		.BYTE	"?"
+		.BYTE	$D
+byte_8A9A:	.BYTE	$A6,  0,	1	; DATA XREF: RAM:8703^o
+		.BYTE	$A3
 		.WORD loc_90BD
-		.BYTE $A5
-aUpTo:		.BYTE "(up to "
-		.BYTE $B1
+		.BYTE	$A5
+aUpTo:		.BYTE	"(up to "
+		.BYTE	$B1
 		.WORD $86
-		.BYTE 6
-		.BYTE ')',$0D
+		.BYTE	6
+		.BYTE	')',$0D
 		MOVEXY	0,7
 		.BYTE	$A5,"Enter amount or press "
 		BLINK "ESC"
-		.BYTE '.',$0D
+		.BYTE	'.',$0D
 		MOVEXY	10,3
-		.BYTE "> "
+		.BYTE	"> "
 		STRJSR	loc_90C0
-		.BYTE $FF
+		.BYTE	$FF
 off_8AD8:	.WORD $FFFF		; DATA XREF: RAM:76E9^w	RAM:88FD^o
 unk_8ADA:	.BYTE	<aLightWizardsGu	; DATA XREF: RAM:76D3^r	RAM:76E6^r
 		.BYTE	<aDarkWizardsGui
@@ -2174,31 +2173,31 @@ unk_8AE8:	.BYTE	>aLightWizardsGu	; DATA XREF: RAM:76D8^r	RAM:76EC^r
 		.BYTE	>byte_8D83
 		.BYTE	>aPaladinsGuild
 		.BYTE	>aMercenariesGui
-aLightWizardsGu:.BYTE "Light Wizards' Guild",0
-aDarkWizardsGui:.BYTE "Dark Wizards' Guild",0
-aGuildOfOrder:	.BYTE "Guild of Order",0
-aGuildOfChaos:	.BYTE "Guild of Chaos",0
-aWizardsOfLawGu:.BYTE "Wizards of Law Guild",0
-aThievesGuild:	.BYTE "Thieves' Guild",0
-aPaladinsGuild:	.BYTE "Paladins' Guild",0
-aMercenariesGui:.BYTE "Mercenaries' Guild"
+aLightWizardsGu:.BYTE	"Light Wizards' Guild",0
+aDarkWizardsGui:.BYTE	"Dark Wizards' Guild",0
+aGuildOfOrder:	.BYTE	"Guild of Order",0
+aGuildOfChaos:	.BYTE	"Guild of Chaos",0
+aWizardsOfLawGu:.BYTE	"Wizards of Law Guild",0
+aThievesGuild:	.BYTE	"Thieves' Guild",0
+aPaladinsGuild:	.BYTE	"Paladins' Guild",0
+aMercenariesGui:.BYTE	"Mercenaries' Guild"
 byte_8D83:	.BYTE	0
-aBrother:	.BYTE "Brother",0
-aSister:	.BYTE "Sister",0
-aDeposit:	.BYTE "Deposit",0
-aWithdrawal:	.BYTE "Withdrawal",0
-aFoodPackets:	.BYTE "Food Packets",0
-aWaterFlasks:	.BYTE "Water Flasks",0
-aUnlitTorches:	.BYTE "Unlit Torches",0
-aTimepieces:	.BYTE "Timepieces",0
-aCompasses:	.BYTE "Compasses",0
-aKeys:		.BYTE "Keys",0
-aCrystals:	.BYTE "Crystals",0
-aGems:		.BYTE "Gems",0
-aJewels:	.BYTE "Jewels",0
-aGold:		.BYTE "Gold",0
-aSilver:	.BYTE "Silver",0
-aCopper:	.BYTE "Copper",0
+aBrother:	.BYTE	"Brother",0
+aSister:	.BYTE	"Sister",0
+aDeposit:	.BYTE	"Deposit",0
+aWithdrawal:	.BYTE	"Withdrawal",0
+aFoodPackets:	.BYTE	"Food Packets",0
+aWaterFlasks:	.BYTE	"Water Flasks",0
+aUnlitTorches:	.BYTE	"Unlit Torches",0
+aTimepieces:	.BYTE	"Timepieces",0
+aCompasses:	.BYTE	"Compasses",0
+aKeys:		.BYTE	"Keys",0
+aCrystals:	.BYTE	"Crystals",0
+aGems:		.BYTE	"Gems",0
+aJewels:	.BYTE	"Jewels",0
+aGold:		.BYTE	"Gold",0
+aSilver:	.BYTE	"Silver",0
+aCopper:	.BYTE	"Copper",0
 
 byte_8C10:
 		MOVEXY	0,2
@@ -2240,11 +2239,11 @@ byte_8DFE:
 		MOVEXY	0,2
 		.BYTE	$A5,"Welcome "
 		PRINTSTRP $6A, 7
-		.BYTE " "
-		.BYTE $B3
+		.BYTE	" "
+		.BYTE	$B3
 		.WORD $6321
-		.BYTE $16
-		.BYTE "!",$0D,$FF
+		.BYTE	$16
+		.BYTE	"!",$0D,$FF
 
 		MOVEXY	0,0
 		.BYTE	$A5,"You can only have full membership",$0D
@@ -2261,54 +2260,54 @@ byte_8DFE:
 		.BYTE	$A5,"Would you like to learn",$0D,$0D
 		.BYTE	$A5,"a spell of "
 		PRINTSTRP $71, 30
-		.BYTE $0D,$0D
-aFor:		.BYTE $A5,"For "
-		.BYTE $B2
+		.BYTE	$0D,$0D
+aFor:		.BYTE	$A5,"For "
+		.BYTE	$B2
 		.WORD $79
-		.BYTE 3
-aSilversq:	.BYTE " silvers? "
-		.BYTE $AC
+		.BYTE	3
+aSilversq:	.BYTE	" silvers? "
+		.BYTE	$AC
 		.WORD asc_83F3		; "("
-		.BYTE $D
-		.BYTE $A3
+		.BYTE	$D
+		.BYTE	$A3
 		.WORD loc_90C0
-		.BYTE $FF
-		.BYTE $A6,  0,	1
-		.BYTE $A5
-aDuesAre:	.BYTE "Dues are "
-		.BYTE $B2
+		.BYTE	$FF
+		.BYTE	$A6,  0,	1
+		.BYTE	$A5
+aDuesAre:	.BYTE	"Dues are "
+		.BYTE	$B2
 		.WORD $69
-		.BYTE 3
-aSilvers_:	.BYTE " silvers."
-		.BYTE $D
-		.BYTE $D
-		.BYTE $A5
-aDoYouStillWish:.BYTE "Do you still wish to join? "
-		.BYTE $AC
+		.BYTE	3
+aSilvers_:	.BYTE	" silvers."
+		.BYTE	$D
+		.BYTE	$D
+		.BYTE	$A5
+aDoYouStillWish:.BYTE	"Do you still wish to join? "
+		.BYTE	$AC
 		.WORD asc_83F3		; "("
-		.BYTE $D
-		.BYTE $FF
-		.BYTE $A6,  7,	1
+		.BYTE	$D
+		.BYTE	$FF
+		.BYTE	$A6,  7,	1
 		MenuItem "1",""
 		PRINTSTRP $6C, 25
-		.BYTE $A6,  7,	2
+		.BYTE	$A6,  7,	2
 		MenuItem "2","Have curses removed"
-		.BYTE $A6,  7,	3
+		.BYTE	$A6,  7,	3
 		MenuItem "3","Learn Guild spells"
-		.BYTE $A6,  7,	4
+		.BYTE	$A6,  7,	4
 		MenuItem "4","Practice Guild spells"
-		.BYTE $A6,  7,	5
+		.BYTE	$A6,  7,	5
 		MenuItem "5","Resign from the Guild"
-		.BYTE $A3
+		.BYTE	$A3
 		.WORD loc_904B
-		.BYTE $A6,  7,	6
+		.BYTE	$A6,  7,	6
 		MenuItem "6","Check your Guild locker"
-		.BYTE $A6,  7,	7
+		.BYTE	$A6,  7,	7
 		MenuItem "0","Leave"
-		.BYTE $FF
-aChargeYourGuil:.BYTE "Charge your Guild Ring",0
-aReplaceYourGui:.BYTE "Replace your Guild Ring",0
-aApplyForFullMe:.BYTE "Apply for full membership status",0
+		.BYTE	$FF
+aChargeYourGuil:.BYTE	"Charge your Guild Ring",0
+aReplaceYourGui:.BYTE	"Replace your Guild Ring",0
+aApplyForFullMe:.BYTE	"Apply for full membership status",0
 ; ---------------------------------------------------------------------------
 
 loc_904B:				; DATA XREF: RAM:8FCA^o
@@ -2322,10 +2321,10 @@ locret_905A:				; CODE XREF: RAM:9050^j
 ; ---------------------------------------------------------------------------
 byte_905B:	.BYTE	2		; light wizards
 		.BYTE	1		; dark wizards
-		.BYTE $1A		; wizards of order
-		.BYTE $12		; wizards of chaos
-		.BYTE $1E		; wizards of law
-		.BYTE  $C		; thieves guild
+		.BYTE	$1A		; wizards of order
+		.BYTE	$12		; wizards of chaos
+		.BYTE	$1E		; wizards of law
+		.BYTE	 $C		; thieves guild
 		.BYTE	0
 		.BYTE	0
 		.BYTE	0
@@ -2335,12 +2334,12 @@ byte_905B:	.BYTE	2		; light wizards
 		.BYTE	2		; ?
 		.BYTE	8		; ?
 
-byte_9069:	.BYTE $1B
-		.BYTE  $A
-		.BYTE  $E
+byte_9069:	.BYTE	$1B
+		.BYTE	 $A
+		.BYTE	 $E
 		.BYTE	4
-		.BYTE  $E
-		.BYTE $1E
+		.BYTE	 $E
+		.BYTE	$1E
 		.BYTE	0
 		.BYTE	0
 		.BYTE	0
@@ -2348,7 +2347,7 @@ byte_9069:	.BYTE $1B
 		.BYTE	0
 		.BYTE	0
 		.BYTE	5
-		.BYTE $13
+		.BYTE	$13
 
 byte_9077:	.BYTE	2
 		.BYTE	3
@@ -2382,54 +2381,54 @@ byte_9085:
 		.BYTE	5
 
 byte_9093:
-		.BYTE $9A ; š
+		.BYTE	$9A ; š
 		.BYTE	0
-		.BYTE $7F ; 
+		.BYTE	$7F ; 
 		.BYTE	0
-		.BYTE $7F ; 
-		.BYTE $40 ; @
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE $7F ; 
-		.BYTE	0
-		.BYTE $FF
-		.BYTE $66 ; f
-		.BYTE $FF
-		.BYTE $80 ; €
-		.BYTE $FF
-		.BYTE $A0 ;  
+		.BYTE	$7F ; 
+		.BYTE	$40 ; @
 		.BYTE	0
 		.BYTE	0
 		.BYTE	0
 		.BYTE	0
 		.BYTE	0
 		.BYTE	0
-		.BYTE $FF
-		.BYTE $80 ; €
-		.BYTE $3C ; <
-		.BYTE $3C ; <
-		.BYTE $1E
-		.BYTE $1E
-		.BYTE $64 ; d
-		.BYTE $64 ; d
-		.BYTE $28 ; (
-		.BYTE $28 ; (
-		.BYTE $28 ; (
-		.BYTE $28 ; (
-		.BYTE $28 ; (
-		.BYTE $28 ; (
-		.BYTE $50 ; P
-		.BYTE $50 ; P
+		.BYTE	$7F ; 
+		.BYTE	0
+		.BYTE	$FF
+		.BYTE	$66 ; f
+		.BYTE	$FF
+		.BYTE	$80 ; €
+		.BYTE	$FF
+		.BYTE	$A0 ;  
+		.BYTE	0
+		.BYTE	0
+		.BYTE	0
+		.BYTE	0
+		.BYTE	0
+		.BYTE	0
+		.BYTE	$FF
+		.BYTE	$80 ; €
+		.BYTE	$3C ; <
+		.BYTE	$3C ; <
+		.BYTE	$1E
+		.BYTE	$1E
+		.BYTE	$64 ; d
+		.BYTE	$64 ; d
+		.BYTE	$28 ; (
+		.BYTE	$28 ; (
+		.BYTE	$28 ; (
+		.BYTE	$28 ; (
+		.BYTE	$28 ; (
+		.BYTE	$28 ; (
+		.BYTE	$50 ; P
+		.BYTE	$50 ; P
 ; ---------------------------------------------------------------------------
 
 loc_90BD:				; DATA XREF: RAM:8512^o	RAM:8603^o ...
 		LDA	#$FF
 ; ---------------------------------------------------------------------------
-		.BYTE $2C ; ,
+		.BYTE	$2C ; ,
 ; ---------------------------------------------------------------------------
 
 loc_90C0:				; DATA XREF: RAM:85B2^o	RAM:863B^o ...
@@ -2437,17 +2436,17 @@ loc_90C0:				; DATA XREF: RAM:85B2^o	RAM:863B^o ...
 		STA	$18FE
 		RTS
 ; ---------------------------------------------------------------------------
-unk_90C6:	.BYTE $82 ; ‚		; DATA XREF: sub_81B0:loc_81B2^r
-		.BYTE $13
+unk_90C6:	.BYTE	$82 ; ‚		; DATA XREF: sub_81B0:loc_81B2^r
+		.BYTE	$13
 		.BYTE	0
 		.BYTE	0
 		.BYTE	0
-		.BYTE $10
-aRing99:	.BYTE " Ring [99]",0    ; DATA XREF: sub_81B0:loc_81E8^r
+		.BYTE	$10
+aRing99:	.BYTE	" Ring [99]",0    ; DATA XREF: sub_81B0:loc_81E8^r
 		.BYTE	0
 		.BYTE	1
-		.BYTE $63 ; c
-byte_90DA:	.BYTE 0			; DATA XREF: RAM:loc_7E11^w RAM:8621^o ...
+		.BYTE	$63 ; c
+byte_90DA:	.BYTE	0			; DATA XREF: RAM:loc_7E11^w RAM:8621^o ...
 		.BYTE	0
 off_90DC:	.WORD byte_90F8		; DATA XREF: sub_81B0+F^r sub_81B0+14^r
 		.WORD byte_90FE
@@ -2463,27 +2462,27 @@ off_90DC:	.WORD byte_90F8		; DATA XREF: sub_81B0+F^r sub_81B0+14^r
 		.WORD byte_90F8
 		.WORD byte_9119
 		.WORD byte_9121
-byte_90F8:	.BYTE 6,"Light"		; DATA XREF: RAM:off_90DC^o RAM:90E8^o ...
-byte_90FE:	.BYTE 5,"Dark"		; DATA XREF: RAM:90DE^o
-byte_9103:	.BYTE 6,"Order"		; DATA XREF: RAM:90E0^o
-byte_9109:	.BYTE 6,"Chaos"		; DATA XREF: RAM:90E2^o
-byte_910F:	.BYTE 4,"Law"		; DATA XREF: RAM:90E4^o
-byte_9113:	.BYTE 6,"Thief"		; DATA XREF: RAM:90E6^o
-byte_9119:	.BYTE 8,"Paladin"	; DATA XREF: RAM:90F4^o
-byte_9121:	.BYTE $A,"Mercenary"	; DATA XREF: RAM:90F6^o
-byte_912B:	.BYTE $30		; DATA XREF: sub_81B0+5^w
-byte_912C:	.BYTE $CC		; DATA XREF: sub_81B0+1D^r sub_81B0+20^w
-		.BYTE $2B ; +
-		.BYTE $87 ; ‡
-		.BYTE $50 ; P
-unk_9130:	.BYTE $52 ; R		; DATA XREF: sub_81B0+25^r sub_81B0+28^w ...
-unk_9131:	.BYTE $45 ; E		; DATA XREF: RAM:83DF^o
-		.BYTE $53 ; S
-		.BYTE $4D ; M
-		.BYTE $53 ; S
-		.BYTE $47 ; G
-		.BYTE $D4 ; Ô
-		.BYTE $2B ; +
+byte_90F8:	.BYTE	6,"Light"		; DATA XREF: RAM:off_90DC^o RAM:90E8^o ...
+byte_90FE:	.BYTE	5,"Dark"		; DATA XREF: RAM:90DE^o
+byte_9103:	.BYTE	6,"Order"		; DATA XREF: RAM:90E0^o
+byte_9109:	.BYTE	6,"Chaos"		; DATA XREF: RAM:90E2^o
+byte_910F:	.BYTE	4,"Law"		; DATA XREF: RAM:90E4^o
+byte_9113:	.BYTE	6,"Thief"		; DATA XREF: RAM:90E6^o
+byte_9119:	.BYTE	8,"Paladin"	; DATA XREF: RAM:90F4^o
+byte_9121:	.BYTE	$A,"Mercenary"	; DATA XREF: RAM:90F6^o
+byte_912B:	.BYTE	$30		; DATA XREF: sub_81B0+5^w
+byte_912C:	.BYTE	$CC		; DATA XREF: sub_81B0+1D^r sub_81B0+20^w
+		.BYTE	$2B ; +
+		.BYTE	$87 ; ‡
+		.BYTE	$50 ; P
+unk_9130:	.BYTE	$52 ; R		; DATA XREF: sub_81B0+25^r sub_81B0+28^w ...
+unk_9131:	.BYTE	$45 ; E		; DATA XREF: RAM:83DF^o
+		.BYTE	$53 ; S
+		.BYTE	$4D ; M
+		.BYTE	$53 ; S
+		.BYTE	$47 ; G
+		.BYTE	$D4 ; Ô
+		.BYTE	$2B ; +
 		DBGSYM	"WAIT4S",$2BFE
 		DBGSYM	"WAITSEC", $2C00
 		DBGSYM	"WAITSE05", $2C2A
@@ -2495,26 +2494,26 @@ unk_9131:	.BYTE $45 ; E		; DATA XREF: RAM:83DF^o
 		DBGSYM	"WAITJIFF", $2C6A
 		DBGSYM	"WAITKEY", $2C73
 		DBGSYM	"WAITK10", $2C8C
-		.BYTE $87
-		.BYTE $53
-unk_91AC:	.BYTE $70		; DATA XREF: RAM:91DCvo
-		.BYTE $70
-		.BYTE $30
-		.BYTE $42
+		.BYTE	$87
+		.BYTE	$53
+unk_91AC:	.BYTE	$70		; DATA XREF: RAM:91DCvo
+		.BYTE	$70
+		.BYTE	$30
+		.BYTE	$42
 		.WORD $400
-		.BYTE $80
+		.BYTE	$80
 		.BYTE	2
-		.BYTE $80
+		.BYTE	$80
 		.BYTE	2
-		.BYTE $80
+		.BYTE	$80
 		.BYTE	2
-		.BYTE $80
+		.BYTE	$80
 		.BYTE	2
-		.BYTE $80
+		.BYTE	$80
 		.BYTE	6
 		.BYTE	0
-		.BYTE $44
-		.BYTE $F0
+		.BYTE	$44
+		.BYTE	$F0
 		.BYTE	4
 		.BYTE	4
 		.BYTE	4
@@ -2810,11 +2809,7 @@ loc_93D8:				; DATA XREF: RAM:93CA^w
 
 loc_93DD:				; CODE XREF: RAM:93D3^j
 		LDA	(off_7),Y
-		INC	off_7
-		BNE	loc_93E5
-		INC	off_7+1
-
-loc_93E5:				; CODE XREF: RAM:93E1^j
+		inc16	off_7
 		LDY	byte_93FF
 
 loc_93E8:				; CODE XREF: RAM:93EBvj
@@ -2832,7 +2827,7 @@ loc_93E8:				; CODE XREF: RAM:93EBvj
 loc_93FC:				; CODE XREF: RAM:93F8^j
 		JMP	loc_939F
 ; ---------------------------------------------------------------------------
-byte_93FF:	.BYTE 0			; DATA XREF: RAM:loc_93C5^w RAM:93D5^r ...
+byte_93FF:	.BYTE	0			; DATA XREF: RAM:loc_93C5^w RAM:93D5^r ...
 byte_9400:	.BYTE	<s_Location	; $00
 		.BYTE	<s_Repair	; $01
 		.BYTE	<s_Strength	; $02
