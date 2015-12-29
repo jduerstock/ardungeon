@@ -2463,8 +2463,7 @@ off_90DC:	.WORD byte_90F8		; DATA XREF: sub_81B0+F^r sub_81B0+14^r
 		.WORD byte_90F8
 		.WORD byte_9119
 		.WORD byte_9121
-byte_90F8:	.BYTE 6			; DATA XREF: RAM:off_90DC^o RAM:90E8^o ...
-aLight:		.BYTE "Light"
+byte_90F8:	.BYTE 6,"Light"		; DATA XREF: RAM:off_90DC^o RAM:90E8^o ...
 byte_90FE:	.BYTE 5			; DATA XREF: RAM:90DE^o
 aDark:		.BYTE "Dark"
 byte_9103:	.BYTE 6			; DATA XREF: RAM:90E0^o
@@ -2565,24 +2564,24 @@ loc_91DE:
 		LDA	#$36 ; '6'
 		STA	COLPF3
 		STA	WSYNC
-		LDA	#$50 ; 'P'
-		LDX	#$70 ; 'p'
-		LDY	#$90 ; 'ê'
+		LDA	#$50
+		LDX	#$70
+		LDY	#$90
 		STA	WSYNC
 		STA	$D000
 		STX	$D001
 		STY	$D002
 		STA	WSYNC
-		LDA	#$B0 ; '∞'
-		LDX	#$48 ; 'H'
-		LDY	#$40 ; '@'
+		LDA	#$B0
+		LDX	#$48
+		LDY	#$40
 		STA	WSYNC
 		STA	$D003
 		STX	$D004
 		STY	$D005
 		STA	WSYNC
-		LDA	#$38 ; '8'
-		LDX	#$30 ; '0'
+		LDA	#$38
+		LDX	#$30
 		STA	WSYNC
 		STA	$D006
 		STX	$D007
@@ -2594,7 +2593,7 @@ loc_91DE:
 		STA	COLBK
 		STX	$D016
 		STY	COLPF2
-		LDX	#$23 ; '#'
+		LDX	#$23
 		LDY	$BBDC,X
 
 loc_9242:				; CODE XREF: RAM:9267vj
@@ -2627,11 +2626,10 @@ loc_9242:				; CODE XREF: RAM:9267vj
 ; ---------------------------------------------------------------------------
 
 loc_9284:				; CODE XREF: RAM:760A^j
-		LDA	#$7F ; ''
-		STA	$253
+		ldi	$253, $7F
 		dldi	$254, $91AC
 		LDA	#8
-		LDX	#$23 ; '#'
+		LDX	#$23
 
 loc_9297:				; CODE XREF: RAM:92A5vj
 		LDY	#$C
@@ -2723,7 +2721,7 @@ loc_9332:				; CODE XREF: RAM:932E^j
 loc_934A:				; CODE XREF: RAM:935Bvj
 		CLC
 		LDA	$F0,X
-		ADC	#$80 ; 'Ä'
+		ADC	#$80
 		STA	$F2,X
 		LDA	$F1,X
 		ADC	#0

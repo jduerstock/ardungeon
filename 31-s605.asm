@@ -1301,7 +1301,7 @@ loc_7E82:				; CODE XREF: sub_7E4D+3Fvj
 		STX	$194E
 		STY	$194F
 		LDA	$194C
-		AND	#$F0 ; 'ð'
+		AND	#$F0
 		STA	$1953
 		LDA	$194C
 		AND	#$F
