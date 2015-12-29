@@ -2212,14 +2212,9 @@ unk_9011:
 		.BYTE	0
 		.BYTE	$23 ; #
 		.BYTE	$28 ; (
-:
-unk_9033:	.BYTE	3		; DATA XREF: RAM:8F6D^o
-		.BYTE	$23 ; #
-		.BYTE	1
-		.BYTE	0
-		.BYTE	1
-		.BYTE	 $F
-aStiletto:	.BYTE	"Stiletto",0
+
+unk_9033:
+		Item	$03,$01,$00,$01,"Stiletto"
 		.BYTE	0
 		.BYTE	$FF
 		.BYTE	0
@@ -2240,13 +2235,9 @@ aStiletto:	.BYTE	"Stiletto",0
 		.BYTE	$15
 		.BYTE	$49 ; I
 		.BYTE	1
-unk_9056:	.BYTE	3		; DATA XREF: RAM:8F6F^o
-		.BYTE	$21 ; !
-		.BYTE	1
-		.BYTE	0
-		.BYTE	1
-		.BYTE	 $D
-aDagger:	.BYTE	"Dagger",0
+
+unk_9056:
+		Item	$03,$01,$00,$01,"Dagger"
 		.BYTE	0
 		.BYTE	$FF
 		.BYTE	0
@@ -2267,13 +2258,9 @@ aDagger:	.BYTE	"Dagger",0
 		.BYTE	$14
 		.BYTE	1
 		.BYTE	2
-unk_9077:	.BYTE	3		; DATA XREF: RAM:8F71^o
-		.BYTE	$26 ; &
-		.BYTE	1
-		.BYTE	0
-		.BYTE	1
-		.BYTE	$12
-aNastyKnife:	.BYTE	"Nasty Knife",0
+
+unk_9077:
+		Item	$03,$01,$00,$01,"Nasty Knife"
 		.BYTE	0
 		.BYTE	$FF
 		.BYTE	0
@@ -2294,13 +2281,9 @@ aNastyKnife:	.BYTE	"Nasty Knife",0
 		.BYTE	$16
 		.BYTE	1
 		.BYTE	5
-unk_909D:	.BYTE	3		; DATA XREF: RAM:8F73^o
-		.BYTE	$1F
-		.BYTE	1
-		.BYTE	0
-		.BYTE	4
-		.BYTE	 $B
-aWhip:		.BYTE	"Whip",0
+
+unk_909D:
+		Item	$03,$01,$00,$04,"Whip"
 		.BYTE	0
 		.BYTE	$FF
 		.BYTE	0
