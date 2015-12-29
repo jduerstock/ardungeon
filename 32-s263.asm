@@ -2159,95 +2159,19 @@ unk_9011:
 
 unk_9033:
 		Item	$03,$01,$00,$01,"Stiletto"
-		.BYTE	0
-		.BYTE	$FF
-		.BYTE	0
-		.BYTE	0
-		.BYTE	$15
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	4
-		.BYTE	8
-		.BYTE	$10
-		.BYTE	$15
-		.BYTE	$49 ; I
-		.BYTE	1
+		.BYTE	$00,$FF,$00,$00,$15,$00,$00,$00,$00,$00,$00,$00,$00,$00,$04,$08,$10,$15,$49,$01
 
 unk_9056:
 		Item	$03,$01,$00,$01,"Dagger"
-		.BYTE	0
-		.BYTE	$FF
-		.BYTE	0
-		.BYTE	0
-		.BYTE	$15
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	4
-		.BYTE	6
-		.BYTE	$10
-		.BYTE	$14
-		.BYTE	1
-		.BYTE	2
+		.BYTE	$00,$FF,$00,$00,$15,$00,$00,$00,$00,$00,$00,$00,$00,$00,$04,$06,$10,$14,$01,$02
 
 unk_9077:
 		Item	$03,$01,$00,$01,"Nasty Knife"
-		.BYTE	0
-		.BYTE	$FF
-		.BYTE	0
-		.BYTE	0
-		.BYTE	$16
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	4
-		.BYTE	7
-		.BYTE	$12
-		.BYTE	$16
-		.BYTE	1
-		.BYTE	5
+		.BYTE	$00,$FF,$00,$00,$16,$00,$00,$00,$00,$00,$00,$00,$00,$00,$04,$07,$12,$16,$01,$05
 
 unk_909D:
 		Item	$03,$01,$00,$04,"Whip"
-		.BYTE	0
-		.BYTE	$FF
-		.BYTE	0
-		.BYTE	$12
-		.BYTE	$12
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	4
-		.BYTE	8
-		.BYTE	$12
-		.BYTE	$16
-		.BYTE	$4C ; L
-		.BYTE	1
+		.BYTE	$00,$FF,$00,$12,$12,$00,$00,$00,$00,$00,$00,$00,$00,$00,$04,$08,$12,$16,$4C,$01
 
 iStaff:
 		Item	$03,$01,$00,$03,"Staff"
