@@ -2119,11 +2119,11 @@ off_8F65:	.WORD	unk_8F9B		; DATA XREF: RAM:7A1B^r	RAM:7B1A^r ...
 		.WORD	unk_9011
 		.WORD	unk_9033
 		.WORD	unk_9056
-		.WORD	unk_9077
-		.WORD	unk_909D
+		.WORD	iNastyKnife
+		.WORD	iWhip
 		.WORD	iStaff
 		.WORD	iWoodenClub
-		.WORD	unk_9102
+		.WORD	iBattleAxe
 		.WORD	unk_9127
 		.WORD	unk_914D
 		.WORD	unk_9172
@@ -2165,11 +2165,11 @@ unk_9056:
 		Item	$03,$01,$00,$01,"Dagger"
 		.BYTE	$00,$FF,$00,$00,$15,$00,$00,$00,$00,$00,$00,$00,$00,$00,$04,$06,$10,$14,$01,$02
 
-unk_9077:
+iNastyKnife:
 		Item	$03,$01,$00,$01,"Nasty Knife"
 		.BYTE	$00,$FF,$00,$00,$16,$00,$00,$00,$00,$00,$00,$00,$00,$00,$04,$07,$12,$16,$01,$05
 
-unk_909D:
+iWhip:
 		Item	$03,$01,$00,$04,"Whip"
 		.BYTE	$00,$FF,$00,$12,$12,$00,$00,$00,$00,$00,$00,$00,$00,$00,$04,$08,$12,$16,$4C,$01
 
@@ -2181,7 +2181,7 @@ iWoodenClub:
 		Item	$03,$01,$00,$0A,"Wooden Club"
 		.BYTE	$00,$FF,$00,$17,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$08,$02,$32,$37,$4A,$04
 
-unk_9102:
+iBattleAxe:
 		Item	$03,$01,$00,$0A,"Battle Axe"
 		.BYTE	$00,$FF,$00,$12,$27,$00,$00,$00,$00,$00,$00,$00,$00,$00,$16,$10,$32,$37,$00,$10
 
