@@ -2363,60 +2363,15 @@ aStaff:		.BYTE	"Staff",0
 		.BYTE	$37 ; 7
 		.BYTE	$8F ; è
 		.BYTE	$40 ; @
-unk_90DC:	.BYTE	3		; DATA XREF: RAM:8F77^o
-		.BYTE	$26 ; &
-		.BYTE	1
-		.BYTE	0
-		.BYTE	 $A
-		.BYTE	$12
-aWoodenClub:	.BYTE	"Wooden Club",0
-		.BYTE	0
-		.BYTE	$FF
-		.BYTE	0
-		.BYTE	$17
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	8
-		.BYTE	2
-		.BYTE	$32 ; 2
-		.BYTE	$37 ; 7
-		.BYTE	$4A ; J
-		.BYTE	4
-unk_9102:	.BYTE	3		; DATA XREF: RAM:8F79^o
-		.BYTE	$25 ; %
-		.BYTE	1
-		.BYTE	0
-		.BYTE	 $A
-		.BYTE	$11
-aBattleAxe:	.BYTE	"Battle Axe",0
-		.BYTE	0
-		.BYTE	$FF
-		.BYTE	0
-		.BYTE	$12
-		.BYTE	$27 ; '
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	$16
-		.BYTE	$10
-		.BYTE	$32 ; 2
-		.BYTE	$37 ; 7
-		.BYTE	0
-		.BYTE	$10
+
+unk_90DC:
+		Item	$03,$01,$00,$0A,"Wooden Club"
+		.BYTE	$00,$FF,$00,$17,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$08,$02,$32,$37,$4A,$04
+
+unk_9102:
+		Item	$03,$01,$00,$0A,"Battle Axe"
+		.BYTE	$00,$FF,$00,$12,$27,$00,$00,$00,$00,$00,$00,$00,$00,$00,$16,$10,$32,$37,$00,$10
+
 unk_9127:
 		Item	$03,$01,$00,$05,"Short Sword"
 		.BYTE	$00,$FF,$00,$00,$23,$00,$00,$00,$00,$00,$00,$00,$00,$00,$0A,$0A,$1E,$23,$00,$10
@@ -2432,15 +2387,19 @@ unk_9172:
 unk_9199:
 		Item	$03,$01,$00,$0A,"Large Shield"
 		.BYTE	$00,$FF,$00,$16,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$18,$01,$2D,$32,$02,$60
+
 unk_91C0:
 		Item	$05,$01,$00,$01,"Green Cap with Feather"
 		.BYTE	$00,$02,$01
+
 unk_91E0:
 		Item	$05,$01,$00,$01,"Floppy Leather Hat"
 		.BYTE	$00,$03,$02
+
 unk_91FC:
 		Item	$05,$01,$00,$01,"Leather Sandals"
 		.BYTE	$00,$02,$01
+
 unk_9215:
 		Item	$05,$01,$00,$02,"High Leather Boots"
 		.BYTE	$00,$04,$04
@@ -2764,22 +2723,14 @@ sub_9521:				; CODE XREF: RAM:9431^p	RAM:943C^p ...
 		inc16	off_7
 		CMP	#$1B
 		BEQ	loc_953A
-		STA	(9),Y
-		INC	9
-		BNE	loc_9537
-		INC	$A
-
-loc_9537:				; CODE XREF: RAM:9533^j
+		STA	(off_9),Y
+		inc16	off_9
 		JMP	sub_9521
 ; ---------------------------------------------------------------------------
 
 loc_953A:				; CODE XREF: RAM:952D^j
-		LDA	(7),Y
-		INC	7
-		BNE	loc_9542
-		INC	8
-
-loc_9542:				; CODE XREF: RAM:953E^j
+		LDA	(off_7),Y
+		inc16	off_7
 		CMP	#$FF
 		BNE	loc_9547
 		RTS
