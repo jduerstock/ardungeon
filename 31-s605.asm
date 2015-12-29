@@ -371,11 +371,11 @@ loc_78A2:				; CODE XREF: RAM:78E5vj
 		STA	$B0		; $00A7
 		LDA	($B2),Y		; $00A9
 		BIT	$7E		; $00AB
-		BNE	loc_78C6	; $00AD
+		BNE	:+		; $00AD
 		ORA	#$FF		; $00AF
 		STA	$FFFF,Y		; $00B1
 
-loc_78C6:				; CODE XREF: RAM:78BF^j
+:					; CODE XREF: RAM:78BF^j
 		LDA	$6E		; $00B4
 		ADC	$76		; $00B6
 		STA	$6E		; $00B8
@@ -413,11 +413,7 @@ loc_78EA:				; CODE XREF: sub_7AD4+E0vp
 		LDA	$68
 		EOR	#$FF
 		STA	$68
-		INC	$68
-		BNE	loc_7913
-		INC	$69
-
-loc_7913:				; CODE XREF: RAM:790F^j
+		inc16	$68
 		LDA	#$47 ; 'G'
 		STA	$6D
 
@@ -2363,19 +2359,19 @@ unk_82BF:	.BYTE	$18		; DATA XREF: RAM:83ACvo
 		.BYTE	$FF
 		.BYTE	$FF
 		.BYTE	$FF
-		.BYTE	$BF ; ¿
-		.BYTE	$BF ; ¿
-		.BYTE	$BF ; ¿
-		.BYTE	$BF ; ¿
-		.BYTE	$AA ; ª
-		.BYTE	$EA ; ê
-		.BYTE	$EA ; ê
-		.BYTE	$EB ; ë
-		.BYTE	$EB ; ë
-		.BYTE	$EF ; ï
-		.BYTE	$EF ; ï
+		.BYTE	$BF
+		.BYTE	$BF
+		.BYTE	$BF
+		.BYTE	$BF
+		.BYTE	$AA
+		.BYTE	$EA
+		.BYTE	$EA
+		.BYTE	$EB
+		.BYTE	$EB
+		.BYTE	$EF
+		.BYTE	$EF
 		.BYTE	$FF
-		.BYTE	$BF ; ¿
+		.BYTE	$BF
 		.BYTE	$FF
 		.BYTE	$FF
 		.BYTE	$FF
@@ -2388,7 +2384,7 @@ unk_830C:	.BYTE	$18		; DATA XREF: RAM:83A8vo
 		.BYTE	8
 		.BYTE	1
 		.BYTE	5
-		.BYTE	$AB ; «
+		.BYTE	$AB
 		.BYTE	$FF
 		.BYTE	$FF
 		.BYTE	$FF
@@ -2400,42 +2396,42 @@ unk_830C:	.BYTE	$18		; DATA XREF: RAM:83A8vo
 		.BYTE	$FF
 		.BYTE	$FF
 		.BYTE	$FF
-		.BYTE	$AA ; ª
-		.BYTE	$AA ; ª
-		.BYTE	$AA ; ª
-		.BYTE	$AA ; ª
-		.BYTE	$FA ; ú
+		.BYTE	$AA
+		.BYTE	$AA
+		.BYTE	$AA
+		.BYTE	$AA
+		.BYTE	$FA
 		.BYTE	$FF
 		.BYTE	$FF
 		.BYTE	$FF
-		.BYTE	$BF ; ¿
-		.BYTE	$BF ; ¿
-		.BYTE	$BF ; ¿
-		.BYTE	$BF ; ¿
+		.BYTE	$BF
+		.BYTE	$BF
+		.BYTE	$BF
+		.BYTE	$BF
 		.BYTE	$FF
-		.BYTE	$EA ; ê
-		.BYTE	$EA ; ê
-		.BYTE	$FA ; ú
-		.BYTE	$FA ; ú
-		.BYTE	$FE ; þ
-		.BYTE	$FE ; þ
+		.BYTE	$EA
+		.BYTE	$EA
+		.BYTE	$FA
+		.BYTE	$FA
+		.BYTE	$FE
+		.BYTE	$FE
 		.BYTE	$FF
-		.BYTE	$AA ; ª
-		.BYTE	$AA ; ª
-		.BYTE	$AA ; ª
-		.BYTE	$AA ; ª
-		.BYTE	$AA ; ª
-		.BYTE	$AA ; ª
-		.BYTE	$AA ; ª
-		.BYTE	$AA ; ª
-		.BYTE	$BF ; ¿
-		.BYTE	$AA ; ª
-		.BYTE	$AA ; ª
-		.BYTE	$AB ; «
-		.BYTE	$AB ; «
-		.BYTE	$AF ; ¯
-		.BYTE	$AF ; ¯
-		.BYTE	$BF ; ¿
+		.BYTE	$AA
+		.BYTE	$AA
+		.BYTE	$AA
+		.BYTE	$AA
+		.BYTE	$AA
+		.BYTE	$AA
+		.BYTE	$AA
+		.BYTE	$AA
+		.BYTE	$BF
+		.BYTE	$AA
+		.BYTE	$AA
+		.BYTE	$AB
+		.BYTE	$AB
+		.BYTE	$AF
+		.BYTE	$AF
+		.BYTE	$BF
 		.BYTE	$FF
 		.BYTE	$FF
 		.BYTE	$FF
@@ -4826,7 +4822,7 @@ unk_92DA:	.BYTE	$FF		; DATA XREF: sub_7888+10^w
 		.BYTE	$FF
 		.BYTE	0
 		.BYTE	$FF
-		.BYTE	$6F ; o
+		.BYTE	$6F
 		.BYTE	$FF
 		.BYTE	0
 		.BYTE	$FF
@@ -4890,7 +4886,7 @@ unk_92DA:	.BYTE	$FF		; DATA XREF: sub_7888+10^w
 		.BYTE	$FF
 		.BYTE	0
 		.BYTE	$FF
-		.BYTE	$6F ; o
+		.BYTE	$6F
 		.BYTE	$FF
 		.BYTE	0
 		.BYTE	$FF
