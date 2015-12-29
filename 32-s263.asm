@@ -2121,8 +2121,8 @@ off_8F65:	.WORD	unk_8F9B		; DATA XREF: RAM:7A1B^r	RAM:7B1A^r ...
 		.WORD	unk_9056
 		.WORD	unk_9077
 		.WORD	unk_909D
-		.WORD	unk_90BC
-		.WORD	unk_90DC
+		.WORD	iStaff
+		.WORD	iWoodenClub
 		.WORD	unk_9102
 		.WORD	unk_9127
 		.WORD	unk_914D
@@ -2140,13 +2140,9 @@ off_8F65:	.WORD	unk_8F9B		; DATA XREF: RAM:7A1B^r	RAM:7B1A^r ...
 		.WORD	unk_92D6
 		.WORD	unk_92F3
 		.WORD	unk_9310
-unk_8F9B:	.BYTE	4		; DATA XREF: RAM:off_8F65^o
-		.BYTE	$29
-		.BYTE	1
-		.BYTE	0
-		.BYTE	8
-		.BYTE	$1A
-aLeatherBreastp:.BYTE	"Leather Breastplate",0
+
+unk_8F9B:
+		Item	$04,$01,$00,$08,"Leather Breastplate"
 		.BYTE	0
 		.BYTE	1
 		.BYTE	$23 ; #
@@ -2162,13 +2158,9 @@ aLeatherBreastp:.BYTE	"Leather Breastplate",0
 		.BYTE	0
 		.BYTE	$23 ; #
 		.BYTE	$28 ; (
-unk_8FC4:	.BYTE	4		; DATA XREF: RAM:8F67^o
-		.BYTE	$27 ; '
-		.BYTE	1
-		.BYTE	0
-		.BYTE	1
-		.BYTE	$18
-aLeatherGauntle:.BYTE	"Leather Gauntlets",0
+
+unk_8FC4:
+		Item	$04,$01,$00,$01,"Leather Gauntlets"
 		.BYTE	0
 		.BYTE	2
 		.BYTE	$23 ; #
@@ -2184,13 +2176,9 @@ aLeatherGauntle:.BYTE	"Leather Gauntlets",0
 		.BYTE	0
 		.BYTE	$23 ; #
 		.BYTE	$28 ; (
-unk_8FEB:	.BYTE	4		; DATA XREF: RAM:8F69^o
-		.BYTE	$26 ; &
-		.BYTE	1
-		.BYTE	0
-		.BYTE	4
-		.BYTE	$17
-aLeatherLegging:.BYTE	"Leather Leggings",0
+
+unk_8FEB:
+		Item	$04,$01,$00,$04,"Leather Leggings"
 		.BYTE	0
 		.BYTE	3
 		.BYTE	$23 ; #
@@ -2206,13 +2194,9 @@ aLeatherLegging:.BYTE	"Leather Leggings",0
 		.BYTE	0
 		.BYTE	$23 ; #
 		.BYTE	$28 ; (
-unk_9011:	.BYTE	4		; DATA XREF: RAM:8F6B^o
-		.BYTE	$22 ; "
-		.BYTE	1
-		.BYTE	0
-		.BYTE	2
-		.BYTE	$13
-aLeatherHelm:	.BYTE	"Leather Helm",0
+
+unk_9011:
+		Item	$04,$01,$00,$02,"Leather Helm"
 		.BYTE	0
 		.BYTE	0
 		.BYTE	$23 ; #
@@ -2228,6 +2212,7 @@ aLeatherHelm:	.BYTE	"Leather Helm",0
 		.BYTE	0
 		.BYTE	$23 ; #
 		.BYTE	$28 ; (
+:
 unk_9033:	.BYTE	3		; DATA XREF: RAM:8F6D^o
 		.BYTE	$23 ; #
 		.BYTE	1
@@ -2336,35 +2321,12 @@ aWhip:		.BYTE	"Whip",0
 		.BYTE	$16
 		.BYTE	$4C ; L
 		.BYTE	1
-unk_90BC:	.BYTE	3		; DATA XREF: RAM:8F75^o
-		.BYTE	$20
-		.BYTE	1
-		.BYTE	0
-		.BYTE	3
-		.BYTE	 $C
-aStaff:		.BYTE	"Staff",0
-		.BYTE	0
-		.BYTE	$FF
-		.BYTE	0
-		.BYTE	$16
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	0
-		.BYTE	6
-		.BYTE	$12
-		.BYTE	$32 ; 2
-		.BYTE	$37 ; 7
-		.BYTE	$8F ; è
-		.BYTE	$40 ; @
 
-unk_90DC:
+iStaff:
+		Item	$03,$01,$00,$03,"Staff"
+		.BYTE	$00,$FF,$00,$16,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$06,$12,$32,$37,$8F,$40
+
+iWoodenClub:
 		Item	$03,$01,$00,$0A,"Wooden Club"
 		.BYTE	$00,$FF,$00,$17,$00,$00,$00,$00,$00,$00,$00,$00,$00,$00,$08,$02,$32,$37,$4A,$04
 
