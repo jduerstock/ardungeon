@@ -151,7 +151,7 @@ $(BINARIES) 11-s680.bin: $(OBJECTS)
 	sha1sum -c 11-s259.sha1
 
 11-s259.bin.crypt: 11-s259.bin
-	./encrypt.php 11-s259.bin 4102001a983277ddd64843acbaf7d040
+	./encrypt.py 11-s259.bin 4102001a983277ddd64843acbaf7d040
 
 11-s311.bin: 11-s311.asm
 	cl65 --start-addr 0x0100 -t none $< -o $@
@@ -160,10 +160,10 @@ $(BINARIES) 11-s680.bin: $(OBJECTS)
 11-s312.bin: 11-s312.asm
 	cl65 --start-addr 0x7600 -t none $< -o $@
 	sha1sum -c 11-s312.sha1
-	./encrypt.php 11-s312.bin 413700204ce23c41cde1a12857f6d83a
+	./encrypt.py 11-s312.bin 413700204ce23c41cde1a12857f6d83a
 
 11-s312.bin.crypt: 11-s312.bin
-	./encrypt.php 11-s312.bin 413700204ce23c41cde1a12857f6d83a
+	./encrypt.py 11-s312.bin 413700204ce23c41cde1a12857f6d83a
 
 11-s376.bin: 11-s376.asm
 	cl65 --start-addr 0x0100 -t none 11-s376.asm -o 11-s376.bin
@@ -172,7 +172,7 @@ $(BINARIES) 11-s680.bin: $(OBJECTS)
 11-s377.bin: 11-s377.asm
 	cl65 --start-addr 0x9800 -t none 11-s377.asm -o 11-s377.bin
 	sha1sum -c 11-s377.sha1
-	./encrypt.php 11-s377.bin 4178002547123a1dffaaa0d4ac13cc22
+	./encrypt.py 11-s377.bin 4178002547123a1dffaaa0d4ac13cc22
 
 11-s451.bin: 11-s451.asm
 	cl65 --start-addr 0x0100 -t none 11-s451.asm -o 11-s451.bin
@@ -181,7 +181,7 @@ $(BINARIES) 11-s680.bin: $(OBJECTS)
 11-s452.bin: 11-s452.asm
 	cl65 --start-addr 0x7600 -t none 11-s452.asm -o 11-s452.bin
 	sha1sum -c 11-s452.sha1
-	./encrypt.php 11-s452.bin 41c300074f7512e77eb2f1b645eb0dcd
+	./encrypt.py 11-s452.bin 41c300074f7512e77eb2f1b645eb0dcd
 
 11-s466.bin: 11-s466.asm
 	cl65 --start-addr 0x0100 -t none 11-s466.asm -o 11-s466.bin
@@ -190,7 +190,7 @@ $(BINARIES) 11-s680.bin: $(OBJECTS)
 11-s467.bin: 11-s467.asm
 	cl65 --start-addr 0x7600 -t none 11-s467.asm -o 11-s467.bin
 	sha1sum -c 11-s467.sha1
-	./encrypt.php 11-s467.bin 41d200064bc5aea0920931376c30af6e
+	./encrypt.py 11-s467.bin 41d200064bc5aea0920931376c30af6e
 
 11-s480.bin: 11-s480.asm
 	cl65 --start-addr 0x0100 -t none 11-s480.asm -o 11-s480.bin
@@ -199,7 +199,7 @@ $(BINARIES) 11-s680.bin: $(OBJECTS)
 11-s481.bin: 11-s481.asm
 	cl65 --start-addr 0x6300 -t none 11-s481.asm -o 11-s481.bin
 	sha1sum -c 11-s481.sha1
-	./encrypt.php 11-s481.bin 41e00012ce2968152c088c20cabc4d9d
+	./encrypt.py 11-s481.bin 41e00012ce2968152c088c20cabc4d9d
 
 11-s517.bin: 11-s517.asm
 	cl65 --start-addr 0x0100 -t none 11-s517.asm -o 11-s517.bin
@@ -208,7 +208,7 @@ $(BINARIES) 11-s680.bin: $(OBJECTS)
 11-s518.bin: 11-s518.asm
 	cl65 --start-addr 0x1400 -t none 11-s518.asm -o 11-s518.bin
 	sha1sum -c 11-s518.sha1
-	./encrypt.php 11-s518.bin 4205004fd4eeca7c58be41ff111a97bd
+	./encrypt.py 11-s518.bin 4205004fd4eeca7c58be41ff111a97bd
 
 11-s676.bin: 11-s676.asm
 	cl65 --start-addr 0x0100 -t none 11-s676.asm -o 11-s676.bin
@@ -217,7 +217,7 @@ $(BINARIES) 11-s680.bin: $(OBJECTS)
 11-s677.bin: 11-s677.asm
 	cl65 --start-addr 0x9000 -t none 11-s677.asm -o 11-s677.bin
 	sha1sum -c 11-s677.sha1
-	./encrypt.php 11-s677.bin 42a4000198528330ebd15088a888464a
+	./encrypt.py 11-s677.bin 42a4000198528330ebd15088a888464a
 
 #11-s679.bin: 11-s679.asm
 #	cl65 --start-addr 0x0100 -t none 11-s679.asm -o 11-s679.bin
@@ -226,10 +226,10 @@ $(BINARIES) 11-s680.bin: $(OBJECTS)
 #11-s680.bin: 11-s680.asm
 #	cl65 --start-addr 0x9000 -t none 11-s680.asm -o 11-s680.bin
 #	sha1sum -c 11-s680.sha1
-#	./encrypt.php 11-s680.bin 42a70001985273ef37bb9374faa9db68
+#	./encrypt.py 11-s680.bin 42a70001985273ef37bb9374faa9db68
 
 11-s680.bin.crypt: 11-s680.bin
-	./encrypt.php 11-s680.bin 42a70001985273ef37bb9374faa9db68
+	./encrypt.py 11-s680.bin 42a70001985273ef37bb9374faa9db68
 
 11-s682.bin: 11-s682.asm
 	cl65 --start-addr 0x1400 -t none 11-s682.asm -o 11-s682.bin
@@ -247,7 +247,7 @@ $(BINARIES) 11-s680.bin: $(OBJECTS)
 21-s011.bin: 21-s011.asm
 	cl65 --start-addr 0xAC00 -t none 21-s011.asm -o 21-s011.bin
 	sha1sum -c 21-s011.sha1
-	./encrypt.php 21-s011.bin 480a00140701d7aad31a3267b2a36fe6
+	./encrypt.py 21-s011.bin 480a00140701d7aad31a3267b2a36fe6
 
 21-s051.bin: 21-s051.asm
 	cl65 --start-addr 0x0100 -t none 21-s051.asm -o 21-s051.bin
@@ -256,7 +256,7 @@ $(BINARIES) 11-s680.bin: $(OBJECTS)
 21-s052.bin: 21-s052.asm
 	cl65 --start-addr 0xAC00 -t none 21-s052.asm -o 21-s052.bin
 	sha1sum -c 21-s052.sha1
-	./encrypt.php 21-s052.bin 4833001465901386ea070ccfc955bdf0
+	./encrypt.py 21-s052.bin 4833001465901386ea070ccfc955bdf0
 
 21-s092.bin: 21-s092.asm
 	cl65 --start-addr 0x0100 -t none 21-s092.asm -o 21-s092.bin
@@ -265,7 +265,7 @@ $(BINARIES) 11-s680.bin: $(OBJECTS)
 21-s093.bin: 21-s093.asm
 	cl65 --start-addr 0xAC00 -t none 21-s093.asm -o 21-s093.bin
 	sha1sum -c 21-s093.sha1
-	./encrypt.php 21-s093.bin 485c001408c35769c3630e0a201cbeaa
+	./encrypt.py 21-s093.bin 485c001408c35769c3630e0a201cbeaa
 
 21-s133.bin: 21-s133.asm
 	cl65 --start-addr 0x0100 -t none 21-s133.asm -o 21-s133.bin
@@ -274,7 +274,7 @@ $(BINARIES) 11-s680.bin: $(OBJECTS)
 21-s134.bin: 21-s134.asm
 	cl65 --start-addr 0xAC00 -t none 21-s134.asm -o 21-s134.bin
 	sha1sum -c 21-s134.sha1
-	./encrypt.php 21-s134.bin 48850014f99125ed7ce0a9ead0cb01fe
+	./encrypt.py 21-s134.bin 48850014f99125ed7ce0a9ead0cb01fe
 
 21-s174.bin: 21-s174.asm
 	cl65 --start-addr 0x0100 -t none 21-s174.asm -o 21-s174.bin
@@ -283,7 +283,7 @@ $(BINARIES) 11-s680.bin: $(OBJECTS)
 21-s175.bin: 21-s175.asm
 	cl65 --start-addr 0xAC00 -t none 21-s175.asm -o 21-s175.bin
 	sha1sum -c 21-s175.sha1
-	./encrypt.php 21-s175.bin 48ae00140f440b8d1e26b98c5c7a8b98
+	./encrypt.py 21-s175.bin 48ae00140f440b8d1e26b98c5c7a8b98
 
 21-s215.bin: 21-s215.asm
 	cl65 --start-addr 0x0100 -t none $< -o $@
@@ -292,7 +292,7 @@ $(BINARIES) 11-s680.bin: $(OBJECTS)
 21-s216.bin: 21-s216.asm
 	cl65 --start-addr 0xAC00 -t none $< -o $@
 	sha1sum -c 21-s216.sha1
-	./encrypt.php 21-s216.bin 48d700145c3854ea62676f9652bb2e66
+	./encrypt.py 21-s216.bin 48d700145c3854ea62676f9652bb2e66
 
 21-s256.bin: 21-s256.asm
 	cl65 --start-addr 0x0100 -t none $< -o $@
@@ -301,7 +301,7 @@ $(BINARIES) 11-s680.bin: $(OBJECTS)
 21-s257.bin: 21-s257.asm
 	cl65 --start-addr 0xAC00 -t none $< -o $@
 	sha1sum -c 21-s257.sha1
-	./encrypt.php 21-s257.bin 49000014777d4ccee8a87674abfae899
+	./encrypt.py 21-s257.bin 49000014777d4ccee8a87674abfae899
 
 21-s297.bin: 21-s297.asm
 	cl65 --start-addr 0x0100 -t none $< -o $@
@@ -310,7 +310,7 @@ $(BINARIES) 11-s680.bin: $(OBJECTS)
 21-s298.bin: 21-s298.asm
 	cl65 --start-addr 0x96F0 -t none $< -o $@
 	sha1sum -c 21-s298.sha1
-	./encrypt.php 21-s298.bin 49291015cfb36435a36778265e8742c4
+	./encrypt.py 21-s298.bin 49291015cfb36435a36778265e8742c4
 
 21-s341.bin: 21-s341.asm
 	cl65 --start-addr 0x0100 -t none $< -o $@
@@ -319,7 +319,7 @@ $(BINARIES) 11-s680.bin: $(OBJECTS)
 21-s342.bin: 21-s342.asm
 	cl65 --start-addr 0x96F0 -t none $< -o $@
 	sha1sum -c 21-s342.sha1
-	./encrypt.php 21-s342.bin 495510150c73dbbdf8c1e78f1b638880
+	./encrypt.py 21-s342.bin 495510150c73dbbdf8c1e78f1b638880
 
 21-s385.bin: 21-s385.asm
 	cl65 --start-addr 0x0100 -t none $< -o $@
@@ -328,7 +328,7 @@ $(BINARIES) 11-s680.bin: $(OBJECTS)
 21-s386.bin: 21-s386.asm
 	cl65 --start-addr 0x96F0 -t none $< -o $@
 	sha1sum -c 21-s386.sha1
-	./encrypt.php 21-s386.bin 498110156789a346853f939ebe74c029
+	./encrypt.py 21-s386.bin 498110156789a346853f939ebe74c029
 
 21-s429.bin: 21-s429.asm
 	cl65 --start-addr 0x0100 -t none $< -o $@
@@ -337,7 +337,7 @@ $(BINARIES) 11-s680.bin: $(OBJECTS)
 21-s430.bin: 21-s430.asm
 	cl65 --start-addr 0x96F0 -t none $< -o $@
 	sha1sum -c 21-s430.sha1
-	./encrypt.php 21-s430.bin 49ad10153ce930547e87e90ce699d934
+	./encrypt.py 21-s430.bin 49ad10153ce930547e87e90ce699d934
 
 21-s473.bin: 21-s473.asm
 	cl65 --start-addr 0x0100 -t none $< -o $@
@@ -346,7 +346,7 @@ $(BINARIES) 11-s680.bin: $(OBJECTS)
 21-s474.bin: 21-s474.asm
 	cl65 --start-addr 0x96F0 -t none $< -o $@
 	sha1sum -c 21-s474.sha1
-	./encrypt.php 21-s474.bin 49d9101558e47ef07dc15a4902399323
+	./encrypt.py 21-s474.bin 49d9101558e47ef07dc15a4902399323
 
 21-s517.bin: 21-s517.asm
 	cl65 --start-addr 0x0100 -t none $< -o $@
@@ -355,7 +355,7 @@ $(BINARIES) 11-s680.bin: $(OBJECTS)
 21-s518.bin: 21-s518.asm
 	cl65 --start-addr 0x96F0 -t none $< -o $@
 	sha1sum -c 21-s518.sha1
-	./encrypt.php 21-s518.bin 4a0510159e6c47b6757d09d1606fe295
+	./encrypt.py 21-s518.bin 4a0510159e6c47b6757d09d1606fe295
 
 21-s561.bin: 21-s561.asm
 	cl65 --start-addr 0x0100 -t none $< -o $@
@@ -364,7 +364,7 @@ $(BINARIES) 11-s680.bin: $(OBJECTS)
 21-s562.bin: 21-s562.asm
 	cl65 --start-addr 0x96F0 -t none $< -o $@
 	sha1sum -c 21-s562.sha1
-	./encrypt.php 21-s562.bin 4a3100059e9f856b4097a277650c3855
+	./encrypt.py 21-s562.bin 4a3100059e9f856b4097a277650c3855
 
 21-s572.bin: 21-s572.asm
 	cl65 --start-addr 0x0100 -t none $< -o $@
@@ -375,7 +375,7 @@ $(BINARIES) 11-s680.bin: $(OBJECTS)
 	ca65 -D D2S1 -t none 31-s605.asm  -o 21-s573.o
 	ld65 -S 0x7600 -t none -o 21-s573.bin 21-s573.o 
 	sha1sum -c 21-s573.sha1
-	./encrypt.php 21-s573.bin 4a3cf020b96d440d7354693bd1c29c78
+	./encrypt.py 21-s573.bin 4a3cf020b96d440d7354693bd1c29c78
 
 21-s639.bin: 21-s639.asm
 	cl65 --start-addr 0x0100 -t none $< -o $@
@@ -384,7 +384,7 @@ $(BINARIES) 11-s680.bin: $(OBJECTS)
 21-s640.bin: 21-s640.asm
 	cl65 --start-addr 0x7600 -t none $< -o $@
 	sha1sum -c 21-s640.sha1
-	./encrypt.php 21-s640.bin 4a7f0006ef443ea2a15a6d2ccbeaa719
+	./encrypt.py 21-s640.bin 4a7f0006ef443ea2a15a6d2ccbeaa719
 
 21-s652.bin: 21-s652.asm
 	cl65 --start-addr 0x0100 -t none $< -o $@
@@ -393,7 +393,7 @@ $(BINARIES) 11-s680.bin: $(OBJECTS)
 21-s653.bin: 21-s653.asm
 	cl65 --start-addr 0x7600 -t none $< -o $@
 	sha1sum -c 21-s653.sha1
-	./encrypt.php 21-s653.bin 4a8c00169cec8be6c28a80d7714853eb
+	./encrypt.py 21-s653.bin 4a8c00169cec8be6c28a80d7714853eb
 
 21-s697.bin: 21-s697.asm
 	cl65 --start-addr 0x1000 -t none $< -o $@
@@ -406,7 +406,7 @@ $(BINARIES) 11-s680.bin: $(OBJECTS)
 22-s002.bin: 22-s002.asm
 	cl65 --start-addr 0x7600 -t none 22-s002.asm -o 22-s002.bin
 	sha1sum -c 22-s002.sha1
-	./encrypt.php 22-s002.bin 4c01001186504a5424a90c7d0039d1a8
+	./encrypt.py 22-s002.bin 4c01001186504a5424a90c7d0039d1a8
 
 22-s036.bin: 22-s036.asm
 	cl65 --start-addr 0x0100 -t none 22-s036.asm -o 22-s036.bin
@@ -415,7 +415,7 @@ $(BINARIES) 11-s680.bin: $(OBJECTS)
 22-s037.bin: 22-s037.asm
 	cl65 --start-addr 0x7600 -t none 22-s037.asm -o 22-s037.bin
 	sha1sum -c 22-s037.sha1
-	./encrypt.php 22-s037.bin 4c24001c27979f0b09df260581395d49
+	./encrypt.py 22-s037.bin 4c24001c27979f0b09df260581395d49
 
 22-s093.bin: 22-s093.asm
 	cl65 --start-addr 0x0100 -t none 22-s093.asm -o 22-s093.bin
@@ -424,7 +424,7 @@ $(BINARIES) 11-s680.bin: $(OBJECTS)
 22-s094.bin: 22-s094.asm
 	cl65 --start-addr 0x7600 -t none 22-s094.asm -o 22-s094.bin
 	sha1sum -c 22-s094.sha1
-	./encrypt.php 22-s094.bin 4c5d001478244b84acdb1b20c6310ae9
+	./encrypt.py 22-s094.bin 4c5d001478244b84acdb1b20c6310ae9
 
 22-s134.bin: 22-s134.asm
 	cl65 --start-addr 0x0100 -t none 22-s134.asm -o 22-s134.bin
@@ -433,7 +433,7 @@ $(BINARIES) 11-s680.bin: $(OBJECTS)
 22-s135.bin: 22-s135.asm
 	cl65 --start-addr 0x7600 -t none 22-s135.asm -o 22-s135.bin
 	sha1sum -c 22-s135.sha1
-	./encrypt.php 22-s135.bin 4c8600109d95bd998fe6e377a3ba21ca
+	./encrypt.py 22-s135.bin 4c8600109d95bd998fe6e377a3ba21ca
 
 22-s167.bin: 22-s167.asm
 	cl65 --start-addr 0x0100 -t none 22-s167.asm -o 22-s167.bin
@@ -442,7 +442,7 @@ $(BINARIES) 11-s680.bin: $(OBJECTS)
 22-s168.bin: 22-s168.asm
 	cl65 --start-addr 0x7600 -t none 22-s168.asm -o 22-s168.bin
 	sha1sum -c 22-s168.sha1
-	./encrypt.php 22-s168.bin 4ca7000f70994ef6378acc8dac478494
+	./encrypt.py 22-s168.bin 4ca7000f70994ef6378acc8dac478494
 
 22-s198.bin: 22-s198.asm
 	cl65 --start-addr 0x0100 -t none 22-s198.asm -o 22-s198.bin
@@ -451,7 +451,7 @@ $(BINARIES) 11-s680.bin: $(OBJECTS)
 22-s199.bin: 22-s199.asm
 	cl65 --start-addr 0x7600 -t none 22-s199.asm -o 22-s199.bin
 	sha1sum -c 22-s199.sha1
-	./encrypt.php 22-s199.bin 4cc600205b702188ee817322afd5716d
+	./encrypt.py 22-s199.bin 4cc600205b702188ee817322afd5716d
 
 22-s263.bin: 22-s263.asm
 	cl65 --start-addr 0x0100 -t none 22-s263.asm -o 22-s263.bin
@@ -460,7 +460,7 @@ $(BINARIES) 11-s680.bin: $(OBJECTS)
 22-s264.bin: 22-s264.asm
 	cl65 --start-addr 0x7600 -t none 22-s264.asm -o 22-s264.bin
 	sha1sum -c 22-s264.sha1
-	./encrypt.php 22-s264.bin 4d070022e81d752c134e4b9d68059d22
+	./encrypt.py 22-s264.bin 4d070022e81d752c134e4b9d68059d22
 
 22-s322.bin: 22-s322.asm
 	cl65 --start-addr 0x0100 -t none 22-s322.asm -o 22-s322.bin
@@ -469,7 +469,7 @@ $(BINARIES) 11-s680.bin: $(OBJECTS)
 22-s323.bin: 22-s323.asm
 	cl65 --start-addr 0x7600 -t none 22-s323.asm -o 22-s323.bin
 	sha1sum -c 22-s323.sha1
-	./encrypt.php 22-s323.bin 4d4c00103447f075cb8a1c2aa8059458
+	./encrypt.py 22-s323.bin 4d4c00103447f075cb8a1c2aa8059458
 
 22-s365.bin: 22-s365.asm
 	cl65 --start-addr 0x0100 -t none 22-s365.asm -o 22-s365.bin
@@ -478,7 +478,7 @@ $(BINARIES) 11-s680.bin: $(OBJECTS)
 22-s366.bin: 22-s366.asm
 	cl65 --start-addr 0x7600 -t none 22-s366.asm -o 22-s366.bin
 	sha1sum -c 22-s366.sha1
-	./encrypt.php 22-s366.bin 4d6d001583762d5fb6a7a9a80c21a204
+	./encrypt.py 22-s366.bin 4d6d001583762d5fb6a7a9a80c21a204
 
 22-s408.bin: 22-s408.asm
 	cl65 --start-addr 0x0100 -t none 22-s408.asm -o 22-s408.bin
@@ -487,7 +487,7 @@ $(BINARIES) 11-s680.bin: $(OBJECTS)
 22-s409.bin: 22-s409.asm
 	cl65 --start-addr 0x7600 -t none 22-s409.asm -o 22-s409.bin
 	sha1sum -c 22-s409.sha1
-	./encrypt.php 22-s409.bin 4d98000bc49ad0fdea9e2edbf4b33776
+	./encrypt.py 22-s409.bin 4d98000bc49ad0fdea9e2edbf4b33776
 
 22-s431.bin: 22-s431.asm
 	cl65 --start-addr 0x0100 -t none 22-s431.asm -o 22-s431.bin
@@ -496,7 +496,7 @@ $(BINARIES) 11-s680.bin: $(OBJECTS)
 22-s432.bin: 22-s432.asm
 	cl65 --start-addr 0x7600 -t none 22-s432.asm -o 22-s432.bin
 	sha1sum -c 22-s432.sha1
-	./encrypt.php 22-s432.bin 4daf001fc23f6bcde8dbbe36ffa5eb2b
+	./encrypt.py 22-s432.bin 4daf001fc23f6bcde8dbbe36ffa5eb2b
 
 22-s494.bin: 22-s494.asm
 	cl65 --start-addr 0x0100 -t none 22-s494.asm -o 22-s494.bin
@@ -505,7 +505,7 @@ $(BINARIES) 11-s680.bin: $(OBJECTS)
 22-s495.bin: 22-s495.asm
 	cl65 --start-addr 0x7600 -t none 22-s495.asm -o 22-s495.bin
 	sha1sum -c 22-s495.sha1
-	./encrypt.php 22-s495.bin 4dee0007244a59b3e9244ec068dbe4c2
+	./encrypt.py 22-s495.bin 4dee0007244a59b3e9244ec068dbe4c2
 
 22-s509.bin: 22-s509.asm
 	cl65 --start-addr 0x0100 -t none 22-s509.asm -o 22-s509.bin
@@ -514,7 +514,7 @@ $(BINARIES) 11-s680.bin: $(OBJECTS)
 22-s510.bin: 22-s510.asm
 	cl65 --start-addr 0x7600 -t none 22-s510.asm -o 22-s510.bin
 	sha1sum -c 22-s510.sha1
-	./encrypt.php 22-s510.bin 4dfd0004d5da77b37f30b253f51eed35
+	./encrypt.py 22-s510.bin 4dfd0004d5da77b37f30b253f51eed35
 
 22-s518.bin: 22-s518.asm
 	cl65 --start-addr 0x0100 -t none 22-s518.asm -o 22-s518.bin
@@ -523,7 +523,7 @@ $(BINARIES) 11-s680.bin: $(OBJECTS)
 22-s519.bin: 22-s519.asm
 	cl65 --start-addr 0x7600 -t none 22-s519.asm -o 22-s519.bin
 	sha1sum -c 22-s519.sha1
-	./encrypt.php 22-s519.bin 4e0680081fb8e48ed09e5149acbe74e2
+	./encrypt.py 22-s519.bin 4e0680081fb8e48ed09e5149acbe74e2
 
 22-s536.bin: 22-s536.asm
 	cl65 --start-addr 0x0100 -t none 22-s536.asm -o 22-s536.bin
@@ -532,7 +532,7 @@ $(BINARIES) 11-s680.bin: $(OBJECTS)
 22-s537.bin: 22-s537.asm
 	cl65 --start-addr 0x96F0 -t none 22-s537.asm -o 22-s537.bin
 	sha1sum -c 22-s537.sha1
-	./encrypt.php 22-s537.bin 4e1800056a9e8dd3251cec89d66e91d4
+	./encrypt.py 22-s537.bin 4e1800056a9e8dd3251cec89d66e91d4
 
 22-s547.bin: 22-s547.asm
 	cl65 --start-addr 0x1000 -t none 22-s547.asm -o 22-s547.bin
@@ -545,7 +545,7 @@ $(BINARIES) 11-s680.bin: $(OBJECTS)
 31-s002.bin: 31-s002.asm
 	cl65 --start-addr 0x7600 -t none 31-s002.asm -o 31-s002.bin
 	sha1sum -c 31-s002.sha1
-	./encrypt.php 31-s002.bin 5001003897e7837b8138bbe947bdc804
+	./encrypt.py 31-s002.bin 5001003897e7837b8138bbe947bdc804
 
 31-s114.bin: 31-s114.asm
 	cl65 --start-addr 0x0100 -t none 31-s114.asm -o 31-s114.bin
@@ -554,7 +554,7 @@ $(BINARIES) 11-s680.bin: $(OBJECTS)
 31-s115.bin: 31-s115.asm
 	cl65 --start-addr 0x7600 -t none 31-s115.asm -o 31-s115.bin
 	sha1sum -c 31-s115.sha1
-	./encrypt.php 31-s115.bin 5072002ab373dd0bb46538f8f006a515
+	./encrypt.py 31-s115.bin 5072002ab373dd0bb46538f8f006a515
 
 31-s199.bin: 31-s199.asm
 	cl65 --start-addr 0x0100 -t none 31-s199.asm -o 31-s199.bin
@@ -563,13 +563,13 @@ $(BINARIES) 11-s680.bin: $(OBJECTS)
 31-s200.bin: 31-s200.asm
 	cl65 --start-addr 0x7600 -t none 31-s200.asm -o 31-s200.bin
 	sha1sum -c 31-s200.sha1
-	./encrypt.php 31-s200.bin 50c70012858d6deaeda0885b036337d8
+	./encrypt.py 31-s200.bin 50c70012858d6deaeda0885b036337d8
 
 31-s236.bin: 31-s236.asm 31-s236.cfg
 	ca65 -o 31-s236.o 31-s236.asm
 	ld65 -o 31-s236.bin -C 31-s236.cfg 31-s236.o
 	sha1sum -c 31-s236.sha1
-	./encrypt.php 31-s236.bin 00000000000000000000000000000000
+	./encrypt.py 31-s236.bin 00000000000000000000000000000000
 
 31-s588.bin: 31-s588.asm
 	cl65 --start-addr 0x1400 -t none 31-s588.asm -o 31-s588.bin
@@ -582,7 +582,7 @@ $(BINARIES) 11-s680.bin: $(OBJECTS)
 31-s590.bin: 31-s590.asm
 	cl65 --start-addr 0x7600 -t none 31-s590.asm -o 31-s590.bin
 	sha1sum -c 31-s590.sha1
-	./encrypt.php 31-s590.bin 524d00074f752ca80d01c68231b9a298
+	./encrypt.py 31-s590.bin 524d00074f752ca80d01c68231b9a298
 
 31-s604.bin: 31-s604.asm
 	cl65 --start-addr 0x0100 -t none 31-s604.asm -o 31-s604.bin
@@ -593,7 +593,7 @@ $(BINARIES) 11-s680.bin: $(OBJECTS)
 	ca65 -D D3S1 -t none 31-s605.asm -o 31-s605.o
 	ld65 -S 0x7600 -t none -o 31-s605.bin 31-s605.o 
 	sha1sum -c 31-s605.sha1
-	./encrypt.php 31-s605.bin 525cf020b96d3e0fea81bd265e2a247b
+	./encrypt.py 31-s605.bin 525cf020b96d3e0fea81bd265e2a247b
 
 31-s671.bin: 31-s671.asm
 	cl65 --start-addr 0x0100 -t none 31-s671.asm -o 31-s671.bin
@@ -602,7 +602,7 @@ $(BINARIES) 11-s680.bin: $(OBJECTS)
 31-s672.bin: 31-s672.asm
 	cl65 --start-addr 0x96f0 -t none 31-s672.asm -o 31-s672.bin
 	sha1sum -c 31-s672.sha1
-	./encrypt.php 31-s672.bin 529f0005669d88b13ed148e210e57f83
+	./encrypt.py 31-s672.bin 529f0005669d88b13ed148e210e57f83
 
 31-s682.bin: 31-s682.asm
 	cl65 --start-addr 0x1400 -t none 31-s682.asm -o 31-s682.bin
@@ -615,7 +615,7 @@ $(BINARIES) 11-s680.bin: $(OBJECTS)
 32-s002.bin: 32-s002.asm
 	cl65 --start-addr 0x7600 -t none 32-s002.asm -o 32-s002.bin
 	sha1sum -c 32-s002.sha1
-	./encrypt.php 32-s002.bin 54010010a05fd0547bd9ae31b386849c
+	./encrypt.py 32-s002.bin 54010010a05fd0547bd9ae31b386849c
 
 32-s034.bin: 32-s034.asm
 	cl65 --start-addr 0x0100 -t none 32-s034.asm -o 32-s034.bin
@@ -624,7 +624,7 @@ $(BINARIES) 11-s680.bin: $(OBJECTS)
 32-s035.bin: 32-s035.asm
 	cl65 --start-addr 0x7600 -t none 32-s035.asm -o 32-s035.bin
 	sha1sum -c 32-s035.sha1
-	./encrypt.php 32-s035.bin 5422001cc443275ea2a1a8a800a5da1e
+	./encrypt.py 32-s035.bin 5422001cc443275ea2a1a8a800a5da1e
 
 32-s091.bin: 32-s091.asm
 	cl65 --start-addr 0x0100 -t none 32-s091.asm -o 32-s091.bin
@@ -633,7 +633,7 @@ $(BINARIES) 11-s680.bin: $(OBJECTS)
 32-s092.bin: 32-s092.asm
 	cl65 --start-addr 0x7600 -t none 32-s092.asm -o 32-s092.bin
 	sha1sum -c 32-s092.sha1
-	./encrypt.php 32-s092.bin 545b00112026f08728733f4de9dceb2c
+	./encrypt.py 32-s092.bin 545b00112026f08728733f4de9dceb2c
 
 32-s126.bin: 32-s126.asm
 	cl65 --start-addr 0x0100 -t none 32-s126.asm -o 32-s126.bin
@@ -642,7 +642,7 @@ $(BINARIES) 11-s680.bin: $(OBJECTS)
 32-s127.bin: 32-s127.asm
 	cl65 --start-addr 0x7600 -t none 32-s127.asm -o 32-s127.bin
 	sha1sum -c 32-s127.sha1
-	./encrypt.php 32-s127.bin 547e001cd04061c7b2e9e2a38787b592
+	./encrypt.py 32-s127.bin 547e001cd04061c7b2e9e2a38787b592
 
 32-s183.bin: 32-s183.asm
 	cl65 --start-addr 0x0100 -t none 32-s183.asm -o 32-s183.bin
@@ -652,7 +652,7 @@ $(BINARIES) 11-s680.bin: $(OBJECTS)
 	ca65 -o 32-s184.o 32-s184.asm
 	ld65 -o 32-s184.bin -C 32-s184.cfg 32-s184.o
 	sha1sum -c 32-s184.sha1
-	./encrypt.php 32-s184.bin 54b70027140ebef8a25661c5160a2805
+	./encrypt.py 32-s184.bin 54b70027140ebef8a25661c5160a2805
 
 32-s262.bin: 32-s262.asm
 	cl65 --start-addr 0x0100 -t none 32-s262.asm -o 32-s262.bin
@@ -661,7 +661,7 @@ $(BINARIES) 11-s680.bin: $(OBJECTS)
 32-s263.bin: 32-s263.asm
 	cl65 --start-addr 0x7600 -t none 32-s263.asm -o 32-s263.bin
 	sha1sum -c 32-s263.sha1
-	./encrypt.php 32-s263.bin 550600204b948601bd9f8bbeccff9b70
+	./encrypt.py 32-s263.bin 550600204b948601bd9f8bbeccff9b70
 
 32-s327.bin: 32-s327.asm
 	cl65 --start-addr 0x0100 -t none 32-s327.asm -o 32-s327.bin
@@ -670,7 +670,7 @@ $(BINARIES) 11-s680.bin: $(OBJECTS)
 32-s328.bin: 32-s328.asm
 	cl65 --start-addr 0x7600 -t none 32-s328.asm -o 32-s328.bin
 	sha1sum -c 32-s328.sha1
-	./encrypt.php 32-s328.bin 5547001b9df7abe47b3c558d4a969e51
+	./encrypt.py 32-s328.bin 5547001b9df7abe47b3c558d4a969e51
 
 32-s382.bin: 32-s382.asm
 	cl65 --start-addr 0x0100 -t none 32-s382.asm -o 32-s382.bin
@@ -679,7 +679,7 @@ $(BINARIES) 11-s680.bin: $(OBJECTS)
 32-s383.bin: 32-s383.asm
 	cl65 --start-addr 0x7600 -t none 32-s383.asm -o 32-s383.bin
 	sha1sum -c 32-s383.sha1
-	./encrypt.php 32-s383.bin 557e0018f5430fe6e47fe06607cbbcb2
+	./encrypt.py 32-s383.bin 557e0018f5430fe6e47fe06607cbbcb2
 
 32-s431.bin: 32-s431.asm
 	cl65 --start-addr 0x0100 -t none 32-s431.asm -o 32-s431.bin
@@ -688,7 +688,7 @@ $(BINARIES) 11-s680.bin: $(OBJECTS)
 32-s432.bin: 32-s432.asm
 	cl65 --start-addr 0x7600 -t none 32-s432.asm -o 32-s432.bin
 	sha1sum -c 32-s432.sha1
-	./encrypt.php 32-s432.bin 55af001f7b462cdfe12dfa0facb0bd3e
+	./encrypt.py 32-s432.bin 55af001f7b462cdfe12dfa0facb0bd3e
 
 32-s494.bin: 32-s494.asm
 	cl65 --start-addr 0x0100 -t none 32-s494.asm -o 32-s494.bin
@@ -697,7 +697,7 @@ $(BINARIES) 11-s680.bin: $(OBJECTS)
 32-s495.bin: 32-s495.asm
 	cl65 --start-addr 0x96F0 -t none 32-s495.asm -o 32-s495.bin
 	sha1sum -c 32-s495.sha1
-	./encrypt.php 32-s495.bin 55ee800795b90cbc9502b50cdb7e93d2
+	./encrypt.py 32-s495.bin 55ee800795b90cbc9502b50cdb7e93d2
 
 32-s510.bin: 32-s510.asm
 	cl65 --start-addr 0x0100 -t none 32-s510.asm -o 32-s510.bin
@@ -706,7 +706,7 @@ $(BINARIES) 11-s680.bin: $(OBJECTS)
 32-s511.bin: 32-s511.asm
 	cl65 --start-addr 0x890B -t none 32-s511.asm -o 32-s511.bin
 	sha1sum -c 32-s511.sha1
-	./encrypt.php 32-s511.bin 55fe800714cfcd4f32c02942e0be7cc1
+	./encrypt.py 32-s511.bin 55fe800714cfcd4f32c02942e0be7cc1
 
 32-s526.bin: 32-s526.asm
 	cl65 --start-addr 0x0100 -t none 32-s526.asm -o 32-s526.bin
@@ -715,7 +715,7 @@ $(BINARIES) 11-s680.bin: $(OBJECTS)
 32-s527.bin: 32-s527.asm
 	cl65 --start-addr 0x8A00 -t none 32-s527.asm -o 32-s527.bin
 	sha1sum -c 32-s527.sha1
-	./encrypt.php 32-s527.bin 560e000df6e170d349d75895b4c8857a
+	./encrypt.py 32-s527.bin 560e000df6e170d349d75895b4c8857a
 
 32-s553.bin: 32-s553.asm
 	cl65 --start-addr 0x0100 -t none 32-s553.asm -o 32-s553.bin
@@ -724,7 +724,7 @@ $(BINARIES) 11-s680.bin: $(OBJECTS)
 32-s554.bin: 32-s554.asm
 	cl65 --start-addr 0x8A00 -t none 32-s554.asm -o 32-s554.bin
 	sha1sum -c 32-s554.sha1
-	./encrypt.php 32-s554.bin 56290006753cd7db9ee05661f2768f85
+	./encrypt.py 32-s554.bin 56290006753cd7db9ee05661f2768f85
 
 32-s566.bin: 32-s566.asm
 	cl65 --start-addr 0x0100 -t none 32-s566.asm -o 32-s566.bin
@@ -733,7 +733,7 @@ $(BINARIES) 11-s680.bin: $(OBJECTS)
 32-s567.bin: 32-s567.asm
 	cl65 --start-addr 0x8A00 -t none 32-s567.asm -o 32-s567.bin
 	sha1sum -c 32-s567.sha1
-	./encrypt.php 32-s567.bin 56360004a2ce1f783637657983d63b83
+	./encrypt.py 32-s567.bin 56360004a2ce1f783637657983d63b83
 
 32-s575.bin: 32-s575.asm
 	cl65 --start-addr 0x0100 -t none 32-s575.asm -o 32-s575.bin
@@ -742,7 +742,7 @@ $(BINARIES) 11-s680.bin: $(OBJECTS)
 32-s576.bin: 32-s576.asm
 	cl65 --start-addr 0x9EF0 -t none 32-s576.asm -o 32-s576.bin
 	sha1sum -c 32-s576.sha1
-	./encrypt.php 32-s576.bin 563f0017b55e3818cc9f5161e346851b
+	./encrypt.py 32-s576.bin 563f0017b55e3818cc9f5161e346851b
 
 32-s622.bin: 32-s622.asm
 	cl65 --start-addr 0x0100 -t none 32-s622.asm -o 32-s622.bin
@@ -751,7 +751,7 @@ $(BINARIES) 11-s680.bin: $(OBJECTS)
 32-s623.bin: 32-s623.asm
 	cl65 --start-addr 0x9FF0 -t none 32-s623.asm -o 32-s623.bin
 	sha1sum -c 32-s623.sha1
-	./encrypt.php 32-s623.bin 566e00102139428c5333f472a9792e0d
+	./encrypt.py 32-s623.bin 566e00102139428c5333f472a9792e0d
 
 32-s655.bin: 32-s655.asm
 	cl65 --start-addr 0x0100 -t none 32-s655.asm -o 32-s655.bin
@@ -760,7 +760,7 @@ $(BINARIES) 11-s680.bin: $(OBJECTS)
 32-s656.bin: 32-s656.asm
 	cl65 --start-addr 0x9FF0 -t none 32-s656.asm -o 32-s656.bin
 	sha1sum -c 32-s656.sha1
-	./encrypt.php 32-s656.bin 568f000ef9b4d14b437b2e8928108dd7
+	./encrypt.py 32-s656.bin 568f000ef9b4d14b437b2e8928108dd7
 
 32-s684.bin: 32-s684.asm
 	cl65 --start-addr 0x0100 -t none 32-s684.asm -o 32-s684.bin
@@ -769,7 +769,7 @@ $(BINARIES) 11-s680.bin: $(OBJECTS)
 32-s685.bin: 32-s685.asm
 	cl65 --start-addr 0x96F0 -t none 32-s685.asm -o 32-s685.bin
 	sha1sum -c 32-s685.sha1
-	./encrypt.php 32-s685.bin 56ac00056a9ea390ed15fd6cb04c2891
+	./encrypt.py 32-s685.bin 56ac00056a9ea390ed15fd6cb04c2891
 
 32-s695.bin: 32-s695.asm
 	cl65 --start-addr 0x1000 -t none 32-s695.asm -o 32-s695.bin
