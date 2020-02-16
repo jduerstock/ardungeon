@@ -32,6 +32,8 @@
 
 ;		.ORG	$1E00
 
+		.SEGMENT	"SEG1E00"
+
 		.RES	398, $00
 		.BYTE	$87
 aMainbeg:	.BYTE	"MAINBEG"
