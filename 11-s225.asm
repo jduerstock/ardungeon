@@ -31,6 +31,7 @@
 		.include	"macros.inc"
 
 ;		.ORG	$1E00
+
 		.RES	398, $00
 		.BYTE	$87
 aMainbeg:	.BYTE	"MAINBEG"
@@ -174,7 +175,7 @@ loc_20F9:				; CODE XREF: RAM:20E8^j	RAM:20F2^j
 		STA	byte_230
 		LDA	#4
 		STA	6
-		LDA	#$80 ; 'Ä'
+		LDA	#$80
 		STA	9
 		LDA	#2
 		STA	$A
@@ -244,7 +245,7 @@ locret_2164:				; CODE XREF: RAM:215C^j	RAM:2161^j
 		DEX
 		STX	$107
 		LDA	#$4F ; 'O'
-		LDX	#$80 ; 'Ä'
+		LDX	#$80
 		LDY	#2
 		JSR	sub_2476
 		BMI	locret_21AD
@@ -273,13 +274,13 @@ aSystemInitiali:.BYTE "      System Initialization     "
 		LDA	SKSTAT
 		STA	SKREST
 		BMI	loc_21ED
-		LDY	#$8C ; 'å'
+		LDY	#$8C
 		STY	$23D
 
 loc_21ED:				; CODE XREF: RAM:21E6^j
 		AND	#$20 ; ' '
 		BNE	loc_21F6
-		LDY	#$8E ; 'é'
+		LDY	#$8E
 		STY	$23D
 
 loc_21F6:				; CODE XREF: RAM:21EF^j
@@ -288,7 +289,7 @@ loc_21F6:				; CODE XREF: RAM:21EF^j
 		LDA	$D20D
 		CMP	$23C
 		BEQ	loc_2208
-		LDY	#$8F ; 'è'
+		LDY	#$8F
 		STY	$23D
 
 loc_2208:				; CODE XREF: RAM:2201^j	RAM:223Dvj
@@ -377,7 +378,7 @@ loc_227B:				; CODE XREF: RAM:2258^j
 		BEQ	loc_22A1
 		STA	$241
 		LDA	AR_POKMSK
-		AND	#$F7 ; '˜'
+		AND	#$F7
 		STA	AR_POKMSK
 		STA	IRQEN
 
@@ -389,7 +390,7 @@ loc_22A1:				; CODE XREF: RAM:2291^j
 		LDA	IRQST
 		AND	#$20 ; ' '
 		BNE	loc_22B9
-		LDA	#$DF ; 'ﬂ'
+		LDA	#$DF
 		STA	IRQEN
 		LDA	AR_POKMSK
 		STA	IRQEN
@@ -443,15 +444,15 @@ loc_22EE:				; CODE XREF: RAM:22D1^j
 		PLA
 		RTI
 ; ---------------------------------------------------------------------------
-unk_22F8:	.BYTE $40 ; @		; DATA XREF: RAM:loc_22BD^r
+unk_22F8:	.BYTE	$40 ; @		; DATA XREF: RAM:loc_22BD^r
 		.BYTE	8
-		.BYTE $10
+		.BYTE	$10
 unk_22FB:	.BYTE	8		; DATA XREF: RAM:22DE^r
-		.BYTE  $E
-		.BYTE  $C
-unk_22FE:	.BYTE $22 ; "		; DATA XREF: RAM:2345vr
-		.BYTE $22 ; "
-		.BYTE $2E ; .
+		.BYTE	$E
+		.BYTE	$C
+unk_22FE:	.BYTE	$22 ; "		; DATA XREF: RAM:2345vr
+		.BYTE	$22 ; "
+		.BYTE	$2E ; .
 ; ---------------------------------------------------------------------------
 
 loc_2301:				; CODE XREF: RAM:2355vj
@@ -569,10 +570,10 @@ a42:		.BYTE	"4(%2%"
 		.BYTE	$80,$03,$18,$04,$82
 		.RES	18,$00
 		.BYTE	7
-a_4:		.BYTE "./4",0
-a154:		.BYTE "15)4%",0
-a0:		.BYTE "+%%0",0
-a429_:		.BYTE "429).",$27,0
+a_4:		.BYTE	"./4",0
+a154:		.BYTE	"15)4%",0
+a0:		.BYTE	"+%%0",0
+a429_:		.BYTE	"429).",$27,0
 		.RES	37,$00
 ; ---------------------------------------------------------------------------
 
