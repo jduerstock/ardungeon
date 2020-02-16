@@ -47,8 +47,10 @@ loc_6391 = $6391
 	.BYTE	.LOBYTE(Addr), .HIBYTE(Addr)
 .endmacro
 
-		.SEGMENT	"SEG_0600"
+		.SEGMENT	"SEG_0600_17"
+
 ;		.ORG	$600
+
 unk_600:	.BYTE	$00,$00,$00,$00,$00,$00,$00,$00	; DATA XREF: sub_31A2+3Evr
 		.BYTE	$3F,$C3,$0F,$0F,$0F,$3C,$3C,$F0
 		.BYTE	$FC,$3F,$3C,$3C,$3C,$3C,$3C,$F3

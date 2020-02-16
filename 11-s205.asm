@@ -1,5 +1,5 @@
 ;
-; 11-s017.asm - kernel loader for ardungeon
+; 11-s205.asm - kernel loader for ardungeon
 ;
 ; This source code is copyright (c) 2008 Jason Duerstock
 ; jason.duerstock@gmail.com
@@ -415,7 +415,7 @@ loc_F9EA:				; CODE XREF: RAM:8314vj
 ; ---------------------------------------------------------------------------
 
 loc_F9F4:
-		LDA	#$80 ; '€'
+		LDA	#$80
 		STA	$25D
 		LDY	word_232+1
 		STY	$263
@@ -532,7 +532,7 @@ loc_FAC4:				; CODE XREF: RAM:83DF^j
 		LDX	$FDA4
 		JSR	sub_FB88
 		STY	loc_FAD7+2
-		EOR	#$80 ; '€'
+		EOR	#$80
 		STA	loc_FAD7+1
 		LDY	#0
 
@@ -1297,23 +1297,22 @@ loc_899D:				; CODE XREF: RAM:8993^j	RAM:8998^j
 		TYA
 		RTS
 ; ---------------------------------------------------------------------------
-		.BYTE $A8
+		.BYTE	$A8
 		MOVEXY	0,1
 aPleaseInsertTh:.BYTE	$A5,"Please insert The Dungeon Disk "
-		.BYTE $B2
-		.WORD $1911
-		.BYTE 1
+		.BYTE	$B2
+		.WORD	$1911
+		.BYTE	1
 		.BYTE	$0D,$0D
 		.BYTE	$A5,"Side "
-		.BYTE $B2
-		.WORD $1910
-		.BYTE 1
+		.BYTE	$B2
+		.WORD	$1910
+		.BYTE	1
 aIntoAnyDrive_:	.BYTE	" into any drive.",$D
 		MOVEXY	0,5
 aPress:		.BYTE	$A5,"Press "
 		BLINK	"SPACE BAR"
 aToCon:		.BYTE	" to con"
 ; end of 'RAM'
-
 
 		.END
