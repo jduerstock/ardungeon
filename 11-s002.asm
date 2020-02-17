@@ -88,7 +88,7 @@
 	DirEnt	$4000,2,2,494,,7	; elevator		; $2C
 	DirEnt	$4000,3,2,431,,31	; tavern		; $2D
 	DirEnt	$4000,3,1,236,,176	; ???			; $2E
-	DirEnt	$4000,1,1,451,,7	; ???			; $2F
+	DirEnt	$4000,1,1,451,,7	; character death	; $2F
 	DirEnt	$4000,2,2,509,,4	; unknown 2		; $30
 	DirEnt	$4000,1,1,466,,6	; save character	; $31
 	DirEnt	$4000,2,2,518,$8000,8	; unknown 3		; $32
