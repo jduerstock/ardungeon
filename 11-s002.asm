@@ -100,7 +100,7 @@
 	DirEnt	$4000,3,2,553,,6	; devourer song		; $38
 	DirEnt	$4000,3,2,566,,4	; unknown song		; $39
 	DirEnt	$4000,3,2,575,,23	; tavern talk		; $3A
-	DirEnt	$4000,1,1,480,,18	; ???			; $3B
+	DirEnt	$4000,1,1,480,,18	; blank character data	; $3B
 	DirEnt	$4000,1,1,517,,79	; portal 2		; $3C
 	DirEnt	$4000,1,1,676,,1	; ???			; $3D
 	DirEnt	$4000,1,1,679,,1	; ???			; $3E
