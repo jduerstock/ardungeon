@@ -4,7 +4,7 @@
 		.include	"macros.inc"
 
 ;		.ORG	$7600
-		.BYTE $1A
+		.BYTE	$1A
 ; ---------------------------------------------------------------------------
 		JMP	loc_7616
 ; ---------------------------------------------------------------------------
@@ -242,24 +242,24 @@ loc_7801:				; CODE XREF: RAM:77D2^j
 		TAX
 		BNE	loc_77E2
 ; ---------------------------------------------------------------------------
-unk_780C:	.BYTE $EA ; ê		; DATA XREF: RAM:77E6^r
-		.BYTE  $C
-		.BYTE	4
-		.BYTE $B9 ; ¹
-		.BYTE $28 ; (
-		.BYTE $F1 ; ñ
-		.BYTE $EA ; ê
-		.BYTE $9E ; ž
-		.BYTE $1D
-unk_7815:	.BYTE $77 ; w		; DATA XREF: RAM:loc_77E2^r
-		.BYTE $79 ; y
-		.BYTE $7A ; z
-		.BYTE $79 ; y
-		.BYTE $79 ; y
-		.BYTE $78 ; x
-		.BYTE $77 ; w
-		.BYTE $79 ; y
-		.BYTE $78 ; x
+unk_780C:	.BYTE	<(loc_77EB-1)	; DATA XREF: RAM:77E6^r
+		.BYTE	<(loc_790D-1)
+		.BYTE	<(loc_7A05-1)
+		.BYTE	$B9 ; ¹
+		.BYTE	$28 ; (
+		.BYTE	$F1 ; ñ
+		.BYTE	$EA ; ê
+		.BYTE	$9E ; ž
+		.BYTE	$1D
+unk_7815:	.BYTE	>(loc_77EB-1)	; DATA XREF: RAM:loc_77E2^r
+		.BYTE	>(loc_790D-1)
+		.BYTE	>(loc_7A05-1)
+		.BYTE	$79 ; y
+		.BYTE	$79 ; y
+		.BYTE	$78 ; x
+		.BYTE	$77 ; w
+		.BYTE	$79 ; y
+		.BYTE	$78 ; x
 ; ---------------------------------------------------------------------------
 		dldi	off_16, $7D3E
 		LDA	#$19
@@ -384,6 +384,8 @@ loc_78F4:				; CODE XREF: RAM:78FBvj
 		STA	$AC00
 		JMP	$180C
 ; ---------------------------------------------------------------------------
+
+loc_790D:
 		dldi	off_16, $7D2E
 
 loc_7915:				; CODE XREF: RAM:7755^j	RAM:799Cvj ...
@@ -503,6 +505,8 @@ loc_79E4:				; CODE XREF: RAM:79DB^j	RAM:79DD^j
 loc_7A02:				; CODE XREF: RAM:79FD^j
 		JMP	loc_77A1
 ; ---------------------------------------------------------------------------
+
+loc_7A05:
 		JSR	j_sub_2E31
 		LDA	$630A
 		LDX	#3

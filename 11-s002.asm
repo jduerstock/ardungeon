@@ -66,7 +66,7 @@
 	DirEnt	$4000,3,2,1,,16		; vault			; $16
 	DirEnt	$4000,3,2,34,,28	; goblin/troll		; $17
 	DirEnt	$4000,3,2,91,,17	; acrinimiril's tomb	; $18
-	DirEnt	$4000,1,1,258,,26	; ???			; $19
+	DirEnt	$4000,1,1,258,,26	; load character	; $19
 	DirEnt	$4000,2,2,36,,28	; ???			; $1A
 	DirEnt	$4000,3,2,126,,28	; ozob			; $1B
 	DirEnt	$4000,3,2,183,,39	; guild			; $1C

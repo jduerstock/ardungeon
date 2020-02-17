@@ -376,7 +376,7 @@ loc_7842:				; CODE XREF: RAM:7853vj
 		JSR	sub_7941
 		LDA	#6
 		STA	off_16
-		LDA	#$89 ; 'â'
+		LDA	#$89
 		STA	off_16+1
 		JSR	$1818
 		LDX	#$F0 ; ''
@@ -707,39 +707,39 @@ loc_7A62:				; CODE XREF: sub_7A5D+Fvj
 ; End of function sub_7A5D
 
 ; ---------------------------------------------------------------------------
-unk_7A75:	.BYTE $34 ; 4		; DATA XREF: RAM:loc_77FF^r
-		.BYTE $1A
-		.BYTE $28 ; (
-		.BYTE  $E
-		.BYTE $44 ; D
-		.BYTE $34 ; 4
-		.BYTE $1A
-		.BYTE $28 ; (
-unk_7A7D:	.BYTE $94 ; î		; DATA XREF: RAM:7730^r
-		.BYTE $91 ; ë
-		.BYTE $90 ; ê
-		.BYTE $85 ; Ö
-		.BYTE $81 ; Å
-		.BYTE $F8 ; ¯
-		.BYTE $E4 ; ‰
-byte_7A84:	.BYTE 0			; DATA XREF: RAM:loc_772B^r RAM:7737^w ...
-byte_7A85:	.BYTE 0			; DATA XREF: RAM:7747^w	RAM:7896^r ...
-unk_7A86:	.BYTE $E5 ; Â		; DATA XREF: sub_7A5D:loc_7A62^r
+unk_7A75:	.BYTE	$34 ; 4		; DATA XREF: RAM:loc_77FF^r
+		.BYTE	$1A
+		.BYTE	$28 ; (
+		.BYTE	 $E
+		.BYTE	$44 ; D
+		.BYTE	$34 ; 4
+		.BYTE	$1A
+		.BYTE	$28 ; (
+unk_7A7D:	.BYTE	$94 ; î		; DATA XREF: RAM:7730^r
+		.BYTE	$91 ; ë
+		.BYTE	$90 ; ê
+		.BYTE	$85 ; Ö
+		.BYTE	$81 ; Å
+		.BYTE	$F8 ; ¯
+		.BYTE	$E4 ; ‰
+byte_7A84:	.BYTE	0			; DATA XREF: RAM:loc_772B^r RAM:7737^w ...
+byte_7A85:	.BYTE	0			; DATA XREF: RAM:7747^w	RAM:7896^r ...
+unk_7A86:	.BYTE	$E5 ; Â		; DATA XREF: sub_7A5D:loc_7A62^r
 					; sub_7A5D+11^r
-		.BYTE $C4 ; -
-		.BYTE $36 ; 6
-		.BYTE $66 ; f
-		.BYTE $C5 ; ≈
-		.BYTE $81 ; Å
-		.BYTE $A4 ; §
-		.BYTE $F8 ; ¯
+		.BYTE	$C4 ; -
+		.BYTE	$36 ; 6
+		.BYTE	$66 ; f
+		.BYTE	$C5 ; ≈
+		.BYTE	$81 ; Å
+		.BYTE	$A4 ; §
+		.BYTE	$F8 ; ¯
 		.BYTE	4
-		.BYTE $F3 ; Û
+		.BYTE	$F3 ; Û
 		.BYTE	0
-		.BYTE  $F
+		.BYTE	 $F
 		.BYTE	1
-		.BYTE  $F
-		.BYTE $41 ; A
+		.BYTE	 $F
+		.BYTE	$41 ; A
 ; ---------------------------------------------------------------------------
 
 loc_7A95:				; CODE XREF: RAM:7696^j
@@ -1438,199 +1438,199 @@ loc_7F2B:				; CODE XREF: sub_7EB0+14^j
 		SEC
 		RTS
 ; ---------------------------------------------------------------------------
-		.BYTE $AD
+		.BYTE	$AD
 		.WORD byte_82F2
 		MOVEXY	0,8
-		.BYTE $A5
-aPleaseInsertYo:.BYTE "Please insert your character disk"
-		.BYTE $D
+		.BYTE	$A5
+aPleaseInsertYo:.BYTE	"Please insert your character disk"
+		.BYTE	$D
 		MOVEXY	0,22
-		.BYTE $A5
-aPressSpaceBa_0:.BYTE "Press SPACE BAR to continue"
-		.BYTE $D
-		.BYTE $D
-		.BYTE $A5
-aOrEscToCance_0:.BYTE "or ESC to cancel"
-		.BYTE $D
-		.BYTE $FF
-		.BYTE $AD
+		.BYTE	$A5
+aPressSpaceBa_0:.BYTE	"Press SPACE BAR to continue"
+		.BYTE	$D
+		.BYTE	$D
+		.BYTE	$A5
+aOrEscToCance_0:.BYTE	"or ESC to cancel"
+		.BYTE	$D
+		.BYTE	$FF
+		.BYTE	$AD
 		.WORD byte_82F2
 		MOVEXY	0,8
-		.BYTE $A5
-aThisCharacterD:.BYTE "This character disk has no characters"
-		.BYTE $D
-		.BYTE $D
-		.BYTE $A5
-aOnIt__0:	.BYTE "on it."
-		.BYTE $D
+		.BYTE	$A5
+aThisCharacterD:.BYTE	"This character disk has no characters"
+		.BYTE	$D
+		.BYTE	$D
+		.BYTE	$A5
+aOnIt__0:	.BYTE	"on it."
+		.BYTE	$D
 byte_7FC0:	MOVEXY	0,22		; DATA XREF: RAM:802Evo	RAM:814Bvo ...
-		.BYTE $A5
-aPressAnyKeyT_0:.BYTE "Press any key to continue"
-		.BYTE $D
-		.BYTE $FF
-		.BYTE $AD
+		.BYTE	$A5
+aPressAnyKeyT_0:.BYTE	"Press any key to continue"
+		.BYTE	$D
+		.BYTE	$FF
+		.BYTE	$AD
 		.WORD byte_82F2
 		MOVEXY	0,8
-		.BYTE $A5
-aUnableToRemove:.BYTE "Unable to remove character!"
-		.BYTE $D
+		.BYTE	$A5
+aUnableToRemove:.BYTE	"Unable to remove character!"
+		.BYTE	$D
 		STRSUB byte_810D
-		.BYTE $AD
+		.BYTE	$AD
 		.WORD byte_82F2
 		MOVEXY	0,8
-		.BYTE $A5
-aThatCharacterH:.BYTE "That Character has been removed."
-		.BYTE $D
+		.BYTE	$A5
+aThatCharacterH:.BYTE	"That Character has been removed."
+		.BYTE	$D
 		STRSUB byte_7FC0
-		.BYTE $AD
+		.BYTE	$AD
 		.WORD byte_82F2
 		MOVEXY	0,8
-aAreYouSureYouW:.BYTE $A5,"Are you sure you want to permanently",$D,$D
-aRemove:	.BYTE $A5,"remove "
+aAreYouSureYouW:.BYTE	$A5,"Are you sure you want to permanently",$D,$D
+aRemove:	.BYTE	$A5,"remove "
 		PRINTSTRP byte_83BD,25
-aq:		.BYTE "?"
-		.BYTE $D
-		.BYTE $D
-		.BYTE $A5
-aYOrN:		.BYTE "(Y or N)"
-		.BYTE $D
-		.BYTE $FF
-		.BYTE $AD
+aq:		.BYTE	"?"
+		.BYTE	$D
+		.BYTE	$D
+		.BYTE	$A5
+aYOrN:		.BYTE	"(Y or N)"
+		.BYTE	$D
+		.BYTE	$FF
+		.BYTE	$AD
 		.WORD byte_82F2
 		MOVEXY	0,8
-a1:		.BYTE " (1) "
+a1:		.BYTE	" (1) "
 		PRINTSTRP off_82F5,25
 		MOVEXY	30,8
 		PRINTSTRP off_82FD,7
 		MOVEXY	0,10
-a2:		.BYTE " (2) "
+a2:		.BYTE	" (2) "
 		PRINTSTRP off_82F7,25
 		MOVEXY	30,10
 		PRINTSTRP off_82FF,7
 		MOVEXY	0,12
-a3:		.BYTE " (3) "
+a3:		.BYTE	" (3) "
 		PRINTSTRP off_82F9,25
 		MOVEXY	30,12
 		PRINTSTRP off_8301,7
 		MOVEXY	0,14
-a4:		.BYTE " (4) "
+a4:		.BYTE	" (4) "
 		PRINTSTRP off_82FB,25
 		MOVEXY	30,14
 		PRINTSTRP off_8303,7
 		MOVEXY	0,22
-		.BYTE $A5
-aSelect14OrEscT:.BYTE "Select 1-4 or ESC to cancel"
-		.BYTE $D
-		.BYTE $FF
-		.BYTE $AD
+		.BYTE	$A5
+aSelect14OrEscT:.BYTE	"Select 1-4 or ESC to cancel"
+		.BYTE	$D
+		.BYTE	$FF
+		.BYTE	$AD
 		.WORD byte_82F2
 		MOVEXY	0,8
-		.BYTE $A5
-aUnableToLoadTh:.BYTE "Unable to load this character!"
-		.BYTE $D
-byte_810D:	.BYTE $D		; DATA XREF: RAM:8003^o
-		.BYTE $A5
-aMakeSureYourDi:.BYTE "Make sure your disk is not write"
-		.BYTE $D
-		.BYTE $A5
-aProtectedAndTr:.BYTE "protected and try again."
-		.BYTE $D
+		.BYTE	$A5
+aUnableToLoadTh:.BYTE	"Unable to load this character!"
+		.BYTE	$D
+byte_810D:	.BYTE	$D		; DATA XREF: RAM:8003^o
+		.BYTE	$A5
+aMakeSureYourDi:.BYTE	"Make sure your disk is not write"
+		.BYTE	$D
+		.BYTE	$A5
+aProtectedAndTr:.BYTE	"protected and try again."
+		.BYTE	$D
 		STRSUB byte_7FC0
-		.BYTE $AD
+		.BYTE	$AD
 		.WORD byte_82F2
 		MOVEXY	0,8
-		.BYTE $A5
-aThisCharacterI:.BYTE "This character is in "
-		.BYTE $B4
+		.BYTE	$A5
+aThisCharacterI:.BYTE	"This character is in "
+		.BYTE	$B4
 		.WORD byte_83BB
-		.BYTE $F
-		.BYTE '!'
-		.BYTE $D
+		.BYTE	$F
+		.BYTE	'!'
+		.BYTE	$D
 		STRSUB byte_7FC0
-		.BYTE $AD
+		.BYTE	$AD
 		.WORD byte_82F2
 		MOVEXY	0,8
-		.BYTE $A5
-aThisCharacterW:.BYTE "This character was on his way to"
-		.BYTE $D
-		.BYTE $D
-		.BYTE $B4
+		.BYTE	$A5
+aThisCharacterW:.BYTE	"This character was on his way to"
+		.BYTE	$D
+		.BYTE	$D
+		.BYTE	$B4
 		.WORD byte_83BB
-		.BYTE $F
-a_DoYouWantToBr:.BYTE ".  Do you want to bring"
-		.BYTE $D
-		.BYTE $D
-		.BYTE $A5
-aTheCharacterBa:.BYTE "the character back to the Dungeon?"
-		.BYTE $D
-		.BYTE $D
-		.BYTE $A5
-		.BYTE $28 ; (
-		.BYTE $A1
-aY:		.BYTE 'Y'
-		.BYTE $A0
-aOr:		.BYTE " or "
-		.BYTE $A1
-aN:		.BYTE 'N'
-		.BYTE $A0
-		.BYTE $29 ; )
-		.BYTE  $D
-		.BYTE $FF
-		.BYTE $AD ; ≠
+		.BYTE	$F
+a_DoYouWantToBr:.BYTE	".  Do you want to bring"
+		.BYTE	$D
+		.BYTE	$D
+		.BYTE	$A5
+aTheCharacterBa:.BYTE	"the character back to the Dungeon?"
+		.BYTE	$D
+		.BYTE	$D
+		.BYTE	$A5
+		.BYTE	$28 ; (
+		.BYTE	$A1
+aY:		.BYTE	'Y'
+		.BYTE	$A0
+aOr:		.BYTE	" or "
+		.BYTE	$A1
+aN:		.BYTE	'N'
+		.BYTE	$A0
+		.BYTE	$29 ; )
+		.BYTE	 $D
+		.BYTE	$FF
+		.BYTE	$AD ; ≠
 		.WORD byte_82F2
 		MOVEXY	0,8
-		.BYTE $A5
-		.BYTE $B4
+		.BYTE	$A5
+		.BYTE	$B4
 		.WORD byte_83BD
-		.BYTE $19
-		.BYTE $20
-aHasBeen:	.BYTE "has been"
-		.BYTE $D
-		.BYTE $D
-		.BYTE $A5
-aLostSomewhereI:.BYTE "lost somewhere in the Dungeon and"
-		.BYTE $D
-		.BYTE $D
-		.BYTE $A5
-aMustBeReJoined:.BYTE "must be re-joined."
-		.BYTE $D
-		.BYTE $D
-		.BYTE $A5
-aTheReJoiningPr:.BYTE "The re-joining process shall cost"
-		.BYTE $D
-		.BYTE $D
-		.BYTE $A5
-aSome:		.BYTE "some "
-		.BYTE $B4
+		.BYTE	$19
+		.BYTE	$20
+aHasBeen:	.BYTE	"has been"
+		.BYTE	$D
+		.BYTE	$D
+		.BYTE	$A5
+aLostSomewhereI:.BYTE	"lost somewhere in the Dungeon and"
+		.BYTE	$D
+		.BYTE	$D
+		.BYTE	$A5
+aMustBeReJoined:.BYTE	"must be re-joined."
+		.BYTE	$D
+		.BYTE	$D
+		.BYTE	$A5
+aTheReJoiningPr:.BYTE	"The re-joining process shall cost"
+		.BYTE	$D
+		.BYTE	$D
+		.BYTE	$A5
+aSome:		.BYTE	"some "
+		.BYTE	$B4
 		.WORD byte_83BF
-		.BYTE $C
-		.BYTE "."
-		.BYTE $D
-		.BYTE $D
-		.BYTE $D
-		.BYTE $A3
+		.BYTE	$C
+		.BYTE	"."
+		.BYTE	$D
+		.BYTE	$D
+		.BYTE	$D
+		.BYTE	$A3
 		.WORD loc_82D2
-		.BYTE $A5
-aThisIsReJoinin:.BYTE "This is Re-joining number "
-		.BYTE $B2
+		.BYTE	$A5
+aThisIsReJoinin:.BYTE	"This is Re-joining number "
+		.BYTE	$B2
 		.WORD byte_83CF
-		.BYTE 3
-a_:		.BYTE "."
-		.BYTE $D
-		.BYTE $A3
+		.BYTE	3
+a_:		.BYTE	"."
+		.BYTE	$D
+		.BYTE	$A3
 		.WORD loc_82D8
-		.BYTE $D
+		.BYTE	$D
 		STRSUB byte_7FC0
-		.BYTE $A8
-		.BYTE $A5
-aResumeExisting:.BYTE "Resume Existing Character"
-		.BYTE $D
-		.BYTE $AE
-		.BYTE $A8
-		.BYTE $A5
-aRemoveExisting:.BYTE "Remove Existing Character"
-		.BYTE $D
-		.BYTE $AE
+		.BYTE	$A8
+		.BYTE	$A5
+aResumeExisting:.BYTE	"Resume Existing Character"
+		.BYTE	$D
+		.BYTE	$AE
+		.BYTE	$A8
+		.BYTE	$A5
+aRemoveExisting:.BYTE	"Remove Existing Character"
+		.BYTE	$D
+		.BYTE	$AE
 ; ---------------------------------------------------------------------------
 
 loc_82D2:				; DATA XREF: RAM:826E^o
@@ -1644,11 +1644,11 @@ loc_82D8:				; DATA XREF: RAM:8292^o
 		STA	$18FE
 		RTS
 ; ---------------------------------------------------------------------------
-aEmpty:		.BYTE "(EMPTY)",0
-aLost:		.BYTE "(LOST)",0
-aOk:		.BYTE "(OK)",0
-byte_82F2:	.BYTE 0			; DATA XREF: RAM:7A97^w	RAM:7AC9^w ...
-byte_82F3:	.BYTE 0			; DATA XREF: RAM:7A9C^w	RAM:7ACE^w
+aEmpty:		.BYTE	"(EMPTY)",0
+aLost:		.BYTE	"(LOST)",0
+aOk:		.BYTE	"(OK)",0
+byte_82F2:	.BYTE	0			; DATA XREF: RAM:7A97^w	RAM:7AC9^w ...
+byte_82F3:	.BYTE	0			; DATA XREF: RAM:7A9C^w	RAM:7ACE^w
 unk_82F4:	.BYTE	0		; DATA XREF: RAM:off_82FDvo
 					; RAM:off_82FFvo ...
 off_82F5:	.WORD unk_8EB8		; DATA XREF: RAM:8083^o
@@ -1667,65 +1667,65 @@ off_8305:	.WORD aStamina		; DATA XREF: RAM:7CDB^r	RAM:7CE1^r
 		.WORD aWisdom		; "wisdom"
 		.WORD aSkill		; "skill"
 		.WORD aSpeed		; "speed"
-aStamina:	.BYTE "stamina",0       ; DATA XREF: RAM:off_8305^o
-aCharisma:	.BYTE "charisma",0      ; DATA XREF: RAM:8307^o
-aStrength:	.BYTE "strength",0      ; DATA XREF: RAM:8309^o
-aIntelligence:	.BYTE "intelligence",0  ; DATA XREF: RAM:830B^o
-aWisdom:	.BYTE "wisdom",0        ; DATA XREF: RAM:830D^o
-aSkill:		.BYTE "skill",0         ; DATA XREF: RAM:830F^o
-aSpeed:		.BYTE "speed",0         ; DATA XREF: RAM:8311^o
-unk_834D:	.BYTE $5D ; ]		; DATA XREF: RAM:7BA3^r	RAM:7BC7^r
-		.BYTE $69 ; i
-		.BYTE $75 ; u
-		.BYTE $84 ; Ñ
-		.BYTE $93 ; ì
-		.BYTE $9D ; ù
-		.BYTE $A8 ; ®
-		.BYTE $B3 ; ≥
-unk_8355:	.BYTE $83 ; É		; DATA XREF: RAM:7BA9^r	RAM:7BCD^r
-		.BYTE $83 ; É
-		.BYTE $83 ; É
-		.BYTE $83 ; É
-		.BYTE $83 ; É
-		.BYTE $83 ; É
-		.BYTE $83 ; É
-		.BYTE $83 ; É
-aTheUnknown:	.BYTE "The Unknown",0
-aTheCityqqq:	.BYTE "The City???",0
-aTheDungeonqqq:	.BYTE "The Dungeon???",0
-aTheWilderness:	.BYTE "The Wilderness",0
-aTheArena:	.BYTE "The Arena",0
-aThePalace:	.BYTE "The Palace",0
-aRevelation:	.BYTE "Revelation",0
-aDestiny:	.BYTE "Destiny",0
-byte_83BB:	.BYTE $FF		; DATA XREF: RAM:7BA6^w	RAM:7BCA^w ...
-byte_83BC:	.BYTE $FF		; DATA XREF: RAM:7BAC^w	RAM:7BD0^w
-byte_83BD:	.BYTE $F4		; DATA XREF: RAM:7AEF^w	RAM:7CCA^w ...
-byte_83BE:	.BYTE $82		; DATA XREF: RAM:7AF6^w	RAM:7CD1^w
-byte_83BF:	.BYTE $F4		; DATA XREF: RAM:7CDE^w	RAM:8266^o
-byte_83C0:	.BYTE $82		; DATA XREF: RAM:7CE4^w
+aStamina:	.BYTE	"stamina",0       ; DATA XREF: RAM:off_8305^o
+aCharisma:	.BYTE	"charisma",0      ; DATA XREF: RAM:8307^o
+aStrength:	.BYTE	"strength",0      ; DATA XREF: RAM:8309^o
+aIntelligence:	.BYTE	"intelligence",0  ; DATA XREF: RAM:830B^o
+aWisdom:	.BYTE	"wisdom",0        ; DATA XREF: RAM:830D^o
+aSkill:		.BYTE	"skill",0         ; DATA XREF: RAM:830F^o
+aSpeed:		.BYTE	"speed",0         ; DATA XREF: RAM:8311^o
+unk_834D:	.BYTE	$5D ; ]		; DATA XREF: RAM:7BA3^r	RAM:7BC7^r
+		.BYTE	$69 ; i
+		.BYTE	$75 ; u
+		.BYTE	$84 ; Ñ
+		.BYTE	$93 ; ì
+		.BYTE	$9D ; ù
+		.BYTE	$A8 ; ®
+		.BYTE	$B3 ; ≥
+unk_8355:	.BYTE	$83 ; É		; DATA XREF: RAM:7BA9^r	RAM:7BCD^r
+		.BYTE	$83 ; É
+		.BYTE	$83 ; É
+		.BYTE	$83 ; É
+		.BYTE	$83 ; É
+		.BYTE	$83 ; É
+		.BYTE	$83 ; É
+		.BYTE	$83 ; É
+aTheUnknown:	.BYTE	"The Unknown",0
+aTheCityqqq:	.BYTE	"The City???",0
+aTheDungeonqqq:	.BYTE	"The Dungeon???",0
+aTheWilderness:	.BYTE	"The Wilderness",0
+aTheArena:	.BYTE	"The Arena",0
+aThePalace:	.BYTE	"The Palace",0
+aRevelation:	.BYTE	"Revelation",0
+aDestiny:	.BYTE	"Destiny",0
+byte_83BB:	.BYTE	$FF		; DATA XREF: RAM:7BA6^w	RAM:7BCA^w ...
+byte_83BC:	.BYTE	$FF		; DATA XREF: RAM:7BAC^w	RAM:7BD0^w
+byte_83BD:	.BYTE	$F4		; DATA XREF: RAM:7AEF^w	RAM:7CCA^w ...
+byte_83BE:	.BYTE	$82		; DATA XREF: RAM:7AF6^w	RAM:7CD1^w
+byte_83BF:	.BYTE	$F4		; DATA XREF: RAM:7CDE^w	RAM:8266^o
+byte_83C0:	.BYTE	$82		; DATA XREF: RAM:7CE4^w
 unk_83C1:	.BYTE	3		; DATA XREF: RAM:7C26^r	RAM:7D43^r
 unk_83C2:	.BYTE	0		; DATA XREF: RAM:7C2C^r	RAM:7D49^r
-		.BYTE $BB ; ª
+		.BYTE	$BB ; ª
 		.BYTE	0
-		.BYTE $73 ; s
+		.BYTE	$73 ; s
 		.BYTE	1
-		.BYTE $2B ; +
+		.BYTE	$2B ; +
 		.BYTE	2
 unk_83C9:	.BYTE	0		; DATA XREF: RAM:7AEC^r	RAM:7B31^r ...
-		.BYTE $1A
-		.BYTE $34 ; 4
-		.BYTE $4E ; N
-byte_83CD:	.BYTE 0			; DATA XREF: RAM:7AE6^r	RAM:7B29^r ...
-byte_83CE:	.BYTE 0			; DATA XREF: RAM:7C16^w	RAM:7C77^w ...
-byte_83CF:	.BYTE 0			; DATA XREF: RAM:7DD1^w	RAM:828C^o
-byte_83D0:	.BYTE 0			; DATA XREF: RAM:7CAF^w	RAM:loc_7E09^r
-byte_83D1:	.BYTE 0			; DATA XREF: RAM:7B89^w	RAM:7BEC^w ...
+		.BYTE	$1A
+		.BYTE	$34 ; 4
+		.BYTE	$4E ; N
+byte_83CD:	.BYTE	0			; DATA XREF: RAM:7AE6^r	RAM:7B29^r ...
+byte_83CE:	.BYTE	0			; DATA XREF: RAM:7C16^w	RAM:7C77^w ...
+byte_83CF:	.BYTE	0			; DATA XREF: RAM:7DD1^w	RAM:828C^o
+byte_83D0:	.BYTE	0			; DATA XREF: RAM:7CAF^w	RAM:loc_7E09^r
+byte_83D1:	.BYTE	0			; DATA XREF: RAM:7B89^w	RAM:7BEC^w ...
 ; ---------------------------------------------------------------------------
 
 loc_83D2:				; CODE XREF: RAM:7924^j
 					; DATA XREF: RAM:off_7927^o
-		dldi	off_16, $8662
+		dldi	off_16, byte_8662
 		JSR	$1818
 
 loc_83DD:				; CODE XREF: RAM:83E9vj
@@ -2024,19 +2024,19 @@ loc_85D6:				; CODE XREF: RAM:85DDvj
 		BPL	loc_85D6
 		RTS
 ; ---------------------------------------------------------------------------
-unk_85E0:	.BYTE $50 ; P		; DATA XREF: RAM:loc_85D6^r
-		.BYTE $70 ; p
-		.BYTE $90 ; ê
-		.BYTE $B0 ; ∞
-		.BYTE $48 ; H
-		.BYTE $40 ; @
-		.BYTE $38 ; 8
-		.BYTE $30 ; 0
-unk_85E8:	.BYTE $70 ; p		; DATA XREF: RAM:8607vo
-		.BYTE $70 ; p
-		.BYTE $E0 ; ‡
+unk_85E0:	.BYTE	$50 ; P		; DATA XREF: RAM:loc_85D6^r
+		.BYTE	$70 ; p
+		.BYTE	$90 ; ê
+		.BYTE	$B0 ; ∞
+		.BYTE	$48 ; H
+		.BYTE	$40 ; @
+		.BYTE	$38 ; 8
+		.BYTE	$30 ; 0
+unk_85E8:	.BYTE	$70 ; p		; DATA XREF: RAM:8607vo
+		.BYTE	$70 ; p
+		.BYTE	$E0 ; ‡
 		.BYTE	0
-		.BYTE $44 ; D
+		.BYTE	$44 ; D
 		.BYTE	0
 		.BYTE	4
 		.BYTE	4
@@ -2062,7 +2062,7 @@ unk_85E8:	.BYTE $70 ; p		; DATA XREF: RAM:8607vo
 		.BYTE	4
 		.BYTE	4
 		.BYTE	4
-		.BYTE $41 ; A
+		.BYTE	$41 ; A
 		.WORD unk_85E8
 ; ---------------------------------------------------------------------------
 		PHA
@@ -2116,6 +2116,7 @@ loc_8655:				; CODE XREF: RAM:8659vj
 		STA	COLBK
 		RTS
 ; ---------------------------------------------------------------------------
+byte_8662:
 		STRSUB	byte_88C4
 		MOVEXY	0,8
 aPleaseInsertTh:.BYTE	$A5,"Please insert the disk to be made into a",$0D,$0D
@@ -2140,356 +2141,356 @@ aBeErased:	.BYTE	$A5,"be erased!",$0D,$0D,$0D
 		STRSUB	byte_86E5
 		STRSUB	byte_88C4
 		MOVEXY	0,8
-		.BYTE $A5
-aUnableToFormat:.BYTE "Unable to format this disk!"
-		.BYTE $D
-		.BYTE $D
-		.BYTE $D
-		.BYTE $A5
-aMakeSureTheDri:.BYTE "Make sure the drive door is closed"
-		.BYTE $D
-		.BYTE $A5
-aAndTheDiskIsNo:.BYTE "and the disk is not write protected"
-		.BYTE $D
-		.BYTE $A5
-aAndTryAgain_:	.BYTE "and try again."
-		.BYTE $D
-		.BYTE $D
+		.BYTE	$A5
+aUnableToFormat:.BYTE	"Unable to format this disk!"
+		.BYTE	$D
+		.BYTE	$D
+		.BYTE	$D
+		.BYTE	$A5
+aMakeSureTheDri:.BYTE	"Make sure the drive door is closed"
+		.BYTE	$D
+		.BYTE	$A5
+aAndTheDiskIsNo:.BYTE	"and the disk is not write protected"
+		.BYTE	$D
+		.BYTE	$A5
+aAndTryAgain_:	.BYTE	"and try again."
+		.BYTE	$D
+		.BYTE	$D
 		STRSUB byte_877E
 		STRSUB byte_88C4
 		MOVEXY	0,8
-		.BYTE $A5
-aCharacterDiskH:.BYTE "Character disk has been created!"
-		.BYTE $D
-		.BYTE $D
-		.BYTE $A5
-aNoErrorsEncoun:.BYTE "No errors encountered."
-		.BYTE $D
+		.BYTE	$A5
+aCharacterDiskH:.BYTE	"Character disk has been created!"
+		.BYTE	$D
+		.BYTE	$D
+		.BYTE	$A5
+aNoErrorsEncoun:.BYTE	"No errors encountered."
+		.BYTE	$D
 		STRSUB byte_877E
-byte_88C4:	.BYTE $A8		; DATA XREF: RAM:8663^o	RAM:871A^o ...
-		.BYTE $A5
-aCreateCharacte:.BYTE "Create Character Disk"
-		.BYTE $D
-		.BYTE $AE
-		.BYTE $12
+byte_88C4:	.BYTE	$A8		; DATA XREF: RAM:8663^o	RAM:871A^o ...
+		.BYTE	$A5
+aCreateCharacte:.BYTE	"Create Character Disk"
+		.BYTE	$D
+		.BYTE	$AE
+		.BYTE	$12
 		.BYTE	1
-		.BYTE $41 ; A
+		.BYTE	$41 ; A
 		.BYTE	0
-aArDungeonChar:	.BYTE "AR DUNGEON CHAR"
-		.BYTE $A0
-		.BYTE $A0 ; †
-		.BYTE $A0 ; †
-		.BYTE $AC ; ¨
+aArDungeonChar:	.BYTE	"AR DUNGEON CHAR"
+		.BYTE	$A0
+		.BYTE	$A0 ; †
+		.BYTE	$A0 ; †
+		.BYTE	$AC ; ¨
 		.BYTE	0
-		.BYTE $A0 ; †
-		.BYTE $32 ; 2
-		.BYTE $41 ; A
-		.BYTE $A0 ; †
-		.BYTE $A0 ; †
-		.BYTE $A0 ; †
-		.BYTE $A0 ; †
-aArChar:	.BYTE "AR CHAR!"        ; DATA XREF: sub_7ECB:loc_7F10^r
+		.BYTE	$A0 ; †
+		.BYTE	$32 ; 2
+		.BYTE	$41 ; A
+		.BYTE	$A0 ; †
+		.BYTE	$A0 ; †
+		.BYTE	$A0 ; †
+		.BYTE	$A0 ; †
+aArChar:	.BYTE	"AR CHAR!"        ; DATA XREF: sub_7ECB:loc_7F10^r
 					; RAM:loc_846F^r
-		.BYTE $A8,$FF
-		.BYTE $A8
+		.BYTE	$A8,$FF
+		.BYTE	$A8
 		MOVEXY	0,10
-		.BYTE $A5
-aYouAreNowJoine:.BYTE "You are now joined.  Prepare to enter"
-		.BYTE $D
-		.BYTE $D
-		.BYTE $A5
-aAlternateRea_1:.BYTE "Alternate Reality, The Dungeon."
-		.BYTE $D
-		.BYTE $FF
-		.BYTE $A8
-		.BYTE $A5
-aAlternateReali:.BYTE "Alternate Reality"
-		.BYTE $D
-		.BYTE $A5
-aTheDungeon:	.BYTE "The Dungeon"
-		.BYTE $D
+		.BYTE	$A5
+aYouAreNowJoine:.BYTE	"You are now joined.  Prepare to enter"
+		.BYTE	$D
+		.BYTE	$D
+		.BYTE	$A5
+aAlternateRea_1:.BYTE	"Alternate Reality, The Dungeon."
+		.BYTE	$D
+		.BYTE	$FF
+		.BYTE	$A8
+		.BYTE	$A5
+aAlternateReali:.BYTE	"Alternate Reality"
+		.BYTE	$D
+		.BYTE	$A5
+aTheDungeon:	.BYTE	"The Dungeon"
+		.BYTE	$D
 		MOVEXY	0,8
-aPressNToCreate:.BYTE "Press N to create a new character"
+aPressNToCreate:.BYTE	"Press N to create a new character"
 		MOVEXY	0,10
-aPressEToResume:.BYTE "Press E to resume an existing character"
+aPressEToResume:.BYTE	"Press E to resume an existing character"
 		MOVEXY	0,12
-aPressTToTransf:.BYTE "Press T to transfer a City character"
+aPressTToTransf:.BYTE	"Press T to transfer a City character"
 		MOVEXY	0,14
-aPressUForChara:.BYTE "Press U for character utilities"
-		.BYTE $FF
-		.BYTE $A8
-		.BYTE $A5
-aCreateANewChar:.BYTE "Create a new character"
-		.BYTE $D
+aPressUForChara:.BYTE	"Press U for character utilities"
+		.BYTE	$FF
+		.BYTE	$A8
+		.BYTE	$A5
+aCreateANewChar:.BYTE	"Create a new character"
+		.BYTE	$D
 		MOVEXY	0,3
-		.BYTE $A5
-aNoteIfYouWishT:.BYTE "NOTE: If you wish to keep this character"
-		.BYTE $D
-		.BYTE $D
-		.BYTE $A5
-aYouMustHaveADu:.BYTE "you must have a Dungeon character disk"
-		.BYTE $D
-		.BYTE $D
-		.BYTE $A5
-aReadyWithFewer:.BYTE "ready with fewer than four characters"
-		.BYTE $D
-		.BYTE $D
-		.BYTE $A5
-aOnIt_:		.BYTE "on it."
-		.BYTE $D
+		.BYTE	$A5
+aNoteIfYouWishT:.BYTE	"NOTE: If you wish to keep this character"
+		.BYTE	$D
+		.BYTE	$D
+		.BYTE	$A5
+aYouMustHaveADu:.BYTE	"you must have a Dungeon character disk"
+		.BYTE	$D
+		.BYTE	$D
+		.BYTE	$A5
+aReadyWithFewer:.BYTE	"ready with fewer than four characters"
+		.BYTE	$D
+		.BYTE	$D
+		.BYTE	$A5
+aOnIt_:		.BYTE	"on it."
+		.BYTE	$D
 		MOVEXY	0,12
-aEnterName:	.BYTE "Enter name :"
-		.BYTE $FF
+aEnterName:	.BYTE	"Enter name :"
+		.BYTE	$FF
 		MOVEXY	0,14
-		.BYTE $A5
-aArtThouMaleOrF:.BYTE "Art thou male or female? (M or F)"
-		.BYTE $D
-		.BYTE $FF
+		.BYTE	$A5
+aArtThouMaleOrF:.BYTE	"Art thou male or female? (M or F)"
+		.BYTE	$D
+		.BYTE	$FF
 		MOVEXY	0,14
-		.BYTE $A5
-aIMSorryButICan:.BYTE "I'm sorry but I can't pronounce"
-		.BYTE $D
-		.BYTE $D
-		.BYTE $A5
-aThatNamePlease:.BYTE "that name, please choose another!"
-		.BYTE $D
-		.BYTE $A5
+		.BYTE	$A5
+aIMSorryButICan:.BYTE	"I'm sorry but I can't pronounce"
+		.BYTE	$D
+		.BYTE	$D
+		.BYTE	$A5
+aThatNamePlease:.BYTE	"that name, please choose another!"
+		.BYTE	$D
+		.BYTE	$A5
 		STRSUB byte_877E
-		.BYTE $A8
+		.BYTE	$A8
 		MOVEXY	0,10
-		.BYTE $A5
-aCharacterTermi:.BYTE "Character terminated."
-		.BYTE $D
-		.BYTE $FF
+		.BYTE	$A5
+aCharacterTermi:.BYTE	"Character terminated."
+		.BYTE	$D
+		.BYTE	$FF
 		MOVEXY	0,17
-		.BYTE $A5
-aThyNameIs:	.BYTE "Thy name is "
-		.BYTE $B3
+		.BYTE	$A5
+aThyNameIs:	.BYTE	"Thy name is "
+		.BYTE	$B3
 		.WORD $6321
-		.BYTE $19
-		.BYTE $2E
-		.BYTE $D
-		.BYTE $D
-		.BYTE $A5
-aThySexIs:	.BYTE "Thy sex is "
+		.BYTE	$19
+		.BYTE	$2E
+		.BYTE	$D
+		.BYTE	$D
+		.BYTE	$A5
+aThySexIs:	.BYTE	"Thy sex is "
 		PRINTSTRP $71,6
-		.BYTE $2E
-		.BYTE $D
-		.BYTE $D
-		.BYTE $A5
-aIsThisCorrectq:.BYTE "Is this correct? (Y or N)"
-		.BYTE $D
-		.BYTE $FF
+		.BYTE	$2E
+		.BYTE	$D
+		.BYTE	$D
+		.BYTE	$A5
+aIsThisCorrectq:.BYTE	"Is this correct? (Y or N)"
+		.BYTE	$D
+		.BYTE	$FF
 
 a_CharacterUtil:
-		.BYTE $A8
-		.BYTE $A5
-aCharacterUtili:.BYTE "Character Utilities"
-		.BYTE $D
+		.BYTE	$A8
+		.BYTE	$A5
+aCharacterUtili:.BYTE	"Character Utilities"
+		.BYTE	$D
 		MOVEXY	0,10
-a1CreateABlankC:.BYTE "  (1) Create a blank character disk"
-		.BYTE $D
-		.BYTE $D
-a2RemoveACharac:.BYTE "  (2) Remove a character"
+a1CreateABlankC:.BYTE	"  (1) Create a blank character disk"
+		.BYTE	$D
+		.BYTE	$D
+a2RemoveACharac:.BYTE	"  (2) Remove a character"
 		MOVEXY	0,22
-		.BYTE $A5
-aSelect12OrPres:.BYTE "Select 1-2 or press ESC for main menu."
-		.BYTE $D
-		.BYTE $FF
-aMale:		.BYTE "male",0
-aFemale:	.BYTE "female",0
+		.BYTE	$A5
+aSelect12OrPres:.BYTE	"Select 1-2 or press ESC for main menu."
+		.BYTE	$D
+		.BYTE	$FF
+aMale:		.BYTE	"male",0
+aFemale:	.BYTE	"female",0
 		.BYTE	0
-		.BYTE  $F
-		.BYTE $3C ; <
-		.BYTE $3C ; <
-		.BYTE $3F ; ?
-		.BYTE $3C ; <
-		.BYTE  $F
-		.BYTE	0
-		.BYTE	0
-		.BYTE	3
-		.BYTE  $F
-		.BYTE	3
-		.BYTE	3
-		.BYTE	3
-		.BYTE $3F ; ?
-		.BYTE	0
-		.BYTE	0
-		.BYTE  $F
-		.BYTE $3C ; <
-		.BYTE	0
-		.BYTE	3
-		.BYTE  $F
-		.BYTE $3F ; ?
-		.BYTE	0
-		.BYTE	0
-		.BYTE $3F ; ?
-		.BYTE	0
-		.BYTE	3
-		.BYTE	0
-		.BYTE $3C ; <
-		.BYTE  $F
-		.BYTE	0
+		.BYTE	 $F
+		.BYTE	$3C ; <
+		.BYTE	$3C ; <
+		.BYTE	$3F ; ?
+		.BYTE	$3C ; <
+		.BYTE	 $F
 		.BYTE	0
 		.BYTE	0
 		.BYTE	3
-		.BYTE  $F
-		.BYTE $3C ; <
-		.BYTE $3F ; ?
+		.BYTE	 $F
+		.BYTE	3
+		.BYTE	3
+		.BYTE	3
+		.BYTE	$3F ; ?
 		.BYTE	0
 		.BYTE	0
+		.BYTE	 $F
+		.BYTE	$3C ; <
 		.BYTE	0
-		.BYTE $3F ; ?
-		.BYTE $3C ; <
-		.BYTE $3F ; ?
-		.BYTE	0
-		.BYTE $3C ; <
-		.BYTE  $F
-		.BYTE	0
-		.BYTE	0
-		.BYTE  $F
-		.BYTE $3C ; <
-		.BYTE $3F ; ?
-		.BYTE $3C ; <
-		.BYTE $3C ; <
-		.BYTE  $F
+		.BYTE	3
+		.BYTE	 $F
+		.BYTE	$3F ; ?
 		.BYTE	0
 		.BYTE	0
-		.BYTE $3F ; ?
+		.BYTE	$3F ; ?
+		.BYTE	0
+		.BYTE	3
+		.BYTE	0
+		.BYTE	$3C ; <
+		.BYTE	 $F
+		.BYTE	0
 		.BYTE	0
 		.BYTE	0
 		.BYTE	3
-		.BYTE  $F
-		.BYTE  $F
-		.BYTE	0
-		.BYTE	0
-		.BYTE  $F
-		.BYTE $3C ; <
-		.BYTE  $F
-		.BYTE $3C ; <
-		.BYTE $3C ; <
-		.BYTE  $F
-		.BYTE	0
-		.BYTE	0
-		.BYTE  $F
-		.BYTE $3C ; <
-		.BYTE  $F
-		.BYTE	0
-		.BYTE	0
-		.BYTE  $F
-		.BYTE	0
-		.BYTE	0
-		.BYTE $F0 ; 
-		.BYTE $3C ; <
-		.BYTE $FC ; ¸
-		.BYTE $3C ; <
-		.BYTE $3C ; <
-		.BYTE $F0 ; 
-		.BYTE	0
-		.BYTE	0
-		.BYTE $C0 ; ¿
-		.BYTE $C0 ; ¿
-		.BYTE $C0 ; ¿
-		.BYTE $C0 ; ¿
-		.BYTE $C0 ; ¿
-		.BYTE $FC ; ¸
-		.BYTE	0
-		.BYTE	0
-		.BYTE $F0 ; 
-		.BYTE $3C ; <
-		.BYTE $F0 ; 
-		.BYTE $C0 ; ¿
-		.BYTE	0
-		.BYTE $FC ; ¸
-		.BYTE	0
-		.BYTE	0
-		.BYTE $FC ; ¸
-		.BYTE $F0 ; 
-		.BYTE $C0 ; ¿
-		.BYTE $F0 ; 
-		.BYTE $3C ; <
-		.BYTE $F0 ; 
-		.BYTE	0
-		.BYTE	0
-		.BYTE $F0 ; 
-		.BYTE $F0 ; 
-		.BYTE $F0 ; 
-		.BYTE $F0 ; 
-		.BYTE $FC ; ¸
-		.BYTE $F0 ; 
-		.BYTE	0
-		.BYTE	0
-		.BYTE $FC ; ¸
-		.BYTE	0
-		.BYTE $F0 ; 
-		.BYTE $3C ; <
-		.BYTE $3C ; <
-		.BYTE $F0 ; 
-		.BYTE	0
-		.BYTE	0
-		.BYTE $F0 ; 
-		.BYTE	0
-		.BYTE $F0 ; 
-		.BYTE $3C ; <
-		.BYTE $3C ; <
-		.BYTE $F0 ; 
-		.BYTE	0
-		.BYTE	0
-		.BYTE $FC ; ¸
-		.BYTE $3C ; <
-		.BYTE $F0 ; 
-		.BYTE $C0 ; ¿
+		.BYTE	 $F
+		.BYTE	$3C ; <
+		.BYTE	$3F ; ?
 		.BYTE	0
 		.BYTE	0
 		.BYTE	0
+		.BYTE	$3F ; ?
+		.BYTE	$3C ; <
+		.BYTE	$3F ; ?
 		.BYTE	0
-		.BYTE $F0 ; 
-		.BYTE $3C ; <
-		.BYTE $F0 ; 
-		.BYTE $3C ; <
-		.BYTE $3C ; <
-		.BYTE $F0 ; 
+		.BYTE	$3C ; <
+		.BYTE	 $F
 		.BYTE	0
 		.BYTE	0
-		.BYTE $F0 ; 
-		.BYTE $3C ; <
-		.BYTE $FC ; ¸
-		.BYTE $3C ; <
-		.BYTE $F0 ; 
-		.BYTE $C0 ; ¿
+		.BYTE	 $F
+		.BYTE	$3C ; <
+		.BYTE	$3F ; ?
+		.BYTE	$3C ; <
+		.BYTE	$3C ; <
+		.BYTE	 $F
 		.BYTE	0
-unk_8CC0:	.BYTE $98 ; ò		; DATA XREF: sub_79DD+27^r
-		.BYTE $A8 ; ®
-		.BYTE $C0 ; ¿
-		.BYTE $D0 ; –
-		.BYTE $E8 ; Ë
-		.BYTE $F8 ; ¯
-		.BYTE $10
-		.BYTE $20
-		.BYTE $38 ; 8
-		.BYTE $48 ; H
-		.BYTE $60 ; `
-		.BYTE $70 ; p
-		.BYTE $88 ; à
-		.BYTE $98 ; ò
-		.BYTE $90 ; ê
-		.BYTE $A0 ; †
-unk_8CD0:	.BYTE $9A ; ö		; DATA XREF: sub_79DD+2C^r
-		.BYTE $9A ; ö
-		.BYTE $9A ; ö
-		.BYTE $9A ; ö
-		.BYTE $9A ; ö
-		.BYTE $9A ; ö
-		.BYTE $9B ; õ
-		.BYTE $9B ; õ
-		.BYTE $9B ; õ
-		.BYTE $9B ; õ
-		.BYTE $9B ; õ
-		.BYTE $9B ; õ
-		.BYTE $9B ; õ
-		.BYTE $9B ; õ
-		.BYTE $AF ; Ø
-		.BYTE $AF ; Ø
+		.BYTE	0
+		.BYTE	$3F ; ?
+		.BYTE	0
+		.BYTE	0
+		.BYTE	3
+		.BYTE	 $F
+		.BYTE	 $F
+		.BYTE	0
+		.BYTE	0
+		.BYTE	 $F
+		.BYTE	$3C ; <
+		.BYTE	 $F
+		.BYTE	$3C ; <
+		.BYTE	$3C ; <
+		.BYTE	 $F
+		.BYTE	0
+		.BYTE	0
+		.BYTE	 $F
+		.BYTE	$3C ; <
+		.BYTE	 $F
+		.BYTE	0
+		.BYTE	0
+		.BYTE	 $F
+		.BYTE	0
+		.BYTE	0
+		.BYTE	$F0 ; 
+		.BYTE	$3C ; <
+		.BYTE	$FC ; ¸
+		.BYTE	$3C ; <
+		.BYTE	$3C ; <
+		.BYTE	$F0 ; 
+		.BYTE	0
+		.BYTE	0
+		.BYTE	$C0 ; ¿
+		.BYTE	$C0 ; ¿
+		.BYTE	$C0 ; ¿
+		.BYTE	$C0 ; ¿
+		.BYTE	$C0 ; ¿
+		.BYTE	$FC ; ¸
+		.BYTE	0
+		.BYTE	0
+		.BYTE	$F0 ; 
+		.BYTE	$3C ; <
+		.BYTE	$F0 ; 
+		.BYTE	$C0 ; ¿
+		.BYTE	0
+		.BYTE	$FC ; ¸
+		.BYTE	0
+		.BYTE	0
+		.BYTE	$FC ; ¸
+		.BYTE	$F0 ; 
+		.BYTE	$C0 ; ¿
+		.BYTE	$F0 ; 
+		.BYTE	$3C ; <
+		.BYTE	$F0 ; 
+		.BYTE	0
+		.BYTE	0
+		.BYTE	$F0 ; 
+		.BYTE	$F0 ; 
+		.BYTE	$F0 ; 
+		.BYTE	$F0 ; 
+		.BYTE	$FC ; ¸
+		.BYTE	$F0 ; 
+		.BYTE	0
+		.BYTE	0
+		.BYTE	$FC ; ¸
+		.BYTE	0
+		.BYTE	$F0 ; 
+		.BYTE	$3C ; <
+		.BYTE	$3C ; <
+		.BYTE	$F0 ; 
+		.BYTE	0
+		.BYTE	0
+		.BYTE	$F0 ; 
+		.BYTE	0
+		.BYTE	$F0 ; 
+		.BYTE	$3C ; <
+		.BYTE	$3C ; <
+		.BYTE	$F0 ; 
+		.BYTE	0
+		.BYTE	0
+		.BYTE	$FC ; ¸
+		.BYTE	$3C ; <
+		.BYTE	$F0 ; 
+		.BYTE	$C0 ; ¿
+		.BYTE	0
+		.BYTE	0
+		.BYTE	0
+		.BYTE	0
+		.BYTE	$F0 ; 
+		.BYTE	$3C ; <
+		.BYTE	$F0 ; 
+		.BYTE	$3C ; <
+		.BYTE	$3C ; <
+		.BYTE	$F0 ; 
+		.BYTE	0
+		.BYTE	0
+		.BYTE	$F0 ; 
+		.BYTE	$3C ; <
+		.BYTE	$FC ; ¸
+		.BYTE	$3C ; <
+		.BYTE	$F0 ; 
+		.BYTE	$C0 ; ¿
+		.BYTE	0
+unk_8CC0:	.BYTE	$98 ; ò		; DATA XREF: sub_79DD+27^r
+		.BYTE	$A8 ; ®
+		.BYTE	$C0 ; ¿
+		.BYTE	$D0 ; –
+		.BYTE	$E8 ; Ë
+		.BYTE	$F8 ; ¯
+		.BYTE	$10
+		.BYTE	$20
+		.BYTE	$38 ; 8
+		.BYTE	$48 ; H
+		.BYTE	$60 ; `
+		.BYTE	$70 ; p
+		.BYTE	$88 ; à
+		.BYTE	$98 ; ò
+		.BYTE	$90 ; ê
+		.BYTE	$A0 ; †
+unk_8CD0:	.BYTE	$9A ; ö		; DATA XREF: sub_79DD+2C^r
+		.BYTE	$9A ; ö
+		.BYTE	$9A ; ö
+		.BYTE	$9A ; ö
+		.BYTE	$9A ; ö
+		.BYTE	$9A ; ö
+		.BYTE	$9B ; õ
+		.BYTE	$9B ; õ
+		.BYTE	$9B ; õ
+		.BYTE	$9B ; õ
+		.BYTE	$9B ; õ
+		.BYTE	$9B ; õ
+		.BYTE	$9B ; õ
+		.BYTE	$9B ; õ
+		.BYTE	$AF ; Ø
+		.BYTE	$AF ; Ø
 unk_8CE0:	.BYTE	0		; DATA XREF: RAM:loc_77A4^r RAM:77BC^w ...
 		.BYTE	0
 		.BYTE	0
@@ -2514,14 +2515,14 @@ unk_8CF0:	.BYTE	1		; DATA XREF: sub_7959+E^r
 		.BYTE	0
 		.BYTE	0
 		.BYTE	1
-unk_8CF8:	.BYTE $10		; DATA XREF: sub_7959:loc_795D^r
+unk_8CF8:	.BYTE	$10		; DATA XREF: sub_7959:loc_795D^r
 		.BYTE	0
-		.BYTE $B0 ; ∞
-		.BYTE $D0 ; –
-		.BYTE $F0 ; 
-		.BYTE $70 ; p
-		.BYTE $90 ; ê
-		.BYTE $30 ; 0
+		.BYTE	$B0 ; ∞
+		.BYTE	$D0 ; –
+		.BYTE	$F0 ; 
+		.BYTE	$70 ; p
+		.BYTE	$90 ; ê
+		.BYTE	$30 ; 0
 unk_8D00:	.BYTE	2		; DATA XREF: RAM:77B1^w	RAM:782D^r ...
 unk_8D01:	.BYTE	1		; DATA XREF: RAM:77B7^w	RAM:7827^r ...
 		.BYTE	1
@@ -2560,8 +2561,8 @@ unk_8D20:	.BYTE	0		; DATA XREF: RAM:782A^w	RAM:7835^r ...
 		.BYTE	0
 		.BYTE	0
 		.BYTE	0
-byte_8D26:	.BYTE 0			; DATA XREF: RAM:785D^r
-byte_8D27:	.BYTE 0			; DATA XREF: RAM:7866^r
+byte_8D26:	.BYTE	0			; DATA XREF: RAM:785D^r
+byte_8D27:	.BYTE	0			; DATA XREF: RAM:7866^r
 unk_8D28:	.BYTE	0		; DATA XREF: sub_7959+68^r
 		.BYTE	1
 		.BYTE	2
@@ -2767,11 +2768,11 @@ unk_8DF0:	.BYTE	0		; DATA XREF: sub_7959:loc_7974^r
 		.BYTE	4
 		.BYTE	6
 		.BYTE	8
-		.BYTE  $A
-		.BYTE  $C
-		.BYTE  $E
-		.BYTE $10
-		.BYTE $12
+		.BYTE	 $A
+		.BYTE	 $C
+		.BYTE	 $E
+		.BYTE	$10
+		.BYTE	$12
 unk_8DFA:	.BYTE	0		; DATA XREF: sub_79DD+31^r
 		.BYTE	0
 		.BYTE	1
@@ -2792,122 +2793,59 @@ unk_8DFA:	.BYTE	0		; DATA XREF: sub_79DD+31^r
 		.BYTE	8
 unk_8E0C:	.BYTE	0		; DATA XREF: sub_79DD+A^r sub_79DD+1A^r
 		.BYTE	8
-		.BYTE $10
-		.BYTE $18
-		.BYTE $20
-		.BYTE $28 ; (
-		.BYTE $30 ; 0
-		.BYTE $38 ; 8
-		.BYTE $40 ; @
-		.BYTE $48 ; H
+		.BYTE	$10
+		.BYTE	$18
+		.BYTE	$20
+		.BYTE	$28 ; (
+		.BYTE	$30 ; 0
+		.BYTE	$38 ; 8
+		.BYTE	$40 ; @
+		.BYTE	$48 ; H
 unk_8E16:	.BYTE	0		; DATA XREF: RAM:7831^r
-		.BYTE  $A
-		.BYTE $14
-		.BYTE $1E
-		.BYTE $28 ; (
-		.BYTE $32 ; 2
-		.BYTE $3C ; <
-		.BYTE $46 ; F
-		.BYTE $50 ; P
-		.BYTE $5A ; Z
-unk_8E20:	.BYTE "      Loading Character...      " ; DATA XREF: RAM:loc_7C08^r
-unk_8E40:	.BYTE $20		; DATA XREF: RAM:loc_83F8^r
-		.BYTE $20
-		.BYTE $46 ; F
-		.BYTE $6F ; o
-		.BYTE $72 ; r
-		.BYTE $6D ; m
-		.BYTE $61 ; a
-		.BYTE $74 ; t
-		.BYTE $74 ; t
-		.BYTE $69 ; i
-		.BYTE $6E ; n
-		.BYTE $67 ; g
-		.BYTE $20
-		.BYTE $43 ; C
-		.BYTE $68 ; h
-		.BYTE $61 ; a
-		.BYTE $72 ; r
-		.BYTE $61 ; a
-		.BYTE $63 ; c
-		.BYTE $74 ; t
-		.BYTE $65 ; e
-		.BYTE $72 ; r
-		.BYTE $20
-		.BYTE $64 ; d
-		.BYTE $69 ; i
-		.BYTE $73 ; s
-		.BYTE $6B ; k
-		.BYTE $2E ; .
-		.BYTE $2E ; .
-		.BYTE $2E ; .
-		.BYTE $20
-		.BYTE $20
-unk_8E60:	.BYTE $20		; DATA XREF: RAM:loc_7ADD^r
-					; RAM:loc_7B20^r
-		.BYTE $20
-		.BYTE $20
-		.BYTE $20
-		.BYTE $20
-		.BYTE $20
-		.BYTE $52 ; R
-		.BYTE $65 ; e
-		.BYTE $6D ; m
-		.BYTE $6F ; o
-		.BYTE $76 ; v
-		.BYTE $69 ; i
-		.BYTE $6E ; n
-		.BYTE $67 ; g
-		.BYTE $20
-		.BYTE $43 ; C
-		.BYTE $68 ; h
-		.BYTE $61 ; a
-		.BYTE $72 ; r
-		.BYTE $61 ; a
-		.BYTE $63 ; c
-		.BYTE $74 ; t
-		.BYTE $65 ; e
-		.BYTE $72 ; r
-		.BYTE $2E ; .
-		.BYTE $2E ; .
-		.BYTE $2E ; .
-		.BYTE $20
-		.BYTE $20
-		.BYTE $20
-		.BYTE $20
-		.BYTE $20
-		.BYTE $20
-		.BYTE $20
-		.BYTE $20
-		.BYTE $43 ; C
-		.BYTE $68 ; h
-		.BYTE $65 ; e
-		.BYTE $63 ; c
-		.BYTE $6B ; k
-		.BYTE $69 ; i
-		.BYTE $6E ; n
-		.BYTE $67 ; g
-		.BYTE $20
-		.BYTE $43 ; C
-		.BYTE $68 ; h
-		.BYTE $61 ; a
-		.BYTE $72 ; r
-		.BYTE $61 ; a
-		.BYTE $63 ; c
-		.BYTE $74 ; t
-		.BYTE $65 ; e
-		.BYTE $72 ; r
-		.BYTE $20
-		.BYTE $44 ; D
-		.BYTE $69 ; i
-		.BYTE $73 ; s
-		.BYTE $6B ; k
-		.BYTE $2E ; .
-		.BYTE $2E ; .
-		.BYTE $2E ; .
-		.BYTE $20
-		.BYTE $20
-		.BYTE $20
+		.BYTE	 $A
+		.BYTE	$14
+		.BYTE	$1E
+		.BYTE	$28 ; (
+		.BYTE	$32 ; 2
+		.BYTE	$3C ; <
+		.BYTE	$46 ; F
+		.BYTE	$50 ; P
+		.BYTE	$5A ; Z
+unk_8E20:	.BYTE	"      Loading Character...      " ; DATA XREF: RAM:loc_7C08^r
+unk_8E40:	.BYTE	$20		; DATA XREF: RAM:loc_83F8^r
+		.BYTE	$20
+		.BYTE	$46 ; F
+		.BYTE	$6F ; o
+		.BYTE	$72 ; r
+		.BYTE	$6D ; m
+		.BYTE	$61 ; a
+		.BYTE	$74 ; t
+		.BYTE	$74 ; t
+		.BYTE	$69 ; i
+		.BYTE	$6E ; n
+		.BYTE	$67 ; g
+		.BYTE	$20
+		.BYTE	$43 ; C
+		.BYTE	$68 ; h
+		.BYTE	$61 ; a
+		.BYTE	$72 ; r
+		.BYTE	$61 ; a
+		.BYTE	$63 ; c
+		.BYTE	$74 ; t
+		.BYTE	$65 ; e
+		.BYTE	$72 ; r
+		.BYTE	$20
+		.BYTE	$64 ; d
+		.BYTE	$69 ; i
+		.BYTE	$73 ; s
+		.BYTE	$6B ; k
+		.BYTE	$2E ; .
+		.BYTE	$2E ; .
+		.BYTE	$2E ; .
+		.BYTE	$20
+		.BYTE	$20
+unk_8E60:	.BYTE	"      Removing Character...  "
+		.BYTE	"      Checking Character Disk...   "
 unk_8EA0:	.BYTE	0		; DATA XREF: RAM:loc_7B49^r
 					; sub_7ECB+58^w
 		.BYTE	0
