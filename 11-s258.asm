@@ -1,5 +1,5 @@
 ;
-; 11-s258.asm - key file for 11-s259
+; 11-s258.asm - game main menu
 ;
 ; This source code is copyright (c) 2008 Jason Duerstock
 ; jason.duerstock@gmail.com
@@ -186,11 +186,11 @@ loc_76F4:				; CODE XREF: RAM:76F7vj	RAM:773Avj ...
 loc_7710:				; CODE XREF: RAM:76FE^j
 		CMP	#$46 ; 'F'
 		BNE	loc_7724
-		LDA	#$80 ; ''
+		LDA	#$80
 		STA	$633B
 		LDA	#$19
 		STA	$71
-		LDA	#$8C ; ''
+		LDA	#$8C
 		STA	$72
 		JMP	loc_774C
 ; ---------------------------------------------------------------------------
@@ -453,9 +453,9 @@ sub_78BB:				; CODE XREF: RAM:786C^p	RAM:7875^p
 ; ---------------------------------------------------------------------------
 
 loc_78D8:				; CODE XREF: RAM:769D^j
-		LDA	#$75 ; 'u'
+		LDA	#>($7600-1)
 		PHA
-		LDA	#$FF
+		LDA	#<($7600-1)
 		PHA
 		ldi	SEGNO, $22
 		dldi	SEGADDR, $7600

@@ -75,7 +75,7 @@
 	DirEnt	$4000,3,1,199,,18	; inn			; $1F
 	DirEnt	$4000,3,2,327,,27	; oracle		; $20
 	DirEnt	$4000,3,2,382,,24	; enchantress		; $21
-	DirEnt	$4000,1,1,311,,32	; ???			; $22
+	DirEnt	$4000,1,1,311,,32	; xfer character	; $22
 	DirEnt	$4000,2,2,134,,16	; ferryman		; $23
 	DirEnt	$4000,2,2,167,,15	; horse			; $24
 	DirEnt	$4000,2,2,198,,32	; smithy		; $25
