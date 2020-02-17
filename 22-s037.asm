@@ -245,22 +245,24 @@ loc_7801:				; CODE XREF: RAM:77D2^j
 unk_780C:	.BYTE	<(loc_77EB-1)	; DATA XREF: RAM:77E6^r
 		.BYTE	<(loc_790D-1)
 		.BYTE	<(loc_7A05-1)
-		.BYTE	$B9 ; ¹
-		.BYTE	$28 ; (
-		.BYTE	$F1 ; ñ
-		.BYTE	$EA ; ê
-		.BYTE	$9E ; ž
-		.BYTE	$1D
+		.BYTE	<(loc_79BA-1)
+		.BYTE	<(loc_7929-1)
+		.BYTE	<(loc_78F2-1)
+		.BYTE	<(loc_77EB-1)
+		.BYTE	<(loc_799F-1)
+		.BYTE	<(loc_781E-1)
 unk_7815:	.BYTE	>(loc_77EB-1)	; DATA XREF: RAM:loc_77E2^r
 		.BYTE	>(loc_790D-1)
 		.BYTE	>(loc_7A05-1)
-		.BYTE	$79 ; y
-		.BYTE	$79 ; y
-		.BYTE	$78 ; x
-		.BYTE	$77 ; w
-		.BYTE	$79 ; y
-		.BYTE	$78 ; x
+		.BYTE	>(loc_79BA-1)
+		.BYTE	>(loc_7929-1)
+		.BYTE	>(loc_78F2-1)
+		.BYTE	>(loc_77EB-1)
+		.BYTE	>(loc_799F-1)
+		.BYTE	>(loc_781E-1)
 ; ---------------------------------------------------------------------------
+
+loc_781E:
 		dldi	off_16, $7D3E
 		LDA	#$19
 		STA	$68
@@ -370,6 +372,8 @@ loc_78D8:				; CODE XREF: RAM:78BD^j	RAM:78CA^j ...
 loc_78EF:				; CODE XREF: RAM:78EA^j
 		JMP	loc_77A1
 ; ---------------------------------------------------------------------------
+
+loc_78F2:
 		LDX	#4
 
 loc_78F4:				; CODE XREF: RAM:78FBvj
@@ -397,6 +401,8 @@ loc_7915:				; CODE XREF: RAM:7755^j	RAM:799Cvj ...
 		JSR	j_sub_2BFC
 		JMP	loc_77A1
 ; ---------------------------------------------------------------------------
+
+loc_7929:
 		dldi	off_16, $7E14
 		LDX	$6A
 		JSR	j_sub_3C5C
@@ -454,6 +460,7 @@ loc_7994:				; CODE XREF: RAM:79B7vj
 		JMP	loc_7915
 ; ---------------------------------------------------------------------------
 
+loc_799F:
 		ldxy	$7B36
 		LDA	$1969
 		BEQ	loc_79AC
@@ -467,6 +474,7 @@ loc_79AC:				; CODE XREF: RAM:79A6^j
 		JMP	loc_7994
 ; ---------------------------------------------------------------------------
 
+loc_79BA:
 		dldi	off_16, $7E4B
 		LDX	$6A
 		JSR	j_sub_3C5C
