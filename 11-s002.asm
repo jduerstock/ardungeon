@@ -83,7 +83,7 @@
 	DirEnt	$4000,2,2,332,,16	; crypt			; $27
 	DirEnt	$4000,2,2,365,,21	; dragon		; $28
 	DirEnt	$4000,2,2,408,,11	; ??? (death's door?)	; $29
-	DirEnt	$4000,1,1,376,,37	; ???			; $2A
+	DirEnt	$4000,1,1,376,,37	; char creation img     ; $2A
 	DirEnt	$4000,2,2,431,,31	; machine room		; $2B
 	DirEnt	$4000,2,2,494,,7	; elevator		; $2C
 	DirEnt	$4000,3,2,431,,31	; tavern		; $2D
