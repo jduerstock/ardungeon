@@ -41,10 +41,10 @@ ASM_SOURCES= \
 	11-s451.asm \
 	11-s466.asm \
 	11-s480.asm \
+	11-s517.asm \
 	11-s679.asm
 
 ASM2_SOURCES= \
-	11-s517.asm 11-s518.asm \
 	11-s676.asm 11-s677.asm \
 	11-s682.asm \
 	21-s001.asm \
@@ -146,13 +146,7 @@ $(BINARIES) 11-s680.bin: $(OBJECTS)
 11-s481.bin.crypt: 11-s481.bin
 	./encrypt.py 11-s481.bin 41e00012ce2968152c088c20cabc4d9d
 
-11-s517.bin: 11-s517.asm
-	cl65 --start-addr 0x0100 -t none 11-s517.asm -o 11-s517.bin
-	sha1sum -c 11-s517.sha1
-
-11-s518.bin: 11-s518.asm
-	cl65 --start-addr 0x1400 -t none 11-s518.asm -o 11-s518.bin
-	sha1sum -c 11-s518.sha1
+11-s518.bin.crypt: 11-s518.bin
 	./encrypt.py 11-s518.bin 4205004fd4eeca7c58be41ff111a97bd
 
 11-s676.bin: 11-s676.asm

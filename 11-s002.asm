@@ -40,7 +40,9 @@
 .endmacro
 
 	.SEGMENT	"SEGDIR"
+
 ;	.ORG	$0280
+
 	DirEnt	,3,1,7,$300,4		; ???			; $00
 	DirEnt	$4000,2,1,10,,20	; map 1			; $01
 	DirEnt	$4000,2,1,51,,20	; map 2			; $02
@@ -101,7 +103,7 @@
 	DirEnt	$4000,3,2,566,,4	; unknown song		; $39
 	DirEnt	$4000,3,2,575,,23	; tavern talk		; $3A
 	DirEnt	$4000,1,1,480,,18	; blank character data	; $3B
-	DirEnt	$4000,1,1,517,,79	; portal 2		; $3C
+	DirEnt	$4000,1,1,517,,79	; game kernel		; $3C
 	DirEnt	$4000,1,1,676,,1	; ???			; $3D
 	DirEnt	$4000,1,1,679,,1	; ???			; $3E
 	DirEnt	$4000,3,1,604,$f000,32	; ???			; $3F
@@ -110,4 +112,6 @@
 	DirEnt	$4000,2,2,536,,5	; ???			; $42
 	DirEnt	$4000,3,1,671,,5	; unknown 4		; $43
 	DirEnt	$4000,3,2,684,,5	; unknown 5		; $44
+
 	.RES	236,$00
+
