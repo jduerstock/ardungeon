@@ -764,10 +764,7 @@ unk_7A86:	.BYTE	$E5 ; å		; DATA XREF: sub_7A5D:loc_7A62^r
 ; ---------------------------------------------------------------------------
 
 loc_7A95:				; CODE XREF: RAM:7696^j
-		LDA	#$98 ; ''
-		STA	byte_82F2
-		LDA	#$82 ; ''
-		STA	byte_82F3
+		dldi	off_82F2, $8298
 		JSR	sub_7EB0
 		BCS	loc_7AC4
 		JSR	sub_7E33
@@ -782,8 +779,7 @@ loc_7A95:				; CODE XREF: RAM:7696^j
 		STA	$638F
 
 loc_7ABD:				; CODE XREF: RAM:7AB6^j
-		LDA	$195B
-		STA	$6320
+		mv	$6320, $195B
 		RTS
 ; ---------------------------------------------------------------------------
 
@@ -792,10 +788,7 @@ loc_7AC4:				; CODE XREF: RAM:7AA2^j	RAM:7AA7^j ...
 ; ---------------------------------------------------------------------------
 
 loc_7AC7:				; DATA XREF: RAM:7929^o
-		LDA	#$B5 ; 'µ'
-		STA	byte_82F2
-		LDA	#$82 ; ''
-		STA	byte_82F3
+		dldi	off_82F2, $82B5
 		JSR	sub_7EB0
 		BCS	loc_7AC4
 		JSR	sub_7E33
@@ -1460,7 +1453,7 @@ loc_7F2B:				; CODE XREF: sub_7EB0+14^j
 		RTS
 ; ---------------------------------------------------------------------------
 		.BYTE	$AD
-		.WORD byte_82F2
+		.WORD	off_82F2
 		MOVEXY	0,8
 		.BYTE	$A5
 aPleaseInsertYo:.BYTE	"Please insert your character disk"
@@ -1475,7 +1468,7 @@ aOrEscToCance_0:.BYTE	"or ESC to cancel"
 		.BYTE	$D
 		.BYTE	$FF
 		.BYTE	$AD
-		.WORD byte_82F2
+		.WORD	off_82F2
 		MOVEXY	0,8
 		.BYTE	$A5
 aThisCharacterD:.BYTE	"This character disk has no characters"
@@ -1490,21 +1483,21 @@ aPressAnyKeyT_0:.BYTE	"Press any key to continue"
 		.BYTE	$D
 		.BYTE	$FF
 		.BYTE	$AD
-		.WORD byte_82F2
+		.WORD	off_82F2
 		MOVEXY	0,8
 		.BYTE	$A5
 aUnableToRemove:.BYTE	"Unable to remove character!"
 		.BYTE	$D
-		STRSUB byte_810D
+		STRSUB	byte_810D
 		.BYTE	$AD
-		.WORD byte_82F2
+		.WORD	off_82F2
 		MOVEXY	0,8
 		.BYTE	$A5
 aThatCharacterH:.BYTE	"That Character has been removed."
 		.BYTE	$D
 		STRSUB byte_7FC0
 		.BYTE	$AD
-		.WORD byte_82F2
+		.WORD	off_82F2
 		MOVEXY	0,8
 aAreYouSureYouW:.BYTE	$A5,"Are you sure you want to permanently",$D,$D
 aRemove:	.BYTE	$A5,"remove "
@@ -1517,7 +1510,7 @@ aYOrN:		.BYTE	"(Y or N)"
 		.BYTE	$D
 		.BYTE	$FF
 		.BYTE	$AD
-		.WORD byte_82F2
+		.WORD	off_82F2
 		MOVEXY	0,8
 a1:		.BYTE	" (1) "
 		PRINTSTRP off_82F5,25
@@ -1544,7 +1537,7 @@ aSelect14OrEscT:.BYTE	"Select 1-4 or ESC to cancel"
 		.BYTE	$D
 		.BYTE	$FF
 		.BYTE	$AD
-		.WORD byte_82F2
+		.WORD	off_82F2
 		MOVEXY	0,8
 		.BYTE	$A5
 aUnableToLoadTh:.BYTE	"Unable to load this character!"
@@ -1558,18 +1551,18 @@ aProtectedAndTr:.BYTE	"protected and try again."
 		.BYTE	$D
 		STRSUB byte_7FC0
 		.BYTE	$AD
-		.WORD byte_82F2
+		.WORD	off_82F2
 		MOVEXY	0,8
 		.BYTE	$A5
 aThisCharacterI:.BYTE	"This character is in "
 		.BYTE	$B4
-		.WORD byte_83BB
+		.WORD	byte_83BB
 		.BYTE	$F
 		.BYTE	'!'
 		.BYTE	$D
-		STRSUB byte_7FC0
+		STRSUB	byte_7FC0
 		.BYTE	$AD
-		.WORD byte_82F2
+		.WORD	off_82F2
 		MOVEXY	0,8
 		.BYTE	$A5
 aThisCharacterW:.BYTE	"This character was on his way to"
@@ -1598,11 +1591,11 @@ aN:		.BYTE	'N'
 		.BYTE	 $D
 		.BYTE	$FF
 		.BYTE	$AD ; ­
-		.WORD byte_82F2
+		.WORD	off_82F2
 		MOVEXY	0,8
 		.BYTE	$A5
 		.BYTE	$B4
-		.WORD byte_83BD
+		.WORD	byte_83BD
 		.BYTE	$19
 		.BYTE	$20
 aHasBeen:	.BYTE	"has been"
@@ -1668,26 +1661,25 @@ loc_82D8:				; DATA XREF: RAM:8292^o
 aEmpty:		.BYTE	"(EMPTY)",0
 aLost:		.BYTE	"(LOST)",0
 aOk:		.BYTE	"(OK)",0
-byte_82F2:	.BYTE	0			; DATA XREF: RAM:7A97^w	RAM:7AC9^w ...
-byte_82F3:	.BYTE	0			; DATA XREF: RAM:7A9C^w	RAM:7ACE^w
+off_82F2:	.BYTE	0, 0		; DATA XREF: RAM:7A97^w	RAM:7AC9^w ...
 unk_82F4:	.BYTE	0		; DATA XREF: RAM:off_82FDvo
 					; RAM:off_82FFvo ...
-off_82F5:	.WORD unk_8EB8		; DATA XREF: RAM:8083^o
-off_82F7:	.WORD unk_8ED2		; DATA XREF: RAM:8096^o
-off_82F9:	.WORD unk_8EEC		; DATA XREF: RAM:80A9^o
-off_82FB:	.WORD unk_8F06		; DATA XREF: RAM:80BC^o
-off_82FD:	.WORD unk_82F4		; DATA XREF: sub_7E33+2B^w sub_7E33+3A^w ...
-off_82FF:	.WORD unk_82F4		; DATA XREF: RAM:809D^o
-off_8301:	.WORD unk_82F4		; DATA XREF: RAM:80B0^o
-off_8303:	.WORD unk_82F4		; DATA XREF: RAM:80C3^o
-off_8305:	.WORD aStamina		; DATA XREF: RAM:7CDB^r	RAM:7CE1^r
+off_82F5:	.WORD	unk_8EB8	; DATA XREF: RAM:8083^o
+off_82F7:	.WORD	unk_8ED2	; DATA XREF: RAM:8096^o
+off_82F9:	.WORD	unk_8EEC	; DATA XREF: RAM:80A9^o
+off_82FB:	.WORD	unk_8F06	; DATA XREF: RAM:80BC^o
+off_82FD:	.WORD	unk_82F4	; DATA XREF: sub_7E33+2B^w sub_7E33+3A^w ...
+off_82FF:	.WORD	unk_82F4	; DATA XREF: RAM:809D^o
+off_8301:	.WORD	unk_82F4	; DATA XREF: RAM:80B0^o
+off_8303:	.WORD	unk_82F4	; DATA XREF: RAM:80C3^o
+off_8305:	.WORD	aStamina	; DATA XREF: RAM:7CDB^r	RAM:7CE1^r
 					; "stamina"
-		.WORD aCharisma		; "charisma"
-		.WORD aStrength		; "strength"
-		.WORD aIntelligence	; "intelligence"
-		.WORD aWisdom		; "wisdom"
-		.WORD aSkill		; "skill"
-		.WORD aSpeed		; "speed"
+		.WORD	aCharisma	; "charisma"
+		.WORD	aStrength	; "strength"
+		.WORD	aIntelligence	; "intelligence"
+		.WORD	aWisdom		; "wisdom"
+		.WORD	aSkill		; "skill"
+		.WORD	aSpeed		; "speed"
 aStamina:	.BYTE	"stamina",0       ; DATA XREF: RAM:off_8305^o
 aCharisma:	.BYTE	"charisma",0      ; DATA XREF: RAM:8307^o
 aStrength:	.BYTE	"strength",0      ; DATA XREF: RAM:8309^o
