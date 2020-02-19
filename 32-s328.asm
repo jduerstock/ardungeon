@@ -621,23 +621,23 @@ byte_7C5E:	MOVEXY	0,0
 		.BYTE	$A5,"You stand before the great and mighty",$0D,$0D
 aOracle_WhatWil:.BYTE	$A5,"Oracle.  What will thee offer for",$0D,$0D
 aWordsOfWisdomq:.BYTE	$A5,"words of wisdom?",$0D
-		.BYTE $A6,  7,	6
-		.BYTE $AC
+		.BYTE	$A6,  7,	6
+		.BYTE	$AC
 		.WORD aDoYou		; "Do you ("
-byte_7CC5:	.BYTE $A6,  0,	0	; DATA XREF: RAM:7A4D^o
-		.BYTE $A5
-aIAmTheAllKnowi:.BYTE "I am the all-knowing Oracle, offer me"
-		.BYTE $D
-		.BYTE $D
-		.BYTE $A5
-aAGiftAndIfIAmP:.BYTE "a gift and if I am pleased I will"
-		.BYTE $D
-		.BYTE $D
-		.BYTE $A5
-aRewardTheeWith:.BYTE "reward thee with knowledge."
-		.BYTE $D
-		.BYTE $A6,  7,	6
-		.BYTE $AC
+byte_7CC5:	.BYTE	$A6,  0,	0	; DATA XREF: RAM:7A4D^o
+		.BYTE	$A5
+aIAmTheAllKnowi:.BYTE	"I am the all-knowing Oracle, offer me"
+		.BYTE	$D
+		.BYTE	$D
+		.BYTE	$A5
+aAGiftAndIfIAmP:.BYTE	"a gift and if I am pleased I will"
+		.BYTE	$D
+		.BYTE	$D
+		.BYTE	$A5
+aRewardTheeWith:.BYTE	"reward thee with knowledge."
+		.BYTE	$D
+		.BYTE	$A6,  7,	6
+		.BYTE	$AC
 		.WORD aDoYou		; "Do you ("
 
 str_7D37:
@@ -645,187 +645,188 @@ str_7D37:
 		.BYTE	$A5,"Foolish human, thou must make an",$0D,$0D
 		.BYTE	$A5,"offering of sufficient value before I",$0D,$0D
 		.BYTE	$A5,"will impart any of my wisdom to thee.",$0D
-		.BYTE $A6,  7,	6
-		.BYTE $AC
+		.BYTE	$A6,  7,	6
+		.BYTE	$AC
 		.WORD aDoYou		; "Do you ("
-		.BYTE $A6,  0,	1
-		.BYTE $A5
-aYouHaveAngered:.BYTE "You have angered me enough!  I will"
-		.BYTE $D
-		.BYTE $A5
-aTolerateThyPre:.BYTE "tolerate thy presence no more for"
-		.BYTE $D
-		.BYTE $A5
-aAtLeastAMonth:	.BYTE "at least a month!"
-		.BYTE $D
-		.BYTE $A5
-aIfThouReturnSo:.BYTE "If thou return sooner prepare to face"
-		.BYTE $D
-		.BYTE $A5
-aTheConsequence:.BYTE "the consequences!"
-		.BYTE $D
-		.BYTE $D
-		.BYTE $A5
-		.BYTE $A1
-		.BYTE $7F ; 
-aBegone:	.BYTE " BEGONE! "
-		.BYTE $7F ; 
-		.BYTE $A0
-		.BYTE $D
-		.BYTE $FF
-		.BYTE $A6,  0,	0
-		.BYTE $A5
-aYouWereToldNot:.BYTE "You were told not to return for a"
-		.BYTE $D
-		.BYTE $D
-		.BYTE $A5
-aMonthNowYouMus:.BYTE "month!  Now you must face the wrath"
-		.BYTE $D
-		.BYTE $D
-		.BYTE $A5
-aOfTheOracle:	.BYTE "of the Oracle!"
-		.BYTE $D
-		.BYTE $FF
-byte_7EB9:	.BYTE $A6,  0,	0	; DATA XREF: RAM:7A69^o
-		.BYTE $A5
-aGreetings:	.BYTE "Greetings "
-		.BYTE $B3
+		.BYTE	$A6,  0,	1
+		.BYTE	$A5
+aYouHaveAngered:.BYTE	"You have angered me enough!  I will"
+		.BYTE	$D
+		.BYTE	$A5
+aTolerateThyPre:.BYTE	"tolerate thy presence no more for"
+		.BYTE	$D
+		.BYTE	$A5
+aAtLeastAMonth:	.BYTE	"at least a month!"
+		.BYTE	$D
+		.BYTE	$A5
+aIfThouReturnSo:.BYTE	"If thou return sooner prepare to face"
+		.BYTE	$D
+		.BYTE	$A5
+aTheConsequence:.BYTE	"the consequences!"
+		.BYTE	$D
+		.BYTE	$D
+		.BYTE	$A5
+		.BYTE	$A1
+		.BYTE	$7F ; 
+aBegone:	.BYTE	" BEGONE! "
+		.BYTE	$7F ; 
+		.BYTE	$A0
+		.BYTE	$D
+		.BYTE	$FF
+
+		.BYTE	$A6,  0,	0
+		.BYTE	$A5
+aYouWereToldNot:.BYTE	"You were told not to return for a"
+		.BYTE	$D
+		.BYTE	$D
+		.BYTE	$A5
+aMonthNowYouMus:.BYTE	"month!  Now you must face the wrath"
+		.BYTE	$D
+		.BYTE	$D
+		.BYTE	$A5
+aOfTheOracle:	.BYTE	"of the Oracle!"
+		.BYTE	$D
+		.BYTE	$FF
+byte_7EB9:	.BYTE	$A6,  0,	0	; DATA XREF: RAM:7A69^o
+		.BYTE	$A5
+aGreetings:	.BYTE	"Greetings "
+		.BYTE	$B3
 		.WORD $6321
-		.BYTE $19
-		.BYTE ","
-		.BYTE $D
-		.BYTE $D
-		.BYTE $A5
-aForASmallOffer:.BYTE "for a small offering I will share"
-		.BYTE $D
-		.BYTE $A5
-aSomeOfMyWisdom:.BYTE "some of my wisdom."
-		.BYTE $D
-		.BYTE $A6,  7,	6
-		.BYTE $AC
+		.BYTE	$19
+		.BYTE	","
+		.BYTE	$D
+		.BYTE	$D
+		.BYTE	$A5
+aForASmallOffer:.BYTE	"for a small offering I will share"
+		.BYTE	$D
+		.BYTE	$A5
+aSomeOfMyWisdom:.BYTE	"some of my wisdom."
+		.BYTE	$D
+		.BYTE	$A6,  7,	6
+		.BYTE	$AC
 		.WORD aDoYou		; "Do you ("
-byte_7F0B:	.BYTE $A6,  0,	0	; DATA XREF: RAM:7A6B^o
-		.BYTE $A5
-aWelcome:	.BYTE "Welcome "
-		.BYTE $B3
+byte_7F0B:	.BYTE	$A6,  0,	0	; DATA XREF: RAM:7A6B^o
+		.BYTE	$A5
+aWelcome:	.BYTE	"Welcome "
+		.BYTE	$B3
 		.WORD $6321
-		.BYTE $19
-		.BYTE ",",$0D,$0D
-aIHaveExpectedT:.BYTE $A5,"I have expected thee.  As usual I shall",$0D,$0D
-aImpartInsightF:.BYTE $A5,"impart insight for a small offering.",$0D
-		.BYTE $A6,  7,	6
-		.BYTE $AC
+		.BYTE	$19
+		.BYTE	",",$0D,$0D
+aIHaveExpectedT:.BYTE	$A5,"I have expected thee.  As usual I shall",$0D,$0D
+aImpartInsightF:.BYTE	$A5,"impart insight for a small offering.",$0D
+		.BYTE	$A6,  7,	6
+		.BYTE	$AC
 		.WORD aDoYou
 
 str_7F74:
-		.BYTE $A6,  7,	2
-aDoYou:		.BYTE "Do you "        ; DATA XREF: RAM:7C5C^o RAM:7CC3^o ...
+		.BYTE	$A6,  7,	2
+aDoYou:		.BYTE	"Do you "        ; DATA XREF: RAM:7C5C^o RAM:7CC3^o ...
 		MenuItem "1","make an offering"
-		.BYTE $D
-aOr:		.BYTE "           or "
+		.BYTE	$D
+aOr:		.BYTE	"           or "
 		MenuItem "2","leave?"
-		.BYTE $FF
-byte_7FB0:	.BYTE $A6,  0,	2	; DATA XREF: RAM:7A63^o
-		.BYTE $A5
-aYouHurlThe:	.BYTE "You hurl the "
-		.BYTE $B4
+		.BYTE	$FF
+byte_7FB0:	.BYTE	$A6,  0,	2	; DATA XREF: RAM:7A63^o
+		.BYTE	$A5
+aYouHurlThe:	.BYTE	"You hurl the "
+		.BYTE	$B4
 		.WORD byte_818C
-		.BYTE $1B
-		.BYTE $D
-		.BYTE $D
-		.BYTE $A5
-aIntoTheFlaming:.BYTE "into the flaming Oracle pit."
-		.BYTE $D
-		.BYTE $FF
-byte_7FE6:	.BYTE $A6,  0,	2	; DATA XREF: RAM:7A65^o	RAM:7A67^o
-		.BYTE $A5
-aYouTossThe:	.BYTE "You toss the "
-		.BYTE $B4
+		.BYTE	$1B
+		.BYTE	$D
+		.BYTE	$D
+		.BYTE	$A5
+aIntoTheFlaming:.BYTE	"into the flaming Oracle pit."
+		.BYTE	$D
+		.BYTE	$FF
+byte_7FE6:	.BYTE	$A6,  0,	2	; DATA XREF: RAM:7A65^o	RAM:7A67^o
+		.BYTE	$A5
+aYouTossThe:	.BYTE	"You toss the "
+		.BYTE	$B4
 		.WORD byte_818C
-		.BYTE $1B
-		.BYTE $D
-		.BYTE $D
-		.BYTE $A5
-aIntoTheFlamesB:.BYTE "into the flames beneath the Oracle.",$D
-		.BYTE $FF
-byte_8023:	.BYTE $A6,  0,	2	; DATA XREF: RAM:7A59^o
-		.BYTE $A5
-aFareTheeWellHu:.BYTE "Fare thee well, human!"
-		.BYTE $D
-		.BYTE $FF
-byte_803F:	.BYTE $A6,  0,	2	; DATA XREF: RAM:7A5B^o
-		.BYTE $A5
-aFarewell_:	.BYTE "Farewell."
-		.BYTE $D
-		.BYTE $FF
-byte_804E:	.BYTE $A6,  0,	2	; DATA XREF: RAM:7A5D^o
-		.BYTE $A5
-aMayTheGodsBeWi:.BYTE "May the gods be with you!"
-		.BYTE $D
-		.BYTE $FF
-byte_806D:	.BYTE $A6,  0,	0	; DATA XREF: RAM:7A55^o
-		.BYTE $A5
-aTheOracleSays:	.BYTE "The oracle says:"
-		.BYTE $D
-		.BYTE $D
-		.BYTE $AD
+		.BYTE	$1B
+		.BYTE	$D
+		.BYTE	$D
+		.BYTE	$A5
+aIntoTheFlamesB:.BYTE	"into the flames beneath the Oracle.",$D
+		.BYTE	$FF
+byte_8023:	.BYTE	$A6,  0,	2	; DATA XREF: RAM:7A59^o
+		.BYTE	$A5
+aFareTheeWellHu:.BYTE	"Fare thee well, human!"
+		.BYTE	$D
+		.BYTE	$FF
+byte_803F:	.BYTE	$A6,  0,	2	; DATA XREF: RAM:7A5B^o
+		.BYTE	$A5
+aFarewell_:	.BYTE	"Farewell."
+		.BYTE	$D
+		.BYTE	$FF
+byte_804E:	.BYTE	$A6,  0,	2	; DATA XREF: RAM:7A5D^o
+		.BYTE	$A5
+aMayTheGodsBeWi:.BYTE	"May the gods be with you!"
+		.BYTE	$D
+		.BYTE	$FF
+byte_806D:	.BYTE	$A6,  0,	0	; DATA XREF: RAM:7A55^o
+		.BYTE	$A5
+aTheOracleSays:	.BYTE	"The oracle says:"
+		.BYTE	$D
+		.BYTE	$D
+		.BYTE	$AD
 		.WORD $68
-byte_8086:	.BYTE $A6,  0,	0	; DATA XREF: RAM:7A57^o
-		.BYTE $A5
-aHeedMyWisdom:	.BYTE "Heed my wisdom:"
-		.BYTE $D
-		.BYTE $AD
+byte_8086:	.BYTE	$A6,  0,	0	; DATA XREF: RAM:7A57^o
+		.BYTE	$A5
+aHeedMyWisdom:	.BYTE	"Heed my wisdom:"
+		.BYTE	$D
+		.BYTE	$AD
 		.WORD $68
-		.BYTE $A6,  0,	1
-		.BYTE $A5
-aTheFlamesFlare:.BYTE "The flames flare slightly as the"
-		.BYTE $D
-		.BYTE $D
-		.BYTE $A5
-		.BYTE $B4
+		.BYTE	$A6,  0,	1
+		.BYTE	$A5
+aTheFlamesFlare:.BYTE	"The flames flare slightly as the"
+		.BYTE	$D
+		.BYTE	$D
+		.BYTE	$A5
+		.BYTE	$B4
 		.WORD byte_818C
-		.BYTE $1B
-aIs:		.BYTE " is"
-		.BYTE $D
-		.BYTE $D
-		.BYTE $A5
-aConsumed_:	.BYTE "consumed."
-		.BYTE $D
-		.BYTE $FF
-		.BYTE $A6,  0,	1
-		.BYTE $A5
-aTheFlamesBlaze:.BYTE "The flames blaze fiercely as the"
-		.BYTE $D
-		.BYTE $D
-		.BYTE $A5
-		.BYTE $B4
+		.BYTE	$1B
+aIs:		.BYTE	" is"
+		.BYTE	$D
+		.BYTE	$D
+		.BYTE	$A5
+aConsumed_:	.BYTE	"consumed."
+		.BYTE	$D
+		.BYTE	$FF
+		.BYTE	$A6,  0,	1
+		.BYTE	$A5
+aTheFlamesBlaze:.BYTE	"The flames blaze fiercely as the"
+		.BYTE	$D
+		.BYTE	$D
+		.BYTE	$A5
+		.BYTE	$B4
 		.WORD byte_818C
-		.BYTE $1B
-aIs_0:		.BYTE " is"
-		.BYTE $D
-		.BYTE $D
-		.BYTE $A5
-aConsumed:	.BYTE "consumed!",$D
-		.BYTE $FF
-byte_8115:	.BYTE $A6,  0,	2	; DATA XREF: RAM:7A4F^o	RAM:7A51^o
-		.BYTE $A5
-aIHaveNoInteres:.BYTE "I have no interest in your worthless"
-		.BYTE $D
-		.BYTE $D
-		.BYTE $A5
-aOffering:	.BYTE "offering!"
-		.BYTE $D
-		.BYTE $FF
-byte_814B:	.BYTE $A6,  0,	2	; DATA XREF: RAM:7A53^o
-		.BYTE $A5
-aTryAgainWhenYo:.BYTE "Try again when you have something",$0D,$0D
-aWorthwhileToOf:.BYTE $A5,"worthwhile to offer me!",$0D,$FF
-byte_818C:	.BYTE 0			; DATA XREF: RAM:782D^w	RAM:7FC2^o ...
-byte_818D:	.BYTE 0			; DATA XREF: RAM:7834^w
-byte_818E:	.BYTE $A6,  0,	1
-aYouHaveJustDes:.BYTE $A5,"You have just destroyed the ring of",$0D,$0D
-aEvilForRidding:.BYTE $A5,"Evil!  For ridding the world of",$0D,$0D
-aThisEvilArtifa:.BYTE $A5,"this evil artifact I shall reward you!",$0D,$FF
+		.BYTE	$1B
+aIs_0:		.BYTE	" is"
+		.BYTE	$D
+		.BYTE	$D
+		.BYTE	$A5
+aConsumed:	.BYTE	"consumed!",$D
+		.BYTE	$FF
+byte_8115:	.BYTE	$A6,  0,	2	; DATA XREF: RAM:7A4F^o	RAM:7A51^o
+		.BYTE	$A5
+aIHaveNoInteres:.BYTE	"I have no interest in your worthless"
+		.BYTE	$D
+		.BYTE	$D
+		.BYTE	$A5
+aOffering:	.BYTE	"offering!"
+		.BYTE	$D
+		.BYTE	$FF
+byte_814B:	.BYTE	$A6,  0,	2	; DATA XREF: RAM:7A53^o
+		.BYTE	$A5
+aTryAgainWhenYo:.BYTE	"Try again when you have something",$0D,$0D
+aWorthwhileToOf:.BYTE	$A5,"worthwhile to offer me!",$0D,$FF
+byte_818C:	.BYTE	0			; DATA XREF: RAM:782D^w	RAM:7FC2^o ...
+byte_818D:	.BYTE	0			; DATA XREF: RAM:7834^w
+byte_818E:	.BYTE	$A6,  0,	1
+aYouHaveJustDes:.BYTE	$A5,"You have just destroyed the ring of",$0D,$0D
+aEvilForRidding:.BYTE	$A5,"Evil!  For ridding the world of",$0D,$0D
+aThisEvilArtifa:.BYTE	$A5,"this evil artifact I shall reward you!",$0D,$FF
 		.WORD word_821A
 		.WORD word_826A
 		.WORD word_8359
@@ -840,171 +841,165 @@ aThisEvilArtifa:.BYTE $A5,"this evil artifact I shall reward you!",$0D,$FF
 		.WORD 0
 word_821A:	.WORD $7508		; DATA XREF: RAM:8202^o
 		.WORD $113
-		.BYTE $D
-		.BYTE $A5
-aSeekThePrisonU:.BYTE "Seek the prison under the palace."
-		.BYTE $D
-		.BYTE $D
-		.BYTE $A5
-aFreeThePrisone:.BYTE "Free the prisoner with a silver key."
-		.BYTE $D
-		.BYTE $FF
+		.BYTE	$D
+		.BYTE	$A5
+aSeekThePrisonU:.BYTE	"Seek the prison under the palace."
+		.BYTE	$D
+		.BYTE	$D
+		.BYTE	$A5
+aFreeThePrisone:.BYTE	"Free the prisoner with a silver key."
+		.BYTE	$D
+		.BYTE	$FF
 word_826A:	.WORD $7508		; DATA XREF: RAM:8204^o
 		.WORD $300
-		.BYTE $A5
-aBringMeTheRing:.BYTE "Bring me the ring that the Goblins &"
-		.BYTE $D
-		.BYTE $A5
-aTrollsWarOver_:.BYTE "Trolls war over.  The Goblins are to"
-		.BYTE $D
-		.BYTE $A5
-aTheNorthwestAn:.BYTE "the Northwest and the Trolls are to the"
-		.BYTE $D
-		.BYTE $A5
-aSouth_TheSmith:.BYTE "South.  The Smithy on the second level"
-		.BYTE $D
-		.BYTE $A5
-aWillReforgeThe:.BYTE "will reforge the ring halves.  Be quick"
-		.BYTE $D
-		.BYTE $A5
-aReturningTheRi:.BYTE "returning the ring for it is evil.",$D
-		.BYTE $FF
+		.BYTE	$A5
+aBringMeTheRing:.BYTE	"Bring me the ring that the Goblins &"
+		.BYTE	$D
+		.BYTE	$A5
+aTrollsWarOver_:.BYTE	"Trolls war over.  The Goblins are to"
+		.BYTE	$D
+		.BYTE	$A5
+aTheNorthwestAn:.BYTE	"the Northwest and the Trolls are to the"
+		.BYTE	$D
+		.BYTE	$A5
+aSouth_TheSmith:.BYTE	"South.  The Smithy on the second level"
+		.BYTE	$D
+		.BYTE	$A5
+aWillReforgeThe:.BYTE	"will reforge the ring halves.  Be quick"
+		.BYTE	$D
+		.BYTE	$A5
+aReturningTheRi:.BYTE	"returning the ring for it is evil.",$D
+		.BYTE	$FF
 word_8359:	.WORD 0			; DATA XREF: RAM:8206^o
 		.WORD $300
-		.BYTE $D
-		.BYTE $D
-		.BYTE $A5
-aTheFutureIsClo:.BYTE "The future is cloudy, try again"
-		.BYTE $D
-		.BYTE $D
-		.BYTE $A5
+		.BYTE	$D
+		.BYTE	$D
+		.BYTE	$A5
+aTheFutureIsClo:.BYTE	"The future is cloudy, try again"
+		.BYTE	$D
+		.BYTE	$D
+		.BYTE	$A5
 		.BYTE	"tomorrow."
-		.BYTE $D
-		.BYTE $FF
-word_838D:	.WORD $7508		; DATA XREF: RAM:8208^o
-		.WORD $401
-		.BYTE $D
-		.BYTE $A5
-aOnTheSecondLev:.BYTE "On the second level find the one in"
-		.BYTE $D
-		.BYTE $A5
-aTheRoomOfGlass:.BYTE "the room of glass.  Don't start off"
-		.BYTE $D
-		.BYTE $A5
-aWithoutATouchO:.BYTE "without a touch of class."
-		.BYTE $D
-		.BYTE $FF
-word_83F8:	.WORD $7508		; DATA XREF: RAM:820A^o
-		.WORD $514
-		.BYTE $A5
-aCrossTheRiverS:.BYTE "Cross the river Stonz at midnight.  On"
-		.BYTE $D
-		.BYTE $A5
-aTheSouthSideOf:.BYTE "the south side of the river awaits"
-		.BYTE $D
-		.BYTE $A5
-aAKing_PassTheS:.BYTE "a king.  Pass the seven who guard to"
-		.BYTE $D
-		.BYTE $A5
-aFurtherYourCau:.BYTE "further your cause."
-		.BYTE $D
-		.BYTE $FF
+		.BYTE	$D
+		.BYTE	$FF
+word_838D:	.WORD	$7508		; DATA XREF: RAM:8208^o
+		.WORD	$401
+		.BYTE	$D
+aOnTheSecondLev:.BYTE	$A5,"On the second level find the one in",$0D
+aTheRoomOfGlass:.BYTE	$A5,"the room of glass.  Don't start off",$0D
+aWithoutATouchO:.BYTE	$A5,"without a touch of class.",$0D,$FF
+
+word_83F8:	.WORD	$7508		; DATA XREF: RAM:820A^o
+		.WORD	$514
+		.BYTE	$A5
+aCrossTheRiverS:.BYTE	"Cross the river Stonz at midnight.  On"
+		.BYTE	$D
+		.BYTE	$A5
+aTheSouthSideOf:.BYTE	"the south side of the river awaits"
+		.BYTE	$D
+		.BYTE	$A5
+aAKing_PassTheS:.BYTE	"a king.  Pass the seven who guard to"
+		.BYTE	$D
+		.BYTE	$A5
+aFurtherYourCau:.BYTE	"further your cause."
+		.BYTE	$D
+		.BYTE	$FF
 word_8484:	.WORD $7508		; DATA XREF: RAM:820C^o
 		.WORD $607
-		.BYTE $D
-		.BYTE $A5
-aAFearsomeFaceL:.BYTE "A fearsome face lurks by the Dragon's"
-		.BYTE $D
-		.BYTE $A5
-aLair_AnswerHis:.BYTE "lair.  Answer his queries for a"
-		.BYTE $D
-		.BYTE $A5
-aValuableAlly_:	.BYTE "valuable ally."
-		.BYTE $D
-		.BYTE $A5
-aRememberXebecS:.BYTE "Remember ",$22,"Xebec's Demise",$22,"."
-		.BYTE $D
-		.BYTE $FF
+		.BYTE	$D
+		.BYTE	$A5
+aAFearsomeFaceL:.BYTE	"A fearsome face lurks by the Dragon's"
+		.BYTE	$D
+		.BYTE	$A5
+aLair_AnswerHis:.BYTE	"lair.  Answer his queries for a"
+		.BYTE	$D
+		.BYTE	$A5
+aValuableAlly_:	.BYTE	"valuable ally."
+		.BYTE	$D
+		.BYTE	$A5
+aRememberXebecS:.BYTE	"Remember ",$22,"Xebec's Demise",$22,"."
+		.BYTE	$D
+		.BYTE	$FF
 word_84FE:	.WORD $7508		; DATA XREF: RAM:820E^o
 		.WORD $715
-		.BYTE $D
-		.BYTE $A5
-aAnswerThreeOfT:.BYTE "Answer three of the Riddler's riddles"
-		.BYTE $D
-		.BYTE $A5
-aToHelpYouFindW:.BYTE "to help you find what the Dragon"
-		.BYTE $D
-		.BYTE $A5
-aSeeksForTheDra:.BYTE "seeks, for the Dragon is a mighty foe."
-		.BYTE $D
-		.BYTE $FF
+		.BYTE	$D
+		.BYTE	$A5
+aAnswerThreeOfT:.BYTE	"Answer three of the Riddler's riddles"
+		.BYTE	$D
+		.BYTE	$A5
+aToHelpYouFindW:.BYTE	"to help you find what the Dragon"
+		.BYTE	$D
+		.BYTE	$A5
+aSeeksForTheDra:.BYTE	"seeks, for the Dragon is a mighty foe."
+		.BYTE	$D
+		.BYTE	$FF
 word_8575:	.WORD $7508		; DATA XREF: RAM:8210^o
 		.WORD $818
-		.BYTE $D
-		.BYTE $A5
-aReturnAllThree:.BYTE "Return all three staff pieces to"
-		.BYTE $D
-		.BYTE $A5
-aAcrinimirilToR:.BYTE "Acrinimiril to recieve the key to"
-		.BYTE $D
-		.BYTE $A5
-aDeathSDoor_:	.BYTE "Death's Door."
-		.BYTE $D
-		.BYTE $FF
+		.BYTE	$D
+		.BYTE	$A5
+aReturnAllThree:.BYTE	"Return all three staff pieces to"
+		.BYTE	$D
+		.BYTE	$A5
+aAcrinimirilToR:.BYTE	"Acrinimiril to recieve the key to"
+		.BYTE	$D
+		.BYTE	$A5
+aDeathSDoor_:	.BYTE	"Death's Door."
+		.BYTE	$D
+		.BYTE	$FF
 word_85CF:	.WORD $7508		; DATA XREF: RAM:8212^o
 		.WORD $901
-		.BYTE $D
-		.BYTE $D
-		.BYTE $A5
-aAMirrorIsProof:.BYTE "A mirror is proof against a stony stare."
-		.BYTE $D
-		.BYTE $FF
+		.BYTE	$D
+		.BYTE	$D
+		.BYTE	$A5
+aAMirrorIsProof:.BYTE	"A mirror is proof against a stony stare."
+		.BYTE	$D
+		.BYTE	$FF
 word_8600:	.WORD $7508		; DATA XREF: RAM:8214^o
 		.WORD $A83
-		.BYTE $D
-		.BYTE $A5
-aCongratulation:.BYTE "Congratulations!  The aliens no longer"
-		.BYTE $D
-		.BYTE $A5
-aGainAmusementF:.BYTE "gain amusement from The Dungeon!"
-		.BYTE $D
-		.BYTE $A5
-aKeepUpTheGoodW:.BYTE "Keep up the good work and you shall"
-		.BYTE $D
-		.BYTE $A5
-aBeAbleToReturn:.BYTE "be able to return to your home world."
-		.BYTE $D
-		.BYTE $FF
+		.BYTE	$D
+		.BYTE	$A5
+aCongratulation:.BYTE	"Congratulations!  The aliens no longer"
+		.BYTE	$D
+		.BYTE	$A5
+aGainAmusementF:.BYTE	"gain amusement from The Dungeon!"
+		.BYTE	$D
+		.BYTE	$A5
+aKeepUpTheGoodW:.BYTE	"Keep up the good work and you shall"
+		.BYTE	$D
+		.BYTE	$A5
+aBeAbleToReturn:.BYTE	"be able to return to your home world."
+		.BYTE	$D
+		.BYTE	$FF
 word_869C:	.WORD 0			; DATA XREF: RAM:8216^o
 		.WORD 0
-		.BYTE $D
-		.BYTE $A5
-aAlasIHaveToldY:.BYTE "Alas, I have told you all that I know"
-		.BYTE $D
-		.BYTE $A5
-aAboutYourFutur:.BYTE "about your future. The future is in"
-		.BYTE $D
-		.BYTE $A5
-aYourHandsNow_:	.BYTE "your hands now."
-		.BYTE $D
-		.BYTE $FF
-unk_86FF:	.BYTE $70 ; p		; DATA XREF: RAM:872Fvo
-		.BYTE $70 ; p
-		.BYTE $30 ; 0
-		.BYTE $42
+		.BYTE	$D
+		.BYTE	$A5
+aAlasIHaveToldY:.BYTE	"Alas, I have told you all that I know"
+		.BYTE	$D
+		.BYTE	$A5
+aAboutYourFutur:.BYTE	"about your future. The future is in"
+		.BYTE	$D
+		.BYTE	$A5
+aYourHandsNow_:	.BYTE	"your hands now."
+		.BYTE	$D
+		.BYTE	$FF
+unk_86FF:	.BYTE	$70 ; p		; DATA XREF: RAM:872Fvo
+		.BYTE	$70 ; p
+		.BYTE	$30 ; 0
+		.BYTE	$42
 		.WORD $400
-		.BYTE $80 ; Ä
+		.BYTE	$80 ; Ä
 		.BYTE	2
-		.BYTE $80 ; Ä
+		.BYTE	$80 ; Ä
 		.BYTE	2
-		.BYTE $80 ; Ä
+		.BYTE	$80 ; Ä
 		.BYTE	2
-		.BYTE $80 ; Ä
+		.BYTE	$80 ; Ä
 		.BYTE	2
-		.BYTE $80 ; Ä
+		.BYTE	$80 ; Ä
 		.BYTE	6
 		.BYTE	0
-		.BYTE $44
+		.BYTE	$44
 		.WORD $4F0
 		.BYTE	4
 		.BYTE	4
@@ -1335,1910 +1330,1910 @@ loc_893B:				; CODE XREF: RAM:893Evj
 loc_894F:				; CODE XREF: RAM:894B^j
 		JMP	loc_88F2
 ; ---------------------------------------------------------------------------
-byte_8952:	.BYTE 0			; DATA XREF: RAM:loc_8918^w RAM:8928^r ...
-		.BYTE $1B
-		.BYTE $17
-		.BYTE $11
-		.BYTE $3F ; ?
-		.BYTE $1B
+byte_8952:	.BYTE	0			; DATA XREF: RAM:loc_8918^w RAM:8928^r ...
+		.BYTE	$1B
+		.BYTE	$17
+		.BYTE	$11
+		.BYTE	$3F ; ?
+		.BYTE	$1B
 		.BYTE	6
 		.BYTE	0
-		.BYTE $FF
-		.BYTE $1B
+		.BYTE	$FF
+		.BYTE	$1B
 		.BYTE	6
 		.BYTE	0
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $1B
+		.BYTE	$FF
+		.BYTE	$FF
+		.BYTE	$1B
 		.BYTE	5
 		.BYTE	0
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $1B
+		.BYTE	$FF
+		.BYTE	$FF
+		.BYTE	$1B
 		.BYTE	5
 		.BYTE	0
-		.BYTE $1B
+		.BYTE	$1B
 		.BYTE	2
-		.BYTE $FF
-		.BYTE $1B
+		.BYTE	$FF
+		.BYTE	$1B
 		.BYTE	4
 		.BYTE	0
-		.BYTE $1B
+		.BYTE	$1B
 		.BYTE	2
-		.BYTE $FF
-		.BYTE $1B
+		.BYTE	$FF
+		.BYTE	$1B
 		.BYTE	4
 		.BYTE	0
-		.BYTE $1B
+		.BYTE	$1B
 		.BYTE	3
-		.BYTE $FF
-		.BYTE $1B
+		.BYTE	$FF
+		.BYTE	$1B
 		.BYTE	3
 		.BYTE	0
-		.BYTE $1B
+		.BYTE	$1B
 		.BYTE	3
-		.BYTE $FF
-		.BYTE  $F
+		.BYTE	$FF
+		.BYTE	 $F
 		.BYTE	5
 		.BYTE	5
 		.BYTE	1
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $1B
+		.BYTE	$FF
+		.BYTE	$FF
+		.BYTE	$1B
 		.BYTE	2
-		.BYTE $FB ; ˚
-		.BYTE $59 ; Y
-		.BYTE $59 ; Y
-		.BYTE $69 ; i
-		.BYTE $1B
+		.BYTE	$FB ; ˚
+		.BYTE	$59 ; Y
+		.BYTE	$59 ; Y
+		.BYTE	$69 ; i
+		.BYTE	$1B
 		.BYTE	4
-		.BYTE $FF
-		.BYTE $1B
+		.BYTE	$FF
+		.BYTE	$1B
 		.BYTE	2
-		.BYTE $55 ; U
-		.BYTE $1B
+		.BYTE	$55 ; U
+		.BYTE	$1B
 		.BYTE	4
-		.BYTE $FF
-		.BYTE $5F ; _
-		.BYTE $50 ; P
-		.BYTE $40 ; @
-		.BYTE $1B
+		.BYTE	$FF
+		.BYTE	$5F ; _
+		.BYTE	$50 ; P
+		.BYTE	$40 ; @
+		.BYTE	$1B
 		.BYTE	5
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
 		.BYTE	0
-		.BYTE $1B
+		.BYTE	$1B
 		.BYTE	5
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
 		.BYTE	0
-		.BYTE $1B
+		.BYTE	$1B
 		.BYTE	6
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $1B
+		.BYTE	$1B
 		.BYTE	6
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $1B
-		.BYTE $26 ; &
-		.BYTE $FF
+		.BYTE	$1B
+		.BYTE	$26 ; &
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $1B
+		.BYTE	$1B
 		.BYTE	6
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
-		.BYTE $1B
+		.BYTE	$1B
 		.BYTE	5
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
 		.BYTE	0
-		.BYTE $1B
+		.BYTE	$1B
 		.BYTE	5
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
 		.BYTE	0
-		.BYTE $1B
+		.BYTE	$1B
 		.BYTE	4
-		.BYTE $FF
-		.BYTE $F5 ; ı
+		.BYTE	$FF
+		.BYTE	$F5 ; ı
 		.BYTE	5
 		.BYTE	1
-		.BYTE $1B
+		.BYTE	$1B
 		.BYTE	4
-		.BYTE $FF
-		.BYTE $1B
+		.BYTE	$FF
+		.BYTE	$1B
 		.BYTE	2
-		.BYTE $55 ; U
-		.BYTE $1B
+		.BYTE	$55 ; U
+		.BYTE	$1B
 		.BYTE	4
-		.BYTE $FF
-		.BYTE $1B
+		.BYTE	$FF
+		.BYTE	$1B
 		.BYTE	2
-		.BYTE $55 ; U
-		.BYTE $1B
+		.BYTE	$55 ; U
+		.BYTE	$1B
 		.BYTE	3
-		.BYTE $FF
-		.BYTE $FC ; ¸
-		.BYTE $50 ; P
-		.BYTE $50 ; P
-		.BYTE $40 ; @
-		.BYTE $1B
+		.BYTE	$FF
+		.BYTE	$FC ; ¸
+		.BYTE	$50 ; P
+		.BYTE	$50 ; P
+		.BYTE	$40 ; @
+		.BYTE	$1B
 		.BYTE	3
-		.BYTE $FF
-		.BYTE $1B
+		.BYTE	$FF
+		.BYTE	$1B
 		.BYTE	3
 		.BYTE	0
-		.BYTE $1B
+		.BYTE	$1B
 		.BYTE	2
-		.BYTE $FF
-		.BYTE $1B
+		.BYTE	$FF
+		.BYTE	$1B
 		.BYTE	4
 		.BYTE	0
-		.BYTE $1B
+		.BYTE	$1B
 		.BYTE	2
-		.BYTE $FF
-		.BYTE $1B
+		.BYTE	$FF
+		.BYTE	$1B
 		.BYTE	4
 		.BYTE	0
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $1B
+		.BYTE	$FF
+		.BYTE	$FF
+		.BYTE	$1B
 		.BYTE	5
 		.BYTE	0
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $1B
+		.BYTE	$FF
+		.BYTE	$FF
+		.BYTE	$1B
 		.BYTE	5
 		.BYTE	0
-		.BYTE $FF
-		.BYTE $1B
+		.BYTE	$FF
+		.BYTE	$1B
 		.BYTE	6
 		.BYTE	0
-		.BYTE $FC ; ¸
-		.BYTE $1B
+		.BYTE	$FC ; ¸
+		.BYTE	$1B
 		.BYTE	6
 		.BYTE	0
-		.BYTE $1B
-		.BYTE $17
-		.BYTE $44 ; D
-		.BYTE $1B
-		.BYTE $17
-		.BYTE $11
-		.BYTE $1B
-		.BYTE $35 ; 5
+		.BYTE	$1B
+		.BYTE	$17
+		.BYTE	$44 ; D
+		.BYTE	$1B
+		.BYTE	$17
+		.BYTE	$11
+		.BYTE	$1B
+		.BYTE	$35 ; 5
 		.BYTE	0
-		.BYTE $1B
+		.BYTE	$1B
 		.BYTE	2
 		.BYTE	8
-		.BYTE $28 ; (
-		.BYTE $28 ; (
-		.BYTE $AC ; ¨
-		.BYTE $AC ; ¨
-		.BYTE $BE ; æ
-		.BYTE $BE ; æ
-		.BYTE $FE ; ˛
-		.BYTE $69 ; i
-		.BYTE $69 ; i
-		.BYTE $65 ; e
-		.BYTE $1B
+		.BYTE	$28 ; (
+		.BYTE	$28 ; (
+		.BYTE	$AC ; ¨
+		.BYTE	$AC ; ¨
+		.BYTE	$BE ; æ
+		.BYTE	$BE ; æ
+		.BYTE	$FE ; ˛
+		.BYTE	$69 ; i
+		.BYTE	$69 ; i
+		.BYTE	$65 ; e
+		.BYTE	$1B
 		.BYTE	2
-		.BYTE $A5 ; •
-		.BYTE $95 ; ï
-		.BYTE $95 ; ï
-		.BYTE $55 ; U
-		.BYTE $55 ; U
-		.BYTE $D6 ; ÷
-		.BYTE $D6 ; ÷
-		.BYTE $DA ; ⁄
-		.BYTE $DA ; ⁄
-		.BYTE $FA ; ˙
-		.BYTE $FA ; ˙
+		.BYTE	$A5 ; •
+		.BYTE	$95 ; ï
+		.BYTE	$95 ; ï
+		.BYTE	$55 ; U
+		.BYTE	$55 ; U
+		.BYTE	$D6 ; ÷
+		.BYTE	$D6 ; ÷
+		.BYTE	$DA ; ⁄
+		.BYTE	$DA ; ⁄
+		.BYTE	$FA ; ˙
+		.BYTE	$FA ; ˙
 		.BYTE	0
 		.BYTE	8
 		.BYTE	8
-		.BYTE $28 ; (
-		.BYTE $2A ; *
-		.BYTE  $A
-		.BYTE  $A
-		.BYTE $2A ; *
-		.BYTE $1B
+		.BYTE	$28 ; (
+		.BYTE	$2A ; *
+		.BYTE	 $A
+		.BYTE	 $A
+		.BYTE	$2A ; *
+		.BYTE	$1B
 		.BYTE	4
 		.BYTE	0
-		.BYTE $80 ; Ä
-		.BYTE $80 ; Ä
+		.BYTE	$80 ; Ä
+		.BYTE	$80 ; Ä
 		.BYTE	0
-		.BYTE $20
-		.BYTE $28 ; (
-		.BYTE $28 ; (
+		.BYTE	$20
+		.BYTE	$28 ; (
+		.BYTE	$28 ; (
 		.BYTE	8
 		.BYTE	8
-		.BYTE  $A
-		.BYTE $2A ; *
-		.BYTE $2A ; *
-		.BYTE $1B
+		.BYTE	 $A
+		.BYTE	$2A ; *
+		.BYTE	$2A ; *
+		.BYTE	$1B
 		.BYTE	6
 		.BYTE	0
-		.BYTE $80 ; Ä
-		.BYTE $1B
+		.BYTE	$80 ; Ä
+		.BYTE	$1B
 		.BYTE	7
 		.BYTE	0
-		.BYTE  $E
-		.BYTE $3E ; >
-		.BYTE $F8 ; ¯
-		.BYTE $3E ; >
-		.BYTE  $F
-		.BYTE $3E ; >
-		.BYTE $FA ; ˙
-		.BYTE $FA ; ˙
-		.BYTE $1B
+		.BYTE	 $E
+		.BYTE	$3E ; >
+		.BYTE	$F8 ; ¯
+		.BYTE	$3E ; >
+		.BYTE	 $F
+		.BYTE	$3E ; >
+		.BYTE	$FA ; ˙
+		.BYTE	$FA ; ˙
+		.BYTE	$1B
 		.BYTE	2
-		.BYTE $55 ; U
-		.BYTE $15
-		.BYTE $95 ; ï
-		.BYTE $95 ; ï
-		.BYTE $15
-		.BYTE $15
-		.BYTE $1B
+		.BYTE	$55 ; U
+		.BYTE	$15
+		.BYTE	$95 ; ï
+		.BYTE	$95 ; ï
+		.BYTE	$15
+		.BYTE	$15
+		.BYTE	$1B
 		.BYTE	2
-		.BYTE $55 ; U
-		.BYTE $1B
+		.BYTE	$55 ; U
+		.BYTE	$1B
 		.BYTE	4
-		.BYTE $54 ; T
-		.BYTE $40 ; @
-		.BYTE $40 ; @
+		.BYTE	$54 ; T
+		.BYTE	$40 ; @
+		.BYTE	$40 ; @
 		.BYTE	0
 		.BYTE	0
-		.BYTE $1B
+		.BYTE	$1B
 		.BYTE	2
-		.BYTE $20
-		.BYTE $A0 ; †
-		.BYTE $1B
-		.BYTE  $B
+		.BYTE	$20
+		.BYTE	$A0 ; †
+		.BYTE	$1B
+		.BYTE	 $B
 		.BYTE	0
-		.BYTE $30 ; 0
-		.BYTE $30 ; 0
-		.BYTE $32 ; 2
-		.BYTE $3A ; :
+		.BYTE	$30 ; 0
+		.BYTE	$30 ; 0
+		.BYTE	$32 ; 2
+		.BYTE	$3A ; :
 		.BYTE	3
-		.BYTE  $B
-		.BYTE $2F ; /
-		.BYTE $2C ; ,
-		.BYTE $AC ; ¨
-		.BYTE $BC ; º
-		.BYTE $B0 ; ∞
-		.BYTE $B0 ; ∞
-		.BYTE $1B
+		.BYTE	 $B
+		.BYTE	$2F ; /
+		.BYTE	$2C ; ,
+		.BYTE	$AC ; ¨
+		.BYTE	$BC ; º
+		.BYTE	$B0 ; ∞
+		.BYTE	$B0 ; ∞
+		.BYTE	$1B
 		.BYTE	5
 		.BYTE	0
-		.BYTE $20
-		.BYTE $20
-		.BYTE $1B
+		.BYTE	$20
+		.BYTE	$20
+		.BYTE	$1B
 		.BYTE	5
 		.BYTE	0
-		.BYTE  $C
-		.BYTE  $C
-		.BYTE $1B
+		.BYTE	 $C
+		.BYTE	 $C
+		.BYTE	$1B
 		.BYTE	9
-		.BYTE $55 ; U
-		.BYTE $5D ; ]
-		.BYTE $5D ; ]
-		.BYTE $5F ; _
-		.BYTE $5F ; _
-		.BYTE $57 ; W
-		.BYTE $55 ; U
+		.BYTE	$55 ; U
+		.BYTE	$5D ; ]
+		.BYTE	$5D ; ]
+		.BYTE	$5F ; _
+		.BYTE	$5F ; _
+		.BYTE	$57 ; W
+		.BYTE	$55 ; U
 		.BYTE	0
-		.BYTE $1B
+		.BYTE	$1B
 		.BYTE	3
-		.BYTE $C0 ; ¿
-		.BYTE $1B
+		.BYTE	$C0 ; ¿
+		.BYTE	$1B
 		.BYTE	2
-		.BYTE $F0 ; 
-		.BYTE $1B
+		.BYTE	$F0 ; 
+		.BYTE	$1B
 		.BYTE	2
 		.BYTE	0
-		.BYTE $1B
+		.BYTE	$1B
 		.BYTE	4
-		.BYTE $30 ; 0
-		.BYTE $1B
-		.BYTE $2F ; /
+		.BYTE	$30 ; 0
+		.BYTE	$1B
+		.BYTE	$2F ; /
 		.BYTE	0
-		.BYTE $1B
-		.BYTE $17
-		.BYTE $44 ; D
-		.BYTE $1B
-		.BYTE $17
-		.BYTE $11
-		.BYTE $1B
-		.BYTE $28 ; (
+		.BYTE	$1B
+		.BYTE	$17
+		.BYTE	$44 ; D
+		.BYTE	$1B
+		.BYTE	$17
+		.BYTE	$11
+		.BYTE	$1B
+		.BYTE	$28 ; (
 		.BYTE	0
 		.BYTE	2
 		.BYTE	2
-		.BYTE $1B
+		.BYTE	$1B
 		.BYTE	4
 		.BYTE	0
 		.BYTE	8
-		.BYTE  $A
-		.BYTE $8A ; ä
-		.BYTE $8A ; ä
-		.BYTE $AA ; ™
-		.BYTE $2A ; *
-		.BYTE  $A
+		.BYTE	 $A
+		.BYTE	$8A ; ä
+		.BYTE	$8A ; ä
+		.BYTE	$AA ; ™
+		.BYTE	$2A ; *
+		.BYTE	 $A
 		.BYTE	2
-		.BYTE $1B
+		.BYTE	$1B
 		.BYTE	3
-		.BYTE $FA ; ˙
-		.BYTE $FE ; ˛
-		.BYTE $BE ; æ
-		.BYTE $BF ; ø
-		.BYTE $BF ; ø
-		.BYTE $95 ; ï
-		.BYTE $A5 ; •
-		.BYTE $AB ; ´
-		.BYTE $EB ; Î
-		.BYTE $EB ; Î
-		.BYTE $1B
+		.BYTE	$FA ; ˙
+		.BYTE	$FE ; ˛
+		.BYTE	$BE ; æ
+		.BYTE	$BF ; ø
+		.BYTE	$BF ; ø
+		.BYTE	$95 ; ï
+		.BYTE	$A5 ; •
+		.BYTE	$AB ; ´
+		.BYTE	$EB ; Î
+		.BYTE	$EB ; Î
+		.BYTE	$1B
 		.BYTE	2
-		.BYTE $EF ; Ô
-		.BYTE $F9 ; ˘
-		.BYTE $EA ; Í
-		.BYTE $E9 ; È
-		.BYTE $E9 ; È
-		.BYTE $A9 ; ©
-		.BYTE $1B
+		.BYTE	$EF ; Ô
+		.BYTE	$F9 ; ˘
+		.BYTE	$EA ; Í
+		.BYTE	$E9 ; È
+		.BYTE	$E9 ; È
+		.BYTE	$A9 ; ©
+		.BYTE	$1B
 		.BYTE	2
-		.BYTE $A5 ; •
-		.BYTE $2C ; ,
-		.BYTE $2F ; /
-		.BYTE $1B
+		.BYTE	$A5 ; •
+		.BYTE	$2C ; ,
+		.BYTE	$2F ; /
+		.BYTE	$1B
 		.BYTE	2
-		.BYTE $AF ; Ø
-		.BYTE $2B ; +
-		.BYTE $2B ; +
-		.BYTE  $B
+		.BYTE	$AF ; Ø
+		.BYTE	$2B ; +
+		.BYTE	$2B ; +
+		.BYTE	 $B
 		.BYTE	2
 		.BYTE	2
-		.BYTE  $A
-		.BYTE $2A ; *
-		.BYTE $2B ; +
-		.BYTE $2F ; /
-		.BYTE $EF ; Ô
-		.BYTE $FF
-		.BYTE $2E ; .
-		.BYTE $AE ; Æ
-		.BYTE $BE ; æ
-		.BYTE $BE ; æ
-		.BYTE $FE ; ˛
-		.BYTE $EA ; Í
-		.BYTE $AA ; ™
-		.BYTE $AB ; ´
-		.BYTE $80 ; Ä
-		.BYTE $83 ; É
-		.BYTE $83 ; É
+		.BYTE	 $A
+		.BYTE	$2A ; *
+		.BYTE	$2B ; +
+		.BYTE	$2F ; /
+		.BYTE	$EF ; Ô
+		.BYTE	$FF
+		.BYTE	$2E ; .
+		.BYTE	$AE ; Æ
+		.BYTE	$BE ; æ
+		.BYTE	$BE ; æ
+		.BYTE	$FE ; ˛
+		.BYTE	$EA ; Í
+		.BYTE	$AA ; ™
+		.BYTE	$AB ; ´
+		.BYTE	$80 ; Ä
+		.BYTE	$83 ; É
+		.BYTE	$83 ; É
 		.BYTE	3
-		.BYTE $1B
+		.BYTE	$1B
 		.BYTE	2
-		.BYTE $2F ; /
-		.BYTE $AF ; Ø
-		.BYTE $1B
+		.BYTE	$2F ; /
+		.BYTE	$AF ; Ø
+		.BYTE	$1B
 		.BYTE	2
-		.BYTE $C0 ; ¿
-		.BYTE $C3 ; √
+		.BYTE	$C0 ; ¿
+		.BYTE	$C3 ; √
 		.BYTE	3
-		.BYTE  $F
-		.BYTE $FF
-		.BYTE $FA ; ˙
-		.BYTE $3E ; >
-		.BYTE $3E ; >
-		.BYTE $2F ; /
-		.BYTE $2F ; /
-		.BYTE $2B ; +
-		.BYTE $AB ; ´
-		.BYTE $AE ; Æ
-		.BYTE $BA ; ∫
-		.BYTE $17
-		.BYTE $97 ; ó
-		.BYTE $9F ; ü
-		.BYTE $AF ; Ø
-		.BYTE $ED ; Ì
-		.BYTE $FD ; ˝
-		.BYTE $AA ; ™
-		.BYTE $AA ; ™
-		.BYTE $1B
+		.BYTE	 $F
+		.BYTE	$FF
+		.BYTE	$FA ; ˙
+		.BYTE	$3E ; >
+		.BYTE	$3E ; >
+		.BYTE	$2F ; /
+		.BYTE	$2F ; /
+		.BYTE	$2B ; +
+		.BYTE	$AB ; ´
+		.BYTE	$AE ; Æ
+		.BYTE	$BA ; ∫
+		.BYTE	$17
+		.BYTE	$97 ; ó
+		.BYTE	$9F ; ü
+		.BYTE	$AF ; Ø
+		.BYTE	$ED ; Ì
+		.BYTE	$FD ; ˝
+		.BYTE	$AA ; ™
+		.BYTE	$AA ; ™
+		.BYTE	$1B
 		.BYTE	5
-		.BYTE $54 ; T
-		.BYTE $A4 ; §
-		.BYTE $A8 ; ®
-		.BYTE $A0 ; †
-		.BYTE $A0 ; †
-		.BYTE $A3 ; £
-		.BYTE $AB ; ´
-		.BYTE $1B
+		.BYTE	$54 ; T
+		.BYTE	$A4 ; §
+		.BYTE	$A8 ; ®
+		.BYTE	$A0 ; †
+		.BYTE	$A0 ; †
+		.BYTE	$A3 ; £
+		.BYTE	$AB ; ´
+		.BYTE	$1B
 		.BYTE	2
-		.BYTE $2B ; +
-		.BYTE $2A ; *
-		.BYTE $1B
+		.BYTE	$2B ; +
+		.BYTE	$2A ; *
+		.BYTE	$1B
 		.BYTE	3
-		.BYTE $C0 ; ¿
+		.BYTE	$C0 ; ¿
 		.BYTE	0
 		.BYTE	0
-		.BYTE $C0 ; ¿
-		.BYTE $F0 ; 
-		.BYTE $3A ; :
-		.BYTE $3E ; >
-		.BYTE  $E
-		.BYTE  $E
-		.BYTE  $F
-		.BYTE $23 ; #
-		.BYTE $23 ; #
-		.BYTE $A2 ; ¢
-		.BYTE $1B
+		.BYTE	$C0 ; ¿
+		.BYTE	$F0 ; 
+		.BYTE	$3A ; :
+		.BYTE	$3E ; >
+		.BYTE	 $E
+		.BYTE	 $E
+		.BYTE	 $F
+		.BYTE	$23 ; #
+		.BYTE	$23 ; #
+		.BYTE	$A2 ; ¢
+		.BYTE	$1B
 		.BYTE	2
-		.BYTE $BC ; º
-		.BYTE $AF ; Ø
-		.BYTE $AF ; Ø
-		.BYTE $EF ; Ô
-		.BYTE $EF ; Ô
-		.BYTE $FE ; ˛
+		.BYTE	$BC ; º
+		.BYTE	$AF ; Ø
+		.BYTE	$AF ; Ø
+		.BYTE	$EF ; Ô
+		.BYTE	$EF ; Ô
+		.BYTE	$FE ; ˛
 		.BYTE	8
 		.BYTE	8
-		.BYTE $20
-		.BYTE $A0 ; †
-		.BYTE $80 ; Ä
-		.BYTE $80 ; Ä
-		.BYTE $B3 ; ≥
-		.BYTE $B3 ; ≥
-		.BYTE  $C
-		.BYTE $3C ; <
-		.BYTE $30 ; 0
-		.BYTE $30 ; 0
-		.BYTE $1B
+		.BYTE	$20
+		.BYTE	$A0 ; †
+		.BYTE	$80 ; Ä
+		.BYTE	$80 ; Ä
+		.BYTE	$B3 ; ≥
+		.BYTE	$B3 ; ≥
+		.BYTE	 $C
+		.BYTE	$3C ; <
+		.BYTE	$30 ; 0
+		.BYTE	$30 ; 0
+		.BYTE	$1B
 		.BYTE	2
-		.BYTE $F0 ; 
-		.BYTE $C0 ; ¿
-		.BYTE $65 ; e
-		.BYTE $65 ; e
-		.BYTE $A5 ; •
-		.BYTE $A5 ; •
-		.BYTE $69 ; i
-		.BYTE $69 ; i
-		.BYTE $6A ; j
-		.BYTE $6A ; j
-		.BYTE $55 ; U
-		.BYTE $55 ; U
-		.BYTE $5D ; ]
-		.BYTE $7D ; }
-		.BYTE $75 ; u
-		.BYTE $F5 ; ı
-		.BYTE $F5 ; ı
-		.BYTE $FD ; ˝
-		.BYTE $FC ; ¸
-		.BYTE $1B
+		.BYTE	$F0 ; 
+		.BYTE	$C0 ; ¿
+		.BYTE	$65 ; e
+		.BYTE	$65 ; e
+		.BYTE	$A5 ; •
+		.BYTE	$A5 ; •
+		.BYTE	$69 ; i
+		.BYTE	$69 ; i
+		.BYTE	$6A ; j
+		.BYTE	$6A ; j
+		.BYTE	$55 ; U
+		.BYTE	$55 ; U
+		.BYTE	$5D ; ]
+		.BYTE	$7D ; }
+		.BYTE	$75 ; u
+		.BYTE	$F5 ; ı
+		.BYTE	$F5 ; ı
+		.BYTE	$FD ; ˝
+		.BYTE	$FC ; ¸
+		.BYTE	$1B
 		.BYTE	3
-		.BYTE $3E ; >
-		.BYTE $FA ; ˙
-		.BYTE $FA ; ˙
-		.BYTE $EA ; Í
-		.BYTE $F0 ; 
-		.BYTE $F0 ; 
-		.BYTE $1B
+		.BYTE	$3E ; >
+		.BYTE	$FA ; ˙
+		.BYTE	$FA ; ˙
+		.BYTE	$EA ; Í
+		.BYTE	$F0 ; 
+		.BYTE	$F0 ; 
+		.BYTE	$1B
 		.BYTE	2
-		.BYTE $FC ; ¸
-		.BYTE $FF
-		.BYTE $BF ; ø
-		.BYTE $BF ; ø
-		.BYTE $1B
-		.BYTE $2F ; /
+		.BYTE	$FC ; ¸
+		.BYTE	$FF
+		.BYTE	$BF ; ø
+		.BYTE	$BF ; ø
+		.BYTE	$1B
+		.BYTE	$2F ; /
 		.BYTE	0
-		.BYTE $1B
-		.BYTE $17
-		.BYTE $44 ; D
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $55 ; U
-		.BYTE $52 ; R
-		.BYTE $3D ; =
-		.BYTE $FF
-		.BYTE $F7 ; ˜
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $7E ; ~
-		.BYTE $FF
-		.BYTE $AA ; ™
-		.BYTE $AA ; ™
-		.BYTE $EA ; Í
-		.BYTE $A8 ; ®
-		.BYTE $59 ; Y
-		.BYTE $58 ; X
-		.BYTE $55 ; U
-		.BYTE $55 ; U
-		.BYTE $5A ; Z
-		.BYTE $55 ; U
-		.BYTE $95 ; ï
-		.BYTE $55 ; U
-		.BYTE $55 ; U
-		.BYTE $99 ; ô
-		.BYTE $4A ; J
-		.BYTE $AA ; ™
-		.BYTE $EA ; Í
-		.BYTE $D9 ; Ÿ
-		.BYTE $EA ; Í
-		.BYTE $AB ; ´
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $FD ; ˝
-		.BYTE $E0 ; ‡
-		.BYTE $7F ; 
-		.BYTE $1B
+		.BYTE	$1B
+		.BYTE	$17
+		.BYTE	$44 ; D
+		.BYTE	$FF
+		.BYTE	$FF
+		.BYTE	$55 ; U
+		.BYTE	$52 ; R
+		.BYTE	$3D ; =
+		.BYTE	$FF
+		.BYTE	$F7 ; ˜
+		.BYTE	$FF
+		.BYTE	$FF
+		.BYTE	$7E ; ~
+		.BYTE	$FF
+		.BYTE	$AA ; ™
+		.BYTE	$AA ; ™
+		.BYTE	$EA ; Í
+		.BYTE	$A8 ; ®
+		.BYTE	$59 ; Y
+		.BYTE	$58 ; X
+		.BYTE	$55 ; U
+		.BYTE	$55 ; U
+		.BYTE	$5A ; Z
+		.BYTE	$55 ; U
+		.BYTE	$95 ; ï
+		.BYTE	$55 ; U
+		.BYTE	$55 ; U
+		.BYTE	$99 ; ô
+		.BYTE	$4A ; J
+		.BYTE	$AA ; ™
+		.BYTE	$EA ; Í
+		.BYTE	$D9 ; Ÿ
+		.BYTE	$EA ; Í
+		.BYTE	$AB ; ´
+		.BYTE	$FF
+		.BYTE	$FF
+		.BYTE	$FD ; ˝
+		.BYTE	$E0 ; ‡
+		.BYTE	$7F ; 
+		.BYTE	$1B
 		.BYTE	3
-		.BYTE $FF
-		.BYTE $55 ; U
-		.BYTE $55 ; U
-		.BYTE $7F ; 
-		.BYTE $FC ; ¸
-		.BYTE  $D
-		.BYTE $FF
-		.BYTE $F7 ; ˜
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $EB ; Î
-		.BYTE $FF
-		.BYTE $AA ; ™
-		.BYTE $AA ; ™
-		.BYTE $EA ; Í
-		.BYTE $A8 ; ®
-		.BYTE $59 ; Y
-		.BYTE $59 ; Y
-		.BYTE $56 ; V
-		.BYTE $55 ; U
-		.BYTE $56 ; V
-		.BYTE $65 ; e
-		.BYTE $95 ; ï
-		.BYTE $55 ; U
-		.BYTE $55 ; U
-		.BYTE $1B
-		.BYTE $17
-		.BYTE $11
-		.BYTE $1B
-		.BYTE $2F ; /
+		.BYTE	$FF
+		.BYTE	$55 ; U
+		.BYTE	$55 ; U
+		.BYTE	$7F ; 
+		.BYTE	$FC ; ¸
+		.BYTE	 $D
+		.BYTE	$FF
+		.BYTE	$F7 ; ˜
+		.BYTE	$FF
+		.BYTE	$FF
+		.BYTE	$EB ; Î
+		.BYTE	$FF
+		.BYTE	$AA ; ™
+		.BYTE	$AA ; ™
+		.BYTE	$EA ; Í
+		.BYTE	$A8 ; ®
+		.BYTE	$59 ; Y
+		.BYTE	$59 ; Y
+		.BYTE	$56 ; V
+		.BYTE	$55 ; U
+		.BYTE	$56 ; V
+		.BYTE	$65 ; e
+		.BYTE	$95 ; ï
+		.BYTE	$55 ; U
+		.BYTE	$55 ; U
+		.BYTE	$1B
+		.BYTE	$17
+		.BYTE	$11
+		.BYTE	$1B
+		.BYTE	$2F ; /
 		.BYTE	0
 		.BYTE	2
 		.BYTE	2
-		.BYTE $80 ; Ä
-		.BYTE $80 ; Ä
-		.BYTE $A3 ; £
-		.BYTE $1B
+		.BYTE	$80 ; Ä
+		.BYTE	$80 ; Ä
+		.BYTE	$A3 ; £
+		.BYTE	$1B
 		.BYTE	2
-		.BYTE $2B ; +
-		.BYTE $AB ; ´
-		.BYTE $AB ; ´
-		.BYTE $EA ; Í
-		.BYTE $EA ; Í
-		.BYTE $CA ;  
-		.BYTE $C2 ; ¬
-		.BYTE $F2 ; Ú
-		.BYTE $1B
+		.BYTE	$2B ; +
+		.BYTE	$AB ; ´
+		.BYTE	$AB ; ´
+		.BYTE	$EA ; Í
+		.BYTE	$EA ; Í
+		.BYTE	$CA ;  
+		.BYTE	$C2 ; ¬
+		.BYTE	$F2 ; Ú
+		.BYTE	$1B
 		.BYTE	3
-		.BYTE $FF
-		.BYTE $BF ; ø
-		.BYTE $AF ; Ø
-		.BYTE $BF ; ø
-		.BYTE $AF ; Ø
-		.BYTE $AF ; Ø
-		.BYTE $9D ; ù
-		.BYTE $BD ; Ω
-		.BYTE $BD ; Ω
-		.BYTE $F5 ; ı
-		.BYTE $E5 ; Â
-		.BYTE $E9 ; È
-		.BYTE $A9 ; ©
-		.BYTE $AA ; ™
-		.BYTE  $A
-		.BYTE $CA ;  
-		.BYTE $CB ; À
-		.BYTE $FB ; ˚
-		.BYTE $BF ; ø
-		.BYTE $BF ; ø
-		.BYTE $AF ; Ø
-		.BYTE $AF ; Ø
-		.BYTE $FE ; ˛
-		.BYTE $FA ; ˙
-		.BYTE $EA ; Í
-		.BYTE $EA ; Í
-		.BYTE $AA ; ™
-		.BYTE $BB ; ª
-		.BYTE $BF ; ø
-		.BYTE $AF ; Ø
-		.BYTE $AB ; ´
-		.BYTE $EF ; Ô
-		.BYTE $FF
-		.BYTE $FE ; ˛
-		.BYTE $FE ; ˛
-		.BYTE $FA ; ˙
-		.BYTE $EA ; Í
-		.BYTE $EA ; Í
-		.BYTE $8F ; è
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $BF ; ø
-		.BYTE $BF ; ø
-		.BYTE $1B
+		.BYTE	$FF
+		.BYTE	$BF ; ø
+		.BYTE	$AF ; Ø
+		.BYTE	$BF ; ø
+		.BYTE	$AF ; Ø
+		.BYTE	$AF ; Ø
+		.BYTE	$9D ; ù
+		.BYTE	$BD ; Ω
+		.BYTE	$BD ; Ω
+		.BYTE	$F5 ; ı
+		.BYTE	$E5 ; Â
+		.BYTE	$E9 ; È
+		.BYTE	$A9 ; ©
+		.BYTE	$AA ; ™
+		.BYTE	 $A
+		.BYTE	$CA ;  
+		.BYTE	$CB ; À
+		.BYTE	$FB ; ˚
+		.BYTE	$BF ; ø
+		.BYTE	$BF ; ø
+		.BYTE	$AF ; Ø
+		.BYTE	$AF ; Ø
+		.BYTE	$FE ; ˛
+		.BYTE	$FA ; ˙
+		.BYTE	$EA ; Í
+		.BYTE	$EA ; Í
+		.BYTE	$AA ; ™
+		.BYTE	$BB ; ª
+		.BYTE	$BF ; ø
+		.BYTE	$AF ; Ø
+		.BYTE	$AB ; ´
+		.BYTE	$EF ; Ô
+		.BYTE	$FF
+		.BYTE	$FE ; ˛
+		.BYTE	$FE ; ˛
+		.BYTE	$FA ; ˙
+		.BYTE	$EA ; Í
+		.BYTE	$EA ; Í
+		.BYTE	$8F ; è
+		.BYTE	$FF
+		.BYTE	$FF
+		.BYTE	$BF ; ø
+		.BYTE	$BF ; ø
+		.BYTE	$1B
 		.BYTE	2
-		.BYTE $3F ; ?
-		.BYTE $EA ; Í
-		.BYTE $EF ; Ô
-		.BYTE $EB ; Î
-		.BYTE $FA ; ˙
-		.BYTE $FA ; ˙
-		.BYTE $EA ; Í
-		.BYTE $EA ; Í
-		.BYTE $AA ; ™
-		.BYTE $EA ; Í
-		.BYTE $EA ; Í
-		.BYTE $1B
-		.BYTE $15
-		.BYTE $AA ; ™
-		.BYTE $3A ; :
-		.BYTE $3A ; :
-		.BYTE $BE ; æ
-		.BYTE $AE ; Æ
-		.BYTE $AE ; Æ
-		.BYTE $AB ; ´
-		.BYTE $AB ; ´
-		.BYTE $AA ; ™
-		.BYTE $1B
+		.BYTE	$3F ; ?
+		.BYTE	$EA ; Í
+		.BYTE	$EF ; Ô
+		.BYTE	$EB ; Î
+		.BYTE	$FA ; ˙
+		.BYTE	$FA ; ˙
+		.BYTE	$EA ; Í
+		.BYTE	$EA ; Í
+		.BYTE	$AA ; ™
+		.BYTE	$EA ; Í
+		.BYTE	$EA ; Í
+		.BYTE	$1B
+		.BYTE	$15
+		.BYTE	$AA ; ™
+		.BYTE	$3A ; :
+		.BYTE	$3A ; :
+		.BYTE	$BE ; æ
+		.BYTE	$AE ; Æ
+		.BYTE	$AE ; Æ
+		.BYTE	$AB ; ´
+		.BYTE	$AB ; ´
+		.BYTE	$AA ; ™
+		.BYTE	$1B
 		.BYTE	2
-		.BYTE $BC ; º
-		.BYTE $FC ; ¸
-		.BYTE $F0 ; 
-		.BYTE $F0 ; 
-		.BYTE $F2 ; Ú
-		.BYTE $FE ; ˛
-		.BYTE $A2 ; ¢
-		.BYTE $20
-		.BYTE $2C ; ,
-		.BYTE $AC ; ¨
-		.BYTE $AC ; ¨
-		.BYTE $AF ; Ø
-		.BYTE $AB ; ´
-		.BYTE $AB ; ´
-		.BYTE $FE ; ˛
-		.BYTE $BE ; æ
-		.BYTE $BF ; ø
-		.BYTE $AF ; Ø
-		.BYTE $AB ; ´
-		.BYTE $2B ; +
-		.BYTE $EA ; Í
-		.BYTE $CA ;  
-		.BYTE $1B
+		.BYTE	$BC ; º
+		.BYTE	$FC ; ¸
+		.BYTE	$F0 ; 
+		.BYTE	$F0 ; 
+		.BYTE	$F2 ; Ú
+		.BYTE	$FE ; ˛
+		.BYTE	$A2 ; ¢
+		.BYTE	$20
+		.BYTE	$2C ; ,
+		.BYTE	$AC ; ¨
+		.BYTE	$AC ; ¨
+		.BYTE	$AF ; Ø
+		.BYTE	$AB ; ´
+		.BYTE	$AB ; ´
+		.BYTE	$FE ; ˛
+		.BYTE	$BE ; æ
+		.BYTE	$BF ; ø
+		.BYTE	$AF ; Ø
+		.BYTE	$AB ; ´
+		.BYTE	$2B ; +
+		.BYTE	$EA ; Í
+		.BYTE	$CA ;  
+		.BYTE	$1B
 		.BYTE	2
-		.BYTE $AF ; Ø
-		.BYTE $BF ; ø
-		.BYTE $FF
-		.BYTE $FE ; ˛
-		.BYTE $FE ; ˛
-		.BYTE $FA ; ˙
-		.BYTE $C0 ; ¿
-		.BYTE $C2 ; ¬
+		.BYTE	$AF ; Ø
+		.BYTE	$BF ; ø
+		.BYTE	$FF
+		.BYTE	$FE ; ˛
+		.BYTE	$FE ; ˛
+		.BYTE	$FA ; ˙
+		.BYTE	$C0 ; ¿
+		.BYTE	$C2 ; ¬
 		.BYTE	2
-		.BYTE  $B
-		.BYTE  $B
-		.BYTE $2F ; /
-		.BYTE $2F ; /
-		.BYTE $AF ; Ø
-		.BYTE $AB ; ´
-		.BYTE $AB ; ´
-		.BYTE $EB ; Î
-		.BYTE $EB ; Î
-		.BYTE $AB ; ´
-		.BYTE $AF ; Ø
-		.BYTE $AF ; Ø
-		.BYTE $BF ; ø
-		.BYTE $FF
-		.BYTE $EF ; Ô
-		.BYTE $EF ; Ô
-		.BYTE $EB ; Î
-		.BYTE $1B
+		.BYTE	 $B
+		.BYTE	 $B
+		.BYTE	$2F ; /
+		.BYTE	$2F ; /
+		.BYTE	$AF ; Ø
+		.BYTE	$AB ; ´
+		.BYTE	$AB ; ´
+		.BYTE	$EB ; Î
+		.BYTE	$EB ; Î
+		.BYTE	$AB ; ´
+		.BYTE	$AF ; Ø
+		.BYTE	$AF ; Ø
+		.BYTE	$BF ; ø
+		.BYTE	$FF
+		.BYTE	$EF ; Ô
+		.BYTE	$EF ; Ô
+		.BYTE	$EB ; Î
+		.BYTE	$1B
 		.BYTE	2
-		.BYTE $EA ; Í
-		.BYTE $FA ; ˙
-		.BYTE $EA ; Í
-		.BYTE $AA ; ™
-		.BYTE $1B
+		.BYTE	$EA ; Í
+		.BYTE	$FA ; ˙
+		.BYTE	$EA ; Í
+		.BYTE	$AA ; ™
+		.BYTE	$1B
 		.BYTE	2
-		.BYTE $AB ; ´
-		.BYTE $AF ; Ø
-		.BYTE $BF ; ø
-		.BYTE $BE ; æ
-		.BYTE $FC ; ¸
-		.BYTE $FC ; ¸
-		.BYTE $F0 ; 
-		.BYTE $F0 ; 
-		.BYTE $B0 ; ∞
-		.BYTE $BC ; º
-		.BYTE $AC ; ¨
-		.BYTE $AC ; ¨
-		.BYTE $1B
+		.BYTE	$AB ; ´
+		.BYTE	$AF ; Ø
+		.BYTE	$BF ; ø
+		.BYTE	$BE ; æ
+		.BYTE	$FC ; ¸
+		.BYTE	$FC ; ¸
+		.BYTE	$F0 ; 
+		.BYTE	$F0 ; 
+		.BYTE	$B0 ; ∞
+		.BYTE	$BC ; º
+		.BYTE	$AC ; ¨
+		.BYTE	$AC ; ¨
+		.BYTE	$1B
 		.BYTE	4
 		.BYTE	0
 		.BYTE	8
 		.BYTE	8
-		.BYTE $28 ; (
-		.BYTE $1B
-		.BYTE $27 ; '
+		.BYTE	$28 ; (
+		.BYTE	$1B
+		.BYTE	$27 ; '
 		.BYTE	0
-		.BYTE $1B
-		.BYTE $17
-		.BYTE $44 ; D
-		.BYTE $1B
-		.BYTE $17
-		.BYTE $11
-		.BYTE $1B
-		.BYTE $2F ; /
+		.BYTE	$1B
+		.BYTE	$17
+		.BYTE	$44 ; D
+		.BYTE	$1B
+		.BYTE	$17
+		.BYTE	$11
+		.BYTE	$1B
+		.BYTE	$2F ; /
 		.BYTE	0
-		.BYTE $2A ; *
-		.BYTE  $A
-		.BYTE  $A
+		.BYTE	$2A ; *
+		.BYTE	 $A
+		.BYTE	 $A
 		.BYTE	2
 		.BYTE	2
-		.BYTE $1B
+		.BYTE	$1B
 		.BYTE	2
 		.BYTE	0
-		.BYTE $FE ; ˛
-		.BYTE $BE ; æ
-		.BYTE $BF ; ø
-		.BYTE $BF ; ø
-		.BYTE $AF ; Ø
-		.BYTE $AB ; ´
-		.BYTE $AB ; ´
-		.BYTE $AA ; ™
-		.BYTE $AE ; Æ
-		.BYTE $BE ; æ
-		.BYTE $BE ; æ
-		.BYTE $FA ; ˙
-		.BYTE $FA ; ˙
-		.BYTE $1B
+		.BYTE	$FE ; ˛
+		.BYTE	$BE ; æ
+		.BYTE	$BF ; ø
+		.BYTE	$BF ; ø
+		.BYTE	$AF ; Ø
+		.BYTE	$AB ; ´
+		.BYTE	$AB ; ´
+		.BYTE	$AA ; ™
+		.BYTE	$AE ; Æ
+		.BYTE	$BE ; æ
+		.BYTE	$BE ; æ
+		.BYTE	$FA ; ˙
+		.BYTE	$FA ; ˙
+		.BYTE	$1B
 		.BYTE	2
-		.BYTE $EA ; Í
-		.BYTE $AE ; Æ
-		.BYTE $AE ; Æ
-		.BYTE $AF ; Ø
-		.BYTE $1B
+		.BYTE	$EA ; Í
+		.BYTE	$AE ; Æ
+		.BYTE	$AE ; Æ
+		.BYTE	$AF ; Ø
+		.BYTE	$1B
 		.BYTE	2
-		.BYTE $BF ; ø
-		.BYTE $AF ; Ø
-		.BYTE $AF ; Ø
-		.BYTE $BF ; ø
-		.BYTE $AF ; Ø
-		.BYTE $AF ; Ø
-		.BYTE $AB ; ´
-		.BYTE $EB ; Î
-		.BYTE $EA ; Í
-		.BYTE $EA ; Í
-		.BYTE $AA ; ™
-		.BYTE $AB ; ´
-		.BYTE $AA ; ™
-		.BYTE $AB ; ´
-		.BYTE $EB ; Î
-		.BYTE $EB ; Î
-		.BYTE $FA ; ˙
-		.BYTE $FB ; ˚
-		.BYTE $FF
-		.BYTE $EA ; Í
-		.BYTE $EA ; Í
-		.BYTE $EB ; Î
-		.BYTE $FB ; ˚
-		.BYTE $1B
+		.BYTE	$BF ; ø
+		.BYTE	$AF ; Ø
+		.BYTE	$AF ; Ø
+		.BYTE	$BF ; ø
+		.BYTE	$AF ; Ø
+		.BYTE	$AF ; Ø
+		.BYTE	$AB ; ´
+		.BYTE	$EB ; Î
+		.BYTE	$EA ; Í
+		.BYTE	$EA ; Í
+		.BYTE	$AA ; ™
+		.BYTE	$AB ; ´
+		.BYTE	$AA ; ™
+		.BYTE	$AB ; ´
+		.BYTE	$EB ; Î
+		.BYTE	$EB ; Î
+		.BYTE	$FA ; ˙
+		.BYTE	$FB ; ˚
+		.BYTE	$FF
+		.BYTE	$EA ; Í
+		.BYTE	$EA ; Í
+		.BYTE	$EB ; Î
+		.BYTE	$FB ; ˚
+		.BYTE	$1B
 		.BYTE	2
-		.BYTE $FF
-		.BYTE $BF ; ø
-		.BYTE $FF
-		.BYTE $FE ; ˛
-		.BYTE $FE ; ˛
-		.BYTE $FA ; ˙
-		.BYTE $FA ; ˙
-		.BYTE $EA ; Í
-		.BYTE $1B
+		.BYTE	$FF
+		.BYTE	$BF ; ø
+		.BYTE	$FF
+		.BYTE	$FE ; ˛
+		.BYTE	$FE ; ˛
+		.BYTE	$FA ; ˙
+		.BYTE	$FA ; ˙
+		.BYTE	$EA ; Í
+		.BYTE	$1B
 		.BYTE	6
-		.BYTE $AA ; ™
-		.BYTE $AB ; ´
-		.BYTE $AF ; Ø
-		.BYTE $BF ; ø
-		.BYTE $AA ; ™
-		.BYTE $AA ; ™
-		.BYTE $AF ; Ø
-		.BYTE $BC ; º
-		.BYTE $1B
+		.BYTE	$AA ; ™
+		.BYTE	$AB ; ´
+		.BYTE	$AF ; Ø
+		.BYTE	$BF ; ø
+		.BYTE	$AA ; ™
+		.BYTE	$AA ; ™
+		.BYTE	$AF ; Ø
+		.BYTE	$BC ; º
+		.BYTE	$1B
 		.BYTE	2
-		.BYTE $F1 ; Ò
-		.BYTE $C5 ; ≈
-		.BYTE $AA ; ™
-		.BYTE $FF
-		.BYTE $D5 ; ’
-		.BYTE $55 ; U
-		.BYTE $55 ; U
-		.BYTE $40 ; @
-		.BYTE $40 ; @
+		.BYTE	$F1 ; Ò
+		.BYTE	$C5 ; ≈
+		.BYTE	$AA ; ™
+		.BYTE	$FF
+		.BYTE	$D5 ; ’
+		.BYTE	$55 ; U
+		.BYTE	$55 ; U
+		.BYTE	$40 ; @
+		.BYTE	$40 ; @
 		.BYTE	3
-		.BYTE $AA ; ™
-		.BYTE $EA ; Í
-		.BYTE $FE ; ˛
-		.BYTE $4F ; O
-		.BYTE $53 ; S
-		.BYTE $D3 ; ”
-		.BYTE $D3 ; ”
-		.BYTE $14
-		.BYTE $1B
+		.BYTE	$AA ; ™
+		.BYTE	$EA ; Í
+		.BYTE	$FE ; ˛
+		.BYTE	$4F ; O
+		.BYTE	$53 ; S
+		.BYTE	$D3 ; ”
+		.BYTE	$D3 ; ”
+		.BYTE	$14
+		.BYTE	$1B
 		.BYTE	3
-		.BYTE $AA ; ™
-		.BYTE $EA ; Í
-		.BYTE $FA ; ˙
-		.BYTE $FE ; ˛
-		.BYTE $FF
-		.BYTE $3E ; >
-		.BYTE $BF ; ø
-		.BYTE $8F ; è
-		.BYTE $AF ; Ø
-		.BYTE $AF ; Ø
-		.BYTE $AB ; ´
-		.BYTE $AA ; ™
-		.BYTE $AA ; ™
-		.BYTE $AB ; ´
-		.BYTE $AB ; ´
-		.BYTE $AA ; ™
-		.BYTE $EA ; Í
-		.BYTE $FA ; ˙
-		.BYTE $FB ; ˚
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $1B
+		.BYTE	$AA ; ™
+		.BYTE	$EA ; Í
+		.BYTE	$FA ; ˙
+		.BYTE	$FE ; ˛
+		.BYTE	$FF
+		.BYTE	$3E ; >
+		.BYTE	$BF ; ø
+		.BYTE	$8F ; è
+		.BYTE	$AF ; Ø
+		.BYTE	$AF ; Ø
+		.BYTE	$AB ; ´
+		.BYTE	$AA ; ™
+		.BYTE	$AA ; ™
+		.BYTE	$AB ; ´
+		.BYTE	$AB ; ´
+		.BYTE	$AA ; ™
+		.BYTE	$EA ; Í
+		.BYTE	$FA ; ˙
+		.BYTE	$FB ; ˚
+		.BYTE	$FF
+		.BYTE	$FF
+		.BYTE	$1B
 		.BYTE	2
-		.BYTE $FA ; ˙
-		.BYTE $FE ; ˛
-		.BYTE $FE ; ˛
-		.BYTE $FA ; ˙
-		.BYTE $FA ; ˙
-		.BYTE $EA ; Í
-		.BYTE $FA ; ˙
-		.BYTE $FE ; ˛
-		.BYTE $FE ; ˛
-		.BYTE $BE ; æ
-		.BYTE $BF ; ø
-		.BYTE $BF ; ø
-		.BYTE $AF ; Ø
-		.BYTE $BF ; ø
-		.BYTE $AF ; Ø
-		.BYTE $BF ; ø
-		.BYTE $BE ; æ
-		.BYTE $FE ; ˛
-		.BYTE $FA ; ˙
-		.BYTE $EA ; Í
-		.BYTE $EA ; Í
-		.BYTE $AA ; ™
-		.BYTE $AF ; Ø
-		.BYTE $AB ; ´
-		.BYTE $AB ; ´
-		.BYTE $AF ; Ø
-		.BYTE $AF ; Ø
-		.BYTE $AB ; ´
-		.BYTE $BF ; ø
-		.BYTE $AF ; Ø
-		.BYTE $FA ; ˙
-		.BYTE $FA ; ˙
-		.BYTE $BA ; ∫
-		.BYTE $BE ; æ
-		.BYTE $EA ; Í
-		.BYTE $FA ; ˙
-		.BYTE $FA ; ˙
-		.BYTE $EA ; Í
-		.BYTE $FA ; ˙
-		.BYTE $FA ; ˙
-		.BYTE $FE ; ˛
-		.BYTE $BE ; æ
-		.BYTE $BF ; ø
-		.BYTE $BF ; ø
-		.BYTE $AF ; Ø
-		.BYTE $AF ; Ø
-		.BYTE $A8 ; ®
-		.BYTE $A8 ; ®
-		.BYTE $1B
+		.BYTE	$FA ; ˙
+		.BYTE	$FE ; ˛
+		.BYTE	$FE ; ˛
+		.BYTE	$FA ; ˙
+		.BYTE	$FA ; ˙
+		.BYTE	$EA ; Í
+		.BYTE	$FA ; ˙
+		.BYTE	$FE ; ˛
+		.BYTE	$FE ; ˛
+		.BYTE	$BE ; æ
+		.BYTE	$BF ; ø
+		.BYTE	$BF ; ø
+		.BYTE	$AF ; Ø
+		.BYTE	$BF ; ø
+		.BYTE	$AF ; Ø
+		.BYTE	$BF ; ø
+		.BYTE	$BE ; æ
+		.BYTE	$FE ; ˛
+		.BYTE	$FA ; ˙
+		.BYTE	$EA ; Í
+		.BYTE	$EA ; Í
+		.BYTE	$AA ; ™
+		.BYTE	$AF ; Ø
+		.BYTE	$AB ; ´
+		.BYTE	$AB ; ´
+		.BYTE	$AF ; Ø
+		.BYTE	$AF ; Ø
+		.BYTE	$AB ; ´
+		.BYTE	$BF ; ø
+		.BYTE	$AF ; Ø
+		.BYTE	$FA ; ˙
+		.BYTE	$FA ; ˙
+		.BYTE	$BA ; ∫
+		.BYTE	$BE ; æ
+		.BYTE	$EA ; Í
+		.BYTE	$FA ; ˙
+		.BYTE	$FA ; ˙
+		.BYTE	$EA ; Í
+		.BYTE	$FA ; ˙
+		.BYTE	$FA ; ˙
+		.BYTE	$FE ; ˛
+		.BYTE	$BE ; æ
+		.BYTE	$BF ; ø
+		.BYTE	$BF ; ø
+		.BYTE	$AF ; Ø
+		.BYTE	$AF ; Ø
+		.BYTE	$A8 ; ®
+		.BYTE	$A8 ; ®
+		.BYTE	$1B
 		.BYTE	2
-		.BYTE $EA ; Í
-		.BYTE $E8 ; Ë
-		.BYTE $A8 ; ®
-		.BYTE $A0 ; †
-		.BYTE $20
-		.BYTE $A0 ; †
-		.BYTE $80 ; Ä
-		.BYTE $80 ; Ä
-		.BYTE $1B
-		.BYTE $2B ; +
+		.BYTE	$EA ; Í
+		.BYTE	$E8 ; Ë
+		.BYTE	$A8 ; ®
+		.BYTE	$A0 ; †
+		.BYTE	$20
+		.BYTE	$A0 ; †
+		.BYTE	$80 ; Ä
+		.BYTE	$80 ; Ä
+		.BYTE	$1B
+		.BYTE	$2B ; +
 		.BYTE	0
-		.BYTE $1B
-		.BYTE $17
-		.BYTE $44 ; D
-		.BYTE $1B
-		.BYTE $17
-		.BYTE $11
-		.BYTE $1B
-		.BYTE $32 ; 2
+		.BYTE	$1B
+		.BYTE	$17
+		.BYTE	$44 ; D
+		.BYTE	$1B
+		.BYTE	$17
+		.BYTE	$11
+		.BYTE	$1B
+		.BYTE	$32 ; 2
 		.BYTE	0
-		.BYTE $1B
+		.BYTE	$1B
 		.BYTE	2
-		.BYTE $80 ; Ä
-		.BYTE $A0 ; †
-		.BYTE $A0 ; †
-		.BYTE $1B
+		.BYTE	$80 ; Ä
+		.BYTE	$A0 ; †
+		.BYTE	$A0 ; †
+		.BYTE	$1B
 		.BYTE	2
-		.BYTE $2B ; +
-		.BYTE $2F ; /
-		.BYTE $AF ; Ø
-		.BYTE $BF ; ø
-		.BYTE $BE ; æ
-		.BYTE $BE ; æ
-		.BYTE $1B
+		.BYTE	$2B ; +
+		.BYTE	$2F ; /
+		.BYTE	$AF ; Ø
+		.BYTE	$BF ; ø
+		.BYTE	$BE ; æ
+		.BYTE	$BE ; æ
+		.BYTE	$1B
 		.BYTE	2
-		.BYTE $EA ; Í
-		.BYTE $1B
+		.BYTE	$EA ; Í
+		.BYTE	$1B
 		.BYTE	2
-		.BYTE $AB ; ´
-		.BYTE $AF ; Ø
-		.BYTE $BE ; æ
-		.BYTE $AF ; Ø
-		.BYTE $AF ; Ø
-		.BYTE $AE ; Æ
-		.BYTE $BE ; æ
-		.BYTE $BF ; ø
-		.BYTE $AF ; Ø
-		.BYTE $AF ; Ø
-		.BYTE $AB ; ´
-		.BYTE $AA ; ™
-		.BYTE $1B
+		.BYTE	$AB ; ´
+		.BYTE	$AF ; Ø
+		.BYTE	$BE ; æ
+		.BYTE	$AF ; Ø
+		.BYTE	$AF ; Ø
+		.BYTE	$AE ; Æ
+		.BYTE	$BE ; æ
+		.BYTE	$BF ; ø
+		.BYTE	$AF ; Ø
+		.BYTE	$AF ; Ø
+		.BYTE	$AB ; ´
+		.BYTE	$AA ; ™
+		.BYTE	$1B
 		.BYTE	2
-		.BYTE $AB ; ´
-		.BYTE $AF ; Ø
-		.BYTE $AE ; Æ
-		.BYTE $BE ; æ
-		.BYTE $FA ; ˙
-		.BYTE $BE ; æ
-		.BYTE $BF ; ø
-		.BYTE $BF ; ø
-		.BYTE $AF ; Ø
-		.BYTE $AF ; Ø
-		.BYTE $BF ; ø
-		.BYTE $BF ; ø
-		.BYTE $FF
-		.BYTE $AF ; Ø
-		.BYTE $AF ; Ø
-		.BYTE $AB ; ´
-		.BYTE $EB ; Î
-		.BYTE $EF ; Ô
-		.BYTE $EF ; Ô
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $AB ; ´
-		.BYTE $AF ; Ø
-		.BYTE $AB ; ´
-		.BYTE $AA ; ™
-		.BYTE $EA ; Í
-		.BYTE $FA ; ˙
-		.BYTE $FA ; ˙
-		.BYTE $FE ; ˛
-		.BYTE $1B
+		.BYTE	$AB ; ´
+		.BYTE	$AF ; Ø
+		.BYTE	$AE ; Æ
+		.BYTE	$BE ; æ
+		.BYTE	$FA ; ˙
+		.BYTE	$BE ; æ
+		.BYTE	$BF ; ø
+		.BYTE	$BF ; ø
+		.BYTE	$AF ; Ø
+		.BYTE	$AF ; Ø
+		.BYTE	$BF ; ø
+		.BYTE	$BF ; ø
+		.BYTE	$FF
+		.BYTE	$AF ; Ø
+		.BYTE	$AF ; Ø
+		.BYTE	$AB ; ´
+		.BYTE	$EB ; Î
+		.BYTE	$EF ; Ô
+		.BYTE	$EF ; Ô
+		.BYTE	$FF
+		.BYTE	$FF
+		.BYTE	$AB ; ´
+		.BYTE	$AF ; Ø
+		.BYTE	$AB ; ´
+		.BYTE	$AA ; ™
+		.BYTE	$EA ; Í
+		.BYTE	$FA ; ˙
+		.BYTE	$FA ; ˙
+		.BYTE	$FE ; ˛
+		.BYTE	$1B
 		.BYTE	3
-		.BYTE $FF
-		.BYTE $BF ; ø
-		.BYTE $AF ; Ø
-		.BYTE $AF ; Ø
-		.BYTE $AB ; ´
-		.BYTE $1B
+		.BYTE	$FF
+		.BYTE	$BF ; ø
+		.BYTE	$AF ; Ø
+		.BYTE	$AF ; Ø
+		.BYTE	$AB ; ´
+		.BYTE	$1B
 		.BYTE	3
-		.BYTE $C5 ; ≈
-		.BYTE $1B
+		.BYTE	$C5 ; ≈
+		.BYTE	$1B
 		.BYTE	2
-		.BYTE $F1 ; Ò
-		.BYTE $FC ; ¸
-		.BYTE  $F
-		.BYTE  $F
-		.BYTE  $C
+		.BYTE	$F1 ; Ò
+		.BYTE	$FC ; ¸
+		.BYTE	 $F
+		.BYTE	 $F
+		.BYTE	 $C
 		.BYTE	0
-		.BYTE $40 ; @
-		.BYTE $40 ; @
-		.BYTE $55 ; U
-		.BYTE $55 ; U
-		.BYTE $1B
+		.BYTE	$40 ; @
+		.BYTE	$40 ; @
+		.BYTE	$55 ; U
+		.BYTE	$55 ; U
+		.BYTE	$1B
 		.BYTE	3
-		.BYTE $14
-		.BYTE $1B
+		.BYTE	$14
+		.BYTE	$1B
 		.BYTE	2
-		.BYTE $53 ; S
-		.BYTE $4F ; O
-		.BYTE $1B
+		.BYTE	$53 ; S
+		.BYTE	$4F ; O
+		.BYTE	$1B
 		.BYTE	4
-		.BYTE $FF
-		.BYTE $FE ; ˛
-		.BYTE $FE ; ˛
-		.BYTE $FA ; ˙
-		.BYTE $FA ; ˙
-		.BYTE $FE ; ˛
-		.BYTE $FA ; ˙
-		.BYTE $EA ; Í
-		.BYTE $AA ; ™
-		.BYTE $A8 ; ®
-		.BYTE $A8 ; ®
-		.BYTE $A0 ; †
-		.BYTE $1B
+		.BYTE	$FF
+		.BYTE	$FE ; ˛
+		.BYTE	$FE ; ˛
+		.BYTE	$FA ; ˙
+		.BYTE	$FA ; ˙
+		.BYTE	$FE ; ˛
+		.BYTE	$FA ; ˙
+		.BYTE	$EA ; Í
+		.BYTE	$AA ; ™
+		.BYTE	$A8 ; ®
+		.BYTE	$A8 ; ®
+		.BYTE	$A0 ; †
+		.BYTE	$1B
 		.BYTE	3
-		.BYTE $BF ; ø
-		.BYTE $1B
+		.BYTE	$BF ; ø
+		.BYTE	$1B
 		.BYTE	3
-		.BYTE $FF
-		.BYTE $EA ; Í
-		.BYTE $AA ; ™
-		.BYTE $AB ; ´
-		.BYTE $AF ; Ø
-		.BYTE $BF ; ø
-		.BYTE $FF
-		.BYTE $FE ; ˛
-		.BYTE $1B
+		.BYTE	$FF
+		.BYTE	$EA ; Í
+		.BYTE	$AA ; ™
+		.BYTE	$AB ; ´
+		.BYTE	$AF ; Ø
+		.BYTE	$BF ; ø
+		.BYTE	$FF
+		.BYTE	$FE ; ˛
+		.BYTE	$1B
 		.BYTE	2
-		.BYTE $FF
-		.BYTE $FE ; ˛
-		.BYTE $FE ; ˛
-		.BYTE $FF
-		.BYTE $BF ; ø
-		.BYTE $BF ; ø
-		.BYTE $AF ; Ø
-		.BYTE $AB ; ´
-		.BYTE $AF ; Ø
-		.BYTE $AB ; ´
-		.BYTE $AF ; Ø
-		.BYTE $BF ; ø
-		.BYTE $AF ; Ø
-		.BYTE $EB ; Î
-		.BYTE $EB ; Î
-		.BYTE $FF
-		.BYTE $FE ; ˛
-		.BYTE $EA ; Í
-		.BYTE $EA ; Í
-		.BYTE $AA ; ™
-		.BYTE $EA ; Í
-		.BYTE $EA ; Í
-		.BYTE $FA ; ˙
-		.BYTE $EA ; Í
-		.BYTE $AA ; ™
-		.BYTE $1B
+		.BYTE	$FF
+		.BYTE	$FE ; ˛
+		.BYTE	$FE ; ˛
+		.BYTE	$FF
+		.BYTE	$BF ; ø
+		.BYTE	$BF ; ø
+		.BYTE	$AF ; Ø
+		.BYTE	$AB ; ´
+		.BYTE	$AF ; Ø
+		.BYTE	$AB ; ´
+		.BYTE	$AF ; Ø
+		.BYTE	$BF ; ø
+		.BYTE	$AF ; Ø
+		.BYTE	$EB ; Î
+		.BYTE	$EB ; Î
+		.BYTE	$FF
+		.BYTE	$FE ; ˛
+		.BYTE	$EA ; Í
+		.BYTE	$EA ; Í
+		.BYTE	$AA ; ™
+		.BYTE	$EA ; Í
+		.BYTE	$EA ; Í
+		.BYTE	$FA ; ˙
+		.BYTE	$EA ; Í
+		.BYTE	$AA ; ™
+		.BYTE	$1B
 		.BYTE	2
-		.BYTE $AB ; ´
-		.BYTE $EF ; Ô
-		.BYTE $EF ; Ô
-		.BYTE $FF
-		.BYTE $AF ; Ø
-		.BYTE $AF ; Ø
-		.BYTE $BF ; ø
-		.BYTE $BE ; æ
-		.BYTE $FE ; ˛
-		.BYTE $FE ; ˛
-		.BYTE $FA ; ˙
-		.BYTE $FB ; ˚
-		.BYTE $80 ; Ä
-		.BYTE $80 ; Ä
-		.BYTE $88 ; à
+		.BYTE	$AB ; ´
+		.BYTE	$EF ; Ô
+		.BYTE	$EF ; Ô
+		.BYTE	$FF
+		.BYTE	$AF ; Ø
+		.BYTE	$AF ; Ø
+		.BYTE	$BF ; ø
+		.BYTE	$BE ; æ
+		.BYTE	$FE ; ˛
+		.BYTE	$FE ; ˛
+		.BYTE	$FA ; ˙
+		.BYTE	$FB ; ˚
+		.BYTE	$80 ; Ä
+		.BYTE	$80 ; Ä
+		.BYTE	$88 ; à
 		.BYTE	8
-		.BYTE $E8 ; Ë
-		.BYTE $E8 ; Ë
-		.BYTE $E0 ; ‡
-		.BYTE $E0 ; ‡
-		.BYTE $1B
-		.BYTE $2F ; /
+		.BYTE	$E8 ; Ë
+		.BYTE	$E8 ; Ë
+		.BYTE	$E0 ; ‡
+		.BYTE	$E0 ; ‡
+		.BYTE	$1B
+		.BYTE	$2F ; /
 		.BYTE	0
-		.BYTE $1B
-		.BYTE $17
-		.BYTE $44 ; D
-		.BYTE $11
-		.BYTE $1F
-		.BYTE $F5 ; ı
-		.BYTE $1B
+		.BYTE	$1B
+		.BYTE	$17
+		.BYTE	$44 ; D
+		.BYTE	$11
+		.BYTE	$1F
+		.BYTE	$F5 ; ı
+		.BYTE	$1B
 		.BYTE	7
-		.BYTE $FF
-		.BYTE $2F ; /
-		.BYTE $FA ; ˙
-		.BYTE $AF ; Ø
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $FA ; ˙
-		.BYTE $BF ; ø
-		.BYTE $FB ; ˚
-		.BYTE $FC ; ¸
-		.BYTE $1B
+		.BYTE	$FF
+		.BYTE	$2F ; /
+		.BYTE	$FA ; ˙
+		.BYTE	$AF ; Ø
+		.BYTE	$FF
+		.BYTE	$FF
+		.BYTE	$FA ; ˙
+		.BYTE	$BF ; ø
+		.BYTE	$FB ; ˚
+		.BYTE	$FC ; ¸
+		.BYTE	$1B
 		.BYTE	3
-		.BYTE $FF
-		.BYTE $FA ; ˙
-		.BYTE $AA ; ™
-		.BYTE $FA ; ˙
-		.BYTE $AE ; Æ
-		.BYTE $AA ; ™
-		.BYTE $5A ; Z
-		.BYTE $F5 ; ı
-		.BYTE $55 ; U
-		.BYTE $50 ; P
+		.BYTE	$FF
+		.BYTE	$FA ; ˙
+		.BYTE	$AA ; ™
+		.BYTE	$FA ; ˙
+		.BYTE	$AE ; Æ
+		.BYTE	$AA ; ™
+		.BYTE	$5A ; Z
+		.BYTE	$F5 ; ı
+		.BYTE	$55 ; U
+		.BYTE	$50 ; P
 		.BYTE	0
-		.BYTE $1A
-		.BYTE $F6 ; ˆ
-		.BYTE $AA ; ™
-		.BYTE $B9 ; π
-		.BYTE $55 ; U
-		.BYTE $4D ; M
-		.BYTE $11
-		.BYTE $17
-		.BYTE $FC ; ¸
-		.BYTE $7F ; 
-		.BYTE $1B
+		.BYTE	$1A
+		.BYTE	$F6 ; ˆ
+		.BYTE	$AA ; ™
+		.BYTE	$B9 ; π
+		.BYTE	$55 ; U
+		.BYTE	$4D ; M
+		.BYTE	$11
+		.BYTE	$17
+		.BYTE	$FC ; ¸
+		.BYTE	$7F ; 
+		.BYTE	$1B
 		.BYTE	6
-		.BYTE $FF
-		.BYTE $6F ; o
-		.BYTE $FF
-		.BYTE $AA ; ™
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $AB ; ´
-		.BYTE $FF
-		.BYTE $FB ; ˚
-		.BYTE $1B
+		.BYTE	$FF
+		.BYTE	$6F ; o
+		.BYTE	$FF
+		.BYTE	$AA ; ™
+		.BYTE	$FF
+		.BYTE	$FF
+		.BYTE	$AB ; ´
+		.BYTE	$FF
+		.BYTE	$FB ; ˚
+		.BYTE	$1B
 		.BYTE	4
-		.BYTE $FF
-		.BYTE $1B
-		.BYTE $17
-		.BYTE $11
-		.BYTE $1B
-		.BYTE $2F ; /
+		.BYTE	$FF
+		.BYTE	$1B
+		.BYTE	$17
+		.BYTE	$11
+		.BYTE	$1B
+		.BYTE	$2F ; /
 		.BYTE	0
-		.BYTE $28 ; (
-		.BYTE $2A ; *
-		.BYTE $2A ; *
-		.BYTE  $A
-		.BYTE  $A
+		.BYTE	$28 ; (
+		.BYTE	$2A ; *
+		.BYTE	$2A ; *
+		.BYTE	 $A
+		.BYTE	 $A
 		.BYTE	2
 		.BYTE	0
-		.BYTE $3F ; ?
-		.BYTE $BE ; æ
-		.BYTE $BE ; æ
-		.BYTE $AE ; Æ
-		.BYTE $AF ; Ø
-		.BYTE $AB ; ´
-		.BYTE $AB ; ´
-		.BYTE $AA ; ™
-		.BYTE $AA ; ™
-		.BYTE $FE ; ˛
-		.BYTE $FA ; ˙
-		.BYTE $FB ; ˚
-		.BYTE $FB ; ˚
-		.BYTE $FF
-		.BYTE $FE ; ˛
-		.BYTE $FE ; ˛
-		.BYTE $FF
-		.BYTE $1B
+		.BYTE	$3F ; ?
+		.BYTE	$BE ; æ
+		.BYTE	$BE ; æ
+		.BYTE	$AE ; Æ
+		.BYTE	$AF ; Ø
+		.BYTE	$AB ; ´
+		.BYTE	$AB ; ´
+		.BYTE	$AA ; ™
+		.BYTE	$AA ; ™
+		.BYTE	$FE ; ˛
+		.BYTE	$FA ; ˙
+		.BYTE	$FB ; ˚
+		.BYTE	$FB ; ˚
+		.BYTE	$FF
+		.BYTE	$FE ; ˛
+		.BYTE	$FE ; ˛
+		.BYTE	$FF
+		.BYTE	$1B
 		.BYTE	2
-		.BYTE $AF ; Ø
-		.BYTE $1B
+		.BYTE	$AF ; Ø
+		.BYTE	$1B
 		.BYTE	2
-		.BYTE $BE ; æ
-		.BYTE $FE ; ˛
-		.BYTE $FA ; ˙
-		.BYTE $EA ; Í
-		.BYTE $AA ; ™
-		.BYTE $AB ; ´
-		.BYTE $AB ; ´
-		.BYTE $BF ; ø
-		.BYTE $FF
-		.BYTE $FE ; ˛
-		.BYTE $FF
-		.BYTE $BE ; æ
-		.BYTE $FA ; ˙
-		.BYTE $FA ; ˙
-		.BYTE $EA ; Í
-		.BYTE $EA ; Í
-		.BYTE $AA ; ™
-		.BYTE $A8 ; ®
-		.BYTE $A0 ; †
-		.BYTE $FF
-		.BYTE $BF ; ø
-		.BYTE $BE ; æ
-		.BYTE $8F ; è
-		.BYTE  $F
-		.BYTE $3E ; >
-		.BYTE $BF ; ø
-		.BYTE $AE ; Æ
-		.BYTE $FE ; ˛
-		.BYTE $BF ; ø
-		.BYTE $BF ; ø
-		.BYTE $AF ; Ø
-		.BYTE $AF ; Ø
-		.BYTE $AB ; ´
-		.BYTE $AB ; ´
-		.BYTE $AF ; Ø
-		.BYTE $AB ; ´
-		.BYTE $AF ; Ø
-		.BYTE $AB ; ´
-		.BYTE $EB ; Î
-		.BYTE $EF ; Ô
-		.BYTE $FF
-		.BYTE $FE ; ˛
-		.BYTE $FE ; ˛
-		.BYTE $1B
+		.BYTE	$BE ; æ
+		.BYTE	$FE ; ˛
+		.BYTE	$FA ; ˙
+		.BYTE	$EA ; Í
+		.BYTE	$AA ; ™
+		.BYTE	$AB ; ´
+		.BYTE	$AB ; ´
+		.BYTE	$BF ; ø
+		.BYTE	$FF
+		.BYTE	$FE ; ˛
+		.BYTE	$FF
+		.BYTE	$BE ; æ
+		.BYTE	$FA ; ˙
+		.BYTE	$FA ; ˙
+		.BYTE	$EA ; Í
+		.BYTE	$EA ; Í
+		.BYTE	$AA ; ™
+		.BYTE	$A8 ; ®
+		.BYTE	$A0 ; †
+		.BYTE	$FF
+		.BYTE	$BF ; ø
+		.BYTE	$BE ; æ
+		.BYTE	$8F ; è
+		.BYTE	 $F
+		.BYTE	$3E ; >
+		.BYTE	$BF ; ø
+		.BYTE	$AE ; Æ
+		.BYTE	$FE ; ˛
+		.BYTE	$BF ; ø
+		.BYTE	$BF ; ø
+		.BYTE	$AF ; Ø
+		.BYTE	$AF ; Ø
+		.BYTE	$AB ; ´
+		.BYTE	$AB ; ´
+		.BYTE	$AF ; Ø
+		.BYTE	$AB ; ´
+		.BYTE	$AF ; Ø
+		.BYTE	$AB ; ´
+		.BYTE	$EB ; Î
+		.BYTE	$EF ; Ô
+		.BYTE	$FF
+		.BYTE	$FE ; ˛
+		.BYTE	$FE ; ˛
+		.BYTE	$1B
 		.BYTE	2
-		.BYTE $FF
-		.BYTE $BF ; ø
-		.BYTE $BF ; ø
-		.BYTE $AF ; Ø
-		.BYTE $AA ; ™
-		.BYTE $AA ; ™
-		.BYTE $15
-		.BYTE $C0 ; ¿
-		.BYTE $1B
+		.BYTE	$FF
+		.BYTE	$BF ; ø
+		.BYTE	$BF ; ø
+		.BYTE	$AF ; Ø
+		.BYTE	$AA ; ™
+		.BYTE	$AA ; ™
+		.BYTE	$15
+		.BYTE	$C0 ; ¿
+		.BYTE	$1B
 		.BYTE	4
-		.BYTE $FF
-		.BYTE $AA ; ™
-		.BYTE $3F ; ?
-		.BYTE $1B
+		.BYTE	$FF
+		.BYTE	$AA ; ™
+		.BYTE	$3F ; ?
+		.BYTE	$1B
 		.BYTE	3
-		.BYTE $FF
-		.BYTE $FE ; ˛
-		.BYTE $EA ; Í
-		.BYTE $AA ; ™
-		.BYTE $FA ; ˙
-		.BYTE $EA ; Í
-		.BYTE $EA ; Í
-		.BYTE $AA ; ™
-		.BYTE $AA ; ™
-		.BYTE $A8 ; ®
-		.BYTE $A8 ; ®
-		.BYTE $A0 ; †
-		.BYTE $A3 ; £
-		.BYTE $8F ; è
-		.BYTE $BF ; ø
-		.BYTE $3F ; ?
-		.BYTE $3F ; ?
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $FE ; ˛
-		.BYTE $FF
-		.BYTE $FA ; ˙
-		.BYTE $FE ; ˛
-		.BYTE $FF
-		.BYTE $FB ; ˚
-		.BYTE $BE ; æ
-		.BYTE $BE ; æ
-		.BYTE $AF ; Ø
-		.BYTE $AF ; Ø
-		.BYTE $AB ; ´
-		.BYTE $AB ; ´
-		.BYTE $EF ; Ô
-		.BYTE $FC ; ¸
-		.BYTE $BC ; º
-		.BYTE $B0 ; ∞
-		.BYTE $F0 ; 
-		.BYTE $AB ; ´
-		.BYTE $EB ; Î
-		.BYTE $EF ; Ô
-		.BYTE $2B ; +
-		.BYTE $2A ; *
-		.BYTE $AA ; ™
-		.BYTE $AB ; ´
-		.BYTE $AB ; ´
-		.BYTE $EB ; Î
-		.BYTE $EB ; Î
-		.BYTE $EA ; Í
-		.BYTE $EA ; Í
-		.BYTE $FA ; ˙
-		.BYTE $FA ; ˙
-		.BYTE $FE ; ˛
-		.BYTE $EA ; Í
-		.BYTE $EA ; Í
-		.BYTE $FA ; ˙
-		.BYTE $EA ; Í
-		.BYTE $FA ; ˙
-		.BYTE $FA ; ˙
-		.BYTE $BE ; æ
-		.BYTE $1B
+		.BYTE	$FF
+		.BYTE	$FE ; ˛
+		.BYTE	$EA ; Í
+		.BYTE	$AA ; ™
+		.BYTE	$FA ; ˙
+		.BYTE	$EA ; Í
+		.BYTE	$EA ; Í
+		.BYTE	$AA ; ™
+		.BYTE	$AA ; ™
+		.BYTE	$A8 ; ®
+		.BYTE	$A8 ; ®
+		.BYTE	$A0 ; †
+		.BYTE	$A3 ; £
+		.BYTE	$8F ; è
+		.BYTE	$BF ; ø
+		.BYTE	$3F ; ?
+		.BYTE	$3F ; ?
+		.BYTE	$FF
+		.BYTE	$FF
+		.BYTE	$FE ; ˛
+		.BYTE	$FF
+		.BYTE	$FA ; ˙
+		.BYTE	$FE ; ˛
+		.BYTE	$FF
+		.BYTE	$FB ; ˚
+		.BYTE	$BE ; æ
+		.BYTE	$BE ; æ
+		.BYTE	$AF ; Ø
+		.BYTE	$AF ; Ø
+		.BYTE	$AB ; ´
+		.BYTE	$AB ; ´
+		.BYTE	$EF ; Ô
+		.BYTE	$FC ; ¸
+		.BYTE	$BC ; º
+		.BYTE	$B0 ; ∞
+		.BYTE	$F0 ; 
+		.BYTE	$AB ; ´
+		.BYTE	$EB ; Î
+		.BYTE	$EF ; Ô
+		.BYTE	$2B ; +
+		.BYTE	$2A ; *
+		.BYTE	$AA ; ™
+		.BYTE	$AB ; ´
+		.BYTE	$AB ; ´
+		.BYTE	$EB ; Î
+		.BYTE	$EB ; Î
+		.BYTE	$EA ; Í
+		.BYTE	$EA ; Í
+		.BYTE	$FA ; ˙
+		.BYTE	$FA ; ˙
+		.BYTE	$FE ; ˛
+		.BYTE	$EA ; Í
+		.BYTE	$EA ; Í
+		.BYTE	$FA ; ˙
+		.BYTE	$EA ; Í
+		.BYTE	$FA ; ˙
+		.BYTE	$FA ; ˙
+		.BYTE	$BE ; æ
+		.BYTE	$1B
 		.BYTE	2
-		.BYTE $BF ; ø
-		.BYTE $1B
+		.BYTE	$BF ; ø
+		.BYTE	$1B
 		.BYTE	2
-		.BYTE $AF ; Ø
-		.BYTE $BF ; ø
-		.BYTE $FE ; ˛
-		.BYTE $FA ; ˙
-		.BYTE $EA ; Í
-		.BYTE $FF
-		.BYTE $FE ; ˛
-		.BYTE $FA ; ˙
-		.BYTE $FE ; ˛
-		.BYTE $AA ; ™
-		.BYTE $AA ; ™
-		.BYTE $A8 ; ®
-		.BYTE $AA ; ™
-		.BYTE $A0 ; †
-		.BYTE $80 ; Ä
-		.BYTE $A0 ; †
-		.BYTE $80 ; Ä
-		.BYTE $1B
+		.BYTE	$AF ; Ø
+		.BYTE	$BF ; ø
+		.BYTE	$FE ; ˛
+		.BYTE	$FA ; ˙
+		.BYTE	$EA ; Í
+		.BYTE	$FF
+		.BYTE	$FE ; ˛
+		.BYTE	$FA ; ˙
+		.BYTE	$FE ; ˛
+		.BYTE	$AA ; ™
+		.BYTE	$AA ; ™
+		.BYTE	$A8 ; ®
+		.BYTE	$AA ; ™
+		.BYTE	$A0 ; †
+		.BYTE	$80 ; Ä
+		.BYTE	$A0 ; †
+		.BYTE	$80 ; Ä
+		.BYTE	$1B
 		.BYTE	2
 		.BYTE	0
-		.BYTE $FC ; ¸
-		.BYTE $1B
-		.BYTE $2F ; /
+		.BYTE	$FC ; ¸
+		.BYTE	$1B
+		.BYTE	$2F ; /
 		.BYTE	0
-		.BYTE $1B
-		.BYTE $17
-		.BYTE $44 ; D
-		.BYTE $1B
+		.BYTE	$1B
+		.BYTE	$17
+		.BYTE	$44 ; D
+		.BYTE	$1B
 		.BYTE	6
-		.BYTE $11
+		.BYTE	$11
 		.BYTE	0
-		.BYTE $1B
+		.BYTE	$1B
 		.BYTE	6
-		.BYTE $11
+		.BYTE	$11
 		.BYTE	0
-		.BYTE $1B
+		.BYTE	$1B
 		.BYTE	6
-		.BYTE $11
-		.BYTE $1B
-		.BYTE $16
+		.BYTE	$11
+		.BYTE	$1B
+		.BYTE	$16
 		.BYTE	0
-		.BYTE  $F
-		.BYTE $FF
-		.BYTE $1B
+		.BYTE	 $F
+		.BYTE	$FF
+		.BYTE	$1B
 		.BYTE	3
 		.BYTE	0
-		.BYTE  $F
-		.BYTE $1B
+		.BYTE	 $F
+		.BYTE	$1B
 		.BYTE	2
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
 		.BYTE	0
-		.BYTE  $F
-		.BYTE $1B
+		.BYTE	 $F
+		.BYTE	$1B
 		.BYTE	4
-		.BYTE $FF
-		.BYTE  $F
-		.BYTE $1B
-		.BYTE  $E
-		.BYTE $FF
-		.BYTE $FA ; ˙
-		.BYTE $1B
+		.BYTE	$FF
+		.BYTE	 $F
+		.BYTE	$1B
+		.BYTE	 $E
+		.BYTE	$FF
+		.BYTE	$FA ; ˙
+		.BYTE	$1B
 		.BYTE	2
-		.BYTE $F2 ; Ú
-		.BYTE $F0 ; 
-		.BYTE $1B
+		.BYTE	$F2 ; Ú
+		.BYTE	$F0 ; 
+		.BYTE	$1B
 		.BYTE	2
-		.BYTE $FC ; ¸
-		.BYTE $AF ; Ø
-		.BYTE $AB ; ´
-		.BYTE $EA ; Í
-		.BYTE $FA ; ˙
-		.BYTE $BF ; ø
-		.BYTE $AF ; Ø
-		.BYTE $2A ; *
-		.BYTE $2A ; *
-		.BYTE $F3 ; Û
-		.BYTE $F3 ; Û
-		.BYTE $1B
+		.BYTE	$FC ; ¸
+		.BYTE	$AF ; Ø
+		.BYTE	$AB ; ´
+		.BYTE	$EA ; Í
+		.BYTE	$FA ; ˙
+		.BYTE	$BF ; ø
+		.BYTE	$AF ; Ø
+		.BYTE	$2A ; *
+		.BYTE	$2A ; *
+		.BYTE	$F3 ; Û
+		.BYTE	$F3 ; Û
+		.BYTE	$1B
 		.BYTE	3
-		.BYTE $FF
-		.BYTE $FC ; ¸
-		.BYTE $A0 ; †
-		.BYTE $FE ; ˛
-		.BYTE $FE ; ˛
-		.BYTE $FA ; ˙
-		.BYTE $FF
-		.BYTE $FE ; ˛
-		.BYTE $1B
+		.BYTE	$FF
+		.BYTE	$FC ; ¸
+		.BYTE	$A0 ; †
+		.BYTE	$FE ; ˛
+		.BYTE	$FE ; ˛
+		.BYTE	$FA ; ˙
+		.BYTE	$FF
+		.BYTE	$FE ; ˛
+		.BYTE	$1B
 		.BYTE	2
-		.BYTE $FF
-		.BYTE $1B
+		.BYTE	$FF
+		.BYTE	$1B
 		.BYTE	2
-		.BYTE $A0 ; †
-		.BYTE $1B
+		.BYTE	$A0 ; †
+		.BYTE	$1B
 		.BYTE	2
-		.BYTE $A8 ; ®
-		.BYTE $AA ; ™
-		.BYTE $FA ; ˙
-		.BYTE $AA ; ™
-		.BYTE $AB ; ´
-		.BYTE $EB ; Î
-		.BYTE $FA ; ˙
-		.BYTE $3E ; >
-		.BYTE $3F ; ?
-		.BYTE  $F
-		.BYTE $C3 ; √
-		.BYTE $AA ; ™
-		.BYTE $AA ; ™
-		.BYTE $1B
+		.BYTE	$A8 ; ®
+		.BYTE	$AA ; ™
+		.BYTE	$FA ; ˙
+		.BYTE	$AA ; ™
+		.BYTE	$AB ; ´
+		.BYTE	$EB ; Î
+		.BYTE	$FA ; ˙
+		.BYTE	$3E ; >
+		.BYTE	$3F ; ?
+		.BYTE	 $F
+		.BYTE	$C3 ; √
+		.BYTE	$AA ; ™
+		.BYTE	$AA ; ™
+		.BYTE	$1B
 		.BYTE	2
-		.BYTE $EA ; Í
-		.BYTE $FA ; ˙
-		.BYTE $FB ; ˚
-		.BYTE $1B
+		.BYTE	$EA ; Í
+		.BYTE	$FA ; ˙
+		.BYTE	$FB ; ˚
+		.BYTE	$1B
 		.BYTE	2
-		.BYTE $FF
-		.BYTE $BF ; ø
-		.BYTE $BF ; ø
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $FB ; ˚
-		.BYTE $FA ; ˙
-		.BYTE $AA ; ™
-		.BYTE $2A ; *
-		.BYTE $CA ;  
-		.BYTE $C0 ; ¿
-		.BYTE $C0 ; ¿
-		.BYTE $F3 ; Û
-		.BYTE $FF
-		.BYTE $BF ; ø
-		.BYTE $AA ; ™
-		.BYTE $AA ; ™
-		.BYTE $AE ; Æ
-		.BYTE $AE ; Æ
-		.BYTE $1B
+		.BYTE	$FF
+		.BYTE	$BF ; ø
+		.BYTE	$BF ; ø
+		.BYTE	$FF
+		.BYTE	$FF
+		.BYTE	$FB ; ˚
+		.BYTE	$FA ; ˙
+		.BYTE	$AA ; ™
+		.BYTE	$2A ; *
+		.BYTE	$CA ;  
+		.BYTE	$C0 ; ¿
+		.BYTE	$C0 ; ¿
+		.BYTE	$F3 ; Û
+		.BYTE	$FF
+		.BYTE	$BF ; ø
+		.BYTE	$AA ; ™
+		.BYTE	$AA ; ™
+		.BYTE	$AE ; Æ
+		.BYTE	$AE ; Æ
+		.BYTE	$1B
 		.BYTE	2
-		.BYTE $3C ; <
-		.BYTE $FF
-		.BYTE $AE ; Æ
-		.BYTE $AE ; Æ
-		.BYTE $AF ; Ø
-		.BYTE $BF ; ø
-		.BYTE $3F ; ?
-		.BYTE $1B
+		.BYTE	$3C ; <
+		.BYTE	$FF
+		.BYTE	$AE ; Æ
+		.BYTE	$AE ; Æ
+		.BYTE	$AF ; Ø
+		.BYTE	$BF ; ø
+		.BYTE	$3F ; ?
+		.BYTE	$1B
 		.BYTE	2
-		.BYTE $FF
-		.BYTE $8F ; è
-		.BYTE $3F ; ?
-		.BYTE $3F ; ?
-		.BYTE $FF
-		.BYTE $FB ; ˚
-		.BYTE $EA ; Í
-		.BYTE $AB ; ´
-		.BYTE $AF ; Ø
-		.BYTE $FE ; ˛
-		.BYTE $FA ; ˙
-		.BYTE $FA ; ˙
-		.BYTE $EB ; Î
-		.BYTE $FB ; ˚
-		.BYTE $FF
-		.BYTE $FE ; ˛
-		.BYTE $FE ; ˛
-		.BYTE $AB ; ´
-		.BYTE $EA ; Í
-		.BYTE $EA ; Í
-		.BYTE $EB ; Î
-		.BYTE $EB ; Î
-		.BYTE $1B
+		.BYTE	$FF
+		.BYTE	$8F ; è
+		.BYTE	$3F ; ?
+		.BYTE	$3F ; ?
+		.BYTE	$FF
+		.BYTE	$FB ; ˚
+		.BYTE	$EA ; Í
+		.BYTE	$AB ; ´
+		.BYTE	$AF ; Ø
+		.BYTE	$FE ; ˛
+		.BYTE	$FA ; ˙
+		.BYTE	$FA ; ˙
+		.BYTE	$EB ; Î
+		.BYTE	$FB ; ˚
+		.BYTE	$FF
+		.BYTE	$FE ; ˛
+		.BYTE	$FE ; ˛
+		.BYTE	$AB ; ´
+		.BYTE	$EA ; Í
+		.BYTE	$EA ; Í
+		.BYTE	$EB ; Î
+		.BYTE	$EB ; Î
+		.BYTE	$1B
 		.BYTE	2
-		.BYTE $AA ; ™
-		.BYTE $C2 ; ¬
-		.BYTE $F2 ; Ú
-		.BYTE $1B
+		.BYTE	$AA ; ™
+		.BYTE	$C2 ; ¬
+		.BYTE	$F2 ; Ú
+		.BYTE	$1B
 		.BYTE	2
-		.BYTE $FA ; ˙
-		.BYTE $FE ; ˛
-		.BYTE $FE ; ˛
-		.BYTE $BF ; ø
-		.BYTE $AB ; ´
-		.BYTE $AB ; ´
-		.BYTE $1B
+		.BYTE	$FA ; ˙
+		.BYTE	$FE ; ˛
+		.BYTE	$FE ; ˛
+		.BYTE	$BF ; ø
+		.BYTE	$AB ; ´
+		.BYTE	$AB ; ´
+		.BYTE	$1B
 		.BYTE	2
-		.BYTE $AF ; Ø
-		.BYTE $BF ; ø
-		.BYTE $BF ; ø
-		.BYTE $BE ; æ
-		.BYTE $EA ; Í
-		.BYTE $AA ; ™
-		.BYTE $AE ; Æ
-		.BYTE $AF ; Ø
-		.BYTE $AF ; Ø
-		.BYTE $AB ; ´
-		.BYTE $AB ; ´
-		.BYTE $1B
+		.BYTE	$AF ; Ø
+		.BYTE	$BF ; ø
+		.BYTE	$BF ; ø
+		.BYTE	$BE ; æ
+		.BYTE	$EA ; Í
+		.BYTE	$AA ; ™
+		.BYTE	$AE ; Æ
+		.BYTE	$AF ; Ø
+		.BYTE	$AF ; Ø
+		.BYTE	$AB ; ´
+		.BYTE	$AB ; ´
+		.BYTE	$1B
 		.BYTE	2
-		.BYTE $AF ; Ø
-		.BYTE $BF ; ø
-		.BYTE $BF ; ø
-		.BYTE $1B
+		.BYTE	$AF ; Ø
+		.BYTE	$BF ; ø
+		.BYTE	$BF ; ø
+		.BYTE	$1B
 		.BYTE	2
-		.BYTE $FF
-		.BYTE $F0 ; 
-		.BYTE $EE ; Ó
-		.BYTE $BE ; æ
-		.BYTE $BE ; æ
-		.BYTE $BA ; ∫
-		.BYTE $FA ; ˙
-		.BYTE $F2 ; Ú
-		.BYTE  $A
-		.BYTE $2A ; *
-		.BYTE $1B
+		.BYTE	$FF
+		.BYTE	$F0 ; 
+		.BYTE	$EE ; Ó
+		.BYTE	$BE ; æ
+		.BYTE	$BE ; æ
+		.BYTE	$BA ; ∫
+		.BYTE	$FA ; ˙
+		.BYTE	$F2 ; Ú
+		.BYTE	 $A
+		.BYTE	$2A ; *
+		.BYTE	$1B
 		.BYTE	2
-		.BYTE $AF ; Ø
-		.BYTE $8F ; è
-		.BYTE $8F ; è
-		.BYTE $BF ; ø
-		.BYTE $BF ; ø
-		.BYTE $3F ; ?
-		.BYTE $1B
+		.BYTE	$AF ; Ø
+		.BYTE	$8F ; è
+		.BYTE	$8F ; è
+		.BYTE	$BF ; ø
+		.BYTE	$BF ; ø
+		.BYTE	$3F ; ?
+		.BYTE	$1B
 		.BYTE	7
-		.BYTE $FF
-		.BYTE $F0 ; 
-		.BYTE $1B
+		.BYTE	$FF
+		.BYTE	$F0 ; 
+		.BYTE	$1B
 		.BYTE	6
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	0
 		.BYTE	0
-		.BYTE $F0 ; 
-		.BYTE $1B
+		.BYTE	$F0 ; 
+		.BYTE	$1B
 		.BYTE	4
-		.BYTE $FF
-		.BYTE $1B
+		.BYTE	$FF
+		.BYTE	$1B
 		.BYTE	3
 		.BYTE	0
-		.BYTE $F0 ; 
-		.BYTE $1B
+		.BYTE	$F0 ; 
+		.BYTE	$1B
 		.BYTE	2
-		.BYTE $FF
-		.BYTE $1B
+		.BYTE	$FF
+		.BYTE	$1B
 		.BYTE	5
 		.BYTE	0
-		.BYTE $F0 ; 
-		.BYTE $FF
-		.BYTE $1B
-		.BYTE  $F
+		.BYTE	$F0 ; 
+		.BYTE	$FF
+		.BYTE	$1B
+		.BYTE	 $F
 		.BYTE	0
-		.BYTE $1B
+		.BYTE	$1B
 		.BYTE	6
-		.BYTE $44 ; D
+		.BYTE	$44 ; D
 		.BYTE	0
-		.BYTE $1B
+		.BYTE	$1B
 		.BYTE	6
-		.BYTE $44 ; D
+		.BYTE	$44 ; D
 		.BYTE	0
-		.BYTE $1B
+		.BYTE	$1B
 		.BYTE	6
-		.BYTE $44 ; D
+		.BYTE	$44 ; D
 		.BYTE	0
-		.BYTE $55 ; U
+		.BYTE	$55 ; U
 		.BYTE	0
-		.BYTE $55 ; U
+		.BYTE	$55 ; U
 		.BYTE	0
-		.BYTE $1B
+		.BYTE	$1B
 		.BYTE	4
-		.BYTE $55 ; U
+		.BYTE	$55 ; U
 		.BYTE	0
-		.BYTE $55 ; U
+		.BYTE	$55 ; U
 		.BYTE	0
-		.BYTE $1B
+		.BYTE	$1B
 		.BYTE	4
-		.BYTE $55 ; U
+		.BYTE	$55 ; U
 		.BYTE	0
-		.BYTE $55 ; U
+		.BYTE	$55 ; U
 		.BYTE	0
-		.BYTE $1B
+		.BYTE	$1B
 		.BYTE	3
-		.BYTE $55 ; U
-		.BYTE $40 ; @
+		.BYTE	$55 ; U
+		.BYTE	$40 ; @
 		.BYTE	0
-		.BYTE $53 ; S
+		.BYTE	$53 ; S
 		.BYTE	3
-		.BYTE $1B
+		.BYTE	$1B
 		.BYTE	3
-		.BYTE $57 ; W
-		.BYTE  $F
-		.BYTE $1B
-		.BYTE $36 ; 6
-		.BYTE $FF
-		.BYTE $28 ; (
-		.BYTE  $A
-		.BYTE $CA ;  
-		.BYTE $FA ; ˙
-		.BYTE $FE ; ˛
-		.BYTE $1B
+		.BYTE	$57 ; W
+		.BYTE	 $F
+		.BYTE	$1B
+		.BYTE	$36 ; 6
+		.BYTE	$FF
+		.BYTE	$28 ; (
+		.BYTE	 $A
+		.BYTE	$CA ;  
+		.BYTE	$FA ; ˙
+		.BYTE	$FE ; ˛
+		.BYTE	$1B
 		.BYTE	2
-		.BYTE $FF
-		.BYTE $AA ; ™
-		.BYTE $2A ; *
-		.BYTE $2A ; *
-		.BYTE $8A ; ä
-		.BYTE $8A ; ä
-		.BYTE $82 ; Ç
-		.BYTE $FC ; ¸
-		.BYTE $FF
-		.BYTE $3F ; ?
-		.BYTE $3F ; ?
-		.BYTE $FF
-		.BYTE $AF ; Ø
-		.BYTE $AB ; ´
-		.BYTE $AB ; ´
-		.BYTE $AF ; Ø
-		.BYTE $FF
-		.BYTE $FE ; ˛
-		.BYTE $1B
+		.BYTE	$FF
+		.BYTE	$AA ; ™
+		.BYTE	$2A ; *
+		.BYTE	$2A ; *
+		.BYTE	$8A ; ä
+		.BYTE	$8A ; ä
+		.BYTE	$82 ; Ç
+		.BYTE	$FC ; ¸
+		.BYTE	$FF
+		.BYTE	$3F ; ?
+		.BYTE	$3F ; ?
+		.BYTE	$FF
+		.BYTE	$AF ; Ø
+		.BYTE	$AB ; ´
+		.BYTE	$AB ; ´
+		.BYTE	$AF ; Ø
+		.BYTE	$FF
+		.BYTE	$FE ; ˛
+		.BYTE	$1B
 		.BYTE	2
-		.BYTE $FF
-		.BYTE $FB ; ˚
-		.BYTE $FA ; ˙
-		.BYTE $EA ; Í
-		.BYTE $AB ; ´
-		.BYTE $F3 ; Û
-		.BYTE $BF ; ø
-		.BYTE $8F ; è
-		.BYTE $C3 ; √
-		.BYTE $F3 ; Û
-		.BYTE $F0 ; 
-		.BYTE $FC ; ¸
-		.BYTE $FC ; ¸
-		.BYTE $FF
-		.BYTE $FE ; ˛
-		.BYTE $FE ; ˛
-		.BYTE $1B
+		.BYTE	$FF
+		.BYTE	$FB ; ˚
+		.BYTE	$FA ; ˙
+		.BYTE	$EA ; Í
+		.BYTE	$AB ; ´
+		.BYTE	$F3 ; Û
+		.BYTE	$BF ; ø
+		.BYTE	$8F ; è
+		.BYTE	$C3 ; √
+		.BYTE	$F3 ; Û
+		.BYTE	$F0 ; 
+		.BYTE	$FC ; ¸
+		.BYTE	$FC ; ¸
+		.BYTE	$FF
+		.BYTE	$FE ; ˛
+		.BYTE	$FE ; ˛
+		.BYTE	$1B
 		.BYTE	2
-		.BYTE $FF
-		.BYTE $3F ; ?
-		.BYTE $3F ; ?
-		.BYTE $AA ; ™
-		.BYTE $8A ; ä
-		.BYTE $CA ;  
-		.BYTE $CA ;  
+		.BYTE	$FF
+		.BYTE	$3F ; ?
+		.BYTE	$3F ; ?
+		.BYTE	$AA ; ™
+		.BYTE	$8A ; ä
+		.BYTE	$CA ;  
+		.BYTE	$CA ;  
 		.BYTE	2
 		.BYTE	2
-		.BYTE $C0 ; ¿
-		.BYTE $F2 ; Ú
-		.BYTE $FF
-		.BYTE $BF ; ø
-		.BYTE $AF ; Ø
-		.BYTE $EB ; Î
-		.BYTE $FF
-		.BYTE $BF ; ø
-		.BYTE $AF ; Ø
-		.BYTE $BF ; ø
-		.BYTE $FF
-		.BYTE $EF ; Ô
-		.BYTE $FA ; ˙
-		.BYTE $FA ; ˙
-		.BYTE $FE ; ˛
-		.BYTE $FE ; ˛
-		.BYTE $EF ; Ô
-		.BYTE $AF ; Ø
-		.BYTE $FE ; ˛
-		.BYTE $FF
-		.BYTE $FF
-		.BYTE $BF ; ø
-		.BYTE $BF ; ø
-		.BYTE $FF
-		.BYTE $FA ; ˙
-		.BYTE $EA ; Í
-		.BYTE $AB ; ´
-		.BYTE $AF ; Ø
-		.BYTE $AF ; Ø
-		.BYTE $EB ; Î
-		.BYTE $EB ; Î
-		.BYTE $AA ; ™
-		.BYTE $8A ; ä
-		.BYTE  $B
-		.BYTE $1B
+		.BYTE	$C0 ; ¿
+		.BYTE	$F2 ; Ú
+		.BYTE	$FF
+		.BYTE	$BF ; ø
+		.BYTE	$AF ; Ø
+		.BYTE	$EB ; Î
+		.BYTE	$FF
+		.BYTE	$BF ; ø
+		.BYTE	$AF ; Ø
+		.BYTE	$BF ; ø
+		.BYTE	$FF
+		.BYTE	$EF ; Ô
+		.BYTE	$FA ; ˙
+		.BYTE	$FA ; ˙
+		.BYTE	$FE ; ˛
+		.BYTE	$FE ; ˛
+		.BYTE	$EF ; Ô
+		.BYTE	$AF ; Ø
+		.BYTE	$FE ; ˛
+		.BYTE	$FF
+		.BYTE	$FF
+		.BYTE	$BF ; ø
+		.BYTE	$BF ; ø
+		.BYTE	$FF
+		.BYTE	$FA ; ˙
+		.BYTE	$EA ; Í
+		.BYTE	$AB ; ´
+		.BYTE	$AF ; Ø
+		.BYTE	$AF ; Ø
+		.BYTE	$EB ; Î
+		.BYTE	$EB ; Î
+		.BYTE	$AA ; ™
+		.BYTE	$8A ; ä
+		.BYTE	 $B
+		.BYTE	$1B
 		.BYTE	2
-		.BYTE $FA ; ˙
-		.BYTE $EA ; Í
-		.BYTE $F8 ; ¯
-		.BYTE $E8 ; Ë
-		.BYTE $FA ; ˙
-		.BYTE $FC ; ¸
-		.BYTE $BA ; ∫
-		.BYTE $FA ; ˙
-		.BYTE $BE ; æ
-		.BYTE $AF ; Ø
-		.BYTE $BF ; ø
-		.BYTE $2B ; +
-		.BYTE  $F
-		.BYTE $3F ; ?
-		.BYTE $FF
-		.BYTE $AF ; Ø
-		.BYTE $BF ; ø
-		.BYTE $FE ; ˛
-		.BYTE $FA ; ˙
-		.BYTE $FB ; ˚
-		.BYTE $F2 ; Ú
-		.BYTE $C2 ; ¬
-		.BYTE $FA ; ˙
-		.BYTE $FA ; ˙
-		.BYTE $EA ; Í
-		.BYTE $FB ; ˚
-		.BYTE $FF
-		.BYTE $FA ; ˙
-		.BYTE $FE ; ˛
-		.BYTE $BE ; æ
-		.BYTE $AF ; Ø
-		.BYTE $BF ; ø
-		.BYTE $FF
-		.BYTE $FE ; ˛
-		.BYTE $BE ; æ
-		.BYTE $AF ; Ø
-		.BYTE $BF ; ø
-		.BYTE $FF
+		.BYTE	$FA ; ˙
+		.BYTE	$EA ; Í
+		.BYTE	$F8 ; ¯
+		.BYTE	$E8 ; Ë
+		.BYTE	$FA ; ˙
+		.BYTE	$FC ; ¸
+		.BYTE	$BA ; ∫
+		.BYTE	$FA ; ˙
+		.BYTE	$BE ; æ
+		.BYTE	$AF ; Ø
+		.BYTE	$BF ; ø
+		.BYTE	$2B ; +
+		.BYTE	 $F
+		.BYTE	$3F ; ?
+		.BYTE	$FF
+		.BYTE	$AF ; Ø
+		.BYTE	$BF ; ø
+		.BYTE	$FE ; ˛
+		.BYTE	$FA ; ˙
+		.BYTE	$FB ; ˚
+		.BYTE	$F2 ; Ú
+		.BYTE	$C2 ; ¬
+		.BYTE	$FA ; ˙
+		.BYTE	$FA ; ˙
+		.BYTE	$EA ; Í
+		.BYTE	$FB ; ˚
+		.BYTE	$FF
+		.BYTE	$FA ; ˙
+		.BYTE	$FE ; ˛
+		.BYTE	$BE ; æ
+		.BYTE	$AF ; Ø
+		.BYTE	$BF ; ø
+		.BYTE	$FF
+		.BYTE	$FE ; ˛
+		.BYTE	$BE ; æ
+		.BYTE	$AF ; Ø
+		.BYTE	$BF ; ø
+		.BYTE	$FF
 		.BYTE	2
-		.BYTE $2A ; *
-		.BYTE $AA ; ™
-		.BYTE $A2 ; ¢
-		.BYTE $82 ; Ç
-		.BYTE $8B ; ã
-		.BYTE $BF ; ø
-		.BYTE $FF
-		.BYTE $A8 ; ®
-		.BYTE $A8 ; ®
-		.BYTE $A3 ; £
-		.BYTE $AF ; Ø
-		.BYTE $BF ; ø
-		.BYTE $1B
-		.BYTE $32 ; 2
-		.BYTE $FF
-		.BYTE $F0 ; 
-		.BYTE $1B
+		.BYTE	$2A ; *
+		.BYTE	$AA ; ™
+		.BYTE	$A2 ; ¢
+		.BYTE	$82 ; Ç
+		.BYTE	$8B ; ã
+		.BYTE	$BF ; ø
+		.BYTE	$FF
+		.BYTE	$A8 ; ®
+		.BYTE	$A8 ; ®
+		.BYTE	$A3 ; £
+		.BYTE	$AF ; Ø
+		.BYTE	$BF ; ø
+		.BYTE	$1B
+		.BYTE	$32 ; 2
+		.BYTE	$FF
+		.BYTE	$F0 ; 
+		.BYTE	$1B
 		.BYTE	6
-		.BYTE $FF
+		.BYTE	$FF
 		.BYTE	1
 		.BYTE	0
-		.BYTE $C5 ; ≈
-		.BYTE $C0 ; ¿
-		.BYTE $1B
+		.BYTE	$C5 ; ≈
+		.BYTE	$C0 ; ¿
+		.BYTE	$1B
 		.BYTE	3
-		.BYTE $D5 ; ’
-		.BYTE $55 ; U
+		.BYTE	$D5 ; ’
+		.BYTE	$55 ; U
 		.BYTE	0
-		.BYTE $55 ; U
+		.BYTE	$55 ; U
 		.BYTE	0
-		.BYTE $1B
+		.BYTE	$1B
 		.BYTE	4
-		.BYTE $55 ; U
+		.BYTE	$55 ; U
 		.BYTE	0
-		.BYTE $55 ; U
+		.BYTE	$55 ; U
 		.BYTE	0
-		.BYTE $1B
+		.BYTE	$1B
 		.BYTE	4
-		.BYTE $55 ; U
+		.BYTE	$55 ; U
 		.BYTE	0
-		.BYTE $55 ; U
+		.BYTE	$55 ; U
 		.BYTE	0
-		.BYTE $1B
+		.BYTE	$1B
 		.BYTE	3
-		.BYTE $55 ; U
-		.BYTE $1B
-		.BYTE $3F ; ?
+		.BYTE	$55 ; U
+		.BYTE	$1B
+		.BYTE	$3F ; ?
 		.BYTE	0
-		.BYTE $1B
-		.BYTE $FF
-		.BYTE $1B
-		.BYTE $23 ; #
-		.BYTE $84 ; Ñ
-		.BYTE $1B
+		.BYTE	$1B
+		.BYTE	$FF
+		.BYTE	$1B
+		.BYTE	$23 ; #
+		.BYTE	$84 ; Ñ
+		.BYTE	$1B
 		.BYTE	3
-		.BYTE $42 ; B
-		.BYTE $44 ; D
-		.BYTE $44 ; D
-		.BYTE $1B
-		.BYTE $12
-		.BYTE $46 ; F
-		.BYTE $1B
+		.BYTE	$42 ; B
+		.BYTE	$44 ; D
+		.BYTE	$44 ; D
+		.BYTE	$1B
+		.BYTE	$12
+		.BYTE	$46 ; F
+		.BYTE	$1B
 		.BYTE	2
-		.BYTE $38 ; 8
-		.BYTE $1B
+		.BYTE	$38 ; 8
+		.BYTE	$1B
 		.BYTE	3
-		.BYTE $3A ; :
-		.BYTE $1B
+		.BYTE	$3A ; :
+		.BYTE	$1B
 		.BYTE	2
-		.BYTE $3E ; >
-		.BYTE $45 ; E
-		.BYTE $1B
+		.BYTE	$3E ; >
+		.BYTE	$45 ; E
+		.BYTE	$1B
 		.BYTE	8
 		.BYTE	6
-		.BYTE $1B
-		.BYTE  $A
-		.BYTE  $F
-		.BYTE $1B
-		.BYTE  $F
+		.BYTE	$1B
+		.BYTE	 $A
+		.BYTE	 $F
+		.BYTE	$1B
+		.BYTE	 $F
 		.BYTE	7
-		.BYTE $1B
+		.BYTE	$1B
 		.BYTE	2
-		.BYTE $36 ; 6
-		.BYTE $38 ; 8
-		.BYTE $39 ; 9
-		.BYTE $38 ; 8
-		.BYTE $38 ; 8
-		.BYTE $1B
+		.BYTE	$36 ; 6
+		.BYTE	$38 ; 8
+		.BYTE	$39 ; 9
+		.BYTE	$38 ; 8
+		.BYTE	$38 ; 8
+		.BYTE	$1B
 		.BYTE	3
-		.BYTE $3B ; ;
-		.BYTE $1B
+		.BYTE	$3B ; ;
+		.BYTE	$1B
 		.BYTE	4
-		.BYTE $3D ; =
-		.BYTE $1B
+		.BYTE	$3D ; =
+		.BYTE	$1B
 		.BYTE	7
-		.BYTE $2D ; -
-		.BYTE $1B
+		.BYTE	$2D ; -
+		.BYTE	$1B
 		.BYTE	7
-		.BYTE $2F ; /
-		.BYTE $1B
+		.BYTE	$2F ; /
+		.BYTE	$1B
 		.BYTE	3
-		.BYTE $3A ; :
-		.BYTE $1B
+		.BYTE	$3A ; :
+		.BYTE	$1B
 		.BYTE	5
 		.BYTE	0
-		.BYTE $2A ; *
-		.BYTE $21 ; !
-		.BYTE $AE ; Æ
+		.BYTE	$2A ; *
+		.BYTE	$21 ; !
+		.BYTE	$AE ; Æ
 		.BYTE	0
 		.BYTE	0
-		.BYTE $3F ; ?
-		.BYTE $F7 ; ˜
-		.BYTE $EF ; Ô
+		.BYTE	$3F ; ?
+		.BYTE	$F7 ; ˜
+		.BYTE	$EF ; Ô
 		.BYTE	0
 		.BYTE	0
-		.BYTE $7F ; 
-		.BYTE $E7 ; Á
-		.BYTE $FE ; ˛
+		.BYTE	$7F ; 
+		.BYTE	$E7 ; Á
+		.BYTE	$FE ; ˛
 		.BYTE	0
 		.BYTE	0
-		.BYTE $3F ; ?
-		.BYTE $83 ; É
-		.BYTE $FE ; ˛
+		.BYTE	$3F ; ?
+		.BYTE	$83 ; É
+		.BYTE	$FE ; ˛
 		.BYTE	0
 		.BYTE	0
-		.BYTE $7F ; 
-		.BYTE $81 ; Å
-		.BYTE $FE ; ˛
+		.BYTE	$7F ; 
+		.BYTE	$81 ; Å
+		.BYTE	$FE ; ˛
 		.BYTE	0
 		.BYTE	0
-		.BYTE $3F ; ?
-		.BYTE $C3 ; √
-		.BYTE $FC ; ¸
+		.BYTE	$3F ; ?
+		.BYTE	$C3 ; √
+		.BYTE	$FC ; ¸
 		.BYTE	0
 		.BYTE	0
-		.BYTE $1F
-		.BYTE $FF
-		.BYTE $F8 ; ¯
+		.BYTE	$1F
+		.BYTE	$FF
+		.BYTE	$F8 ; ¯
 		.BYTE	0
 		.BYTE	0
 		.BYTE	7
-		.BYTE $FF
-		.BYTE $E0 ; ‡
-		.BYTE $1B
-		.BYTE $16
+		.BYTE	$FF
+		.BYTE	$E0 ; ‡
+		.BYTE	$1B
+		.BYTE	$16
 		.BYTE	0
-		.BYTE $38 ; 8
-		.BYTE $1B
+		.BYTE	$38 ; 8
+		.BYTE	$1B
 		.BYTE	3
 		.BYTE	0
-		.BYTE $3A ; :
-		.BYTE $1B
+		.BYTE	$3A ; :
+		.BYTE	$1B
 		.BYTE	2
 		.BYTE	0
 		.BYTE	7
-		.BYTE $1F
-		.BYTE $D8 ; ÿ
+		.BYTE	$1F
+		.BYTE	$D8 ; ÿ
 		.BYTE	0
 		.BYTE	0
-		.BYTE $7F ; 
-		.BYTE $FF
-		.BYTE $FC ; ¸
+		.BYTE	$7F ; 
+		.BYTE	$FF
+		.BYTE	$FC ; ¸
 		.BYTE	0
 		.BYTE	0
-		.BYTE $7F ; 
-		.BYTE $FF
-		.BYTE $F8 ; ¯
+		.BYTE	$7F ; 
+		.BYTE	$FF
+		.BYTE	$F8 ; ¯
 		.BYTE	0
-		.BYTE $8B ; ã
-		.BYTE $84 ; Ñ
-		.BYTE $35 ; 5
+		.BYTE	$8B ; ã
+		.BYTE	$84 ; Ñ
+		.BYTE	$35 ; 5
 		.BYTE	7
-		.BYTE $9C ; ú
+		.BYTE	$9C ; ú
 		.BYTE	0
-		.BYTE $1B
-		.BYTE $FF
+		.BYTE	$1B
+		.BYTE	$FF
 		.BYTE	0
 		.BYTE	0
 		.BYTE	0

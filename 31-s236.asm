@@ -3208,8 +3208,7 @@ M68_i_SceptreOfEvil:
 		.BYTE	$10,$28,$50,$50,$8a,$0a
 :
 M68_AAAD:
-		LDA	#$06
-		STA	$6320
+		ldi	$6320, $06
 		ldxy	$7508
 		LDA	#$0C
 		SEC

@@ -564,8 +564,7 @@ loc_797B:				; CODE XREF: sub_7AE7-231^j
 		LDA	$630D
 		SBC	#7
 		STA	$630D
-		LDA	#$FF
-		STA	$6320
+		ldi	$6320, $FF
 		LDA	I_EXPLVL
 		CLC
 		ADC	#$A
