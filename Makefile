@@ -42,7 +42,8 @@ ASM_SOURCES= \
 	11-s466.asm \
 	11-s480.asm \
 	11-s517.asm \
-	11-s679.asm
+	11-s679.asm \
+	22-s365.asm
 
 ASM2_SOURCES= \
 	11-s676.asm 11-s677.asm \
@@ -74,7 +75,6 @@ ASM2_SOURCES= \
 	22-s198.asm 22-s199.asm \
 	22-s263.asm 22-s264.asm \
 	22-s322.asm 22-s323.asm \
-	22-s365.asm 22-s366.asm \
 	22-s408.asm 22-s409.asm \
 	22-s431.asm 22-s432.asm \
 	22-s494.asm 22-s495.asm \
@@ -410,13 +410,7 @@ $(BINARIES) 11-s680.bin: $(OBJECTS)
 	sha1sum -c 22-s323.sha1
 	./encrypt.py 22-s323.bin 4d4c00103447f075cb8a1c2aa8059458
 
-22-s365.bin: 22-s365.asm
-	cl65 --start-addr 0x0100 -t none 22-s365.asm -o 22-s365.bin
-	sha1sum -c 22-s365.sha1
-
-22-s366.bin: 22-s366.asm
-	cl65 --start-addr 0x7600 -t none 22-s366.asm -o 22-s366.bin
-	sha1sum -c 22-s366.sha1
+22-s366.bin.crypt: 22-s366.bin
 	./encrypt.py 22-s366.bin 4d6d001583762d5fb6a7a9a80c21a204
 
 22-s408.bin: 22-s408.asm
