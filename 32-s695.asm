@@ -26,6 +26,8 @@
 ;	I don't believe this data is used for anything; it is just included
 ;	to ensure the correct hash is produced for the full disk image
 
+	.SEGMENT "CRUFT_32"
+
 		.BYTE	$81,$8d,$02,$11,$c4,$12,$a4,$f2,$86,$99,$49,$a8,$2c,$b9,$43,$d5
 		.BYTE	$a4,$0d,$7e,$00,$d2,$04,$a4,$99,$be,$d4,$64,$51,$06,$b7,$6b,$42
 		.BYTE	$34,$42,$31,$57,$ca,$12,$4e,$00,$67,$5f,$e3,$66,$dc,$7b,$03,$d5
