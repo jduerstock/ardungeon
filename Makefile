@@ -50,6 +50,7 @@ ASM_SOURCES= \
 	32-s126.asm \
 	32-s183.asm \
 	32-s382.asm \
+	32-s431.asm \
 	32-s494.asm \
 	32-s510.asm \
 	32-s526.asm \
@@ -108,7 +109,6 @@ ASM2_SOURCES= \
 	32-s034.asm 32-s035.asm \
 	32-s262.asm 32-s263.asm \
 	32-s327.asm 32-s328.asm \
-	32-s431.asm 32-s432.asm \
 	32-s526.asm 32-s527.asm \
 	32-s684.asm 32-s685.asm \
 	32-s695.asm
@@ -570,13 +570,7 @@ $(BINARIES) 11-s680.bin: $(OBJECTS)
 32-s383.bin.crypt: 32-s383.bin
 	./encrypt.py 32-s383.bin 557e0018f5430fe6e47fe06607cbbcb2
 
-32-s431.bin: 32-s431.asm
-	cl65 --start-addr 0x0100 -t none 32-s431.asm -o 32-s431.bin
-	sha1sum -c 32-s431.sha1
-
-32-s432.bin: 32-s432.asm
-	cl65 --start-addr 0x7600 -t none 32-s432.asm -o 32-s432.bin
-	sha1sum -c 32-s432.sha1
+32-s432.bin.crypt: 32-s432.bin
 	./encrypt.py 32-s432.bin 55af001f7b462cdfe12dfa0facb0bd3e
 
 32-s495.bin.crypt: 32-s495.bin
