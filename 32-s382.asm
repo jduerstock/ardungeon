@@ -1381,12 +1381,8 @@ a_Thy_IsEnchanted:
 		.BYTE	$B3
 		.WORD	off_7BD8
 		.BYTE	$1E
-		.BYTE	$D
-		.BYTE	$D
-		.BYTE	$A5
-aIsEnchanted:	.BYTE	"is enchanted!"
-		.BYTE	$D
-		.BYTE	$FF
+		.BYTE	$0D,$0D
+		.BYTE	$A5,"is enchanted!",$0D,$FF
 
 a_ThereIsASpecial:
 		MOVEXY	0,1
