@@ -108,22 +108,8 @@ unk_700:
 	.byte	$3c,$3c,$3c,$3c,$3c,$3c,$fc,$ff
 	.byte	$0f,$3c,$3c,$3c,$3c,$3c,$f0,$c0
 	.byte	$0f,$0f,$0f,$0f,$cf,$ff,$3f,$0c
-		.BYTE	 $F
-		.BYTE	 $F
-		.BYTE	$3C ; <
-		.BYTE	$F0 ; ð
-		.BYTE	$F0 ; ð
-		.BYTE	$3C ; <
-		.BYTE	 $F
-		.BYTE	 $F
-		.BYTE	 $F
-		.BYTE	$3C ; <
-		.BYTE	$3C ; <
-		.BYTE	$F0 ; ð
-		.BYTE	$C0 ; À
-		.BYTE	$C0 ; À
-		.BYTE	$C0 ; À
-		.BYTE	$C0 ; À
+	.byte	$0f,$0f,$3c,$f0,$f0,$3c,$0f,$0f
+	.byte	$0f,$3c,$3c,$f0,$c0,$c0,$c0,$c0
 		.BYTE	$FC ; ü
 		.BYTE	$3C ; <
 		.BYTE	$F0 ; ð
