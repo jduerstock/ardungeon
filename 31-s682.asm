@@ -1,2 +1,5 @@
+
 ;	.ORG	$1400
+	.SEGMENT "CRUFT_31"
+
 	.RES	4992,$00
